@@ -18,7 +18,7 @@ public class StateCompoundCompartmentEditPart extends ListCompartmentEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7009;
+	public static final int VISUAL_ID = 7011;
 
 	/**
 	 * @generated

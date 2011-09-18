@@ -57,7 +57,7 @@ public class StateCreateCommand extends EditElementCommand {
 		owner.getVertices().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_State_2003(newElement);
+				.getInstance().init_State_3010(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -24,8 +24,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StateRegionCompartment2CanonicalEditPolicy extends
-		CanonicalEditPolicy {
+public class FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy
+		extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -44,7 +44,7 @@ public class StateRegionCompartment2CanonicalEditPolicy extends
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getState_Regions();
+				.getFujabaRealtimeStatechart_Vertices();
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class StateRegionCompartment2CanonicalEditPolicy extends
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getStateRegionCompartment_7005SemanticChildren(viewObject);
+				.getFujabaRealtimeStatechartStatechartContentsCompartment_7014SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -75,7 +75,7 @@ public class StateRegionCompartment2CanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -88,7 +88,7 @@ public class StateRegionCompartment2CanonicalEditPolicy extends
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getStateRegionCompartment_7005SemanticChildren((View) getHost()
+				.getFujabaRealtimeStatechartStatechartContentsCompartment_7014SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

@@ -25,6 +25,7 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getParentState <em>Parent State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived <em>Statechart Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -126,5 +127,31 @@ public interface Region extends Prioritizable, NamedElement {
 	 * @generated
 	 */
 	EList<Transition> getTransitions();
+
+	/**
+	 * Returns the value of the '<em><b>Statechart Derived</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Statechart Derived</em>' containment reference.
+	 * @see #setStatechartDerived(FujabaRealtimeStatechart)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_StatechartDerived()
+	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.statechart'"
+	 * @generated
+	 */
+	FujabaRealtimeStatechart getStatechartDerived();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived <em>Statechart Derived</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Statechart Derived</em>' containment reference.
+	 * @see #getStatechartDerived()
+	 * @generated
+	 */
+	void setStatechartDerived(FujabaRealtimeStatechart value);
 
 } // Region

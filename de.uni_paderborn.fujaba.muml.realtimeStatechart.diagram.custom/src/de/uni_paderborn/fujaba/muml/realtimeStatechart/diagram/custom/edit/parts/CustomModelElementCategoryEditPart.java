@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.policies.CustomModelElementCategoryCanonicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart;
 
 public class CustomModelElementCategoryEditPart extends
@@ -12,8 +13,12 @@ public class CustomModelElementCategoryEditPart extends
 		super(view);
 	}
 
-//	protected void createDefaultEditPolicies() {
-//		super.createDefaultEditPolicies();
-//		removeEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
-//	}
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+
+		removeEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new CustomModelElementCategoryCanonicalEditPolicy());
+
+	}
 }

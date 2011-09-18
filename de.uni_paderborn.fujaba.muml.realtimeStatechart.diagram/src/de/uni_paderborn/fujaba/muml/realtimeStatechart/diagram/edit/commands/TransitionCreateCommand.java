@@ -163,5 +163,4 @@ public class TransitionCreateCommand extends EditElementCommand {
 		}
 		return null;
 	}
-
 }

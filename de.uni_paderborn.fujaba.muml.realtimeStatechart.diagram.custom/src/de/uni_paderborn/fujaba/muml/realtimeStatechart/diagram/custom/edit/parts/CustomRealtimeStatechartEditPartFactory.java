@@ -3,16 +3,16 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry;
 
@@ -31,16 +31,18 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
+			case ModelElementCategoryEditPart.VISUAL_ID:
+				return new CustomModelElementCategoryEditPart(view);
 //			case FujabaRealtimeStatechartEditPart.VISUAL_ID:
 //				return new CustomFujabaRealtimeStatechartEditPart(view);
 			case StateEditPart.VISUAL_ID:
 				return new CustomStateEditPart(view);
-			case State2EditPart.VISUAL_ID:
-				return new CustomState2EditPart(view);
+//			case State2EditPart.VISUAL_ID:
+//				return new CustomState2EditPart(view);
 			case TransitionEditPart.VISUAL_ID:
 				return new CustomTransitionEditPart(view);
-			case Transition2EditPart.VISUAL_ID:
-				return new CustomTransition2EditPart(view);
+//			case Transition2EditPart.VISUAL_ID:
+//				return new CustomTransition2EditPart(view);
 			case StateCompoundCompartmentEditPart.VISUAL_ID:
 				return new CustomStateCompoundCompartmentEditPart(view);
 			case StateRegionCompartmentEditPart.VISUAL_ID:

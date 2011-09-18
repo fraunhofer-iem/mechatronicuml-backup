@@ -50,11 +50,6 @@ public class MessageImpl extends InvocationImpl implements Message {
 	 */
 	protected MessageImpl() {
 		super();
-		// Install a notification adapter that informs the
-		// derived reference, whenever one of the dependent features
-		// was modified
-		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF);
-		portsDerivedAdapter.addLocalDependency(CallsPackage.Literals.INVOCATION__CALLEE);
 	}
 
 	/**

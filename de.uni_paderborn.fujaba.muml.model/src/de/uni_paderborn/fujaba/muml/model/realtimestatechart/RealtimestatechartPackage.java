@@ -351,13 +351,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION__TRANSITIONS = PRIORITIZABLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Statechart Derived</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__STATECHART_DERIVED = PRIORITIZABLE_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 7;
+	int REGION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.
@@ -2296,6 +2305,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getRegion_Transitions();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived <em>Statechart Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Statechart Derived</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived()
+	 * @see #getRegion()
+	 * @generated
+	 */
+	EReference getRegion_StatechartDerived();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3328,6 +3348,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REGION__TRANSITIONS = eINSTANCE.getRegion_Transitions();
+
+		/**
+		 * The meta object literal for the '<em><b>Statechart Derived</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION__STATECHART_DERIVED = eINSTANCE.getRegion_StatechartDerived();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl <em>State</em>}' class.

@@ -57,10 +57,11 @@ public class CustomRealtimeStatechartDiagramCreationWizard extends
 	 */
 	@Override
 	protected ExtendableElement createDiagramElement() {
-		FujabaRealtimeStatechart failureTypeDiag = RealtimestatechartFactory.eINSTANCE
-				.createFujabaRealtimeStatechart();
-
-		return failureTypeDiag;
+//		FujabaRealtimeStatechart failureTypeDiag = RealtimestatechartFactory.eINSTANCE
+//				.createFujabaRealtimeStatechart();
+//
+//		return failureTypeDiag;
+		return null;
 	}
 
 	@Override

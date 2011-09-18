@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class State2CreateCommand extends EditElementCommand {
+public class FujabaRealtimeStatechart2CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public State2CreateCommand(CreateElementRequest req) {
+	public FujabaRealtimeStatechart2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -41,6 +41,10 @@ public class State2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region) getElementToEdit();
+		if (container.getStatechartDerived() != null) {
+			return false;
+		}
 		return true;
 
 	}
@@ -50,14 +54,11 @@ public class State2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createState();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createFujabaRealtimeStatechart();
 
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region) getElementToEdit();
-		owner.getVertices().add(newElement);
-
-		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_State_3007(newElement);
+		owner.setStatechartDerived(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -69,7 +70,7 @@ public class State2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

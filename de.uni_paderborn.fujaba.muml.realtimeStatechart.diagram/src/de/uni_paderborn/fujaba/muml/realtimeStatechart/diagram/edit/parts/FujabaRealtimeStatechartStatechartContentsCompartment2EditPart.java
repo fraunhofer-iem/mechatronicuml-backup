@@ -1,8 +1,7 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -13,32 +12,27 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StateCompoundCompartment2EditPart extends ListCompartmentEditPart {
+public class FujabaRealtimeStatechartStatechartContentsCompartment2EditPart
+		extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7004;
+	public static final int VISUAL_ID = 7014;
 
 	/**
 	 * @generated
 	 */
-	public StateCompoundCompartment2EditPart(View view) {
+	public FujabaRealtimeStatechartStatechartContentsCompartment2EditPart(
+			View view) {
 		super(view);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected boolean hasModelChildrenChanged(Notification evt) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.StateCompoundCompartment2EditPart_title;
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.FujabaRealtimeStatechartStatechartContentsCompartment2EditPart_title;
 	}
 
 	/**
@@ -58,14 +52,14 @@ public class StateCompoundCompartment2EditPart extends ListCompartmentEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateCompoundCompartment2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.FujabaRealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateCompoundCompartment2CanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy());
 	}
 
 	/**

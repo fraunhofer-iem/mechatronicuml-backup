@@ -383,6 +383,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String FujabaRealtimeStatechartStatechartContentsCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String StateCompoundCompartmentEditPart_title;
 
 	/**
@@ -398,37 +403,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StateCompoundCompartment2EditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String StateRegionCompartment2EditPart_title;
+	public static String FujabaRealtimeStatechartStatechartContentsCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateEntryPoint_3008_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateEntryPoint_3008_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4002_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4002_source;
 
 	/**
 	 * @generated
@@ -453,27 +433,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_3007_incominglinks;
+	public static String NavigatorGroupName_State_3010_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_3007_outgoinglinks;
+	public static String NavigatorGroupName_State_3010_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_FujabaRealtimeStatechart_1000_links;
+	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_2003_incominglinks;
+	public static String NavigatorGroupName_StateEntryPoint_3008_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_2003_outgoinglinks;
+	public static String NavigatorGroupName_StateEntryPoint_3008_outgoinglinks;
 
 	/**
 	 * @generated

@@ -27,7 +27,71 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
+        href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+    <childNodes
+        visualID="3010"
+        editPartClassName="StateEditPart"
+        itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateViewFactory"
+        canonicalEditPolicyClassName="StateCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.9"
+        compartments="//@diagram/@compartments.1 //@diagram/@compartments.2"
+        graphicalNodeEditPolicyClassName="StateGraphicalNodeEditPolicy"
+        createCommandClassName="StateCreateCommand"
+        containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="StateEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="StateFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StateFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStateNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureCompoundCompartment; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRegionsCompartment; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInnerContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureFinalStateOutline; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.PolylineShape fFigureInitialStateArrow; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.Ellipse fFigureInitialStateEllipse; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure fFigureInitialStateArc; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StateFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialStateArc = new de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure();&#xA;&#xA;&#xA;&#xA;this.add(fFigureInitialStateArc);&#xA;&#xA;&#xA;&#xA;fFigureInitialStateArrow = new org.eclipse.draw2d.PolylineShape();&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(26)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(31)&#xA;, getMapMode().DPtoLP(13)&#xA;));&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(33)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;&#xA;this.add(fFigureInitialStateArrow);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure initialStateFigureContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;initialStateFigureContainer0.setFill(false);&#xA;initialStateFigureContainer0.setOutline(false);&#xA;&#xA;this.add(initialStateFigureContainer0);&#xA;initialStateFigureContainer0.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;fFigureInitialStateEllipse = new org.eclipse.draw2d.Ellipse();&#xA;&#x9;fFigureInitialStateEllipse.setBackgroundColor(org.eclipse.draw2d.ColorConstants.gray);&#xA;&#xA;initialStateFigureContainer0.add(fFigureInitialStateEllipse, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateContainer.setFill(false);&#xA;fFigureStateContainer.setOutline(false);&#xA;fFigureStateContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(fFigureStateContainer);&#xA;fFigureStateContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureFinalStateOutline = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureFinalStateOutline.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#xA;fFigureStateContainer.add(fFigureFinalStateOutline);&#xA;&#xA;&#xA;&#xA;fFigureInnerContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureInnerContainer.setFill(false);&#xA;fFigureInnerContainer.setOutline(false);&#xA;fFigureInnerContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;&#xA;fFigureStateContainer.add(fFigureInnerContainer);&#xA;fFigureInnerContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RoundedRectangle stateFigure2 = new org.eclipse.draw2d.RoundedRectangle();&#xA;stateFigure2.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#xA;fFigureInnerContainer.add(stateFigure2);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStateFigure2 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStateFigure2.numColumns = 1;&#xA;&#x9;layoutStateFigure2.makeColumnsEqualWidth = false;&#xA;&#x9;stateFigure2.setLayoutManager(layoutStateFigure2);&#xA;&#xA;&#xA;&#xA;fFigureStateNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStateNameLabel.setText(&quot;&quot;);&#xA;&#xA;fFigureStateNameLabel.setFont(FFIGURESTATENAMELABEL_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameLabel.horizontalIndent = 0;&#xA;constraintFFigureStateNameLabel.horizontalSpan = 1;&#xA;constraintFFigureStateNameLabel.verticalSpan = 1;&#xA;constraintFFigureStateNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateNameLabel.grabExcessVerticalSpace = false;&#xA;stateFigure2.add(fFigureStateNameLabel, constraintFFigureStateNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureCompoundCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureCompoundCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCompoundCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCompoundCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCompoundCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureCompoundCompartment.horizontalIndent = 0;&#xA;constraintFFigureCompoundCompartment.horizontalSpan = 1;&#xA;constraintFFigureCompoundCompartment.verticalSpan = 1;&#xA;constraintFFigureCompoundCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCompoundCompartment.grabExcessVerticalSpace = false;&#xA;stateFigure2.add(fFigureCompoundCompartment, constraintFFigureCompoundCompartment);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureRegionsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureRegionsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureRegionsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureRegionsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureRegionsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureRegionsCompartment.horizontalIndent = 0;&#xA;constraintFFigureRegionsCompartment.horizontalSpan = 1;&#xA;constraintFFigureRegionsCompartment.verticalSpan = 1;&#xA;constraintFFigureRegionsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureRegionsCompartment.grabExcessVerticalSpace = true;&#xA;stateFigure2.add(fFigureRegionsCompartment, constraintFFigureRegionsCompartment);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStateNameLabel() {&#xA;&#x9;&#x9;return fFigureStateNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureCompoundCompartment() {&#xA;&#x9;&#x9;return fFigureCompoundCompartment;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRegionsCompartment() {&#xA;&#x9;&#x9;return fFigureRegionsCompartment;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInnerContainer() {&#xA;&#x9;&#x9;return fFigureInnerContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureFinalStateOutline() {&#xA;&#x9;&#x9;return fFigureFinalStateOutline;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateContainer() {&#xA;&#x9;&#x9;return fFigureStateContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.PolylineShape getFigureInitialStateArrow() {&#xA;&#x9;&#x9;return fFigureInitialStateArrow;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.Ellipse getFigureInitialStateEllipse() {&#xA;&#x9;&#x9;return fFigureInitialStateEllipse;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure getFigureInitialStateArc() {&#xA;&#x9;&#x9;return fFigureInitialStateArc;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTATENAMELABEL_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 10, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            height="40"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.0">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5017"
+          editPartClassName="StateNameEditPart"
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StateNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureStateNameLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.5">
+          <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
     <childNodes
         visualID="3001"
         editPartClassName="EntryEventEditPart"
@@ -36,7 +100,7 @@
         canonicalEditPolicyClassName="EntryEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EntryEventGraphicalNodeEditPolicy"
         createCommandClassName="EntryEventCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.3">
+        containers="//@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -88,7 +152,7 @@
         canonicalEditPolicyClassName="DoEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DoEventGraphicalNodeEditPolicy"
         createCommandClassName="DoEventCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.3">
+        containers="//@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -156,7 +220,7 @@
         canonicalEditPolicyClassName="ExitEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ExitEventGraphicalNodeEditPolicy"
         createCommandClassName="ExitEventCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.3">
+        containers="//@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -208,7 +272,7 @@
         canonicalEditPolicyClassName="ClockConstraintCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ClockConstraintGraphicalNodeEditPolicy"
         createCommandClassName="ClockConstraintCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.3">
+        containers="//@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -260,7 +324,7 @@
         canonicalEditPolicyClassName="SynchronizationChannelCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SynchronizationChannelGraphicalNodeEditPolicy"
         createCommandClassName="SynchronizationChannelCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.3">
+        containers="//@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -319,10 +383,10 @@
         itemSemanticEditPolicyClassName="RegionItemSemanticEditPolicy"
         notationViewFactoryClassName="RegionViewFactory"
         canonicalEditPolicyClassName="RegionCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.2"
+        compartments="//@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="RegionGraphicalNodeEditPolicy"
         createCommandClassName="RegionCreateCommand"
-        containers="//@diagram/@compartments.4 //@diagram/@compartments.1">
+        containers="//@diagram/@compartments.2">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -409,16 +473,15 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3007"
-        editPartClassName="State2EditPart"
-        itemSemanticEditPolicyClassName="State2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateViewFactory"
-        canonicalEditPolicyClassName="State2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.7 //@diagram/@childNodes.8"
-        compartments="//@diagram/@compartments.3 //@diagram/@compartments.4"
-        graphicalNodeEditPolicyClassName="State2GraphicalNodeEditPolicy"
-        createCommandClassName="State2CreateCommand"
-        containers="//@diagram/@compartments.2">
+        visualID="3011"
+        editPartClassName="FujabaRealtimeStatechart2EditPart"
+        itemSemanticEditPolicyClassName="FujabaRealtimeStatechart2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="FujabaRealtimeStatechartViewFactory"
+        canonicalEditPolicyClassName="FujabaRealtimeStatechart2CanonicalEditPolicy"
+        compartments="//@diagram/@compartments.4"
+        graphicalNodeEditPolicyClassName="FujabaRealtimeStatechart2GraphicalNodeEditPolicy"
+        createCommandClassName="FujabaRealtimeStatechart2CreateCommand"
+        containers="//@diagram/@compartments.3">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -426,51 +489,16 @@
           metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="StateFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StateFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStateNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureCompoundCompartment; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRegionsCompartment; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInnerContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureFinalStateOutline; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.PolylineShape fFigureInitialStateArrow; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.Ellipse fFigureInitialStateEllipse; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure fFigureInitialStateArc; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StateFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialStateArc = new de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure();&#xA;&#xA;&#xA;&#xA;this.add(fFigureInitialStateArc);&#xA;&#xA;&#xA;&#xA;fFigureInitialStateArrow = new org.eclipse.draw2d.PolylineShape();&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(26)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(31)&#xA;, getMapMode().DPtoLP(13)&#xA;));&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(33)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;&#xA;this.add(fFigureInitialStateArrow);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure initialStateFigureContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;initialStateFigureContainer0.setFill(false);&#xA;initialStateFigureContainer0.setOutline(false);&#xA;&#xA;this.add(initialStateFigureContainer0);&#xA;initialStateFigureContainer0.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;fFigureInitialStateEllipse = new org.eclipse.draw2d.Ellipse();&#xA;&#x9;fFigureInitialStateEllipse.setBackgroundColor(org.eclipse.draw2d.ColorConstants.gray);&#xA;&#xA;initialStateFigureContainer0.add(fFigureInitialStateEllipse, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateContainer.setFill(false);&#xA;fFigureStateContainer.setOutline(false);&#xA;fFigureStateContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(fFigureStateContainer);&#xA;fFigureStateContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureFinalStateOutline = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureFinalStateOutline.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#xA;fFigureStateContainer.add(fFigureFinalStateOutline);&#xA;&#xA;&#xA;&#xA;fFigureInnerContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureInnerContainer.setFill(false);&#xA;fFigureInnerContainer.setOutline(false);&#xA;fFigureInnerContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;&#xA;fFigureStateContainer.add(fFigureInnerContainer);&#xA;fFigureInnerContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RoundedRectangle stateFigure2 = new org.eclipse.draw2d.RoundedRectangle();&#xA;stateFigure2.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#xA;fFigureInnerContainer.add(stateFigure2);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStateFigure2 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStateFigure2.numColumns = 1;&#xA;&#x9;layoutStateFigure2.makeColumnsEqualWidth = false;&#xA;&#x9;stateFigure2.setLayoutManager(layoutStateFigure2);&#xA;&#xA;&#xA;&#xA;fFigureStateNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStateNameLabel.setText(&quot;&quot;);&#xA;&#xA;fFigureStateNameLabel.setFont(FFIGURESTATENAMELABEL_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameLabel.horizontalIndent = 0;&#xA;constraintFFigureStateNameLabel.horizontalSpan = 1;&#xA;constraintFFigureStateNameLabel.verticalSpan = 1;&#xA;constraintFFigureStateNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateNameLabel.grabExcessVerticalSpace = false;&#xA;stateFigure2.add(fFigureStateNameLabel, constraintFFigureStateNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureCompoundCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureCompoundCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCompoundCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCompoundCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCompoundCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureCompoundCompartment.horizontalIndent = 0;&#xA;constraintFFigureCompoundCompartment.horizontalSpan = 1;&#xA;constraintFFigureCompoundCompartment.verticalSpan = 1;&#xA;constraintFFigureCompoundCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCompoundCompartment.grabExcessVerticalSpace = false;&#xA;stateFigure2.add(fFigureCompoundCompartment, constraintFFigureCompoundCompartment);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureRegionsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureRegionsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureRegionsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureRegionsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureRegionsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureRegionsCompartment.horizontalIndent = 0;&#xA;constraintFFigureRegionsCompartment.horizontalSpan = 1;&#xA;constraintFFigureRegionsCompartment.verticalSpan = 1;&#xA;constraintFFigureRegionsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureRegionsCompartment.grabExcessVerticalSpace = true;&#xA;stateFigure2.add(fFigureRegionsCompartment, constraintFFigureRegionsCompartment);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStateNameLabel() {&#xA;&#x9;&#x9;return fFigureStateNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureCompoundCompartment() {&#xA;&#x9;&#x9;return fFigureCompoundCompartment;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRegionsCompartment() {&#xA;&#x9;&#x9;return fFigureRegionsCompartment;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInnerContainer() {&#xA;&#x9;&#x9;return fFigureInnerContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureFinalStateOutline() {&#xA;&#x9;&#x9;return fFigureFinalStateOutline;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateContainer() {&#xA;&#x9;&#x9;return fFigureStateContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.PolylineShape getFigureInitialStateArrow() {&#xA;&#x9;&#x9;return fFigureInitialStateArrow;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.Ellipse getFigureInitialStateEllipse() {&#xA;&#x9;&#x9;return fFigureInitialStateEllipse;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure getFigureInitialStateArc() {&#xA;&#x9;&#x9;return fFigureInitialStateArc;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTATENAMELABEL_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 10, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            height="40"/>
-      </viewmap>
+          className="StatechartFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StatechartFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartVariablesLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStatechartContentsCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StatechartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure statechartTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;statechartTitleAreaFigure0.setFill(false);&#xA;statechartTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintStatechartTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStatechartTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStatechartTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintStatechartTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.verticalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintStatechartTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(statechartTitleAreaFigure0, constraintStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStatechartTitleAreaFigure0.numColumns = 2;&#xA;&#x9;layoutStatechartTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;statechartTitleAreaFigure0.setLayoutManager(layoutStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureStatechartNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStatechartNameLabel.setText(&quot;&quot;);&#xA;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);&#xA;&#xA;&#xA;&#xA;fFigureStatechartVariablesLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStatechartVariablesLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartVariablesLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartVariablesLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStatechartVariablesLabel.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureStatechartVariablesLabel.horizontalIndent = 0;&#xA;constraintFFigureStatechartVariablesLabel.horizontalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.verticalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel, constraintFFigureStatechartVariablesLabel);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStatechartContentsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStatechartContentsCompartment.setFill(false);&#xA;fFigureStatechartContentsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartContentsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartContentsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalIndent = 0;&#xA;constraintFFigureStatechartContentsCompartment.horizontalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.verticalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartNameLabel() {&#xA;&#x9;&#x9;return fFigureStatechartNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartVariablesLabel() {&#xA;&#x9;&#x9;return fFigureStatechartVariablesLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStatechartContentsCompartment() {&#xA;&#x9;&#x9;return fFigureStatechartContentsCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/statechartDerived"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/vertices"/>
-        <modelElementInitializer
-            xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.0">
-            <feature
-                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
-          </initializers>
-        </modelElementInitializer>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/statechartDerived"/>
       </modelFacet>
-      <labels
-          visualID="5009"
-          editPartClassName="StateName2EditPart"
-          itemSemanticEditPolicyClassName="StateName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateNameViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureStateNameLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.5">
-          <metaFeatures
-              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
-        </modelFacet>
-      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -481,7 +509,7 @@
         canonicalEditPolicyClassName="StateEntryPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StateEntryPointGraphicalNodeEditPolicy"
         createCommandClassName="StateEntryPointCreateCommand"
-        containers="//@diagram/@childNodes.6 //@diagram/@topLevelNodes.0"
+        containers="//@diagram/@childNodes.0"
         preferredSideName="WEST">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -507,7 +535,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.9">
+              value="//@expressionProviders/@providers.0/@expressions.10">
             <feature
                 href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
@@ -523,7 +551,7 @@
         canonicalEditPolicyClassName="StateExitPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StateExitPointGraphicalNodeEditPolicy"
         createCommandClassName="StateExitPointCreateCommand"
-        containers="//@diagram/@childNodes.6 //@diagram/@topLevelNodes.0"
+        containers="//@diagram/@childNodes.0"
         preferredSideName="EAST">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -550,7 +578,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.10">
+              value="//@expressionProviders/@providers.0/@expressions.11">
             <feature
                 href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
@@ -558,67 +586,31 @@
       </modelFacet>
     </childNodes>
     <topLevelNodes
-        visualID="2003"
-        editPartClassName="StateEditPart"
-        itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateViewFactory"
-        canonicalEditPolicyClassName="StateCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.7 //@diagram/@childNodes.8"
-        compartments="//@diagram/@compartments.0 //@diagram/@compartments.1"
-        graphicalNodeEditPolicyClassName="StateGraphicalNodeEditPolicy"
-        createCommandClassName="StateCreateCommand">
+        visualID="2004"
+        editPartClassName="FujabaRealtimeStatechartEditPart"
+        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartItemSemanticEditPolicy"
+        notationViewFactoryClassName="FujabaRealtimeStatechartViewFactory"
+        canonicalEditPolicyClassName="FujabaRealtimeStatechartCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.0"
+        graphicalNodeEditPolicyClassName="FujabaRealtimeStatechartGraphicalNodeEditPolicy"
+        createCommandClassName="FujabaRealtimeStatechartCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="StateEditHelper"/>
+          editHelperClassName="FujabaRealtimeStatechartEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="StateFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StateFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStateNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureCompoundCompartment; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRegionsCompartment; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInnerContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureFinalStateOutline; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.PolylineShape fFigureInitialStateArrow; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.Ellipse fFigureInitialStateEllipse; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure fFigureInitialStateArc; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StateFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialStateArc = new de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure();&#xA;&#xA;&#xA;&#xA;this.add(fFigureInitialStateArc);&#xA;&#xA;&#xA;&#xA;fFigureInitialStateArrow = new org.eclipse.draw2d.PolylineShape();&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(26)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(31)&#xA;, getMapMode().DPtoLP(13)&#xA;));&#xA;fFigureInitialStateArrow.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(33)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;&#xA;this.add(fFigureInitialStateArrow);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure initialStateFigureContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;initialStateFigureContainer0.setFill(false);&#xA;initialStateFigureContainer0.setOutline(false);&#xA;&#xA;this.add(initialStateFigureContainer0);&#xA;initialStateFigureContainer0.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;fFigureInitialStateEllipse = new org.eclipse.draw2d.Ellipse();&#xA;&#x9;fFigureInitialStateEllipse.setBackgroundColor(org.eclipse.draw2d.ColorConstants.gray);&#xA;&#xA;initialStateFigureContainer0.add(fFigureInitialStateEllipse, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateContainer.setFill(false);&#xA;fFigureStateContainer.setOutline(false);&#xA;fFigureStateContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(fFigureStateContainer);&#xA;fFigureStateContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureFinalStateOutline = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureFinalStateOutline.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#xA;fFigureStateContainer.add(fFigureFinalStateOutline);&#xA;&#xA;&#xA;&#xA;fFigureInnerContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureInnerContainer.setFill(false);&#xA;fFigureInnerContainer.setOutline(false);&#xA;fFigureInnerContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;&#xA;fFigureStateContainer.add(fFigureInnerContainer);&#xA;fFigureInnerContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RoundedRectangle stateFigure2 = new org.eclipse.draw2d.RoundedRectangle();&#xA;stateFigure2.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#xA;fFigureInnerContainer.add(stateFigure2);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStateFigure2 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStateFigure2.numColumns = 1;&#xA;&#x9;layoutStateFigure2.makeColumnsEqualWidth = false;&#xA;&#x9;stateFigure2.setLayoutManager(layoutStateFigure2);&#xA;&#xA;&#xA;&#xA;fFigureStateNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStateNameLabel.setText(&quot;&quot;);&#xA;&#xA;fFigureStateNameLabel.setFont(FFIGURESTATENAMELABEL_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameLabel.horizontalIndent = 0;&#xA;constraintFFigureStateNameLabel.horizontalSpan = 1;&#xA;constraintFFigureStateNameLabel.verticalSpan = 1;&#xA;constraintFFigureStateNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateNameLabel.grabExcessVerticalSpace = false;&#xA;stateFigure2.add(fFigureStateNameLabel, constraintFFigureStateNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureCompoundCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureCompoundCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCompoundCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCompoundCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCompoundCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureCompoundCompartment.horizontalIndent = 0;&#xA;constraintFFigureCompoundCompartment.horizontalSpan = 1;&#xA;constraintFFigureCompoundCompartment.verticalSpan = 1;&#xA;constraintFFigureCompoundCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCompoundCompartment.grabExcessVerticalSpace = false;&#xA;stateFigure2.add(fFigureCompoundCompartment, constraintFFigureCompoundCompartment);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureRegionsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureRegionsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureRegionsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureRegionsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureRegionsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureRegionsCompartment.horizontalIndent = 0;&#xA;constraintFFigureRegionsCompartment.horizontalSpan = 1;&#xA;constraintFFigureRegionsCompartment.verticalSpan = 1;&#xA;constraintFFigureRegionsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureRegionsCompartment.grabExcessVerticalSpace = true;&#xA;stateFigure2.add(fFigureRegionsCompartment, constraintFFigureRegionsCompartment);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStateNameLabel() {&#xA;&#x9;&#x9;return fFigureStateNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureCompoundCompartment() {&#xA;&#x9;&#x9;return fFigureCompoundCompartment;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRegionsCompartment() {&#xA;&#x9;&#x9;return fFigureRegionsCompartment;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInnerContainer() {&#xA;&#x9;&#x9;return fFigureInnerContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureFinalStateOutline() {&#xA;&#x9;&#x9;return fFigureFinalStateOutline;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateContainer() {&#xA;&#x9;&#x9;return fFigureStateContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.PolylineShape getFigureInitialStateArrow() {&#xA;&#x9;&#x9;return fFigureInitialStateArrow;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.Ellipse getFigureInitialStateEllipse() {&#xA;&#x9;&#x9;return fFigureInitialStateEllipse;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure getFigureInitialStateArc() {&#xA;&#x9;&#x9;return fFigureInitialStateArc;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTATENAMELABEL_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 10, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            height="40"/>
-      </viewmap>
+          className="StatechartFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StatechartFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartVariablesLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStatechartContentsCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StatechartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure statechartTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;statechartTitleAreaFigure0.setFill(false);&#xA;statechartTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintStatechartTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStatechartTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStatechartTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintStatechartTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.verticalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintStatechartTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(statechartTitleAreaFigure0, constraintStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStatechartTitleAreaFigure0.numColumns = 2;&#xA;&#x9;layoutStatechartTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;statechartTitleAreaFigure0.setLayoutManager(layoutStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureStatechartNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStatechartNameLabel.setText(&quot;&quot;);&#xA;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);&#xA;&#xA;&#xA;&#xA;fFigureStatechartVariablesLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStatechartVariablesLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartVariablesLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartVariablesLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStatechartVariablesLabel.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureStatechartVariablesLabel.horizontalIndent = 0;&#xA;constraintFFigureStatechartVariablesLabel.horizontalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.verticalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel, constraintFFigureStatechartVariablesLabel);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStatechartContentsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStatechartContentsCompartment.setFill(false);&#xA;fFigureStatechartContentsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartContentsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartContentsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalIndent = 0;&#xA;constraintFFigureStatechartContentsCompartment.horizontalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.verticalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartNameLabel() {&#xA;&#x9;&#x9;return fFigureStatechartNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartVariablesLabel() {&#xA;&#x9;&#x9;return fFigureStatechartVariablesLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStatechartContentsCompartment() {&#xA;&#x9;&#x9;return fFigureStatechartContentsCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
-        <modelElementInitializer
-            xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.0">
-            <feature
-                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
-          </initializers>
-        </modelElementInitializer>
+            href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
-      <labels
-          visualID="5016"
-          editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateNameViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureStateNameLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.5">
-          <metaFeatures
-              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
-        </modelFacet>
-      </labels>
     </topLevelNodes>
     <links
         visualID="4001"
@@ -692,89 +684,35 @@
             parser="//@labelParsers/@implementations.8"/>
       </labels>
     </links>
-    <links
-        visualID="4002"
-        editPartClassName="Transition2EditPart"
-        itemSemanticEditPolicyClassName="Transition2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="TransitionViewFactory"
-        createCommandClassName="Transition2CreateCommand"
-        reorientCommandClassName="Transition2ReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@links.0/@elementType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionDeadlineLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setSourceDecoration(createSourceDecoration());&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTransitionLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureTransitionDeadlineLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionDeadlineLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionDeadlineLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {&#xA;&#x9;&#x9;de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration df = new de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration();&#xA;&#xA;&#xA;df.setLocation(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;df.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionLabelFigure() {&#xA;&#x9;&#x9;return fFigureTransitionLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionDeadlineLabelFigure() {&#xA;&#x9;&#x9;return fFigureTransitionDeadlineLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/transitions"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/transitions"/>
-        <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition/source"/>
-        <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition/target"/>
-      </modelFacet>
-      <labels
-          visualID="6003"
-          editPartClassName="WrappingLabel10EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionLabelFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="-20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.9"/>
-      </labels>
-      <labels
-          visualID="6004"
-          editPartClassName="WrappingLabel11EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel11ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true"
-          alignment="SOURCE">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionDeadlineLabelFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              x="-10"
-              y="20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.10"/>
-      </labels>
-    </links>
     <compartments
-        visualID="7009"
+        visualID="7014"
+        editPartClassName="FujabaRealtimeStatechartStatechartContentsCompartment2EditPart"
+        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0"
+        title="StatechartContentsCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureStatechartContentsCompartment"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
+        visualID="7011"
         editPartClassName="StateCompoundCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateCompoundCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="StateCompoundCompartmentViewFactory"
         canonicalEditPolicyClassName="StateCompoundCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4"
+        childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5"
         title="CompoundCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+        node="//@diagram/@childNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -783,16 +721,17 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7010"
+        visualID="7012"
         editPartClassName="StateRegionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="StateRegionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.5"
+        childNodes="//@diagram/@childNodes.6"
         title="RegionCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+        node="//@diagram/@childNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -806,11 +745,11 @@
         itemSemanticEditPolicyClassName="RegionRegionContentsCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="RegionRegionContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RegionRegionContentsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.6"
+        childNodes="//@diagram/@childNodes.7"
         title="RegionContentsCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.5"
+        node="//@diagram/@childNodes.6"
         listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -820,39 +759,22 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7004"
-        editPartClassName="StateCompoundCompartment2EditPart"
-        itemSemanticEditPolicyClassName="StateCompoundCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateCompoundCompartmentViewFactory"
-        canonicalEditPolicyClassName="StateCompoundCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4"
-        title="CompoundCompartment"
+        visualID="7013"
+        editPartClassName="FujabaRealtimeStatechartStatechartContentsCompartmentEditPart"
+        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="FujabaRealtimeStatechartStatechartContentsCompartmentViewFactory"
+        canonicalEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0"
+        title="StatechartContentsCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.6">
+        node="//@diagram/@childNodes.7"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureCompoundCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-    </compartments>
-    <compartments
-        visualID="7005"
-        editPartClassName="StateRegionCompartment2EditPart"
-        itemSemanticEditPolicyClassName="StateRegionCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateRegionCompartmentViewFactory"
-        canonicalEditPolicyClassName="StateRegionCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.5"
-        title="RegionCompartment"
-        canCollapse="false"
-        needsTitle="false"
-        node="//@diagram/@childNodes.6">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureRegionsCompartment"
+          getterName="getFigureStatechartContentsCompartment"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <palette>
@@ -862,7 +784,8 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Statechart"
-            description="Creates a new Statechart"/>
+            description="Creates a new Statechart"
+            genNodes="//@diagram/@topLevelNodes.0"/>
       </groups>
       <groups
           title="Realtime Statechart"
@@ -873,13 +796,13 @@
             title="State"
             description="Creates a new State"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/c_state16.gif"
-            genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.6"/>
+            genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Transition"
             description="Creates a new Transition"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/transition16.gif"
-            genLinks="//@diagram/@links.0 //@diagram/@links.1"/>
+            genLinks="//@diagram/@links.0"/>
       </groups>
       <groups
           title="Realtime State"
@@ -890,49 +813,49 @@
             title="Clock Constraint"
             description="Creates a new Clock Constraint"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/clock2.gif"
-            genNodes="//@diagram/@childNodes.3"/>
+            genNodes="//@diagram/@childNodes.4"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Entry Action"
             description="Creates an EntryAction"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/entry_action16.gif"
-            genNodes="//@diagram/@childNodes.0"/>
+            genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Do Action"
             description="Creates a Do Action"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/do_action16.gif"
-            genNodes="//@diagram/@childNodes.1"/>
+            genNodes="//@diagram/@childNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exit Action"
             description="Creates an Exit Action"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/exit_action16.gif"
-            genNodes="//@diagram/@childNodes.2"/>
+            genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Synchronization Channel"
             description="Creates a new Synchronization Channel"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/xAction.gif"
-            genNodes="//@diagram/@childNodes.4"/>
+            genNodes="//@diagram/@childNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Region"
             description="Creates an inner Region for a State"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/region.gif"
-            genNodes="//@diagram/@childNodes.5"/>
+            genNodes="//@diagram/@childNodes.6"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State Entry Point"
             description="Create State Entry Point"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_entry_point.gif"
-            genNodes="//@diagram/@childNodes.7"/>
+            genNodes="//@diagram/@childNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State Exit Point"
             description="Create State Exit Point"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_exit_point.gif"
-            genNodes="//@diagram/@childNodes.8"/>
+            genNodes="//@diagram/@childNodes.9"/>
       </groups>
     </palette>
     <preferencePages
@@ -978,56 +901,38 @@
     <childReferences
         child="//@diagram"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.0"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@childNodes.1"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@childNodes.2"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@childNodes.3"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@childNodes.4"/>
     <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@childNodes.0"/>
-    <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@childNodes.1"/>
-    <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@childNodes.2"/>
-    <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@childNodes.3"/>
-    <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@childNodes.4"/>
-    <childReferences
-        parent="//@diagram/@childNodes.6"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@childNodes.5"/>
+    <childReferences
+        parent="//@diagram/@childNodes.7"
+        child="//@diagram/@childNodes.0"/>
     <childReferences
         parent="//@diagram/@childNodes.6"
         child="//@diagram/@childNodes.7"/>
     <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@childNodes.8"/>
-    <childReferences
-        parent="//@diagram/@childNodes.5"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@childNodes.6"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.5"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.7"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@childNodes.8"/>
+    <childReferences
+        parent="//@diagram/@childNodes.0"
+        child="//@diagram/@childNodes.9"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.0"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
@@ -1038,36 +943,12 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.0"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.0"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.6"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@links.0"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.7"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.7"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@links.0"
         referenceType="in_source"
         groupName="incoming links"
@@ -1086,36 +967,24 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.0"
+        child="//@diagram/@childNodes.9"
         referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.9"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.6"
+        child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@links.0"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.7"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.7"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1133,103 +1002,14 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram"
-        child="//@diagram/@links.1"
-        groupName="links"
-        groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.1"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.6"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@links.1"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.7"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.7"
-        child="//@diagram/@links.1"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.8"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.8"
-        child="//@diagram/@links.1"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.9"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.1"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.6"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.6"
-        child="//@diagram/@links.1"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.7"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.7"
-        child="//@diagram/@links.1"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.8"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.8"
-        child="//@diagram/@links.1"
+        parent="//@diagram/@childNodes.9"
+        child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
@@ -1278,15 +1058,11 @@
       <expressions
           body="'region'"/>
       <expressions
+          body="(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.attributes->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.attributes->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.eType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.eType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)"/>
+      <expressions
           body="'entrypoint'"/>
       <expressions
           body="'exitpoint'"/>
-      <expressions
-          body="(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.attributes->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.attributes->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.eType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.eType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)"/>
-      <expressions
-          body="(&#xA;-- Synchronizations&#xA;&#xA;&#x9;if self.synchronization.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.synchronization.callee.oclAsType(SynchronizationChannel).name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.synchronization.callee.oclAsType(SynchronizationChannel).name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;'('&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;self.synchronization.ownedParameterBindings->iterate(&#xA;&#x9;&#x9;&#x9;&#x9;binding; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'&quot;'.concat(binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value).concat('&quot;')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;')'&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.kind = SynchronizationKind::SEND then&#xA;&#x9;&#x9;&#x9;&#x9;'!'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;'?'&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;)&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Trigger Event&#xA;&#xA;&#x9;if self.triggerMessageEvent.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.triggerMessageEvent.message.instanceOf.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.triggerMessageEvent.message.instanceOf.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;if self.triggerMessageEvent.message.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.triggerMessageEvent.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Clock Constraints&#xA;&#xA;&#x9;if self.clockConstraints->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;self.clockConstraints->iterate(clockConstraint; result : String = '' | (&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.clock.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.operator.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} in array->any(t | t.d = clockConstraint.operator).s&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.bound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.bound.toString()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;))&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Guard&#xA;&#xA;&#x9;if self.guard.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;if self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Slash (only shown, if one of the next parts is not null&#xA;&#xA;&#x9;if self.action.oclIsUndefined() and self.raiseMessageEvent.oclIsUndefined() and self.clockResets->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' / '&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Action&#xA;&#xA;&#x9;if self.action.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'('.concat(&#xA;&#x9;&#x9;&#x9;if self.action.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.action.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;&#xA;-- Raise Event&#xA;&#xA;&#x9;if self.raiseMessageEvent.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.raiseMessageEvent.message.instanceOf.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.raiseMessageEvent.message.instanceOf.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;if self.raiseMessageEvent.message.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.raiseMessageEvent.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Clock Resets&#xA;&#xA;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'{resets: '.concat(&#xA;&#x9;&#x9;&#x9;self.clockResets->iterate(clockReset; result : String = '' | &#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clockReset.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockReset.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('}')&#xA;&#x9;endif&#xA;)"/>
-      <expressions
-          body="(&#xA;&#xA;-- Relative Deadline&#xA;&#xA;&#x9;if self.relativeDeadline.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.lowerBound.oclIsUndefined() then 'null' else self.relativeDeadline.lowerBound.toString() endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.upperBound.oclIsUndefined() then 'null' else self.relativeDeadline.upperBound.toString() endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Absolute Deadlines&#xA;&#xA;&#x9;self.absoluteDeadlines->iterate(absoluteDeadline; result : String = '' |&#xA;&#x9;&#x9;(if result = '\n' then '' else result.concat('\n') endif).concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.clock.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(' ∈ [').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.lowerBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.upperBound.oclIsUndefined() then &#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.upperBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;)&#xA;)"/>
       <expressions
           body="(&#xA;-- Synchronizations&#xA;&#xA;&#x9;if self.synchronization.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.synchronization.callee.oclAsType(SynchronizationChannel).name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.synchronization.callee.oclAsType(SynchronizationChannel).name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;'('&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;self.synchronization.ownedParameterBindings->iterate(&#xA;&#x9;&#x9;&#x9;&#x9;binding; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'&quot;'.concat(binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value).concat('&quot;')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;')'&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.kind = SynchronizationKind::SEND then&#xA;&#x9;&#x9;&#x9;&#x9;'!'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;'?'&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;)&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Trigger Event&#xA;&#xA;&#x9;if self.triggerMessageEvent.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.triggerMessageEvent.message.instanceOf.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.triggerMessageEvent.message.instanceOf.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;if self.triggerMessageEvent.message.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.triggerMessageEvent.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Clock Constraints&#xA;&#xA;&#x9;if self.clockConstraints->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;self.clockConstraints->iterate(clockConstraint; result : String = '' | (&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.clock.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.operator.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} in array->any(t | t.d = clockConstraint.operator).s&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.bound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.bound.toString()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;))&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Guard&#xA;&#xA;&#x9;if self.guard.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;if self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Slash (only shown, if one of the next parts is not null&#xA;&#xA;&#x9;if self.action.oclIsUndefined() and self.raiseMessageEvent.oclIsUndefined() and self.clockResets->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' / '&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Action&#xA;&#xA;&#x9;if self.action.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'('.concat(&#xA;&#x9;&#x9;&#x9;if self.action.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.action.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;&#xA;-- Raise Event&#xA;&#xA;&#x9;if self.raiseMessageEvent.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.raiseMessageEvent.message.instanceOf.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.raiseMessageEvent.message.instanceOf.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;if self.raiseMessageEvent.message.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.raiseMessageEvent.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Clock Resets&#xA;&#xA;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'{resets: '.concat(&#xA;&#x9;&#x9;&#x9;self.clockResets->iterate(clockReset; result : String = '' | &#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clockReset.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockReset.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('}')&#xA;&#x9;endif&#xA;)"/>
       <expressions
@@ -1297,7 +1073,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
         className="EntryEventLabelExpressionLabelParser5004"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
@@ -1305,7 +1081,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
         className="DoEventLabelExpressionLabelParser5005"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
@@ -1313,7 +1089,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
         className="ExitEventLabelExpressionLabelParser5006"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
@@ -1321,7 +1097,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
         className="ClockConstraintLabelExpressionLabelParser5007"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
@@ -1329,7 +1105,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
         className="SynchronizationChannelLabelExpressionLabelParser5008"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
@@ -1337,12 +1113,12 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.5/@labels.2/@modelFacet"
+        uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
         className="RegionLabelExpressionLabelParser5012"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region"/>
     </implementations>
@@ -1359,22 +1135,6 @@
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
         className="TransitionLabelExpressionLabelParser6002"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.1/@labels.0/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.1/@labels.1/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6004"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>

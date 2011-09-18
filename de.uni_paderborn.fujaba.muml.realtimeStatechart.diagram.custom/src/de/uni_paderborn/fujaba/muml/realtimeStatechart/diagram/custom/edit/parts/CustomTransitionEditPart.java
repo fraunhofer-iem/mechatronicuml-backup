@@ -1,13 +1,9 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts;
 
-import java.util.Iterator;
-import java.util.List;
-
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration;

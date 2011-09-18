@@ -51,6 +51,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getParentState <em>Parent State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getStatechartDerived <em>Statechart Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,6 +129,16 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	protected EStructuralFeature.Internal.SettingDelegate TRANSITIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__TRANSITIONS).getSettingDelegate();
 
 	/**
+	 * The cached setting delegate for the '{@link #getStatechartDerived() <em>Statechart Derived</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatechartDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate STATECHART_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -141,6 +152,9 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 		
 		DerivedAttributeAdapter regionVerticesAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.REGION__VERTICES);
 		regionVerticesAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.REGION__STATECHART, RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__VERTICES);
+		
+		DerivedAttributeAdapter regionStatechartAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED);
+		regionStatechartAdapter.addLocalDependency(RealtimestatechartPackage.Literals.REGION__STATECHART);
 	}
 
 	/**
@@ -332,6 +346,38 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public FujabaRealtimeStatechart getStatechartDerived() {
+		return (FujabaRealtimeStatechart)STATECHART_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStatechartDerived(FujabaRealtimeStatechart newStatechartDerived, NotificationChain msgs) {
+		// TODO: implement this method to set the contained 'Statechart Derived' containment reference
+		// -> this method is automatically invoked to keep the containment relationship in synch
+		// -> do not modify other features
+		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStatechartDerived(FujabaRealtimeStatechart newStatechartDerived) {
+		STATECHART_DERIVED__ESETTING_DELEGATE.dynamicSet(this, null, 0, newStatechartDerived);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -414,6 +460,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REGION__TRANSITIONS:
 				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
+				return basicSetStatechartDerived(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -455,6 +503,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				return getVertices();
 			case RealtimestatechartPackage.REGION__TRANSITIONS:
 				return getTransitions();
+			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
+				return getStatechartDerived();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -493,6 +543,9 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				getTransitions().clear();
 				getTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
+			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
+				setStatechartDerived((FujabaRealtimeStatechart)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -526,6 +579,9 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 			case RealtimestatechartPackage.REGION__TRANSITIONS:
 				getTransitions().clear();
 				return;
+			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
+				setStatechartDerived((FujabaRealtimeStatechart)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -552,6 +608,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				return VERTICES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REGION__TRANSITIONS:
 				return TRANSITIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
+				return STATECHART_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
