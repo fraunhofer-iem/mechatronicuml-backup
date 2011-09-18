@@ -1,0 +1,30 @@
+
+«AROUND refreshConnectionsBody FOR gmfgen::GenDiagram-»
+	«EXPAND CodeStyle::G2('java.util.Map', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')» domain2NotationMap = new «EXPAND CodeStyle::G2('java.util.HashMap', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')»();
+	«EXPAND CodeStyle::G('java.util.Collection', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())» linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+	java.util.Collection existingLinks = new java.util.LinkedList(getDiagram().getEdges());
+	for (java.util.Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge nextDiagramLink = (org.eclipse.gmf.runtime.notation.Edge) linksIterator.next();
+		int diagramLinkVisualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(nextDiagramLink);
+		if (diagramLinkVisualID == -1«EXPAND _compareLinkVisualID FOREACH links->select(gl | gl.modelFacet.oclIsUndefined())») {
+			if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+				linksIterator.remove();
+			}
+			continue;
+		}
+		if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+			org.eclipse.emf.ecore.EObject diagramLinkObject = nextDiagramLink.getElement();
+			org.eclipse.emf.ecore.EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+			org.eclipse.emf.ecore.EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+			«EXPAND CodeStyle::iterate('nextLinkDescriptor', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName(), 'linkDescriptorsIterator', 'linkDescriptors.iterator()')-»
+				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+					linksIterator.remove();
+					linkDescriptorsIterator.remove();
+					break;
+				}
+			}
+		}
+	}
+	deleteViews(existingLinks.iterator());
+	return createConnections(linkDescriptors, domain2NotationMap);
+«ENDAROUND»

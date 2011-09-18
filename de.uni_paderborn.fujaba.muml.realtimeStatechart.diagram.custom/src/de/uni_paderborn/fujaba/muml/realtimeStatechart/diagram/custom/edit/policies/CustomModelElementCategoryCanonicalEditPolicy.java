@@ -17,4 +17,5 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends
 		List<IAdaptable> createdViews = new ArrayList<IAdaptable>(createdConnectionViews);
 		makeViewsImmutable(createdViews);
 	}
+
 }

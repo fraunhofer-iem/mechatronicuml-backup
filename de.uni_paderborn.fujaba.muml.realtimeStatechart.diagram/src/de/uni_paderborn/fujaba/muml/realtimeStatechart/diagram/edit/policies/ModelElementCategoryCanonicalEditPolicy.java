@@ -204,22 +204,28 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				}
 				continue;
 			}
-			EObject diagramLinkObject = nextDiagramLink.getElement();
-			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
-			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for (Iterator<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> linkDescriptorsIterator = linkDescriptors
-					.iterator(); linkDescriptorsIterator.hasNext();) {
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-						.next();
-				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
-						&& diagramLinkSrc == nextLinkDescriptor.getSource()
-						&& diagramLinkDst == nextLinkDescriptor
-								.getDestination()
-						&& diagramLinkVisualID == nextLinkDescriptor
-								.getVisualID()) {
-					linksIterator.remove();
-					linkDescriptorsIterator.remove();
-					break;
+			if (nextDiagramLink.getSource() != null
+					&& nextDiagramLink.getTarget() != null) {
+				EObject diagramLinkObject = nextDiagramLink.getElement();
+				EObject diagramLinkSrc = nextDiagramLink.getSource()
+						.getElement();
+				EObject diagramLinkDst = nextDiagramLink.getTarget()
+						.getElement();
+				for (Iterator<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+						.iterator(); linkDescriptorsIterator.hasNext();) {
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
+							.next();
+					if (diagramLinkObject == nextLinkDescriptor
+							.getModelElement()
+							&& diagramLinkSrc == nextLinkDescriptor.getSource()
+							&& diagramLinkDst == nextLinkDescriptor
+									.getDestination()
+							&& diagramLinkVisualID == nextLinkDescriptor
+									.getVisualID()) {
+						linksIterator.remove();
+						linkDescriptorsIterator.remove();
+						break;
+					}
 				}
 			}
 		}
