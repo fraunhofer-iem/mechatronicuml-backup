@@ -19,7 +19,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -95,14 +94,14 @@ public class FujabaRealtimeStatechart2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new StatechartFigure();
+		return primaryShape = new InnerStatechartFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public StatechartFigure getPrimaryShape() {
-		return (StatechartFigure) primaryShape;
+	public InnerStatechartFigure getPrimaryShape() {
+		return (InnerStatechartFigure) primaryShape;
 	}
 
 	/**
@@ -254,16 +253,8 @@ public class FujabaRealtimeStatechart2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StatechartFigure extends RoundedRectangle {
+	public class InnerStatechartFigure extends RectangleFigure {
 
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureStatechartNameLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureStatechartVariablesLabel;
 		/**
 		 * @generated
 		 */
@@ -272,15 +263,15 @@ public class FujabaRealtimeStatechart2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public StatechartFigure() {
+		public InnerStatechartFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
+			this.setFill(false);
+			this.setOutline(false);
 			createContents();
 		}
 
@@ -288,47 +279,6 @@ public class FujabaRealtimeStatechart2EditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
-
-			RectangleFigure statechartTitleAreaFigure0 = new RectangleFigure();
-			statechartTitleAreaFigure0.setFill(false);
-			statechartTitleAreaFigure0.setOutline(false);
-
-			GridData constraintStatechartTitleAreaFigure0 = new GridData();
-			constraintStatechartTitleAreaFigure0.verticalAlignment = GridData.CENTER;
-			constraintStatechartTitleAreaFigure0.horizontalAlignment = GridData.FILL;
-			constraintStatechartTitleAreaFigure0.horizontalIndent = 0;
-			constraintStatechartTitleAreaFigure0.horizontalSpan = 1;
-			constraintStatechartTitleAreaFigure0.verticalSpan = 1;
-			constraintStatechartTitleAreaFigure0.grabExcessHorizontalSpace = true;
-			constraintStatechartTitleAreaFigure0.grabExcessVerticalSpace = false;
-			this.add(statechartTitleAreaFigure0,
-					constraintStatechartTitleAreaFigure0);
-
-			GridLayout layoutStatechartTitleAreaFigure0 = new GridLayout();
-			layoutStatechartTitleAreaFigure0.numColumns = 2;
-			layoutStatechartTitleAreaFigure0.makeColumnsEqualWidth = false;
-			statechartTitleAreaFigure0
-					.setLayoutManager(layoutStatechartTitleAreaFigure0);
-
-			fFigureStatechartNameLabel = new WrappingLabel();
-			fFigureStatechartNameLabel.setText("");
-
-			statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);
-
-			fFigureStatechartVariablesLabel = new WrappingLabel();
-			fFigureStatechartVariablesLabel.setText("");
-
-			GridData constraintFFigureStatechartVariablesLabel = new GridData();
-			constraintFFigureStatechartVariablesLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureStatechartVariablesLabel.horizontalAlignment = GridData.END;
-			constraintFFigureStatechartVariablesLabel.horizontalIndent = 0;
-			constraintFFigureStatechartVariablesLabel.horizontalSpan = 1;
-			constraintFFigureStatechartVariablesLabel.verticalSpan = 1;
-			constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;
-			statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel,
-					constraintFFigureStatechartVariablesLabel);
 
 			fFigureStatechartContentsCompartment = new RectangleFigure();
 			fFigureStatechartContentsCompartment.setFill(false);
@@ -345,20 +295,6 @@ public class FujabaRealtimeStatechart2EditPart extends ShapeNodeEditPart {
 			this.add(fFigureStatechartContentsCompartment,
 					constraintFFigureStatechartContentsCompartment);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureStatechartNameLabel() {
-			return fFigureStatechartNameLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureStatechartVariablesLabel() {
-			return fFigureStatechartVariablesLabel;
 		}
 
 		/**

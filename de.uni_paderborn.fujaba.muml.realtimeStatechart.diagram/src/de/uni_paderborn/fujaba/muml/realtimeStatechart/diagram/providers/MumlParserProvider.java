@@ -23,6 +23,25 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser fujabaRealtimeStatechartName_5018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getFujabaRealtimeStatechartName_5018Parser() {
+		if (fujabaRealtimeStatechartName_5018Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			fujabaRealtimeStatechartName_5018Parser = parser;
+		}
+		return fujabaRealtimeStatechartName_5018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser stateName_5017Parser;
 
 	/**
@@ -202,6 +221,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartNameEditPart.VISUAL_ID:
+			return getFujabaRealtimeStatechartName_5018Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
 			return getStateName_5017Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:

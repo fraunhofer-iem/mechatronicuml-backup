@@ -218,6 +218,9 @@ public class MumlVisualIDRegistry {
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

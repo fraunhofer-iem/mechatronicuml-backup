@@ -342,6 +342,10 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5018 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartNameEditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
@@ -401,7 +405,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID),
-				false, false, false, false);
+				false, false, true, true);
 		return node;
 	}
 
@@ -687,7 +691,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID),
-				false, false, false, false);
+				false, false, true, true);
 		return node;
 	}
 

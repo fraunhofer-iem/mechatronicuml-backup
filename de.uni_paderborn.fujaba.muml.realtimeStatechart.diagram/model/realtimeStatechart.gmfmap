@@ -11,6 +11,13 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="realtimeStatechart.gmfgraph#StatechartNameLabel"/>
+        <features
+            href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="realtimeStatechart.gmftool#//@palette/@tools.0"/>
@@ -243,7 +250,7 @@
                   <domainMetaElement
                       href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart"/>
                   <diagramNode
-                      href="realtimeStatechart.gmfgraph#Statechart"/>
+                      href="realtimeStatechart.gmfgraph#InnerStatechart"/>
                   <children
                       compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
                       referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">

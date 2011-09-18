@@ -1,7 +1,8 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -13,7 +14,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 public class RegionRegionContentsCompartmentEditPart extends
-		ShapeCompartmentEditPart {
+		ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -25,6 +26,13 @@ public class RegionRegionContentsCompartmentEditPart extends
 	 */
 	public RegionRegionContentsCompartmentEditPart(View view) {
 		super(view);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean hasModelChildrenChanged(Notification evt) {
+		return false;
 	}
 
 	/**
