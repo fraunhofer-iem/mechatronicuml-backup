@@ -1715,19 +1715,19 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getRegion_Vertices(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- we only derive states, if the selected statechart is different to our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.vertices\r\nendif"
+			 "derivation", "-- we only derive states, if the selected statechart is different to our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.vertices\r\nendif"
 		   });			
 		addAnnotation
 		  (getRegion_Transitions(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- we only derive transitions, if the selected statechart is different to our parentState\'s statechart\n-- (consistently to Region.vertices; see comments in derivation there for details)\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.transitions\r\nendif"
+			 "derivation", "-- we only derive transitions, if the selected statechart is different to our parentState\'s statechart\n-- (consistently to Region.vertices; see comments in derivation there for details)\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.transitions\r\nendif"
 		   });			
 		addAnnotation
 		  (getRegion_StatechartDerived(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.statechart"
+			 "derivation", "-- we only derive the statechart, if it is different to our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tnull\r\nelse\r\n\tself.statechart\r\nendif"
 		   });				
 		addAnnotation
 		  (stateEClass, 
