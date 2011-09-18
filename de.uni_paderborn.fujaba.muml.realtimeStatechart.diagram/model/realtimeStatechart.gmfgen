@@ -561,6 +561,7 @@
         visualID="2003"
         editPartClassName="StateEditPart"
         itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateViewFactory"
         canonicalEditPolicyClassName="StateCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.7 //@diagram/@childNodes.8"
         compartments="//@diagram/@compartments.0 //@diagram/@compartments.1"
@@ -599,7 +600,8 @@
       <labels
           visualID="5016"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -766,6 +768,7 @@
         visualID="7009"
         editPartClassName="StateCompoundCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateCompoundCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateCompoundCompartmentViewFactory"
         canonicalEditPolicyClassName="StateCompoundCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4"
         title="CompoundCompartment"
@@ -783,6 +786,7 @@
         visualID="7010"
         editPartClassName="StateRegionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateRegionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="RegionCompartment"
@@ -886,7 +890,7 @@
             title="Clock Constraint"
             description="Creates a new Clock Constraint"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/clock2.gif"
-            genNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.4"/>
+            genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Entry Action"
@@ -909,7 +913,8 @@
             xsi:type="gmfgen:ToolEntry"
             title="Synchronization Channel"
             description="Creates a new Synchronization Channel"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/xAction.gif"/>
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/xAction.gif"
+            genNodes="//@diagram/@childNodes.4"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Region"

@@ -169,7 +169,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.0"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.4"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
