@@ -143,7 +143,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
+					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart) childEditPart)
@@ -152,7 +152,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
+					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart) childEditPart)
@@ -161,7 +161,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
+					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
@@ -170,7 +170,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
+					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortEditPart) childEditPart)

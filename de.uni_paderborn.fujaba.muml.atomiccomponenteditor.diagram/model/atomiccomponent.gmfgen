@@ -42,7 +42,7 @@
         graphicalNodeEditPolicyClassName="HybridPortGraphicalNodeEditPolicy"
         createCommandClassName="HybridPortCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
-        preferredSideName="NORTH">
+        preferredSideName="SOUTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -136,7 +136,7 @@
         graphicalNodeEditPolicyClassName="DiscretePortGraphicalNodeEditPolicy"
         createCommandClassName="DiscretePortCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
-        preferredSideName="NORTH">
+        preferredSideName="SOUTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -230,7 +230,7 @@
         graphicalNodeEditPolicyClassName="ContinuousPortGraphicalNodeEditPolicy"
         createCommandClassName="ContinuousPortCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
-        preferredSideName="NORTH">
+        preferredSideName="SOUTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -324,7 +324,7 @@
         graphicalNodeEditPolicyClassName="HardwarePortGraphicalNodeEditPolicy"
         createCommandClassName="HardwarePortCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
-        preferredSideName="NORTH">
+        preferredSideName="SOUTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType

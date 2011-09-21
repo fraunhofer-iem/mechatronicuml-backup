@@ -143,7 +143,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
+					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart) childEditPart)
@@ -152,7 +152,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
+					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart) childEditPart)
@@ -161,7 +161,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
+					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart) childEditPart)
@@ -170,7 +170,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
+					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart) childEditPart)

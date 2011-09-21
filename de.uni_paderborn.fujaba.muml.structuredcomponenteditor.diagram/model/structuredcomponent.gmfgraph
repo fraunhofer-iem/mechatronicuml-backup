@@ -27,7 +27,7 @@
   </nodes>
   <nodes
       name="Port"
-      affixedParentSide="NORTH">
+      affixedParentSide="SOUTH">
     <figure
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
     <facets
