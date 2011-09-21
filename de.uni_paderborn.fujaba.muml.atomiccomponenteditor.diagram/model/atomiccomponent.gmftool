@@ -23,7 +23,8 @@
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Ports"
-        collapsible="true">
+        collapsible="true"
+        active="//@palette/@tools.1/@tools.0">
       <tools
           xsi:type="gmftool:CreationTool"
           title="DiscretePort"
@@ -60,9 +61,6 @@
             path="icons/HardwarePort.gif"
             bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
-      <active
-          xsi:type="gmftool:CreationTool"
-          href="../../de.uni_paderborn.fujaba.muml.structuredcomponenteditor/model/structuredcomponent.gmftool#//@palette/@tools.1/@tools.0"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>
