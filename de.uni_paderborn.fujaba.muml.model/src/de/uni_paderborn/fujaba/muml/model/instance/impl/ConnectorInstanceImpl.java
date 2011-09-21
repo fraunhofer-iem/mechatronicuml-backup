@@ -40,7 +40,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getBehaviorInstance <em>Behavior Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getSource <em>Source</em>}</li>
@@ -52,16 +51,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * @generated
  */
 public class ConnectorInstanceImpl extends ExtendableElementImpl implements ConnectorInstance {
-	/**
-	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehavior()
-	 * @generated
-	 * @ordered
-	 */
-	protected Behavior behavior;
-
 	/**
 	 * The cached value of the '{@link #getBehaviorInstance() <em>Behavior Instance</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -129,66 +118,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	@Override
 	protected EClass eStaticClass() {
 		return InstancePackage.Literals.CONNECTOR_INSTANCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Behavior getBehavior() {
-		if (behavior != null && behavior.eIsProxy()) {
-			InternalEObject oldBehavior = (InternalEObject)behavior;
-			behavior = (Behavior)eResolveProxy(oldBehavior);
-			if (behavior != oldBehavior) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR, oldBehavior, behavior));
-			}
-		}
-		return behavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Behavior basicGetBehavior() {
-		return behavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBehavior(Behavior newBehavior, NotificationChain msgs) {
-		Behavior oldBehavior = behavior;
-		behavior = newBehavior;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR, oldBehavior, newBehavior);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBehavior(Behavior newBehavior) {
-		if (newBehavior != behavior) {
-			NotificationChain msgs = null;
-			if (behavior != null)
-				msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
-			if (newBehavior != null)
-				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
-			msgs = basicSetBehavior(newBehavior, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR, newBehavior, newBehavior));
 	}
 
 	/**
@@ -408,10 +337,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR:
-				if (behavior != null)
-					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
-				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehaviorInstance()).basicAdd(otherEnd, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__SOURCE:
@@ -434,8 +359,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR:
-				return basicSetBehavior(null, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE:
 				return ((InternalEList<?>)getBehaviorInstance()).basicRemove(otherEnd, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__SOURCE:
@@ -454,9 +377,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR:
-				if (resolve) return getBehavior();
-				return basicGetBehavior();
 			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE:
 				return getBehaviorInstance();
 			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
@@ -484,9 +404,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR:
-				setBehavior((Behavior)newValue);
-				return;
 			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE:
 				getBehaviorInstance().clear();
 				getBehaviorInstance().addAll((Collection<? extends BehaviorInstance>)newValue);
@@ -515,9 +432,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR:
-				setBehavior((Behavior)null);
-				return;
 			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE:
 				getBehaviorInstance().clear();
 				return;
@@ -545,8 +459,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR:
-				return behavior != null;
 			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE:
 				return behaviorInstance != null && !behaviorInstance.isEmpty();
 			case InstancePackage.CONNECTOR_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
@@ -568,17 +480,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == BehavioralElement.class) {
-			switch (derivedFeatureID) {
-				case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
-				default: return -1;
-			}
-		}
-		if (baseClass == BehavioralConnector.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == BehavioralElementInstance.class) {
 			switch (derivedFeatureID) {
 				case InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE: return InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE;
@@ -596,17 +497,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == BehavioralElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR;
-				default: return -1;
-			}
-		}
-		if (baseClass == BehavioralConnector.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == BehavioralElementInstance.class) {
 			switch (baseFeatureID) {
 				case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE: return InstancePackage.CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE;

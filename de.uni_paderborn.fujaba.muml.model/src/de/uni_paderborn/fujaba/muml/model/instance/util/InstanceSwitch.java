@@ -112,9 +112,7 @@ public class InstanceSwitch<T> {
 				ConnectorInstance connectorInstance = (ConnectorInstance)theEObject;
 				T result = caseConnectorInstance(connectorInstance);
 				if (result == null) result = caseExtendableElement(connectorInstance);
-				if (result == null) result = caseBehavioralConnector(connectorInstance);
 				if (result == null) result = caseBehavioralElementInstance(connectorInstance);
-				if (result == null) result = caseBehavioralElement(connectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -133,9 +131,7 @@ public class InstanceSwitch<T> {
 				T result = caseAssemblyInstance(assemblyInstance);
 				if (result == null) result = caseConnectorInstance(assemblyInstance);
 				if (result == null) result = caseExtendableElement(assemblyInstance);
-				if (result == null) result = caseBehavioralConnector(assemblyInstance);
 				if (result == null) result = caseBehavioralElementInstance(assemblyInstance);
-				if (result == null) result = caseBehavioralElement(assemblyInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -144,9 +140,7 @@ public class InstanceSwitch<T> {
 				T result = caseDelegationInstance(delegationInstance);
 				if (result == null) result = caseConnectorInstance(delegationInstance);
 				if (result == null) result = caseExtendableElement(delegationInstance);
-				if (result == null) result = caseBehavioralConnector(delegationInstance);
 				if (result == null) result = caseBehavioralElementInstance(delegationInstance);
-				if (result == null) result = caseBehavioralElement(delegationInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -523,36 +517,6 @@ public class InstanceSwitch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBehavioralElement(BehavioralElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Behavioral Connector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBehavioralConnector(BehavioralConnector object) {
 		return null;
 	}
 

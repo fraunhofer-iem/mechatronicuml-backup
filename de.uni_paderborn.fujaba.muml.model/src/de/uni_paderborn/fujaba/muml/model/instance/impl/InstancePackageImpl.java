@@ -828,7 +828,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		componentInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		componentInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		connectorInstanceEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
-		connectorInstanceEClass.getESuperTypes().add(theComponentPackage.getBehavioralConnector());
 		connectorInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
@@ -906,7 +905,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getFujabaRealtimeStatechartInstance_ParentStatechart(), this.getFujabaRealtimeStatechartInstance(), this.getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts(), "parentStatechart", null, 1, 1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behavioralElementInstanceEClass, BehavioralElementInstance.class, "BehavioralElementInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehavioralElementInstance_BehaviorInstance(), this.getBehaviorInstance(), this.getBehaviorInstance_BehavioralElementInstance(), "behaviorInstance", null, 1, -1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavioralElementInstance_BehaviorInstance(), this.getBehaviorInstance(), this.getBehaviorInstance_BehavioralElementInstance(), "behaviorInstance", null, 0, -1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehavioralElementInstance_BehavioralElementType(), theCorePackage.getBehavioralElement(), null, "behavioralElementType", null, 1, 1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeBindingEClass, AttributeBinding.class, "AttributeBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -57,7 +57,7 @@ public interface BehavioralElementInstance extends EObject {
 	 * @return the value of the '<em>Behavior Instance</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getBehavioralElementInstance_BehaviorInstance()
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavioralElementInstance
-	 * @model opposite="behavioralElementInstance" containment="true" required="true"
+	 * @model opposite="behavioralElementInstance" containment="true"
 	 * @generated
 	 */
 	EList<BehaviorInstance> getBehaviorInstance();

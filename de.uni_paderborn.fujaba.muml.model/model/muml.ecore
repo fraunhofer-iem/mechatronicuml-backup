@@ -892,9 +892,8 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This is an abstract super class for all instances of behavioral elements. The &#xD;&#xA;behavioral element instance contains the instances of all its behaviors.&#xD;&#xA;&#xD;&#xA;In case of a DiscreteMultiPortInstance, this reference contains the statechart&#xD;&#xA;for the multi-role as well as the adaptation statechart. In case of a &#xD;&#xA;ComponentInstance, this reference contains the component statechart instance&#xD;&#xA;as well as all synchronization statechart instances."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorInstance" lowerBound="1"
-            upperBound="-1" eType="#//model/instance/BehaviorInstance" containment="true"
-            eOpposite="#//model/instance/BehaviorInstance/behavioralElementInstance">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorInstance" upperBound="-1"
+            eType="#//model/instance/BehaviorInstance" containment="true" eOpposite="#//model/instance/BehaviorInstance/behavioralElementInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="These are the behavior instances of the behavioral element instance. A &#xD;&#xA;behavioral element instance has more than one behavior instance in case&#xD;&#xA;that a behavior may be hierarchically composed as it is the case for &#xD;&#xA;real-time statecharts. Then, all instances that do not directly have a behavioral&#xD;&#xA;element instance are contained in the behaviorInstance reference of the &#xD;&#xA;nearest ancestor."/>
           </eAnnotations>
