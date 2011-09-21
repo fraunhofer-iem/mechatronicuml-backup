@@ -236,7 +236,7 @@
                 outline="false">
               <backgroundColor
                   xsi:type="gmfgraph:ConstantColor"
-                  value="gray"/>
+                  value="black"/>
               <template/>
               <template
                   x="1"
@@ -266,7 +266,7 @@
                 outline="false">
               <backgroundColor
                   xsi:type="gmfgraph:ConstantColor"
-                  value="gray"/>
+                  value="black"/>
               <template
                   x="1"/>
               <template
@@ -297,7 +297,7 @@
                 outline="false">
               <backgroundColor
                   xsi:type="gmfgraph:ConstantColor"
-                  value="gray"/>
+                  value="black"/>
               <template
                   x="6"/>
               <template

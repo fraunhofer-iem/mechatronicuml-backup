@@ -482,7 +482,7 @@ public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
 					getMapMode().DPtoLP(2)));
 			fFigureInPolygon.setFill(true);
 			fFigureInPolygon.setOutline(false);
-			fFigureInPolygon.setBackgroundColor(ColorConstants.gray);
+			fFigureInPolygon.setBackgroundColor(ColorConstants.black);
 
 			fFigureInPolygonContainer.add(fFigureInPolygon);
 
@@ -505,7 +505,7 @@ public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
 					getMapMode().DPtoLP(2)));
 			fFigureOutPolygon.setFill(true);
 			fFigureOutPolygon.setOutline(false);
-			fFigureOutPolygon.setBackgroundColor(ColorConstants.gray);
+			fFigureOutPolygon.setBackgroundColor(ColorConstants.black);
 
 			fFigureOutPolygonContainer.add(fFigureOutPolygon);
 
@@ -534,7 +534,7 @@ public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
 					getMapMode().DPtoLP(11)));
 			fFigureInOutPolygon.setFill(true);
 			fFigureInOutPolygon.setOutline(false);
-			fFigureInOutPolygon.setBackgroundColor(ColorConstants.gray);
+			fFigureInOutPolygon.setBackgroundColor(ColorConstants.black);
 
 			fFigureInOutPolygonContainer.add(fFigureInOutPolygon);
 
