@@ -169,7 +169,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,3010,3001,3002,3003,3004,3005,3006,3011,3008,3009"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,3010,3001,3002,3003,3004,3005,3006,3011,3008,3009,3012,3013"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
@@ -182,13 +182,13 @@
             <method name="getType()" value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2004,3010,3001,3002,3003,3004,3005,3006,3011,3008,3009"/>
+            <method name="getType()" value="2004,3010,3001,3002,3003,3004,3005,3006,3011,3008,3009,3012,3013"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5018,5017,5004,5005,5006,5007,5008,5010,5011,5012"/>
+            <method name="getType()" value="5018,5019,5017,5004,5005,5006,5007,5008,5010,5011,5012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7014,7011,7012,7003,7013"/>
@@ -344,6 +344,26 @@
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
+               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryPoint_3012"
+               name="%metatype.name.EntryPoint_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="EntryPoint"
+               edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.EntryPointEditHelper">
+            <param name="semanticHint" value="3012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitPoint_3013"
+               name="%metatype.name.ExitPoint_3013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExitPoint"
+               edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.ExitPointEditHelper">
+            <param name="semanticHint" value="3013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
+         <metamodelType
                id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.Transition_4001"
                name="%metatype.name.Transition_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -376,6 +396,8 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.FujabaRealtimeStatechart_3011"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3008"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3009"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryPoint_3012"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitPoint_3013"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.Transition_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

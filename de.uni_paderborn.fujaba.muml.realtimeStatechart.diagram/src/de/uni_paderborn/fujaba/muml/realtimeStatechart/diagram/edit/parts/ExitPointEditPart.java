@@ -31,12 +31,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class StateExitPointEditPart extends AbstractBorderItemEditPart {
+public class ExitPointEditPart extends AbstractBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3009;
+	public static final int VISUAL_ID = 3013;
 
 	/**
 	 * @generated
@@ -51,7 +51,7 @@ public class StateExitPointEditPart extends AbstractBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public StateExitPointEditPart(View view) {
+	public ExitPointEditPart(View view) {
 		super(view);
 	}
 
@@ -64,7 +64,7 @@ public class StateExitPointEditPart extends AbstractBorderItemEditPart {
 				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateExitPointItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ExitPointItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

@@ -95,6 +95,16 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType EntryPoint_3012 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryPoint_3012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ExitPoint_3013 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitPoint_3013"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Transition_4001 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.Transition_4001"); //$NON-NLS-1$
 
 	/**
@@ -267,6 +277,16 @@ public class MumlElementTypes {
 							.getStateExitPoint());
 
 			elements.put(
+					EntryPoint_3012,
+					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getEntryPoint());
+
+			elements.put(
+					ExitPoint_3013,
+					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getExitPoint());
+
+			elements.put(
 					Transition_4001,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getTransition());
@@ -299,6 +319,8 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(FujabaRealtimeStatechart_3011);
 			KNOWN_ELEMENT_TYPES.add(StateEntryPoint_3008);
 			KNOWN_ELEMENT_TYPES.add(StateExitPoint_3009);
+			KNOWN_ELEMENT_TYPES.add(EntryPoint_3012);
+			KNOWN_ELEMENT_TYPES.add(ExitPoint_3013);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -333,6 +355,10 @@ public class MumlElementTypes {
 			return StateEntryPoint_3008;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
 			return StateExitPoint_3009;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+			return EntryPoint_3012;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+			return ExitPoint_3013;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return Transition_4001;
 		}

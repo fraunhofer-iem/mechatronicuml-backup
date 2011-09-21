@@ -35,6 +35,24 @@
             path="icon/transition16.gif"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
       </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Entry Point"
+          description="Create Entry Point">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/state_entry_point.gif"
+            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Exit Point"
+          description="Create Exit Point">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/state_exit_point.gif"
+            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+      </tools>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

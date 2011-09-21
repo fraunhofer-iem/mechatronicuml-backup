@@ -303,6 +303,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String EntryPoint3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String EntryPoint3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ExitPoint4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ExitPoint4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ClockConstraint1CreationTool_title;
 
 	/**
@@ -413,6 +433,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ExitPoint_3013_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExitPoint_3013_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_StateEntryPoint_3008_incominglinks;
 
 	/**
@@ -444,6 +474,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Transition_4001_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3012_outgoinglinks;
 
 	/**
 	 * @generated

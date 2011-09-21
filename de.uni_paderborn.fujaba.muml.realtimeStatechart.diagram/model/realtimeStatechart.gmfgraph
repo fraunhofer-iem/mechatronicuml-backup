@@ -407,13 +407,13 @@
           figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="StateEntryPointFigure">
+        name="EntryPointFigure">
       <actualFigure
           xsi:type="gmfgraph:Ellipse"
           name="StateEntryPointFigure"/>
     </descriptors>
     <descriptors
-        name="StateExitPointFigure">
+        name="ExitPointFigure">
       <actualFigure
           xsi:type="gmfgraph:Ellipse"
           name="StateExitPointFigure">
@@ -475,8 +475,8 @@
     </facets>
   </nodes>
   <nodes
-      name="StateEntryPoint"
-      figure="StateEntryPointFigure"
+      name="EntryPoint"
+      figure="EntryPointFigure"
       affixedParentSide="WEST">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
@@ -486,8 +486,8 @@
     </facets>
   </nodes>
   <nodes
-      name="StateExitPoint"
-      figure="StateExitPointFigure"
+      name="ExitPoint"
+      figure="ExitPointFigure"
       affixedParentSide="EAST">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">

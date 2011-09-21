@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 
-public class StateBehavior {
+public class StateBehavior extends BorderItemContainerBehavior {
 
 	public static final Dimension DEFAULT_BORDER_ITEM_OFFSET = new Dimension(
 			12, 12);
@@ -37,12 +37,18 @@ public class StateBehavior {
 	private RectangleFigure stateContainer;
 	private Ellipse initialStateEllipse;
 	private RectangleFigure innerContainer;
-	private AbstractBorderedShapeEditPart editPart;
+
 	private boolean initialState;
 
+	
+	
+	@Override
 	public void setEditPart(AbstractBorderedShapeEditPart editPart) {
-		this.editPart = editPart;
-		updateInitialState();
+		super.setEditPart(editPart);
+		
+		// Super implementation of setEditPart already updates the border items,
+		// so no update is required
+		updateInitialState(false);
 	}
 
 	public void handleNotificationEvent(Notification notification) {
@@ -65,8 +71,10 @@ public class StateBehavior {
 	}
 
 	public void setInitialState(boolean initialState) {
-		this.initialState = initialState;
-		updateInitialState();
+		if (this.initialState != initialState) {
+			this.initialState = initialState;
+			updateInitialState(true);
+		}
 	}
 
 	public void setFinalState(boolean finalState) {
@@ -96,7 +104,7 @@ public class StateBehavior {
 				.DPtoLP(16)));
 	}
 
-	private void updateInitialState() {
+	private void updateInitialState(boolean update) {
 		initialStateArrow.setVisible(initialState);
 		initialStateArc.setVisible(initialState);
 
@@ -110,54 +118,8 @@ public class StateBehavior {
 		stateContainer.setBorder(marginBorder);
 		initialStateEllipse.setVisible(initialState);
 
-		if (editPart != null) {
-			Figure borderItemContainer = (Figure) editPart.getBorderedFigure()
-					.getBorderItemContainer();
-
-			for (Object borderItem : borderItemContainer.getChildren()) {
-				updateBorderItem(borderItemContainer, (IFigure) borderItem);
-			}
-		}
-	}
-
-	public void afterAddFixedChild(EditPart childEditPart) {
-		if (editPart != null) {
-			Figure borderItemContainer = (Figure) editPart.getBorderedFigure()
-					.getBorderItemContainer();
-			updateBorderItem(borderItemContainer,
-					((AbstractGraphicalEditPart) childEditPart).getFigure());
-		}
-	}
-
-	private void updateBorderItem(Figure borderItemContainer, IFigure borderItem) {
-		int verticalOffset = 0;
-		if (initialState) {
-			verticalOffset = INITIAL_STATE_MARGIN_TOP;
-		}
-
-		Object constraint = borderItemContainer.getLayoutManager()
-				.getConstraint(borderItem);
-		if (constraint instanceof BorderItemLocator) {
-			BorderItemLocator locator = (BorderItemLocator) constraint;
-			CustomBorderItemLocator customLocator;
-			if (locator instanceof CustomBorderItemLocator) {
-				customLocator = (CustomBorderItemLocator) locator;
-			} else {
-				customLocator = new CustomBorderItemLocator(
-						editPart.getMainFigure(),
-						locator.getPreferredSideOfParent());
-			}
-			// This magical -1 fixes a bug that the border item cannot reside at
-			// the top border...
-			int magicalVerticalOffset = verticalOffset - 1;
-			customLocator.setBorderItemOffset(DEFAULT_BORDER_ITEM_OFFSET
-					.getExpanded(0, magicalVerticalOffset),
-					DEFAULT_BORDER_ITEM_OFFSET);
-
-			// Always call setConstraint(), to update visuals (even if
-			// locator==customLocator).
-			borderItemContainer.setConstraint((IFigure) borderItem,
-					customLocator);
+		if (update) {
+			updateBorderItems();
 		}
 	}
 
@@ -191,6 +153,23 @@ public class StateBehavior {
 		};
 		plate.setMinimumSize(new Dimension(0, 0));
 		return plate;
+	}
+
+	@Override
+	protected Dimension getTopLeftOffset() {
+		int verticalOffset = 0;
+		if (initialState) {
+			verticalOffset = INITIAL_STATE_MARGIN_TOP;
+		}
+		// This magical -1 fixes a bug that the border item cannot reside at
+		// the top border...
+		int magicalVerticalOffset = verticalOffset - 1;
+		return DEFAULT_BORDER_ITEM_OFFSET.getExpanded(0, magicalVerticalOffset);
+	}
+
+	@Override
+	protected Dimension getBottomRightOffset() {
+		return DEFAULT_BORDER_ITEM_OFFSET;
 	}
 
 }
