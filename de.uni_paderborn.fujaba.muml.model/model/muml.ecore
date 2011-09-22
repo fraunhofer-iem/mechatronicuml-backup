@@ -596,7 +596,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An Expression that represents an activity."/>
         </eAnnotations>
@@ -1345,7 +1345,7 @@
             <details key="documentation" value="a transition can have one relative deadline"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="safe" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="false">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Needed for failure propagation."/>

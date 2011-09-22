@@ -149,6 +149,7 @@ public class RegionItemProvider
 			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__VERTICES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__TRANSITIONS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED);
 		}
 		return childrenFeatures;
 	}
@@ -210,6 +211,7 @@ public class RegionItemProvider
 			case RealtimestatechartPackage.REGION__EXTENSION:
 			case RealtimestatechartPackage.REGION__VERTICES:
 			case RealtimestatechartPackage.REGION__TRANSITIONS:
+			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -281,6 +283,11 @@ public class RegionItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.REGION__TRANSITIONS,
 				 RealtimestatechartFactory.eINSTANCE.createTransition()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED,
+				 RealtimestatechartFactory.eINSTANCE.createFujabaRealtimeStatechart()));
 	}
 
 }

@@ -16,6 +16,7 @@ import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
 
 import org.storydriven.modeling.TypedElement;
+import org.storydriven.modeling.calls.Invocation;
 import org.storydriven.modeling.expressions.Expression;
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
@@ -125,6 +126,10 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseInvocation(Invocation object) {
+				return createInvocationAdapter();
 			}
 			@Override
 			public Adapter caseTypedElement(TypedElement object) {
@@ -305,6 +310,20 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommentableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.calls.Invocation <em>Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.modeling.calls.Invocation
+	 * @generated
+	 */
+	public Adapter createInvocationAdapter() {
 		return null;
 	}
 

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 /**
@@ -400,7 +401,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int ACTIVITY_CALL_EXPRESSION__ANNOTATION = CallsPackage.INVOCATION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -409,25 +410,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_CALL_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
+	int ACTIVITY_CALL_EXPRESSION__EXTENSION = CallsPackage.INVOCATION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -436,7 +419,43 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+	int ACTIVITY_CALL_EXPRESSION__COMMENT = CallsPackage.INVOCATION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS = CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Callee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__CALLEE = CallsPackage.INVOCATION__CALLEE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__TYPE = CallsPackage.INVOCATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE = CallsPackage.INVOCATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Activity</b></em>' reference.
@@ -445,7 +464,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION__ACTIVITY = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+	int ACTIVITY_CALL_EXPRESSION__ACTIVITY = CallsPackage.INVOCATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Activity Call Expression</em>' class.
@@ -454,7 +473,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int ACTIVITY_CALL_EXPRESSION_FEATURE_COUNT = CallsPackage.INVOCATION_FEATURE_COUNT + 3;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.

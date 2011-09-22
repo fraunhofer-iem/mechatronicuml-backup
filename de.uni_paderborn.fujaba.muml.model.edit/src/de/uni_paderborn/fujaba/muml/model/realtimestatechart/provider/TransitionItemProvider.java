@@ -85,7 +85,7 @@ public class TransitionItemProvider
 			addClockConstraintsPropertyDescriptor(object);
 			addAbsoluteDeadlinesPropertyDescriptor(object);
 			addRelativeDeadlinePropertyDescriptor(object);
-			addSafePropertyDescriptor(object);
+			addBlockablePropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
@@ -467,19 +467,19 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Safe feature.
+	 * This adds a property descriptor for the Blockable feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSafePropertyDescriptor(Object object) {
+	protected void addBlockablePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Transition_safe_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_safe_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__SAFE,
+				 getString("_UI_Transition_blockable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_blockable_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__BLOCKABLE,
 				 true,
 				 false,
 				 false,
@@ -692,7 +692,7 @@ public class TransitionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Transition.class)) {
-			case RealtimestatechartPackage.TRANSITION__SAFE:
+			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

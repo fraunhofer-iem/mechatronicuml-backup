@@ -32,7 +32,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getClockConstraints <em>Clock Constraints</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRelativeDeadline <em>Relative Deadline</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isSafe <em>Safe</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isBlockable <em>Blockable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getGuard <em>Guard</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getEvents <em>Events</em>}</li>
@@ -265,30 +265,30 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	void setRelativeDeadline(RelativeDeadline value);
 
 	/**
-	 * Returns the value of the '<em><b>Safe</b></em>' attribute.
+	 * Returns the value of the '<em><b>Blockable</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Needed for failure propagation.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Safe</em>' attribute.
-	 * @see #setSafe(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Safe()
+	 * @return the value of the '<em>Blockable</em>' attribute.
+	 * @see #setBlockable(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Blockable()
 	 * @model default="false"
 	 * @generated
 	 */
-	boolean isSafe();
+	boolean isBlockable();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isSafe <em>Safe</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isBlockable <em>Blockable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Safe</em>' attribute.
-	 * @see #isSafe()
+	 * @param value the new value of the '<em>Blockable</em>' attribute.
+	 * @see #isBlockable()
 	 * @generated
 	 */
-	void setSafe(boolean value);
+	void setBlockable(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Urgent</b></em>' attribute.

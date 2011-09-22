@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.core;
 
 import org.storydriven.modeling.activities.Activity;
+import org.storydriven.modeling.calls.Invocation;
 import org.storydriven.modeling.activities.ExceptionVariable;
 
 import org.storydriven.modeling.expressions.Expression;
@@ -31,7 +32,7 @@ import org.storydriven.modeling.expressions.Expression;
  * @model
  * @generated
  */
-public interface ActivityCallExpression extends Expression {
+public interface ActivityCallExpression extends Invocation, Expression {
 	/**
 	 * Returns the value of the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->

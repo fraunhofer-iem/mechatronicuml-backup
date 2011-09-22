@@ -16,6 +16,7 @@ import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
 
 import org.storydriven.modeling.TypedElement;
+import org.storydriven.modeling.calls.Invocation;
 import org.storydriven.modeling.expressions.Expression;
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
@@ -149,9 +150,10 @@ public class CoreSwitch<T> {
 			case CorePackage.ACTIVITY_CALL_EXPRESSION: {
 				ActivityCallExpression activityCallExpression = (ActivityCallExpression)theEObject;
 				T result = caseActivityCallExpression(activityCallExpression);
+				if (result == null) result = caseInvocation(activityCallExpression);
 				if (result == null) result = caseExpression(activityCallExpression);
-				if (result == null) result = caseTypedElement(activityCallExpression);
 				if (result == null) result = caseCommentableElement(activityCallExpression);
+				if (result == null) result = caseTypedElement(activityCallExpression);
 				if (result == null) result = caseExtendableElement(activityCallExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -322,6 +324,21 @@ public class CoreSwitch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Invocation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInvocation(Invocation object) {
 		return null;
 	}
 

@@ -759,13 +759,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZABLE_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Safe</b></em>' attribute.
+	 * The feature id for the '<em><b>Blockable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SAFE = PRIORITIZABLE_FEATURE_COUNT + 12;
+	int TRANSITION__BLOCKABLE = PRIORITIZABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -2632,15 +2632,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_RelativeDeadline();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isSafe <em>Safe</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isBlockable <em>Blockable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Safe</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isSafe()
+	 * @return the meta object for the attribute '<em>Blockable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isBlockable()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_Safe();
+	EAttribute getTransition_Blockable();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isUrgent <em>Urgent</em>}'.
@@ -3596,12 +3596,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__RELATIVE_DEADLINE = eINSTANCE.getTransition_RelativeDeadline();
 
 		/**
-		 * The meta object literal for the '<em><b>Safe</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Blockable</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__SAFE = eINSTANCE.getTransition_Safe();
+		EAttribute TRANSITION__BLOCKABLE = eINSTANCE.getTransition_Blockable();
 
 		/**
 		 * The meta object literal for the '<em><b>Urgent</b></em>' attribute feature.

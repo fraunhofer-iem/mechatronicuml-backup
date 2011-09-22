@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 
 import org.storydriven.modeling.activities.ActivitiesPackage;
+import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -487,6 +488,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Obtain other dependent packages
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
+		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 
@@ -498,6 +500,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		abstractRealtimeStatechartEClass.getESuperTypes().add(this.getBehavior());
+		activityCallExpressionEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		activityCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters

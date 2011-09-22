@@ -371,7 +371,7 @@
           <genFeatures children="true" createChild="true" propertyCategory="" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/absoluteDeadlines"/>
           <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Relative Deadline"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/relativeDeadline"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Transition/safe"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Transition/blockable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Transition/urgent"/>
           <genFeatures children="true" createChild="true" propertyCategory="Guard"
               propertyDescription="" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/guard"/>
