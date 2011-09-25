@@ -587,6 +587,14 @@
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>
+<extension
+         point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
+      <factory
+            class="de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactory"
+            pluginid="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
+            priority="1"></factory>
+   </extension>
+
 
 
 

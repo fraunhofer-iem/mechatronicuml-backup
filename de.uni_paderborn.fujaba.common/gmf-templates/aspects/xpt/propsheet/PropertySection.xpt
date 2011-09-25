@@ -4,9 +4,16 @@
 		org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			org.eclipse.emf.common.notify.AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory>();
-			de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactories.fillItemProviderFactories(factories);
+			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> positivePriorityFactories =
+				de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, true);
+			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> negativePriorityFactories =
+				de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, false);
+
+			// Put all factories into one composed adapter factory.
+			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<AdapterFactory>();
+			factories.addAll(positivePriorityFactories);
 			factories.add(defaultFactory);
+			factories.addAll(negativePriorityFactories);
 			return new org.eclipse.emf.edit.provider.ComposedAdapterFactory(factories);
 		}
 		return null;

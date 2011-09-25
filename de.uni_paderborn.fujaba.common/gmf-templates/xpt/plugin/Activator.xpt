@@ -89,13 +89,13 @@ public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlug
 	protected org.eclipse.emf.edit.provider.ComposedAdapterFactory createAdapterFactory() {
 		«EXPAND CodeStyle::newGenericInstance('factories', 'java.util.ArrayList', 'org.eclipse.emf.common.notify.AdapterFactory') FOR editorGen.diagram»();
 		
-		// BEGIN: Customized by bingo
-		// Added to allow creation of custom ItemProviderFactories for cases, in
-		// which edit code of dependent meta-models cannot be changed.
-		de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactories.fillItemProviderFactories(factories);
-		// END: Customized
+		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(ID, true);
+		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(ID, false);
 
+		// Put all factories into one composed adapter factory.
+		factories.addAll(positivePriorityFactories);
 		fillItemProviderFactories(factories);
+		factories.addAll(negativePriorityFactories);
 		
 		return new org.eclipse.emf.edit.provider.ComposedAdapterFactory(factories);
 	}

@@ -106,10 +106,22 @@ public class MessageinterfacePropertySection extends AdvancedPropertySection
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
+			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+					.getInstance()
+					.getCustomItemProviderAdapterFactories(
+							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin.ID,
+							true);
+			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+					.getInstance()
+					.getCustomItemProviderAdapterFactories(
+							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin.ID,
+							false);
+
+			// Put all factories into one composed adapter factory.
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-			de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactories
-					.fillItemProviderFactories(factories);
+			factories.addAll(positivePriorityFactories);
 			factories.add(defaultFactory);
+			factories.addAll(negativePriorityFactories);
 			return new ComposedAdapterFactory(factories);
 		}
 		return null;

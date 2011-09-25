@@ -117,14 +117,15 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 
-		// BEGIN: Customized by bingo
-		// Added to allow creation of custom ItemProviderFactories for cases, in
-		// which edit code of dependent meta-models cannot be changed.
-		de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactories
-				.fillItemProviderFactories(factories);
-		// END: Customized
+		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
+		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
 
+		// Put all factories into one composed adapter factory.
+		factories.addAll(positivePriorityFactories);
 		fillItemProviderFactories(factories);
+		factories.addAll(negativePriorityFactories);
 
 		return new ComposedAdapterFactory(factories);
 	}

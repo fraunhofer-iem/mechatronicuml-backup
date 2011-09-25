@@ -25,7 +25,6 @@
       </context>
    </extension>
 
-   	
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
@@ -488,14 +487,13 @@
       <?gmfgen generated="true"?>
    </extension>
 
-
-
-
-
-
-
-
-
-
    <!-- optionally, specify keybindings -->
+
+   <extension
+         point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
+      <factory
+            class="de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactory"
+            pluginid="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"
+            priority="1"></factory>
+   </extension>
 </plugin>

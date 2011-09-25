@@ -629,12 +629,10 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance link = (de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance) linkObject;
-			// BEGIN: Bugfix (MechatronicUML)
-			// TODO: Create Bug for this and reference its ID
-			// if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
-			//	continue;
-			// }
-			// END: Bugfix
+			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance dst = link
 					.getTarget();
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance src = link
@@ -662,12 +660,10 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance link = (de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance) linkObject;
-			// BEGIN: Bugfix (MechatronicUML)
-			// TODO: Create Bug for this and reference its ID
-			// if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
-			//	continue;
-			// }
-			// END: Bugfix
+			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance dst = link
 					.getTarget();
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance src = link
@@ -699,12 +695,10 @@ public class MumlDiagramUpdater {
 			}
 			de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance link = (de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance) setting
 					.getEObject();
-			// BEGIN: Bugfix (MechatronicUML)
-			// TODO: Create Bug for this and reference its ID
-			// if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
-			//	continue;
-			// }
-			// END: Bugfix
+			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance src = link
 					.getSource();
 			result.add(new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor(
@@ -734,12 +728,10 @@ public class MumlDiagramUpdater {
 			}
 			de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance link = (de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance) setting
 					.getEObject();
-			// BEGIN: Bugfix (MechatronicUML)
-			// TODO: Create Bug for this and reference its ID
-			// if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
-			//	continue;
-			// }
-			// END: Bugfix
+			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance src = link
 					.getSource();
 			result.add(new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor(
@@ -778,12 +770,10 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance link = (de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance) linkObject;
-			// BEGIN: Bugfix (MechatronicUML)
-			// TODO: Create Bug for this and reference its ID
-			// if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
-			//	continue;
-			// }
-			// END: Bugfix
+			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance dst = link
 					.getTarget();
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance src = link
@@ -827,12 +817,10 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance link = (de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance) linkObject;
-			// BEGIN: Bugfix (MechatronicUML)
-			// TODO: Create Bug for this and reference its ID
-			// if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
-			//	continue;
-			// }
-			// END: Bugfix
+			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance dst = link
 					.getTarget();
 			de.uni_paderborn.fujaba.muml.model.instance.PortInstance src = link

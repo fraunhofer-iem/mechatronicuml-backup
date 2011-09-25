@@ -2,15 +2,14 @@ package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.sheet;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AdvancedPropertySection;
@@ -20,6 +19,8 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+
+import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
 
 /**
  * @generated
@@ -58,6 +59,7 @@ public class AtomiccomponentPropertySection extends AdvancedPropertySection
 
 	/**
 	 * Modify/unwrap selection.
+	 * 
 	 * @generated
 	 */
 	protected Object transformSelection(Object selected) {
@@ -106,10 +108,22 @@ public class AtomiccomponentPropertySection extends AdvancedPropertySection
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
+			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+					.getInstance()
+					.getCustomItemProviderAdapterFactories(
+							de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.ID,
+							true);
+			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+					.getInstance()
+					.getCustomItemProviderAdapterFactories(
+							de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.ID,
+							false);
+
+			// Put all factories into one composed adapter factory.
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-			de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactories
-					.fillItemProviderFactories(factories);
+			factories.addAll(positivePriorityFactories);
 			factories.add(defaultFactory);
+			factories.addAll(negativePriorityFactories);
 			return new ComposedAdapterFactory(factories);
 		}
 		return null;
