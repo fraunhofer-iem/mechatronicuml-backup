@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.org.storydriven.modeling.calls;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.provider.org.storydriven.modeling.calls;
 
 import java.util.List;
 

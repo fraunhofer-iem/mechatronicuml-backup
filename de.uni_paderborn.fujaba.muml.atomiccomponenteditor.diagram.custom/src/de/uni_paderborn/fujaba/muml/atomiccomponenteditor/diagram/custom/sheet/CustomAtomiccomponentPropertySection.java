@@ -5,7 +5,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.ui.views.properties.IPropertySource;
 
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.sheet.AtomiccomponentPropertySection;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomPropertySource;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource;
 
 public class CustomAtomiccomponentPropertySection extends
 		AtomiccomponentPropertySection {

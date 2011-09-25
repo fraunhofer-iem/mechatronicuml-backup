@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.provider;
 
 import java.util.ArrayList;
 import java.util.Arrays;

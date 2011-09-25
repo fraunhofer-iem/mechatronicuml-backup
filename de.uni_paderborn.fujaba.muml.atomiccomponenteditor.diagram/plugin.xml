@@ -492,7 +492,7 @@
    <extension
          point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
       <factory
-            class="de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactory"
+            class="de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomItemProviderFactory"
             pluginid="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"
             priority="1"></factory>
    </extension>

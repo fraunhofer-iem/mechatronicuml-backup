@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.org.eclipse.emf.ecore;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.provider.org.eclipse.emf.ecore;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EParameter;

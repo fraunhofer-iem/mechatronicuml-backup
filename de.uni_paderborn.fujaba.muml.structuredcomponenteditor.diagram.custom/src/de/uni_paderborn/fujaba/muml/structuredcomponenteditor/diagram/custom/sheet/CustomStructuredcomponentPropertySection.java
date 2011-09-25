@@ -8,7 +8,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomPropertySource;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.sheet.MumlPropertySection;

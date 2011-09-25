@@ -4,7 +4,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.ui.views.properties.IPropertySource;
 
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomPropertySource;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource;
 import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.sheet.MessageinterfacePropertySection;
 
 public class CustomMessageinterfacePropertySection extends
