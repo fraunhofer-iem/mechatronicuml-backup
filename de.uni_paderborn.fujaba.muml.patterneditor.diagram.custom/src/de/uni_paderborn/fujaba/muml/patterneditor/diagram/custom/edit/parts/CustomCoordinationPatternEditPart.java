@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts;
 
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.EllipseAnchor;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
@@ -29,6 +30,8 @@ public class CustomCoordinationPatternEditPart /* extends
 				return new EllipseAnchor(this);
 			}
 		};
+		result.setMinimumSize(new Dimension(0, 0));
 		return result;
 	}
+
 }

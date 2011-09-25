@@ -15,6 +15,7 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -32,6 +33,8 @@ public class CustomStructuredcomponentEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
+			case StructuredComponentEditPart.VISUAL_ID:
+				return new CustomStructuredComponentEditPart(view);
 			case StructuredComponentDiagramEditPart.VISUAL_ID:
 				return new CustomStructuredComponentDiagramEditPart(view);
 			case DiscretePortEditPart.VISUAL_ID:

@@ -4,9 +4,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart;
@@ -55,6 +57,13 @@ public class CustomComponentInstanceEditPart extends ComponentInstanceEditPart {
 			}
 		}
 		super.handleNotificationEvent(notification);
+	}
+
+	@Override
+	protected NodeFigure createNodePlate() {
+		NodeFigure plate = super.createNodePlate();
+		plate.setMinimumSize(new Dimension(0, 0));
+		return plate;
 	}
 
 	public class CustomComponentFigure extends ComponentFigure {

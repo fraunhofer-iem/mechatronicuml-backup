@@ -4,6 +4,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart;
+import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart;
 import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry;
 
@@ -22,6 +23,8 @@ public class CustomMessageinterfaceEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
+			case MessageInterfaceEditPart.VISUAL_ID:
+				return new CustomMessageInterfaceEditPart(view);
 			
 			case MessageInterfaceDiagramEditPart.VISUAL_ID:
 				return new CustomMessageInterfaceDiagramEditPart(view);
