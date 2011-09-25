@@ -444,6 +444,13 @@
         </children>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="EntryExitPointExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="EntryExitPointExternalLabelFigure"
+          text=""/>
+    </descriptors>
   </figures>
   <nodes
       name="Statechart"
@@ -578,4 +585,8 @@
       figure="StatechartFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.5/@accessors.2"/>
+  <labels
+      name="EntryExitPointExternalLabel"
+      figure="EntryExitPointExternalLabelFigure"
+      elementIcon="false"/>
 </gmfgraph:Canvas>

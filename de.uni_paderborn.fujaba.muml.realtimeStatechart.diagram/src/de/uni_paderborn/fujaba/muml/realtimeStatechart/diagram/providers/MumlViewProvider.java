@@ -879,6 +879,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5020 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointNameEditPart.VISUAL_ID));
+		label5020.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5020 = (Location) label5020.getLayoutConstraint();
+		location5020.setX(0);
+		location5020.setY(5);
 		return node;
 	}
 
