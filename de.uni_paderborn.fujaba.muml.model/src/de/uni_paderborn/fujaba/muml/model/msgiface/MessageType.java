@@ -14,6 +14,14 @@ import org.storydriven.modeling.calls.Callable;
  * A representation of the model object '<em><b>Message Type</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A message type defines the signature of one event. That includes the name
+ * of the event as well as the list of parameters. The message type inherits from
+ * callable because concrete events in a real-time statechart must provide a 
+ * parameter mapping for the parameters of the message type as it is defined for
+ * method invocations.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
