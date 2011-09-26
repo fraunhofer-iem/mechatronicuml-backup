@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
-
 import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->

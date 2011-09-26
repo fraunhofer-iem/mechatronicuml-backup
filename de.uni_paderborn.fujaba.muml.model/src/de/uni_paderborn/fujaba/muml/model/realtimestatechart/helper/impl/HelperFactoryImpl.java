@@ -7,12 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.*;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.Vector;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;

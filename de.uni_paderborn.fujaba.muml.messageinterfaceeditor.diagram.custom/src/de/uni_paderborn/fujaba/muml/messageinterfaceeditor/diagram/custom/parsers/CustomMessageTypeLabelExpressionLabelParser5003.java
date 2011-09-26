@@ -5,11 +5,11 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5003;
+import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5007;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 
 public class CustomMessageTypeLabelExpressionLabelParser5003 extends
-		MessageTypeLabelExpressionLabelParser5003 {
+		MessageTypeLabelExpressionLabelParser5007 {
 
 
 	protected IStatus updateValues(EObject target, String newString)

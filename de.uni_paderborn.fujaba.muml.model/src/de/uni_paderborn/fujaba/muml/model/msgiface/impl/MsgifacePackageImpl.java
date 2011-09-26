@@ -266,8 +266,8 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		// Add supertypes to classes
 		messageInterfaceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		messageTypeEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		messageTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		messageTypeEClass.getESuperTypes().add(theCallsPackage.getCallable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -308,7 +308,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		   source, 
 		   new String[] {
 			 "constraints", "NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
-		   });				
+		   });		
 	}
 
 	/**
@@ -327,7 +327,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 			 "NoBidirectionalGeneralization", "self.superType->forAll(x|x.superType->forAll(y|y<>self))",
 			 "UniqueMessageTypeNames", "self.messageTypes->isUnique(name)",
 			 "NoMessageTypeOrNotAtLeastTwoGeneralizations", "self.messageTypes->size()>=1 or self.superType->size()>=2"
-		   });					
+		   });			
 	}
 
 } //MsgifacePackageImpl

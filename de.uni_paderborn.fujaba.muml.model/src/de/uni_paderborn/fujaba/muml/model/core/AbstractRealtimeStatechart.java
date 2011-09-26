@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core;
 
-import java.util.Map;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 

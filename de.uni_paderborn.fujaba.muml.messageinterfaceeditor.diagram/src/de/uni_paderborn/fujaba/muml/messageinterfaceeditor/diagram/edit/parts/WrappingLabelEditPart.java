@@ -42,13 +42,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class MessageTypeNameEditPart extends CompartmentEditPart implements
+public class WrappingLabelEditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5003;
+	public static final int VISUAL_ID = 5007;
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class MessageTypeNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public MessageTypeNameEditPart(View view) {
+	public WrappingLabelEditPart(View view) {
 		super(view);
 	}
 
@@ -290,10 +290,10 @@ public class MessageTypeNameEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MessageinterfaceParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3002,
+							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3004,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

@@ -23,11 +23,11 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class MessageTypeLabelExpressionLabelParser5003 implements IParser {
+public class MessageTypeLabelExpressionLabelParser5007 implements IParser {
 	/**
 	 * @generated
 	 */
-	public MessageTypeLabelExpressionLabelParser5003() {
+	public MessageTypeLabelExpressionLabelParser5007() {
 	}
 
 	/**

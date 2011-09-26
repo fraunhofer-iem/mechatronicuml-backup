@@ -14,13 +14,19 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * <!-- begin-user-doc -->

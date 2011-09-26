@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.instance;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.expressions.Expression;
 
 /**

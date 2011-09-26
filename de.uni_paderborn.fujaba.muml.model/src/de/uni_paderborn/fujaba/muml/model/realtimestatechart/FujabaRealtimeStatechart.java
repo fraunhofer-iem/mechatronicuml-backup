@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 import java.util.Iterator;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 

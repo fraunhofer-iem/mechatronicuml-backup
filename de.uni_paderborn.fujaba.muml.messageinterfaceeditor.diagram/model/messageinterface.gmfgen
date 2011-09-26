@@ -34,7 +34,7 @@
     <domainDiagramElement
         href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
-        visualID="3002"
+        visualID="3004"
         editPartClassName="MessageTypeEditPart"
         itemSemanticEditPolicyClassName="MessageTypeItemSemanticEditPolicy"
         notationViewFactoryClassName="MessageTypeViewFactory"
@@ -74,10 +74,10 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5003"
-          editPartClassName="MessageTypeNameEditPart"
-          itemSemanticEditPolicyClassName="MessageTypeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageTypeNameViewFactory">
+          visualID="5007"
+          editPartClassName="WrappingLabelEditPart"
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageTypeLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -340,7 +340,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.0/@labels.0/@modelFacet"
-        className="MessageTypeLabelExpressionLabelParser5003"
+        className="MessageTypeLabelExpressionLabelParser5007"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType"/>

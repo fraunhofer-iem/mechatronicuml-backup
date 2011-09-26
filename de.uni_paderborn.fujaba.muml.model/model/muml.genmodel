@@ -462,7 +462,7 @@
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/msgiface/MessageInterface/messageTypes"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/msgiface/MessageType">
-          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/msgiface/MessageType/messageInterface"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/msgiface/MessageType/messageInterface"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

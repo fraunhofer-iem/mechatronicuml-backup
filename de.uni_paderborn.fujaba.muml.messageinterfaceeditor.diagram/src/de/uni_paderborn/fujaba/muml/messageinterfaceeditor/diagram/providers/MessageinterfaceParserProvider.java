@@ -28,7 +28,7 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getMessageInterfaceName_5005Parser() {
+	protected IParser getMessageInterfaceName_5005Parser() {
 		if (messageInterfaceName_5005Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -42,16 +42,16 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5003 messageTypeLabel_5003Parser;
+	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5007 messageTypeLabel_5007Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getMessageTypeLabel_5003Parser() {
-		if (messageTypeLabel_5003Parser == null) {
-			messageTypeLabel_5003Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5003();
+	protected IParser getMessageTypeLabel_5007Parser() {
+		if (messageTypeLabel_5007Parser == null) {
+			messageTypeLabel_5007Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5007();
 		}
-		return messageTypeLabel_5003Parser;
+		return messageTypeLabel_5007Parser;
 	}
 
 	/**
@@ -61,8 +61,8 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID:
 			return getMessageInterfaceName_5005Parser();
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
-			return getMessageTypeLabel_5003Parser();
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+			return getMessageTypeLabel_5007Parser();
 		}
 		return null;
 	}

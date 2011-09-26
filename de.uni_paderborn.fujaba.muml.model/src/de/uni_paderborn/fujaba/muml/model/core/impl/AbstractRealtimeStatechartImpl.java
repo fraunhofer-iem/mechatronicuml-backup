@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
-import java.util.Map;
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,7 +26,6 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->

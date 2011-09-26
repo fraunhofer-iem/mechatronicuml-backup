@@ -7,12 +7,10 @@
 package de.uni_paderborn.fujaba.muml.model.component;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 
 /**
  * <!-- begin-user-doc -->

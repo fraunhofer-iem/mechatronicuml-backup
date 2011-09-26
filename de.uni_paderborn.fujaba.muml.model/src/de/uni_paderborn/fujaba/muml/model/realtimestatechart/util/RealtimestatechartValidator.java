@@ -7,16 +7,46 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.util;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->

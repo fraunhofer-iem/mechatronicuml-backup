@@ -6,10 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

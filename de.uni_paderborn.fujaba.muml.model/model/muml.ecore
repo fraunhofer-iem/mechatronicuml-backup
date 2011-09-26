@@ -1751,16 +1751,9 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the list of parameters. The message type inherits from&#xD;&#xA;callable because concrete events in a real-time statechart must provide a &#xD;&#xA;parameter mapping for the parameters of the message type as it is defined for&#xD;&#xA;method invocations."/>
-        </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable">
         <eStructuralFeatures xsi:type="ecore:EReference" name="messageInterface" lowerBound="1"
-            eType="#//model/msgiface/MessageInterface" eOpposite="#//model/msgiface/MessageInterface/messageTypes">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The message interface this message type belongs to."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+            eType="#//model/msgiface/MessageInterface" eOpposite="#//model/msgiface/MessageInterface/messageTypes"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>

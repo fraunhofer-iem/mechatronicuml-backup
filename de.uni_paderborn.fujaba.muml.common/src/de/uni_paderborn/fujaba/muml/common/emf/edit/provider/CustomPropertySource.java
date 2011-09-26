@@ -97,7 +97,12 @@ public class CustomPropertySource extends PropertySource {
 						EDataType eDataType = EcorePackage.Literals.ESTRING;
 						return createEDataTypeCellEditor(eDataType, parent);
 
-					} else if (feature.isMany() && createAllowed) {
+					} else if (feature.isMany()
+							&& createAllowed
+							) {
+
+						// TODO: Use PropertyDescriptors to find out properties.
+
 						if (EcorePackage.Literals.EPARAMETER
 								.isSuperTypeOf(eClass)) {
 							return createTypedElementCellEditor(parent,
@@ -130,14 +135,14 @@ public class CustomPropertySource extends PropertySource {
 									getCurrentValues());
 						} else if (EcorePackage.Literals.EATTRIBUTE
 								.isSuperTypeOf(eClass)) {
-							return createTypedElementCellEditor(parent,
+							return createAttributeCellEditor(parent,
 									getLabelProvider(), feature,
-									getCurrentValues(), ";", "; ");
+									getCurrentValues());
 						} else if (EcorePackage.Literals.EOPERATION
 								.isSuperTypeOf(eClass)) {
-							return createTypedElementCellEditor(parent,
+							return createOperationCellEditor(parent,
 									getLabelProvider(), feature,
-									getCurrentValues(), ";", "; ");
+									getCurrentValues());
 						}
 					}
 				}
@@ -413,6 +418,26 @@ public class CustomPropertySource extends PropertySource {
 		typedElementCellEditor.addProperty(upperBoundProperty);
 
 		return typedElementCellEditor;
+	}
+
+	protected CellEditor createOperationCellEditor(Composite parent,
+			ILabelProvider labelProvider, EStructuralFeature feature,
+			Collection<?> currentValues) {
+		MultiFeatureCreationCellEditor cellEditor = createTypedElementCellEditor(
+				parent, labelProvider, feature, currentValues, ";", "; ");
+		// Property inParameters= createProperty(
+		// EcorePackage.Literals.EOPERATION__EPARAMETERS,
+		// upperBoundEditor);
+		// upperBoundProperty.setDisplayName("Cardinality");
+		// cellEditor.addPriority();
+		return cellEditor;
+	}
+
+	protected CellEditor createAttributeCellEditor(Composite parent,
+			ILabelProvider labelProvider, EStructuralFeature feature,
+			Collection<?> currentValues) {
+		return createTypedElementCellEditor(parent, labelProvider, feature,
+				currentValues, ";", "; ");
 	}
 
 	private Property createProperty(EStructuralFeature feature,

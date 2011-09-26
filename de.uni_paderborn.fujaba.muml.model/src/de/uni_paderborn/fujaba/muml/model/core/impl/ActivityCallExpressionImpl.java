@@ -6,27 +6,21 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.TypedElement;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.calls.impl.InvocationImpl;
 import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.activities.ExceptionVariable;
 
-import org.storydriven.modeling.expressions.impl.ExpressionImpl;
+import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

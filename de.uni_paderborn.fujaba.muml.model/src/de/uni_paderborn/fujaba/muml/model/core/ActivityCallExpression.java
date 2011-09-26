@@ -8,8 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.core;
 
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.calls.Invocation;
-import org.storydriven.modeling.activities.ExceptionVariable;
-
 import org.storydriven.modeling.expressions.Expression;
 
 /**

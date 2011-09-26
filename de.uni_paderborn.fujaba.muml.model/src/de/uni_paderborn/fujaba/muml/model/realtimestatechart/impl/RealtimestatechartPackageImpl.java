@@ -39,7 +39,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryExitPointKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;

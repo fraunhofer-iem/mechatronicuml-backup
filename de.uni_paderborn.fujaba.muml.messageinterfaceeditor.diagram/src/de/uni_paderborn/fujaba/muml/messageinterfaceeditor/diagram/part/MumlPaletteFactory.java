@@ -62,10 +62,10 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageType2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageType2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3002));
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3004));
 		entry.setId("createMessageType2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3002));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

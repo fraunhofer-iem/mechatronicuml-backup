@@ -11,7 +11,6 @@ import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 
 /**
  * <!-- begin-user-doc -->

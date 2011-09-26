@@ -31,7 +31,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_MessageType_3002(
+	public void init_MessageType_3004(
 			de.uni_paderborn.fujaba.muml.model.msgiface.MessageType instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory

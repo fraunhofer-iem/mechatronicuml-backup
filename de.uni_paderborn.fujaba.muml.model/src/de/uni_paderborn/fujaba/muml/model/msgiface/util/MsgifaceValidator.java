@@ -7,16 +7,17 @@
 package de.uni_paderborn.fujaba.muml.model.msgiface.util;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 
 /**
  * <!-- begin-user-doc -->

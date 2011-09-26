@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+
 import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
@@ -51,11 +52,11 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType MessageInterface_2003 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2003"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageType_3002 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3002"); //$NON-NLS-1$
+	public static final IElementType MessageType_3004 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3004"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -181,7 +182,7 @@ public class MumlElementTypes {
 							.getMessageInterface());
 
 			elements.put(
-					MessageType_3002,
+					MessageType_3004,
 					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
 							.getMessageType());
 
@@ -208,7 +209,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
 			KNOWN_ELEMENT_TYPES.add(MessageInterface_2003);
-			KNOWN_ELEMENT_TYPES.add(MessageType_3002);
+			KNOWN_ELEMENT_TYPES.add(MessageType_3004);
 			KNOWN_ELEMENT_TYPES.add(MessageInterfaceSuperType_4003);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -224,7 +225,7 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return MessageInterface_2003;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return MessageType_3002;
+			return MessageType_3004;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
 			return MessageInterfaceSuperType_4003;
 		}

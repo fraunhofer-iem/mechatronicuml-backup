@@ -105,8 +105,8 @@ public class MsgifaceSwitch<T> {
 			case MsgifacePackage.MESSAGE_TYPE: {
 				MessageType messageType = (MessageType)theEObject;
 				T result = caseMessageType(messageType);
-				if (result == null) result = caseCallable(messageType);
 				if (result == null) result = caseNamedElement(messageType);
+				if (result == null) result = caseCallable(messageType);
 				if (result == null) result = caseCommentableElement(messageType);
 				if (result == null) result = caseExtendableElement(messageType);
 				if (result == null) result = defaultCase(theEObject);
