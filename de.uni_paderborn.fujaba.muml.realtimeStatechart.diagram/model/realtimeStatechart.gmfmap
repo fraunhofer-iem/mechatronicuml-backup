@@ -413,6 +413,10 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/target"/>
+    <creationConstraints>
+      <sourceEnd
+          body="not (self.oclIsKindOf(EntryPoint) and (not oppositeEnd.oclIsKindOf(State) and not oppositeEnd.oclIsKindOf(StateEntryPoint))) and&#xA;not (self.oclIsKindOf(ExitPoint) and (not oppositeEnd.oclIsKindOf(State) and not oppositeEnd.oclIsKindOf(StateExitPoint)))"/>
+    </creationConstraints>
   </links>
   <diagram>
     <diagramCanvas

@@ -454,6 +454,16 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 		}
 		super.eSet(featureID, newValue);
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isEmbedded() {
+		return getEmbeddingRegion() != null;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

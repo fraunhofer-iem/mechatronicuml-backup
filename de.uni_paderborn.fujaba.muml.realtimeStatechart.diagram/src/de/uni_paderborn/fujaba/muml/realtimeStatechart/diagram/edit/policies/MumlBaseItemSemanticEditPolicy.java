@@ -1,7 +1,10 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies;
 
+import java.util.Collections;
 import java.util.Iterator;
 
+import java.util.Map;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -340,7 +343,33 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition linkInstance,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target) {
-			return true;
+			try {
+				if (source == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> env = Collections
+							.<String, EClassifier> singletonMap(
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
+					Object sourceVal = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
+							.getExpression(
+									15,
+									de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+											.getVertex(), env).evaluate(
+									source,
+									Collections.singletonMap(
+											"oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				return true;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return false;
+			}
 		}
 	}
 
