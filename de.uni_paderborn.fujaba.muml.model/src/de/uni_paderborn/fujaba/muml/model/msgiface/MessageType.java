@@ -33,7 +33,7 @@ import org.storydriven.modeling.calls.Callable;
  * @model
  * @generated
  */
-public interface MessageType extends NamedElement, Callable {
+public interface MessageType extends Callable, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Message Interface</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.

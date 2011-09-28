@@ -87,9 +87,21 @@ public class CustomPropertySource extends PropertySource {
 					// We only allow creating new objects, if the Reference is a
 					// containment reference.
 					boolean createAllowed = true;
+					boolean createForced = false;
 					if (feature instanceof EReference) {
 						EReference reference = (EReference) feature;
 						createAllowed = reference.isContainment();
+					}
+
+					if (feature
+							.equals(CallsPackage.Literals.CALLABLE__IN_PARAMETER)
+							|| feature
+									.equals(CallsPackage.Literals.CALLABLE__OUT_PARAMETER)) {
+						createForced = true;
+					}
+					
+					if (feature.equals(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS)) {
+						createAllowed = false;
 					}
 
 					if (CorePackage.Literals.NATURAL_NUMBER
@@ -97,9 +109,8 @@ public class CustomPropertySource extends PropertySource {
 						EDataType eDataType = EcorePackage.Literals.ESTRING;
 						return createEDataTypeCellEditor(eDataType, parent);
 
-					} else if (feature.isMany()
-							&& createAllowed
-							) {
+					} else if (feature.isMany() && createAllowed
+							|| createForced) {
 
 						// TODO: Use PropertyDescriptors to find out properties.
 

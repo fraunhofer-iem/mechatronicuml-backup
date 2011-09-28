@@ -266,8 +266,8 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		// Add supertypes to classes
 		messageInterfaceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		messageTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		messageTypeEClass.getESuperTypes().add(theCallsPackage.getCallable());
+		messageTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -18,9 +18,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.modeling.NamedElement;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.calls.impl.CallableImpl;
 import org.storydriven.modeling.calls.Callable;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
@@ -36,87 +38,33 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getInParameters <em>In Parameter</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getOutParameters <em>Out Parameter</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getContainedParameters <em>Contained Parameters</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getTest <em>Test</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getMessageInterface <em>Message Interface</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MessageTypeImpl extends NamedElementImpl implements MessageType {
+public class MessageTypeImpl extends CallableImpl implements MessageType {
 	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMMENT_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EParameter> inParameters;
-
-	/**
-	 * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EParameter> outParameters;
-
-	/**
-	 * The cached value of the '{@link #getContainedParameters() <em>Contained Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainedParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EParameter> containedParameters;
-
-	/**
-	 * The default value of the '{@link #getTest() <em>Test</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTest()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TEST_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTest() <em>Test</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTest()
-	 * @generated
-	 * @ordered
-	 */
-	protected String test = TEST_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,8 +90,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComment() {
-		return comment;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -151,68 +99,11 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__COMMENT, oldComment, comment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EParameter> getInParameters() {
-		if (inParameters == null) {
-			inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this, MsgifacePackage.MESSAGE_TYPE__IN_PARAMETER);
-		}
-		return inParameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EParameter> getOutParameters() {
-		if (outParameters == null) {
-			outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this, MsgifacePackage.MESSAGE_TYPE__OUT_PARAMETER);
-		}
-		return outParameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EParameter> getContainedParameters() {
-		if (containedParameters == null) {
-			containedParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this, MsgifacePackage.MESSAGE_TYPE__CONTAINED_PARAMETERS);
-		}
-		return containedParameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTest() {
-		return test;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTest(String newTest) {
-		String oldTest = test;
-		test = newTest;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__TEST, oldTest, test));
+			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__NAME, oldName, name));
 	}
 
 	/**
@@ -280,8 +171,6 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__CONTAINED_PARAMETERS:
-				return ((InternalEList<?>)getContainedParameters()).basicRemove(otherEnd, msgs);
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				return basicSetMessageInterface(null, msgs);
 		}
@@ -310,16 +199,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
-				return getComment();
-			case MsgifacePackage.MESSAGE_TYPE__IN_PARAMETER:
-				return getInParameters();
-			case MsgifacePackage.MESSAGE_TYPE__OUT_PARAMETER:
-				return getOutParameters();
-			case MsgifacePackage.MESSAGE_TYPE__CONTAINED_PARAMETERS:
-				return getContainedParameters();
-			case MsgifacePackage.MESSAGE_TYPE__TEST:
-				return getTest();
+			case MsgifacePackage.MESSAGE_TYPE__NAME:
+				return getName();
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				return getMessageInterface();
 		}
@@ -335,23 +216,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
-				setComment((String)newValue);
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__IN_PARAMETER:
-				getInParameters().clear();
-				getInParameters().addAll((Collection<? extends EParameter>)newValue);
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__OUT_PARAMETER:
-				getOutParameters().clear();
-				getOutParameters().addAll((Collection<? extends EParameter>)newValue);
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__CONTAINED_PARAMETERS:
-				getContainedParameters().clear();
-				getContainedParameters().addAll((Collection<? extends EParameter>)newValue);
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__TEST:
-				setTest((String)newValue);
+			case MsgifacePackage.MESSAGE_TYPE__NAME:
+				setName((String)newValue);
 				return;
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				setMessageInterface((MessageInterface)newValue);
@@ -368,20 +234,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__IN_PARAMETER:
-				getInParameters().clear();
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__OUT_PARAMETER:
-				getOutParameters().clear();
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__CONTAINED_PARAMETERS:
-				getContainedParameters().clear();
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__TEST:
-				setTest(TEST_EDEFAULT);
+			case MsgifacePackage.MESSAGE_TYPE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				setMessageInterface((MessageInterface)null);
@@ -398,16 +252,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case MsgifacePackage.MESSAGE_TYPE__IN_PARAMETER:
-				return inParameters != null && !inParameters.isEmpty();
-			case MsgifacePackage.MESSAGE_TYPE__OUT_PARAMETER:
-				return outParameters != null && !outParameters.isEmpty();
-			case MsgifacePackage.MESSAGE_TYPE__CONTAINED_PARAMETERS:
-				return containedParameters != null && !containedParameters.isEmpty();
-			case MsgifacePackage.MESSAGE_TYPE__TEST:
-				return TEST_EDEFAULT == null ? test != null : !TEST_EDEFAULT.equals(test);
+			case MsgifacePackage.MESSAGE_TYPE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				return getMessageInterface() != null;
 		}
@@ -421,18 +267,9 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
+		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
-				case MsgifacePackage.MESSAGE_TYPE__COMMENT: return SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == Callable.class) {
-			switch (derivedFeatureID) {
-				case MsgifacePackage.MESSAGE_TYPE__IN_PARAMETER: return CallsPackage.CALLABLE__IN_PARAMETER;
-				case MsgifacePackage.MESSAGE_TYPE__OUT_PARAMETER: return CallsPackage.CALLABLE__OUT_PARAMETER;
-				case MsgifacePackage.MESSAGE_TYPE__CONTAINED_PARAMETERS: return CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
-				case MsgifacePackage.MESSAGE_TYPE__TEST: return CallsPackage.CALLABLE__TEST;
+				case MsgifacePackage.MESSAGE_TYPE__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
 				default: return -1;
 			}
 		}
@@ -446,18 +283,9 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
+		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
-				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return MsgifacePackage.MESSAGE_TYPE__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == Callable.class) {
-			switch (baseFeatureID) {
-				case CallsPackage.CALLABLE__IN_PARAMETER: return MsgifacePackage.MESSAGE_TYPE__IN_PARAMETER;
-				case CallsPackage.CALLABLE__OUT_PARAMETER: return MsgifacePackage.MESSAGE_TYPE__OUT_PARAMETER;
-				case CallsPackage.CALLABLE__CONTAINED_PARAMETERS: return MsgifacePackage.MESSAGE_TYPE__CONTAINED_PARAMETERS;
-				case CallsPackage.CALLABLE__TEST: return MsgifacePackage.MESSAGE_TYPE__TEST;
+				case SDMPackage.NAMED_ELEMENT__NAME: return MsgifacePackage.MESSAGE_TYPE__NAME;
 				default: return -1;
 			}
 		}
@@ -474,10 +302,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(", test: ");
-		result.append(test);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
