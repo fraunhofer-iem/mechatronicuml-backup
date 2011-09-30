@@ -540,7 +540,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated NOT
 	 */
 	public void setTriggerMessageEvent(AsynchronousMessageEvent newTriggerMessageEvent) {
-		// TRIGGER_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newTriggerMessageEvent);
+		// TODO: Create ItemProvider in edit code for this!
 		if (newTriggerMessageEvent != null) {
 			Assert.isLegal(
 					newTriggerMessageEvent.getKind() == EventKind.TRIGGER,
@@ -578,13 +578,15 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		return (AsynchronousMessageEvent)RAISE_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
+	
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void setRaiseMessageEvent(AsynchronousMessageEvent newRaiseMessageEvent) {
-		// RAISE_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRaiseMessageEvent);
+		// TODO: Create ItemProvider in edit code for this!
 		if (newRaiseMessageEvent != null) {
 			Assert.isLegal(newRaiseMessageEvent.getKind() == EventKind.RAISE,
 					"This AsynchronousMessageEvent does not have an EventType of RAISE.");
