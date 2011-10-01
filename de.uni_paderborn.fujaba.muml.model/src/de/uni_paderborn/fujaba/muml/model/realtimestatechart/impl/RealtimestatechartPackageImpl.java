@@ -1781,7 +1781,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "SetTargetAndSource", "self.target->notEmpty() and self.source->notEmpty()",
 			 "NoCrossingOfRegionBorders", "self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or\r\nself.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=\r\nself.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or \t\t\t\t\r\nself.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=\r\nself.target.oclAsType(StateExitPoint).statechart.embeddingRegion",
 			 "EntryPointMustOnlyPointToStatesOrStateEntryPoints", "not (self.source.oclIsKindOf(EntryPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateEntryPoint)))",
-			 "ExitPointMustOnlyPointToStatesOrStateExitPoints", "not (self.source.oclIsKindOf(ExitPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateExitPoint)))"
+			 "ExitPointMustOnlyPointToStatesOrStateExitPoints", "not (self.source.oclIsKindOf(ExitPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateExitPoint)))",
+			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "self.triggerMessageEvent.message.ownedParameterBindings->isEmpty()"
 		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 

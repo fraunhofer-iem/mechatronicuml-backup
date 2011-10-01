@@ -1278,6 +1278,7 @@
           <details key="NoCrossingOfRegionBorders" value="self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or&#xD;&#xA;self.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=&#xD;&#xA;self.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or &#x9;&#x9;&#x9;&#x9;&#xD;&#xA;self.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=&#xD;&#xA;self.target.oclAsType(StateExitPoint).statechart.embeddingRegion"/>
           <details key="EntryPointMustOnlyPointToStatesOrStateEntryPoints" value="not (self.source.oclIsKindOf(EntryPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateEntryPoint)))"/>
           <details key="ExitPointMustOnlyPointToStatesOrStateExitPoints" value="not (self.source.oclIsKindOf(ExitPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateExitPoint)))"/>
+          <details key="TriggerMessageEventsMustNotHaveAnOwnedParameterBinding" value="self.triggerMessageEvent.message.ownedParameterBindings->isEmpty()"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="synchronization" eType="#//model/realtimestatechart/Synchronization"
             containment="true">
