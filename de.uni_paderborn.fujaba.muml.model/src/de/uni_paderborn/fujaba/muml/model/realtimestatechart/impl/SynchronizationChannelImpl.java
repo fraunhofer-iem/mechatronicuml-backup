@@ -6,22 +6,24 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.ECollections;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EParameter;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.calls.impl.CallableImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.SDMPackage;
+
+import org.storydriven.modeling.calls.impl.CallableImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,19 +63,10 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected SynchronizationChannelImpl() {
 		super();
-		
-		// Ingo Budde:
-		// TODO: Removed these DerivedAttributeAdapters, as the model changed.
-		
-//		DerivedAttributeAdapter synchronizationChannelExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, false);
-//		synchronizationChannelExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__NAME);
-//
-//		DerivedAttributeAdapter synchronizationChannelExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, false);
-//		synchronizationChannelExprAdapter2.addLocalDependency(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
 	}
 
 	/**
@@ -306,18 +299,6 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 		result.append(name);
 		result.append(')');
 		return result.toString();
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<EParameter> getInParameters() {
-		return (EList<EParameter>)ECollections.EMPTY_ELIST;
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<EParameter> getOutParameters() {
-		return (EList<EParameter>)ECollections.EMPTY_ELIST;
 	}
 
 } //SynchronizationChannelImpl
