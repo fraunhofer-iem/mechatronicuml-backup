@@ -281,20 +281,23 @@ public class TransitionItemProvider
 			 getString("_UI_TriggerMessageEventPropertyCategory"),
 			 null,
 			 messagePropertyDescriptor));
+
+
+		// Note: The following PropertyDescriptor was removed due to bug #146.
 		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Invocation_ownedParameterBindings_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Invocation_ownedParameterBindings_feature", "_UI_Invocation_type"),
-			CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
-			true,
-			false,
-			false,
-			null,
-			getString("_UI_TriggerMessageEventPropertyCategory"),
-			null,
-			messagePropertyDescriptor));
+//		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+//			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+//			getResourceLocator(),
+//			getString("_UI_Invocation_ownedParameterBindings_feature"),
+//			getString("_UI_PropertyDescriptor_description", "_UI_Invocation_ownedParameterBindings_feature", "_UI_Invocation_type"),
+//			CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+//			true,
+//			false,
+//			false,
+//			null,
+//			getString("_UI_TriggerMessageEventPropertyCategory"),
+//			null,
+//			messagePropertyDescriptor));
 	}
 
 	/**
