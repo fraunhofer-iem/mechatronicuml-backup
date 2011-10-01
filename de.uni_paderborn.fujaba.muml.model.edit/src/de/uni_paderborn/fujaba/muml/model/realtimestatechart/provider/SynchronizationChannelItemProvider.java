@@ -157,5 +157,14 @@ public class SynchronizationChannelItemProvider
 	public ResourceLocator getResourceLocator() {
 		return MumlEditPlugin.INSTANCE;
 	}
+	
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	protected void addOutParameterPropertyDescriptor(Object object) {
+		// do nothing here
+	}
+
 
 }
