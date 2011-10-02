@@ -9,7 +9,8 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
-public class ContinuousPortInstanceBehavior extends AbstractPortInstanceBehavior {
+public class ContinuousPortInstanceBehavior extends
+		AbstractPortInstanceBehavior {
 
 	public ContinuousPortInstanceBehavior(GraphicalEditPart editPart) {
 		super(editPart);
@@ -23,7 +24,7 @@ public class ContinuousPortInstanceBehavior extends AbstractPortInstanceBehavior
 	@Override
 	public CustomPortFigure.PortType getPortType() {
 		ContinuousPortDirectionKind kind = null;
-		
+
 		PortInstance portInstance = getPortInstance();
 		if (portInstance != null) {
 			Port port = portInstance.getPortType();
@@ -32,16 +33,19 @@ public class ContinuousPortInstanceBehavior extends AbstractPortInstanceBehavior
 			}
 		}
 
-		switch (kind) {
-		case IN:
-			return CustomPortFigure.PortType.IN_PORT;
+		if (kind != null) {
+			switch (kind) {
+			case IN:
+				return CustomPortFigure.PortType.IN_PORT;
 
-		case OUT:
-			return CustomPortFigure.PortType.OUT_PORT;
+			case OUT:
+				return CustomPortFigure.PortType.OUT_PORT;
 
-		default:
-			return CustomPortFigure.PortType.NONE;
+			default:
+			}
 		}
+
+		return CustomPortFigure.PortType.NONE;
 	}
 
 }
