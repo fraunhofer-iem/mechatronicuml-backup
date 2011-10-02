@@ -5,10 +5,10 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 
-public class HybridPortBehavior extends ContinuousPortBehavior {
+public class HybridPortInstanceBehavior extends ContinuousPortInstanceBehavior {
 
-	public HybridPortBehavior(GraphicalEditPart editPart) {
-		super(editPart);
+	public HybridPortInstanceBehavior(GraphicalEditPart graphicalEditPart) {
+		super(graphicalEditPart);
 	}
 	
 	@Override

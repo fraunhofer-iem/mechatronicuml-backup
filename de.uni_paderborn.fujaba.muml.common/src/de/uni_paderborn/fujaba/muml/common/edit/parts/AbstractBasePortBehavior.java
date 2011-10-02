@@ -6,6 +6,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -23,7 +24,7 @@ public abstract class AbstractBasePortBehavior {
 	/**
 	 * The port's EditPart.
 	 */
-	protected AbstractBorderItemEditPart editPart;
+	protected GraphicalEditPart editPart;
 
 	/**
 	 * The port's figure.
@@ -46,7 +47,7 @@ public abstract class AbstractBasePortBehavior {
 	 * @param editPart
 	 *            The port's EditPart.
 	 */
-	public AbstractBasePortBehavior(AbstractBorderItemEditPart editPart) {
+	public AbstractBasePortBehavior(GraphicalEditPart editPart) {
 		this.editPart = editPart;
 	}
 
@@ -57,7 +58,9 @@ public abstract class AbstractBasePortBehavior {
 	 * @param notification
 	 *            The notification sent by the model.
 	 */
-	public abstract void handleNotificationEvent(final Notification notification);
+	public void handleNotificationEvent(final Notification notification) {
+		// default implementation does nothing
+	}
 
 	public abstract CustomPortFigure.PortKind getPortKind();
 
@@ -92,9 +95,11 @@ public abstract class AbstractBasePortBehavior {
 	 *            The port's container figure.
 	 */
 	public void addPortContainerLayoutListener(IFigure portContainerFigure) {
-		portContainerLayoutListener = new PortContainerLayoutListener(editPart,
-				portFigure);
-		portContainerFigure.addLayoutListener(portContainerLayoutListener);
+		if (editPart instanceof AbstractBorderItemEditPart) {
+			portContainerLayoutListener = new PortContainerLayoutListener(
+					(AbstractBorderItemEditPart) editPart, portFigure);
+			portContainerFigure.addLayoutListener(portContainerLayoutListener);
+		}
 	}
 
 	/**
@@ -115,9 +120,12 @@ public abstract class AbstractBasePortBehavior {
 	 * objects.
 	 */
 	public void activate() {
-		IBorderItemLocator locator = editPart.getBorderItemLocator();
-		if (locator instanceof BorderItemLocator) {
-			((BorderItemLocator) locator).setBorderItemOffset(offset);
+		if (editPart instanceof AbstractBorderItemEditPart) {
+			IBorderItemLocator locator = ((AbstractBorderItemEditPart) editPart)
+					.getBorderItemLocator();
+			if (locator instanceof BorderItemLocator) {
+				((BorderItemLocator) locator).setBorderItemOffset(offset);
+			}
 		}
 		updatePortType();
 		updatePortCardinality();

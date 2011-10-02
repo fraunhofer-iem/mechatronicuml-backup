@@ -1,36 +1,30 @@
 package de.uni_paderborn.fujaba.muml.common.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
-public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
+public abstract class AbstractPortInstanceBehavior extends AbstractBasePortBehavior {
 
 	/**
 	 * The model object. It will be set, while the EditPart is active (between
 	 * calls to activate() and deactivate()).
 	 */
-	private Port port;
+	private PortInstance portInstance;
 
-	public AbstractPortBehavior(GraphicalEditPart editPart) {
+	public AbstractPortInstanceBehavior(GraphicalEditPart editPart) {
 		super(editPart);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void activate() {
 		EObject element = editPart.getNotationView().getElement();
-		if (element instanceof Port) {
-			port = (Port) editPart.getNotationView().getElement();
+		if (element instanceof PortInstance) {
+			portInstance = (PortInstance) editPart.getNotationView().getElement();
 		}
 
 		EditPart parentEditPart = editPart.getParent();
@@ -47,8 +41,8 @@ public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
 		super.activate();
 	}
 
-	public Port getPort() {
-		return port;
+	public PortInstance getPortInstance() {
+		return portInstance;
 	}
 
 	/**
@@ -57,7 +51,7 @@ public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
 	 */
 	@Override
 	public void deactivate() {
-		port = null;
+		portInstance = null;
 
 		EditPart parentEditPart = editPart.getParent();
 		IFigure figure = null;
@@ -75,29 +69,7 @@ public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
 
 	@Override
 	public boolean isMultiPort() {
-		boolean isMulti = false;
-		if (port != null && port.getCardinality() != null) {
-			NaturalNumber upperBound = port.getCardinality().getUpperBound();
-			if (upperBound != null
-					&& (upperBound.isInfinity() || upperBound.getValue() > 1)) {
-				isMulti = true;
-			}
-		}
-		return isMulti;
-	}
-
-	@Override
-	public void handleNotificationEvent(Notification notification) {
-		Object feature = notification.getFeature();
-		if (feature instanceof EStructuralFeature) {
-			EStructuralFeature structuralFeature = (EStructuralFeature) feature;
-			if (structuralFeature.getContainerClass().isAssignableFrom(Port.class)) {
-				int featureID = notification.getFeatureID(Port.class);
-				if (featureID == ComponentPackage.PORT__CARDINALITY) {
-					updatePortCardinality();
-				}
-			}
-		}
+		return false;
 	}
 
 }

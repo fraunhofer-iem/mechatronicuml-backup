@@ -10,11 +10,11 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.common.edit.parts.PortInstanceBehavior;
+import de.uni_paderborn.fujaba.muml.common.edit.parts.HybridPortInstanceBehavior;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortInstanceItemSemanticEditPolicy;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart;;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart;
 
 /**
  * A customized PortEditPart. It is responsible for ports around
@@ -23,12 +23,12 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
  * @author bingo
  * 
  */
-public class CustomPortInstanceEditPart extends DiscreteSinglePortInstanceEditPart {
+public class CustomHybridPortInstance2EditPart extends HybridPortInstance2EditPart {
 
 	/**
 	 * All behavior is delegated, to reduce duplicate code.
 	 */
-	private PortInstanceBehavior delegation;
+	private HybridPortInstanceBehavior delegation;
 
 	/**
 	 * Constructs this EditPart.
@@ -36,7 +36,7 @@ public class CustomPortInstanceEditPart extends DiscreteSinglePortInstanceEditPa
 	 * @param view
 	 *            The graphical model.
 	 */
-	public CustomPortInstanceEditPart(View view) {
+	public CustomHybridPortInstance2EditPart(View view) {
 		super(view);
 
 	}
@@ -68,9 +68,9 @@ public class CustomPortInstanceEditPart extends DiscreteSinglePortInstanceEditPa
 	 * 
 	 * @return The PortBehavior object.
 	 */
-	private PortInstanceBehavior getDelegation() {
+	private HybridPortInstanceBehavior getDelegation() {
 		if (delegation == null) {
-			delegation = new PortInstanceBehavior(this);
+			delegation = new HybridPortInstanceBehavior(this);
 		}
 		return delegation;
 	}

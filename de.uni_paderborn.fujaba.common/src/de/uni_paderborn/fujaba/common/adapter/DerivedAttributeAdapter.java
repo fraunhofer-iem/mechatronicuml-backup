@@ -178,7 +178,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 				eventType = Notification.SET;
 			}
 			containerObject.eNotify(new ENotificationImpl(containerObject,
-					eventType, derivedFeature, null, containerObject.eGet(
+					eventType, derivedFeature, notification.getOldValue(), containerObject.eGet(
 							derivedFeature, true, true)));
 		}
 	}

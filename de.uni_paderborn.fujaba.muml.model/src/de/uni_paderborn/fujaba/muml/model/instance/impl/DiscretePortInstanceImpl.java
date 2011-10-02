@@ -9,6 +9,8 @@ package de.uni_paderborn.fujaba.muml.model.instance.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
@@ -50,10 +52,16 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected DiscretePortInstanceImpl() {
 		super();
+
+		DerivedAttributeAdapter receiverMessageInterfaceAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE);
+		receiverMessageInterfaceAdapter.addNavigatedDependency(InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE, ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE);
+		
+		DerivedAttributeAdapter senderMessageInterfaceAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE);
+		senderMessageInterfaceAdapter.addNavigatedDependency(InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE, ComponentPackage.Literals.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE);
 	}
 
 	/**
