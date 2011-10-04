@@ -215,4 +215,12 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 */
 	boolean isFlat();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" statechartRequired="true"
+	 * @generated
+	 */
+	boolean isSuperStatechartOf(FujabaRealtimeStatechart statechart);
+
 } // FujabaRealtimeStatechart

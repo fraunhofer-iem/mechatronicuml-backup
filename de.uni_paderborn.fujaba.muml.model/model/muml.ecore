@@ -1114,7 +1114,7 @@
             <details key="documentation" value="The derived states of the realtime statechart."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="-- we only derive states, if the selected statechart is different to our parentState's statechart&#xA;-- this ensures that no endless recursion happens, when creating child-editparts for the states.&#xA;-- \todoib{This is not enough. We must make sure that all parents differ from ourself.}&#xA;&#xA;if self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.statechart.vertices&#xD;&#xA;endif"/>
+            <details key="derivation" value="-- we only derive the statechart, if it is no super statechart of our parentState's statechart&#xA;-- this ensures that no endless recursion happens, when creating child-editparts for the states.&#xA;&#xA;if self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.statechart.vertices&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
@@ -1124,7 +1124,7 @@
             <details key="documentation" value="The derived states of the realtime statechart."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="-- we only derive transitions, if the selected statechart is different to our parentState's statechart&#xA;-- (consistently to Region.vertices; see comments in derivation there for details)&#xA;-- \todoib{This is not enough. We must make sure that all parents differ from ourself.}&#xA;&#xA;if self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.statechart.transitions&#xD;&#xA;endif"/>
+            <details key="derivation" value="-- we only derive the statechart, if it is no super statechart of our parentState's statechart&#xA;-- this ensures that no endless recursion happens, when creating child-editparts for the states.&#xA;&#xA;if self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.statechart.transitions&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statechartDerived"
@@ -1134,7 +1134,7 @@
             <details key="documentation" value=""/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="-- we only derive the statechart, if it is different to our parentState's statechart&#xA;-- this ensures that no endless recursion happens, when creating child-editparts for the states.&#xA;-- \todoib{This is not enough. We must make sure that all parents differ from ourself.}&#xA;&#xA;if self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;self.statechart&#xD;&#xA;endif"/>
+            <details key="derivation" value="-- we only derive the statechart, if it is no super statechart of our parentState's statechart&#xA;-- this ensures that no endless recursion happens, when creating child-editparts for the states.&#xA;&#xA;if self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;self.statechart&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1514,6 +1514,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="UniqueNameOfStates MinOneState"/>
         </eAnnotations>
+        <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="statechart" lowerBound="1" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"/>
+        </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddingRegion" eType="#//model/realtimestatechart/Region"
             eOpposite="#//model/realtimestatechart/Region/statechart"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"

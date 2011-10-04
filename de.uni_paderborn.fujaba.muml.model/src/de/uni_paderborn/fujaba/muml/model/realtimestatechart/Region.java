@@ -107,7 +107,7 @@ public interface Region extends Prioritizable, NamedElement {
 	 * @return the value of the '<em>Vertices</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Vertices()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive states, if the selected statechart is different to our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.vertices\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.vertices\r\nendif'"
 	 * @generated
 	 */
 	EList<Vertex> getVertices();
@@ -123,7 +123,7 @@ public interface Region extends Prioritizable, NamedElement {
 	 * @return the value of the '<em>Transitions</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Transitions()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive transitions, if the selected statechart is different to our parentState\'s statechart\n-- (consistently to Region.vertices; see comments in derivation there for details)\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.transitions\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.transitions\r\nendif'"
 	 * @generated
 	 */
 	EList<Transition> getTransitions();
@@ -139,7 +139,7 @@ public interface Region extends Prioritizable, NamedElement {
 	 * @see #setStatechartDerived(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_StatechartDerived()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is different to our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tnull\r\nelse\r\n\tself.statechart\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tnull\r\nelse\r\n\tself.statechart\r\nendif'"
 	 * @generated
 	 */
 	FujabaRealtimeStatechart getStatechartDerived();

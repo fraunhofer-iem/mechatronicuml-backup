@@ -75,6 +75,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.util.Realtimestatec
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -1614,6 +1615,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getFujabaRealtimeStatechart_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFujabaRealtimeStatechart_Flat(), theEcorePackage.getEBoolean(), "flat", "false", 0, 1, FujabaRealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
+		EOperation op = addEOperation(fujabaRealtimeStatechartEClass, ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFujabaRealtimeStatechart(), "statechart", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(entryOrExitPointEClass, EntryOrExitPoint.class, "EntryOrExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1734,19 +1738,19 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getRegion_Vertices(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- we only derive states, if the selected statechart is different to our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.vertices\r\nendif"
+			 "derivation", "-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.vertices\r\nendif"
 		   });			
 		addAnnotation
 		  (getRegion_Transitions(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- we only derive transitions, if the selected statechart is different to our parentState\'s statechart\n-- (consistently to Region.vertices; see comments in derivation there for details)\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.transitions\r\nendif"
+			 "derivation", "-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.transitions\r\nendif"
 		   });			
 		addAnnotation
 		  (getRegion_StatechartDerived(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- we only derive the statechart, if it is different to our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n-- \\todoib{This is not enough. We must make sure that all parents differ from ourself.}\n\nif self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then\r\n\tnull\r\nelse\r\n\tself.statechart\r\nendif"
+			 "derivation", "-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tnull\r\nelse\r\n\tself.statechart\r\nendif"
 		   });				
 		addAnnotation
 		  (stateEClass, 

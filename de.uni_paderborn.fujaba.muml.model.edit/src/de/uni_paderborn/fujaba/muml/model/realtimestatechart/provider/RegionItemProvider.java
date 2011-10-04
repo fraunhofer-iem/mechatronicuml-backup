@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,9 +30,11 @@ import org.storydriven.modeling.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region} object.
@@ -114,7 +117,38 @@ public class RegionItemProvider
 				 true,
 				 null,
 				 null,
-				 null);
+				 null) {
+
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Collection<?> choices = super.getChoiceOfValues(object);
+				
+				Region region = (Region) object;
+
+				if (region != null && region.getParentState() != null
+						&& region.getParentState().getStatechart() != null) {
+
+					State parentState = region.getParentState();
+
+					FujabaRealtimeStatechart parentStatechart = parentState
+							.getStatechart();
+
+					List<Object> invalidChoices = new ArrayList<Object>();
+					for (Object choice : choices) {
+						if (choice == null) {
+							continue;
+						}
+						FujabaRealtimeStatechart rtsc = (FujabaRealtimeStatechart) choice;
+						if (rtsc.isSuperStatechartOf(parentStatechart)) {
+							invalidChoices.add(choice);
+						}
+					}
+					choices.removeAll(invalidChoices);
+				}
+				return choices;
+			}
+
+		};
 		
 		itemPropertyDescriptors.add(statechartPropertyDescriptor);
 		

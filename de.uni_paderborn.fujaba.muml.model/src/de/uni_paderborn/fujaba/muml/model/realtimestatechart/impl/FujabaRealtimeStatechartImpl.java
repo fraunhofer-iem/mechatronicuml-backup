@@ -6,8 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,11 +21,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import de.uni_paderborn.fujaba.common.algorithm.BreadthFirstSearchAlgorithm;
+import de.uni_paderborn.fujaba.common.algorithm.ISearchVisitor;
 import de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 
@@ -343,6 +348,47 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 */
 	public boolean isFlat() {
 		return (Boolean)FLAT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isSuperStatechartOf(final FujabaRealtimeStatechart statechart) {
+		if (statechart == null) {
+			return false;
+		}
+
+		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
+		return bfs.search(this, new ISearchVisitor() {
+
+			@Override
+			public boolean visit(Object object) {
+				return !statechart.equals(object);
+			}
+
+			@Override
+			public List<?> getAdjacentNodes(Object object) {
+				FujabaRealtimeStatechart rtsc = (FujabaRealtimeStatechart) object;
+				
+				List<Object> parentStatecharts = new ArrayList<Object>();
+				
+				Region region = rtsc.getEmbeddingRegion();
+				if (region != null) {
+//				List<Region> regions = rtsc.getEmbeddingRegions();
+//				for (Region region : regions) {
+				State state = region.getParentState();
+				if (state != null) {
+					parentStatecharts.add(state.getStatechart());
+				}
+//				}
+				}
+				
+				return parentStatecharts;
+			}
+			
+		});
 	}
 
 	/**
