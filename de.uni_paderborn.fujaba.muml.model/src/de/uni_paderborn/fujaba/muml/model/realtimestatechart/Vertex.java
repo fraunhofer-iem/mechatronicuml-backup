@@ -94,4 +94,12 @@ public interface Vertex extends NamedElement {
 	 */
 	void setStatechart(FujabaRealtimeStatechart value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isSuperVertexOf(Vertex vertex);
+
 } // Vertex

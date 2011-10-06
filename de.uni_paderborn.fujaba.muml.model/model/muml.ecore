@@ -1247,6 +1247,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a node in a realtime statechart that is connected with other nodes via transitions."/>
         </eAnnotations>
+        <eOperations name="isSuperVertexOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="vertex" eType="#//model/realtimestatechart/Vertex"/>
+        </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions"
             upperBound="-1" eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/source">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

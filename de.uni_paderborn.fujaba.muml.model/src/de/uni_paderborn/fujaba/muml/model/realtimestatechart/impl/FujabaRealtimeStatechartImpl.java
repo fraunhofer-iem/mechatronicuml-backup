@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -355,39 +356,37 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean isSuperStatechartOf(final FujabaRealtimeStatechart statechart) {
-		if (statechart == null) {
-			return false;
-		}
+	public boolean isSuperStatechartOf(FujabaRealtimeStatechart statechart) {
+		Assert.isLegal(statechart != null);
 
 		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
-		return bfs.search(this, new ISearchVisitor() {
+		return bfs.search(statechart, new ISearchVisitor() {
 
 			@Override
 			public boolean visit(Object object) {
-				return !statechart.equals(object);
+				return !FujabaRealtimeStatechartImpl.this.equals(object);
 			}
 
 			@Override
 			public List<?> getAdjacentNodes(Object object) {
 				FujabaRealtimeStatechart rtsc = (FujabaRealtimeStatechart) object;
-				
+
 				List<Object> parentStatecharts = new ArrayList<Object>();
-				
+
 				Region region = rtsc.getEmbeddingRegion();
 				if (region != null) {
-//				List<Region> regions = rtsc.getEmbeddingRegions();
-//				for (Region region : regions) {
-				State state = region.getParentState();
-				if (state != null) {
-					parentStatecharts.add(state.getStatechart());
+					// List<Region> regions = rtsc.getEmbeddingRegions();
+					// for (Region region : regions) {
+					State state = region.getParentState();
+					if (state != null && state.getStatechart() != null) {
+						parentStatecharts.add(state.getStatechart());
+					}
+					// }
 				}
-//				}
-				}
-				
+
 				return parentStatecharts;
 			}
-			
+
 		});
 	}
 

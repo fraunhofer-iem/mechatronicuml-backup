@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * A BFS-Search algorithm.
+ * A BFS-Search algorithm for graphs.
  * 
  * @author bingo
  *

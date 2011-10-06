@@ -6,8 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -19,8 +22,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.common.algorithm.BreadthFirstSearchAlgorithm;
+import de.uni_paderborn.fujaba.common.algorithm.ISearchVisitor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 
@@ -142,6 +149,48 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.VERTEX__STATECHART, newStatechart, newStatechart));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isSuperVertexOf(Vertex vertex) {
+		Assert.isLegal(vertex != null);
+
+		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
+		return bfs.search(vertex, new ISearchVisitor() {
+
+			@Override
+			public boolean visit(Object object) {
+				return !VertexImpl.this.equals(object);
+			}
+
+			@Override
+			public List<?> getAdjacentNodes(Object object) {
+
+				List<Object> parentStates = new ArrayList<Object>();
+
+				State state = (State) object;
+				FujabaRealtimeStatechart rtsc = state.getStatechart();
+				if (rtsc != null) {
+					Region region = rtsc.getEmbeddingRegion();
+					if (region != null) {
+						// List<Region> regions = rtsc.getEmbeddingRegions();
+						// for (Region region : regions) {
+						State parentState = region.getParentState();
+						if (state != null) {
+							parentStates.add(parentState);
+						}
+						// }
+					}
+				}
+
+				return parentStates;
+			}
+
+		});
 	}
 
 	/**

@@ -6,12 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -23,12 +25,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.modeling.expressions.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 /**
@@ -106,10 +109,10 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 	 * This adds a property descriptor for the Clock feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addClockPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
@@ -118,7 +121,35 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 						"_UI_ClockConstraint_clock_feature",
 						"_UI_ClockConstraint_type"),
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
-				true, false, true, null, null, null));
+				true, false, true, null, null, null) {
+
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) { 
+				Collection<?> choices = super.getChoiceOfValues(object);
+				List<Object> invalidChoices = new ArrayList<Object>();
+				FujabaRealtimeStatechart rtsc = getContainerStatechart((EObject) object);
+				if (rtsc != null) {
+					for (Object choice : choices) {
+						if (choice != null) {
+							Clock clock = (Clock) choice;
+							if (!clock.getStatechart().isSuperStatechartOf(rtsc)) {
+								invalidChoices.add(choice);
+							}
+						}
+					}
+				}
+				choices.removeAll(invalidChoices);
+				return choices;
+			}
+
+			private FujabaRealtimeStatechart getContainerStatechart(
+					EObject object) {
+				while (object != null && !(object instanceof FujabaRealtimeStatechart)) {
+					object = object.eContainer();
+				}
+				return (FujabaRealtimeStatechart) object;
+			}
+		});
 	}
 
 	/**
@@ -199,10 +230,11 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 		StringBuffer sb = new StringBuffer();
 		sb.append(getString("_UI_ClockConstraint_type"));
 		sb.append(' ');
-		
+
 		ClockConstraint constraint = (ClockConstraint) object;
-		
-		if (constraint.getClock() != null && constraint.getClock().getName() != null) {
+
+		if (constraint.getClock() != null
+				&& constraint.getClock().getName() != null) {
 			sb.append(constraint.getClock().getName());
 		} else {
 			sb.append("null");
@@ -221,7 +253,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 			case EQUAL:
 				sb.append('=');
 				break;
-			
+
 			// These should not be set normally
 			case GREATER_OR_EQUAL:
 				sb.append('≥');
@@ -237,9 +269,9 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 				break;
 			}
 		}
-		
+
 		sb.append(' ');
-		
+
 		if (constraint.getBound() != null) {
 			sb.append(constraint.getBound().toString());
 		} else {

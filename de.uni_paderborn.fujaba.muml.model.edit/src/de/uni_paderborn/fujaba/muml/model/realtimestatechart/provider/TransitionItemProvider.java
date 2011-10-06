@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -37,6 +38,7 @@ import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyD
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.MessageInstanceOfPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.TransitionMessageEventPropertyDescriptor;
@@ -127,7 +129,28 @@ public class TransitionItemProvider
 						null,
 						getString("_UI_SynchronizationPropertyCategory"),
 						null,
-						rootPropertyDescriptor));
+						rootPropertyDescriptor) {
+
+					@Override
+					public Collection<?> getChoiceOfValues(Object object) {
+						Collection<?> choices = super.getChoiceOfValues(object);
+						List<Object> invalidChoices = new ArrayList<Object>();
+						Transition transition = (Transition) object;
+						for (Object choice : choices) {
+							if (choice instanceof SynchronizationChannel) {
+								SynchronizationChannel channel = (SynchronizationChannel) choice;
+								if (channel.getState().isSuperVertexOf(transition.getSource())) {
+									continue;
+								}
+							}
+							invalidChoices.add(choice);
+						}
+						choices.removeAll(invalidChoices);
+						
+						return choices;
+					}
+			
+		});
 		
 		itemPropertyDescriptors
 				.add(new DefaultChainedPropertyDescriptor(
@@ -388,7 +411,7 @@ public class TransitionItemProvider
 				 null));
 	}
 
-/**
+	/**
 	 * This adds a property descriptor for the Absolute Deadlines feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
