@@ -4,12 +4,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.commands.DelegationInstanceReorientCommand;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * A customized DelegationInstanceReorientCommand. We make sure, an Delegation
  * instance may be reoriented this way.
  * 
- * @author bingo
+ * @author bingo, braund
  * 
  */
 public class CustomDelegationInstanceReorientCommand extends
@@ -35,19 +36,31 @@ public class CustomDelegationInstanceReorientCommand extends
 	 */
 	@Override
 	public boolean canExecute() {
+		
+		// Find out the new source and target
+		PortInstance source = getLink().getSource();
+		PortInstance target = getLink().getTarget();
+		switch (reorientDirection) {
+		case ReorientRelationshipRequest.REORIENT_SOURCE:
+			source = getNewSource();
+			break;
+		case ReorientRelationshipRequest.REORIENT_TARGET:
+			target = getNewTarget();
+			break;
+		}
+		
 		// We add checks that are only performed, when both source and target
 		// are set.
-		if (getNewSource() != null && getNewTarget() != null) {
-			// Make sure, both the source's ComponentInstance contains the
-			// target's ComponentInstance.
-			ComponentInstance sourceComponentInstance = getNewSource()
+		if (source != null && target != null) {
+
+			ComponentInstance sourceComponentInstance = source
 					.getComponentInstance();
 
-			ComponentInstance targetComponentInstance = getNewTarget()
+			ComponentInstance targetComponentInstance = target
 					.getComponentInstance();
 
-			if (!sourceComponentInstance.getEmbeddedCIC().getComponentInstances().contains(
-					targetComponentInstance)) {
+			if (sourceComponentInstance.eContainer().equals(
+					targetComponentInstance.eContainer())) {
 				return false;
 			}
 		}

@@ -19,14 +19,14 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
- * A customized PortInstanceItemSemanticEditPolicy. We create our customized Delegation
- * and Assembly-CreateCommands here.
+ * A customized PortInstanceItemSemanticEditPolicy. We create our customized
+ * Delegation and Assembly-CreateCommands here.
  * 
  * @author bingo
  * 
  */
 public class CustomPortInstanceItemSemanticEditPolicy extends
-DiscreteSinglePortInstanceItemSemanticEditPolicy {
+		DiscreteSinglePortInstanceItemSemanticEditPolicy {
 
 	// TODO: Can we forbid deleting the view element.
 	/**
@@ -74,7 +74,8 @@ DiscreteSinglePortInstanceItemSemanticEditPolicy {
 		PortInstance sourcePortInstance = (PortInstance) req.getSource();
 		PortInstance targetPortInstance = (PortInstance) req.getTarget();
 
-		return new CustomDelegationInstanceCreateCommand(req, sourcePortInstance, targetPortInstance);
+		return new CustomDelegationInstanceCreateCommand(req,
+				sourcePortInstance, targetPortInstance);
 	}
 
 	/**
@@ -89,7 +90,8 @@ DiscreteSinglePortInstanceItemSemanticEditPolicy {
 		PortInstance sourcePortInstance = (PortInstance) req.getSource();
 		PortInstance targetPortInstance = (PortInstance) req.getTarget();
 
-		return new CustomAssemblyInstanceCreateCommand(req, sourcePortInstance, targetPortInstance);
+		return new CustomAssemblyInstanceCreateCommand(req, sourcePortInstance,
+				targetPortInstance);
 	}
 
 	private CustomDelegationInstanceReorientCommand getDelegationInstanceReorientCommand(
@@ -99,7 +101,7 @@ DiscreteSinglePortInstanceItemSemanticEditPolicy {
 
 	private CustomAssemblyInstanceReorientCommand getAssemblyInstanceReorientCommand(
 			ReorientRelationshipRequest req) {
-		
+
 		return new CustomAssemblyInstanceReorientCommand(req);
 	}
 
@@ -111,9 +113,19 @@ DiscreteSinglePortInstanceItemSemanticEditPolicy {
 	 * @return the model element of the parent EditPart.
 	 */
 	private EObject getParentElement(EditPart editPart) {
-		DiagramEditPart parentEditPart = (DiagramEditPart) editPart
-				.getParent();
-		return parentEditPart.getNotationView().getElement();
+		
+		if(editPart.getParent() instanceof DiagramEditPart){
+			DiagramEditPart parentEditPart = (DiagramEditPart) editPart.getParent();
+			return parentEditPart.getNotationView().getElement();
+		}
+		
+		if (editPart.getParent() instanceof ShapeNodeEditPart) {
+			ShapeNodeEditPart parentEditPart = (ShapeNodeEditPart) editPart
+					.getParent();
+			return parentEditPart.getNotationView().getElement();
+		}
+		
+		return null;
 	}
 
 }

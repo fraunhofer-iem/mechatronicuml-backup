@@ -4,13 +4,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.commands.DelegationInstanceCreateCommand;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * A customized DelegationInstanceCreateCommand. We make sure, an Delegation
  * instance may be created between both ports.
  * 
- * @author bingo
+ * @author bingo, braund
  * 
  */
 public class CustomDelegationInstanceCreateCommand extends
@@ -39,19 +40,39 @@ public class CustomDelegationInstanceCreateCommand extends
 		// We add checks that are only performed, when both source and target
 		// are set.
 		if (getSource() != null && getTarget() != null) {
-			// Make sure, both the source's ComponentInstance contains the
-			// target's ComponentInstance.
+
 			ComponentInstance sourceComponentInstance = getSource()
 					.getComponentInstance();
 
 			ComponentInstance targetComponentInstance = getTarget()
 					.getComponentInstance();
 
-			if (!sourceComponentInstance.getEmbeddedCIC().getComponentInstances().contains(
-					targetComponentInstance)) {
+			if (sourceComponentInstance.eContainer().equals(
+					targetComponentInstance.eContainer())) {
 				return false;
 			}
 		}
 		return super.canExecute();
+	}
+	
+	@Override
+	public de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration getContainer(){
+		
+		ComponentInstance sourceComponentInstance = getSource()
+			.getComponentInstance();
+
+		if(getTarget()==null){
+			return (ComponentInstanceConfiguration) sourceComponentInstance.eContainer();
+		}
+		
+		ComponentInstance targetComponentInstance = getTarget()
+			.getComponentInstance();
+		
+		if(((sourceComponentInstance.getEmbeddedCIC()!=null && sourceComponentInstance.getEmbeddedCIC().getComponentInstances().contains(
+					targetComponentInstance)))){
+			return sourceComponentInstance.getEmbeddedCIC();
+		}else{
+			return targetComponentInstance.getEmbeddedCIC();
+		}
 	}
 }

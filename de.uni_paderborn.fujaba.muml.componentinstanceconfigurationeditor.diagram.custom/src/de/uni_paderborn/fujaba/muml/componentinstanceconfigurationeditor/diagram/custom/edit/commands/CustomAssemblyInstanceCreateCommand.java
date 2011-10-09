@@ -4,13 +4,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.commands.AssemblyInstanceCreateCommand;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * A customized AssemblyInstanceCreateCommand. We make sure, an assembly
  * instance may be created between both ports.
  * 
- * @author bingo
+ * @author bingo, braund
  * 
  */
 public class CustomAssemblyInstanceCreateCommand extends
@@ -40,18 +41,28 @@ public class CustomAssemblyInstanceCreateCommand extends
 		// We add checks that are only performed, when both source and target
 		// are set.
 		if (getSource() != null && getTarget() != null) {
-			// Make sure, the source's and the target's ComponentInstance are not the same.
+
 			ComponentInstance sourceComponentInstance = getSource()
 					.getComponentInstance();
 
 			ComponentInstance targetComponentInstance = getTarget()
 					.getComponentInstance();
 
-			if (sourceComponentInstance == targetComponentInstance) {
+			if (!sourceComponentInstance.eContainer().equals(
+					targetComponentInstance.eContainer())) {
 				return false;
 			}
 		}
 		return super.canExecute();
 
+	}
+
+	@Override
+	public de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration getContainer(){
+		
+		ComponentInstance sourceComponentInstance = getSource()
+			.getComponentInstance();
+
+			return (ComponentInstanceConfiguration) sourceComponentInstance.eContainer();
 	}
 }
