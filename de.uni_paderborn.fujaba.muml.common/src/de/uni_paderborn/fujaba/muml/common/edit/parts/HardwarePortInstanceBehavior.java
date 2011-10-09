@@ -18,7 +18,7 @@ public class HardwarePortInstanceBehavior extends AbstractPortInstanceBehavior {
 
 	@Override
 	public CustomPortFigure.PortType getPortType() {
-		return CustomPortFigure.PortType.NONE;
+		return CustomPortFigure.PortType.INOUT_PORT;
 	}
 
 }
