@@ -4,6 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
@@ -110,7 +111,7 @@ DiscreteSinglePortInstanceItemSemanticEditPolicy {
 	 * @return the model element of the parent EditPart.
 	 */
 	private EObject getParentElement(EditPart editPart) {
-		ShapeNodeEditPart parentEditPart = (ShapeNodeEditPart) editPart
+		DiagramEditPart parentEditPart = (DiagramEditPart) editPart
 				.getParent();
 		return parentEditPart.getNotationView().getElement();
 	}
