@@ -10,6 +10,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -275,11 +276,32 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@SuppressWarnings("unchecked")
 	public EList<Port> getPortsDerived() {
-		return (EList<Port>)PORTS_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+
+		/* 
+		 * BEGIN: Bugfix to prevent NullPointerAccess:
+		 * 
+		 * Caused by: java.lang.NullPointerException
+		 * at org.eclipse.emf.ecore.impl.EStructuralFeatureImpl$InternalSettingDelegateMany.dynamicGet(EStructuralFeatureImpl.java:1710)
+		 * at de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl.getPortsDerived(ComponentPartImpl.java:286)
+		 * 
+		 * TODO: Why was this exception thrown?
+		*/
+		if (componentType != null) {
+			return componentType.getPorts();
+		} else {
+			return ECollections.emptyEList();
+		}
+		
+		// Original Code:
+		// return (EList<Port>)PORTS_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		
+		
+		/*
+		 * END: Bugfix
+		 */
 	}
 
 	/**
