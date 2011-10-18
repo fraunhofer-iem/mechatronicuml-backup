@@ -116,7 +116,7 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -138,7 +138,7 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -160,7 +160,7 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -182,7 +182,7 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_WCETAnalysisPropertyCategory"),
 				 null));
 	}
 
@@ -204,7 +204,7 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_WCETAnalysisPropertyCategory"),
 				 null));
 	}
 
@@ -226,7 +226,7 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_WCETAnalysisPropertyCategory"),
 				 null));
 	}
 

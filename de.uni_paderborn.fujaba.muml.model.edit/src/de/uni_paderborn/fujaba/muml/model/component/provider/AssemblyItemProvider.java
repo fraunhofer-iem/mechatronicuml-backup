@@ -81,7 +81,7 @@ public class AssemblyItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConnectedComponentsPropertyCategory"),
 				 null));
 	}
 
@@ -103,7 +103,7 @@ public class AssemblyItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConnectedComponentsPropertyCategory"),
 				 null));
 	}
 

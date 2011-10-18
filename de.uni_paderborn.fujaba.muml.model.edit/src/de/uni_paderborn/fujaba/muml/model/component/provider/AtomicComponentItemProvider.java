@@ -81,7 +81,7 @@ public class AtomicComponentItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BehaviorPropertyCategory"),
 				 null));
 	}
 

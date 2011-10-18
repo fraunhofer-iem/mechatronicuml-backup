@@ -86,7 +86,7 @@ public class ConnectorTypeItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BehaviorPropertyCategory"),
 				 null));
 	}
 
@@ -108,7 +108,7 @@ public class ConnectorTypeItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConnectedPortsPropertyCategory"),
 				 null));
 	}
 
@@ -130,7 +130,7 @@ public class ConnectorTypeItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConnectedPortsPropertyCategory"),
 				 null));
 	}
 
@@ -152,7 +152,7 @@ public class ConnectorTypeItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_ParentPropertyCategory"),
 				 null));
 	}
 

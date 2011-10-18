@@ -118,7 +118,7 @@ public class ComponentItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConstraintPropertyCategory"),
 				 null));
 	}
 
@@ -140,7 +140,7 @@ public class ComponentItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -162,7 +162,7 @@ public class ComponentItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -184,7 +184,7 @@ public class ComponentItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 

@@ -62,7 +62,6 @@ public class StructuredComponentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEmbeddedPartsPropertyDescriptor(object);
-			addConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,29 +84,7 @@ public class StructuredComponentItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Connectors feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StructuredComponent_connectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredComponent_connectors_feature", "_UI_StructuredComponent_type"),
-				 ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 

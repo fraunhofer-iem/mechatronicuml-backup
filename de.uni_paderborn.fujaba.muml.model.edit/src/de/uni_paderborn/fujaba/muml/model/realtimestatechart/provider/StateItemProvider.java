@@ -112,7 +112,7 @@ public class StateItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -134,7 +134,7 @@ public class StateItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -178,7 +178,7 @@ public class StateItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_MiscPropertyCategory"),
 				 null));
 	}
 

@@ -97,7 +97,7 @@ public class CoordinationPatternItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConstraintPropertyCategory"),
 				 null));
 	}
 

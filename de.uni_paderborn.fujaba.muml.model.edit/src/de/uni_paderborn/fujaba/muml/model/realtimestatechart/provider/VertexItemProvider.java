@@ -85,7 +85,7 @@ public class VertexItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_TransitionsPropertyCategory"),
 				 null));
 	}
 
@@ -107,7 +107,7 @@ public class VertexItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_TransitionsPropertyCategory"),
 				 null));
 	}
 

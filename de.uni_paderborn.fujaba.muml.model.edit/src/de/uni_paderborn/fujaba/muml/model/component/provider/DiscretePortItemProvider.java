@@ -90,7 +90,7 @@ public class DiscretePortItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BehaviorPropertyCategory"),
 				 null));
 	}
 
@@ -112,7 +112,7 @@ public class DiscretePortItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -134,7 +134,7 @@ public class DiscretePortItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_MessageInterfacePropertyCategory"),
 				 null));
 	}
 
@@ -156,7 +156,7 @@ public class DiscretePortItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_MessageInterfacePropertyCategory"),
 				 null));
 	}
 
@@ -178,7 +178,7 @@ public class DiscretePortItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BehaviorPropertyCategory"),
 				 null));
 	}
 
@@ -200,7 +200,7 @@ public class DiscretePortItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BehaviorPropertyCategory"),
 				 null));
 	}
 

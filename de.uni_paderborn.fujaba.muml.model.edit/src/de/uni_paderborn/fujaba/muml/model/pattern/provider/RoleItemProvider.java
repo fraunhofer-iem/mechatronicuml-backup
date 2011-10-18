@@ -99,7 +99,7 @@ public class RoleItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConstraintPropertyCategory"),
 				 null));
 	}
 
@@ -121,7 +121,7 @@ public class RoleItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BehaviorPropertyCategory"),
 				 null));
 	}
 

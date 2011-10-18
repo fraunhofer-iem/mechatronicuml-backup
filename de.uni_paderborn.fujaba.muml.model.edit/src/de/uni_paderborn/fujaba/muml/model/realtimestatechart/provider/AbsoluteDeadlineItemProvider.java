@@ -23,10 +23,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 /**
- * This is the item provider adapter for a
- * {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline} object.
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
 public class AbsoluteDeadlineItemProvider extends DeadlineItemProvider
@@ -65,28 +63,30 @@ public class AbsoluteDeadlineItemProvider extends DeadlineItemProvider
 	 * @generated
 	 */
 	protected void addClockPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_AbsoluteDeadline_clock_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_AbsoluteDeadline_clock_feature",
-						"_UI_AbsoluteDeadline_type"),
-				RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE__CLOCK,
-				true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbsoluteDeadline_clock_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbsoluteDeadline_clock_feature", "_UI_AbsoluteDeadline_type"),
+				 RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE__CLOCK,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns AbsoluteDeadline.gif. <!-- begin-user-doc --> <!--
+	 * This returns AbsoluteDeadline.gif.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/AbsoluteDeadline"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AbsoluteDeadline"));
 	}
 
 	/**
@@ -131,11 +131,10 @@ public class AbsoluteDeadlineItemProvider extends DeadlineItemProvider
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -170,13 +169,14 @@ public class AbsoluteDeadlineItemProvider extends DeadlineItemProvider
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND
-				|| childFeature == RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND;
+		boolean qualify =
+			childFeature == RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND ||
+			childFeature == RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

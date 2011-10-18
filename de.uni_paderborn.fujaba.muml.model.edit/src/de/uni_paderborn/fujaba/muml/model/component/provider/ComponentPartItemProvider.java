@@ -70,9 +70,6 @@ public class ComponentPartItemProvider
 
 			addComponentTypePropertyDescriptor(object);
 			addParentComponentPropertyDescriptor(object);
-			addFromRevPropertyDescriptor(object);
-			addToRevPropertyDescriptor(object);
-			addDelegationPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -96,7 +93,7 @@ public class ComponentPartItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -118,73 +115,7 @@ public class ComponentPartItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the From Rev feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFromRevPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPart_fromRev_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_fromRev_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__FROM_REV,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the To Rev feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addToRevPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPart_toRev_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_toRev_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__TO_REV,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Delegation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDelegationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPart_delegation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_delegation_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__DELEGATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 

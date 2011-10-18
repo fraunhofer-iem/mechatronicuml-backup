@@ -251,7 +251,7 @@ public class TransitionItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ClockPropertyCategory"),
 				 null));
 	}
 
@@ -407,7 +407,7 @@ public class TransitionItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_ClockPropertyCategory"),
 				 null));
 	}
 
@@ -429,7 +429,7 @@ public class TransitionItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_AbsoluteDeadlinePropertyCategory"),
 				 null));
 	}
 

@@ -88,7 +88,7 @@ public class BehaviorItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -110,7 +110,7 @@ public class BehaviorItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -132,7 +132,7 @@ public class BehaviorItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 

@@ -80,7 +80,7 @@ public class DelegationItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConnectedComponentPropertyCategory"),
 				 null));
 	}
 

@@ -83,7 +83,7 @@ public class BehavioralElementItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BehaviorPropertyCategory"),
 				 null));
 	}
 

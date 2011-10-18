@@ -72,8 +72,6 @@ public class PortItemProvider
 			addCommentPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
-			addIncomingConnectorsPropertyDescriptor(object);
-			addOutgoingConnectorsPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -119,7 +117,7 @@ public class PortItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ConstraintPropertyCategory"),
 				 null));
 	}
 
@@ -185,51 +183,7 @@ public class PortItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Incoming Connectors feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIncomingConnectorsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_incomingConnectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_incomingConnectors_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__INCOMING_CONNECTORS,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Outgoing Connectors feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOutgoingConnectorsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_outgoingConnectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_outgoingConnectors_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__OUTGOING_CONNECTORS,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 

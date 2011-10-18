@@ -68,7 +68,6 @@ public class FujabaRealtimeStatechartItemProvider
 
 			addEmbeddingRegionPropertyDescriptor(object);
 			addClocksPropertyDescriptor(object);
-			addAvailableClocksPropertyDescriptor(object);
 			addHistoryPropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
 			addFlatPropertyDescriptor(object);
@@ -90,7 +89,7 @@ public class FujabaRealtimeStatechartItemProvider
 				 getString("_UI_FujabaRealtimeStatechart_embeddingRegion_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_embeddingRegion_feature", "_UI_FujabaRealtimeStatechart_type"),
 				 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -116,29 +115,7 @@ public class FujabaRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Available Clocks feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAvailableClocksPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FujabaRealtimeStatechart_availableClocks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_availableClocks_feature", "_UI_FujabaRealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -160,7 +137,7 @@ public class FujabaRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -200,7 +177,7 @@ public class FujabaRealtimeStatechartItemProvider
 				 getString("_UI_FujabaRealtimeStatechart_flat_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_flat_feature", "_UI_FujabaRealtimeStatechart_type"),
 				 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__FLAT,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
