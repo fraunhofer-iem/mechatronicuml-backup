@@ -28,7 +28,7 @@
    </extension>
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/pattern">
+      <metamodel nsURI="http://de.upb.fujaba.muml/model/pattern">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.RoleAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_2005"
