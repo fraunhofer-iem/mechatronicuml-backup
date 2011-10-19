@@ -35,7 +35,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 */
 	public static CoreFactory init() {
 		try {
-			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http:///de/uni_paderborn/fujaba/muml/model/core"); 
+			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.upb.fujaba.muml/model/core"); 
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}

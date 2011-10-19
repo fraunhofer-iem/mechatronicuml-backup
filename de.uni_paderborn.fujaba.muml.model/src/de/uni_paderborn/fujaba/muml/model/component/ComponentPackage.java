@@ -50,7 +50,7 @@ public interface ComponentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///de/uni_paderborn/fujaba/muml/model/component";
+	String eNS_URI = "http://de.upb.fujaba.muml/model/component";
 
 	/**
 	 * The package namespace name.

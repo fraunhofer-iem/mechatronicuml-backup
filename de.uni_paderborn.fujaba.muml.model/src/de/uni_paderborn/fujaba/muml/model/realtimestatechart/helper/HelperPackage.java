@@ -39,7 +39,7 @@ public interface HelperPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper";
+	String eNS_URI = "http://de.upb.fujaba.muml/model/realtimestatechart/helper";
 
 	/**
 	 * The package namespace name.
