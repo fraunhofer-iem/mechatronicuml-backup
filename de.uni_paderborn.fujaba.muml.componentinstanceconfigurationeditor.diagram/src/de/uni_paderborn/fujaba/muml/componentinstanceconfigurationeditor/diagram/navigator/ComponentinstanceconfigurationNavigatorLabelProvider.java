@@ -79,40 +79,40 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://de.upb.fujaba.muml/model/instance?HardwarePortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HardwarePortInstance_3013); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/instance?HardwarePortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HardwarePortInstance_3013); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://de.upb.fujaba.muml/model/instance?DelegationInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DelegationInstance_4004); //$NON-NLS-1$
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/instance?DelegationInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DelegationInstance_4004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://de.upb.fujaba.muml/model/instance?ComponentInstanceConfiguration", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/muml/model/instance?ComponentInstanceConfiguration", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://de.upb.fujaba.muml/model/instance?DiscreteSinglePortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2005); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/instance?DiscreteSinglePortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2005); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://de.upb.fujaba.muml/model/instance?ContinuousPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ContinuousPortInstance_2007); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/instance?ContinuousPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ContinuousPortInstance_2007); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://de.upb.fujaba.muml/model/instance?HybridPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HybridPortInstance_2008); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/instance?HybridPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HybridPortInstance_2008); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://de.upb.fujaba.muml/model/instance?ComponentInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstance_2004); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/instance?ComponentInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstance_2004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://de.upb.fujaba.muml/model/instance?DiscreteSinglePortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3010); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/instance?DiscreteSinglePortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3010); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstance2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://de.upb.fujaba.muml/model/instance?HardwarePortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HardwarePortInstance_2006); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/instance?HardwarePortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HardwarePortInstance_2006); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://de.upb.fujaba.muml/model/instance?AssemblyInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.AssemblyInstance_4003); //$NON-NLS-1$
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/instance?AssemblyInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.AssemblyInstance_4003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://de.upb.fujaba.muml/model/instance?ContinuousPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ContinuousPortInstance_3011); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/instance?ContinuousPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ContinuousPortInstance_3011); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://de.upb.fujaba.muml/model/instance?HybridPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HybridPortInstance_3012); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/instance?HybridPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HybridPortInstance_3012); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
