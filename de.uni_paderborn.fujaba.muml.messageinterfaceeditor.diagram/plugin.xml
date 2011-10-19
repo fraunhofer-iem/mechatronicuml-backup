@@ -224,7 +224,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
+      <metamodel nsURI="http://de.upb.fujaba.muml/model/msgiface">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2003"
                name="%metatype.name.MessageInterface_2003"
@@ -234,7 +234,7 @@
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
+      <metamodel nsURI="http://de.upb.fujaba.muml/model/msgiface">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3004"
                name="%metatype.name.MessageType_3004"
@@ -244,7 +244,7 @@
             <param name="semanticHint" value="3004"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
+      <metamodel nsURI="http://de.upb.fujaba.muml/model/msgiface">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4003"
                name="%metatype.name.MessageInterfaceSuperType_4003"
