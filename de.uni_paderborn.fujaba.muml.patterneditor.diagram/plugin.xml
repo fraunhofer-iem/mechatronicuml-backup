@@ -222,7 +222,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://de.upb.fujaba.muml/model/pattern">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/pattern">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_2003"
                name="%metatype.name.CoordinationPattern_2003"
