@@ -80,13 +80,13 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://de.upb.fujaba.muml/model/msgiface?MessageInterface", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2003); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageInterface", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://de.upb.fujaba.muml/model/msgiface?MessageType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3004); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://de.upb.fujaba.muml/model/msgiface?MessageInterface?superType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4003); //$NON-NLS-1$
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageInterface?superType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://de.fujaba.modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
