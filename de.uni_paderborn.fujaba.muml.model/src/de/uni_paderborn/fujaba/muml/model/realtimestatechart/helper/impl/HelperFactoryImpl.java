@@ -34,7 +34,7 @@ public class HelperFactoryImpl extends EFactoryImpl implements HelperFactory {
 	 */
 	public static HelperFactory init() {
 		try {
-			HelperFactory theHelperFactory = (HelperFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.upb.fujaba.muml/model/realtimestatechart/helper"); 
+			HelperFactory theHelperFactory = (HelperFactory)EPackage.Registry.INSTANCE.getEFactory("http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper"); 
 			if (theHelperFactory != null) {
 				return theHelperFactory;
 			}

@@ -33,7 +33,7 @@ public class MsgifaceFactoryImpl extends EFactoryImpl implements MsgifaceFactory
 	 */
 	public static MsgifaceFactory init() {
 		try {
-			MsgifaceFactory theMsgifaceFactory = (MsgifaceFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.upb.fujaba.muml/model/msgiface"); 
+			MsgifaceFactory theMsgifaceFactory = (MsgifaceFactory)EPackage.Registry.INSTANCE.getEFactory("http:///de/uni_paderborn/fujaba/muml/model/msgiface"); 
 			if (theMsgifaceFactory != null) {
 				return theMsgifaceFactory;
 			}

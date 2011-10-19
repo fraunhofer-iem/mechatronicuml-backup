@@ -34,7 +34,7 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	 */
 	public static PatternFactory init() {
 		try {
-			PatternFactory thePatternFactory = (PatternFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.upb.fujaba.muml/model/pattern"); 
+			PatternFactory thePatternFactory = (PatternFactory)EPackage.Registry.INSTANCE.getEFactory("http:///de/uni_paderborn/fujaba/muml/model/pattern"); 
 			if (thePatternFactory != null) {
 				return thePatternFactory;
 			}
