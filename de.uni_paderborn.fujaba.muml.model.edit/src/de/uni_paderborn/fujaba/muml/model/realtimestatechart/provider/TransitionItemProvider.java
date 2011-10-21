@@ -702,8 +702,21 @@ public class TransitionItemProvider
 	@Override
 	public String getText(Object object) {
 		Transition transition = (Transition)object;
-		return getString("_UI_Transition_type") + " " + transition.getSource().getName() +" to " +
-			transition.getTarget().getName();
+		StringBuffer sb = new StringBuffer();
+		sb.append(getString("_UI_Transition_type"));
+		sb.append(' ');
+		if (transition.getSource() != null && transition.getSource().getName() != null) {
+			sb.append(transition.getSource().getName());
+		} else {
+			sb.append("null");
+		}
+		sb.append(" to ");
+		if (transition.getTarget() != null && transition.getTarget().getName() != null) {
+			sb.append(transition.getTarget().getName());
+		} else {
+			sb.append("null");
+		}
+		return sb.toString();
 	}
 
 	/**
