@@ -32,7 +32,10 @@ import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.MultiFeatureCreationDialog;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListCreationDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertiesListCreationDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.TextualCreationDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.DefaultMultiLabelProvider;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.IMultiLabelProvider;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.DefaultMultiTextParser;
@@ -220,18 +223,31 @@ public class CustomPropertySource extends PropertySource {
 		@Override
 		protected Object openDialogBox(Control cellEditorWindow) {
 			// Dialog creation
-			MultiFeatureCreationDialog dialog = new MultiFeatureCreationDialog(
+			ExtensibleCreationDialog dialog = new ExtensibleCreationDialog(
 					PlatformUI.getWorkbench().getDisplay().getActiveShell(),
 					labelProvider, (EObject) object, structuralFeature,
-					currentValues, adapterFactory, properties, textParser,
-					textProvider, instanceClass);
+					adapterFactory);
+			
+			PropertiesListCreationDialogExtension propertiesDialogExtension = new PropertiesListCreationDialogExtension(dialog, properties, instanceClass);
+			ObjectsListCreationDialogExtension objectsListCreationDialogExtension = new ObjectsListCreationDialogExtension(dialog, adapterFactory, currentValues);
+			TextualCreationDialogExtension textualCreationDialogExtension = new TextualCreationDialogExtension(dialog, textParser, textProvider);
+
+			propertiesDialogExtension.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
+			propertiesDialogExtension.setTextualCreationDialogExtension(textualCreationDialogExtension);
+			objectsListCreationDialogExtension.setPropertiesListCreationDialogExtension(propertiesDialogExtension);
+			objectsListCreationDialogExtension.setTextualCreationDialogExtension(textualCreationDialogExtension);
+			textualCreationDialogExtension.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
+
+			dialog.addExtension(propertiesDialogExtension);
+			dialog.addExtension(objectsListCreationDialogExtension);
+			dialog.addExtension(textualCreationDialogExtension);
 
 			// Open the dialog and retrieve the user
 			// selection
 			int result = dialog.open();
 			labelProvider.dispose();
 			if (result == Window.OK) {
-				return dialog.getResult();
+				return objectsListCreationDialogExtension.getResult();
 			}
 
 			return null;

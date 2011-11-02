@@ -32,7 +32,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 
 /**
- * A Property to show in the MultiFeatureCreationDialog.
+ * A Property to show in the ExtensibleCreationDialog.
  * 
  * @author bingo
  * 
@@ -219,7 +219,7 @@ public class Property {
 
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
 				editingDomain,
-				"MultiFeatureCreationDialog -> setPropertyValue()",
+				"ExtensibleCreationDialog -> setPropertyValue()",
 				Collections.EMPTY_LIST) {
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
