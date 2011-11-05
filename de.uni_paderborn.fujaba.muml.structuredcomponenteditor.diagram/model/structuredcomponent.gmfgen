@@ -1186,7 +1186,7 @@
       <expressions
           body="'port'"/>
       <expressions
-          body="if self.componentType.oclIsUndefined() then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.componentType.name&#xA;endif"/>
+          body="if self.componentType.oclIsUndefined() then&#xA;    'null'&#xA;else&#xA;&#x9;self.componentType.name.concat(' ['.concat(&#xA;&#x9;(&#xA;&#x9;if self.cardinality.lowerBound.value = self.cardinality.upperBound.value then&#xA;&#x9;&#x9;self.cardinality.lowerBound.toString()&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.toString().concat('..'.concat(self.cardinality.upperBound.toString()))&#xA;&#x9;endif&#xA;&#x9;)&#xA;&#x9;).concat(']'))&#xA;endif"/>
     </providers>
   </expressionProviders>
   <labelParsers

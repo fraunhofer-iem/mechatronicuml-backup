@@ -23,12 +23,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser structuredComponentName_5010Parser;
+	protected IParser structuredComponentName_5010Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStructuredComponentName_5010Parser() {
+	protected IParser getStructuredComponentName_5010Parser() {
 		if (structuredComponentName_5010Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -42,12 +42,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser hybridPortName_5001Parser;
+	protected IParser hybridPortName_5001Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getHybridPortName_5001Parser() {
+	protected IParser getHybridPortName_5001Parser() {
 		if (hybridPortName_5001Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -61,12 +61,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser discretePortName_5002Parser;
+	protected IParser discretePortName_5002Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getDiscretePortName_5002Parser() {
+	protected IParser getDiscretePortName_5002Parser() {
 		if (discretePortName_5002Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -80,12 +80,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser continuousPortName_5003Parser;
+	protected IParser continuousPortName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getContinuousPortName_5003Parser() {
+	protected IParser getContinuousPortName_5003Parser() {
 		if (continuousPortName_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -99,12 +99,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser hardwarePortName_5004Parser;
+	protected IParser hardwarePortName_5004Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getHardwarePortName_5004Parser() {
+	protected IParser getHardwarePortName_5004Parser() {
 		if (hardwarePortName_5004Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -118,12 +118,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5009 componentPartLabel_5009Parser;
+	protected de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5009 componentPartLabel_5009Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getComponentPartLabel_5009Parser() {
+	protected IParser getComponentPartLabel_5009Parser() {
 		if (componentPartLabel_5009Parser == null) {
 			componentPartLabel_5009Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5009();
 		}
@@ -133,12 +133,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser hybridPortName_5005Parser;
+	protected IParser hybridPortName_5005Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getHybridPortName_5005Parser() {
+	protected IParser getHybridPortName_5005Parser() {
 		if (hybridPortName_5005Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -152,12 +152,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser discretePortName_5006Parser;
+	protected IParser discretePortName_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getDiscretePortName_5006Parser() {
+	protected IParser getDiscretePortName_5006Parser() {
 		if (discretePortName_5006Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -171,12 +171,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser continuousPortName_5007Parser;
+	protected IParser continuousPortName_5007Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getContinuousPortName_5007Parser() {
+	protected IParser getContinuousPortName_5007Parser() {
 		if (continuousPortName_5007Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -190,12 +190,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser hardwarePortName_5008Parser;
+	protected IParser hardwarePortName_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getHardwarePortName_5008Parser() {
+	protected IParser getHardwarePortName_5008Parser() {
 		if (hardwarePortName_5008Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
