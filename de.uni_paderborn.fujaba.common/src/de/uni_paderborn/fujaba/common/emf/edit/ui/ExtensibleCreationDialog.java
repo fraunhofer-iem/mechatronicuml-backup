@@ -191,9 +191,6 @@ public class ExtensibleCreationDialog extends Dialog {
 		return contentProvider;
 	}
 
-
-
-
 	public EStructuralFeature getStructuralFeature() {
 		return structuralFeature;
 	}

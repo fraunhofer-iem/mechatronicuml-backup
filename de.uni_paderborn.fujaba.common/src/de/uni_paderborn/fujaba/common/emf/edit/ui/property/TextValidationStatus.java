@@ -2,6 +2,8 @@ package de.uni_paderborn.fujaba.common.emf.edit.ui.property;
 
 import java.util.List;
 
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidationStatus;
+
 /**
  * A validation status for text validation.
  * 

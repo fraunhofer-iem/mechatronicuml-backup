@@ -12,6 +12,8 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidationStatus;
+
 /**
  * A PropertyEditor using a TextField to create Strings.
  * 

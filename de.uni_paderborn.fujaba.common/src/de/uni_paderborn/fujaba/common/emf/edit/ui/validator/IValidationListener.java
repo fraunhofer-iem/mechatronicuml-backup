@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.property;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.validator;
 
 /**
  * A Listener, which will be notified, if a validation occurred.

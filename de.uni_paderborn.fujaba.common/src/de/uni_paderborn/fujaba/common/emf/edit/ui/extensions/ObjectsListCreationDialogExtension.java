@@ -30,14 +30,15 @@ import org.eclipse.swt.widgets.Table;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
 public class ObjectsListCreationDialogExtension extends
-		AbstractCreationDialogExtension {
+		AbstractCreationDialogExtension implements
+		IObjectsListCreationDialogExtension {
 	private Button btnUp;
 	private Button btnDown;
 	private Button btnRemove;
 
-	private TextualCreationDialogExtension textualCreationDialogExtension;
+	private ITextualCreationDialogExtension textualCreationDialogExtension;
 
-	private PropertiesListCreationDialogExtension propertiesListCreationDialogExtension;
+	private IPropertiesListCreationDialogExtension propertiesListCreationDialogExtension;
 
 	/**
 	 * A SelectionChangedListener, which is notified about selection changes in
@@ -97,10 +98,8 @@ public class ObjectsListCreationDialogExtension extends
 
 	@Override
 	public void createMainArea(Composite parent) {
-		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true,
-				1, 1));
-		
-		
+		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
+
 		Label lblParameterList = new Label(parent, SWT.NONE);
 		GridData gdLblParameterList = new GridData(SWT.LEFT, SWT.TOP, false,
 				false, 1, 1);
@@ -112,7 +111,6 @@ public class ObjectsListCreationDialogExtension extends
 		Table tblParameterTable = objectsTableViewer.getTable();
 		tblParameterTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 				true, 1, 1));
-
 
 		// Create SelectionListener for objectsTableViewer to update text
 		// selection accordingly
@@ -158,24 +156,24 @@ public class ObjectsListCreationDialogExtension extends
 		objectsTableViewer
 				.addSelectionChangedListener(parameterSelectionToButtonEnablementListener);
 
-		
-
 		// Initialize objectsTableViewer
-		objectsTableViewer.setContentProvider(getCreationDialog().getContentProvider());
-		objectsTableViewer.setLabelProvider(getCreationDialog().getLabelProvider());
+		objectsTableViewer.setContentProvider(getCreationDialog()
+				.getContentProvider());
+		objectsTableViewer.setLabelProvider(getCreationDialog()
+				.getLabelProvider());
 		objectsTableViewer.setInput(values);
 	}
 
 	@Override
 	public void createButtonArea(Composite composite) {
-		
+
 		EStructuralFeature feature = getStructuralFeature();
 
-		GridData firstLayoutData = new GridData(SWT.FILL, SWT.CENTER, true, false,
-				1, 1);
-		
+		GridData firstLayoutData = new GridData(SWT.FILL, SWT.CENTER, true,
+				false, 1, 1);
+
 		firstLayoutData.verticalIndent = 20;
-		
+
 		btnRemove = new Button(composite, SWT.NONE);
 		btnRemove.setLayoutData(firstLayoutData);
 		btnRemove.setText("&Remove");
@@ -192,7 +190,6 @@ public class ObjectsListCreationDialogExtension extends
 				1, 1));
 		btnDown.setText("&Down");
 		btnDown.setVisible(feature.isOrdered());
-		
 
 		btnRemove.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -265,8 +262,6 @@ public class ObjectsListCreationDialogExtension extends
 			}
 		});
 
-	
-
 		// Create an empty selection.
 		objectsTableViewer
 				.setSelection(new StructuredSelection(new Object[] {}));
@@ -328,12 +323,14 @@ public class ObjectsListCreationDialogExtension extends
 	public TableViewer getTableViewer() {
 		return objectsTableViewer;
 	}
-	
-	public void setPropertiesListCreationDialogExtension(PropertiesListCreationDialogExtension propertiesListCreationDialogExtension) {
+
+	public void setPropertiesListCreationDialogExtension(
+			IPropertiesListCreationDialogExtension propertiesListCreationDialogExtension) {
 		this.propertiesListCreationDialogExtension = propertiesListCreationDialogExtension;
 	}
-	
-	public void setTextualCreationDialogExtension(TextualCreationDialogExtension textualCreationDialogExtension) {
+
+	public void setTextualCreationDialogExtension(
+			ITextualCreationDialogExtension textualCreationDialogExtension) {
 		this.textualCreationDialogExtension = textualCreationDialogExtension;
 	}
 

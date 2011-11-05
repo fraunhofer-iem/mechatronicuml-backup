@@ -105,18 +105,15 @@ public class DefaultChainedPropertyDescriptor extends
 	 * Convenience method to calculate the changes between two values and apply
 	 * them to a feature. For many-features this means that the difference
 	 * between the values in the list is calculated.
-	 * 
-	 * @param object
-	 * @param newValue
-	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	protected void applyChangesToFeature(EStructuralFeature featureToSet, Object object, Object oldValue, Object newValue) {
+	protected void applyChangesToFeature(EStructuralFeature featureToSet,
+			Object object, Object oldValue, Object newValue) {
 		Object oldSetFeatureValue = doGetValue((EObject) object, featureToSet);
 		if (featureToSet.isMany() && oldSetFeatureValue instanceof Collection) {
-			
+
 			// TODO: Maybe we should use Setting Delegates for this...
-			
+
 			BasicEList<Object> added = new BasicEList<Object>();
 			added.addAll((Collection<?>) newValue);
 			added.removeAll((Collection<?>) oldValue);
@@ -124,34 +121,38 @@ public class DefaultChainedPropertyDescriptor extends
 			BasicEList<Object> removed = new BasicEList<Object>();
 			removed.addAll((Collection<?>) oldValue);
 			removed.removeAll((Collection<?>) newValue);
-			
+
 			((Collection<Object>) newValue).clear();
-			((Collection<Object>) newValue).addAll((Collection<Object>) oldSetFeatureValue);
+			((Collection<Object>) newValue)
+					.addAll((Collection<Object>) oldSetFeatureValue);
 			((Collection<Object>) newValue).addAll(added);
 			((Collection<Object>) newValue).removeAll(removed);
-			
+
 		}
 		doSetFeatureValue(featureToSet, object, newValue);
 	}
-	
-	
+
 	/**
 	 * Convenience method to set a new value for a feature of the given object.
-	 * @param featureToSet The feature to set.
-	 * @param object The object containing the feature.
-	 * @param newValue The value to set.
+	 * 
+	 * @param featureToSet
+	 *            The feature to set.
+	 * @param object
+	 *            The object containing the feature.
+	 * @param newValue
+	 *            The value to set.
 	 */
-	private void doSetFeatureValue(EStructuralFeature featureToSet, Object object, Object newValue) {
+	private void doSetFeatureValue(EStructuralFeature featureToSet,
+			Object object, Object newValue) {
 
-		// Copied from ItemPropertyDescriptor base class:
+		// Copied from ItemPropertyDescriptor.setPropertyValue()
 		EObject eObject = (EObject) object;
 		EditingDomain editingDomain = getEditingDomain(object);
 		if (editingDomain == null) {
 			eObject.eSet(featureToSet, newValue);
 		} else {
 			Command setCommand = SetCommand.create(editingDomain,
-					getCommandOwner(eObject), featureToSet,
-					newValue);
+					getCommandOwner(eObject), featureToSet, newValue);
 			editingDomain.getCommandStack().execute(setCommand);
 		}
 	}

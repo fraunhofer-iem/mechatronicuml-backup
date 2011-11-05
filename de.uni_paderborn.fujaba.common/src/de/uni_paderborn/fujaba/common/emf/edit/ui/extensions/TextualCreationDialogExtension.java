@@ -20,7 +20,6 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.List;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.IMultiLabelProvider;
@@ -28,16 +27,17 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.IMultiTextParser;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
 
 public class TextualCreationDialogExtension extends
-		AbstractCreationDialogExtension {
-	
-	private ObjectsListCreationDialogExtension objectsListCreationDialogExtension;
+		AbstractCreationDialogExtension implements
+		ITextualCreationDialogExtension {
+
+	private IObjectsListCreationDialogExtension objectsListCreationDialogExtension;
 
 	/**
 	 * The areas in the Parameter-Line Textfield that contain certain
 	 * Parameters.
 	 */
 	private Map<Object, Range> textRanges;
-	
+
 	/**
 	 * A SelectionChangedListener, which is notified about selection changes in
 	 * the Parameter List and updates the Parameter-Line Textfield selection
@@ -52,7 +52,6 @@ public class TextualCreationDialogExtension extends
 	 */
 	private ISelectionChangedListener parameterSelectionToButtonEnablementListener;
 
-	
 	/**
 	 * A ModifyListener, which is notified when the Parameter-Line Text was
 	 * edited by the user.
@@ -75,7 +74,7 @@ public class TextualCreationDialogExtension extends
 	 * create new objects.
 	 */
 	private IMultiTextParser textParser;
-	
+
 	/**
 	 * The text provider for the structural feature. It can and provide a text
 	 * for a set of existing objects.
@@ -90,10 +89,6 @@ public class TextualCreationDialogExtension extends
 		this.textProvider = textProvider;
 	}
 
-	public void setObjectsListCreationDialogExtension(ObjectsListCreationDialogExtension objectsListCreationDialogExtension) {
-		this.objectsListCreationDialogExtension = objectsListCreationDialogExtension;
-	}
-
 	@Override
 	public void initialize() {
 		// TODO Auto-generated method stub
@@ -102,8 +97,7 @@ public class TextualCreationDialogExtension extends
 
 	@Override
 	public void createMainArea(Composite parent) {
-		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false,
-				1, 1));
+		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
 		if (this.textProvider != null) {
 			Label lblParameters = new Label(parent, SWT.NONE);
 			GridData gdLblParameters = new GridData(SWT.LEFT, SWT.CENTER,
@@ -120,7 +114,7 @@ public class TextualCreationDialogExtension extends
 
 			new Label(parent, SWT.NONE);
 		}
-		
+
 		if (txtParameterLine != null) {
 			// Create CaretListener for txtParameterLine to update
 			// Parameter-List
@@ -143,16 +137,20 @@ public class TextualCreationDialogExtension extends
 
 					Map<Object, Range> newRanges = new HashMap<Object, Range>();
 					java.util.List<Range> newErrorRanges = new ArrayList<Range>();
-					java.util.List<Object> newObjects = textParser.createObjects(
-							text.toCharArray(), newRanges, newErrorRanges);
+					java.util.List<Object> newObjects = textParser
+							.createObjects(text.toCharArray(), newRanges,
+									newErrorRanges);
 
 					clearTextStyle(txtParameterLine);
 					markErrors(txtParameterLine, newErrorRanges);
 
 					textRanges = newRanges;
-					objectsListCreationDialogExtension.getCurrentListItems().clear();
-					objectsListCreationDialogExtension.getCurrentListItems().addAll(newObjects);
-					objectsListCreationDialogExtension.getTableViewer().refresh();
+					objectsListCreationDialogExtension.getCurrentListItems()
+							.clear();
+					objectsListCreationDialogExtension.getCurrentListItems()
+							.addAll(newObjects);
+					objectsListCreationDialogExtension.getTableViewer()
+							.refresh();
 
 					onParameterLineCaretMoved(txtParameterLine.getCaretOffset());
 				}
@@ -165,8 +163,10 @@ public class TextualCreationDialogExtension extends
 
 					// Make sure, the selection for txtParameterLine will be
 					// set.
-					objectsListCreationDialogExtension.getTableViewer().setSelection(objectsListCreationDialogExtension.getTableViewer()
-							.getSelection());
+					objectsListCreationDialogExtension.getTableViewer()
+							.setSelection(
+									objectsListCreationDialogExtension
+											.getTableViewer().getSelection());
 				}
 			});
 
@@ -180,7 +180,6 @@ public class TextualCreationDialogExtension extends
 		// TODO Auto-generated method stub
 
 	}
-	
 
 	/**
 	 * Fills the textual Parameter-Line with the existing parameters and updates
@@ -190,13 +189,13 @@ public class TextualCreationDialogExtension extends
 		if (textProvider != null) {
 			textRanges = new HashMap<Object, Range>();
 
-			String text = textProvider
-					.getText(objectsListCreationDialogExtension.getCurrentListItems(), textRanges);
+			String text = textProvider.getText(
+					objectsListCreationDialogExtension.getCurrentListItems(),
+					textRanges);
 
 			setParameterLine(text);
 		}
 	}
-	
 
 	/**
 	 * Selects the substring representing the passed parameter.
@@ -232,8 +231,6 @@ public class TextualCreationDialogExtension extends
 			txtParameterLine.addCaretListener(txtParameterLineCaretListener);
 		}
 	}
-	
-
 
 	/**
 	 * Clears the TextStyle of the passed StyledText control.
@@ -247,7 +244,7 @@ public class TextualCreationDialogExtension extends
 		styleRange.length = styledText.getCharCount();
 		styledText.setStyleRange(styleRange);
 	}
-	
+
 	/**
 	 * Updates the Parameter-List selection based on the caret position in the
 	 * Parameter-Line Textfield.
@@ -258,7 +255,8 @@ public class TextualCreationDialogExtension extends
 	protected void onParameterLineCaretMoved(int caretOffset) {
 		if (textRanges != null) {
 			Object selectedObject = null;
-			for (Object object : objectsListCreationDialogExtension.getCurrentListItems()) {
+			for (Object object : objectsListCreationDialogExtension
+					.getCurrentListItems()) {
 				selectedObject = object;
 				Range textSelection = textRanges.get(object);
 				int start = textSelection.getStart();
@@ -270,12 +268,11 @@ public class TextualCreationDialogExtension extends
 			if (selectedObject != null) {
 				ISelection listSelection = new StructuredSelection(
 						new Object[] { selectedObject });
-				objectsListCreationDialogExtension.setListSelection(listSelection);
+				objectsListCreationDialogExtension
+						.setListSelection(listSelection);
 			}
 		}
 	}
-	
-
 
 	/**
 	 * Marks errors in the given StyledText-Control.
@@ -285,7 +282,8 @@ public class TextualCreationDialogExtension extends
 	 * @param errorRanges
 	 *            The list of error ranges.
 	 */
-	protected void markErrors(StyledText styledText, java.util.List<Range> errorRanges) {
+	protected void markErrors(StyledText styledText,
+			java.util.List<Range> errorRanges) {
 		for (Range range : errorRanges) {
 			StyleRange errorStyle = new StyleRange();
 			errorStyle.start = range.getStart();
@@ -300,7 +298,12 @@ public class TextualCreationDialogExtension extends
 	@Override
 	public void okPressed() {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	public void setObjectsListCreationDialogExtension(
+			IObjectsListCreationDialogExtension objectsListCreationDialogExtension) {
+		this.objectsListCreationDialogExtension = objectsListCreationDialogExtension;
 	}
 
 }

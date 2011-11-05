@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidator;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidator;
 
 /**
  * Default implementation of AbstractTypedElementParser; it requires an instance

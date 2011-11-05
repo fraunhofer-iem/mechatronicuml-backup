@@ -42,10 +42,10 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.DefaultMultiTextParser
 import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.IMultiTextParser;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.AbstractPropertyEditor;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.ComboPropertyEditor;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidator;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Property;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.TextPropertyEditor;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.typedelement.DefaultTypedElementParser;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidator;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IdentifierValidator;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -102,8 +102,9 @@ public class CustomPropertySource extends PropertySource {
 									.equals(CallsPackage.Literals.CALLABLE__OUT_PARAMETER)) {
 						createForced = true;
 					}
-					
-					if (feature.equals(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS)) {
+
+					if (feature
+							.equals(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS)) {
 						createAllowed = false;
 					}
 
@@ -183,21 +184,46 @@ public class CustomPropertySource extends PropertySource {
 
 	protected class MultiFeatureCreationCellEditor extends
 			ExtendedDialogCellEditor {
-		protected EStructuralFeature structuralFeature;
-		protected List<Property> properties = new ArrayList<Property>();
 		protected IMultiTextParser textParser;
 		protected IMultiLabelProvider textProvider;
-		protected EClass instanceClass;
-		protected Collection<?> currentValues;
+		protected ExtensibleCreationDialog dialog;
+		private PropertiesListCreationDialogExtension propertiesDialogExtension;
+		private ObjectsListCreationDialogExtension objectsListCreationDialogExtension;
 
 		private MultiFeatureCreationCellEditor(Composite composite,
 				ILabelProvider labelProvider,
 				EStructuralFeature structuralFeature,
 				Collection<?> currentValues) {
 			super(composite, labelProvider);
-			this.structuralFeature = structuralFeature;
-			this.currentValues = currentValues;
-			instanceClass = (EClass) structuralFeature.getEType();
+
+			// Dialog creation
+			dialog = new ExtensibleCreationDialog(PlatformUI.getWorkbench()
+					.getDisplay().getActiveShell(), labelProvider,
+					(EObject) object, structuralFeature, adapterFactory);
+
+			propertiesDialogExtension = new PropertiesListCreationDialogExtension(
+					dialog);
+
+			objectsListCreationDialogExtension = new ObjectsListCreationDialogExtension(
+					dialog, adapterFactory, currentValues);
+			TextualCreationDialogExtension textualCreationDialogExtension = new TextualCreationDialogExtension(
+					dialog, textParser, textProvider);
+
+			propertiesDialogExtension
+					.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
+			propertiesDialogExtension
+					.setTextualCreationDialogExtension(textualCreationDialogExtension);
+			objectsListCreationDialogExtension
+					.setPropertiesListCreationDialogExtension(propertiesDialogExtension);
+			objectsListCreationDialogExtension
+					.setTextualCreationDialogExtension(textualCreationDialogExtension);
+			textualCreationDialogExtension
+					.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
+
+			dialog.addExtension(propertiesDialogExtension);
+			dialog.addExtension(objectsListCreationDialogExtension);
+			dialog.addExtension(textualCreationDialogExtension);
+
 		}
 
 		public void setMultiTextParser(IMultiTextParser textParser) {
@@ -208,39 +234,17 @@ public class CustomPropertySource extends PropertySource {
 			this.textProvider = textProvider;
 		}
 
-		public void addProperty(Property property) {
-			properties.add(property);
-		}
-
-		public void removeProperty(Property property) {
-			properties.remove(property);
+		public void addProperties(EClass instanceClass,
+				Collection<Property> properties) {
+			propertiesDialogExtension.addProperties(instanceClass, properties);
 		}
 
 		public void setInstanceClass(EClass instanceClass) {
-			this.instanceClass = instanceClass;
+			propertiesDialogExtension.setInstanceClass(instanceClass);
 		}
 
 		@Override
 		protected Object openDialogBox(Control cellEditorWindow) {
-			// Dialog creation
-			ExtensibleCreationDialog dialog = new ExtensibleCreationDialog(
-					PlatformUI.getWorkbench().getDisplay().getActiveShell(),
-					labelProvider, (EObject) object, structuralFeature,
-					adapterFactory);
-			
-			PropertiesListCreationDialogExtension propertiesDialogExtension = new PropertiesListCreationDialogExtension(dialog, properties, instanceClass);
-			ObjectsListCreationDialogExtension objectsListCreationDialogExtension = new ObjectsListCreationDialogExtension(dialog, adapterFactory, currentValues);
-			TextualCreationDialogExtension textualCreationDialogExtension = new TextualCreationDialogExtension(dialog, textParser, textProvider);
-
-			propertiesDialogExtension.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
-			propertiesDialogExtension.setTextualCreationDialogExtension(textualCreationDialogExtension);
-			objectsListCreationDialogExtension.setPropertiesListCreationDialogExtension(propertiesDialogExtension);
-			objectsListCreationDialogExtension.setTextualCreationDialogExtension(textualCreationDialogExtension);
-			textualCreationDialogExtension.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
-
-			dialog.addExtension(propertiesDialogExtension);
-			dialog.addExtension(objectsListCreationDialogExtension);
-			dialog.addExtension(textualCreationDialogExtension);
 
 			// Open the dialog and retrieve the user
 			// selection
@@ -272,23 +276,27 @@ public class CustomPropertySource extends PropertySource {
 		textualExpressionCellEditor
 				.setInstanceClass(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION);
 
-		textualExpressionCellEditor
-				.addProperty(createProperty(
+		List<Property> textualExpressionProperties = new ArrayList<Property>();
+		textualExpressionProperties
+				.add(createProperty(
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
 						new TextPropertyEditor(adapterFactory, true, true)));
 
-		textualExpressionCellEditor.addProperty(createProperty(
+		textualExpressionProperties.add(createProperty(
 				SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				new TextPropertyEditor(adapterFactory, true, true)));
-
-		textualExpressionCellEditor.addProperty(createProperty(
+		textualExpressionProperties.add(createProperty(
 				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
 				new TextPropertyEditor()));
 
-		textualExpressionCellEditor
-				.addProperty(createProperty(
+		textualExpressionProperties
+				.add(createProperty(
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
 						new TextPropertyEditor()));
+
+		textualExpressionCellEditor.addProperties(
+				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION,
+				textualExpressionProperties);
 
 		return textualExpressionCellEditor;
 	}
@@ -304,7 +312,8 @@ public class CustomPropertySource extends PropertySource {
 				adapterFactory);
 		clockPropertyEditor.setLabelProvider(labelProvider);
 
-		clockConstraintCellEditor.addProperty(createProperty(
+		Collection<Property> properties = new ArrayList<Property>();
+		properties.add(createProperty(
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
 				clockPropertyEditor));
 
@@ -312,14 +321,20 @@ public class CustomPropertySource extends PropertySource {
 				adapterFactory);
 		operatorPropertyEditor.setLabelProvider(labelProvider);
 
-		clockConstraintCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
 				operatorPropertyEditor));
 
 		TextPropertyEditor boundPropertyEditor = new TextPropertyEditor();
-		clockConstraintCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
 				boundPropertyEditor));
+
+		clockConstraintCellEditor
+				.addProperties(
+						RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT,
+						properties);
+
 		return clockConstraintCellEditor;
 	}
 
@@ -334,21 +349,26 @@ public class CustomPropertySource extends PropertySource {
 				adapterFactory);
 		parameterEditor.setLabelProvider(labelProvider);
 
-		parameterBindingCellEditor.addProperty(createProperty(
+		Collection<Property> properties = new ArrayList<Property>();
+
+		properties.add(createProperty(
 				CallsPackage.Literals.PARAMETER_BINDING__PARAMETER,
 				parameterEditor));
 
 		TextPropertyEditor valueExpressionValueEditor = new TextPropertyEditor();
-		parameterBindingCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
 				valueExpressionValueEditor));
 
 		ComboPropertyEditor valueExpressionTypeEditor = new ComboPropertyEditor(
 				adapterFactory);
-		parameterBindingCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
 				valueExpressionTypeEditor));
 		valueExpressionTypeEditor.setLabelProvider(labelProvider);
+
+		parameterBindingCellEditor.addProperties(
+				CallsPackage.Literals.PARAMETER_BINDING, properties);
 
 		return parameterBindingCellEditor;
 	}
@@ -360,22 +380,28 @@ public class CustomPropertySource extends PropertySource {
 		MultiFeatureCreationCellEditor absoluteDeadlineCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
+		Collection<Property> properties = new ArrayList<Property>();
+
 		ComboPropertyEditor clockTypeEditor = new ComboPropertyEditor(
 				adapterFactory);
-		absoluteDeadlineCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE__CLOCK,
 				clockTypeEditor));
 		clockTypeEditor.setLabelProvider(labelProvider);
 
 		TextPropertyEditor lowerBoundValueEditor = new TextPropertyEditor();
-		absoluteDeadlineCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
 				lowerBoundValueEditor));
 
 		TextPropertyEditor upperBoundValueEditor = new TextPropertyEditor();
-		absoluteDeadlineCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
 				upperBoundValueEditor));
+
+		absoluteDeadlineCellEditor.addProperties(
+				RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE,
+				properties);
 
 		return absoluteDeadlineCellEditor;
 	}
@@ -386,9 +412,14 @@ public class CustomPropertySource extends PropertySource {
 
 		MultiFeatureCreationCellEditor clocksCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
-		clocksCellEditor.addProperty(createProperty(
-				SDMPackage.Literals.NAMED_ELEMENT__NAME,
+
+		Collection<Property> properties = new ArrayList<Property>();
+
+		properties.add(createProperty(SDMPackage.Literals.NAMED_ELEMENT__NAME,
 				new TextPropertyEditor()));
+
+		clocksCellEditor.addProperties(
+				RealtimestatechartPackage.Literals.CLOCK, properties);
 
 		return clocksCellEditor;
 	}
@@ -429,11 +460,13 @@ public class CustomPropertySource extends PropertySource {
 		typeEditor.setLabelProvider(labelProvider);
 		typeEditor.setChoices(choices);
 
+		Collection<Property> properties = new ArrayList<Property>();
+
 		typedElementCellEditor.setMultiTextParser(multiTextParser);
 		typedElementCellEditor.setMultiLabelProvider(multiLabelProvider);
-		typedElementCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				EcorePackage.Literals.ENAMED_ELEMENT__NAME, nameEditor));
-		typedElementCellEditor.addProperty(createProperty(
+		properties.add(createProperty(
 				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
 
 		TextPropertyEditor upperBoundEditor = new TextPropertyEditor();
@@ -442,7 +475,10 @@ public class CustomPropertySource extends PropertySource {
 				EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND,
 				upperBoundEditor);
 		upperBoundProperty.setDisplayName("Cardinality");
-		typedElementCellEditor.addProperty(upperBoundProperty);
+		properties.add(upperBoundProperty);
+
+		typedElementCellEditor.addProperties(
+				EcorePackage.Literals.ETYPED_ELEMENT, properties);
 
 		return typedElementCellEditor;
 	}

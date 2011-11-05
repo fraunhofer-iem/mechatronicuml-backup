@@ -3,8 +3,6 @@ package de.uni_paderborn.fujaba.common.emf.edit.ui.validator;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidationStatus;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidator;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.TextValidationStatus;
 

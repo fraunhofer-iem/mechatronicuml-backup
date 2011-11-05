@@ -1,7 +1,10 @@
 package de.uni_paderborn.fujaba.common.emf.edit.ui.extensions;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EClass;
@@ -21,42 +24,17 @@ import org.eclipse.swt.widgets.Label;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.AbstractPropertyEditor;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidationListener;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Property;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidationListener;
 
 public class PropertiesListCreationDialogExtension extends
-		AbstractCreationDialogExtension {
+		AbstractCreationDialogExtension implements
+		IPropertiesListCreationDialogExtension {
+
 	/**
 	 * The instance class of the objects to create.
 	 */
 	private EClass instanceClass;
-
-	/**
-	 * A field, which remembers, if the values currently entered are valid.
-	 */
-
-	private boolean validInput;
-
-	private TextualCreationDialogExtension textualCreationDialogExtension;
-	private ObjectsListCreationDialogExtension objectsListCreationDialogExtension;
-
-	public PropertiesListCreationDialogExtension(
-			ExtensibleCreationDialog creationDialog, List<Property> properties,
-			EClass instanceClass) {
-		super(creationDialog);
-		this.properties = properties;
-		this.instanceClass = instanceClass;
-	}
-
-	public void setTextualCreationDialogExtension(
-			TextualCreationDialogExtension textualCreationDialogExtension) {
-		this.textualCreationDialogExtension = textualCreationDialogExtension;
-	}
-
-	public void setObjectsListCreationDialogExtension(
-			ObjectsListCreationDialogExtension objectsListCreationDialogExtension) {
-		this.objectsListCreationDialogExtension = objectsListCreationDialogExtension;
-	}
 
 	/**
 	 * The Modify-Button.
@@ -69,15 +47,59 @@ public class PropertiesListCreationDialogExtension extends
 	private Button btnCreate;
 
 	/**
-	 * The properties to display.
+	 * The properties to display for an instanceClass.
 	 */
-	private List<Property> properties;
+	private Map<EClass, Collection<Property>> instanceClassToProperties = new HashMap<EClass, Collection<Property>>();
+
+	/**
+	 * A field, which remembers, if the values currently entered are valid.
+	 */
+	private boolean validInput;
+
+	/**
+	 * The control of the ExtensibleCreationDialog.
+	 */
+	private Composite parentControl;
+
+	/**
+	 * Our container that actually contains the property editors.
+	 */
+	private Composite propertyEditorContainer;
+
+	private ITextualCreationDialogExtension textualCreationDialogExtension;
+
+	private IObjectsListCreationDialogExtension objectsListCreationDialogExtension;
+
+	public PropertiesListCreationDialogExtension(
+			ExtensibleCreationDialog creationDialog) {
+		super(creationDialog);
+		setInstanceClass(creationDialog.getStructuralFeature().eClass());
+	}
+
+	public void addProperties(EClass instanceClass,
+			Collection<Property> properties) {
+		instanceClassToProperties.put(instanceClass, properties);
+	}
 
 	@Override
 	public void initialize() {
-		for (Property property : properties) {
+		for (Property property : getProperties()) {
 			property.getPropertyEditor().applyDefaultValue();
 		}
+	}
+
+	/**
+	 * Convenience method to get the properties that should be displayed
+	 * currently (for the instanceClass currently set).
+	 * 
+	 * @return The collection of Properties, which can be empty but is never
+	 *         null.
+	 */
+	private Collection<Property> getProperties() {
+		if (instanceClassToProperties.containsKey(instanceClass)) {
+			return instanceClassToProperties.get(instanceClass);
+		}
+		return Collections.emptyList();
 	}
 
 	/**
@@ -87,7 +109,7 @@ public class PropertiesListCreationDialogExtension extends
 	 *            The object to apply the properties to.
 	 */
 	protected void applyProperties(EObject object) {
-		for (Property property : properties) {
+		for (Property property : getProperties()) {
 			AbstractPropertyEditor editor = property.getPropertyEditor();
 			try {
 				property.setPropertyValue(object, editor.getValue());
@@ -120,61 +142,92 @@ public class PropertiesListCreationDialogExtension extends
 
 	@Override
 	public void createMainArea(Composite parent) {
-		
-		
-		boolean extendVertically = false;
+		this.parentControl = parent;
+		createPropertyEditors();
+	}
 
-		for (Property property : properties) {
-			if (property.getPropertyEditor().isExtendVertically()) {
-				extendVertically = true;
-				break;
-			}
+	public void setInstanceClass(EClass instanceClass) {
+		if (this.instanceClass != instanceClass) {
+			this.instanceClass = instanceClass;
+			createPropertyEditors();
 		}
-		
-		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-				extendVertically, 1, 1));
+	}
 
-		Group grpParameterProps = new Group(parent, SWT.NONE);
-		grpParameterProps.setLayout(new GridLayout(2, false));
-		grpParameterProps.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-				extendVertically, 1, 1));
-		grpParameterProps.setText("&Properties");
+	private void createPropertyEditors() {
 
-		IValidationListener validationListener = new IValidationListener() {
+		if (instanceClass != null && parentControl != null) {
+			// Dispose old property editors
+			if (propertyEditorContainer != null) {
+				propertyEditorContainer.dispose();
+			}
 
-			@Override
-			public void validationOccurred(boolean valid) {
-				boolean allValid = true;
-				for (Property property : properties) {
-					if (!property.getPropertyEditor().isValid()) {
-						allValid = false;
-						break;
-					}
+			// Create a new container
+			propertyEditorContainer = new Composite(parentControl, 0);
+			propertyEditorContainer.setLayout(new GridLayout(1, false));
+
+			/*
+			 * Create new property editors
+			 */
+
+			boolean extendVertically = false;
+			for (Property property : getProperties()) {
+				if (property.getPropertyEditor().isExtendVertically()) {
+					extendVertically = true;
+					break;
 				}
-				validInput = allValid;
-				updateModifyButtonEnablement();
-				updateCreateButtonEnablement();
 			}
-		};
 
-		for (Property property : properties) {
-			Label lblName = new Label(grpParameterProps, SWT.NONE);
-			lblName.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false,
-					false, 1, 1));
-			lblName.setText(property.getDisplayName() + ":");
+			parentControl.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
+					extendVertically, 1, 1));
 
-			AbstractPropertyEditor editor = property.getPropertyEditor();
-			editor.addValidationListener(validationListener);
+			propertyEditorContainer.setLayoutData(new GridData(SWT.FILL,
+					SWT.FILL, true, extendVertically, 1, 1));
 
-			Control editorControl = editor.create(grpParameterProps);
-			boolean extendPropertyVertically = editor.isExtendVertically();
-			int verticalAlignment = SWT.CENTER;
-			if (extendPropertyVertically) {
-				verticalAlignment = SWT.FILL;
+			Group grpParameterProps = new Group(propertyEditorContainer,
+					SWT.NONE);
+			grpParameterProps.setLayout(new GridLayout(2, false));
+			grpParameterProps.setLayoutData(new GridData(SWT.FILL, SWT.FILL,
+					true, extendVertically, 1, 1));
+			grpParameterProps.setText("&Properties");
+
+			IValidationListener validationListener = new IValidationListener() {
+
+				@Override
+				public void validationOccurred(boolean valid) {
+					boolean allValid = true;
+					for (Property property : getProperties()) {
+						if (!property.getPropertyEditor().isValid()) {
+							allValid = false;
+							break;
+						}
+					}
+					validInput = allValid;
+					updateModifyButtonEnablement();
+					updateCreateButtonEnablement();
+				}
+			};
+
+			for (Property property : getProperties()) {
+				Label lblName = new Label(grpParameterProps, SWT.NONE);
+				lblName.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false,
+						false, 1, 1));
+				lblName.setText(property.getDisplayName() + ":");
+
+				AbstractPropertyEditor editor = property.getPropertyEditor();
+				editor.addValidationListener(validationListener);
+
+				Control editorControl = editor.create(grpParameterProps);
+				boolean extendPropertyVertically = editor.isExtendVertically();
+				int verticalAlignment = SWT.CENTER;
+				if (extendPropertyVertically) {
+					verticalAlignment = SWT.FILL;
+				}
+				editorControl
+						.setLayoutData(new GridData(SWT.FILL,
+								verticalAlignment, true,
+								extendPropertyVertically, 1, 1));
+
 			}
-			editorControl.setLayoutData(new GridData(SWT.FILL,
-					verticalAlignment, true, extendPropertyVertically, 1, 1));
-
 		}
 	}
 
@@ -246,6 +299,16 @@ public class PropertiesListCreationDialogExtension extends
 			}
 		});
 
+	}
+
+	public void setTextualCreationDialogExtension(
+			ITextualCreationDialogExtension textualCreationDialogExtension) {
+		this.textualCreationDialogExtension = textualCreationDialogExtension;
+	}
+
+	public void setObjectsListCreationDialogExtension(
+			IObjectsListCreationDialogExtension objectsListCreationDialogExtension) {
+		this.objectsListCreationDialogExtension = objectsListCreationDialogExtension;
 	}
 
 	@Override

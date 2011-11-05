@@ -6,6 +6,10 @@ import java.util.List;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidationListener;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidationStatus;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidator;
+
 /**
  * An abstract implementation of a property editor. Should be subclassed to
  * create the gui-control to use.
