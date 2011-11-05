@@ -355,7 +355,7 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class MessageInterfaceFigure extends RoundedRectangle {
+	public class MessageInterfaceFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -374,10 +374,10 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = false;
+			layoutThis.marginWidth = 1;
+			layoutThis.marginHeight = 0;
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(12)));
 			createContents();
 		}
 

@@ -22,13 +22,14 @@
     <descriptors
         name="MessageInterfaceFigure">
       <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="MessageInterfaceFigure"
-          cornerWidth="12"
-          cornerHeight="12">
+          xsi:type="gmfgraph:Rectangle"
+          name="MessageInterfaceFigure">
         <layout
             xsi:type="gmfgraph:GridLayout"
-            equalWidth="false"/>
+            equalWidth="false">
+          <margins
+              dx="1"/>
+        </layout>
         <children
             xsi:type="gmfgraph:Label"
             name="MessageInterfaceNameLabel">

@@ -23,7 +23,7 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser messageInterfaceName_5005Parser;
+	protected IParser messageInterfaceName_5005Parser;
 
 	/**
 	 * @generated
