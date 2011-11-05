@@ -30,7 +30,8 @@ import org.storydriven.modeling.calls.Callable;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageType()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueParameterNames='self.containedParameters->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueParameterNames'"
  * @generated
  */
 public interface MessageType extends Callable, NamedElement {

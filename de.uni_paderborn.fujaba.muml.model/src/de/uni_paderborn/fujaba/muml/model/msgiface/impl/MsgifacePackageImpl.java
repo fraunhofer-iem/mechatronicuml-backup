@@ -308,7 +308,13 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		   source, 
 		   new String[] {
 			 "constraints", "NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
-		   });			
+		   });						
+		addAnnotation
+		  (messageTypeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueParameterNames"
+		   });
 	}
 
 	/**
@@ -327,7 +333,13 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 			 "NoBidirectionalGeneralization", "self.superType->forAll(x|x.superType->forAll(y|y<>self))",
 			 "UniqueMessageTypeNames", "self.messageTypes->isUnique(name)",
 			 "NoMessageTypeOrNotAtLeastTwoGeneralizations", "self.messageTypes->size()>=1 or self.superType->size()>=2"
-		   });				
+		   });						
+		addAnnotation
+		  (messageTypeEClass, 
+		   source, 
+		   new String[] {
+			 "UniqueParameterNames", "self.containedParameters->isUnique(name)"
+		   });	
 	}
 
 } //MsgifacePackageImpl

@@ -244,7 +244,46 @@ public class MsgifaceValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMessageType(MessageType messageType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(messageType, diagnostics, context);
+		if (!validate_NoCircularContainment(messageType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMessageType_UniqueParameterNames(messageType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the UniqueParameterNames constraint of '<em>Message Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MESSAGE_TYPE__UNIQUE_PARAMETER_NAMES__EEXPRESSION = "self.containedParameters->isUnique(name)";
+
+	/**
+	 * Validates the UniqueParameterNames constraint of '<em>Message Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMessageType_UniqueParameterNames(MessageType messageType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(MsgifacePackage.Literals.MESSAGE_TYPE,
+				 messageType,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueParameterNames",
+				 MESSAGE_TYPE__UNIQUE_PARAMETER_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

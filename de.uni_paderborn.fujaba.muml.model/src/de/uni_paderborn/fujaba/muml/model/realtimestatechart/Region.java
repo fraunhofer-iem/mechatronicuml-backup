@@ -102,7 +102,7 @@ public interface Region extends Prioritizable, NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The derived states of the realtime statechart.
+	 * The derived vertices (e.g. states) of the realtime statechart.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Vertices</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Vertices()
@@ -118,7 +118,7 @@ public interface Region extends Prioritizable, NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The derived states of the realtime statechart.
+	 * The derived transitions of the realtime statechart.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Transitions</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Transitions()
@@ -133,13 +133,13 @@ public interface Region extends Prioritizable, NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * The derived realtime statecharts .
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart Derived</em>' containment reference.
 	 * @see #setStatechartDerived(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_StatechartDerived()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tnull\r\nelse\r\n\tself.statechart\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\r\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\r\n\r\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\r\n\tnull\r\r\nelse\r\r\n\tself.statechart\r\r\nendif'"
 	 * @generated
 	 */
 	FujabaRealtimeStatechart getStatechartDerived();

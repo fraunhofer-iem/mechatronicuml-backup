@@ -1753,7 +1753,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getRegion_StatechartDerived(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tnull\r\nelse\r\n\tself.statechart\r\nendif"
+			 "derivation", "-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\r\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\r\n\r\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\r\n\tnull\r\r\nelse\r\r\n\tself.statechart\r\r\nendif"
 		   });				
 		addAnnotation
 		  (stateEClass, 
