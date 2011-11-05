@@ -146,6 +146,11 @@ public class PropertiesListCreationDialogExtension extends
 		createPropertyEditors();
 	}
 
+	@Override
+	public EClass getInstanceClass() {
+		return instanceClass;
+	}
+
 	public void setInstanceClass(EClass instanceClass) {
 		if (this.instanceClass != instanceClass) {
 			this.instanceClass = instanceClass;
@@ -315,6 +320,11 @@ public class PropertiesListCreationDialogExtension extends
 	public void okPressed() {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public Collection<EClass> getInstanceClasses() {
+		return instanceClassToProperties.keySet();
 	}
 
 }

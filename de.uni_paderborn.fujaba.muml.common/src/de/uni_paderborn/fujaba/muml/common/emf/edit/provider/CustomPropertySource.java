@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListCreationDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertiesListCreationDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.TextualCreationDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.TypeSelectionDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.DefaultMultiLabelProvider;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.IMultiLabelProvider;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.DefaultMultiTextParser;
@@ -187,6 +188,7 @@ public class CustomPropertySource extends PropertySource {
 		protected IMultiTextParser textParser;
 		protected IMultiLabelProvider textProvider;
 		protected ExtensibleCreationDialog dialog;
+		private TypeSelectionDialogExtension typeSelectionDialogExtension;
 		private PropertiesListCreationDialogExtension propertiesDialogExtension;
 		private ObjectsListCreationDialogExtension objectsListCreationDialogExtension;
 
@@ -201,6 +203,8 @@ public class CustomPropertySource extends PropertySource {
 					.getDisplay().getActiveShell(), labelProvider,
 					(EObject) object, structuralFeature, adapterFactory);
 
+			typeSelectionDialogExtension = new TypeSelectionDialogExtension(dialog, adapterFactory);
+			
 			propertiesDialogExtension = new PropertiesListCreationDialogExtension(
 					dialog);
 
@@ -209,6 +213,8 @@ public class CustomPropertySource extends PropertySource {
 			TextualCreationDialogExtension textualCreationDialogExtension = new TextualCreationDialogExtension(
 					dialog, textParser, textProvider);
 
+			typeSelectionDialogExtension.setPropertiesListCreationDialogExtension(propertiesDialogExtension);
+			
 			propertiesDialogExtension
 					.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
 			propertiesDialogExtension
@@ -220,6 +226,7 @@ public class CustomPropertySource extends PropertySource {
 			textualCreationDialogExtension
 					.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
 
+			dialog.addExtension(typeSelectionDialogExtension);
 			dialog.addExtension(propertiesDialogExtension);
 			dialog.addExtension(objectsListCreationDialogExtension);
 			dialog.addExtension(textualCreationDialogExtension);
