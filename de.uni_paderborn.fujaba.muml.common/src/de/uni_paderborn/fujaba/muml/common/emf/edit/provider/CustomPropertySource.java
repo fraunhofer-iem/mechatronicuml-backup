@@ -126,7 +126,7 @@ public class CustomPropertySource extends PropertySource {
 									getCurrentValues(), ",", ", ");
 						} else if (ExpressionsPackage.Literals.EXPRESSION
 								.isSuperTypeOf(eClass)) {
-							return createTextualExpressionCellEditor(parent,
+							return createExpressionCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
 						} else if (RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT
@@ -203,8 +203,9 @@ public class CustomPropertySource extends PropertySource {
 					.getDisplay().getActiveShell(), labelProvider,
 					(EObject) object, structuralFeature, adapterFactory);
 
-			typeSelectionDialogExtension = new TypeSelectionDialogExtension(dialog, adapterFactory);
-			
+			typeSelectionDialogExtension = new TypeSelectionDialogExtension(
+					dialog, adapterFactory);
+
 			propertiesDialogExtension = new PropertiesListCreationDialogExtension(
 					dialog);
 
@@ -213,8 +214,9 @@ public class CustomPropertySource extends PropertySource {
 			TextualCreationDialogExtension textualCreationDialogExtension = new TextualCreationDialogExtension(
 					dialog, textParser, textProvider);
 
-			typeSelectionDialogExtension.setPropertiesListCreationDialogExtension(propertiesDialogExtension);
-			
+			typeSelectionDialogExtension
+					.setPropertiesListCreationDialogExtension(propertiesDialogExtension);
+
 			propertiesDialogExtension
 					.setObjectsListCreationDialogExtension(objectsListCreationDialogExtension);
 			propertiesDialogExtension
@@ -273,16 +275,17 @@ public class CustomPropertySource extends PropertySource {
 		return null;
 	}
 
-	private MultiFeatureCreationCellEditor createTextualExpressionCellEditor(
+	private MultiFeatureCreationCellEditor createExpressionCellEditor(
 			Composite parent, ILabelProvider labelProvider,
 			EStructuralFeature structuralFeature, Collection<?> currentValues) {
 
-		MultiFeatureCreationCellEditor textualExpressionCellEditor = new MultiFeatureCreationCellEditor(
+		MultiFeatureCreationCellEditor expressionCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
-		textualExpressionCellEditor
+		expressionCellEditor
 				.setInstanceClass(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION);
 
+		// Add Properties for TextualExpression
 		List<Property> textualExpressionProperties = new ArrayList<Property>();
 		textualExpressionProperties
 				.add(createProperty(
@@ -301,11 +304,25 @@ public class CustomPropertySource extends PropertySource {
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
 						new TextPropertyEditor()));
 
-		textualExpressionCellEditor.addProperties(
+		expressionCellEditor.addProperties(
 				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION,
 				textualExpressionProperties);
 
-		return textualExpressionCellEditor;
+		// Add Properties for ActivityCallExpression:
+		List<Property> methodCallExpressionProperties = new ArrayList<Property>();
+
+		ComboPropertyEditor opaqueCallablePropertyEditor = new ComboPropertyEditor(
+				adapterFactory);
+		opaqueCallablePropertyEditor.setLabelProvider(labelProvider);
+
+		methodCallExpressionProperties
+				.add(createProperty(
+						org.storydriven.modeling.calls.expressions.ExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
+						opaqueCallablePropertyEditor));
+		
+		expressionCellEditor.addProperties(org.storydriven.modeling.calls.expressions.ExpressionsPackage.Literals.METHOD_CALL_EXPRESSION, methodCallExpressionProperties);
+
+		return expressionCellEditor;
 	}
 
 	private CellEditor createClockConstraintCellEditor(Composite parent,

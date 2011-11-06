@@ -233,7 +233,9 @@ public class PropertiesListCreationDialogExtension extends
 								extendPropertyVertically, 1, 1));
 
 			}
+			parentControl.getParent().layout();
 		}
+		
 	}
 
 	@Override
