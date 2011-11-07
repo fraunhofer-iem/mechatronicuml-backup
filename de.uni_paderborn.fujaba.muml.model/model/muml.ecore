@@ -963,7 +963,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="2"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1"
             upperBound="2" eType="#//model/pattern/Role" containment="true" eOpposite="#//model/pattern/Role/coordinationPattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The roles belonging to this pattern."/>
@@ -982,11 +982,16 @@
             <details key="derivation" value="if roles->isEmpty() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;roles->first()&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="role2" lowerBound="1"
-            eType="#//model/pattern/Role" changeable="false" volatile="true" transient="true"
-            derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="role2" eType="#//model/pattern/Role"
+            changeable="false" volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if roles->size() &lt; 2 then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;roles->last()&#xD;&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="patternEllipse" lowerBound="1"
+            eType="#//model/pattern/PatternEllipse" containment="true" eOpposite="#//model/pattern/PatternEllipse/coordinationPattern">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A CoordinationPattern. contains exactly one PatternEllipse. &#xD;&#xA;This reference only exists because of GMF problems to visualize the ellipse of a Real-Time Coordination Patterns."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1038,6 +1043,17 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
             eType="#//model/core/Behavior"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PatternEllipse">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class only exists because of GMF problems to visualize the ellipse of a Real-Time Coordination Patterns."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
+            lowerBound="1" eType="#//model/pattern/CoordinationPattern" eOpposite="#//model/pattern/CoordinationPattern/patternEllipse">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A PatternEllipse has exactly one CoordinationPattern.&#xD;&#xA;This reference only exists because of GMF problems to visualize the ellipse of a Real-Time Coordination Patterns."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart"
@@ -1289,14 +1305,14 @@
             <details key="documentation" value="The synchronisation which is sent upon activation of this transition."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//model/realtimestatechart/Vertex"
-            eOpposite="#//model/realtimestatechart/Vertex/incomingTransitions">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+            eType="#//model/realtimestatechart/Vertex" eOpposite="#//model/realtimestatechart/Vertex/incomingTransitions">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The state which is the target of this transition.&#xD;&#xA;\todosd{discuss for v0.2:change cardinality to 1..1}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//model/realtimestatechart/Vertex"
-            eOpposite="#//model/realtimestatechart/Vertex/outgoingTransitions">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+            eType="#//model/realtimestatechart/Vertex" eOpposite="#//model/realtimestatechart/Vertex/outgoingTransitions">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The state which is the source of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 1..1}"/>
           </eAnnotations>
