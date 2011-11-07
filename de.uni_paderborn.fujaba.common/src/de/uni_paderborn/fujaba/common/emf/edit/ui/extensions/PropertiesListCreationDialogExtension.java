@@ -73,7 +73,7 @@ public class PropertiesListCreationDialogExtension extends
 	public PropertiesListCreationDialogExtension(
 			ExtensibleCreationDialog creationDialog) {
 		super(creationDialog);
-		setInstanceClass(creationDialog.getStructuralFeature().eClass());
+		setInstanceClass((EClass) creationDialog.getStructuralFeature().getEType());
 	}
 
 	public void addProperties(EClass instanceClass,

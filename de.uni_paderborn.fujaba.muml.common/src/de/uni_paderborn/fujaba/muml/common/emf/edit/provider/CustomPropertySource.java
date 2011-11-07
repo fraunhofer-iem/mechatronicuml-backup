@@ -122,7 +122,7 @@ public class CustomPropertySource extends PropertySource {
 						if (EcorePackage.Literals.EPARAMETER
 								.isSuperTypeOf(eClass)) {
 							return createTypedElementCellEditor(parent,
-									getLabelProvider(), feature,
+									getLabelProvider(), feature, EcorePackage.Literals.EPARAMETER,
 									getCurrentValues(), ",", ", ");
 						} else if (ExpressionsPackage.Literals.EXPRESSION
 								.isSuperTypeOf(eClass)) {
@@ -450,7 +450,7 @@ public class CustomPropertySource extends PropertySource {
 
 	private MultiFeatureCreationCellEditor createTypedElementCellEditor(
 			Composite parent, ILabelProvider labelProvider,
-			EStructuralFeature structuralFeature, Collection<?> currentValues,
+			EStructuralFeature structuralFeature, EClass concreteClass, Collection<?> currentValues,
 			String parserSplitElement, String labelProviderSplitElement) {
 
 		MultiFeatureCreationCellEditor typedElementCellEditor = new MultiFeatureCreationCellEditor(
@@ -502,7 +502,7 @@ public class CustomPropertySource extends PropertySource {
 		properties.add(upperBoundProperty);
 
 		typedElementCellEditor.addProperties(
-				EcorePackage.Literals.ETYPED_ELEMENT, properties);
+				concreteClass, properties);
 
 		return typedElementCellEditor;
 	}
@@ -511,7 +511,7 @@ public class CustomPropertySource extends PropertySource {
 			ILabelProvider labelProvider, EStructuralFeature feature,
 			Collection<?> currentValues) {
 		MultiFeatureCreationCellEditor cellEditor = createTypedElementCellEditor(
-				parent, labelProvider, feature, currentValues, ";", "; ");
+				parent, labelProvider, feature, EcorePackage.Literals.EOPERATION, currentValues, ";", "; ");
 		// Property inParameters= createProperty(
 		// EcorePackage.Literals.EOPERATION__EPARAMETERS,
 		// upperBoundEditor);
@@ -523,7 +523,7 @@ public class CustomPropertySource extends PropertySource {
 	protected CellEditor createAttributeCellEditor(Composite parent,
 			ILabelProvider labelProvider, EStructuralFeature feature,
 			Collection<?> currentValues) {
-		return createTypedElementCellEditor(parent, labelProvider, feature,
+		return createTypedElementCellEditor(parent, labelProvider, feature, EcorePackage.Literals.EATTRIBUTE,
 				currentValues, ";", "; ");
 	}
 
