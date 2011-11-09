@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 
@@ -25,10 +27,12 @@ import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
+import de.uni_paderborn.fujaba.muml.model.pattern.util.PatternValidator;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl.HelperPackageImpl;
@@ -61,6 +65,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	private EClass roleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass patternEllipseEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -139,6 +150,15 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		theRealtimestatechartPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(thePatternPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return PatternValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		thePatternPackage.freeze();
@@ -244,6 +264,15 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCoordinationPattern_PatternEllipse() {
+		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRole() {
 		return roleEClass;
 	}
@@ -325,6 +354,42 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRole_Ordered() {
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRole_OrderVariable() {
+		return (EReference)roleEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPatternEllipse() {
+		return patternEllipseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPatternEllipse_CoordinationPattern() {
+		return (EReference)patternEllipseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PatternFactory getPatternFactory() {
 		return (PatternFactory)getEFactoryInstance();
 	}
@@ -359,6 +424,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__CONNECTOR);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ROLE1);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ROLE2);
+		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__PATTERN_ELLIPSE);
 
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__ROLE_CONNECTOR);
@@ -369,6 +435,11 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(roleEClass, ROLE__PORT);
 		createEReference(roleEClass, ROLE__ADAPTATION_BEHAVIOR);
 		createEReference(roleEClass, ROLE__ROLE_AND_ADAPTATION_BEHAVIOR);
+		createEAttribute(roleEClass, ROLE__ORDERED);
+		createEReference(roleEClass, ROLE__ORDER_VARIABLE);
+
+		patternEllipseEClass = createEClass(PATTERN_ELLIPSE);
+		createEReference(patternEllipseEClass, PATTERN_ELLIPSE__COORDINATION_PATTERN);
 	}
 
 	/**
@@ -399,6 +470,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -420,10 +492,11 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getRoleConnector_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Connector(), "coordinationPattern", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationPatternEClass, CoordinationPattern.class, "CoordinationPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCoordinationPattern_Roles(), this.getRole(), this.getRole_CoordinationPattern(), "roles", null, 2, 2, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationPattern_Roles(), this.getRole(), this.getRole_CoordinationPattern(), "roles", null, 1, 2, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_Connector(), this.getRoleConnector(), this.getRoleConnector_CoordinationPattern(), "connector", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_Role1(), this.getRole(), null, "role1", null, 1, 1, CoordinationPattern.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationPattern_Role2(), this.getRole(), null, "role2", null, 1, 1, CoordinationPattern.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationPattern_Role2(), this.getRole(), null, "role2", null, 0, 1, CoordinationPattern.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationPattern_PatternEllipse(), this.getPatternEllipse(), this.getPatternEllipse_CoordinationPattern(), "patternEllipse", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_RoleConnector(), this.getRoleConnector(), this.getRoleConnector_Source(), "roleConnector", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -434,6 +507,11 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getRole_Port(), theComponentPackage.getDiscretePort(), theComponentPackage.getDiscretePort_Refines(), "port", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_Ordered(), theEcorePackage.getEBoolean(), "ordered", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_OrderVariable(), ecorePackage.getEAttribute(), null, "orderVariable", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(patternEllipseEClass, PatternEllipse.class, "PatternEllipse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPatternEllipse_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_PatternEllipse(), "coordinationPattern", null, 1, 1, PatternEllipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -460,7 +538,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																		
+		   });														
+		addAnnotation
+		  (roleEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable"
+		   });												
 	}
 
 	/**
@@ -482,7 +566,14 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "derivation", "if roles->size() < 2 then\r\n\tnull\r\nelse\r\n\troles->last()\r\nendif"
-		   });								
+		   });					
+		addAnnotation
+		  (roleEClass, 
+		   source, 
+		   new String[] {
+			 "OrderOnlyForMultiPort", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.infinity)",
+			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')"
+		   });											
 	}
 
 } //PatternPackageImpl

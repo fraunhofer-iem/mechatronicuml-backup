@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
@@ -40,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getConnector <em>Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getRole1 <em>Role1</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getRole2 <em>Role2</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getPatternEllipse <em>Pattern Ellipse</em>}</li>
  * </ul>
  * </p>
  *
@@ -95,6 +97,16 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ROLE2__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PatternPackage.Literals.COORDINATION_PATTERN__ROLE2).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getPatternEllipse() <em>Pattern Ellipse</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPatternEllipse()
+	 * @generated
+	 * @ordered
+	 */
+	protected PatternEllipse patternEllipse;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,6 +235,49 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PatternEllipse getPatternEllipse() {
+		return patternEllipse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPatternEllipse(PatternEllipse newPatternEllipse, NotificationChain msgs) {
+		PatternEllipse oldPatternEllipse = patternEllipse;
+		patternEllipse = newPatternEllipse;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE, oldPatternEllipse, newPatternEllipse);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPatternEllipse(PatternEllipse newPatternEllipse) {
+		if (newPatternEllipse != patternEllipse) {
+			NotificationChain msgs = null;
+			if (patternEllipse != null)
+				msgs = ((InternalEObject)patternEllipse).eInverseRemove(this, PatternPackage.PATTERN_ELLIPSE__COORDINATION_PATTERN, PatternEllipse.class, msgs);
+			if (newPatternEllipse != null)
+				msgs = ((InternalEObject)newPatternEllipse).eInverseAdd(this, PatternPackage.PATTERN_ELLIPSE__COORDINATION_PATTERN, PatternEllipse.class, msgs);
+			msgs = basicSetPatternEllipse(newPatternEllipse, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE, newPatternEllipse, newPatternEllipse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -235,6 +290,10 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				if (connector != null)
 					msgs = ((InternalEObject)connector).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternPackage.COORDINATION_PATTERN__CONNECTOR, null, msgs);
 				return basicSetConnector((RoleConnector)otherEnd, msgs);
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE:
+				if (patternEllipse != null)
+					msgs = ((InternalEObject)patternEllipse).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE, null, msgs);
+				return basicSetPatternEllipse((PatternEllipse)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -253,6 +312,8 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case PatternPackage.COORDINATION_PATTERN__CONNECTOR:
 				return basicSetConnector(null, msgs);
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE:
+				return basicSetPatternEllipse(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -277,6 +338,8 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 			case PatternPackage.COORDINATION_PATTERN__ROLE2:
 				if (resolve) return getRole2();
 				return basicGetRole2();
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE:
+				return getPatternEllipse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -301,6 +364,9 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 			case PatternPackage.COORDINATION_PATTERN__CONNECTOR:
 				setConnector((RoleConnector)newValue);
 				return;
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE:
+				setPatternEllipse((PatternEllipse)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -321,6 +387,9 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				return;
 			case PatternPackage.COORDINATION_PATTERN__CONNECTOR:
 				setConnector((RoleConnector)null);
+				return;
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE:
+				setPatternEllipse((PatternEllipse)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -344,6 +413,8 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				return ROLE1__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PatternPackage.COORDINATION_PATTERN__ROLE2:
 				return ROLE2__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE:
+				return patternEllipse != null;
 		}
 		return super.eIsSet(featureID);
 	}

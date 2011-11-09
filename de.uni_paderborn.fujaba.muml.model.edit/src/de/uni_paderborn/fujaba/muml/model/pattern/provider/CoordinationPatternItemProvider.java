@@ -279,6 +279,7 @@ public class CoordinationPatternItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__CONNECTOR);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__ROLE2);
+			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_ELLIPSE);
 		}
 		return childrenFeatures;
 	}
@@ -335,6 +336,7 @@ public class CoordinationPatternItemProvider
 		switch (notification.getFeatureID(CoordinationPattern.class)) {
 			case PatternPackage.COORDINATION_PATTERN__CONNECTOR:
 			case PatternPackage.COORDINATION_PATTERN__ROLE2:
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -361,6 +363,11 @@ public class CoordinationPatternItemProvider
 			(createChildParameter
 				(PatternPackage.Literals.COORDINATION_PATTERN__ROLE2,
 				 PatternFactory.eINSTANCE.createRole()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_ELLIPSE,
+				 PatternFactory.eINSTANCE.createPatternEllipse()));
 	}
 
 	/**

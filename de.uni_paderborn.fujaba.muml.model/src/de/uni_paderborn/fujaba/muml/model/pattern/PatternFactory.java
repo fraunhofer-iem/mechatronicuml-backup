@@ -53,6 +53,15 @@ public interface PatternFactory extends EFactory {
 	Role createRole();
 
 	/**
+	 * Returns a new object of class '<em>Ellipse</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ellipse</em>'.
+	 * @generated
+	 */
+	PatternEllipse createPatternEllipse();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

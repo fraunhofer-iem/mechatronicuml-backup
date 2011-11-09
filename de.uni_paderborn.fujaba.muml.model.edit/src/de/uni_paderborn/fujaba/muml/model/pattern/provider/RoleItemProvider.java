@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
@@ -77,6 +78,8 @@ public class RoleItemProvider
 			addCardinalityPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
+			addOrderedPropertyDescriptor(object);
+			addOrderVariablePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -278,6 +281,50 @@ public class RoleItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Ordered feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrderedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_ordered_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_ordered_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__ORDERED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Order Variable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrderVariablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_orderVariable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_orderVariable_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__ORDER_VARIABLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -353,6 +400,9 @@ public class RoleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
+			case PatternPackage.ROLE__ORDERED:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case PatternPackage.ROLE__CARDINALITY:
 			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

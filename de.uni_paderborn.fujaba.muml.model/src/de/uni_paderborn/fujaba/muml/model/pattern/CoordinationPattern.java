@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnector <em>Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole1 <em>Role1</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole2 <em>Role2</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getPatternEllipse <em>Pattern Ellipse</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,7 +48,7 @@ public interface CoordinationPattern extends NamedElement, ConstrainableElement 
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Roles()
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern
-	 * @model opposite="coordinationPattern" containment="true" lower="2" upper="2"
+	 * @model opposite="coordinationPattern" containment="true" required="true" upper="2"
 	 * @generated
 	 */
 	EList<Role> getRoles();
@@ -106,10 +107,38 @@ public interface CoordinationPattern extends NamedElement, ConstrainableElement 
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role2</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Role2()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if roles->size() < 2 then\r\n\tnull\r\nelse\r\n\troles->last()\r\nendif'"
 	 * @generated
 	 */
 	Role getRole2();
+
+	/**
+	 * Returns the value of the '<em><b>Pattern Ellipse</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse#getCoordinationPattern <em>Coordination Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A CoordinationPattern. contains exactly one PatternEllipse. 
+	 * This reference only exists because of GMF problems to visualize the ellipse of a Real-Time Coordination Patterns.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Pattern Ellipse</em>' containment reference.
+	 * @see #setPatternEllipse(PatternEllipse)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_PatternEllipse()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse#getCoordinationPattern
+	 * @model opposite="coordinationPattern" containment="true" required="true"
+	 * @generated
+	 */
+	PatternEllipse getPatternEllipse();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getPatternEllipse <em>Pattern Ellipse</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pattern Ellipse</em>' containment reference.
+	 * @see #getPatternEllipse()
+	 * @generated
+	 */
+	void setPatternEllipse(PatternEllipse value);
 
 } // CoordinationPattern

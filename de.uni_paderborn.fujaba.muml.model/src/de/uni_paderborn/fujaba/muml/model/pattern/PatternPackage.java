@@ -210,13 +210,22 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN__ROLE2 = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Pattern Ellipse</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN__PATTERN_ELLIPSE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Coordination Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COORDINATION_PATTERN_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl <em>Role</em>}' class.
@@ -346,13 +355,60 @@ public interface PatternPackage extends EPackage {
 	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
+	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ORDERED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Order Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ORDER_VARIABLE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternEllipseImpl <em>Ellipse</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternEllipseImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getPatternEllipse()
+	 * @generated
+	 */
+	int PATTERN_ELLIPSE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_ELLIPSE__COORDINATION_PATTERN = 0;
+
+	/**
+	 * The number of structural features of the '<em>Ellipse</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_ELLIPSE_FEATURE_COUNT = 1;
 
 
 	/**
@@ -464,6 +520,17 @@ public interface PatternPackage extends EPackage {
 	EReference getCoordinationPattern_Role2();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getPatternEllipse <em>Pattern Ellipse</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Pattern Ellipse</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getPatternEllipse()
+	 * @see #getCoordinationPattern()
+	 * @generated
+	 */
+	EReference getCoordinationPattern_PatternEllipse();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -560,6 +627,49 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_RoleAndAdaptationBehavior();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered <em>Ordered</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ordered</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EAttribute getRole_Ordered();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable <em>Order Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Order Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_OrderVariable();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse <em>Ellipse</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ellipse</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse
+	 * @generated
+	 */
+	EClass getPatternEllipse();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse#getCoordinationPattern <em>Coordination Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Coordination Pattern</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse#getCoordinationPattern()
+	 * @see #getPatternEllipse()
+	 * @generated
+	 */
+	EReference getPatternEllipse_CoordinationPattern();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -668,6 +778,14 @@ public interface PatternPackage extends EPackage {
 		EReference COORDINATION_PATTERN__ROLE2 = eINSTANCE.getCoordinationPattern_Role2();
 
 		/**
+		 * The meta object literal for the '<em><b>Pattern Ellipse</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COORDINATION_PATTERN__PATTERN_ELLIPSE = eINSTANCE.getCoordinationPattern_PatternEllipse();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl <em>Role</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -740,6 +858,40 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getRole_RoleAndAdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Ordered</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROLE__ORDERED = eINSTANCE.getRole_Ordered();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__ORDER_VARIABLE = eINSTANCE.getRole_OrderVariable();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternEllipseImpl <em>Ellipse</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternEllipseImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getPatternEllipse()
+		 * @generated
+		 */
+		EClass PATTERN_ELLIPSE = eINSTANCE.getPatternEllipse();
+
+		/**
+		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATTERN_ELLIPSE__COORDINATION_PATTERN = eINSTANCE.getPatternEllipse_CoordinationPattern();
 
 	}
 

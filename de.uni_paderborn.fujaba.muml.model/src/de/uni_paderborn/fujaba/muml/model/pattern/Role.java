@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
@@ -36,11 +37,14 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable <em>Order Variable</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OrderOnlyForMultiPort='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')'"
  * @generated
  */
 public interface Role extends NamedElement, ConstrainableElement, BehavioralElement {
@@ -249,5 +253,55 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * @generated
 	 */
 	void setRoleAndAdaptationBehavior(Behavior value);
+
+	/**
+	 * Returns the value of the '<em><b>Ordered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This attribute marks a multi-role as being ordered. In an ordered multi-role, one of the contained integer attributes is used to define the order. Then, the instances of the multi-role are numbered from 1 to n for n instances.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Ordered</em>' attribute.
+	 * @see #setOrdered(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Ordered()
+	 * @model
+	 * @generated
+	 */
+	boolean isOrdered();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered <em>Ordered</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ordered</em>' attribute.
+	 * @see #isOrdered()
+	 * @generated
+	 */
+	void setOrdered(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This attribute defines the order on the instances of the multi-role. It must be defined in the real-time statechart of this role and it must be of type integer.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Order Variable</em>' reference.
+	 * @see #setOrderVariable(EAttribute)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_OrderVariable()
+	 * @model
+	 * @generated
+	 */
+	EAttribute getOrderVariable();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable <em>Order Variable</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Variable</em>' reference.
+	 * @see #getOrderVariable()
+	 * @generated
+	 */
+	void setOrderVariable(EAttribute value);
 
 } // Role

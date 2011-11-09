@@ -84,7 +84,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setTarget(Vertex)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Target()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getIncomingTransitions
-	 * @model opposite="incomingTransitions"
+	 * @model opposite="incomingTransitions" required="true"
 	 * @generated
 	 */
 	Vertex getTarget();
@@ -112,7 +112,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setSource(Vertex)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Source()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getOutgoingTransitions
-	 * @model opposite="outgoingTransitions"
+	 * @model opposite="outgoingTransitions" required="true"
 	 * @generated
 	 */
 	Vertex getSource();

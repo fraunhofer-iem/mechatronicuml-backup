@@ -144,6 +144,29 @@ public class PatternItemProviderAdapterFactory extends PatternAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PatternEllipseItemProvider patternEllipseItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPatternEllipseAdapter() {
+		if (patternEllipseItemProvider == null) {
+			patternEllipseItemProvider = new PatternEllipseItemProvider(this);
+		}
+
+		return patternEllipseItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +268,7 @@ public class PatternItemProviderAdapterFactory extends PatternAdapterFactory imp
 		if (roleConnectorItemProvider != null) roleConnectorItemProvider.dispose();
 		if (coordinationPatternItemProvider != null) coordinationPatternItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
+		if (patternEllipseItemProvider != null) patternEllipseItemProvider.dispose();
 	}
 
 }

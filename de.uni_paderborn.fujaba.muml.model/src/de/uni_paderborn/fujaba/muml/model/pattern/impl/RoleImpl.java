@@ -11,6 +11,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -52,6 +53,8 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getOrderVariable <em>Order Variable</em>}</li>
  * </ul>
  * </p>
  *
@@ -147,6 +150,36 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected Behavior roleAndAdaptationBehavior;
+
+	/**
+	 * The default value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOrdered()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ORDERED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOrdered()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean ordered = ORDERED_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOrderVariable() <em>Order Variable</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderVariable()
+	 * @generated
+	 * @ordered
+	 */
+	protected EAttribute orderVariable;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -552,6 +585,65 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isOrdered() {
+		return ordered;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrdered(boolean newOrdered) {
+		boolean oldOrdered = ordered;
+		ordered = newOrdered;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ORDERED, oldOrdered, ordered));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrderVariable() {
+		if (orderVariable != null && orderVariable.eIsProxy()) {
+			InternalEObject oldOrderVariable = (InternalEObject)orderVariable;
+			orderVariable = (EAttribute)eResolveProxy(oldOrderVariable);
+			if (orderVariable != oldOrderVariable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ORDER_VARIABLE, oldOrderVariable, orderVariable));
+			}
+		}
+		return orderVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute basicGetOrderVariable() {
+		return orderVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrderVariable(EAttribute newOrderVariable) {
+		EAttribute oldOrderVariable = orderVariable;
+		orderVariable = newOrderVariable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ORDER_VARIABLE, oldOrderVariable, orderVariable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -648,6 +740,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
 				if (resolve) return getRoleAndAdaptationBehavior();
 				return basicGetRoleAndAdaptationBehavior();
+			case PatternPackage.ROLE__ORDERED:
+				return isOrdered();
+			case PatternPackage.ROLE__ORDER_VARIABLE:
+				if (resolve) return getOrderVariable();
+				return basicGetOrderVariable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -693,6 +790,12 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)newValue);
 				return;
+			case PatternPackage.ROLE__ORDERED:
+				setOrdered((Boolean)newValue);
+				return;
+			case PatternPackage.ROLE__ORDER_VARIABLE:
+				setOrderVariable((EAttribute)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -735,6 +838,12 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)null);
 				return;
+			case PatternPackage.ROLE__ORDERED:
+				setOrdered(ORDERED_EDEFAULT);
+				return;
+			case PatternPackage.ROLE__ORDER_VARIABLE:
+				setOrderVariable((EAttribute)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -767,6 +876,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return adaptationBehavior != null;
 			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
 				return roleAndAdaptationBehavior != null;
+			case PatternPackage.ROLE__ORDERED:
+				return ordered != ORDERED_EDEFAULT;
+			case PatternPackage.ROLE__ORDER_VARIABLE:
+				return orderVariable != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -813,6 +926,22 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ordered: ");
+		result.append(ordered);
+		result.append(')');
+		return result.toString();
 	}
 
 } //RoleImpl
