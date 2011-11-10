@@ -10,7 +10,7 @@
 				de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, false);
 
 			// Put all factories into one composed adapter factory.
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<AdapterFactory>();
+			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory>();
 			factories.addAll(positivePriorityFactories);
 			factories.add(defaultFactory);
 			factories.addAll(negativePriorityFactories);
