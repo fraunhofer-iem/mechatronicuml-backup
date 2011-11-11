@@ -118,7 +118,7 @@ public class MumlEditPartProvider extends AbstractEditPartProvider {
 	public synchronized boolean provides(IOperation operation) {
 		if (operation instanceof CreateGraphicEditPartOperation) {
 			View view = ((IEditPartOperation) operation).getView();
-			if (!de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID
+			if (!de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 					.equals(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 							.getModelID(view))) {
 				return false;

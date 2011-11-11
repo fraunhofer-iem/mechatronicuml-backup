@@ -2,12 +2,17 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
@@ -19,14 +24,21 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 
 /**
  * @generated
  */
-public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
+public class CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy
+		extends CanonicalEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	/**
 	 * @generated
@@ -43,9 +55,17 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return ModelinstancePackage.eINSTANCE
-				.getModelElementCategory_ModelElements();
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+							.getCoordinationPattern_Pattern());
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+							.getCoordinationPattern_Roles());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -53,14 +73,23 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		View viewObject = (View) getHost().getModel();
+		List<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-				.getModelElementCategory_1000SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("rawtypes")
+	protected List getSemanticChildrenViewDescriptors() {
+		View viewObject = (View) getHost().getModel();
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
+				.getCoordinationPatternCoordinationPatternContainerCompartment_7001SemanticChildren(viewObject);
+
 	}
 
 	/**
@@ -76,8 +105,10 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
+		int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
+		return visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -88,9 +119,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-				.getModelElementCategory_1000SemanticChildren((View) getHost()
-						.getModel());
+		List<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -160,7 +189,6 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (changed || createdViews.size() > 0) {
 			postProcessRefreshSemantic(createdViews);
 		}
-
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
@@ -170,4 +198,5 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		makeViewsImmutable(createdViews);
 	}
+
 }

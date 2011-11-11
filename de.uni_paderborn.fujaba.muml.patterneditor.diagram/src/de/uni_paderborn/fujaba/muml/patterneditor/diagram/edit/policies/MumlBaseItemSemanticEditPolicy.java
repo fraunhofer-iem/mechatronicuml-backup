@@ -296,4 +296,88 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 	}
 
+	/**
+	 * @generated
+	 */
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
+				.getInstance().getLinkConstraints();
+		if (cached == null) {
+			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().setLinkConstraints(
+							cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static class LinkConstraints {
+
+		/**
+		 * @generated
+		 */
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateCoordinationPatternRoles_4001(
+				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern source,
+				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
+			if (source != null) {
+				if (source.getRoles().size() >= 2
+						|| source.getRoles().contains(target)) {
+					return false;
+				}
+				if (source == target) {
+					return false;
+				}
+			}
+			if (target != null && (target.getCoordinationPattern() != null)) {
+				return false;
+			}
+
+			return canExistCoordinationPatternRoles_4001(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateRoleConnector_4002(
+				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container,
+				de.uni_paderborn.fujaba.muml.model.pattern.Role source,
+				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
+			if (container != null) {
+				if (container.getConnector() != null) {
+					return false;
+				}
+			}
+			return canExistRoleConnector_4002(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistCoordinationPatternRoles_4001(
+				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern source,
+				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistRoleConnector_4002(
+				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container,
+				de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector linkInstance,
+				de.uni_paderborn.fujaba.muml.model.pattern.Role source,
+				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
+			return true;
+		}
+	}
+
 }

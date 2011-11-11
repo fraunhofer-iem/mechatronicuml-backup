@@ -142,7 +142,7 @@ public class RoleItemProvider
 				 getString("_UI_Role_roleConnector_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_roleConnector_feature", "_UI_Role_type"),
 				 PatternPackage.Literals.ROLE__ROLE_CONNECTOR,
-				 false,
+				 true,
 				 false,
 				 true,
 				 null,

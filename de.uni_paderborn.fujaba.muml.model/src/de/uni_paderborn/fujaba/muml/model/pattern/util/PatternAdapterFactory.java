@@ -91,10 +91,6 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 				return createRoleAdapter();
 			}
 			@Override
-			public Adapter casePatternEllipse(PatternEllipse object) {
-				return createPatternEllipseAdapter();
-			}
-			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
 			}
@@ -173,20 +169,6 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRoleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse <em>Ellipse</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse
-	 * @generated
-	 */
-	public Adapter createPatternEllipseAdapter() {
 		return null;
 	}
 

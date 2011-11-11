@@ -51,7 +51,24 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationPattern_2003 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_2003"); //$NON-NLS-1$
+	public static final IElementType CoordinationPattern_2001 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_2001"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType CoordinationPattern_3001 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_3001"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Role_3002 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_3002"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType CoordinationPatternRoles_4001 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPatternRoles_4001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType RoleConnector_4002 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.RoleConnector_4002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -168,9 +185,29 @@ public class MumlElementTypes {
 					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					CoordinationPattern_2003,
+					CoordinationPattern_2001,
 					de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
 							.getCoordinationPattern());
+
+			elements.put(
+					CoordinationPattern_3001,
+					de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+							.getCoordinationPattern());
+
+			elements.put(
+					Role_3002,
+					de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+							.getRole());
+
+			elements.put(
+					CoordinationPatternRoles_4001,
+					de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+							.getCoordinationPattern_Roles());
+
+			elements.put(
+					RoleConnector_4002,
+					de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+							.getRoleConnector());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -189,7 +226,11 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_2003);
+			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_2001);
+			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_3001);
+			KNOWN_ELEMENT_TYPES.add(Role_3002);
+			KNOWN_ELEMENT_TYPES.add(CoordinationPatternRoles_4001);
+			KNOWN_ELEMENT_TYPES.add(RoleConnector_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -199,10 +240,18 @@ public class MumlElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
-			return CoordinationPattern_2003;
+			return CoordinationPattern_2001;
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
+			return CoordinationPattern_3001;
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:
+			return Role_3002;
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternRolesEditPart.VISUAL_ID:
+			return CoordinationPatternRoles_4001;
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
+			return RoleConnector_4002;
 		}
 		return null;
 	}

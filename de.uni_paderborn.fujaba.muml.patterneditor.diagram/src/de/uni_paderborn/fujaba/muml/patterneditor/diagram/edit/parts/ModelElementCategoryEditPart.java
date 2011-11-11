@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -14,7 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PatternDiagramEditPart extends DiagramEditPart {
+public class ModelElementCategoryEditPart extends DiagramEditPart {
 
 	/**
 	 * @generated
@@ -29,7 +30,7 @@ public class PatternDiagramEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public PatternDiagramEditPart(View view) {
+	public ModelElementCategoryEditPart(View view) {
 		super(view);
 	}
 
@@ -40,10 +41,10 @@ public class PatternDiagramEditPart extends DiagramEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.PatternDiagramItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.PatternDiagramCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy());
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

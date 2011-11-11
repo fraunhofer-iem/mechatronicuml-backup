@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers;
 
+import java.util.Collection;
 import org.eclipse.emf.ecore.EcorePackage;
 
 /**
@@ -14,21 +15,16 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CoordinationPattern_2003(
+	public void init_CoordinationPattern_2001(
 			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
-					.createRoleConnector();
-			instance.setConnector(newInstance_0_0);
-			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
 							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-									.getRoleConnector(), null).evaluate(
-							newInstance_0_0);
-			newInstance_0_0.setBidirectional(((Boolean) value_0_0_0)
-					.booleanValue());
-
+									.getCoordinationPattern(), null).evaluate(
+							instance);
+			instance.setName((String) value_0);
 			de.uni_paderborn.fujaba.muml.model.pattern.Role newInstance_1_0 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
 					.createRole();
 			instance.getRoles().add(newInstance_1_0);
@@ -133,13 +129,34 @@ public class ElementInitializers {
 			newInstance_1_1
 					.setRoleConnector((de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector) value_1_1_2);
 
-			Object value_2 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+			de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector newInstance_2_0 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
+					.createRoleConnector();
+			instance.setConnector(newInstance_2_0);
+			Object value_2_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							9,
 							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-									.getCoordinationPattern(), null).evaluate(
-							instance);
-			instance.setName((String) value_2);
+									.getRoleConnector(), null).evaluate(
+							newInstance_2_0);
+			newInstance_2_0.setBidirectional(((Boolean) value_2_0_0)
+					.booleanValue());
+			Object value_2_0_1 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							10,
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getRoleConnector(), null).evaluate(
+							newInstance_2_0);
+			newInstance_2_0
+					.setSource((de.uni_paderborn.fujaba.muml.model.pattern.Role) value_2_0_1);
+			Object value_2_0_2 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							11,
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getRoleConnector(), null).evaluate(
+							newInstance_2_0);
+			newInstance_2_0
+					.setTarget((de.uni_paderborn.fujaba.muml.model.pattern.Role) value_2_0_2);
+
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

@@ -3,9 +3,10 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.policies.CustomModelElementCategoryCanonicalEditPolicy;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart;
 
-public class CustomPatternDiagramEditPart extends PatternDiagramEditPart {
+public class CustomPatternDiagramEditPart extends ModelElementCategoryEditPart {
 	public CustomPatternDiagramEditPart(View view) {
 		super(view);
 	}
@@ -14,6 +15,7 @@ public class CustomPatternDiagramEditPart extends PatternDiagramEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		removeEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new CustomModelElementCategoryCanonicalEditPolicy());
 	}
 
 }

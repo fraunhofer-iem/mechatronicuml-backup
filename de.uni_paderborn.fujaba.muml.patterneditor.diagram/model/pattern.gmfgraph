@@ -89,6 +89,20 @@
       <accessors
           figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="CoordinationPatternContainerFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="CoordinationPatternContainerFigure"/>
+    </descriptors>
+    <descriptors
+        name="CoordinationPatternContainerCompartmentFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="CoordinationPatternContainerCompartmentFigure"
+          outline="false"
+          fill="false"/>
+    </descriptors>
   </figures>
   <nodes
       name="CoordinationPattern"
@@ -107,6 +121,9 @@
   <nodes
       name="TextualConstraint"
       figure="TextualConstraintFigure"/>
+  <nodes
+      name="CoordinationPatternContainer"
+      figure="CoordinationPatternContainerFigure"/>
   <connections
       name="RoleConnector"
       figure="RoleConnectorFigure"/>
@@ -116,6 +133,9 @@
   <connections
       name="ConstraintLink"
       figure="ConstraintLinkFigure"/>
+  <compartments
+      name="CoordinationPatternContainerCompartment"
+      figure="CoordinationPatternContainerCompartmentFigure"/>
   <labels
       name="CoordinationPatternName"
       figure="CoordinationPatternFigure"

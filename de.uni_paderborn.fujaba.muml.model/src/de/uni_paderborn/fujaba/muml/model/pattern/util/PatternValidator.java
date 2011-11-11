@@ -96,8 +96,6 @@ public class PatternValidator extends EObjectValidator {
 				return validateCoordinationPattern((CoordinationPattern)value, diagnostics, context);
 			case PatternPackage.ROLE:
 				return validateRole((Role)value, diagnostics, context);
-			case PatternPackage.PATTERN_ELLIPSE:
-				return validatePatternEllipse((PatternEllipse)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -197,15 +195,6 @@ public class PatternValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePatternEllipse(PatternEllipse patternEllipse, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(patternEllipse, diagnostics, context);
 	}
 
 	/**

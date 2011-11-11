@@ -25,9 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnector <em>Connector</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole1 <em>Role1</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole2 <em>Role2</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getPatternEllipse <em>Pattern Ellipse</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getPattern <em>Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,63 +80,33 @@ public interface CoordinationPattern extends NamedElement, ConstrainableElement 
 	void setConnector(RoleConnector value);
 
 	/**
-	 * Returns the value of the '<em><b>Role1</b></em>' reference.
+	 * Returns the value of the '<em><b>Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Role1</em>' reference isn't clear,
+	 * If the meaning of the '<em>Pattern</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role1</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Role1()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if roles->isEmpty() then\r\n\tnull\r\nelse\r\n\troles->first()\r\nendif'"
-	 * @generated
-	 */
-	Role getRole1();
-
-	/**
-	 * Returns the value of the '<em><b>Role2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Role2</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role2</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Role2()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if roles->size() < 2 then\r\n\tnull\r\nelse\r\n\troles->last()\r\nendif'"
-	 * @generated
-	 */
-	Role getRole2();
-
-	/**
-	 * Returns the value of the '<em><b>Pattern Ellipse</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse#getCoordinationPattern <em>Coordination Pattern</em>}'.
-	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A CoordinationPattern. contains exactly one PatternEllipse. 
-	 * This reference only exists because of GMF problems to visualize the ellipse of a Real-Time Coordination Patterns.
+	 * This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Pattern.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Pattern Ellipse</em>' containment reference.
-	 * @see #setPatternEllipse(PatternEllipse)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_PatternEllipse()
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternEllipse#getCoordinationPattern
-	 * @model opposite="coordinationPattern" containment="true" required="true"
+	 * @return the value of the '<em>Pattern</em>' containment reference.
+	 * @see #setPattern(CoordinationPattern)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Pattern()
+	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self'"
 	 * @generated
 	 */
-	PatternEllipse getPatternEllipse();
+	CoordinationPattern getPattern();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getPatternEllipse <em>Pattern Ellipse</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getPattern <em>Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pattern Ellipse</em>' containment reference.
-	 * @see #getPatternEllipse()
+	 * @param value the new value of the '<em>Pattern</em>' containment reference.
+	 * @see #getPattern()
 	 * @generated
 	 */
-	void setPatternEllipse(PatternEllipse value);
+	void setPattern(CoordinationPattern value);
 
 } // CoordinationPattern

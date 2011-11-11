@@ -66,7 +66,6 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 			case PatternPackage.ROLE_CONNECTOR: return createRoleConnector();
 			case PatternPackage.COORDINATION_PATTERN: return createCoordinationPattern();
 			case PatternPackage.ROLE: return createRole();
-			case PatternPackage.PATTERN_ELLIPSE: return createPatternEllipse();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -100,16 +99,6 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	public Role createRole() {
 		RoleImpl role = new RoleImpl();
 		return role;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PatternEllipse createPatternEllipse() {
-		PatternEllipseImpl patternEllipse = new PatternEllipseImpl();
-		return patternEllipse;
 	}
 
 	/**

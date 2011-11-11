@@ -10,14 +10,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 /**
  * @generated
  */
-public class PatternDiagramItemSemanticEditPolicy
+public class ModelElementCategoryItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public PatternDiagramItemSemanticEditPolicy() {
+	public ModelElementCategoryItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
 	}
@@ -26,7 +26,7 @@ public class PatternDiagramItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2003 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2001 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.CoordinationPatternCreateCommand(
 					req));

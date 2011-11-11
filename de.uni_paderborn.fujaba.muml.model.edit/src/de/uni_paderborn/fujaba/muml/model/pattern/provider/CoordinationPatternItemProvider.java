@@ -73,8 +73,6 @@ public class CoordinationPatternItemProvider
 			super.getPropertyDescriptors(object);
 
 			addConstraintPropertyDescriptor(object);
-			addRole1PropertyDescriptor(object);
-			addRole2PropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -102,170 +100,6 @@ public class CoordinationPatternItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Role1 feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addRole1PropertyDescriptor(Object object) {
-		addRolePropertyDescriptor(PatternPackage.Literals.COORDINATION_PATTERN__ROLE1, getString("_UI_Role1PropertyCategory"));		
-	}
-	
-
-	/**
-	 * This adds a property descriptor for the Role2 feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addRole2PropertyDescriptor(Object object) {
-		addRolePropertyDescriptor(PatternPackage.Literals.COORDINATION_PATTERN__ROLE2, getString("_UI_Role2PropertyCategory"));
-	}
-
-
-	private void addRolePropertyDescriptor(EReference reference, String category) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CoordinationPattern_role1_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_role1_feature", "_UI_CoordinationPattern_type"),
-				 reference,
-				 true,
-				 false,
-				 true,
-				 null,
-				 category,
-				 null);
-		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_NamedElement_name_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				SDMPackage.Literals.NAMED_ELEMENT__NAME,
-				true,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				category,
-				null,
-				rootPropertyDescriptor));
-
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_ConstrainableElement_constraint_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-			 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-			 true,
-			 false,
-			 true,
-			 null,
-			 category,
-			 null,
-			 rootPropertyDescriptor));
-		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_BehavioralElement_behavior_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
-			 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
-			 true,
-			 false,
-			 true,
-			 null,
-			 category,
-			 null,
-			 rootPropertyDescriptor));
-		
-		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_Role_senderMessageInterface_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_Role_senderMessageInterface_feature", "_UI_Role_type"),
-			 PatternPackage.Literals.ROLE__SENDER_MESSAGE_INTERFACE,
-			 true,
-			 false,
-			 true,
-			 null,
-			 category,
-			 null,
-			 rootPropertyDescriptor));
-		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_Role_receiverMessageInterface_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_Role_receiverMessageInterface_feature", "_UI_Role_type"),
-			 PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_INTERFACE,
-			 true,
-			 false,
-			 true,
-			 null,
-			 category,
-			 null,
-			 rootPropertyDescriptor));
-		
-		IChainedPropertyDescriptor cardinalityPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Role_cardinality_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Role_cardinality_feature", "_UI_Role_type"),
-				PatternPackage.Literals.ROLE__CARDINALITY,
-				true,
-				false,
-				false,
-				null,
-				category,
-				null,
-				rootPropertyDescriptor);
-
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Cardinality_lowerBound_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Cardinality_lowerBound_feature", "_UI_Cardinality_type"),
-				CorePackage.Literals.CARDINALITY__LOWER_BOUND,
-				true,
-				false,
-				false,
-				null,
-				category,
-				null, 
-				cardinalityPropertyDescriptor));
-
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Cardinality_upperBound_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Cardinality_upperBound_feature", "_UI_Cardinality_type"),
-				CorePackage.Literals.CARDINALITY__UPPER_BOUND,
-				true,
-				false,
-				false,
-				null,
-				category,
-				null,
-				cardinalityPropertyDescriptor));
-		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_Role_port_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_Role_port_feature", "_UI_Role_type"),
-			 PatternPackage.Literals.ROLE__PORT,
-			 true,
-			 false,
-			 true,
-			 null,
-			 category,
-			 null,
-			 rootPropertyDescriptor));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -278,8 +112,6 @@ public class CoordinationPatternItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__CONNECTOR);
-			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__ROLE2);
-			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_ELLIPSE);
 		}
 		return childrenFeatures;
 	}
@@ -335,8 +167,6 @@ public class CoordinationPatternItemProvider
 
 		switch (notification.getFeatureID(CoordinationPattern.class)) {
 			case PatternPackage.COORDINATION_PATTERN__CONNECTOR:
-			case PatternPackage.COORDINATION_PATTERN__ROLE2:
-			case PatternPackage.COORDINATION_PATTERN__PATTERN_ELLIPSE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -358,16 +188,6 @@ public class CoordinationPatternItemProvider
 			(createChildParameter
 				(PatternPackage.Literals.COORDINATION_PATTERN__CONNECTOR,
 				 PatternFactory.eINSTANCE.createRoleConnector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PatternPackage.Literals.COORDINATION_PATTERN__ROLE2,
-				 PatternFactory.eINSTANCE.createRole()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_ELLIPSE,
-				 PatternFactory.eINSTANCE.createPatternEllipse()));
 	}
 
 	/**

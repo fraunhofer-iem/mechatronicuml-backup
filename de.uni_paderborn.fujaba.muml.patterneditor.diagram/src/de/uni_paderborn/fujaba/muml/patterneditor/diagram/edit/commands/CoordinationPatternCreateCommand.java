@@ -59,7 +59,7 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers
-				.getInstance().init_CoordinationPattern_2003(newElement);
+				.getInstance().init_CoordinationPattern_2001(newElement);
 
 		doConfigure(newElement, monitor, info);
 

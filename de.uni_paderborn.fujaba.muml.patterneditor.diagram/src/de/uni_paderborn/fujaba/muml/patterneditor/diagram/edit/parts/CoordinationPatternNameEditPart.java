@@ -42,8 +42,8 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabelEditPart extends CompartmentEditPart implements
-		ITextAwareEditPart {
+public class CoordinationPatternNameEditPart extends CompartmentEditPart
+		implements ITextAwareEditPart {
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public WrappingLabelEditPart(View view) {
+	public CoordinationPatternNameEditPart(View view) {
 		super(view);
 	}
 
@@ -89,7 +89,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 				new LabelDirectEditPolicy());
 		installEditPolicy(
 				EditPolicy.PRIMARY_DRAG_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.NodeLabelDragPolicy());
+				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.NodeLabelDragPolicy());
 	}
 
 	/**
@@ -290,10 +290,10 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2003,
+							de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_3001,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

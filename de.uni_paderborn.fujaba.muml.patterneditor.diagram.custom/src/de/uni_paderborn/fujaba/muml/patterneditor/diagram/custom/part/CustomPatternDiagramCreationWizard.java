@@ -6,6 +6,7 @@ import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
 import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin;
 
 /**
  * A CreationWizard for Pattern diagrams. It implements the abstract creation
@@ -20,7 +21,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 		super.init(workbench, selection);
 
 		setWindowTitle(getWindowTitle());
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
+		setDefaultPageImageDescriptor(MumlDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/wizban/NewPatterneditorWizard.gif")); //$NON-NLS-1$
 
 	}
@@ -32,7 +33,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	@Override
 	protected String getModelId() {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID;
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID;
 	}
 
 	@Override
@@ -53,7 +54,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	@Override
 	protected ExtendableElement createDiagramElement() {
-		return null;
+		return null; //PatternFactory.eINSTANCE.createCoordinationPattern();
 	}
 
 }

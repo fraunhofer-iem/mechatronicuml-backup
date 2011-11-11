@@ -287,14 +287,11 @@
           <genFeatures property="None" notify="false" createChild="false" propertyDescription="Role"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/roles"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/connector"/>
-          <genFeatures notify="false" createChild="false" propertyCategory="Role 1"
-              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/role1"/>
-          <genFeatures children="true" createChild="true" propertyCategory="Role 2"
-              propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/role2"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/patternEllipse"/>
+          <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/pattern"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/pattern/Role">
-          <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/roleConnector"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/coordinationPattern"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -311,9 +308,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/pattern/Role/ordered"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/orderVariable"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/pattern/PatternEllipse">
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/PatternEllipse/coordinationPattern"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.model"

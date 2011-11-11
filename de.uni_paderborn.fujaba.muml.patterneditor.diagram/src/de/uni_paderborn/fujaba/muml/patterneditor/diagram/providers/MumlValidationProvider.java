@@ -6,7 +6,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PatternValidationProvider {
+public class MumlValidationProvider {
 
 	/**
 	 * @generated
@@ -57,7 +57,7 @@ public class PatternValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID
+					&& de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 							.equals(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 									.getModelID((View) object));
 		}

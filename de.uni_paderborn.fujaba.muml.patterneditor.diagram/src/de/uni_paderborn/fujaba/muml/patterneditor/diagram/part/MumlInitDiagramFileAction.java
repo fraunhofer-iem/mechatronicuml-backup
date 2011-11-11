@@ -92,7 +92,7 @@ public class MumlInitDiagramFileAction implements IObjectActionDelegate {
 				domainModelURI, diagramRoot, editingDomain);
 		wizard.setWindowTitle(NLS
 				.bind(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.InitDiagramFile_WizardTitle,
-						de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID));
+						de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID));
 		de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorUtil
 				.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
 	}

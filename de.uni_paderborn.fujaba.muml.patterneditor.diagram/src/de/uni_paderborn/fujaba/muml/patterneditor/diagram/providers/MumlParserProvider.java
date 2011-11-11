@@ -23,12 +23,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser coordinationPatternName_5001Parser;
+	protected IParser coordinationPatternName_5001Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCoordinationPatternName_5001Parser() {
+	protected IParser getCoordinationPatternName_5001Parser() {
 		if (coordinationPatternName_5001Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -44,7 +44,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID:
 			return getCoordinationPatternName_5001Parser();
 		}
 		return null;

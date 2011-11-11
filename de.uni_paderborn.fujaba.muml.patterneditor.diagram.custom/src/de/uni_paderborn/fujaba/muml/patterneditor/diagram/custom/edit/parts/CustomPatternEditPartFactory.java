@@ -3,8 +3,9 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.MumlEditPartFactory;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -21,9 +22,12 @@ public class CustomPatternEditPartFactory extends MumlEditPartFactory {
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case PatternDiagramEditPart.VISUAL_ID:
+			case ModelElementCategoryEditPart.VISUAL_ID:
 				return new CustomPatternDiagramEditPart(view);
-
+				
+			case CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
+				return new CustomCoordinationPatternCoordinationPatternContainerCompartmentEditPart(view);
+				
 //			case CoordinationPatternEditPart.VISUAL_ID:
 //				return new CustomCoordinationPatternEditPart(view);
 

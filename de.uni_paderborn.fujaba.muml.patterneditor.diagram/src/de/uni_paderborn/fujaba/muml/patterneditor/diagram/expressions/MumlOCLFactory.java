@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression[10];
+		this.expressions = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression[12];
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class MumlOCLFactory {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] { "false", //$NON-NLS-1$
+			final String[] exprBodies = new String[] { "\'pattern\'", //$NON-NLS-1$
 					"\'role1\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
@@ -58,7 +58,9 @@ public class MumlOCLFactory {
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"self.coordinationPattern.connector->any(true)", //$NON-NLS-1$
-					"\'pattern\'", //$NON-NLS-1$
+					"false", //$NON-NLS-1$
+					"self.coordinationPattern.roles->first()", //$NON-NLS-1$
+					"self.coordinationPattern.roles->last()", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

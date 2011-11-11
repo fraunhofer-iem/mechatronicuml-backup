@@ -975,23 +975,13 @@
             <details key="documentation" value="Each coordination pattern has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="role1" lowerBound="1"
-            eType="#//model/pattern/Role" changeable="false" volatile="true" transient="true"
-            derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//model/pattern/CoordinationPattern"
+            volatile="true" transient="true" derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if roles->isEmpty() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;roles->first()&#xD;&#xA;endif"/>
+            <details key="derivation" value="self"/>
           </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="role2" eType="#//model/pattern/Role"
-            changeable="false" volatile="true" transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if roles->size() &lt; 2 then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;roles->last()&#xD;&#xA;endif"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="patternEllipse" lowerBound="1"
-            eType="#//model/pattern/PatternEllipse" containment="true" eOpposite="#//model/pattern/PatternEllipse/coordinationPattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A CoordinationPattern. contains exactly one PatternEllipse. &#xD;&#xA;This reference only exists because of GMF problems to visualize the ellipse of a Real-Time Coordination Patterns."/>
+            <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Pattern."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1058,17 +1048,6 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderVariable" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This attribute defines the order on the instances of the multi-role. It must be defined in the real-time statechart of this role and it must be of type integer."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PatternEllipse">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class only exists because of GMF problems to visualize the ellipse of a Real-Time Coordination Patterns."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
-            lowerBound="1" eType="#//model/pattern/CoordinationPattern" eOpposite="#//model/pattern/CoordinationPattern/patternEllipse">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A PatternEllipse has exactly one CoordinationPattern.&#xD;&#xA;This reference only exists because of GMF problems to visualize the ellipse of a Real-Time Coordination Patterns."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
