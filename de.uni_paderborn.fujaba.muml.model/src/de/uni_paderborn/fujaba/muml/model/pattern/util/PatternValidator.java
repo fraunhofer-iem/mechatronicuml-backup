@@ -107,7 +107,46 @@ public class PatternValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRoleConnector(RoleConnector roleConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(roleConnector, diagnostics, context);
+		if (!validate_NoCircularContainment(roleConnector, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRoleConnector_OnlyRolesOfSameCoordinationPattern(roleConnector, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the OnlyRolesOfSameCoordinationPattern constraint of '<em>Role Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PATTERN__EEXPRESSION = "(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern";
+
+	/**
+	 * Validates the OnlyRolesOfSameCoordinationPattern constraint of '<em>Role Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRoleConnector_OnlyRolesOfSameCoordinationPattern(RoleConnector roleConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PatternPackage.Literals.ROLE_CONNECTOR,
+				 roleConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OnlyRolesOfSameCoordinationPattern",
+				 ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PATTERN__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

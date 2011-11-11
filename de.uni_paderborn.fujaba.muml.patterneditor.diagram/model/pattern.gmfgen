@@ -321,6 +321,8 @@
         <targetMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/target"/>
       </modelFacet>
+      <creationConstraints
+          targetEnd="//@expressionProviders/@providers.0/@expressions.12"/>
     </links>
     <compartments
         visualID="7001"
@@ -528,6 +530,9 @@
           body="self.coordinationPattern.roles->first()"/>
       <expressions
           body="self.coordinationPattern.roles->last()"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.coordinationPattern = oppositeEnd.coordinationPattern"/>
     </providers>
   </expressionProviders>
   <labelParsers

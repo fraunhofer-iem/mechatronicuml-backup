@@ -484,6 +484,12 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });			
+		addAnnotation
+		  (roleConnectorEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "OnlyRolesOfSameCoordinationPattern"
 		   });													
 		addAnnotation
 		  (roleEClass, 
@@ -500,7 +506,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";											
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		addAnnotation
+		  (roleConnectorEClass, 
+		   source, 
+		   new String[] {
+			 "OnlyRolesOfSameCoordinationPattern", "(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"
+		   });									
 		addAnnotation
 		  (getCoordinationPattern_Pattern(), 
 		   source, 

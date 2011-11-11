@@ -28,7 +28,8 @@ import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRoleConnector()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyRolesOfSameCoordinationPattern'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationPattern='(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern'"
  * @generated
  */
 public interface RoleConnector extends BehavioralConnector {

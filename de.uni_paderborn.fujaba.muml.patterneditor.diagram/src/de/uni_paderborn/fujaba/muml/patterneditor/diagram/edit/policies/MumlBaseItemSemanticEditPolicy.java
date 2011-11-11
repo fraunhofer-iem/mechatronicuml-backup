@@ -1,7 +1,10 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies;
 
+import java.util.Collections;
 import java.util.Iterator;
 
+import java.util.Map;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -376,7 +379,33 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.model.pattern.Role source,
 				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
-			return true;
+			try {
+				if (target == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> env = Collections
+							.<String, EClassifier> singletonMap(
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE.getRole()); //$NON-NLS-1$
+					Object targetVal = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+							.getExpression(
+									12,
+									de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+											.getRole(), env).evaluate(
+									target,
+									Collections.singletonMap(
+											"oppositeEnd", source)); //$NON-NLS-1$
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				return true;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return false;
+			}
 		}
 	}
 

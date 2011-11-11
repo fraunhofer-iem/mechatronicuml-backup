@@ -250,6 +250,10 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/target"/>
+    <creationConstraints>
+      <targetEnd
+          body="self.coordinationPattern = oppositeEnd.coordinationPattern"/>
+    </creationConstraints>
   </links>
   <diagram>
     <diagramCanvas
