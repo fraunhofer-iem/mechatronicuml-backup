@@ -33,9 +33,9 @@ import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListCreationDialogExtension;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertiesListCreationDialogExtension;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.TextualCreationDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertiesListDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.TextualDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.TypeSelectionDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.DefaultMultiLabelProvider;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.IMultiLabelProvider;
@@ -189,8 +189,8 @@ public class CustomPropertySource extends PropertySource {
 		protected IMultiLabelProvider textProvider;
 		protected ExtensibleCreationDialog dialog;
 		private TypeSelectionDialogExtension typeSelectionDialogExtension;
-		private PropertiesListCreationDialogExtension propertiesDialogExtension;
-		private ObjectsListCreationDialogExtension objectsListCreationDialogExtension;
+		private PropertiesListDialogExtension propertiesDialogExtension;
+		private ObjectsListDialogExtension objectsListCreationDialogExtension;
 
 		private MultiFeatureCreationCellEditor(Composite composite,
 				ILabelProvider labelProvider,
@@ -206,12 +206,12 @@ public class CustomPropertySource extends PropertySource {
 			typeSelectionDialogExtension = new TypeSelectionDialogExtension(
 					dialog, adapterFactory);
 
-			propertiesDialogExtension = new PropertiesListCreationDialogExtension(
+			propertiesDialogExtension = new PropertiesListDialogExtension(
 					dialog);
 
-			objectsListCreationDialogExtension = new ObjectsListCreationDialogExtension(
+			objectsListCreationDialogExtension = new ObjectsListDialogExtension(
 					dialog, adapterFactory, currentValues);
-			TextualCreationDialogExtension textualCreationDialogExtension = new TextualCreationDialogExtension(
+			TextualDialogExtension textualCreationDialogExtension = new TextualDialogExtension(
 					dialog, textParser, textProvider);
 
 			typeSelectionDialogExtension

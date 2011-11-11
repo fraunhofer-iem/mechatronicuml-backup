@@ -30,16 +30,16 @@ import org.eclipse.swt.widgets.Table;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
-public class ObjectsListCreationDialogExtension extends
-		AbstractCreationDialogExtension implements
-		IObjectsListCreationDialogExtension {
+public class ObjectsListDialogExtension extends
+		AbstractDialogExtension implements
+		IObjectsListDialogExtension {
 	private Button btnUp;
 	private Button btnDown;
 	private Button btnRemove;
 
-	private ITextualCreationDialogExtension textualCreationDialogExtension;
+	private ITextualDialogExtension textualCreationDialogExtension;
 
-	private IPropertiesListCreationDialogExtension propertiesListCreationDialogExtension;
+	private IPropertiesListDialogExtension propertiesListCreationDialogExtension;
 
 	/**
 	 * A SelectionChangedListener, which is notified about selection changes in
@@ -84,7 +84,7 @@ public class ObjectsListCreationDialogExtension extends
 	 */
 	private TableViewer objectsTableViewer;
 
-	public ObjectsListCreationDialogExtension(
+	public ObjectsListDialogExtension(
 			ExtensibleCreationDialog creationDialog,
 			AdapterFactory adapterFactory, Collection<?> currentValues) {
 		super(creationDialog);
@@ -326,12 +326,12 @@ public class ObjectsListCreationDialogExtension extends
 	}
 
 	public void setPropertiesListCreationDialogExtension(
-			IPropertiesListCreationDialogExtension propertiesListCreationDialogExtension) {
+			IPropertiesListDialogExtension propertiesListCreationDialogExtension) {
 		this.propertiesListCreationDialogExtension = propertiesListCreationDialogExtension;
 	}
 
 	public void setTextualCreationDialogExtension(
-			ITextualCreationDialogExtension textualCreationDialogExtension) {
+			ITextualDialogExtension textualCreationDialogExtension) {
 		this.textualCreationDialogExtension = textualCreationDialogExtension;
 	}
 

@@ -26,11 +26,11 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.IMultiLabelProv
 import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.IMultiTextParser;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
 
-public class TextualCreationDialogExtension extends
-		AbstractCreationDialogExtension implements
-		ITextualCreationDialogExtension {
+public class TextualDialogExtension extends
+		AbstractDialogExtension implements
+		ITextualDialogExtension {
 
-	private IObjectsListCreationDialogExtension objectsListCreationDialogExtension;
+	private IObjectsListDialogExtension objectsListCreationDialogExtension;
 
 	/**
 	 * The areas in the Parameter-Line Textfield that contain certain
@@ -81,7 +81,7 @@ public class TextualCreationDialogExtension extends
 	 */
 	private IMultiLabelProvider textProvider;
 
-	public TextualCreationDialogExtension(
+	public TextualDialogExtension(
 			ExtensibleCreationDialog creationDialog,
 			IMultiTextParser textParser, IMultiLabelProvider textProvider) {
 		super(creationDialog);
@@ -302,7 +302,7 @@ public class TextualCreationDialogExtension extends
 	}
 
 	public void setObjectsListCreationDialogExtension(
-			IObjectsListCreationDialogExtension objectsListCreationDialogExtension) {
+			IObjectsListDialogExtension objectsListCreationDialogExtension) {
 		this.objectsListCreationDialogExtension = objectsListCreationDialogExtension;
 	}
 

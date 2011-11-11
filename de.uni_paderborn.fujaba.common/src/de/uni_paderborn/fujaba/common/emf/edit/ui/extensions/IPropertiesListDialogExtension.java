@@ -5,7 +5,7 @@ import java.util.Collection;
 import org.eclipse.emf.ecore.EClass;
 
 
-public interface IPropertiesListCreationDialogExtension extends ICreationDialogExtension {
+public interface IPropertiesListDialogExtension extends IDialogExtension {
 
 	void updateModifyButtonEnablement();
 

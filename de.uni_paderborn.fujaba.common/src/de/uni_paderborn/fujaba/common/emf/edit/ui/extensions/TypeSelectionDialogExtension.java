@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Composite;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
 public class TypeSelectionDialogExtension extends
-		AbstractCreationDialogExtension implements
+		AbstractDialogExtension implements
 		ITypeSelectionDialogExtension {
 
 	private ItemProvider values;
@@ -25,7 +25,7 @@ public class TypeSelectionDialogExtension extends
 
 	private AdapterFactory adapterFactory;
 
-	private IPropertiesListCreationDialogExtension propertiesListCreationDialogExtension;
+	private IPropertiesListDialogExtension propertiesListCreationDialogExtension;
 
 	public TypeSelectionDialogExtension(
 			ExtensibleCreationDialog creationDialog,
@@ -88,7 +88,7 @@ public class TypeSelectionDialogExtension extends
 	}
 
 	public void setPropertiesListCreationDialogExtension(
-			IPropertiesListCreationDialogExtension propertiesListCreationDialogExtension) {
+			IPropertiesListDialogExtension propertiesListCreationDialogExtension) {
 		this.propertiesListCreationDialogExtension = propertiesListCreationDialogExtension;
 	}
 

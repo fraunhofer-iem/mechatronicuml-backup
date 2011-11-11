@@ -4,10 +4,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
-public abstract class AbstractCreationDialogExtension implements ICreationDialogExtension {
+public abstract class AbstractDialogExtension implements IDialogExtension {
 	private ExtensibleCreationDialog creationDialog;
 	
-	public AbstractCreationDialogExtension(ExtensibleCreationDialog creationDialog) {
+	public AbstractDialogExtension(ExtensibleCreationDialog creationDialog) {
 		this.creationDialog = creationDialog;
 	}
 

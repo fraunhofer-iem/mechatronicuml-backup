@@ -27,9 +27,9 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.property.AbstractPropertyEdito
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Property;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidationListener;
 
-public class PropertiesListCreationDialogExtension extends
-		AbstractCreationDialogExtension implements
-		IPropertiesListCreationDialogExtension {
+public class PropertiesListDialogExtension extends
+		AbstractDialogExtension implements
+		IPropertiesListDialogExtension {
 
 	/**
 	 * The instance class of the objects to create.
@@ -66,11 +66,11 @@ public class PropertiesListCreationDialogExtension extends
 	 */
 	private Composite propertyEditorContainer;
 
-	private ITextualCreationDialogExtension textualCreationDialogExtension;
+	private ITextualDialogExtension textualCreationDialogExtension;
 
-	private IObjectsListCreationDialogExtension objectsListCreationDialogExtension;
+	private IObjectsListDialogExtension objectsListCreationDialogExtension;
 
-	public PropertiesListCreationDialogExtension(
+	public PropertiesListDialogExtension(
 			ExtensibleCreationDialog creationDialog) {
 		super(creationDialog);
 		setInstanceClass((EClass) creationDialog.getStructuralFeature().getEType());
@@ -309,12 +309,12 @@ public class PropertiesListCreationDialogExtension extends
 	}
 
 	public void setTextualCreationDialogExtension(
-			ITextualCreationDialogExtension textualCreationDialogExtension) {
+			ITextualDialogExtension textualCreationDialogExtension) {
 		this.textualCreationDialogExtension = textualCreationDialogExtension;
 	}
 
 	public void setObjectsListCreationDialogExtension(
-			IObjectsListCreationDialogExtension objectsListCreationDialogExtension) {
+			IObjectsListDialogExtension objectsListCreationDialogExtension) {
 		this.objectsListCreationDialogExtension = objectsListCreationDialogExtension;
 	}
 

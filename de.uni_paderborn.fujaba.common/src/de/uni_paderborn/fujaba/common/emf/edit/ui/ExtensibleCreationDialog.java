@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ICreationDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.IDialogExtension;
 
 /**
  * 
@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ICreationDialogExte
  */
 public class ExtensibleCreationDialog extends Dialog {
 	
-	private List<ICreationDialogExtension> extensions = new ArrayList<ICreationDialogExtension>();
+	private List<IDialogExtension> extensions = new ArrayList<IDialogExtension>();
 
 
 	/**
@@ -111,7 +111,7 @@ public class ExtensibleCreationDialog extends Dialog {
 	}
 	
 	
-	public void addExtension(ICreationDialogExtension extension) {
+	public void addExtension(IDialogExtension extension) {
 		extensions.add(extension);
 	}
 
@@ -137,7 +137,7 @@ public class ExtensibleCreationDialog extends Dialog {
 		Composite container = (Composite) super.createDialogArea(parent);
 		container.setLayout(new GridLayout(2, false));
 		
-		for (ICreationDialogExtension extension : extensions) {
+		for (IDialogExtension extension : extensions) {
 			Composite mainArea = new Composite(container, SWT.NONE);
 			GridLayout gridLayoutMainArea = new GridLayout(1, false);
 			mainArea.setLayout(gridLayoutMainArea);
@@ -154,7 +154,7 @@ public class ExtensibleCreationDialog extends Dialog {
 			extension.createButtonArea(buttonArea);
 		}
 
-		for (ICreationDialogExtension extension : extensions) {
+		for (IDialogExtension extension : extensions) {
 			extension.initialize();
 		}
 
@@ -171,7 +171,7 @@ public class ExtensibleCreationDialog extends Dialog {
 
 	@Override
 	protected void okPressed() {
-		for (ICreationDialogExtension extension : extensions) {
+		for (IDialogExtension extension : extensions) {
 			extension.okPressed();
 		}
 		super.okPressed();

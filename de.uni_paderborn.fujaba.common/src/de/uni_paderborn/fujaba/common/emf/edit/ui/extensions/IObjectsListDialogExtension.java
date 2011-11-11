@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TableViewer;
 
-public interface IObjectsListCreationDialogExtension extends
-		ICreationDialogExtension {
+public interface IObjectsListDialogExtension extends
+		IDialogExtension {
 	EObject getListSelection();
 
 	List<Object> getCurrentListItems();
