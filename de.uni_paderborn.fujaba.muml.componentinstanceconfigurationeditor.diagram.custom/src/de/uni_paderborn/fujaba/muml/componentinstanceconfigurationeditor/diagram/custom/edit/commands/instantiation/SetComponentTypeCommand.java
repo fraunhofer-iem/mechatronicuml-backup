@@ -16,7 +16,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
@@ -416,8 +415,6 @@ public class SetComponentTypeCommand extends AbstractCommand {
 	private PortInstance createSinglePortInstance(Port port) {
 		if (port instanceof DiscretePort && !(port instanceof ContinuousPort)) {
 			return InstanceFactory.eINSTANCE.createDiscreteSinglePortInstance();
-		} else if (port instanceof HardwarePort) {
-			return InstanceFactory.eINSTANCE.createHardwarePortInstance();
 		} else if (port instanceof ContinuousPort && !(port instanceof DiscretePort)) {
 			return InstanceFactory.eINSTANCE.createContinuousPortInstance();
 		} else if (port instanceof HybridPort) {
