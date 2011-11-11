@@ -23,12 +23,12 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser atomicComponentName_5002Parser;
+	protected IParser atomicComponentName_5002Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getAtomicComponentName_5002Parser() {
+	protected IParser getAtomicComponentName_5002Parser() {
 		if (atomicComponentName_5002Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -42,12 +42,12 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser hybridPortName_5003Parser;
+	protected IParser hybridPortName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getHybridPortName_5003Parser() {
+	protected IParser getHybridPortName_5003Parser() {
 		if (hybridPortName_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -61,12 +61,12 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser discretePortName_5004Parser;
+	protected IParser discretePortName_5004Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getDiscretePortName_5004Parser() {
+	protected IParser getDiscretePortName_5004Parser() {
 		if (discretePortName_5004Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -80,12 +80,12 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser continuousPortName_5005Parser;
+	protected IParser continuousPortName_5005Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getContinuousPortName_5005Parser() {
+	protected IParser getContinuousPortName_5005Parser() {
 		if (continuousPortName_5005Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -94,25 +94,6 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 			continuousPortName_5005Parser = parser;
 		}
 		return continuousPortName_5005Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser hardwarePortName_5006Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getHardwarePortName_5006Parser() {
-		if (hardwarePortName_5006Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
-					features);
-			hardwarePortName_5006Parser = parser;
-		}
-		return hardwarePortName_5006Parser;
 	}
 
 	/**
@@ -128,8 +109,6 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 			return getDiscretePortName_5004Parser();
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
 			return getContinuousPortName_5005Parser();
-		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortNameEditPart.VISUAL_ID:
-			return getHardwarePortName_5006Parser();
 		}
 		return null;
 	}

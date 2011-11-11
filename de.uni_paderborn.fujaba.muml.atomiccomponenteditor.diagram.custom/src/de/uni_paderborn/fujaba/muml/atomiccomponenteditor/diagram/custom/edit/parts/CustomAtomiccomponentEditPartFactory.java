@@ -7,7 +7,6 @@ import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.Ato
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart;
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart;
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart;
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortEditPart;
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart;
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry;
@@ -34,8 +33,6 @@ public class CustomAtomiccomponentEditPartFactory extends MumlEditPartFactory {
 				return new CustomContinuousPortEditPart(view);
 			case HybridPortEditPart.VISUAL_ID:
 				return new CustomHybridPortEditPart(view);
-			case HardwarePortEditPart.VISUAL_ID:
-				return new CustomHardwarePortEditPart(view);
 			case AtomicComponentDiagramEditPart.VISUAL_ID:
 				return new CustomAtomicComponentDiagramEditPart(view);
 			}

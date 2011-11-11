@@ -1,13 +1,11 @@
 package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
-import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
@@ -49,7 +47,6 @@ public class MumlPaletteFactory {
 		paletteContainer.add(createDiscretePort1CreationTool());
 		paletteContainer.add(createContinuousPort2CreationTool());
 		paletteContainer.add(createHybridPort3CreationTool());
-		paletteContainer.add(createHardwarePort4CreationTool());
 		return paletteContainer;
 	}
 
@@ -113,22 +110,6 @@ public class MumlPaletteFactory {
 		entry.setId("createHybridPort3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createHardwarePort4CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.HardwarePort4CreationTool_title,
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.HardwarePort4CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HardwarePort_3005));
-		entry.setId("createHardwarePort4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/HardwarePort.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

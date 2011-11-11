@@ -20,8 +20,6 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 
-import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
-
 /**
  * @generated
  */

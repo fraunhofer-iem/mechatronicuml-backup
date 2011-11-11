@@ -52,15 +52,6 @@
             path="icons/HybridPort.gif"
             bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="HardwarePort"
-          description="Create new HardwarePort">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/HardwarePort.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
-      </tools>
     </tools>
   </palette>
 </gmftool:ToolRegistry>
