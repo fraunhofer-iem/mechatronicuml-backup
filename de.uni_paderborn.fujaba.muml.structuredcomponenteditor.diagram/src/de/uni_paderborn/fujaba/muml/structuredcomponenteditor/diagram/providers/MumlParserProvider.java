@@ -99,33 +99,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser hardwarePortName_5004Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getHardwarePortName_5004Parser() {
-		if (hardwarePortName_5004Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
-					features);
-			hardwarePortName_5004Parser = parser;
-		}
-		return hardwarePortName_5004Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5009 componentPartLabel_5009Parser;
+	protected de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser componentPartLabel_5009Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getComponentPartLabel_5009Parser() {
 		if (componentPartLabel_5009Parser == null) {
-			componentPartLabel_5009Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5009();
+			componentPartLabel_5009Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser();
 		}
 		return componentPartLabel_5009Parser;
 	}
@@ -190,25 +171,6 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser hardwarePortName_5008Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getHardwarePortName_5008Parser() {
-		if (hardwarePortName_5008Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
-					features);
-			hardwarePortName_5008Parser = parser;
-		}
-		return hardwarePortName_5008Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentNameEditPart.VISUAL_ID:
@@ -219,8 +181,6 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getDiscretePortName_5002Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
 			return getContinuousPortName_5003Parser();
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePortNameEditPart.VISUAL_ID:
-			return getHardwarePortName_5004Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getComponentPartLabel_5009Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortName2EditPart.VISUAL_ID:
@@ -229,8 +189,6 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getDiscretePortName_5006Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortName2EditPart.VISUAL_ID:
 			return getContinuousPortName_5007Parser();
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePortName2EditPart.VISUAL_ID:
-			return getHardwarePortName_5008Parser();
 		}
 		return null;
 	}

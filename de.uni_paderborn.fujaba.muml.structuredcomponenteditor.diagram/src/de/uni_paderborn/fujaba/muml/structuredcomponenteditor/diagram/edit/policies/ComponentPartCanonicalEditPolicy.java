@@ -51,14 +51,23 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		View viewObject = (View) getHost().getModel();
+		List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
-				.getComponentPart_3005SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("rawtypes")
+	protected List getSemanticChildrenViewDescriptors() {
+		View viewObject = (View) getHost().getModel();
+		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
+				.getComponentPart_3005SemanticChildren(viewObject);
+
 	}
 
 	/**
@@ -76,14 +85,9 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 	private boolean isMyDiagramElement(View view) {
 		int visualID = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
-		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart.VISUAL_ID:
-			return true;
-		}
-		return false;
+		return visualID == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart.VISUAL_ID;
 	}
 
 	/**
@@ -94,9 +98,7 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
-				.getComponentPart_3005SemanticChildren((View) getHost()
-						.getModel());
+		List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

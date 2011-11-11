@@ -8,8 +8,6 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePortEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.MumlEditPartFactory;
@@ -43,16 +41,12 @@ public class CustomStructuredcomponentEditPartFactory extends
 				return new CustomContinuousPortEditPart(view);
 			case HybridPortEditPart.VISUAL_ID:
 				return new CustomHybridPortEditPart(view);
-			case HardwarePortEditPart.VISUAL_ID:
-				return new CustomHardwarePortEditPart(view);
 			case DiscretePort2EditPart.VISUAL_ID:
 				return new CustomDiscretePortEditPart(view);
 			case ContinuousPort2EditPart.VISUAL_ID:
 				return new CustomContinuousPortEditPart(view);
 			case HybridPort2EditPart.VISUAL_ID:
 				return new CustomHybridPortEditPart(view);
-			case HardwarePort2EditPart.VISUAL_ID:
-				return new CustomHardwarePortEditPart(view);
 			case ComponentPartEditPart.VISUAL_ID:
 				return new CustomComponentPartEditPart(view);
 			case StructuredComponentComponentCompartmentEditPart.VISUAL_ID:

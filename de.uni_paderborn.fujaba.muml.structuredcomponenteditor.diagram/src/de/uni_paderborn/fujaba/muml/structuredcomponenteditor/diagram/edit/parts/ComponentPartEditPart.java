@@ -96,7 +96,6 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 				case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -168,15 +167,6 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
 		return false;
 	}
 
@@ -205,13 +195,6 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.remove(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart) childEditPart)
-							.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePort2EditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
