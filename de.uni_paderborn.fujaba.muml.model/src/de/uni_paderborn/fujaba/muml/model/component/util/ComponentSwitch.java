@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -26,7 +25,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
@@ -158,17 +156,6 @@ public class ComponentSwitch<T> {
 				if (result == null) result = caseCommentableElement(discretePort);
 				if (result == null) result = caseConstrainableElement(discretePort);
 				if (result == null) result = caseExtendableElement(discretePort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentPackage.HARDWARE_PORT: {
-				HardwarePort hardwarePort = (HardwarePort)theEObject;
-				T result = caseHardwarePort(hardwarePort);
-				if (result == null) result = casePort(hardwarePort);
-				if (result == null) result = caseNamedElement(hardwarePort);
-				if (result == null) result = caseCommentableElement(hardwarePort);
-				if (result == null) result = caseConstrainableElement(hardwarePort);
-				if (result == null) result = caseExtendableElement(hardwarePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -329,21 +316,6 @@ public class ComponentSwitch<T> {
 	 * @generated
 	 */
 	public T caseDiscretePort(DiscretePort object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hardware Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hardware Port</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHardwarePort(HardwarePort object) {
 		return null;
 	}
 

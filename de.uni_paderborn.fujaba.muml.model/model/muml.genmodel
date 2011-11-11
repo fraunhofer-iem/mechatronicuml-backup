@@ -16,7 +16,6 @@
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ComponentKind/SOFTWARE_COMPONENT"/>
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ComponentKind/CONTINUOUS_COMPONENT"/>
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ComponentKind/HYBRID_COMPONENT"/>
-          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ComponentKind/HARDWARE_COMPONENT"/>
         </genEnums>
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//model/component/ContinuousPortDirectionKind">
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ContinuousPortDirectionKind/IN"/>
@@ -57,7 +56,6 @@
           <genFeatures notify="false" createChild="false" propertyCategory="Behavior"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/roleAndAdaptationBehavior"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/component/HardwarePort"/>
         <genClasses ecoreClass="muml.ecore#//model/component/ComponentPart">
           <genFeatures notify="false" createChild="false" propertyCategory="General"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/componentType"/>

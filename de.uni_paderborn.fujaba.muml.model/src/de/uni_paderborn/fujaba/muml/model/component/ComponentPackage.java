@@ -623,106 +623,6 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 6;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHardwarePort()
-	 * @generated
-	 */
-	int HARDWARE_PORT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__ANNOTATION = PORT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__EXTENSION = PORT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__NAME = PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__COMMENT = PORT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__CONSTRAINT = PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__CARDINALITY = PORT__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__INCOMING_CONNECTORS = PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__COMPONENT = PORT__COMPONENT;
-
-	/**
-	 * The number of structural features of the '<em>Hardware Port</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl <em>Part</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -730,7 +630,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentPart()
 	 * @generated
 	 */
-	int COMPONENT_PART = 6;
+	int COMPONENT_PART = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -839,7 +739,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getStructuredComponent()
 	 * @generated
 	 */
-	int STRUCTURED_COMPONENT = 7;
+	int STRUCTURED_COMPONENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -948,7 +848,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAtomicComponent()
 	 * @generated
 	 */
-	int ATOMIC_COMPONENT = 8;
+	int ATOMIC_COMPONENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1048,7 +948,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getBehavioralConnector()
 	 * @generated
 	 */
-	int BEHAVIORAL_CONNECTOR = 12;
+	int BEHAVIORAL_CONNECTOR = 11;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl <em>Connector Type</em>}' class.
@@ -1058,7 +958,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getConnectorType()
 	 * @generated
 	 */
-	int CONNECTOR_TYPE = 9;
+	int CONNECTOR_TYPE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1131,7 +1031,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAssembly()
 	 * @generated
 	 */
-	int ASSEMBLY = 10;
+	int ASSEMBLY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1222,7 +1122,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDelegation()
 	 * @generated
 	 */
-	int DELEGATION = 11;
+	int DELEGATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1322,7 +1222,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHybridPort()
 	 * @generated
 	 */
-	int HYBRID_PORT = 13;
+	int HYBRID_PORT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1485,7 +1385,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentKind()
 	 * @generated
 	 */
-	int COMPONENT_KIND = 14;
+	int COMPONENT_KIND = 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}' enum.
@@ -1495,7 +1395,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortDirectionKind()
 	 * @generated
 	 */
-	int CONTINUOUS_PORT_DIRECTION_KIND = 15;
+	int CONTINUOUS_PORT_DIRECTION_KIND = 14;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Component <em>Component</em>}'.
@@ -1667,16 +1567,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiscretePort_RoleAndAdaptationBehavior();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort <em>Hardware Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hardware Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.HardwarePort
-	 * @generated
-	 */
-	EClass getHardwarePort();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getCardinality <em>Cardinality</em>}'.
@@ -2135,16 +2025,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHardwarePort()
-		 * @generated
-		 */
-		EClass HARDWARE_PORT = eINSTANCE.getHardwarePort();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.

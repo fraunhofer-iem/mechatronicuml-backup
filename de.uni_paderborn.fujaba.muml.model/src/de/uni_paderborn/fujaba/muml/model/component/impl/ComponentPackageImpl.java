@@ -30,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
@@ -91,13 +90,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	private EClass discretePortEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass hardwarePortEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -414,15 +406,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHardwarePort() {
-		return hardwarePortEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getPort_Cardinality() {
 		return (EReference)portEClass.getEStructuralFeatures().get(0);
 	}
@@ -722,8 +705,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(discretePortEClass, DISCRETE_PORT__ADAPTATION_BEHAVIOR);
 		createEReference(discretePortEClass, DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR);
 
-		hardwarePortEClass = createEClass(HARDWARE_PORT);
-
 		componentPartEClass = createEClass(COMPONENT_PART);
 		createEReference(componentPartEClass, COMPONENT_PART__COMPONENT_TYPE);
 		createEReference(componentPartEClass, COMPONENT_PART__PARENT_COMPONENT);
@@ -804,7 +785,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		continuousPortEClass.getESuperTypes().add(this.getPort());
 		discretePortEClass.getESuperTypes().add(this.getPort());
 		discretePortEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
-		hardwarePortEClass.getESuperTypes().add(this.getPort());
 		componentPartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		structuredComponentEClass.getESuperTypes().add(this.getComponent());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
@@ -842,8 +822,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getDiscretePort_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePort_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(hardwarePortEClass, HardwarePort.class, "HardwarePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(componentPartEClass, ComponentPart.class, "ComponentPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentPart_ComponentType(), this.getComponent(), this.getComponent_ReferencingComponentParts(), "componentType", null, 1, 1, ComponentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentPart_ParentComponent(), this.getStructuredComponent(), this.getStructuredComponent_EmbeddedParts(), "parentComponent", null, 1, 1, ComponentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -880,7 +858,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		addEEnumLiteral(componentKindEEnum, ComponentKind.SOFTWARE_COMPONENT);
 		addEEnumLiteral(componentKindEEnum, ComponentKind.CONTINUOUS_COMPONENT);
 		addEEnumLiteral(componentKindEEnum, ComponentKind.HYBRID_COMPONENT);
-		addEEnumLiteral(componentKindEEnum, ComponentKind.HARDWARE_COMPONENT);
 
 		initEEnum(continuousPortDirectionKindEEnum, ContinuousPortDirectionKind.class, "ContinuousPortDirectionKind");
 		addEEnumLiteral(continuousPortDirectionKindEEnum, ContinuousPortDirectionKind.IN);
@@ -929,13 +906,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "AtLeastOneMessageInterface"
-		   });								
-		addAnnotation
-		  (hardwarePortEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "LowerBoundMustBeOne UpperBoundMustBeOne"
-		   });		
+		   });						
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -947,7 +918,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueComponentPartsWithinStructuredComponent"
-		   });																		
+		   });																					
 		addAnnotation
 		  (hybridPortEClass, 
 		   source, 
@@ -982,14 +953,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "AtLeastOneMessageInterface", "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"
-		   });						
-		addAnnotation
-		  (hardwarePortEClass, 
-		   source, 
-		   new String[] {
-			 "LowerBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.lowerBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.lowerBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.lowerBound.value = 1\n\tendif\n)",
-			 "UpperBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.upperBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.upperBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.upperBound.value = 1\n\tendif\n)"
-		   });					
+		   });							
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1009,7 +973,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "UniqueComponentPartsWithinStructuredComponent", "self.embeddedParts->isUnique(p | p.componentType)"
-		   });																		
+		   });																					
 		addAnnotation
 		  (hybridPortEClass, 
 		   source, 

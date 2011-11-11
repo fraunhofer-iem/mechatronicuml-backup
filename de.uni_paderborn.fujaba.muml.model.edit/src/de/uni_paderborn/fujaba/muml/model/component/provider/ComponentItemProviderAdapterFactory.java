@@ -144,29 +144,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected HardwarePortItemProvider hardwarePortItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createHardwarePortAdapter() {
-		if (hardwarePortItemProvider == null) {
-			hardwarePortItemProvider = new HardwarePortItemProvider(this);
-		}
-
-		return hardwarePortItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -406,7 +383,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (continuousComponentItemProvider != null) continuousComponentItemProvider.dispose();
 		if (continuousPortItemProvider != null) continuousPortItemProvider.dispose();
 		if (discretePortItemProvider != null) discretePortItemProvider.dispose();
-		if (hardwarePortItemProvider != null) hardwarePortItemProvider.dispose();
 		if (componentPartItemProvider != null) componentPartItemProvider.dispose();
 		if (structuredComponentItemProvider != null) structuredComponentItemProvider.dispose();
 		if (atomicComponentItemProvider != null) atomicComponentItemProvider.dispose();

@@ -20,8 +20,8 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * The entries of the enumeration represent different kinds of components. These
  * are discrete software components, continous components containing controller
- * code, hybrid components that is a discrete software component which may have 
- * continuous input signals, and hardware components representing physical entities in the system.
+ * code, and hybrid components that is a discrete software component which may have 
+ * continuous input signals.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentKind()
  * @model
@@ -56,15 +56,7 @@ public enum ComponentKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HYBRID_COMPONENT(2, "HYBRID_COMPONENT", "hybrid component"), /**
-	 * The '<em><b>HARDWARE COMPONENT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HARDWARE_COMPONENT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	HARDWARE_COMPONENT(3, "HARDWARE_COMPONENT", "hardware component");
+	HYBRID_COMPONENT(2, "HYBRID_COMPONENT", "hybrid component");
 
 	/**
 	 * The '<em><b>SOFTWARE COMPONENT</b></em>' literal value.
@@ -74,6 +66,9 @@ public enum ComponentKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A component of this kind represent discrete software components. A discrete software component has a behavior specification which is given by means of a real-time statechart.
+	 * <!-- end-model-doc -->
 	 * @see #SOFTWARE_COMPONENT
 	 * @model literal="software component"
 	 * @generated
@@ -89,6 +84,9 @@ public enum ComponentKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A continuous component represents a continuous controller. Such components do not carry a behavior specification in MechatronicUML. Instead, we assume that the behavior of such components is modeled by using a control engineering tool like Matlab/Simulink, Dymola/Modelica or CamelView. In MechatronicUML, only the interface of these components is modeled. The interface is given by their ports.
+	 * <!-- end-model-doc -->
 	 * @see #CONTINUOUS_COMPONENT
 	 * @model literal="continuous component"
 	 * @generated
@@ -104,27 +102,15 @@ public enum ComponentKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A hybrid component bridges the gap between discrete software components and continuous control components. A hybrid component may be considered as a discrete software component which has special ports for reading and writing continuous signals from and to continuous components, e.g., for setting a new reference value to a controller.
+	 * <!-- end-model-doc -->
 	 * @see #HYBRID_COMPONENT
 	 * @model literal="hybrid component"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int HYBRID_COMPONENT_VALUE = 2;
-
-	/**
-	 * The '<em><b>HARDWARE COMPONENT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>HARDWARE COMPONENT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #HARDWARE_COMPONENT
-	 * @model literal="hardware component"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int HARDWARE_COMPONENT_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Kind</b></em>' enumerators.
@@ -137,7 +123,6 @@ public enum ComponentKind implements Enumerator {
 			SOFTWARE_COMPONENT,
 			CONTINUOUS_COMPONENT,
 			HYBRID_COMPONENT,
-			HARDWARE_COMPONENT,
 		};
 
 	/**
@@ -191,7 +176,6 @@ public enum ComponentKind implements Enumerator {
 			case SOFTWARE_COMPONENT_VALUE: return SOFTWARE_COMPONENT;
 			case CONTINUOUS_COMPONENT_VALUE: return CONTINUOUS_COMPONENT;
 			case HYBRID_COMPONENT_VALUE: return HYBRID_COMPONENT;
-			case HARDWARE_COMPONENT_VALUE: return HARDWARE_COMPONENT;
 		}
 		return null;
 	}

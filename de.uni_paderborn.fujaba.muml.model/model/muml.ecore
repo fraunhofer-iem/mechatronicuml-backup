@@ -138,18 +138,6 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
             eType="#//model/core/Behavior"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HardwarePort" eSuperTypes="#//model/component/Port">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This is concrete port specification which provides the functionality of a hardware port.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="LowerBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
-          <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="LowerBoundMustBeOne UpperBoundMustBeOne"/>
-        </eAnnotations>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"/>
@@ -291,12 +279,23 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="ComponentKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The entries of the enumeration represent different kinds of components. These&#xD;&#xA;are discrete software components, continous components containing controller&#xD;&#xA;code, hybrid components that is a discrete software component which may have &#xD;&#xA;continuous input signals, and hardware components representing physical entities in the system."/>
+          <details key="documentation" value="The entries of the enumeration represent different kinds of components. These&#xD;&#xA;are discrete software components, continous components containing controller&#xD;&#xA;code, and hybrid components that is a discrete software component which may have &#xD;&#xA;continuous input signals."/>
         </eAnnotations>
-        <eLiterals name="SOFTWARE_COMPONENT" literal="software component"/>
-        <eLiterals name="CONTINUOUS_COMPONENT" value="1" literal="continuous component"/>
-        <eLiterals name="HYBRID_COMPONENT" value="2" literal="hybrid component"/>
-        <eLiterals name="HARDWARE_COMPONENT" value="3" literal="hardware component"/>
+        <eLiterals name="SOFTWARE_COMPONENT" literal="software component">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A component of this kind represent discrete software components. A discrete software component has a behavior specification which is given by means of a real-time statechart."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="CONTINUOUS_COMPONENT" value="1" literal="continuous component">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A continuous component represents a continuous controller. Such components do not carry a behavior specification in MechatronicUML. Instead, we assume that the behavior of such components is modeled by using a control engineering tool like Matlab/Simulink, Dymola/Modelica or CamelView. In MechatronicUML, only the interface of these components is modeled. The interface is given by their ports."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="HYBRID_COMPONENT" value="2" literal="hybrid component">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A hybrid component bridges the gap between discrete software components and continuous control components. A hybrid component may be considered as a discrete software component which has special ports for reading and writing continuous signals from and to continuous components, e.g., for setting a new reference value to a controller."/>
+          </eAnnotations>
+        </eLiterals>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BehavioralConnector" abstract="true"
           eSuperTypes="#//model/core/BehavioralElement">

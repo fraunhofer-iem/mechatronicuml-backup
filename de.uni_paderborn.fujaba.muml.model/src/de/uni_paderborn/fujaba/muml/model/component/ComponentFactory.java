@@ -53,15 +53,6 @@ public interface ComponentFactory extends EFactory {
 	DiscretePort createDiscretePort();
 
 	/**
-	 * Returns a new object of class '<em>Hardware Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hardware Port</em>'.
-	 * @generated
-	 */
-	HardwarePort createHardwarePort();
-
-	/**
 	 * Returns a new object of class '<em>Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

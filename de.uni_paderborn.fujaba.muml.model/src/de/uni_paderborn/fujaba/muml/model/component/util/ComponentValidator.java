@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -28,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
@@ -115,8 +113,6 @@ public class ComponentValidator extends EObjectValidator {
 				return validateContinuousPort((ContinuousPort)value, diagnostics, context);
 			case ComponentPackage.DISCRETE_PORT:
 				return validateDiscretePort((DiscretePort)value, diagnostics, context);
-			case ComponentPackage.HARDWARE_PORT:
-				return validateHardwarePort((HardwarePort)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_PART:
 				return validateComponentPart((ComponentPart)value, diagnostics, context);
 			case ComponentPackage.STRUCTURED_COMPONENT:
@@ -357,102 +353,6 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "AtLeastOneMessageInterface",
 				 DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_INTERFACE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHardwarePort(HardwarePort hardwarePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(hardwarePort, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHardwarePort_LowerBoundMustBeOne(hardwarePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHardwarePort_UpperBoundMustBeOne(hardwarePort, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the LowerBoundMustBeOne constraint of '<em>Hardware Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String HARDWARE_PORT__LOWER_BOUND_MUST_BE_ONE__EEXPRESSION = "-- This Constraint is fulfilled, if no Cardinality exists.\n" +
-		"-- But that is okay, as then another Problem-Marker is shown,\n" +
-		"-- because Cardinality.lowerBound is 1..1\n" +
-		"self.cardinality.oclIsUndefined() or (\n" +
-		"\tif self.cardinality.lowerBound.oclIsUndefined() then\n" +
-		"\t\tfalse\n" +
-		"\telse\n" +
-		"\t\tself.cardinality.lowerBound.value = 1\n" +
-		"\tendif\n" +
-		")";
-
-	/**
-	 * Validates the LowerBoundMustBeOne constraint of '<em>Hardware Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHardwarePort_LowerBoundMustBeOne(HardwarePort hardwarePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.HARDWARE_PORT,
-				 hardwarePort,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "LowerBoundMustBeOne",
-				 HARDWARE_PORT__LOWER_BOUND_MUST_BE_ONE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the UpperBoundMustBeOne constraint of '<em>Hardware Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String HARDWARE_PORT__UPPER_BOUND_MUST_BE_ONE__EEXPRESSION = "-- This Constraint is fulfilled, if no Cardinality exists.\n" +
-		"-- But that is okay, as then another Problem-Marker is shown,\n" +
-		"-- because Cardinality.upperBound is 1..1\n" +
-		"self.cardinality.oclIsUndefined() or (\n" +
-		"\tif self.cardinality.upperBound.oclIsUndefined() then\n" +
-		"\t\tfalse\n" +
-		"\telse\n" +
-		"\t\tself.cardinality.upperBound.value = 1\n" +
-		"\tendif\n" +
-		")";
-
-	/**
-	 * Validates the UpperBoundMustBeOne constraint of '<em>Hardware Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHardwarePort_UpperBoundMustBeOne(HardwarePort hardwarePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.HARDWARE_PORT,
-				 hardwarePort,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "UpperBoundMustBeOne",
-				 HARDWARE_PORT__UPPER_BOUND_MUST_BE_ONE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

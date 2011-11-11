@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -25,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
@@ -76,7 +74,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.CONTINUOUS_COMPONENT: return createContinuousComponent();
 			case ComponentPackage.CONTINUOUS_PORT: return createContinuousPort();
 			case ComponentPackage.DISCRETE_PORT: return createDiscretePort();
-			case ComponentPackage.HARDWARE_PORT: return createHardwarePort();
 			case ComponentPackage.COMPONENT_PART: return createComponentPart();
 			case ComponentPackage.STRUCTURED_COMPONENT: return createStructuredComponent();
 			case ComponentPackage.ATOMIC_COMPONENT: return createAtomicComponent();
@@ -150,16 +147,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public DiscretePort createDiscretePort() {
 		DiscretePortImpl discretePort = new DiscretePortImpl();
 		return discretePort;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HardwarePort createHardwarePort() {
-		HardwarePortImpl hardwarePort = new HardwarePortImpl();
-		return hardwarePort;
 	}
 
 	/**
