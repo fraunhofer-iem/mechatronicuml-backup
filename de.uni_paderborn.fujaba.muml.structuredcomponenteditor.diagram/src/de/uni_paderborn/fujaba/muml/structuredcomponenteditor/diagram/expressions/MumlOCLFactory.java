@@ -70,7 +70,7 @@ public class MumlOCLFactory {
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"\'port\'", //$NON-NLS-1$
-					"if self.componentType.oclIsUndefined() then\n    \'null\'\nelse\n\tself.componentType.name.concat(\' [\'.concat(\n\t(\n\tif not self.cardinality.upperBound.infinity and self.cardinality.lowerBound.value = self.cardinality.upperBound.value then\n\t\tself.cardinality.lowerBound.toString()\n\telse\n\t\tself.cardinality.lowerBound.toString().concat(\'..\'.concat(self.cardinality.upperBound.toString()))\n\tendif\n\t)\n\t).concat(\']\'))\nendif", //$NON-NLS-1$
+					"if self.componentType.oclIsUndefined() then\n    \'null\'\nelse\n\tself.componentType.name.concat(\' [\'.concat(\n\t(\n\tif not (self.cardinality.lowerBound.infinity xor self.cardinality.upperBound.infinity) and self.cardinality.lowerBound.value = self.cardinality.upperBound.value then\n\t\tself.cardinality.lowerBound.toString()\n\telse\n\t\tself.cardinality.lowerBound.toString().concat(\'..\'.concat(self.cardinality.upperBound.toString()))\n\tendif\n\t)\n\t).concat(\']\'))\nendif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],
