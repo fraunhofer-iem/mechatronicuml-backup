@@ -617,7 +617,46 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateClockConstraint(ClockConstraint clockConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(clockConstraint, diagnostics, context);
+		if (!validate_NoCircularContainment(clockConstraint, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(clockConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(clockConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(clockConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(clockConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(clockConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(clockConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(clockConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(clockConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateClockConstraint_ValidOperators(clockConstraint, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValidOperators constraint of '<em>Clock Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CLOCK_CONSTRAINT__VALID_OPERATORS__EEXPRESSION = "Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->exists(op : modeling::expressions::ComparingOperator | self.operator = op)";
+
+	/**
+	 * Validates the ValidOperators constraint of '<em>Clock Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClockConstraint_ValidOperators(ClockConstraint clockConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT,
+				 clockConstraint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidOperators",
+				 CLOCK_CONSTRAINT__VALID_OPERATORS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

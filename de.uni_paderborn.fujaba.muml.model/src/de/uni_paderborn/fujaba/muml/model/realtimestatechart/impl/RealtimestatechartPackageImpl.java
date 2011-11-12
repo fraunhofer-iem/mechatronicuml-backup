@@ -1696,7 +1696,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders"
-		   });																																													
+		   });																						
+		addAnnotation
+		  (clockConstraintEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ValidOperators"
+		   });																										
 		addAnnotation
 		  (fujabaRealtimeStatechartEClass, 
 		   source, 
@@ -1802,7 +1808,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()\n"
-		   });																												
+		   });										
+		addAnnotation
+		  (clockConstraintEClass, 
+		   source, 
+		   new String[] {
+			 "ValidOperators", "Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->exists(op : modeling::expressions::ComparingOperator | self.operator = op)"
+		   });																					
 		addAnnotation
 		  (getSynchronization_SyncChannel(), 
 		   source, 

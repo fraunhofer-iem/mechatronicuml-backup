@@ -1399,6 +1399,12 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard.&#xD;&#xA;\todosd{Inherit from ComparisonExpression?}"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ValidOperators" value="Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->exists(op : modeling::expressions::ComparingOperator | self.operator = op)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="ValidOperators"/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
             eType="#//model/core/NaturalNumber" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
