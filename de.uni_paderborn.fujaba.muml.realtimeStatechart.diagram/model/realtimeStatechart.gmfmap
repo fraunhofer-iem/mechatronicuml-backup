@@ -74,7 +74,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="'entry / '.concat(if self.action.oclIsUndefined() then '' else self.action.name endif)"/>
+                    body="'entry / '.concat(if self.action.oclIsUndefined() then '' else '{'.concat(self.action.name).concat('}') endif)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -115,7 +115,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="'do / '.concat(if self.action.oclIsUndefined() then '' else self.action.name endif)"/>
+                    body="'do / '.concat(if self.action.oclIsUndefined() then '' else '{'.concat(self.action.name).concat('}') endif)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -137,7 +137,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="'exit / '.concat(if self.action.oclIsUndefined() then '' else self.action.name endif)"/>
+                    body="'exit / '.concat(if self.action.oclIsUndefined() then '' else '{'.concat(self.action.name).concat('}') endif)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"

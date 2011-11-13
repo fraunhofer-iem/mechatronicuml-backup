@@ -52,14 +52,23 @@ public class FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEdit
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		View viewObject = (View) getHost().getModel();
+		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getFujabaRealtimeStatechartStatechartContentsCompartment_7014SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("rawtypes")
+	protected List getSemanticChildrenViewDescriptors() {
+		View viewObject = (View) getHost().getModel();
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
+				.getFujabaRealtimeStatechartStatechartContentsCompartment_7014SemanticChildren(viewObject);
+
 	}
 
 	/**
@@ -87,9 +96,7 @@ public class FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEdit
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getFujabaRealtimeStatechartStatechartContentsCompartment_7014SemanticChildren((View) getHost()
-						.getModel());
+		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

@@ -23,12 +23,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser fujabaRealtimeStatechartName_5018Parser;
+	protected IParser fujabaRealtimeStatechartName_5018Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getFujabaRealtimeStatechartName_5018Parser() {
+	protected IParser getFujabaRealtimeStatechartName_5018Parser() {
 		if (fujabaRealtimeStatechartName_5018Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -42,12 +42,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.FujabaRealtimeStatechartLabelExpressionLabelParser5019 fujabaRealtimeStatechartLabel_5019Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.FujabaRealtimeStatechartLabelExpressionLabelParser5019 fujabaRealtimeStatechartLabel_5019Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getFujabaRealtimeStatechartLabel_5019Parser() {
+	protected IParser getFujabaRealtimeStatechartLabel_5019Parser() {
 		if (fujabaRealtimeStatechartLabel_5019Parser == null) {
 			fujabaRealtimeStatechartLabel_5019Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.FujabaRealtimeStatechartLabelExpressionLabelParser5019();
 		}
@@ -57,12 +57,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser stateName_5017Parser;
+	protected IParser stateName_5017Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStateName_5017Parser() {
+	protected IParser getStateName_5017Parser() {
 		if (stateName_5017Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -76,12 +76,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5004 entryEventLabel_5004Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5004 entryEventLabel_5004Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEntryEventLabel_5004Parser() {
+	protected IParser getEntryEventLabel_5004Parser() {
 		if (entryEventLabel_5004Parser == null) {
 			entryEventLabel_5004Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5004();
 		}
@@ -91,12 +91,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser5005 doEventLabel_5005Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser5005 doEventLabel_5005Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getDoEventLabel_5005Parser() {
+	protected IParser getDoEventLabel_5005Parser() {
 		if (doEventLabel_5005Parser == null) {
 			doEventLabel_5005Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser5005();
 		}
@@ -106,12 +106,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5006 exitEventLabel_5006Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5006 exitEventLabel_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getExitEventLabel_5006Parser() {
+	protected IParser getExitEventLabel_5006Parser() {
 		if (exitEventLabel_5006Parser == null) {
 			exitEventLabel_5006Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5006();
 		}
@@ -121,12 +121,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5007 clockConstraintLabel_5007Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5007 clockConstraintLabel_5007Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getClockConstraintLabel_5007Parser() {
+	protected IParser getClockConstraintLabel_5007Parser() {
 		if (clockConstraintLabel_5007Parser == null) {
 			clockConstraintLabel_5007Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5007();
 		}
@@ -136,12 +136,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5008 synchronizationChannelLabel_5008Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5008 synchronizationChannelLabel_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getSynchronizationChannelLabel_5008Parser() {
+	protected IParser getSynchronizationChannelLabel_5008Parser() {
 		if (synchronizationChannelLabel_5008Parser == null) {
 			synchronizationChannelLabel_5008Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5008();
 		}
@@ -151,12 +151,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser regionName_5010Parser;
+	protected IParser regionName_5010Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionName_5010Parser() {
+	protected IParser getRegionName_5010Parser() {
 		if (regionName_5010Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -170,12 +170,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser regionPriority_5011Parser;
+	protected IParser regionPriority_5011Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionPriority_5011Parser() {
+	protected IParser getRegionPriority_5011Parser() {
 		if (regionPriority_5011Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getPrioritizable_Priority() };
@@ -189,12 +189,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5012 regionLabel_5012Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5012 regionLabel_5012Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionLabel_5012Parser() {
+	protected IParser getRegionLabel_5012Parser() {
 		if (regionLabel_5012Parser == null) {
 			regionLabel_5012Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5012();
 		}
@@ -204,12 +204,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser entryPointName_5020Parser;
+	protected IParser entryPointName_5020Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEntryPointName_5020Parser() {
+	protected IParser getEntryPointName_5020Parser() {
 		if (entryPointName_5020Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -223,12 +223,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001 transitionLabel_6001Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001 transitionLabel_6001Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getTransitionLabel_6001Parser() {
+	protected IParser getTransitionLabel_6001Parser() {
 		if (transitionLabel_6001Parser == null) {
 			transitionLabel_6001Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001();
 		}
@@ -238,12 +238,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6002 transitionLabel_6002Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6002 transitionLabel_6002Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getTransitionLabel_6002Parser() {
+	protected IParser getTransitionLabel_6002Parser() {
 		if (transitionLabel_6002Parser == null) {
 			transitionLabel_6002Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6002();
 		}
