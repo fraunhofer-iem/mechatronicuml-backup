@@ -1230,13 +1230,13 @@
       <expressions
           body="'State'"/>
       <expressions
-          body="'entry / '.concat(if self.action.oclIsUndefined() then '' else '{'.concat(self.action.name).concat('}') endif)"/>
+          body="'entry /'.concat(&#xA;&#x9;(&#xA;&#x9;if self.action.oclIsUndefined() or self.action.name = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' {'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}')&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;)"/>
       <expressions
           body="'action'"/>
       <expressions
           body="'do / '.concat(if self.action.oclIsUndefined() then '' else '{'.concat(self.action.name).concat('}') endif)"/>
       <expressions
-          body="'exit / '.concat(if self.action.oclIsUndefined() then '' else '{'.concat(self.action.name).concat('}') endif)"/>
+          body="'exit /'.concat(&#xA;&#x9;(&#xA;&#x9;if self.action.oclIsUndefined() or self.action.name = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' {'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}')&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;)"/>
       <expressions
           body="(&#xA;&#x9;if self.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.clock.name&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.operator.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;} in array->any(t | t.d = self.operator).s&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.bound.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.bound.toString()&#xA;&#x9;endif&#xA;)"/>
       <expressions

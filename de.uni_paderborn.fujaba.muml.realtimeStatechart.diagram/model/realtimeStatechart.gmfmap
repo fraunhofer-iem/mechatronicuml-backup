@@ -74,7 +74,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="'entry / '.concat(if self.action.oclIsUndefined() then '' else '{'.concat(self.action.name).concat('}') endif)"/>
+                    body="'entry /'.concat(&#xA;&#x9;(&#xA;&#x9;if self.action.oclIsUndefined() or self.action.name = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' {'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}')&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -137,7 +137,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="'exit / '.concat(if self.action.oclIsUndefined() then '' else '{'.concat(self.action.name).concat('}') endif)"/>
+                    body="'exit /'.concat(&#xA;&#x9;(&#xA;&#x9;if self.action.oclIsUndefined() or self.action.name = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' {'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}')&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
