@@ -1,10 +1,12 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts;
 
+import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -22,6 +24,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -345,6 +348,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 
 			this.setFill(false);
 			this.setOutline(false);
+			this.setBorder(createBorder0());
 			createContents();
 		}
 
@@ -447,6 +451,19 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			this.add(fFigureRegionContentsCompartment,
 					constraintFFigureRegionContentsCompartment);
 
+		}
+
+		/**
+		 * @generated
+		 */
+		private Border createBorder0() {
+			OneLineBorder result = new OneLineBorder();
+
+			result.setPosition(PositionConstants.BOTTOM);
+
+			result.setStyle(SWT.LINE_DASH);
+
+			return result;
 		}
 
 		/**

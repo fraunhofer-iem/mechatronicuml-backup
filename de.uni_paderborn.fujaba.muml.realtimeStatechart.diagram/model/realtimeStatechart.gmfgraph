@@ -301,6 +301,16 @@
           fill="false">
         <layout
             xsi:type="gmfgraph:GridLayout"/>
+        <border
+            xsi:type="gmfgraph:CustomBorder"
+            qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder">
+          <attributes
+              name="position"
+              value="org.eclipse.draw2d.PositionConstants.BOTTOM"/>
+          <attributes
+              name="style"
+              value="org.eclipse.swt.SWT.LINE_DASH"/>
+        </border>
         <children
             xsi:type="gmfgraph:FigureRef"
             figure="//@figures.0/@descriptors.3/@actualFigure"/>

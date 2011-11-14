@@ -18,11 +18,7 @@ public class CustomRegionEditPart extends RegionEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		primaryShape = new CustomRegionFigure();
-		OneLineBorder border = new OneLineBorder(1, PositionConstants.BOTTOM);
-		border.setStyle(SWT.LINE_DASH);
-		primaryShape.setBorder(border);
-		return primaryShape;
+		return primaryShape = new CustomRegionFigure();
 	}
 
 	public class CustomRegionFigure extends RegionFigure {
