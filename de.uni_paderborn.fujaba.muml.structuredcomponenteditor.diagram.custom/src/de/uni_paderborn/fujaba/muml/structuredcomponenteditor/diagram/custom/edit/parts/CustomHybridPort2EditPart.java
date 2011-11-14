@@ -43,7 +43,7 @@ public class CustomHybridPort2EditPart extends HybridPort2EditPart {
 	protected IFigure createNodeShape() {
 		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
 		primaryShape = portFigure;
-		getBehavior().setPortFigure(portFigure);
+		getBehavior().setFigure(portFigure);
 		return primaryShape;
 	}
 

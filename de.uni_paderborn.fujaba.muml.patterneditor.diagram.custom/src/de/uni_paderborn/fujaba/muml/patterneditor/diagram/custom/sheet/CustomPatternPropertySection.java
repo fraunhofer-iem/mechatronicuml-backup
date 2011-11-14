@@ -21,7 +21,7 @@ public class CustomPatternPropertySection extends MumlPropertySection {
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
 					IItemPropertySource.class);
 			if (ips != null) {
-				return new CustomPropertySource(object, ips, af, this);
+				return new CustomPropertySource(object, ips, af);
 			}
 		}
 		return super.getPropertySource(object);
