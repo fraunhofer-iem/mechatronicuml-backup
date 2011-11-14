@@ -15,7 +15,7 @@ public class FujabaRealtimeStatechartStatechartContentsCompartment2ItemSemanticE
 	 */
 	public FujabaRealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.FujabaRealtimeStatechart_2004);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.FujabaRealtimeStatechart_3011);
 	}
 
 	/**

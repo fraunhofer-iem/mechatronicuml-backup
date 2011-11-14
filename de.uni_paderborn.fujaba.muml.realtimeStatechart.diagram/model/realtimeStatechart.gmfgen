@@ -809,10 +809,10 @@
     </links>
     <compartments
         visualID="7014"
-        editPartClassName="FujabaRealtimeStatechartStatechartContentsCompartment2EditPart"
-        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
+        editPartClassName="FujabaRealtimeStatechartStatechartContentsCompartmentEditPart"
+        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="FujabaRealtimeStatechartStatechartContentsCompartmentViewFactory"
-        canonicalEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
+        canonicalEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
         canCollapse="false"
@@ -882,10 +882,10 @@
     </compartments>
     <compartments
         visualID="7013"
-        editPartClassName="FujabaRealtimeStatechartStatechartContentsCompartmentEditPart"
-        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy"
+        editPartClassName="FujabaRealtimeStatechartStatechartContentsCompartment2EditPart"
+        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
         notationViewFactoryClassName="FujabaRealtimeStatechartStatechartContentsCompartmentViewFactory"
-        canonicalEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy"
+        canonicalEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
         canCollapse="false"

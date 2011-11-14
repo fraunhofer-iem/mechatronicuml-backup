@@ -33,7 +33,7 @@ public class MumlDiagramUpdater {
 			return getFujabaRealtimeStatechart_2004SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
 			return getState_3010SemanticChildren(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
 			return getFujabaRealtimeStatechartStatechartContentsCompartment_7014SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart.VISUAL_ID:
 			return getStateCompoundCompartment_7011SemanticChildren(view);
@@ -41,7 +41,7 @@ public class MumlDiagramUpdater {
 			return getStateRegionCompartment_7012SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID:
 			return getRegionRegionContentsCompartment_7003SemanticChildren(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
 			return getFujabaRealtimeStatechartStatechartContentsCompartment_7013SemanticChildren(view);
 		}
 		return Collections.emptyList();

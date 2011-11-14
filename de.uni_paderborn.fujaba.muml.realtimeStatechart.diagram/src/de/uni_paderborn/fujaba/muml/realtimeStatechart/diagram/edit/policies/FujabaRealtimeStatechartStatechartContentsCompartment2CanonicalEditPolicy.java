@@ -67,7 +67,7 @@ public class FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEdit
 	protected List getSemanticChildrenViewDescriptors() {
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getFujabaRealtimeStatechartStatechartContentsCompartment_7014SemanticChildren(viewObject);
+				.getFujabaRealtimeStatechartStatechartContentsCompartment_7013SemanticChildren(viewObject);
 
 	}
 
