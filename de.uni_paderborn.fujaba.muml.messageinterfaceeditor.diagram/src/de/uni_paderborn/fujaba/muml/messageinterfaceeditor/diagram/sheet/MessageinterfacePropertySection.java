@@ -39,7 +39,8 @@ public class MessageinterfacePropertySection extends AdvancedPropertySection
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
 					IItemPropertySource.class);
 			if (ips != null) {
-				return new PropertySource(object, ips);
+				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
+						object, ips, af, this);
 			}
 		}
 		if (object instanceof IAdaptable) {

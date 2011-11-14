@@ -438,7 +438,7 @@ public class DiscreteSinglePortInstanceEditPart extends
 					getMapMode().DPtoLP(2)));
 			fFigureInPolygon.setFill(true);
 			fFigureInPolygon.setOutline(false);
-			fFigureInPolygon.setBackgroundColor(ColorConstants.gray);
+			fFigureInPolygon.setBackgroundColor(ColorConstants.black);
 
 			fFigureInPolygonContainer.add(fFigureInPolygon);
 
@@ -461,7 +461,7 @@ public class DiscreteSinglePortInstanceEditPart extends
 					getMapMode().DPtoLP(2)));
 			fFigureOutPolygon.setFill(true);
 			fFigureOutPolygon.setOutline(false);
-			fFigureOutPolygon.setBackgroundColor(ColorConstants.gray);
+			fFigureOutPolygon.setBackgroundColor(ColorConstants.black);
 
 			fFigureOutPolygonContainer.add(fFigureOutPolygon);
 
@@ -490,7 +490,7 @@ public class DiscreteSinglePortInstanceEditPart extends
 					getMapMode().DPtoLP(11)));
 			fFigureInOutPolygon.setFill(true);
 			fFigureInOutPolygon.setOutline(false);
-			fFigureInOutPolygon.setBackgroundColor(ColorConstants.gray);
+			fFigureInOutPolygon.setBackgroundColor(ColorConstants.black);
 
 			fFigureInOutPolygonContainer.add(fFigureInOutPolygon);
 

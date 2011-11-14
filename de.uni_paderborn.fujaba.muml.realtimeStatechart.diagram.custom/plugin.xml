@@ -33,7 +33,7 @@
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
    </extension>
-   
+<!--  
    <extension
          id="propSections"
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
@@ -55,6 +55,7 @@
          </propertySection>
       </propertySections>
    </extension>
+-->
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider

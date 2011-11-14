@@ -10,6 +10,7 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AdvancedPropertySection;
@@ -38,7 +39,8 @@ public class MumlPropertySection extends AdvancedPropertySection implements
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
 					IItemPropertySource.class);
 			if (ips != null) {
-				return new PropertySource(object, ips);
+				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
+						object, ips, af, this);
 			}
 		}
 		if (object instanceof IAdaptable) {

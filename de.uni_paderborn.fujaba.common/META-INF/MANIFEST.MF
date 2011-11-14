@@ -21,6 +21,8 @@ Require-Bundle: org.eclipse.emf.edit;bundle-version="2.6.0",
  org.eclipse.jface;bundle-version="3.6.2",
  org.eclipse.emf.transaction;bundle-version="1.4.0",
  org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0",
- org.eclipse.emf.edit.ui;bundle-version="2.6.0"
+ org.eclipse.emf.edit.ui;bundle-version="2.6.0",
+ org.eclipse.gmf.runtime.emf.ui.properties;bundle-version="1.4.0",
+ org.eclipse.ui.views
 Bundle-Activator: de.uni_paderborn.fujaba.common.FujabaCommonPlugin
 Bundle-ActivationPolicy: lazy

@@ -1,3 +1,4 @@
+«REM»
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «AROUND section FOR gmfgen::GenCustomPropertyTab-»
@@ -13,3 +14,4 @@
          </propertySection>
 «ENDIF-»
 «ENDAROUND»
+«ENDREM»

@@ -3,10 +3,12 @@ package de.uni_paderborn.fujaba.common.emf.edit.ui.extensions;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemProvider;
@@ -22,7 +24,6 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
@@ -30,16 +31,24 @@ import org.eclipse.swt.widgets.Table;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
-public class ObjectsListDialogExtension extends
-		AbstractDialogExtension implements
-		IObjectsListDialogExtension {
+public class ObjectsListDialogExtension extends AbstractDialogExtension
+		implements IObjectsListDialogExtension {
+	private Adapter hookAdapter = new AdapterImpl() {
+		@Override
+		public void notifyChanged(Notification notification) {
+			if (objectsTableViewer != null && !objectsTableViewer.getControl().isDisposed()) {
+				objectsTableViewer.refresh();
+			}
+		}
+	};
+	
 	private Button btnUp;
 	private Button btnDown;
 	private Button btnRemove;
 
-	private ITextualDialogExtension textualCreationDialogExtension;
+	private ITextualDialogExtension textualDialogExtension;
 
-	private IPropertiesListDialogExtension propertiesListCreationDialogExtension;
+	private IPropertiesListDialogExtension propertiesListDialogExtension;
 
 	/**
 	 * A SelectionChangedListener, which is notified about selection changes in
@@ -47,13 +56,6 @@ public class ObjectsListDialogExtension extends
 	 * accordingly.
 	 */
 	private ISelectionChangedListener objectsSelectionToRangeListener;
-
-	/**
-	 * A SelectionChangedListener, which is notified about selection changes in
-	 * the Parameter List and updates the enable-status of the Buttons "Up",
-	 * "Down" and "Modify" accordingly.
-	 */
-	private ISelectionChangedListener parameterSelectionToButtonEnablementListener;
 
 	/**
 	 * A ModifyListener, which is notified when the Parameter-Line Text was
@@ -84,8 +86,7 @@ public class ObjectsListDialogExtension extends
 	 */
 	private TableViewer objectsTableViewer;
 
-	public ObjectsListDialogExtension(
-			ExtensibleCreationDialog creationDialog,
+	public ObjectsListDialogExtension(ExtensibleCreationDialog creationDialog,
 			AdapterFactory adapterFactory, Collection<?> currentValues) {
 		super(creationDialog);
 		this.values = new ItemProvider(adapterFactory, currentValues);
@@ -122,7 +123,7 @@ public class ObjectsListDialogExtension extends
 							.getSelection();
 					Object selectedElement = selection.getFirstElement();
 					if (selectedElement != null) {
-						textualCreationDialogExtension
+						textualDialogExtension
 								.setTextRange((EObject) selectedElement);
 					}
 				}
@@ -133,33 +134,35 @@ public class ObjectsListDialogExtension extends
 
 		// Create SelectionListener for objectsTableViewer to update
 		// Button-enablement accordingly
-		parameterSelectionToButtonEnablementListener = new ISelectionChangedListener() {
-			public void selectionChanged(SelectionChangedEvent event) {
-				if (event.getSelection() instanceof IStructuredSelection) {
-					IStructuredSelection selection = (IStructuredSelection) event
-							.getSelection();
-					Object selectedElement = selection.getFirstElement();
-					if (selectedElement != null) {
-						int index = values.getChildren().indexOf(
-								selectedElement);
-						btnUp.setEnabled(index > 0);
-						btnDown.setEnabled(index < values.getChildren().size() - 1);
-					} else {
-						btnUp.setEnabled(false);
-						btnDown.setEnabled(false);
-					}
-					btnRemove.setEnabled(selectedElement != null);
-					propertiesListCreationDialogExtension
-							.updateModifyButtonEnablement();
-				}
-			}
-		};
 		objectsTableViewer
-				.addSelectionChangedListener(parameterSelectionToButtonEnablementListener);
+				.addSelectionChangedListener(new ISelectionChangedListener() {
+					public void selectionChanged(SelectionChangedEvent event) {
+						ISelection selection = event.getSelection();
+						propertiesListDialogExtension.setInput(selection);
+						if (event.getSelection() instanceof IStructuredSelection) {
+							IStructuredSelection ssel = (IStructuredSelection) event
+									.getSelection();
+							EObject selectedElement = (EObject) ssel
+									.getFirstElement();
+							if (selectedElement != null) {
+								int index = values.getChildren().indexOf(
+										selectedElement);
+								btnUp.setEnabled(index > 0);
+								btnDown.setEnabled(index < values.getChildren()
+										.size() - 1);
+							} else {
+								btnUp.setEnabled(false);
+								btnDown.setEnabled(false);
+							}
+							btnRemove.setEnabled(selectedElement != null);
+						}
+					}
+				});
 
 		// Initialize objectsTableViewer
 		objectsTableViewer.setContentProvider(getCreationDialog()
 				.getContentProvider());
+
 		objectsTableViewer.setLabelProvider(getCreationDialog()
 				.getLabelProvider());
 		objectsTableViewer.setInput(values);
@@ -185,6 +188,7 @@ public class ObjectsListDialogExtension extends
 		btnUp.setLayoutData(gdBtnUp);
 		btnUp.setText("&Up");
 		btnUp.setVisible(feature.isOrdered());
+		
 
 		btnDown = new Button(composite, SWT.NONE);
 		btnDown.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
@@ -195,13 +199,17 @@ public class ObjectsListDialogExtension extends
 		btnRemove.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				Object previouslySelectedObject = getListSelection();
+				EObject previouslySelectedObject = getListSelection();
 				if (previouslySelectedObject != null) {
 					int index = values.getChildren().indexOf(
 							previouslySelectedObject);
+					
+					// Unhook from the model element
+					previouslySelectedObject.eAdapters().remove(hookAdapter);
+					
+
 					values.getChildren().remove(previouslySelectedObject);
-					textualCreationDialogExtension
-							.rebuildTextualParameterLine();
+					textualDialogExtension.rebuildTextualString();
 
 					int objectsCount = values.getChildren().size();
 					if (index >= objectsCount) {
@@ -231,8 +239,7 @@ public class ObjectsListDialogExtension extends
 							index - 1);
 					values.getChildren().set(index - 1, firstObject);
 					values.getChildren().set(index, secondObject);
-					textualCreationDialogExtension
-							.rebuildTextualParameterLine();
+					textualDialogExtension.rebuildTextualString();
 
 					// Update visuals
 					objectsTableViewer.refresh();
@@ -252,8 +259,7 @@ public class ObjectsListDialogExtension extends
 							index + 1);
 					values.getChildren().set(index + 1, firstObject);
 					values.getChildren().set(index, secondObject);
-					textualCreationDialogExtension
-							.rebuildTextualParameterLine();
+					textualDialogExtension.rebuildTextualString();
 
 					// Update visuals
 					objectsTableViewer.refresh();
@@ -318,6 +324,10 @@ public class ObjectsListDialogExtension extends
 	}
 
 	public void addListItem(EObject newObject) {
+		// Hook into the model element
+		newObject.eAdapters().add(hookAdapter);
+		
+		// Add the element to the list
 		values.getChildren().add(newObject);
 	}
 
@@ -325,14 +335,13 @@ public class ObjectsListDialogExtension extends
 		return objectsTableViewer;
 	}
 
-	public void setPropertiesListCreationDialogExtension(
-			IPropertiesListDialogExtension propertiesListCreationDialogExtension) {
-		this.propertiesListCreationDialogExtension = propertiesListCreationDialogExtension;
+	public void setPropertiesListDialogExtension(
+			IPropertiesListDialogExtension propertiesListDialogExtension) {
+		this.propertiesListDialogExtension = propertiesListDialogExtension;
 	}
 
-	public void setTextualCreationDialogExtension(
-			ITextualDialogExtension textualCreationDialogExtension) {
-		this.textualCreationDialogExtension = textualCreationDialogExtension;
+	public void setTextualDialogExtension(
+			ITextualDialogExtension textualDialogExtension) {
+		this.textualDialogExtension = textualDialogExtension;
 	}
-
 }

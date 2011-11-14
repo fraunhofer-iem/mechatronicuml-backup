@@ -30,7 +30,7 @@ public class TextualDialogExtension extends
 		AbstractDialogExtension implements
 		ITextualDialogExtension {
 
-	private IObjectsListDialogExtension objectsListCreationDialogExtension;
+	private IObjectsListDialogExtension objectsListDialogExtension;
 
 	/**
 	 * The areas in the Parameter-Line Textfield that contain certain
@@ -56,18 +56,18 @@ public class TextualDialogExtension extends
 	 * A ModifyListener, which is notified when the Parameter-Line Text was
 	 * edited by the user.
 	 */
-	private ModifyListener txtParameterLineModifyListener;
+	private ModifyListener txtTextualStringModifyListener;
 
 	/**
 	 * A CaretListener, which is notified when the user changes the
 	 * Caret-Position in the Parameter-Line Textfield.
 	 */
-	private CaretListener txtParameterLineCaretListener;
+	private CaretListener txtTextualStringCaretListener;
 
 	/**
 	 * The textual Parameter-Line Textfield.
 	 */
-	private StyledText txtParameterLine;
+	private StyledText txtTextualString;
 
 	/**
 	 * The text parser for the structural feature. It can parse a String to
@@ -107,33 +107,33 @@ public class TextualDialogExtension extends
 			lblParameters.setText("&Textual representation:");
 			new Label(parent, SWT.NONE);
 
-			txtParameterLine = new StyledText(parent, SWT.BORDER | SWT.SINGLE);
-			txtParameterLine.setLayoutData(new GridData(SWT.FILL, SWT.FILL,
+			txtTextualString = new StyledText(parent, SWT.BORDER | SWT.SINGLE);
+			txtTextualString.setLayoutData(new GridData(SWT.FILL, SWT.FILL,
 					true, false, 1, 1));
-			txtParameterLine.setEnabled(this.textParser != null);
+			txtTextualString.setEnabled(this.textParser != null);
 
 			new Label(parent, SWT.NONE);
 		}
 
-		if (txtParameterLine != null) {
-			// Create CaretListener for txtParameterLine to update
+		if (txtTextualString != null) {
+			// Create CaretListener for txtTextualString to update
 			// Parameter-List
 			// selection accordingly.
-			txtParameterLineCaretListener = new CaretListener() {
+			txtTextualStringCaretListener = new CaretListener() {
 				@Override
 				public void caretMoved(CaretEvent event) {
-					onParameterLineCaretMoved(event.caretOffset);
+					onTextualStringCaretMoved(event.caretOffset);
 				}
 			};
-			txtParameterLine.addCaretListener(txtParameterLineCaretListener);
+			txtTextualString.addCaretListener(txtTextualStringCaretListener);
 
-			// Create ModifyListener for txtParameterLine to recreate all
+			// Create ModifyListener for txtTextualString to recreate all
 			// parameters.
-			txtParameterLineModifyListener = new ModifyListener() {
+			txtTextualStringModifyListener = new ModifyListener() {
 				public void modifyText(ModifyEvent e) {
 					textRanges = null;
 
-					String text = txtParameterLine.getText();
+					String text = txtTextualString.getText();
 
 					Map<Object, Range> newRanges = new HashMap<Object, Range>();
 					java.util.List<Range> newErrorRanges = new ArrayList<Range>();
@@ -141,37 +141,37 @@ public class TextualDialogExtension extends
 							.createObjects(text.toCharArray(), newRanges,
 									newErrorRanges);
 
-					clearTextStyle(txtParameterLine);
-					markErrors(txtParameterLine, newErrorRanges);
+					clearTextStyle(txtTextualString);
+					markErrors(txtTextualString, newErrorRanges);
 
 					textRanges = newRanges;
-					objectsListCreationDialogExtension.getCurrentListItems()
+					objectsListDialogExtension.getCurrentListItems()
 							.clear();
-					objectsListCreationDialogExtension.getCurrentListItems()
+					objectsListDialogExtension.getCurrentListItems()
 							.addAll(newObjects);
-					objectsListCreationDialogExtension.getTableViewer()
+					objectsListDialogExtension.getTableViewer()
 							.refresh();
 
-					onParameterLineCaretMoved(txtParameterLine.getCaretOffset());
+					onTextualStringCaretMoved(txtTextualString.getCaretOffset());
 				}
 			};
-			txtParameterLine.addModifyListener(txtParameterLineModifyListener);
-			txtParameterLine.addFocusListener(new FocusAdapter() {
+			txtTextualString.addModifyListener(txtTextualStringModifyListener);
+			txtTextualString.addFocusListener(new FocusAdapter() {
 				@Override
 				public void focusLost(FocusEvent e) {
-					rebuildTextualParameterLine();
+					rebuildTextualString();
 
-					// Make sure, the selection for txtParameterLine will be
+					// Make sure, the selection for txtTextualString will be
 					// set.
-					objectsListCreationDialogExtension.getTableViewer()
+					objectsListDialogExtension.getTableViewer()
 							.setSelection(
-									objectsListCreationDialogExtension
+									objectsListDialogExtension
 											.getTableViewer().getSelection());
 				}
 			});
 
-			// Initialize Textual Parameter Line
-			rebuildTextualParameterLine();
+			// Initialize Textual String
+			rebuildTextualString();
 		}
 	}
 
@@ -185,15 +185,15 @@ public class TextualDialogExtension extends
 	 * Fills the textual Parameter-Line with the existing parameters and updates
 	 * the parameterRanges hash-map to store the new substring-positions.
 	 */
-	public void rebuildTextualParameterLine() {
+	public void rebuildTextualString() {
 		if (textProvider != null) {
 			textRanges = new HashMap<Object, Range>();
 
 			String text = textProvider.getText(
-					objectsListCreationDialogExtension.getCurrentListItems(),
+					objectsListDialogExtension.getCurrentListItems(),
 					textRanges);
 
-			setParameterLine(text);
+			setTextualString(text);
 		}
 	}
 
@@ -204,12 +204,12 @@ public class TextualDialogExtension extends
 	 *            The parameter to select.
 	 */
 	public void setTextRange(EObject selectedObject) {
-		if (txtParameterLine != null && textRanges != null) {
+		if (txtTextualString != null && textRanges != null) {
 			Range textSelection = textRanges.get(selectedObject);
 			if (textSelection != null) {
 				int start = textSelection.getStart();
 				int end = start + textSelection.getLength();
-				txtParameterLine.setSelection(start, end);
+				txtTextualString.setSelection(start, end);
 			}
 		}
 	}
@@ -218,17 +218,17 @@ public class TextualDialogExtension extends
 	 * Sets the text of the Parameter-Line Control without firing notifications,
 	 * which are only useful, if the user enters a value.
 	 * 
-	 * @param parameterLineString
+	 * @param textualStringString
 	 *            The string to set.
 	 */
-	private void setParameterLine(String parameterLineString) {
-		if (txtParameterLine != null) {
-			txtParameterLine.removeCaretListener(txtParameterLineCaretListener);
-			txtParameterLine
-					.removeModifyListener(txtParameterLineModifyListener);
-			txtParameterLine.setText(parameterLineString);
-			txtParameterLine.addModifyListener(txtParameterLineModifyListener);
-			txtParameterLine.addCaretListener(txtParameterLineCaretListener);
+	private void setTextualString(String textualStringString) {
+		if (txtTextualString != null) {
+			txtTextualString.removeCaretListener(txtTextualStringCaretListener);
+			txtTextualString
+					.removeModifyListener(txtTextualStringModifyListener);
+			txtTextualString.setText(textualStringString);
+			txtTextualString.addModifyListener(txtTextualStringModifyListener);
+			txtTextualString.addCaretListener(txtTextualStringCaretListener);
 		}
 	}
 
@@ -252,10 +252,10 @@ public class TextualDialogExtension extends
 	 * @param caretOffset
 	 *            The new caret offset.
 	 */
-	protected void onParameterLineCaretMoved(int caretOffset) {
+	protected void onTextualStringCaretMoved(int caretOffset) {
 		if (textRanges != null) {
 			Object selectedObject = null;
-			for (Object object : objectsListCreationDialogExtension
+			for (Object object : objectsListDialogExtension
 					.getCurrentListItems()) {
 				selectedObject = object;
 				Range textSelection = textRanges.get(object);
@@ -268,7 +268,7 @@ public class TextualDialogExtension extends
 			if (selectedObject != null) {
 				ISelection listSelection = new StructuredSelection(
 						new Object[] { selectedObject });
-				objectsListCreationDialogExtension
+				objectsListDialogExtension
 						.setListSelection(listSelection);
 			}
 		}
@@ -301,9 +301,10 @@ public class TextualDialogExtension extends
 
 	}
 
-	public void setObjectsListCreationDialogExtension(
-			IObjectsListDialogExtension objectsListCreationDialogExtension) {
-		this.objectsListCreationDialogExtension = objectsListCreationDialogExtension;
+	public void setObjectsListDialogExtension(
+			IObjectsListDialogExtension objectsListDialogExtension) {
+		this.objectsListDialogExtension = objectsListDialogExtension;
 	}
+
 
 }

@@ -27,3 +27,24 @@
 		return (org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain) org.eclipse.emf.transaction.util.TransactionUtil.getEditingDomain(object);
 	}
 «ENDAROUND»
+
+
+«AROUND getPropertySourceMethod FOR gmfgen::GenCustomPropertyTab-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.ui.views.properties.IPropertySource getPropertySource(Object object) {
+		if (object instanceof org.eclipse.ui.views.properties.IPropertySource) {
+			return (org.eclipse.ui.views.properties.IPropertySource) object;
+		}
+		org.eclipse.emf.common.notify.AdapterFactory af = getAdapterFactory(object);
+		if (af != null) {
+			org.eclipse.emf.edit.provider.IItemPropertySource ips = (org.eclipse.emf.edit.provider.IItemPropertySource) af.adapt(object, org.eclipse.emf.edit.provider.IItemPropertySource.class);
+			if (ips != null) {
+				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(object, ips, af, this);
+			}
+		}
+		if (object instanceof org.eclipse.core.runtime.IAdaptable) {
+			return (org.eclipse.ui.views.properties.IPropertySource) ((org.eclipse.core.runtime.IAdaptable) object).getAdapter(org.eclipse.ui.views.properties.IPropertySource.class);
+		}
+		return null;
+	}
+«ENDAROUND»

@@ -30,7 +30,6 @@ public class ExtensibleCreationDialog extends Dialog {
 	
 	private List<IDialogExtension> extensions = new ArrayList<IDialogExtension>();
 
-
 	/**
 	 * The StructuralFeature that we set the values for.
 	 */
@@ -40,7 +39,7 @@ public class ExtensibleCreationDialog extends Dialog {
 	/**
 	 * The initial size for this dialog.
 	 */
-	private static final Point INITIAL_DIALOG_SIZE = new Point(500, 470);
+	private static final Point INITIAL_DIALOG_SIZE = new Point(550, 500);
 
 
 	/**
@@ -194,5 +193,8 @@ public class ExtensibleCreationDialog extends Dialog {
 	public EStructuralFeature getStructuralFeature() {
 		return structuralFeature;
 	}
+	
+	
+
 
 }

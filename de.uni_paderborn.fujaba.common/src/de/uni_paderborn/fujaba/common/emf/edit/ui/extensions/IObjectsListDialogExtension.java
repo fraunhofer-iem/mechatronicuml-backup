@@ -14,7 +14,7 @@ public interface IObjectsListDialogExtension extends
 
 	List<Object> getCurrentListItems();
 
-	void setListSelection(ISelection parameterSelection);
+	void setListSelection(ISelection listSelection);
 	
 	void addListItem(EObject newObject);
 
