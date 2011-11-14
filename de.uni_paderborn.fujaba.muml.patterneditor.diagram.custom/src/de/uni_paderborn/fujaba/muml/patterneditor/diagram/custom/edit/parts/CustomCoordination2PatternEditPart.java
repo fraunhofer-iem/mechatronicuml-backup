@@ -5,6 +5,9 @@ import org.eclipse.draw2d.EllipseAnchor;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.View;
+
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart;
 
 /**
  * A custom EditPart for the CoordinationPattern. We replace the NodeFigure
@@ -13,13 +16,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
  * @author bingo
  * 
  */
-public class CustomCoordinationPatternEditPart /* extends
-		CoordinationPatternEditPart*/ {
-/*
-	public CustomCoordinationPatternEditPart(View view) {
+public class CustomCoordination2PatternEditPart  extends
+		CoordinationPattern2EditPart {
+
+	public CustomCoordination2PatternEditPart(View view) {
 		super(view);
 	}
-*/
+
 	/**
 	 * Customized the CoordinationPattern NodeFigure to have an EllipseAnchor.
 	 */

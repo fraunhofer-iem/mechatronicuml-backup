@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.MumlEditPartFactory;
@@ -32,8 +33,8 @@ public class CustomPatternEditPartFactory extends MumlEditPartFactory {
 			case RoleEditPart.VISUAL_ID:
 				return new CustomRoleEditPart(view);
 
-//			case CoordinationPatternEditPart.VISUAL_ID:
-//				return new CustomCoordinationPatternEditPart(view);
+			case CoordinationPattern2EditPart.VISUAL_ID:
+				return new CustomCoordination2PatternEditPart(view);
 
 //			case ConstrainableElementConstraintEditPart.VISUAL_ID:
 //				return new CustomTextualConstraintEditPart(view);
