@@ -8,8 +8,8 @@ public class CustomEcoreItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.emf.ecore.EAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -21,11 +21,10 @@ public class CustomEcoreItemProviderAdapterFactory extends
 		return eAttributeItemProvider;
 	}
 
-
 	/**
 	 * This creates an adapter for a {@link org.eclipse.emf.ecore.EParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -35,5 +34,20 @@ public class CustomEcoreItemProviderAdapterFactory extends
 		}
 
 		return eParameterItemProvider;
+	}
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.emf.ecore.EOperation}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEOperationAdapter() {
+		if (eOperationItemProvider == null) {
+			eOperationItemProvider = new CustomEOperationItemProvider(this);
+		}
+
+		return eOperationItemProvider;
 	}
 }
