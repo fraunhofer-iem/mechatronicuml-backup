@@ -39,7 +39,9 @@
   <childNodeTraces visualID="3012" queryText="let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'EntryPoint'">
     <nodeLabelTraces visualID="5020" queryText="true"/>
   </childNodeTraces>
-  <childNodeTraces visualID="3013" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'ExitPoint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'FujabaRealtimeStatechart') and _containmentMF_.name = 'vertices')"/>
+  <childNodeTraces visualID="3013" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'ExitPoint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'FujabaRealtimeStatechart') and _containmentMF_.name = 'vertices')">
+    <nodeLabelTraces visualID="5021" queryText="true"/>
+  </childNodeTraces>
   <linkTraces visualID="4001" queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'Transition')">
     <linkLabelTraces visualID="6001" queryText="true"/>
     <linkLabelTraces visualID="6002" queryText="true"/>

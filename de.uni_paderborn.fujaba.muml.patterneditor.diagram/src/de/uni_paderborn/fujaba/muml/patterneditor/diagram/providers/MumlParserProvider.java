@@ -42,10 +42,31 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected IParser roleName_5002Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getRoleName_5002Parser() {
+		if (roleName_5002Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser(
+					features);
+			roleName_5002Parser = parser;
+		}
+		return roleName_5002Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID:
 			return getCoordinationPatternName_5001Parser();
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
+			return getRoleName_5002Parser();
 		}
 		return null;
 	}

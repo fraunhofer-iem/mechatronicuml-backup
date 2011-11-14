@@ -48,6 +48,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart(
 						view);
 
+			case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart(
+						view);
+
 			case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart(
 						view);

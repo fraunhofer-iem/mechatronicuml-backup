@@ -367,6 +367,13 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
+            <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>

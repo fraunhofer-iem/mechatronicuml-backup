@@ -213,6 +213,13 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="pattern.gmfgraph#RoleName"/>
+            <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="pattern.gmftool#//@palette/@tools.0/@tools.1"/>
