@@ -39,7 +39,7 @@ public class CustomContinuousPortEditPart extends ContinuousPortEditPart {
 	protected IFigure createNodeShape() {
 		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
 		primaryShape = portFigure;
-		getBehavior().setPortFigure(portFigure);
+		getBehavior().setFigure(portFigure);
 		return primaryShape;
 	}
 

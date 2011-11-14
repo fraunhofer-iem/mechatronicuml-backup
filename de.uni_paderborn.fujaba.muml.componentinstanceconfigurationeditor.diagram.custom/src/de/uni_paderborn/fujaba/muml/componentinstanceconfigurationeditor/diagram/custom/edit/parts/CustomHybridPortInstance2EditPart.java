@@ -48,7 +48,7 @@ public class CustomHybridPortInstance2EditPart extends HybridPortInstance2EditPa
 	protected IFigure createNodeShape() {
 		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
 		primaryShape = portFigure;
-		getDelegation().setPortFigure(portFigure);
+		getDelegation().setFigure(portFigure);
 		return primaryShape;
 	}
 
@@ -100,7 +100,7 @@ public class CustomHybridPortInstance2EditPart extends HybridPortInstance2EditPa
 		if (figure instanceof BorderedNodeFigure) {
 			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
 			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			getDelegation().addPortContainerLayoutListener(portContainerFigure);
+			getDelegation().addContainerLayoutListener(portContainerFigure);
 		}
 
 		super.activate();
@@ -119,7 +119,7 @@ public class CustomHybridPortInstance2EditPart extends HybridPortInstance2EditPa
 		if (figure instanceof BorderedNodeFigure) {
 			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
 			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			getDelegation().removePortContainerLayoutListener(
+			getDelegation().removeContainerLayoutListener(
 					portContainerFigure);
 		}
 		getDelegation().deactivate();
