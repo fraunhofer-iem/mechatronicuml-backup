@@ -59,6 +59,11 @@ public class CustomRegionRegionContentsCompartmentEditPart extends
 			constrainedToolbarLayout.setStretchMajorAxis(true);
 			constrainedToolbarLayout.setStretchMinorAxis(true);
 		}
+		
+		// Begin: Fix for Mechatronic-UML Bug #116
+		result.setBorder(null);
+		// End Fix
+		
 		return result;
 
 	}

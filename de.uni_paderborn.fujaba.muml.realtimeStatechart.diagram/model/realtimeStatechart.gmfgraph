@@ -297,6 +297,7 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="RegionFigure"
+          outline="false"
           fill="false">
         <layout
             xsi:type="gmfgraph:GridLayout"/>

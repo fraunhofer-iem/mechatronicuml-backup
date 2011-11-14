@@ -6,6 +6,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartment2EditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart;
@@ -57,6 +59,10 @@ public class CustomRealtimeStatechartEditPartFactory extends
 				return new CustomRegionEditPart(view);
 			case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
 				return new CustomRegionRegionContentsCompartmentEditPart(view);
+			case FujabaRealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
+				return new CustomFujabaRealtimeStatechartStatechartContentsCompartmentEditPart(view);
+			case FujabaRealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
+				return new CustomFujabaRealtimeStatechartStatechartContentsCompartment2EditPart(view);
 
 			default:
 				break;

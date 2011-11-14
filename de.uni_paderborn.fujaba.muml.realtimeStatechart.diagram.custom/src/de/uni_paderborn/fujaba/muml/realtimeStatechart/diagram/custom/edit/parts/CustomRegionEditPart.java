@@ -2,7 +2,9 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart;
 
@@ -16,7 +18,11 @@ public class CustomRegionEditPart extends RegionEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new CustomRegionFigure();
+		primaryShape = new CustomRegionFigure();
+		OneLineBorder border = new OneLineBorder(1, PositionConstants.BOTTOM);
+		border.setStyle(SWT.LINE_DASH);
+		primaryShape.setBorder(border);
+		return primaryShape;
 	}
 
 	public class CustomRegionFigure extends RegionFigure {

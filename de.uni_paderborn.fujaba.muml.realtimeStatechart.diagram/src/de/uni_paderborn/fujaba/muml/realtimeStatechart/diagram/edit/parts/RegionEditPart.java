@@ -344,6 +344,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
+			this.setOutline(false);
 			createContents();
 		}
 

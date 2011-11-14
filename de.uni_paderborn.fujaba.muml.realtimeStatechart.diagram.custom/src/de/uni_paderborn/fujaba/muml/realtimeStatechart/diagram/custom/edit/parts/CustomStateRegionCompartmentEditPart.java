@@ -26,7 +26,8 @@ public class CustomStateRegionCompartmentEditPart extends
 			constrainedToolbarLayout.setStretchMajorAxis(true);
 			constrainedToolbarLayout.setStretchMinorAxis(true);
 		}
+		
 		return result;
 	}
-
+	
 }
