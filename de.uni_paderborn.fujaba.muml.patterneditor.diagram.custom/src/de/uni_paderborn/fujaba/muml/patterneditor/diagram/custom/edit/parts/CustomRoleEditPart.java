@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -27,8 +28,9 @@ public class CustomRoleEditPart extends RoleEditPart {
 	@Override
 	protected IFigure createNodeShape() {
 		CustomPortFigure roleFigure = new CustomPortFigure(getMapMode());
-		primaryShape = roleFigure;
+		roleFigure.setPortSide(PositionConstants.WEST);
 		getBehavior().setFigure(roleFigure);
+		primaryShape = roleFigure;
 		return primaryShape;
 	}
 
