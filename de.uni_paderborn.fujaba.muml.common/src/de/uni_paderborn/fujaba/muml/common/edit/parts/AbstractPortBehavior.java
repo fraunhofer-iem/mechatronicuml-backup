@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
-public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
+public abstract class AbstractPortBehavior extends AbstractBehavior {
 
 	/**
 	 * The model object. It will be set, while the EditPart is active (between
@@ -41,7 +41,7 @@ public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
 		if (figure instanceof BorderedNodeFigure) {
 			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
 			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			addPortContainerLayoutListener(portContainerFigure);
+			addContainerLayoutListener(portContainerFigure);
 		}
 
 		super.activate();
@@ -67,14 +67,14 @@ public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
 		if (figure instanceof BorderedNodeFigure) {
 			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
 			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			removePortContainerLayoutListener(portContainerFigure);
+			removeContainerLayoutListener(portContainerFigure);
 		}
 
 		super.deactivate();
 	}
 
 	@Override
-	public boolean isMultiPort() {
+	public boolean isMulti() {
 		boolean isMulti = false;
 		if (port != null && port.getCardinality() != null) {
 			NaturalNumber upperBound = port.getCardinality().getUpperBound();
@@ -88,15 +88,8 @@ public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
-		Object feature = notification.getFeature();
-		if (feature instanceof EStructuralFeature) {
-			EStructuralFeature structuralFeature = (EStructuralFeature) feature;
-			if (structuralFeature.getContainerClass().isAssignableFrom(Port.class)) {
-				int featureID = notification.getFeatureID(Port.class);
-				if (featureID == ComponentPackage.PORT__CARDINALITY) {
-					updatePortCardinality();
-				}
-			}
+		if (notification.getFeature() == ComponentPackage.Literals.PORT__CARDINALITY) {
+			updateCardinality();
 		}
 	}
 

@@ -32,23 +32,11 @@
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="RoleFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="RoleFigure"/>
-    </descriptors>
-    <descriptors
         name="RolePatternFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="RolePatternFigure"
           lineKind="LINE_DASH"/>
-    </descriptors>
-    <descriptors
-        name="RoleNameFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="RoleNameFigure"/>
     </descriptors>
     <descriptors
         name="ConstraintLinkFigure">
@@ -87,7 +75,7 @@
             y="40"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="CoordinationPatternContainerFigure">
@@ -109,8 +97,9 @@
       figure="CoordinationPatternFigure"/>
   <nodes
       name="Role"
-      figure="RoleFigure"
       resizeConstraint="NONE">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -143,11 +132,13 @@
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="RoleName"
-      figure="RoleNameFigure"
-      elementIcon="false"/>
+      elementIcon="false">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortExternalLabelFigure"/>
+  </labels>
   <labels
       name="TextualConstraintName"
       figure="TextualConstraintFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
 </gmfgraph:Canvas>

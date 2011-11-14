@@ -109,7 +109,7 @@ public class CustomPortFigure extends RectangleFigure {
 		this.mapMode = mapMode;
 		createContents();
 		fFigureHardwareTypeLabel.setAlignment(PositionConstants.CENTER);
-		setPortMulti(false);
+		setMulti(false);
 		setPortKindAndPortType(null, PortType.INOUT_PORT);
 		setPortSide(PositionConstants.NORTH);
 	}
@@ -200,7 +200,7 @@ public class CustomPortFigure extends RectangleFigure {
 	 * @param isMulti
 	 *            true, if this Port is a multi port.
 	 */
-	public void setPortMulti(boolean isMulti) {
+	public void setMulti(boolean isMulti) {
 		this.multiPort = isMulti;
 
 		// Calculate new Margin for bottom, right.

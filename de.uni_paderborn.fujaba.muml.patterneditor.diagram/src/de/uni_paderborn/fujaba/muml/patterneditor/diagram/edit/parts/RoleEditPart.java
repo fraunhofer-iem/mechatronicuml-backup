@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -20,11 +24,15 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -96,14 +104,14 @@ public class RoleEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new RectangleFigure();
+		return primaryShape = new PortFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public RectangleFigure getPrimaryShape() {
-		return (RectangleFigure) primaryShape;
+	public PortFigure getPrimaryShape() {
+		return (PortFigure) primaryShape;
 	}
 
 	/**
@@ -254,5 +262,257 @@ public class RoleEditPart extends ShapeNodeEditPart {
 		}
 		return types;
 	}
+
+	/**
+	 * @generated
+	 */
+	public class PortFigure extends RectangleFigure {
+
+		/**
+		 * @generated
+		 */
+		private ScalablePolygonShape fFigureInPolygon;
+		/**
+		 * @generated
+		 */
+		private ScalablePolygonShape fFigureOutPolygon;
+		/**
+		 * @generated
+		 */
+		private ScalablePolygonShape fFigureInOutPolygon;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureInnerRectContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureOutlineRectangle;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureShadowRectangle;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureHardwareTypeLabel;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureInPolygonContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureOutPolygonContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureInOutPolygonContainer;
+
+		/**
+		 * @generated
+		 */
+		public PortFigure() {
+			this.setLayoutManager(new StackLayout());
+			this.setFill(false);
+			this.setOutline(false);
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			RectangleFigure aux10 = new RectangleFigure();
+			aux10.setFill(false);
+			aux10.setOutline(false);
+			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0)));
+
+			this.add(aux10);
+			aux10.setLayoutManager(new StackLayout());
+
+			fFigureShadowRectangle = new RectangleFigure();
+
+			aux10.add(fFigureShadowRectangle);
+
+			fFigureInnerRectContainer = new RectangleFigure();
+			fFigureInnerRectContainer.setFill(false);
+			fFigureInnerRectContainer.setOutline(false);
+			fFigureInnerRectContainer.setBorder(new MarginBorder(getMapMode()
+					.DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0)));
+
+			this.add(fFigureInnerRectContainer);
+			fFigureInnerRectContainer.setLayoutManager(new StackLayout());
+
+			fFigureOutlineRectangle = new RectangleFigure();
+
+			fFigureInnerRectContainer.add(fFigureOutlineRectangle);
+
+			fFigureInPolygonContainer = new RectangleFigure();
+			fFigureInPolygonContainer.setFill(false);
+			fFigureInPolygonContainer.setOutline(false);
+			fFigureInPolygonContainer.setBorder(new MarginBorder(getMapMode()
+					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5)));
+
+			fFigureInnerRectContainer.add(fFigureInPolygonContainer);
+			fFigureInPolygonContainer.setLayoutManager(new StackLayout());
+
+			fFigureInPolygon = new ScalablePolygonShape();
+			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0)));
+			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(1)));
+			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(2)));
+			fFigureInPolygon.setFill(true);
+			fFigureInPolygon.setOutline(false);
+			fFigureInPolygon.setBackgroundColor(ColorConstants.black);
+
+			fFigureInPolygonContainer.add(fFigureInPolygon);
+
+			fFigureOutPolygonContainer = new RectangleFigure();
+			fFigureOutPolygonContainer.setFill(false);
+			fFigureOutPolygonContainer.setOutline(false);
+			fFigureOutPolygonContainer.setBorder(new MarginBorder(getMapMode()
+					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5)));
+
+			fFigureInnerRectContainer.add(fFigureOutPolygonContainer);
+			fFigureOutPolygonContainer.setLayoutManager(new StackLayout());
+
+			fFigureOutPolygon = new ScalablePolygonShape();
+			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(0)));
+			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(1)));
+			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(2)));
+			fFigureOutPolygon.setFill(true);
+			fFigureOutPolygon.setOutline(false);
+			fFigureOutPolygon.setBackgroundColor(ColorConstants.black);
+
+			fFigureOutPolygonContainer.add(fFigureOutPolygon);
+
+			fFigureInOutPolygonContainer = new RectangleFigure();
+			fFigureInOutPolygonContainer.setFill(false);
+			fFigureInOutPolygonContainer.setOutline(false);
+			fFigureInOutPolygonContainer.setBorder(new MarginBorder(
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3)));
+
+			fFigureInnerRectContainer.add(fFigureInOutPolygonContainer);
+			fFigureInOutPolygonContainer.setLayoutManager(new StackLayout());
+
+			fFigureInOutPolygon = new ScalablePolygonShape();
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
+					getMapMode().DPtoLP(0)));
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(3)));
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
+					getMapMode().DPtoLP(6)));
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(5)));
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(7),
+					getMapMode().DPtoLP(8)));
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(11)));
+			fFigureInOutPolygon.setFill(true);
+			fFigureInOutPolygon.setOutline(false);
+			fFigureInOutPolygon.setBackgroundColor(ColorConstants.black);
+
+			fFigureInOutPolygonContainer.add(fFigureInOutPolygon);
+
+			fFigureHardwareTypeLabel = new WrappingLabel();
+			fFigureHardwareTypeLabel.setText("");
+
+			fFigureHardwareTypeLabel.setFont(FFIGUREHARDWARETYPELABEL_FONT);
+
+			fFigureInnerRectContainer.add(fFigureHardwareTypeLabel);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public ScalablePolygonShape getFigureInPolygon() {
+			return fFigureInPolygon;
+		}
+
+		/**
+		 * @generated
+		 */
+		public ScalablePolygonShape getFigureOutPolygon() {
+			return fFigureOutPolygon;
+		}
+
+		/**
+		 * @generated
+		 */
+		public ScalablePolygonShape getFigureInOutPolygon() {
+			return fFigureInOutPolygon;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInnerRectContainer() {
+			return fFigureInnerRectContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureOutlineRectangle() {
+			return fFigureOutlineRectangle;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureShadowRectangle() {
+			return fFigureShadowRectangle;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureHardwareTypeLabel() {
+			return fFigureHardwareTypeLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInPolygonContainer() {
+			return fFigureInPolygonContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureOutPolygonContainer() {
+			return fFigureOutPolygonContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInOutPolygonContainer() {
+			return fFigureInOutPolygonContainer;
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGUREHARDWARETYPELABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 7, SWT.NORMAL);
 
 }

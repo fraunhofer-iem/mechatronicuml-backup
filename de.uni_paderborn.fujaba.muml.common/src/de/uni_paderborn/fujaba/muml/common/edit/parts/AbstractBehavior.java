@@ -20,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
  * @author bingo
  * 
  */
-public abstract class AbstractBasePortBehavior {
+public abstract class AbstractBehavior {
 	/**
 	 * The port's EditPart.
 	 */
@@ -29,17 +29,17 @@ public abstract class AbstractBasePortBehavior {
 	/**
 	 * The port's figure.
 	 */
-	private CustomPortFigure portFigure;
+	private CustomPortFigure figure;
 
 	/**
 	 * The offset that the port lies within it's container.
 	 */
-	private static final Dimension offset = new Dimension(12, 12);
+	private static final Dimension OFFSET = new Dimension(12, 12);
 
 	/**
 	 * The LayoutListener for layouting the port's container.
 	 */
-	private LayoutListener portContainerLayoutListener;
+	private LayoutListener containerLayoutListener;
 
 	/**
 	 * Constructs this instance.
@@ -47,7 +47,7 @@ public abstract class AbstractBasePortBehavior {
 	 * @param editPart
 	 *            The port's EditPart.
 	 */
-	public AbstractBasePortBehavior(GraphicalEditPart editPart) {
+	public AbstractBehavior(GraphicalEditPart editPart) {
 		this.editPart = editPart;
 	}
 
@@ -66,14 +66,14 @@ public abstract class AbstractBasePortBehavior {
 
 	public abstract CustomPortFigure.PortType getPortType();
 
-	public abstract boolean isMultiPort();
+	public abstract boolean isMulti();
 
 	/**
 	 * Updates the PortFigure to visualize a multi-port, if necessary.
 	 */
-	public void updatePortCardinality() {
-		if (portFigure != null) {
-			portFigure.setPortMulti(isMultiPort());
+	public void updateCardinality() {
+		if (figure != null) {
+			figure.setMulti(isMulti());
 		}
 	}
 
@@ -81,8 +81,8 @@ public abstract class AbstractBasePortBehavior {
 	 * Updates the PortFigure to visualize a specific kind of port.
 	 */
 	public void updatePortType() {
-		if (portFigure != null) {
-			portFigure.setPortKindAndPortType(getPortKind(), getPortType());
+		if (figure != null) {
+			figure.setPortKindAndPortType(getPortKind(), getPortType());
 		}
 	}
 
@@ -91,27 +91,27 @@ public abstract class AbstractBasePortBehavior {
 	 * will hook into layout changes (movements) and update the port's visual
 	 * orientation according to the side it lies at.
 	 * 
-	 * @param portContainerFigure
+	 * @param containerFigure
 	 *            The port's container figure.
 	 */
-	public void addPortContainerLayoutListener(IFigure portContainerFigure) {
+	public void addContainerLayoutListener(IFigure containerFigure) {
 		if (editPart instanceof AbstractBorderItemEditPart) {
-			portContainerLayoutListener = new PortContainerLayoutListener(
-					(AbstractBorderItemEditPart) editPart, portFigure);
-			portContainerFigure.addLayoutListener(portContainerLayoutListener);
+			containerLayoutListener = new ContainerLayoutListener(
+					(AbstractBorderItemEditPart) editPart, figure);
+			containerFigure.addLayoutListener(containerLayoutListener);
 		}
 	}
 
 	/**
 	 * Removes the LayoutListener from the given port container figure.
 	 * 
-	 * @param portContainerFigure
+	 * @param containerFigure
 	 *            The port's container figure.
 	 */
-	public void removePortContainerLayoutListener(IFigure portContainerFigure) {
-		if (portContainerLayoutListener != null) {
-			portContainerFigure
-					.removeLayoutListener(portContainerLayoutListener);
+	public void removeContainerLayoutListener(IFigure containerFigure) {
+		if (containerLayoutListener != null) {
+			containerFigure
+					.removeLayoutListener(containerLayoutListener);
 		}
 	}
 
@@ -124,11 +124,11 @@ public abstract class AbstractBasePortBehavior {
 			IBorderItemLocator locator = ((AbstractBorderItemEditPart) editPart)
 					.getBorderItemLocator();
 			if (locator instanceof BorderItemLocator) {
-				((BorderItemLocator) locator).setBorderItemOffset(offset);
+				((BorderItemLocator) locator).setBorderItemOffset(OFFSET);
 			}
 		}
 		updatePortType();
-		updatePortCardinality();
+		updateCardinality();
 	}
 
 	/**
@@ -139,11 +139,11 @@ public abstract class AbstractBasePortBehavior {
 	}
 
 	public CustomPortFigure getPortFigure() {
-		return portFigure;
+		return figure;
 	}
 
-	public void setPortFigure(CustomPortFigure portFigure) {
-		this.portFigure = portFigure;
+	public void setFigure(CustomPortFigure figure) {
+		this.figure = figure;
 	}
 
 	/**
@@ -158,8 +158,8 @@ public abstract class AbstractBasePortBehavior {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
 			public PointList getPolygonPoints() {
 				PointList customPolygonPoints = null;
-				if (portFigure != null) {
-					customPolygonPoints = portFigure
+				if (figure != null) {
+					customPolygonPoints = figure
 							.getCustomPolygonPoints(getHandleBounds());
 				}
 				if (customPolygonPoints != null) {
@@ -182,7 +182,7 @@ public abstract class AbstractBasePortBehavior {
 	 * @author bingo
 	 * 
 	 */
-	private class PortContainerLayoutListener extends LayoutListener.Stub {
+	private class ContainerLayoutListener extends LayoutListener.Stub {
 		/**
 		 * The port's EditPart.
 		 */
@@ -198,10 +198,10 @@ public abstract class AbstractBasePortBehavior {
 		 * 
 		 * @param editPart
 		 *            The port's EditPart
-		 * @param portFigure
+		 * @param figure
 		 *            The port's figure that should be rotated.
 		 */
-		public PortContainerLayoutListener(AbstractBorderItemEditPart editPart,
+		public ContainerLayoutListener(AbstractBorderItemEditPart editPart,
 				CustomPortFigure portFigure) {
 			this.editPart = editPart;
 			this.portFigure = portFigure;
