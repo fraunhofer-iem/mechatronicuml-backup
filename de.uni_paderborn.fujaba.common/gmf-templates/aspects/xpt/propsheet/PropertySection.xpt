@@ -39,7 +39,8 @@
 		if (af != null) {
 			org.eclipse.emf.edit.provider.IItemPropertySource ips = (org.eclipse.emf.edit.provider.IItemPropertySource) af.adapt(object, org.eclipse.emf.edit.provider.IItemPropertySource.class);
 			if (ips != null) {
-				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(object, ips, af, this);
+				org.eclipse.emf.edit.domain.EditingDomain ed = getEditingDomainFor(object);
+				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(object, ips, af, ed, this);
 			}
 		}
 		if (object instanceof org.eclipse.core.runtime.IAdaptable) {

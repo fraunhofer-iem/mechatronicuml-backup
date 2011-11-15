@@ -217,6 +217,47 @@ public class MessageinterfaceNavigatorContentProvider implements
 		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.NavigatorGroupName_MessageInterface_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.NavigatorGroupName_MessageInterface_2003_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
@@ -268,47 +309,6 @@ public class MessageinterfaceNavigatorContentProvider implements
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
-			}
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.NavigatorGroupName_MessageInterface_2003_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.NavigatorGroupName_MessageInterface_2003_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}

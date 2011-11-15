@@ -150,6 +150,8 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ModelinstanceItemProviderAdapterFactory());
 		factories.add(new SDMItemProviderAdapterFactory());

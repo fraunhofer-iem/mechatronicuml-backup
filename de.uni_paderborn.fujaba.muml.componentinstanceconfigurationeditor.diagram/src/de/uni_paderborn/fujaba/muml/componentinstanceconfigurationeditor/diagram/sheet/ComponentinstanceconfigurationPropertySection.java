@@ -7,6 +7,7 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
@@ -39,8 +40,9 @@ public class ComponentinstanceconfigurationPropertySection extends
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
 					IItemPropertySource.class);
 			if (ips != null) {
+				EditingDomain ed = getEditingDomainFor(object);
 				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
-						object, ips, af, this);
+						object, ips, af, ed, this);
 			}
 		}
 		if (object instanceof IAdaptable) {

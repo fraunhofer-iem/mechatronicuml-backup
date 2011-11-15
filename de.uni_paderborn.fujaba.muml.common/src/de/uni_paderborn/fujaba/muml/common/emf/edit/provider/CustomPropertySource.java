@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -40,13 +41,15 @@ public class CustomPropertySource extends PropertySource {
 	private final boolean readOnlyOverride;
 	private AdapterFactory adapterFactory;
 	private IPropertySourceProvider propertySourceProvider;
+	private EditingDomain editingDomain;
 
 	public CustomPropertySource(Object object,
 			IItemPropertySource itemPropertySource,
 			AdapterFactory adapterFactory,
-			IPropertySourceProvider propertySourceProvider) {
+			EditingDomain editingDomain, IPropertySourceProvider propertySourceProvider) {
 		this(object, itemPropertySource, false, propertySourceProvider);
 		this.adapterFactory = adapterFactory;
+		this.editingDomain = editingDomain;
 	}
 
 	public CustomPropertySource(Object object,
@@ -59,75 +62,82 @@ public class CustomPropertySource extends PropertySource {
 
 	protected IPropertyDescriptor createPropertyDescriptor(
 			IItemPropertyDescriptor itemPropertyDescriptor) {
+		IItemPropertyDescriptor delegatingItemPropertyDescriptor = new CustomDelegatingItemPropertyDescriptor(
+				itemPropertyDescriptor, editingDomain.getResourceSet());
 
-		return new PropertyDescriptor(this.object, itemPropertyDescriptor) {
+		return new CustomPropertyDescriptor(this.object,
+				delegatingItemPropertyDescriptor);
+	}
 
-			public CellEditor createPropertyEditor(Composite parent) {
-				if (readOnlyOverride) {
-					return null;
-				}
+	protected class CustomPropertyDescriptor extends PropertyDescriptor {
 
-				Object f = itemPropertyDescriptor
-						.getFeature(itemPropertyDescriptor);
+		public CustomPropertyDescriptor(Object object,
+				IItemPropertyDescriptor itemPropertyDescriptor) {
+			super(object, itemPropertyDescriptor);
+		}
 
-				if (object instanceof EObject
-						&& f instanceof EStructuralFeature
-						&& ((EStructuralFeature) f).getEType() instanceof EClass) {
-					final EStructuralFeature feature = (EStructuralFeature) f;
-					EClass eClass = (EClass) feature.getEType();
-
-					// We only allow creating new objects, if the Reference is a
-					// containment reference.
-					boolean createAllowed = true;
-					boolean createForced = false;
-					if (feature instanceof EReference) {
-						EReference reference = (EReference) feature;
-						createAllowed = reference.isContainment();
-					}
-
-					if (feature
-							.equals(CallsPackage.Literals.CALLABLE__IN_PARAMETER)
-							|| feature
-									.equals(CallsPackage.Literals.CALLABLE__OUT_PARAMETER)) {
-						createForced = true;
-					}
-
-					if (feature
-							.equals(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS)) {
-						createAllowed = false;
-					}
-
-					if (CorePackage.Literals.NATURAL_NUMBER
-							.isSuperTypeOf(eClass)) {
-						EDataType eDataType = EcorePackage.Literals.ESTRING;
-						return createEDataTypeCellEditor(eDataType, parent);
-
-					} else if (feature.isMany() && createAllowed
-							|| createForced) {
-
-						return new MultiFeatureCreationCellEditor(parent,
-								getLabelProvider(), feature, getCurrentValues());
-					}
-				}
-				return super.createPropertyEditor(parent);
+		public CellEditor createPropertyEditor(Composite parent) {
+			if (readOnlyOverride) {
+				return null;
 			}
 
-			private Collection<?> getCurrentValues() {
-				Object value = itemPropertyDescriptor.getPropertyValue(object);
-				Collection<?> currentValues;
-				if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
-					value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
-							.getEditableValue(value);
-				}
-				if (value instanceof Collection) {
-					currentValues = (Collection<?>) value;
-				} else {
-					currentValues = new ArrayList<Object>();
-				}
-				return currentValues;
-			}
+			Object f = itemPropertyDescriptor
+					.getFeature(itemPropertyDescriptor);
 
-		};
+			if (object instanceof EObject && f instanceof EStructuralFeature
+					&& ((EStructuralFeature) f).getEType() instanceof EClass) {
+				final EStructuralFeature feature = (EStructuralFeature) f;
+				EClass eClass = (EClass) feature.getEType();
+
+				// We only allow creating new objects, if the Reference is a
+				// containment reference.
+				boolean createAllowed = true;
+				boolean createForced = false;
+				if (feature instanceof EReference) {
+					EReference reference = (EReference) feature;
+					createAllowed = reference.isContainment();
+				}
+
+				if (feature
+						.equals(CallsPackage.Literals.CALLABLE__IN_PARAMETER)
+						|| feature
+								.equals(CallsPackage.Literals.CALLABLE__OUT_PARAMETER)) {
+					createForced = true;
+				}
+
+				if (feature
+						.equals(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS)) {
+					createAllowed = false;
+				}
+
+				if (CorePackage.Literals.NATURAL_NUMBER.isSuperTypeOf(eClass)) {
+					EDataType eDataType = EcorePackage.Literals.ESTRING;
+					return createEDataTypeCellEditor(eDataType, parent);
+
+				} else if (feature.isMany() && createAllowed || createForced) {
+
+					return new MultiFeatureCreationCellEditor(parent,
+							getLabelProvider(), feature, getCurrentValues());
+				}
+			}
+			return super.createPropertyEditor(parent);
+		}
+
+		private Collection<?> getCurrentValues() {
+			Object value = itemPropertyDescriptor.getPropertyValue(object);
+			Collection<?> currentValues;
+			if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
+				value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
+						.getEditableValue(value);
+			}
+			if (value instanceof Collection) {
+				currentValues = (Collection<?>) value;
+			} else {
+				currentValues = new ArrayList<Object>();
+			}
+			return currentValues;
+		}
+
 	}
 
 	protected class MultiFeatureCreationCellEditor extends

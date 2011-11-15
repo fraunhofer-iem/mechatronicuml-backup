@@ -11,6 +11,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ItemProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -89,6 +90,7 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension
 	public ObjectsListDialogExtension(ExtensibleCreationDialog creationDialog,
 			AdapterFactory adapterFactory, Collection<?> currentValues) {
 		super(creationDialog);
+//		currentValues = EcoreUtil.copyAll(currentValues);
 		this.values = new ItemProvider(adapterFactory, currentValues);
 	}
 
