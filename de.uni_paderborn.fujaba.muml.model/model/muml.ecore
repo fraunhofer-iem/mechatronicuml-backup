@@ -1795,5 +1795,44 @@
             eType="#//model/msgiface/MessageInterface" eOpposite="#//model/msgiface/MessageInterface/messageTypes"/>
       </eClassifiers>
     </eSubpackages>
+    <eSubpackages name="deployment" nsURI="http:///de/uni_paderborn/fujaba/muml/model/deployment"
+        nsPrefix="deployment">
+      <eClassifiers xsi:type="ecore:EClass" name="Deployment">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="communicationLinks"
+            upperBound="-1" eType="#//model/deployment/CommunicationLink" containment="true"
+            eOpposite="#//model/deployment/CommunicationLink/deployment"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="hardwareNodes" lowerBound="1"
+            upperBound="-1" eType="#//model/deployment/HardwareNode" containment="true"
+            eOpposite="#//model/deployment/HardwareNode/deployment"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceConfiguration"
+            eType="#//model/instance/ComponentInstanceConfiguration"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HardwareNode">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" lowerBound="1"
+            eType="#//model/deployment/Deployment" eOpposite="#//model/deployment/Deployment/hardwareNodes"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="hardwarePorts" upperBound="-1"
+            eType="#//model/deployment/HardwarePort" containment="true" eOpposite="#//model/deployment/HardwarePort/hardwareNode"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deployedInstances"
+            upperBound="-1" eType="#//model/instance/ComponentInstance"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HardwarePort">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="hardwareNode" lowerBound="1"
+            eType="#//model/deployment/HardwareNode" eOpposite="#//model/deployment/HardwareNode/hardwarePorts"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingCommunicationLink"
+            eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/source"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingCommunicationLink"
+            lowerBound="1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/target"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deployedPortInstance"
+            upperBound="-1" eType="#//model/instance/PortInstance"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="CommunicationLink">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" lowerBound="1"
+            eType="#//model/deployment/Deployment" eOpposite="#//model/deployment/Deployment/communicationLinks"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+            eType="#//model/deployment/HardwarePort" eOpposite="#//model/deployment/HardwarePort/outgoingCommunicationLink"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+            eType="#//model/deployment/HardwarePort" eOpposite="#//model/deployment/HardwarePort/incomingCommunicationLink"/>
+      </eClassifiers>
+    </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>
