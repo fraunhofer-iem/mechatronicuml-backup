@@ -40,6 +40,13 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
+	public boolean isTopLevelCanonical() {
+		return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -75,6 +82,26 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
+		// Begin added to switch off toplevel canonical behavior:
+		if (!isTopLevelCanonical()) {
+			View containerView = (View) getHost().getModel();
+			List<View> childViews = containerView.getChildren();
+			List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
+
+			for (View childView : childViews) {
+				EObject childElement = childView.getElement();
+				int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID;
+				if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+						.getVisualID(childView)) {
+					result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
+							childElement, visualID));
+					continue;
+				}
+			}
+			return result;
+		}
+		// End added
+
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
 				.getModelElementCategory_1000SemanticChildren(viewObject);

@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
@@ -18,7 +20,11 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
@@ -26,6 +32,13 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public boolean isTopLevelCanonical() {
+		return true;
+	}
 
 	/**
 	 * @generated
@@ -65,6 +78,26 @@ public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
+		// Begin added to switch off toplevel canonical behavior:
+		if (!isTopLevelCanonical()) {
+			View containerView = (View) getHost().getModel();
+			List<View> childViews = containerView.getChildren();
+			List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor>();
+
+			for (View childView : childViews) {
+				EObject childElement = childView.getElement();
+				int visualID = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID;
+				if (visualID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+						.getVisualID(childView)) {
+					result.add(new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor(
+							childElement, visualID));
+					continue;
+				}
+			}
+			return result;
+		}
+		// End added
+
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramUpdater
 				.getMessageInterfaceMessageTypeCompartment_7003SemanticChildren(viewObject);

@@ -33,8 +33,6 @@ public class CustomAtomiccomponentEditPartFactory extends MumlEditPartFactory {
 				return new CustomContinuousPortEditPart(view);
 			case HybridPortEditPart.VISUAL_ID:
 				return new CustomHybridPortEditPart(view);
-			case AtomicComponentDiagramEditPart.VISUAL_ID:
-				return new CustomAtomicComponentDiagramEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

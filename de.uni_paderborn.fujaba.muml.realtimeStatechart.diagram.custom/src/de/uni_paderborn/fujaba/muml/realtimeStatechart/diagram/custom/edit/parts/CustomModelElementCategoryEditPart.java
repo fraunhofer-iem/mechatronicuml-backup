@@ -13,12 +13,12 @@ public class CustomModelElementCategoryEditPart extends
 		super(view);
 	}
 
-	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
-
-		removeEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new CustomModelElementCategoryCanonicalEditPolicy());
-
-	}
+//	protected void createDefaultEditPolicies() {
+//		super.createDefaultEditPolicies();
+//
+//		removeEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
+//		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+//				new CustomModelElementCategoryCanonicalEditPolicy());
+//
+//	}
 }

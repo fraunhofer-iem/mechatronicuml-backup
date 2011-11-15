@@ -11,11 +11,12 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.Mod
 public class CustomModelElementCategoryCanonicalEditPolicy extends
 		ModelElementCategoryCanonicalEditPolicy {
 
-	@Override
-	protected void refreshSemantic() {
-		Collection<IAdaptable> createdConnectionViews = refreshConnections();
-		List<IAdaptable> createdViews = new ArrayList<IAdaptable>(createdConnectionViews);
-		makeViewsImmutable(createdViews);
-	}
+	// This only refreshes connections (was a hack)
+//	@Override
+//	protected void refreshSemantic() {
+//		Collection<IAdaptable> createdConnectionViews = refreshConnections();
+//		List<IAdaptable> createdViews = new ArrayList<IAdaptable>(createdConnectionViews);
+//		makeViewsImmutable(createdViews);
+//	}
 
 }

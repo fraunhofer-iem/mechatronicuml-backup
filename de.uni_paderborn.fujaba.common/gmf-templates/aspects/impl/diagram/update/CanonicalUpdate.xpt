@@ -5,6 +5,49 @@
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION impl::diagram::updater::CanonicalUpdate»
 
+«AROUND body FOR gmfgen::GenContainerBase-»
+	«REM» Call super implementation «ENDREM»
+	«targetDef.proceed()»
+	
+	«EXPAND postProcessRefreshSemantic-»
+	
+	«EXPAND isTopLevelCanonical-»
+«ENDAROUND»
+
+«DEFINE postProcessRefreshSemantic FOR gmfgen::GenContainerBase-»
+«REM»
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected void postProcessRefreshSemantic(java.util.List<org.eclipse.core.runtime.IAdaptable> viewDescriptors) {
+		super.postProcessRefreshSemantic(viewDescriptors);
+		
+		org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+		if (!containerView.getPersistedChildren().isEmpty()) {
+			org.eclipse.emf.common.util.EList<?> styles = new org.eclipse.emf.common.util.BasicEList<org.eclipse.gmf.runtime.notation.Style>(containerView.getStyles());
+			styles.remove(org.eclipse.gmf.runtime.notation.NotationPackage.Literals.CANONICAL_STYLE);
+			org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest reqSet = new org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest(containerView, org.eclipse.gmf.runtime.notation.NotationPackage.Literals.VIEW__STYLES, styles);
+	        org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand setCommand = new org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand(reqSet);
+	        org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy proxy = new org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy(setCommand);
+	        executeCommand(proxy);
+    	}
+	}
+«ENDREM»
+«ENDDEFINE»
+
+«DEFINE isTopLevelCanonical FOR gmfgen::GenDiagram-»
+«EXPAND xpt::Common::generatedMemberComment»
+	public boolean isTopLevelCanonical() {
+		return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+	}
+«ENDDEFINE»
+
+«DEFINE isTopLevelCanonical FOR gmfgen::GenContainerBase-»
+«EXPAND xpt::Common::generatedMemberComment»
+	public boolean isTopLevelCanonical() {
+		return true;
+	}
+«ENDDEFINE»
+
 
 «AROUND refreshConnectionsBody FOR gmfgen::GenDiagram-»
 	«EXPAND CodeStyle::G2('java.util.Map', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')» domain2NotationMap = new «EXPAND CodeStyle::G2('java.util.HashMap', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')»();
@@ -56,8 +99,27 @@ protected java.util.List getSemanticChildrenList() {
 }
 
 «EXPAND xpt::Common::generatedMemberComment»
+
 «EXPAND CodeStyle::SuppressWarnings('"rawtypes"')»
 protected java.util.List getSemanticChildrenViewDescriptors() {
+	// Begin added to switch off toplevel canonical behavior:
+	if (!isTopLevelCanonical()) {
+		org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+		java.util.List<org.eclipse.gmf.runtime.notation.View> childViews = containerView.getChildren();
+		«EXPAND CodeStyle::G('java.util.List', getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName())» result = new «EXPAND CodeStyle::G('java.util.LinkedList', getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName())»(); 
+		
+		for (org.eclipse.gmf.runtime.notation.View childView : childViews) {
+			org.eclipse.emf.ecore.EObject childElement = childView.getElement();
+			int visualID = «EXPAND xpt::editor::VisualIDRegistry::visualID FOR getSemanticChildren(self)->first()»;
+			if (visualID == «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(childView)) {
+				result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+	// End added
+
 	«IF hasSemanticChildren(self) /*REVISIT: is there real need for this check - Generator seems to consult needsCanonicalEP, which in turns ensures there are semantic children?*/-»
 	org.eclipse.gmf.runtime.notation.View viewObject = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
 	return «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodCall»(viewObject);

@@ -33,8 +33,6 @@ public class CustomStructuredcomponentEditPartFactory extends
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case StructuredComponentEditPart.VISUAL_ID:
 				return new CustomStructuredComponentEditPart(view);
-			case StructuredComponentDiagramEditPart.VISUAL_ID:
-				return new CustomStructuredComponentDiagramEditPart(view);
 			case DiscretePortEditPart.VISUAL_ID:
 				return new CustomDiscretePortEditPart(view);
 			case ContinuousPortEditPart.VISUAL_ID:

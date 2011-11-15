@@ -25,9 +25,6 @@ public class CustomMessageinterfaceEditPartFactory extends
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case MessageInterfaceEditPart.VISUAL_ID:
 				return new CustomMessageInterfaceEditPart(view);
-			
-			case MessageInterfaceDiagramEditPart.VISUAL_ID:
-				return new CustomMessageInterfaceDiagramEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);
