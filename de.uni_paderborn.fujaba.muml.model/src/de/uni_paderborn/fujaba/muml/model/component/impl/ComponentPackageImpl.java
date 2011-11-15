@@ -38,6 +38,8 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
+import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
@@ -218,6 +220,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
 		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) : HelperPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
+		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theComponentPackage.createPackageContents();
@@ -228,6 +231,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		theRealtimestatechartPackage.createPackageContents();
 		theHelperPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
+		theDeploymentPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theComponentPackage.initializePackageContents();
@@ -238,6 +242,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		theRealtimestatechartPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
+		theDeploymentPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

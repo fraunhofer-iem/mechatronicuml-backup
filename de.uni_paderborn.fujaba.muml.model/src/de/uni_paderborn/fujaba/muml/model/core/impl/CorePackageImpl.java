@@ -34,6 +34,8 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Infinity;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.util.CoreValidator;
+import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
@@ -165,6 +167,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
 		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) : HelperPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
+		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCorePackage.createPackageContents();
@@ -175,6 +178,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theRealtimestatechartPackage.createPackageContents();
 		theHelperPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
+		theDeploymentPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCorePackage.initializePackageContents();
@@ -185,6 +189,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theRealtimestatechartPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
+		theDeploymentPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

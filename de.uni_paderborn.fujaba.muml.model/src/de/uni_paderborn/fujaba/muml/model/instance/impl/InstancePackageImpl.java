@@ -20,6 +20,8 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
+import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance;
@@ -223,6 +225,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
 		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) : HelperPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
+		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theInstancePackage.createPackageContents();
@@ -233,6 +236,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theRealtimestatechartPackage.createPackageContents();
 		theHelperPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
+		theDeploymentPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theInstancePackage.initializePackageContents();
@@ -243,6 +247,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theRealtimestatechartPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
+		theDeploymentPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theInstancePackage.freeze();

@@ -10,7 +10,9 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
  de.uni_paderborn.fujaba.muml.model.constraint.provider,
+ de.uni_paderborn.fujaba.muml.model.core.descriptor,
  de.uni_paderborn.fujaba.muml.model.core.provider,
+ de.uni_paderborn.fujaba.muml.model.deployment.provider,
  de.uni_paderborn.fujaba.muml.model.instance.provider,
  de.uni_paderborn.fujaba.muml.model.msgiface.provider,
  de.uni_paderborn.fujaba.muml.model.pattern.provider,

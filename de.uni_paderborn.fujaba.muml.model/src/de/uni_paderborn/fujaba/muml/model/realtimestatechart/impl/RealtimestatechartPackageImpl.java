@@ -20,6 +20,8 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 
+import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
@@ -370,6 +372,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
 		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) : HelperPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
+		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRealtimestatechartPackage.createPackageContents();
@@ -380,6 +383,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		thePatternPackage.createPackageContents();
 		theHelperPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
+		theDeploymentPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRealtimestatechartPackage.initializePackageContents();
@@ -390,6 +394,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		thePatternPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
+		theDeploymentPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
