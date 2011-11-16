@@ -3,10 +3,10 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartment2EditPart;
 
 public class CustomFujabaRealtimeStatechartStatechartContentsCompartment2EditPart
-		extends FujabaRealtimeStatechartStatechartContentsCompartmentEditPart {
+		extends FujabaRealtimeStatechartStatechartContentsCompartment2EditPart {
 
 	public CustomFujabaRealtimeStatechartStatechartContentsCompartment2EditPart(
 			View view) {

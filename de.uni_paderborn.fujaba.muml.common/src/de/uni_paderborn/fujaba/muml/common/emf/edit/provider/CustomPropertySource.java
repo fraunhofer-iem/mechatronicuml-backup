@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -62,8 +63,12 @@ public class CustomPropertySource extends PropertySource {
 
 	protected IPropertyDescriptor createPropertyDescriptor(
 			IItemPropertyDescriptor itemPropertyDescriptor) {
+		ResourceSet resourceSet = null;
+		if (editingDomain != null) {
+			resourceSet = editingDomain.getResourceSet();
+		}
 		IItemPropertyDescriptor delegatingItemPropertyDescriptor = new CustomDelegatingItemPropertyDescriptor(
-				itemPropertyDescriptor, editingDomain.getResourceSet());
+				itemPropertyDescriptor, resourceSet);
 
 		return new CustomPropertyDescriptor(this.object,
 				delegatingItemPropertyDescriptor);
