@@ -31,6 +31,8 @@ public class CustomStructuredcomponentEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
+			case StructuredComponentDiagramEditPart.VISUAL_ID:
+				return new CustomStructuredComponentDiagramEditPart(view);
 			case StructuredComponentEditPart.VISUAL_ID:
 				return new CustomStructuredComponentEditPart(view);
 			case DiscretePortEditPart.VISUAL_ID:

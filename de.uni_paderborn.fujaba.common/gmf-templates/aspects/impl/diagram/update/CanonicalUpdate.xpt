@@ -37,7 +37,8 @@
 «DEFINE isTopLevelCanonical FOR gmfgen::GenDiagram-»
 «EXPAND xpt::Common::generatedMemberComment»
 	public boolean isTopLevelCanonical() {
-		return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+		return true;
 	}
 «ENDDEFINE»
 

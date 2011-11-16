@@ -30,7 +30,7 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	public boolean isTopLevelCanonical() {
-		return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+		return true;
 	}
 
 	/**

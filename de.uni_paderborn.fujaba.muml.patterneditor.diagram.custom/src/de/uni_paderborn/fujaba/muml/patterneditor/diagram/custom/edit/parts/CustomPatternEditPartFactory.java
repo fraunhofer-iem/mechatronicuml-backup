@@ -24,16 +24,14 @@ public class CustomPatternEditPartFactory extends MumlEditPartFactory {
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-
+			case ModelElementCategoryEditPart.VISUAL_ID:
+				return new CustomModelElementCategoryEditPart(view);
 			case CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
 				return new CustomCoordinationPatternCoordinationPatternContainerCompartmentEditPart(view);
-				
 			case RoleEditPart.VISUAL_ID:
 				return new CustomRoleEditPart(view);
-
 			case CoordinationPattern2EditPart.VISUAL_ID:
 				return new CustomCoordination2PatternEditPart(view);
-
 //			case ConstrainableElementConstraintEditPart.VISUAL_ID:
 //				return new CustomTextualConstraintEditPart(view);
 

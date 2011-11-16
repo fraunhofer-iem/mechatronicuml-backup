@@ -31,7 +31,7 @@ public class FujabaRealtimeStatechartCanonicalEditPolicy extends
 	 * @generated
 	 */
 	public boolean isTopLevelCanonical() {
-		return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+		return true;
 	}
 
 	/**
