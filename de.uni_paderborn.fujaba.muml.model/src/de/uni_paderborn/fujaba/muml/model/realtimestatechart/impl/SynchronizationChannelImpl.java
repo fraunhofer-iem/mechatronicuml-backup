@@ -6,24 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.calls.impl.CallableImpl;
+
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.SDMPackage;
-
-import org.storydriven.modeling.calls.impl.CallableImpl;
 
 /**
  * <!-- begin-user-doc -->

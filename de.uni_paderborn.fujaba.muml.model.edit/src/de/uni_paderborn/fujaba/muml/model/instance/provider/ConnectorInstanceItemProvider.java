@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.BehavioralConnectorItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -23,14 +22,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.calls.CallsFactory;
 import org.storydriven.modeling.provider.ExtendableElementItemProvider;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;

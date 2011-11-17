@@ -6,52 +6,34 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import de.fujaba.modelinstance.ModelinstancePackage;
-
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentFactory;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
-
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperPackage;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl.HelperPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

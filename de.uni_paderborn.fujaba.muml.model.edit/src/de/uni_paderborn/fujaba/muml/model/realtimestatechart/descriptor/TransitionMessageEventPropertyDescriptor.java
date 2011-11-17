@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 

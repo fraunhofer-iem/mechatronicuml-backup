@@ -6,34 +6,34 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.calls.CallsPackage;
+import org.storydriven.modeling.expressions.ExpressionsPackage;
+
 import de.fujaba.modelinstance.ModelinstancePackage;
-
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
@@ -67,29 +67,9 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperPackage;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl.HelperPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.util.RealtimestatechartValidator;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.EcorePackage;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.storydriven.modeling.SDMPackage;
-
-import org.storydriven.modeling.calls.CallsPackage;
-
-import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->

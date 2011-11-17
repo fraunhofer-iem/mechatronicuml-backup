@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
-import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * <!-- begin-user-doc -->

@@ -7,16 +7,18 @@
 package de.uni_paderborn.fujaba.muml.model.pattern.util;
 
 import de.uni_paderborn.fujaba.muml.model.pattern.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

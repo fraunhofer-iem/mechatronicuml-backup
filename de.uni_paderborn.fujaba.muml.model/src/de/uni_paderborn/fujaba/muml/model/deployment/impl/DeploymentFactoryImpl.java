@@ -7,14 +7,18 @@
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
 import de.uni_paderborn.fujaba.muml.model.deployment.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
+import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
+import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentFactory;
+import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
+import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
 
 /**
  * <!-- begin-user-doc -->
