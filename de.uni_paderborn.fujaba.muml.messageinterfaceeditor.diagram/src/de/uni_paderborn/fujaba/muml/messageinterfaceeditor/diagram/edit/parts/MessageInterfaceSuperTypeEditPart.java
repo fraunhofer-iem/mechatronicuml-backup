@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts;
 
 import java.util.List;
+
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.PolygonDecoration;

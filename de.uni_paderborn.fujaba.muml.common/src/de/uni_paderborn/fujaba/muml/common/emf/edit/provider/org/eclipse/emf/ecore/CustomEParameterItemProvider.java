@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.emf.edit.provider.org.eclipse.emf.ecore;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.provider.EParameterItemProvider;
 

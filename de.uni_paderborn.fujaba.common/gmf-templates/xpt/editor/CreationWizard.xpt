@@ -1,0 +1,67 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION MetaModel»
+
+
+
+«EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::editor::GenDiagram»
+
+«DEFINE CreationWizard FOR gmfgen::GenDiagram-»
+«EXPAND xpt::Common::copyright FOR editorGen-»
+package «editorGen.editor.packageName»;
+
+«EXPAND xpt::Common::generatedClassComment»
+public abstract class «creationWizardClassName» extends de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard {
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public void init(org.eclipse.ui.IWorkbench workbench, org.eclipse.jface.viewers.IStructuredSelection selection) {
+		super.init(workbench, selection);
+
+		setDefaultPageImageDescriptor(«editorGen.plugin.getActivatorQualifiedClassName()».getBundledImageDescriptor(
+				"icons/wizban/New«IF domainDiagramElement <> null»«domainDiagramElement.genPackage.prefix»«ENDIF»Wizard.gif")); //$NON-NLS-1$
+
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected String getDiagramFileExtension() {
+		return "«editorGen.diagramFileExtension»"; //$NON-NLS-1$
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected String getModelId() {
+		return "«editorGen.modelID»";
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint getDiagramPreferencesHint() {
+		return «editorGen.plugin.getActivatorQualifiedClassName()».DIAGRAM_PREFERENCES_HINT;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected String getEditorId() {
+		return «editorGen.editor.getQualifiedClassName()».ID;
+
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected org.eclipse.emf.ecore.EObject createDiagramElement() {
+		«REM»It would be better to compare to the Meta-Class«ENDREM»
+		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
+			return null;
+		«ELSE»
+			return «EXPAND MetaModel::NewInstance FOR domainDiagramElement»;
+		«ENDIF»
+	}
+
+
+	«EXPAND additions-»
+}
+«ENDDEFINE»
+
+«DEFINE additions FOR gmfgen::GenDiagram»«ENDDEFINE»

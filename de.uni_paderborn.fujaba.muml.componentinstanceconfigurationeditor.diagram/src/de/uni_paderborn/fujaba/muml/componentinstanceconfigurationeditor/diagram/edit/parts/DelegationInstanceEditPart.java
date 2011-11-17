@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts;
 
 import java.util.List;
+
 import org.eclipse.draw2d.Connection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;

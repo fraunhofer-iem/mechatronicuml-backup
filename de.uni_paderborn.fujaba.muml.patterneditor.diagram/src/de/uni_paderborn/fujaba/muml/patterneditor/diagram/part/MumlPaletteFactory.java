@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.part;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 

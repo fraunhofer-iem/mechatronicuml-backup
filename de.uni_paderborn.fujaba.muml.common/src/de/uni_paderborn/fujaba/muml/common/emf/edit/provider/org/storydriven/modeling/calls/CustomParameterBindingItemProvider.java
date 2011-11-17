@@ -11,7 +11,6 @@ import org.storydriven.modeling.calls.provider.ParameterBindingItemProvider;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 
 public class CustomParameterBindingItemProvider extends
 		ParameterBindingItemProvider {

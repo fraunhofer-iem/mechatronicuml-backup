@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.edit.parts;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 
@@ -11,7 +10,6 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 
 public class DiscretePortInstanceBehavior extends AbstractPortInstanceBehavior {

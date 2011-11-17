@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 

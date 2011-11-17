@@ -2,7 +2,6 @@ package de.uni_paderborn.fujaba.muml.common.emf.edit.provider.org.storydriven.mo
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.storydriven.modeling.calls.provider.CallsItemProviderAdapterFactory;
-import org.storydriven.modeling.calls.provider.ParameterBindingItemProvider;
 
 
 public class CustomCallsItemProviderAdapterFactory extends

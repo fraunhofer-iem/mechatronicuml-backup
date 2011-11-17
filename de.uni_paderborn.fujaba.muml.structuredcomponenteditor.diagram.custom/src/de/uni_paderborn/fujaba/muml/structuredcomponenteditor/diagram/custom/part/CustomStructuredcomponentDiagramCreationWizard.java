@@ -1,13 +1,6 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.part;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IWorkbench;
-import org.storydriven.modeling.ExtendableElement;
-
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizard;
 
 /**
  * A CreationWizard for StructuredComponent diagrams. It implements the abstract
@@ -17,56 +10,11 @@ import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
  * 
  */
 public class CustomStructuredcomponentDiagramCreationWizard extends
-		FujabaDiagramNewWizard {
-
-	public void init(IWorkbench workbench, IStructuredSelection selection) {
-		super.init(workbench, selection);
-
-		setWindowTitle(getWindowTitle());
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewPatterneditorWizard.gif")); //$NON-NLS-1$
-
-	}
-
-	@Override
-	protected String getDiagramFileExtension() {
-		return "structuredcomponent_diagram"; //$NON-NLS-1$
-	}
-
-	@Override
-	protected String getModelId() {
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.MODEL_ID;
-	}
-
-	@Override
-	protected PreferencesHint getDiagramPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
-	}
-
-	@Override
-	protected String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor.ID;
-
-	}
-
+		MumlCreationWizard {
 
 	@Override
 	protected String getModelElementCategoryKey() {
 		return "de.uni_paderborn.fujaba.muml.components.category";
-	}
-
-	@Override
-	protected ExtendableElement createDiagramElement() {
-		return null;
-	}
-
-	@Override
-	public boolean isValidDiagramElement(EObject object) {
-		if (object instanceof ModelElementCategory) {
-			ModelElementCategory category = (ModelElementCategory) object;
-			return getModelElementCategoryKey().equals(category.getKey());
-		}
-		return false;
 	}
 
 }

@@ -26,6 +26,7 @@ import org.storydriven.modeling.calls.provider.CallsItemProviderAdapterFactory;
 import org.storydriven.modeling.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.storydriven.modeling.provider.SDMItemProviderAdapterFactory;
 import org.storydriven.modeling.templates.provider.TemplatesItemProviderAdapterFactory;
+
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
 /**
