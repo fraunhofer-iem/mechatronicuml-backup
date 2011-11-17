@@ -50,7 +50,7 @@ public abstract class «creationWizardClassName» extends de.fujaba.newwizard.di
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	@Override
-	protected org.eclipse.emf.ecore.EObject createDiagramElement() {
+	protected org.storydriven.modeling.ExtendableElement createDiagramElement() {
 		«REM»It would be better to compare to the Meta-Class«ENDREM»
 		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
 			return null;

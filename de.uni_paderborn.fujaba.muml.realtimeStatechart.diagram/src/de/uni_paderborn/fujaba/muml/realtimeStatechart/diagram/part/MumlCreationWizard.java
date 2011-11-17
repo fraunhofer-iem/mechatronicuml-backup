@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 
+import org.storydriven.modeling.ExtendableElement;
 import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 
 /**
@@ -60,7 +61,7 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 	 * @generated
 	 */
 	@Override
-	protected EObject createDiagramElement() {
+	protected ExtendableElement createDiagramElement() {
 
 		return null;
 
