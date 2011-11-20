@@ -1674,20 +1674,14 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (stateEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero"
+			 "constraints", "OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"
 		   });																							
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders"
-		   });																						
-		addAnnotation
-		  (clockConstraintEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "ValidOperators"
-		   });																										
+		   });																																													
 		addAnnotation
 		  (fujabaRealtimeStatechartEClass, 
 		   source, 
@@ -1758,7 +1752,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniquePrioritiesOfRegions", "self.regions->isUnique(priority)",
 			 "UniqueChannelNames", "self.channels->isUnique(name)",
 			 "UniqueRegionNames", "self.regions->isUnique(name)",
-			 "BoundOfInvariantGreaterOrEqualZero", "self.invariants->forAll(bound.value >= 0)"
+			 "BoundOfInvariantGreaterOrEqualZero", "self.invariants->forAll(bound.value >= 0)",
+			 "InvalidClockConstraintOperator", "self.invariants->forAll(invariant | Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"
 		   });												
 		addAnnotation
 		  (getState_Events(), 
@@ -1793,13 +1788,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()\n"
-		   });										
-		addAnnotation
-		  (clockConstraintEClass, 
-		   source, 
-		   new String[] {
-			 "ValidOperators", "Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->exists(op : modeling::expressions::ComparingOperator | self.operator = op)"
-		   });																					
+		   });																												
 		addAnnotation
 		  (getSynchronization_SyncChannel(), 
 		   source, 

@@ -1157,7 +1157,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero"/>
+          <details key="constraints" value="OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
@@ -1172,6 +1172,7 @@
           <details key="UniqueChannelNames" value="self.channels->isUnique(name)"/>
           <details key="UniqueRegionNames" value="self.regions->isUnique(name)"/>
           <details key="BoundOfInvariantGreaterOrEqualZero" value="self.invariants->forAll(bound.value >= 0)"/>
+          <details key="InvalidClockConstraintOperator" value="self.invariants->forAll(invariant | Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
             eType="#//model/realtimestatechart/Region" containment="true" eOpposite="#//model/realtimestatechart/Region/parentState">
@@ -1398,12 +1399,6 @@
       <eClassifiers xsi:type="ecore:EClass" name="ClockConstraint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard.&#xD;&#xA;\todosd{Inherit from ComparisonExpression?}"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="ValidOperators" value="Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->exists(op : modeling::expressions::ComparingOperator | self.operator = op)"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="ValidOperators"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
             eType="#//model/core/NaturalNumber" containment="true">

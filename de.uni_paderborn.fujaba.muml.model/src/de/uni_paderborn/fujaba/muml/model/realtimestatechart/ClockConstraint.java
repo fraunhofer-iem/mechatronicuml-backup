@@ -31,8 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClockConstraint()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidOperators='Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->exists(op : modeling::expressions::ComparingOperator | self.operator = op)'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidOperators'"
+ * @model
  * @generated
  */
 public interface ClockConstraint extends EObject {
