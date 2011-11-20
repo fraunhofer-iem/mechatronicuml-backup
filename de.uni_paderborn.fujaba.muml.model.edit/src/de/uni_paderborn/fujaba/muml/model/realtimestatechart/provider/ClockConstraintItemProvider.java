@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -34,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint} object.
@@ -155,10 +157,10 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 	 * This adds a property descriptor for the Operator feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOperatorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
+		/*itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
@@ -171,6 +173,32 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+		*/
+		// needed for #41 
+		itemPropertyDescriptors.add(
+				new ItemPropertyDescriptor(
+						((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+						 getResourceLocator(),
+						 getString("_UI_ClockConstraint_operator_feature"),
+						 getString("_UI_PropertyDescriptor_description", "_UI_ClockConstraint_operator_feature", "_UI_ClockConstraint_type"),
+						 RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
+						 true,
+						 false,
+						 false,
+						 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						 null,
+						 null) {
+					public Collection<?> getChoiceOfValues(Object object) {
+						if (object instanceof EObject && ((EObject) object).eContainer() instanceof State) {
+							List<Enumerator> enumerators = new ArrayList<Enumerator>();
+							enumerators.add(org.storydriven.modeling.expressions.ComparingOperator.LESS);
+							enumerators.add(org.storydriven.modeling.expressions.ComparingOperator.LESS_OR_EQUAL);
+							return enumerators;
+						}
+						return super.getChoiceOfValues(object);
+					}
+				}
+		);
 	}
 
 	/**
