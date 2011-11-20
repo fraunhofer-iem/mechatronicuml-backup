@@ -550,7 +550,80 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssembly(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(assembly, diagnostics, context);
+		if (!validate_NoCircularContainment(assembly, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidDiscretePortDiscretePortConnection(assembly, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValidDiscretePortDiscretePortConnection constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_DISCRETE_PORT_DISCRETE_PORT_CONNECTION__EEXPRESSION = "if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then\n" +
+		"    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then\n" +
+		"        -- check compatibility of message interfaces\n" +
+		"        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in\n" +
+		"        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in\n" +
+		"        fromPort.senderMessageInterface = toPort.receiverMessageInterface \n" +
+		"        and fromPort.receiverMessageInterface = toPort.senderMessageInterface\n" +
+		"        and (\n" +
+		"            -- check refines\n" +
+		"            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then\n" +
+		"                -- only one port has a refinement\n" +
+		"                false\n" +
+		"            else\n" +
+		"                fromPort.refines.oclIsUndefined() \n" +
+		"                -- both ports have a refinement\n" +
+		"                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern\n" +
+		"                -- this check is sufficient\n" +
+		"                and not fromPort.refines.coordinationPattern.oclIsUndefined()\n" +
+		"                and (\n" +
+		"                    if fromPort.refines.coordinationPattern.roles->size() = 2 then\n" +
+		"                        fromPort.refines.name <> toPort.refines.name\n" +
+		"                    else\n" +
+		"                        -- both ports have the same role and belong the same pattern\n" +
+		"                        true\n" +
+		"                    endif\n" +
+		"                )\n" +
+		"            endif\n" +
+		"        )\n" +
+		"    else\n" +
+		"        -- this case must be checked by other constraints\n" +
+		"        true\n" +
+		"    endif\n" +
+		"else\n" +
+		"    false\n" +
+		"endif";
+
+	/**
+	 * Validates the ValidDiscretePortDiscretePortConnection constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidDiscretePortDiscretePortConnection(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidDiscretePortDiscretePortConnection",
+				 ASSEMBLY__VALID_DISCRETE_PORT_DISCRETE_PORT_CONNECTION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
