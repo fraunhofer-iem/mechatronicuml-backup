@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.part;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
@@ -17,12 +18,12 @@ public class CustomMessageinterfaceDiagramCreationWizard extends
 	}
 
 	protected boolean isModelElementCategoryDiagramElement() {
-		return false;
+		return true;
 	}
 
 	protected CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
 			Collection<EObject> elements) {
-		return null;
+		return new CreateViewRequest(new ArrayList<CreateViewRequest.ViewDescriptor>());
 	}
 
 }

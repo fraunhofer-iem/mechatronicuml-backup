@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
@@ -30,7 +31,7 @@ public class CustomComponentinstanceconfigurationDiagramCreationWizard extends
 
 	protected CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
 			Collection<EObject> elements) {
-		return null;
+		return new CreateViewRequest(new ArrayList<CreateViewRequest.ViewDescriptor>());
 	}
 
 }
