@@ -24,8 +24,24 @@
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
    </extension>
-
-   	
+   
+   
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.InitDiagram"
+            nameFilter="*.fujaba"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
@@ -245,7 +261,13 @@
       </IconProvider>
    </extension>
 
-   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance">
@@ -555,37 +577,14 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
-      <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlParserProvider">
-         <Priority name="Lowest"/>
-      </ParserProvider>
-   </extension>
-<extension
+
+   <!-- optionally, specify keybindings -->
+
+   <extension
          point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
       <factory
             class="de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomItemProviderFactory"
             pluginid="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"
             priority="1"></factory>
    </extension>
-<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.InitDiagram"
-            nameFilter="*.fujaba"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlInitDiagramFileAction"
-               menubarPath="fujaba"
-               enablesFor="1"
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.InitDiagramAction">
-         </action>
-      </objectContribution>
-   </extension>
-
-
-
-
-   <!-- optionally, specify keybindings -->
 </plugin>
