@@ -59,6 +59,18 @@
          <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ComponentPartAdvice"/>
       </binding>
    </extension>
+   <extension
+         id="modelelementcategory"
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="de.uni_paderborn.fujaba.muml.components.category"
+            name="Components">
+         <child
+               class="StructuredComponent"
+               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/component">
+         </child>
+      </category>
+   </extension>
 
 	<!--
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">

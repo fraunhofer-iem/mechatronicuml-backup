@@ -38,6 +38,21 @@
          contributorClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    </extension>
+   
+   
+   <extension
+         id="modelelementcategory"
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="de.uni_paderborn.fujaba.muml.messageinterface.category"
+            name="Message Interfaces">
+         <child
+               class="MessageInterface"
+               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/instance">
+         </child>
+      </category>
+   </extension>
+   
 <!--
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">

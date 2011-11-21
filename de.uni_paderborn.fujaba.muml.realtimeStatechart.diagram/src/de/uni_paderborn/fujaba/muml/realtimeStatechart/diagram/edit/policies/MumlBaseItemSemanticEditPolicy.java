@@ -60,8 +60,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * Extended request data key to hold editpart visual id.
 	 * Add visual id of edited editpart to extended data of the request
-	 * so command switch can decide what kind of diagram element is being edited.
-	 * It is done in those cases when it's not possible to deduce diagram
+	 * so command switch can decide what kind of diagramResource element is being edited.
+	 * It is done in those cases when it's not possible to deduce diagramResource
 	 * element kind from domain element.
 	 * 
 	 * @generated
@@ -284,7 +284,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * Clean all shortcuts to the host element from the same diagram
+	 * Clean all shortcuts to the host element from the same diagramResource
 	 * @generated
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {

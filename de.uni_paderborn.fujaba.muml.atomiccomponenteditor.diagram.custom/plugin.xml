@@ -38,6 +38,17 @@
          </Priority>
       </editpartProvider>
    </extension>
+   <extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="de.uni_paderborn.fujaba.muml.components.category"
+            name="Components">
+         <child
+               class="AtomicComponent"
+               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/component">
+         </child>
+      </category>
+   </extension>
 
 
 </plugin>

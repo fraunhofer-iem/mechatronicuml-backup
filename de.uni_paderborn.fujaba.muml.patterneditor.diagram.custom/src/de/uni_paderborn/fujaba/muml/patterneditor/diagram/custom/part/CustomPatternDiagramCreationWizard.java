@@ -1,12 +1,5 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.part;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.notation.Diagram;
-
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizard;
 
 /**
@@ -21,14 +14,5 @@ public class CustomPatternDiagramCreationWizard extends MumlCreationWizard {
 	@Override
 	protected String getModelElementCategoryKey() {
 		return "de.uni_paderborn.fujaba.muml.pattern.category";
-	}
-
-	protected boolean isModelElementCategoryDiagramElement() {
-		return true;
-	}
-
-	protected CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
-			Collection<EObject> elements) {
-		return new CreateViewRequest(new ArrayList<CreateViewRequest.ViewDescriptor>());
 	}
 }

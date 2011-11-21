@@ -1,12 +1,5 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.part;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.notation.Diagram;
-
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizard;
 
 /**
@@ -22,15 +15,6 @@ public class CustomStructuredcomponentDiagramCreationWizard extends
 	@Override
 	protected String getModelElementCategoryKey() {
 		return "de.uni_paderborn.fujaba.muml.components.category";
-	}
-
-	protected boolean isModelElementCategoryDiagramElement() {
-		return true;
-	}
-
-	protected CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
-			Collection<EObject> elements) {
-		return new CreateViewRequest(new ArrayList<CreateViewRequest.ViewDescriptor>());
 	}
 
 }

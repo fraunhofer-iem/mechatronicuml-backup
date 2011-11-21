@@ -59,6 +59,37 @@ public abstract class «creationWizardClassName» extends de.fujaba.newwizard.di
 		«ENDIF»
 	}
 
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected boolean isModelElementCategoryDiagramElement() {
+		«REM»It would be better to compare to the Meta-Class«ENDREM»
+		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
+			return true;
+		«ELSE»
+			return false;
+		«ENDIF»
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest getCreatePersistedViewsRequest(org.eclipse.gmf.runtime.notation.Diagram diagram, java.util.Collection<org.eclipse.emf.ecore.EObject> elements) {
+		java.util.List<«editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»> childDescriptors = «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodCall»(diagram);
+		java.util.List<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor> viewDescriptors = new java.util.ArrayList<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor>(childDescriptors.size());
+
+		«EXPAND CodeStyle::iterate('d', getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName(), 'childDescriptors')-»
+			if (!elements.contains(d.getModelElement())) {
+				continue;
+			}
+			java.lang.String hint = «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('d.getVisualID()')»;
+			org.eclipse.core.runtime.IAdaptable elementAdapter = new de.fujaba.newwizard.InitialElementAdapter(
+					d.getModelElement(), hint);
+			org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor(
+					elementAdapter, org.eclipse.gmf.runtime.notation.Node.class, hint, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, true,
+					getDiagramPreferencesHint());
+			viewDescriptors.add(descriptor);
+		}
+		return new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest(viewDescriptors);
+	}
+	
+
 
 	«EXPAND additions-»
 }

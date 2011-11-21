@@ -568,6 +568,22 @@
             pluginid="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"
             priority="1"></factory>
    </extension>
+<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.InitDiagram"
+            nameFilter="*.fujaba"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlInitDiagramFileAction"
+               menubarPath="fujaba"
+               enablesFor="1"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+
 
 
 

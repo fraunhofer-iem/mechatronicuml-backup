@@ -477,6 +477,22 @@
             pluginid="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
             priority="1"></factory>
    </extension>
+<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.InitDiagram"
+            nameFilter="*.fujaba"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+
 
 
 

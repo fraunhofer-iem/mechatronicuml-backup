@@ -67,4 +67,16 @@
       </ParserProvider>
    </extension>
 
+   <extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="de.uni_paderborn.fujaba.muml.components.category"
+            name="Component Instance Configurations">
+         <child
+               class="ComponentInstanceConfiguration"
+               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/instance">
+         </child>
+      </category>
+   </extension>
+
 </plugin>

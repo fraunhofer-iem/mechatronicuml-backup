@@ -23,10 +23,14 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import de.fujaba.modelinstance.ModelElementCategory;
 
 /**
  * @generated
@@ -186,6 +190,27 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		 */
 		protected String getSelectionTitle() {
 			return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public void createControl(Composite parent) {
+			super.createControl(parent);
+			getModelViewer().addFilter(new ViewerFilter() {
+
+				@Override
+				public boolean select(Viewer viewer, Object parentElement,
+						Object element) {
+					//					if (element instanceof de.fujaba.modelinstance.ModelElementCategory) {
+					//						de.fujaba.modelinstance.ModelElementCategory category = (de.fujaba.modelinstance.ModelElementCategory) element;
+					//						return getModelElementCategoryKey().equals(category.getKey());
+					//					}
+					return true;
+				}
+
+			});
 		}
 
 		/**

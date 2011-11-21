@@ -56,5 +56,17 @@
          </Priority>
       </editpartProvider>
    </extension>
+   <extension
+         id="modelelementcategory"
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="de.uni_paderborn.fujaba.muml.pattern.category"
+            name="Coordination Patterns">
+         <child
+               class="CoordinationPattern"
+               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/pattern">
+         </child>
+      </category>
+   </extension>
 
 </plugin>

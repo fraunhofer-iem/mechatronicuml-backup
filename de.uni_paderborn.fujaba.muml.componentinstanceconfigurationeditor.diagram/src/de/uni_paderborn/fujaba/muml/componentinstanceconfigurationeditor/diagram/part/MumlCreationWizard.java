@@ -1,11 +1,20 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 
 import org.storydriven.modeling.ExtendableElement;
+import de.fujaba.newwizard.InitialElementAdapter;
 import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 
 /**
@@ -66,5 +75,40 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 		return de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
 				.createComponentInstanceConfiguration();
 
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean isModelElementCategoryDiagramElement() {
+
+		return false;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
+			Collection<EObject> elements) {
+		List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
+				.getComponentInstanceConfiguration_1000SemanticChildren(diagram);
+		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
+				childDescriptors.size());
+
+		for (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor d : childDescriptors) {
+			if (!elements.contains(d.getModelElement())) {
+				continue;
+			}
+			java.lang.String hint = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+					.getType(d.getVisualID());
+			IAdaptable elementAdapter = new InitialElementAdapter(
+					d.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
+					elementAdapter, Node.class, hint, ViewUtil.APPEND, true,
+					getDiagramPreferencesHint());
+			viewDescriptors.add(descriptor);
+		}
+		return new CreateViewRequest(viewDescriptors);
 	}
 }
