@@ -48,7 +48,7 @@
             name="Message Interfaces">
          <child
                class="MessageInterface"
-               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/instance">
+               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
          </child>
       </category>
    </extension>

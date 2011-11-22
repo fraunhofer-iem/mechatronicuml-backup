@@ -51,7 +51,7 @@
             key="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
             name="Realtime Statecharts">
          <child
-               class="AbstractRealtimeStatechart"
+               class="FujabaRealtimeStatechart"
                packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          </child>
       </category>
