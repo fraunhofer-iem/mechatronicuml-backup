@@ -27,12 +27,11 @@ import org.eclipse.swt.widgets.Composite;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
-public class ObjectCreationDialogExtension extends AbstractDialogExtension
-		implements IObjectCreationDialogExtension {
+public class ObjectCreationDialogExtension extends AbstractDialogExtension{
 
-	private IObjectsListDialogExtension objectsListDialogExtension;
+	private ObjectsListDialogExtension objectsListDialogExtension;
 
-	private ITextualDialogExtension textualDialogExtension;
+	private TextualDialogExtension textualDialogExtension;
 
 	private ItemProvider values;
 
@@ -169,12 +168,12 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension
 	}
 
 	public void setTextualDialogExtension(
-			ITextualDialogExtension textualDialogExtension) {
+			TextualDialogExtension textualDialogExtension) {
 		this.textualDialogExtension = textualDialogExtension;
 	}
 
 	public void setObjectsListDialogExtension(
-			IObjectsListDialogExtension objectsListDialogExtension) {
+			ObjectsListDialogExtension objectsListDialogExtension) {
 		this.objectsListDialogExtension = objectsListDialogExtension;
 	}
 

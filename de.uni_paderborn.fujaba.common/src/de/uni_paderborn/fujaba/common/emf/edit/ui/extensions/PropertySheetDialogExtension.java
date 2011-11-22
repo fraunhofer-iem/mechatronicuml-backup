@@ -11,20 +11,17 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
-public class PropertySheetDialogExtension extends
-		AbstractDialogExtension implements
-		IPropertiesListDialogExtension {
+public class PropertySheetDialogExtension extends AbstractDialogExtension {
 
 	/**
 	 * The PropertySheetPage.
 	 */
 	protected PropertySheetPage page;
-	
-	private IPropertySourceProvider propertySourceProvider; 
 
-	private IObjectsListDialogExtension objectsListDialogExtension;
+	private IPropertySourceProvider propertySourceProvider;
 
-	public PropertySheetDialogExtension(IPropertySourceProvider propertySourceProvider,
+	public PropertySheetDialogExtension(
+			IPropertySourceProvider propertySourceProvider,
 			ExtensibleCreationDialog creationDialog) {
 		super(creationDialog);
 		this.propertySourceProvider = propertySourceProvider;
@@ -46,31 +43,28 @@ public class PropertySheetDialogExtension extends
 		gridLayout.horizontalSpacing = 0;
 		gridLayout.marginTop = 0;
 		gridLayout.marginLeft = 0;
-		gridLayout.marginHeight= 0;
+		gridLayout.marginHeight = 0;
 		gridLayout.marginWidth = 0;
 		composite.setLayout(gridLayout);
-		
-        page = new PropertySheetPage();
-        page.setPropertySourceProvider(propertySourceProvider);
-        page.createControl(composite);
-        page.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+		page = new PropertySheetPage();
+		page.setPropertySourceProvider(propertySourceProvider);
+		page.createControl(composite);
+		page.getControl().setLayoutData(
+				new GridData(SWT.FILL, SWT.FILL, true, true));
 	}
 
 	public void setInput(ISelection selection) {
 		if (page != null && !page.getControl().isDisposed()) {
 			page.selectionChanged(null, selection);
-			getCreationDialog().getShell().layout(new Control[] { page.getControl() });
+			getCreationDialog().getShell().layout(
+					new Control[] { page.getControl() });
 		}
 	}
 
 	@Override
 	public void createButtonArea(Composite composite) {
 		// no buttons
-	}
-
-	public void setObjectsListDialogExtension(
-			IObjectsListDialogExtension objectsListDialogExtension) {
-		this.objectsListDialogExtension = objectsListDialogExtension;
 	}
 
 	@Override

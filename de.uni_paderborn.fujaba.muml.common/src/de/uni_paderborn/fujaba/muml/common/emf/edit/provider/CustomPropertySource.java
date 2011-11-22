@@ -182,11 +182,8 @@ public class CustomPropertySource extends PropertySource {
 			objectCreationDialogExtension
 					.setTextualDialogExtension(textualDialogExtension);
 
-			propertySheetDialogExtension
-					.setObjectsListDialogExtension(objectsListDialogExtension);
-
 			objectsListDialogExtension
-					.setPropertiesListDialogExtension(propertySheetDialogExtension);
+					.setPropertySheetDialogExtension(propertySheetDialogExtension);
 			objectsListDialogExtension
 					.setTextualDialogExtension(textualDialogExtension);
 			textualDialogExtension

@@ -31,8 +31,7 @@ import org.eclipse.swt.widgets.Table;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
-public class ObjectsListDialogExtension extends AbstractDialogExtension
-		implements IObjectsListDialogExtension {
+public class ObjectsListDialogExtension extends AbstractDialogExtension {
 	private Adapter hookAdapter = new AdapterImpl() {
 		@Override
 		public void notifyChanged(Notification notification) {
@@ -46,9 +45,9 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension
 	private Button btnDown;
 	private Button btnRemove;
 
-	private ITextualDialogExtension textualDialogExtension;
+	private TextualDialogExtension textualDialogExtension;
 
-	private IPropertiesListDialogExtension propertiesListDialogExtension;
+	private PropertySheetDialogExtension propertySheetDialogExtension;
 
 	/**
 	 * A SelectionChangedListener, which is notified about selection changes in
@@ -139,7 +138,7 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension
 				.addSelectionChangedListener(new ISelectionChangedListener() {
 					public void selectionChanged(SelectionChangedEvent event) {
 						ISelection selection = event.getSelection();
-						propertiesListDialogExtension.setInput(selection);
+						propertySheetDialogExtension.setInput(selection);
 						if (event.getSelection() instanceof IStructuredSelection) {
 							IStructuredSelection ssel = (IStructuredSelection) event
 									.getSelection();
@@ -336,13 +335,13 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension
 		return objectsTableViewer;
 	}
 
-	public void setPropertiesListDialogExtension(
-			IPropertiesListDialogExtension propertiesListDialogExtension) {
-		this.propertiesListDialogExtension = propertiesListDialogExtension;
+	public void setPropertySheetDialogExtension(
+			PropertySheetDialogExtension propertySheetDialogExtension) {
+		this.propertySheetDialogExtension = propertySheetDialogExtension;
 	}
 
 	public void setTextualDialogExtension(
-			ITextualDialogExtension textualDialogExtension) {
+			TextualDialogExtension textualDialogExtension) {
 		this.textualDialogExtension = textualDialogExtension;
 	}
 }

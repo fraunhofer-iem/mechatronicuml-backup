@@ -27,10 +27,9 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.IMultiTextParser;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
 
 public class TextualDialogExtension extends
-		AbstractDialogExtension implements
-		ITextualDialogExtension {
+		AbstractDialogExtension {
 
-	private IObjectsListDialogExtension objectsListDialogExtension;
+	private ObjectsListDialogExtension objectsListDialogExtension;
 
 	/**
 	 * The areas in the Parameter-Line Textfield that contain certain
@@ -302,7 +301,7 @@ public class TextualDialogExtension extends
 	}
 
 	public void setObjectsListDialogExtension(
-			IObjectsListDialogExtension objectsListDialogExtension) {
+			ObjectsListDialogExtension objectsListDialogExtension) {
 		this.objectsListDialogExtension = objectsListDialogExtension;
 	}
 
