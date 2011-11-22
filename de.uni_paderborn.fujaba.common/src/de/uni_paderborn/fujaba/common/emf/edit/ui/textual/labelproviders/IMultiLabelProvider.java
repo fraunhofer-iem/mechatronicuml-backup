@@ -1,9 +1,9 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.labelproviders;
 
 import java.util.List;
 import java.util.Map;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.Range;
 
 /**
  * An IMultiTextProvider is able to provide a text for a set of objects.

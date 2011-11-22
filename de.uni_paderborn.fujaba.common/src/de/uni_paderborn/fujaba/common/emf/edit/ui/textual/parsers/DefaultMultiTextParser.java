@@ -1,9 +1,9 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.parsers;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.parsers;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.Range;
 
 /**
  * Default implementation of IMultiTextParser, it requires a split element to

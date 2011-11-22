@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.typedelement;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.parsers;
 
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.jface.viewers.LabelProvider;

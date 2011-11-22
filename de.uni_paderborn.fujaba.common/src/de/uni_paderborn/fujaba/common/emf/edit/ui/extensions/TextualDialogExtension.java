@@ -22,9 +22,9 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.IMultiLabelProvider;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.IMultiTextParser;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.labelproviders.IMultiLabelProvider;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.parsers.IMultiTextParser;
 
 public class TextualDialogExtension extends
 		AbstractDialogExtension {

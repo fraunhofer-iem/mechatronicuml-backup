@@ -1,14 +1,13 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.typedelement;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.parsers;
 
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ETypedElement;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.ITextParser;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.TextValidationStatus;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidator;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.validator.IValidator;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.validator.TextValidationStatus;
 
 /**
  * A text parser, which can create a typed element from a textual representation

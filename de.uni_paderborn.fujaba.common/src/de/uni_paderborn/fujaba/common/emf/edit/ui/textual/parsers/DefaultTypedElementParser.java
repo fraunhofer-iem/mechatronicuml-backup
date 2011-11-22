@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.typedelement;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.parsers;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IValidator;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.validator.IValidator;
 
 /**
  * Default implementation of AbstractTypedElementParser; it requires an instance

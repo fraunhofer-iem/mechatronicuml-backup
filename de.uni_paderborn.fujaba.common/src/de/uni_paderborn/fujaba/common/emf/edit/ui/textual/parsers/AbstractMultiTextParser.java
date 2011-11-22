@@ -1,10 +1,10 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.parsers;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.parsers;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.Range;
 
 /**
  * Abstract implementation of the IMultiTextParser interface, it requires

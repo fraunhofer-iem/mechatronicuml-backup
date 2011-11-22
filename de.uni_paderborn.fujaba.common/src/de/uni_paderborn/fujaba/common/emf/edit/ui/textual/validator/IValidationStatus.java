@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.validator;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.validator;
 
 /**
  * The status of a validation.

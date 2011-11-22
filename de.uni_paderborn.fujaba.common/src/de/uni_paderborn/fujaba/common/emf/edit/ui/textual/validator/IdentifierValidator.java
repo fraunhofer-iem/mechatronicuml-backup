@@ -1,10 +1,9 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.validator;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.validator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.TextValidationStatus;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.Range;
 
 /**
  * A Validator, which checks if the identifier string contains only valid

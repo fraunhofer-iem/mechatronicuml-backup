@@ -1,11 +1,11 @@
-package de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.textual.labelproviders;
 
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.jface.viewers.ILabelProvider;
 
-import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.Range;
 
 /**
  * Default implementation of IMultiLabelProvider; it requires label provider for
