@@ -25,6 +25,12 @@ public class ClockPropertyDescriptor extends ItemPropertyDescriptor {
 	}
 
 	@Override
+	protected Collection<?> getComboBoxObjects(Object object) {
+		// TODO Auto-generated method stub
+		return super.getComboBoxObjects(object);
+	}
+
+	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
 		Collection<?> choices = super.getChoiceOfValues(object);
 		List<Object> invalidChoices = new ArrayList<Object>();

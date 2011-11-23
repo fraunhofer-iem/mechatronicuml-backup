@@ -1,6 +1,7 @@
-
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+
+«EXTENSION MetaModel»
 
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION impl::diagram::updater::CanonicalUpdate»
@@ -38,7 +39,11 @@
 «EXPAND xpt::Common::generatedMemberComment»
 	public boolean isTopLevelCanonical() {
 		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
-		return true;
+		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
+			return false; // This editor uses ModelElementCategory as Diagram Element.
+		«ELSE»
+			return true; // This editor does not use ModelElementCategory as Diagram Element.
+		«ENDIF»
 	}
 «ENDDEFINE»
 

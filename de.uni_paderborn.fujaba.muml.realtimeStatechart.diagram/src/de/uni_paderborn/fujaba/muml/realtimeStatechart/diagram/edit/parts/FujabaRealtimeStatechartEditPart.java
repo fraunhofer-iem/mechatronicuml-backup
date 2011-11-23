@@ -243,6 +243,10 @@ public class FujabaRealtimeStatechartEditPart extends
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+
+		// Ensures that the element can be shrinked (Muml Bug #62).
+		result.setMinimumSize(new Dimension(0, 0));
+
 		return result;
 	}
 

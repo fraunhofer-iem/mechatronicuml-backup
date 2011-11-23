@@ -25,8 +25,6 @@ public class CustomAtomiccomponentEditPartFactory extends MumlEditPartFactory {
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case AtomicComponentDiagramEditPart.VISUAL_ID:
-				return new CustomAtomicComponentDiagramEditPart(view);
 			case AtomicComponentEditPart.VISUAL_ID:
 				return new CustomAtomicComponentEditPart(view);
 			case DiscretePortEditPart.VISUAL_ID:

@@ -10,6 +10,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -191,6 +192,10 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 90);
+
+		// Ensures that the element can be shrinked (Muml Bug #62).
+		result.setMinimumSize(new Dimension(0, 0));
+
 		return result;
 	}
 

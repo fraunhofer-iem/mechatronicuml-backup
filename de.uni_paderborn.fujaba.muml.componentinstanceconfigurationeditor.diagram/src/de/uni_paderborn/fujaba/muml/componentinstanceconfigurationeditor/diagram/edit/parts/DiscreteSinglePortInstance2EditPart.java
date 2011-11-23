@@ -11,6 +11,7 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -117,6 +118,10 @@ public class DiscreteSinglePortInstance2EditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24);
+
+		// Ensures that the element can be shrinked (Muml Bug #62).
+		result.setMinimumSize(new Dimension(0, 0));
+
 		return result;
 	}
 

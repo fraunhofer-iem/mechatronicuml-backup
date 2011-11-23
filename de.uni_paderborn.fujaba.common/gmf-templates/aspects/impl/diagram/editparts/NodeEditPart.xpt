@@ -1,0 +1,21 @@
+
+«REM»The AROUND-Statement cannot used with overloading, as it seems.«ENDREM» 
+«AROUND setupNodePlate FOR gmfgen::GenNode»
+	«REM»Call mySetupNodePlate, which is overloaded for different types.«ENDREM»
+	«EXPAND mySetupNodePlate»
+«ENDAROUND»
+
+
+«REM»Copied from original NodeEditPart.xpt«ENDREM»
+«DEFINE mySetupNodePlate FOR gmfgen::GenChildSideAffixedNode»
+	//FIXME: workaround for #154536
+	result.getBounds().setSize(result.getPreferredSize());
+«ENDDEFINE»
+
+
+«DEFINE mySetupNodePlate FOR gmfgen::GenNode»
+
+	// Ensures that the element can be shrinked (Muml Bug #62).
+	result.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(0, 0));
+
+«ENDDEFINE»

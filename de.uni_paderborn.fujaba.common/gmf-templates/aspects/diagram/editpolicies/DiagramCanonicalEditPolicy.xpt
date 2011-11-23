@@ -1,5 +1,8 @@
 
 «AROUND refreshConnectionsMethod FOR gmfgen::GenDiagram-»
+
+	«REM» Only changed visibility to protected «ENDREM»
+
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected «EXPAND CodeStyle::G('java.util.Collection', 'org.eclipse.core.runtime.IAdaptable')» refreshConnections() {
 		«EXPAND impl::diagram::update::CanonicalUpdate::refreshConnectionsBody-»

@@ -42,7 +42,9 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 */
 	public boolean isTopLevelCanonical() {
 		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
-		return true;
+
+		return false; // This editor uses ModelElementCategory as Diagram Element.
+
 	}
 
 	/**

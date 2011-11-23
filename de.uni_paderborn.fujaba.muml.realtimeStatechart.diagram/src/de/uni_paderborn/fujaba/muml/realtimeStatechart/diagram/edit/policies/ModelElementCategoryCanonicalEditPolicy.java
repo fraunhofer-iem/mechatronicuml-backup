@@ -40,14 +40,6 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	public boolean isTopLevelCanonical() {
-		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -81,6 +73,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
+
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
@@ -124,6 +117,16 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	private boolean isMyDiagramElement(View view) {
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
+	}
+
+	/**
+	 * @generated
+	 */
+	public boolean isTopLevelCanonical() {
+		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+
+		return false; // This editor uses ModelElementCategory as Diagram Element.
+
 	}
 
 	/**

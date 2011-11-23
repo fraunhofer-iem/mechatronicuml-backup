@@ -155,6 +155,10 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(20, 20);
+
+		// Ensures that the element can be shrinked (Muml Bug #62).
+		result.setMinimumSize(new Dimension(0, 0));
+
 		return result;
 	}
 

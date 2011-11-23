@@ -47,7 +47,9 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	 */
 	public boolean isTopLevelCanonical() {
 		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
-		return true;
+
+		return true; // This editor does not use ModelElementCategory as Diagram Element.
+
 	}
 
 	/**

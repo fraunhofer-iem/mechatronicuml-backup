@@ -159,6 +159,7 @@ public class DiscretePort2EditPart extends BorderedBorderItemEditPart {
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
+
 		return result;
 	}
 

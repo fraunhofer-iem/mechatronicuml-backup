@@ -11,6 +11,7 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -123,6 +124,7 @@ public class DiscreteSinglePortInstanceEditPart extends
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
+
 		return result;
 	}
 

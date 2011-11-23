@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.provider;
 
-import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.edit.part.CustomMessageinterfaceEditPartFactory;
 import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlEditPartProvider;
 
 
@@ -13,9 +12,9 @@ import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.Mum
 public class CustomMessageinterfaceEditPartProvider extends
 		MumlEditPartProvider {
 
-	public CustomMessageinterfaceEditPartProvider() {
-		setFactory(new CustomMessageinterfaceEditPartFactory());
-		setAllowCaching(true);
-	}
+//	public CustomMessageinterfaceEditPartProvider() {
+//		setFactory(new CustomMessageinterfaceEditPartFactory());
+//		setAllowCaching(true);
+//	}
 
 }
