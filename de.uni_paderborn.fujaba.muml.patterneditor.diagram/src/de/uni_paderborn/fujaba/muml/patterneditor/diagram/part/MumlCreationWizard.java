@@ -5,9 +5,14 @@ import java.util.Collection;
 import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
+import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
+import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -20,7 +25,7 @@ import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 /**
  * @generated
  */
-public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
+public class MumlCreationWizard extends FujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -37,7 +42,7 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 	 * @generated
 	 */
 	@Override
-	protected String getDiagramFileExtension() {
+	public String getDiagramFileExtension() {
 		return "pattern_diagram"; //$NON-NLS-1$
 	}
 
@@ -45,7 +50,7 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 	 * @generated
 	 */
 	@Override
-	protected String getModelId() {
+	public String getModelId() {
 		return "Patterneditor";
 	}
 
@@ -53,7 +58,15 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 	 * @generated
 	 */
 	@Override
-	protected PreferencesHint getDiagramPreferencesHint() {
+	public String getModelElementCategoryKey() {
+		return "de.uni_paderborn.fujaba.muml.pattern.category";
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public PreferencesHint getDiagramPreferencesHint() {
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
@@ -61,7 +74,7 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 	 * @generated
 	 */
 	@Override
-	protected String getEditorId() {
+	public String getEditorId() {
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor.ID;
 
 	}
@@ -70,7 +83,7 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 	 * @generated
 	 */
 	@Override
-	protected ExtendableElement createDiagramElement() {
+	public ExtendableElement createDiagramElement() {
 
 		return null;
 
@@ -79,7 +92,7 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 	/**
 	 * @generated
 	 */
-	protected boolean isModelElementCategoryDiagramElement() {
+	public boolean isModelElementCategoryDiagramElement() {
 
 		return true;
 
@@ -88,7 +101,7 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 	/**
 	 * @generated
 	 */
-	protected CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
+	public CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
 			Collection<EObject> elements) {
 		List<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
 				.getModelElementCategory_1000SemanticChildren(diagram);
@@ -109,6 +122,32 @@ public abstract class MumlCreationWizard extends FujabaDiagramNewWizard {
 			viewDescriptors.add(descriptor);
 		}
 		return new CreateViewRequest(viewDescriptors);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean isValidDiagramElement(EObject diagramElement) {
+		IAdaptable adapter = new EObjectAdapter(diagramElement);
+		IOperation operation = new CreateDiagramViewOperation(adapter,
+				getModelId(), getDiagramPreferencesHint());
+		return ViewService.getInstance().provides(operation);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean isValidTopLevelNodeElement(EObject diagramElement,
+			EObject topLevelNodeElement) {
+		Diagram diagram = ViewService.getInstance().createDiagram(
+				diagramElement, getModelId(), getDiagramPreferencesHint());
+
+		IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
+		IOperation operation = new CreateNodeViewOperation(adapter, diagram,
+				null, 0, false, getDiagramPreferencesHint());
+		return ViewService.getInstance().provides(operation);
 	}
 
 }

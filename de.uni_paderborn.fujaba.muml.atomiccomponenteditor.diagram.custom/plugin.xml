@@ -20,15 +20,14 @@
   	  <wizard
   	       category="de.fujaba/de.fujaba.diagrams"
   	       icon="icons/AtomicComponentDiagram.gif"
-  	       class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
-  	       id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
+  	       class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizard"
+  	       id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizard"
   	       name="Atomic Component Diagram">
   	     
   	  	 <description>Creates a new Atomic Component Diagram.</description>
       </wizard>
    </extension>
-   
-   
+
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
@@ -38,17 +37,5 @@
          </Priority>
       </editpartProvider>
    </extension>
-   <extension
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <category
-            key="de.uni_paderborn.fujaba.muml.components.category"
-            name="Components">
-         <child
-               class="AtomicComponent"
-               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/component">
-         </child>
-      </category>
-   </extension>
-
 
 </plugin>

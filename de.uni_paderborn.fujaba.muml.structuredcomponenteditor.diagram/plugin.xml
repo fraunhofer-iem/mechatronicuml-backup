@@ -16,14 +16,14 @@
    </extension>
 
    <extension point="org.eclipse.ui.contexts" id="ui-context">
-      <?gmfgen generated="true"?>
-      <context
-         description="%context.description"
-         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ui.diagramContext"
-         name="%context.name"
-         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-      </context>
-   </extension>
+		<?gmfgen generated="true"?>
+		<context
+	      description="%context.description"
+	      id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ui.diagramContext"
+	      name="%context.name"
+	      parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+	   	</context>
+	</extension>
 
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
@@ -443,21 +443,49 @@
             pluginid="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"
             priority="1"></factory>
    </extension>
-<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.InitDiagram"
-            nameFilter="*.fujaba"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlInitDiagramFileAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.InitDiagramAction">
-         </action>
-      </objectContribution>
+<extension point="org.eclipse.ui.menus">
+	   <?gmfgen generated="true"?>   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=additions">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+	            id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+	            label="%initDiagramActionLabel"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+<extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.components.category"
+            name="component">
+         
+         <child
+               class="StructuredComponent"
+               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/component">
+         </child>
+         
+      </category>
    </extension>
+
+
 
 
 

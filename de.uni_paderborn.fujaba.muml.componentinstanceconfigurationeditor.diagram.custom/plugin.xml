@@ -20,8 +20,8 @@
   	  <wizard
   	       category="de.fujaba/de.fujaba.diagrams"
   	       icon="icons/ComponentInstanceConfDiagram.gif"
-  	       class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramCreationWizard"
-  	       id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramCreationWizard"
+  	       class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlCreationWizard"
+  	       id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlCreationWizard"
   	       name="ComponentInstance Configuration Diagram">
   	     
   	  	 <description>Creates a new ComponentInstance Configuration Diagram.</description>
@@ -65,18 +65,6 @@
       <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.providers.CustomComponentinstanceconfigurationParserProvider">
          <Priority name="Low"/>
       </ParserProvider>
-   </extension>
-
-   <extension
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <category
-            key="de.uni_paderborn.fujaba.muml.components.category"
-            name="Component Instance Configurations">
-         <child
-               class="ComponentInstanceConfiguration"
-               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/instance">
-         </child>
-      </category>
    </extension>
 
 </plugin>

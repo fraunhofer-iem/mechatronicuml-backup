@@ -1,46 +1,62 @@
+«EXTENSION MetaModel»
+«EXTENSION xpt::StringOperations»
+
+«EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::editor::GenDiagram»
+
+
 «AROUND extensions FOR gmfgen::GenEditorGenerator»
-   <extension point="org.eclipse.ui.contexts" id="ui-context">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <context
-         description="%context.description"
-         id="«editor.contextID»"
-         name="%context.name"
-         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-      </context>
+	<extension point="org.eclipse.ui.contexts" id="ui-context">
+		«EXPAND xpt::Common::xmlGeneratedTag»
+		<context
+	      description="%context.description"
+	      id="«editor.contextID»"
+	      name="%context.name"
+	      parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+	   	</context>
+	</extension>
+
+	<extension point="org.eclipse.ui.menus">
+	   «EXPAND xpt::Common::xmlGeneratedTag»   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=additions">
+	      <command
+	            commandId="«plugin.iD».createDiagram"
+	            id="«plugin.iD».createDiagram"
+	            label="%initDiagramActionLabel"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.commands">
+		«EXPAND xpt::Common::xmlGeneratedTag»
+		<command
+			categoryId="de.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="«diagram.getInitDiagramFileActionQualifiedClassName()»"
+			id="«plugin.iD».createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+	
+	<extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      «EXPAND xpt::Common::xmlGeneratedTag»  
+      <category
+            key="«getReflectionPackageName(diagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgiface', '\\.messageinterface')».category"
+            name="«diagram.topLevelNodes->first().getDomainMetaClass().genPackage.ecorePackage.name»">
+         «FOREACH diagram.topLevelNodes.getDomainMetaClass() AS node»
+         <child
+               class="«node.ecoreClass.name»"
+               packageNsUri="«node.genPackage.ecorePackage.nsURI»">
+         </child>
+         «ENDFOREACH»
+      </category>
    </extension>
-   
-   
-«IF diagram.generateInitDiagramAction()-»
-   «IF null = application»<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <objectContribution
-            id="«plugin.iD».InitDiagram"
-            nameFilter="*.«domainFileExtension»"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="«diagram.getInitDiagramFileActionQualifiedClassName()»"
-               menubarPath="additions"
-               enablesFor="1"
-               id="«plugin.iD».InitDiagramAction">
-         </action>
-      </objectContribution>
-   </extension>
-	«ELSE-»
-   <extension point="org.eclipse.ui.actionSets" id="init-diagram-action">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <actionSet
-            label="%initDiagramActionLabel"
-            visible="true"
-            id="«plugin.iD».InitDiagram">
-         <action
-               label="%initDiagramActionLabel"
-               class="«diagram.getInitDiagramFileActionQualifiedClassName()»"
-               menubarPath="file/additions"
-               id="«plugin.iD».InitDiagramAction">
-         </action>
-      </actionSet>
-   </extension>
-	«ENDIF-»
-«ENDIF-»
+	
+
 «ENDAROUND»

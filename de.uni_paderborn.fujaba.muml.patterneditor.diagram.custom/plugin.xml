@@ -20,8 +20,8 @@
   	  <wizard
   	       category="de.fujaba/de.fujaba.diagrams"
   	     icon="icons/PatternDiagram.gif"
-  	     class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
-  	     id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
+  	     class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizard"
   	     name="Pattern Diagram">
   	  	 <description>Creates a new Pattern diagram.</description>
       </wizard>
@@ -55,18 +55,6 @@
                name="Low">
          </Priority>
       </editpartProvider>
-   </extension>
-   <extension
-         id="modelelementcategory"
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <category
-            key="de.uni_paderborn.fujaba.muml.pattern.category"
-            name="Coordination Patterns">
-         <child
-               class="CoordinationPattern"
-               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/pattern">
-         </child>
-      </category>
    </extension>
 
 </plugin>

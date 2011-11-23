@@ -7,12 +7,14 @@
 «EXTENSION xpt::editor::Utils»
 «EXTENSION xpt::editor::GenDiagram»
 
+
+
 «DEFINE CreationWizard FOR gmfgen::GenDiagram-»
 «EXPAND xpt::Common::copyright FOR editorGen-»
 package «editorGen.editor.packageName»;
 
 «EXPAND xpt::Common::generatedClassComment»
-public abstract class «creationWizardClassName» extends de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard {
+public class «creationWizardClassName» extends de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard {
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	public void init(org.eclipse.ui.IWorkbench workbench, org.eclipse.jface.viewers.IStructuredSelection selection) {
@@ -22,74 +24,9 @@ public abstract class «creationWizardClassName» extends de.fujaba.newwizard.di
 				"icons/wizban/New«IF domainDiagramElement <> null»«domainDiagramElement.genPackage.prefix»«ENDIF»Wizard.gif")); //$NON-NLS-1$
 
 	}
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	protected String getDiagramFileExtension() {
-		return "«editorGen.diagramFileExtension»"; //$NON-NLS-1$
-	}
 	
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	protected String getModelId() {
-		return "«editorGen.modelID»";
-	}
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	protected org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint getDiagramPreferencesHint() {
-		return «editorGen.plugin.getActivatorQualifiedClassName()».DIAGRAM_PREFERENCES_HINT;
-	}
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	protected String getEditorId() {
-		return «editorGen.editor.getQualifiedClassName()».ID;
-
-	}
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	protected org.storydriven.modeling.ExtendableElement createDiagramElement() {
-		«REM»It would be better to compare to the Meta-Class«ENDREM»
-		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
-			return null;
-		«ELSE»
-			return «EXPAND MetaModel::NewInstance FOR domainDiagramElement»;
-		«ENDIF»
-	}
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	protected boolean isModelElementCategoryDiagramElement() {
-		«REM»It would be better to compare to the Meta-Class«ENDREM»
-		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
-			return true;
-		«ELSE»
-			return false;
-		«ENDIF»
-	}
+	«EXPAND xpt::editor::FujabaEditorDescription::description FOR editorGen»
 	
-	«EXPAND xpt::Common::generatedMemberComment»
-	protected org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest getCreatePersistedViewsRequest(org.eclipse.gmf.runtime.notation.Diagram diagram, java.util.Collection<org.eclipse.emf.ecore.EObject> elements) {
-		java.util.List<«editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»> childDescriptors = «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodCall»(diagram);
-		java.util.List<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor> viewDescriptors = new java.util.ArrayList<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor>(childDescriptors.size());
-
-		«EXPAND CodeStyle::iterate('d', getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName(), 'childDescriptors')-»
-			if (!elements.contains(d.getModelElement())) {
-				continue;
-			}
-			java.lang.String hint = «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('d.getVisualID()')»;
-			org.eclipse.core.runtime.IAdaptable elementAdapter = new de.fujaba.newwizard.InitialElementAdapter(
-					d.getModelElement(), hint);
-			org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor(
-					elementAdapter, org.eclipse.gmf.runtime.notation.Node.class, hint, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, true,
-					getDiagramPreferencesHint());
-			viewDescriptors.add(descriptor);
-		}
-		return new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest(viewDescriptors);
-	}
-	
-
 
 	«EXPAND additions-»
 }

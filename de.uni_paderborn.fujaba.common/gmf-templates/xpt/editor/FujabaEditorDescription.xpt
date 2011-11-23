@@ -1,0 +1,103 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION MetaModel»
+«EXTENSION xpt::StringOperations»
+
+
+«DEFINE description FOR gmfgen::GenEditorGenerator»
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getDiagramFileExtension() {
+		return "«diagramFileExtension»"; //$NON-NLS-1$
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getModelId() {
+		return "«modelID»";
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getModelElementCategoryKey() {
+		return "«getReflectionPackageName(diagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgiface', '\\.messageinterface')».category";
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint getDiagramPreferencesHint() {
+		return «plugin.getActivatorQualifiedClassName()».DIAGRAM_PREFERENCES_HINT;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getEditorId() {
+		return «editor.getQualifiedClassName()».ID;
+
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public org.storydriven.modeling.ExtendableElement createDiagramElement() {
+		«REM»It would be better to compare to the Meta-Class«ENDREM»
+		«IF getQualifiedInterfaceName(diagram.domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
+			return null;
+		«ELSE»
+			return «EXPAND MetaModel::NewInstance FOR diagram.domainDiagramElement»;
+		«ENDIF»
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public boolean isModelElementCategoryDiagramElement() {
+		«REM»It would be better to compare to the Meta-Class«ENDREM»
+		«IF getQualifiedInterfaceName(diagram.domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
+			return true;
+		«ELSE»
+			return false;
+		«ENDIF»
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest getCreatePersistedViewsRequest(org.eclipse.gmf.runtime.notation.Diagram diagram, java.util.Collection<org.eclipse.emf.ecore.EObject> elements) {
+		java.util.List<«diagramUpdater.getNodeDescriptorQualifiedClassName()»> childDescriptors = «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodCall FOR diagram»(diagram);
+		java.util.List<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor> viewDescriptors = new java.util.ArrayList<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor>(childDescriptors.size());
+
+		for («diagramUpdater.getNodeDescriptorQualifiedClassName()» d : childDescriptors) {
+			if (!elements.contains(d.getModelElement())) {
+				continue;
+			}
+			java.lang.String hint = «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('d.getVisualID()') FOR diagram»;
+			org.eclipse.core.runtime.IAdaptable elementAdapter = new de.fujaba.newwizard.InitialElementAdapter(
+					d.getModelElement(), hint);
+			org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor(
+					elementAdapter, org.eclipse.gmf.runtime.notation.Node.class, hint, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, true,
+					getDiagramPreferencesHint());
+			viewDescriptors.add(descriptor);
+		}
+		return new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest(viewDescriptors);
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public boolean isValidDiagramElement(org.eclipse.emf.ecore.EObject diagramElement) {
+		org.eclipse.core.runtime.IAdaptable adapter = new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(diagramElement);
+		org.eclipse.gmf.runtime.common.core.service.IOperation operation = new org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation(adapter,
+				getModelId(), getDiagramPreferencesHint());
+		return org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().provides(operation);
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public boolean isValidTopLevelNodeElement(org.eclipse.emf.ecore.EObject diagramElement,
+			org.eclipse.emf.ecore.EObject topLevelNodeElement) {
+		org.eclipse.gmf.runtime.notation.Diagram diagram = org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().createDiagram(diagramElement,
+				getModelId(), getDiagramPreferencesHint());
+
+		org.eclipse.core.runtime.IAdaptable adapter = new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(topLevelNodeElement);
+		org.eclipse.gmf.runtime.common.core.service.IOperation operation = new org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation(adapter, diagram,
+				null, 0, false, getDiagramPreferencesHint());
+		return org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().provides(operation);
+	}
+	
+«ENDDEFINE»

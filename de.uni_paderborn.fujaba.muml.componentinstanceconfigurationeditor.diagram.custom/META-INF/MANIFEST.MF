@@ -22,5 +22,4 @@ Export-Package: de.uni_paderborn.fujaba.muml.componentinstanceconfigurationedito
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.parts,
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.policies,
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.providers,
- de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part,
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.providers

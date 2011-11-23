@@ -39,20 +39,7 @@
       </editor>
    </extension>
    
-   
-   <extension
-         id="modelelementcategory"
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <category
-            key="de.uni_paderborn.fujaba.muml.messageinterface.category"
-            name="Message Interfaces">
-         <child
-               class="MessageInterface"
-               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
-         </child>
-      </category>
-   </extension>
-   
+
 <!--
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
@@ -72,29 +59,5 @@
       </ParserProvider>
    </extension>
 
-
-  <extension
-        point="org.eclipse.ui.popupMenus">
-     <objectContribution
-           adaptable="false"
-           id="objectContribution.MessageType"
-           objectClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart">
-        <menu
-              id="RealtimeStatechart.ModifyEParameter"
-              label="Custom.Insert"
-              path="additions">
-           <separator
-                 name="group1">
-           </separator>
-        </menu>
-        <action
-              class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.action.ModifyMessageTypeWizardAction"
-              enablesFor="1"
-              id="Statechart.ModifyParameterID"
-              label="Modify Parameters"
-              menubarPath="RealtimeStatechart.ModifyEParameter/group1">
-        </action>
-     </objectContribution>
-  </extension>
 
 </plugin>

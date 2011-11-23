@@ -19,6 +19,7 @@ package «editorGen.editor.packageName»;
 «EXPAND xpt::Common::generatedClassComment»
 public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlugin {
 
+
 	«EXPAND xpt::Common::generatedMemberComment»
 	public static final String ID = "«iD»"; //$NON-NLS-1$
 
