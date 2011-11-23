@@ -78,4 +78,22 @@ public class RegionRegionContentsCompartmentEditPart extends
 		}
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void refreshVisibility() {
+		final View notationView = getNotationView();
+		final boolean hasChildren = notationView.getChildren().size() > 0;
+		setVisibility(hasChildren);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification event) {
+		refreshVisibility();
+		super.handleNotificationEvent(event);
+	}
+
 }
