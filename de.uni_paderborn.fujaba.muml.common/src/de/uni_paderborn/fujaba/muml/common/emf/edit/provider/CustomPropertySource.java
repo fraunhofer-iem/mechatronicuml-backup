@@ -9,20 +9,24 @@ import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 
+import de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySection;
+
 public class CustomPropertySource extends PropertySource {
 
 	private AdapterFactory adapterFactory;
 	private IPropertySourceProvider propertySourceProvider;
 	private EditingDomain editingDomain;
+	private IRefreshProhibitedPropertySection mainPropertySection;
 
 	public CustomPropertySource(Object object,
 			IItemPropertySource itemPropertySource,
 			AdapterFactory adapterFactory, EditingDomain editingDomain,
-			IPropertySourceProvider propertySourceProvider) {
+			IPropertySourceProvider propertySourceProvider, IRefreshProhibitedPropertySection mainPropertySection) {
 		super(object, itemPropertySource);
 		this.propertySourceProvider = propertySourceProvider;
 		this.adapterFactory = adapterFactory;
 		this.editingDomain = editingDomain;
+		this.mainPropertySection = mainPropertySection;
 	}
 
 	protected IPropertyDescriptor createPropertyDescriptor(
@@ -34,7 +38,7 @@ public class CustomPropertySource extends PropertySource {
 		IItemPropertyDescriptor delegatingItemPropertyDescriptor = new CustomDelegatingItemPropertyDescriptor(
 				itemPropertyDescriptor, resourceSet);
 
-		return new CustomPropertyDescriptor(this.object, delegatingItemPropertyDescriptor, adapterFactory, propertySourceProvider);
+		return new CustomPropertyDescriptor(this.object, delegatingItemPropertyDescriptor, adapterFactory, editingDomain, propertySourceProvider, mainPropertySection);
 	}
 
 }

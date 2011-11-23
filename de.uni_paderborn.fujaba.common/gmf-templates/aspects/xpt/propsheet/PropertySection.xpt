@@ -1,3 +1,6 @@
+«AROUND implementsClause FOR gmfgen::GenCustomPropertyTab»«targetDef.proceed()», de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySection«ENDAROUND»
+
+
 ﻿«AROUND getAdapterFactoryMethod FOR gmfgen::GenCustomPropertyTab»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected org.eclipse.emf.common.notify.AdapterFactory getAdapterFactory(Object object) {
@@ -40,7 +43,7 @@
 			org.eclipse.emf.edit.provider.IItemPropertySource ips = (org.eclipse.emf.edit.provider.IItemPropertySource) af.adapt(object, org.eclipse.emf.edit.provider.IItemPropertySource.class);
 			if (ips != null) {
 				org.eclipse.emf.edit.domain.EditingDomain ed = getEditingDomainFor(object);
-				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(object, ips, af, ed, this);
+				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(object, ips, af, ed, this, this);
 			}
 		}
 		if (object instanceof org.eclipse.core.runtime.IAdaptable) {
@@ -48,4 +51,31 @@
 		}
 		return null;
 	}
+«ENDAROUND»
+
+«AROUND additions FOR gmfgen::GenCustomPropertyTab-»
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private int refreshProhibitions = 0;
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public void refresh() {
+		if (refreshProhibitions <= 0) {
+			super.refresh();
+		}
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public synchronized void pushRefreshProhibition() {
+		this.refreshProhibitions++;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public synchronized void popRefreshProhibition() {
+		this.refreshProhibitions--;
+	}
+	
 «ENDAROUND»

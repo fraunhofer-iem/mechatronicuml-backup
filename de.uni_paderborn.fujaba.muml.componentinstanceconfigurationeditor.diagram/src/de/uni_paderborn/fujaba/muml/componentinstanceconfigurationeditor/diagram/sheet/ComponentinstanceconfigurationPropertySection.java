@@ -24,7 +24,10 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
  * @generated
  */
 public class ComponentinstanceconfigurationPropertySection extends
-		AdvancedPropertySection implements IPropertySourceProvider {
+		AdvancedPropertySection
+		implements
+		IPropertySourceProvider,
+		de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySection {
 
 	/**
 	 * @generated
@@ -40,7 +43,7 @@ public class ComponentinstanceconfigurationPropertySection extends
 			if (ips != null) {
 				EditingDomain ed = getEditingDomainFor(object);
 				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
-						object, ips, af, ed, this);
+						object, ips, af, ed, this, this);
 			}
 		}
 		if (object instanceof IAdaptable) {
@@ -137,6 +140,37 @@ public class ComponentinstanceconfigurationPropertySection extends
 		}
 		return (AdapterFactoryEditingDomain) TransactionUtil
 				.getEditingDomain(object);
+	}
+
+	/**
+	 * @generated
+	 */
+	private int refreshProhibitions = 0;
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void refresh() {
+		if (refreshProhibitions <= 0) {
+			super.refresh();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public synchronized void pushRefreshProhibition() {
+		this.refreshProhibitions++;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public synchronized void popRefreshProhibition() {
+		this.refreshProhibitions--;
 	}
 
 }

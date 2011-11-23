@@ -27,7 +27,9 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.IDialogExtension;
  * 
  */
 public class ExtensibleCreationDialog extends Dialog {
-	
+
+	private IRefreshProhibitedPropertySection mainPropertySection;
+
 	private List<IDialogExtension> extensions = new ArrayList<IDialogExtension>();
 
 	/**
@@ -35,12 +37,10 @@ public class ExtensibleCreationDialog extends Dialog {
 	 */
 	private EStructuralFeature structuralFeature;
 
-	
 	/**
 	 * The initial size for this dialog.
 	 */
 	private static final Point INITIAL_DIALOG_SIZE = new Point(550, 500);
-
 
 	/**
 	 * The LabelProvider used to get Labels for Parameters and typeClassifiers.
@@ -52,23 +52,16 @@ public class ExtensibleCreationDialog extends Dialog {
 	 */
 	private IContentProvider contentProvider;
 
-
-
 	/**
 	 * The Object containing the StructuralFeature, we are setting the values
 	 * for.
 	 */
 	private EObject containerObject;
 
-
 	// Note: We store Listeners in order to be able to remove/add them
 	// afterwards.
 
-
-
 	// UI-Controls:
-
-
 
 	/**
 	 * Constructs this ExtensibleCreationDialog.
@@ -99,17 +92,18 @@ public class ExtensibleCreationDialog extends Dialog {
 	public ExtensibleCreationDialog(Shell parentShell,
 			ILabelProvider labelProvider, EObject containerObject,
 			EStructuralFeature structuralFeature,
-			AdapterFactory adapterFactory) {
+			AdapterFactory adapterFactory,
+			IRefreshProhibitedPropertySection mainPropertySection) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE | SWT.MAX);
 		this.labelProvider = labelProvider;
 		this.structuralFeature = structuralFeature;
 		this.containerObject = containerObject;
+		this.mainPropertySection = mainPropertySection;
 
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
 	}
-	
-	
+
 	public void addExtension(IDialogExtension extension) {
 		extensions.add(extension);
 	}
@@ -135,7 +129,7 @@ public class ExtensibleCreationDialog extends Dialog {
 	protected Control createDialogArea(Composite parent) {
 		Composite container = (Composite) super.createDialogArea(parent);
 		container.setLayout(new GridLayout(2, false));
-		
+
 		for (IDialogExtension extension : extensions) {
 			Composite mainArea = new Composite(container, SWT.NONE);
 			GridLayout gridLayoutMainArea = new GridLayout(1, false);
@@ -143,12 +137,12 @@ public class ExtensibleCreationDialog extends Dialog {
 
 			Composite buttonArea = new Composite(container, SWT.NONE);
 			GridLayout gridLayoutButtonArea = new GridLayout(1, false);
-			GridData gridDataButtonArea = new GridData(SWT.FILL, SWT.FILL, false, false,
-					1, 1);
+			GridData gridDataButtonArea = new GridData(SWT.FILL, SWT.FILL,
+					false, false, 1, 1);
 			gridLayoutButtonArea.marginTop = 7;
 			buttonArea.setLayout(gridLayoutButtonArea);
 			buttonArea.setLayoutData(gridDataButtonArea);
-			
+
 			extension.createMainArea(mainArea);
 			extension.createButtonArea(buttonArea);
 		}
@@ -159,9 +153,6 @@ public class ExtensibleCreationDialog extends Dialog {
 
 		return container;
 	}
-
-
-
 
 	@Override
 	protected Point getInitialSize() {
@@ -176,12 +167,22 @@ public class ExtensibleCreationDialog extends Dialog {
 		super.okPressed();
 	}
 
+	// We must forbid calling refresh on the main Property Section, while the
+	// dialog is open (part of the fix of the Widget-Disposed bug).
+	@Override
+	public int open() {
+		mainPropertySection.pushRefreshProhibition();
+		int result = super.open();
+		mainPropertySection.popRefreshProhibition();
+		return result;
+	}
+
 	@Override
 	public boolean close() {
 		contentProvider.dispose();
 		return super.close();
 	}
-	
+
 	public ILabelProvider getLabelProvider() {
 		return labelProvider;
 	}
@@ -193,8 +194,5 @@ public class ExtensibleCreationDialog extends Dialog {
 	public EStructuralFeature getStructuralFeature() {
 		return structuralFeature;
 	}
-	
-	
-
 
 }

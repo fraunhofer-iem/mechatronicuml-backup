@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.common.emf.edit.ui.extensions;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -18,6 +20,8 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 	 */
 	protected PropertySheetPage page;
 
+	protected EObject initialObject;
+
 	private IPropertySourceProvider propertySourceProvider;
 
 	public PropertySheetDialogExtension(
@@ -25,7 +29,10 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 			ExtensibleCreationDialog creationDialog) {
 		super(creationDialog);
 		this.propertySourceProvider = propertySourceProvider;
-
+	}
+	
+	public void setInitialObject(EObject initialObject) {
+		this.initialObject = initialObject;
 	}
 
 	@Override
@@ -52,6 +59,8 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 		page.createControl(composite);
 		page.getControl().setLayoutData(
 				new GridData(SWT.FILL, SWT.FILL, true, true));
+
+		setInput(new StructuredSelection(new Object[] { initialObject }));
 	}
 
 	public void setInput(ISelection selection) {

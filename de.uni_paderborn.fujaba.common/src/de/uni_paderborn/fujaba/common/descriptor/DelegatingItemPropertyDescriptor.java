@@ -7,7 +7,7 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 public class DelegatingItemPropertyDescriptor implements
-		IItemPropertyDescriptor {
+		IItemPropertyDescriptor, IDifferentObjectItemPropertyDescriptor {
 
 	protected IItemPropertyDescriptor delegation;
 
@@ -113,6 +113,14 @@ public class DelegatingItemPropertyDescriptor implements
 	@Override
 	public boolean isSortChoices(Object object) {
 		return delegation.isSortChoices(object);
+	}
+
+	@Override
+	public Object getActualObject(Object object) {
+		if (delegation instanceof IDifferentObjectItemPropertyDescriptor) {
+			return ((IDifferentObjectItemPropertyDescriptor) delegation).getActualObject(object);
+		}
+		return object;
 	}
 
 }

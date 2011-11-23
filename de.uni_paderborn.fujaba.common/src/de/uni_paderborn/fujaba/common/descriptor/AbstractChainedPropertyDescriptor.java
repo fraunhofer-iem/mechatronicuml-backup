@@ -215,4 +215,9 @@ public abstract class AbstractChainedPropertyDescriptor extends
 		return feature;
 	}
 
+	@Override
+	public Object getActualObject(Object object) {
+		return getWrappedValue(parent.getPropertyValue(object));
+	}
+
 }
