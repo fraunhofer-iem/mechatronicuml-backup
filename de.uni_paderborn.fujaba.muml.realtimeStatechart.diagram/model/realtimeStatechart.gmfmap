@@ -293,9 +293,16 @@
                       xsi:type="ecore:EAttribute"
                       href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
                   <value
-                      body="'entrypoint'"/>
+                      body="'stateentrypoint'"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
+                <features
+                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.6"/>
@@ -317,9 +324,16 @@
                       xsi:type="ecore:EAttribute"
                       href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
                   <value
-                      body="'exitpoint'"/>
+                      body="'stateexitpoint'"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
+                <features
+                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.7"/>
@@ -346,6 +360,17 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'entrypoint'"/>
+            </initializers>
+          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -367,6 +392,17 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'exitpoint'"/>
+            </initializers>
+          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel

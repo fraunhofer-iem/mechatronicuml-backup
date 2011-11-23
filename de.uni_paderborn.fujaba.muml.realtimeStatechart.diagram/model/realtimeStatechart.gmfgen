@@ -541,6 +541,25 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5022"
+          editPartClassName="StateEntryPointNameEditPart"
+          itemSemanticEditPolicyClassName="StateEntryPointNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StateEntryPointNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="EntryExitPointExternalLabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EntryExitPointExternalLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EntryExitPointExternalLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.5">
+          <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -584,6 +603,25 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5023"
+          editPartClassName="StateExitPointNameEditPart"
+          itemSemanticEditPolicyClassName="StateExitPointNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StateExitPointNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="EntryExitPointExternalLabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EntryExitPointExternalLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EntryExitPointExternalLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.5">
+          <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -616,6 +654,15 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.12">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -669,6 +716,15 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.13">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -824,7 +880,7 @@
             parser="//@labelParsers/@implementations.9"/>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.15"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.17"/>
     </links>
     <compartments
         visualID="7014"
@@ -1267,6 +1323,10 @@
       <expressions
           body="(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.attributes->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.attributes->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.eType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.eType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)"/>
       <expressions
+          body="'stateentrypoint'"/>
+      <expressions
+          body="'stateexitpoint'"/>
+      <expressions
           body="'entrypoint'"/>
       <expressions
           body="'exitpoint'"/>
@@ -1325,7 +1385,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
@@ -1338,7 +1398,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
         className="FujabaRealtimeStatechartLabelExpressionLabelParser5019"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
     </implementations>
@@ -1346,7 +1406,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.0/@modelFacet"
         className="TransitionLabelExpressionLabelParser6001"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
@@ -1354,7 +1414,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
         className="TransitionLabelExpressionLabelParser6002"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>

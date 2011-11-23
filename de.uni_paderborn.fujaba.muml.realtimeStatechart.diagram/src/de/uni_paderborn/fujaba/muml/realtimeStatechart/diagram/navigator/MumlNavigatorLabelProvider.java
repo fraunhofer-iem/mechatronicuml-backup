@@ -82,48 +82,48 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?Region", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Region_3006); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?FujabaRealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.FujabaRealtimeStatechart_2004); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?SynchronizationChannel", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3005); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?EntryPoint", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3012); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?StateEntryPoint", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateEntryPoint_3008); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://de.fujaba.modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?ExitEvent", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitEvent_3003); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?EntryEvent", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryEvent_3001); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?StateExitPoint", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateExitPoint_3009); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?SynchronizationChannel", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3005); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?FujabaRealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.FujabaRealtimeStatechart_3011); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?State", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3010); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?DoEvent", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.DoEvent_3002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?Transition", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4001); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?EntryPoint", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3012); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?FujabaRealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.FujabaRealtimeStatechart_2004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?ClockConstraint", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ClockConstraint_3004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?ExitPoint", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3013); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?StateEntryPoint", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateEntryPoint_3008); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?State", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3010); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?FujabaRealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.FujabaRealtimeStatechart_3011); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?EntryEvent", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryEvent_3001); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart?DoEvent", de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.DoEvent_3002); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -182,34 +182,34 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
 			return getRegion_3006Text(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID:
-			return getFujabaRealtimeStatechart_2004Text(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+			return getSynchronizationChannel_3005Text(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+			return getEntryPoint_3012Text(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
+			return getStateEntryPoint_3008Text(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getModelElementCategory_1000Text(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
 			return getExitEvent_3003Text(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+			return getEntryEvent_3001Text(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
 			return getStateExitPoint_3009Text(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
-			return getSynchronizationChannel_3005Text(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID:
+			return getFujabaRealtimeStatechart_3011Text(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+			return getState_3010Text(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+			return getDoEvent_3002Text(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getTransition_4001Text(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-			return getEntryPoint_3012Text(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID:
+			return getFujabaRealtimeStatechart_2004Text(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
 			return getClockConstraint_3004Text(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
 			return getExitPoint_3013Text(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
-			return getStateEntryPoint_3008Text(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getState_3010Text(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID:
-			return getFujabaRealtimeStatechart_3011Text(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return getEntryEvent_3001Text(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-			return getDoEvent_3002Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -262,15 +262,20 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getStateEntryPoint_3008Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint domainModelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateEntryPoint_3008,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3008); //$NON-NLS-1$
+					.getInstance().logError(
+							"Parser was not found for label " + 5022); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -340,15 +345,20 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getStateExitPoint_3009Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint domainModelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateExitPoint_3009,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3009); //$NON-NLS-1$
+					.getInstance().logError(
+							"Parser was not found for label " + 5023); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

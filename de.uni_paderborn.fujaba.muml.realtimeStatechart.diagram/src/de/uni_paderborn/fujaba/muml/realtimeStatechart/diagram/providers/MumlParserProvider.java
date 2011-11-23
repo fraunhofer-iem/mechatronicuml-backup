@@ -204,6 +204,44 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected IParser stateEntryPointName_5022Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getStateEntryPointName_5022Parser() {
+		if (stateEntryPointName_5022Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			stateEntryPointName_5022Parser = parser;
+		}
+		return stateEntryPointName_5022Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser stateExitPointName_5023Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getStateExitPointName_5023Parser() {
+		if (stateExitPointName_5023Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			stateExitPointName_5023Parser = parser;
+		}
+		return stateExitPointName_5023Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser entryPointName_5020Parser;
 
 	/**
@@ -296,6 +334,10 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getRegionPriority_5011Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
 			return getRegionLabel_5012Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart.VISUAL_ID:
+			return getStateEntryPointName_5022Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointNameEditPart.VISUAL_ID:
+			return getStateExitPointName_5023Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointNameEditPart.VISUAL_ID:
 			return getEntryPointName_5020Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointNameEditPart.VISUAL_ID:

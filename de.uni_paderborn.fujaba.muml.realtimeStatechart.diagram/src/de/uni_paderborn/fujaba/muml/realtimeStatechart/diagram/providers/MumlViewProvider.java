@@ -795,6 +795,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5022 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart.VISUAL_ID));
+		label5022.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5022 = (Location) label5022.getLayoutConstraint();
+		location5022.setX(0);
+		location5022.setY(5);
 		return node;
 	}
 
@@ -837,6 +846,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5023 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointNameEditPart.VISUAL_ID));
+		label5023.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5023 = (Location) label5023.getLayoutConstraint();
+		location5023.setX(0);
+		location5023.setY(5);
 		return node;
 	}
 
