@@ -528,7 +528,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "OrderOnlyForMultiPort", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.infinity)",
+			 "OrderOnlyForMultiPort", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)",
 			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')"
 		   });									
 	}

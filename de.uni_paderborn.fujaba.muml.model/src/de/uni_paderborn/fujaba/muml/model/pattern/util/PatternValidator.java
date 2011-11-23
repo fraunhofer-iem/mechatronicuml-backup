@@ -186,7 +186,7 @@ public class PatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__ORDER_ONLY_FOR_MULTI_PORT__EEXPRESSION = "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.infinity)";
+	protected static final String ROLE__ORDER_ONLY_FOR_MULTI_PORT__EEXPRESSION = "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)";
 
 	/**
 	 * Validates the OrderOnlyForMultiPort constraint of '<em>Role</em>'.

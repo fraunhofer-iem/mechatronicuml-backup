@@ -1004,7 +1004,7 @@
           <details key="constraints" value="OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="OrderOnlyForMultiPort" value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.infinity)"/>
+          <details key="OrderOnlyForMultiPort" value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
           <details key="OrderedRequiresIntegerOrderVariable" value="self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType ='EInt')"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
