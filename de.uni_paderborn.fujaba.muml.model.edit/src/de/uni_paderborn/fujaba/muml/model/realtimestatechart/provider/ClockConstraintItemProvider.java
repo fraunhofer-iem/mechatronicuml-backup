@@ -27,15 +27,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.modeling.expressions.ComparingOperator;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.ClockPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint} object.
@@ -113,7 +111,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 	 * @generated NOT
 	 */
 	protected void addClockPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+		itemPropertyDescriptors.add(new ClockPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
@@ -122,35 +120,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 						"_UI_ClockConstraint_clock_feature",
 						"_UI_ClockConstraint_type"),
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
-				true, false, true, null, null, null) {
-
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) { 
-				Collection<?> choices = super.getChoiceOfValues(object);
-				List<Object> invalidChoices = new ArrayList<Object>();
-				FujabaRealtimeStatechart rtsc = getContainerStatechart((EObject) object);
-				if (rtsc != null) {
-					for (Object choice : choices) {
-						if (choice != null) {
-							Clock clock = (Clock) choice;
-							if (!clock.getStatechart().isSuperStatechartOf(rtsc)) {
-								invalidChoices.add(choice);
-							}
-						}
-					}
-				}
-				choices.removeAll(invalidChoices);
-				return choices;
-			}
-
-			private FujabaRealtimeStatechart getContainerStatechart(
-					EObject object) {
-				while (object != null && !(object instanceof FujabaRealtimeStatechart)) {
-					object = object.eContainer();
-				}
-				return (FujabaRealtimeStatechart) object;
-			}
-		});
+				true, false, true, null, null, null));
 	}
 
 	/**
