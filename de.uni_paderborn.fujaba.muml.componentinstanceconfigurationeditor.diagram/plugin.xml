@@ -159,7 +159,12 @@
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
-      <?gmfgen generated="true"?>   
+      
+      <!-- MANUALLY REMOVED: -->
+      
+      <!--
+      <?gmfgen generated="true"?>
+      -->   
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
@@ -181,6 +186,10 @@
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
             tab="property.tab.DiagramPropertySection">
          </propertySection>     
+         
+         <!-- MANUALLY REMOVED: -->
+         
+         <!--
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
@@ -189,6 +198,7 @@
             <input type="org.eclipse.gef.EditPart"/>
             <input type="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
          </propertySection>
+         -->
       </propertySections>
    </extension>
 
