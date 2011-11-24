@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.util;
 
-import de.uni_paderborn.fujaba.muml.model.instance.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -16,8 +15,6 @@ import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding;
-import de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
@@ -27,8 +24,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
