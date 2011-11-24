@@ -21,14 +21,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5002 componentInstanceLabel_5002Parser;
+	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser componentInstanceLabel_5002Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getComponentInstanceLabel_5002Parser() {
 		if (componentInstanceLabel_5002Parser == null) {
-			componentInstanceLabel_5002Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5002();
+			componentInstanceLabel_5002Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser();
 		}
 		return componentInstanceLabel_5002Parser;
 	}

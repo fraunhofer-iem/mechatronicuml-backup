@@ -568,115 +568,6 @@ public interface InstancePackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortInstanceImpl <em>Hardware Port Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHardwarePortInstance()
-	 * @generated
-	 */
-	int HARDWARE_PORT_INSTANCE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__NAME = PORT_INSTANCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__COMMENT = PORT_INSTANCE__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Port Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__PORT_TYPE = PORT_INSTANCE__PORT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__CONNECTOR_INSTANCES = PORT_INSTANCE__CONNECTOR_INSTANCES;
-
-	/**
-	 * The number of structural features of the '<em>Hardware Port Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -684,7 +575,7 @@ public interface InstancePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getContinuousPortInstance()
 	 * @generated
 	 */
-	int CONTINUOUS_PORT_INSTANCE = 7;
+	int CONTINUOUS_PORT_INSTANCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -793,7 +684,7 @@ public interface InstancePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscretePortInstance()
 	 * @generated
 	 */
-	int DISCRETE_PORT_INSTANCE = 9;
+	int DISCRETE_PORT_INSTANCE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -920,7 +811,7 @@ public interface InstancePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHybridPortInstance()
 	 * @generated
 	 */
-	int HYBRID_PORT_INSTANCE = 8;
+	int HYBRID_PORT_INSTANCE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1047,7 +938,7 @@ public interface InstancePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscreteSinglePortInstance()
 	 * @generated
 	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE = 10;
+	int DISCRETE_SINGLE_PORT_INSTANCE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1183,7 +1074,7 @@ public interface InstancePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscreteMultiPortInstance()
 	 * @generated
 	 */
-	int DISCRETE_MULTI_PORT_INSTANCE = 11;
+	int DISCRETE_MULTI_PORT_INSTANCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1319,7 +1210,7 @@ public interface InstancePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getBehavioralElementInstance()
 	 * @generated
 	 */
-	int BEHAVIORAL_ELEMENT_INSTANCE = 12;
+	int BEHAVIORAL_ELEMENT_INSTANCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
@@ -1585,16 +1476,6 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInstanceConfiguration_ParentPortInstancesDerived();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance <em>Hardware Port Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hardware Port Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance
-	 * @generated
-	 */
-	EClass getHardwarePortInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance <em>Continuous Port Instance</em>}'.
@@ -1928,16 +1809,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED = eINSTANCE.getComponentInstanceConfiguration_ParentPortInstancesDerived();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortInstanceImpl <em>Hardware Port Instance</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHardwarePortInstance()
-		 * @generated
-		 */
-		EClass HARDWARE_PORT_INSTANCE = eINSTANCE.getHardwarePortInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.

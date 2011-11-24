@@ -139,11 +139,6 @@ public class MumlVisualIDRegistry {
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-					.getHardwarePortInstance().isSuperTypeOf(
-							domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstance2EditPart.VISUAL_ID;
-			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
@@ -160,11 +155,6 @@ public class MumlVisualIDRegistry {
 					.getContinuousPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID;
-			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-					.getHardwarePortInstance().isSuperTypeOf(
-							domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -207,9 +197,6 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstance2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
@@ -222,9 +209,6 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

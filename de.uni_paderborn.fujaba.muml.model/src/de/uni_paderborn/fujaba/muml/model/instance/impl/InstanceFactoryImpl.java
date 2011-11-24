@@ -77,7 +77,6 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 			case InstancePackage.ASSEMBLY_INSTANCE: return createAssemblyInstance();
 			case InstancePackage.DELEGATION_INSTANCE: return createDelegationInstance();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION: return createComponentInstanceConfiguration();
-			case InstancePackage.HARDWARE_PORT_INSTANCE: return createHardwarePortInstance();
 			case InstancePackage.CONTINUOUS_PORT_INSTANCE: return createContinuousPortInstance();
 			case InstancePackage.HYBRID_PORT_INSTANCE: return createHybridPortInstance();
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE: return createDiscreteSinglePortInstance();
@@ -135,16 +134,6 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	public ComponentInstanceConfiguration createComponentInstanceConfiguration() {
 		ComponentInstanceConfigurationImpl componentInstanceConfiguration = new ComponentInstanceConfigurationImpl();
 		return componentInstanceConfiguration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HardwarePortInstance createHardwarePortInstance() {
-		HardwarePortInstanceImpl hardwarePortInstance = new HardwarePortInstanceImpl();
-		return hardwarePortInstance;
 	}
 
 	/**

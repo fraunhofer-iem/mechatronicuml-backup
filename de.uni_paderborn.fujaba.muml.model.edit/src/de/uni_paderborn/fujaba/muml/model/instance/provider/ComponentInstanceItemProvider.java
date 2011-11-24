@@ -232,11 +232,6 @@ public class ComponentInstanceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
-				 InstanceFactory.eINSTANCE.createHardwarePortInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
 				 InstanceFactory.eINSTANCE.createContinuousPortInstance()));
 
 		newChildDescriptors.add

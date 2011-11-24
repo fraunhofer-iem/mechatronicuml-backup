@@ -42,7 +42,7 @@
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.6"/>
+              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="componentinstanceconfiguration.gmfgraph#Port"/>
         </ownedChild>
@@ -95,30 +95,6 @@
               href="componentinstanceconfiguration.gmfgraph#Port"/>
         </ownedChild>
       </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/portInstances"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortInstance"/>
-          <domainInitializer
-              xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
-              <value
-                  body="'portinstance'"/>
-            </initializers>
-          </domainInitializer>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.4"/>
-          <diagramNode
-              href="componentinstanceconfiguration.gmfgraph#Port"/>
-        </ownedChild>
-      </children>
     </ownedChild>
   </nodes>
   <nodes>
@@ -138,6 +114,9 @@
               body="'portinstance'"/>
         </initializers>
       </domainInitializer>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="componentinstanceconfiguration.gmfgraph#Port"/>
     </ownedChild>
@@ -169,27 +148,6 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ContinuousPortInstance"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
-          <value
-              body="'portinstance'"/>
-        </initializers>
-      </domainInitializer>
-      <diagramNode
-          href="componentinstanceconfiguration.gmfgraph#Port"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
-    <ownedChild>
-      <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortInstance"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers

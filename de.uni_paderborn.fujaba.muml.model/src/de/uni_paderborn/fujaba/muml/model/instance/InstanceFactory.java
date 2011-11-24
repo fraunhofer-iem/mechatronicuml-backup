@@ -71,15 +71,6 @@ public interface InstanceFactory extends EFactory {
 	ComponentInstanceConfiguration createComponentInstanceConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>Hardware Port Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hardware Port Instance</em>'.
-	 * @generated
-	 */
-	HardwarePortInstance createHardwarePortInstance();
-
-	/**
 	 * Returns a new object of class '<em>Continuous Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

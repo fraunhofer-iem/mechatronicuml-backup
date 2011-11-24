@@ -288,32 +288,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String HardwarePortInstance5CreationTool_title;
+	public static String ContinuousPortInstance5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HardwarePortInstance5CreationTool_desc;
+	public static String ContinuousPortInstance5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ContinuousPortInstance6CreationTool_title;
+	public static String HybridPortInstance6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ContinuousPortInstance6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String HybirdPortInstance7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String HybirdPortInstance7CreationTool_desc;
+	public static String HybridPortInstance6CreationTool_desc;
 
 	/**
 	 * @generated
@@ -369,26 +359,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HardwarePortInstance_3013_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HardwarePortInstance_3013_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HardwarePortInstance_2006_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HardwarePortInstance_2006_outgoinglinks;
 
 	/**
 	 * @generated

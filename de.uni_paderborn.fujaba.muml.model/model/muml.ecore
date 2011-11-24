@@ -778,11 +778,6 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HardwarePortInstance" eSuperTypes="#//model/instance/PortInstance">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a hardware port at instance level. The port type of an hardware&#xD;&#xA;port instance must be a hardware port."/>
-        </eAnnotations>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//model/instance/PortInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a continuous port at instance level. The port type of a&#xD;&#xA;continuous port instance must be a continuous port."/>

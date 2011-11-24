@@ -8,8 +8,6 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstance2EditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.MumlEditPartFactory;
@@ -35,12 +33,6 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 				
 			case DiscreteSinglePortInstance2EditPart.VISUAL_ID:
 				return new CustomDiscreteSinglePortInstance2EditPart(view);
-				
-			case HardwarePortInstanceEditPart.VISUAL_ID:
-				return new CustomHardwarePortInstanceEditPart(view);
-				
-			case HardwarePortInstance2EditPart.VISUAL_ID:
-				return new CustomHardwarePortInstance2EditPart(view);
 				
 			case ContinuousPortInstanceEditPart.VISUAL_ID:
 				return new CustomContinuousPortInstanceEditPart(view);

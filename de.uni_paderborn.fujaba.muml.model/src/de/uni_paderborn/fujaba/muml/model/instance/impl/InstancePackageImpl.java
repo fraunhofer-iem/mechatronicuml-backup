@@ -103,13 +103,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass hardwarePortInstanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass continuousPortInstanceEClass = null;
 
 	/**
@@ -449,15 +442,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHardwarePortInstance() {
-		return hardwarePortInstanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getContinuousPortInstance() {
 		return continuousPortInstanceEClass;
 	}
@@ -609,8 +593,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(componentInstanceConfigurationEClass, COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES);
 		createEReference(componentInstanceConfigurationEClass, COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED);
 
-		hardwarePortInstanceEClass = createEClass(HARDWARE_PORT_INSTANCE);
-
 		continuousPortInstanceEClass = createEClass(CONTINUOUS_PORT_INSTANCE);
 
 		hybridPortInstanceEClass = createEClass(HYBRID_PORT_INSTANCE);
@@ -674,7 +656,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		assemblyInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		delegationInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		componentInstanceConfigurationEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
-		hardwarePortInstanceEClass.getESuperTypes().add(this.getPortInstance());
 		continuousPortInstanceEClass.getESuperTypes().add(this.getPortInstance());
 		hybridPortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
 		hybridPortInstanceEClass.getESuperTypes().add(this.getContinuousPortInstance());
@@ -713,8 +694,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getComponentInstanceConfiguration_ParentPortInstancesDerived(), this.getPortInstance(), null, "parentPortInstancesDerived", null, 0, -1, ComponentInstanceConfiguration.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(componentInstanceConfigurationEClass, this.getPortInstance(), "getParentPortInstances", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(hardwarePortInstanceEClass, HardwarePortInstance.class, "HardwarePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(continuousPortInstanceEClass, ContinuousPortInstance.class, "ContinuousPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -758,7 +737,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																									
+		   });																																								
 	}
 
 	/**
@@ -792,7 +771,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "getParentPortInstances()\r\n"
-		   });							
+		   });						
 		addAnnotation
 		  (getDiscretePortInstance_ReceiverMessageInterface(), 
 		   source, 

@@ -159,17 +159,6 @@ public class InstanceSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InstancePackage.HARDWARE_PORT_INSTANCE: {
-				HardwarePortInstance hardwarePortInstance = (HardwarePortInstance)theEObject;
-				T result = caseHardwarePortInstance(hardwarePortInstance);
-				if (result == null) result = casePortInstance(hardwarePortInstance);
-				if (result == null) result = caseNamedElement(hardwarePortInstance);
-				if (result == null) result = caseCommentableElement(hardwarePortInstance);
-				if (result == null) result = caseBehavioralElementInstance(hardwarePortInstance);
-				if (result == null) result = caseExtendableElement(hardwarePortInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case InstancePackage.CONTINUOUS_PORT_INSTANCE: {
 				ContinuousPortInstance continuousPortInstance = (ContinuousPortInstance)theEObject;
 				T result = caseContinuousPortInstance(continuousPortInstance);
@@ -326,21 +315,6 @@ public class InstanceSwitch<T> {
 	 * @generated
 	 */
 	public T caseComponentInstanceConfiguration(ComponentInstanceConfiguration object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hardware Port Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hardware Port Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHardwarePortInstance(HardwarePortInstance object) {
 		return null;
 	}
 

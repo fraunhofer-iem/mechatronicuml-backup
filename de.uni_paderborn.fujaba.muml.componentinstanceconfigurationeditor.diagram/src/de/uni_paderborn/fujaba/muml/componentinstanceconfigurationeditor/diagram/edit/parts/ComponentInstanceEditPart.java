@@ -96,7 +96,6 @@ public class ComponentInstanceEditPart extends AbstractBorderedShapeEditPart {
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -168,15 +167,6 @@ public class ComponentInstanceEditPart extends AbstractBorderedShapeEditPart {
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
 		return false;
 	}
 
@@ -205,13 +195,6 @@ public class ComponentInstanceEditPart extends AbstractBorderedShapeEditPart {
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart) childEditPart)
-							.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart) childEditPart)
 							.getFigure());
 			return true;
 		}

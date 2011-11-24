@@ -190,29 +190,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected HardwarePortInstanceItemProvider hardwarePortInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createHardwarePortInstanceAdapter() {
-		if (hardwarePortInstanceItemProvider == null) {
-			hardwarePortInstanceItemProvider = new HardwarePortInstanceItemProvider(this);
-		}
-
-		return hardwarePortInstanceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -408,7 +385,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		if (assemblyInstanceItemProvider != null) assemblyInstanceItemProvider.dispose();
 		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
 		if (componentInstanceConfigurationItemProvider != null) componentInstanceConfigurationItemProvider.dispose();
-		if (hardwarePortInstanceItemProvider != null) hardwarePortInstanceItemProvider.dispose();
 		if (continuousPortInstanceItemProvider != null) continuousPortInstanceItemProvider.dispose();
 		if (hybridPortInstanceItemProvider != null) hybridPortInstanceItemProvider.dispose();
 		if (discreteSinglePortInstanceItemProvider != null) discreteSinglePortInstanceItemProvider.dispose();

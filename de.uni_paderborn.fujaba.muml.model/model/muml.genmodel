@@ -228,7 +228,6 @@
           <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
           <genOperations ecoreOperation="muml.ecore#//model/instance/ComponentInstanceConfiguration/getParentPortInstances"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/instance/HardwarePortInstance"/>
         <genClasses ecoreClass="muml.ecore#//model/instance/ContinuousPortInstance"/>
         <genClasses ecoreClass="muml.ecore#//model/instance/HybridPortInstance"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/instance/DiscretePortInstance">
