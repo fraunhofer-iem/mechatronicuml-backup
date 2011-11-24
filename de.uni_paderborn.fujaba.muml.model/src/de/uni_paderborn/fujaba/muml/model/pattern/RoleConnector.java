@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import java.util.Iterator;
-
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
@@ -28,10 +26,10 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isFlat <em>Flat</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -121,30 +119,20 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	EList<Clock> getClocks();
 
 	/**
-	 * Returns the value of the '<em><b>Available Clocks</b></em>' attribute.
+	 * Returns the value of the '<em><b>Available Clocks</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.
 	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Available Clocks</em>' attribute.
-	 * @see #setAvailableClocks(Iterator)
+	 * @return the value of the '<em>Available Clocks</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_AvailableClocks()
-	 * @model dataType="de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.Iterator" derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks'"
 	 * @generated
 	 */
-	Iterator getAvailableClocks();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Available Clocks</em>' attribute.
-	 * @see #getAvailableClocks()
-	 * @generated
-	 */
-	void setAvailableClocks(Iterator value);
+	Clock getAvailableClocks();
 
 	/**
 	 * Returns the value of the '<em><b>History</b></em>' attribute.

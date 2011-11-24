@@ -1440,12 +1440,6 @@
             <details key="documentation" value="The clocks of this realtime statechart."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableClocks" eType="#//model/realtimestatechart/helper/Iterator"
-            derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart."/>
@@ -1464,6 +1458,15 @@
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This derived attribute allows to checks whether a statechart is flat or not. In a&#xD;&#xA;flat statechart, none of the contained states contains a regions with an embedded&#xD;&#xA;substatechart."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="availableClocks" eType="#//model/realtimestatechart/Clock"
+            changeable="false" volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1609,10 +1612,6 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
             eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/stateExitPoints"/>
       </eClassifiers>
-      <eSubpackages name="helper" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper"
-          nsPrefix="helper">
-        <eClassifiers xsi:type="ecore:EDataType" name="Iterator" instanceClassName="java.util.Iterator"/>
-      </eSubpackages>
     </eSubpackages>
     <eSubpackages name="msgiface" nsURI="http:///de/uni_paderborn/fujaba/muml/model/msgiface"
         nsPrefix="msgiface">

@@ -65,8 +65,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl.HelperPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.util.RealtimestatechartValidator;
 
 /**
@@ -334,7 +332,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
-		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) : HelperPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
 		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 
@@ -345,7 +342,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		theCorePackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		thePatternPackage.createPackageContents();
-		theHelperPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
 		theDeploymentPackage.createPackageContents();
 
@@ -356,7 +352,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		theCorePackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		thePatternPackage.initializePackageContents();
-		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
 		theDeploymentPackage.initializePackageContents();
 
@@ -1049,8 +1044,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFujabaRealtimeStatechart_AvailableClocks() {
-		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(4);
+	public EReference getFujabaRealtimeStatechart_AvailableClocks() {
+		return (EReference)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1059,7 +1054,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getFujabaRealtimeStatechart_History() {
-		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1068,7 +1063,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getFujabaRealtimeStatechart_EventQueueSize() {
-		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1077,7 +1072,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getFujabaRealtimeStatechart_Flat() {
-		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1360,10 +1355,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__TRANSITIONS);
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__VERTICES);
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__CLOCKS);
-		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS);
 		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__HISTORY);
 		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE);
 		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__FLAT);
+		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS);
 
 		eventEClass = createEClass(EVENT);
 		createEAttribute(eventEClass, EVENT__KIND);
@@ -1420,16 +1415,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		HelperPackage theHelperPackage = (HelperPackage)EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theHelperPackage);
 
 		// Create type parameters
 
@@ -1557,10 +1548,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getFujabaRealtimeStatechart_Transitions(), this.getTransition(), this.getTransition_Statechart(), "transitions", null, 0, -1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFujabaRealtimeStatechart_Vertices(), this.getVertex(), this.getVertex_Statechart(), "vertices", null, 0, -1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFujabaRealtimeStatechart_Clocks(), this.getClock(), this.getClock_Statechart(), "clocks", null, 0, -1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFujabaRealtimeStatechart_AvailableClocks(), theHelperPackage.getIterator(), "availableClocks", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFujabaRealtimeStatechart_History(), ecorePackage.getEBoolean(), "history", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFujabaRealtimeStatechart_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFujabaRealtimeStatechart_Flat(), theEcorePackage.getEBoolean(), "flat", "false", 0, 1, FujabaRealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFujabaRealtimeStatechart_AvailableClocks(), this.getClock(), null, "availableClocks", null, 0, 1, FujabaRealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(fujabaRealtimeStatechartEClass, ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getFujabaRealtimeStatechart(), "statechart", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1643,7 +1634,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueNameOfStates MinOneState NoCycles"
-		   });																									
+		   });																										
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 
@@ -1758,13 +1749,19 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniqueNameOfStates", "self.vertices.oclAsType(State)->isUnique(name) ",
 			 "MinOneState", "self.vertices.oclAsType(State)->notEmpty()",
 			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"
-		   });									
+		   });								
 		addAnnotation
 		  (getFujabaRealtimeStatechart_Flat(), 
 		   source, 
 		   new String[] {
 			 "derivation", "not(vertices -> exists( v : Vertex | v.oclIsTypeOf(State) implies v.oclAsType(State).regions -> notEmpty()))"
-		   });												
+		   });				
+		addAnnotation
+		  (getFujabaRealtimeStatechart_AvailableClocks(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks"
+		   });											
 		addAnnotation
 		  (getMessage_InstanceOf(), 
 		   source, 

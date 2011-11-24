@@ -397,10 +397,10 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
           <genFeatures children="true" createChild="true" propertyCategory="General"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
-          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/availableClocks"/>
           <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/history"/>
           <genFeatures createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/eventQueueSize"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/flat"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/availableClocks"/>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/isSuperStatechartOf">
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/isSuperStatechartOf/statechart"/>
           </genOperations>
@@ -428,10 +428,6 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoint"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateExitPoint/state"/>
         </genClasses>
-        <nestedGenPackages prefix="Helper" basePackage="de.uni_paderborn.fujaba.muml.model.realtimestatechart"
-            disposableProviderFactory="true" ecorePackage="muml.ecore#//model/realtimestatechart/helper">
-          <genDataTypes ecoreDataType="muml.ecore#//model/realtimestatechart/helper/Iterator"/>
-        </nestedGenPackages>
       </nestedGenPackages>
       <nestedGenPackages prefix="Msgiface" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/msgiface">

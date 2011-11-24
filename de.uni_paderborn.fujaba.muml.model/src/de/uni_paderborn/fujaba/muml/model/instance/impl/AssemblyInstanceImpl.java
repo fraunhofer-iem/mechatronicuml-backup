@@ -17,7 +17,6 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 
 /**
  * <!-- begin-user-doc -->

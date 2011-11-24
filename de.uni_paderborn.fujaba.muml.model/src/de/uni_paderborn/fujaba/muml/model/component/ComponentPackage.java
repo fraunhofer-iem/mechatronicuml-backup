@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.modeling.SDMPackage;
 
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.

@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.modeling.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;

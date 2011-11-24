@@ -35,8 +35,5 @@ Export-Package: de.uni_paderborn.fujaba.muml.model.component,
  de.uni_paderborn.fujaba.muml.model.pattern.impl,
  de.uni_paderborn.fujaba.muml.model.pattern.util,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart,
- de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper,
- de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl,
- de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.util,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.util

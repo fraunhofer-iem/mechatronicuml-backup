@@ -1445,22 +1445,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FUJABA_REALTIME_STATECHART__CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Available Clocks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>History</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__HISTORY = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 5;
+	int FUJABA_REALTIME_STATECHART__HISTORY = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
@@ -1469,7 +1460,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 6;
+	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Flat</b></em>' attribute.
@@ -1478,7 +1469,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__FLAT = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 7;
+	int FUJABA_REALTIME_STATECHART__FLAT = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Available Clocks</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Fujaba Realtime Statechart</em>' class.
@@ -2800,15 +2800,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getFujabaRealtimeStatechart_Clocks();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Available Clocks</em>'.
+	 * @return the meta object for the reference '<em>Available Clocks</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks()
 	 * @see #getFujabaRealtimeStatechart()
 	 * @generated
 	 */
-	EAttribute getFujabaRealtimeStatechart_AvailableClocks();
+	EReference getFujabaRealtimeStatechart_AvailableClocks();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}'.
@@ -3678,12 +3678,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference FUJABA_REALTIME_STATECHART__CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_Clocks();
 
 		/**
-		 * The meta object literal for the '<em><b>Available Clocks</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Available Clocks</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_AvailableClocks();
+		EReference FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_AvailableClocks();
 
 		/**
 		 * The meta object literal for the '<em><b>History</b></em>' attribute feature.

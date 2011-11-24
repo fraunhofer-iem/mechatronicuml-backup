@@ -253,10 +253,10 @@ public class FujabaRealtimeStatechartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FujabaRealtimeStatechart.class)) {
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__FLAT:
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
