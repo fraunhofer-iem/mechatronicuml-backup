@@ -73,7 +73,7 @@ public interface ContinuousPort extends Port {
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(EDataType)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getContinuousPort_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EDataType getType();
