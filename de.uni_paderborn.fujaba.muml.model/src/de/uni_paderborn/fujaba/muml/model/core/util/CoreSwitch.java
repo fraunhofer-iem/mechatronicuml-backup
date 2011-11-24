@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -25,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.Infinity;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
 /**
@@ -114,12 +112,6 @@ public class CoreSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CorePackage.INFINITY: {
-				Infinity infinity = (Infinity)theEObject;
-				T result = caseInfinity(infinity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CorePackage.BEHAVIORAL_ELEMENT: {
 				BehavioralElement behavioralElement = (BehavioralElement)theEObject;
 				T result = caseBehavioralElement(behavioralElement);
@@ -190,21 +182,6 @@ public class CoreSwitch<T> {
 	 * @generated
 	 */
 	public T caseCardinality(Cardinality object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Infinity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Infinity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInfinity(Infinity object) {
 		return null;
 	}
 

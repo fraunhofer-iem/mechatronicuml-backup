@@ -431,17 +431,12 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents either a natural number or infinity.&#xD;&#xA;TODO-SD: Do we really need that class?"/>
         </eAnnotations>
-        <eOperations name="getValueAsObject" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Dependend on whether this object represents a natural number or infinity an object of type &quot;Long&quot; or &quot;Infinity&quot; is returned."/>
-          </eAnnotations>
-        </eOperations>
-        <eOperations name="setValue">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Set the value to infinity."/>
-          </eAnnotations>
-          <eParameters name="o" eType="#//model/core/Infinity"/>
-        </eOperations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="ValueGreaterOrEqualZero"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ValueGreaterOrEqualZero" value="self.value >= 0"/>
+        </eAnnotations>
         <eOperations name="setValue">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Set the value to the value of the given parameter."/>
@@ -461,12 +456,14 @@
         <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eParameters name="o" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
         </eOperations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+            defaultValueLiteral="1">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The value of this natural number."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="infinity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="infinity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            defaultValueLiteral="false">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Determins whether this natural number represents infinity."/>
           </eAnnotations>
@@ -494,45 +491,6 @@
             <details key="documentation" value="The upper bound of this cardinality."/>
           </eAnnotations>
         </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Infinity">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class extends java.lang.Number by the capability to represent infinity."/>
-        </eAnnotations>
-        <eOperations name="byteValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Yields Byte.MAX_VALUE."/>
-          </eAnnotations>
-        </eOperations>
-        <eOperations name="doubleValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Yields Double.MAX_VALUE."/>
-          </eAnnotations>
-        </eOperations>
-        <eOperations name="floatValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Yields Float.MAX_VALUE."/>
-          </eAnnotations>
-        </eOperations>
-        <eOperations name="intValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Yields Integer.MAX_VALUE."/>
-          </eAnnotations>
-        </eOperations>
-        <eOperations name="longValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Yields Long.MAX_VALUE."/>
-          </eAnnotations>
-        </eOperations>
-        <eOperations name="shortValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Yields Short.MAX_VALUE."/>
-          </eAnnotations>
-        </eOperations>
-        <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-          <eParameters name="o" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-        </eOperations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BehavioralElement" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

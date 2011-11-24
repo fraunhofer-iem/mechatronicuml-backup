@@ -129,12 +129,8 @@
         <genClasses ecoreClass="muml.ecore#//model/core/NaturalNumber">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/NaturalNumber/value"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/NaturalNumber/infinity"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/getValueAsObject"/>
           <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/setValue">
-            <genParameters ecoreParameter="muml.ecore#//model/core/NaturalNumber/setValue/o"/>
-          </genOperations>
-          <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/setValue.1">
-            <genParameters ecoreParameter="muml.ecore#//model/core/NaturalNumber/setValue.1/value"/>
+            <genParameters ecoreParameter="muml.ecore#//model/core/NaturalNumber/setValue/value"/>
           </genOperations>
           <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/longValue"/>
           <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/toString"/>
@@ -145,18 +141,6 @@
         <genClasses ecoreClass="muml.ecore#//model/core/Cardinality">
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Cardinality/lowerBound"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Cardinality/upperBound"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/core/Infinity">
-          <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/byteValue"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/doubleValue"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/floatValue"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/intValue"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/longValue"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/shortValue"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/toString"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/equals">
-            <genParameters ecoreParameter="muml.ecore#//model/core/Infinity/equals/o"/>
-          </genOperations>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/core/BehavioralElement">
           <genFeatures notify="false" createChild="false" propertyCategory="Behavior"

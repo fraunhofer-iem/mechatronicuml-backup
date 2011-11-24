@@ -44,15 +44,6 @@ public interface CoreFactory extends EFactory {
 	Cardinality createCardinality();
 
 	/**
-	 * Returns a new object of class '<em>Infinity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Infinity</em>'.
-	 * @generated
-	 */
-	Infinity createInfinity();
-
-	/**
 	 * Returns a new object of class '<em>Activity Call Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

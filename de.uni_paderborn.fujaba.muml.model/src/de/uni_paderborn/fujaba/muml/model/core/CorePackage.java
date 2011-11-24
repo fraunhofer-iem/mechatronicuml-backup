@@ -144,25 +144,6 @@ public interface CorePackage extends EPackage {
 	int CARDINALITY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.InfinityImpl <em>Infinity</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.InfinityImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getInfinity()
-	 * @generated
-	 */
-	int INFINITY = 2;
-
-	/**
-	 * The number of structural features of the '<em>Infinity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFINITY_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl <em>Behavioral Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,7 +151,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getBehavioralElement()
 	 * @generated
 	 */
-	int BEHAVIORAL_ELEMENT = 3;
+	int BEHAVIORAL_ELEMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -198,7 +179,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getConstrainableElement()
 	 * @generated
 	 */
-	int CONSTRAINABLE_ELEMENT = 4;
+	int CONSTRAINABLE_ELEMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -226,7 +207,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAbstractRealtimeStatechart()
 	 * @generated
 	 */
-	int ABSTRACT_REALTIME_STATECHART = 5;
+	int ABSTRACT_REALTIME_STATECHART = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -345,7 +326,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 6;
+	int BEHAVIOR = 5;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -391,7 +372,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getActivityCallExpression()
 	 * @generated
 	 */
-	int ACTIVITY_CALL_EXPRESSION = 7;
+	int ACTIVITY_CALL_EXPRESSION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -537,16 +518,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCardinality_UpperBound();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.Infinity <em>Infinity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Infinity</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Infinity
-	 * @generated
-	 */
-	EClass getInfinity();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement <em>Behavioral Element</em>}'.
@@ -781,16 +752,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference CARDINALITY__UPPER_BOUND = eINSTANCE.getCardinality_UpperBound();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.InfinityImpl <em>Infinity</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.InfinityImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getInfinity()
-		 * @generated
-		 */
-		EClass INFINITY = eINSTANCE.getInfinity();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl <em>Behavioral Element</em>}' class.

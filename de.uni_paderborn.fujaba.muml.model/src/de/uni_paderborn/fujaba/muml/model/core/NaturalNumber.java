@@ -27,12 +27,14 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getNaturalNumber()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValueGreaterOrEqualZero'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValueGreaterOrEqualZero='self.value >= 0'"
  * @generated
  */
 public interface NaturalNumber extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -41,7 +43,7 @@ public interface NaturalNumber extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(long)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getNaturalNumber_Value()
-	 * @model
+	 * @model default="1"
 	 * @generated
 	 */
 	long getValue();
@@ -58,6 +60,7 @@ public interface NaturalNumber extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Infinity</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -66,7 +69,7 @@ public interface NaturalNumber extends EObject {
 	 * @return the value of the '<em>Infinity</em>' attribute.
 	 * @see #setInfinity(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getNaturalNumber_Infinity()
-	 * @model
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isInfinity();
@@ -80,28 +83,6 @@ public interface NaturalNumber extends EObject {
 	 * @generated
 	 */
 	void setInfinity(boolean value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Dependend on whether this object represents a natural number or infinity an object of type "Long" or "Infinity" is returned.
-	 * <!-- end-model-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	EObject getValueAsObject();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Set the value to infinity.
-	 * <!-- end-model-doc -->
-	 * @model
-	 * @generated
-	 */
-	void setValue(Infinity o);
 
 	/**
 	 * <!-- begin-user-doc -->

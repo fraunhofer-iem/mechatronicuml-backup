@@ -121,29 +121,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.Infinity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InfinityItemProvider infinityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.Infinity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createInfinityAdapter() {
-		if (infinityItemProvider == null) {
-			infinityItemProvider = new InfinityItemProvider(this);
-		}
-
-		return infinityItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -267,7 +244,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	public void dispose() {
 		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
 		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
-		if (infinityItemProvider != null) infinityItemProvider.dispose();
 		if (activityCallExpressionItemProvider != null) activityCallExpressionItemProvider.dispose();
 	}
 

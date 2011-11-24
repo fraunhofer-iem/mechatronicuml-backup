@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -22,7 +21,6 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.Infinity;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
 /**
@@ -101,8 +99,6 @@ public class CoreValidator extends EObjectValidator {
 				return validateNaturalNumber((NaturalNumber)value, diagnostics, context);
 			case CorePackage.CARDINALITY:
 				return validateCardinality((Cardinality)value, diagnostics, context);
-			case CorePackage.INFINITY:
-				return validateInfinity((Infinity)value, diagnostics, context);
 			case CorePackage.BEHAVIORAL_ELEMENT:
 				return validateBehavioralElement((BehavioralElement)value, diagnostics, context);
 			case CorePackage.CONSTRAINABLE_ELEMENT:
@@ -124,7 +120,46 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateNaturalNumber(NaturalNumber naturalNumber, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(naturalNumber, diagnostics, context);
+		if (!validate_NoCircularContainment(naturalNumber, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNaturalNumber_ValueGreaterOrEqualZero(naturalNumber, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValueGreaterOrEqualZero constraint of '<em>Natural Number</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String NATURAL_NUMBER__VALUE_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "self.value >= 0";
+
+	/**
+	 * Validates the ValueGreaterOrEqualZero constraint of '<em>Natural Number</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNaturalNumber_ValueGreaterOrEqualZero(NaturalNumber naturalNumber, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(CorePackage.Literals.NATURAL_NUMBER,
+				 naturalNumber,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValueGreaterOrEqualZero",
+				 NATURAL_NUMBER__VALUE_GREATER_OR_EQUAL_ZERO__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -173,15 +208,6 @@ public class CoreValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateInfinity(Infinity infinity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(infinity, diagnostics, context);
 	}
 
 	/**
