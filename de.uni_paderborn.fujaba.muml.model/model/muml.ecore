@@ -514,41 +514,6 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AbstractRealtimeStatechart" abstract="true"
-          eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/core/Behavior">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a realtime statechart.&#xD;&#xA;\todosd{All references should moved to FujabaRealtimeStatechart, because an AbstractRealtimeStatechart abstracts from the concrete modeling.}"/>
-        </eAnnotations>
-        <eOperations name="getHighestParentStatechart" eType="#//model/core/AbstractRealtimeStatechart">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
-          </eAnnotations>
-        </eOperations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-            defaultValueLiteral="0">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="needed for WCET-analysis"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="utilisation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="needed for WCET-analysis"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleDocument" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-            defaultValueLiteral="\&quot;schedule.xml\&quot;">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="needed for WCET-analysis"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-            derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This attribute specifies whether this realtime statechart is embedded into a region or not.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Abstract super class for all elements that represent a behavior. &#xD;&#xA;Known sub-classes: AbstractRealtimeStatechart"/>
@@ -1405,7 +1370,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechart" eSuperTypes="#//model/core/AbstractRealtimeStatechart">
+      <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/core/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
         </eAnnotations>
@@ -1419,6 +1384,11 @@
         </eAnnotations>
         <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eParameters name="statechart" lowerBound="1" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"/>
+        </eOperations>
+        <eOperations name="getHighestParentStatechart">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
+          </eAnnotations>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddingRegion" eType="#//model/realtimestatechart/Region"
             eOpposite="#//model/realtimestatechart/Region/statechart"/>
@@ -1467,6 +1437,33 @@
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="0">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="needed for WCET-analysis"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="utilisation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="needed for WCET-analysis"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleDocument" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral="\&quot;schedule.xml\&quot;">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="needed for WCET-analysis"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This attribute specifies whether this realtime statechart is embedded into a region or not.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="not self.embeddingRegion.oclIsUndefined()"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

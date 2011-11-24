@@ -18,6 +18,7 @@ import org.storydriven.modeling.calls.Invocation;
 
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.*;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
@@ -249,7 +250,6 @@ public class RealtimestatechartSwitch<T> {
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: {
 				FujabaRealtimeStatechart fujabaRealtimeStatechart = (FujabaRealtimeStatechart)theEObject;
 				T result = caseFujabaRealtimeStatechart(fujabaRealtimeStatechart);
-				if (result == null) result = caseAbstractRealtimeStatechart(fujabaRealtimeStatechart);
 				if (result == null) result = caseNamedElement(fujabaRealtimeStatechart);
 				if (result == null) result = caseCommentableElement(fujabaRealtimeStatechart);
 				if (result == null) result = caseBehavior(fujabaRealtimeStatechart);
@@ -836,21 +836,6 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseCallable(Callable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Realtime Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Realtime Statechart</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractRealtimeStatechart(AbstractRealtimeStatechart object) {
 		return null;
 	}
 

@@ -150,16 +150,6 @@
           <genFeatures notify="false" createChild="false" propertyCategory="Constraint"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/ConstrainableElement/constraint"/>
         </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/core/AbstractRealtimeStatechart">
-          <genFeatures createChild="false" propertyCategory="WCET-Analysis" propertyDescription=""
-              ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/securityLevel"/>
-          <genFeatures createChild="false" propertyCategory="WCET-Analysis" propertyDescription=""
-              ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/utilisation"/>
-          <genFeatures createChild="false" propertyCategory="WCET-Analysis" propertyDescription=""
-              ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/scheduleDocument"/>
-          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/embedded"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/AbstractRealtimeStatechart/getHighestParentStatechart"/>
-        </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/core/Behavior">
           <genFeatures notify="false" createChild="false" propertyCategory="General"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Behavior/behavioralElement"/>
@@ -401,9 +391,14 @@
           <genFeatures createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/eventQueueSize"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/flat"/>
           <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/availableClocks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/securityLevel"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/utilisation"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/scheduleDocument"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/embedded"/>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/isSuperStatechartOf">
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/isSuperStatechartOf/statechart"/>
           </genOperations>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/getHighestParentStatechart"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Event/kind"/>

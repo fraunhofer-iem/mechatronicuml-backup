@@ -200,125 +200,6 @@ public interface CorePackage extends EPackage {
 	int CONSTRAINABLE_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl <em>Abstract Realtime Statechart</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	int ABSTRACT_REALTIME_STATECHART = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__NAME = SDMPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__OPERATIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The number of structural features of the '<em>Abstract Realtime Statechart</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
-
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl <em>Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -326,7 +207,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 5;
+	int BEHAVIOR = 4;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -372,7 +253,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getActivityCallExpression()
 	 * @generated
 	 */
-	int ACTIVITY_CALL_EXPRESSION = 6;
+	int ACTIVITY_CALL_EXPRESSION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -562,60 +443,6 @@ public interface CorePackage extends EPackage {
 	EReference getConstrainableElement_Constraint();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart <em>Abstract Realtime Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract Realtime Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart
-	 * @generated
-	 */
-	EClass getAbstractRealtimeStatechart();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSecurityLevel <em>Security Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Security Level</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSecurityLevel()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getAbstractRealtimeStatechart_SecurityLevel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getUtilisation <em>Utilisation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Utilisation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getUtilisation()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getAbstractRealtimeStatechart_Utilisation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Schedule Document</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getScheduleDocument()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getAbstractRealtimeStatechart_ScheduleDocument();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Embedded</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#isEmbedded()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getAbstractRealtimeStatechart_Embedded();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -788,48 +615,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONSTRAINABLE_ELEMENT__CONSTRAINT = eINSTANCE.getConstrainableElement_Constraint();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl <em>Abstract Realtime Statechart</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAbstractRealtimeStatechart()
-		 * @generated
-		 */
-		EClass ABSTRACT_REALTIME_STATECHART = eINSTANCE.getAbstractRealtimeStatechart();
-
-		/**
-		 * The meta object literal for the '<em><b>Security Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = eINSTANCE.getAbstractRealtimeStatechart_SecurityLevel();
-
-		/**
-		 * The meta object literal for the '<em><b>Utilisation</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_REALTIME_STATECHART__UTILISATION = eINSTANCE.getAbstractRealtimeStatechart_Utilisation();
-
-		/**
-		 * The meta object literal for the '<em><b>Schedule Document</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = eINSTANCE.getAbstractRealtimeStatechart_ScheduleDocument();
-
-		/**
-		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_REALTIME_STATECHART__EMBEDDED = eINSTANCE.getAbstractRealtimeStatechart_Embedded();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl <em>Behavior</em>}' class.

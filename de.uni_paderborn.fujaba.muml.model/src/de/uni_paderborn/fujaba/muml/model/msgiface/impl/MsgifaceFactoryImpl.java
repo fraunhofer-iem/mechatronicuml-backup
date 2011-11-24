@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.impl;
 
+import de.uni_paderborn.fujaba.muml.model.msgiface.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;

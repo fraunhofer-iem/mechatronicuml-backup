@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
+import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -124,16 +125,6 @@ public class CoreSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CorePackage.ABSTRACT_REALTIME_STATECHART: {
-				AbstractRealtimeStatechart abstractRealtimeStatechart = (AbstractRealtimeStatechart)theEObject;
-				T result = caseAbstractRealtimeStatechart(abstractRealtimeStatechart);
-				if (result == null) result = caseNamedElement(abstractRealtimeStatechart);
-				if (result == null) result = caseCommentableElement(abstractRealtimeStatechart);
-				if (result == null) result = caseBehavior(abstractRealtimeStatechart);
-				if (result == null) result = caseExtendableElement(abstractRealtimeStatechart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CorePackage.BEHAVIOR: {
 				Behavior behavior = (Behavior)theEObject;
 				T result = caseBehavior(behavior);
@@ -216,21 +207,6 @@ public class CoreSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Realtime Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Realtime Statechart</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractRealtimeStatechart(AbstractRealtimeStatechart object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -272,21 +248,6 @@ public class CoreSwitch<T> {
 	 * @generated
 	 */
 	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

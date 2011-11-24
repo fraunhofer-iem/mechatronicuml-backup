@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
+import de.uni_paderborn.fujaba.muml.model.core.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -99,10 +100,6 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createConstrainableElementAdapter();
 			}
 			@Override
-			public Adapter caseAbstractRealtimeStatechart(AbstractRealtimeStatechart object) {
-				return createAbstractRealtimeStatechartAdapter();
-			}
-			@Override
 			public Adapter caseBehavior(Behavior object) {
 				return createBehaviorAdapter();
 			}
@@ -113,10 +110,6 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
@@ -211,20 +204,6 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart <em>Abstract Realtime Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart
-	 * @generated
-	 */
-	public Adapter createAbstractRealtimeStatechartAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -263,20 +242,6 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.modeling.NamedElement
-	 * @generated
-	 */
-	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 

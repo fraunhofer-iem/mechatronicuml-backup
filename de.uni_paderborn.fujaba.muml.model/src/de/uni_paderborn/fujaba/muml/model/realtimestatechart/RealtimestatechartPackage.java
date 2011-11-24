@@ -1316,7 +1316,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__ANNOTATION = CorePackage.ABSTRACT_REALTIME_STATECHART__ANNOTATION;
+	int FUJABA_REALTIME_STATECHART__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1325,7 +1325,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EXTENSION = CorePackage.ABSTRACT_REALTIME_STATECHART__EXTENSION;
+	int FUJABA_REALTIME_STATECHART__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1334,7 +1334,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__NAME = CorePackage.ABSTRACT_REALTIME_STATECHART__NAME;
+	int FUJABA_REALTIME_STATECHART__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1343,7 +1343,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__COMMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT;
+	int FUJABA_REALTIME_STATECHART__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -1352,7 +1352,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
+	int FUJABA_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -1361,7 +1361,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__OPERATIONS = CorePackage.ABSTRACT_REALTIME_STATECHART__OPERATIONS;
+	int FUJABA_REALTIME_STATECHART__OPERATIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1370,43 +1370,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__ATTRIBUTES = CorePackage.ABSTRACT_REALTIME_STATECHART__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__SECURITY_LEVEL = CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL;
-
-	/**
-	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__UTILISATION = CorePackage.ABSTRACT_REALTIME_STATECHART__UTILISATION;
-
-	/**
-	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT;
-
-	/**
-	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__EMBEDDED = CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED;
+	int FUJABA_REALTIME_STATECHART__ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
@@ -1415,7 +1379,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EMBEDDING_REGION = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 0;
+	int FUJABA_REALTIME_STATECHART__EMBEDDING_REGION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -1424,7 +1388,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__TRANSITIONS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 1;
+	int FUJABA_REALTIME_STATECHART__TRANSITIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
@@ -1433,7 +1397,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__VERTICES = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 2;
+	int FUJABA_REALTIME_STATECHART__VERTICES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -1442,7 +1406,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 3;
+	int FUJABA_REALTIME_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>History</b></em>' attribute.
@@ -1451,7 +1415,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__HISTORY = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 4;
+	int FUJABA_REALTIME_STATECHART__HISTORY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
@@ -1460,7 +1424,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 5;
+	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Flat</b></em>' attribute.
@@ -1469,7 +1433,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__FLAT = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 6;
+	int FUJABA_REALTIME_STATECHART__FLAT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Available Clocks</b></em>' reference.
@@ -1478,7 +1442,43 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 7;
+	int FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Fujaba Realtime Statechart</em>' class.
@@ -1487,7 +1487,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 8;
+	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl <em>Message</em>}' class.
@@ -2811,6 +2811,50 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getFujabaRealtimeStatechart_AvailableClocks();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getSecurityLevel <em>Security Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Security Level</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getSecurityLevel()
+	 * @see #getFujabaRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getFujabaRealtimeStatechart_SecurityLevel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getUtilisation <em>Utilisation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Utilisation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getUtilisation()
+	 * @see #getFujabaRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getFujabaRealtimeStatechart_Utilisation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Schedule Document</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getScheduleDocument()
+	 * @see #getFujabaRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getFujabaRealtimeStatechart_ScheduleDocument();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isEmbedded <em>Embedded</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Embedded</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isEmbedded()
+	 * @see #getFujabaRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getFujabaRealtimeStatechart_Embedded();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3684,6 +3728,38 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_AvailableClocks();
+
+		/**
+		 * The meta object literal for the '<em><b>Security Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUJABA_REALTIME_STATECHART__SECURITY_LEVEL = eINSTANCE.getFujabaRealtimeStatechart_SecurityLevel();
+
+		/**
+		 * The meta object literal for the '<em><b>Utilisation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUJABA_REALTIME_STATECHART__UTILISATION = eINSTANCE.getFujabaRealtimeStatechart_Utilisation();
+
+		/**
+		 * The meta object literal for the '<em><b>Schedule Document</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT = eINSTANCE.getFujabaRealtimeStatechart_ScheduleDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUJABA_REALTIME_STATECHART__EMBEDDED = eINSTANCE.getFujabaRealtimeStatechart_Embedded();
 
 		/**
 		 * The meta object literal for the '<em><b>History</b></em>' attribute feature.

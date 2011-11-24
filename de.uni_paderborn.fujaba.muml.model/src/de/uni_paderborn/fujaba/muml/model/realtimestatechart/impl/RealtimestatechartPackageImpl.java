@@ -1053,6 +1053,42 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getFujabaRealtimeStatechart_SecurityLevel() {
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFujabaRealtimeStatechart_Utilisation() {
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFujabaRealtimeStatechart_ScheduleDocument() {
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFujabaRealtimeStatechart_Embedded() {
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getFujabaRealtimeStatechart_History() {
 		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(4);
 	}
@@ -1359,6 +1395,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE);
 		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__FLAT);
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS);
+		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__SECURITY_LEVEL);
+		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__UTILISATION);
+		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT);
+		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__EMBEDDED);
 
 		eventEClass = createEClass(EVENT);
 		createEAttribute(eventEClass, EVENT__KIND);
@@ -1443,7 +1483,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		synchronizationChannelEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		synchronizationChannelEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		synchronizationEClass.getESuperTypes().add(theCallsPackage.getInvocation());
-		fujabaRealtimeStatechartEClass.getESuperTypes().add(theCorePackage.getAbstractRealtimeStatechart());
+		fujabaRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		fujabaRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		fujabaRealtimeStatechartEClass.getESuperTypes().add(theCorePackage.getBehavior());
 		transitionEventEClass.getESuperTypes().add(this.getEvent());
 		stateEventEClass.getESuperTypes().add(this.getEvent());
 		messageEClass.getESuperTypes().add(theCallsPackage.getInvocation());
@@ -1552,9 +1594,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getFujabaRealtimeStatechart_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFujabaRealtimeStatechart_Flat(), theEcorePackage.getEBoolean(), "flat", "false", 0, 1, FujabaRealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getFujabaRealtimeStatechart_AvailableClocks(), this.getClock(), null, "availableClocks", null, 0, 1, FujabaRealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFujabaRealtimeStatechart_SecurityLevel(), ecorePackage.getEInt(), "securityLevel", "0", 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFujabaRealtimeStatechart_Utilisation(), ecorePackage.getEDouble(), "utilisation", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFujabaRealtimeStatechart_ScheduleDocument(), ecorePackage.getEString(), "scheduleDocument", "\\\"schedule.xml\\\"", 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFujabaRealtimeStatechart_Embedded(), ecorePackage.getEBoolean(), "embedded", "false", 0, 1, FujabaRealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(fujabaRealtimeStatechartEClass, ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getFujabaRealtimeStatechart(), "statechart", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(fujabaRealtimeStatechartEClass, null, "getHighestParentStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Kind(), this.getEventKind(), "kind", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1634,7 +1682,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueNameOfStates MinOneState NoCycles"
-		   });																										
+		   });																																
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 
@@ -1749,7 +1797,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniqueNameOfStates", "self.vertices.oclAsType(State)->isUnique(name) ",
 			 "MinOneState", "self.vertices.oclAsType(State)->notEmpty()",
 			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"
-		   });								
+		   });									
 		addAnnotation
 		  (getFujabaRealtimeStatechart_Flat(), 
 		   source, 
@@ -1761,6 +1809,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks"
+		   });						
+		addAnnotation
+		  (getFujabaRealtimeStatechart_Embedded(), 
+		   source, 
+		   new String[] {
+			 "derivation", "not self.embeddingRegion.oclIsUndefined()"
 		   });											
 		addAnnotation
 		  (getMessage_InstanceOf(), 

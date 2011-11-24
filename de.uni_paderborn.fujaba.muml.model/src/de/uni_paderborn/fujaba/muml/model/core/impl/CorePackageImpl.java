@@ -84,13 +84,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass abstractRealtimeStatechartEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass behaviorEClass = null;
 
 	/**
@@ -291,51 +284,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstractRealtimeStatechart() {
-		return abstractRealtimeStatechartEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractRealtimeStatechart_SecurityLevel() {
-		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractRealtimeStatechart_Utilisation() {
-		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractRealtimeStatechart_ScheduleDocument() {
-		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractRealtimeStatechart_Embedded() {
-		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBehavior() {
 		return behaviorEClass;
 	}
@@ -427,12 +375,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		constrainableElementEClass = createEClass(CONSTRAINABLE_ELEMENT);
 		createEReference(constrainableElementEClass, CONSTRAINABLE_ELEMENT__CONSTRAINT);
 
-		abstractRealtimeStatechartEClass = createEClass(ABSTRACT_REALTIME_STATECHART);
-		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL);
-		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__UTILISATION);
-		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT);
-		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__EMBEDDED);
-
 		behaviorEClass = createEClass(BEHAVIOR);
 		createEReference(behaviorEClass, BEHAVIOR__BEHAVIORAL_ELEMENT);
 		createEReference(behaviorEClass, BEHAVIOR__OPERATIONS);
@@ -467,7 +409,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Obtain other dependent packages
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
-		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
@@ -477,9 +418,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
-		abstractRealtimeStatechartEClass.getESuperTypes().add(this.getBehavior());
 		activityCallExpressionEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		activityCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
@@ -507,14 +445,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(constrainableElementEClass, ConstrainableElement.class, "ConstrainableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstrainableElement_Constraint(), theConstraintPackage.getConstraint(), theConstraintPackage.getConstraint_ConstrainableElement(), "constraint", null, 0, -1, ConstrainableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(abstractRealtimeStatechartEClass, AbstractRealtimeStatechart.class, "AbstractRealtimeStatechart", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractRealtimeStatechart_SecurityLevel(), ecorePackage.getEInt(), "securityLevel", "0", 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractRealtimeStatechart_Utilisation(), ecorePackage.getEDouble(), "utilisation", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractRealtimeStatechart_ScheduleDocument(), ecorePackage.getEString(), "scheduleDocument", "\\\"schedule.xml\\\"", 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractRealtimeStatechart_Embedded(), ecorePackage.getEBoolean(), "embedded", "false", 0, 1, AbstractRealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
-		addEOperation(abstractRealtimeStatechartEClass, this.getAbstractRealtimeStatechart(), "getHighestParentStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavior_BehavioralElement(), this.getBehavioralElement(), this.getBehavioralElement_Behavior(), "behavioralElement", null, 0, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -561,7 +491,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });																			
+		   });													
 	}
 
 	/**
@@ -583,7 +513,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"
-		   });																		
+		   });												
 	}
 
 } //CorePackageImpl

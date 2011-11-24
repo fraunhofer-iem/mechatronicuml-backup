@@ -18,6 +18,7 @@ import org.storydriven.modeling.calls.Invocation;
 
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.*;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
@@ -234,10 +235,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBehavior(Behavior object) {
 				return createBehaviorAdapter();
-			}
-			@Override
-			public Adapter caseAbstractRealtimeStatechart(AbstractRealtimeStatechart object) {
-				return createAbstractRealtimeStatechartAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -718,20 +715,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCallableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart <em>Abstract Realtime Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart
-	 * @generated
-	 */
-	public Adapter createAbstractRealtimeStatechartAdapter() {
 		return null;
 	}
 

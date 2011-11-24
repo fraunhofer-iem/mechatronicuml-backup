@@ -6,8 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import org.eclipse.emf.common.util.EList;
 
+import org.storydriven.modeling.CommentableElement;
+import org.storydriven.modeling.NamedElement;
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 
 /**
@@ -30,6 +33,10 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getSecurityLevel <em>Security Level</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getUtilisation <em>Utilisation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,7 +45,7 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueNameOfStates MinOneState NoCycles'"
  * @generated
  */
-public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
+public interface FujabaRealtimeStatechart extends NamedElement, CommentableElement, Behavior {
 	/**
 	 * Returns the value of the '<em><b>Embedding Region</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}'.
@@ -135,6 +142,100 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	Clock getAvailableClocks();
 
 	/**
+	 * Returns the value of the '<em><b>Security Level</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * needed for WCET-analysis
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Security Level</em>' attribute.
+	 * @see #setSecurityLevel(int)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_SecurityLevel()
+	 * @model default="0"
+	 * @generated
+	 */
+	int getSecurityLevel();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getSecurityLevel <em>Security Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Security Level</em>' attribute.
+	 * @see #getSecurityLevel()
+	 * @generated
+	 */
+	void setSecurityLevel(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Utilisation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * needed for WCET-analysis
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Utilisation</em>' attribute.
+	 * @see #setUtilisation(double)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_Utilisation()
+	 * @model
+	 * @generated
+	 */
+	double getUtilisation();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getUtilisation <em>Utilisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Utilisation</em>' attribute.
+	 * @see #getUtilisation()
+	 * @generated
+	 */
+	void setUtilisation(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Schedule Document</b></em>' attribute.
+	 * The default value is <code>"\\\"schedule.xml\\\""</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * needed for WCET-analysis
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Schedule Document</em>' attribute.
+	 * @see #setScheduleDocument(String)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_ScheduleDocument()
+	 * @model default="\\\"schedule.xml\\\""
+	 * @generated
+	 */
+	String getScheduleDocument();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Schedule Document</em>' attribute.
+	 * @see #getScheduleDocument()
+	 * @generated
+	 */
+	void setScheduleDocument(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Embedded</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This attribute specifies whether this realtime statechart is embedded into a region or not.
+	 * \todosd{ocl: implement derived}
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Embedded</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_Embedded()
+	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.embeddingRegion.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean isEmbedded();
+
+	/**
 	 * Returns the value of the '<em><b>History</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -210,5 +311,16 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 * @generated
 	 */
 	boolean isSuperStatechartOf(FujabaRealtimeStatechart statechart);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns realtime statechart which represents the root of the hierarchy tree.
+	 * <!-- end-model-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	void getHighestParentStatechart();
 
 } // FujabaRealtimeStatechart

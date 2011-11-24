@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
+import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -103,8 +104,6 @@ public class CoreValidator extends EObjectValidator {
 				return validateBehavioralElement((BehavioralElement)value, diagnostics, context);
 			case CorePackage.CONSTRAINABLE_ELEMENT:
 				return validateConstrainableElement((ConstrainableElement)value, diagnostics, context);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART:
-				return validateAbstractRealtimeStatechart((AbstractRealtimeStatechart)value, diagnostics, context);
 			case CorePackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case CorePackage.ACTIVITY_CALL_EXPRESSION:
@@ -226,15 +225,6 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateConstrainableElement(ConstrainableElement constrainableElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(constrainableElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAbstractRealtimeStatechart(AbstractRealtimeStatechart abstractRealtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(abstractRealtimeStatechart, diagnostics, context);
 	}
 
 	/**
