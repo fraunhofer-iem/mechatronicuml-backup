@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -95,7 +95,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
+			case RealtimestatechartPackage.REALTIME_STATECHART: return createRealtimeStatechart();
 			case RealtimestatechartPackage.MESSAGE: return createMessage();
 			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
 			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
@@ -267,9 +267,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FujabaRealtimeStatechart createFujabaRealtimeStatechart() {
-		FujabaRealtimeStatechartImpl fujabaRealtimeStatechart = new FujabaRealtimeStatechartImpl();
-		return fujabaRealtimeStatechart;
+	public RealtimeStatechart createRealtimeStatechart() {
+		RealtimeStatechartImpl realtimeStatechart = new RealtimeStatechartImpl();
+		return realtimeStatechart;
 	}
 
 	/**

@@ -128,20 +128,20 @@ public interface Transition extends Prioritizable, ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getTransitions <em>Transitions</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getTransitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this transition belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(FujabaRealtimeStatechart)
+	 * @see #setStatechart(RealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Statechart()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getTransitions
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getTransitions
 	 * @model opposite="transitions" transient="false"
 	 * @generated
 	 */
-	FujabaRealtimeStatechart getStatechart();
+	RealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}' container reference.
@@ -151,7 +151,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(FujabaRealtimeStatechart value);
+	void setStatechart(RealtimeStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Clock Resets</b></em>' reference list.

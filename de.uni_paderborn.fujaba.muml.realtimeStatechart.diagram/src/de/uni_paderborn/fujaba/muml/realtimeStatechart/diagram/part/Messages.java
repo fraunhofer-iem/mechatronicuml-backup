@@ -403,7 +403,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String FujabaRealtimeStatechartStatechartContentsCompartment2EditPart_title;
+	public static String RealtimeStatechartStatechartContentsCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -423,12 +423,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String FujabaRealtimeStatechartStatechartContentsCompartmentEditPart_title;
+	public static String RealtimeStatechartStatechartContentsCompartment2EditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateExitPoint_3015_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateExitPoint_3015_outgoinglinks;
 
 	/**
 	 * @generated
@@ -439,6 +449,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ExitPoint_3013_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3012_outgoinglinks;
 
 	/**
 	 * @generated
@@ -464,26 +484,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_StateEntryPoint_3014_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateExitPoint_3015_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateExitPoint_3015_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_EntryPoint_3012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_EntryPoint_3012_outgoinglinks;
 
 	/**
 	 * @generated

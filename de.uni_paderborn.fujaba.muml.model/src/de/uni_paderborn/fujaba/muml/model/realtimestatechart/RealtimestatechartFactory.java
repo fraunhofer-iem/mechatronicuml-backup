@@ -134,13 +134,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	Synchronization createSynchronization();
 
 	/**
-	 * Returns a new object of class '<em>Fujaba Realtime Statechart</em>'.
+	 * Returns a new object of class '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fujaba Realtime Statechart</em>'.
+	 * @return a new object of class '<em>Realtime Statechart</em>'.
 	 * @generated
 	 */
-	FujabaRealtimeStatechart createFujabaRealtimeStatechart();
+	RealtimeStatechart createRealtimeStatechart();
 
 	/**
 	 * Returns a new object of class '<em>Message</em>'.

@@ -477,7 +477,7 @@ public class RoleItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternPackage.Literals.ROLE__ADAPTATION_BEHAVIOR,
-				 RealtimestatechartFactory.eINSTANCE.createFujabaRealtimeStatechart()));
+				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 	}
 
 	/**

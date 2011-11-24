@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -28,7 +29,7 @@ import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.SDMPackage;
 
 import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
@@ -104,7 +105,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * @generated
 	 * @ordered
 	 */
-	protected FujabaRealtimeStatechart statechart;
+	protected RealtimeStatechart statechart;
 
 	/**
 	 * The cached setting delegate for the '{@link #getVertices() <em>Vertices</em>}' containment reference list.
@@ -146,10 +147,10 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	
 
 		DerivedAttributeAdapter regionTransitionAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.REGION__TRANSITIONS);
-		regionTransitionAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.REGION__STATECHART, RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__TRANSITIONS);
+		regionTransitionAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.REGION__STATECHART, RealtimestatechartPackage.Literals.REALTIME_STATECHART__TRANSITIONS);
 		
 		DerivedAttributeAdapter regionVerticesAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.REGION__VERTICES);
-		regionVerticesAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.REGION__STATECHART, RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__VERTICES);
+		regionVerticesAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.REGION__STATECHART, RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES);
 		
 		DerivedAttributeAdapter regionStatechartAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED);
 		regionStatechartAdapter.addLocalDependency(RealtimestatechartPackage.Literals.REGION__STATECHART);
@@ -215,10 +216,10 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FujabaRealtimeStatechart getStatechart() {
+	public RealtimeStatechart getStatechart() {
 		if (statechart != null && statechart.eIsProxy()) {
 			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (FujabaRealtimeStatechart)eResolveProxy(oldStatechart);
+			statechart = (RealtimeStatechart)eResolveProxy(oldStatechart);
 			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.REGION__STATECHART, oldStatechart, statechart));
@@ -232,7 +233,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FujabaRealtimeStatechart basicGetStatechart() {
+	public RealtimeStatechart basicGetStatechart() {
 		return statechart;
 	}
 
@@ -241,8 +242,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(FujabaRealtimeStatechart newStatechart, NotificationChain msgs) {
-		FujabaRealtimeStatechart oldStatechart = statechart;
+	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
+		RealtimeStatechart oldStatechart = statechart;
 		statechart = newStatechart;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__STATECHART, oldStatechart, newStatechart);
@@ -256,13 +257,13 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(FujabaRealtimeStatechart newStatechart) {
+	public void setStatechart(RealtimeStatechart newStatechart) {
 		if (newStatechart != statechart) {
 			NotificationChain msgs = null;
 			if (statechart != null)
-				msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION, FujabaRealtimeStatechart.class, msgs);
+				msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
 			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION, FujabaRealtimeStatechart.class, msgs);
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
 			msgs = basicSetStatechart(newStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -344,8 +345,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FujabaRealtimeStatechart getStatechartDerived() {
-		return (FujabaRealtimeStatechart)STATECHART_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public RealtimeStatechart getStatechartDerived() {
+		return (RealtimeStatechart)STATECHART_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -353,7 +354,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechartDerived(FujabaRealtimeStatechart newStatechartDerived, NotificationChain msgs) {
+	public NotificationChain basicSetStatechartDerived(RealtimeStatechart newStatechartDerived, NotificationChain msgs) {
 		// TODO: implement this method to set the contained 'Statechart Derived' containment reference
 		// -> this method is automatically invoked to keep the containment relationship in synch
 		// -> do not modify other features
@@ -367,7 +368,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechartDerived(FujabaRealtimeStatechart newStatechartDerived) {
+	public void setStatechartDerived(RealtimeStatechart newStatechartDerived) {
 		STATECHART_DERIVED__ESETTING_DELEGATE.dynamicSet(this, null, 0, newStatechartDerived);
 	}
 
@@ -428,8 +429,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.REGION__STATECHART:
 				if (statechart != null)
-					msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION, FujabaRealtimeStatechart.class, msgs);
-				return basicSetStatechart((FujabaRealtimeStatechart)otherEnd, msgs);
+					msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
+				return basicSetStatechart((RealtimeStatechart)otherEnd, msgs);
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -528,7 +529,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				setName((String)newValue);
 				return;
 			case RealtimestatechartPackage.REGION__STATECHART:
-				setStatechart((FujabaRealtimeStatechart)newValue);
+				setStatechart((RealtimeStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				setParentState((State)newValue);
@@ -542,7 +543,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				getTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
 			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
-				setStatechartDerived((FujabaRealtimeStatechart)newValue);
+				setStatechartDerived((RealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -566,7 +567,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				setName(NAME_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.REGION__STATECHART:
-				setStatechart((FujabaRealtimeStatechart)null);
+				setStatechart((RealtimeStatechart)null);
 				return;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				setParentState((State)null);
@@ -578,7 +579,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 				getTransitions().clear();
 				return;
 			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
-				setStatechartDerived((FujabaRealtimeStatechart)null);
+				setStatechartDerived((RealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);

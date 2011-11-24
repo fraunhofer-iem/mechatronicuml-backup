@@ -956,8 +956,8 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents clocks of a realtime statechart."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"
-            eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/clocks">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/RealtimeStatechart"
+            eOpposite="#//model/realtimestatechart/RealtimeStatechart/clocks">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The realtime statechart this clock belongs to.&#xA;\todoib{Should be 1..1, but GMF needs 0..1 here!}&#xD;&#xA;\todosd{is this info necessary?}"/>
           </eAnnotations>
@@ -968,7 +968,7 @@
           <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
-            eType="#//model/realtimestatechart/FujabaRealtimeStatechart" eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion">
+            eType="#//model/realtimestatechart/RealtimeStatechart" eOpposite="#//model/realtimestatechart/RealtimeStatechart/embeddingRegion">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The realtime statechart this region embeds."/>
           </eAnnotations>
@@ -1000,7 +1000,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statechartDerived"
-            lowerBound="1" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"
+            lowerBound="1" eType="#//model/realtimestatechart/RealtimeStatechart"
             volatile="true" transient="true" derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The derived realtime statecharts ."/>
@@ -1132,8 +1132,8 @@
             <details key="documentation" value="The incoming transitions of this vertex"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"
-            eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/vertices">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/RealtimeStatechart"
+            eOpposite="#//model/realtimestatechart/RealtimeStatechart/vertices">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The realtime statechart this state belongs to.&#xA;\todoib{Should be 1..1, but GMF needs 0..1 here!}"/>
           </eAnnotations>
@@ -1171,8 +1171,8 @@
             <details key="documentation" value="The state which is the source of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 1..1}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"
-            eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/transitions">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/RealtimeStatechart"
+            eOpposite="#//model/realtimestatechart/RealtimeStatechart/transitions">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The realtime statechart this transition belongs to."/>
           </eAnnotations>
@@ -1370,7 +1370,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/core/Behavior">
+      <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/core/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
         </eAnnotations>
@@ -1383,7 +1383,7 @@
           <details key="constraints" value="UniqueNameOfStates MinOneState NoCycles"/>
         </eAnnotations>
         <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-          <eParameters name="statechart" lowerBound="1" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"/>
+          <eParameters name="statechart" lowerBound="1" eType="#//model/realtimestatechart/RealtimeStatechart"/>
         </eOperations>
         <eOperations name="getHighestParentStatechart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

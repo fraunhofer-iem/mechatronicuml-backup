@@ -37,13 +37,6 @@ public class StateCompoundCompartmentCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	public boolean isTopLevelCanonical() {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -94,6 +87,7 @@ public class StateCompoundCompartmentCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
+
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
@@ -146,6 +140,13 @@ public class StateCompoundCompartmentCanonicalEditPolicy extends
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public boolean isTopLevelCanonical() {
+		return true;
 	}
 
 	/**

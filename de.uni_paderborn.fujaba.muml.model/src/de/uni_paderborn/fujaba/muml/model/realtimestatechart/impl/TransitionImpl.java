@@ -34,8 +34,9 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
@@ -447,9 +448,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FujabaRealtimeStatechart getStatechart() {
+	public RealtimeStatechart getStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART) return null;
-		return (FujabaRealtimeStatechart)eContainer();
+		return (RealtimeStatechart)eContainer();
 	}
 
 	/**
@@ -457,7 +458,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(FujabaRealtimeStatechart newStatechart, NotificationChain msgs) {
+	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.TRANSITION__STATECHART, msgs);
 		return msgs;
 	}
@@ -467,7 +468,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(FujabaRealtimeStatechart newStatechart) {
+	public void setStatechart(RealtimeStatechart newStatechart) {
 		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART && newStatechart != null)) {
 			if (EcoreUtil.isAncestor(this, newStatechart))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -475,7 +476,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS, FujabaRealtimeStatechart.class, msgs);
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS, RealtimeStatechart.class, msgs);
 			msgs = basicSetStatechart(newStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -836,7 +837,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((FujabaRealtimeStatechart)otherEnd, msgs);
+				return basicSetStatechart((RealtimeStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -886,7 +887,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS, FujabaRealtimeStatechart.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS, RealtimeStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -966,7 +967,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				setSource((Vertex)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				setStatechart((FujabaRealtimeStatechart)newValue);
+				setStatechart((RealtimeStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				getClockResets().clear();
@@ -1024,7 +1025,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				setSource((Vertex)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				setStatechart((FujabaRealtimeStatechart)null);
+				setStatechart((RealtimeStatechart)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				getClockResets().clear();

@@ -60,8 +60,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * Extended request data key to hold editpart visual id.
 	 * Add visual id of edited editpart to extended data of the request
-	 * so command switch can decide what kind of diagramResource element is being edited.
-	 * It is done in those cases when it's not possible to deduce diagramResource
+	 * so command switch can decide what kind of diagram element is being edited.
+	 * It is done in those cases when it's not possible to deduce diagram
 	 * element kind from domain element.
 	 * 
 	 * @generated
@@ -284,7 +284,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * Clean all shortcuts to the host element from the same diagramResource
+	 * Clean all shortcuts to the host element from the same diagram
 	 * @generated
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
@@ -329,7 +329,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateTransition_4001(
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container,
+				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target) {
 			return canExistTransition_4001(container, null, source, target);
@@ -339,7 +339,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistTransition_4001(
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container,
+				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition linkInstance,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target) {

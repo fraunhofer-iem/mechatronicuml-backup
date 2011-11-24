@@ -32,7 +32,6 @@
         visualID="3010"
         editPartClassName="StateEditPart"
         itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateViewFactory"
         canonicalEditPolicyClassName="StateCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.9"
         compartments="//@diagram/@compartments.1 //@diagram/@compartments.2"
@@ -56,9 +55,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -72,8 +71,7 @@
       <labels
           visualID="5017"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateNameViewFactory">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -474,13 +472,12 @@
     </childNodes>
     <childNodes
         visualID="3011"
-        editPartClassName="FujabaRealtimeStatechart2EditPart"
-        itemSemanticEditPolicyClassName="FujabaRealtimeStatechart2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="FujabaRealtimeStatechartViewFactory"
-        canonicalEditPolicyClassName="FujabaRealtimeStatechart2CanonicalEditPolicy"
+        editPartClassName="RealtimeStatechart2EditPart"
+        itemSemanticEditPolicyClassName="RealtimeStatechart2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="RealtimeStatechart2CanonicalEditPolicy"
         compartments="//@diagram/@compartments.4"
-        graphicalNodeEditPolicyClassName="FujabaRealtimeStatechart2GraphicalNodeEditPolicy"
-        createCommandClassName="FujabaRealtimeStatechart2CreateCommand"
+        graphicalNodeEditPolicyClassName="RealtimeStatechart2GraphicalNodeEditPolicy"
+        createCommandClassName="RealtimeStatechart2CreateCommand"
         containers="//@diagram/@compartments.3">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -493,7 +490,7 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InnerStatechartFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStatechartContentsCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InnerStatechartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureStatechartContentsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStatechartContentsCompartment.setFill(false);&#xA;fFigureStatechartContentsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartContentsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartContentsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalIndent = 0;&#xA;constraintFFigureStatechartContentsCompartment.horizontalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.verticalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStatechartContentsCompartment() {&#xA;&#x9;&#x9;return fFigureStatechartContentsCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/statechartDerived"/>
         <childMetaFeature
@@ -651,9 +648,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/EntryPoint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -689,7 +686,6 @@
         visualID="3013"
         editPartClassName="ExitPointEditPart"
         itemSemanticEditPolicyClassName="ExitPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExitPointViewFactory"
         canonicalEditPolicyClassName="ExitPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ExitPointGraphicalNodeEditPolicy"
         createCommandClassName="ExitPointCreateCommand"
@@ -713,9 +709,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ExitPoint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -730,8 +726,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5021"
           editPartClassName="ExitPointNameEditPart"
-          itemSemanticEditPolicyClassName="ExitPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ExitPointNameViewFactory">
+          itemSemanticEditPolicyClassName="ExitPointNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -748,26 +743,25 @@
     </childNodes>
     <topLevelNodes
         visualID="2004"
-        editPartClassName="FujabaRealtimeStatechartEditPart"
-        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartItemSemanticEditPolicy"
-        notationViewFactoryClassName="FujabaRealtimeStatechartViewFactory"
-        canonicalEditPolicyClassName="FujabaRealtimeStatechartCanonicalEditPolicy"
+        editPartClassName="RealtimeStatechartEditPart"
+        itemSemanticEditPolicyClassName="RealtimeStatechartItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="RealtimeStatechartCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.10 //@diagram/@childNodes.11"
         compartments="//@diagram/@compartments.0"
-        graphicalNodeEditPolicyClassName="FujabaRealtimeStatechartGraphicalNodeEditPolicy"
-        createCommandClassName="FujabaRealtimeStatechartCreateCommand">
+        graphicalNodeEditPolicyClassName="RealtimeStatechartGraphicalNodeEditPolicy"
+        createCommandClassName="RealtimeStatechartCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="FujabaRealtimeStatechartEditHelper"/>
+          editHelperClassName="RealtimeStatechartEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StatechartFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StatechartFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartVariablesLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStatechartContentsCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StatechartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure statechartTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;statechartTitleAreaFigure0.setFill(false);&#xA;statechartTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintStatechartTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStatechartTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStatechartTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintStatechartTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.verticalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintStatechartTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(statechartTitleAreaFigure0, constraintStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStatechartTitleAreaFigure0.numColumns = 2;&#xA;&#x9;layoutStatechartTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;statechartTitleAreaFigure0.setLayoutManager(layoutStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureStatechartNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStatechartNameLabel.setText(&quot;&quot;);&#xA;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);&#xA;&#xA;&#xA;&#xA;fFigureStatechartVariablesLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStatechartVariablesLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartVariablesLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartVariablesLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStatechartVariablesLabel.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureStatechartVariablesLabel.horizontalIndent = 0;&#xA;constraintFFigureStatechartVariablesLabel.horizontalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.verticalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel, constraintFFigureStatechartVariablesLabel);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStatechartContentsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStatechartContentsCompartment.setFill(false);&#xA;fFigureStatechartContentsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartContentsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartContentsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalIndent = 0;&#xA;constraintFFigureStatechartContentsCompartment.horizontalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.verticalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartNameLabel() {&#xA;&#x9;&#x9;return fFigureStatechartNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartVariablesLabel() {&#xA;&#x9;&#x9;return fFigureStatechartVariablesLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStatechartContentsCompartment() {&#xA;&#x9;&#x9;return fFigureStatechartContentsCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
         <containmentMetaFeature
             href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
@@ -775,9 +769,8 @@
       </modelFacet>
       <labels
           visualID="5018"
-          editPartClassName="FujabaRealtimeStatechartNameEditPart"
-          itemSemanticEditPolicyClassName="FujabaRealtimeStatechartNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="FujabaRealtimeStatechartNameViewFactory">
+          editPartClassName="RealtimeStatechartNameEditPart"
+          itemSemanticEditPolicyClassName="RealtimeStatechartNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -795,7 +788,6 @@
           visualID="5019"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="FujabaRealtimeStatechartLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -829,9 +821,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/transitions"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/transitions"/>
         <sourceMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition/source"/>
         <targetMetaFeature
@@ -884,10 +876,9 @@
     </links>
     <compartments
         visualID="7014"
-        editPartClassName="FujabaRealtimeStatechartStatechartContentsCompartmentEditPart"
-        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="FujabaRealtimeStatechartStatechartContentsCompartmentViewFactory"
-        canonicalEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy"
+        editPartClassName="RealtimeStatechartStatechartContentsCompartmentEditPart"
+        itemSemanticEditPolicyClassName="RealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="RealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
         canCollapse="false"
@@ -905,7 +896,6 @@
         visualID="7011"
         editPartClassName="StateCompoundCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateCompoundCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateCompoundCompartmentViewFactory"
         canonicalEditPolicyClassName="StateCompoundCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5"
         title="CompoundCompartment"
@@ -923,13 +913,13 @@
         visualID="7012"
         editPartClassName="StateRegionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateRegionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.6"
         title="RegionCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.0">
+        node="//@diagram/@childNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -957,10 +947,9 @@
     </compartments>
     <compartments
         visualID="7013"
-        editPartClassName="FujabaRealtimeStatechartStatechartContentsCompartment2EditPart"
-        itemSemanticEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="FujabaRealtimeStatechartStatechartContentsCompartmentViewFactory"
-        canonicalEditPolicyClassName="FujabaRealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
+        editPartClassName="RealtimeStatechartStatechartContentsCompartment2EditPart"
+        itemSemanticEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
         canCollapse="false"
@@ -1346,6 +1335,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
+        className="EntryEventLabelExpressionLabelParser5004"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/EntryEvent"/>
@@ -1353,6 +1343,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
+        className="DoEventLabelExpressionLabelParser5005"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/DoEvent"/>
@@ -1360,6 +1351,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
+        className="ExitEventLabelExpressionLabelParser5006"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ExitEvent"/>
@@ -1367,6 +1359,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        className="ClockConstraintLabelExpressionLabelParser5007"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ClockConstraint"/>
@@ -1374,6 +1367,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
+        className="SynchronizationChannelLabelExpressionLabelParser5008"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/SynchronizationChannel"/>
@@ -1384,6 +1378,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
+        className="RegionLabelExpressionLabelParser5012"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region"/>
@@ -1391,13 +1386,15 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
+        className="RealtimeStatechartLabelExpressionLabelParser5019"
         viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.0/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6001"
         viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -1405,6 +1402,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6002"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>

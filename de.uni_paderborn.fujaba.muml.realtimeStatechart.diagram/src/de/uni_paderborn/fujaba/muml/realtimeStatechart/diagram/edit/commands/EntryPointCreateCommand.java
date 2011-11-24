@@ -53,7 +53,7 @@ public class EntryPointCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createEntryPoint();
 
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getElementToEdit();
 		owner.getVertices().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers

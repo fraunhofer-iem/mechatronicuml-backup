@@ -61,7 +61,6 @@ public class MumlPropertySection extends AdvancedPropertySection
 
 	/**
 	 * Modify/unwrap selection.
-	 * 
 	 * @generated
 	 */
 	protected Object transformSelection(Object selected) {
@@ -172,4 +171,5 @@ public class MumlPropertySection extends AdvancedPropertySection
 	public synchronized void popRefreshProhibition() {
 		this.refreshProhibitions--;
 	}
+
 }

@@ -993,16 +993,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION = 14;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl <em>Fujaba Realtime Statechart</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFujabaRealtimeStatechart()
-	 * @generated
-	 */
-	int FUJABA_REALTIME_STATECHART = 16;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionEventImpl <em>Transition Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1310,13 +1300,23 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_FEATURE_COUNT = CallsPackage.INVOCATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl <em>Realtime Statechart</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getRealtimeStatechart()
+	 * @generated
+	 */
+	int REALTIME_STATECHART = 16;
+
+	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int REALTIME_STATECHART__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1325,7 +1325,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
+	int REALTIME_STATECHART__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1334,7 +1334,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int REALTIME_STATECHART__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1343,7 +1343,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int REALTIME_STATECHART__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -1352,7 +1352,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -1361,7 +1361,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__OPERATIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int REALTIME_STATECHART__OPERATIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1370,7 +1370,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int REALTIME_STATECHART__ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
@@ -1379,7 +1379,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EMBEDDING_REGION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int REALTIME_STATECHART__EMBEDDING_REGION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -1388,7 +1388,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__TRANSITIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int REALTIME_STATECHART__TRANSITIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
@@ -1397,7 +1397,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__VERTICES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int REALTIME_STATECHART__VERTICES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -1406,7 +1406,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int REALTIME_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>History</b></em>' attribute.
@@ -1415,7 +1415,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__HISTORY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int REALTIME_STATECHART__HISTORY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
@@ -1424,7 +1424,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int REALTIME_STATECHART__EVENT_QUEUE_SIZE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Flat</b></em>' attribute.
@@ -1433,7 +1433,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__FLAT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int REALTIME_STATECHART__FLAT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Available Clocks</b></em>' reference.
@@ -1442,7 +1442,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int REALTIME_STATECHART__AVAILABLE_CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
@@ -1451,7 +1451,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
@@ -1460,7 +1460,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
@@ -1469,7 +1469,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
@@ -1478,16 +1478,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
-	 * The number of structural features of the '<em>Fujaba Realtime Statechart</em>' class.
+	 * The number of structural features of the '<em>Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
+	int REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl <em>Message</em>}' class.
@@ -2746,146 +2746,146 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getPrioritizable_Priority();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart <em>Fujaba Realtime Statechart</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart <em>Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fujaba Realtime Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart
+	 * @return the meta object for class '<em>Realtime Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart
 	 * @generated
 	 */
-	EClass getFujabaRealtimeStatechart();
+	EClass getRealtimeStatechart();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Embedding Region</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEmbeddingRegion()
-	 * @see #getFujabaRealtimeStatechart()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getFujabaRealtimeStatechart_EmbeddingRegion();
+	EReference getRealtimeStatechart_EmbeddingRegion();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getTransitions <em>Transitions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getTransitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Transitions</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getTransitions()
-	 * @see #getFujabaRealtimeStatechart()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getTransitions()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getFujabaRealtimeStatechart_Transitions();
+	EReference getRealtimeStatechart_Transitions();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices <em>Vertices</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices <em>Vertices</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Vertices</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices()
-	 * @see #getFujabaRealtimeStatechart()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getFujabaRealtimeStatechart_Vertices();
+	EReference getRealtimeStatechart_Vertices();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getClocks <em>Clocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Clocks</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks()
-	 * @see #getFujabaRealtimeStatechart()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getClocks()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getFujabaRealtimeStatechart_Clocks();
+	EReference getRealtimeStatechart_Clocks();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Available Clocks</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks()
-	 * @see #getFujabaRealtimeStatechart()
-	 * @generated
-	 */
-	EReference getFujabaRealtimeStatechart_AvailableClocks();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getSecurityLevel <em>Security Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Security Level</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getSecurityLevel()
-	 * @see #getFujabaRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getFujabaRealtimeStatechart_SecurityLevel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getUtilisation <em>Utilisation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Utilisation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getUtilisation()
-	 * @see #getFujabaRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getFujabaRealtimeStatechart_Utilisation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Schedule Document</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getScheduleDocument()
-	 * @see #getFujabaRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getFujabaRealtimeStatechart_ScheduleDocument();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isEmbedded <em>Embedded</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Embedded</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isEmbedded()
-	 * @see #getFujabaRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getFujabaRealtimeStatechart_Embedded();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isHistory <em>History</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>History</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory()
-	 * @see #getFujabaRealtimeStatechart()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isHistory()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EAttribute getFujabaRealtimeStatechart_History();
+	EAttribute getRealtimeStatechart_History();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Event Queue Size</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEventQueueSize()
-	 * @see #getFujabaRealtimeStatechart()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEventQueueSize()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EAttribute getFujabaRealtimeStatechart_EventQueueSize();
+	EAttribute getRealtimeStatechart_EventQueueSize();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isFlat <em>Flat</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isFlat <em>Flat</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Flat</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isFlat()
-	 * @see #getFujabaRealtimeStatechart()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isFlat()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EAttribute getFujabaRealtimeStatechart_Flat();
+	EAttribute getRealtimeStatechart_Flat();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Available Clocks</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAvailableClocks()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EReference getRealtimeStatechart_AvailableClocks();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getSecurityLevel <em>Security Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Security Level</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getSecurityLevel()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getRealtimeStatechart_SecurityLevel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getUtilisation <em>Utilisation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Utilisation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getUtilisation()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getRealtimeStatechart_Utilisation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Schedule Document</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getScheduleDocument()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getRealtimeStatechart_ScheduleDocument();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Embedded</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isEmbedded()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getRealtimeStatechart_Embedded();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event <em>Event</em>}'.
@@ -3680,14 +3680,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute PRIORITIZABLE__PRIORITY = eINSTANCE.getPrioritizable_Priority();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl <em>Fujaba Realtime Statechart</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl <em>Realtime Statechart</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFujabaRealtimeStatechart()
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getRealtimeStatechart()
 		 * @generated
 		 */
-		EClass FUJABA_REALTIME_STATECHART = eINSTANCE.getFujabaRealtimeStatechart();
+		EClass REALTIME_STATECHART = eINSTANCE.getRealtimeStatechart();
 
 		/**
 		 * The meta object literal for the '<em><b>Embedding Region</b></em>' reference feature.
@@ -3695,7 +3695,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUJABA_REALTIME_STATECHART__EMBEDDING_REGION = eINSTANCE.getFujabaRealtimeStatechart_EmbeddingRegion();
+		EReference REALTIME_STATECHART__EMBEDDING_REGION = eINSTANCE.getRealtimeStatechart_EmbeddingRegion();
 
 		/**
 		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
@@ -3703,7 +3703,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUJABA_REALTIME_STATECHART__TRANSITIONS = eINSTANCE.getFujabaRealtimeStatechart_Transitions();
+		EReference REALTIME_STATECHART__TRANSITIONS = eINSTANCE.getRealtimeStatechart_Transitions();
 
 		/**
 		 * The meta object literal for the '<em><b>Vertices</b></em>' containment reference list feature.
@@ -3711,7 +3711,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUJABA_REALTIME_STATECHART__VERTICES = eINSTANCE.getFujabaRealtimeStatechart_Vertices();
+		EReference REALTIME_STATECHART__VERTICES = eINSTANCE.getRealtimeStatechart_Vertices();
 
 		/**
 		 * The meta object literal for the '<em><b>Clocks</b></em>' containment reference list feature.
@@ -3719,47 +3719,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUJABA_REALTIME_STATECHART__CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_Clocks();
-
-		/**
-		 * The meta object literal for the '<em><b>Available Clocks</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_AvailableClocks();
-
-		/**
-		 * The meta object literal for the '<em><b>Security Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUJABA_REALTIME_STATECHART__SECURITY_LEVEL = eINSTANCE.getFujabaRealtimeStatechart_SecurityLevel();
-
-		/**
-		 * The meta object literal for the '<em><b>Utilisation</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUJABA_REALTIME_STATECHART__UTILISATION = eINSTANCE.getFujabaRealtimeStatechart_Utilisation();
-
-		/**
-		 * The meta object literal for the '<em><b>Schedule Document</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT = eINSTANCE.getFujabaRealtimeStatechart_ScheduleDocument();
-
-		/**
-		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUJABA_REALTIME_STATECHART__EMBEDDED = eINSTANCE.getFujabaRealtimeStatechart_Embedded();
+		EReference REALTIME_STATECHART__CLOCKS = eINSTANCE.getRealtimeStatechart_Clocks();
 
 		/**
 		 * The meta object literal for the '<em><b>History</b></em>' attribute feature.
@@ -3767,7 +3727,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FUJABA_REALTIME_STATECHART__HISTORY = eINSTANCE.getFujabaRealtimeStatechart_History();
+		EAttribute REALTIME_STATECHART__HISTORY = eINSTANCE.getRealtimeStatechart_History();
 
 		/**
 		 * The meta object literal for the '<em><b>Event Queue Size</b></em>' attribute feature.
@@ -3775,7 +3735,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = eINSTANCE.getFujabaRealtimeStatechart_EventQueueSize();
+		EAttribute REALTIME_STATECHART__EVENT_QUEUE_SIZE = eINSTANCE.getRealtimeStatechart_EventQueueSize();
 
 		/**
 		 * The meta object literal for the '<em><b>Flat</b></em>' attribute feature.
@@ -3783,7 +3743,47 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FUJABA_REALTIME_STATECHART__FLAT = eINSTANCE.getFujabaRealtimeStatechart_Flat();
+		EAttribute REALTIME_STATECHART__FLAT = eINSTANCE.getRealtimeStatechart_Flat();
+
+		/**
+		 * The meta object literal for the '<em><b>Available Clocks</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getRealtimeStatechart_AvailableClocks();
+
+		/**
+		 * The meta object literal for the '<em><b>Security Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REALTIME_STATECHART__SECURITY_LEVEL = eINSTANCE.getRealtimeStatechart_SecurityLevel();
+
+		/**
+		 * The meta object literal for the '<em><b>Utilisation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REALTIME_STATECHART__UTILISATION = eINSTANCE.getRealtimeStatechart_Utilisation();
+
+		/**
+		 * The meta object literal for the '<em><b>Schedule Document</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REALTIME_STATECHART__SCHEDULE_DOCUMENT = eINSTANCE.getRealtimeStatechart_ScheduleDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REALTIME_STATECHART__EMBEDDED = eINSTANCE.getRealtimeStatechart_Embedded();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EventImpl <em>Event</em>}' class.

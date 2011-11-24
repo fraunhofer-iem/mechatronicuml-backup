@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 
 public class ClockPropertyDescriptor extends ItemPropertyDescriptor {
 	public ClockPropertyDescriptor(AdapterFactory adapterFactory,
@@ -34,7 +34,7 @@ public class ClockPropertyDescriptor extends ItemPropertyDescriptor {
 	public Collection<?> getChoiceOfValues(Object object) {
 		Collection<?> choices = super.getChoiceOfValues(object);
 		List<Object> invalidChoices = new ArrayList<Object>();
-		FujabaRealtimeStatechart rtsc = getContainerStatechart((EObject) object);
+		RealtimeStatechart rtsc = getContainerStatechart((EObject) object);
 		if (rtsc != null) {
 			for (Object choice : choices) {
 				if (choice != null) {
@@ -49,11 +49,11 @@ public class ClockPropertyDescriptor extends ItemPropertyDescriptor {
 		return choices;
 	}
 
-	private FujabaRealtimeStatechart getContainerStatechart(EObject object) {
-		while (object != null && !(object instanceof FujabaRealtimeStatechart)) {
+	private RealtimeStatechart getContainerStatechart(EObject object) {
+		while (object != null && !(object instanceof RealtimeStatechart)) {
 			object = object.eContainer();
 		}
-		return (FujabaRealtimeStatechart) object;
+		return (RealtimeStatechart) object;
 	}
 
 }

@@ -36,7 +36,7 @@ import org.storydriven.modeling.NamedElement;
 public interface Region extends Prioritizable, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Statechart</em>' reference isn't clear,
@@ -47,13 +47,13 @@ public interface Region extends Prioritizable, NamedElement {
 	 * The realtime statechart this region embeds.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
-	 * @see #setStatechart(FujabaRealtimeStatechart)
+	 * @see #setStatechart(RealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Statechart()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEmbeddingRegion
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion
 	 * @model opposite="embeddingRegion" required="true"
 	 * @generated
 	 */
-	FujabaRealtimeStatechart getStatechart();
+	RealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}' reference.
@@ -63,7 +63,7 @@ public interface Region extends Prioritizable, NamedElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(FujabaRealtimeStatechart value);
+	void setStatechart(RealtimeStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent State</b></em>' container reference.
@@ -136,13 +136,13 @@ public interface Region extends Prioritizable, NamedElement {
 	 * The derived realtime statecharts .
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart Derived</em>' containment reference.
-	 * @see #setStatechartDerived(FujabaRealtimeStatechart)
+	 * @see #setStatechartDerived(RealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_StatechartDerived()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\r\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\r\n\r\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\r\n\tnull\r\r\nelse\r\r\n\tself.statechart\r\r\nendif'"
 	 * @generated
 	 */
-	FujabaRealtimeStatechart getStatechartDerived();
+	RealtimeStatechart getStatechartDerived();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived <em>Statechart Derived</em>}' containment reference.
@@ -152,6 +152,6 @@ public interface Region extends Prioritizable, NamedElement {
 	 * @see #getStatechartDerived()
 	 * @generated
 	 */
-	void setStatechartDerived(FujabaRealtimeStatechart value);
+	void setStatechartDerived(RealtimeStatechart value);
 
 } // Region

@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 /**
@@ -56,9 +57,9 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FujabaRealtimeStatechart getStatechart() {
+	public RealtimeStatechart getStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.CLOCK__STATECHART) return null;
-		return (FujabaRealtimeStatechart)eContainer();
+		return (RealtimeStatechart)eContainer();
 	}
 
 	/**
@@ -66,7 +67,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(FujabaRealtimeStatechart newStatechart, NotificationChain msgs) {
+	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.CLOCK__STATECHART, msgs);
 		return msgs;
 	}
@@ -76,7 +77,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(FujabaRealtimeStatechart newStatechart) {
+	public void setStatechart(RealtimeStatechart newStatechart) {
 		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.CLOCK__STATECHART && newStatechart != null)) {
 			if (EcoreUtil.isAncestor(this, newStatechart))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -84,7 +85,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS, FujabaRealtimeStatechart.class, msgs);
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS, RealtimeStatechart.class, msgs);
 			msgs = basicSetStatechart(newStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -104,7 +105,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((FujabaRealtimeStatechart)otherEnd, msgs);
+				return basicSetStatechart((RealtimeStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -132,7 +133,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS, FujabaRealtimeStatechart.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS, RealtimeStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -161,7 +162,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				setStatechart((FujabaRealtimeStatechart)newValue);
+				setStatechart((RealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,7 +177,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				setStatechart((FujabaRealtimeStatechart)null);
+				setStatechart((RealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);

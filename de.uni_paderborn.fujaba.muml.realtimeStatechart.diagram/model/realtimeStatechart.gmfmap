@@ -10,7 +10,7 @@
         href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -34,7 +34,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"/>
@@ -256,14 +256,14 @@
                     href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/statechartDerived"/>
                 <ownedChild>
                   <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart"/>
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
                   <diagramNode
                       href="realtimeStatechart.gmfgraph#InnerStatechart"/>
                   <children
                       compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
                       referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
                     <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
                   </children>
                   <compartments
                       children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
@@ -356,7 +356,7 @@
       <children
           referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
@@ -388,7 +388,7 @@
       <children
           referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
@@ -444,7 +444,7 @@
           body="(&#xA;&#xA;-- Relative Deadline&#xA;&#xA;&#x9;if self.relativeDeadline.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.lowerBound.oclIsUndefined() then 'null' else self.relativeDeadline.lowerBound.toString() endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.upperBound.oclIsUndefined() then 'null' else self.relativeDeadline.upperBound.toString() endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Absolute Deadlines&#xA;&#xA;&#x9;self.absoluteDeadlines->iterate(absoluteDeadline; result : String = '' |&#xA;&#x9;&#x9;(if result = '\n' then '' else result.concat('\n') endif).concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.clock.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(' ∈ [').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.lowerBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.upperBound.oclIsUndefined() then &#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.upperBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;)&#xA;)"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/transitions"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>

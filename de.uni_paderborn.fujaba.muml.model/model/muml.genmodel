@@ -380,25 +380,24 @@
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Prioritizable">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart">
-          <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory=""
-              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
-          <genFeatures children="true" createChild="true" propertyCategory="General"
-              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
-          <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/history"/>
-          <genFeatures createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/eventQueueSize"/>
-          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/flat"/>
-          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/availableClocks"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/securityLevel"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/utilisation"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/scheduleDocument"/>
-          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/embedded"/>
-          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/isSuperStatechartOf">
-            <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/isSuperStatechartOf/statechart"/>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/RealtimeStatechart">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/embeddingRegion"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/transitions"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/clocks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/history"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/eventQueueSize"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/flat"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/availableClocks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/embedded"/>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf">
+            <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
           </genOperations>
-          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/getHighestParentStatechart"/>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Event/kind"/>

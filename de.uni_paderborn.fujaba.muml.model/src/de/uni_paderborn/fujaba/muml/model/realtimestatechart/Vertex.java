@@ -68,7 +68,7 @@ public interface Vertex extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices <em>Vertices</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices <em>Vertices</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -76,13 +76,13 @@ public interface Vertex extends NamedElement {
 	 * \todoib{Should be 1..1, but GMF needs 0..1 here!}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(FujabaRealtimeStatechart)
+	 * @see #setStatechart(RealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getVertex_Statechart()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices
 	 * @model opposite="vertices" transient="false"
 	 * @generated
 	 */
-	FujabaRealtimeStatechart getStatechart();
+	RealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}' container reference.
@@ -92,7 +92,7 @@ public interface Vertex extends NamedElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(FujabaRealtimeStatechart value);
+	void setStatechart(RealtimeStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->

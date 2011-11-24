@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -247,13 +247,13 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: {
-				FujabaRealtimeStatechart fujabaRealtimeStatechart = (FujabaRealtimeStatechart)theEObject;
-				T result = caseFujabaRealtimeStatechart(fujabaRealtimeStatechart);
-				if (result == null) result = caseNamedElement(fujabaRealtimeStatechart);
-				if (result == null) result = caseCommentableElement(fujabaRealtimeStatechart);
-				if (result == null) result = caseBehavior(fujabaRealtimeStatechart);
-				if (result == null) result = caseExtendableElement(fujabaRealtimeStatechart);
+			case RealtimestatechartPackage.REALTIME_STATECHART: {
+				RealtimeStatechart realtimeStatechart = (RealtimeStatechart)theEObject;
+				T result = caseRealtimeStatechart(realtimeStatechart);
+				if (result == null) result = caseNamedElement(realtimeStatechart);
+				if (result == null) result = caseCommentableElement(realtimeStatechart);
+				if (result == null) result = caseBehavior(realtimeStatechart);
+				if (result == null) result = caseExtendableElement(realtimeStatechart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -585,17 +585,17 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fujaba Realtime Statechart</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fujaba Realtime Statechart</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Realtime Statechart</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFujabaRealtimeStatechart(FujabaRealtimeStatechart object) {
+	public T caseRealtimeStatechart(RealtimeStatechart object) {
 		return null;
 	}
 

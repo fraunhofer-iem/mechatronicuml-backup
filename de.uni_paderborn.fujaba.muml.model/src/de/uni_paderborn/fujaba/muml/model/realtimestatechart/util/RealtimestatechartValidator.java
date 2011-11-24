@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -150,8 +150,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				return validateSynchronization((Synchronization)value, diagnostics, context);
 			case RealtimestatechartPackage.PRIORITIZABLE:
 				return validatePrioritizable((Prioritizable)value, diagnostics, context);
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART:
-				return validateFujabaRealtimeStatechart((FujabaRealtimeStatechart)value, diagnostics, context);
+			case RealtimestatechartPackage.REALTIME_STATECHART:
+				return validateRealtimeStatechart((RealtimeStatechart)value, diagnostics, context);
 			case RealtimestatechartPackage.EVENT:
 				return validateEvent((Event)value, diagnostics, context);
 			case RealtimestatechartPackage.TRANSITION_EVENT:
@@ -712,87 +712,87 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFujabaRealtimeStatechart(FujabaRealtimeStatechart fujabaRealtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(fujabaRealtimeStatechart, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFujabaRealtimeStatechart_UniqueNameOfStates(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFujabaRealtimeStatechart_MinOneState(fujabaRealtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFujabaRealtimeStatechart_NoCycles(fujabaRealtimeStatechart, diagnostics, context);
+	public boolean validateRealtimeStatechart(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(realtimeStatechart, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_UniqueNameOfStates(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_MinOneState(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoCycles(realtimeStatechart, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the UniqueNameOfStates constraint of '<em>Fujaba Realtime Statechart</em>'.
+	 * The cached validation expression for the UniqueNameOfStates constraint of '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String FUJABA_REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "self.vertices.oclAsType(State)->isUnique(name) ";
+	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "self.vertices.oclAsType(State)->isUnique(name) ";
 
 	/**
-	 * Validates the UniqueNameOfStates constraint of '<em>Fujaba Realtime Statechart</em>'.
+	 * Validates the UniqueNameOfStates constraint of '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFujabaRealtimeStatechart_UniqueNameOfStates(FujabaRealtimeStatechart fujabaRealtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRealtimeStatechart_UniqueNameOfStates(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART,
-				 fujabaRealtimeStatechart,
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniqueNameOfStates",
-				 FUJABA_REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION,
+				 REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the MinOneState constraint of '<em>Fujaba Realtime Statechart</em>'.
+	 * The cached validation expression for the MinOneState constraint of '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String FUJABA_REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION = "self.vertices.oclAsType(State)->notEmpty()";
+	protected static final String REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION = "self.vertices.oclAsType(State)->notEmpty()";
 
 	/**
-	 * Validates the MinOneState constraint of '<em>Fujaba Realtime Statechart</em>'.
+	 * Validates the MinOneState constraint of '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFujabaRealtimeStatechart_MinOneState(FujabaRealtimeStatechart fujabaRealtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRealtimeStatechart_MinOneState(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART,
-				 fujabaRealtimeStatechart,
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "MinOneState",
-				 FUJABA_REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION,
+				 REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the NoCycles constraint of '<em>Fujaba Realtime Statechart</em>'.
+	 * The cached validation expression for the NoCycles constraint of '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String FUJABA_REALTIME_STATECHART__NO_CYCLES__EEXPRESSION = "-- If we are contained within a statechart...\n" +
+	protected static final String REALTIME_STATECHART__NO_CYCLES__EEXPRESSION = "-- If we are contained within a statechart...\n" +
 		"(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n" +
 		"\n" +
 		"implies\n" +
@@ -801,21 +801,21 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		"(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))";
 
 	/**
-	 * Validates the NoCycles constraint of '<em>Fujaba Realtime Statechart</em>'.
+	 * Validates the NoCycles constraint of '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFujabaRealtimeStatechart_NoCycles(FujabaRealtimeStatechart fujabaRealtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRealtimeStatechart_NoCycles(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART,
-				 fujabaRealtimeStatechart,
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "NoCycles",
-				 FUJABA_REALTIME_STATECHART__NO_CYCLES__EEXPRESSION,
+				 REALTIME_STATECHART__NO_CYCLES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

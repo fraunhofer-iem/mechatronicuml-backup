@@ -30,7 +30,7 @@ import org.storydriven.modeling.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
@@ -130,7 +130,7 @@ public class RegionItemProvider
 
 					State parentState = region.getParentState();
 
-					FujabaRealtimeStatechart parentStatechart = parentState
+					RealtimeStatechart parentStatechart = parentState
 							.getStatechart();
 
 					List<Object> invalidChoices = new ArrayList<Object>();
@@ -138,7 +138,7 @@ public class RegionItemProvider
 						if (choice == null) {
 							continue;
 						}
-						FujabaRealtimeStatechart rtsc = (FujabaRealtimeStatechart) choice;
+						RealtimeStatechart rtsc = (RealtimeStatechart) choice;
 						if (rtsc.isSuperStatechartOf(parentStatechart)) {
 							invalidChoices.add(choice);
 						}
@@ -155,9 +155,9 @@ public class RegionItemProvider
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
-			 getString("_UI_FujabaRealtimeStatechart_clocks_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_clocks_feature", "_UI_FujabaRealtimeStatechart_type"),
-			 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__CLOCKS,
+			 getString("_UI_RealtimeStatechart_clocks_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_clocks_feature", "_UI_RealtimeStatechart_type"),
+			 RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS,
 			 true,
 			 false,
 			 false,
@@ -311,7 +311,7 @@ public class RegionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED,
-				 RealtimestatechartFactory.eINSTANCE.createFujabaRealtimeStatechart()));
+				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 	}
 
 }

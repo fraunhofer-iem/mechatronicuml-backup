@@ -31,7 +31,7 @@ import org.storydriven.modeling.NamedElement;
 public interface Clock extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getClocks <em>Clocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Statechart</em>' container reference isn't clear,
@@ -44,13 +44,13 @@ public interface Clock extends NamedElement {
 	 * \todosd{is this info necessary?}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(FujabaRealtimeStatechart)
+	 * @see #setStatechart(RealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClock_Statechart()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getClocks
 	 * @model opposite="clocks" transient="false"
 	 * @generated
 	 */
-	FujabaRealtimeStatechart getStatechart();
+	RealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock#getStatechart <em>Statechart</em>}' container reference.
@@ -60,6 +60,6 @@ public interface Clock extends NamedElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(FujabaRealtimeStatechart value);
+	void setStatechart(RealtimeStatechart value);
 
 } // Clock

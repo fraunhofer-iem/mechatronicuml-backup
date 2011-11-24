@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -169,8 +169,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createPrioritizableAdapter();
 			}
 			@Override
-			public Adapter caseFujabaRealtimeStatechart(FujabaRealtimeStatechart object) {
-				return createFujabaRealtimeStatechartAdapter();
+			public Adapter caseRealtimeStatechart(RealtimeStatechart object) {
+				return createRealtimeStatechartAdapter();
 			}
 			@Override
 			public Adapter caseEvent(Event object) {
@@ -481,16 +481,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart <em>Fujaba Realtime Statechart</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart <em>Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart
 	 * @generated
 	 */
-	public Adapter createFujabaRealtimeStatechartAdapter() {
+	public Adapter createRealtimeStatechartAdapter() {
 		return null;
 	}
 

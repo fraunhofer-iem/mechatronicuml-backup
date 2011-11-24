@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 import java.util.Set;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -32,13 +32,6 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
-
-	/**
-	 * @generated
-	 */
-	public boolean isTopLevelCanonical() {
-		return true;
-	}
 
 	/**
 	 * @generated
@@ -84,6 +77,7 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
@@ -129,6 +123,13 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID
 				|| visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID;
+	}
+
+	/**
+	 * @generated
+	 */
+	public boolean isTopLevelCanonical() {
+		return true;
 	}
 
 	/**

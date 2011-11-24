@@ -16,7 +16,7 @@ import org.storydriven.modeling.NamedElement;
  *
  * <!-- begin-model-doc -->
  * This class represents a realtime statechart.
- * \todosd{All references should moved to FujabaRealtimeStatechart, because an AbstractRealtimeStatechart abstracts from the concrete modeling.}
+ * \todosd{All references should moved to RealtimeStatechart, because an AbstractRealtimeStatechart abstracts from the concrete modeling.}
  * <!-- end-model-doc -->
  *
  * <p>

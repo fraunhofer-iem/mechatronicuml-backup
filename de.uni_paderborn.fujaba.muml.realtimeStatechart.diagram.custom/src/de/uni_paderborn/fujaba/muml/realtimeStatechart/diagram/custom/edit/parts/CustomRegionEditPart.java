@@ -39,7 +39,7 @@ public class CustomRegionEditPart extends RegionEditPart {
 //				int featureID = notification.getFeatureID(Region.class);
 //				if (featureID == RealtimestatechartPackage.REGION__TRANSITIONS) {
 //					Region region = (Region) getNotationView().getElement();
-//					FujabaRealtimeStatechart statechart = region
+//					RealtimeStatechart statechart = region
 //							.getStatechart();
 //					// if (notification.getOldValue() == sourceElement
 //					// || notification.getOldValue() == targetElement) {

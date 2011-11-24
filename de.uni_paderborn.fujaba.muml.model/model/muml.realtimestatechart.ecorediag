@@ -387,7 +387,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_gN7MbLnsEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_gN7MYrnsEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart"/>
+    <element xmi:type="ecore:EClass" href="muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gN7MY7nsEeC8CvP5OVqITA" x="904" y="583"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_gN7MbbnsEeC8CvP5OVqITA" type="1001">
@@ -696,7 +696,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_gOz8YbnsEeC8CvP5OVqITA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_gOz8YrnsEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+    <element xmi:type="ecore:EReference" href="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gOz8Y7nsEeC8CvP5OVqITA" points="[0, 0, 0, 58]$[0, -58, 0, 0]$[0, -58, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HhFo1LntEeC8CvP5OVqITA" id="(0.14936678671423412,0.004130284926470588)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HhFo1bntEeC8CvP5OVqITA" id="(0.9437040441176471,1.0086584756540697)"/>
@@ -1208,7 +1208,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_gQv2GbnsEeC8CvP5OVqITA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_gQv2GrnsEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
+    <element xmi:type="ecore:EReference" href="muml.ecore#//model/realtimestatechart/RealtimeStatechart/transitions"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gQv2G7nsEeC8CvP5OVqITA" points="[0, 0, -346, -18]$[288, 1, -58, -17]$[288, 18, -58, 0]$[346, 18, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HhFo2LntEeC8CvP5OVqITA" id="(1.0019065548229769,0.9281494140625)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HhFo2bntEeC8CvP5OVqITA" id="(5.287465469613259E-4,0.13032883864182693)"/>
@@ -1236,7 +1236,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_gQ5m6bnsEeC8CvP5OVqITA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_gQ5m6rnsEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
+    <element xmi:type="ecore:EReference" href="muml.ecore#//model/realtimestatechart/RealtimeStatechart/embeddingRegion"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gQ5m67nsEeC8CvP5OVqITA" points="[0, 6, 184, 7]$[-79, 6, 105, 7]$[-184, 6, 0, 7]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oTYaIrntEeC8CvP5OVqITA" id="(0.0019062020186054913,0.08011043772977941)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oTYaI7ntEeC8CvP5OVqITA" id="(1.0077700147441788,0.19878724563953487)"/>
@@ -1250,7 +1250,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_gRCw0bnsEeC8CvP5OVqITA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_gRCw0rnsEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
+    <element xmi:type="ecore:EReference" href="muml.ecore#//model/realtimestatechart/RealtimeStatechart/clocks"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gRCw07nsEeC8CvP5OVqITA" points="[2, 0, 0, -240]$[2, 129, 0, -111]$[2, 240, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HhFozrntEeC8CvP5OVqITA" id="(0.5019062020186055,1.0041302849264706)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HhFoz7ntEeC8CvP5OVqITA" id="(0.07267073089001226,0.009153854015261628)"/>

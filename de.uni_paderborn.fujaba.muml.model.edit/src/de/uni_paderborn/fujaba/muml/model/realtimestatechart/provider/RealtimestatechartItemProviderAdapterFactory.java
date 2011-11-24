@@ -351,26 +351,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FujabaRealtimeStatechartItemProvider fujabaRealtimeStatechartItemProvider;
+	protected RealtimeStatechartItemProvider realtimeStatechartItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFujabaRealtimeStatechartAdapter() {
-		if (fujabaRealtimeStatechartItemProvider == null) {
-			fujabaRealtimeStatechartItemProvider = new FujabaRealtimeStatechartItemProvider(this);
+	public Adapter createRealtimeStatechartAdapter() {
+		if (realtimeStatechartItemProvider == null) {
+			realtimeStatechartItemProvider = new RealtimeStatechartItemProvider(this);
 		}
 
-		return fujabaRealtimeStatechartItemProvider;
+		return realtimeStatechartItemProvider;
 	}
 
 	/**
@@ -645,7 +645,7 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
-		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();
+		if (realtimeStatechartItemProvider != null) realtimeStatechartItemProvider.dispose();
 		if (messageItemProvider != null) messageItemProvider.dispose();
 		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
 		if (exitEventItemProvider != null) exitEventItemProvider.dispose();

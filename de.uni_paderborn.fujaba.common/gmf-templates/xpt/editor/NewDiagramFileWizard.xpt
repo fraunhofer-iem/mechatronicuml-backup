@@ -146,7 +146,7 @@ public class «EXPAND className» extends org.eclipse.jface.wizard.Wizard {
 		protected String getSelectionTitle() {
 			return «EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPageSelectionTitle(self)) FOR editorGen»;
 		}
-		
+«REM»
 		«EXPAND xpt::Common::generatedMemberComment»
 		@Override
 		public void createControl(org.eclipse.swt.widgets.Composite parent) {
@@ -165,7 +165,7 @@ public class «EXPAND className» extends org.eclipse.jface.wizard.Wizard {
 				
 			});
 		}
-		
+«ENDREM»	
 
 		«EXPAND xpt::Common::generatedMemberComment»
 		protected boolean validatePage() {

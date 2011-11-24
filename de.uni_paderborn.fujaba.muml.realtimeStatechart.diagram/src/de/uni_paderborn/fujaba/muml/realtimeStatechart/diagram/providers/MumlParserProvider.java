@@ -23,35 +23,35 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser fujabaRealtimeStatechartName_5018Parser;
+	protected IParser realtimeStatechartName_5018Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getFujabaRealtimeStatechartName_5018Parser() {
-		if (fujabaRealtimeStatechartName_5018Parser == null) {
+	protected IParser getRealtimeStatechartName_5018Parser() {
+		if (realtimeStatechartName_5018Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			fujabaRealtimeStatechartName_5018Parser = parser;
+			realtimeStatechartName_5018Parser = parser;
 		}
-		return fujabaRealtimeStatechartName_5018Parser;
+		return realtimeStatechartName_5018Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.FujabaRealtimeStatechartLabelExpressionLabelParser fujabaRealtimeStatechartLabel_5019Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5019 realtimeStatechartLabel_5019Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getFujabaRealtimeStatechartLabel_5019Parser() {
-		if (fujabaRealtimeStatechartLabel_5019Parser == null) {
-			fujabaRealtimeStatechartLabel_5019Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.FujabaRealtimeStatechartLabelExpressionLabelParser();
+	protected IParser getRealtimeStatechartLabel_5019Parser() {
+		if (realtimeStatechartLabel_5019Parser == null) {
+			realtimeStatechartLabel_5019Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5019();
 		}
-		return fujabaRealtimeStatechartLabel_5019Parser;
+		return realtimeStatechartLabel_5019Parser;
 	}
 
 	/**
@@ -76,14 +76,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser entryEventLabel_5004Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5004 entryEventLabel_5004Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getEntryEventLabel_5004Parser() {
 		if (entryEventLabel_5004Parser == null) {
-			entryEventLabel_5004Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser();
+			entryEventLabel_5004Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5004();
 		}
 		return entryEventLabel_5004Parser;
 	}
@@ -91,14 +91,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser doEventLabel_5005Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser5005 doEventLabel_5005Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getDoEventLabel_5005Parser() {
 		if (doEventLabel_5005Parser == null) {
-			doEventLabel_5005Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser();
+			doEventLabel_5005Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser5005();
 		}
 		return doEventLabel_5005Parser;
 	}
@@ -106,14 +106,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser exitEventLabel_5006Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5006 exitEventLabel_5006Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getExitEventLabel_5006Parser() {
 		if (exitEventLabel_5006Parser == null) {
-			exitEventLabel_5006Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser();
+			exitEventLabel_5006Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5006();
 		}
 		return exitEventLabel_5006Parser;
 	}
@@ -121,14 +121,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser clockConstraintLabel_5007Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5007 clockConstraintLabel_5007Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getClockConstraintLabel_5007Parser() {
 		if (clockConstraintLabel_5007Parser == null) {
-			clockConstraintLabel_5007Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser();
+			clockConstraintLabel_5007Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5007();
 		}
 		return clockConstraintLabel_5007Parser;
 	}
@@ -136,14 +136,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser synchronizationChannelLabel_5008Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5008 synchronizationChannelLabel_5008Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getSynchronizationChannelLabel_5008Parser() {
 		if (synchronizationChannelLabel_5008Parser == null) {
-			synchronizationChannelLabel_5008Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser();
+			synchronizationChannelLabel_5008Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5008();
 		}
 		return synchronizationChannelLabel_5008Parser;
 	}
@@ -189,14 +189,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser regionLabel_5012Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5012 regionLabel_5012Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getRegionLabel_5012Parser() {
 		if (regionLabel_5012Parser == null) {
-			regionLabel_5012Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser();
+			regionLabel_5012Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5012();
 		}
 		return regionLabel_5012Parser;
 	}
@@ -280,14 +280,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser transitionLabel_6001Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001 transitionLabel_6001Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getTransitionLabel_6001Parser() {
 		if (transitionLabel_6001Parser == null) {
-			transitionLabel_6001Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser();
+			transitionLabel_6001Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001();
 		}
 		return transitionLabel_6001Parser;
 	}
@@ -295,14 +295,14 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser transitionLabel_6002Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6002 transitionLabel_6002Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getTransitionLabel_6002Parser() {
 		if (transitionLabel_6002Parser == null) {
-			transitionLabel_6002Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser();
+			transitionLabel_6002Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6002();
 		}
 		return transitionLabel_6002Parser;
 	}
@@ -312,10 +312,10 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartNameEditPart.VISUAL_ID:
-			return getFujabaRealtimeStatechartName_5018Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID:
+			return getRealtimeStatechartName_5018Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getFujabaRealtimeStatechartLabel_5019Parser();
+			return getRealtimeStatechartLabel_5019Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
 			return getStateName_5017Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
