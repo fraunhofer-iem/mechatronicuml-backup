@@ -1642,7 +1642,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (fujabaRealtimeStatechartEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueNameOfStates MinOneState"
+			 "constraints", "UniqueNameOfStates MinOneState NoCycles"
 		   });																									
 		addAnnotation
 		  (entryPointEClass, 
@@ -1756,7 +1756,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "UniqueNameOfStates", "self.vertices.oclAsType(State)->isUnique(name) ",
-			 "MinOneState", "self.vertices.oclAsType(State)->notEmpty()"
+			 "MinOneState", "self.vertices.oclAsType(State)->notEmpty()",
+			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"
 		   });									
 		addAnnotation
 		  (getFujabaRealtimeStatechart_Flat(), 

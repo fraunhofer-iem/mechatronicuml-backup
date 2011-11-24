@@ -724,6 +724,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fujabaRealtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateFujabaRealtimeStatechart_UniqueNameOfStates(fujabaRealtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateFujabaRealtimeStatechart_MinOneState(fujabaRealtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFujabaRealtimeStatechart_NoCycles(fujabaRealtimeStatechart, diagnostics, context);
 		return result;
 	}
 
@@ -780,6 +781,41 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "MinOneState",
 				 FUJABA_REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NoCycles constraint of '<em>Fujaba Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String FUJABA_REALTIME_STATECHART__NO_CYCLES__EEXPRESSION = "-- If we are contained within a statechart...\n" +
+		"(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n" +
+		"\n" +
+		"implies\n" +
+		"\n" +
+		"-- ... then we must not be a super statechart of it.\n" +
+		"(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))";
+
+	/**
+	 * Validates the NoCycles constraint of '<em>Fujaba Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFujabaRealtimeStatechart_NoCycles(FujabaRealtimeStatechart fujabaRealtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART,
+				 fujabaRealtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NoCycles",
+				 FUJABA_REALTIME_STATECHART__NO_CYCLES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
