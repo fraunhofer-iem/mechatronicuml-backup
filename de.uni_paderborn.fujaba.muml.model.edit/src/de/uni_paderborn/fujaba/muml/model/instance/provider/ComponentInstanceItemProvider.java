@@ -149,7 +149,6 @@ public class ComponentInstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(InstancePackage.Literals.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_CIC);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
 		}
@@ -206,7 +205,6 @@ public class ComponentInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInstance.class)) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -225,11 +223,6 @@ public class ComponentInstanceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(InstancePackage.Literals.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE,
-				 InstanceFactory.eINSTANCE.createFujabaRealtimeStatechartInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter

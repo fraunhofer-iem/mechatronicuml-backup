@@ -229,19 +229,6 @@ public class InstanceSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InstancePackage.BEHAVIOR_INSTANCE: {
-				BehaviorInstance behaviorInstance = (BehaviorInstance)theEObject;
-				T result = caseBehaviorInstance(behaviorInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case InstancePackage.FUJABA_REALTIME_STATECHART_INSTANCE: {
-				FujabaRealtimeStatechartInstance fujabaRealtimeStatechartInstance = (FujabaRealtimeStatechartInstance)theEObject;
-				T result = caseFujabaRealtimeStatechartInstance(fujabaRealtimeStatechartInstance);
-				if (result == null) result = caseBehaviorInstance(fujabaRealtimeStatechartInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE: {
 				BehavioralElementInstance behavioralElementInstance = (BehavioralElementInstance)theEObject;
 				T result = caseBehavioralElementInstance(behavioralElementInstance);
@@ -429,36 +416,6 @@ public class InstanceSwitch<T> {
 	 * @generated
 	 */
 	public T caseDiscreteMultiPortInstance(DiscreteMultiPortInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Behavior Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Behavior Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBehaviorInstance(BehaviorInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fujaba Realtime Statechart Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fujaba Realtime Statechart Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFujabaRealtimeStatechartInstance(FujabaRealtimeStatechartInstance object) {
 		return null;
 	}
 

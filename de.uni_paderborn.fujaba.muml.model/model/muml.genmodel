@@ -242,28 +242,8 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteMultiPortInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/adaptationBehaviorInstance"/>
-        </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/instance/BehaviorInstance">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehaviorInstance/behavior"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehaviorInstance/behavioralElementInstance"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/instance/FujabaRealtimeStatechartInstance">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/FujabaRealtimeStatechartInstance/statechart"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/FujabaRealtimeStatechartInstance/embeddedSubStatecharts"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/FujabaRealtimeStatechartInstance/referencedSubStatecharts"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/FujabaRealtimeStatechartInstance/allSubStatecharts"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/FujabaRealtimeStatechartInstance/parentStatechart"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/instance/BehavioralElementInstance">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehavioralElementInstance/behaviorInstance"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehavioralElementInstance/behavioralElementType"/>
         </genClasses>

@@ -116,15 +116,6 @@ public interface InstanceFactory extends EFactory {
 	DiscreteMultiPortInstance createDiscreteMultiPortInstance();
 
 	/**
-	 * Returns a new object of class '<em>Fujaba Realtime Statechart Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fujaba Realtime Statechart Instance</em>'.
-	 * @generated
-	 */
-	FujabaRealtimeStatechartInstance createFujabaRealtimeStatechartInstance();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

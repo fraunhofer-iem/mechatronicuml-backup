@@ -305,29 +305,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FujabaRealtimeStatechartInstanceItemProvider fujabaRealtimeStatechartInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFujabaRealtimeStatechartInstanceAdapter() {
-		if (fujabaRealtimeStatechartInstanceItemProvider == null) {
-			fujabaRealtimeStatechartInstanceItemProvider = new FujabaRealtimeStatechartInstanceItemProvider(this);
-		}
-
-		return fujabaRealtimeStatechartInstanceItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -436,7 +413,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		if (hybridPortInstanceItemProvider != null) hybridPortInstanceItemProvider.dispose();
 		if (discreteSinglePortInstanceItemProvider != null) discreteSinglePortInstanceItemProvider.dispose();
 		if (discreteMultiPortInstanceItemProvider != null) discreteMultiPortInstanceItemProvider.dispose();
-		if (fujabaRealtimeStatechartInstanceItemProvider != null) fujabaRealtimeStatechartInstanceItemProvider.dispose();
 	}
 
 }

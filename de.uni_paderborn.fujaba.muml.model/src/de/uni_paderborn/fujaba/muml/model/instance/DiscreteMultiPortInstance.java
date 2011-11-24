@@ -26,7 +26,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances <em>Sub Port Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getAdaptationBehaviorInstance <em>Adaptation Behavior Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,32 +55,5 @@ public interface DiscreteMultiPortInstance extends DiscretePortInstance {
 	 * @generated
 	 */
 	EList<DiscreteSinglePortInstance> getSubPortInstances();
-
-	/**
-	 * Returns the value of the '<em><b>Adaptation Behavior Instance</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This is an instance of the adaptation behavior of the multi-port instance. An
-	 * instance of the adaptation behavior is instantiated at all times.
-	 * \todosd{ocl: implement derived}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Adaptation Behavior Instance</em>' reference.
-	 * @see #setAdaptationBehaviorInstance(BehaviorInstance)
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscreteMultiPortInstance_AdaptationBehaviorInstance()
-	 * @model required="true" derived="true"
-	 * @generated
-	 */
-	BehaviorInstance getAdaptationBehaviorInstance();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getAdaptationBehaviorInstance <em>Adaptation Behavior Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Adaptation Behavior Instance</em>' reference.
-	 * @see #getAdaptationBehaviorInstance()
-	 * @generated
-	 */
-	void setAdaptationBehaviorInstance(BehaviorInstance value);
 
 } // DiscreteMultiPortInstance

@@ -30,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehavioralElementInstanceImpl#getBehaviorInstance <em>Behavior Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehavioralElementInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  * </ul>
  * </p>
@@ -38,16 +37,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * @generated
  */
 public abstract class BehavioralElementInstanceImpl extends EObjectImpl implements BehavioralElementInstance {
-	/**
-	 * The cached value of the '{@link #getBehaviorInstance() <em>Behavior Instance</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehaviorInstance()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<BehaviorInstance> behaviorInstance;
-
 	/**
 	 * The cached value of the '{@link #getBehavioralElementType() <em>Behavioral Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -75,18 +64,6 @@ public abstract class BehavioralElementInstanceImpl extends EObjectImpl implemen
 	@Override
 	protected EClass eStaticClass() {
 		return InstancePackage.Literals.BEHAVIORAL_ELEMENT_INSTANCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<BehaviorInstance> getBehaviorInstance() {
-		if (behaviorInstance == null) {
-			behaviorInstance = new EObjectContainmentWithInverseEList<BehaviorInstance>(BehaviorInstance.class, this, InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE, InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE);
-		}
-		return behaviorInstance;
 	}
 
 	/**
@@ -132,40 +109,9 @@ public abstract class BehavioralElementInstanceImpl extends EObjectImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehaviorInstance()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE:
-				return ((InternalEList<?>)getBehaviorInstance()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE:
-				return getBehaviorInstance();
 			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				if (resolve) return getBehavioralElementType();
 				return basicGetBehavioralElementType();
@@ -182,10 +128,6 @@ public abstract class BehavioralElementInstanceImpl extends EObjectImpl implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE:
-				getBehaviorInstance().clear();
-				getBehaviorInstance().addAll((Collection<? extends BehaviorInstance>)newValue);
-				return;
 			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				setBehavioralElementType((BehavioralElement)newValue);
 				return;
@@ -201,9 +143,6 @@ public abstract class BehavioralElementInstanceImpl extends EObjectImpl implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE:
-				getBehaviorInstance().clear();
-				return;
 			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				setBehavioralElementType((BehavioralElement)null);
 				return;
@@ -219,8 +158,6 @@ public abstract class BehavioralElementInstanceImpl extends EObjectImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE:
-				return behaviorInstance != null && !behaviorInstance.isEmpty();
 			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				return behavioralElementType != null;
 		}

@@ -34,7 +34,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getBehaviorInstance <em>Behavior Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getEmbeddedCIC <em>Embedded CIC</em>}</li>
@@ -45,16 +44,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * @generated
  */
 public class ComponentInstanceImpl extends NamedElementImpl implements ComponentInstance {
-	/**
-	 * The cached value of the '{@link #getBehaviorInstance() <em>Behavior Instance</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehaviorInstance()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<BehaviorInstance> behaviorInstance;
-
 	/**
 	 * The cached value of the '{@link #getBehavioralElementType() <em>Behavioral Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -112,18 +101,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	protected EClass eStaticClass() {
 		return InstancePackage.Literals.COMPONENT_INSTANCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<BehaviorInstance> getBehaviorInstance() {
-		if (behaviorInstance == null) {
-			behaviorInstance = new EObjectContainmentWithInverseEList<BehaviorInstance>(BehaviorInstance.class, this, InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE, InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE);
-		}
-		return behaviorInstance;
 	}
 
 	/**
@@ -266,8 +243,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehaviorInstance()).basicAdd(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
 		}
@@ -282,8 +257,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
-				return ((InternalEList<?>)getBehaviorInstance()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
 				return basicSetEmbeddedCIC(null, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
@@ -300,8 +273,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
-				return getBehaviorInstance();
 			case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				if (resolve) return getBehavioralElementType();
 				return basicGetBehavioralElementType();
@@ -325,10 +296,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
-				getBehaviorInstance().clear();
-				getBehaviorInstance().addAll((Collection<? extends BehaviorInstance>)newValue);
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				setBehavioralElementType((BehavioralElement)newValue);
 				return;
@@ -354,9 +321,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
-				getBehaviorInstance().clear();
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				setBehavioralElementType((BehavioralElement)null);
 				return;
@@ -381,8 +345,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
-				return behaviorInstance != null && !behaviorInstance.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				return behavioralElementType != null;
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
@@ -404,7 +366,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElementInstance.class) {
 			switch (derivedFeatureID) {
-				case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE: return InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE;
 				case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE: return InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
 				default: return -1;
 			}
@@ -421,7 +382,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElementInstance.class) {
 			switch (baseFeatureID) {
-				case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE: return InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE;
 				case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE: return InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
 				default: return -1;
 			}

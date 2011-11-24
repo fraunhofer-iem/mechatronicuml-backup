@@ -82,7 +82,6 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 			case InstancePackage.HYBRID_PORT_INSTANCE: return createHybridPortInstance();
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE: return createDiscreteSinglePortInstance();
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE: return createDiscreteMultiPortInstance();
-			case InstancePackage.FUJABA_REALTIME_STATECHART_INSTANCE: return createFujabaRealtimeStatechartInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -186,16 +185,6 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	public DiscreteMultiPortInstance createDiscreteMultiPortInstance() {
 		DiscreteMultiPortInstanceImpl discreteMultiPortInstance = new DiscreteMultiPortInstanceImpl();
 		return discreteMultiPortInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FujabaRealtimeStatechartInstance createFujabaRealtimeStatechartInstance() {
-		FujabaRealtimeStatechartInstanceImpl fujabaRealtimeStatechartInstance = new FujabaRealtimeStatechartInstanceImpl();
-		return fujabaRealtimeStatechartInstance;
 	}
 
 	/**

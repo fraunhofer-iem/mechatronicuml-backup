@@ -59,7 +59,6 @@ public class DiscreteMultiPortInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSubPortInstancesPropertyDescriptor(object);
-			addAdaptationBehaviorInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,28 +77,6 @@ public class DiscreteMultiPortInstanceItemProvider
 				 getString("_UI_DiscreteMultiPortInstance_subPortInstances_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteMultiPortInstance_subPortInstances_feature", "_UI_DiscreteMultiPortInstance_type"),
 				 InstancePackage.Literals.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Adaptation Behavior Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAdaptationBehaviorInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscreteMultiPortInstance_adaptationBehaviorInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteMultiPortInstance_adaptationBehaviorInstance_feature", "_UI_DiscreteMultiPortInstance_type"),
-				 InstancePackage.Literals.DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE,
 				 true,
 				 false,
 				 true,

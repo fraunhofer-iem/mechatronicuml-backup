@@ -836,81 +836,11 @@
             <details key="documentation" value="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehaviorInstance"
-            lowerBound="1" eType="#//model/instance/BehaviorInstance" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This is an instance of the adaptation behavior of the multi-port instance. An&#xD;&#xA;instance of the adaptation behavior is instantiated at all times.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="BehaviorInstance" abstract="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This is an abstract super class for all instances of behaviors. In MechatronicUML,&#xD;&#xA;we use instances of behaviors because, e.g., the behavior of a multi-port is &#xD;&#xA;instantiated multiple times. Then, all instances may specify an own assignment&#xD;&#xA;of initial values to the attributes."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
-            eType="#//model/core/Behavior">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The behavior which is instantiated here. For each behavior, multiple instance&#xD;&#xA;may be created."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementInstance"
-            lowerBound="1" eType="#//model/instance/BehavioralElementInstance" eOpposite="#//model/instance/BehavioralElementInstance/behaviorInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference points to the behavioral element instance that this behavior &#xD;&#xA;instance belongs to. Each behavior instance belongs to exactly one behavioral&#xD;&#xA;element instance and defines its behavior."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechartInstance"
-          eSuperTypes="#//model/instance/BehaviorInstance">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents an instance of a FujabaRealtimeStatechart. The meta-model&#xD;&#xA;contains instances of statecharts because, in case of a multi-port, a statechart&#xD;&#xA;contains a dynamic number of regions and, thus, a dynamic number of statechart&#xD;&#xA;instances. In addition, each statechart instance may have a different initial&#xD;&#xA;assigment of values to its attributes."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
-            eType="#//model/realtimestatechart/FujabaRealtimeStatechart">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The statechart which is instantiated here."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedSubStatecharts"
-            upperBound="-1" eType="#//model/instance/FujabaRealtimeStatechartInstance"
-            eOpposite="#//model/instance/FujabaRealtimeStatechartInstance/parentStatechart">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference contains all instances of statecharts that are contained in &#xD;&#xA;regions of the currently active state of this statechart."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="referencedSubStatecharts"
-            upperBound="-1" eType="#//model/instance/FujabaRealtimeStatechartInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="In case of a component statechart instance, all statechart instances of the port&#xD;&#xA;instances are held in this reference.  In case of a multi-port statechart instance,&#xD;&#xA;all statechart instances of the sub-port instances are held in this reference."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="allSubStatecharts"
-            upperBound="-1" eType="#//model/instance/FujabaRealtimeStatechartInstance"
-            derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference returns all statechart instances that are contained in this&#xD;&#xA;statechart instance. The instances may either be contained as sub-statecharts&#xD;&#xA;or referenced. Thus, this reference is a union of embeddedSubStatecharts&#xD;&#xA;and referencedSubStatecharts."/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="embeddedSubStatecharts -> union(referencedSubStatecharts)"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parentStatechart" lowerBound="1"
-            eType="#//model/instance/FujabaRealtimeStatechartInstance" eOpposite="#//model/instance/FujabaRealtimeStatechartInstance/embeddedSubStatecharts">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="In case of a sub-statechart, this reference points to the parent statechart instance.&#xD;&#xA;This reference will be null for all top-level statechart instances and for all&#xD;&#xA;referenced statechart instances."/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BehavioralElementInstance" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This is an abstract super class for all instances of behavioral elements. The &#xD;&#xA;behavioral element instance contains the instances of all its behaviors.&#xD;&#xA;&#xD;&#xA;In case of a DiscreteMultiPortInstance, this reference contains the statechart&#xD;&#xA;for the multi-role as well as the adaptation statechart. In case of a &#xD;&#xA;ComponentInstance, this reference contains the component statechart instance&#xD;&#xA;as well as all synchronization statechart instances."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorInstance" upperBound="-1"
-            eType="#//model/instance/BehaviorInstance" containment="true" eOpposite="#//model/instance/BehaviorInstance/behavioralElementInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="These are the behavior instances of the behavioral element instance. A &#xD;&#xA;behavioral element instance has more than one behavior instance in case&#xD;&#xA;that a behavior may be hierarchically composed as it is the case for &#xD;&#xA;real-time statecharts. Then, all instances that do not directly have a behavioral&#xD;&#xA;element instance are contained in the behaviorInstance reference of the &#xD;&#xA;nearest ancestor."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementType"
             lowerBound="1" eType="#//model/core/BehavioralElement">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

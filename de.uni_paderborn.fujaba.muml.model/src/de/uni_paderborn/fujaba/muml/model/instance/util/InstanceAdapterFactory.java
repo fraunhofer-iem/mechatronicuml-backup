@@ -138,14 +138,6 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 				return createDiscreteMultiPortInstanceAdapter();
 			}
 			@Override
-			public Adapter caseBehaviorInstance(BehaviorInstance object) {
-				return createBehaviorInstanceAdapter();
-			}
-			@Override
-			public Adapter caseFujabaRealtimeStatechartInstance(FujabaRealtimeStatechartInstance object) {
-				return createFujabaRealtimeStatechartInstanceAdapter();
-			}
-			@Override
 			public Adapter caseBehavioralElementInstance(BehavioralElementInstance object) {
 				return createBehavioralElementInstanceAdapter();
 			}
@@ -346,34 +338,6 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscreteMultiPortInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance <em>Behavior Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance
-	 * @generated
-	 */
-	public Adapter createBehaviorInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance <em>Fujaba Realtime Statechart Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance
-	 * @generated
-	 */
-	public Adapter createFujabaRealtimeStatechartInstanceAdapter() {
 		return null;
 	}
 

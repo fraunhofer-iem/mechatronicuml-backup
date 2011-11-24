@@ -40,7 +40,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getBehaviorInstance <em>Behavior Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
@@ -72,16 +71,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getBehaviorInstance() <em>Behavior Instance</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehaviorInstance()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<BehaviorInstance> behaviorInstance;
 
 	/**
 	 * The cached value of the '{@link #getBehavioralElementType() <em>Behavioral Element Type</em>}' reference.
@@ -193,18 +182,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 		comment = newComment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.PORT_INSTANCE__COMMENT, oldComment, comment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<BehaviorInstance> getBehaviorInstance() {
-		if (behaviorInstance == null) {
-			behaviorInstance = new EObjectContainmentWithInverseEList<BehaviorInstance>(BehaviorInstance.class, this, InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE, InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE);
-		}
-		return behaviorInstance;
 	}
 
 	/**
@@ -367,8 +344,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehaviorInstance()).basicAdd(otherEnd, msgs);
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -389,8 +364,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
-				return ((InternalEList<?>)getBehaviorInstance()).basicRemove(otherEnd, msgs);
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return basicSetComponentInstance(null, msgs);
 			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
@@ -425,8 +398,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
 				return getComment();
-			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
-				return getBehaviorInstance();
 			case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				if (resolve) return getBehavioralElementType();
 				return basicGetBehavioralElementType();
@@ -456,10 +427,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
 				setComment((String)newValue);
-				return;
-			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
-				getBehaviorInstance().clear();
-				getBehaviorInstance().addAll((Collection<? extends BehaviorInstance>)newValue);
 				return;
 			case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				setBehavioralElementType((BehavioralElement)newValue);
@@ -497,9 +464,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 			case InstancePackage.PORT_INSTANCE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
-				getBehaviorInstance().clear();
-				return;
 			case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				setBehavioralElementType((BehavioralElement)null);
 				return;
@@ -532,8 +496,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
-				return behaviorInstance != null && !behaviorInstance.isEmpty();
 			case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				return behavioralElementType != null;
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
@@ -565,7 +527,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 		}
 		if (baseClass == BehavioralElementInstance.class) {
 			switch (derivedFeatureID) {
-				case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE: return InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE;
 				case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE: return InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
 				default: return -1;
 			}
@@ -588,7 +549,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 		}
 		if (baseClass == BehavioralElementInstance.class) {
 			switch (baseFeatureID) {
-				case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE: return InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE;
 				case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE: return InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
 				default: return -1;
 			}

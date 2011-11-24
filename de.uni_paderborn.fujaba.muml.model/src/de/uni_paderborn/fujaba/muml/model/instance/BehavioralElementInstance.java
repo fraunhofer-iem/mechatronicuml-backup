@@ -29,7 +29,6 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance#getBehaviorInstance <em>Behavior Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  * </ul>
  * </p>
@@ -39,28 +38,6 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
  * @generated
  */
 public interface BehavioralElementInstance extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Behavior Instance</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavioralElementInstance <em>Behavioral Element Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * These are the behavior instances of the behavioral element instance. A 
-	 * behavioral element instance has more than one behavior instance in case
-	 * that a behavior may be hierarchically composed as it is the case for 
-	 * real-time statecharts. Then, all instances that do not directly have a behavioral
-	 * element instance are contained in the behaviorInstance reference of the 
-	 * nearest ancestor.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Behavior Instance</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getBehavioralElementInstance_BehaviorInstance()
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavioralElementInstance
-	 * @model opposite="behavioralElementInstance" containment="true"
-	 * @generated
-	 */
-	EList<BehaviorInstance> getBehaviorInstance();
-
 	/**
 	 * Returns the value of the '<em><b>Behavioral Element Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

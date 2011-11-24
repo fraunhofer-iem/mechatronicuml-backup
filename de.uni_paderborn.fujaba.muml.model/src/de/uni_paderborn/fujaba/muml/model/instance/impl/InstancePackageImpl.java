@@ -145,20 +145,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass behaviorInstanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fujabaRealtimeStatechartInstanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass behavioralElementInstanceEClass = null;
 
 	/**
@@ -553,96 +539,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteMultiPortInstance_AdaptationBehaviorInstance() {
-		return (EReference)discreteMultiPortInstanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBehaviorInstance() {
-		return behaviorInstanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBehaviorInstance_Behavior() {
-		return (EReference)behaviorInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBehaviorInstance_BehavioralElementInstance() {
-		return (EReference)behaviorInstanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFujabaRealtimeStatechartInstance() {
-		return fujabaRealtimeStatechartInstanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFujabaRealtimeStatechartInstance_Statechart() {
-		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts() {
-		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFujabaRealtimeStatechartInstance_ReferencedSubStatecharts() {
-		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFujabaRealtimeStatechartInstance_AllSubStatecharts() {
-		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFujabaRealtimeStatechartInstance_ParentStatechart() {
-		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBehavioralElementInstance() {
 		return behavioralElementInstanceEClass;
 	}
@@ -652,17 +548,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehavioralElementInstance_BehaviorInstance() {
-		return (EReference)behavioralElementInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getBehavioralElementInstance_BehavioralElementType() {
-		return (EReference)behavioralElementInstanceEClass.getEStructuralFeatures().get(1);
+		return (EReference)behavioralElementInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -737,21 +624,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		discreteMultiPortInstanceEClass = createEClass(DISCRETE_MULTI_PORT_INSTANCE);
 		createEReference(discreteMultiPortInstanceEClass, DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES);
-		createEReference(discreteMultiPortInstanceEClass, DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE);
-
-		behaviorInstanceEClass = createEClass(BEHAVIOR_INSTANCE);
-		createEReference(behaviorInstanceEClass, BEHAVIOR_INSTANCE__BEHAVIOR);
-		createEReference(behaviorInstanceEClass, BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE);
-
-		fujabaRealtimeStatechartInstanceEClass = createEClass(FUJABA_REALTIME_STATECHART_INSTANCE);
-		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__STATECHART);
-		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__EMBEDDED_SUB_STATECHARTS);
-		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__REFERENCED_SUB_STATECHARTS);
-		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__ALL_SUB_STATECHARTS);
-		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__PARENT_STATECHART);
 
 		behavioralElementInstanceEClass = createEClass(BEHAVIORAL_ELEMENT_INSTANCE);
-		createEReference(behavioralElementInstanceEClass, BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE);
 		createEReference(behavioralElementInstanceEClass, BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE);
 	}
 
@@ -784,7 +658,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -808,7 +681,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		discretePortInstanceEClass.getESuperTypes().add(this.getPortInstance());
 		discreteSinglePortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
 		discreteMultiPortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
-		fujabaRealtimeStatechartInstanceEClass.getESuperTypes().add(this.getBehaviorInstance());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentInstanceEClass, ComponentInstance.class, "ComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -857,21 +729,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		initEClass(discreteMultiPortInstanceEClass, DiscreteMultiPortInstance.class, "DiscreteMultiPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteMultiPortInstance_SubPortInstances(), this.getDiscreteSinglePortInstance(), this.getDiscreteSinglePortInstance_MultiPortInstance(), "subPortInstances", null, 0, -1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteMultiPortInstance_AdaptationBehaviorInstance(), this.getBehaviorInstance(), null, "adaptationBehaviorInstance", null, 1, 1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
-		initEClass(behaviorInstanceEClass, BehaviorInstance.class, "BehaviorInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorInstance_Behavior(), theCorePackage.getBehavior(), null, "behavior", null, 1, 1, BehaviorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehaviorInstance_BehavioralElementInstance(), this.getBehavioralElementInstance(), this.getBehavioralElementInstance_BehaviorInstance(), "behavioralElementInstance", null, 1, 1, BehaviorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(fujabaRealtimeStatechartInstanceEClass, FujabaRealtimeStatechartInstance.class, "FujabaRealtimeStatechartInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFujabaRealtimeStatechartInstance_Statechart(), theRealtimestatechartPackage.getFujabaRealtimeStatechart(), null, "statechart", null, 1, 1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts(), this.getFujabaRealtimeStatechartInstance(), this.getFujabaRealtimeStatechartInstance_ParentStatechart(), "embeddedSubStatecharts", null, 0, -1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFujabaRealtimeStatechartInstance_ReferencedSubStatecharts(), this.getFujabaRealtimeStatechartInstance(), null, "referencedSubStatecharts", null, 0, -1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFujabaRealtimeStatechartInstance_AllSubStatecharts(), this.getFujabaRealtimeStatechartInstance(), null, "allSubStatecharts", null, 0, -1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getFujabaRealtimeStatechartInstance_ParentStatechart(), this.getFujabaRealtimeStatechartInstance(), this.getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts(), "parentStatechart", null, 1, 1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behavioralElementInstanceEClass, BehavioralElementInstance.class, "BehavioralElementInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehavioralElementInstance_BehaviorInstance(), this.getBehaviorInstance(), this.getBehaviorInstance_BehavioralElementInstance(), "behaviorInstance", null, 0, -1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehavioralElementInstance_BehavioralElementType(), theCorePackage.getBehavioralElement(), null, "behavioralElementType", null, 1, 1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
@@ -899,7 +758,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																					
+		   });																																									
 	}
 
 	/**
@@ -945,13 +804,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).senderMessageInterface\nendif"
-		   });															
-		addAnnotation
-		  (getFujabaRealtimeStatechartInstance_AllSubStatecharts(), 
-		   source, 
-		   new String[] {
-			 "derivation", "embeddedSubStatecharts -> union(referencedSubStatecharts)"
-		   });				
+		   });						
 	}
 
 } //InstancePackageImpl

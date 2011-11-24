@@ -30,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteMultiPortInstanceImpl#getSubPortInstances <em>Sub Port Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteMultiPortInstanceImpl#getAdaptationBehaviorInstance <em>Adaptation Behavior Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,16 +45,6 @@ public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl impl
 	 * @ordered
 	 */
 	protected EList<DiscreteSinglePortInstance> subPortInstances;
-
-	/**
-	 * The cached value of the '{@link #getAdaptationBehaviorInstance() <em>Adaptation Behavior Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAdaptationBehaviorInstance()
-	 * @generated
-	 * @ordered
-	 */
-	protected BehaviorInstance adaptationBehaviorInstance;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,44 +75,6 @@ public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl impl
 			subPortInstances = new EObjectWithInverseResolvingEList<DiscreteSinglePortInstance>(DiscreteSinglePortInstance.class, this, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE);
 		}
 		return subPortInstances;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehaviorInstance getAdaptationBehaviorInstance() {
-		if (adaptationBehaviorInstance != null && adaptationBehaviorInstance.eIsProxy()) {
-			InternalEObject oldAdaptationBehaviorInstance = (InternalEObject)adaptationBehaviorInstance;
-			adaptationBehaviorInstance = (BehaviorInstance)eResolveProxy(oldAdaptationBehaviorInstance);
-			if (adaptationBehaviorInstance != oldAdaptationBehaviorInstance) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE, oldAdaptationBehaviorInstance, adaptationBehaviorInstance));
-			}
-		}
-		return adaptationBehaviorInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehaviorInstance basicGetAdaptationBehaviorInstance() {
-		return adaptationBehaviorInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAdaptationBehaviorInstance(BehaviorInstance newAdaptationBehaviorInstance) {
-		BehaviorInstance oldAdaptationBehaviorInstance = adaptationBehaviorInstance;
-		adaptationBehaviorInstance = newAdaptationBehaviorInstance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE, oldAdaptationBehaviorInstance, adaptationBehaviorInstance));
 	}
 
 	/**
@@ -165,9 +116,6 @@ public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl impl
 		switch (featureID) {
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES:
 				return getSubPortInstances();
-			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE:
-				if (resolve) return getAdaptationBehaviorInstance();
-				return basicGetAdaptationBehaviorInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,9 +133,6 @@ public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl impl
 				getSubPortInstances().clear();
 				getSubPortInstances().addAll((Collection<? extends DiscreteSinglePortInstance>)newValue);
 				return;
-			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE:
-				setAdaptationBehaviorInstance((BehaviorInstance)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -203,9 +148,6 @@ public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl impl
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES:
 				getSubPortInstances().clear();
 				return;
-			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE:
-				setAdaptationBehaviorInstance((BehaviorInstance)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -220,8 +162,6 @@ public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl impl
 		switch (featureID) {
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES:
 				return subPortInstances != null && !subPortInstances.isEmpty();
-			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE:
-				return adaptationBehaviorInstance != null;
 		}
 		return super.eIsSet(featureID);
 	}
