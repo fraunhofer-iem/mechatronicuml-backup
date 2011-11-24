@@ -952,13 +952,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-            eType="#//model/pattern/Role" eOpposite="#//model/pattern/Role/roleConnector">
+            eType="#//model/pattern/Role" eOpposite="#//model/pattern/Role/outgoingRoleConnector">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-            eType="#//model/pattern/Role">
+            eType="#//model/pattern/Role" eOpposite="#//model/pattern/Role/incomingRoleConnector">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
           </eAnnotations>
@@ -1001,14 +1001,15 @@
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable"/>
+          <details key="constraints" value="OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasAtLeastOneConnector"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OrderOnlyForMultiPort" value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
           <details key="OrderedRequiresIntegerOrderVariable" value="self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType ='EInt')"/>
+          <details key="RoleHasAtLeastOneConnector" value="self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
-            eType="#//model/pattern/RoleConnector" eOpposite="#//model/pattern/RoleConnector/source">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingRoleConnector"
+            eType="#//model/pattern/RoleConnector" eOpposite="#//model/pattern/RoleConnector/target">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The connector which connects this role with another role.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
           </eAnnotations>
@@ -1059,6 +1060,14 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderVariable" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This attribute defines the order on the instances of the multi-role. It must be defined in the real-time statechart of this role and it must be of type integer."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingRoleConnector"
+            eType="#//model/pattern/RoleConnector" eOpposite="#//model/pattern/RoleConnector/source"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" eType="#//model/pattern/RoleConnector"
+            changeable="false" volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if self.incomingConnector -> notEmpty() then&#xD;&#xA;&#x9;self.incomingConnector&#xD;&#xA;else&#xD;&#xA;&#x9;self.outgoingConnector&#xD;&#xA;Endif"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

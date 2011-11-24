@@ -60,7 +60,7 @@ public interface RoleConnector extends BehavioralConnector {
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -69,8 +69,8 @@ public interface RoleConnector extends BehavioralConnector {
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Role)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRoleConnector_Source()
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector
-	 * @model opposite="roleConnector" required="true"
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector
+	 * @model opposite="outgoingRoleConnector" required="true"
 	 * @generated
 	 */
 	Role getSource();
@@ -87,6 +87,7 @@ public interface RoleConnector extends BehavioralConnector {
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -95,7 +96,8 @@ public interface RoleConnector extends BehavioralConnector {
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Role)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRoleConnector_Target()
-	 * @model required="true"
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getIncomingRoleConnector
+	 * @model opposite="incomingRoleConnector" required="true"
 	 * @generated
 	 */
 	Role getTarget();

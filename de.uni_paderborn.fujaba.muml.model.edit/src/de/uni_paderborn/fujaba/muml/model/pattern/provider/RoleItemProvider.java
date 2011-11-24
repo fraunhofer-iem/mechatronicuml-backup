@@ -72,7 +72,7 @@ public class RoleItemProvider
 
 			addConstraintPropertyDescriptor(object);
 			addBehaviorPropertyDescriptor(object);
-			addRoleConnectorPropertyDescriptor(object);
+			addIncomingRoleConnectorPropertyDescriptor(object);
 			addSenderMessageInterfacePropertyDescriptor(object);
 			addReceiverMessageInterfacePropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
@@ -80,6 +80,8 @@ public class RoleItemProvider
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
 			addOrderVariablePropertyDescriptor(object);
+			addOutgoingRoleConnectorPropertyDescriptor(object);
+			addRoleConnectorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,6 +127,28 @@ public class RoleItemProvider
 				 true,
 				 null,
 				 getString("_UI_BehaviorPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Incoming Role Connector feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncomingRoleConnectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_incomingRoleConnector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_incomingRoleConnector_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__INCOMING_ROLE_CONNECTOR,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
 				 null));
 	}
 
@@ -316,6 +340,28 @@ public class RoleItemProvider
 				 getString("_UI_Role_orderVariable_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_orderVariable_feature", "_UI_Role_type"),
 				 PatternPackage.Literals.ROLE__ORDER_VARIABLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Outgoing Role Connector feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutgoingRoleConnectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_outgoingRoleConnector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_outgoingRoleConnector_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__OUTGOING_ROLE_CONNECTOR,
 				 true,
 				 false,
 				 true,

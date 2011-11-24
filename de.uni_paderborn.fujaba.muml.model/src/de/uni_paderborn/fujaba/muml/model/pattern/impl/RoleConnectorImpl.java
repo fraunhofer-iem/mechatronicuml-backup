@@ -166,9 +166,9 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, PatternPackage.ROLE__ROLE_CONNECTOR, Role.class, msgs);
+				msgs = ((InternalEObject)source).eInverseRemove(this, PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR, Role.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, PatternPackage.ROLE__ROLE_CONNECTOR, Role.class, msgs);
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR, Role.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -207,11 +207,33 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(Role newTarget) {
+	public NotificationChain basicSetTarget(Role newTarget, NotificationChain msgs) {
 		Role oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE_CONNECTOR__TARGET, oldTarget, target));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE_CONNECTOR__TARGET, oldTarget, newTarget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTarget(Role newTarget) {
+		if (newTarget != target) {
+			NotificationChain msgs = null;
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR, Role.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR, Role.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE_CONNECTOR__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -265,8 +287,12 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 		switch (featureID) {
 			case PatternPackage.ROLE_CONNECTOR__SOURCE:
 				if (source != null)
-					msgs = ((InternalEObject)source).eInverseRemove(this, PatternPackage.ROLE__ROLE_CONNECTOR, Role.class, msgs);
+					msgs = ((InternalEObject)source).eInverseRemove(this, PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR, Role.class, msgs);
 				return basicSetSource((Role)otherEnd, msgs);
+			case PatternPackage.ROLE_CONNECTOR__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR, Role.class, msgs);
+				return basicSetTarget((Role)otherEnd, msgs);
 			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -285,6 +311,8 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 		switch (featureID) {
 			case PatternPackage.ROLE_CONNECTOR__SOURCE:
 				return basicSetSource(null, msgs);
+			case PatternPackage.ROLE_CONNECTOR__TARGET:
+				return basicSetTarget(null, msgs);
 			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
 				return basicSetCoordinationPattern(null, msgs);
 		}

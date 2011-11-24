@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -45,7 +46,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getBehavior <em>Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
@@ -55,6 +56,8 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getOrderVariable <em>Order Variable</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,14 +85,14 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	protected Behavior behavior;
 
 	/**
-	 * The cached value of the '{@link #getRoleConnector() <em>Role Connector</em>}' reference.
+	 * The cached value of the '{@link #getIncomingRoleConnector() <em>Incoming Role Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoleConnector()
+	 * @see #getIncomingRoleConnector()
 	 * @generated
 	 * @ordered
 	 */
-	protected RoleConnector roleConnector;
+	protected RoleConnector incomingRoleConnector;
 
 	/**
 	 * The cached value of the '{@link #getSenderMessageInterface() <em>Sender Message Interface</em>}' reference.
@@ -180,6 +183,26 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected EAttribute orderVariable;
+
+	/**
+	 * The cached value of the '{@link #getOutgoingRoleConnector() <em>Outgoing Role Connector</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingRoleConnector()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleConnector outgoingRoleConnector;
+
+	/**
+	 * The cached setting delegate for the '{@link #getRoleConnector() <em>Role Connector</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleConnector()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ROLE_CONNECTOR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PatternPackage.Literals.ROLE__ROLE_CONNECTOR).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,16 +300,16 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleConnector getRoleConnector() {
-		if (roleConnector != null && roleConnector.eIsProxy()) {
-			InternalEObject oldRoleConnector = (InternalEObject)roleConnector;
-			roleConnector = (RoleConnector)eResolveProxy(oldRoleConnector);
-			if (roleConnector != oldRoleConnector) {
+	public RoleConnector getIncomingRoleConnector() {
+		if (incomingRoleConnector != null && incomingRoleConnector.eIsProxy()) {
+			InternalEObject oldIncomingRoleConnector = (InternalEObject)incomingRoleConnector;
+			incomingRoleConnector = (RoleConnector)eResolveProxy(oldIncomingRoleConnector);
+			if (incomingRoleConnector != oldIncomingRoleConnector) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ROLE_CONNECTOR, oldRoleConnector, roleConnector));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR, oldIncomingRoleConnector, incomingRoleConnector));
 			}
 		}
-		return roleConnector;
+		return incomingRoleConnector;
 	}
 
 	/**
@@ -294,8 +317,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleConnector basicGetRoleConnector() {
-		return roleConnector;
+	public RoleConnector basicGetIncomingRoleConnector() {
+		return incomingRoleConnector;
 	}
 
 	/**
@@ -303,11 +326,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRoleConnector(RoleConnector newRoleConnector, NotificationChain msgs) {
-		RoleConnector oldRoleConnector = roleConnector;
-		roleConnector = newRoleConnector;
+	public NotificationChain basicSetIncomingRoleConnector(RoleConnector newIncomingRoleConnector, NotificationChain msgs) {
+		RoleConnector oldIncomingRoleConnector = incomingRoleConnector;
+		incomingRoleConnector = newIncomingRoleConnector;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ROLE_CONNECTOR, oldRoleConnector, newRoleConnector);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR, oldIncomingRoleConnector, newIncomingRoleConnector);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -318,18 +341,36 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoleConnector(RoleConnector newRoleConnector) {
-		if (newRoleConnector != roleConnector) {
+	public void setIncomingRoleConnector(RoleConnector newIncomingRoleConnector) {
+		if (newIncomingRoleConnector != incomingRoleConnector) {
 			NotificationChain msgs = null;
-			if (roleConnector != null)
-				msgs = ((InternalEObject)roleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
-			if (newRoleConnector != null)
-				msgs = ((InternalEObject)newRoleConnector).eInverseAdd(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
-			msgs = basicSetRoleConnector(newRoleConnector, msgs);
+			if (incomingRoleConnector != null)
+				msgs = ((InternalEObject)incomingRoleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__TARGET, RoleConnector.class, msgs);
+			if (newIncomingRoleConnector != null)
+				msgs = ((InternalEObject)newIncomingRoleConnector).eInverseAdd(this, PatternPackage.ROLE_CONNECTOR__TARGET, RoleConnector.class, msgs);
+			msgs = basicSetIncomingRoleConnector(newIncomingRoleConnector, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ROLE_CONNECTOR, newRoleConnector, newRoleConnector));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR, newIncomingRoleConnector, newIncomingRoleConnector));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleConnector getRoleConnector() {
+		return (RoleConnector)ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleConnector basicGetRoleConnector() {
+		return (RoleConnector)ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -644,6 +685,66 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoleConnector getOutgoingRoleConnector() {
+		if (outgoingRoleConnector != null && outgoingRoleConnector.eIsProxy()) {
+			InternalEObject oldOutgoingRoleConnector = (InternalEObject)outgoingRoleConnector;
+			outgoingRoleConnector = (RoleConnector)eResolveProxy(oldOutgoingRoleConnector);
+			if (outgoingRoleConnector != oldOutgoingRoleConnector) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR, oldOutgoingRoleConnector, outgoingRoleConnector));
+			}
+		}
+		return outgoingRoleConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleConnector basicGetOutgoingRoleConnector() {
+		return outgoingRoleConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOutgoingRoleConnector(RoleConnector newOutgoingRoleConnector, NotificationChain msgs) {
+		RoleConnector oldOutgoingRoleConnector = outgoingRoleConnector;
+		outgoingRoleConnector = newOutgoingRoleConnector;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR, oldOutgoingRoleConnector, newOutgoingRoleConnector);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutgoingRoleConnector(RoleConnector newOutgoingRoleConnector) {
+		if (newOutgoingRoleConnector != outgoingRoleConnector) {
+			NotificationChain msgs = null;
+			if (outgoingRoleConnector != null)
+				msgs = ((InternalEObject)outgoingRoleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
+			if (newOutgoingRoleConnector != null)
+				msgs = ((InternalEObject)newOutgoingRoleConnector).eInverseAdd(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
+			msgs = basicSetOutgoingRoleConnector(newOutgoingRoleConnector, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR, newOutgoingRoleConnector, newOutgoingRoleConnector));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -654,16 +755,20 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				if (behavior != null)
 					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 				return basicSetBehavior((Behavior)otherEnd, msgs);
-			case PatternPackage.ROLE__ROLE_CONNECTOR:
-				if (roleConnector != null)
-					msgs = ((InternalEObject)roleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
-				return basicSetRoleConnector((RoleConnector)otherEnd, msgs);
+			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
+				if (incomingRoleConnector != null)
+					msgs = ((InternalEObject)incomingRoleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__TARGET, RoleConnector.class, msgs);
+				return basicSetIncomingRoleConnector((RoleConnector)otherEnd, msgs);
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetCoordinationPattern((CoordinationPattern)otherEnd, msgs);
 			case PatternPackage.ROLE__PORT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPort()).basicAdd(otherEnd, msgs);
+			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
+				if (outgoingRoleConnector != null)
+					msgs = ((InternalEObject)outgoingRoleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
+				return basicSetOutgoingRoleConnector((RoleConnector)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -680,14 +785,16 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case PatternPackage.ROLE__BEHAVIOR:
 				return basicSetBehavior(null, msgs);
-			case PatternPackage.ROLE__ROLE_CONNECTOR:
-				return basicSetRoleConnector(null, msgs);
+			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
+				return basicSetIncomingRoleConnector(null, msgs);
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return basicSetCoordinationPattern(null, msgs);
 			case PatternPackage.ROLE__CARDINALITY:
 				return basicSetCardinality(null, msgs);
 			case PatternPackage.ROLE__PORT:
 				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
+			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
+				return basicSetOutgoingRoleConnector(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -719,9 +826,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__BEHAVIOR:
 				if (resolve) return getBehavior();
 				return basicGetBehavior();
-			case PatternPackage.ROLE__ROLE_CONNECTOR:
-				if (resolve) return getRoleConnector();
-				return basicGetRoleConnector();
+			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
+				if (resolve) return getIncomingRoleConnector();
+				return basicGetIncomingRoleConnector();
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern();
 			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
@@ -745,6 +852,12 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ORDER_VARIABLE:
 				if (resolve) return getOrderVariable();
 				return basicGetOrderVariable();
+			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
+				if (resolve) return getOutgoingRoleConnector();
+				return basicGetOutgoingRoleConnector();
+			case PatternPackage.ROLE__ROLE_CONNECTOR:
+				if (resolve) return getRoleConnector();
+				return basicGetRoleConnector();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -765,8 +878,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__BEHAVIOR:
 				setBehavior((Behavior)newValue);
 				return;
-			case PatternPackage.ROLE__ROLE_CONNECTOR:
-				setRoleConnector((RoleConnector)newValue);
+			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
+				setIncomingRoleConnector((RoleConnector)newValue);
 				return;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)newValue);
@@ -796,6 +909,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ORDER_VARIABLE:
 				setOrderVariable((EAttribute)newValue);
 				return;
+			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
+				setOutgoingRoleConnector((RoleConnector)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -814,8 +930,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__BEHAVIOR:
 				setBehavior((Behavior)null);
 				return;
-			case PatternPackage.ROLE__ROLE_CONNECTOR:
-				setRoleConnector((RoleConnector)null);
+			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
+				setIncomingRoleConnector((RoleConnector)null);
 				return;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)null);
@@ -844,6 +960,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ORDER_VARIABLE:
 				setOrderVariable((EAttribute)null);
 				return;
+			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
+				setOutgoingRoleConnector((RoleConnector)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -860,8 +979,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return constraint != null && !constraint.isEmpty();
 			case PatternPackage.ROLE__BEHAVIOR:
 				return behavior != null;
-			case PatternPackage.ROLE__ROLE_CONNECTOR:
-				return roleConnector != null;
+			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
+				return incomingRoleConnector != null;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern() != null;
 			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
@@ -880,6 +999,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return ordered != ORDERED_EDEFAULT;
 			case PatternPackage.ROLE__ORDER_VARIABLE:
 				return orderVariable != null;
+			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
+				return outgoingRoleConnector != null;
+			case PatternPackage.ROLE__ROLE_CONNECTOR:
+				return ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

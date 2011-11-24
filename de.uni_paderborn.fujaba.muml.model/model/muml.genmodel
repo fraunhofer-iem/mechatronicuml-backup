@@ -290,7 +290,7 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/pattern/Role">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/roleConnector"/>
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/incomingRoleConnector"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/coordinationPattern"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/senderMessageInterface"/>
@@ -306,6 +306,10 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/pattern/Role/ordered"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/orderVariable"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/outgoingRoleConnector"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/roleConnector"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.model"

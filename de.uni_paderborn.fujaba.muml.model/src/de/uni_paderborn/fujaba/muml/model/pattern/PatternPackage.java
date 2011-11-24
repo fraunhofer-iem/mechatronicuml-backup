@@ -265,13 +265,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE__BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
+	 * The feature id for the '<em><b>Incoming Role Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE__INCOMING_ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
@@ -355,13 +355,31 @@ public interface PatternPackage extends EPackage {
 	int ROLE__ORDER_VARIABLE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Outgoing Role Connector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__OUTGOING_ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
 
 
 	/**
@@ -470,6 +488,17 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRole();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Incoming Role Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getIncomingRoleConnector()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_IncomingRoleConnector();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}'.
@@ -582,6 +611,17 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_OrderVariable();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Outgoing Role Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_OutgoingRoleConnector();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -690,6 +730,14 @@ public interface PatternPackage extends EPackage {
 		EClass ROLE = eINSTANCE.getRole();
 
 		/**
+		 * The meta object literal for the '<em><b>Incoming Role Connector</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__INCOMING_ROLE_CONNECTOR = eINSTANCE.getRole_IncomingRoleConnector();
+
+		/**
 		 * The meta object literal for the '<em><b>Role Connector</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -768,6 +816,14 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__ORDER_VARIABLE = eINSTANCE.getRole_OrderVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Role Connector</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__OUTGOING_ROLE_CONNECTOR = eINSTANCE.getRole_OutgoingRoleConnector();
 
 	}
 

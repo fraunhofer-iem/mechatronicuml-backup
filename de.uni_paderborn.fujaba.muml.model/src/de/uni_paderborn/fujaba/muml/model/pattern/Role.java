@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
@@ -39,42 +39,56 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable <em>Order Variable</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OrderOnlyForMultiPort='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasAtLeastOneConnector'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OrderOnlyForMultiPort='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')' RoleHasAtLeastOneConnector='self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()'"
  * @generated
  */
 public interface Role extends NamedElement, ConstrainableElement, BehavioralElement {
 	/**
-	 * Returns the value of the '<em><b>Role Connector</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource <em>Source</em>}'.
+	 * Returns the value of the '<em><b>Incoming Role Connector</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The connector which connects this role with another role.
 	 * Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*
 	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Incoming Role Connector</em>' reference.
+	 * @see #setIncomingRoleConnector(RoleConnector)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_IncomingRoleConnector()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getTarget
+	 * @model opposite="target"
+	 * @generated
+	 */
+	RoleConnector getIncomingRoleConnector();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Incoming Role Connector</em>' reference.
+	 * @see #getIncomingRoleConnector()
+	 * @generated
+	 */
+	void setIncomingRoleConnector(RoleConnector value);
+
+	/**
+	 * Returns the value of the '<em><b>Role Connector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role Connector</em>' reference.
-	 * @see #setRoleConnector(RoleConnector)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_RoleConnector()
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource
-	 * @model opposite="source" required="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.incomingConnector -> notEmpty() then\r\n\tself.incomingConnector\r\nelse\r\n\tself.outgoingConnector\r\nEndif'"
 	 * @generated
 	 */
 	RoleConnector getRoleConnector();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Connector</em>' reference.
-	 * @see #getRoleConnector()
-	 * @generated
-	 */
-	void setRoleConnector(RoleConnector value);
 
 	/**
 	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' container reference.
@@ -303,5 +317,33 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * @generated
 	 */
 	void setOrderVariable(EAttribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing Role Connector</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing Role Connector</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing Role Connector</em>' reference.
+	 * @see #setOutgoingRoleConnector(RoleConnector)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_OutgoingRoleConnector()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource
+	 * @model opposite="source"
+	 * @generated
+	 */
+	RoleConnector getOutgoingRoleConnector();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Outgoing Role Connector</em>' reference.
+	 * @see #getOutgoingRoleConnector()
+	 * @generated
+	 */
+	void setOutgoingRoleConnector(RoleConnector value);
 
 } // Role

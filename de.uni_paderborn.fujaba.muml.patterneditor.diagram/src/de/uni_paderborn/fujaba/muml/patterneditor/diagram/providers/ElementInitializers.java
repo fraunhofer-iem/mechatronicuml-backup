@@ -74,7 +74,7 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
 									.getRole(), null).evaluate(newInstance_1_0);
 			newInstance_1_0
-					.setRoleConnector((de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector) value_1_0_2);
+					.setOutgoingRoleConnector((de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector) value_1_0_2);
 
 			de.uni_paderborn.fujaba.muml.model.pattern.Role newInstance_1_1 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
 					.createRole();
@@ -126,7 +126,7 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
 									.getRole(), null).evaluate(newInstance_1_1);
 			newInstance_1_1
-					.setRoleConnector((de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector) value_1_1_2);
+					.setIncomingRoleConnector((de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector) value_1_1_2);
 
 			de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector newInstance_2_0 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
 					.createRoleConnector();

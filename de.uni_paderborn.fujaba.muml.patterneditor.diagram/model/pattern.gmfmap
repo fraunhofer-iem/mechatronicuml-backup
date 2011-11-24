@@ -79,7 +79,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/roleConnector"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/outgoingRoleConnector"/>
               <value
                   body="self.coordinationPattern.connector->any(true)"/>
             </initializers>
@@ -139,7 +139,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/roleConnector"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/incomingRoleConnector"/>
               <value
                   body="self.coordinationPattern.connector->any(true)"/>
             </initializers>

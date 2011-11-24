@@ -208,7 +208,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.4">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role/roleConnector"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role/outgoingRoleConnector"/>
               </initializers>
               <elementClass
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role"/>
@@ -257,7 +257,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.8">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role/roleConnector"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role/incomingRoleConnector"/>
               </initializers>
               <elementClass
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role"/>

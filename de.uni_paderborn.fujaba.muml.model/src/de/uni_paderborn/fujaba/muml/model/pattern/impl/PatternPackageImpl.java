@@ -261,8 +261,17 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_RoleConnector() {
+	public EReference getRole_IncomingRoleConnector() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRole_RoleConnector() {
+		return (EReference)roleEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -351,6 +360,15 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRole_OutgoingRoleConnector() {
+		return (EReference)roleEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PatternFactory getPatternFactory() {
 		return (PatternFactory)getEFactoryInstance();
 	}
@@ -386,7 +404,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__PATTERN);
 
 		roleEClass = createEClass(ROLE);
-		createEReference(roleEClass, ROLE__ROLE_CONNECTOR);
+		createEReference(roleEClass, ROLE__INCOMING_ROLE_CONNECTOR);
 		createEReference(roleEClass, ROLE__COORDINATION_PATTERN);
 		createEReference(roleEClass, ROLE__SENDER_MESSAGE_INTERFACE);
 		createEReference(roleEClass, ROLE__RECEIVER_MESSAGE_INTERFACE);
@@ -396,6 +414,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(roleEClass, ROLE__ROLE_AND_ADAPTATION_BEHAVIOR);
 		createEAttribute(roleEClass, ROLE__ORDERED);
 		createEReference(roleEClass, ROLE__ORDER_VARIABLE);
+		createEReference(roleEClass, ROLE__OUTGOING_ROLE_CONNECTOR);
+		createEReference(roleEClass, ROLE__ROLE_CONNECTOR);
 	}
 
 	/**
@@ -443,8 +463,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(roleConnectorEClass, RoleConnector.class, "RoleConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoleConnector_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 0, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoleConnector_Source(), this.getRole(), this.getRole_RoleConnector(), "source", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoleConnector_Target(), this.getRole(), null, "target", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleConnector_Source(), this.getRole(), this.getRole_OutgoingRoleConnector(), "source", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleConnector_Target(), this.getRole(), this.getRole_IncomingRoleConnector(), "target", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleConnector_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Connector(), "coordinationPattern", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationPatternEClass, CoordinationPattern.class, "CoordinationPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -453,7 +473,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getCoordinationPattern_Pattern(), this.getCoordinationPattern(), null, "pattern", null, 0, 1, CoordinationPattern.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRole_RoleConnector(), this.getRoleConnector(), this.getRoleConnector_Source(), "roleConnector", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_IncomingRoleConnector(), this.getRoleConnector(), this.getRoleConnector_Target(), "incomingRoleConnector", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Roles(), "coordinationPattern", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_SenderMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "senderMessageInterface", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_ReceiverMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "receiverMessageInterface", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -463,6 +483,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getRole_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRole_Ordered(), theEcorePackage.getEBoolean(), "ordered", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_OrderVariable(), ecorePackage.getEAttribute(), null, "orderVariable", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_OutgoingRoleConnector(), this.getRoleConnector(), this.getRoleConnector_Source(), "outgoingRoleConnector", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_RoleConnector(), this.getRoleConnector(), null, "roleConnector", null, 0, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -500,8 +522,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable"
-		   });										
+			 "constraints", "OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasAtLeastOneConnector"
+		   });											
 	}
 
 	/**
@@ -529,8 +551,15 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "OrderOnlyForMultiPort", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)",
-			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')"
-		   });									
+			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')",
+			 "RoleHasAtLeastOneConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()"
+		   });											
+		addAnnotation
+		  (getRole_RoleConnector(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if self.incomingConnector -> notEmpty() then\r\n\tself.incomingConnector\r\nelse\r\n\tself.outgoingConnector\r\nEndif"
+		   });
 	}
 
 } //PatternPackageImpl

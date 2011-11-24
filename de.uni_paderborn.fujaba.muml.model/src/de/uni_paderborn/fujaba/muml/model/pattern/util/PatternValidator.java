@@ -177,6 +177,7 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_OrderOnlyForMultiPort(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_OrderedRequiresIntegerOrderVariable(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_RoleHasAtLeastOneConnector(role, diagnostics, context);
 		return result;
 	}
 
@@ -233,6 +234,35 @@ public class PatternValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "OrderedRequiresIntegerOrderVariable",
 				 ROLE__ORDERED_REQUIRES_INTEGER_ORDER_VARIABLE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the RoleHasAtLeastOneConnector constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ROLE__ROLE_HAS_AT_LEAST_ONE_CONNECTOR__EEXPRESSION = "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()";
+
+	/**
+	 * Validates the RoleHasAtLeastOneConnector constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRole_RoleHasAtLeastOneConnector(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PatternPackage.Literals.ROLE,
+				 role,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RoleHasAtLeastOneConnector",
+				 ROLE__ROLE_HAS_AT_LEAST_ONE_CONNECTOR__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
