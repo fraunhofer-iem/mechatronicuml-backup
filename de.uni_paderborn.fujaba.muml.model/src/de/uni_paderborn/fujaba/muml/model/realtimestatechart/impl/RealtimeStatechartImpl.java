@@ -6,40 +6,39 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
-
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.common.algorithm.BreadthFirstSearchAlgorithm;
+import de.uni_paderborn.fujaba.common.algorithm.ISearchVisitor;
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->
@@ -645,21 +644,51 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
+	@Override
 	public boolean isEmbedded() {
-		return (Boolean)EMBEDDED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		return getEmbeddingRegion() != null;
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isSuperStatechartOf(RealtimeStatechart statechart) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Assert.isLegal(statechart != null);
+
+		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
+		return bfs.search(statechart, new ISearchVisitor() {
+
+			@Override
+			public boolean visit(Object object) {
+				return !RealtimeStatechartImpl.this.equals(object);
+			}
+
+			@Override
+			public List<?> getAdjacentNodes(Object object) {
+				RealtimeStatechart rtsc = (RealtimeStatechart) object;
+
+				List<Object> parentStatecharts = new ArrayList<Object>();
+
+				Region region = rtsc.getEmbeddingRegion();
+				if (region != null) {
+					// List<Region> regions = rtsc.getEmbeddingRegions();
+					// for (Region region : regions) {
+					State state = region.getParentState();
+					if (state != null && state.getStatechart() != null) {
+						parentStatecharts.add(state.getStatechart());
+					}
+					// }
+				}
+
+				return parentStatecharts;
+			}
+
+		});
 	}
 
 	/**
