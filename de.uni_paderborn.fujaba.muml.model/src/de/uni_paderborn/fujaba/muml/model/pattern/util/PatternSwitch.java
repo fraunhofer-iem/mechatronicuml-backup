@@ -99,7 +99,6 @@ public class PatternSwitch<T> {
 			case PatternPackage.ROLE_CONNECTOR: {
 				RoleConnector roleConnector = (RoleConnector)theEObject;
 				T result = caseRoleConnector(roleConnector);
-				if (result == null) result = caseBehavioralConnector(roleConnector);
 				if (result == null) result = caseBehavioralElement(roleConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -184,21 +183,6 @@ public class PatternSwitch<T> {
 	 * @generated
 	 */
 	public T caseBehavioralElement(BehavioralElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Behavioral Connector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBehavioralConnector(BehavioralConnector object) {
 		return null;
 	}
 

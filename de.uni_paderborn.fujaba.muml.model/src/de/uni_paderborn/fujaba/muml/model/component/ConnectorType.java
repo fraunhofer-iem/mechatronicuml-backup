@@ -31,7 +31,7 @@ import org.storydriven.modeling.ExtendableElement;
  * @model abstract="true"
  * @generated
  */
-public interface ConnectorType extends ExtendableElement, BehavioralConnector {
+public interface ConnectorType extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>From Port</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}'.

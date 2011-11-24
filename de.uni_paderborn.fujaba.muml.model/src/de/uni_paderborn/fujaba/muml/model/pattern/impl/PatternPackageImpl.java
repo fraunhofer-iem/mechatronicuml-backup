@@ -442,10 +442,10 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
-		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
+		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
@@ -453,7 +453,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		roleConnectorEClass.getESuperTypes().add(theComponentPackage.getBehavioralConnector());
+		roleConnectorEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		coordinationPatternEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		coordinationPatternEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
 		roleEClass.getESuperTypes().add(theSDMPackage.getNamedElement());

@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
  *
  * @generated
  */
-public class AssemblyImpl extends ConnectorTypeImpl implements Assembly {
+public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
 	 * <!-- begin-user-doc -->

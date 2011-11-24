@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
  * @generated
  */
 public class AssemblyItemProvider
-	extends ConnectorTypeItemProvider
+	extends BehavioralConnectorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

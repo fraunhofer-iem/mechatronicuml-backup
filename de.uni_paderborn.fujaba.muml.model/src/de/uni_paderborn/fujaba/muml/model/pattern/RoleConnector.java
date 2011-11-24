@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
 
 /**
@@ -32,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationPattern='(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern'"
  * @generated
  */
-public interface RoleConnector extends BehavioralConnector {
+public interface RoleConnector extends BehavioralElement {
 	/**
 	 * Returns the value of the '<em><b>Bidirectional</b></em>' attribute.
 	 * <!-- begin-user-doc -->

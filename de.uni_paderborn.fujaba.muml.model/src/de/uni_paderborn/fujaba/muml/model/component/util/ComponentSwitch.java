@@ -195,18 +195,16 @@ public class ComponentSwitch<T> {
 				ConnectorType connectorType = (ConnectorType)theEObject;
 				T result = caseConnectorType(connectorType);
 				if (result == null) result = caseExtendableElement(connectorType);
-				if (result == null) result = caseBehavioralConnector(connectorType);
-				if (result == null) result = caseBehavioralElement(connectorType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ComponentPackage.ASSEMBLY: {
 				Assembly assembly = (Assembly)theEObject;
 				T result = caseAssembly(assembly);
-				if (result == null) result = caseConnectorType(assembly);
-				if (result == null) result = caseExtendableElement(assembly);
 				if (result == null) result = caseBehavioralConnector(assembly);
+				if (result == null) result = caseConnectorType(assembly);
 				if (result == null) result = caseBehavioralElement(assembly);
+				if (result == null) result = caseExtendableElement(assembly);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -215,15 +213,15 @@ public class ComponentSwitch<T> {
 				T result = caseDelegation(delegation);
 				if (result == null) result = caseConnectorType(delegation);
 				if (result == null) result = caseExtendableElement(delegation);
-				if (result == null) result = caseBehavioralConnector(delegation);
-				if (result == null) result = caseBehavioralElement(delegation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ComponentPackage.BEHAVIORAL_CONNECTOR: {
 				BehavioralConnector behavioralConnector = (BehavioralConnector)theEObject;
 				T result = caseBehavioralConnector(behavioralConnector);
+				if (result == null) result = caseConnectorType(behavioralConnector);
 				if (result == null) result = caseBehavioralElement(behavioralConnector);
+				if (result == null) result = caseExtendableElement(behavioralConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

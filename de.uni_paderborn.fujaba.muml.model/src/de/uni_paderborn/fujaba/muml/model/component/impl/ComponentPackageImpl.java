@@ -817,9 +817,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
 		atomicComponentEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		connectorTypeEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
-		connectorTypeEClass.getESuperTypes().add(this.getBehavioralConnector());
-		assemblyEClass.getESuperTypes().add(this.getConnectorType());
+		assemblyEClass.getESuperTypes().add(this.getBehavioralConnector());
 		delegationEClass.getESuperTypes().add(this.getConnectorType());
+		behavioralConnectorEClass.getESuperTypes().add(this.getConnectorType());
 		behavioralConnectorEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		hybridPortEClass.getESuperTypes().add(this.getDiscretePort());
 		hybridPortEClass.getESuperTypes().add(this.getContinuousPort());

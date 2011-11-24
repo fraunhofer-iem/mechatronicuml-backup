@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern.impl;
 
+import de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -35,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *
  * @generated
  */
-public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleConnector {
+public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConnector {
 	/**
 	 * The default value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->

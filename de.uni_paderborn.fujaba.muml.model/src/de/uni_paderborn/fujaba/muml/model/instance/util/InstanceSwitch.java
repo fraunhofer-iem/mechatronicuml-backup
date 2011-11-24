@@ -116,7 +116,6 @@ public class InstanceSwitch<T> {
 				ConnectorInstance connectorInstance = (ConnectorInstance)theEObject;
 				T result = caseConnectorInstance(connectorInstance);
 				if (result == null) result = caseExtendableElement(connectorInstance);
-				if (result == null) result = caseBehavioralElementInstance(connectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,8 +133,8 @@ public class InstanceSwitch<T> {
 				AssemblyInstance assemblyInstance = (AssemblyInstance)theEObject;
 				T result = caseAssemblyInstance(assemblyInstance);
 				if (result == null) result = caseConnectorInstance(assemblyInstance);
-				if (result == null) result = caseExtendableElement(assemblyInstance);
 				if (result == null) result = caseBehavioralElementInstance(assemblyInstance);
+				if (result == null) result = caseExtendableElement(assemblyInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -144,7 +143,6 @@ public class InstanceSwitch<T> {
 				T result = caseDelegationInstance(delegationInstance);
 				if (result == null) result = caseConnectorInstance(delegationInstance);
 				if (result == null) result = caseExtendableElement(delegationInstance);
-				if (result == null) result = caseBehavioralElementInstance(delegationInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

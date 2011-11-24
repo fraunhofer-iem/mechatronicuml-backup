@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
  * @model
  * @generated
  */
-public interface AssemblyInstance extends ConnectorInstance {
+public interface AssemblyInstance extends ConnectorInstance, BehavioralElementInstance {
 	/**
 	 * Returns the value of the '<em><b>Assembly Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

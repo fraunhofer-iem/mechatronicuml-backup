@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.BehavioralConnectorItemProvider;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
 
@@ -35,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  * @generated
  */
 public class RoleConnectorItemProvider
-	extends BehavioralConnectorItemProvider
+	extends BehavioralElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

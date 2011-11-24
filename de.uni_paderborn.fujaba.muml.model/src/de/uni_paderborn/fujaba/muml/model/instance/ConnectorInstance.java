@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
  * @model
  * @generated
  */
-public interface ConnectorInstance extends ExtendableElement, BehavioralElementInstance {
+public interface ConnectorInstance extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}'.

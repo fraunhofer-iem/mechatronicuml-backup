@@ -1015,22 +1015,13 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_TYPE__BEHAVIOR = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__FROM_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int CONNECTOR_TYPE__FROM_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To Port</b></em>' reference.
@@ -1039,7 +1030,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__TO_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int CONNECTOR_TYPE__TO_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -1048,7 +1039,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__PARENT_COMPONENT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int CONNECTOR_TYPE__PARENT_COMPONENT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Connector Type</em>' class.
@@ -1057,7 +1048,52 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int CONNECTOR_TYPE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR__ANNOTATION = CONNECTOR_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR__EXTENSION = CONNECTOR_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>From Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR__FROM_PORT = CONNECTOR_TYPE__FROM_PORT;
+
+	/**
+	 * The feature id for the '<em><b>To Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR__TO_PORT = CONNECTOR_TYPE__TO_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR__PARENT_COMPONENT = CONNECTOR_TYPE__PARENT_COMPONENT;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl <em>Assembly</em>}' class.
@@ -1070,87 +1106,6 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__ANNOTATION = CONNECTOR_TYPE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__EXTENSION = CONNECTOR_TYPE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__BEHAVIOR = CONNECTOR_TYPE__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>From Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__FROM_PORT = CONNECTOR_TYPE__FROM_PORT;
-
-	/**
-	 * The feature id for the '<em><b>To Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__TO_PORT = CONNECTOR_TYPE__TO_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__PARENT_COMPONENT = CONNECTOR_TYPE__PARENT_COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>To</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__TO = CONNECTOR_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__FROM = CONNECTOR_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Assembly</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DelegationImpl <em>Delegation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1159,6 +1114,105 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	int DELEGATION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR__BEHAVIOR = CONNECTOR_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Behavioral Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__ANNOTATION = BEHAVIORAL_CONNECTOR__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__EXTENSION = BEHAVIORAL_CONNECTOR__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>From Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__FROM_PORT = BEHAVIORAL_CONNECTOR__FROM_PORT;
+
+	/**
+	 * The feature id for the '<em><b>To Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__TO_PORT = BEHAVIORAL_CONNECTOR__TO_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__PARENT_COMPONENT = BEHAVIORAL_CONNECTOR__PARENT_COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__BEHAVIOR = BEHAVIORAL_CONNECTOR__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__TO = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__FROM = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Assembly</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_FEATURE_COUNT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1177,15 +1231,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELEGATION__EXTENSION = CONNECTOR_TYPE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__BEHAVIOR = CONNECTOR_TYPE__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>From Port</b></em>' reference.
@@ -1231,24 +1276,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELEGATION_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
-
-	/**
-	 * The number of structural features of the '<em>Behavioral Connector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl <em>Hybrid Port</em>}' class.

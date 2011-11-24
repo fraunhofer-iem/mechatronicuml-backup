@@ -644,11 +644,11 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		componentInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		componentInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		connectorInstanceEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
-		connectorInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		portInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		assemblyInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
+		assemblyInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		delegationInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		componentInstanceConfigurationEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		continuousPortInstanceEClass.getESuperTypes().add(this.getPortInstance());

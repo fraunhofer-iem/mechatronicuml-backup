@@ -23,6 +23,6 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
  * @model abstract="true"
  * @generated
  */
-public interface BehavioralConnector extends BehavioralElement {
+public interface BehavioralConnector extends ConnectorType, BehavioralElement {
 
 } // BehavioralConnector
