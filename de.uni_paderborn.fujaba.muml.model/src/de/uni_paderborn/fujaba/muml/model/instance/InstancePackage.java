@@ -1448,22 +1448,13 @@ public interface InstancePackage extends EPackage {
 	int BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Attribute Bindings</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS = 2;
-
-	/**
 	 * The number of structural features of the '<em>Behavior Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_INSTANCE_FEATURE_COUNT = 3;
+	int BEHAVIOR_INSTANCE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.FujabaRealtimeStatechartInstanceImpl <em>Fujaba Realtime Statechart Instance</em>}' class.
@@ -1492,15 +1483,6 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int FUJABA_REALTIME_STATECHART_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE = BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE;
-
-	/**
-	 * The feature id for the '<em><b>Attribute Bindings</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS = BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS;
 
 	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' reference.
@@ -1592,44 +1574,6 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int BEHAVIORAL_ELEMENT_INSTANCE_FEATURE_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.AttributeBindingImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getAttributeBinding()
-	 * @generated
-	 */
-	int ATTRIBUTE_BINDING = 15;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_BINDING__ATTRIBUTE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_BINDING__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Attribute Binding</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_BINDING_FEATURE_COUNT = 2;
-
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance <em>Component Instance</em>}'.
@@ -2026,17 +1970,6 @@ public interface InstancePackage extends EPackage {
 	EReference getBehaviorInstance_BehavioralElementInstance();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getAttributeBindings <em>Attribute Bindings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attribute Bindings</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getAttributeBindings()
-	 * @see #getBehaviorInstance()
-	 * @generated
-	 */
-	EReference getBehaviorInstance_AttributeBindings();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance <em>Fujaba Realtime Statechart Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2132,38 +2065,6 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBehavioralElementInstance_BehavioralElementType();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding <em>Attribute Binding</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute Binding</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding
-	 * @generated
-	 */
-	EClass getAttributeBinding();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding#getAttribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding#getAttribute()
-	 * @see #getAttributeBinding()
-	 * @generated
-	 */
-	EReference getAttributeBinding_Attribute();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding#getValue()
-	 * @see #getAttributeBinding()
-	 * @generated
-	 */
-	EReference getAttributeBinding_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2510,14 +2411,6 @@ public interface InstancePackage extends EPackage {
 		EReference BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE = eINSTANCE.getBehaviorInstance_BehavioralElementInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute Bindings</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS = eINSTANCE.getBehaviorInstance_AttributeBindings();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.FujabaRealtimeStatechartInstanceImpl <em>Fujaba Realtime Statechart Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2592,32 +2485,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = eINSTANCE.getBehavioralElementInstance_BehavioralElementType();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.AttributeBindingImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getAttributeBinding()
-		 * @generated
-		 */
-		EClass ATTRIBUTE_BINDING = eINSTANCE.getAttributeBinding();
-
-		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTRIBUTE_BINDING__ATTRIBUTE = eINSTANCE.getAttributeBinding_Attribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTRIBUTE_BINDING__VALUE = eINSTANCE.getAttributeBinding_Value();
 
 	}
 

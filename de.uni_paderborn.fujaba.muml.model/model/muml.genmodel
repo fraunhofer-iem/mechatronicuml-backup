@@ -249,7 +249,6 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehaviorInstance/behavior"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehaviorInstance/behavioralElementInstance"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehaviorInstance/attributeBindings"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/FujabaRealtimeStatechartInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -267,11 +266,6 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehavioralElementInstance/behaviorInstance"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehavioralElementInstance/behavioralElementType"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/instance/AttributeBinding">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/AttributeBinding/attribute"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/AttributeBinding/value"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml.model"

@@ -162,13 +162,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	private EClass behavioralElementInstanceEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass attributeBindingEClass = null;
-
-	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -596,15 +589,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehaviorInstance_AttributeBindings() {
-		return (EReference)behaviorInstanceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getFujabaRealtimeStatechartInstance() {
 		return fujabaRealtimeStatechartInstanceEClass;
 	}
@@ -686,33 +670,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAttributeBinding() {
-		return attributeBindingEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttributeBinding_Attribute() {
-		return (EReference)attributeBindingEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttributeBinding_Value() {
-		return (EReference)attributeBindingEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public InstanceFactory getInstanceFactory() {
 		return (InstanceFactory)getEFactoryInstance();
 	}
@@ -785,7 +742,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		behaviorInstanceEClass = createEClass(BEHAVIOR_INSTANCE);
 		createEReference(behaviorInstanceEClass, BEHAVIOR_INSTANCE__BEHAVIOR);
 		createEReference(behaviorInstanceEClass, BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE);
-		createEReference(behaviorInstanceEClass, BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS);
 
 		fujabaRealtimeStatechartInstanceEClass = createEClass(FUJABA_REALTIME_STATECHART_INSTANCE);
 		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__STATECHART);
@@ -797,10 +753,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		behavioralElementInstanceEClass = createEClass(BEHAVIORAL_ELEMENT_INSTANCE);
 		createEReference(behavioralElementInstanceEClass, BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE);
 		createEReference(behavioralElementInstanceEClass, BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE);
-
-		attributeBindingEClass = createEClass(ATTRIBUTE_BINDING);
-		createEReference(attributeBindingEClass, ATTRIBUTE_BINDING__ATTRIBUTE);
-		createEReference(attributeBindingEClass, ATTRIBUTE_BINDING__VALUE);
 	}
 
 	/**
@@ -833,7 +785,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
-		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -911,7 +862,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(behaviorInstanceEClass, BehaviorInstance.class, "BehaviorInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviorInstance_Behavior(), theCorePackage.getBehavior(), null, "behavior", null, 1, 1, BehaviorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehaviorInstance_BehavioralElementInstance(), this.getBehavioralElementInstance(), this.getBehavioralElementInstance_BehaviorInstance(), "behavioralElementInstance", null, 1, 1, BehaviorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehaviorInstance_AttributeBindings(), this.getAttributeBinding(), null, "attributeBindings", null, 0, -1, BehaviorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fujabaRealtimeStatechartInstanceEClass, FujabaRealtimeStatechartInstance.class, "FujabaRealtimeStatechartInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFujabaRealtimeStatechartInstance_Statechart(), theRealtimestatechartPackage.getFujabaRealtimeStatechart(), null, "statechart", null, 1, 1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -923,10 +873,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(behavioralElementInstanceEClass, BehavioralElementInstance.class, "BehavioralElementInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavioralElementInstance_BehaviorInstance(), this.getBehaviorInstance(), this.getBehaviorInstance_BehavioralElementInstance(), "behaviorInstance", null, 0, -1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehavioralElementInstance_BehavioralElementType(), theCorePackage.getBehavioralElement(), null, "behavioralElementType", null, 1, 1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(attributeBindingEClass, AttributeBinding.class, "AttributeBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttributeBinding_Attribute(), ecorePackage.getEAttribute(), null, "attribute", null, 1, 1, AttributeBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttributeBinding_Value(), theExpressionsPackage.getExpression(), null, "value", null, 1, 1, AttributeBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -953,7 +899,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																									
+		   });																																																					
 	}
 
 	/**
@@ -999,13 +945,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).senderMessageInterface\nendif"
-		   });																
+		   });															
 		addAnnotation
 		  (getFujabaRealtimeStatechartInstance_AllSubStatecharts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "embeddedSubStatecharts -> union(referencedSubStatecharts)"
-		   });							
+		   });				
 	}
 
 } //InstancePackageImpl

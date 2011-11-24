@@ -125,15 +125,6 @@ public interface InstanceFactory extends EFactory {
 	FujabaRealtimeStatechartInstance createFujabaRealtimeStatechartInstance();
 
 	/**
-	 * Returns a new object of class '<em>Attribute Binding</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute Binding</em>'.
-	 * @generated
-	 */
-	AttributeBinding createAttributeBinding();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

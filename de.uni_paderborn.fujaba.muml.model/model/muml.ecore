@@ -859,12 +859,6 @@
             <details key="documentation" value="This reference points to the behavioral element instance that this behavior &#xD;&#xA;instance belongs to. Each behavior instance belongs to exactly one behavioral&#xD;&#xA;element instance and defines its behavior."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="attributeBindings"
-            upperBound="-1" eType="#//model/instance/AttributeBinding" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The attributes bindings define an assignment of initial values to the attributes&#xD;&#xA;of the behavior of this behavior instance. There may only be one attribute &#xD;&#xA;binding for each attribute of the respective behavior, but there may be no &#xD;&#xA;attribute binding for an attribute which is not contained in the behavior."/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechartInstance"
           eSuperTypes="#//model/instance/BehaviorInstance">
@@ -921,24 +915,6 @@
             lowerBound="1" eType="#//model/core/BehavioralElement">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The BehavioralElement which is instantiated by this BehavioralElementInstance.&#xD;&#xA;There may be multiple instances for the same BehavioralElement in one model."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AttributeBinding">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The AttributeBinding is used to assign initial values to the attributes of a &#xD;&#xA;behavior instance. For each attribute of the respective behavior, at most one &#xD;&#xA;AttributeBinding may be specified. The AttributeBinding references the&#xD;&#xA;attribute and assigns an arbitrary expression as a value. The expression must &#xD;&#xA;evaluate to the same type as the attribute type."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-            eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The attribute for which a value is assigned."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-            eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
-            containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The expression defining the initial value for this attribute. The expression must&#xD;&#xA;evaluate to the same type as the attribute in this attribute assignment."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

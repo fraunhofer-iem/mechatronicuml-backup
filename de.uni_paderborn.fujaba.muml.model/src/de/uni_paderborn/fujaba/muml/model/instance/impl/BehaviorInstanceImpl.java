@@ -34,7 +34,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehaviorInstanceImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehaviorInstanceImpl#getBehavioralElementInstance <em>Behavioral Element Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehaviorInstanceImpl#getAttributeBindings <em>Attribute Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,16 +49,6 @@ public abstract class BehaviorInstanceImpl extends EObjectImpl implements Behavi
 	 * @ordered
 	 */
 	protected Behavior behavior;
-
-	/**
-	 * The cached value of the '{@link #getAttributeBindings() <em>Attribute Bindings</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttributeBindings()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AttributeBinding> attributeBindings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,18 +153,6 @@ public abstract class BehaviorInstanceImpl extends EObjectImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AttributeBinding> getAttributeBindings() {
-		if (attributeBindings == null) {
-			attributeBindings = new EObjectContainmentEList<AttributeBinding>(AttributeBinding.class, this, InstancePackage.BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS);
-		}
-		return attributeBindings;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -197,8 +174,6 @@ public abstract class BehaviorInstanceImpl extends EObjectImpl implements Behavi
 		switch (featureID) {
 			case InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE:
 				return basicSetBehavioralElementInstance(null, msgs);
-			case InstancePackage.BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS:
-				return ((InternalEList<?>)getAttributeBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -230,8 +205,6 @@ public abstract class BehaviorInstanceImpl extends EObjectImpl implements Behavi
 				return basicGetBehavior();
 			case InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE:
 				return getBehavioralElementInstance();
-			case InstancePackage.BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS:
-				return getAttributeBindings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,10 +224,6 @@ public abstract class BehaviorInstanceImpl extends EObjectImpl implements Behavi
 			case InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE:
 				setBehavioralElementInstance((BehavioralElementInstance)newValue);
 				return;
-			case InstancePackage.BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS:
-				getAttributeBindings().clear();
-				getAttributeBindings().addAll((Collection<? extends AttributeBinding>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -273,9 +242,6 @@ public abstract class BehaviorInstanceImpl extends EObjectImpl implements Behavi
 			case InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE:
 				setBehavioralElementInstance((BehavioralElementInstance)null);
 				return;
-			case InstancePackage.BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS:
-				getAttributeBindings().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -292,8 +258,6 @@ public abstract class BehaviorInstanceImpl extends EObjectImpl implements Behavi
 				return behavior != null;
 			case InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE:
 				return getBehavioralElementInstance() != null;
-			case InstancePackage.BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS:
-				return attributeBindings != null && !attributeBindings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

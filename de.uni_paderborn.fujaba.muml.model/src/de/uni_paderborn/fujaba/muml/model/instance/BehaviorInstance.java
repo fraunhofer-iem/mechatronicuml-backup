@@ -28,7 +28,6 @@ import de.uni_paderborn.fujaba.muml.model.core.Behavior;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavioralElementInstance <em>Behavioral Element Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getAttributeBindings <em>Attribute Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,23 +90,5 @@ public interface BehaviorInstance extends EObject {
 	 * @generated
 	 */
 	void setBehavioralElementInstance(BehavioralElementInstance value);
-
-	/**
-	 * Returns the value of the '<em><b>Attribute Bindings</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The attributes bindings define an assignment of initial values to the attributes
-	 * of the behavior of this behavior instance. There may only be one attribute 
-	 * binding for each attribute of the respective behavior, but there may be no 
-	 * attribute binding for an attribute which is not contained in the behavior.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Attribute Bindings</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getBehaviorInstance_AttributeBindings()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<AttributeBinding> getAttributeBindings();
 
 } // BehaviorInstance

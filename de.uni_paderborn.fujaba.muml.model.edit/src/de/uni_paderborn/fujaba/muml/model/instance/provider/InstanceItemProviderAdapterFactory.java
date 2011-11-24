@@ -328,29 +328,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeBindingItemProvider attributeBindingItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttributeBindingAdapter() {
-		if (attributeBindingItemProvider == null) {
-			attributeBindingItemProvider = new AttributeBindingItemProvider(this);
-		}
-
-		return attributeBindingItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,7 +437,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		if (discreteSinglePortInstanceItemProvider != null) discreteSinglePortInstanceItemProvider.dispose();
 		if (discreteMultiPortInstanceItemProvider != null) discreteMultiPortInstanceItemProvider.dispose();
 		if (fujabaRealtimeStatechartInstanceItemProvider != null) fujabaRealtimeStatechartInstanceItemProvider.dispose();
-		if (attributeBindingItemProvider != null) attributeBindingItemProvider.dispose();
 	}
 
 }
