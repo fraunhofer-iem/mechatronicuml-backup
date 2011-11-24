@@ -62,35 +62,12 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommittedPropertyDescriptor(object);
 			addInitialPropertyDescriptor(object);
 			addFinalPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addSimplePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Committed feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommittedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_committed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_committed_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__COMMITTED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -256,7 +233,6 @@ public class StateItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(State.class)) {
-			case RealtimestatechartPackage.STATE__COMMITTED:
 			case RealtimestatechartPackage.STATE__INITIAL:
 			case RealtimestatechartPackage.STATE__FINAL:
 			case RealtimestatechartPackage.STATE__URGENT:

@@ -43,7 +43,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChan
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getExitEvent <em>Exit Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getEntryEvent <em>Entry Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getInvariants <em>Invariants</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isCommitted <em>Committed</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isInitial <em>Initial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isUrgent <em>Urgent</em>}</li>
@@ -107,26 +106,6 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected EList<ClockConstraint> invariants;
-
-	/**
-	 * The default value of the '{@link #isCommitted() <em>Committed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCommitted()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean COMMITTED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCommitted() <em>Committed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCommitted()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean committed = COMMITTED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isInitial() <em>Initial</em>}' attribute.
@@ -415,27 +394,6 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCommitted() {
-		return committed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCommitted(boolean newCommitted) {
-		boolean oldCommitted = committed;
-		committed = newCommitted;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__COMMITTED, oldCommitted, committed));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<SynchronizationChannel> getChannels() {
 		if (channels == null) {
 			channels = new EObjectContainmentWithInverseEList<SynchronizationChannel>(SynchronizationChannel.class, this, RealtimestatechartPackage.STATE__CHANNELS, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE);
@@ -625,8 +583,6 @@ public class StateImpl extends VertexImpl implements State {
 				return getEntryEvent();
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				return getInvariants();
-			case RealtimestatechartPackage.STATE__COMMITTED:
-				return isCommitted();
 			case RealtimestatechartPackage.STATE__INITIAL:
 				return isInitial();
 			case RealtimestatechartPackage.STATE__FINAL:
@@ -672,9 +628,6 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				getInvariants().clear();
 				getInvariants().addAll((Collection<? extends ClockConstraint>)newValue);
-				return;
-			case RealtimestatechartPackage.STATE__COMMITTED:
-				setCommitted((Boolean)newValue);
 				return;
 			case RealtimestatechartPackage.STATE__INITIAL:
 				setInitial((Boolean)newValue);
@@ -724,9 +677,6 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				getInvariants().clear();
 				return;
-			case RealtimestatechartPackage.STATE__COMMITTED:
-				setCommitted(COMMITTED_EDEFAULT);
-				return;
 			case RealtimestatechartPackage.STATE__INITIAL:
 				setInitial(INITIAL_EDEFAULT);
 				return;
@@ -767,8 +717,6 @@ public class StateImpl extends VertexImpl implements State {
 				return entryEvent != null;
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				return invariants != null && !invariants.isEmpty();
-			case RealtimestatechartPackage.STATE__COMMITTED:
-				return committed != COMMITTED_EDEFAULT;
 			case RealtimestatechartPackage.STATE__INITIAL:
 				return initial != INITIAL_EDEFAULT;
 			case RealtimestatechartPackage.STATE__FINAL:
@@ -799,9 +747,7 @@ public class StateImpl extends VertexImpl implements State {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (committed: ");
-		result.append(committed);
-		result.append(", initial: ");
+		result.append(" (initial: ");
 		result.append(initial);
 		result.append(", final: ");
 		result.append(final_);

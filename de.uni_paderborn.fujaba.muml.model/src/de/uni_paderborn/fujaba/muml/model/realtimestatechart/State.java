@@ -25,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitEvent <em>Exit Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryEvent <em>Entry Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getInvariants <em>Invariants</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isCommitted <em>Committed</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isInitial <em>Initial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isFinal <em>Final</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isUrgent <em>Urgent</em>}</li>
@@ -154,33 +153,6 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	EList<ClockConstraint> getInvariants();
-
-	/**
-	 * Returns the value of the '<em><b>Committed</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * If a state is active and commited, no time is allowed to pass and no other transition is allowed to fire until the state is leaved.
-	 * The meaning of being committed is the same as it is with committed states in Uppaal.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Committed</em>' attribute.
-	 * @see #setCommitted(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_Committed()
-	 * @model default="false"
-	 * @generated
-	 */
-	boolean isCommitted();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isCommitted <em>Committed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Committed</em>' attribute.
-	 * @see #isCommitted()
-	 * @generated
-	 */
-	void setCommitted(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Channels</b></em>' containment reference list.

@@ -88,7 +88,6 @@ public class TransitionItemProvider
 			addAbsoluteDeadlinesPropertyDescriptor(object);
 			addRelativeDeadlinePropertyDescriptor(object);
 			addBlockablePropertyDescriptor(object);
-			addUrgentPropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
 		}
@@ -515,28 +514,6 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Urgent feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUrgentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_urgent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_urgent_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__URGENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-/**
 	 * This adds a property descriptor for the Guard feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -732,7 +709,6 @@ public class TransitionItemProvider
 
 		switch (notification.getFeatureID(Transition.class)) {
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
-			case RealtimestatechartPackage.TRANSITION__URGENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.TRANSITION__ANNOTATION:

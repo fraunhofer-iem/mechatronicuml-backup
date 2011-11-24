@@ -551,22 +551,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__INVARIANTS = VERTEX_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Committed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__COMMITTED = VERTEX_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Initial</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__INITIAL = VERTEX_FEATURE_COUNT + 6;
+	int STATE__INITIAL = VERTEX_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Final</b></em>' attribute.
@@ -575,7 +566,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__FINAL = VERTEX_FEATURE_COUNT + 7;
+	int STATE__FINAL = VERTEX_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -584,7 +575,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__URGENT = VERTEX_FEATURE_COUNT + 8;
+	int STATE__URGENT = VERTEX_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Channels</b></em>' containment reference list.
@@ -593,7 +584,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__CHANNELS = VERTEX_FEATURE_COUNT + 9;
+	int STATE__CHANNELS = VERTEX_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Events</b></em>' reference list.
@@ -602,7 +593,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__EVENTS = VERTEX_FEATURE_COUNT + 10;
+	int STATE__EVENTS = VERTEX_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>State Entry Points</b></em>' containment reference list.
@@ -611,7 +602,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__STATE_ENTRY_POINTS = VERTEX_FEATURE_COUNT + 11;
+	int STATE__STATE_ENTRY_POINTS = VERTEX_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Simple</b></em>' attribute.
@@ -620,7 +611,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__SIMPLE = VERTEX_FEATURE_COUNT + 12;
+	int STATE__SIMPLE = VERTEX_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>State Exit Points</b></em>' containment reference list.
@@ -629,7 +620,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__STATE_EXIT_POINTS = VERTEX_FEATURE_COUNT + 13;
+	int STATE__STATE_EXIT_POINTS = VERTEX_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -638,7 +629,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 14;
+	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
@@ -777,22 +768,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__BLOCKABLE = PRIORITIZABLE_FEATURE_COUNT + 12;
 
 	/**
-	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__URGENT = PRIORITIZABLE_FEATURE_COUNT + 13;
-
-	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 14;
+	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
@@ -801,7 +783,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EVENTS = PRIORITIZABLE_FEATURE_COUNT + 15;
+	int TRANSITION__EVENTS = PRIORITIZABLE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -810,7 +792,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ACTION = PRIORITIZABLE_FEATURE_COUNT + 16;
+	int TRANSITION__ACTION = PRIORITIZABLE_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -819,7 +801,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 17;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -2235,17 +2217,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getState_Invariants();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isCommitted <em>Committed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Committed</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isCommitted()
-	 * @see #getState()
-	 * @generated
-	 */
-	EAttribute getState_Committed();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getChannels <em>Channels</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2506,17 +2477,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTransition_Blockable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isUrgent <em>Urgent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Urgent</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isUrgent()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_Urgent();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getGuard <em>Guard</em>}'.
@@ -3264,14 +3224,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference STATE__INVARIANTS = eINSTANCE.getState_Invariants();
 
 		/**
-		 * The meta object literal for the '<em><b>Committed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STATE__COMMITTED = eINSTANCE.getState_Committed();
-
-		/**
 		 * The meta object literal for the '<em><b>Channels</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3466,14 +3418,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRANSITION__BLOCKABLE = eINSTANCE.getTransition_Blockable();
-
-		/**
-		 * The meta object literal for the '<em><b>Urgent</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__URGENT = eINSTANCE.getTransition_Urgent();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard</b></em>' containment reference feature.

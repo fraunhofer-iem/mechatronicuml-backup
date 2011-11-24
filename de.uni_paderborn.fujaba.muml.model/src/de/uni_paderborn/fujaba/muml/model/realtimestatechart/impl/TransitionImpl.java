@@ -64,7 +64,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getRelativeDeadline <em>Relative Deadline</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isBlockable <em>Blockable</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAction <em>Action</em>}</li>
@@ -206,26 +205,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @ordered
 	 */
 	protected boolean blockable = BLOCKABLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isUrgent() <em>Urgent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUrgent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean URGENT_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isUrgent() <em>Urgent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUrgent()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean urgent = URGENT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' containment reference.
@@ -698,27 +677,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isUrgent() {
-		return urgent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUrgent(boolean newUrgent) {
-		boolean oldUrgent = urgent;
-		urgent = newUrgent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__URGENT, oldUrgent, urgent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Expression getGuard() {
 		return guard;
 	}
@@ -971,8 +929,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getRelativeDeadline();
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
 				return isBlockable();
-			case RealtimestatechartPackage.TRANSITION__URGENT:
-				return isUrgent();
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return getGuard();
 			case RealtimestatechartPackage.TRANSITION__EVENTS:
@@ -1030,9 +986,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
 				setBlockable((Boolean)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__URGENT:
-				setUrgent((Boolean)newValue);
-				return;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)newValue);
 				return;
@@ -1088,9 +1041,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
 				setBlockable(BLOCKABLE_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.TRANSITION__URGENT:
-				setUrgent(URGENT_EDEFAULT);
-				return;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)null);
 				return;
@@ -1138,8 +1088,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return relativeDeadline != null;
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
 				return blockable != BLOCKABLE_EDEFAULT;
-			case RealtimestatechartPackage.TRANSITION__URGENT:
-				return urgent != URGENT_EDEFAULT;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return guard != null;
 			case RealtimestatechartPackage.TRANSITION__EVENTS:
@@ -1206,8 +1154,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (blockable: ");
 		result.append(blockable);
-		result.append(", urgent: ");
-		result.append(urgent);
 		result.append(')');
 		return result.toString();
 	}
