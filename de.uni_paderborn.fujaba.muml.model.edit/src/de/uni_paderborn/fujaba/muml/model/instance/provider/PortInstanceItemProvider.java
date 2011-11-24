@@ -71,6 +71,7 @@ public class PortInstanceItemProvider
 			addPortTypePropertyDescriptor(object);
 			addIncomingConnectorInstancesPropertyDescriptor(object);
 			addOutgoingConnectorInstancesPropertyDescriptor(object);
+			addConnectorInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -178,6 +179,28 @@ public class PortInstanceItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_outgoingConnectorInstances_feature", "_UI_PortInstance_type"),
 				 InstancePackage.Literals.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES,
 				 false,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connector Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectorInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_connectorInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_connectorInstances_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__CONNECTOR_INSTANCES,
+				 true,
 				 false,
 				 true,
 				 null,

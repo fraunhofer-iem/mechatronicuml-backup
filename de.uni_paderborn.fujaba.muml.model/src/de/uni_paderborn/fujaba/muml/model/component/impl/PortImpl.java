@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -45,6 +46,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getConnectors <em>Connectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -110,6 +112,16 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected EList<ConnectorType> outgoingConnectors;
+
+	/**
+	 * The cached setting delegate for the '{@link #getConnectors() <em>Connectors</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__CONNECTORS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,6 +226,16 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__COMPONENT, newComponent, newComponent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<ConnectorType> getConnectors() {
+		return (EList<ConnectorType>)CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -362,6 +384,8 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				return getOutgoingConnectors();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent();
+			case ComponentPackage.PORT__CONNECTORS:
+				return getConnectors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -450,6 +474,8 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				return outgoingConnectors != null && !outgoingConnectors.isEmpty();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent() != null;
+			case ComponentPackage.PORT__CONNECTORS:
+				return CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

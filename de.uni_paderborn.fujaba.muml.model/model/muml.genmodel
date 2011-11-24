@@ -40,6 +40,7 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/component/Port/outgoingConnectors"/>
           <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="General"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/Port/component"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/Port/connectors"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/ContinuousPort">
           <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousPort/kind"/>
@@ -208,6 +209,8 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/PortInstance/incomingConnectorInstances"/>
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/PortInstance/outgoingConnectorInstances"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/instance/PortInstance/connectorInstances"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/AssemblyInstance">
           <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"

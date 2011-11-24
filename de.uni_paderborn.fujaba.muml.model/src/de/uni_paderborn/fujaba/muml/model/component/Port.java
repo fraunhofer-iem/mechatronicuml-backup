@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getConnectors <em>Connectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,23 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * @generated
 	 */
 	void setComponent(Component value);
+
+	/**
+	 * Returns the value of the '<em><b>Connectors</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connectors</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connectors</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_Connectors()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.incomingConnectors -> union(self.outgoingConnectors)'"
+	 * @generated
+	 */
+	EList<ConnectorType> getConnectors();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

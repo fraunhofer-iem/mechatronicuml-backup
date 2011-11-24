@@ -73,6 +73,7 @@ public class PortItemProvider
 			addConstraintPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
+			addConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -184,6 +185,28 @@ public class PortItemProvider
 				 false,
 				 null,
 				 getString("_UI_GeneralPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connectors feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_connectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_connectors_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__CONNECTORS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
 				 null));
 	}
 

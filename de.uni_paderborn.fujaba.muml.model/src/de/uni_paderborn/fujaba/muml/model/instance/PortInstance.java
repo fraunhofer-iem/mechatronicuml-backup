@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getConnectorInstances <em>Connector Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -121,5 +122,22 @@ public interface PortInstance extends NamedElement, CommentableElement, Behavior
 	 * @generated
 	 */
 	EList<ConnectorInstance> getOutgoingConnectorInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Connector Instances</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connector Instances</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connector Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_ConnectorInstances()
+	 * @model transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.incomingConnectorInstances -> union(self.outgoingConnectorInstances )'"
+	 * @generated
+	 */
+	EList<ConnectorInstance> getConnectorInstances();
 
 } // PortInstance

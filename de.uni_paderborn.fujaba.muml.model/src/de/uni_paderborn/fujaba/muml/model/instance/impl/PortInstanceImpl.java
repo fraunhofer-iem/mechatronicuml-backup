@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -45,6 +46,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -120,6 +122,16 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 	 * @ordered
 	 */
 	protected EList<ConnectorInstance> outgoingConnectorInstances;
+
+	/**
+	 * The cached setting delegate for the '{@link #getConnectorInstances() <em>Connector Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectorInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate CONNECTOR_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__CONNECTOR_INSTANCES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -342,6 +354,16 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	public EList<ConnectorInstance> getConnectorInstances() {
+		return (EList<ConnectorInstance>)CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -417,6 +439,8 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 				return getIncomingConnectorInstances();
 			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
 				return getOutgoingConnectorInstances();
+			case InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES:
+				return getConnectorInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -454,6 +478,10 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 				getOutgoingConnectorInstances().clear();
 				getOutgoingConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
 				return;
+			case InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES:
+				getConnectorInstances().clear();
+				getConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -487,6 +515,9 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
 				getOutgoingConnectorInstances().clear();
 				return;
+			case InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES:
+				getConnectorInstances().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -513,6 +544,8 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 				return incomingConnectorInstances != null && !incomingConnectorInstances.isEmpty();
 			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
 				return outgoingConnectorInstances != null && !outgoingConnectorInstances.isEmpty();
+			case InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES:
+				return CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

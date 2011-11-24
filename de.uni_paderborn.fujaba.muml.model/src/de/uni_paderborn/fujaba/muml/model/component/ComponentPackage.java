@@ -351,13 +351,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT__COMPONENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
@@ -449,6 +458,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT__COMPONENT = PORT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__CONNECTORS = PORT__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -558,6 +576,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_PORT__COMPONENT = PORT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__CONNECTORS = PORT__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -1306,6 +1333,15 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__COMPONENT = DISCRETE_PORT__COMPONENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__CONNECTORS = DISCRETE_PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1481,6 +1517,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_Component();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getConnectors <em>Connectors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Connectors</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getConnectors()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_Connectors();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort <em>Continuous Port</em>}'.
@@ -1957,6 +2004,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__COMPONENT = eINSTANCE.getPort_Component();
+
+		/**
+		 * The meta object literal for the '<em><b>Connectors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__CONNECTORS = eINSTANCE.getPort_Connectors();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
