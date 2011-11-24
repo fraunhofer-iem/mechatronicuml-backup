@@ -16,6 +16,18 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+  	  <wizard
+  	       category="de.fujaba/de.fujaba.diagrams"
+           class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlCreationWizard"
+           icon="icons/MessageInterfaceDiagram.gif"
+           id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
+           name="Message-Interface Diagram">
+  	     
+  	  	 <description>Creates a new Message-Interface Diagram.</description>
+      </wizard>
+   </extension>
+   
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <ParserProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.provider.CustomMessageinterfaceParserProvider">
          <Priority name="Low"/>

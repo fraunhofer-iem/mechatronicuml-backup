@@ -5,7 +5,7 @@
          point="org.eclipse.ui.newWizards">
       <wizard
   	       category="de.fujaba/de.fujaba.diagrams"
-            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.part.CustomRealtimeStatechartDiagramCreationWizard"
+            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlCreationWizard"
             icon="icons/StatechartFile.gif"
             id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.realtimestatechartwizard"
             name="Realtime Statechart Diagram">
