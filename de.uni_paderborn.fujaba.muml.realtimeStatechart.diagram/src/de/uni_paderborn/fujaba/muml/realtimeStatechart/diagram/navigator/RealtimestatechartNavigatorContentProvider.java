@@ -217,6 +217,40 @@ public class RealtimestatechartNavigatorContentProvider implements
 		switch (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			return result.toArray();
+		}
+
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -244,47 +278,6 @@ public class RealtimestatechartNavigatorContentProvider implements
 			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
-			Diagram sv = (Diagram) view;
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup links = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_ModelElementCategory_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			if (!links.isEmpty()) {
-				result.add(links);
 			}
 			return result.toArray();
 		}
@@ -392,6 +385,30 @@ public class RealtimestatechartNavigatorContentProvider implements
 			return result.toArray();
 		}
 
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
+			Diagram sv = (Diagram) view;
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup links = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_ModelElementCategory_1000_links,
+					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			if (!links.isEmpty()) {
+				result.add(links);
+			}
+			return result.toArray();
+		}
+
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -420,6 +437,66 @@ public class RealtimestatechartNavigatorContentProvider implements
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_StateEntryPoint_3014_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_StateEntryPoint_3014_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
 			return result.toArray();
 		}
 
@@ -502,66 +579,6 @@ public class RealtimestatechartNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_StateEntryPoint_3014_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_StateEntryPoint_3014_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -590,23 +607,6 @@ public class RealtimestatechartNavigatorContentProvider implements
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
 			return result.toArray();
 		}
 		}

@@ -149,8 +149,6 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
-		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
