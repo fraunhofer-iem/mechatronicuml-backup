@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.dialogs.Dialog;
@@ -27,6 +32,12 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.IDialogExtension;
  * 
  */
 public class ExtensibleCreationDialog extends Dialog {
+
+	/**
+	 * A resource for newly created object. It is within the same ResourceSet as
+	 * the RootNode, so that PropertyDescriptors can find valid choices.
+	 */
+	private Resource transientResource;
 
 	private IRefreshProhibitedPropertySection mainPropertySection;
 
@@ -58,10 +69,6 @@ public class ExtensibleCreationDialog extends Dialog {
 	 */
 	private EObject containerObject;
 
-	// Note: We store Listeners in order to be able to remove/add them
-	// afterwards.
-
-	// UI-Controls:
 
 	/**
 	 * Constructs this ExtensibleCreationDialog.
@@ -74,19 +81,9 @@ public class ExtensibleCreationDialog extends Dialog {
 	 *            The object containing the <code>structuralFeature</code>.
 	 * @param structuralFeature
 	 *            The StructuralFeature to set values for.
-	 * @param currentValues
-	 *            The current objects of the feature.
 	 * @param adapterFactory
 	 *            The adapter factory for content providers, item providers and
 	 *            ItemPropertyDescriptors.
-	 * @param textParser
-	 *            The TextParser that is able to create objects represented by a
-	 *            text.
-	 * @param textProvider
-	 *            The TextProvider that is able to build a text for a set of
-	 *            objects.
-	 * @param instanceClass
-	 *            The instance class to create new objects.
 	 * 
 	 */
 	public ExtensibleCreationDialog(Shell parentShell,
@@ -101,7 +98,16 @@ public class ExtensibleCreationDialog extends Dialog {
 		this.containerObject = containerObject;
 		this.mainPropertySection = mainPropertySection;
 
+		ResourceSet resourceSet = containerObject.eResource().getResourceSet();
+
+		transientResource = resourceSet.createResource(URI.createURI(""));
+		transientResource.eSetDeliver(false);
+
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
+	}
+
+	public Resource getTransientResource() {
+		return transientResource;
 	}
 
 	public void addExtension(IDialogExtension extension) {
@@ -164,6 +170,8 @@ public class ExtensibleCreationDialog extends Dialog {
 		for (IDialogExtension extension : extensions) {
 			extension.okPressed();
 		}
+		transientResource.getResourceSet().getResources()
+				.remove(transientResource);
 		super.okPressed();
 	}
 

@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CaretEvent;
@@ -26,8 +25,7 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.Range;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.labelproviders.IMultiLabelProvider;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.textual.parsers.IMultiTextParser;
 
-public class TextualDialogExtension extends
-		AbstractDialogExtension {
+public class TextualDialogExtension extends AbstractDialogExtension {
 
 	private ObjectsListDialogExtension objectsListDialogExtension;
 
@@ -36,20 +34,6 @@ public class TextualDialogExtension extends
 	 * Parameters.
 	 */
 	private Map<Object, Range> textRanges;
-
-	/**
-	 * A SelectionChangedListener, which is notified about selection changes in
-	 * the Parameter List and updates the Parameter-Line Textfield selection
-	 * accordingly.
-	 */
-	private ISelectionChangedListener objectsSelectionToRangeListener;
-
-	/**
-	 * A SelectionChangedListener, which is notified about selection changes in
-	 * the Parameter List and updates the enable-status of the Buttons "Up",
-	 * "Down" and "Modify" accordingly.
-	 */
-	private ISelectionChangedListener parameterSelectionToButtonEnablementListener;
 
 	/**
 	 * A ModifyListener, which is notified when the Parameter-Line Text was
@@ -80,8 +64,7 @@ public class TextualDialogExtension extends
 	 */
 	private IMultiLabelProvider textProvider;
 
-	public TextualDialogExtension(
-			ExtensibleCreationDialog creationDialog,
+	public TextualDialogExtension(ExtensibleCreationDialog creationDialog,
 			IMultiTextParser textParser, IMultiLabelProvider textProvider) {
 		super(creationDialog);
 		this.textParser = textParser;
@@ -116,8 +99,7 @@ public class TextualDialogExtension extends
 
 		if (txtTextualString != null) {
 			// Create CaretListener for txtTextualString to update
-			// Parameter-List
-			// selection accordingly.
+			// list-selection accordingly.
 			txtTextualStringCaretListener = new CaretListener() {
 				@Override
 				public void caretMoved(CaretEvent event) {
@@ -144,12 +126,10 @@ public class TextualDialogExtension extends
 					markErrors(txtTextualString, newErrorRanges);
 
 					textRanges = newRanges;
-					objectsListDialogExtension.getCurrentListItems()
-							.clear();
-					objectsListDialogExtension.getCurrentListItems()
-							.addAll(newObjects);
-					objectsListDialogExtension.getTableViewer()
-							.refresh();
+					objectsListDialogExtension.getCurrentListItems().clear();
+					objectsListDialogExtension.getCurrentListItems().addAll(
+							newObjects);
+					objectsListDialogExtension.getTableViewer().refresh();
 
 					onTextualStringCaretMoved(txtTextualString.getCaretOffset());
 				}
@@ -162,10 +142,9 @@ public class TextualDialogExtension extends
 
 					// Make sure, the selection for txtTextualString will be
 					// set.
-					objectsListDialogExtension.getTableViewer()
-							.setSelection(
-									objectsListDialogExtension
-											.getTableViewer().getSelection());
+					objectsListDialogExtension.getTableViewer().setSelection(
+							objectsListDialogExtension.getTableViewer()
+									.getSelection());
 				}
 			});
 
@@ -267,8 +246,7 @@ public class TextualDialogExtension extends
 			if (selectedObject != null) {
 				ISelection listSelection = new StructuredSelection(
 						new Object[] { selectedObject });
-				objectsListDialogExtension
-						.setListSelection(listSelection);
+				objectsListDialogExtension.setListSelection(listSelection);
 			}
 		}
 	}
@@ -304,6 +282,5 @@ public class TextualDialogExtension extends
 			ObjectsListDialogExtension objectsListDialogExtension) {
 		this.objectsListDialogExtension = objectsListDialogExtension;
 	}
-
 
 }

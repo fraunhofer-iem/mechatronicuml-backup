@@ -9,10 +9,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemProvider;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -27,7 +30,7 @@ import org.eclipse.swt.widgets.Composite;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
-public class ObjectCreationDialogExtension extends AbstractDialogExtension{
+public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 	private ObjectsListDialogExtension objectsListDialogExtension;
 
@@ -78,10 +81,6 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension{
 			}
 		}
 
-		creationDialog.getStructuralFeature(); // Create
-												// EStructuralFeatureItemProvider
-												// by adapting adapterFactory,
-												// see CustomPropertySource
 	}
 
 	@Override
@@ -124,27 +123,19 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension{
 				1, 1));
 		btnCreate.setText("&Create");
 
-		// btnModify = new Button(composite, SWT.NONE);
-		// btnModify.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
-		// false,
-		// 1, 1));
-		// btnModify.setText("&Modify");
-
 		btnCreate.addSelectionListener(new SelectionAdapter() {
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				EObject newObject = EcoreUtil.create(getInstanceClass());
+				final Resource resource = getCreationDialog()
+						.getTransientResource();
 
-				// applyProperties(newObject);
-
+				final EObject newObject = EcoreUtil.create(getInstanceClass());
+				resource.getContents().add(newObject);
+				
 				objectsListDialogExtension.addListItem(newObject);
 				textualDialogExtension.rebuildTextualString();
 
-				// Update visuals
-				// TODO:
-				// txtName.setSelection(0, txtName.getText().length());
-				// txtName.setFocus();
 				objectsListDialogExtension.getTableViewer().refresh();
 				objectsListDialogExtension.getTableViewer().setSelection(
 						new StructuredSelection(new Object[] { newObject }));
@@ -163,8 +154,6 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension{
 
 	@Override
 	public void okPressed() {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void setTextualDialogExtension(

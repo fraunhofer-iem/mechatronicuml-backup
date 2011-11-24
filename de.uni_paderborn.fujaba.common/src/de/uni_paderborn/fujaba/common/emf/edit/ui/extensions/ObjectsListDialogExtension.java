@@ -35,12 +35,13 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 	private Adapter hookAdapter = new AdapterImpl() {
 		@Override
 		public void notifyChanged(Notification notification) {
-			if (objectsTableViewer != null && !objectsTableViewer.getControl().isDisposed()) {
+			if (objectsTableViewer != null
+					&& !objectsTableViewer.getControl().isDisposed()) {
 				objectsTableViewer.refresh();
 			}
 		}
 	};
-	
+
 	private Button btnUp;
 	private Button btnDown;
 	private Button btnRemove;
@@ -51,22 +52,10 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 
 	/**
 	 * A SelectionChangedListener, which is notified about selection changes in
-	 * the Parameter List and updates the Parameter-Line Textfield selection
-	 * accordingly.
+	 * the Parameter List and updates the Textfield selection of the
+	 * TextualDialogExtension accordingly.
 	 */
 	private ISelectionChangedListener objectsSelectionToRangeListener;
-
-	/**
-	 * A ModifyListener, which is notified when the Parameter-Line Text was
-	 * edited by the user.
-	 */
-	private ModifyListener txtParameterLineModifyListener;
-
-	/**
-	 * A CaretListener, which is notified when the user changes the
-	 * Caret-Position in the Parameter-Line Textfield.
-	 */
-	private CaretListener txtParameterLineCaretListener;
 
 	/**
 	 * The result, which can be accessed using getResult(), after the dialog was
@@ -88,7 +77,7 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 	public ObjectsListDialogExtension(ExtensibleCreationDialog creationDialog,
 			AdapterFactory adapterFactory, Collection<?> currentValues) {
 		super(creationDialog);
-//		currentValues = EcoreUtil.copyAll(currentValues);
+		// currentValues = EcoreUtil.copyAll(currentValues);
 		this.values = new ItemProvider(adapterFactory, currentValues);
 	}
 
@@ -188,7 +177,6 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 		btnUp.setLayoutData(gdBtnUp);
 		btnUp.setText("&Up");
 		btnUp.setVisible(feature.isOrdered());
-		
 
 		btnDown = new Button(composite, SWT.NONE);
 		btnDown.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
@@ -203,10 +191,9 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 				if (previouslySelectedObject != null) {
 					int index = values.getChildren().indexOf(
 							previouslySelectedObject);
-					
+
 					// Unhook from the model element
 					previouslySelectedObject.eAdapters().remove(hookAdapter);
-					
 
 					values.getChildren().remove(previouslySelectedObject);
 					textualDialogExtension.rebuildTextualString();
@@ -326,7 +313,7 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 	public void addListItem(EObject newObject) {
 		// Hook into the model element
 		newObject.eAdapters().add(hookAdapter);
-		
+
 		// Add the element to the list
 		values.getChildren().add(newObject);
 	}
