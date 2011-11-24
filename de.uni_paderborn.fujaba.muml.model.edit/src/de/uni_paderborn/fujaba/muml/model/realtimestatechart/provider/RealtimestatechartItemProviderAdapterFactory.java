@@ -374,29 +374,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EntryOrExitPointItemProvider entryOrExitPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEntryOrExitPointAdapter() {
-		if (entryOrExitPointItemProvider == null) {
-			entryOrExitPointItemProvider = new EntryOrExitPointItemProvider(this);
-		}
-
-		return entryOrExitPointItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -417,29 +394,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		}
 
 		return messageItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StateEntryOrExitPointItemProvider stateEntryOrExitPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStateEntryOrExitPointAdapter() {
-		if (stateEntryOrExitPointItemProvider == null) {
-			stateEntryOrExitPointItemProvider = new StateEntryOrExitPointItemProvider(this);
-		}
-
-		return stateEntryOrExitPointItemProvider;
 	}
 
 	/**
@@ -692,9 +646,7 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();
-		if (entryOrExitPointItemProvider != null) entryOrExitPointItemProvider.dispose();
 		if (messageItemProvider != null) messageItemProvider.dispose();
-		if (stateEntryOrExitPointItemProvider != null) stateEntryOrExitPointItemProvider.dispose();
 		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
 		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
 		if (entryPointItemProvider != null) entryPointItemProvider.dispose();

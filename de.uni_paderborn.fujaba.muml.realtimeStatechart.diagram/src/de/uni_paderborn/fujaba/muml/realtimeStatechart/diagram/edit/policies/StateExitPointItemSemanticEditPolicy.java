@@ -25,7 +25,7 @@ public class StateExitPointItemSemanticEditPolicy
 	 */
 	public StateExitPointItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateExitPoint_3009);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateExitPoint_3015);
 	}
 
 	/**

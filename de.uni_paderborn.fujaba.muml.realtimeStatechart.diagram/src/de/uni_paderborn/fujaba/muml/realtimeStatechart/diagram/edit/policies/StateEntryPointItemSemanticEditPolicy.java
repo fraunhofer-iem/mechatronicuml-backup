@@ -25,7 +25,7 @@ public class StateEntryPointItemSemanticEditPolicy
 	 */
 	public StateEntryPointItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateEntryPoint_3008);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateEntryPoint_3014);
 	}
 
 	/**

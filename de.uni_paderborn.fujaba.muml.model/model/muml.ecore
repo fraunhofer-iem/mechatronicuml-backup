@@ -1249,9 +1249,9 @@
             <details key="documentation" value="This derived reference returns all StateEvents of this state. The StateEvents of&#xD;&#xA;this state are all entry-, do- and exit-Events."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="stateEntryOrExitPoints"
-            upperBound="-1" eType="#//model/realtimestatechart/StateEntryOrExitPoint"
-            containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="stateEntryPoints" upperBound="-1"
+            eType="#//model/realtimestatechart/StateEntryPoint" containment="true"
+            eOpposite="#//model/realtimestatechart/StateEntryPoint/state">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A state references its entry and exit points. They can only exist, if a state embeds one or more statecharts."/>
           </eAnnotations>
@@ -1266,6 +1266,9 @@
             <details key="documentation" value="A state is simple if it does not contain a region with an embedded substatechart."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="stateExitPoints" upperBound="-1"
+            eType="#//model/realtimestatechart/StateExitPoint" containment="true"
+            eOpposite="#//model/realtimestatechart/StateExitPoint/state"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1591,11 +1594,6 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Entry points are defined points on a state that can be used to reach inner states. \todoib{This is the documentation for EntryPoint.}"/>
-        </eAnnotations>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A synchronization has two kinds: send and receive."/>
@@ -1662,13 +1660,6 @@
           </eAnnotations>
         </eLiterals>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StateEntryOrExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The entry and exit points that are assigned to a state. They are derived from the entry and exit points of the statechart, the state embeds."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="entryOrExitPoint" eType="#//model/realtimestatechart/EntryOrExitPoint"
-            derived="true"/>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EntryEvent" eSuperTypes="#//model/realtimestatechart/EntryOrExitEvent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an entry event. The action associated with this &#xD;&#xA;event will be executed when the state is entered.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
@@ -1679,7 +1670,7 @@
           <details key="documentation" value="This class represents an exit event. The action associated with this &#xD;&#xA;event will be executed when the state is left.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//model/realtimestatechart/EntryOrExitPoint">
+      <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="OneOutgoingTransition"/>
         </eAnnotations>
@@ -1690,7 +1681,7 @@
           <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//model/realtimestatechart/EntryOrExitPoint">
+      <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="AtMostOneOutgoingTransition"/>
         </eAnnotations>
@@ -1701,7 +1692,7 @@
           <details key="AtMostOneOutgoingTransition" value="self.outgoingTransitions->size() &lt;= 1"/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StateEntryPoint" eSuperTypes="#//model/realtimestatechart/StateEntryOrExitPoint">
+      <eClassifiers xsi:type="ecore:EClass" name="StateEntryPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="AtLeastOneIncomingTransition"/>
         </eAnnotations>
@@ -1720,8 +1711,10 @@
             <details key="documentation" value="This is the inherited entryOrExitPoint casted as EntryPoint."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
+            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/stateEntryPoints"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StateExitPoint" eSuperTypes="#//model/realtimestatechart/StateEntryOrExitPoint">
+      <eClassifiers xsi:type="ecore:EClass" name="StateExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="OneOutgoingTransition"/>
         </eAnnotations>
@@ -1740,6 +1733,8 @@
             <details key="documentation" value="This is the inherited entryOrExitPoint casted as ExitPoint."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
+            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/stateExitPoints"/>
       </eClassifiers>
       <eSubpackages name="helper" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper"
           nsPrefix="helper">

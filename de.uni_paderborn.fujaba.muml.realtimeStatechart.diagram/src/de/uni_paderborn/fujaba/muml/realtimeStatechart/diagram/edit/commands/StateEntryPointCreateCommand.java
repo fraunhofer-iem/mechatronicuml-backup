@@ -54,10 +54,10 @@ public class StateEntryPointCreateCommand extends EditElementCommand {
 				.createStateEntryPoint();
 
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
-		owner.getStateEntryOrExitPoints().add(newElement);
+		owner.getStateEntryPoints().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_StateEntryPoint_3008(newElement);
+				.getInstance().init_StateEntryPoint_3014(newElement);
 
 		doConfigure(newElement, monitor, info);
 

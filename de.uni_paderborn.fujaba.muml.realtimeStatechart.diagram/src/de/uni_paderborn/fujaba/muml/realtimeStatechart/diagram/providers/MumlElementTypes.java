@@ -87,11 +87,13 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StateEntryPoint_3008 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3008"); //$NON-NLS-1$
+	public static final IElementType StateEntryPoint_3014 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3014"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType StateExitPoint_3009 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3009"); //$NON-NLS-1$
+	public static final IElementType StateExitPoint_3015 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3015"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -267,12 +269,12 @@ public class MumlElementTypes {
 							.getFujabaRealtimeStatechart());
 
 			elements.put(
-					StateEntryPoint_3008,
+					StateEntryPoint_3014,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getStateEntryPoint());
 
 			elements.put(
-					StateExitPoint_3009,
+					StateExitPoint_3015,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getStateExitPoint());
 
@@ -317,8 +319,8 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(SynchronizationChannel_3005);
 			KNOWN_ELEMENT_TYPES.add(Region_3006);
 			KNOWN_ELEMENT_TYPES.add(FujabaRealtimeStatechart_3011);
-			KNOWN_ELEMENT_TYPES.add(StateEntryPoint_3008);
-			KNOWN_ELEMENT_TYPES.add(StateExitPoint_3009);
+			KNOWN_ELEMENT_TYPES.add(StateEntryPoint_3014);
+			KNOWN_ELEMENT_TYPES.add(StateExitPoint_3015);
 			KNOWN_ELEMENT_TYPES.add(EntryPoint_3012);
 			KNOWN_ELEMENT_TYPES.add(ExitPoint_3013);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
@@ -352,9 +354,9 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechart2EditPart.VISUAL_ID:
 			return FujabaRealtimeStatechart_3011;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
-			return StateEntryPoint_3008;
+			return StateEntryPoint_3014;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
-			return StateExitPoint_3009;
+			return StateExitPoint_3015;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
 			return EntryPoint_3012;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:

@@ -143,15 +143,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	FujabaRealtimeStatechart createFujabaRealtimeStatechart();
 
 	/**
-	 * Returns a new object of class '<em>Entry Or Exit Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entry Or Exit Point</em>'.
-	 * @generated
-	 */
-	EntryOrExitPoint createEntryOrExitPoint();
-
-	/**
 	 * Returns a new object of class '<em>Message</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,15 +150,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	 * @generated
 	 */
 	Message createMessage();
-
-	/**
-	 * Returns a new object of class '<em>State Entry Or Exit Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State Entry Or Exit Point</em>'.
-	 * @generated
-	 */
-	StateEntryOrExitPoint createStateEntryOrExitPoint();
 
 	/**
 	 * Returns a new object of class '<em>Entry Event</em>'.

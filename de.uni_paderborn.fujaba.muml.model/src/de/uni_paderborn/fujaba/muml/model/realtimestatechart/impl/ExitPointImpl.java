@@ -20,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
  *
  * @generated
  */
-public class ExitPointImpl extends EntryOrExitPointImpl implements ExitPoint {
+public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

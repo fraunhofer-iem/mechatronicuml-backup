@@ -25,5 +25,5 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneOutgoingTransition='self.outgoingTransitions->size() = 1'"
  * @generated
  */
-public interface EntryPoint extends EntryOrExitPoint {
+public interface EntryPoint extends Vertex {
 } // EntryPoint

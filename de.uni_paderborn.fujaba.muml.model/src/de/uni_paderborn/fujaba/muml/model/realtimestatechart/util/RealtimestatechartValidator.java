@@ -154,8 +154,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				return validatePrioritizable((Prioritizable)value, diagnostics, context);
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART:
 				return validateFujabaRealtimeStatechart((FujabaRealtimeStatechart)value, diagnostics, context);
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_POINT:
-				return validateEntryOrExitPoint((EntryOrExitPoint)value, diagnostics, context);
 			case RealtimestatechartPackage.EVENT:
 				return validateEvent((Event)value, diagnostics, context);
 			case RealtimestatechartPackage.TRANSITION_EVENT:
@@ -164,8 +162,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				return validateStateEvent((StateEvent)value, diagnostics, context);
 			case RealtimestatechartPackage.MESSAGE:
 				return validateMessage((Message)value, diagnostics, context);
-			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT:
-				return validateStateEntryOrExitPoint((StateEntryOrExitPoint)value, diagnostics, context);
 			case RealtimestatechartPackage.ENTRY_EVENT:
 				return validateEntryEvent((EntryEvent)value, diagnostics, context);
 			case RealtimestatechartPackage.EXIT_EVENT:
@@ -796,15 +792,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEntryOrExitPoint(EntryOrExitPoint entryOrExitPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(entryOrExitPoint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateEvent(Event event, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(event, diagnostics, context);
 	}
@@ -834,15 +821,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 */
 	public boolean validateMessage(Message message, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(message, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStateEntryOrExitPoint(StateEntryOrExitPoint stateEntryOrExitPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(stateEntryOrExitPoint, diagnostics, context);
 	}
 
 	/**

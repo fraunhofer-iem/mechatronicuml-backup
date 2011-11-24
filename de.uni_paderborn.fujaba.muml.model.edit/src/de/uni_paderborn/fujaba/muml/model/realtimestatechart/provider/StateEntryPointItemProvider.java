@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
  * @generated
  */
 public class StateEntryPointItemProvider
-	extends StateEntryOrExitPointItemProvider
+	extends VertexItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

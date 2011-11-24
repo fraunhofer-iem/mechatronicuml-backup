@@ -286,16 +286,6 @@ public class RegionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.REGION__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createStateEntryOrExitPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__VERTICES,
 				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
 
 		newChildDescriptors.add

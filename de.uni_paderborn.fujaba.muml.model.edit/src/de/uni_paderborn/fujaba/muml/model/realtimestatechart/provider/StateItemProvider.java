@@ -66,7 +66,6 @@ public class StateItemProvider
 			addInitialPropertyDescriptor(object);
 			addFinalPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
-			addStateEntryOrExitPointsPropertyDescriptor(object);
 			addSimplePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -161,28 +160,6 @@ public class StateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the State Entry Or Exit Points feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStateEntryOrExitPointsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_stateEntryOrExitPoints_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_stateEntryOrExitPoints_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__STATE_ENTRY_OR_EXIT_POINTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_MiscPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Simple feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -223,6 +200,8 @@ public class StateItemProvider
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__INVARIANTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__CHANNELS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EVENTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__STATE_ENTRY_POINTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__STATE_EXIT_POINTS);
 		}
 		return childrenFeatures;
 	}
@@ -291,6 +270,8 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 			case RealtimestatechartPackage.STATE__CHANNELS:
 			case RealtimestatechartPackage.STATE__EVENTS:
+			case RealtimestatechartPackage.STATE__STATE_ENTRY_POINTS:
+			case RealtimestatechartPackage.STATE__STATE_EXIT_POINTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -352,6 +333,16 @@ public class StateItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__EVENTS,
 				 RealtimestatechartFactory.eINSTANCE.createExitEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.STATE__STATE_ENTRY_POINTS,
+				 RealtimestatechartFactory.eINSTANCE.createStateEntryPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.STATE__STATE_EXIT_POINTS,
+				 RealtimestatechartFactory.eINSTANCE.createStateExitPoint()));
 	}
 
 	/**

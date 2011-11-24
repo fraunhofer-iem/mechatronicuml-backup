@@ -350,10 +350,10 @@
           <genFeatures createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/State/urgent"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/channels"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/events"/>
-          <genFeatures notify="false" createChild="false" propertyCategory="Misc"
-              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/stateEntryOrExitPoints"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/stateEntryPoints"/>
           <genFeatures property="Readonly" createChild="false" propertyCategory=""
               ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/State/simple"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/stateExitPoints"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Vertex">
           <genFeatures notify="false" createChild="false" propertyCategory="Transitions"
@@ -441,7 +441,6 @@
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/isSuperStatechartOf/statechart"/>
           </genOperations>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryOrExitPoint"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Event/kind"/>
         </genClasses>
@@ -451,10 +450,6 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Message/instanceOf"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/StateEntryOrExitPoint">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateEntryOrExitPoint/entryOrExitPoint"/>
-        </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryEvent"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitEvent"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryPoint"/>
@@ -462,10 +457,12 @@
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/StateEntryPoint">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoint"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateEntryPoint/state"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/StateExitPoint">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoint"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateExitPoint/state"/>
         </genClasses>
         <nestedGenPackages prefix="Helper" basePackage="de.uni_paderborn.fujaba.muml.model.realtimestatechart"
             disposableProviderFactory="true" ecorePackage="muml.ecore#//model/realtimestatechart/helper">

@@ -175,10 +175,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createFujabaRealtimeStatechartAdapter();
 			}
 			@Override
-			public Adapter caseEntryOrExitPoint(EntryOrExitPoint object) {
-				return createEntryOrExitPointAdapter();
-			}
-			@Override
 			public Adapter caseEvent(Event object) {
 				return createEventAdapter();
 			}
@@ -193,10 +189,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseMessage(Message object) {
 				return createMessageAdapter();
-			}
-			@Override
-			public Adapter caseStateEntryOrExitPoint(StateEntryOrExitPoint object) {
-				return createStateEntryOrExitPointAdapter();
 			}
 			@Override
 			public Adapter caseEntryEvent(EntryEvent object) {
@@ -509,20 +501,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint <em>Entry Or Exit Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint
-	 * @generated
-	 */
-	public Adapter createEntryOrExitPointAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -575,20 +553,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMessageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint <em>State Entry Or Exit Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint
-	 * @generated
-	 */
-	public Adapter createStateEntryOrExitPointAdapter() {
 		return null;
 	}
 

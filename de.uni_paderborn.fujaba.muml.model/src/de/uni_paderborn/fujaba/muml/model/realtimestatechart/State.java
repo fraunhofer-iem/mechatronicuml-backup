@@ -31,8 +31,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getChannels <em>Channels</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents <em>Events</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryOrExitPoints <em>State Entry Or Exit Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryPoints <em>State Entry Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isSimple <em>Simple</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateExitPoints <em>State Exit Points</em>}</li>
  * </ul>
  * </p>
  *
@@ -220,19 +221,21 @@ public interface State extends Vertex {
 	EList<StateEvent> getEvents();
 
 	/**
-	 * Returns the value of the '<em><b>State Entry Or Exit Points</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint}.
+	 * Returns the value of the '<em><b>State Entry Points</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A state references its entry and exit points. They can only exist, if a state embeds one or more statecharts.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>State Entry Or Exit Points</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_StateEntryOrExitPoints()
-	 * @model containment="true"
+	 * @return the value of the '<em>State Entry Points</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_StateEntryPoints()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getState
+	 * @model opposite="state" containment="true"
 	 * @generated
 	 */
-	EList<StateEntryOrExitPoint> getStateEntryOrExitPoints();
+	EList<StateEntryPoint> getStateEntryPoints();
 
 	/**
 	 * Returns the value of the '<em><b>Simple</b></em>' attribute.
@@ -260,6 +263,24 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	boolean isSetSimple();
+
+	/**
+	 * Returns the value of the '<em><b>State Exit Points</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getState <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>State Exit Points</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>State Exit Points</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_StateExitPoints()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getState
+	 * @model opposite="state" containment="true"
+	 * @generated
+	 */
+	EList<StateExitPoint> getStateExitPoints();
 
 	/**
 	 * Returns the value of the '<em><b>Initial</b></em>' attribute.

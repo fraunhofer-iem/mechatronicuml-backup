@@ -90,7 +90,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_StateEntryPoint_3008(
+	public void init_StateEntryPoint_3014(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
@@ -109,7 +109,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_StateExitPoint_3009(
+	public void init_StateExitPoint_3015(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory

@@ -281,7 +281,7 @@
           </children>
           <children>
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/stateEntryOrExitPoints"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/stateEntryPoints"/>
             <ownedChild>
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateEntryPoint"/>
@@ -312,7 +312,7 @@
           </children>
           <children>
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/stateEntryOrExitPoints"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/stateExitPoints"/>
             <ownedChild>
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateExitPoint"/>

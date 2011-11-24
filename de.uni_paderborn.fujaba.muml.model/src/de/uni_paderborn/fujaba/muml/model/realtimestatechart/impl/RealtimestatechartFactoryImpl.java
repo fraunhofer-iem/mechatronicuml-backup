@@ -98,9 +98,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_POINT: return createEntryOrExitPoint();
 			case RealtimestatechartPackage.MESSAGE: return createMessage();
-			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT: return createStateEntryOrExitPoint();
 			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
 			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
 			case RealtimestatechartPackage.ENTRY_POINT: return createEntryPoint();
@@ -281,29 +279,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryOrExitPoint createEntryOrExitPoint() {
-		EntryOrExitPointImpl entryOrExitPoint = new EntryOrExitPointImpl();
-		return entryOrExitPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Message createMessage() {
 		MessageImpl message = new MessageImpl();
 		return message;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StateEntryOrExitPoint createStateEntryOrExitPoint() {
-		StateEntryOrExitPointImpl stateEntryOrExitPoint = new StateEntryOrExitPointImpl();
-		return stateEntryOrExitPoint;
 	}
 
 	/**
