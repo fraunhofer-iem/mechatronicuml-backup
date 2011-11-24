@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
+import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +23,7 @@ package de.uni_paderborn.fujaba.muml.model.component;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getTo <em>To</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getFrom <em>From</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,5 +86,30 @@ public interface Assembly extends BehavioralConnector {
 	 * @generated
 	 */
 	void setFrom(ComponentPart value);
+
+	/**
+	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The coordination pattern that defines the protocol of this assembly.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Coordination Pattern</em>' reference.
+	 * @see #setCoordinationPattern(CoordinationPattern)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly_CoordinationPattern()
+	 * @model required="true"
+	 * @generated
+	 */
+	CoordinationPattern getCoordinationPattern();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern <em>Coordination Pattern</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Coordination Pattern</em>' reference.
+	 * @see #getCoordinationPattern()
+	 * @generated
+	 */
+	void setCoordinationPattern(CoordinationPattern value);
 
 } // Assembly

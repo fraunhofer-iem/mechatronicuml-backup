@@ -1206,13 +1206,22 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY__FROM = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Coordination Pattern</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__COORDINATION_PATTERN = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Assembly</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_FEATURE_COUNT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
+	int ASSEMBLY_FEATURE_COUNT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1909,6 +1918,17 @@ public interface ComponentPackage extends EPackage {
 	EReference getAssembly_From();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern <em>Coordination Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Coordination Pattern</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern()
+	 * @see #getAssembly()
+	 * @generated
+	 */
+	EReference getAssembly_CoordinationPattern();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Delegation <em>Delegation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2330,6 +2350,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSEMBLY__FROM = eINSTANCE.getAssembly_From();
+
+		/**
+		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSEMBLY__COORDINATION_PATTERN = eINSTANCE.getAssembly_CoordinationPattern();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DelegationImpl <em>Delegation</em>}' class.

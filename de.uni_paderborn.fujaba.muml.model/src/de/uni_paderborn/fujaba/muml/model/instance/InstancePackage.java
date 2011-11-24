@@ -394,22 +394,13 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_INSTANCE__ASSEMBLY_TYPE = CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Pattern</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__COORDINATION_PATTERN = CONNECTOR_INSTANCE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Assembly Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_INSTANCE_FEATURE_COUNT = CONNECTOR_INSTANCE_FEATURE_COUNT + 3;
+	int ASSEMBLY_INSTANCE_FEATURE_COUNT = CONNECTOR_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationInstanceImpl <em>Delegation Instance</em>}' class.
@@ -1385,17 +1376,6 @@ public interface InstancePackage extends EPackage {
 	EReference getAssemblyInstance_AssemblyType();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getCoordinationPattern <em>Coordination Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Coordination Pattern</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getCoordinationPattern()
-	 * @see #getAssemblyInstance()
-	 * @generated
-	 */
-	EReference getAssemblyInstance_CoordinationPattern();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance <em>Delegation Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1731,14 +1711,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSEMBLY_INSTANCE__ASSEMBLY_TYPE = eINSTANCE.getAssemblyInstance_AssemblyType();
-
-		/**
-		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSEMBLY_INSTANCE__COORDINATION_PATTERN = eINSTANCE.getAssemblyInstance_CoordinationPattern();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationInstanceImpl <em>Delegation Instance</em>}' class.

@@ -628,6 +628,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAssembly_CoordinationPattern() {
+		return (EReference)assemblyEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDelegation() {
 		return delegationEClass;
 	}
@@ -754,6 +763,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		assemblyEClass = createEClass(ASSEMBLY);
 		createEReference(assemblyEClass, ASSEMBLY__TO);
 		createEReference(assemblyEClass, ASSEMBLY__FROM);
+		createEReference(assemblyEClass, ASSEMBLY__COORDINATION_PATTERN);
 
 		delegationEClass = createEClass(DELEGATION);
 		createEReference(delegationEClass, DELEGATION__COMPONENT_PART);
@@ -874,6 +884,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(assemblyEClass, Assembly.class, "Assembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssembly_To(), this.getComponentPart(), this.getComponentPart_ToRev(), "to", null, 1, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssembly_From(), this.getComponentPart(), this.getComponentPart_FromRev(), "from", null, 1, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssembly_CoordinationPattern(), thePatternPackage.getCoordinationPattern(), null, "coordinationPattern", null, 1, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(delegationEClass, Delegation.class, "Delegation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDelegation_ComponentPart(), this.getComponentPart(), this.getComponentPart_Delegation(), "componentPart", null, 1, 1, Delegation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -953,7 +964,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "ValidDiscretePortDiscretePortConnection"
-		   });													
+		   });														
 		addAnnotation
 		  (hybridPortEClass, 
 		   source, 
@@ -1020,7 +1031,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "ValidDiscretePortDiscretePortConnection", "if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then\n    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then\n        -- check compatibility of message interfaces\n        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in\n        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in\n        fromPort.senderMessageInterface = toPort.receiverMessageInterface \n        and fromPort.receiverMessageInterface = toPort.senderMessageInterface\n        and (\n            -- check refines\n            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then\n                -- only one port has a refinement\n                false\n            else\n                fromPort.refines.oclIsUndefined() \n                -- both ports have a refinement\n                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern\n                -- this check is sufficient\n                and not fromPort.refines.coordinationPattern.oclIsUndefined()\n                and (\n                    if fromPort.refines.coordinationPattern.roles->size() = 2 then\n                        fromPort.refines.name <> toPort.refines.name\n                    else\n                        -- both ports have the same role and belong the same pattern\n                        true\n                    endif\n                )\n            endif\n        )\n    else\n        -- this case must be checked by other constraints\n        true\n    endif\nelse\n    false\nendif"
-		   });													
+		   });														
 		addAnnotation
 		  (hybridPortEClass, 
 		   source, 

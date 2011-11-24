@@ -58,7 +58,6 @@ public class AssemblyInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBehavioralElementTypePropertyDescriptor(object);
-			addCoordinationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,28 +76,6 @@ public class AssemblyInstanceItemProvider
 				 getString("_UI_BehavioralElementInstance_behavioralElementType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElementInstance_behavioralElementType_feature", "_UI_BehavioralElementInstance_type"),
 				 InstancePackage.Literals.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Coordination Pattern feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCoordinationPatternPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssemblyInstance_coordinationPattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyInstance_coordinationPattern_feature", "_UI_AssemblyInstance_type"),
-				 InstancePackage.Literals.ASSEMBLY_INSTANCE__COORDINATION_PATTERN,
 				 true,
 				 false,
 				 true,

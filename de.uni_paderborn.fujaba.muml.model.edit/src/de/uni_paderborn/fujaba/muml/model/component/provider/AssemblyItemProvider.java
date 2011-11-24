@@ -59,6 +59,7 @@ public class AssemblyItemProvider
 
 			addToPropertyDescriptor(object);
 			addFromPropertyDescriptor(object);
+			addCoordinationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -104,6 +105,28 @@ public class AssemblyItemProvider
 				 true,
 				 null,
 				 getString("_UI_ConnectedComponentsPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Coordination Pattern feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordinationPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Assembly_coordinationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Assembly_coordinationPattern_feature", "_UI_Assembly_type"),
+				 ComponentPackage.Literals.ASSEMBLY__COORDINATION_PATTERN,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
 				 null));
 	}
 

@@ -28,7 +28,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl#getAssemblyType <em>Assembly Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,16 +53,6 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ASSEMBLY_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE).getSettingDelegate();
-
-	/**
-	 * The cached value of the '{@link #getCoordinationPattern() <em>Coordination Pattern</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCoordinationPattern()
-	 * @generated
-	 * @ordered
-	 */
-	protected CoordinationPattern coordinationPattern;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,44 +134,6 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationPattern getCoordinationPattern() {
-		if (coordinationPattern != null && coordinationPattern.eIsProxy()) {
-			InternalEObject oldCoordinationPattern = (InternalEObject)coordinationPattern;
-			coordinationPattern = (CoordinationPattern)eResolveProxy(oldCoordinationPattern);
-			if (coordinationPattern != oldCoordinationPattern) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN, oldCoordinationPattern, coordinationPattern));
-			}
-		}
-		return coordinationPattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CoordinationPattern basicGetCoordinationPattern() {
-		return coordinationPattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCoordinationPattern(CoordinationPattern newCoordinationPattern) {
-		CoordinationPattern oldCoordinationPattern = coordinationPattern;
-		coordinationPattern = newCoordinationPattern;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN, oldCoordinationPattern, coordinationPattern));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -192,9 +143,6 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 			case InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE:
 				if (resolve) return getAssemblyType();
 				return basicGetAssemblyType();
-			case InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN:
-				if (resolve) return getCoordinationPattern();
-				return basicGetCoordinationPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,9 +158,6 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 			case InstancePackage.ASSEMBLY_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				setBehavioralElementType((BehavioralElement)newValue);
 				return;
-			case InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN:
-				setCoordinationPattern((CoordinationPattern)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -227,9 +172,6 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 		switch (featureID) {
 			case InstancePackage.ASSEMBLY_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
 				setBehavioralElementType((BehavioralElement)null);
-				return;
-			case InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN:
-				setCoordinationPattern((CoordinationPattern)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,8 +189,6 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 				return behavioralElementType != null;
 			case InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE:
 				return ASSEMBLY_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN:
-				return coordinationPattern != null;
 		}
 		return super.eIsSet(featureID);
 	}

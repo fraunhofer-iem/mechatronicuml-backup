@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl#getTo <em>To</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl#getFrom <em>From</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +52,16 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 	 * @ordered
 	 */
 	protected ComponentPart from;
+
+	/**
+	 * The cached value of the '{@link #getCoordinationPattern() <em>Coordination Pattern</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoordinationPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected CoordinationPattern coordinationPattern;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,6 +207,44 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CoordinationPattern getCoordinationPattern() {
+		if (coordinationPattern != null && coordinationPattern.eIsProxy()) {
+			InternalEObject oldCoordinationPattern = (InternalEObject)coordinationPattern;
+			coordinationPattern = (CoordinationPattern)eResolveProxy(oldCoordinationPattern);
+			if (coordinationPattern != oldCoordinationPattern) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.ASSEMBLY__COORDINATION_PATTERN, oldCoordinationPattern, coordinationPattern));
+			}
+		}
+		return coordinationPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoordinationPattern basicGetCoordinationPattern() {
+		return coordinationPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCoordinationPattern(CoordinationPattern newCoordinationPattern) {
+		CoordinationPattern oldCoordinationPattern = coordinationPattern;
+		coordinationPattern = newCoordinationPattern;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ASSEMBLY__COORDINATION_PATTERN, oldCoordinationPattern, coordinationPattern));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -240,6 +290,9 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 			case ComponentPackage.ASSEMBLY__FROM:
 				if (resolve) return getFrom();
 				return basicGetFrom();
+			case ComponentPackage.ASSEMBLY__COORDINATION_PATTERN:
+				if (resolve) return getCoordinationPattern();
+				return basicGetCoordinationPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,6 +310,9 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 				return;
 			case ComponentPackage.ASSEMBLY__FROM:
 				setFrom((ComponentPart)newValue);
+				return;
+			case ComponentPackage.ASSEMBLY__COORDINATION_PATTERN:
+				setCoordinationPattern((CoordinationPattern)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,6 +332,9 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 			case ComponentPackage.ASSEMBLY__FROM:
 				setFrom((ComponentPart)null);
 				return;
+			case ComponentPackage.ASSEMBLY__COORDINATION_PATTERN:
+				setCoordinationPattern((CoordinationPattern)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -292,6 +351,8 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 				return to != null;
 			case ComponentPackage.ASSEMBLY__FROM:
 				return from != null;
+			case ComponentPackage.ASSEMBLY__COORDINATION_PATTERN:
+				return coordinationPattern != null;
 		}
 		return super.eIsSet(featureID);
 	}

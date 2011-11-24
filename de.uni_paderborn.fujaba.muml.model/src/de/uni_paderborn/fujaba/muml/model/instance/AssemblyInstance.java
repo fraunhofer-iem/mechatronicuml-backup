@@ -22,7 +22,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getAssemblyType <em>Assembly Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,30 +44,5 @@ public interface AssemblyInstance extends ConnectorInstance, BehavioralElementIn
 	 * @generated
 	 */
 	Assembly getAssemblyType();
-
-	/**
-	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The coordination pattern that defines the protocol of this assembly instance.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Coordination Pattern</em>' reference.
-	 * @see #setCoordinationPattern(CoordinationPattern)
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_CoordinationPattern()
-	 * @model required="true"
-	 * @generated
-	 */
-	CoordinationPattern getCoordinationPattern();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getCoordinationPattern <em>Coordination Pattern</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Coordination Pattern</em>' reference.
-	 * @see #getCoordinationPattern()
-	 * @generated
-	 */
-	void setCoordinationPattern(CoordinationPattern value);
 
 } // AssemblyInstance

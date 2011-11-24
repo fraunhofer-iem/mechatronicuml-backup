@@ -93,6 +93,8 @@
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/Assembly/to"/>
           <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="ConnectedComponents"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/Assembly/from"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/component/Assembly/coordinationPattern"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/Delegation">
           <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="ConnectedComponent"
@@ -217,8 +219,6 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/AssemblyInstance">
           <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/AssemblyInstance/assemblyType"/>
-          <genFeatures notify="false" createChild="false" propertyCategory="" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/AssemblyInstance/coordinationPattern"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/DelegationInstance">
           <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
