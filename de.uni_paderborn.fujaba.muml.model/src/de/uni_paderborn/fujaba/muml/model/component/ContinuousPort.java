@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
+import org.eclipse.emf.ecore.EDataType;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +23,7 @@ package de.uni_paderborn.fujaba.muml.model.component;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getKind <em>Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,4 +61,30 @@ public interface ContinuousPort extends Port {
 	 * @generated
 	 */
 	void setKind(ContinuousPortDirectionKind value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' reference.
+	 * @see #setType(EDataType)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getContinuousPort_Type()
+	 * @model
+	 * @generated
+	 */
+	EDataType getType();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' reference.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(EDataType value);
 } // ContinuousPort

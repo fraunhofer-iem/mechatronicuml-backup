@@ -8,6 +8,8 @@ package de.uni_paderborn.fujaba.muml.model.component.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -22,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +49,16 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * @ordered
 	 */
 	protected ContinuousPortDirectionKind kind = KIND_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EDataType type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,11 +105,52 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (EDataType)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.CONTINUOUS_PORT__TYPE, oldType, type));
+			}
+		}
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(EDataType newType) {
+		EDataType oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.CONTINUOUS_PORT__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ComponentPackage.CONTINUOUS_PORT__KIND:
 				return getKind();
+			case ComponentPackage.CONTINUOUS_PORT__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,6 +165,9 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 		switch (featureID) {
 			case ComponentPackage.CONTINUOUS_PORT__KIND:
 				setKind((ContinuousPortDirectionKind)newValue);
+				return;
+			case ComponentPackage.CONTINUOUS_PORT__TYPE:
+				setType((EDataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -127,6 +184,9 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 			case ComponentPackage.CONTINUOUS_PORT__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
+			case ComponentPackage.CONTINUOUS_PORT__TYPE:
+				setType((EDataType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -141,6 +201,8 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 		switch (featureID) {
 			case ComponentPackage.CONTINUOUS_PORT__KIND:
 				return kind != KIND_EDEFAULT;
+			case ComponentPackage.CONTINUOUS_PORT__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}

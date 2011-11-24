@@ -61,6 +61,7 @@ public class HybridPortItemProvider
 			super.getPropertyDescriptors(object);
 
 			addKindPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,6 +85,28 @@ public class HybridPortItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_GeneralPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContinuousPort_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_type_feature", "_UI_ContinuousPort_type"),
+				 ComponentPackage.Literals.CONTINUOUS_PORT__TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
 				 null));
 	}
 

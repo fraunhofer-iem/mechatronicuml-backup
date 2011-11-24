@@ -478,13 +478,22 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__KIND = PORT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__TYPE = PORT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Continuous Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 1;
+	int CONTINUOUS_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl <em>Discrete Port</em>}' class.
@@ -1405,13 +1414,22 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__KIND = DISCRETE_PORT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__TYPE = DISCRETE_PORT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Hybrid Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_FEATURE_COUNT = DISCRETE_PORT_FEATURE_COUNT + 1;
+	int HYBRID_PORT_FEATURE_COUNT = DISCRETE_PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.
@@ -1549,6 +1567,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContinuousPort_Kind();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType()
+	 * @see #getContinuousPort()
+	 * @generated
+	 */
+	EReference getContinuousPort_Type();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort <em>Discrete Port</em>}'.
@@ -2030,6 +2059,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTINUOUS_PORT__KIND = eINSTANCE.getContinuousPort_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTINUOUS_PORT__TYPE = eINSTANCE.getContinuousPort_Type();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl <em>Discrete Port</em>}' class.
