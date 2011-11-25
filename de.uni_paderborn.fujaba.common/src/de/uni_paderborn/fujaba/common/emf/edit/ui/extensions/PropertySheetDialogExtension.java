@@ -4,12 +4,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FormAttachment;
+import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
@@ -42,25 +46,39 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void createMainArea(Composite parent) {
-		Composite composite = new Composite(parent, SWT.BORDER);
-		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
-		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		GridLayout gridLayout = new GridLayout(1, true);
-		gridLayout.verticalSpacing = 0;
-		gridLayout.horizontalSpacing = 0;
-		gridLayout.marginTop = 0;
-		gridLayout.marginLeft = 0;
-		gridLayout.marginHeight = 0;
-		gridLayout.marginWidth = 0;
-		composite.setLayout(gridLayout);
 
+		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		
+		// see AdvancedPropertySection.createControls();
+		TabbedPropertySheetWidgetFactory factory = new TabbedPropertySheetWidgetFactory();
+		Composite composite = factory.createFlatFormComposite(parent);
+		FormLayout layout = (FormLayout) composite.getLayout(); 
+		layout.marginWidth = 3;
+		layout.marginHeight = 3;
+
+		composite.setLayout(layout);		
+		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		
+		
 		page = new PropertySheetPage();
 		page.setPropertySourceProvider(propertySourceProvider);
 		page.createControl(composite);
-		page.getControl().setLayoutData(
-				new GridData(SWT.FILL, SWT.FILL, true, true));
+	
+        FormData data = null;
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(0, 0);
+		data.bottom = new FormAttachment(100, 0);
+		data.height = 200;
+		data.width = 200;
+		page.getControl().setLayoutData(data);
+		Tree tree = (Tree) page.getControl();
 
 		setInput(new StructuredSelection(new Object[] { initialObject }));
+		
+		tree.getColumn(0).setWidth(200);
+		tree.getColumn(1).setWidth(40);
 	}
 
 	public void setInput(ISelection selection) {
