@@ -108,6 +108,48 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/roles"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/roles"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.12">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role/cardinality"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.13">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.14">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
+            </newElementInitializers>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -341,7 +383,7 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/target"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.12"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.15"/>
     </links>
     <compartments
         visualID="7001"
@@ -549,6 +591,12 @@
           body="self.coordinationPattern.roles->first()"/>
       <expressions
           body="self.coordinationPattern.roles->last()"/>
+      <expressions
+          body="'role'"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="1"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.coordinationPattern = oppositeEnd.coordinationPattern"/>

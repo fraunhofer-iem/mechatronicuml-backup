@@ -57,4 +57,17 @@
       </editpartProvider>
    </extension>
 
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
+		<contributionItemProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
+   			checkPluginLoaded="false">
+			<Priority name="Low"/>
+			<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+				<popupStructuredContributionCriteria objectClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart"/>
+				<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+			</popupContribution>
+		</contributionItemProvider>
+   </extension>
+	
+
 </plugin>
