@@ -205,8 +205,8 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Available Clocks</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AvailableClocks()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks'"
+	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks->asSet()'"
 	 * @generated
 	 */
 	EList<Clock> getAvailableClocks();
