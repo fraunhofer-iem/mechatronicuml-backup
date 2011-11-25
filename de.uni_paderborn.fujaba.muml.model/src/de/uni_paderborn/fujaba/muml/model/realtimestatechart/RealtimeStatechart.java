@@ -195,20 +195,21 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	boolean isFlat();
 
 	/**
-	 * Returns the value of the '<em><b>Available Clocks</b></em>' reference.
+	 * Returns the value of the '<em><b>Available Clocks</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.
 	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Available Clocks</em>' reference.
+	 * @return the value of the '<em>Available Clocks</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AvailableClocks()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks'"
 	 * @generated
 	 */
-	Clock getAvailableClocks();
+	EList<Clock> getAvailableClocks();
 
 	/**
 	 * Returns the value of the '<em><b>Security Level</b></em>' attribute.

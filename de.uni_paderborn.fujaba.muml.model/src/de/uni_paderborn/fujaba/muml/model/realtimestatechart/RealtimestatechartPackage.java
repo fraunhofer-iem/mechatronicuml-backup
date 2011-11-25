@@ -1436,7 +1436,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__FLAT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Available Clocks</b></em>' reference.
+	 * The feature id for the '<em><b>Available Clocks</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2833,10 +2833,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getRealtimeStatechart_Flat();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Available Clocks</em>'.
+	 * @return the meta object for the reference list '<em>Available Clocks</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAvailableClocks()
 	 * @see #getRealtimeStatechart()
 	 * @generated
@@ -3746,7 +3746,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute REALTIME_STATECHART__FLAT = eINSTANCE.getRealtimeStatechart_Flat();
 
 		/**
-		 * The meta object literal for the '<em><b>Available Clocks</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Available Clocks</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

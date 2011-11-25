@@ -210,7 +210,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	protected EStructuralFeature.Internal.SettingDelegate FLAT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__FLAT).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getAvailableClocks() <em>Available Clocks</em>}' reference.
+	 * The cached setting delegate for the '{@link #getAvailableClocks() <em>Available Clocks</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAvailableClocks()
@@ -565,17 +565,9 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Clock getAvailableClocks() {
-		return (Clock)AVAILABLE_CLOCKS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Clock basicGetAvailableClocks() {
-		return (Clock)AVAILABLE_CLOCKS__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	@SuppressWarnings("unchecked")
+	public EList<Clock> getAvailableClocks() {
+		return (EList<Clock>)AVAILABLE_CLOCKS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -788,8 +780,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 				return isFlat();
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				if (resolve) return getAvailableClocks();
-				return basicGetAvailableClocks();
+				return getAvailableClocks();
 			case RealtimestatechartPackage.REALTIME_STATECHART__SECURITY_LEVEL:
 				return getSecurityLevel();
 			case RealtimestatechartPackage.REALTIME_STATECHART__UTILISATION:
