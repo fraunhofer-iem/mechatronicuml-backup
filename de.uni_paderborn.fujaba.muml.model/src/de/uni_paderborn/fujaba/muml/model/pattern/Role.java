@@ -56,8 +56,8 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The connector which connects this role with another role.
-	 * Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*
+	 * The incoming RoleConnector, which connects this role with another role.
+	 * Either incomingRoleConnector or outgoingRoleConnector (or both) must be set.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Incoming Role Connector</em>' reference.
 	 * @see #setIncomingRoleConnector(RoleConnector)
@@ -327,6 +327,10 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The outgoing RoleConnector, which connects this role with another role.
+	 * Either incomingRoleConnector or outgoingRoleConnector (or both) must be set.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Outgoing Role Connector</em>' reference.
 	 * @see #setOutgoingRoleConnector(RoleConnector)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_OutgoingRoleConnector()

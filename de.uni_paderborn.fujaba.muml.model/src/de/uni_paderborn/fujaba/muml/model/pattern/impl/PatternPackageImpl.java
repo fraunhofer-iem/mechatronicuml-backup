@@ -518,7 +518,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasAtLeastOneConnector"
-		   });											
+		   });												
 	}
 
 	/**
@@ -548,7 +548,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 			 "OrderOnlyForMultiPort", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)",
 			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')",
 			 "RoleHasAtLeastOneConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()"
-		   });											
+		   });												
 		addAnnotation
 		  (getRole_RoleConnector(), 
 		   source, 
