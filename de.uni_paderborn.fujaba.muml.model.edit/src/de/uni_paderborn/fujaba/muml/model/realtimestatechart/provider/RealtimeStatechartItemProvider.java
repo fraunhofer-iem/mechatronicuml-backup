@@ -78,11 +78,10 @@ public class RealtimeStatechartItemProvider
 			addBehavioralElementPropertyDescriptor(object);
 			addOperationsPropertyDescriptor(object);
 			addAttributesPropertyDescriptor(object);
-			addEmbeddingRegionPropertyDescriptor(object);
+			addClocksPropertyDescriptor(object);
 			addHistoryPropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
 			addFlatPropertyDescriptor(object);
-			addAvailableClocksPropertyDescriptor(object);
 			addSecurityLevelPropertyDescriptor(object);
 			addUtilisationPropertyDescriptor(object);
 			addScheduleDocumentPropertyDescriptor(object);
@@ -180,22 +179,22 @@ public class RealtimeStatechartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Embedding Region feature.
+	 * This adds a property descriptor for the Clocks feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEmbeddingRegionPropertyDescriptor(Object object) {
+	protected void addClocksPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_embeddingRegion_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_embeddingRegion_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__EMBEDDING_REGION,
+				 getString("_UI_RealtimeStatechart_clocks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_clocks_feature", "_UI_RealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS,
 				 true,
 				 false,
-				 true,
+				 false,
 				 null,
 				 null,
 				 null));
@@ -263,28 +262,6 @@ public class RealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Available Clocks feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAvailableClocksPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_availableClocks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_availableClocks_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__AVAILABLE_CLOCKS,
-				 false,
-				 false,
-				 false,
-				 null,
 				 null,
 				 null));
 	}
