@@ -26,7 +26,8 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getDoEvent()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidLowerUpperPeriod='self.periodLower >= 1 and self.periodLower <= self.periodUpper'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidLowerUpperPeriod'"
  * @generated
  */
 public interface DoEvent extends StateEvent {

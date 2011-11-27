@@ -1677,7 +1677,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders"
-		   });																																												
+		   });																													
+		addAnnotation
+		  (doEventEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ValidLowerUpperPeriod"
+		   });																		
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
@@ -1784,7 +1790,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()\n"
-		   });																											
+		   });																	
+		addAnnotation
+		  (doEventEClass, 
+		   source, 
+		   new String[] {
+			 "ValidLowerUpperPeriod", "self.periodLower >= 1 and self.periodLower <= self.periodUpper"
+		   });													
 		addAnnotation
 		  (getSynchronization_SyncChannel(), 
 		   source, 
