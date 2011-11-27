@@ -203,22 +203,21 @@ public class CustomPortFigure extends RectangleFigure {
 	public void setMulti(boolean isMulti) {
 		this.multiPort = isMulti;
 
-		// Calculate new Margin for bottom, right.
-		int marginBottomRight = 0;
+		// Calculate new Margin for top and right.
+		int marginTopRight = 0;
 		if (isMulti) {
-			marginBottomRight = 3;
+			marginTopRight = 3;
 		}
 
 		// Calculate new preferred size, which is the original size (24,24)
 		// minus the margin.
 		if (getParent() != null) {
 			Dimension preferredSize = getParent().getPreferredSize().getCopy();
-			preferredSize.expand(-marginBottomRight, -marginBottomRight);
+			preferredSize.expand(-marginTopRight, -marginTopRight);
 
 			// Set the new margin and the new preferred size.
 			RectangleFigure innerRectContainer = getFigureInnerRectContainer();
-			innerRectContainer.setBorder(new MarginBorder(0, 0,
-					marginBottomRight, marginBottomRight));
+			innerRectContainer.setBorder(new MarginBorder(marginTopRight, 0, 0, marginTopRight));
 			innerRectContainer.setPreferredSize(preferredSize);
 		}
 	}
@@ -255,8 +254,8 @@ public class CustomPortFigure extends RectangleFigure {
 		RectangleFigure aux10 = new RectangleFigure();
 		aux10.setFill(false);
 		aux10.setOutline(false);
-		aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode()
-				.DPtoLP(3), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+		aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode()
+				.DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(0)));
 
 		this.add(aux10);
 		aux10.setLayoutManager(new StackLayout());

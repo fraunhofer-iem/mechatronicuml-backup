@@ -419,8 +419,8 @@ public class DiscretePortEditPart extends BorderedBorderItemEditPart {
 			RectangleFigure aux10 = new RectangleFigure();
 			aux10.setFill(false);
 			aux10.setOutline(false);
-			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(0),
+			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
 					getMapMode().DPtoLP(0)));
 
 			this.add(aux10);

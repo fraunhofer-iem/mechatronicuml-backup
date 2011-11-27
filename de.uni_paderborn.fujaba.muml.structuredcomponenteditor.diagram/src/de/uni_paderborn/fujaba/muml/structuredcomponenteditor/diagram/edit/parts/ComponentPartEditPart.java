@@ -361,8 +361,8 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			RectangleFigure aux10 = new RectangleFigure();
 			aux10.setFill(false);
 			aux10.setOutline(false);
-			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(0),
+			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
 					getMapMode().DPtoLP(0)));
 
 			this.add(aux10);
@@ -376,7 +376,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			fFigureInnerRectContainer.setFill(false);
 			fFigureInnerRectContainer.setOutline(false);
 			fFigureInnerRectContainer.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(3),
+					.DPtoLP(8), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(3)));
 
 			this.add(fFigureInnerRectContainer);

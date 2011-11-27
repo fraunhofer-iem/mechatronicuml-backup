@@ -24,8 +24,8 @@
           <border
               xsi:type="gmfgraph:MarginBorder">
             <insets
-                top="3"
-                left="3"/>
+                left="3"
+                bottom="3"/>
           </border>
           <children
               xsi:type="gmfgraph:Rectangle"
@@ -41,7 +41,7 @@
           <border
               xsi:type="gmfgraph:MarginBorder">
             <insets
-                bottom="3"
+                top="8"
                 right="3"/>
           </border>
           <children
@@ -194,8 +194,8 @@
           <border
               xsi:type="gmfgraph:MarginBorder">
             <insets
-                top="3"
-                left="3"/>
+                left="3"
+                bottom="3"/>
           </border>
           <children
               xsi:type="gmfgraph:Rectangle"

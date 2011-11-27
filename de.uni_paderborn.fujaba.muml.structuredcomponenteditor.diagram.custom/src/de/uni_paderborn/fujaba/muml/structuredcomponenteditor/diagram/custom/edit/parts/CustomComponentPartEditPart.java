@@ -109,10 +109,12 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		}
 
 		public void setPartMulti(boolean isMulti) {
-			// Calculate new Margin for bottom, right.
-			int marginBottomRight = 0;
+			// Calculate new Margin for top and right.
+			int marginTop = 0;
+			int marginRight = 0;
 			if (isMulti) {
-				marginBottomRight = 3;
+				marginTop = 8;
+				marginRight = 3;
 			}
 
 			// Calculate new preferred size, which is the original size
@@ -120,12 +122,11 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 			if (getParent() != null) {
 				Dimension preferredSize = getParent().getPreferredSize()
 						.getCopy();
-				preferredSize.expand(-marginBottomRight, -marginBottomRight);
+				preferredSize.expand(-marginRight, -marginTop);
 
 				// Set the new margin and the new preferred size.
 				RectangleFigure innerRectContainer = getFigureInnerRectContainer();
-				innerRectContainer.setBorder(new MarginBorder(0, 0,
-						marginBottomRight, marginBottomRight));
+				innerRectContainer.setBorder(new MarginBorder(marginTop, 0, 0, marginRight));
 				innerRectContainer.setPreferredSize(preferredSize);
 			}
 		}
