@@ -91,13 +91,15 @@ public class InvocationParameterBindingPropertySourceProvider implements
 				itemPropertyDescriptors = new ArrayList<IItemPropertyDescriptor>();
 
 				Invocation invocation = (Invocation) object;
-				int id = 0;
-				for (EParameter parameter : invocation.getCallee()
-						.getContainedParameters()) {
-					itemPropertyDescriptors
-							.add(new InvocationParameterBindingPropertyDescriptor(
-									Integer.toString(id), invocation, parameter));
-					id++;
+				if (invocation.getCallee() != null) {
+					int id = 0;
+					for (EParameter parameter : invocation.getCallee()
+							.getContainedParameters()) {
+						itemPropertyDescriptors
+								.add(new InvocationParameterBindingPropertyDescriptor(
+										Integer.toString(id), invocation, parameter));
+						id++;
+					}
 				}
 			}
 			return itemPropertyDescriptors;

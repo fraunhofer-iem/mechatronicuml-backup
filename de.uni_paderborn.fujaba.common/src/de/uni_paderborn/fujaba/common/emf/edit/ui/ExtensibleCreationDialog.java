@@ -37,7 +37,7 @@ public class ExtensibleCreationDialog extends Dialog {
 	 * A resource for newly created object. It is within the same ResourceSet as
 	 * the RootNode, so that PropertyDescriptors can find valid choices.
 	 */
-	private Resource transientResource;
+//	private Resource transientResource;
 
 	private IRefreshProhibitedPropertySection mainPropertySection;
 
@@ -98,17 +98,17 @@ public class ExtensibleCreationDialog extends Dialog {
 		this.containerObject = containerObject;
 		this.mainPropertySection = mainPropertySection;
 
-		ResourceSet resourceSet = containerObject.eResource().getResourceSet();
-
-		transientResource = resourceSet.createResource(URI.createURI(""));
-		transientResource.eSetDeliver(false);
+//		ResourceSet resourceSet = containerObject.eResource().getResourceSet();
+//
+//		transientResource = resourceSet.createResource(URI.createURI(""));
+//		transientResource.eSetDeliver(false);
 
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
 	}
 
-	public Resource getTransientResource() {
-		return transientResource;
-	}
+//	public Resource getTransientResource() {
+//		return transientResource;
+//	}
 
 	public void addExtension(IDialogExtension extension) {
 		extensions.add(extension);
@@ -170,8 +170,8 @@ public class ExtensibleCreationDialog extends Dialog {
 		for (IDialogExtension extension : extensions) {
 			extension.okPressed();
 		}
-		transientResource.getResourceSet().getResources()
-				.remove(transientResource);
+//		transientResource.getResourceSet().getResources()
+//				.remove(transientResource);
 		super.okPressed();
 	}
 
