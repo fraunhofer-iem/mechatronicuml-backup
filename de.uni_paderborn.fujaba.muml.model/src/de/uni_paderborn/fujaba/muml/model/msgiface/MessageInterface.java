@@ -23,6 +23,7 @@ import org.storydriven.modeling.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getAllAvailableMessageTypes <em>All Available Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,5 +66,22 @@ public interface MessageInterface extends NamedElement {
 	 * @generated
 	 */
 	EList<MessageType> getMessageTypes();
+
+	/**
+	 * Returns the value of the '<em><b>All Available Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>All Available Message Types</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Available Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageInterface_AllAvailableMessageTypes()
+	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if superType -> isEmpty() then self->asSet() else superType endif).messageTypes -> asSet()'"
+	 * @generated
+	 */
+	EList<MessageType> getAllAvailableMessageTypes();
 
 } // MessageInterface

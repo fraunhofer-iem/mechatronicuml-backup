@@ -66,6 +66,7 @@ public class MessageInterfaceItemProvider
 
 			addSuperTypePropertyDescriptor(object);
 			addMessageTypesPropertyDescriptor(object);
+			addAllAvailableMessageTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -106,6 +107,28 @@ public class MessageInterfaceItemProvider
 				 getString("_UI_MessageInterface_messageTypes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MessageInterface_messageTypes_feature", "_UI_MessageInterface_type"),
 				 MsgifacePackage.Literals.MESSAGE_INTERFACE__MESSAGE_TYPES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the All Available Message Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllAvailableMessageTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageInterface_allAvailableMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageInterface_allAvailableMessageTypes_feature", "_UI_MessageInterface_type"),
+				 MsgifacePackage.Literals.MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES,
 				 false,
 				 false,
 				 false,

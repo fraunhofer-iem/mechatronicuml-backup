@@ -122,13 +122,22 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_INTERFACE__MESSAGE_TYPES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>All Available Message Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Message Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_INTERFACE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl <em>Message Type</em>}' class.
@@ -254,6 +263,17 @@ public interface MsgifacePackage extends EPackage {
 	EReference getMessageInterface_MessageTypes();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getAllAvailableMessageTypes <em>All Available Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Available Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getAllAvailableMessageTypes()
+	 * @see #getMessageInterface()
+	 * @generated
+	 */
+	EReference getMessageInterface_AllAvailableMessageTypes();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType <em>Message Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -321,6 +341,14 @@ public interface MsgifacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_INTERFACE__MESSAGE_TYPES = eINSTANCE.getMessageInterface_MessageTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>All Available Message Types</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES = eINSTANCE.getMessageInterface_AllAvailableMessageTypes();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl <em>Message Type</em>}' class.

@@ -11,6 +11,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -30,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageInterfaceImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageInterfaceImpl#getMessageTypes <em>Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageInterfaceImpl#getAllAvailableMessageTypes <em>All Available Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +57,16 @@ public class MessageInterfaceImpl extends NamedElementImpl implements MessageInt
 	 * @ordered
 	 */
 	protected EList<MessageType> messageTypes;
+
+	/**
+	 * The cached setting delegate for the '{@link #getAllAvailableMessageTypes() <em>All Available Message Types</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllAvailableMessageTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MsgifacePackage.Literals.MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,6 +117,16 @@ public class MessageInterfaceImpl extends NamedElementImpl implements MessageInt
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	public EList<MessageType> getAllAvailableMessageTypes() {
+		return (EList<MessageType>)ALL_AVAILABLE_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -140,6 +162,8 @@ public class MessageInterfaceImpl extends NamedElementImpl implements MessageInt
 				return getSuperType();
 			case MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES:
 				return getMessageTypes();
+			case MsgifacePackage.MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES:
+				return getAllAvailableMessageTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,6 +219,8 @@ public class MessageInterfaceImpl extends NamedElementImpl implements MessageInt
 				return superType != null && !superType.isEmpty();
 			case MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES:
 				return messageTypes != null && !messageTypes.isEmpty();
+			case MsgifacePackage.MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES:
+				return ALL_AVAILABLE_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -184,6 +184,15 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMessageInterface_AllAvailableMessageTypes() {
+		return (EReference)messageInterfaceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMessageType() {
 		return messageTypeEClass;
 	}
@@ -228,6 +237,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		messageInterfaceEClass = createEClass(MESSAGE_INTERFACE);
 		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__SUPER_TYPE);
 		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__MESSAGE_TYPES);
+		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES);
 
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
 		createEReference(messageTypeEClass, MESSAGE_TYPE__MESSAGE_INTERFACE);
@@ -273,6 +283,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageInterface_SuperType(), this.getMessageInterface(), null, "superType", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageInterface_MessageTypes(), this.getMessageType(), this.getMessageType_MessageInterface(), "messageTypes", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInterface_AllAvailableMessageTypes(), this.getMessageType(), null, "allAvailableMessageTypes", null, 0, -1, MessageInterface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageType_MessageInterface(), this.getMessageInterface(), this.getMessageInterface_MessageTypes(), "messageInterface", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -308,7 +319,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		   source, 
 		   new String[] {
 			 "constraints", "NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
-		   });						
+		   });							
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
@@ -333,7 +344,13 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 			 "NoBidirectionalGeneralization", "self.superType->forAll(x|x.superType->forAll(y|y<>self))",
 			 "UniqueMessageTypeNames", "self.messageTypes->isUnique(name)",
 			 "NoMessageTypeOrNotAtLeastTwoGeneralizations", "self.messageTypes->size()>=1 or self.superType->size()>=2"
-		   });						
+		   });					
+		addAnnotation
+		  (getMessageInterface_AllAvailableMessageTypes(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self -> closure(if superType -> isEmpty() then self->asSet() else superType endif).messageTypes -> asSet()"
+		   });			
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
