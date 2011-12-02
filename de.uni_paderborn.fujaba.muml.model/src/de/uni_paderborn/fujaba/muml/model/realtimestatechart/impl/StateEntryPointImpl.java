@@ -26,8 +26,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryPointImpl#getEntryPoint <em>Entry Point</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryPointImpl#getState <em>State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryPointImpl#getEntryPoint <em>Entry Point</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,15 +35,14 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
  */
 public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	/**
-	 * The cached setting delegate for the '{@link #getEntryPoint() <em>Entry Point</em>}' reference.
+	 * The cached value of the '{@link #getEntryPoint() <em>Entry Point</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEntryPoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate ENTRY_POINT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.STATE_ENTRY_POINT__ENTRY_POINT).getSettingDelegate();
-
+	protected EntryPoint entryPoint;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,7 +68,15 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	 * @generated
 	 */
 	public EntryPoint getEntryPoint() {
-		return (EntryPoint)ENTRY_POINT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		if (entryPoint != null && entryPoint.eIsProxy()) {
+			InternalEObject oldEntryPoint = (InternalEObject)entryPoint;
+			entryPoint = (EntryPoint)eResolveProxy(oldEntryPoint);
+			if (entryPoint != oldEntryPoint) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT, oldEntryPoint, entryPoint));
+			}
+		}
+		return entryPoint;
 	}
 
 	/**
@@ -78,7 +85,7 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	 * @generated
 	 */
 	public EntryPoint basicGetEntryPoint() {
-		return (EntryPoint)ENTRY_POINT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+		return entryPoint;
 	}
 
 	/**
@@ -87,7 +94,10 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	 * @generated
 	 */
 	public void setEntryPoint(EntryPoint newEntryPoint) {
-		ENTRY_POINT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newEntryPoint);
+		EntryPoint oldEntryPoint = entryPoint;
+		entryPoint = newEntryPoint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT, oldEntryPoint, entryPoint));
 	}
 
 	/**
@@ -183,11 +193,11 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case RealtimestatechartPackage.STATE_ENTRY_POINT__STATE:
+				return getState();
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
 				if (resolve) return getEntryPoint();
 				return basicGetEntryPoint();
-			case RealtimestatechartPackage.STATE_ENTRY_POINT__STATE:
-				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,11 +210,11 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
-				setEntryPoint((EntryPoint)newValue);
-				return;
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__STATE:
 				setState((State)newValue);
+				return;
+			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
+				setEntryPoint((EntryPoint)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,11 +228,11 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
-				setEntryPoint((EntryPoint)null);
-				return;
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__STATE:
 				setState((State)null);
+				return;
+			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
+				setEntryPoint((EntryPoint)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -236,10 +246,10 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
-				return ENTRY_POINT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__STATE:
 				return getState() != null;
+			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
+				return entryPoint != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1883,22 +1883,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_ENTRY_POINT__STATECHART = VERTEX__STATECHART;
 
 	/**
-	 * The feature id for the '<em><b>Entry Point</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__ENTRY_POINT = VERTEX_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_ENTRY_POINT__STATE = VERTEX_FEATURE_COUNT + 1;
+	int STATE_ENTRY_POINT__STATE = VERTEX_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entry Point</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_ENTRY_POINT__ENTRY_POINT = VERTEX_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>State Entry Point</em>' class.
@@ -1974,22 +1974,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_EXIT_POINT__STATECHART = VERTEX__STATECHART;
 
 	/**
-	 * The feature id for the '<em><b>Exit Point</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__EXIT_POINT = VERTEX_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_EXIT_POINT__STATE = VERTEX_FEATURE_COUNT + 1;
+	int STATE_EXIT_POINT__STATE = VERTEX_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Exit Point</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_EXIT_POINT__EXIT_POINT = VERTEX_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>State Exit Point</em>' class.

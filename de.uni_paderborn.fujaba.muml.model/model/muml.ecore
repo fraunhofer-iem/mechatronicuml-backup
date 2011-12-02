@@ -1600,17 +1600,10 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="AtLeastOneIncomingTransition" value="self.incomingTransitions ->size()>0"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoint" eType="#//model/realtimestatechart/EntryPoint"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="entryOrExitPoint.oclAsType(realtimestatechart::EntryPoint)"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This is the inherited entryOrExitPoint casted as EntryPoint."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
             eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/stateEntryPoints"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoint" lowerBound="1"
+            eType="#//model/realtimestatechart/EntryPoint"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="StateExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -1622,17 +1615,10 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoint" eType="#//model/realtimestatechart/ExitPoint"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="entryOrExitPoint.oclAsType(realtimestatechart::ExitPoint)"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This is the inherited entryOrExitPoint casted as ExitPoint."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
             eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/stateExitPoints"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoint" lowerBound="1"
+            eType="#//model/realtimestatechart/ExitPoint"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="msgiface" nsURI="http:///de/uni_paderborn/fujaba/muml/model/msgiface"
