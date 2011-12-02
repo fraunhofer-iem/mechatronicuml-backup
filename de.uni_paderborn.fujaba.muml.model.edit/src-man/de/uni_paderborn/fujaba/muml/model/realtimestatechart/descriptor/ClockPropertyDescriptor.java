@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.util.ItemPropertyDescriptorUtil;
 
 public class ClockPropertyDescriptor extends ItemPropertyDescriptor {
 	public ClockPropertyDescriptor(AdapterFactory adapterFactory,
@@ -24,18 +26,13 @@ public class ClockPropertyDescriptor extends ItemPropertyDescriptor {
 
 	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
-		RealtimeStatechart rtsc = deduceContainer((EObject) object);
+		RealtimeStatechart rtsc = (RealtimeStatechart) ItemPropertyDescriptorUtil
+				.deduceContainer((EObject) object,
+						RealtimestatechartPackage.Literals.REALTIME_STATECHART);
 		if (rtsc != null) {
 			return rtsc.getAvailableClocks();
 		}
 		return Collections.emptyList();
-	}
-
-	protected RealtimeStatechart deduceContainer(EObject object) {
-		while (object != null && !(object instanceof RealtimeStatechart)) {
-			object = object.eContainer();
-		}
-		return (RealtimeStatechart) object;
 	}
 
 }
