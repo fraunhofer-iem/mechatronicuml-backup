@@ -94,5 +94,4 @@ public class DelegationInstanceEditPart extends ConnectionNodeEditPart
 
 		super.handleNotificationEvent(notification);
 	}
-
 }

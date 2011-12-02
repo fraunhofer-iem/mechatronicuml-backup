@@ -163,5 +163,4 @@ public class AssemblyInstanceCreateCommand extends EditElementCommand {
 		}
 		return null;
 	}
-
 }

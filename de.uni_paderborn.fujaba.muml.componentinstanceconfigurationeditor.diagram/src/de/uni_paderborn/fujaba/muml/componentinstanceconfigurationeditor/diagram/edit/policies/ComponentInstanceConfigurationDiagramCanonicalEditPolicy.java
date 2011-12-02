@@ -45,16 +45,6 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	public boolean isTopLevelCanonical() {
-		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
-
-		return true; // This editor does not use ModelElementCategory as Diagram Element.
-
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -96,6 +86,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
+
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
@@ -147,6 +138,16 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public boolean isTopLevelCanonical() {
+		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+
+		return true; // This editor does not use ModelElementCategory as Diagram Element.
+
 	}
 
 	/**

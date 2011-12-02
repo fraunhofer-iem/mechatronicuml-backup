@@ -94,5 +94,4 @@ public class AssemblyInstanceEditPart extends ConnectionNodeEditPart implements
 
 		super.handleNotificationEvent(notification);
 	}
-
 }

@@ -12,6 +12,25 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_HybridPortInstance_2008(
+			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							4,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getHybridPortInstance(), null).evaluate(
+							instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_DiscreteSinglePortInstance_2005(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
@@ -50,12 +69,12 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPortInstance_2008(
+	public void init_HybridPortInstance_3012(
 			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							4,
+							0,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getHybridPortInstance(), null).evaluate(
 							instance);
@@ -97,25 +116,6 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getContinuousPortInstance(), null)
 					.evaluate(instance);
-			instance.setName((String) value_0);
-		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void init_HybridPortInstance_3012(
-			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
-		try {
-			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							0,
-							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-									.getHybridPortInstance(), null).evaluate(
-							instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin

@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
@@ -17,8 +18,8 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
-
 import org.storydriven.modeling.ExtendableElement;
+
 import de.fujaba.newwizard.InitialElementAdapter;
 import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 
@@ -150,4 +151,5 @@ public class MumlCreationWizard extends FujabaDiagramNewWizard {
 				null, 0, false, getDiagramPreferencesHint());
 		return ViewService.getInstance().provides(operation);
 	}
+
 }

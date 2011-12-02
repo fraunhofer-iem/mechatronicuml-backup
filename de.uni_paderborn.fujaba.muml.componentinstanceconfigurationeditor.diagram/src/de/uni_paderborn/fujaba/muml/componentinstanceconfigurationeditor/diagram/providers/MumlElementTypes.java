@@ -53,33 +53,27 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType HybridPortInstance_2008 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2008"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
 	public static final IElementType DiscreteSinglePortInstance_2005 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2005"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType ContinuousPortInstance_2007 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_2007"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType HybridPortInstance_2008 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2008"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType DiscreteSinglePortInstance_3010 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3010"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType ContinuousPortInstance_3011 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_3011"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType HybridPortInstance_3012 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_3012"); //$NON-NLS-1$
-
+	/**
+	 * @generated
+	 */
+	public static final IElementType DiscreteSinglePortInstance_3010 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3010"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ContinuousPortInstance_3011 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_3011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */

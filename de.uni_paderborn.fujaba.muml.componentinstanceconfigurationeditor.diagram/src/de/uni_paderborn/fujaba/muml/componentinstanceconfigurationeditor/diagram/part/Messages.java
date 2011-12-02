@@ -313,72 +313,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HybridPortInstance_2008_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_2008_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_DiscreteSinglePortInstance_2005_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DiscreteSinglePortInstance_2005_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DelegationInstance_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DelegationInstance_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AssemblyInstance_4003_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AssemblyInstance_4003_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_2007_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_2007_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_3012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_3012_outgoinglinks;
 
 	/**
 	 * @generated
@@ -393,7 +333,67 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_HybridPortInstance_2008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HybridPortInstance_2008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AssemblyInstance_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AssemblyInstance_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HybridPortInstance_3012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HybridPortInstance_3012_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContinuousPortInstance_2007_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContinuousPortInstance_2007_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ComponentInstanceConfiguration_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DelegationInstance_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DelegationInstance_4004_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
 
 	/**
 	 * @generated
