@@ -400,6 +400,9 @@
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
           </genOperations>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getUniqueRegionPriority">
+            <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getUniqueRegionPriority/hint"/>
+          </genOperations>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Event/kind"/>
@@ -415,14 +418,14 @@
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryPoint"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitPoint"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/StateEntryPoint">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateEntryPoint/state"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoint"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateEntryPoint/state"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/StateExitPoint">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateExitPoint/state"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoint"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateExitPoint/state"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Msgiface" basePackage="de.uni_paderborn.fujaba.muml.model"

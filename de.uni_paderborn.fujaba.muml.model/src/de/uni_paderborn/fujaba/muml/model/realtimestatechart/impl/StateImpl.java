@@ -453,6 +453,31 @@ public class StateImpl extends VertexImpl implements State {
 		return stateExitPoints;
 	}
 
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getUniqueRegionPriority(int hint) {
+		for (; hasRegionOfPriority(hint); hint++);
+		return hint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasRegionOfPriority(int priority) {
+		for (Region region : regions) {
+			if (region.getPriority() == priority) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
