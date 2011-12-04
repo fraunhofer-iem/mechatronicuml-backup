@@ -470,7 +470,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * @generated
 	 */
 	public boolean hasRegionOfPriority(int priority) {
-		for (Region region : regions) {
+		for (Region region : getRegions()) {
 			if (region.getPriority() == priority) {
 				return true;
 			}
