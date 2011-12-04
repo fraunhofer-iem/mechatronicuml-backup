@@ -249,15 +249,16 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 					// Parameter
 					List<ParameterBinding> allBindings = (List<ParameterBinding>) invocation
 							.getOwnedParameterBindings();
-					List<ParameterBinding> filteredBindings = new ArrayList<ParameterBinding>(
-							allBindings);
+					List<ParameterBinding> filteredBindings = new ArrayList<ParameterBinding>();
 
-					List<EParameter> parameters = invocation.getCallee()
-							.getContainedParameters();
-
-					for (ParameterBinding binding : allBindings) {
-						if (!parameters.contains(binding.getParameter())) {
-							filteredBindings.remove(binding);
+					if (invocation.getCallee() != null) {
+						List<EParameter> parameters = invocation.getCallee()
+								.getContainedParameters();
+	
+						for (ParameterBinding binding : allBindings) {
+							if (parameters.contains(binding.getParameter())) {
+								filteredBindings.add(binding);
+							}
 						}
 					}
 
