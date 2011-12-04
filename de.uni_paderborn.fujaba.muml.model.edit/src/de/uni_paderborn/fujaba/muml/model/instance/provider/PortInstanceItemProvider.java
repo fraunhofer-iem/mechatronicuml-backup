@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -25,6 +26,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
+import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
@@ -122,11 +125,11 @@ public class PortInstanceItemProvider
 	 * This adds a property descriptor for the Port Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addPortTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_PortInstance_portType_feature"),
@@ -137,7 +140,29 @@ public class PortInstanceItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+
+			@SuppressWarnings("unchecked")
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Collection<Port> allPorts = (Collection<Port>) super.getChoiceOfValues(object);
+				Collection<Port> ports = new ArrayList<Port>();
+				PortInstance portInstance = (PortInstance) object;
+				if (portInstance.getComponentInstance() != null) {
+					Component component = portInstance.getComponentInstance()
+							.getComponentType();
+					if (component != null) {
+						for (Port port : allPorts) {
+							if (port == null || port.getComponent() == component) {
+								ports.add(port);
+							}
+						}
+					}
+				}
+				return ports;
+			}
+		
+		});
 	}
 
 	/**
