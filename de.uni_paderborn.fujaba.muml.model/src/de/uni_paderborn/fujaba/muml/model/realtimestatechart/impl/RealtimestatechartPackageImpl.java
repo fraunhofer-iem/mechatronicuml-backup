@@ -1781,7 +1781,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "OneInvarianPerClock", "self.invariants->isUnique(clock)",
-			 "OneInitialState", "self.statechart.vertices.oclAsType(State)->one(s|  s.initial)",
+			 "OneInitialState", "not self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->isEmpty()",
 			 "NoOutgoingTransitionOfFinalState", "self.final implies self.outgoingTransitions->isEmpty()",
 			 "NoRegionsOfFinalState", "self.final implies self.regions->isEmpty()",
 			 "UniquePrioritiesOfOutgoingTransitions", "self.outgoingTransitions->isUnique(priority) ",

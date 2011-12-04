@@ -1023,7 +1023,7 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OneInvarianPerClock" value="self.invariants->isUnique(clock)"/>
-          <details key="OneInitialState" value="self.statechart.vertices.oclAsType(State)->one(s|  s.initial)"/>
+          <details key="OneInitialState" value="not self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->isEmpty()"/>
           <details key="NoOutgoingTransitionOfFinalState" value="self.final implies self.outgoingTransitions->isEmpty()"/>
           <details key="NoRegionsOfFinalState" value="self.final implies self.regions->isEmpty()"/>
           <details key="UniquePrioritiesOfOutgoingTransitions" value="self.outgoingTransitions->isUnique(priority) "/>

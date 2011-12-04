@@ -289,7 +289,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__ONE_INITIAL_STATE__EEXPRESSION = "self.statechart.vertices.oclAsType(State)->one(s|  s.initial)";
+	protected static final String STATE__ONE_INITIAL_STATE__EEXPRESSION = "not self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->isEmpty()";
 
 	/**
 	 * Validates the OneInitialState constraint of '<em>State</em>'.
