@@ -106,7 +106,7 @@ public interface Vertex extends NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Returns the next free higher region priority that is closest to the value provided as hint.
+	 * Returns the next free higher transition priority that is closest to the value provided as hint.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasOutgoingTransitionOfPriority(hint); hint++);\nreturn hint;'"
 	 * @generated
@@ -117,7 +117,7 @@ public interface Vertex extends NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Returns the <code>true</code>, if this State contains a region of the given priority.
+	 * Returns the <code>true</code>, if this Vertex contains an outgoing transition of the given priority.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Transition transition : getOutgoingTransitions()) {\n\tif (transition.getPriority() == priority) {\n\t\treturn true;\n\t}\n}\nreturn false;'"
 	 * @generated
