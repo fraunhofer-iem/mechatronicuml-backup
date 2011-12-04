@@ -352,7 +352,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
 					Object sourceVal = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									17,
+									19,
 									de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 											.getVertex(), env).evaluate(
 									source,

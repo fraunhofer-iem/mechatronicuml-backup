@@ -271,7 +271,7 @@ public interface State extends Vertex {
 	 * <!-- begin-model-doc -->
 	 * Returns the <code>true</code>, if this State contains a region of the given priority.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Region region : regions) {\n\tif (region.getPriority() == priority) {\n\t\treturn true;\n\t}\n}\nreturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Region region : getRegions()) {\n\tif (region.getPriority() == priority) {\n\t\treturn true;\n\t}\n}\nreturn false;'"
 	 * @generated
 	 */
 	boolean hasRegionOfPriority(int priority);

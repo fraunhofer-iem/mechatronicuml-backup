@@ -102,4 +102,26 @@ public interface Vertex extends NamedElement {
 	 */
 	boolean isSuperVertexOf(Vertex vertex);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns the next free higher region priority that is closest to the value provided as hint.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasOutgoingTransitionOfPriority(hint); hint++);\nreturn hint;'"
+	 * @generated
+	 */
+	int getUniqueTransitionPriority(int hint);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns the <code>true</code>, if this State contains a region of the given priority.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Transition transition : getOutgoingTransitions()) {\n\tif (transition.getPriority() == priority) {\n\t\treturn true;\n\t}\n}\nreturn false;'"
+	 * @generated
+	 */
+	boolean hasOutgoingTransitionOfPriority(int priority);
+
 } // Vertex

@@ -219,6 +219,14 @@
                   <value
                       body="'region'"/>
                 </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
+                  <value
+                      body="self.parentState.getUniqueRegionPriority(0)"/>
+                </initializers>
               </domainInitializer>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping"
@@ -427,6 +435,17 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EAttribute"
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
+        <value
+            body="self.source.getUniqueTransitionPriority(0)"/>
+      </initializers>
+    </domainInitializer>
     <labelMappings
         xsi:type="gmfmap:ExpressionLabelMapping"
         readOnly="true">
