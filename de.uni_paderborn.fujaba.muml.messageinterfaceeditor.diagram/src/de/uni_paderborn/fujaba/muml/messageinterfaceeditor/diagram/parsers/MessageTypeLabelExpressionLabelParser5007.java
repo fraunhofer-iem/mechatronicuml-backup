@@ -34,7 +34,13 @@ public class MessageTypeLabelExpressionLabelParser5007 implements IParser {
 	 * @generated
 	 */
 	public String getEditString(IAdaptable element, int flags) {
-		return getPrintString(element, flags);
+		EObject target = (EObject) element.getAdapter(EObject.class);
+		Object result = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
+				.getExpression(
+						3,
+						de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+								.getMessageType(), null).evaluate(target);
+		return String.valueOf(result);
 	}
 
 	/**
