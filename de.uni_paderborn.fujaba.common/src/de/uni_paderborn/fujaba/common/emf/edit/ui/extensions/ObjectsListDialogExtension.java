@@ -196,6 +196,10 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 					previouslySelectedObject.eAdapters().remove(hookAdapter);
 
 					values.getChildren().remove(previouslySelectedObject);
+					// Begin added because of #204
+					getCreationDialog().setPropertyValue(values.getChildren());
+					// End added
+
 					textualDialogExtension.rebuildTextualString();
 
 					int objectsCount = values.getChildren().size();
@@ -226,6 +230,9 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 							index - 1);
 					values.getChildren().set(index - 1, firstObject);
 					values.getChildren().set(index, secondObject);
+					// Begin added because of #204
+					getCreationDialog().setPropertyValue(values.getChildren());
+					// End added
 					textualDialogExtension.rebuildTextualString();
 
 					// Update visuals
@@ -246,6 +253,9 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 							index + 1);
 					values.getChildren().set(index + 1, firstObject);
 					values.getChildren().set(index, secondObject);
+					// Begin added because of #204
+					getCreationDialog().setPropertyValue(values.getChildren());
+					// End added
 					textualDialogExtension.rebuildTextualString();
 
 					// Update visuals
@@ -316,6 +326,11 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 
 		// Add the element to the list
 		values.getChildren().add(newObject);
+		
+		// Begin added because of #204
+		getCreationDialog().setPropertyValue(values.getChildren());
+		// End added
+		
 	}
 
 	public TableViewer getTableViewer() {

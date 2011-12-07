@@ -1,25 +1,27 @@
 package de.uni_paderborn.fujaba.common.emf.edit.ui;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
-import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
+import org.eclipse.gmf.runtime.common.ui.services.properties.GetPropertySourceOperation;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
@@ -37,9 +39,19 @@ public class ExtensibleCreationDialog extends Dialog {
 	 * A resource for newly created object. It is within the same ResourceSet as
 	 * the RootNode, so that PropertyDescriptors can find valid choices.
 	 */
-//	private Resource transientResource;
+	// private Resource transientResource;
 
 	private IRefreshProhibitedPropertySection mainPropertySection;
+
+	@Override
+	protected Button createButton(Composite parent, int id, String label,
+			boolean defaultButton) {
+		Button button = super.createButton(parent, id, label, defaultButton);
+		if (id == IDialogConstants.CANCEL_ID) {
+			button.setEnabled(false);
+		}
+		return button;
+	}
 
 	private List<IDialogExtension> extensions = new ArrayList<IDialogExtension>();
 
@@ -69,6 +81,7 @@ public class ExtensibleCreationDialog extends Dialog {
 	 */
 	private EObject containerObject;
 
+	private AdapterFactory adapterFactory;
 
 	/**
 	 * Constructs this ExtensibleCreationDialog.
@@ -97,18 +110,10 @@ public class ExtensibleCreationDialog extends Dialog {
 		this.structuralFeature = structuralFeature;
 		this.containerObject = containerObject;
 		this.mainPropertySection = mainPropertySection;
-
-//		ResourceSet resourceSet = containerObject.eResource().getResourceSet();
-//
-//		transientResource = resourceSet.createResource(URI.createURI(""));
-//		transientResource.eSetDeliver(false);
+		this.adapterFactory = adapterFactory;
 
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
 	}
-
-//	public Resource getTransientResource() {
-//		return transientResource;
-//	}
 
 	public void addExtension(IDialogExtension extension) {
 		extensions.add(extension);
@@ -122,6 +127,16 @@ public class ExtensibleCreationDialog extends Dialog {
 				new Object[] { structuralFeature.getName(),
 						labelProvider.getText(containerObject) }));
 		shell.setImage(labelProvider.getImage(containerObject));
+	}
+
+	public IItemPropertyDescriptor getItemPropertyDescriptor() {
+		IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
+				containerObject, IItemPropertySource.class);
+		if (ips != null) {
+			return ips
+					.getPropertyDescriptor(containerObject, structuralFeature);
+		}
+		return null;
 	}
 
 	/**
@@ -165,14 +180,31 @@ public class ExtensibleCreationDialog extends Dialog {
 		return INITIAL_DIALOG_SIZE;
 	}
 
+	// Begin removed because of #204
+	// @Override
+	// protected void okPressed() {
+	// for (IDialogExtension extension : extensions) {
+	// extension.okPressed();
+	// }
+	// super.okPressed();
+	// }
+	// End removed
+
 	@Override
-	protected void okPressed() {
+	public boolean close() {
+		// Begin added because of #204
 		for (IDialogExtension extension : extensions) {
 			extension.okPressed();
 		}
-//		transientResource.getResourceSet().getResources()
-//				.remove(transientResource);
-		super.okPressed();
+
+		// Hack to force notification (the real result will be afterwards) 
+		getItemPropertyDescriptor().setPropertyValue(containerObject, Collections.EMPTY_LIST);
+		// End added
+		
+		
+
+		contentProvider.dispose();
+		return super.close();
 	}
 
 	// We must forbid calling refresh on the main Property Section, while the
@@ -185,12 +217,6 @@ public class ExtensibleCreationDialog extends Dialog {
 		return result;
 	}
 
-	@Override
-	public boolean close() {
-		contentProvider.dispose();
-		return super.close();
-	}
-
 	public ILabelProvider getLabelProvider() {
 		return labelProvider;
 	}
@@ -201,6 +227,13 @@ public class ExtensibleCreationDialog extends Dialog {
 
 	public EStructuralFeature getStructuralFeature() {
 		return structuralFeature;
+	}
+
+	public void setPropertyValue(Object value) {
+		IItemPropertyDescriptor itemPropertyDescriptor = getItemPropertyDescriptor();
+		if (itemPropertyDescriptor != null) {
+			itemPropertyDescriptor.setPropertyValue(containerObject, value);
+		}
 	}
 
 }

@@ -127,11 +127,8 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-//				final Resource resource = getCreationDialog()
-//						.getTransientResource();
 
 				final EObject newObject = EcoreUtil.create(getInstanceClass());
-//				resource.getContents().add(newObject);
 				
 				objectsListDialogExtension.addListItem(newObject);
 				textualDialogExtension.rebuildTextualString();

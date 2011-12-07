@@ -159,11 +159,14 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			// Open the dialog and retrieve the user selection
 			int result = dialog.open();
 			labelProvider.dispose();
-			if (result == Window.OK) {
-				return getResult();
-			}
-
-			return null;
+			
+			// Currently Cancel is disabled:
+//			if (result == Window.OK) {
+//				return getResult();
+//			}
+//
+//			return null;
+			return getResult();
 		}
 
 		protected abstract void addExtensions();
