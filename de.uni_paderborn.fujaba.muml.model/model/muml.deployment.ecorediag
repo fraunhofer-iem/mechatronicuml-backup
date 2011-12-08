@@ -76,6 +76,10 @@
   <children xmi:type="notation:Node" xmi:id="_Mme6oA9zEeGE6rODE2Dxiw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_Mme6ow9zEeGE6rODE2Dxiw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_Mme6pA9zEeGE6rODE2Dxiw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_3IOhECGAEeGaBq0L1oY9hw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="muml.ecore#//model/deployment/HardwareNode/Ressources"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_3IOhESGAEeGaBq0L1oY9hw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Mme6pQ9zEeGE6rODE2Dxiw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Mme6pg9zEeGE6rODE2Dxiw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Mme6pw9zEeGE6rODE2Dxiw"/>
@@ -108,6 +112,10 @@
   <children xmi:type="notation:Node" xmi:id="_OyCMMA9zEeGE6rODE2Dxiw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_OyL9MA9zEeGE6rODE2Dxiw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_OyL9MQ9zEeGE6rODE2Dxiw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_foL-MSGAEeGaBq0L1oY9hw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="muml.ecore#//model/deployment/CommunicationLink/transferRate"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_foL-MiGAEeGaBq0L1oY9hw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_OyL9Mg9zEeGE6rODE2Dxiw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_OyL9Mw9zEeGE6rODE2Dxiw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_OyL9NA9zEeGE6rODE2Dxiw"/>
