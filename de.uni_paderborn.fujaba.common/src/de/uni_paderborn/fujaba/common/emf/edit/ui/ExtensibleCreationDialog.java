@@ -192,18 +192,24 @@ public class ExtensibleCreationDialog extends Dialog {
 
 	@Override
 	public boolean close() {
-		// Begin added because of #204
-		for (IDialogExtension extension : extensions) {
-			extension.okPressed();
+		// Execute everything within a try-catch block to prevent problems to close the window.
+		try {
+			// Begin added because of #204
+			for (IDialogExtension extension : extensions) {
+				extension.okPressed();
+			}
+	
+			// Hack to force notification (the real result will be set afterwards) 
+			getItemPropertyDescriptor().setPropertyValue(containerObject, Collections.EMPTY_LIST);
+			// End added
+			
+			for (IDialogExtension extension : extensions) {
+				extension.dispose();
+			}
+			contentProvider.dispose();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		// Hack to force notification (the real result will be afterwards) 
-		getItemPropertyDescriptor().setPropertyValue(containerObject, Collections.EMPTY_LIST);
-		// End added
-		
-		
-
-		contentProvider.dispose();
 		return super.close();
 	}
 

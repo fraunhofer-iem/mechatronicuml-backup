@@ -19,5 +19,9 @@ public abstract class AbstractDialogExtension implements IDialogExtension {
 	public EStructuralFeature getStructuralFeature() {
 		return creationDialog.getStructuralFeature();
 	}
+	
+	public void dispose() {
+		
+	}
 
 }

@@ -7,4 +7,5 @@ public interface IDialogExtension {
 	void createMainArea(Composite parent);
 	void createButtonArea(Composite parent);
 	void okPressed();
+	void dispose();
 }

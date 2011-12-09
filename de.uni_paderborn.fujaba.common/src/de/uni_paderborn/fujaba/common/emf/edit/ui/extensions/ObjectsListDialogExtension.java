@@ -79,12 +79,24 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 		super(creationDialog);
 		// currentValues = EcoreUtil.copyAll(currentValues);
 		this.values = new ItemProvider(adapterFactory, currentValues);
+		
+		// Hook into initial elements
+		for (Object object : values.getChildren()) {
+			((EObject) object).eAdapters().add(hookAdapter);
+		}
 	}
 
 	@Override
 	public void initialize() {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public void dispose() {
+		// Unhook from remaining elements
+		for (Object object : values.getChildren()) {
+			((EObject) object).eAdapters().remove(hookAdapter);
+		}
 	}
 
 	@Override
