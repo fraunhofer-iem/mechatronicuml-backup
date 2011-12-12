@@ -309,6 +309,12 @@
           <genFeatures property="Readonly" createChild="false" propertyCategory=""
               ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/State/simple"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/stateExitPoints"/>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority">
+            <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority/hint"/>
+          </genOperations>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority">
+            <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority/priority"/>
+          </genOperations>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Vertex">
           <genFeatures notify="false" createChild="false" propertyCategory="Transitions"
@@ -318,6 +324,12 @@
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Vertex/statechart"/>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf">
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/vertex"/>
+          </genOperations>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/Vertex/getUniqueTransitionPriority">
+            <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/Vertex/getUniqueTransitionPriority/hint"/>
+          </genOperations>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/Vertex/hasOutgoingTransitionOfPriority">
+            <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/Vertex/hasOutgoingTransitionOfPriority/priority"/>
           </genOperations>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/Transition">
@@ -400,9 +412,6 @@
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
           </genOperations>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
-          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getUniqueRegionPriority">
-            <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getUniqueRegionPriority/hint"/>
-          </genOperations>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Event/kind"/>

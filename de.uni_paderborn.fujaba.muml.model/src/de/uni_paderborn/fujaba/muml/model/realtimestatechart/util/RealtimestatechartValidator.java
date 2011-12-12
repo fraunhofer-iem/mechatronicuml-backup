@@ -570,6 +570,11 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_SetTargetAndSource(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_NoCrossingOfRegionBorders(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_EntryPointMustOnlyPointToStatesOrStateEntryPoints(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_ExitPointMustOnlyPointToStatesOrStateEntryPoints(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_ValidTriggerMessageEvents(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_ValidRaiseMessageEvents(transition, diagnostics, context);
 		return result;
 	}
 
@@ -630,6 +635,175 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "NoCrossingOfRegionBorders",
 				 TRANSITION__NO_CROSSING_OF_REGION_BORDERS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the EntryPointMustOnlyPointToStatesOrStateEntryPoints constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__ENTRY_POINT_MUST_ONLY_POINT_TO_STATES_OR_STATE_ENTRY_POINTS__EEXPRESSION = "not (self.source.oclIsKindOf(EntryPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateEntryPoint)))";
+
+	/**
+	 * Validates the EntryPointMustOnlyPointToStatesOrStateEntryPoints constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_EntryPointMustOnlyPointToStatesOrStateEntryPoints(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "EntryPointMustOnlyPointToStatesOrStateEntryPoints",
+				 TRANSITION__ENTRY_POINT_MUST_ONLY_POINT_TO_STATES_OR_STATE_ENTRY_POINTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * Validates the ExitPointMustOnlyPointToStatesOrStateEntryPoints constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_ExitPointMustOnlyPointToStatesOrStateEntryPoints(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ExitPointMustOnlyPointToStatesOrStateEntryPoints", getObjectLabel(transition, context) },
+						 new Object[] { transition },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached validation expression for the TriggerMessageEventsMustNotHaveAnOwnedParameterBinding constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__TRIGGER_MESSAGE_EVENTS_MUST_NOT_HAVE_AN_OWNED_PARAMETER_BINDING__EEXPRESSION = "not self.triggerMessageEvent.message.oclIsUndefined() implies\n" +
+		"self.triggerMessageEvent.message.ownedParameterBindings->isEmpty()";
+
+	/**
+	 * Validates the TriggerMessageEventsMustNotHaveAnOwnedParameterBinding constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding",
+				 TRANSITION__TRIGGER_MESSAGE_EVENTS_MUST_NOT_HAVE_AN_OWNED_PARAMETER_BINDING__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidTriggerMessageEvents constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\n" +
+		"(\n" +
+		"\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n" +
+		"\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\n" +
+		"\telse\n" +
+		"\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n" +
+		"\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\n" +
+		"\t\telse\n" +
+		"\t\t\tnull\n" +
+		"\t\tendif\n" +
+		"\tendif\n" +
+		") in\n" +
+		"not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf)";
+
+	/**
+	 * Validates the ValidTriggerMessageEvents constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_ValidTriggerMessageEvents(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidTriggerMessageEvents",
+				 TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidRaiseMessageEvents constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\n" +
+		"(\n" +
+		"\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n" +
+		"\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface\n" +
+		"\telse\n" +
+		"\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n" +
+		"\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).senderMessageInterface\n" +
+		"\t\telse\n" +
+		"\t\t\tnull\n" +
+		"\t\tendif\n" +
+		"\tendif\n" +
+		") in\n" +
+		"not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf)";
+
+	/**
+	 * Validates the ValidRaiseMessageEvents constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_ValidRaiseMessageEvents(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidRaiseMessageEvents",
+				 TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
