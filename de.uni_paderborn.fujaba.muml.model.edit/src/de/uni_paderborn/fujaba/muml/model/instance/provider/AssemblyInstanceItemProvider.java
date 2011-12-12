@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,6 +21,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
 /**
@@ -58,6 +61,8 @@ public class AssemblyInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBehavioralElementTypePropertyDescriptor(object);
+			addPropagationDelayLowerBoundPropertyDescriptor(object);
+			addPropagationDelayUpperBoundPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +90,50 @@ public class AssemblyInstanceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Propagation Delay Lower Bound feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPropagationDelayLowerBoundPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssemblyInstance_propagationDelayLowerBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyInstance_propagationDelayLowerBound_feature", "_UI_AssemblyInstance_type"),
+				 InstancePackage.Literals.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Propagation Delay Upper Bound feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPropagationDelayUpperBoundPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssemblyInstance_propagationDelayUpperBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyInstance_propagationDelayUpperBound_feature", "_UI_AssemblyInstance_type"),
+				 InstancePackage.Literals.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns AssemblyInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,7 +152,8 @@ public class AssemblyInstanceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AssemblyInstance_type");
+		AssemblyInstance assemblyInstance = (AssemblyInstance)object;
+		return getString("_UI_AssemblyInstance_type") + " " + assemblyInstance.getPropagationDelayLowerBound();
 	}
 
 	/**
@@ -116,6 +166,13 @@ public class AssemblyInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(AssemblyInstance.class)) {
+			case InstancePackage.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND:
+			case InstancePackage.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

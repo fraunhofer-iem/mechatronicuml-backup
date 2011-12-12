@@ -21,6 +21,8 @@ import de.uni_paderborn.fujaba.muml.model.component.Assembly;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getAssemblyType <em>Assembly Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayLowerBound <em>Propagation Delay Lower Bound</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayUpperBound <em>Propagation Delay Upper Bound</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,5 +45,57 @@ public interface AssemblyInstance extends ConnectorInstance, BehavioralElementIn
 	 * @generated
 	 */
 	Assembly getAssemblyType();
+
+	/**
+	 * Returns the value of the '<em><b>Propagation Delay Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Propagation Delay Lower Bound</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Propagation Delay Lower Bound</em>' attribute.
+	 * @see #setPropagationDelayLowerBound(int)
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_PropagationDelayLowerBound()
+	 * @model
+	 * @generated
+	 */
+	int getPropagationDelayLowerBound();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayLowerBound <em>Propagation Delay Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Propagation Delay Lower Bound</em>' attribute.
+	 * @see #getPropagationDelayLowerBound()
+	 * @generated
+	 */
+	void setPropagationDelayLowerBound(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Propagation Delay Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Propagation Delay Upper Bound</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Propagation Delay Upper Bound</em>' attribute.
+	 * @see #setPropagationDelayUpperBound(int)
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_PropagationDelayUpperBound()
+	 * @model
+	 * @generated
+	 */
+	int getPropagationDelayUpperBound();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayUpperBound <em>Propagation Delay Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Propagation Delay Upper Bound</em>' attribute.
+	 * @see #getPropagationDelayUpperBound()
+	 * @generated
+	 */
+	void setPropagationDelayUpperBound(int value);
 
 } // AssemblyInstance

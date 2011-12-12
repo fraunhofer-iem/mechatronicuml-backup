@@ -193,6 +193,8 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/AssemblyInstance">
           <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/AssemblyInstance/assemblyType"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/DelegationInstance">
           <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"

@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.instance.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 
@@ -41,6 +42,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
+import org.eclipse.emf.ecore.EAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -369,6 +371,24 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAssemblyInstance_PropagationDelayLowerBound() {
+		return (EAttribute)assemblyInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAssemblyInstance_PropagationDelayUpperBound() {
+		return (EAttribute)assemblyInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDelegationInstance() {
 		return delegationInstanceEClass;
 	}
@@ -564,6 +584,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		assemblyInstanceEClass = createEClass(ASSEMBLY_INSTANCE);
 		createEReference(assemblyInstanceEClass, ASSEMBLY_INSTANCE__ASSEMBLY_TYPE);
+		createEAttribute(assemblyInstanceEClass, ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND);
+		createEAttribute(assemblyInstanceEClass, ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND);
 
 		delegationInstanceEClass = createEClass(DELEGATION_INSTANCE);
 		createEReference(delegationInstanceEClass, DELEGATION_INSTANCE__DELEGATION_TYPE);
@@ -617,6 +639,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Obtain other dependent packages
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
@@ -662,6 +685,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		initEClass(assemblyInstanceEClass, AssemblyInstance.class, "AssemblyInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyInstance_AssemblyType(), theComponentPackage.getAssembly(), null, "assemblyType", null, 0, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssemblyInstance_PropagationDelayLowerBound(), theEcorePackage.getEInt(), "propagationDelayLowerBound", null, 0, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssemblyInstance_PropagationDelayUpperBound(), theEcorePackage.getEInt(), "propagationDelayUpperBound", null, 0, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(delegationInstanceEClass, DelegationInstance.class, "DelegationInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDelegationInstance_DelegationType(), theComponentPackage.getDelegation(), null, "delegationType", null, 0, 1, DelegationInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
