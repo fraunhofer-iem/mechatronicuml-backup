@@ -418,6 +418,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String StateChannelCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String RegionRegionContentsCompartmentEditPart_title;
 
 	/**

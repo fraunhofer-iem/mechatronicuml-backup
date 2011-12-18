@@ -248,6 +248,15 @@
               </children>
               <children
                   xsi:type="gmfgraph:Rectangle"
+                  name="ChannelCompartment"
+                  outline="false">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    verticalAlignment="FILL"
+                    horizontalAlignment="BEGINNING"/>
+              </children>
+              <children
+                  xsi:type="gmfgraph:Rectangle"
                   name="CompoundCompartment"
                   outline="false">
                 <layoutData
@@ -275,10 +284,10 @@
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.0"/>
       <accessors
           accessor="getFigureCompoundCompartment"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.2"/>
       <accessors
           accessor="getFigureRegionsCompartment"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.3"/>
       <accessors
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1"/>
       <accessors
@@ -291,6 +300,8 @@
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.2/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
@@ -536,6 +547,10 @@
       name="StatechartContentsCompartment"
       figure="StatechartFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <compartments
+      name="ChannelCompartment"
+      figure="StateFigure"
+      accessor="//@figures.0/@descriptors.4/@accessors.9"/>
   <labels
       name="TransitionLabel"
       figure="TransitionFigure"

@@ -42,11 +42,6 @@ public class StateCompoundCompartmentItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.ClockConstraintCreateCommand(
 					req));
 		}
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3005 == req
-				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.SynchronizationChannelCreateCommand(
-					req));
-		}
 		return super.getCreateCommand(req);
 	}
 

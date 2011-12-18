@@ -169,7 +169,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.2">
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/channels"/>
             <ownedChild>
@@ -192,7 +192,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(&#xA;&#x9;'('.concat(&#xA;&#x9;&#x9;self.containedParameters->iterate(param; result : String = '' | &#xA;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;param.name.concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if param.eType.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(')')&#xA;)"/>
+                    body="(&#xA;if self.state.channels->first() = self then&#xA;&#x9;'ch: '&#xA;else&#xA;&#x9;''&#xA;endif&#xA;).concat(&#xA;if self.name.oclIsUndefined() then 'null' else self.name endif).concat(&#xA;&#x9;'('.concat(&#xA;&#x9;&#x9;self.containedParameters->iterate(param; result : String = '' | &#xA;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;param.name.concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if param.eType.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(')')&#xA;).concat(&#xA;if self.state.channels->last() = self then&#xA;&#x9;';'&#xA;else&#xA;&#x9;','&#xA;endif&#xA;)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -350,7 +350,7 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2">
+              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2">
             <compartment
                 href="realtimeStatechart.gmfgraph#CompoundCompartment"/>
           </compartments>
@@ -358,6 +358,11 @@
               children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5">
             <compartment
                 href="realtimeStatechart.gmfgraph#RegionCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.4">
+            <compartment
+                href="realtimeStatechart.gmfgraph#ChannelCompartment"/>
           </compartments>
         </ownedChild>
       </children>
