@@ -1,0 +1,4 @@
+not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and
+not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)
+implies
+self.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind
