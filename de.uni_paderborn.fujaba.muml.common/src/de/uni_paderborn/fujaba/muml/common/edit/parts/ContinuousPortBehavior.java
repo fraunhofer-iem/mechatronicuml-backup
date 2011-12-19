@@ -9,7 +9,7 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 
-public class ContinuousPortBehavior extends AbstractPortBehavior {
+public class ContinuousPortBehavior extends AbstractPortTypeBehavior {
 
 	public ContinuousPortBehavior(GraphicalEditPart editPart) {
 		super(editPart);

@@ -14,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
-public class RoleBehavior extends AbstractBehavior {
+public class RoleBehavior extends AbstractPortBehavior {
 	/**
 	 * The model object. It will be set, while the EditPart is active (between
 	 * calls to activate() and deactivate()).

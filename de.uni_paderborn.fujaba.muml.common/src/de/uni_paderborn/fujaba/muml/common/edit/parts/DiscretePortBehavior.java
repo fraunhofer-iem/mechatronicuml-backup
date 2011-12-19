@@ -10,7 +10,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 
-public class DiscretePortBehavior extends AbstractPortBehavior {
+public class DiscretePortBehavior extends AbstractPortTypeBehavior {
 
 	public DiscretePortBehavior(GraphicalEditPart editPart) {
 		super(editPart);
