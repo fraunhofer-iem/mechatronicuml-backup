@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[7];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[8];
 	}
 
 	/**
@@ -57,6 +57,7 @@ public class MumlOCLFactory {
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
+					"self.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->isEmpty()", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.instance.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
@@ -36,6 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.util.InstanceValidator;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
@@ -212,6 +214,15 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theRealtimestatechartPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
 		theDeploymentPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theInstancePackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return InstanceValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theInstancePackage.freeze();
@@ -740,7 +751,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																							
+		   });																					
+		addAnnotation
+		  (delegationInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "OneDelegationInstancePerPortInstance"
+		   });																					
 	}
 
 	/**
@@ -763,6 +780,12 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   new String[] {
 			 "derivation", "connectorType.oclAsType(component::Assembly)"
 		   });				
+		addAnnotation
+		  (delegationInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "OneDelegationInstancePerPortInstance", "not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"
+		   });			
 		addAnnotation
 		  (getDelegationInstance_DelegationType(), 
 		   source, 

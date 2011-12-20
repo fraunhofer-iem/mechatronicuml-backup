@@ -196,6 +196,10 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/target"/>
+    <creationConstraints>
+      <sourceEnd
+          body="self.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->isEmpty()"/>
+    </creationConstraints>
   </links>
   <diagram>
     <diagramCanvas

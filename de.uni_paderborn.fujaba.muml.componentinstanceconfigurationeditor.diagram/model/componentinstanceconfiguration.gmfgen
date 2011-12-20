@@ -389,6 +389,8 @@
         <targetMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ConnectorInstance/target"/>
       </modelFacet>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.7"/>
     </links>
     <palette>
       <groups
@@ -839,6 +841,9 @@
           body="'portinstance'"/>
       <expressions
           body="'portinstance'"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->isEmpty()"/>
     </providers>
   </expressionProviders>
   <labelParsers
