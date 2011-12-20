@@ -1076,12 +1076,6 @@
             genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Synchronization Channel"
-            description="Creates a new Synchronization Channel"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/xAction.gif"
-            genNodes="//@diagram/@childNodes.5"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="Region"
             description="Creates an inner Region for a State"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/region.gif"

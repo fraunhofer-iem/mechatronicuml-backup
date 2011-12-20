@@ -363,42 +363,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String SynchronizationChannel5CreationTool_title;
+	public static String Region5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SynchronizationChannel5CreationTool_desc;
+	public static String Region5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Region6CreationTool_title;
+	public static String StateEntryPoint6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Region6CreationTool_desc;
+	public static String StateEntryPoint6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StateEntryPoint7CreationTool_title;
+	public static String StateExitPoint7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateEntryPoint7CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String StateExitPoint8CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String StateExitPoint8CreationTool_desc;
+	public static String StateExitPoint7CreationTool_desc;
 
 	/**
 	 * @generated

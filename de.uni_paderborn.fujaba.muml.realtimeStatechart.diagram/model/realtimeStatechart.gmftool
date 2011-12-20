@@ -97,15 +97,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Synchronization Channel"
-          description="Creates a new Synchronization Channel">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icon/xAction.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Region"
           description="Creates an inner Region for a State">
         <smallIcon

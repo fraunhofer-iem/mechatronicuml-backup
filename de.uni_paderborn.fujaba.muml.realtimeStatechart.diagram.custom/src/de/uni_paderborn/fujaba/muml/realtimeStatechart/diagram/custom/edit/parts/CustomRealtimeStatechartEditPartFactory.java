@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateE
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -36,6 +37,7 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
+
 			case ModelElementCategoryEditPart.VISUAL_ID:
 				return new CustomModelElementCategoryEditPart(view);
 			case RealtimeStatechartEditPart.VISUAL_ID:
@@ -66,7 +68,8 @@ public class CustomRealtimeStatechartEditPartFactory extends
 				return new CustomRealtimeStatechartStatechartContentsCompartmentEditPart(view);
 			case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
 				return new CustomRealtimeStatechartStatechartContentsCompartment2EditPart(view);
-
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new CustomWrappingLabel6EditPart(view);
 			default:
 				break;
 			}
