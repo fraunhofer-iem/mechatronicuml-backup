@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,9 +40,9 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -131,10 +132,15 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 
 					@Override
 					public Collection<?> getChoiceOfValues(Object object) {
-						Collection<?> choices = super.getChoiceOfValues(object);
-						List<Object> invalidChoices = new ArrayList<Object>();
 						Transition transition = (Transition) object;
-						for (Object choice : choices) {
+						
+						Collection<?> choices = super.getChoiceOfValues(object);
+						Iterator<?> it = choices.iterator();
+						while (it.hasNext()) {
+							Object choice = it.next();
+							if (choice == null) {
+								continue;
+							}
 							if (choice instanceof SynchronizationChannel) {
 								SynchronizationChannel channel = (SynchronizationChannel) choice;
 								if (channel.getState().isSuperVertexOf(
@@ -142,10 +148,8 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 									continue;
 								}
 							}
-							invalidChoices.add(choice);
+							it.remove();
 						}
-						choices.removeAll(invalidChoices);
-
 						return choices;
 					}
 
@@ -290,6 +294,9 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 
 			@Override
 			public Collection<?> getChoiceOfValues(Object message) {
+				Collection<MessageType> choices = new ArrayList<MessageType>();
+				choices.add(null);
+				
 				RealtimeStatechart statechart = (RealtimeStatechart) ItemPropertyDescriptorUtil
 						.deduceContainer(
 								(EObject) message,
@@ -303,9 +310,9 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 					messageInterface = ((Role) element).getReceiverMessageInterface();
 				}
 				if (messageInterface != null) {
-					return messageInterface.getAllAvailableMessageTypes();
+					choices.addAll(messageInterface.getAllAvailableMessageTypes());
 				}
-				return Collections.emptyList();
+				return choices;
 			}
 		});
 
@@ -382,6 +389,9 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 
 			@Override
 			public Collection<?> getChoiceOfValues(Object message) {
+				Collection<MessageType> choices = new ArrayList<MessageType>();
+				choices.add(null);
+				
 				RealtimeStatechart statechart = (RealtimeStatechart) ItemPropertyDescriptorUtil
 						.deduceContainer(
 								(EObject) message,
@@ -395,9 +405,9 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 					messageInterface = ((Role) element).getSenderMessageInterface();
 				}
 				if (messageInterface != null) {
-					return messageInterface.getAllAvailableMessageTypes();
+					choices.addAll(messageInterface.getAllAvailableMessageTypes());
 				}
-				return Collections.emptyList();
+				return choices;
 			}
 
 		});
