@@ -70,33 +70,11 @@ public class AssignmentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addAssignOperatorPropertyDescriptor(object);
 			addIncrementDecrementOperatorPropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Assignment_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Assignment_name_feature", "_UI_Assignment_type"),
-				 ActionLanguagePackage.Literals.ASSIGNMENT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -139,6 +117,28 @@ public class AssignmentItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Assignment_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Assignment_attribute_feature", "_UI_Assignment_type"),
+				 ActionLanguagePackage.Literals.ASSIGNMENT__ATTRIBUTE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -192,7 +192,7 @@ public class AssignmentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Assignment)object).getName();
+		String label = ((Assignment)object).getComment();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Assignment_type") :
 			getString("_UI_Assignment_type") + " " + label;
@@ -210,7 +210,6 @@ public class AssignmentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Assignment.class)) {
-			case ActionLanguagePackage.ASSIGNMENT__NAME:
 			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -292,6 +291,11 @@ public class AssignmentItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createAttributeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

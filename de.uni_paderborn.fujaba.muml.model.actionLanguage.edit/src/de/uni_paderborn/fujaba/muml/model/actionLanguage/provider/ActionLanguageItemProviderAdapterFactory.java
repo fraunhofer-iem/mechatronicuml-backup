@@ -352,6 +352,29 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeExpressionItemProvider attributeExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeExpressionAdapter() {
+		if (attributeExpressionItemProvider == null) {
+			attributeExpressionItemProvider = new AttributeExpressionItemProvider(this);
+		}
+
+		return attributeExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -462,6 +485,7 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		if (assignmentItemProvider != null) assignmentItemProvider.dispose();
 		if (forLoopItemProvider != null) forLoopItemProvider.dispose();
 		if (ifStatementItemProvider != null) ifStatementItemProvider.dispose();
+		if (attributeExpressionItemProvider != null) attributeExpressionItemProvider.dispose();
 	}
 
 }
