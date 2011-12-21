@@ -239,6 +239,16 @@ public class ActionLanguageSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ActionLanguagePackage.ATTRIBUTE_EXPRESSION: {
+				AttributeExpression attributeExpression = (AttributeExpression)theEObject;
+				T result = caseAttributeExpression(attributeExpression);
+				if (result == null) result = caseExpression(attributeExpression);
+				if (result == null) result = caseTypedElement(attributeExpression);
+				if (result == null) result = caseCommentableElement(attributeExpression);
+				if (result == null) result = caseExtendableElement(attributeExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -450,6 +460,21 @@ public class ActionLanguageSwitch<T> {
 	 * @generated
 	 */
 	public T caseIfStatement(IfStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeExpression(AttributeExpression object) {
 		return null;
 	}
 

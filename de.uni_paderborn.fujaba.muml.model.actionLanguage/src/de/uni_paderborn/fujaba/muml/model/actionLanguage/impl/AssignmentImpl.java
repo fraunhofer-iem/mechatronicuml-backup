@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOpera
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -30,36 +31,16 @@ import org.storydriven.modeling.expressions.impl.ExpressionImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getAssignOperator <em>Assign Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getAssignExpression <em>Assign Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getIncrementDecrementOperator <em>Increment Decrement Operator</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class AssignmentImpl extends ExpressionImpl implements Assignment {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAssignOperator() <em>Assign Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -111,6 +92,16 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	protected IncrementDecrementOperator incrementDecrementOperator = INCREMENT_DECREMENT_OPERATOR_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	protected EAttribute attribute;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -127,27 +118,6 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	protected EClass eStaticClass() {
 		return ActionLanguagePackage.Literals.ASSIGNMENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -240,6 +210,44 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAttribute() {
+		if (attribute != null && attribute.eIsProxy()) {
+			InternalEObject oldAttribute = (InternalEObject)attribute;
+			attribute = (EAttribute)eResolveProxy(oldAttribute);
+			if (attribute != oldAttribute) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE, oldAttribute, attribute));
+			}
+		}
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute basicGetAttribute() {
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAttribute(EAttribute newAttribute) {
+		EAttribute oldAttribute = attribute;
+		attribute = newAttribute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE, oldAttribute, attribute));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -257,14 +265,15 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__NAME:
-				return getName();
 			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 				return getAssignOperator();
 			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_EXPRESSION:
 				return getAssignExpression();
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				return getIncrementDecrementOperator();
+			case ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE:
+				if (resolve) return getAttribute();
+				return basicGetAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,9 +286,6 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__NAME:
-				setName((String)newValue);
-				return;
 			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 				setAssignOperator((AssignOperator)newValue);
 				return;
@@ -288,6 +294,9 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 				return;
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				setIncrementDecrementOperator((IncrementDecrementOperator)newValue);
+				return;
+			case ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE:
+				setAttribute((EAttribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -301,9 +310,6 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 				setAssignOperator(ASSIGN_OPERATOR_EDEFAULT);
 				return;
@@ -312,6 +318,9 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 				return;
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				setIncrementDecrementOperator(INCREMENT_DECREMENT_OPERATOR_EDEFAULT);
+				return;
+			case ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE:
+				setAttribute((EAttribute)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -325,14 +334,14 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 				return assignOperator != ASSIGN_OPERATOR_EDEFAULT;
 			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_EXPRESSION:
 				return assignExpression != null;
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				return incrementDecrementOperator != INCREMENT_DECREMENT_OPERATOR_EDEFAULT;
+			case ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE:
+				return attribute != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -347,9 +356,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", assignOperator: ");
+		result.append(" (assignOperator: ");
 		result.append(assignOperator);
 		result.append(", incrementDecrementOperator: ");
 		result.append(incrementDecrementOperator);

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.storydriven.modeling.expressions.Expression;
 
 /**
@@ -16,10 +17,10 @@ import org.storydriven.modeling.expressions.Expression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAssignOperator <em>Assign Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAssignExpression <em>Assign Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getIncrementDecrementOperator <em>Increment Decrement Operator</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAttribute <em>Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,32 +29,6 @@ import org.storydriven.modeling.expressions.Expression;
  * @generated
  */
 public interface Assignment extends Expression {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Assign Operator</b></em>' attribute.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator}.
@@ -137,5 +112,31 @@ public interface Assignment extends Expression {
 	 * @generated
 	 */
 	void setIncrementDecrementOperator(IncrementDecrementOperator value);
+
+	/**
+	 * Returns the value of the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attribute</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attribute</em>' reference.
+	 * @see #setAttribute(EAttribute)
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_Attribute()
+	 * @model
+	 * @generated
+	 */
+	EAttribute getAttribute();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAttribute <em>Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Attribute</em>' reference.
+	 * @see #getAttribute()
+	 * @generated
+	 */
+	void setAttribute(EAttribute value);
 
 } // Assignment

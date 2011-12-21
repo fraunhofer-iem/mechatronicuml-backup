@@ -134,6 +134,15 @@ public interface ActionLanguageFactory extends EFactory {
 	IfStatement createIfStatement();
 
 	/**
+	 * Returns a new object of class '<em>Attribute Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Expression</em>'.
+	 * @generated
+	 */
+	AttributeExpression createAttributeExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

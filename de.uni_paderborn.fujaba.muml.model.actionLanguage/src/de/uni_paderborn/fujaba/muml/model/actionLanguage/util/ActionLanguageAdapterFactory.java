@@ -134,6 +134,10 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 				return createIfStatementAdapter();
 			}
 			@Override
+			public Adapter caseAttributeExpression(AttributeExpression object) {
+				return createAttributeExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -362,6 +366,20 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIfStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression <em>Attribute Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression
+	 * @generated
+	 */
+	public Adapter createAttributeExpressionAdapter() {
 		return null;
 	}
 

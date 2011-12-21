@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
@@ -149,6 +150,13 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	private EClass ifStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -511,7 +519,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssignment_Name() {
+	public EAttribute getAssignment_AssignOperator() {
 		return (EAttribute)assignmentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -520,17 +528,8 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssignment_AssignOperator() {
-		return (EAttribute)assignmentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getAssignment_AssignExpression() {
-		return (EReference)assignmentEClass.getEStructuralFeatures().get(2);
+		return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -539,7 +538,16 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	public EAttribute getAssignment_IncrementDecrementOperator() {
-		return (EAttribute)assignmentEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)assignmentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssignment_Attribute() {
+		return (EReference)assignmentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -621,6 +629,24 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 */
 	public EReference getIfStatement_ElseBlock() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttributeExpression() {
+		return attributeExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttributeExpression_Attribute() {
+		return (EReference)attributeExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -752,10 +778,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		doWhileLoopEClass = createEClass(DO_WHILE_LOOP);
 
 		assignmentEClass = createEClass(ASSIGNMENT);
-		createEAttribute(assignmentEClass, ASSIGNMENT__NAME);
 		createEAttribute(assignmentEClass, ASSIGNMENT__ASSIGN_OPERATOR);
 		createEReference(assignmentEClass, ASSIGNMENT__ASSIGN_EXPRESSION);
 		createEAttribute(assignmentEClass, ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR);
+		createEReference(assignmentEClass, ASSIGNMENT__ATTRIBUTE);
 
 		forLoopEClass = createEClass(FOR_LOOP);
 		createEReference(forLoopEClass, FOR_LOOP__INITALIZE_EXPRESSION);
@@ -767,6 +793,9 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_IF_CONDITIONS);
 		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_IF_BLOCKS);
 		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_BLOCK);
+
+		attributeExpressionEClass = createEClass(ATTRIBUTE_EXPRESSION);
+		createEReference(attributeExpressionEClass, ATTRIBUTE_EXPRESSION__ATTRIBUTE);
 
 		// Create enums
 		logicOperatorEEnum = createEEnum(LOGIC_OPERATOR);
@@ -803,7 +832,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -824,6 +852,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		assignmentEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		forLoopEClass.getESuperTypes().add(this.getLoop());
 		ifStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		attributeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(textualExpressionEClass, TextualExpression.class, "TextualExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -833,7 +862,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		initEClass(literalExpressionEClass, LiteralExpression.class, "LiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLiteralExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLiteralExpression_ValueType(), theEcorePackage.getEDataType(), null, "valueType", null, 0, 1, LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLiteralExpression_ValueType(), ecorePackage.getEDataType(), null, "valueType", null, 0, 1, LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnaryExpression_UnaryExpression(), theExpressionsPackage.getExpression(), null, "unaryExpression", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -864,10 +893,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEClass(doWhileLoopEClass, DoWhileLoop.class, "DoWhileLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAssignment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssignment_AssignOperator(), this.getAssignOperator(), "assignOperator", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssignment_AssignExpression(), theExpressionsPackage.getExpression(), null, "assignExpression", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssignment_IncrementDecrementOperator(), this.getIncrementDecrementOperator(), "incrementDecrementOperator", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssignment_Attribute(), ecorePackage.getEAttribute(), null, "attribute", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForLoop_InitalizeExpression(), this.getAssignment(), null, "initalizeExpression", null, 0, 1, ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -879,6 +908,9 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getIfStatement_ElseIfConditions(), theExpressionsPackage.getExpression(), null, "elseIfConditions", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIfStatement_ElseIfBlocks(), this.getBlock(), null, "elseIfBlocks", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIfStatement_ElseBlock(), this.getBlock(), null, "elseBlock", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(attributeExpressionEClass, AttributeExpression.class, "AttributeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttributeExpression_Attribute(), ecorePackage.getEAttribute(), null, "attribute", null, 0, 1, AttributeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(logicOperatorEEnum, LogicOperator.class, "LogicOperator");
@@ -937,28 +969,8 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createResource(eNS_URI);
 
 		// Create annotations
-		// subsets
-		createSubsetsAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>subsets</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createSubsetsAnnotations() {
-		String source = "subsets";															
-		addAnnotation
-		  (getLiteralExpression_ValueType(), 
-		   source, 
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(SDMPackage.eNS_URI).appendFragment("//TypedElement/type")
-		   });												
 	}
 
 	/**
@@ -968,7 +980,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																											
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																									
 		addAnnotation
 		  (assignmentEClass, 
 		   source, 

@@ -61,13 +61,10 @@ public interface LiteralExpression extends Expression {
 	 * Returns the value of the '<em><b>Value Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The literal's type, e.g. EInt, EString, etc.
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value Type</em>' reference.
 	 * @see #setValueType(EDataType)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getLiteralExpression_ValueType()
-	 * @model ordered="false"
+	 * @model
 	 * @generated
 	 */
 	EDataType getValueType();
