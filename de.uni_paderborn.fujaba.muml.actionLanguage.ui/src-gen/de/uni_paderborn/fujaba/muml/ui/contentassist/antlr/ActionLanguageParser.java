@@ -43,7 +43,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBinaryLogicExpressionAccess().getAlternatives_0(), "rule__BinaryLogicExpression__Alternatives_0");
 					put(grammarAccess.getBinaryLogicExpressionAccess().getRightExpressionAlternatives_1_1_0(), "rule__BinaryLogicExpression__RightExpressionAlternatives_1_1_0");
 					put(grammarAccess.getLiteralExpressionAccess().getAlternatives(), "rule__LiteralExpression__Alternatives");
-					put(grammarAccess.getIdentifierOrValueAccess().getAlternatives(), "rule__IdentifierOrValue__Alternatives");
+					put(grammarAccess.getAttributeExpressionAccess().getAlternatives(), "rule__AttributeExpression__Alternatives");
 					put(grammarAccess.getAssignOperatorAccess().getAlternatives(), "rule__AssignOperator__Alternatives");
 					put(grammarAccess.getIncrementDecrementOperatorAccess().getAlternatives(), "rule__IncrementDecrementOperator__Alternatives");
 					put(grammarAccess.getLogicOperatorAccess().getAlternatives(), "rule__LogicOperator__Alternatives");
@@ -72,6 +72,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryExpressionAccess().getGroup(), "rule__UnaryExpression__Group__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup_0(), "rule__LiteralExpression__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup_1(), "rule__LiteralExpression__Group_1__0");
+					put(grammarAccess.getAttributeExpressionAccess().getGroup_1(), "rule__AttributeExpression__Group_1__0");
 					put(grammarAccess.getBlockAccess().getExpressionsAssignment_1(), "rule__Block__ExpressionsAssignment_1");
 					put(grammarAccess.getForLoopAccess().getInitalizeExpressionAssignment_2(), "rule__ForLoop__InitalizeExpressionAssignment_2");
 					put(grammarAccess.getForLoopAccess().getLoopTestAssignment_3(), "rule__ForLoop__LoopTestAssignment_3");
@@ -86,11 +87,11 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfStatementAccess().getElseIfConditionsAssignment_5_2(), "rule__IfStatement__ElseIfConditionsAssignment_5_2");
 					put(grammarAccess.getIfStatementAccess().getElseIfBlocksAssignment_5_4(), "rule__IfStatement__ElseIfBlocksAssignment_5_4");
 					put(grammarAccess.getIfStatementAccess().getElseBlockAssignment_6_1(), "rule__IfStatement__ElseBlockAssignment_6_1");
-					put(grammarAccess.getAssignmentAccess().getNameAssignment_0(), "rule__Assignment__NameAssignment_0");
+					put(grammarAccess.getAssignmentAccess().getAttributeAssignment_0(), "rule__Assignment__AttributeAssignment_0");
 					put(grammarAccess.getAssignmentAccess().getAssignOperatorAssignment_1_0_0(), "rule__Assignment__AssignOperatorAssignment_1_0_0");
 					put(grammarAccess.getAssignmentAccess().getAssignExpressionAssignment_1_0_1(), "rule__Assignment__AssignExpressionAssignment_1_0_1");
 					put(grammarAccess.getAssignmentAccess().getIncrementDecrementOperatorAssignment_1_1(), "rule__Assignment__IncrementDecrementOperatorAssignment_1_1");
-					put(grammarAccess.getForLoopCountingExpressionAccess().getNameAssignment_0(), "rule__ForLoopCountingExpression__NameAssignment_0");
+					put(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAssignment_0(), "rule__ForLoopCountingExpression__AttributeAssignment_0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getIncrementDecrementOperatorAssignment_1_0(), "rule__ForLoopCountingExpression__IncrementDecrementOperatorAssignment_1_0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAssignOperatorAssignment_1_1_0(), "rule__ForLoopCountingExpression__AssignOperatorAssignment_1_1_0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAssignExpressionAssignment_1_1_1(), "rule__ForLoopCountingExpression__AssignExpressionAssignment_1_1_1");
@@ -103,6 +104,8 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryExpressionAccess().getUnaryOperatorAssignment_1(), "rule__UnaryExpression__UnaryOperatorAssignment_1");
 					put(grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAssignment_2(), "rule__UnaryExpression__UnaryExpressionAssignment_2");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1_1(), "rule__LiteralExpression__ValueAssignment_1_1");
+					put(grammarAccess.getLiteralExpressionAccess().getValueTypeAssignment_1_3(), "rule__LiteralExpression__ValueTypeAssignment_1_3");
+					put(grammarAccess.getAttributeExpressionAccess().getAttributeAssignment_1_1(), "rule__AttributeExpression__AttributeAssignment_1_1");
 				}
 			};
 		}
