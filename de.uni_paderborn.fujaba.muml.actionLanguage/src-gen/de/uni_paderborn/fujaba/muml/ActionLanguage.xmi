@@ -10,6 +10,9 @@
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="modeling">
       <ePackage href="http://ns.storydriven.org/sdm/expressions/0.1.0#/"/>
     </metamodelDeclarations>
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="rtsc">
+      <ePackage href="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart#//model/realtimestatechart"/>
+    </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="expressions">
       <ePackage href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions"/>
     </metamodelDeclarations>
@@ -115,7 +118,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ExpressionStartRule">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
@@ -131,20 +134,25 @@
         <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//Assignment"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="/0/@metamodelDeclarations.1">
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </terminal>
         </elements>
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Assignment" feature="assignOperator" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="assignExpression" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="incrementDecrementOperator" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
@@ -155,16 +163,21 @@
         <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//Assignment"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="/0/@metamodelDeclarations.1">
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </terminal>
         </elements>
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Assignment" feature="incrementDecrementOperator" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
           </elements>
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Assignment" feature="assignOperator" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="assignExpression" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
@@ -174,13 +187,13 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Expression">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ArithmeticExpression">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
@@ -192,7 +205,7 @@
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="rightExpression" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
@@ -201,7 +214,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ComparisonExpression">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
@@ -214,7 +227,7 @@
               </type>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="rightExpression" operator="=">
@@ -224,13 +237,13 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="BinaryLogicExpression">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Group">
@@ -240,20 +253,20 @@
               </type>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="rightExpression" operator="=">
             <terminal xsi:type="xtext:Alternatives">
               <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
-              <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+              <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
             </terminal>
           </elements>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="UnaryExpression">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
@@ -263,15 +276,15 @@
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="unaryOperator" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="unaryExpression" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LiteralExpression">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
@@ -287,7 +300,39 @@
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="valueType" operator="=">
+            <terminal xsi:type="xtext:CrossReference">
+              <type metamodel="/0/@metamodelDeclarations.1">
+                <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
+              </type>
+              <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+            </terminal>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="AttributeExpression">
+      <type metamodel="/0/@metamodelDeclarations.4">
+        <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/expressions/0.1.0#//expressions/Expression"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AttributeExpression"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
+            <terminal xsi:type="xtext:CrossReference">
+              <type metamodel="/0/@metamodelDeclarations.1">
+                <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+              </type>
+              <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+            </terminal>
           </elements>
         </elements>
       </alternatives>
@@ -296,10 +341,7 @@
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
-      </alternatives>
+      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="AssignOperator">
       <type metamodel="/0/@metamodelDeclarations.0">

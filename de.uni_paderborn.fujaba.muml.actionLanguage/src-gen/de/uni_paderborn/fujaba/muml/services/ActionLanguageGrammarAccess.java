@@ -316,8 +316,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class AssignmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Assignment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cAttributeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cAttributeEAttributeCrossReference_0_0 = (CrossReference)cAttributeAssignment_0.eContents().get(0);
+		private final RuleCall cAttributeEAttributeIDTerminalRuleCall_0_0_1 = (RuleCall)cAttributeEAttributeCrossReference_0_0.eContents().get(1);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
 		private final Assignment cAssignOperatorAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
@@ -329,19 +330,22 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Assignment returns actionLanguage::Assignment:
-		//	name=ID (assignOperator=AssignOperator assignExpression=Expression |
+		//	attribute=[ecore::EAttribute] (assignOperator=AssignOperator assignExpression=Expression |
 		//	incrementDecrementOperator=IncrementDecrementOperator) ";";
 		public ParserRule getRule() { return rule; }
 
-		//name=ID (assignOperator=AssignOperator assignExpression=Expression |
+		//attribute=[ecore::EAttribute] (assignOperator=AssignOperator assignExpression=Expression |
 		//incrementDecrementOperator=IncrementDecrementOperator) ";"
 		public Group getGroup() { return cGroup; }
 
-		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//attribute=[ecore::EAttribute]
+		public Assignment getAttributeAssignment_0() { return cAttributeAssignment_0; }
+
+		//[ecore::EAttribute]
+		public CrossReference getAttributeEAttributeCrossReference_0_0() { return cAttributeEAttributeCrossReference_0_0; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getAttributeEAttributeIDTerminalRuleCall_0_0_1() { return cAttributeEAttributeIDTerminalRuleCall_0_0_1; }
 
 		//assignOperator=AssignOperator assignExpression=Expression | incrementDecrementOperator=IncrementDecrementOperator
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -374,8 +378,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class ForLoopCountingExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForLoopCountingExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cAttributeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cAttributeEAttributeCrossReference_0_0 = (CrossReference)cAttributeAssignment_0.eContents().get(0);
+		private final RuleCall cAttributeEAttributeIDTerminalRuleCall_0_0_1 = (RuleCall)cAttributeEAttributeCrossReference_0_0.eContents().get(1);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cIncrementDecrementOperatorAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0 = (RuleCall)cIncrementDecrementOperatorAssignment_1_0.eContents().get(0);
@@ -386,19 +391,22 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAssignExpressionExpressionParserRuleCall_1_1_1_0 = (RuleCall)cAssignExpressionAssignment_1_1_1.eContents().get(0);
 		
 		//ForLoopCountingExpression returns actionLanguage::Assignment:
-		//	name=ID (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
+		//	attribute=[ecore::EAttribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
 		//	assignExpression=Expression);
 		public ParserRule getRule() { return rule; }
 
-		//name=ID (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
+		//attribute=[ecore::EAttribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
 		//assignExpression=Expression)
 		public Group getGroup() { return cGroup; }
 
-		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//attribute=[ecore::EAttribute]
+		public Assignment getAttributeAssignment_0() { return cAttributeAssignment_0; }
+
+		//[ecore::EAttribute]
+		public CrossReference getAttributeEAttributeCrossReference_0_0() { return cAttributeEAttributeCrossReference_0_0; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getAttributeEAttributeIDTerminalRuleCall_0_0_1() { return cAttributeEAttributeIDTerminalRuleCall_0_0_1; }
 
 		//incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator assignExpression=Expression
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -532,7 +540,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final RuleCall cUnaryExpressionParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
-		private final RuleCall cLiteralExpressionParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final RuleCall cAttributeExpressionParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
 		private final Action cBinaryLogicExpressionLeftExpressionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
@@ -541,28 +549,28 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightExpressionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final Alternatives cRightExpressionAlternatives_1_1_0 = (Alternatives)cRightExpressionAssignment_1_1.eContents().get(0);
 		private final RuleCall cRightExpressionUnaryExpressionParserRuleCall_1_1_0_0 = (RuleCall)cRightExpressionAlternatives_1_1_0.eContents().get(0);
-		private final RuleCall cRightExpressionLiteralExpressionParserRuleCall_1_1_0_1 = (RuleCall)cRightExpressionAlternatives_1_1_0.eContents().get(1);
+		private final RuleCall cRightExpressionAttributeExpressionParserRuleCall_1_1_0_1 = (RuleCall)cRightExpressionAlternatives_1_1_0.eContents().get(1);
 		
 		//BinaryLogicExpression returns expressions::Expression:
-		//	(UnaryExpression | LiteralExpression) (({actionLanguage::BinaryLogicExpression.leftExpression=current}
-		//	operator=LogicOperator) rightExpression=(UnaryExpression | LiteralExpression))*;
+		//	(UnaryExpression | AttributeExpression) (({actionLanguage::BinaryLogicExpression.leftExpression=current}
+		//	operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*;
 		public ParserRule getRule() { return rule; }
 
-		//(UnaryExpression | LiteralExpression) (({actionLanguage::BinaryLogicExpression.leftExpression=current}
-		//operator=LogicOperator) rightExpression=(UnaryExpression | LiteralExpression))*
+		//(UnaryExpression | AttributeExpression) (({actionLanguage::BinaryLogicExpression.leftExpression=current}
+		//operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*
 		public Group getGroup() { return cGroup; }
 
-		//UnaryExpression | LiteralExpression
+		//UnaryExpression | AttributeExpression
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//UnaryExpression
 		public RuleCall getUnaryExpressionParserRuleCall_0_0() { return cUnaryExpressionParserRuleCall_0_0; }
 
-		//LiteralExpression
-		public RuleCall getLiteralExpressionParserRuleCall_0_1() { return cLiteralExpressionParserRuleCall_0_1; }
+		//AttributeExpression
+		public RuleCall getAttributeExpressionParserRuleCall_0_1() { return cAttributeExpressionParserRuleCall_0_1; }
 
 		//(({actionLanguage::BinaryLogicExpression.leftExpression=current} operator=LogicOperator)
-		//rightExpression=(UnaryExpression | LiteralExpression))*
+		//rightExpression=(UnaryExpression | AttributeExpression))*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{actionLanguage::BinaryLogicExpression.leftExpression=current} operator=LogicOperator
@@ -577,17 +585,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//LogicOperator
 		public RuleCall getOperatorLogicOperatorEnumRuleCall_1_0_1_0() { return cOperatorLogicOperatorEnumRuleCall_1_0_1_0; }
 
-		//rightExpression=(UnaryExpression | LiteralExpression)
+		//rightExpression=(UnaryExpression | AttributeExpression)
 		public Assignment getRightExpressionAssignment_1_1() { return cRightExpressionAssignment_1_1; }
 
-		//UnaryExpression | LiteralExpression
+		//UnaryExpression | AttributeExpression
 		public Alternatives getRightExpressionAlternatives_1_1_0() { return cRightExpressionAlternatives_1_1_0; }
 
 		//UnaryExpression
 		public RuleCall getRightExpressionUnaryExpressionParserRuleCall_1_1_0_0() { return cRightExpressionUnaryExpressionParserRuleCall_1_1_0_0; }
 
-		//LiteralExpression
-		public RuleCall getRightExpressionLiteralExpressionParserRuleCall_1_1_0_1() { return cRightExpressionLiteralExpressionParserRuleCall_1_1_0_1; }
+		//AttributeExpression
+		public RuleCall getRightExpressionAttributeExpressionParserRuleCall_1_1_0_1() { return cRightExpressionAttributeExpressionParserRuleCall_1_1_0_1; }
 	}
 
 	public class UnaryExpressionElements extends AbstractParserRuleElementFinder {
@@ -597,13 +605,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUnaryOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cUnaryOperatorUnaryOperatorEnumRuleCall_1_0 = (RuleCall)cUnaryOperatorAssignment_1.eContents().get(0);
 		private final Assignment cUnaryExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cUnaryExpressionLiteralExpressionParserRuleCall_2_0 = (RuleCall)cUnaryExpressionAssignment_2.eContents().get(0);
+		private final RuleCall cUnaryExpressionAttributeExpressionParserRuleCall_2_0 = (RuleCall)cUnaryExpressionAssignment_2.eContents().get(0);
 		
 		//UnaryExpression returns expressions::Expression:
-		//	{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator unaryExpression=LiteralExpression;
+		//	{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator unaryExpression=AttributeExpression;
 		public ParserRule getRule() { return rule; }
 
-		//{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator unaryExpression=LiteralExpression
+		//{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator unaryExpression=AttributeExpression
 		public Group getGroup() { return cGroup; }
 
 		//{actionLanguage::UnaryExpression}
@@ -615,11 +623,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//UnaryOperator
 		public RuleCall getUnaryOperatorUnaryOperatorEnumRuleCall_1_0() { return cUnaryOperatorUnaryOperatorEnumRuleCall_1_0; }
 
-		//unaryExpression=LiteralExpression
+		//unaryExpression=AttributeExpression
 		public Assignment getUnaryExpressionAssignment_2() { return cUnaryExpressionAssignment_2; }
 
-		//LiteralExpression
-		public RuleCall getUnaryExpressionLiteralExpressionParserRuleCall_2_0() { return cUnaryExpressionLiteralExpressionParserRuleCall_2_0; }
+		//AttributeExpression
+		public RuleCall getUnaryExpressionAttributeExpressionParserRuleCall_2_0() { return cUnaryExpressionAttributeExpressionParserRuleCall_2_0; }
 	}
 
 	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
@@ -633,14 +641,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cLiteralExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueIdentifierOrValueParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final Keyword cColonKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cValueTypeAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final CrossReference cValueTypeEDataTypeCrossReference_1_3_0 = (CrossReference)cValueTypeAssignment_1_3.eContents().get(0);
+		private final RuleCall cValueTypeEDataTypeIDTerminalRuleCall_1_3_0_1 = (RuleCall)cValueTypeEDataTypeCrossReference_1_3_0.eContents().get(1);
 		
 		//LiteralExpression returns expressions::Expression:
-		//	"(" Expression ")" | {actionLanguage::LiteralExpression} value= //(':'^valueType=EType)?
-		//	IdentifierOrValue;
+		//	"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType];
 		public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" | {actionLanguage::LiteralExpression} value= //(':'^valueType=EType)?
-		//IdentifierOrValue
+		//"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType]
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" Expression ")"
@@ -655,40 +665,77 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 
-		//{actionLanguage::LiteralExpression} value= //(':'^valueType=EType)?
-		//IdentifierOrValue
+		//{actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType]
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{actionLanguage::LiteralExpression}
 		public Action getLiteralExpressionAction_1_0() { return cLiteralExpressionAction_1_0; }
 
-		//value= //(':'^valueType=EType)?
-		//IdentifierOrValue
+		//value=IdentifierOrValue
 		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
 
-		////(':'^valueType=EType)?
 		//IdentifierOrValue
 		public RuleCall getValueIdentifierOrValueParserRuleCall_1_1_0() { return cValueIdentifierOrValueParserRuleCall_1_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_1_2() { return cColonKeyword_1_2; }
+
+		//valueType=[ecore::EDataType]
+		public Assignment getValueTypeAssignment_1_3() { return cValueTypeAssignment_1_3; }
+
+		//[ecore::EDataType]
+		public CrossReference getValueTypeEDataTypeCrossReference_1_3_0() { return cValueTypeEDataTypeCrossReference_1_3_0; }
+
+		//ID
+		public RuleCall getValueTypeEDataTypeIDTerminalRuleCall_1_3_0_1() { return cValueTypeEDataTypeIDTerminalRuleCall_1_3_0_1; }
+	}
+
+	public class AttributeExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cLiteralExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cAttributeExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cAttributeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cAttributeEAttributeCrossReference_1_1_0 = (CrossReference)cAttributeAssignment_1_1.eContents().get(0);
+		private final RuleCall cAttributeEAttributeIDTerminalRuleCall_1_1_0_1 = (RuleCall)cAttributeEAttributeCrossReference_1_1_0.eContents().get(1);
+		
+		//AttributeExpression returns expressions::Expression:
+		//	LiteralExpression | {actionLanguage::AttributeExpression} attribute=[ecore::EAttribute];
+		public ParserRule getRule() { return rule; }
+
+		//LiteralExpression | {actionLanguage::AttributeExpression} attribute=[ecore::EAttribute]
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//LiteralExpression
+		public RuleCall getLiteralExpressionParserRuleCall_0() { return cLiteralExpressionParserRuleCall_0; }
+
+		//{actionLanguage::AttributeExpression} attribute=[ecore::EAttribute]
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{actionLanguage::AttributeExpression}
+		public Action getAttributeExpressionAction_1_0() { return cAttributeExpressionAction_1_0; }
+
+		//attribute=[ecore::EAttribute]
+		public Assignment getAttributeAssignment_1_1() { return cAttributeAssignment_1_1; }
+
+		//[ecore::EAttribute]
+		public CrossReference getAttributeEAttributeCrossReference_1_1_0() { return cAttributeEAttributeCrossReference_1_1_0; }
+
+		//ID
+		public RuleCall getAttributeEAttributeIDTerminalRuleCall_1_1_0_1() { return cAttributeEAttributeIDTerminalRuleCall_1_1_0_1; }
 	}
 
 	public class IdentifierOrValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IdentifierOrValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cNUMBERTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cNUMBERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//IdentifierOrValue returns ecore::EString:
-		//	ID | NUMBER;
+		//	NUMBER;
 		public ParserRule getRule() { return rule; }
 
-		//ID | NUMBER
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-
 		//NUMBER
-		public RuleCall getNUMBERTerminalRuleCall_1() { return cNUMBERTerminalRuleCall_1; }
+		public RuleCall getNUMBERTerminalRuleCall() { return cNUMBERTerminalRuleCall; }
 	}
 	
 	
@@ -1018,6 +1065,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private BinaryLogicExpressionElements pBinaryLogicExpression;
 	private UnaryExpressionElements pUnaryExpression;
 	private LiteralExpressionElements pLiteralExpression;
+	private AttributeExpressionElements pAttributeExpression;
 	private IdentifierOrValueElements pIdentifierOrValue;
 	private AssignOperatorElements unknownRuleAssignOperator;
 	private IncrementDecrementOperatorElements unknownRuleIncrementDecrementOperator;
@@ -1111,7 +1159,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Assignment returns actionLanguage::Assignment:
-	//	name=ID (assignOperator=AssignOperator assignExpression=Expression |
+	//	attribute=[ecore::EAttribute] (assignOperator=AssignOperator assignExpression=Expression |
 	//	incrementDecrementOperator=IncrementDecrementOperator) ";";
 	public AssignmentElements getAssignmentAccess() {
 		return (pAssignment != null) ? pAssignment : (pAssignment = new AssignmentElements());
@@ -1122,7 +1170,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ForLoopCountingExpression returns actionLanguage::Assignment:
-	//	name=ID (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
+	//	attribute=[ecore::EAttribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
 	//	assignExpression=Expression);
 	public ForLoopCountingExpressionElements getForLoopCountingExpressionAccess() {
 		return (pForLoopCountingExpression != null) ? pForLoopCountingExpression : (pForLoopCountingExpression = new ForLoopCountingExpressionElements());
@@ -1165,8 +1213,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BinaryLogicExpression returns expressions::Expression:
-	//	(UnaryExpression | LiteralExpression) (({actionLanguage::BinaryLogicExpression.leftExpression=current}
-	//	operator=LogicOperator) rightExpression=(UnaryExpression | LiteralExpression))*;
+	//	(UnaryExpression | AttributeExpression) (({actionLanguage::BinaryLogicExpression.leftExpression=current}
+	//	operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*;
 	public BinaryLogicExpressionElements getBinaryLogicExpressionAccess() {
 		return (pBinaryLogicExpression != null) ? pBinaryLogicExpression : (pBinaryLogicExpression = new BinaryLogicExpressionElements());
 	}
@@ -1176,7 +1224,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UnaryExpression returns expressions::Expression:
-	//	{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator unaryExpression=LiteralExpression;
+	//	{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator unaryExpression=AttributeExpression;
 	public UnaryExpressionElements getUnaryExpressionAccess() {
 		return (pUnaryExpression != null) ? pUnaryExpression : (pUnaryExpression = new UnaryExpressionElements());
 	}
@@ -1186,8 +1234,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LiteralExpression returns expressions::Expression:
-	//	"(" Expression ")" | {actionLanguage::LiteralExpression} value= //(':'^valueType=EType)?
-	//	IdentifierOrValue;
+	//	"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType];
 	public LiteralExpressionElements getLiteralExpressionAccess() {
 		return (pLiteralExpression != null) ? pLiteralExpression : (pLiteralExpression = new LiteralExpressionElements());
 	}
@@ -1196,8 +1243,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getLiteralExpressionAccess().getRule();
 	}
 
+	//AttributeExpression returns expressions::Expression:
+	//	LiteralExpression | {actionLanguage::AttributeExpression} attribute=[ecore::EAttribute];
+	public AttributeExpressionElements getAttributeExpressionAccess() {
+		return (pAttributeExpression != null) ? pAttributeExpression : (pAttributeExpression = new AttributeExpressionElements());
+	}
+	
+	public ParserRule getAttributeExpressionRule() {
+		return getAttributeExpressionAccess().getRule();
+	}
+
 	//IdentifierOrValue returns ecore::EString:
-	//	ID | NUMBER;
+	//	NUMBER;
 	public IdentifierOrValueElements getIdentifierOrValueAccess() {
 		return (pIdentifierOrValue != null) ? pIdentifierOrValue : (pIdentifierOrValue = new IdentifierOrValueElements());
 	}
