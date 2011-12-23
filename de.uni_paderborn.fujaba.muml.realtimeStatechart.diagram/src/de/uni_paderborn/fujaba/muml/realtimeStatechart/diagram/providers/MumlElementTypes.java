@@ -52,12 +52,10 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType RealtimeStatechart_2004 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.RealtimeStatechart_2004"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType State_3010 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_3010"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -86,7 +84,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType RealtimeStatechart_3011 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.RealtimeStatechart_3011"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -103,7 +100,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ExitPoint_3013 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitPoint_3013"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */

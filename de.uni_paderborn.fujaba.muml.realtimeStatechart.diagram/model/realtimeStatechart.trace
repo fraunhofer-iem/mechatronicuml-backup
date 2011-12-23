@@ -31,6 +31,7 @@
     <compartmentTraces visualID="7011" queryText="true"/>
     <compartmentTraces visualID="7012" queryText="true"/>
     <compartmentTraces visualID="7015" queryText="true"/>
+    <compartmentTraces visualID="7016" queryText="true"/>
   </childNodeTraces>
   <childNodeTraces visualID="3011" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'RealtimeStatechart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'Region') and _containmentMF_.name = 'statechartDerived')">
     <compartmentTraces visualID="7013" queryText="true"/>

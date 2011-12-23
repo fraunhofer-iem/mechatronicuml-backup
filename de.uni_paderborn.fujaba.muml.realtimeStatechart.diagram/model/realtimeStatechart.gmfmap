@@ -147,7 +147,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.3">
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/invariants"/>
             <ownedChild>
@@ -347,9 +347,9 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2">
+              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2">
             <compartment
-                href="realtimeStatechart.gmfgraph#CompoundCompartment"/>
+                href="realtimeStatechart.gmfgraph#ActionCompartment"/>
           </compartments>
           <compartments
               children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5">
@@ -360,6 +360,11 @@
               children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.4">
             <compartment
                 href="realtimeStatechart.gmfgraph#ChannelCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.3">
+            <compartment
+                href="realtimeStatechart.gmfgraph#InvariantCompartment"/>
           </compartments>
         </ownedChild>
       </children>

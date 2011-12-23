@@ -248,16 +248,24 @@
               </children>
               <children
                   xsi:type="gmfgraph:Rectangle"
+                  name="InvariantCompartment"
+                  outline="false">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    horizontalAlignment="FILL"/>
+              </children>
+              <children
+                  xsi:type="gmfgraph:Rectangle"
                   name="ChannelCompartment"
                   outline="false">
                 <layoutData
                     xsi:type="gmfgraph:GridLayoutData"
-                    verticalAlignment="FILL"
-                    horizontalAlignment="BEGINNING"/>
+                    grabExcessHorizontalSpace="true"
+                    horizontalAlignment="FILL"/>
               </children>
               <children
                   xsi:type="gmfgraph:Rectangle"
-                  name="CompoundCompartment"
+                  name="ActionCompartment"
                   outline="false">
                 <layoutData
                     xsi:type="gmfgraph:GridLayoutData"
@@ -283,11 +291,11 @@
           accessor="getFigureStateNameLabel"
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.0"/>
       <accessors
-          accessor="getFigureCompoundCompartment"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.2"/>
+          accessor="getFigureActionCompartment"
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.3"/>
       <accessors
           accessor="getFigureRegionsCompartment"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.3"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.4"/>
       <accessors
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1"/>
       <accessors
@@ -301,6 +309,10 @@
       <accessors
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
       <accessors
+          accessor="getFigureChannelCompartment"
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.2"/>
+      <accessors
+          accessor="getFigureInvariantCompartment"
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.1"/>
     </descriptors>
     <descriptors
@@ -532,7 +544,7 @@
         xsi:type="gmfgraph:LabelOffsetFacet"/>
   </connections>
   <compartments
-      name="CompoundCompartment"
+      name="ActionCompartment"
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.4/@accessors.1"/>
   <compartments
@@ -551,6 +563,10 @@
       name="ChannelCompartment"
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.4/@accessors.9"/>
+  <compartments
+      name="InvariantCompartment"
+      figure="StateFigure"
+      accessor="//@figures.0/@descriptors.4/@accessors.10"/>
   <labels
       name="TransitionLabel"
       figure="TransitionFigure"

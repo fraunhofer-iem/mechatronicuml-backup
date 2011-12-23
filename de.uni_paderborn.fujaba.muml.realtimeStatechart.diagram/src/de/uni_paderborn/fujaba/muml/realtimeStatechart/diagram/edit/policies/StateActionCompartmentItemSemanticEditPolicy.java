@@ -6,14 +6,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 /**
  * @generated
  */
-public class StateCompoundCompartmentItemSemanticEditPolicy
+public class StateActionCompartmentItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public StateCompoundCompartmentItemSemanticEditPolicy() {
+	public StateActionCompartmentItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3010);
 	}

@@ -413,7 +413,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart.VISUAL_ID),
+						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID),
 				false, false, true, true);
 		createCompartment(
 				node,
@@ -424,6 +424,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID),
+				false, false, true, true);
+		createCompartment(
+				node,
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID),
 				false, false, true, true);
 		return node;
 	}

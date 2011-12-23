@@ -18,8 +18,8 @@ import org.eclipse.gmf.runtime.notation.SortingStyle;
 import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts.CustomStateCompoundCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts.CustomStateActionCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateActionCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlViewProvider;
 
@@ -40,7 +40,7 @@ public class CustomRealtimestatechartViewProvider extends MumlViewProvider {
 	}
 
 	private static final String STATE_COMPOUND_COMPARTMENT_TYPE = MumlVisualIDRegistry
-			.getType(StateCompoundCompartmentEditPart.VISUAL_ID);
+			.getType(StateActionCompartmentEditPart.VISUAL_ID);
 
 	@Override
 	public Node createState_3010(EObject domainElement, View containerView,
@@ -76,7 +76,7 @@ public class CustomRealtimestatechartViewProvider extends MumlViewProvider {
 		style.setSorting(Sorting.AUTOMATIC_LITERAL);
 		Map<String, SortingDirection> sortingKeys = new HashMap<String, SortingDirection>();
 		sortingKeys.put(
-				CustomStateCompoundCompartmentEditPart.DEFAULT_SORTING_KEY,
+				CustomStateActionCompartmentEditPart.DEFAULT_SORTING_KEY,
 				SortingDirection.ASCENDING_LITERAL);
 		style.setSortingKeys(sortingKeys);
 	}

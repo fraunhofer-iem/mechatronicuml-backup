@@ -26,7 +26,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StateCompoundCompartmentCanonicalEditPolicy extends
+public class StateActionCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
 
 	/**

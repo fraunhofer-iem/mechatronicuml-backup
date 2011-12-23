@@ -13,17 +13,17 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StateRegionCompartmentEditPart extends ListCompartmentEditPart {
+public class StateActionCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7012;
+	public static final int VISUAL_ID = 7011;
 
 	/**
 	 * @generated
 	 */
-	public StateRegionCompartmentEditPart(View view) {
+	public StateActionCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -38,7 +38,7 @@ public class StateRegionCompartmentEditPart extends ListCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.StateRegionCompartmentEditPart_title;
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.StateActionCompartmentEditPart_title;
 	}
 
 	/**
@@ -58,14 +58,14 @@ public class StateRegionCompartmentEditPart extends ListCompartmentEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateRegionCompartmentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateActionCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateRegionCompartmentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateActionCompartmentCanonicalEditPolicy());
 	}
 
 	/**

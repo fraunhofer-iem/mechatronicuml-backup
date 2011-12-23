@@ -10,14 +10,14 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateActionCompartmentEditPart;
 
-public class CustomStateCompoundCompartmentEditPart extends
-		StateCompoundCompartmentEditPart {
+public class CustomStateActionCompartmentEditPart extends
+		StateActionCompartmentEditPart {
 
 	public static final String DEFAULT_SORTING_KEY = "default_sorting_key";
 
-	public CustomStateCompoundCompartmentEditPart(View view) {
+	public CustomStateActionCompartmentEditPart(View view) {
 		super(view);
 	}
 

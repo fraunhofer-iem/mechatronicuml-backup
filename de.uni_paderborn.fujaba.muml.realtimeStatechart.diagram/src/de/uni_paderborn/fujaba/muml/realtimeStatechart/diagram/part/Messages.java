@@ -398,7 +398,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StateCompoundCompartmentEditPart_title;
+	public static String StateActionCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -409,6 +409,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String StateChannelCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StateInvariantCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -424,6 +429,51 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateEntryPoint_3014_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateEntryPoint_3014_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ModelElementCategory_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_State_3010_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_State_3010_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3012_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Transition_4001_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Transition_4001_source;
 
 	/**
 	 * @generated
@@ -444,51 +494,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ExitPoint_3013_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_EntryPoint_3012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_EntryPoint_3012_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ModelElementCategory_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4001_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4001_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateEntryPoint_3014_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateEntryPoint_3014_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_3010_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_3010_outgoinglinks;
 
 	/**
 	 * @generated

@@ -26,13 +26,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StateCompoundCompartmentCanonicalEditPolicy extends
+public class StateInvariantCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
-
-	/**
-	 * @generated
-	 */
-	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	/**
 	 * @generated
@@ -49,20 +44,9 @@ public class StateCompoundCompartmentCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Set getFeaturesToSynchronize() {
-		if (myFeaturesToSynchronize == null) {
-			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getState_EntryEvent());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getState_DoEvent());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getState_ExitEvent());
-		}
-		return myFeaturesToSynchronize;
+	protected EStructuralFeature getFeatureToSynchronize() {
+		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_Invariants();
 	}
 
 	/**
@@ -92,7 +76,7 @@ public class StateCompoundCompartmentCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID;
 				if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
 					result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
@@ -106,7 +90,7 @@ public class StateCompoundCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getStateActionCompartment_7011SemanticChildren(viewObject);
+				.getStateInvariantCompartment_7016SemanticChildren(viewObject);
 
 	}
 
@@ -123,11 +107,8 @@ public class StateCompoundCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
-		return visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID;
 	}
 
 	/**
