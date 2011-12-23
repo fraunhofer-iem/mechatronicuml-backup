@@ -60,6 +60,9 @@ public class RoleCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern owner = (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) getElementToEdit();
 		owner.getRoles().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers
+				.getInstance().init_Role_3002(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

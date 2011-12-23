@@ -165,6 +165,57 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_Role_3002(
+			de.uni_paderborn.fujaba.muml.model.pattern.Role instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							12,
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getRole(), null).evaluate(instance);
+			instance.setName((String) value_0);
+			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createCardinality();
+			instance.setCardinality(newInstance_1_0);
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_1_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_1_0.setLowerBound(newInstance_1_0_0_0);
+			Object value_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							13,
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_1_0_0_0);
+
+			value_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
+					.performCast(value_1_0_0_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_1_0_0_0.setValue(((Long) value_1_0_0_0_0).longValue());
+
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_1_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_1_0.setUpperBound(newInstance_1_0_1_0);
+			Object value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							14,
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_1_0_1_0);
+
+			value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
+					.performCast(value_1_0_1_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_1_0_1_0.setValue(((Long) value_1_0_1_0_0).longValue());
+
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getElementInitializers();

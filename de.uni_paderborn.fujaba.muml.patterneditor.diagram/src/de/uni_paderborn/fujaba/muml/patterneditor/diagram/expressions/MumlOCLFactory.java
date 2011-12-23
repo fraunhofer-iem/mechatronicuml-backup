@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression[13];
+		this.expressions = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression[16];
 	}
 
 	/**
@@ -62,6 +62,9 @@ public class MumlOCLFactory {
 					"false", //$NON-NLS-1$
 					"self.coordinationPattern.roles->first()", //$NON-NLS-1$
 					"self.coordinationPattern.roles->last()", //$NON-NLS-1$
+					"\'role\'", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
 					"self.coordinationPattern = oppositeEnd.coordinationPattern", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

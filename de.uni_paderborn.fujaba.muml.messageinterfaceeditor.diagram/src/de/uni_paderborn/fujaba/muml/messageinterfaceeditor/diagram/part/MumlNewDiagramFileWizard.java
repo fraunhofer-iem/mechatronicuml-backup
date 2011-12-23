@@ -194,27 +194,6 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		/**
 		 * @generated
 		 */
-		@Override
-		public void createControl(Composite parent) {
-			super.createControl(parent);
-			getModelViewer().addFilter(new ViewerFilter() {
-
-				@Override
-				public boolean select(Viewer viewer, Object parentElement,
-						Object element) {
-					//					if (element instanceof de.fujaba.modelinstance.ModelElementCategory) {
-					//						de.fujaba.modelinstance.ModelElementCategory category = (de.fujaba.modelinstance.ModelElementCategory) element;
-					//						return getModelElementCategoryKey().equals(category.getKey());
-					//					}
-					return true;
-				}
-
-			});
-		}
-
-		/**
-		 * @generated
-		 */
 		protected boolean validatePage() {
 			if (selectedModelElement == null) {
 				setErrorMessage(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);

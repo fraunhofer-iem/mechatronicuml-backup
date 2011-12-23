@@ -388,7 +388,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE.getRole()); //$NON-NLS-1$
 					Object targetVal = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									12,
+									15,
 									de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
 											.getRole(), env).evaluate(
 									target,
