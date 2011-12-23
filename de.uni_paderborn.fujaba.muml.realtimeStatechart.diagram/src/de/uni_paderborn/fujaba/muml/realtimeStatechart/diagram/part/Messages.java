@@ -323,72 +323,62 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ClockConstraint1CreationTool_title;
+	public static String EntryAction1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ClockConstraint1CreationTool_desc;
+	public static String EntryAction1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String EntryAction2CreationTool_title;
+	public static String DoAction2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String EntryAction2CreationTool_desc;
+	public static String DoAction2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DoAction3CreationTool_title;
+	public static String ExitAction3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DoAction3CreationTool_desc;
+	public static String ExitAction3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ExitAction4CreationTool_title;
+	public static String Region4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ExitAction4CreationTool_desc;
+	public static String Region4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Region5CreationTool_title;
+	public static String StateEntryPoint5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Region5CreationTool_desc;
+	public static String StateEntryPoint5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StateEntryPoint6CreationTool_title;
+	public static String StateExitPoint6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateEntryPoint6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String StateExitPoint7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String StateExitPoint7CreationTool_desc;
+	public static String StateExitPoint6CreationTool_desc;
 
 	/**
 	 * @generated

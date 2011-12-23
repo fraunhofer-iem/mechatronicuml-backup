@@ -61,15 +61,6 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Clock Constraint"
-          description="Creates a new Clock Constraint">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icon/clock2.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Entry Action"
           description="Creates an EntryAction">
         <smallIcon

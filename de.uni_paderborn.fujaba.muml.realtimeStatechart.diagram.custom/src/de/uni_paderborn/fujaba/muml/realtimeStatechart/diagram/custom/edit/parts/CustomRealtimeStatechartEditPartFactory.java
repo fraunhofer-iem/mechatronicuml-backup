@@ -17,6 +17,7 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateC
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart;
@@ -56,6 +57,8 @@ public class CustomRealtimeStatechartEditPartFactory extends
 				return new CustomStateRegionCompartmentEditPart(view);
 			case StateChannelCompartmentEditPart.VISUAL_ID:
 				return new CustomStateChannelCompartmentEditPart(view);
+			case StateInvariantCompartmentEditPart.VISUAL_ID:
+				return new CustomStateInvariantCompartmentEditPart(view);
 			case StateEntryPointEditPart.VISUAL_ID:
 				return new CustomStateEntryPointEditPart(view);
 			case StateExitPointEditPart.VISUAL_ID:
@@ -65,9 +68,11 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
 				return new CustomRegionRegionContentsCompartmentEditPart(view);
 			case RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
-				return new CustomRealtimeStatechartStatechartContentsCompartmentEditPart(view);
+				return new CustomRealtimeStatechartStatechartContentsCompartmentEditPart(
+						view);
 			case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
-				return new CustomRealtimeStatechartStatechartContentsCompartment2EditPart(view);
+				return new CustomRealtimeStatechartStatechartContentsCompartment2EditPart(
+						view);
 			case WrappingLabel6EditPart.VISUAL_ID:
 				return new CustomWrappingLabel6EditPart(view);
 			default:

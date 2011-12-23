@@ -1795,7 +1795,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getState_Events(), 
 		   source, 
 		   new String[] {
-			 "derivation", "(entryEvent.oclAsType(StateEvent) -> asSet() -> union(exitEvent.oclAsType(StateEvent) -> asSet())) -> union(doEvent.oclAsType(StateEvent) -> asSet())"
+			 "derivation", "Set { entryEvent, exitEvent, doEvent }"
 		   });				
 		addAnnotation
 		  (getState_Simple(), 

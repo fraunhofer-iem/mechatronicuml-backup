@@ -78,7 +78,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.0"/>
               <diagramNode
                   href="realtimeStatechart.gmfgraph#StateItem"/>
             </ownedChild>
@@ -119,7 +119,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.2"/>
+                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.1"/>
               <diagramNode
                   href="realtimeStatechart.gmfgraph#StateItem"/>
             </ownedChild>
@@ -141,7 +141,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.3"/>
+                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.2"/>
               <diagramNode
                   href="realtimeStatechart.gmfgraph#StateItem"/>
             </ownedChild>
@@ -159,11 +159,8 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="(&#xA;&#x9;if self.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.clock.name&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.operator.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;} in array->any(t | t.d = self.operator).s&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.bound.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.bound.toString()&#xA;&#x9;endif&#xA;)"/>
+                    body="(&#xA;if self.eContainer().oclAsType(State).invariants->first() = self then&#xA;&#x9;'inv: '&#xA;else&#xA;&#x9;''&#xA;endif&#xA;).concat(&#xA;&#xA;-- BEGIN: The actual name of the Invariant&#xA;&#xA;&#x9;if self.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.clock.name&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.operator.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;} in array->any(t | t.d = self.operator).s&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.bound.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.bound.toString()&#xA;&#x9;endif&#xA;&#xA;-- END: The actual name of the invariant&#xA;&#xA;).concat(&#xA;if self.eContainer().oclAsType(State).invariants->last() = self then&#xA;&#x9;';'&#xA;else&#xA;&#x9;','&#xA;endif&#xA;)&#xA;&#xA;"/>
               </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.0"/>
               <diagramNode
                   href="realtimeStatechart.gmfgraph#StateItem"/>
             </ownedChild>
@@ -192,7 +189,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="(&#xA;if self.state.channels->first() = self then&#xA;&#x9;'ch: '&#xA;else&#xA;&#x9;''&#xA;endif&#xA;).concat(&#xA;if self.name.oclIsUndefined() then 'null' else self.name endif).concat(&#xA;&#x9;'('.concat(&#xA;&#x9;&#x9;self.containedParameters->iterate(param; result : String = '' | &#xA;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;param.name.concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if param.eType.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(')')&#xA;).concat(&#xA;if self.state.channels->last() = self then&#xA;&#x9;';'&#xA;else&#xA;&#x9;','&#xA;endif&#xA;)"/>
+                    body="(&#xA;if self.state.channels->first() = self then&#xA;&#x9;'ch: '&#xA;else&#xA;&#x9;''&#xA;endif&#xA;).concat(&#xA;&#xA;-- BEGIN: The actual name of the Clock&#xA;&#xA;if self.name.oclIsUndefined() then 'null' else self.name endif).concat(&#xA;&#x9;'('.concat(&#xA;&#x9;&#x9;self.containedParameters->iterate(param; result : String = '' | &#xA;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;param.name.concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if param.eType.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(')')&#xA;&#xA;-- END: The actual name of the Clock&#xA;&#xA;).concat(&#xA;if self.state.channels->last() = self then&#xA;&#x9;';'&#xA;else&#xA;&#x9;','&#xA;endif&#xA;)"/>
               </labelMappings>
               <diagramNode
                   href="realtimeStatechart.gmfgraph#StateItem"/>
@@ -251,7 +248,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.4"/>
+                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.3"/>
               <diagramNode
                   href="realtimeStatechart.gmfgraph#Region"/>
               <children
@@ -310,7 +307,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.5"/>
+                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.4"/>
               <diagramNode
                   href="realtimeStatechart.gmfgraph#EntryPoint"/>
             </ownedChild>
@@ -341,7 +338,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.6"/>
+                  href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.5"/>
               <diagramNode
                   href="realtimeStatechart.gmfgraph#ExitPoint"/>
             </ownedChild>

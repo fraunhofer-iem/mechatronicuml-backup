@@ -62,12 +62,105 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDoEventPropertyDescriptor(object);
+			addExitEventPropertyDescriptor(object);
+			addEntryEventPropertyDescriptor(object);
+			addInvariantsPropertyDescriptor(object);
 			addInitialPropertyDescriptor(object);
 			addFinalPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
+			addChannelsPropertyDescriptor(object);
 			addSimplePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Do Event feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDoEventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_doEvent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_doEvent_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__DO_EVENT,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Exit Event feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExitEventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_exitEvent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_exitEvent_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__EXIT_EVENT,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Entry Event feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntryEventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_entryEvent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_entryEvent_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__ENTRY_EVENT,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Invariants feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInvariantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_invariants_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_invariants_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__INVARIANTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -132,6 +225,28 @@ public class StateItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Channels feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addChannelsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_channels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_channels_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__CHANNELS,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
