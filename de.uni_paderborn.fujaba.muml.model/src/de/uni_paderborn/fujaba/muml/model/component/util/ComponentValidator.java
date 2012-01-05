@@ -676,8 +676,8 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY__NO_SELF_ASSEMBLIES_FOR_SINGLE_PORTS__EEXPRESSION = "self.fromPort.cardinality.upperBound <= 1\n" +
-		"implies\n" +
+	protected static final String ASSEMBLY__NO_SELF_ASSEMBLIES_FOR_SINGLE_PORTS__EEXPRESSION = "self.fromPort.cardinality.upperBound.value <= 1\r\n" +
+		"implies\r\n" +
 		"self.fromPort <> self.toPort";
 
 	/**
