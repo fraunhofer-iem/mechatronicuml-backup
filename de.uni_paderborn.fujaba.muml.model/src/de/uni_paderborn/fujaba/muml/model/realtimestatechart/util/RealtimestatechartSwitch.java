@@ -153,8 +153,8 @@ public class RealtimestatechartSwitch<T> {
 			case RealtimestatechartPackage.REGION: {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
-				if (result == null) result = casePrioritizable(region);
 				if (result == null) result = caseNamedElement(region);
+				if (result == null) result = casePrioritizable(region);
 				if (result == null) result = caseExtendableElement(region);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -179,8 +179,8 @@ public class RealtimestatechartSwitch<T> {
 			case RealtimestatechartPackage.TRANSITION: {
 				Transition transition = (Transition)theEObject;
 				T result = caseTransition(transition);
-				if (result == null) result = casePrioritizable(transition);
 				if (result == null) result = caseExtendableElement(transition);
+				if (result == null) result = casePrioritizable(transition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

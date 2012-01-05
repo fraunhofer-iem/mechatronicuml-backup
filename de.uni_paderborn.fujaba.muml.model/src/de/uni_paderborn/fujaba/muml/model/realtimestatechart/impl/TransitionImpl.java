@@ -29,11 +29,13 @@ import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.expressions.Expression;
 
+import org.storydriven.modeling.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
@@ -52,8 +54,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchronization <em>Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSource <em>Source</em>}</li>
@@ -73,29 +74,29 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *
  * @generated
  */
-public class TransitionImpl extends PrioritizableImpl implements Transition {
+public class TransitionImpl extends ExtendableElementImpl implements Transition {
+	/**
+	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PRIORITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected int priority = PRIORITY_EDEFAULT;
+
 	// TODO: Why is this not generated?
 	protected static final SynchronizationKind SYNCHRONIZATION_CHANNEL_KIND_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EAnnotation> annotations;
-
-	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExtensions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Extension> extensions;
 
 	/**
 	 * The cached value of the '{@link #getSynchronization() <em>Synchronization</em>}' containment reference.
@@ -261,11 +262,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, RealtimestatechartPackage.TRANSITION__ANNOTATION);
-		}
-		return annotations;
+	public int getPriority() {
+		return priority;
 	}
 
 	/**
@@ -273,11 +271,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartPackage.TRANSITION__EXTENSION, SDMPackage.EXTENSION__EXTENDABLE_BASE);
-		}
-		return extensions;
+	public void setPriority(int newPriority) {
+		int oldPriority = priority;
+		priority = newPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__PRIORITY, oldPriority, priority));
 	}
 
 	/**
@@ -776,56 +774,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extension getExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Extension provideExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation provideAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				if (target != null)
 					msgs = ((InternalEObject)target).eInverseRemove(this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS, Vertex.class, msgs);
@@ -850,10 +802,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
-				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return basicSetSynchronization(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__TARGET:
@@ -900,10 +848,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
-				return getAnnotations();
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
-				return getExtensions();
+			case RealtimestatechartPackage.TRANSITION__PRIORITY:
+				return getPriority();
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return getSynchronization();
 			case RealtimestatechartPackage.TRANSITION__TARGET:
@@ -949,13 +895,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
-				getExtensions().clear();
-				getExtensions().addAll((Collection<? extends Extension>)newValue);
+			case RealtimestatechartPackage.TRANSITION__PRIORITY:
+				setPriority((Integer)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				setSynchronization((Synchronization)newValue);
@@ -1009,11 +950,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
-				getAnnotations().clear();
-				return;
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
-				getExtensions().clear();
+			case RealtimestatechartPackage.TRANSITION__PRIORITY:
+				setPriority(PRIORITY_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				setSynchronization((Synchronization)null);
@@ -1063,10 +1001,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
-				return annotations != null && !annotations.isEmpty();
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
-				return extensions != null && !extensions.isEmpty();
+			case RealtimestatechartPackage.TRANSITION__PRIORITY:
+				return priority != PRIORITY_EDEFAULT;
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return synchronization != null;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
@@ -1106,15 +1042,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
+		if (baseClass == Prioritizable.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.TRANSITION__ANNOTATION: return SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case RealtimestatechartPackage.TRANSITION__EXTENSION: return SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+				case RealtimestatechartPackage.TRANSITION__PRIORITY: return RealtimestatechartPackage.PRIORITIZABLE__PRIORITY;
 				default: return -1;
 			}
 		}
@@ -1128,15 +1058,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
+		if (baseClass == Prioritizable.class) {
 			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (baseFeatureID) {
-				case SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION: return RealtimestatechartPackage.TRANSITION__ANNOTATION;
-				case SDMPackage.EXTENDABLE_ELEMENT__EXTENSION: return RealtimestatechartPackage.TRANSITION__EXTENSION;
+				case RealtimestatechartPackage.PRIORITIZABLE__PRIORITY: return RealtimestatechartPackage.TRANSITION__PRIORITY;
 				default: return -1;
 			}
 		}
@@ -1153,7 +1077,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (blockable: ");
+		result.append(" (priority: ");
+		result.append(priority);
+		result.append(", blockable: ");
 		result.append(blockable);
 		result.append(')');
 		return result.toString();

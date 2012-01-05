@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import java.util.Collection;
 
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.modeling.impl.NamedElementImpl;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.NamedElement;
@@ -43,9 +45,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getExtensions <em>Extension</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getParentState <em>Parent State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getVertices <em>Vertices</em>}</li>
@@ -56,46 +56,26 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *
  * @generated
  */
-public class RegionImpl extends PrioritizableImpl implements Region {
+public class RegionImpl extends NamedElementImpl implements Region {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
+	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
+	 * @see #getPriority()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EAnnotation> annotations;
+	protected static final int PRIORITY_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
+	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExtensions()
+	 * @see #getPriority()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Extension> extensions;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+	protected int priority = PRIORITY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' reference.
@@ -171,11 +151,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, RealtimestatechartPackage.REGION__ANNOTATION);
-		}
-		return annotations;
+	public int getPriority() {
+		return priority;
 	}
 
 	/**
@@ -183,32 +160,11 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartPackage.REGION__EXTENSION, SDMPackage.EXTENSION__EXTENDABLE_BASE);
-		}
-		return extensions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setPriority(int newPriority) {
+		int oldPriority = priority;
+		priority = newPriority;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__PRIORITY, oldPriority, priority));
 	}
 
 	/**
@@ -377,56 +333,10 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extension getExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Extension provideExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation provideAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__EXTENSION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.REGION__STATECHART:
 				if (statechart != null)
 					msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
@@ -447,10 +357,6 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__ANNOTATION:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.REGION__EXTENSION:
-				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REGION__STATECHART:
 				return basicSetStatechart(null, msgs);
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
@@ -487,12 +393,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__ANNOTATION:
-				return getAnnotations();
-			case RealtimestatechartPackage.REGION__EXTENSION:
-				return getExtensions();
-			case RealtimestatechartPackage.REGION__NAME:
-				return getName();
+			case RealtimestatechartPackage.REGION__PRIORITY:
+				return getPriority();
 			case RealtimestatechartPackage.REGION__STATECHART:
 				if (resolve) return getStatechart();
 				return basicGetStatechart();
@@ -517,16 +419,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__ANNOTATION:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case RealtimestatechartPackage.REGION__EXTENSION:
-				getExtensions().clear();
-				getExtensions().addAll((Collection<? extends Extension>)newValue);
-				return;
-			case RealtimestatechartPackage.REGION__NAME:
-				setName((String)newValue);
+			case RealtimestatechartPackage.REGION__PRIORITY:
+				setPriority((Integer)newValue);
 				return;
 			case RealtimestatechartPackage.REGION__STATECHART:
 				setStatechart((RealtimeStatechart)newValue);
@@ -557,14 +451,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__ANNOTATION:
-				getAnnotations().clear();
-				return;
-			case RealtimestatechartPackage.REGION__EXTENSION:
-				getExtensions().clear();
-				return;
-			case RealtimestatechartPackage.REGION__NAME:
-				setName(NAME_EDEFAULT);
+			case RealtimestatechartPackage.REGION__PRIORITY:
+				setPriority(PRIORITY_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.REGION__STATECHART:
 				setStatechart((RealtimeStatechart)null);
@@ -593,12 +481,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__ANNOTATION:
-				return annotations != null && !annotations.isEmpty();
-			case RealtimestatechartPackage.REGION__EXTENSION:
-				return extensions != null && !extensions.isEmpty();
-			case RealtimestatechartPackage.REGION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case RealtimestatechartPackage.REGION__PRIORITY:
+				return priority != PRIORITY_EDEFAULT;
 			case RealtimestatechartPackage.REGION__STATECHART:
 				return statechart != null;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
@@ -620,21 +504,9 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
+		if (baseClass == Prioritizable.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.REGION__ANNOTATION: return SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case RealtimestatechartPackage.REGION__EXTENSION: return SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.REGION__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
+				case RealtimestatechartPackage.REGION__PRIORITY: return RealtimestatechartPackage.PRIORITIZABLE__PRIORITY;
 				default: return -1;
 			}
 		}
@@ -648,21 +520,9 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
+		if (baseClass == Prioritizable.class) {
 			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (baseFeatureID) {
-				case SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION: return RealtimestatechartPackage.REGION__ANNOTATION;
-				case SDMPackage.EXTENDABLE_ELEMENT__EXTENSION: return RealtimestatechartPackage.REGION__EXTENSION;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (baseFeatureID) {
-				case SDMPackage.NAMED_ELEMENT__NAME: return RealtimestatechartPackage.REGION__NAME;
+				case RealtimestatechartPackage.PRIORITIZABLE__PRIORITY: return RealtimestatechartPackage.REGION__PRIORITY;
 				default: return -1;
 			}
 		}
@@ -679,8 +539,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (priority: ");
+		result.append(priority);
 		result.append(')');
 		return result.toString();
 	}

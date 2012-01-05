@@ -984,7 +984,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/realtimestatechart/Prioritizable">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
         </eAnnotations>
@@ -1188,7 +1188,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement #//model/realtimestatechart/Prioritizable">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateEntryPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents"/>
         </eAnnotations>
