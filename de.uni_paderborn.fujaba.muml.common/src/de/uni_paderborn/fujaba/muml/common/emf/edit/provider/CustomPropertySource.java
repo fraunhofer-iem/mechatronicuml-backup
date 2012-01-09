@@ -31,14 +31,6 @@ public class CustomPropertySource extends PropertySource {
 
 	protected IPropertyDescriptor createPropertyDescriptor(
 			IItemPropertyDescriptor itemPropertyDescriptor) {
-//		ResourceSet resourceSet = null;
-//		if (editingDomain != null) {
-//			resourceSet = editingDomain.getResourceSet();
-//		}
-//		IItemPropertyDescriptor delegatingItemPropertyDescriptor = new CustomDelegatingItemPropertyDescriptor(
-//				itemPropertyDescriptor, resourceSet);
-//
-//		return new CustomPropertyDescriptor(this.object, delegatingItemPropertyDescriptor, adapterFactory, editingDomain, propertySourceProvider, mainPropertySection);
 		return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, adapterFactory, editingDomain, propertySourceProvider, mainPropertySection);
 	}
 

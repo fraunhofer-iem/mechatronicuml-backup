@@ -74,13 +74,13 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 			}
 
-			// #1 Rule: Only show creation dialog, if the feature is many and
-			// containment.
-			boolean create = feature.isMany();
+			// #1 Rule: Only show creation dialog, if we have a containment
+			// reference.
+			boolean create = false;
 			if (feature instanceof EReference) {
 				EReference reference = (EReference) feature;
-				if (!reference.isContainment()) {
-					create = false;
+				if (reference.isContainment()) {
+					create = true;
 				}
 			}
 
@@ -94,14 +94,17 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				create = false;
 			}
 
+			// If the creation dialog should be shown, check which one.
 			if (create) {
-				// Which creation dialog?
+				// Which creation dialog should be shown?
 				if (CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS
 						.equals(feature)) {
 					return new InvocationParameterBindingCreationCellEditor(
 							parent, feature);
-				} else {
+				} else if (feature.isMany()) {
 					return new MultiFeatureCreationCellEditor(parent, feature);
+				} else {
+					// Don't show a creation dialog
 				}
 			}
 		}
@@ -159,13 +162,13 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			// Open the dialog and retrieve the user selection
 			int result = dialog.open();
 			labelProvider.dispose();
-			
+
 			// Currently Cancel is disabled:
-//			if (result == Window.OK) {
-//				return getResult();
-//			}
-//
-//			return null;
+			// if (result == Window.OK) {
+			// return getResult();
+			// }
+			//
+			// return null;
 			return getResult();
 		}
 
@@ -257,7 +260,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 					if (invocation.getCallee() != null) {
 						List<EParameter> parameters = invocation.getCallee()
 								.getContainedParameters();
-	
+
 						for (ParameterBinding binding : allBindings) {
 							if (parameters.contains(binding.getParameter())) {
 								filteredBindings.add(binding);
