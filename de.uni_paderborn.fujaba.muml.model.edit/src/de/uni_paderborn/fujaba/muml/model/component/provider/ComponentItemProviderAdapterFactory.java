@@ -75,29 +75,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ContinuousComponentItemProvider continuousComponentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createContinuousComponentAdapter() {
-		if (continuousComponentItemProvider == null) {
-			continuousComponentItemProvider = new ContinuousComponentItemProvider(this);
-		}
-
-		return continuousComponentItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -380,7 +357,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (continuousComponentItemProvider != null) continuousComponentItemProvider.dispose();
 		if (continuousPortItemProvider != null) continuousPortItemProvider.dispose();
 		if (discretePortItemProvider != null) discretePortItemProvider.dispose();
 		if (componentPartItemProvider != null) componentPartItemProvider.dispose();

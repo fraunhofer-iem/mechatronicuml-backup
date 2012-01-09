@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -20,7 +19,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
@@ -72,7 +70,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ComponentPackage.CONTINUOUS_COMPONENT: return createContinuousComponent();
 			case ComponentPackage.CONTINUOUS_PORT: return createContinuousPort();
 			case ComponentPackage.DISCRETE_PORT: return createDiscretePort();
 			case ComponentPackage.COMPONENT_PART: return createComponentPart();
@@ -118,16 +115,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ContinuousComponent createContinuousComponent() {
-		ContinuousComponentImpl continuousComponent = new ContinuousComponentImpl();
-		return continuousComponent;
 	}
 
 	/**

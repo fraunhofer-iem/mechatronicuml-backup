@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,9 +19,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
 /**

@@ -6,19 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.ExtendableElement;
-import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.TypedElement;
 import org.storydriven.modeling.calls.Invocation;
 import org.storydriven.modeling.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;

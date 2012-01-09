@@ -48,16 +48,6 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ContinuousComponent" eSuperTypes="#//model/component/Component">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a continuous component on the modeling level. Its purpose is to store a XML file which is created by the CAMEL tool and describes the continuous behavior of the component."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="xMLFileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The XML file describing the continuous behavior of this component."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Ports represent the interaction points between a component and the components environment."/>

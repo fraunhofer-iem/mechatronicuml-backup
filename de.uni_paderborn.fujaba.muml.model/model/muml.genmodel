@@ -28,9 +28,6 @@
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/Component/referencingComponentParts"/>
           <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/Component/componentType"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/component/ContinuousComponent">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousComponent/xMLFileName"/>
-        </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/Port">
           <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
               propertyDescription="" ecoreFeature="ecore:EReference muml.ecore#//model/component/Port/cardinality"/>

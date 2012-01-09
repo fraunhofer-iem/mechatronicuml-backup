@@ -158,106 +158,6 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousComponent()
-	 * @generated
-	 */
-	int CONTINUOUS_COMPONENT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__ANNOTATION = COMPONENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__EXTENSION = COMPONENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__NAME = COMPONENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__COMMENT = COMPONENT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__CONSTRAINT = COMPONENT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__PORTS = COMPONENT__PORTS;
-
-	/**
-	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__REFERENCING_COMPONENT_PARTS = COMPONENT__REFERENCING_COMPONENT_PARTS;
-
-	/**
-	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__COMPONENT_TYPE = COMPONENT__COMPONENT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>XML File Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__XML_FILE_NAME = COMPONENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Continuous Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl <em>Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -265,7 +165,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPort()
 	 * @generated
 	 */
-	int PORT = 2;
+	int PORT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -374,7 +274,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPort()
 	 * @generated
 	 */
-	int CONTINUOUS_PORT = 3;
+	int CONTINUOUS_PORT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -501,7 +401,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDiscretePort()
 	 * @generated
 	 */
-	int DISCRETE_PORT = 4;
+	int DISCRETE_PORT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -664,7 +564,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentPart()
 	 * @generated
 	 */
-	int COMPONENT_PART = 5;
+	int COMPONENT_PART = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -773,7 +673,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getStructuredComponent()
 	 * @generated
 	 */
-	int STRUCTURED_COMPONENT = 6;
+	int STRUCTURED_COMPONENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -882,7 +782,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAtomicComponent()
 	 * @generated
 	 */
-	int ATOMIC_COMPONENT = 7;
+	int ATOMIC_COMPONENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -982,7 +882,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getBehavioralConnector()
 	 * @generated
 	 */
-	int BEHAVIORAL_CONNECTOR = 11;
+	int BEHAVIORAL_CONNECTOR = 10;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl <em>Connector Type</em>}' class.
@@ -992,7 +892,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getConnectorType()
 	 * @generated
 	 */
-	int CONNECTOR_TYPE = 8;
+	int CONNECTOR_TYPE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1101,7 +1001,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAssembly()
 	 * @generated
 	 */
-	int ASSEMBLY = 9;
+	int ASSEMBLY = 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DelegationImpl <em>Delegation</em>}' class.
@@ -1111,7 +1011,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDelegation()
 	 * @generated
 	 */
-	int DELEGATION = 10;
+	int DELEGATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -1292,7 +1192,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHybridPort()
 	 * @generated
 	 */
-	int HYBRID_PORT = 12;
+	int HYBRID_PORT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1473,7 +1373,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentKind()
 	 * @generated
 	 */
-	int COMPONENT_KIND = 13;
+	int COMPONENT_KIND = 12;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}' enum.
@@ -1483,7 +1383,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortDirectionKind()
 	 * @generated
 	 */
-	int CONTINUOUS_PORT_DIRECTION_KIND = 14;
+	int CONTINUOUS_PORT_DIRECTION_KIND = 13;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Component <em>Component</em>}'.
@@ -1527,27 +1427,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponent_ComponentType();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent <em>Continuous Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Continuous Component</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent
-	 * @generated
-	 */
-	EClass getContinuousComponent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent#getXMLFileName <em>XML File Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>XML File Name</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent#getXMLFileName()
-	 * @see #getContinuousComponent()
-	 * @generated
-	 */
-	EAttribute getContinuousComponent_XMLFileName();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Port <em>Port</em>}'.
@@ -2042,24 +1921,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPONENT__COMPONENT_TYPE = eINSTANCE.getComponent_ComponentType();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousComponent()
-		 * @generated
-		 */
-		EClass CONTINUOUS_COMPONENT = eINSTANCE.getContinuousComponent();
-
-		/**
-		 * The meta object literal for the '<em><b>XML File Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTINUOUS_COMPONENT__XML_FILE_NAME = eINSTANCE.getContinuousComponent_XMLFileName();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl <em>Port</em>}' class.

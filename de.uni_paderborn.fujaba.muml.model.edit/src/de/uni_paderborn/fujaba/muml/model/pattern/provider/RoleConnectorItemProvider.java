@@ -23,7 +23,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.BehavioralConnectorItemProvider;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;

@@ -26,15 +26,6 @@ public interface ComponentFactory extends EFactory {
 	ComponentFactory eINSTANCE = de.uni_paderborn.fujaba.muml.model.component.impl.ComponentFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Continuous Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Continuous Component</em>'.
-	 * @generated
-	 */
-	ContinuousComponent createContinuousComponent();
-
-	/**
 	 * Returns a new object of class '<em>Continuous Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

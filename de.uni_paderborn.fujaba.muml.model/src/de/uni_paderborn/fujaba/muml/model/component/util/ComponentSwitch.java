@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,7 +21,6 @@ import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
-import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
@@ -113,17 +111,6 @@ public class ComponentSwitch<T> {
 				if (result == null) result = caseCommentableElement(component);
 				if (result == null) result = caseConstrainableElement(component);
 				if (result == null) result = caseExtendableElement(component);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentPackage.CONTINUOUS_COMPONENT: {
-				ContinuousComponent continuousComponent = (ContinuousComponent)theEObject;
-				T result = caseContinuousComponent(continuousComponent);
-				if (result == null) result = caseComponent(continuousComponent);
-				if (result == null) result = caseNamedElement(continuousComponent);
-				if (result == null) result = caseCommentableElement(continuousComponent);
-				if (result == null) result = caseConstrainableElement(continuousComponent);
-				if (result == null) result = caseExtendableElement(continuousComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -255,21 +242,6 @@ public class ComponentSwitch<T> {
 	 * @generated
 	 */
 	public T caseComponent(Component object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Continuous Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Continuous Component</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseContinuousComponent(ContinuousComponent object) {
 		return null;
 	}
 

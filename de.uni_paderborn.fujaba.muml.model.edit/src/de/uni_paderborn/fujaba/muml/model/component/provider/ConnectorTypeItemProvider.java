@@ -23,7 +23,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.storydriven.modeling.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType} object.

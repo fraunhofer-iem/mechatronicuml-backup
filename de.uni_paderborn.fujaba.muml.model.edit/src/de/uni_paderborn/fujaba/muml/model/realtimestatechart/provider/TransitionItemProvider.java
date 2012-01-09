@@ -8,15 +8,14 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,15 +26,15 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
-import org.storydriven.modeling.calls.CallsFactory;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
+import org.storydriven.modeling.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
@@ -58,7 +57,7 @@ import de.uni_paderborn.fujaba.muml.model.util.ItemPropertyDescriptorUtil;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class TransitionItemProvider extends PrioritizableItemProvider implements
+public class TransitionItemProvider extends ExtendableElementItemProvider implements
 		IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
@@ -82,6 +81,7 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPriorityPropertyDescriptor(object);
 			addSynchronizationPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
@@ -96,6 +96,28 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Priority feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPriorityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Prioritizable_priority_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Prioritizable_priority_feature", "_UI_Prioritizable_type"),
+				 RealtimestatechartPackage.Literals.PRIORITIZABLE__PRIORITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -659,8 +681,6 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
@@ -735,11 +755,10 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Transition.class)) {
+			case RealtimestatechartPackage.TRANSITION__PRIORITY:
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
@@ -764,21 +783,6 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
-				 EcoreFactory.eINSTANCE.createEAnnotation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -879,6 +883,17 @@ public class TransitionItemProvider extends PrioritizableItemProvider implements
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createAction()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

@@ -16,7 +16,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 /**

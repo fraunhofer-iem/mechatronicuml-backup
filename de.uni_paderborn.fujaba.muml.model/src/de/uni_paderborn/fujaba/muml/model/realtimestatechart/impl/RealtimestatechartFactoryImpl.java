@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -25,8 +24,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;

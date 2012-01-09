@@ -48,7 +48,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;

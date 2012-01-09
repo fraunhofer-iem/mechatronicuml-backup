@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -44,7 +45,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-import org.eclipse.emf.ecore.EAttribute;
 
 /**
  * <!-- begin-user-doc -->

@@ -13,8 +13,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,12 +24,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.calls.CallsFactory;
+import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -43,7 +42,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
  * @generated
  */
 public class RegionItemProvider
-	extends PrioritizableItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -71,30 +70,30 @@ public class RegionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addPriorityPropertyDescriptor(object);
 			addStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Priority feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addPriorityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 SDMPackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_Prioritizable_priority_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Prioritizable_priority_feature", "_UI_Prioritizable_type"),
+				 RealtimestatechartPackage.Literals.PRIORITIZABLE__PRIORITY,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -179,8 +178,6 @@ public class RegionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__VERTICES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__TRANSITIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED);
@@ -238,11 +235,9 @@ public class RegionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Region.class)) {
-			case RealtimestatechartPackage.REGION__NAME:
+			case RealtimestatechartPackage.REGION__PRIORITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.REGION__ANNOTATION:
-			case RealtimestatechartPackage.REGION__EXTENSION:
 			case RealtimestatechartPackage.REGION__VERTICES:
 			case RealtimestatechartPackage.REGION__TRANSITIONS:
 			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
@@ -262,21 +257,6 @@ public class RegionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
-				 EcoreFactory.eINSTANCE.createEAnnotation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -312,6 +292,17 @@ public class RegionItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED,
 				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

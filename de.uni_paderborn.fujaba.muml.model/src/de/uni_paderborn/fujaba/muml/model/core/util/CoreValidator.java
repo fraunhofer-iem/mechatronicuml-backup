@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -15,7 +14,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;

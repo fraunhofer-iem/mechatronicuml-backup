@@ -26,7 +26,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
-import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
@@ -63,13 +62,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	private EClass componentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass continuousComponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,24 +284,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EAttribute getComponent_ComponentType() {
 		return (EAttribute)componentEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getContinuousComponent() {
-		return continuousComponentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getContinuousComponent_XMLFileName() {
-		return (EAttribute)continuousComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -714,9 +688,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(componentEClass, COMPONENT__REFERENCING_COMPONENT_PARTS);
 		createEAttribute(componentEClass, COMPONENT__COMPONENT_TYPE);
 
-		continuousComponentEClass = createEClass(CONTINUOUS_COMPONENT);
-		createEAttribute(continuousComponentEClass, CONTINUOUS_COMPONENT__XML_FILE_NAME);
-
 		portEClass = createEClass(PORT);
 		createEReference(portEClass, PORT__CARDINALITY);
 		createEReference(portEClass, PORT__INCOMING_CONNECTORS);
@@ -810,7 +781,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		componentEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		componentEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		componentEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
-		continuousComponentEClass.getESuperTypes().add(this.getComponent());
 		portEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		portEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		portEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
@@ -834,9 +804,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getComponent_Ports(), this.getPort(), this.getPort_Component(), "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_ReferencingComponentParts(), this.getComponentPart(), this.getComponentPart_ComponentType(), "referencingComponentParts", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_ComponentType(), this.getComponentKind(), "componentType", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(continuousComponentEClass, ContinuousComponent.class, "ContinuousComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContinuousComponent_XMLFileName(), ecorePackage.getEString(), "xMLFileName", null, 0, 1, ContinuousComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPort_Cardinality(), theCorePackage.getCardinality(), null, "cardinality", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -929,7 +896,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "UniquePortNames"
-		   });															
+		   });													
 		addAnnotation
 		  (continuousPortEClass, 
 		   source, 
@@ -987,7 +954,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "UniquePortNames", "self.ports->isUnique(name)"
-		   });												
+		   });										
 		addAnnotation
 		  (getPort_Connectors(), 
 		   source, 

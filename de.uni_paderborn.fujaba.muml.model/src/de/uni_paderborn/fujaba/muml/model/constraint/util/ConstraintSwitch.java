@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.constraint.util;
 
-import de.uni_paderborn.fujaba.muml.model.constraint.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;

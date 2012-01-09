@@ -6,14 +6,13 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EOperation;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 
 /**
  * <!-- begin-user-doc -->

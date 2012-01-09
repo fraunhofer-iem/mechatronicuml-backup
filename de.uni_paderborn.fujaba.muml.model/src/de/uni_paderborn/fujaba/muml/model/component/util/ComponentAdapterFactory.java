@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -22,7 +21,6 @@ import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
-import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
@@ -91,10 +89,6 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseComponent(Component object) {
 				return createComponentAdapter();
-			}
-			@Override
-			public Adapter caseContinuousComponent(ContinuousComponent object) {
-				return createContinuousComponentAdapter();
 			}
 			@Override
 			public Adapter casePort(Port object) {
@@ -191,20 +185,6 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent <em>Continuous Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent
-	 * @generated
-	 */
-	public Adapter createContinuousComponentAdapter() {
 		return null;
 	}
 

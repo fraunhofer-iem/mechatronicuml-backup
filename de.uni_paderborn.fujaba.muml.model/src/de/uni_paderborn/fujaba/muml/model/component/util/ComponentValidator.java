@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -23,7 +22,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
-import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
@@ -106,8 +104,6 @@ public class ComponentValidator extends EObjectValidator {
 		switch (classifierID) {
 			case ComponentPackage.COMPONENT:
 				return validateComponent((Component)value, diagnostics, context);
-			case ComponentPackage.CONTINUOUS_COMPONENT:
-				return validateContinuousComponent((ContinuousComponent)value, diagnostics, context);
 			case ComponentPackage.PORT:
 				return validatePort((Port)value, diagnostics, context);
 			case ComponentPackage.CONTINUOUS_PORT:
@@ -185,25 +181,6 @@ public class ComponentValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateContinuousComponent(ContinuousComponent continuousComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(continuousComponent, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(continuousComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(continuousComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(continuousComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(continuousComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(continuousComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(continuousComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuousComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuousComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(continuousComponent, diagnostics, context);
-		return result;
 	}
 
 	/**

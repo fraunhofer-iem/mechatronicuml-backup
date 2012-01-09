@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
