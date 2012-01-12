@@ -109,6 +109,14 @@ public class HybridPortItemProvider
 				 null,
 				 null));
 	}
+	
+	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
+		// do nothing (bug #222)
+	}
+
+	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
+		// do nothing (bug #222)
+	}
 
 	/**
 	 * This returns HybridPort.gif.
