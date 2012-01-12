@@ -234,6 +234,10 @@ public class ExtensibleCreationDialog extends Dialog {
 	public EStructuralFeature getStructuralFeature() {
 		return structuralFeature;
 	}
+	
+	public EObject getContainerObject() {
+		return containerObject;
+	}
 
 	public void setPropertyValue(Object value) {
 		IItemPropertyDescriptor itemPropertyDescriptor = getItemPropertyDescriptor();

@@ -16,7 +16,9 @@ Require-Bundle: org.eclipse.xtext,
  org.storydriven.modeling,
  de.uni_paderborn.fujaba.muml.model.actionLanguage,
  org.eclipse.xtext.util,
- org.antlr.runtime
+ org.antlr.runtime,
+ de.fujaba.modelinstance,
+ de.uni_paderborn.fujaba.muml.model;bundle-version="1.0.0"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.uni_paderborn.fujaba.muml,

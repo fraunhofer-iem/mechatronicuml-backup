@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -34,7 +36,13 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySect
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectCreationDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
+import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class CustomPropertyDescriptor extends PropertyDescriptor {
 
@@ -174,6 +182,57 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 		protected abstract Object getResult();
 
+	}
+	
+	public class ActionCellEditor extends AbstractCreationCellEditor {
+		private Collection<?> oldValues;
+		private SimpleTextualDialogExtension textDialog;
+
+		public ActionCellEditor(Composite composite, EStructuralFeature feature) {
+			super(composite, feature);
+		}
+		
+		private List<EAttribute> getAllAvailableAttributes() {
+			EObject containerObject = dialog.getContainerObject();
+			if (containerObject instanceof StateEvent) {
+				return ((RealtimeStatechart) containerObject.eContainer().eContainer()).getAllAvailableAttributes();
+			} else if (containerObject instanceof Transition) {
+				return ((Transition) containerObject).getStatechart().getAllAvailableAttributes();
+			}
+			return null;
+		}
+
+		private void addParserExtension() {
+			// store old values because if OK is pressed the old property value
+			// is always overridden (see ExtensibleCreationDialog) with an empty collection
+			oldValues = getCurrentValues();
+			String initialString = "";
+			if (!oldValues.isEmpty()) {
+				EObject eobject = (EObject) oldValues.iterator().next();
+				initialString = ActionLanguageResource.serializeEObject(eobject, getAllAvailableAttributes());
+			}
+			System.out.println(oldValues);
+			textDialog = new SimpleTextualDialogExtension(dialog, initialString);
+			this.dialog.addExtension(textDialog);			
+		}
+		
+		@Override
+		protected void addExtensions() {
+			addParserExtension();
+		}
+
+		@Override
+		protected Object getResult() {
+			// TODO Auto-generated method stub
+			EObject model = ActionLanguageResource.loadFromString(textDialog.getResult(), getAllAvailableAttributes());
+			if (model == null) {
+				return oldValues;
+			}
+			List<Object> list = new BasicEList<Object>();
+			list.add(model);
+			return list;
+		}
+		
 	}
 
 	public class MultiFeatureCreationCellEditor extends

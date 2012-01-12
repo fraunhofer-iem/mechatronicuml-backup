@@ -1410,21 +1410,7 @@ ruleLiteralExpression returns [EObject current=null]
     {
         createLeafNode(grammarAccess.getLiteralExpressionAccess().getColonKeyword_1_2(), null); 
     }
-(
-(
-		{
-			if ($current==null) {
-	            $current = factory.create(grammarAccess.getLiteralExpressionRule().getType().getClassifier());
-	            associateNodeWithAstElement(currentNode, $current);
-	        }
-        }
-	RULE_ID
-	{
-		createLeafNode(grammarAccess.getLiteralExpressionAccess().getValueTypeEDataTypeCrossReference_1_3_0(), "valueType"); 
-	}
-
-)
-)))
+))
 ;
 
 

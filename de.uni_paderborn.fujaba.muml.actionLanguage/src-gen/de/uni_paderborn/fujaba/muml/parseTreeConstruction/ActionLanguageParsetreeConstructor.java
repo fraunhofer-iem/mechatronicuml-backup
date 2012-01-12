@@ -3100,11 +3100,13 @@ protected class UnaryExpression_UnaryExpressionAssignment_2 extends AssignmentTo
 /************ begin Rule LiteralExpression ****************
  *
  * LiteralExpression returns expressions::Expression:
- * 	"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType];
+ * 	"(" Expression ")" | //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+ * 	{actionLanguage::LiteralExpression} value=IdentifierOrValue ":";
  *
  **/
 
-// "(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType]
+// "(" Expression ")" | //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+// {actionLanguage::LiteralExpression} value=IdentifierOrValue ":"
 protected class LiteralExpression_Alternatives extends AlternativesToken {
 
 	public LiteralExpression_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3240,7 +3242,8 @@ protected class LiteralExpression_RightParenthesisKeyword_0_2 extends KeywordTok
 }
 
 
-// {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType]
+// //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+// {actionLanguage::LiteralExpression} value=IdentifierOrValue ":"
 protected class LiteralExpression_Group_1 extends GroupToken {
 	
 	public LiteralExpression_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3255,7 +3258,7 @@ protected class LiteralExpression_Group_1 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new LiteralExpression_ValueTypeAssignment_1_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new LiteralExpression_ColonKeyword_1_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3269,6 +3272,7 @@ protected class LiteralExpression_Group_1 extends GroupToken {
 
 }
 
+// //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
 // {actionLanguage::LiteralExpression}
 protected class LiteralExpression_LiteralExpressionAction_1_0 extends ActionToken  {
 
@@ -3347,43 +3351,6 @@ protected class LiteralExpression_ColonKeyword_1_2 extends KeywordToken  {
 			case 0: return new LiteralExpression_ValueAssignment_1_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
-	}
-
-}
-
-// valueType=[ecore::EDataType]
-protected class LiteralExpression_ValueTypeAssignment_1_3 extends AssignmentToken  {
-	
-	public LiteralExpression_ValueTypeAssignment_1_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getLiteralExpressionAccess().getValueTypeAssignment_1_3();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new LiteralExpression_ColonKeyword_1_2(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("valueType",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("valueType");
-		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
-			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getLiteralExpressionAccess().getValueTypeEDataTypeCrossReference_1_3_0().getType().getClassifier())) {
-				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getLiteralExpressionAccess().getValueTypeEDataTypeCrossReference_1_3_0(); 
-				return obj;
-			}
-		}
-		return null;
 	}
 
 }

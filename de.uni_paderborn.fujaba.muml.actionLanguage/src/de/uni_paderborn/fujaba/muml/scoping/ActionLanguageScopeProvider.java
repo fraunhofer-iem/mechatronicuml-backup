@@ -3,7 +3,15 @@
  */
 package de.uni_paderborn.fujaba.muml.scoping;
 
+import java.util.List;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 
 /**
  * This class contains custom scoping description.
@@ -13,5 +21,34 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
  *
  */
 public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
+	private List<EAttribute> attributeList = null;
+	
+	public ActionLanguageScopeProvider() {
+		super();
+	}
+	
+	IScope scope_Assignment_attribute(Assignment assignment, EReference ref) {
+		/*EAttribute attr = EcoreFactory.eINSTANCE.createEAttribute();
+		attr.setName("f");
+		//assignment.eResource().getContents().add(attr);
+		ResourceSet resSet = new ResourceSetImpl();
+		URI uri = URI.createURI("file:///home/marcus/runtime-EclipseApplication/shk/default.fujaba");
+		Resource resource = resSet.getResource(uri, true);
+		de.fujaba.modelinstance.impl.RootNodeImpl x = (RootNodeImpl) resource.getContents().get(0);
+		RealtimeStatechart rt = (RealtimeStatechart) x.getCategories().get(3).getModelElements().get(0);
+		EList<EAttribute> attrList = rt.getAttributes();//new ArrayList<EAttribute>();
+//		attrList.add(attr);*/
+		System.out.println(this);
+		if (attributeList == null) {
+			return IScope.NULLSCOPE;
+		}
+		return Scopes.scopeFor(attributeList);
+		//return IScope.NULLSCOPE;
+		//return null;
+	}
+	
+	public void setAttributeList(List<EAttribute> attributeList) {
+		this.attributeList = attributeList;
+	}
 
 }

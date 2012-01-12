@@ -642,15 +642,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueIdentifierOrValueParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final Keyword cColonKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cValueTypeAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final CrossReference cValueTypeEDataTypeCrossReference_1_3_0 = (CrossReference)cValueTypeAssignment_1_3.eContents().get(0);
-		private final RuleCall cValueTypeEDataTypeIDTerminalRuleCall_1_3_0_1 = (RuleCall)cValueTypeEDataTypeCrossReference_1_3_0.eContents().get(1);
 		
 		//LiteralExpression returns expressions::Expression:
-		//	"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType];
+		//	"(" Expression ")" | //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+		//	{actionLanguage::LiteralExpression} value=IdentifierOrValue ":";
 		public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType]
+		//"(" Expression ")" | //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+		//{actionLanguage::LiteralExpression} value=IdentifierOrValue ":"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" Expression ")"
@@ -665,9 +664,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 
-		//{actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType]
+		////{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+		//{actionLanguage::LiteralExpression} value=IdentifierOrValue ":"
 		public Group getGroup_1() { return cGroup_1; }
 
+		////{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
 		//{actionLanguage::LiteralExpression}
 		public Action getLiteralExpressionAction_1_0() { return cLiteralExpressionAction_1_0; }
 
@@ -679,15 +680,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//":"
 		public Keyword getColonKeyword_1_2() { return cColonKeyword_1_2; }
-
-		//valueType=[ecore::EDataType]
-		public Assignment getValueTypeAssignment_1_3() { return cValueTypeAssignment_1_3; }
-
-		//[ecore::EDataType]
-		public CrossReference getValueTypeEDataTypeCrossReference_1_3_0() { return cValueTypeEDataTypeCrossReference_1_3_0; }
-
-		//ID
-		public RuleCall getValueTypeEDataTypeIDTerminalRuleCall_1_3_0_1() { return cValueTypeEDataTypeIDTerminalRuleCall_1_3_0_1; }
 	}
 
 	public class AttributeExpressionElements extends AbstractParserRuleElementFinder {
@@ -1234,7 +1226,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LiteralExpression returns expressions::Expression:
-	//	"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue ":" valueType=[ecore::EDataType];
+	//	"(" Expression ")" | //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+	//	{actionLanguage::LiteralExpression} value=IdentifierOrValue ":";
 	public LiteralExpressionElements getLiteralExpressionAccess() {
 		return (pLiteralExpression != null) ? pLiteralExpression : (pLiteralExpression = new LiteralExpressionElements());
 	}

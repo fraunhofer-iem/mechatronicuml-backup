@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.common.emf.edit.ui.extensions;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
@@ -18,6 +19,10 @@ public abstract class AbstractDialogExtension implements IDialogExtension {
 	
 	public EStructuralFeature getStructuralFeature() {
 		return creationDialog.getStructuralFeature();
+	}
+	
+	public EObject getContainerObject() {
+		return creationDialog.getContainerObject();
 	}
 	
 	public void dispose() {

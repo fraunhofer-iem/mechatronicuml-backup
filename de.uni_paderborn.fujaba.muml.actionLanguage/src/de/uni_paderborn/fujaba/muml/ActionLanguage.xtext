@@ -72,7 +72,8 @@ UnaryExpression returns expressions::Expression:
 	
 LiteralExpression returns expressions::Expression:
 	'(' Expression ')' |
-	{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+	//{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
+	{actionLanguage::LiteralExpression} value=IdentifierOrValue':'
 	;	
 AttributeExpression returns expressions::Expression:
 	 LiteralExpression  |
