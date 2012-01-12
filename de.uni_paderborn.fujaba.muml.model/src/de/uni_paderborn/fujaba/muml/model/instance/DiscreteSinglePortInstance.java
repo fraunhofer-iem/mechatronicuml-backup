@@ -32,7 +32,7 @@ package de.uni_paderborn.fujaba.muml.model.instance;
 public interface DiscreteSinglePortInstance extends DiscretePortInstance {
 
 	/**
-	 * Returns the value of the '<em><b>Multi Port Instance</b></em>' reference.
+	 * Returns the value of the '<em><b>Multi Port Instance</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances <em>Sub Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -40,20 +40,20 @@ public interface DiscreteSinglePortInstance extends DiscretePortInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Multi Port Instance</em>' reference.
+	 * @return the value of the '<em>Multi Port Instance</em>' container reference.
 	 * @see #setMultiPortInstance(DiscreteMultiPortInstance)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscreteSinglePortInstance_MultiPortInstance()
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances
-	 * @model opposite="subPortInstances"
+	 * @model opposite="subPortInstances" transient="false"
 	 * @generated
 	 */
 	DiscreteMultiPortInstance getMultiPortInstance();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance#getMultiPortInstance <em>Multi Port Instance</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance#getMultiPortInstance <em>Multi Port Instance</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Multi Port Instance</em>' reference.
+	 * @param value the new value of the '<em>Multi Port Instance</em>' container reference.
 	 * @see #getMultiPortInstance()
 	 * @generated
 	 */

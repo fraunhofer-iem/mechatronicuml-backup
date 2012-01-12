@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  */
 public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl implements DiscreteMultiPortInstance {
 	/**
-	 * The cached value of the '{@link #getSubPortInstances() <em>Sub Port Instances</em>}' reference list.
+	 * The cached value of the '{@link #getSubPortInstances() <em>Sub Port Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSubPortInstances()
@@ -69,7 +70,7 @@ public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl impl
 	 */
 	public EList<DiscreteSinglePortInstance> getSubPortInstances() {
 		if (subPortInstances == null) {
-			subPortInstances = new EObjectWithInverseResolvingEList<DiscreteSinglePortInstance>(DiscreteSinglePortInstance.class, this, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE);
+			subPortInstances = new EObjectContainmentWithInverseEList<DiscreteSinglePortInstance>(DiscreteSinglePortInstance.class, this, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE);
 		}
 		return subPortInstances;
 	}
