@@ -313,6 +313,46 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_HybridPortInstance_3012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HybridPortInstance_3012_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AssemblyInstance_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AssemblyInstance_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HybridPortInstance_2008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HybridPortInstance_2008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_DiscreteSinglePortInstance_2005_incominglinks;
 
 	/**
@@ -333,32 +373,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HybridPortInstance_2008_incominglinks;
+	public static String NavigatorGroupName_DelegationInstance_4004_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HybridPortInstance_2008_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AssemblyInstance_4003_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AssemblyInstance_4003_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_3012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_3012_outgoinglinks;
+	public static String NavigatorGroupName_DelegationInstance_4004_source;
 
 	/**
 	 * @generated
@@ -378,27 +398,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationInstance_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DelegationInstance_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_UnexpectedValueType;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_WrongStringConversion;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_UnknownLiteral;
+
+	/**
+	 * @generated
+	 */
+	public static String MessageFormatParser_InvalidInputError;
 
 	/**
 	 * @generated

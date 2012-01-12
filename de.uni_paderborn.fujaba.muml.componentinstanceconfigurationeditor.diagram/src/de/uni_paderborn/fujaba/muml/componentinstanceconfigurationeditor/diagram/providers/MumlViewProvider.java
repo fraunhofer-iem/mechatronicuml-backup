@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
+import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
@@ -372,6 +373,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5003 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID));
+		label5003.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5003 = (Location) label5003.getLayoutConstraint();
+		location5003.setX(0);
+		location5003.setY(5);
 		return node;
 	}
 
@@ -415,6 +425,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5004 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID));
+		label5004.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5004 = (Location) label5004.getLayoutConstraint();
+		location5004.setX(0);
+		location5004.setY(5);
 		return node;
 	}
 
@@ -458,6 +477,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5005 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceNameEditPart.VISUAL_ID));
+		label5005.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5005 = (Location) label5005.getLayoutConstraint();
+		location5005.setX(0);
+		location5005.setY(5);
 		return node;
 	}
 
@@ -500,6 +528,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5006 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceName2EditPart.VISUAL_ID));
+		label5006.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5006 = (Location) label5006.getLayoutConstraint();
+		location5006.setX(0);
+		location5006.setY(5);
 		return node;
 	}
 
@@ -542,6 +579,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5007 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName2EditPart.VISUAL_ID));
+		label5007.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5007 = (Location) label5007.getLayoutConstraint();
+		location5007.setX(0);
+		location5007.setY(5);
 		return node;
 	}
 
@@ -584,6 +630,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5008 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceName2EditPart.VISUAL_ID));
+		label5008.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5008 = (Location) label5008.getLayoutConstraint();
+		location5008.setX(0);
+		location5008.setY(5);
 		return node;
 	}
 

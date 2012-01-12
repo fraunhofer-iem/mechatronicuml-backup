@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[8];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[9];
 	}
 
 	/**
@@ -50,6 +50,7 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
+					"\'instance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$

@@ -44,4 +44,10 @@
     <accessor
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.1/@accessors.0"/>
   </labels>
+  <labels
+      name="PortInstanceLabel"
+      elementIcon="false">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortExternalLabelFigure"/>
+  </labels>
 </gmfgraph:Canvas>

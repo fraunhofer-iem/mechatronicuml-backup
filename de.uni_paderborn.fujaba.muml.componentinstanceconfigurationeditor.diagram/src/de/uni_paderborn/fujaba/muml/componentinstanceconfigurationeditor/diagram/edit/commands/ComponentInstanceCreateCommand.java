@@ -56,6 +56,9 @@ public class ComponentInstanceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getElementToEdit();
 		owner.getComponentInstances().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
+				.getInstance().init_ComponentInstance_2004(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
