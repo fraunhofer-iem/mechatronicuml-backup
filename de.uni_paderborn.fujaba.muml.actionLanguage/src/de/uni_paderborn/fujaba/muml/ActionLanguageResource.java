@@ -16,6 +16,7 @@ import org.storydriven.modeling.expressions.Expression;
 
 import com.google.inject.Injector;
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
 import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
 
 public class ActionLanguageResource {
@@ -51,6 +52,9 @@ public class ActionLanguageResource {
 	}
 	
 	public static String serializeEObject(EObject object, List<EAttribute> attributeList) {
+		if (!(object instanceof Block)) {
+			return null;
+		}
 		XtextResource resource = (XtextResource) getXtextResource(attributeList);
 		return resource.getSerializer().serialize(object);
 	}

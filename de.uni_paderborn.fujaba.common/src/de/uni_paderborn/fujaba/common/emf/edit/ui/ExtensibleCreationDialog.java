@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,11 +41,7 @@ public class ExtensibleCreationDialog extends Dialog {
 	public final static String EXTENSION_GROUP_DEFAULT = "default";
 	public final static String EXTENSION_GROUP_XTEXT_PARSER = "XTextParser";
 
-	/**
-	 * A resource for newly created object. It is within the same ResourceSet as
-	 * the RootNode, so that PropertyDescriptors can find valid choices.
-	 */
-	// private Resource transientResource;
+	private Composite container;
 
 	private IRefreshProhibitedPropertySection mainPropertySection;
 
@@ -58,7 +55,7 @@ public class ExtensibleCreationDialog extends Dialog {
 		return button;
 	}
 
-	private Map<Object, List<IDialogExtension>> groupToExtensions = new HashMap<Object, List<IDialogExtension>>();
+	private Map<Object, List<IDialogExtension>> groupToExtensions = new LinkedHashMap<Object, List<IDialogExtension>>();
 
 	/**
 	 * The StructuralFeature that we set the values for.
@@ -171,7 +168,7 @@ public class ExtensibleCreationDialog extends Dialog {
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite container = (Composite) super.createDialogArea(parent);
+		container = (Composite) super.createDialogArea(parent);
 		container.setLayout(new GridLayout(2, false));
 
 		for (List<IDialogExtension> extensions : groupToExtensions.values()) {
@@ -278,6 +275,10 @@ public class ExtensibleCreationDialog extends Dialog {
 		if (itemPropertyDescriptor != null) {
 			itemPropertyDescriptor.setPropertyValue(containerObject, value);
 		}
+	}
+	
+	public void layout() {
+		container.layout(false);
 	}
 
 }

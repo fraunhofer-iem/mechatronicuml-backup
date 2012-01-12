@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.common.emf.edit.ui.extensions;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
@@ -47,7 +48,9 @@ public abstract class AbstractDialogExtension implements IDialogExtension {
 	@Override
 	public void setVisible(boolean visible) {
 		mainArea.setVisible(visible);
+		((GridData) mainArea.getLayoutData()).exclude = !visible;
 		buttonArea.setVisible(visible);
+		((GridData) buttonArea.getLayoutData()).exclude = !visible;
 	}
 
 	public EObject getContainerObject() {

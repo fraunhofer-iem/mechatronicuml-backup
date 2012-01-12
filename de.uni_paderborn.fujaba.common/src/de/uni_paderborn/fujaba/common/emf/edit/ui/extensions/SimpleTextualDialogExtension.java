@@ -15,11 +15,13 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 public class SimpleTextualDialogExtension extends AbstractDialogExtension {
 	private Text textfield;
 	private String initialString = "";
-	private String result = "";
+	private String resultString = "";
+	private ITextParser parser;
 
-	public SimpleTextualDialogExtension(ExtensibleCreationDialog creationDialog, String initialString) {
+	public SimpleTextualDialogExtension(ExtensibleCreationDialog creationDialog, String initialString, ITextParser parser) {
 		super(creationDialog);
 		this.initialString = initialString;
+		this.parser = parser;
 	}
 
 	@Override
@@ -31,37 +33,27 @@ public class SimpleTextualDialogExtension extends AbstractDialogExtension {
 	@Override
 	public void createMainArea(Composite parent) {
 		// TODO Auto-generated method stub
+		super.createMainArea(parent);
 		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-		/*Label lblParameters = new Label(parent, SWT.NONE);
-		GridData gdLblParameters = new GridData(SWT.LEFT, SWT.CENTER,
-				false, false, 1, 1);
-		gdLblParameters.verticalIndent = 5;
-		lblParameters.setLayoutData(gdLblParameters);
-		lblParameters.setText("&Textual representation:");*/
 		textfield = new Text(parent, SWT.MULTI | SWT.BORDER | SWT.V_SCROLL);
-		//textfield.setText("");
 		textfield.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 		textfield.setText(initialString);
-		//textfield.setBounds(0, 0, 2550, 250);
-	}
-
-	@Override
-	public void createButtonArea(Composite parent) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void okPressed() {
 		// TODO Auto-generated method stub
 		//XtextResource res = new XtextResource();
-		System.out.println(getContainerObject());
-		result = textfield.getText();
-		System.out.println("pressed");
+		//System.out.println(getContainerObject());
+		resultString = textfield.getText();
 	}
 	
-	public String getResult() {
-		return result;
+	public Object getResult() {
+		return parser.parse(resultString);
+	}
+	
+	public interface ITextParser {
+		Object parse(String text);
 	}
 
 }

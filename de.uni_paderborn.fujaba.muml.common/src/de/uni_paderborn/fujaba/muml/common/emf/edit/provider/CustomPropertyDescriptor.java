@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.common.emf.edit.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -37,9 +39,11 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectCreationDialo
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExtension;
 import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
@@ -106,6 +110,8 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 						.equals(feature)) {
 					return new InvocationParameterBindingCreationCellEditor(
 							parent, feature);
+				} else if (RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS.equals(feature)) {
+					return new ActionCellEditor(parent, feature);
 				} else if (feature.isMany()) {
 					return new MultiFeatureCreationCellEditor(parent, feature);
 				} else {
@@ -183,9 +189,10 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 	}
 	
-	public class ActionCellEditor extends AbstractCreationCellEditor {
+	public class ActionCellEditor extends MultiFeatureCreationCellEditor {
 		private Collection<?> oldValues;
 		private SimpleTextualDialogExtension textDialog;
+		private UseParserDialogExtension useParserDialogExtension;
 
 		public ActionCellEditor(Composite composite, EStructuralFeature feature) {
 			super(composite, feature);
@@ -201,31 +208,44 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			return null;
 		}
 
-		private void addParserExtension() {
+		@Override
+		protected void addExtensions() {
 			// store old values because if OK is pressed the old property value
 			// is always overridden (see ExtensibleCreationDialog) with an empty collection
-			oldValues = getCurrentValues();
+			oldValues = EcoreUtil.copyAll(getCurrentValues());
 			String initialString = "";
 			if (!oldValues.isEmpty()) {
 				EObject eobject = (EObject) oldValues.iterator().next();
 				initialString = ActionLanguageResource.serializeEObject(eobject, getAllAvailableAttributes());
+				if (initialString == null) {
+					initialString = "// warning: existing expressions will be replaced!";
+				}
 			}
-			System.out.println(oldValues);
-			textDialog = new SimpleTextualDialogExtension(dialog, initialString);
-			dialog.addExtension(textDialog, ExtensibleCreationDialog.EXTENSION_GROUP_XTEXT_PARSER);			
-		}
+			
+			SimpleTextualDialogExtension.ITextParser parser = new SimpleTextualDialogExtension.ITextParser() {
+				@Override
+				public Object parse(String text) {
+					return ActionLanguageResource.loadFromString(text, getAllAvailableAttributes());
+				}
+			};
+			textDialog = new SimpleTextualDialogExtension(dialog, initialString, parser);			
 		
-		@Override
-		protected void addExtensions() {
-			addParserExtension();
+			useParserDialogExtension = new UseParserDialogExtension(dialog);
+			dialog.addExtension(useParserDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_ALWAYS_VISIBLE);
+			super.addExtensions();
+			// add the objectsListDialogExtension object after it's created
+			useParserDialogExtension.setObjectsListDialogExtension(objectsListDialogExtension);
+			useParserDialogExtension.setTextualDialogExtension(textDialog);
+			dialog.addExtension(textDialog, ExtensibleCreationDialog.EXTENSION_GROUP_XTEXT_PARSER);
 		}
 
 		@Override
 		protected Object getResult() {
-			// TODO Auto-generated method stub
-			EObject model = ActionLanguageResource.loadFromString(textDialog.getResult(), getAllAvailableAttributes());
+			Object model = useParserDialogExtension.getResult();
 			if (model == null) {
 				return oldValues;
+			} else if (model instanceof Collection) {
+				return model;
 			}
 			List<Object> list = new BasicEList<Object>();
 			list.add(model);
@@ -236,7 +256,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 	public class MultiFeatureCreationCellEditor extends
 			AbstractCreationCellEditor {
-		private ObjectsListDialogExtension objectsListDialogExtension;
+		protected ObjectsListDialogExtension objectsListDialogExtension;
 
 		public MultiFeatureCreationCellEditor(Composite composite,
 				EStructuralFeature feature) {

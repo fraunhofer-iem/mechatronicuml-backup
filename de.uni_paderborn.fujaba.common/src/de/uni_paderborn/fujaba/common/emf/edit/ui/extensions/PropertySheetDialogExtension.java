@@ -46,7 +46,7 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void createMainArea(Composite parent) {
-
+		super.createMainArea(parent);
 		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
 		// see AdvancedPropertySection.createControls();
@@ -87,11 +87,6 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 			getCreationDialog().getShell().layout(
 					new Control[] { page.getControl() });
 		}
-	}
-
-	@Override
-	public void createButtonArea(Composite composite) {
-		// no buttons
 	}
 
 	@Override

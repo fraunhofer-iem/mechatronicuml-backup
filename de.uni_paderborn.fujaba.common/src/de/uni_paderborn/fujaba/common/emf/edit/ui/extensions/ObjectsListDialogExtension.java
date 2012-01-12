@@ -144,7 +144,7 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void createButtonArea(Composite composite) {
-
+		super.createButtonArea(composite);
 		EStructuralFeature feature = getStructuralFeature();
 
 		GridData firstLayoutData = new GridData(SWT.FILL, SWT.CENTER, true,

@@ -88,6 +88,7 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void createMainArea(Composite parent) {
+		super.createMainArea(parent);
 		values = new ItemProvider(adapterFactory, instanceClasses);
 		comboViewer = new ComboViewer(parent, SWT.NONE);
 
@@ -116,6 +117,7 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void createButtonArea(Composite composite) {
+		super.createButtonArea(composite);
 		btnCreate = new Button(composite, SWT.NONE);
 		btnCreate.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
 				1, 1));
