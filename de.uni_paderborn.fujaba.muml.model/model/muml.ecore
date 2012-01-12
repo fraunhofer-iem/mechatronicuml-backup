@@ -558,7 +558,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package instance contains all classes for building configurations of component instances.&#xD;&#xA;&#xD;&#xA;Component instances are built from component types and connected by connectors. The resulting structure is a component instance configuration."/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/instance/BehavioralElementInstance">
+      <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a component instance. It is an instantiation of a component."/>
         </eAnnotations>
@@ -603,7 +603,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PortInstance" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/instance/BehavioralElementInstance">
+      <eClassifiers xsi:type="ecore:EClass" name="PortInstance" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A port instance is a port of a component at instance level."/>
         </eAnnotations>
@@ -639,7 +639,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//model/instance/ConnectorInstance #//model/instance/BehavioralElementInstance">
+      <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//model/instance/ConnectorInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an assembly connector at instance level."/>
         </eAnnotations>
@@ -761,17 +761,6 @@
             eType="#//model/instance/DiscreteSinglePortInstance" eOpposite="#//model/instance/DiscreteSinglePortInstance/multiPortInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="BehavioralElementInstance" abstract="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This is an abstract super class for all instances of behavioral elements. The &#xD;&#xA;behavioral element instance contains the instances of all its behaviors.&#xD;&#xA;&#xD;&#xA;In case of a DiscreteMultiPortInstance, this reference contains the statechart&#xD;&#xA;for the multi-role as well as the adaptation statechart. In case of a &#xD;&#xA;ComponentInstance, this reference contains the component statechart instance&#xD;&#xA;as well as all synchronization statechart instances."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementType"
-            lowerBound="1" eType="#//model/core/BehavioralElement">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The BehavioralElement which is instantiated by this BehavioralElementInstance.&#xD;&#xA;There may be multiple instances for the same BehavioralElement in one model."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

@@ -217,10 +217,6 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
         </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/instance/BehavioralElementInstance">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/BehavioralElementInstance/behavioralElementType"/>
-        </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/pattern">

@@ -15,7 +15,6 @@ import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
@@ -106,7 +105,6 @@ public class InstanceSwitch<T> {
 				ComponentInstance componentInstance = (ComponentInstance)theEObject;
 				T result = caseComponentInstance(componentInstance);
 				if (result == null) result = caseNamedElement(componentInstance);
-				if (result == null) result = caseBehavioralElementInstance(componentInstance);
 				if (result == null) result = caseExtendableElement(componentInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -123,7 +121,6 @@ public class InstanceSwitch<T> {
 				T result = casePortInstance(portInstance);
 				if (result == null) result = caseNamedElement(portInstance);
 				if (result == null) result = caseCommentableElement(portInstance);
-				if (result == null) result = caseBehavioralElementInstance(portInstance);
 				if (result == null) result = caseExtendableElement(portInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -132,7 +129,6 @@ public class InstanceSwitch<T> {
 				AssemblyInstance assemblyInstance = (AssemblyInstance)theEObject;
 				T result = caseAssemblyInstance(assemblyInstance);
 				if (result == null) result = caseConnectorInstance(assemblyInstance);
-				if (result == null) result = caseBehavioralElementInstance(assemblyInstance);
 				if (result == null) result = caseExtendableElement(assemblyInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -158,7 +154,6 @@ public class InstanceSwitch<T> {
 				if (result == null) result = casePortInstance(continuousPortInstance);
 				if (result == null) result = caseNamedElement(continuousPortInstance);
 				if (result == null) result = caseCommentableElement(continuousPortInstance);
-				if (result == null) result = caseBehavioralElementInstance(continuousPortInstance);
 				if (result == null) result = caseExtendableElement(continuousPortInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -171,7 +166,6 @@ public class InstanceSwitch<T> {
 				if (result == null) result = casePortInstance(hybridPortInstance);
 				if (result == null) result = caseNamedElement(hybridPortInstance);
 				if (result == null) result = caseCommentableElement(hybridPortInstance);
-				if (result == null) result = caseBehavioralElementInstance(hybridPortInstance);
 				if (result == null) result = caseExtendableElement(hybridPortInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -182,7 +176,6 @@ public class InstanceSwitch<T> {
 				if (result == null) result = casePortInstance(discretePortInstance);
 				if (result == null) result = caseNamedElement(discretePortInstance);
 				if (result == null) result = caseCommentableElement(discretePortInstance);
-				if (result == null) result = caseBehavioralElementInstance(discretePortInstance);
 				if (result == null) result = caseExtendableElement(discretePortInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -194,7 +187,6 @@ public class InstanceSwitch<T> {
 				if (result == null) result = casePortInstance(discreteSinglePortInstance);
 				if (result == null) result = caseNamedElement(discreteSinglePortInstance);
 				if (result == null) result = caseCommentableElement(discreteSinglePortInstance);
-				if (result == null) result = caseBehavioralElementInstance(discreteSinglePortInstance);
 				if (result == null) result = caseExtendableElement(discreteSinglePortInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -206,14 +198,7 @@ public class InstanceSwitch<T> {
 				if (result == null) result = casePortInstance(discreteMultiPortInstance);
 				if (result == null) result = caseNamedElement(discreteMultiPortInstance);
 				if (result == null) result = caseCommentableElement(discreteMultiPortInstance);
-				if (result == null) result = caseBehavioralElementInstance(discreteMultiPortInstance);
 				if (result == null) result = caseExtendableElement(discreteMultiPortInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE: {
-				BehavioralElementInstance behavioralElementInstance = (BehavioralElementInstance)theEObject;
-				T result = caseBehavioralElementInstance(behavioralElementInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -383,21 +368,6 @@ public class InstanceSwitch<T> {
 	 * @generated
 	 */
 	public T caseDiscreteMultiPortInstance(DiscreteMultiPortInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBehavioralElementInstance(BehavioralElementInstance object) {
 		return null;
 	}
 

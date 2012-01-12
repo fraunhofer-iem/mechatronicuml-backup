@@ -15,7 +15,6 @@ import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
@@ -127,10 +126,6 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDiscreteMultiPortInstance(DiscreteMultiPortInstance object) {
 				return createDiscreteMultiPortInstanceAdapter();
-			}
-			@Override
-			public Adapter caseBehavioralElementInstance(BehavioralElementInstance object) {
-				return createBehavioralElementInstanceAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -315,20 +310,6 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscreteMultiPortInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance <em>Behavioral Element Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance
-	 * @generated
-	 */
-	public Adapter createBehavioralElementInstanceAdapter() {
 		return null;
 	}
 

@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Assembly;
  * @model
  * @generated
  */
-public interface AssemblyInstance extends ConnectorInstance, BehavioralElementInstance {
+public interface AssemblyInstance extends ConnectorInstance {
 	/**
 	 * Returns the value of the '<em><b>Assembly Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

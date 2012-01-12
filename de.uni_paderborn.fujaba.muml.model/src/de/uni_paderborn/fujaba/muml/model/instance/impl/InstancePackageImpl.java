@@ -25,7 +25,6 @@ import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
@@ -129,13 +128,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	private EClass discreteMultiPortInstanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass behavioralElementInstanceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -535,24 +527,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBehavioralElementInstance() {
-		return behavioralElementInstanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBehavioralElementInstance_BehavioralElementType() {
-		return (EReference)behavioralElementInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public InstanceFactory getInstanceFactory() {
 		return (InstanceFactory)getEFactoryInstance();
 	}
@@ -619,9 +593,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		discreteMultiPortInstanceEClass = createEClass(DISCRETE_MULTI_PORT_INSTANCE);
 		createEReference(discreteMultiPortInstanceEClass, DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES);
-
-		behavioralElementInstanceEClass = createEClass(BEHAVIORAL_ELEMENT_INSTANCE);
-		createEReference(behavioralElementInstanceEClass, BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE);
 	}
 
 	/**
@@ -652,7 +623,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -660,13 +630,10 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		// Add supertypes to classes
 		componentInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		componentInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		connectorInstanceEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
-		portInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		assemblyInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
-		assemblyInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		delegationInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		componentInstanceConfigurationEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		continuousPortInstanceEClass.getESuperTypes().add(this.getPortInstance());
@@ -723,9 +690,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(discreteMultiPortInstanceEClass, DiscreteMultiPortInstance.class, "DiscreteMultiPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteMultiPortInstance_SubPortInstances(), this.getDiscreteSinglePortInstance(), this.getDiscreteSinglePortInstance_MultiPortInstance(), "subPortInstances", null, 0, -1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(behavioralElementInstanceEClass, BehavioralElementInstance.class, "BehavioralElementInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehavioralElementInstance_BehavioralElementType(), theCorePackage.getBehavioralElement(), null, "behavioralElementType", null, 1, 1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		// Create resource
 		createResource(eNS_URI);
 
@@ -757,7 +721,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "constraints", "OneDelegationInstancePerPortInstance"
-		   });																					
+		   });																			
 	}
 
 	/**
@@ -809,7 +773,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).senderMessageInterface\nendif"
-		   });						
+		   });				
 	}
 
 } //InstancePackageImpl

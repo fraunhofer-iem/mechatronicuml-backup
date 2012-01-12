@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
@@ -122,8 +121,6 @@ public class InstanceValidator extends EObjectValidator {
 				return validateDiscreteSinglePortInstance((DiscreteSinglePortInstance)value, diagnostics, context);
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE:
 				return validateDiscreteMultiPortInstance((DiscreteMultiPortInstance)value, diagnostics, context);
-			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE:
-				return validateBehavioralElementInstance((BehavioralElementInstance)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -265,15 +262,6 @@ public class InstanceValidator extends EObjectValidator {
 	 */
 	public boolean validateDiscreteMultiPortInstance(DiscreteMultiPortInstance discreteMultiPortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(discreteMultiPortInstance, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBehavioralElementInstance(BehavioralElementInstance behavioralElementInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(behavioralElementInstance, diagnostics, context);
 	}
 
 	/**

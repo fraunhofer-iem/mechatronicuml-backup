@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
  * @model abstract="true"
  * @generated
  */
-public interface PortInstance extends NamedElement, CommentableElement, BehavioralElementInstance {
+public interface PortInstance extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

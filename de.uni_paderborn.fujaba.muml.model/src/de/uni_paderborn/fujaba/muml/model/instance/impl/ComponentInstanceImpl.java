@@ -19,8 +19,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -33,7 +31,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getEmbeddedCIC <em>Embedded CIC</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
@@ -43,16 +40,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * @generated
  */
 public class ComponentInstanceImpl extends NamedElementImpl implements ComponentInstance {
-	/**
-	 * The cached value of the '{@link #getBehavioralElementType() <em>Behavioral Element Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehavioralElementType()
-	 * @generated
-	 * @ordered
-	 */
-	protected BehavioralElement behavioralElementType;
-
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -100,44 +87,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	protected EClass eStaticClass() {
 		return InstancePackage.Literals.COMPONENT_INSTANCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehavioralElement getBehavioralElementType() {
-		if (behavioralElementType != null && behavioralElementType.eIsProxy()) {
-			InternalEObject oldBehavioralElementType = (InternalEObject)behavioralElementType;
-			behavioralElementType = (BehavioralElement)eResolveProxy(oldBehavioralElementType);
-			if (behavioralElementType != oldBehavioralElementType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE, oldBehavioralElementType, behavioralElementType));
-			}
-		}
-		return behavioralElementType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehavioralElement basicGetBehavioralElementType() {
-		return behavioralElementType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBehavioralElementType(BehavioralElement newBehavioralElementType) {
-		BehavioralElement oldBehavioralElementType = behavioralElementType;
-		behavioralElementType = newBehavioralElementType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE, oldBehavioralElementType, behavioralElementType));
 	}
 
 	/**
@@ -272,9 +221,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
-				if (resolve) return getBehavioralElementType();
-				return basicGetBehavioralElementType();
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
@@ -295,9 +241,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
-				setBehavioralElementType((BehavioralElement)newValue);
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				setComponentType((Component)newValue);
 				return;
@@ -320,9 +263,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
-				setBehavioralElementType((BehavioralElement)null);
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				setComponentType((Component)null);
 				return;
@@ -344,8 +284,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
-				return behavioralElementType != null;
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				return componentType != null;
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
@@ -354,38 +292,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				return portInstances != null && !portInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == BehavioralElementInstance.class) {
-			switch (derivedFeatureID) {
-				case InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE: return InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == BehavioralElementInstance.class) {
-			switch (baseFeatureID) {
-				case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE: return InstancePackage.COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ComponentInstanceImpl

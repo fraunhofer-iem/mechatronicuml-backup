@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Component;
  * @model
  * @generated
  */
-public interface ComponentInstance extends NamedElement, BehavioralElementInstance {
+public interface ComponentInstance extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
