@@ -46,16 +46,7 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 	private Button btnDown;
 	private Button btnRemove;
 
-	private TextualDialogExtension textualDialogExtension;
-
 	private PropertySheetDialogExtension propertySheetDialogExtension;
-
-	/**
-	 * A SelectionChangedListener, which is notified about selection changes in
-	 * the Parameter List and updates the Textfield selection of the
-	 * TextualDialogExtension accordingly.
-	 */
-	private ISelectionChangedListener objectsSelectionToRangeListener;
 
 	/**
 	 * The result, which can be accessed using getResult(), after the dialog was
@@ -114,24 +105,6 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 		Table tblParameterTable = objectsTableViewer.getTable();
 		tblParameterTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 				true, 1, 1));
-
-		// Create SelectionListener for objectsTableViewer to update text
-		// selection accordingly
-		objectsSelectionToRangeListener = new ISelectionChangedListener() {
-			public void selectionChanged(SelectionChangedEvent event) {
-				if (event.getSelection() instanceof IStructuredSelection) {
-					IStructuredSelection selection = (IStructuredSelection) event
-							.getSelection();
-					Object selectedElement = selection.getFirstElement();
-					if (selectedElement != null) {
-						textualDialogExtension
-								.setTextRange((EObject) selectedElement);
-					}
-				}
-			}
-		};
-		objectsTableViewer
-				.addSelectionChangedListener(objectsSelectionToRangeListener);
 
 		// Create SelectionListener for objectsTableViewer to update
 		// Button-enablement accordingly
@@ -212,8 +185,6 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 					getCreationDialog().setPropertyValue(values.getChildren());
 					// End added
 
-					textualDialogExtension.rebuildTextualString();
-
 					int objectsCount = values.getChildren().size();
 					if (index >= objectsCount) {
 						index = objectsCount - 1;
@@ -245,7 +216,6 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 					// Begin added because of #204
 					getCreationDialog().setPropertyValue(values.getChildren());
 					// End added
-					textualDialogExtension.rebuildTextualString();
 
 					// Update visuals
 					objectsTableViewer.refresh();
@@ -268,7 +238,6 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 					// Begin added because of #204
 					getCreationDialog().setPropertyValue(values.getChildren());
 					// End added
-					textualDialogExtension.rebuildTextualString();
 
 					// Update visuals
 					objectsTableViewer.refresh();
@@ -298,20 +267,6 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 		return null;
 	}
 
-	/**
-	 * Selects the given parameter within the Parameters-List without firing
-	 * notifications, which are only useful, if the users selects a parameter.
-	 * 
-	 * @param parameterSelection
-	 *            The parameter to select.
-	 */
-	public void setListSelection(ISelection parameterSelection) {
-		objectsTableViewer
-				.removeSelectionChangedListener(objectsSelectionToRangeListener);
-		objectsTableViewer.setSelection(parameterSelection);
-		objectsTableViewer
-				.addSelectionChangedListener(objectsSelectionToRangeListener);
-	}
 
 	@Override
 	public void okPressed() {
@@ -354,8 +309,4 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 		this.propertySheetDialogExtension = propertySheetDialogExtension;
 	}
 
-	public void setTextualDialogExtension(
-			TextualDialogExtension textualDialogExtension) {
-		this.textualDialogExtension = textualDialogExtension;
-	}
 }

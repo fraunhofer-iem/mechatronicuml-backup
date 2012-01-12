@@ -34,8 +34,6 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 	private ObjectsListDialogExtension objectsListDialogExtension;
 
-	private TextualDialogExtension textualDialogExtension;
-
 	private ItemProvider values;
 
 	private ComboViewer comboViewer;
@@ -131,8 +129,6 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 				final EObject newObject = EcoreUtil.create(getInstanceClass());
 				
 				objectsListDialogExtension.addListItem(newObject);
-				textualDialogExtension.rebuildTextualString();
-
 				objectsListDialogExtension.getTableViewer().refresh();
 				objectsListDialogExtension.getTableViewer().setSelection(
 						new StructuredSelection(new Object[] { newObject }));
@@ -151,11 +147,6 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void okPressed() {
-	}
-
-	public void setTextualDialogExtension(
-			TextualDialogExtension textualDialogExtension) {
-		this.textualDialogExtension = textualDialogExtension;
 	}
 
 	public void setObjectsListDialogExtension(

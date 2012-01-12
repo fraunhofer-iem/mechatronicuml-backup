@@ -20,7 +20,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.ui.provider.PropertyDescriptor;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ICellEditorListener;
-import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
@@ -35,7 +34,6 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySect
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectCreationDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialogExtension;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.TextualDialogExtension;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 public class CustomPropertyDescriptor extends PropertyDescriptor {
@@ -198,26 +196,16 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 			objectsListDialogExtension = new ObjectsListDialogExtension(dialog,
 					adapterFactory, getCurrentValues());
-			TextualDialogExtension textualDialogExtension = new TextualDialogExtension(
-					dialog, null, null);
 
 			objectCreationDialogExtension
 					.setObjectsListDialogExtension(objectsListDialogExtension);
-
-			objectCreationDialogExtension
-					.setTextualDialogExtension(textualDialogExtension);
 
 			objectsListDialogExtension
 					.setPropertySheetDialogExtension(propertySheetDialogExtension);
-			objectsListDialogExtension
-					.setTextualDialogExtension(textualDialogExtension);
-			textualDialogExtension
-					.setObjectsListDialogExtension(objectsListDialogExtension);
 
 			dialog.addExtension(objectCreationDialogExtension);
 			dialog.addExtension(objectsListDialogExtension);
 			dialog.addExtension(propertySheetDialogExtension);
-			dialog.addExtension(textualDialogExtension);
 		}
 
 		@Override
