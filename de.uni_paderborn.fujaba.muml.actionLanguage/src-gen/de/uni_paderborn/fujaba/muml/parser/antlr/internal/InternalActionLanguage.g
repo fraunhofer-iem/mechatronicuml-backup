@@ -90,16 +90,27 @@ ruleBlock returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-(	'{' 
+((
+    { 
+        temp=factory.create(grammarAccess.getBlockAccess().getBlockAction_0().getType().getClassifier());
+        $current = temp; 
+        temp = null;
+        CompositeNode newNode = createCompositeNode(grammarAccess.getBlockAccess().getBlockAction_0(), currentNode.getParent());
+    newNode.getChildren().add(currentNode);
+    moveLookaheadInfo(currentNode, newNode);
+    currentNode = newNode; 
+        associateNodeWithAstElement(currentNode, $current); 
+    }
+)	'{' 
     {
-        createLeafNode(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_0(), null); 
+        createLeafNode(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_1(), null); 
     }
 (
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getBlockAccess().getExpressionsExpressionStartRuleParserRuleCall_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getBlockAccess().getExpressionsExpressionStartRuleParserRuleCall_2_0(), currentNode); 
 	    }
-		lv_expressions_1_0=ruleExpressionStartRule		{
+		lv_expressions_2_0=ruleExpressionStartRule		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getBlockRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -108,7 +119,7 @@ ruleBlock returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"expressions",
-	        		lv_expressions_1_0, 
+	        		lv_expressions_2_0, 
 	        		"ExpressionStartRule", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -120,7 +131,7 @@ ruleBlock returns [EObject current=null]
 )
 )*	'}' 
     {
-        createLeafNode(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_2(), null); 
+        createLeafNode(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_3(), null); 
     }
 )
 ;
@@ -1406,11 +1417,7 @@ ruleLiteralExpression returns [EObject current=null]
 	    }
 
 )
-)	':' 
-    {
-        createLeafNode(grammarAccess.getLiteralExpressionAccess().getColonKeyword_1_2(), null); 
-    }
-))
+)))
 ;
 
 

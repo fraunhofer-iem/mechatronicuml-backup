@@ -13,6 +13,7 @@ import "platform:/resource/org.storydriven.modeling/model/sdm.ecore#//expression
 
 
 Block returns actionLanguage::Block:
+	{actionLanguage::Block}
 	'{'(expressions+=ExpressionStartRule*)'}';
 
 ForLoop returns actionLanguage::ForLoop:
@@ -72,9 +73,9 @@ UnaryExpression returns expressions::Expression:
 	
 LiteralExpression returns expressions::Expression:
 	'(' Expression ')' |
-	//{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
-	{actionLanguage::LiteralExpression} value=IdentifierOrValue':'
+	{actionLanguage::LiteralExpression} value=IdentifierOrValue
 	;	
+	
 AttributeExpression returns expressions::Expression:
 	 LiteralExpression  |
 	{actionLanguage::AttributeExpression}  attribute=[ecore::EAttribute]

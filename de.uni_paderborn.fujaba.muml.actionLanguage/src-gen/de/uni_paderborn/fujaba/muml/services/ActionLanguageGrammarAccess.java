@@ -20,29 +20,33 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class BlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Block");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cExpressionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cExpressionsExpressionStartRuleParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Action cBlockAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionsExpressionStartRuleParserRuleCall_2_0 = (RuleCall)cExpressionsAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Block returns actionLanguage::Block:
-		//	"{" expressions+=ExpressionStartRule* "}";
+		//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"{" expressions+=ExpressionStartRule* "}"
+		//{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}"
 		public Group getGroup() { return cGroup; }
 
+		//{actionLanguage::Block}
+		public Action getBlockAction_0() { return cBlockAction_0; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
 		//expressions+=ExpressionStartRule*
-		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
+		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
 
 		//ExpressionStartRule
-		public RuleCall getExpressionsExpressionStartRuleParserRuleCall_1_0() { return cExpressionsExpressionStartRuleParserRuleCall_1_0; }
+		public RuleCall getExpressionsExpressionStartRuleParserRuleCall_2_0() { return cExpressionsExpressionStartRuleParserRuleCall_2_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class ForLoopElements extends AbstractParserRuleElementFinder {
@@ -641,15 +645,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cLiteralExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueIdentifierOrValueParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
-		private final Keyword cColonKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//LiteralExpression returns expressions::Expression:
-		//	"(" Expression ")" | //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
-		//	{actionLanguage::LiteralExpression} value=IdentifierOrValue ":";
+		//	"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue;
 		public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" | //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
-		//{actionLanguage::LiteralExpression} value=IdentifierOrValue ":"
+		//"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" Expression ")"
@@ -664,11 +665,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 
-		////{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
-		//{actionLanguage::LiteralExpression} value=IdentifierOrValue ":"
+		//{actionLanguage::LiteralExpression} value=IdentifierOrValue
 		public Group getGroup_1() { return cGroup_1; }
 
-		////{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
 		//{actionLanguage::LiteralExpression}
 		public Action getLiteralExpressionAction_1_0() { return cLiteralExpressionAction_1_0; }
 
@@ -677,9 +676,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//IdentifierOrValue
 		public RuleCall getValueIdentifierOrValueParserRuleCall_1_1_0() { return cValueIdentifierOrValueParserRuleCall_1_1_0; }
-
-		//":"
-		public Keyword getColonKeyword_1_2() { return cColonKeyword_1_2; }
 	}
 
 	public class AttributeExpressionElements extends AbstractParserRuleElementFinder {
@@ -1089,7 +1085,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Block returns actionLanguage::Block:
-	//	"{" expressions+=ExpressionStartRule* "}";
+	//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}";
 	public BlockElements getBlockAccess() {
 		return (pBlock != null) ? pBlock : (pBlock = new BlockElements());
 	}
@@ -1226,8 +1222,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LiteralExpression returns expressions::Expression:
-	//	"(" Expression ")" | //{actionLanguage::LiteralExpression} value=IdentifierOrValue':'valueType=[ecore::EDataType]
-	//	{actionLanguage::LiteralExpression} value=IdentifierOrValue ":";
+	//	"(" Expression ")" | {actionLanguage::LiteralExpression} value=IdentifierOrValue;
 	public LiteralExpressionElements getLiteralExpressionAccess() {
 		return (pLiteralExpression != null) ? pLiteralExpression : (pLiteralExpression = new LiteralExpressionElements());
 	}
