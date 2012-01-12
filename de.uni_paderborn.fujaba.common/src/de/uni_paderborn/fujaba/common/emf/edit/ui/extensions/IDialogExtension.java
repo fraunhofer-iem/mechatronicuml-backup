@@ -8,4 +8,5 @@ public interface IDialogExtension {
 	void createButtonArea(Composite parent);
 	void okPressed();
 	void dispose();
+	void setVisible(boolean visible);
 }

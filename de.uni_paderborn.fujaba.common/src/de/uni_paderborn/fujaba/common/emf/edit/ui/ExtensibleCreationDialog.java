@@ -1,9 +1,11 @@
 package de.uni_paderborn.fujaba.common.emf.edit.ui;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
@@ -12,7 +14,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
-import org.eclipse.gmf.runtime.common.ui.services.properties.GetPropertySourceOperation;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.IContentProvider;
@@ -35,6 +36,10 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.IDialogExtension;
  */
 public class ExtensibleCreationDialog extends Dialog {
 
+	public final static String EXTENSION_GROUP_ALWAYS_VISIBLE = "always visible";
+	public final static String EXTENSION_GROUP_DEFAULT = "default";
+	public final static String EXTENSION_GROUP_XTEXT_PARSER = "XTextParser";
+
 	/**
 	 * A resource for newly created object. It is within the same ResourceSet as
 	 * the RootNode, so that PropertyDescriptors can find valid choices.
@@ -53,7 +58,7 @@ public class ExtensibleCreationDialog extends Dialog {
 		return button;
 	}
 
-	private List<IDialogExtension> extensions = new ArrayList<IDialogExtension>();
+	private Map<Object, List<IDialogExtension>> groupToExtensions = new HashMap<Object, List<IDialogExtension>>();
 
 	/**
 	 * The StructuralFeature that we set the values for.
@@ -115,8 +120,26 @@ public class ExtensibleCreationDialog extends Dialog {
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
 	}
 
-	public void addExtension(IDialogExtension extension) {
-		extensions.add(extension);
+	public void addExtension(IDialogExtension extension, Object group) {
+		getExtensionsInGroup(group).add(extension);
+	}
+
+	public List<IDialogExtension> getExtensionsInGroup(Object group) {
+		List<IDialogExtension> extensions = groupToExtensions.get(group);
+		if (extensions == null) {
+			extensions = new ArrayList<IDialogExtension>();
+			groupToExtensions.put(group, extensions);
+		}
+		return extensions;
+	}
+
+	public Collection<Object> getRegisteredGroups() {
+		return groupToExtensions.keySet();
+	}
+
+	
+	public Map<Object, List<IDialogExtension>> getGroupMap() {
+		return groupToExtensions;
 	}
 
 	@Override
@@ -151,25 +174,29 @@ public class ExtensibleCreationDialog extends Dialog {
 		Composite container = (Composite) super.createDialogArea(parent);
 		container.setLayout(new GridLayout(2, false));
 
-		for (IDialogExtension extension : extensions) {
-			Composite mainArea = new Composite(container, SWT.NONE);
-			GridLayout gridLayoutMainArea = new GridLayout(1, false);
-			mainArea.setLayout(gridLayoutMainArea);
+		for (List<IDialogExtension> extensions : groupToExtensions.values()) {
+			for (IDialogExtension extension : extensions) {
+				Composite mainArea = new Composite(container, SWT.NONE);
+				GridLayout gridLayoutMainArea = new GridLayout(1, false);
+				mainArea.setLayout(gridLayoutMainArea);
 
-			Composite buttonArea = new Composite(container, SWT.NONE);
-			GridLayout gridLayoutButtonArea = new GridLayout(1, false);
-			GridData gridDataButtonArea = new GridData(SWT.FILL, SWT.FILL,
-					false, false, 1, 1);
-			gridLayoutButtonArea.marginTop = 7;
-			buttonArea.setLayout(gridLayoutButtonArea);
-			buttonArea.setLayoutData(gridDataButtonArea);
+				Composite buttonArea = new Composite(container, SWT.NONE);
+				GridLayout gridLayoutButtonArea = new GridLayout(1, false);
+				GridData gridDataButtonArea = new GridData(SWT.FILL, SWT.FILL,
+						false, false, 1, 1);
+				gridLayoutButtonArea.marginTop = 7;
+				buttonArea.setLayout(gridLayoutButtonArea);
+				buttonArea.setLayoutData(gridDataButtonArea);
 
-			extension.createMainArea(mainArea);
-			extension.createButtonArea(buttonArea);
+				extension.createMainArea(mainArea);
+				extension.createButtonArea(buttonArea);
+			}
 		}
 
-		for (IDialogExtension extension : extensions) {
-			extension.initialize();
+		for (List<IDialogExtension> extensions : groupToExtensions.values()) {
+			for (IDialogExtension extension : extensions) {
+				extension.initialize();
+			}
 		}
 
 		return container;
@@ -192,19 +219,26 @@ public class ExtensibleCreationDialog extends Dialog {
 
 	@Override
 	public boolean close() {
-		// Execute everything within a try-catch block to prevent problems to close the window.
+		// Execute everything within a try-catch block to prevent problems to
+		// close the window.
 		try {
 			// Begin added because of #204
-			for (IDialogExtension extension : extensions) {
-				extension.okPressed();
+			for (List<IDialogExtension> extensions : groupToExtensions.values()) {
+				for (IDialogExtension extension : extensions) {
+					extension.okPressed();
+				}
 			}
-	
-			// Hack to force notification (the real result will be set afterwards) 
-			getItemPropertyDescriptor().setPropertyValue(containerObject, Collections.EMPTY_LIST);
+
+			// Hack to force notification (the real result will be set
+			// afterwards)
+			getItemPropertyDescriptor().setPropertyValue(containerObject,
+					Collections.EMPTY_LIST);
 			// End added
-			
-			for (IDialogExtension extension : extensions) {
-				extension.dispose();
+
+			for (List<IDialogExtension> extensions : groupToExtensions.values()) {
+				for (IDialogExtension extension : extensions) {
+					extension.dispose();
+				}
 			}
 			contentProvider.dispose();
 		} catch (Exception e) {
@@ -234,7 +268,7 @@ public class ExtensibleCreationDialog extends Dialog {
 	public EStructuralFeature getStructuralFeature() {
 		return structuralFeature;
 	}
-	
+
 	public EObject getContainerObject() {
 		return containerObject;
 	}

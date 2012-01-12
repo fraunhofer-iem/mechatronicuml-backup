@@ -40,7 +40,6 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialog
 import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
@@ -213,7 +212,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			}
 			System.out.println(oldValues);
 			textDialog = new SimpleTextualDialogExtension(dialog, initialString);
-			this.dialog.addExtension(textDialog);			
+			dialog.addExtension(textDialog, ExtensibleCreationDialog.EXTENSION_GROUP_XTEXT_PARSER);			
 		}
 		
 		@Override
@@ -262,9 +261,9 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			objectsListDialogExtension
 					.setPropertySheetDialogExtension(propertySheetDialogExtension);
 
-			dialog.addExtension(objectCreationDialogExtension);
-			dialog.addExtension(objectsListDialogExtension);
-			dialog.addExtension(propertySheetDialogExtension);
+			dialog.addExtension(objectCreationDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
+			dialog.addExtension(objectsListDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
+			dialog.addExtension(propertySheetDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
 		}
 
 		@Override
@@ -336,7 +335,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 			propertySheetDialogExtension
 					.setInitialObject((EObject) actualObject);
-			dialog.addExtension(propertySheetDialogExtension);
+			dialog.addExtension(propertySheetDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
 		}
 
 		@Override

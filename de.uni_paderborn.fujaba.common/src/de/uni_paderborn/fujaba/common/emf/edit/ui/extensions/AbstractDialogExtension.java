@@ -2,12 +2,15 @@ package de.uni_paderborn.fujaba.common.emf.edit.ui.extensions;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.swt.widgets.Composite;
 
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
 public abstract class AbstractDialogExtension implements IDialogExtension {
 
 	private ExtensibleCreationDialog creationDialog;
+	private Composite mainArea;
+	private Composite buttonArea;
 	
 	public AbstractDialogExtension(ExtensibleCreationDialog creationDialog) {
 		this.creationDialog = creationDialog;
@@ -20,13 +23,39 @@ public abstract class AbstractDialogExtension implements IDialogExtension {
 	public EStructuralFeature getStructuralFeature() {
 		return creationDialog.getStructuralFeature();
 	}
-	
+
+	@Override
+	public void initialize() {
+		// do nothing by default
+	}
+
+	@Override
+	public void createMainArea(Composite parent) {
+		mainArea = parent;
+	}
+
+	@Override
+	public void createButtonArea(Composite parent) {
+		buttonArea = parent;
+	}
+
+	@Override
+	public void okPressed() {
+		// do nothing by default
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		mainArea.setVisible(visible);
+		buttonArea.setVisible(visible);
+	}
+
 	public EObject getContainerObject() {
 		return creationDialog.getContainerObject();
 	}
 	
 	public void dispose() {
-		
+		// do nothing by default
 	}
 
 }

@@ -19,8 +19,6 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CaretListener;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -92,6 +90,8 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void createMainArea(Composite parent) {
+		super.createMainArea(parent);
+
 		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 
 		Label lblParameterList = new Label(parent, SWT.NONE);
@@ -308,5 +308,6 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 			PropertySheetDialogExtension propertySheetDialogExtension) {
 		this.propertySheetDialogExtension = propertySheetDialogExtension;
 	}
+
 
 }
