@@ -38,7 +38,16 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="DiscreteSinglePortInstance"
-          description="Create new PortInstance">
+          description="Create new DiscreteSinglePortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/DiscretePort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DiscreteMultiPortInstance"
+          description="Create new DiscreteMultiPortInstance">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/DiscretePort.gif"
@@ -47,7 +56,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="ContinuousPortInstance"
-          description="Create new PortInstance">
+          description="Create new ContinuousPortInstance">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ContinuousPort.gif"
@@ -56,7 +65,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="HybridPortInstance"
-          description="Create new PortInstance">
+          description="Create new HybridPortInstance">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/HybridPort.gif"

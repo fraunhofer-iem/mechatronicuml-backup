@@ -288,27 +288,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ContinuousPortInstance5CreationTool_title;
+	public static String DiscreteMultiPortInstance5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ContinuousPortInstance5CreationTool_desc;
+	public static String DiscreteMultiPortInstance5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String HybridPortInstance6CreationTool_title;
+	public static String ContinuousPortInstance6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HybridPortInstance6CreationTool_desc;
+	public static String ContinuousPortInstance6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String HybridPortInstance7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String HybridPortInstance7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_3013_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_3013_outgoinglinks;
 
 	/**
 	 * @generated
@@ -323,32 +348,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AssemblyInstance_4003_target;
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_2009_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AssemblyInstance_4003_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_2008_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_2008_outgoinglinks;
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_2009_outgoinglinks;
 
 	/**
 	 * @generated
@@ -363,16 +368,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_3011_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_3011_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_DelegationInstance_4004_target;
 
 	/**
@@ -383,12 +378,62 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_HybridPortInstance_2008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HybridPortInstance_2008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3014_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3014_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ContinuousPortInstance_2007_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ContinuousPortInstance_2007_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContinuousPortInstance_3011_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContinuousPortInstance_3011_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AssemblyInstance_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AssemblyInstance_4003_source;
 
 	/**
 	 * @generated

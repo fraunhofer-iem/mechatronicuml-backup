@@ -24,7 +24,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ComponentInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
+public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy
+		extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -43,7 +44,7 @@ public class ComponentInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-				.getComponentInstance_PortInstances();
+				.getDiscreteMultiPortInstance_SubPortInstances();
 	}
 
 	/**
@@ -73,7 +74,7 @@ public class ComponentInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID;
 				if (visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
 					result.add(new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor(
@@ -87,7 +88,7 @@ public class ComponentInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
-				.getComponentInstance_2004SemanticChildren(viewObject);
+				.getDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment_7001SemanticChildren(viewObject);
 
 	}
 
@@ -104,16 +105,8 @@ public class ComponentInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
-		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
-			return true;
-		}
-		return false;
 	}
 
 	/**

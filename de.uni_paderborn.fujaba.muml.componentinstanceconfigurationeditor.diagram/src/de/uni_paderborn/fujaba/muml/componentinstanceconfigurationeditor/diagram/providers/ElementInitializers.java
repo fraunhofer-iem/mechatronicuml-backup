@@ -36,7 +36,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							5,
+							7,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getHybridPortInstance(), null).evaluate(
 							instance);
@@ -55,9 +55,28 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							6,
+							8,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getDiscreteSinglePortInstance(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_DiscreteMultiPortInstance_2009(
+			de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							9,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getDiscreteMultiPortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
@@ -74,7 +93,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							7,
+							10,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getContinuousPortInstance(), null)
 					.evaluate(instance);
@@ -126,12 +145,50 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_DiscreteMultiPortInstance_3013(
+			de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							3,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getDiscreteMultiPortInstance(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_DiscreteSinglePortInstance_3014(
+			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							4,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getDiscreteSinglePortInstance(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_ContinuousPortInstance_3011(
 			de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							3,
+							5,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getContinuousPortInstance(), null)
 					.evaluate(instance);

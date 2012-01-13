@@ -5,17 +5,17 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
@@ -30,33 +30,33 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Font;
-import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
  */
-public class DiscreteSinglePortInstance2EditPart extends
-		AbstractBorderedShapeEditPart {
+public class DiscreteMultiPortInstance2EditPart extends
+		BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2005;
+	public static final int VISUAL_ID = 3013;
 
 	/**
 	 * @generated
@@ -71,7 +71,7 @@ public class DiscreteSinglePortInstance2EditPart extends
 	/**
 	 * @generated
 	 */
-	public DiscreteSinglePortInstance2EditPart(View view) {
+	public DiscreteMultiPortInstance2EditPart(View view) {
 		super(view);
 	}
 
@@ -79,10 +79,14 @@ public class DiscreteSinglePortInstance2EditPart extends
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
+				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.DiscreteSinglePortInstance2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.DiscreteMultiPortInstance2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -98,7 +102,7 @@ public class DiscreteSinglePortInstance2EditPart extends
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						// BEGIN FIX: Muml-Bug #58
@@ -231,14 +235,78 @@ public class DiscreteSinglePortInstance2EditPart extends
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new PortFigure();
+		return primaryShape = new DiscreteMultiPortInstanceFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public PortFigure getPrimaryShape() {
-		return (PortFigure) primaryShape;
+	public DiscreteMultiPortInstanceFigure getPrimaryShape() {
+		return (DiscreteMultiPortInstanceFigure) primaryShape;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureDiscreteSinglePortInstancesCompartment();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureDiscreteSinglePortInstancesCompartment();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart) {
+			return getPrimaryShape()
+					.getFigureDiscreteSinglePortInstancesCompartment();
+		}
+		if (editPart instanceof IBorderItemEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
+		return getContentPane();
 	}
 
 	/**
@@ -246,7 +314,7 @@ public class DiscreteSinglePortInstance2EditPart extends
 	 */
 	protected void addBorderItem(IFigure borderItemContainer,
 			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart) {
+		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
@@ -262,8 +330,8 @@ public class DiscreteSinglePortInstance2EditPart extends
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24);
 
-		// Ensures that the element can be shrinked (Muml Bug #62).
-		result.setMinimumSize(new Dimension(0, 0));
+		//FIXME: workaround for #154536
+		result.getBounds().setSize(result.getPreferredSize());
 
 		return result;
 	}
@@ -292,6 +360,11 @@ public class DiscreteSinglePortInstance2EditPart extends
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -346,7 +419,7 @@ public class DiscreteSinglePortInstance2EditPart extends
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -493,56 +566,42 @@ public class DiscreteSinglePortInstance2EditPart extends
 	/**
 	 * @generated
 	 */
-	public class PortFigure extends RectangleFigure {
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
+					.getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter
+					.getAdapter(IElementType.class);
+			if (type == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3014) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+
+	/**
+	 * @generated
+	 */
+	public class DiscreteMultiPortInstanceFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private ScalablePolygonShape fFigureInPolygon;
-		/**
-		 * @generated
-		 */
-		private ScalablePolygonShape fFigureOutPolygon;
-		/**
-		 * @generated
-		 */
-		private ScalablePolygonShape fFigureInOutPolygon;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureInnerRectContainer;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureOutlineRectangle;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureShadowRectangle;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureHardwareTypeLabel;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureInPolygonContainer;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureOutPolygonContainer;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureInOutPolygonContainer;
+		private RectangleFigure fFigureDiscreteSinglePortInstancesCompartment;
 
 		/**
 		 * @generated
 		 */
-		public PortFigure() {
-			this.setLayoutManager(new StackLayout());
-			this.setFill(false);
-			this.setOutline(false);
+		public DiscreteMultiPortInstanceFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
+			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
 
@@ -551,195 +610,42 @@ public class DiscreteSinglePortInstance2EditPart extends
 		 */
 		private void createContents() {
 
-			RectangleFigure aux10 = new RectangleFigure();
-			aux10.setFill(false);
-			aux10.setOutline(false);
-			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(0)));
+			fFigureDiscreteSinglePortInstancesCompartment = new RectangleFigure();
+			fFigureDiscreteSinglePortInstancesCompartment.setOutline(false);
 
-			this.add(aux10);
-			aux10.setLayoutManager(new StackLayout());
+			GridData constraintFFigureDiscreteSinglePortInstancesCompartment = new GridData();
+			constraintFFigureDiscreteSinglePortInstancesCompartment.verticalAlignment = GridData.CENTER;
+			constraintFFigureDiscreteSinglePortInstancesCompartment.horizontalAlignment = GridData.CENTER;
+			constraintFFigureDiscreteSinglePortInstancesCompartment.horizontalIndent = 0;
+			constraintFFigureDiscreteSinglePortInstancesCompartment.horizontalSpan = 1;
+			constraintFFigureDiscreteSinglePortInstancesCompartment.verticalSpan = 1;
+			constraintFFigureDiscreteSinglePortInstancesCompartment.grabExcessHorizontalSpace = true;
+			constraintFFigureDiscreteSinglePortInstancesCompartment.grabExcessVerticalSpace = true;
+			this.add(fFigureDiscreteSinglePortInstancesCompartment,
+					constraintFFigureDiscreteSinglePortInstancesCompartment);
 
-			fFigureShadowRectangle = new RectangleFigure();
+			ToolbarLayout layoutFFigureDiscreteSinglePortInstancesCompartment = new ToolbarLayout();
+			layoutFFigureDiscreteSinglePortInstancesCompartment
+					.setStretchMinorAxis(true);
+			layoutFFigureDiscreteSinglePortInstancesCompartment
+					.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
 
-			aux10.add(fFigureShadowRectangle);
+			layoutFFigureDiscreteSinglePortInstancesCompartment.setSpacing(5);
+			layoutFFigureDiscreteSinglePortInstancesCompartment
+					.setVertical(false);
 
-			fFigureInnerRectContainer = new RectangleFigure();
-			fFigureInnerRectContainer.setFill(false);
-			fFigureInnerRectContainer.setOutline(false);
-			fFigureInnerRectContainer.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-
-			this.add(fFigureInnerRectContainer);
-			fFigureInnerRectContainer.setLayoutManager(new StackLayout());
-
-			fFigureOutlineRectangle = new RectangleFigure();
-
-			fFigureInnerRectContainer.add(fFigureOutlineRectangle);
-
-			fFigureInPolygonContainer = new RectangleFigure();
-			fFigureInPolygonContainer.setFill(false);
-			fFigureInPolygonContainer.setOutline(false);
-			fFigureInPolygonContainer.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
-
-			fFigureInnerRectContainer.add(fFigureInPolygonContainer);
-			fFigureInPolygonContainer.setLayoutManager(new StackLayout());
-
-			fFigureInPolygon = new ScalablePolygonShape();
-			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(1)));
-			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(2)));
-			fFigureInPolygon.setFill(true);
-			fFigureInPolygon.setOutline(false);
-			fFigureInPolygon.setBackgroundColor(ColorConstants.black);
-
-			fFigureInPolygonContainer.add(fFigureInPolygon);
-
-			fFigureOutPolygonContainer = new RectangleFigure();
-			fFigureOutPolygonContainer.setFill(false);
-			fFigureOutPolygonContainer.setOutline(false);
-			fFigureOutPolygonContainer.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
-
-			fFigureInnerRectContainer.add(fFigureOutPolygonContainer);
-			fFigureOutPolygonContainer.setLayoutManager(new StackLayout());
-
-			fFigureOutPolygon = new ScalablePolygonShape();
-			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(0)));
-			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(1)));
-			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(2)));
-			fFigureOutPolygon.setFill(true);
-			fFigureOutPolygon.setOutline(false);
-			fFigureOutPolygon.setBackgroundColor(ColorConstants.black);
-
-			fFigureOutPolygonContainer.add(fFigureOutPolygon);
-
-			fFigureInOutPolygonContainer = new RectangleFigure();
-			fFigureInOutPolygonContainer.setFill(false);
-			fFigureInOutPolygonContainer.setOutline(false);
-			fFigureInOutPolygonContainer.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3)));
-
-			fFigureInnerRectContainer.add(fFigureInOutPolygonContainer);
-			fFigureInOutPolygonContainer.setLayoutManager(new StackLayout());
-
-			fFigureInOutPolygon = new ScalablePolygonShape();
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
-					getMapMode().DPtoLP(0)));
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(3)));
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
-					getMapMode().DPtoLP(6)));
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(5)));
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(7),
-					getMapMode().DPtoLP(8)));
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(11)));
-			fFigureInOutPolygon.setFill(true);
-			fFigureInOutPolygon.setOutline(false);
-			fFigureInOutPolygon.setBackgroundColor(ColorConstants.black);
-
-			fFigureInOutPolygonContainer.add(fFigureInOutPolygon);
-
-			fFigureHardwareTypeLabel = new WrappingLabel();
-			fFigureHardwareTypeLabel.setText("");
-
-			fFigureHardwareTypeLabel.setFont(FFIGUREHARDWARETYPELABEL_FONT);
-
-			fFigureInnerRectContainer.add(fFigureHardwareTypeLabel);
+			fFigureDiscreteSinglePortInstancesCompartment
+					.setLayoutManager(layoutFFigureDiscreteSinglePortInstancesCompartment);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public ScalablePolygonShape getFigureInPolygon() {
-			return fFigureInPolygon;
-		}
-
-		/**
-		 * @generated
-		 */
-		public ScalablePolygonShape getFigureOutPolygon() {
-			return fFigureOutPolygon;
-		}
-
-		/**
-		 * @generated
-		 */
-		public ScalablePolygonShape getFigureInOutPolygon() {
-			return fFigureInOutPolygon;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureInnerRectContainer() {
-			return fFigureInnerRectContainer;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureOutlineRectangle() {
-			return fFigureOutlineRectangle;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureShadowRectangle() {
-			return fFigureShadowRectangle;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureHardwareTypeLabel() {
-			return fFigureHardwareTypeLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureInPolygonContainer() {
-			return fFigureInPolygonContainer;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureOutPolygonContainer() {
-			return fFigureOutPolygonContainer;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureInOutPolygonContainer() {
-			return fFigureInOutPolygonContainer;
+		public RectangleFigure getFigureDiscreteSinglePortInstancesCompartment() {
+			return fFigureDiscreteSinglePortInstancesCompartment;
 		}
 
 	}
-
-	/**
-	 * @generated
-	 */
-	static final Font FFIGUREHARDWARETYPELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 7, SWT.NORMAL);
 
 }

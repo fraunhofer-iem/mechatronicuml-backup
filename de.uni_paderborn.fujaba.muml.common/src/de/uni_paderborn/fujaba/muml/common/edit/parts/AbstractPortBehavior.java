@@ -87,6 +87,50 @@ public abstract class AbstractPortBehavior {
 	}
 
 	/**
+	 * Gets and lazily creates the container layout listener.
+	 * 
+	 * @return The container layout listener.
+	 */
+	public LayoutListener getContainerLayoutListener() {
+		if (containerLayoutListener == null) {
+			containerLayoutListener = createContainerLayoutListener();
+		}
+		return containerLayoutListener;
+	}
+
+	/**
+	 * Creates the container layout listener.
+	 * 
+	 * @return the container layout listener.
+	 */
+	public LayoutListener createContainerLayoutListener() {
+
+		/**
+		 * A LayoutListener that listens to changes in the container's layout.
+		 * After the ports are layouted, we check at which side they are, to
+		 * rotate their polygon.
+		 * 
+		 */
+		return new LayoutListener.Stub() {
+
+			/**
+			 * Rotate the port's figure according to the side that the port
+			 * currently is at.
+			 */
+			@Override
+			public void postLayout(IFigure container) {
+				IBorderItemLocator borderItemLocator = ((AbstractBorderItemEditPart) editPart)
+						.getBorderItemLocator();
+				if (borderItemLocator != null) {
+					borderItemLocator.relocate(editPart.getFigure());
+					int side = borderItemLocator.getCurrentSideOfParent();
+					figure.setPortSide(side);
+				}
+			}
+		};
+	}
+
+	/**
 	 * Adds a LayoutListener to the given port container figure. This listener
 	 * will hook into layout changes (movements) and update the port's visual
 	 * orientation according to the side it lies at.
@@ -96,9 +140,7 @@ public abstract class AbstractPortBehavior {
 	 */
 	public void addContainerLayoutListener(IFigure containerFigure) {
 		if (editPart instanceof AbstractBorderItemEditPart) {
-			containerLayoutListener = new ContainerLayoutListener(
-					(AbstractBorderItemEditPart) editPart, figure);
-			containerFigure.addLayoutListener(containerLayoutListener);
+			containerFigure.addLayoutListener(getContainerLayoutListener());
 		}
 	}
 
@@ -110,8 +152,7 @@ public abstract class AbstractPortBehavior {
 	 */
 	public void removeContainerLayoutListener(IFigure containerFigure) {
 		if (containerLayoutListener != null) {
-			containerFigure
-					.removeLayoutListener(containerLayoutListener);
+			containerFigure.removeLayoutListener(containerLayoutListener);
 		}
 	}
 
@@ -174,52 +215,4 @@ public abstract class AbstractPortBehavior {
 		return result;
 	}
 
-	/**
-	 * A LayoutListener that listens to changes in the container's layout. After
-	 * the ports are layouted, we check at which side they are, to rotate their
-	 * polygon.
-	 * 
-	 * @author bingo
-	 * 
-	 */
-	private class ContainerLayoutListener extends LayoutListener.Stub {
-		/**
-		 * The port's EditPart.
-		 */
-		private AbstractBorderItemEditPart editPart;
-
-		/**
-		 * The port's figure that should be rotated.
-		 */
-		private CustomPortFigure portFigure;
-
-		/**
-		 * Constructs this LayoutListener.
-		 * 
-		 * @param editPart
-		 *            The port's EditPart
-		 * @param figure
-		 *            The port's figure that should be rotated.
-		 */
-		public ContainerLayoutListener(AbstractBorderItemEditPart editPart,
-				CustomPortFigure portFigure) {
-			this.editPart = editPart;
-			this.portFigure = portFigure;
-		}
-
-		/**
-		 * Rotate the port's figure according to the side that the port
-		 * currently is at.
-		 */
-		@Override
-		public void postLayout(IFigure container) {
-			IBorderItemLocator borderItemLocator = editPart
-					.getBorderItemLocator();
-			if (borderItemLocator != null) {
-				borderItemLocator.relocate(editPart.getFigure());
-				int side = borderItemLocator.getCurrentSideOfParent();
-				portFigure.setPortSide(side);
-			}
-		}
-	}
 }

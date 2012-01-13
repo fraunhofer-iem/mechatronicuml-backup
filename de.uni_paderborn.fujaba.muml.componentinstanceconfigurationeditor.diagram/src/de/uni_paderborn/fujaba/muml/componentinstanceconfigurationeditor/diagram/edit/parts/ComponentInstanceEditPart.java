@@ -95,6 +95,7 @@ public class ComponentInstanceEditPart extends AbstractBorderedShapeEditPart {
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
@@ -158,6 +159,15 @@ public class ComponentInstanceEditPart extends AbstractBorderedShapeEditPart {
 							.getFigure(), locator);
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
+					PositionConstants.NORTH);
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart) childEditPart)
+							.getFigure(), locator);
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NORTH);
@@ -188,6 +198,13 @@ public class ComponentInstanceEditPart extends AbstractBorderedShapeEditPart {
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart) childEditPart)
+							.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
