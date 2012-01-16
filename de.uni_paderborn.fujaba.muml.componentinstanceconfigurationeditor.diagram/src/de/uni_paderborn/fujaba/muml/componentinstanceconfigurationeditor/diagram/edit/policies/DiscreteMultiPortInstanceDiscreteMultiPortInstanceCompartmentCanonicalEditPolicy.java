@@ -75,8 +75,9 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID;
-				if (visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView)) {
+				if (childElement.eContainer() == containerView.getElement()
+						&& visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+								.getVisualID(childView)) {
 					result.add(new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;

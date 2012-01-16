@@ -117,7 +117,7 @@ public class DiscreteSinglePortInstance3EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(30, 24);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));

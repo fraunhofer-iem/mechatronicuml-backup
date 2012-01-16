@@ -94,8 +94,9 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID;
-				if (visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView)) {
+				if (childElement.eContainer() == containerView.getElement()
+						&& visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
+								.getVisualID(childView)) {
 					result.add(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;

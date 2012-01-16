@@ -80,8 +80,9 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID;
-				if (visualID == de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView)) {
+				if (childElement.eContainer() == containerView.getElement()
+						&& visualID == de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
+								.getVisualID(childView)) {
 					result.add(new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;

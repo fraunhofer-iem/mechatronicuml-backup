@@ -75,8 +75,9 @@ public class StateChannelCompartmentCanonicalEditPolicy extends
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID;
-				if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView)) {
+				if (childElement.eContainer() == containerView.getElement()
+						&& visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+								.getVisualID(childView)) {
 					result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;

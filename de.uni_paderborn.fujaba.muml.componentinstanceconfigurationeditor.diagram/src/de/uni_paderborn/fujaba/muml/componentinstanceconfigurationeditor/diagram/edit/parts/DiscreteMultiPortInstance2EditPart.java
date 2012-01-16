@@ -624,19 +624,6 @@ public class DiscreteMultiPortInstance2EditPart extends
 			this.add(fFigureDiscreteSinglePortInstancesCompartment,
 					constraintFFigureDiscreteSinglePortInstancesCompartment);
 
-			ToolbarLayout layoutFFigureDiscreteSinglePortInstancesCompartment = new ToolbarLayout();
-			layoutFFigureDiscreteSinglePortInstancesCompartment
-					.setStretchMinorAxis(true);
-			layoutFFigureDiscreteSinglePortInstancesCompartment
-					.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
-			layoutFFigureDiscreteSinglePortInstancesCompartment.setSpacing(5);
-			layoutFFigureDiscreteSinglePortInstancesCompartment
-					.setVertical(false);
-
-			fFigureDiscreteSinglePortInstancesCompartment
-					.setLayoutManager(layoutFFigureDiscreteSinglePortInstancesCompartment);
-
 		}
 
 		/**
