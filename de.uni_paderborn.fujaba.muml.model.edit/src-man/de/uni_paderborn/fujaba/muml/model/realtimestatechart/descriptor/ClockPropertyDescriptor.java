@@ -28,7 +28,10 @@ public class ClockPropertyDescriptor extends ItemPropertyDescriptor {
 	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
 		Collection<Clock> choices = new ArrayList<Clock>();
-		choices.add(null);
+		
+		if (!feature.isMany()) {
+			choices.add(null);
+		}
 		
 		RealtimeStatechart rtsc = (RealtimeStatechart) ItemPropertyDescriptorUtil
 				.deduceContainer((EObject) object,
