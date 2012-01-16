@@ -29,8 +29,6 @@ import org.storydriven.modeling.ExtendableElement;
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getConnectorType()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidContinuousPortDirections'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidContinuousPortDirections='not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and\nnot self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)\nimplies\nself.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind'"
  * @generated
  */
 public interface ConnectorType extends ExtendableElement {

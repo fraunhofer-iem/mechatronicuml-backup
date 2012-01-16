@@ -519,49 +519,7 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConnectorType(ConnectorType connectorType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(connectorType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(connectorType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(connectorType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(connectorType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(connectorType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(connectorType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(connectorType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(connectorType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(connectorType, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectorType_ValidContinuousPortDirections(connectorType, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the ValidContinuousPortDirections constraint of '<em>Connector Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONNECTOR_TYPE__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION = "not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and\n" +
-		"not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)\n" +
-		"implies\n" +
-		"self.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind";
-
-	/**
-	 * Validates the ValidContinuousPortDirections constraint of '<em>Connector Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConnectorType_ValidContinuousPortDirections(ConnectorType connectorType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.CONNECTOR_TYPE,
-				 connectorType,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidContinuousPortDirections",
-				 CONNECTOR_TYPE__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(connectorType, diagnostics, context);
 	}
 
 	/**
@@ -579,9 +537,9 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assembly, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectorType_ValidContinuousPortDirections(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_ValidDiscretePortDiscretePortConnection(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_NoSelfAssembliesForSinglePorts(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidContinuousPortDirections(assembly, diagnostics, context);
 		return result;
 	}
 
@@ -680,22 +638,44 @@ public class ComponentValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the ValidContinuousPortDirections constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION = "not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and\n" +
+		"not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)\n" +
+		"implies\n" +
+		"self.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind";
+
+	/**
+	 * Validates the ValidContinuousPortDirections constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidContinuousPortDirections(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidContinuousPortDirections",
+				 ASSEMBLY__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDelegation(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(delegation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectorType_ValidContinuousPortDirections(delegation, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(delegation, diagnostics, context);
 	}
 
 	/**
@@ -704,17 +684,7 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateBehavioralConnector(BehavioralConnector behavioralConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(behavioralConnector, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(behavioralConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(behavioralConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(behavioralConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(behavioralConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(behavioralConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(behavioralConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(behavioralConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(behavioralConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectorType_ValidContinuousPortDirections(behavioralConnector, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(behavioralConnector, diagnostics, context);
 	}
 
 	/**
