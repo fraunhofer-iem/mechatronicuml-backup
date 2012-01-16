@@ -107,16 +107,8 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				// instantiate the connector types
 				for (ConnectorType connectorType : structuredComponent
 						.getConnectors()) {
-					// this list is needed for identifying later on which
-					// concrete port instances needed to be connected
-					// with the new generated connector instance
-					List<PortInstance> portInstances = getAllDirectContainedPortInstances(newInstance);
-					// have to be added because of possible delegation
-					// connectors
-					portInstances.addAll(newInstance.getPortInstances());
 
-					createConnectorInstance(connectorType, portInstances,
-							getLowestCardinality(connectorType));
+					createConnectorInstances(newInstance, connectorType);
 				}
 			}
 		}
@@ -327,15 +319,23 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return newInstances;
 	}
 
-	private void createConnectorInstance(ConnectorType connectorType,
-			List<PortInstance> portInstanceList, long cardinality) {
+	private void createConnectorInstances(ComponentInstance componentInstance, ConnectorType connectorType) {
+		// this list is needed for identifying later on which
+		// concrete port instances needed to be connected
+		// with the new generated connector instance
+		List<PortInstance> portInstances = getAllDirectContainedPortInstances(componentInstance);
+		// have to be added because of possible delegation
+		// connectors
+		portInstances.addAll(componentInstance.getPortInstances());
+		
+		long cardinality = getLowestCardinality(connectorType);
 
-		for (int i = 0; i < cardinality; i++) {
-			createConnectorInstance(connectorType, portInstanceList);
+		for (long i = 0; i < cardinality; i++) {
+			createConnectorInstance(componentInstance, connectorType, portInstances);
 		}
 	}
 
-	private void createConnectorInstance(ConnectorType connectorType,
+	private void createConnectorInstance(ComponentInstance componentInstance, ConnectorType connectorType,
 			List<PortInstance> portInstanceList) {
 		PortInstance toPortInstance = null;
 		PortInstance fromPortInstance = null;
@@ -348,12 +348,15 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			if (toPortInstance != null && fromPortInstance != null) {
 				break;
 			} else if (portInstance.getPortType() == toPort) {
+				// XXX: Here we prevent instantiation, if we have a DiscreteMultiPortInstance.
 				if (!isConnectorInstanceAlreadyInstanciated(connectorType,
 						portInstance) && !(portInstance instanceof DiscreteMultiPortInstance)) {
 					
 					toPortInstance = portInstance;
 				}
+
 			} else if (portInstance.getPortType() == fromPort) {
+				// XXX: Here we DO NOT prevent instantiation, if we have a DiscreteMultiPortInstance.
 				if (!isConnectorInstanceAlreadyInstanciated(connectorType,
 						portInstance)) {
 					fromPortInstance = portInstance;
