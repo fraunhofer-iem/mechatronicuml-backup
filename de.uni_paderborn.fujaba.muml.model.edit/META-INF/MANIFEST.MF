@@ -9,14 +9,22 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
+ de.uni_paderborn.fujaba.muml.model.component.providers,
  de.uni_paderborn.fujaba.muml.model.constraint.provider,
+ de.uni_paderborn.fujaba.muml.model.constraint.providers,
  de.uni_paderborn.fujaba.muml.model.core.descriptor,
  de.uni_paderborn.fujaba.muml.model.core.provider,
+ de.uni_paderborn.fujaba.muml.model.core.providers,
  de.uni_paderborn.fujaba.muml.model.deployment.provider,
+ de.uni_paderborn.fujaba.muml.model.deployment.providers,
  de.uni_paderborn.fujaba.muml.model.instance.provider,
+ de.uni_paderborn.fujaba.muml.model.instance.providers,
  de.uni_paderborn.fujaba.muml.model.msgiface.provider,
+ de.uni_paderborn.fujaba.muml.model.msgiface.providers,
  de.uni_paderborn.fujaba.muml.model.pattern.provider,
- de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider
+ de.uni_paderborn.fujaba.muml.model.pattern.providers,
+ de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider,
+ de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
@@ -25,5 +33,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.modeling;visibility:=reexport,
  org.storydriven.modeling.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.common;bundle-version="1.0.0",
- de.fujaba.modelinstance.edit;bundle-version="1.0.0"
+ de.fujaba.modelinstance.edit;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.emf.eef.runtime;bundle-version="0.9.1";visibility:=reexport
 Bundle-ActivationPolicy: lazy

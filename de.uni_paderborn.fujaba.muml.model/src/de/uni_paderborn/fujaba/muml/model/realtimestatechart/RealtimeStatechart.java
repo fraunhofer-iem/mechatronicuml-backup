@@ -50,7 +50,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Behavior;
  */
 public interface RealtimeStatechart extends NamedElement, CommentableElement, Behavior {
 	/**
-	 * Returns the value of the '<em><b>Embedding Region</b></em>' reference.
+	 * Returns the value of the '<em><b>Embedding Region</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -58,20 +58,20 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Embedding Region</em>' reference.
+	 * @return the value of the '<em>Embedding Region</em>' container reference.
 	 * @see #setEmbeddingRegion(Region)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_EmbeddingRegion()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart
-	 * @model opposite="statechart"
+	 * @model opposite="statechart" transient="false"
 	 * @generated
 	 */
 	Region getEmbeddingRegion();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Embedding Region</em>' reference.
+	 * @param value the new value of the '<em>Embedding Region</em>' container reference.
 	 * @see #getEmbeddingRegion()
 	 * @generated
 	 */

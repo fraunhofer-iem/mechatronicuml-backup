@@ -477,33 +477,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRegion_Vertices() {
-		return (EReference)regionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRegion_Transitions() {
-		return (EReference)regionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRegion_StatechartDerived() {
-		return (EReference)regionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getState() {
 		return stateEClass;
 	}
@@ -1334,9 +1307,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		regionEClass = createEClass(REGION);
 		createEReference(regionEClass, REGION__STATECHART);
 		createEReference(regionEClass, REGION__PARENT_STATE);
-		createEReference(regionEClass, REGION__VERTICES);
-		createEReference(regionEClass, REGION__TRANSITIONS);
-		createEReference(regionEClass, REGION__STATECHART_DERIVED);
 
 		stateEClass = createEClass(STATE);
 		createEReference(stateEClass, STATE__REGIONS);
@@ -1530,11 +1500,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getClock_Statechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_Clocks(), "statechart", null, 0, 1, Clock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(regionEClass, Region.class, "Region", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRegion_Statechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_EmbeddingRegion(), "statechart", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRegion_Statechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_EmbeddingRegion(), "statechart", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_ParentState(), this.getState(), this.getState_Regions(), "parentState", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRegion_Vertices(), this.getVertex(), null, "vertices", null, 0, -1, Region.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getRegion_Transitions(), this.getTransition(), null, "transitions", null, 0, -1, Region.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getRegion_StatechartDerived(), this.getRealtimeStatechart(), null, "statechartDerived", null, 1, 1, Region.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getState_Regions(), this.getRegion(), this.getRegion_ParentState(), "regions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1618,7 +1585,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getPrioritizable_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Prioritizable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(realtimeStatechartEClass, RealtimeStatechart.class, "RealtimeStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRealtimeStatechart_EmbeddingRegion(), this.getRegion(), this.getRegion_Statechart(), "embeddingRegion", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechart_EmbeddingRegion(), this.getRegion(), this.getRegion_Statechart(), "embeddingRegion", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_Transitions(), this.getTransition(), this.getTransition_Statechart(), "transitions", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_Vertices(), this.getVertex(), this.getVertex_Statechart(), "vertices", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_Clocks(), this.getClock(), this.getClock_Statechart(), "clocks", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1698,7 +1665,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																			
+		   });													
 		addAnnotation
 		  (stateEClass, 
 		   source, 
@@ -1756,25 +1723,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";															
-		addAnnotation
-		  (getRegion_Vertices(), 
-		   source, 
-		   new String[] {
-			 "derivation", "-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.vertices\r\nendif"
-		   });			
-		addAnnotation
-		  (getRegion_Transitions(), 
-		   source, 
-		   new String[] {
-			 "derivation", "-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.transitions\r\nendif"
-		   });			
-		addAnnotation
-		  (getRegion_StatechartDerived(), 
-		   source, 
-		   new String[] {
-			 "derivation", "-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\r\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\r\n\r\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\r\n\tnull\r\r\nelse\r\r\n\tself.statechart\r\r\nendif"
-		   });				
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																
 		addAnnotation
 		  (stateEClass, 
 		   source, 

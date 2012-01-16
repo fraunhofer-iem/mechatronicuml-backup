@@ -295,7 +295,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION__PRIORITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -313,40 +313,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION__PARENT_STATE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__VERTICES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__TRANSITIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Statechart Derived</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__STATECHART_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int REGION_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.
@@ -1371,7 +1344,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
+	 * The feature id for the '<em><b>Embedding Region</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2113,10 +2086,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getRegion();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Statechart</em>'.
+	 * @return the meta object for the containment reference '<em>Statechart</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart()
 	 * @see #getRegion()
 	 * @generated
@@ -2133,39 +2106,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRegion_ParentState();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getVertices <em>Vertices</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Vertices</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getVertices()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EReference getRegion_Vertices();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getTransitions <em>Transitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Transitions</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getTransitions()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EReference getRegion_Transitions();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived <em>Statechart Derived</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Statechart Derived</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EReference getRegion_StatechartDerived();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State <em>State</em>}'.
@@ -2772,10 +2712,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getRealtimeStatechart();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Embedding Region</em>'.
+	 * @return the meta object for the container reference '<em>Embedding Region</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion()
 	 * @see #getRealtimeStatechart()
 	 * @generated
@@ -3216,7 +3156,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass REGION = eINSTANCE.getRegion();
 
 		/**
-		 * The meta object literal for the '<em><b>Statechart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Statechart</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3230,30 +3170,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REGION__PARENT_STATE = eINSTANCE.getRegion_ParentState();
-
-		/**
-		 * The meta object literal for the '<em><b>Vertices</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REGION__VERTICES = eINSTANCE.getRegion_Vertices();
-
-		/**
-		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REGION__TRANSITIONS = eINSTANCE.getRegion_Transitions();
-
-		/**
-		 * The meta object literal for the '<em><b>Statechart Derived</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REGION__STATECHART_DERIVED = eINSTANCE.getRegion_StatechartDerived();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl <em>State</em>}' class.
@@ -3728,7 +3644,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass REALTIME_STATECHART = eINSTANCE.getRealtimeStatechart();
 
 		/**
-		 * The meta object literal for the '<em><b>Embedding Region</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Embedding Region</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

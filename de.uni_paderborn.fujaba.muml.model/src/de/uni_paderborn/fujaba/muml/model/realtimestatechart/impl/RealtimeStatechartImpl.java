@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
@@ -120,16 +121,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @ordered
 	 */
 	protected EList<EAttribute> attributes;
-
-	/**
-	 * The cached value of the '{@link #getEmbeddingRegion() <em>Embedding Region</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmbeddingRegion()
-	 * @generated
-	 * @ordered
-	 */
-	protected Region embeddingRegion;
 
 	/**
 	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
@@ -441,24 +432,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 */
 	public Region getEmbeddingRegion() {
-		if (embeddingRegion != null && embeddingRegion.eIsProxy()) {
-			InternalEObject oldEmbeddingRegion = (InternalEObject)embeddingRegion;
-			embeddingRegion = (Region)eResolveProxy(oldEmbeddingRegion);
-			if (embeddingRegion != oldEmbeddingRegion) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, oldEmbeddingRegion, embeddingRegion));
-			}
-		}
-		return embeddingRegion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Region basicGetEmbeddingRegion() {
-		return embeddingRegion;
+		if (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION) return null;
+		return (Region)eContainer();
 	}
 
 	/**
@@ -467,12 +442,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 */
 	public NotificationChain basicSetEmbeddingRegion(Region newEmbeddingRegion, NotificationChain msgs) {
-		Region oldEmbeddingRegion = embeddingRegion;
-		embeddingRegion = newEmbeddingRegion;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, oldEmbeddingRegion, newEmbeddingRegion);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newEmbeddingRegion, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, msgs);
 		return msgs;
 	}
 
@@ -482,10 +452,12 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 */
 	public void setEmbeddingRegion(Region newEmbeddingRegion) {
-		if (newEmbeddingRegion != embeddingRegion) {
+		if (newEmbeddingRegion != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION && newEmbeddingRegion != null)) {
+			if (EcoreUtil.isAncestor(this, newEmbeddingRegion))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (embeddingRegion != null)
-				msgs = ((InternalEObject)embeddingRegion).eInverseRemove(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newEmbeddingRegion != null)
 				msgs = ((InternalEObject)newEmbeddingRegion).eInverseAdd(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
 			msgs = basicSetEmbeddingRegion(newEmbeddingRegion, msgs);
@@ -750,8 +722,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
 				return basicSetBehavioralElement((BehavioralElement)otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
-				if (embeddingRegion != null)
-					msgs = ((InternalEObject)embeddingRegion).eInverseRemove(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetEmbeddingRegion((Region)otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
@@ -795,6 +767,20 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RealtimestatechartPackage.REALTIME_STATECHART__COMMENT:
@@ -807,8 +793,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
 				return getAttributes();
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
-				if (resolve) return getEmbeddingRegion();
-				return basicGetEmbeddingRegion();
+				return getEmbeddingRegion();
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return getTransitions();
 			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:
@@ -964,7 +949,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
 				return attributes != null && !attributes.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
-				return embeddingRegion != null;
+				return getEmbeddingRegion() != null;
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return transitions != null && !transitions.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:

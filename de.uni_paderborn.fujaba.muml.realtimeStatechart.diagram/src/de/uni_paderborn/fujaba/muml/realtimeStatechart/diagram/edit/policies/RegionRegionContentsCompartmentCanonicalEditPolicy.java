@@ -44,7 +44,7 @@ public class RegionRegionContentsCompartmentCanonicalEditPolicy extends
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getRegion_StatechartDerived();
+				.getRegion_Statechart();
 	}
 
 	/**

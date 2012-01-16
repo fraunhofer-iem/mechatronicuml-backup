@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -81,11 +82,13 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createStatechart1CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2004);
+		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3016);
 		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Statechart1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Statechart1CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2004));
+				types);
 		entry.setId("createStatechart1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2004));

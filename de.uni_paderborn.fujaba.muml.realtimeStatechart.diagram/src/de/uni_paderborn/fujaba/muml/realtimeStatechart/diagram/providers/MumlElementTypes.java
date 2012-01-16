@@ -83,7 +83,8 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType RealtimeStatechart_3011 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.RealtimeStatechart_3011"); //$NON-NLS-1$
+	public static final IElementType RealtimeStatechart_3016 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.RealtimeStatechart_3016"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -260,19 +261,9 @@ public class MumlElementTypes {
 							.getRegion());
 
 			elements.put(
-					RealtimeStatechart_3011,
+					RealtimeStatechart_3016,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getRealtimeStatechart());
-
-			elements.put(
-					StateEntryPoint_3014,
-					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getStateEntryPoint());
-
-			elements.put(
-					StateExitPoint_3015,
-					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getStateExitPoint());
 
 			elements.put(
 					EntryPoint_3012,
@@ -283,6 +274,16 @@ public class MumlElementTypes {
 					ExitPoint_3013,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getExitPoint());
+
+			elements.put(
+					StateEntryPoint_3014,
+					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getStateEntryPoint());
+
+			elements.put(
+					StateExitPoint_3015,
+					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getStateExitPoint());
 
 			elements.put(
 					Transition_4001,
@@ -314,11 +315,11 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3004);
 			KNOWN_ELEMENT_TYPES.add(SynchronizationChannel_3005);
 			KNOWN_ELEMENT_TYPES.add(Region_3006);
-			KNOWN_ELEMENT_TYPES.add(RealtimeStatechart_3011);
-			KNOWN_ELEMENT_TYPES.add(StateEntryPoint_3014);
-			KNOWN_ELEMENT_TYPES.add(StateExitPoint_3015);
+			KNOWN_ELEMENT_TYPES.add(RealtimeStatechart_3016);
 			KNOWN_ELEMENT_TYPES.add(EntryPoint_3012);
 			KNOWN_ELEMENT_TYPES.add(ExitPoint_3013);
+			KNOWN_ELEMENT_TYPES.add(StateEntryPoint_3014);
+			KNOWN_ELEMENT_TYPES.add(StateExitPoint_3015);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -348,15 +349,15 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
 			return Region_3006;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
-			return RealtimeStatechart_3011;
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
-			return StateEntryPoint_3014;
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
-			return StateExitPoint_3015;
+			return RealtimeStatechart_3016;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
 			return EntryPoint_3012;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
 			return ExitPoint_3013;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
+			return StateEntryPoint_3014;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
+			return StateExitPoint_3015;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return Transition_4001;
 		}

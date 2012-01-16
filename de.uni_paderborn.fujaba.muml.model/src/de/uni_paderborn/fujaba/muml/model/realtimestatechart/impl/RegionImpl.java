@@ -39,9 +39,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getParentState <em>Parent State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getVertices <em>Vertices</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getStatechartDerived <em>Statechart Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,7 +66,7 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	protected int priority = PRIORITY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' reference.
+	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatechart()
@@ -79,52 +76,12 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	protected RealtimeStatechart statechart;
 
 	/**
-	 * The cached setting delegate for the '{@link #getVertices() <em>Vertices</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVertices()
 	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate VERTICES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__VERTICES).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate TRANSITIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__TRANSITIONS).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getStatechartDerived() <em>Statechart Derived</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatechartDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate STATECHART_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED).getSettingDelegate();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
 	 */
 	protected RegionImpl() {
 		super();
-	
-
-		DerivedAttributeAdapter regionTransitionAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.REGION__TRANSITIONS);
-		regionTransitionAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.REGION__STATECHART, RealtimestatechartPackage.Literals.REALTIME_STATECHART__TRANSITIONS);
-		
-		DerivedAttributeAdapter regionVerticesAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.REGION__VERTICES);
-		regionVerticesAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.REGION__STATECHART, RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES);
-		
-		DerivedAttributeAdapter regionStatechartAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED);
-		regionStatechartAdapter.addLocalDependency(RealtimestatechartPackage.Literals.REGION__STATECHART);
 	}
 
 	/**
@@ -164,23 +121,6 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * @generated
 	 */
 	public RealtimeStatechart getStatechart() {
-		if (statechart != null && statechart.eIsProxy()) {
-			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (RealtimeStatechart)eResolveProxy(oldStatechart);
-			if (statechart != oldStatechart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.REGION__STATECHART, oldStatechart, statechart));
-			}
-		}
-		return statechart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RealtimeStatechart basicGetStatechart() {
 		return statechart;
 	}
 
@@ -292,45 +232,12 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RealtimeStatechart getStatechartDerived() {
-		return (RealtimeStatechart)STATECHART_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStatechartDerived(RealtimeStatechart newStatechartDerived, NotificationChain msgs) {
-		// TODO: implement this method to set the contained 'Statechart Derived' containment reference
-		// -> this method is automatically invoked to keep the containment relationship in synch
-		// -> do not modify other features
-		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStatechartDerived(RealtimeStatechart newStatechartDerived) {
-		STATECHART_DERIVED__ESETTING_DELEGATE.dynamicSet(this, null, 0, newStatechartDerived);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RealtimestatechartPackage.REGION__STATECHART:
 				if (statechart != null)
-					msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
+					msgs = ((InternalEObject)statechart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.REGION__STATECHART, null, msgs);
 				return basicSetStatechart((RealtimeStatechart)otherEnd, msgs);
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				if (eInternalContainer() != null)
@@ -352,12 +259,6 @@ public class RegionImpl extends NamedElementImpl implements Region {
 				return basicSetStatechart(null, msgs);
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return basicSetParentState(null, msgs);
-			case RealtimestatechartPackage.REGION__VERTICES:
-				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.REGION__TRANSITIONS:
-				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
-				return basicSetStatechartDerived(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -387,16 +288,9 @@ public class RegionImpl extends NamedElementImpl implements Region {
 			case RealtimestatechartPackage.REGION__PRIORITY:
 				return getPriority();
 			case RealtimestatechartPackage.REGION__STATECHART:
-				if (resolve) return getStatechart();
-				return basicGetStatechart();
+				return getStatechart();
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState();
-			case RealtimestatechartPackage.REGION__VERTICES:
-				return getVertices();
-			case RealtimestatechartPackage.REGION__TRANSITIONS:
-				return getTransitions();
-			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
-				return getStatechartDerived();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -419,17 +313,6 @@ public class RegionImpl extends NamedElementImpl implements Region {
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				setParentState((State)newValue);
 				return;
-			case RealtimestatechartPackage.REGION__VERTICES:
-				getVertices().clear();
-				getVertices().addAll((Collection<? extends Vertex>)newValue);
-				return;
-			case RealtimestatechartPackage.REGION__TRANSITIONS:
-				getTransitions().clear();
-				getTransitions().addAll((Collection<? extends Transition>)newValue);
-				return;
-			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
-				setStatechartDerived((RealtimeStatechart)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -451,15 +334,6 @@ public class RegionImpl extends NamedElementImpl implements Region {
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				setParentState((State)null);
 				return;
-			case RealtimestatechartPackage.REGION__VERTICES:
-				getVertices().clear();
-				return;
-			case RealtimestatechartPackage.REGION__TRANSITIONS:
-				getTransitions().clear();
-				return;
-			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
-				setStatechartDerived((RealtimeStatechart)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -478,12 +352,6 @@ public class RegionImpl extends NamedElementImpl implements Region {
 				return statechart != null;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState() != null;
-			case RealtimestatechartPackage.REGION__VERTICES:
-				return VERTICES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case RealtimestatechartPackage.REGION__TRANSITIONS:
-				return TRANSITIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
-				return STATECHART_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/de.uni_paderborn.fujaba.muml.model.edit/src-gen">
+  <editionContexts basePackage="de.uni_paderborn.fujaba.muml.model" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="muml.components#_JFrooT_fEeGfJJz3Fbn-mg"/>
+  </editionContexts>
+  <editionContexts basePackage="de.uni_paderborn.fujaba.muml.model" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="muml.components#_JFtd5z_fEeGfJJz3Fbn-mg"/>
+  </editionContexts>
+  <editionContexts basePackage="de.uni_paderborn.fujaba.muml.model" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="muml.components#_JFwhIj_fEeGfJJz3Fbn-mg"/>
+  </editionContexts>
+  <editionContexts basePackage="de.uni_paderborn.fujaba.muml.model" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="muml.components#_JFxINT_fEeGfJJz3Fbn-mg"/>
+  </editionContexts>
+  <editionContexts basePackage="de.uni_paderborn.fujaba.muml.model" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="muml.components#_JFxvQz_fEeGfJJz3Fbn-mg"/>
+  </editionContexts>
+  <editionContexts basePackage="de.uni_paderborn.fujaba.muml.model" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="muml.components#_JFxvWj_fEeGfJJz3Fbn-mg"/>
+  </editionContexts>
+  <editionContexts basePackage="de.uni_paderborn.fujaba.muml.model" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="muml.components#_JFy9dz_fEeGfJJz3Fbn-mg"/>
+  </editionContexts>
+  <editionContexts basePackage="de.uni_paderborn.fujaba.muml.model" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="muml.components#_JFy9gj_fEeGfJJz3Fbn-mg"/>
+  </editionContexts>
+  <viewsRepositories basePackage="de.uni_paderborn.fujaba.muml.model.instance" swtViews="true" formViews="true">
+    <viewsRepository href="muml.components#_JFzkcD_fEeGfJJz3Fbn-mg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="de.uni_paderborn.fujaba.muml.model.deployment" swtViews="true" formViews="true">
+    <viewsRepository href="muml.components#_JF2n3z_fEeGfJJz3Fbn-mg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="de.uni_paderborn.fujaba.muml.model.realtimestatechart" swtViews="true" formViews="true">
+    <viewsRepository href="muml.components#_JF3O2T_fEeGfJJz3Fbn-mg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="de.uni_paderborn.fujaba.muml.model.constraint" swtViews="true" formViews="true">
+    <viewsRepository href="muml.components#_JF4c_z_fEeGfJJz3Fbn-mg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="de.uni_paderborn.fujaba.muml.model.core" swtViews="true" formViews="true">
+    <viewsRepository href="muml.components#_JF4dBj_fEeGfJJz3Fbn-mg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="de.uni_paderborn.fujaba.muml.model.component" swtViews="true" formViews="true">
+    <viewsRepository href="muml.components#_JF5rGT_fEeGfJJz3Fbn-mg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="de.uni_paderborn.fujaba.muml.model.msgiface" swtViews="true" formViews="true">
+    <viewsRepository href="muml.components#_JF65MT_fEeGfJJz3Fbn-mg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="de.uni_paderborn.fujaba.muml.model.pattern" swtViews="true" formViews="true">
+    <viewsRepository href="muml.components#_JF65Pj_fEeGfJJz3Fbn-mg"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

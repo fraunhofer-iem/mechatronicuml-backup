@@ -253,26 +253,9 @@
                   href="realtimeStatechart.gmfgraph#Region"/>
               <children
                   compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@compartments.0"
-                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+                  referencedChild="//@nodes.0/@ownedChild">
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/statechartDerived"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
-                  <diagramNode
-                      href="realtimeStatechart.gmfgraph#InnerStatechart"/>
-                  <children
-                      compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
-                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
-                    <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
-                  </children>
-                  <compartments
-                      children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
-                    <compartment
-                        href="realtimeStatechart.gmfgraph#StatechartContentsCompartment"/>
-                  </compartments>
-                </ownedChild>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/statechart"/>
               </children>
               <compartments
                   children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0">

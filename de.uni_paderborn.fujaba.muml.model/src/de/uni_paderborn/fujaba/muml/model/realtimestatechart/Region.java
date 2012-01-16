@@ -23,9 +23,6 @@ import org.storydriven.modeling.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getParentState <em>Parent State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getVertices <em>Vertices</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived <em>Statechart Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,7 +32,7 @@ import org.storydriven.modeling.NamedElement;
  */
 public interface Region extends NamedElement, Prioritizable {
 	/**
-	 * Returns the value of the '<em><b>Statechart</b></em>' reference.
+	 * Returns the value of the '<em><b>Statechart</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -46,20 +43,20 @@ public interface Region extends NamedElement, Prioritizable {
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this region embeds.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Statechart</em>' reference.
+	 * @return the value of the '<em>Statechart</em>' containment reference.
 	 * @see #setStatechart(RealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Statechart()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion
-	 * @model opposite="embeddingRegion" required="true"
+	 * @model opposite="embeddingRegion" containment="true" required="true"
 	 * @generated
 	 */
 	RealtimeStatechart getStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statechart</em>' reference.
+	 * @param value the new value of the '<em>Statechart</em>' containment reference.
 	 * @see #getStatechart()
 	 * @generated
 	 */
@@ -95,63 +92,5 @@ public interface Region extends NamedElement, Prioritizable {
 	 * @generated
 	 */
 	void setParentState(State value);
-
-	/**
-	 * Returns the value of the '<em><b>Vertices</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The derived vertices (e.g. states) of the realtime statechart.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Vertices</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Vertices()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.vertices\r\nendif'"
-	 * @generated
-	 */
-	EList<Vertex> getVertices();
-
-	/**
-	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The derived transitions of the realtime statechart.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Transitions</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Transitions()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\n\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\n\tOrderedSet { }\r\nelse\r\n\tself.statechart.transitions\r\nendif'"
-	 * @generated
-	 */
-	EList<Transition> getTransitions();
-
-	/**
-	 * Returns the value of the '<em><b>Statechart Derived</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The derived realtime statecharts .
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Statechart Derived</em>' containment reference.
-	 * @see #setStatechartDerived(RealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_StatechartDerived()
-	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- we only derive the statechart, if it is no super statechart of our parentState\'s statechart\r\n-- this ensures that no endless recursion happens, when creating child-editparts for the states.\r\n\r\nif self.statechart.oclIsUndefined() or self.statechart.isSuperStatechartOf(self.parentState.statechart) then\r\r\n\tnull\r\r\nelse\r\r\n\tself.statechart\r\r\nendif'"
-	 * @generated
-	 */
-	RealtimeStatechart getStatechartDerived();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechartDerived <em>Statechart Derived</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statechart Derived</em>' containment reference.
-	 * @see #getStatechartDerived()
-	 * @generated
-	 */
-	void setStatechartDerived(RealtimeStatechart value);
 
 } // Region

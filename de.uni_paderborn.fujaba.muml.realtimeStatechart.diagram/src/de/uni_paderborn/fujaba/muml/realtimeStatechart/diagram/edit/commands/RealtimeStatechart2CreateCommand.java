@@ -42,7 +42,7 @@ public class RealtimeStatechart2CreateCommand extends EditElementCommand {
 	 */
 	public boolean canExecute() {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region) getElementToEdit();
-		if (container.getStatechartDerived() != null) {
+		if (container.getStatechart() != null) {
 			return false;
 		}
 		return true;
@@ -58,7 +58,7 @@ public class RealtimeStatechart2CreateCommand extends EditElementCommand {
 				.createRealtimeStatechart();
 
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region) getElementToEdit();
-		owner.setStatechartDerived(newElement);
+		owner.setStatechart(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -167,38 +167,6 @@ public class RegionItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__VERTICES);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__TRANSITIONS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
 	 * This returns Region.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -238,11 +206,6 @@ public class RegionItemProvider
 			case RealtimestatechartPackage.REGION__PRIORITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.REGION__VERTICES:
-			case RealtimestatechartPackage.REGION__TRANSITIONS:
-			case RealtimestatechartPackage.REGION__STATECHART_DERIVED:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -257,41 +220,6 @@ public class RegionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createState()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createExitPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createStateEntryPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createStateExitPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__TRANSITIONS,
-				 RealtimestatechartFactory.eINSTANCE.createTransition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__STATECHART_DERIVED,
-				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 	}
 
 	/**
