@@ -241,7 +241,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 				sb.append('<');
 				break;
 			case LESS_OR_EQUAL:
-				sb.append('≤');
+				sb.append('\u2264'); // used the java-sdk tool "native2ascii"
 				break;
 			case EQUAL:
 				sb.append('=');
@@ -249,13 +249,13 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 
 			// These should not be set normally
 			case GREATER_OR_EQUAL:
-				sb.append('≥');
+				sb.append('\u2265'); // used the java-sdk tool "native2ascii"
 				break;
 			case GREATER:
 				sb.append('>');
 				break;
 			case UNEQUAL:
-				sb.append('≠');
+				sb.append('\u2260'); // used the java-sdk tool "native2ascii"
 				break;
 			case REGULAR_EXPRESSION:
 				sb.append("regexp");
