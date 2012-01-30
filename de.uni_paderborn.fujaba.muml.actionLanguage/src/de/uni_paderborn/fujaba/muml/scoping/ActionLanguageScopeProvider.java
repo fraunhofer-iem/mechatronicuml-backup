@@ -32,7 +32,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	IScope scope_EAttribute(Object object, EReference ref) {
 		// this is called whenever an EAttribute is needed
 		// (regardless if it's an assignment or BinaryLogicExpression etc.)
-		System.out.println(this);
+		//System.out.println(this);
 		if (attributeList == null) {
 			return IScope.NULLSCOPE;
 		}

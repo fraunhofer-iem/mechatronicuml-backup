@@ -3,7 +3,18 @@
  */
 package de.uni_paderborn.fujaba.muml.ui;
 
+import org.eclipse.core.resources.IStorage;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.model.IResourceForEditorInputFactory;
+import org.eclipse.xtext.ui.editor.model.JavaClassPathResourceForIEditorInputFactory;
+import org.eclipse.xtext.ui.editor.model.XtextDocument;
+import org.eclipse.xtext.ui.editor.model.XtextDocumentProvider;
+
+import com.google.inject.Provider;
+
+import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -12,4 +23,15 @@ public class ActionLanguageUiModule extends de.uni_paderborn.fujaba.muml.ui.Abst
 	public ActionLanguageUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+	public Class<? extends IResourceForEditorInputFactory> bindIResourceForEditorInputFactory() {
+		//return JavaClassPathResourceForIEditorInputFactory.class;
+		return CustomResourceForEditorInputFactory.class;
+	}
+	
+	public Class<? extends XtextDocumentProvider> bindXtextDocumentProvider() {
+		return CustomXtextDocumentProvider.class;
+	}
 }
+
+

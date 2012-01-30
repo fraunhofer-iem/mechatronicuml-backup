@@ -9,6 +9,8 @@ import com.google.inject.Provider;
 
 
 public class ActionLanguageScopeProviderFactory implements Provider<IScopeProvider> {
+	// FIXME: try to get rid of this static stuff...
+	
 	private static ActionLanguageScopeProvider scopeProvider;
 	
 	private static ActionLanguageScopeProvider getScopeProvider() {
