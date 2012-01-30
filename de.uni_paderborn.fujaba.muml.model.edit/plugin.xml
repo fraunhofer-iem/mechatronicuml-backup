@@ -155,7 +155,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.component.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -170,7 +170,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.component.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -181,7 +181,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.component.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.component.section.ContinuousPort"
@@ -310,7 +310,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.constraint.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -325,7 +325,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.constraint.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -336,7 +336,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.constraint.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.constraint.section.TextualConstraint"
@@ -409,7 +409,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.core.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -424,7 +424,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.core.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -435,7 +435,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.core.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.core.section.NaturalNumber"
@@ -523,7 +523,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.deployment.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -538,7 +538,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.deployment.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -549,7 +549,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.deployment.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.deployment.section.Deployment"
@@ -645,7 +645,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.instance.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -660,7 +660,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.instance.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -671,7 +671,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.instance.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.instance.section.ComponentInstance"
@@ -808,7 +808,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.msgiface.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -823,7 +823,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.msgiface.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -834,7 +834,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.msgiface.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.msgiface.section.MessageInterface"
@@ -915,7 +915,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.pattern.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -930,7 +930,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.pattern.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -941,7 +941,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.pattern.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.pattern.section.RoleConnector"
@@ -1030,7 +1030,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.realtimestatechart.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -1045,7 +1045,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.realtimestatechart.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -1056,7 +1056,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.realtimestatechart.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.realtimestatechart.section.AbsoluteDeadline"
@@ -1219,4 +1219,17 @@
          </propertySection>
       </propertySections>
    </extension>
+<!--
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="de.uni_paderborn.fujaba.muml.model.component.presentation.ComponentEditorID"
+            name="%_UI_ComponentEditor_label"
+            icon="icons/full/obj16/ComponentModelFile.gif"
+            extensions="fujaba"
+            class="de.uni_paderborn.fujaba.muml.model.component.presentation.ComponentEditor"
+            contributorClass="de.uni_paderborn.fujaba.muml.model.component.presentation.ComponentActionBarContributor">
+      </editor>
+   </extension>
+-->
 </plugin>

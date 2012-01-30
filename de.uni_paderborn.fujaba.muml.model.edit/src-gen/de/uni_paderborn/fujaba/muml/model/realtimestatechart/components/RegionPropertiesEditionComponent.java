@@ -97,7 +97,7 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 				statechartSettings = new EObjectFlatComboSettings(region, RealtimestatechartPackage.eINSTANCE.getRegion_Statechart());
 				basePart.initStatechart(statechartSettings);
 				// set the button mode
-				basePart.setStatechartButtonMode(ButtonsModeEnum.BROWSE);
+				basePart.setStatechartButtonMode(ButtonsModeEnum.CREATE);
 			}
 			if (isAccessible(RealtimestatechartViewsRepository.Region.Properties.parentState)) {
 				// init part
@@ -109,20 +109,6 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 			// init filters
 			
 			
-			basePart.addFilterToStatechart(new ViewerFilter() {
-			
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-			 */
-			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				return (element instanceof RealtimeStatechart);
-				}
-			
-			});
-			// Start of user code for additional businessfilters for statechart
-			// End of user code
 			
 			basePart.addFilterToParentState(new ViewerFilter() {
 			

@@ -63,7 +63,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.model.instance.properties">
+            contributorId="de.fujaba.properties">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -78,7 +78,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.model.instance.properties">
+            contributorId="de.fujaba.properties">
          <propertyTab
                label="Base"
                category="default"
@@ -89,7 +89,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.model.instance.properties">
+            contributorId="de.fujaba.properties">
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="de.uni_paderborn.fujaba.muml.model.instance.section.ComponentInstance"
