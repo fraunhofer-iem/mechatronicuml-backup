@@ -45,7 +45,7 @@ public interface PatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///de/uni_paderborn/fujaba/muml/model/pattern";
+	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.2.3";
 
 	/**
 	 * The package namespace name.
