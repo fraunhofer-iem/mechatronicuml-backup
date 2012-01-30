@@ -716,14 +716,22 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class IdentifierOrValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IdentifierOrValue");
-		private final RuleCall cNUMBERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//IdentifierOrValue returns ecore::EString:
-		//	NUMBER;
+		//	NUMBER | BOOLEAN;
 		public ParserRule getRule() { return rule; }
 
+		//NUMBER | BOOLEAN
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//NUMBER
-		public RuleCall getNUMBERTerminalRuleCall() { return cNUMBERTerminalRuleCall; }
+		public RuleCall getNUMBERTerminalRuleCall_0() { return cNUMBERTerminalRuleCall_0; }
+
+		//BOOLEAN
+		public RuleCall getBOOLEANTerminalRuleCall_1() { return cBOOLEANTerminalRuleCall_1; }
 	}
 	
 	
@@ -1062,6 +1070,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private ComparingOperatorElements unknownRuleComparingOperator;
 	private UnaryOperatorElements unknownRuleUnaryOperator;
 	private TerminalRule tNUMBER;
+	private TerminalRule tBOOLEAN;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -1242,7 +1251,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IdentifierOrValue returns ecore::EString:
-	//	NUMBER;
+	//	NUMBER | BOOLEAN;
 	public IdentifierOrValueElements getIdentifierOrValueAccess() {
 		return (pIdentifierOrValue != null) ? pIdentifierOrValue : (pIdentifierOrValue = new IdentifierOrValueElements());
 	}
@@ -1315,6 +1324,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//	"0".."9"* ("." "0".."9"+)?;
 	public TerminalRule getNUMBERRule() {
 		return (tNUMBER != null) ? tNUMBER : (tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER"));
+	} 
+
+	//terminal BOOLEAN returns ecore::EBoolean:
+	//	"true" | "false";
+	public TerminalRule getBOOLEANRule() {
+		return (tBOOLEAN != null) ? tBOOLEAN : (tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN"));
 	} 
 
 	//terminal ID:

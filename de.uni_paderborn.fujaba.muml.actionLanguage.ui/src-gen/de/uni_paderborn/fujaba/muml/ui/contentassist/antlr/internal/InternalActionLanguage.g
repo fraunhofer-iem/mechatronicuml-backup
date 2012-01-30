@@ -493,9 +493,9 @@ ruleIdentifierOrValue
     }
 	:
 (
-{ before(grammarAccess.getIdentifierOrValueAccess().getNUMBERTerminalRuleCall()); }
-	RULE_NUMBER
-{ after(grammarAccess.getIdentifierOrValueAccess().getNUMBERTerminalRuleCall()); }
+{ before(grammarAccess.getIdentifierOrValueAccess().getAlternatives()); }
+(rule__IdentifierOrValue__Alternatives)
+{ after(grammarAccess.getIdentifierOrValueAccess().getAlternatives()); }
 )
 
 ;
@@ -785,6 +785,28 @@ rule__AttributeExpression__Alternatives
 { before(grammarAccess.getAttributeExpressionAccess().getGroup_1()); }
 (rule__AttributeExpression__Group_1__0)
 { after(grammarAccess.getAttributeExpressionAccess().getGroup_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IdentifierOrValue__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getIdentifierOrValueAccess().getNUMBERTerminalRuleCall_0()); }
+	RULE_NUMBER
+{ after(grammarAccess.getIdentifierOrValueAccess().getNUMBERTerminalRuleCall_0()); }
+)
+
+    |(
+{ before(grammarAccess.getIdentifierOrValueAccess().getBOOLEANTerminalRuleCall_1()); }
+	RULE_BOOLEAN
+{ after(grammarAccess.getIdentifierOrValueAccess().getBOOLEANTerminalRuleCall_1()); }
 )
 
 ;
@@ -3860,6 +3882,8 @@ finally {
 
 
 RULE_NUMBER : ('0'..'9')* ('.' ('0'..'9')+)?;
+
+RULE_BOOLEAN : ('true'|'false');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

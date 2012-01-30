@@ -73,7 +73,7 @@ UnaryExpression returns expressions::Expression:
 	
 LiteralExpression returns expressions::Expression:
 	'(' Expression ')' |
-	{actionLanguage::LiteralExpression} value=IdentifierOrValue
+	{actionLanguage::LiteralExpression} value=IdentifierOrValue 
 	;	
 	
 AttributeExpression returns expressions::Expression:
@@ -82,7 +82,7 @@ AttributeExpression returns expressions::Expression:
 	;			
 	
 IdentifierOrValue returns ecore::EString:
-NUMBER
+NUMBER|BOOLEAN
 ;	
 	
 enum AssignOperator returns actionLanguage::AssignOperator: EQUAL='=' | ASSIGN2=':=' | PLUS_EQUAL='+='| EQUAL_PLUS='=+' | MINUS_EQUAL='-='| EQUAL_MINUS='=-' ;	
@@ -102,8 +102,11 @@ enum ComparingOperator returns actionLanguage::ComparingOperator:
 LESS='<' | LESS_OR_EQUAL='<=' | EQUAL='==' | GREATER_OR_EQUAL='>=' | GREATER='>' | UNEQUAL='<>' 
 ;
 
+
 enum UnaryOperator returns actionLanguage::UnaryOperator: NOT='not' | MINUS='-' | PLUS='+';
 
 terminal NUMBER returns ecore::EBigDecimal:
 	('0'..'9')* ('.' ('0'..'9')+)?;
+terminal BOOLEAN returns ecore::EBoolean:
+'true' | 'false';	
 	

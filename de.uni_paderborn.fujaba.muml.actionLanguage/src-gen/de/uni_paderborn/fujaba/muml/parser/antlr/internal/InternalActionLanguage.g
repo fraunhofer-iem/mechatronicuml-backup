@@ -1498,14 +1498,22 @@ ruleIdentifierOrValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeR
     @after { resetLookahead(); 
 	    lastConsumedNode = currentNode;
     }:
-    this_NUMBER_0=RULE_NUMBER    {
+(    this_NUMBER_0=RULE_NUMBER    {
 		$current.merge(this_NUMBER_0);
     }
 
     { 
-    createLeafNode(grammarAccess.getIdentifierOrValueAccess().getNUMBERTerminalRuleCall(), null); 
+    createLeafNode(grammarAccess.getIdentifierOrValueAccess().getNUMBERTerminalRuleCall_0(), null); 
     }
 
+    |    this_BOOLEAN_1=RULE_BOOLEAN    {
+		$current.merge(this_BOOLEAN_1);
+    }
+
+    { 
+    createLeafNode(grammarAccess.getIdentifierOrValueAccess().getBOOLEANTerminalRuleCall_1(), null); 
+    }
+)
     ;
 
 
@@ -1747,6 +1755,8 @@ ruleUnaryOperator returns [Enumerator current=null]
 
 
 RULE_NUMBER : ('0'..'9')* ('.' ('0'..'9')+)?;
+
+RULE_BOOLEAN : ('true'|'false');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

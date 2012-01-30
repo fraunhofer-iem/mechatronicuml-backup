@@ -44,6 +44,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBinaryLogicExpressionAccess().getRightExpressionAlternatives_1_1_0(), "rule__BinaryLogicExpression__RightExpressionAlternatives_1_1_0");
 					put(grammarAccess.getLiteralExpressionAccess().getAlternatives(), "rule__LiteralExpression__Alternatives");
 					put(grammarAccess.getAttributeExpressionAccess().getAlternatives(), "rule__AttributeExpression__Alternatives");
+					put(grammarAccess.getIdentifierOrValueAccess().getAlternatives(), "rule__IdentifierOrValue__Alternatives");
 					put(grammarAccess.getAssignOperatorAccess().getAlternatives(), "rule__AssignOperator__Alternatives");
 					put(grammarAccess.getIncrementDecrementOperatorAccess().getAlternatives(), "rule__IncrementDecrementOperator__Alternatives");
 					put(grammarAccess.getLogicOperatorAccess().getAlternatives(), "rule__LogicOperator__Alternatives");
