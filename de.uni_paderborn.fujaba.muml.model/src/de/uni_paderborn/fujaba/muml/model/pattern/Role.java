@@ -45,8 +45,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OrderOnlyForMultiPort='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')' RoleHasConnector='self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OrderOnlyForMultiPort='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')' RoleHasConnector='self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()' RoleRequiresBehavior='not self.behavior.oclIsUndefined()'"
  * @generated
  */
 public interface Role extends NamedElement, ConstrainableElement, BehavioralElement {

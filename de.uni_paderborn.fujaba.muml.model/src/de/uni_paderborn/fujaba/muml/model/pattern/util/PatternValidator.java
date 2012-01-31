@@ -178,6 +178,7 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateRole_OrderOnlyForMultiPort(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_OrderedRequiresIntegerOrderVariable(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleHasConnector(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
 		return result;
 	}
 
@@ -263,6 +264,35 @@ public class PatternValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "RoleHasConnector",
 				 ROLE__ROLE_HAS_CONNECTOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the RoleRequiresBehavior constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ROLE__ROLE_REQUIRES_BEHAVIOR__EEXPRESSION = "not self.behavior.oclIsUndefined()";
+
+	/**
+	 * Validates the RoleRequiresBehavior constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRole_RoleRequiresBehavior(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PatternPackage.Literals.ROLE,
+				 role,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RoleRequiresBehavior",
+				 ROLE__ROLE_REQUIRES_BEHAVIOR__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

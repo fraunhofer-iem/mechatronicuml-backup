@@ -109,10 +109,11 @@
           <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="AtLeastOneMessageInterface"/>
+          <details key="constraints" value="AtLeastOneMessageInterface DiscretePortRequiresBehavior"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="AtLeastOneMessageInterface" value="self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))"/>
+          <details key="DiscretePortRequiresBehavior" value="-- clarify if this also holds for hybrid ports&#xA;not self.behavior.oclIsUndefined()"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/pattern/Role"
             eOpposite="#//model/pattern/Role/port">
@@ -223,6 +224,12 @@
       <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" eSuperTypes="#//model/component/Component #//model/core/BehavioralElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xA;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="SoftwareComponentRequiresBehavior" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SoftwareComponentRequiresBehavior"/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
@@ -832,12 +839,13 @@
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector"/>
+          <details key="constraints" value="OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OrderOnlyForMultiPort" value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
           <details key="OrderedRequiresIntegerOrderVariable" value="self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType ='EInt')"/>
           <details key="RoleHasConnector" value="self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()"/>
+          <details key="RoleRequiresBehavior" value="not self.behavior.oclIsUndefined()"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingRoleConnector"
             eType="#//model/pattern/RoleConnector" eOpposite="#//model/pattern/RoleConnector/target">

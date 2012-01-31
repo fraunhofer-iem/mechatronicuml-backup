@@ -21,7 +21,8 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAtomicComponent()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SoftwareComponentRequiresBehavior='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SoftwareComponentRequiresBehavior'"
  * @generated
  */
 public interface AtomicComponent extends Component, BehavioralElement {

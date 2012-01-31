@@ -32,8 +32,8 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneMessageInterface'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageInterface='self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneMessageInterface DiscretePortRequiresBehavior'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageInterface='self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))' DiscretePortRequiresBehavior='-- clarify if this also holds for hybrid ports\nnot self.behavior.oclIsUndefined()'"
  * @generated
  */
 public interface DiscretePort extends Port, BehavioralElement {

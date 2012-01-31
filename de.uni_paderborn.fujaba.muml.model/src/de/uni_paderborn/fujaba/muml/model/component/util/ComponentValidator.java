@@ -305,6 +305,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageInterface(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(discretePort, diagnostics, context);
 		return result;
 	}
 
@@ -332,6 +333,36 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "AtLeastOneMessageInterface",
 				 DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_INTERFACE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DiscretePortRequiresBehavior constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_BEHAVIOR__EEXPRESSION = "-- clarify if this also holds for hybrid ports\n" +
+		"not self.behavior.oclIsUndefined()";
+
+	/**
+	 * Validates the DiscretePortRequiresBehavior constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_DiscretePortRequiresBehavior(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscretePortRequiresBehavior",
+				 DISCRETE_PORT__DISCRETE_PORT_REQUIRES_BEHAVIOR__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -510,7 +541,37 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentRequiresBehavior(atomicComponent, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the SoftwareComponentRequiresBehavior constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_REQUIRES_BEHAVIOR__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())";
+
+	/**
+	 * Validates the SoftwareComponentRequiresBehavior constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAtomicComponent_SoftwareComponentRequiresBehavior(AtomicComponent atomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ATOMIC_COMPONENT,
+				 atomicComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SoftwareComponentRequiresBehavior",
+				 ATOMIC_COMPONENT__SOFTWARE_COMPONENT_REQUIRES_BEHAVIOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -703,6 +764,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageInterface(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHybridPort_LowerBoundMustBeZeroOrOne(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHybridPort_UpperBoundMustBeOne(hybridPort, diagnostics, context);
 		return result;

@@ -907,7 +907,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtLeastOneMessageInterface"
+			 "constraints", "AtLeastOneMessageInterface DiscretePortRequiresBehavior"
 		   });						
 		addAnnotation
 		  (componentPartEClass, 
@@ -920,7 +920,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueComponentPartsWithinStructuredComponent"
-		   });											
+		   });							
+		addAnnotation
+		  (atomicComponentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "SoftwareComponentRequiresBehavior"
+		   });							
 		addAnnotation
 		  (assemblyEClass, 
 		   source, 
@@ -966,7 +972,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneMessageInterface", "self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))"
+			 "AtLeastOneMessageInterface", "self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))",
+			 "DiscretePortRequiresBehavior", "-- clarify if this also holds for hybrid ports\nnot self.behavior.oclIsUndefined()"
 		   });							
 		addAnnotation
 		  (componentPartEClass, 
@@ -987,7 +994,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "UniqueComponentPartsWithinStructuredComponent", "self.embeddedParts->isUnique(p | p.componentType)"
-		   });											
+		   });					
+		addAnnotation
+		  (atomicComponentEClass, 
+		   source, 
+		   new String[] {
+			 "SoftwareComponentRequiresBehavior", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())"
+		   });									
 		addAnnotation
 		  (assemblyEClass, 
 		   source, 

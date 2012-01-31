@@ -517,7 +517,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector"
+			 "constraints", "OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"
 		   });												
 	}
 
@@ -547,7 +547,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   new String[] {
 			 "OrderOnlyForMultiPort", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)",
 			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')",
-			 "RoleHasConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()"
+			 "RoleHasConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()",
+			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()"
 		   });												
 		addAnnotation
 		  (getRole_RoleConnector(), 
