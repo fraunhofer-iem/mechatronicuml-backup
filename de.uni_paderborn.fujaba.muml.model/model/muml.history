@@ -14425,5 +14425,46 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"
         oldDataValue="OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="SoftwareComponentHasOnlyDiscretePorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniquePortNames SoftwareComponentHasOnlyDiscretePorts"
+        oldDataValue="UniquePortNames"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort))"
+        oldDataValue="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort))"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="ContinuesComponentHasOnlyContinuesPorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="self.componentType = component::ComponentKind::CONTINUES_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::ContinuesPort))"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="HybridComponentHasOnlyHybridPorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="self.componentType = component::ComponentKind::HYBRID_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::HybridPort))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniquePortNames SoftwareComponentHasOnlyDiscretePorts ContinuesComponentHasOnlyContinuesPorts HybridComponentHasOnlyHybridPorts"
+        oldDataValue="UniquePortNames SoftwareComponentHasOnlyDiscretePorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="ContinuousComponentHasOnlyContinuousPorts" oldDataValue="ContinuesComponentHasOnlyContinuesPorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::ContinuousPort))"
+        oldDataValue="self.componentType = component::ComponentKind::CONTINUES_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::ContinuesPort))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniquePortNames SoftwareComponentHasOnlyDiscretePorts ContinuousComponentHasOnlyContinuousPorts HybridComponentHasOnlyHybridPorts"
+        oldDataValue="UniquePortNames SoftwareComponentHasOnlyDiscretePorts ContinuesComponentHasOnlyContinuesPorts HybridComponentHasOnlyHybridPorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::ContinuousPort))"
+        oldDataValue="self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::ContinuousPort))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::ContinuousPort))"
+        oldDataValue="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::ContinuousPort))"/>
   </releases>
 </history:History>

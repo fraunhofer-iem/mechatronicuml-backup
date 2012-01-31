@@ -895,7 +895,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniquePortNames"
+			 "constraints", "UniquePortNames SoftwareComponentHasOnlyDiscretePorts ContinuousComponentHasOnlyContinuousPorts HybridComponentHasOnlyHybridPorts"
 		   });													
 		addAnnotation
 		  (continuousPortEClass, 
@@ -953,7 +953,10 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "UniquePortNames", "self.ports->isUnique(name)"
+			 "UniquePortNames", "self.ports->isUnique(name)",
+			 "SoftwareComponentHasOnlyDiscretePorts", "-- use typeOf otherwise hybrid ports are also allowed\nself.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort))",
+			 "ContinuousComponentHasOnlyContinuousPorts", "-- use typeOf otherwise hybrid ports are also allowed\nself.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::ContinuousPort))",
+			 "HybridComponentHasOnlyHybridPorts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::HybridPort))"
 		   });										
 		addAnnotation
 		  (getPort_Connectors(), 

@@ -25,10 +25,13 @@
           <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="UniquePortNames"/>
+          <details key="constraints" value="UniquePortNames SoftwareComponentHasOnlyDiscretePorts ContinuousComponentHasOnlyContinuousPorts HybridComponentHasOnlyHybridPorts"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="UniquePortNames" value="self.ports->isUnique(name)"/>
+          <details key="SoftwareComponentHasOnlyDiscretePorts" value="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort))"/>
+          <details key="ContinuousComponentHasOnlyContinuousPorts" value="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::ContinuousPort))"/>
+          <details key="HybridComponentHasOnlyHybridPorts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::HybridPort))"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
             eType="#//model/component/Port" containment="true" eOpposite="#//model/component/Port/component">
