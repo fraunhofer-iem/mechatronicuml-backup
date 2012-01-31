@@ -14381,5 +14381,9 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/deployment/0.2.3" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.2.2"/>
   </releases>
-  <releases/>
+  <releases>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))"
+        oldDataValue="not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"/>
+  </releases>
 </history:History>
