@@ -606,6 +606,24 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAssembly_ToDiscretePort() {
+		return (EReference)assemblyEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssembly_FromDiscretePort() {
+		return (EReference)assemblyEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDelegation() {
 		return delegationEClass;
 	}
@@ -730,6 +748,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(assemblyEClass, ASSEMBLY__TO);
 		createEReference(assemblyEClass, ASSEMBLY__FROM);
 		createEReference(assemblyEClass, ASSEMBLY__COORDINATION_PATTERN);
+		createEReference(assemblyEClass, ASSEMBLY__TO_DISCRETE_PORT);
+		createEReference(assemblyEClass, ASSEMBLY__FROM_DISCRETE_PORT);
 
 		delegationEClass = createEClass(DELEGATION);
 		createEReference(delegationEClass, DELEGATION__COMPONENT_PART);
@@ -847,6 +867,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getAssembly_To(), this.getComponentPart(), this.getComponentPart_ToRev(), "to", null, 1, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssembly_From(), this.getComponentPart(), this.getComponentPart_FromRev(), "from", null, 1, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssembly_CoordinationPattern(), thePatternPackage.getCoordinationPattern(), null, "coordinationPattern", null, 1, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssembly_ToDiscretePort(), this.getDiscretePort(), null, "toDiscretePort", null, 0, 1, Assembly.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getAssembly_FromDiscretePort(), this.getDiscretePort(), null, "fromDiscretePort", null, 0, 1, Assembly.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(delegationEClass, Delegation.class, "Delegation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDelegation_ComponentPart(), this.getComponentPart(), this.getComponentPart_Delegation(), "componentPart", null, 1, 1, Delegation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -931,8 +953,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (assemblyEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections"
-		   });														
+			 "constraints", "NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"
+		   });																		
 		addAnnotation
 		  (hybridPortEClass, 
 		   source, 
@@ -1008,10 +1030,25 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (assemblyEClass, 
 		   source, 
 		   new String[] {
-			 "ValidDiscretePortDiscretePortConnection", "if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then\n    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then\n        -- check compatibility of message interfaces\n        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in\n        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in\n        fromPort.senderMessageInterface = toPort.receiverMessageInterface \n        and fromPort.receiverMessageInterface = toPort.senderMessageInterface\n        and (\n            -- check refines\n            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then\n                -- only one port has a refinement\n                false\n            else\n                fromPort.refines.oclIsUndefined() \n                -- both ports have a refinement\n                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern\n                -- this check is sufficient\n                and not fromPort.refines.coordinationPattern.oclIsUndefined()\n                and (\n                    if fromPort.refines.coordinationPattern.roles->size() = 2 then\n                        fromPort.refines.name <> toPort.refines.name\n                    else\n                        -- both ports have the same role and belong the same pattern\n                        true\n                    endif\n                )\n            endif\n        )\n    else\n        -- this case must be checked by other constraints\n        true\n    endif\nelse\n    false\nendif",
 			 "NoSelfAssembliesForSinglePorts", "self.fromPort.cardinality.upperBound.value <= 1\r\nimplies\r\nself.fromPort <> self.toPort",
-			 "ValidContinuousPortDirections", "not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and\nnot self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)\nimplies\nself.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind"
-		   });														
+			 "ValidContinuousPortDirections", "not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and\nnot self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)\nimplies\nself.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind",
+			 "AssemblyBetweenDiscretePortsRequiresCoordinationPattern", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\t-- assembly between two discrete ports requires a coordination pattern\n\tnot self.coordinationPattern.oclIsUndefined()\nelse\n\ttrue\nendif",
+			 "AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n\t\tand\n\t\t-- both refinements must belong to the same pattern\n\t\tself.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern\nelse\n\ttrue\nendif",
+			 "AssemblyBetweenDiscretePortsRequiresDifferentRoles", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n\t\tand\n\t\t-- both ports should have different roles (unless the pattern has only one role)\n\t\t(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name <> self.toDiscretePort.refines.name))\nelse\n\ttrue\nendif",
+			 "AssemblyBetweenDiscretePortsSameMessageInterfaces", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\t-- message interfaces must be compatible\n\tself.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface\n\tand\n\tself.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface\nelse\n\ttrue\nendif"
+		   });						
+		addAnnotation
+		  (getAssembly_ToDiscretePort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then\n\tself.toPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif"
+		   });			
+		addAnnotation
+		  (getAssembly_FromDiscretePort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then\n\tself.fromPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif"
+		   });											
 		addAnnotation
 		  (hybridPortEClass, 
 		   source, 

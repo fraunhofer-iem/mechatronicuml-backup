@@ -263,12 +263,16 @@
           <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections"/>
+          <details key="constraints" value="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="ValidDiscretePortDiscretePortConnection" value="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;        -- check compatibility of message interfaces&#xA;        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in&#xA;        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in&#xA;        fromPort.senderMessageInterface = toPort.receiverMessageInterface &#xA;        and fromPort.receiverMessageInterface = toPort.senderMessageInterface&#xA;        and (&#xA;            -- check refines&#xA;            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then&#xA;                -- only one port has a refinement&#xA;                false&#xA;            else&#xA;                fromPort.refines.oclIsUndefined() &#xA;                -- both ports have a refinement&#xA;                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern&#xA;                -- this check is sufficient&#xA;                and not fromPort.refines.coordinationPattern.oclIsUndefined()&#xA;                and (&#xA;                    if fromPort.refines.coordinationPattern.roles->size() = 2 then&#xA;                        fromPort.refines.name &lt;> toPort.refines.name&#xA;                    else&#xA;                        -- both ports have the same role and belong the same pattern&#xA;                        true&#xA;                    endif&#xA;                )&#xA;            endif&#xA;        )&#xA;    else&#xA;        -- this case must be checked by other constraints&#xA;        true&#xA;    endif&#xA;else&#xA;    false&#xA;endif"/>
           <details key="NoSelfAssembliesForSinglePorts" value="self.fromPort.cardinality.upperBound.value &lt;= 1&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
           <details key="ValidContinuousPortDirections" value="not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and&#xA;not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)&#xA;implies&#xA;self.fromPort.oclAsType(component::ContinuousPort).kind &lt;> self.toPort.oclAsType(component::ContinuousPort).kind"/>
+          <details key="AssemblyBetweenDiscretePortsRequiresCoordinationPattern" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination pattern&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
+          <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"
+              value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
+          <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
+          <details key="AssemblyBetweenDiscretePortsSameMessageInterfaces" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- message interfaces must be compatible&#xA;&#x9;self.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface&#xA;&#x9;and&#xA;&#x9;self.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface&#xA;else&#xA;&#x9;true&#xA;endif"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1"
             eType="#//model/component/ComponentPart" eOpposite="#//model/component/ComponentPart/toRev">
@@ -286,6 +290,26 @@
             lowerBound="1" eType="#//model/pattern/CoordinationPattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern that defines the protocol of this assembly."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="toDiscretePort" ordered="false"
+            eType="#//model/component/DiscretePort" volatile="true" transient="true"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Return the toPort as a DiscretePort if possible"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="fromDiscretePort" ordered="false"
+            eType="#//model/component/DiscretePort" volatile="true" transient="true"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Return the fromPort as a DiscretePort if possible"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

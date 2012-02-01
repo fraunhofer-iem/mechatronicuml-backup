@@ -24,12 +24,14 @@ import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getTo <em>To</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getFrom <em>From</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern <em>Coordination Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getToDiscretePort <em>To Discrete Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getFromDiscretePort <em>From Discrete Port</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidDiscretePortDiscretePortConnection='if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then\n    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then\n        -- check compatibility of message interfaces\n        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in\n        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in\n        fromPort.senderMessageInterface = toPort.receiverMessageInterface \n        and fromPort.receiverMessageInterface = toPort.senderMessageInterface\n        and (\n            -- check refines\n            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then\n                -- only one port has a refinement\n                false\n            else\n                fromPort.refines.oclIsUndefined() \n                -- both ports have a refinement\n                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern\n                -- this check is sufficient\n                and not fromPort.refines.coordinationPattern.oclIsUndefined()\n                and (\n                    if fromPort.refines.coordinationPattern.roles->size() = 2 then\n                        fromPort.refines.name <> toPort.refines.name\n                    else\n                        -- both ports have the same role and belong the same pattern\n                        true\n                    endif\n                )\n            endif\n        )\n    else\n        -- this case must be checked by other constraints\n        true\n    endif\nelse\n    false\nendif' NoSelfAssembliesForSinglePorts='self.fromPort.cardinality.upperBound.value <= 1\r\nimplies\r\nself.fromPort <> self.toPort' ValidContinuousPortDirections='not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and\nnot self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)\nimplies\nself.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoSelfAssembliesForSinglePorts='self.fromPort.cardinality.upperBound.value <= 1\r\nimplies\r\nself.fromPort <> self.toPort' ValidContinuousPortDirections='not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and\nnot self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)\nimplies\nself.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind' AssemblyBetweenDiscretePortsRequiresCoordinationPattern='if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\t-- assembly between two discrete ports requires a coordination pattern\n\tnot self.coordinationPattern.oclIsUndefined()\nelse\n\ttrue\nendif' AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern='if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n\t\tand\n\t\t-- both refinements must belong to the same pattern\n\t\tself.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern\nelse\n\ttrue\nendif' AssemblyBetweenDiscretePortsRequiresDifferentRoles='if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n\t\tand\n\t\t-- both ports should have different roles (unless the pattern has only one role)\n\t\t(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name <> self.toDiscretePort.refines.name))\nelse\n\ttrue\nendif' AssemblyBetweenDiscretePortsSameMessageInterfaces='if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\t-- message interfaces must be compatible\n\tself.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface\n\tand\n\tself.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface\nelse\n\ttrue\nendif'"
  * @generated
  */
 public interface Assembly extends BehavioralConnector {
@@ -111,5 +113,57 @@ public interface Assembly extends BehavioralConnector {
 	 * @generated
 	 */
 	void setCoordinationPattern(CoordinationPattern value);
+
+	/**
+	 * Returns the value of the '<em><b>To Discrete Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return the toPort as a DiscretePort if possible
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>To Discrete Port</em>' reference.
+	 * @see #setToDiscretePort(DiscretePort)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly_ToDiscretePort()
+	 * @model transient="true" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then\n\tself.toPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif'"
+	 * @generated
+	 */
+	DiscretePort getToDiscretePort();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getToDiscretePort <em>To Discrete Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To Discrete Port</em>' reference.
+	 * @see #getToDiscretePort()
+	 * @generated
+	 */
+	void setToDiscretePort(DiscretePort value);
+
+	/**
+	 * Returns the value of the '<em><b>From Discrete Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return the fromPort as a DiscretePort if possible
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>From Discrete Port</em>' reference.
+	 * @see #setFromDiscretePort(DiscretePort)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly_FromDiscretePort()
+	 * @model transient="true" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then\n\tself.fromPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif'"
+	 * @generated
+	 */
+	DiscretePort getFromDiscretePort();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getFromDiscretePort <em>From Discrete Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Discrete Port</em>' reference.
+	 * @see #getFromDiscretePort()
+	 * @generated
+	 */
+	void setFromDiscretePort(DiscretePort value);
 
 } // Assembly

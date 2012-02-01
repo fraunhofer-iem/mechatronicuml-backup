@@ -696,73 +696,13 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assembly, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssembly_ValidDiscretePortDiscretePortConnection(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_NoSelfAssembliesForSinglePorts(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_ValidContinuousPortDirections(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsRequiresCoordinationPattern(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsRequiresDifferentRoles(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsSameMessageInterfaces(assembly, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the ValidDiscretePortDiscretePortConnection constraint of '<em>Assembly</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY__VALID_DISCRETE_PORT_DISCRETE_PORT_CONNECTION__EEXPRESSION = "if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then\n" +
-		"    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then\n" +
-		"        -- check compatibility of message interfaces\n" +
-		"        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in\n" +
-		"        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in\n" +
-		"        fromPort.senderMessageInterface = toPort.receiverMessageInterface \n" +
-		"        and fromPort.receiverMessageInterface = toPort.senderMessageInterface\n" +
-		"        and (\n" +
-		"            -- check refines\n" +
-		"            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then\n" +
-		"                -- only one port has a refinement\n" +
-		"                false\n" +
-		"            else\n" +
-		"                fromPort.refines.oclIsUndefined() \n" +
-		"                -- both ports have a refinement\n" +
-		"                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern\n" +
-		"                -- this check is sufficient\n" +
-		"                and not fromPort.refines.coordinationPattern.oclIsUndefined()\n" +
-		"                and (\n" +
-		"                    if fromPort.refines.coordinationPattern.roles->size() = 2 then\n" +
-		"                        fromPort.refines.name <> toPort.refines.name\n" +
-		"                    else\n" +
-		"                        -- both ports have the same role and belong the same pattern\n" +
-		"                        true\n" +
-		"                    endif\n" +
-		"                )\n" +
-		"            endif\n" +
-		"        )\n" +
-		"    else\n" +
-		"        -- this case must be checked by other constraints\n" +
-		"        true\n" +
-		"    endif\n" +
-		"else\n" +
-		"    false\n" +
-		"endif";
-
-	/**
-	 * Validates the ValidDiscretePortDiscretePortConnection constraint of '<em>Assembly</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssembly_ValidDiscretePortDiscretePortConnection(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY,
-				 assembly,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidDiscretePortDiscretePortConnection",
-				 ASSEMBLY__VALID_DISCRETE_PORT_DISCRETE_PORT_CONNECTION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -823,6 +763,148 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ValidContinuousPortDirections",
 				 ASSEMBLY__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresCoordinationPattern constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_COORDINATION_PATTERN__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+		"\t-- assembly between two discrete ports requires a coordination pattern\n" +
+		"\tnot self.coordinationPattern.oclIsUndefined()\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the AssemblyBetweenDiscretePortsRequiresCoordinationPattern constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_AssemblyBetweenDiscretePortsRequiresCoordinationPattern(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsRequiresCoordinationPattern",
+				 ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_COORDINATION_PATTERN__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PATTERN__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
+		"\t\tand\n" +
+		"\t\t-- both refinements must belong to the same pattern\n" +
+		"\t\tself.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern",
+				 ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PATTERN__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresDifferentRoles constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
+		"\t\tand\n" +
+		"\t\t-- both ports should have different roles (unless the pattern has only one role)\n" +
+		"\t\t(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name <> self.toDiscretePort.refines.name))\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the AssemblyBetweenDiscretePortsRequiresDifferentRoles constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_AssemblyBetweenDiscretePortsRequiresDifferentRoles(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsRequiresDifferentRoles",
+				 ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsSameMessageInterfaces constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_SAME_MESSAGE_INTERFACES__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+		"\t-- message interfaces must be compatible\n" +
+		"\tself.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface\n" +
+		"\tand\n" +
+		"\tself.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the AssemblyBetweenDiscretePortsSameMessageInterfaces constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_AssemblyBetweenDiscretePortsSameMessageInterfaces(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsSameMessageInterfaces",
+				 ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_SAME_MESSAGE_INTERFACES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -2993,24 +2993,24 @@
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.3/@changes.90/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.90/@element"
+            featureName="key" dataValue="ValidDiscretePortDiscretePortConnection"/>
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.90/@element"
+            featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;        -- check compatibility of message interfaces&#xA;        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in&#xA;        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in&#xA;        fromPort.senderMessageInterface = toPort.receiverMessageInterface &#xA;        and fromPort.receiverMessageInterface = toPort.senderMessageInterface&#xA;        and (&#xA;            -- check refines&#xA;            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then&#xA;                -- only one port has a refinement&#xA;                false&#xA;            else&#xA;                fromPort.refines.oclIsUndefined() &#xA;                -- both ports have a refinement&#xA;                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern&#xA;                -- this check is sufficient&#xA;                and not fromPort.refines.coordinationPattern.oclIsUndefined()&#xA;                and (&#xA;                    if fromPort.refines.coordinationPattern.roles->size() = 2 then&#xA;                        fromPort.refines.name &lt;> toPort.refines.name&#xA;                    else&#xA;                        -- both ports have the same role and belong the same pattern&#xA;                        true&#xA;                    endif&#xA;                )&#xA;            endif&#xA;        )&#xA;    else&#xA;        -- this case must be checked by other constraints&#xA;        true&#xA;    endif&#xA;else&#xA;    false&#xA;endif"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="key" dataValue="ValidDiscretePortDiscretePortConnection"/>
+            featureName="key" dataValue="NoSelfAssembliesForSinglePorts"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;        -- check compatibility of message interfaces&#xA;        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in&#xA;        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in&#xA;        fromPort.senderMessageInterface = toPort.receiverMessageInterface &#xA;        and fromPort.receiverMessageInterface = toPort.senderMessageInterface&#xA;        and (&#xA;            -- check refines&#xA;            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then&#xA;                -- only one port has a refinement&#xA;                false&#xA;            else&#xA;                fromPort.refines.oclIsUndefined() &#xA;                -- both ports have a refinement&#xA;                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern&#xA;                -- this check is sufficient&#xA;                and not fromPort.refines.coordinationPattern.oclIsUndefined()&#xA;                and (&#xA;                    if fromPort.refines.coordinationPattern.roles->size() = 2 then&#xA;                        fromPort.refines.name &lt;> toPort.refines.name&#xA;                    else&#xA;                        -- both ports have the same role and belong the same pattern&#xA;                        true&#xA;                    endif&#xA;                )&#xA;            endif&#xA;        )&#xA;    else&#xA;        -- this case must be checked by other constraints&#xA;        true&#xA;    endif&#xA;else&#xA;    false&#xA;endif"/>
+            featureName="value" dataValue="self.fromPort.cardinality.upperBound.value &lt;= 1&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="key" dataValue="NoSelfAssembliesForSinglePorts"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="value" dataValue="self.fromPort.cardinality.upperBound.value &lt;= 1&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
             featureName="key" dataValue="ValidContinuousPortDirections"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
             featureName="value" dataValue="not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and&#xA;not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)&#xA;implies&#xA;self.fromPort.oclAsType(component::ContinuousPort).kind &lt;> self.toPort.oclAsType(component::ContinuousPort).kind"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/BehavioralConnector"
@@ -14466,5 +14466,193 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
         featureName="value" dataValue="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::ContinuousPort))"
         oldDataValue="-- use typeOf otherwise hybrid ports are also allowed&#xA;self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::ContinuousPort))"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresCoordinationPattern"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;&#x9;-- clarify if the same applies to hybrid ports (for now: yes)&#xA;&#x9;if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;-- both ports need a refinement&#xA;&#x9;&#x9;not self.fromPort.refines.oclIsUndefined() and not self.toPort.oclIsUndefined()&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern"
+        oldDataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresEqualCoordinationPattern"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"
+        oldDataValue="AssemblyBetweenDiscretePortsRequiresEqualCoordinationPattern"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;&#x9;-- clarify if the same applies to hybrid ports (for now: yes)&#xA;&#x9;if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;-- both ports need a refinement&#xA;&#x9;&#x9;not self.fromPort.refines.oclIsUndefined() and not self.toPort.oclIsUndefined()&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;and self.fromPort.refines.coordinationPattern = self.toPort.refines.coordinationPattern&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresDifferentRoles"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;&#x9;-- clarify if the same applies to hybrid ports (for now: yes)&#xA;&#x9;if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;-- both ports need a refinement&#xA;&#x9;&#x9;not self.fromPort.refines.oclIsUndefined() and not self.toPort.refines.oclIsUndefined()&#xA;&#x9;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;&#x9;and&#x9;self.fromPort.refines.coordinationPattern.roles->size() implies (self.fromPort.refines.name &lt;> self.toPort.refines.name)&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;&#x9;-- clarify if the same applies to hybrid ports (for now: yes)&#xA;&#x9;if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;-- both ports need a refinement&#xA;&#x9;&#x9;not self.fromPort.refines.oclIsUndefined() and not self.toPort.oclIsUndefined()&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;&#x9;-- clarify if the same applies to hybrid ports (for now: yes)&#xA;&#x9;if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;-- both ports need a refinement&#xA;&#x9;&#x9;not self.fromPort.refines.oclIsUndefined() and not self.toPort.oclIsUndefined()&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles"
+        oldDataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Assembly/toDiscretePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+        featureName="eType" referenceValue="muml.ecore#//model/component/DiscretePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+        featureName="name" dataValue="discreteToPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+        featureName="ordered" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+        featureName="volatile" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+        featureName="name" dataValue="toDiscretePort" oldDataValue="discreteToPort"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/toDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Return the toPort as a DiscretePort if possible"
+        oldDataValue="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/toDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks->asSet()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.toPort.oclIsUndefined and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsKindOf(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;end"
+        oldDataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks->asSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.toPort.oclIsUndefined and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsKindOf(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;end"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Assembly/fromDiscretePort">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+          featureName="name" dataValue="toDiscretePort"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+          featureName="ordered" dataValue="false" oldDataValue="true"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+          featureName="eType" referenceValue="muml.ecore#//model/component/DiscretePort"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/fromDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Return the toPort as a DiscretePort if possible"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/fromDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+        featureName="name" dataValue="fromDiscretePort" oldDataValue="toDiscretePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Return the fromPort as a DiscretePort if possible"
+        oldDataValue="Return the toPort as a DiscretePort if possible"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- both ports need a refinement&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;&#x9;-- clarify if the same applies to hybrid ports (for now: yes)&#xA;&#x9;if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;-- both ports need a refinement&#xA;&#x9;&#x9;not self.fromPort.refines.oclIsUndefined() and not self.toPort.oclIsUndefined()&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefind() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;&#x9;-- clarify if the same applies to hybrid ports (for now: yes)&#xA;&#x9;if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;-- both ports need a refinement&#xA;&#x9;&#x9;not self.fromPort.refines.oclIsUndefined() and not self.toPort.oclIsUndefined()&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;and self.fromPort.refines.coordinationPattern = self.toPort.refines.coordinationPattern&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefind() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern.roles->size() implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name)&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;&#x9;-- clarify if the same applies to hybrid ports (for now: yes)&#xA;&#x9;if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;-- both ports need a refinement&#xA;&#x9;&#x9;not self.fromPort.refines.oclIsUndefined() and not self.toPort.refines.oclIsUndefined()&#xA;&#x9;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;&#x9;and&#x9;self.fromPort.refines.coordinationPattern.roles->size() implies (self.fromPort.refines.name &lt;> self.toPort.refines.name)&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefind() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefind() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefind() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern.roles->size() implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name)&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefind() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern.roles->size() implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name)&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern.roles->size() implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name)&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.3/@changes.84/@element">
+      <changes xsi:type="history:Set" element="#//@releases.3/@changes.84/@element"
+          featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresCoordinationPattern"/>
+      <changes xsi:type="history:Set" element="#//@releases.3/@changes.84/@element"
+          featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- both ports need a refinement&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Set" element="#//@releases.3/@changes.84/@element"
+        featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"
+        oldDataValue="AssemblyBetweenDiscretePortsRequiresCoordinationPattern"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination pattern&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- both ports need a refinement&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"
+          value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- both ports need a refinement&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="key" dataValue="AssemblyBetweenDiscretePortsSameMessageInterfaces"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.isUndefined() then&#xA;&#x9;-- message interfaces must be compatible&#xA;&#x9;self.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface&#xA;&#x9;and&#xA;&#x9;self.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"
+        oldDataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- message interfaces must be compatible&#xA;&#x9;self.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface&#xA;&#x9;and&#xA;&#x9;self.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.isUndefined() then&#xA;&#x9;-- message interfaces must be compatible&#xA;&#x9;self.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface&#xA;&#x9;and&#xA;&#x9;self.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="ValidDiscretePortDiscretePortConnection"
+          value="if not self.fromPort.oclIsUndefined() and not self.toPort.oclIsUndefined() then&#xA;    if self.fromPort.oclIsKindOf(component::DiscretePort) and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;        -- check compatibility of message interfaces&#xA;        let fromPort : component::DiscretePort = self.fromPort.oclAsType(component::DiscretePort) in&#xA;        let toPort : component::DiscretePort = self.toPort.oclAsType(component::DiscretePort) in&#xA;        fromPort.senderMessageInterface = toPort.receiverMessageInterface &#xA;        and fromPort.receiverMessageInterface = toPort.senderMessageInterface&#xA;        and (&#xA;            -- check refines&#xA;            if fromPort.refines.oclIsUndefined() xor toPort.refines.oclIsUndefined() then&#xA;                -- only one port has a refinement&#xA;                false&#xA;            else&#xA;                fromPort.refines.oclIsUndefined() &#xA;                -- both ports have a refinement&#xA;                or fromPort.refines.coordinationPattern = toPort.refines.coordinationPattern&#xA;                -- this check is sufficient&#xA;                and not fromPort.refines.coordinationPattern.oclIsUndefined()&#xA;                and (&#xA;                    if fromPort.refines.coordinationPattern.roles->size() = 2 then&#xA;                        fromPort.refines.name &lt;> toPort.refines.name&#xA;                    else&#xA;                        -- both ports have the same role and belong the same pattern&#xA;                        true&#xA;                    endif&#xA;                )&#xA;            endif&#xA;        )&#xA;    else&#xA;        -- this case must be checked by other constraints&#xA;        true&#xA;    endif&#xA;else&#xA;    false&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"
+        oldDataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"/>
   </releases>
 </history:History>

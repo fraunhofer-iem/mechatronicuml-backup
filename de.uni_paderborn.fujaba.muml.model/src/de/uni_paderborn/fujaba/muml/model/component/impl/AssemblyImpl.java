@@ -9,12 +9,14 @@ package de.uni_paderborn.fujaba.muml.model.component.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 
 /**
@@ -27,6 +29,8 @@ import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl#getTo <em>To</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl#getFrom <em>From</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl#getToDiscretePort <em>To Discrete Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl#getFromDiscretePort <em>From Discrete Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +66,26 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 	 * @ordered
 	 */
 	protected CoordinationPattern coordinationPattern;
+
+	/**
+	 * The cached setting delegate for the '{@link #getToDiscretePort() <em>To Discrete Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToDiscretePort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TO_DISCRETE_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.ASSEMBLY__TO_DISCRETE_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getFromDiscretePort() <em>From Discrete Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromDiscretePort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate FROM_DISCRETE_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.ASSEMBLY__FROM_DISCRETE_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -245,6 +269,60 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DiscretePort getToDiscretePort() {
+		return (DiscretePort)TO_DISCRETE_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscretePort basicGetToDiscretePort() {
+		return (DiscretePort)TO_DISCRETE_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setToDiscretePort(DiscretePort newToDiscretePort) {
+		TO_DISCRETE_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newToDiscretePort);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscretePort getFromDiscretePort() {
+		return (DiscretePort)FROM_DISCRETE_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscretePort basicGetFromDiscretePort() {
+		return (DiscretePort)FROM_DISCRETE_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFromDiscretePort(DiscretePort newFromDiscretePort) {
+		FROM_DISCRETE_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newFromDiscretePort);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -293,6 +371,12 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 			case ComponentPackage.ASSEMBLY__COORDINATION_PATTERN:
 				if (resolve) return getCoordinationPattern();
 				return basicGetCoordinationPattern();
+			case ComponentPackage.ASSEMBLY__TO_DISCRETE_PORT:
+				if (resolve) return getToDiscretePort();
+				return basicGetToDiscretePort();
+			case ComponentPackage.ASSEMBLY__FROM_DISCRETE_PORT:
+				if (resolve) return getFromDiscretePort();
+				return basicGetFromDiscretePort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,6 +397,12 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 				return;
 			case ComponentPackage.ASSEMBLY__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)newValue);
+				return;
+			case ComponentPackage.ASSEMBLY__TO_DISCRETE_PORT:
+				setToDiscretePort((DiscretePort)newValue);
+				return;
+			case ComponentPackage.ASSEMBLY__FROM_DISCRETE_PORT:
+				setFromDiscretePort((DiscretePort)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,6 +425,12 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 			case ComponentPackage.ASSEMBLY__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)null);
 				return;
+			case ComponentPackage.ASSEMBLY__TO_DISCRETE_PORT:
+				setToDiscretePort((DiscretePort)null);
+				return;
+			case ComponentPackage.ASSEMBLY__FROM_DISCRETE_PORT:
+				setFromDiscretePort((DiscretePort)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -353,6 +449,10 @@ public class AssemblyImpl extends BehavioralConnectorImpl implements Assembly {
 				return from != null;
 			case ComponentPackage.ASSEMBLY__COORDINATION_PATTERN:
 				return coordinationPattern != null;
+			case ComponentPackage.ASSEMBLY__TO_DISCRETE_PORT:
+				return TO_DISCRETE_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.ASSEMBLY__FROM_DISCRETE_PORT:
+				return FROM_DISCRETE_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
