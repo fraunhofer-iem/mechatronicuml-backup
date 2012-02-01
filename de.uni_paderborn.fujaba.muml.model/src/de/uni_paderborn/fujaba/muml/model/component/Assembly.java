@@ -97,7 +97,7 @@ public interface Assembly extends BehavioralConnector {
 	 * @return the value of the '<em>Coordination Pattern</em>' reference.
 	 * @see #setCoordinationPattern(CoordinationPattern)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly_CoordinationPattern()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	CoordinationPattern getCoordinationPattern();
