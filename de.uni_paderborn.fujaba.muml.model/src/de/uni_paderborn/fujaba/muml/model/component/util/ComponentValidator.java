@@ -742,10 +742,9 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION = "not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and\n" +
-		"not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)\n" +
-		"implies\n" +
-		"self.fromPort.oclAsType(component::ContinuousPort).kind <> self.toPort.oclAsType(component::ContinuousPort).kind";
+	protected static final String ASSEMBLY__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n" +
+		"\timplies\n" +
+		"\tself.fromContinuousPort.kind <> self.toContinuousPort.kind";
 
 	/**
 	 * Validates the ValidContinuousPortDirections constraint of '<em>Assembly</em>'.
@@ -916,7 +915,48 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDelegation(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(delegation, diagnostics, context);
+		if (!validate_NoCircularContainment(delegation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_ValidContinuousPortDirections(delegation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValidContinuousPortDirections constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n" +
+		"\timplies\n" +
+		"\tself.fromContinuousPort.kind = self.toContinuousPort.kind";
+
+	/**
+	 * Validates the ValidContinuousPortDirections constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_ValidContinuousPortDirections(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidContinuousPortDirections",
+				 DELEGATION__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

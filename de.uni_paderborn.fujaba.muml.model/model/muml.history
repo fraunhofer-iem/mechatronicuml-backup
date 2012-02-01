@@ -14497,99 +14497,99 @@
         featureName="value" dataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles"
         oldDataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly"
-        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Assembly/toDiscretePort"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
         featureName="eType" referenceValue="muml.ecore#//model/component/DiscretePort"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
         featureName="name" dataValue="discreteToPort"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
         featureName="derived" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
         featureName="ordered" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
         featureName="transient" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
         featureName="volatile" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
         featureName="name" dataValue="toDiscretePort" oldDataValue="discreteToPort"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/toDiscretePort"
-        referenceName="eAnnotations" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-        referenceName="details" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="key" dataValue="documentation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="Return the toPort as a DiscretePort if possible"
         oldDataValue="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/toDiscretePort"
-        referenceName="eAnnotations" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="key" dataValue="derivation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks->asSet()"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if not self.toPort.oclIsUndefined and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsKindOf(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;end"
         oldDataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks->asSet()"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"
         oldDataValue="if not self.toPort.oclIsUndefined and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsKindOf(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;end"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly"
-        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Assembly/fromDiscretePort">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
           featureName="name" dataValue="toDiscretePort"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
           featureName="ordered" dataValue="false" oldDataValue="true"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
           featureName="volatile" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
           featureName="transient" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
           featureName="derived" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
           featureName="eType" referenceValue="muml.ecore#//model/component/DiscretePort"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/fromDiscretePort"
-        referenceName="eAnnotations" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-        referenceName="details" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="key" dataValue="documentation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="Return the toPort as a DiscretePort if possible"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/fromDiscretePort"
-        referenceName="eAnnotations" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="key" dataValue="derivation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
         featureName="name" dataValue="fromDiscretePort" oldDataValue="toDiscretePort"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="Return the fromPort as a DiscretePort if possible"
         oldDataValue="Return the toPort as a DiscretePort if possible"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"
         oldDataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
@@ -14654,5 +14654,217 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"
         oldDataValue="ValidDiscretePortDiscretePortConnection NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/Assembly"
+        referenceName="eStructuralFeatures"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/Assembly"
+        referenceName="eStructuralFeatures"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ConnectorType/toDiscretePort">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+          featureName="name" dataValue="toDiscretePort"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+          featureName="ordered" dataValue="false" oldDataValue="true"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+          featureName="eType" referenceValue="muml.ecore#//model/component/DiscretePort"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Return the toPort as a DiscretePort if possible"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+          featureName="name" dataValue="fromDiscretePort"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+          featureName="ordered" dataValue="false" oldDataValue="true"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+          featureName="eType" referenceValue="muml.ecore#//model/component/DiscretePort"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Return the fromPort as a DiscretePort if possible"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromDiscretePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ConnectorType/toContinuousPort">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+          featureName="name" dataValue="toDiscretePort"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+          featureName="ordered" dataValue="false" oldDataValue="true"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+          featureName="eType" referenceValue="muml.ecore#//model/component/DiscretePort"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Return the toPort as a DiscretePort if possible"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+          featureName="name" dataValue="fromDiscretePort"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+          featureName="ordered" dataValue="false" oldDataValue="true"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+          featureName="eType" referenceValue="muml.ecore#//model/component/DiscretePort"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Return the fromPort as a DiscretePort if possible"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+        featureName="eType" referenceValue="muml.ecore#//model/component/ContinuousPort"
+        oldReferenceValue="muml.ecore#//model/component/DiscretePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort) then&#xA;&#x9;self.toPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Return the toPort as a ContinuesPort if possible"
+        oldDataValue="Return the toPort as a DiscretePort if possible"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort"
+        featureName="name" dataValue="toContinuousPort" oldDataValue="toDiscretePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+        featureName="name" dataValue="fromContinuousPort" oldDataValue="fromDiscretePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort"
+        featureName="eType" referenceValue="muml.ecore#//model/component/ContinuousPort"
+        oldReferenceValue="muml.ecore#//model/component/DiscretePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) then&#xA;&#x9;self.fromPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Return the fromPort as a ContinuousPort if possible"
+        oldDataValue="Return the fromPort as a DiscretePort if possible"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"
+        oldDataValue="not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) and&#xA;not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort)&#xA;implies&#xA;self.fromPort.oclAsType(component::ContinuousPort).kind &lt;> self.toPort.oclAsType(component::ContinuousPort).kind"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.fromPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="ValidContinuousPortDirections"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"
+        oldDataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="key" dataValue="constraints"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidContinuousPortDirections"/>
   </releases>
 </history:History>

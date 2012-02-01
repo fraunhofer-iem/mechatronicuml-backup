@@ -29,7 +29,8 @@ package de.uni_paderborn.fujaba.muml.model.component;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDelegation()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidContinuousPortDirections'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidContinuousPortDirections='not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n\timplies\n\tself.fromContinuousPort.kind = self.toContinuousPort.kind'"
  * @generated
  */
 public interface Delegation extends ConnectorType {
