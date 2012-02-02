@@ -34,6 +34,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegation <em>Delegation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isIsMultiPart <em>Is Multi Part</em>}</li>
  * </ul>
  * </p>
  *
@@ -179,6 +180,61 @@ public interface ComponentPart extends CommentableElement {
 	 * @generated
 	 */
 	boolean isSetPortsDerived();
+
+	/**
+	 * Returns the value of the '<em><b>Is Multi Part</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the part is a multi part (it is only used to
+	 * simplify OCL constraints).
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Is Multi Part</em>' attribute.
+	 * @see #isSetIsMultiPart()
+	 * @see #unsetIsMultiPart()
+	 * @see #setIsMultiPart(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_IsMultiPart()
+	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity'"
+	 * @generated
+	 */
+	boolean isIsMultiPart();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isIsMultiPart <em>Is Multi Part</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Multi Part</em>' attribute.
+	 * @see #isSetIsMultiPart()
+	 * @see #unsetIsMultiPart()
+	 * @see #isIsMultiPart()
+	 * @generated
+	 */
+	void setIsMultiPart(boolean value);
+
+	/**
+	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isIsMultiPart <em>Is Multi Part</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetIsMultiPart()
+	 * @see #isIsMultiPart()
+	 * @see #setIsMultiPart(boolean)
+	 * @generated
+	 */
+	void unsetIsMultiPart();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isIsMultiPart <em>Is Multi Part</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Is Multi Part</em>' attribute is set.
+	 * @see #unsetIsMultiPart()
+	 * @see #isIsMultiPart()
+	 * @see #setIsMultiPart(boolean)
+	 * @generated
+	 */
+	boolean isSetIsMultiPart();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

@@ -14868,5 +14868,165 @@
         featureName="value" dataValue="ValidContinuousPortDirections"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/coordinationPattern"
         featureName="lowerBound" dataValue="0" oldDataValue="1"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+          featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+          featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresDifferentRoles"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresSameRoles"
+        oldDataValue="AssemblyBetweenDiscretePortsRequiresDifferentRoles"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have the same roles&#xA;&#x9;&#x9;self.fromDiscretePort.refines.name == self.toDiscretePort.refines.name&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="DelegationBetweenDiscretePortsRequiresSameRoles"
+        oldDataValue="AssemblyBetweenDiscretePortsRequiresSameRoles"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="DelegationBetweenDiscretePortsRequiresSameCoordinationPattern"
+        oldDataValue="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenDiscretePortsRequiresSameCoordinationPattern"
+        oldDataValue="ValidContinuousPortDirections"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles"
+        oldDataValue="ValidContinuousPortDirections DelegationBetweenDiscretePortsRequiresSameCoordinationPattern"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have the same roles&#xA;&#x9;&#x9;self.fromDiscretePort.refines.name = self.toDiscretePort.refines.name&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have the same roles&#xA;&#x9;&#x9;self.fromDiscretePort.refines.name == self.toDiscretePort.refines.name&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+          featureName="key" dataValue="ValidContinuousPortDirections"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+          featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="DelegationBetweenContinuousPortsRequiresSameDataType"
+        oldDataValue="ValidContinuousPortDirections"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.type = self.toContinuousPort.type"
+        oldDataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles"
+        oldDataValue="ValidContinuousPortDirections DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="key" dataValue="DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Port/isMultiPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="defaultValueLiteral" dataValue=""/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="name" dataValue="isMultiPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="volatile" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/isMultiPort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="derivation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.upperBound.value > 1 or self.upperBound.infinity"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/isMultiPort"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="This class represents a component part. Component parts are used to specify&#xD;&#xA;the inner structure of a structured component. A component part represents&#xD;&#xA;another component that is embedded in a  structured &#xD;&#xA;component. It is specified on the model level and is &#xD;&#xA;always typed over a component (either structured or atomic)."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This derived attribute indicates if the port is a multi port (it is only used to&#xA;simplify OCL constraints)."
+        oldDataValue="This class represents a component part. Component parts are used to specify&#xD;&#xA;the inner structure of a structured component. A component part represents&#xD;&#xA;another component that is embedded in a  structured &#xD;&#xA;component. It is specified on the model level and is &#xD;&#xA;always typed over a component (either structured or atomic)."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()&#xA;and self.fromPort.isMultiPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;-- either the target port is a multi port&#xA;&#x9;&#x9;self.toPort.isMultiPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;self.componentPart.isMultiPart&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()&#xA;and self.fromPort.isMultiPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;-- the target port is a multi port&#xA;&#x9;&#x9;self.toPort.isMultiPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;-- the target part is a multi part&#xA;&#x9;&#x9;self.componentPart.isMultiPart&#xA;&#x9;)"
+        oldDataValue="not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()&#xA;and self.fromPort.isMultiPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;-- either the target port is a multi port&#xA;&#x9;&#x9;self.toPort.isMultiPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;self.componentPart.isMultiPart&#xA;&#x9;)"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ComponentPart/isMultiPart">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+          featureName="name" dataValue="isMultiPort"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+          featureName="defaultValueLiteral" dataValue=""/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+          featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="This derived attribute indicates if the port is a multi port (it is only used to&#xA;simplify OCL constraints)."/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self.upperBound.value > 1 or self.upperBound.infinity"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        featureName="name" dataValue="isMultiPart" oldDataValue="isMultiPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This derived attribute indicates if the part is a multi part (it is only used to&#xA;simplify OCL constraints)."
+        oldDataValue="This derived attribute indicates if the port is a multi port (it is only used to&#xA;simplify OCL constraints)."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity"
+        oldDataValue="self.upperBound.value > 1 or self.upperBound.infinity"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity"
+        oldDataValue="self.upperBound.value > 1 or self.upperBound.infinity"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
+        oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        featureName="defaultValueLiteral" dataValue="false" oldDataValue=""/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        featureName="unsettable" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        featureName="defaultValueLiteral" dataValue="" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="unsettable" dataValue="true" oldDataValue="false"/>
   </releases>
 </history:History>

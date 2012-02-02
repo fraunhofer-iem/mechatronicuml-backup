@@ -925,6 +925,10 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegation_ValidContinuousPortDirections(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_DelegationBetweenContinuousPortsRequiresSameDataType(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_DelegationBetweenDiscretePortsRequiresSameCoordinationPattern(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_DelegationBetweenDiscretePortsRequiresSameRoles(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(delegation, diagnostics, context);
 		return result;
 	}
 
@@ -954,6 +958,146 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ValidContinuousPortDirections",
 				 DELEGATION__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DelegationBetweenContinuousPortsRequiresSameDataType constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__DELEGATION_BETWEEN_CONTINUOUS_PORTS_REQUIRES_SAME_DATA_TYPE__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n" +
+		"\timplies\n" +
+		"\tself.fromContinuousPort.type = self.toContinuousPort.type";
+
+	/**
+	 * Validates the DelegationBetweenContinuousPortsRequiresSameDataType constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_DelegationBetweenContinuousPortsRequiresSameDataType(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegationBetweenContinuousPortsRequiresSameDataType",
+				 DELEGATION__DELEGATION_BETWEEN_CONTINUOUS_PORTS_REQUIRES_SAME_DATA_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DelegationBetweenDiscretePortsRequiresSameCoordinationPattern constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PATTERN__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
+		"\t\tand\n" +
+		"\t\t-- both refinements must belong to the same pattern\n" +
+		"\t\tself.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the DelegationBetweenDiscretePortsRequiresSameCoordinationPattern constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_DelegationBetweenDiscretePortsRequiresSameCoordinationPattern(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegationBetweenDiscretePortsRequiresSameCoordinationPattern",
+				 DELEGATION__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PATTERN__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DelegationBetweenDiscretePortsRequiresSameRoles constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_ROLES__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
+		"\t\tand\n" +
+		"\t\t-- both ports should have the same roles\n" +
+		"\t\tself.fromDiscretePort.refines.name = self.toDiscretePort.refines.name\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the DelegationBetweenDiscretePortsRequiresSameRoles constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_DelegationBetweenDiscretePortsRequiresSameRoles(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegationBetweenDiscretePortsRequiresSameRoles",
+				 DELEGATION__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_ROLES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__DISCRETE_MULTI_PORT_DELEGATION_REQUIRES_MULTI_PORT_OR_SINGLE_PORT_AND_MULTI_PART__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()\n" +
+		"and self.fromPort.isMultiPort\n" +
+		"\timplies (\n" +
+		"\t\t-- the target port is a multi port\n" +
+		"\t\tself.toPort.isMultiPort\n" +
+		"\t\tor\n" +
+		"\t\t-- the target part is a multi part\n" +
+		"\t\tself.componentPart.isMultiPart\n" +
+		"\t)";
+
+	/**
+	 * Validates the DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart",
+				 DELEGATION__DISCRETE_MULTI_PORT_DELEGATION_REQUIRES_MULTI_PORT_OR_SINGLE_PORT_AND_MULTI_PART__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

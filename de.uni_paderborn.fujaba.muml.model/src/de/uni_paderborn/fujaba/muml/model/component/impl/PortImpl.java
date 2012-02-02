@@ -47,6 +47,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#isIsMultiPort <em>Is Multi Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -122,6 +123,16 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__CONNECTORS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsMultiPort() <em>Is Multi Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMultiPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_MULTI_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__IS_MULTI_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,6 +247,42 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	@SuppressWarnings("unchecked")
 	public EList<ConnectorType> getConnectors() {
 		return (EList<ConnectorType>)CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsMultiPort() {
+		return (Boolean)IS_MULTI_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsMultiPort(boolean newIsMultiPort) {
+		IS_MULTI_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newIsMultiPort);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetIsMultiPort() {
+		IS_MULTI_PORT__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetIsMultiPort() {
+		return IS_MULTI_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -386,6 +433,8 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				return getComponent();
 			case ComponentPackage.PORT__CONNECTORS:
 				return getConnectors();
+			case ComponentPackage.PORT__IS_MULTI_PORT:
+				return isIsMultiPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -420,6 +469,9 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)newValue);
 				return;
+			case ComponentPackage.PORT__IS_MULTI_PORT:
+				setIsMultiPort((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -450,6 +502,9 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)null);
 				return;
+			case ComponentPackage.PORT__IS_MULTI_PORT:
+				unsetIsMultiPort();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -476,6 +531,8 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				return getComponent() != null;
 			case ComponentPackage.PORT__CONNECTORS:
 				return CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.PORT__IS_MULTI_PORT:
+				return isSetIsMultiPort();
 		}
 		return super.eIsSet(featureID);
 	}

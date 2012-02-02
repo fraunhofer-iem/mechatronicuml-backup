@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#isIsMultiPort <em>Is Multi Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,6 +85,61 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * @generated
 	 */
 	EList<ConnectorType> getConnectors();
+
+	/**
+	 * Returns the value of the '<em><b>Is Multi Port</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the port is a multi port (it is only used to
+	 * simplify OCL constraints).
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Is Multi Port</em>' attribute.
+	 * @see #isSetIsMultiPort()
+	 * @see #unsetIsMultiPort()
+	 * @see #setIsMultiPort(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_IsMultiPort()
+	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity'"
+	 * @generated
+	 */
+	boolean isIsMultiPort();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#isIsMultiPort <em>Is Multi Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Multi Port</em>' attribute.
+	 * @see #isSetIsMultiPort()
+	 * @see #unsetIsMultiPort()
+	 * @see #isIsMultiPort()
+	 * @generated
+	 */
+	void setIsMultiPort(boolean value);
+
+	/**
+	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#isIsMultiPort <em>Is Multi Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetIsMultiPort()
+	 * @see #isIsMultiPort()
+	 * @see #setIsMultiPort(boolean)
+	 * @generated
+	 */
+	void unsetIsMultiPort();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#isIsMultiPort <em>Is Multi Port</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Is Multi Port</em>' attribute is set.
+	 * @see #unsetIsMultiPort()
+	 * @see #isIsMultiPort()
+	 * @see #setIsMultiPort(boolean)
+	 * @generated
+	 */
+	boolean isSetIsMultiPort();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

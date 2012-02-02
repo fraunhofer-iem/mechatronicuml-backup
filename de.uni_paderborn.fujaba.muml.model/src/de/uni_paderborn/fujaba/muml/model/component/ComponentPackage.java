@@ -258,13 +258,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT__CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__IS_MULTI_PORT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
@@ -365,6 +374,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT__CONNECTORS = PORT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__IS_MULTI_PORT = PORT__IS_MULTI_PORT;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -492,6 +510,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_PORT__CONNECTORS = PORT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__IS_MULTI_PORT = PORT__IS_MULTI_PORT;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -657,13 +684,22 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_PART__PORTS_DERIVED = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Is Multi Part</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PART__IS_MULTI_PART = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT_PART_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl <em>Structured Component</em>}' class.
@@ -1429,6 +1465,15 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__CONNECTORS = DISCRETE_PORT__CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__IS_MULTI_PORT = DISCRETE_PORT__IS_MULTI_PORT;
+
+	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1603,6 +1648,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_Connectors();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.Port#isIsMultiPort <em>Is Multi Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Multi Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#isIsMultiPort()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EAttribute getPort_IsMultiPort();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort <em>Continuous Port</em>}'.
@@ -1809,6 +1865,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentPart_PortsDerived();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isIsMultiPart <em>Is Multi Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Multi Part</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isIsMultiPart()
+	 * @see #getComponentPart()
+	 * @generated
+	 */
+	EAttribute getComponentPart_IsMultiPart();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}'.
@@ -2137,6 +2204,14 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT__CONNECTORS = eINSTANCE.getPort_Connectors();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Multi Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT__IS_MULTI_PORT = eINSTANCE.getPort_IsMultiPort();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2293,6 +2368,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_PART__PORTS_DERIVED = eINSTANCE.getComponentPart_PortsDerived();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Multi Part</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_PART__IS_MULTI_PART = eINSTANCE.getComponentPart_IsMultiPart();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
