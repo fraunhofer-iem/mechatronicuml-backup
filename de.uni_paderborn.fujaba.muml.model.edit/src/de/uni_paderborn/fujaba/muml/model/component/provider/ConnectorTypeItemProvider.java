@@ -62,6 +62,10 @@ public class ConnectorTypeItemProvider
 			addFromPortPropertyDescriptor(object);
 			addToPortPropertyDescriptor(object);
 			addParentComponentPropertyDescriptor(object);
+			addToDiscretePortPropertyDescriptor(object);
+			addFromDiscretePortPropertyDescriptor(object);
+			addToContinuousPortPropertyDescriptor(object);
+			addFromContinuousPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -129,6 +133,94 @@ public class ConnectorTypeItemProvider
 				 false,
 				 null,
 				 getString("_UI_ParentPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the To Discrete Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addToDiscretePortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorType_toDiscretePort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorType_toDiscretePort_feature", "_UI_ConnectorType_type"),
+				 ComponentPackage.Literals.CONNECTOR_TYPE__TO_DISCRETE_PORT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the From Discrete Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFromDiscretePortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorType_fromDiscretePort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorType_fromDiscretePort_feature", "_UI_ConnectorType_type"),
+				 ComponentPackage.Literals.CONNECTOR_TYPE__FROM_DISCRETE_PORT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the To Continuous Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addToContinuousPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorType_toContinuousPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorType_toContinuousPort_feature", "_UI_ConnectorType_type"),
+				 ComponentPackage.Literals.CONNECTOR_TYPE__TO_CONTINUOUS_PORT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the From Continuous Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFromContinuousPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorType_fromContinuousPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorType_fromContinuousPort_feature", "_UI_ConnectorType_type"),
+				 ComponentPackage.Literals.CONNECTOR_TYPE__FROM_CONTINUOUS_PORT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
 				 null));
 	}
 

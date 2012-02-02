@@ -74,6 +74,7 @@ public class PortItemProvider
 			addCardinalityPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
 			addConnectorsPropertyDescriptor(object);
+			addIsMultiPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -211,6 +212,28 @@ public class PortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Multi Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsMultiPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_isMultiPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_isMultiPort_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__IS_MULTI_PORT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -278,6 +301,7 @@ public class PortItemProvider
 
 		switch (notification.getFeatureID(Port.class)) {
 			case ComponentPackage.PORT__COMMENT:
+			case ComponentPackage.PORT__IS_MULTI_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.PORT__CARDINALITY:

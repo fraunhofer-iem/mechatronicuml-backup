@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.provider.CommentableElementItemProvider;
 
@@ -71,6 +72,7 @@ public class ComponentPartItemProvider
 			addComponentTypePropertyDescriptor(object);
 			addParentComponentPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
+			addIsMultiPartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -163,6 +165,28 @@ public class ComponentPartItemProvider
 
 
 	/**
+	 * This adds a property descriptor for the Is Multi Part feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsMultiPartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentPart_isMultiPart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_isMultiPart_feature", "_UI_ComponentPart_type"),
+				 ComponentPackage.Literals.COMPONENT_PART__IS_MULTI_PART,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -232,6 +256,9 @@ public class ComponentPartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentPart.class)) {
+			case ComponentPackage.COMPONENT_PART__IS_MULTI_PART:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
