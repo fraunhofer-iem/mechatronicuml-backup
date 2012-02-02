@@ -3,8 +3,6 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.popup.act
 import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.jface.action.IAction;
@@ -22,7 +20,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.ui.editor.XtextReadonlyEditorInput;
 
-import de.uni_paderborn.fujaba.muml.ui.ActionEditorInput;
 import de.uni_paderborn.fujaba.muml.ui.ActionStorage;
 import de.uni_paderborn.fujaba.muml.ui.CustomResourceForEditorInputFactory;
 
@@ -41,6 +38,7 @@ public class OpenEditorAction implements IObjectActionDelegate {
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		IEditorDescriptor descr = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor("foo.action");
 		if (checkOpenEditors(page, actionStorage)) {
+			MessageDialog.openError(shell, "Error", "Please close existing action editors first");
 			return;
 		}
 		try {
@@ -50,14 +48,16 @@ public class OpenEditorAction implements IObjectActionDelegate {
 			e.printStackTrace();
 		}
 	}
-	
-	/*
-	 * Checks for open action editors. If one is found and its IStorage doesn't correspond
-	 * to the actionStorage an error dialog pops up (and true is returned).
+
+	/**
+	 * Checks for open action editors.
+	 * 
+	 * @return <code>true</code>, if one is found and its IStorage doesn't
+	 *         correspond to the actionStorage.
 	 */
 	private boolean checkOpenEditors(IWorkbenchPage page, ActionStorage actionStorage) {
 		for (IEditorReference it : page.getEditorReferences()) {
-			// FIXME: removed hardcoded string
+			// FIXME: remove hardcoded string
 			if (it.getId().equals("de.uni_paderborn.fujaba.muml.ActionLanguage")) {
 				IEditorInput editorInput = null;
 				try {
@@ -77,10 +77,8 @@ public class OpenEditorAction implements IObjectActionDelegate {
 					e.printStackTrace();
 				}
 				if (!actionStorage.equals(storage)) {
-					MessageDialog.openError(shell, "Error", "Please close existing action editors first");
 					return true;
 				}
-				
 			}
 		}
 		return false;
