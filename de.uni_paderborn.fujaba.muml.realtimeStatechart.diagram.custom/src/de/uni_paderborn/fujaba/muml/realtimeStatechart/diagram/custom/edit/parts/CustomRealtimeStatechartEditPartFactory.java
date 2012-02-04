@@ -38,9 +38,6 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-
-			case ModelElementCategoryEditPart.VISUAL_ID:
-				return new CustomModelElementCategoryEditPart(view);
 			case RealtimeStatechartEditPart.VISUAL_ID:
 				return new CustomRealtimeStatechartEditPart(view);
 			case StateEditPart.VISUAL_ID:
