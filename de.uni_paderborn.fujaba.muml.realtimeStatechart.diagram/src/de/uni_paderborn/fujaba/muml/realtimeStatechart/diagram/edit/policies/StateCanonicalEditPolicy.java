@@ -28,10 +28,18 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 
+	private boolean canonicalNodes = true;
 	/**
 	 * @generated
 	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
+
+	public StateCanonicalEditPolicy() {
+	}
+
+	public StateCanonicalEditPolicy(boolean canonicalNodes) {
+		this.canonicalNodes = canonicalNodes;
+	}
 
 	/**
 	 * @generated
@@ -81,7 +89,7 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
-		if (!isTopLevelCanonical()) {
+		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
 			List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
@@ -124,13 +132,6 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID
 				|| visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID;
-	}
-
-	/**
-	 * @generated
-	 */
-	public boolean isTopLevelCanonical() {
-		return true;
 	}
 
 	/**

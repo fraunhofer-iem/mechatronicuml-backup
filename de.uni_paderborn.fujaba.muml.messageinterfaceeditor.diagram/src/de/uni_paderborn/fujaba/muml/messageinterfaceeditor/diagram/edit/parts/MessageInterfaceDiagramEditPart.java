@@ -42,9 +42,12 @@ public class MessageInterfaceDiagramEditPart extends DiagramEditPart {
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceDiagramItemSemanticEditPolicy());
+
 		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceDiagramCanonicalEditPolicy());
+				"CustomCanonical",
+				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceDiagramCanonicalEditPolicy(
+						false));
+
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

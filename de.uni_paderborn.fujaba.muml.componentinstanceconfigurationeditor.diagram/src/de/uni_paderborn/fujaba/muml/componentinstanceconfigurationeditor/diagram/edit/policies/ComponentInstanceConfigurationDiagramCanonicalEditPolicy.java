@@ -37,10 +37,19 @@ import org.eclipse.gmf.runtime.notation.View;
 public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 		CanonicalEditPolicy {
 
+	private boolean canonicalNodes = true;
 	/**
 	 * @generated
 	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
+
+	public ComponentInstanceConfigurationDiagramCanonicalEditPolicy() {
+	}
+
+	public ComponentInstanceConfigurationDiagramCanonicalEditPolicy(
+			boolean canonicalNodes) {
+		this.canonicalNodes = canonicalNodes;
+	}
 
 	/**
 	 * @generated
@@ -90,7 +99,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
-		if (!isTopLevelCanonical()) {
+		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
 			List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor>();
@@ -140,16 +149,6 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 			return true;
 		}
 		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	public boolean isTopLevelCanonical() {
-		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
-
-		return true; // This editor does not use ModelElementCategory as Diagram Element.
-
 	}
 
 	/**
@@ -248,7 +247,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Collection<IAdaptable> refreshConnections() {
+	private Collection<IAdaptable> refreshConnections() {
 		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
 		Collection<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);

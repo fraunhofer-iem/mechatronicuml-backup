@@ -43,9 +43,12 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy());
+
 		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy());
+				"CustomCanonical",
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy(
+						false));
+
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

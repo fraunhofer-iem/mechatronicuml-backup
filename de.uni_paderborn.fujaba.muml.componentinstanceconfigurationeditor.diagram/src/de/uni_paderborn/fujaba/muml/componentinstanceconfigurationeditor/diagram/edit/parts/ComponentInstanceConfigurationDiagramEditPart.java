@@ -43,9 +43,12 @@ public class ComponentInstanceConfigurationDiagramEditPart extends
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.ComponentInstanceConfigurationDiagramItemSemanticEditPolicy());
+
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.ComponentInstanceConfigurationDiagramCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.ComponentInstanceConfigurationDiagramCanonicalEditPolicy(
+						true));
+
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

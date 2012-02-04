@@ -27,6 +27,16 @@ import org.eclipse.gmf.runtime.notation.View;
 public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 
+	private boolean canonicalNodes = true;
+
+	public DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy() {
+	}
+
+	public DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy(
+			boolean canonicalNodes) {
+		this.canonicalNodes = canonicalNodes;
+	}
+
 	/**
 	 * @generated
 	 */
@@ -67,7 +77,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
-		if (!isTopLevelCanonical()) {
+		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
 			List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor>();
@@ -108,13 +118,6 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 	private boolean isMyDiagramElement(View view) {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	public boolean isTopLevelCanonical() {
-		return true;
 	}
 
 	/**

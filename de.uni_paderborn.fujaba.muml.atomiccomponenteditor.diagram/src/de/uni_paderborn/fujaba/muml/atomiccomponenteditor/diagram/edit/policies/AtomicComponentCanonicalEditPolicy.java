@@ -26,11 +26,13 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 
-	/**
-	 * @generated
-	 */
-	public boolean isTopLevelCanonical() {
-		return true;
+	private boolean canonicalNodes = true;
+
+	public AtomicComponentCanonicalEditPolicy() {
+	}
+
+	public AtomicComponentCanonicalEditPolicy(boolean canonicalNodes) {
+		this.canonicalNodes = canonicalNodes;
 	}
 
 	/**
@@ -72,7 +74,7 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
-		if (!isTopLevelCanonical()) {
+		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
 			List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor>();

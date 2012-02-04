@@ -37,14 +37,13 @@ import de.fujaba.modelinstance.ModelinstancePackage;
 public class StructuredComponentDiagramCanonicalEditPolicy extends
 		CanonicalEditPolicy {
 
-	/**
-	 * @generated
-	 */
-	public boolean isTopLevelCanonical() {
-		//return getCanonicalStyle() != null && getCanonicalStyle().isCanonical();
+	private boolean canonicalNodes = true;
 
-		return false; // This editor uses ModelElementCategory as Diagram Element.
+	public StructuredComponentDiagramCanonicalEditPolicy() {
+	}
 
+	public StructuredComponentDiagramCanonicalEditPolicy(boolean canonicalNodes) {
+		this.canonicalNodes = canonicalNodes;
 	}
 
 	/**
@@ -86,7 +85,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
-		if (!isTopLevelCanonical()) {
+		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
 			List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor>();
@@ -225,7 +224,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Collection<IAdaptable> refreshConnections() {
+	private Collection<IAdaptable> refreshConnections() {
 		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
 		Collection<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);

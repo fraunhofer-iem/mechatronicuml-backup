@@ -42,9 +42,12 @@ public class AtomicComponentDiagramEditPart extends DiagramEditPart {
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.AtomicComponentDiagramItemSemanticEditPolicy());
+
 		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.AtomicComponentDiagramCanonicalEditPolicy());
+				"CustomCanonical",
+				new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.AtomicComponentDiagramCanonicalEditPolicy(
+						false));
+
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

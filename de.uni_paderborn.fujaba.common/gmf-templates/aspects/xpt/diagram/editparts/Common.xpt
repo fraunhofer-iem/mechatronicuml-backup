@@ -1,0 +1,18 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+
+«EXTENSION MetaModel»
+
+«EXTENSION xpt::diagram::updater::Utils»
+«EXTENSION impl::diagram::updater::CanonicalUpdate»
+
+«DEFINE installCanonicalEditPolicy FOR gmfgen::GenDiagram-»
+	«IF needsCanonicalEditPolicy()-»
+		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
+			installEditPolicy("CustomCanonical", new «getCanonicalEditPolicyQualifiedClassName()»(false));
+		«ELSE»
+			installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new «getCanonicalEditPolicyQualifiedClassName()»(true));
+		«ENDIF»
+	«ENDIF-» 
+«ENDDEFINE»
+

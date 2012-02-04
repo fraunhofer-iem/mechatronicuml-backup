@@ -29,16 +29,18 @@ import org.eclipse.gmf.runtime.notation.View;
 public class CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 
+	private boolean canonicalNodes = true;
 	/**
 	 * @generated
 	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
-	/**
-	 * @generated
-	 */
-	public boolean isTopLevelCanonical() {
-		return true;
+	public CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy() {
+	}
+
+	public CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy(
+			boolean canonicalNodes) {
+		this.canonicalNodes = canonicalNodes;
 	}
 
 	/**
@@ -88,7 +90,7 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentCanonical
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
-		if (!isTopLevelCanonical()) {
+		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
 			List<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor>();
