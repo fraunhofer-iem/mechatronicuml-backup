@@ -43,6 +43,7 @@ public class MessageInterfaceDiagramEditPart extends DiagramEditPart {
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceDiagramItemSemanticEditPolicy());
 
+		// Not installing the EditPolicy with the key EditPolicyRoles.CANONICAL_ROLE guarantees that the "Delete from Diagram" Action is visible. 
 		installEditPolicy(
 				"CustomCanonical",
 				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceDiagramCanonicalEditPolicy(
