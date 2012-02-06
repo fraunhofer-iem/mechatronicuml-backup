@@ -1,4 +1,4 @@
-package de.fujaba.modelinstance.edapt.operations;
+package de.uni_paderborn.fujaba.muml.edapt.operations;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

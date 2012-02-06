@@ -1,4 +1,4 @@
-package de.fujaba.modelinstance.edapt.operations;
+package de.uni_paderborn.fujaba.muml.edapt.operations;
 
 import org.eclipse.emf.edapt.declaration.EdaptLibrary;
 import org.eclipse.emf.edapt.declaration.LibraryImplementation;
