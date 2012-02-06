@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/component"
+            uri="http://www.fujaba.de/muml/model/component/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -24,7 +24,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/constraint"
+            uri="http://www.fujaba.de/muml/model/constraint/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -36,7 +36,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/core"
+            uri="http://www.fujaba.de/muml/model/core/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -48,7 +48,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/instance"
+            uri="http://www.fujaba.de/muml/model/instance/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -60,7 +60,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/pattern"
+            uri="http://www.fujaba.de/muml/model/pattern/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.pattern.provider.PatternItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -72,7 +72,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart"
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -84,7 +84,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/msgiface"
+            uri="http://www.fujaba.de/muml/model/msgiface/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.msgiface.provider.MsgifaceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -98,7 +98,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/component"
+            uri="http://www.fujaba.de/muml/model/component/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.component.providers.ComponentEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -253,7 +253,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/constraint"
+            uri="http://www.fujaba.de/muml/model/constraint/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.constraint.providers.ConstraintEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -352,7 +352,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/core"
+            uri="http://www.fujaba.de/muml/model/core/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.core.providers.CoreEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -466,7 +466,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/deployment"
+            uri="http://www.fujaba.de/muml/model/deployment/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.deployment.providers.DeploymentEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -588,7 +588,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/instance"
+            uri="http://www.fujaba.de/muml/model/instance/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.instance.providers.InstanceEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -751,7 +751,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/msgiface"
+            uri="http://www.fujaba.de/muml/model/msgiface/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.msgiface.providers.MsgifaceEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -858,7 +858,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/pattern"
+            uri="http://www.fujaba.de/muml/model/pattern/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.pattern.providers.PatternEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -973,7 +973,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart"
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers.RealtimestatechartEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
