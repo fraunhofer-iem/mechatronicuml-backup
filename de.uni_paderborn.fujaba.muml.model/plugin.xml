@@ -47,6 +47,13 @@
             uri="http://www.fujaba.de/muml/model/msgiface/0.2.1">
       </package>
    </extension>
+   
+      <extension
+         point="org.eclipse.emf.edapt.migrators">
+      <migrator
+            path="model/muml.history">
+      </migrator>
+   </extension>
 
 
 </plugin>
