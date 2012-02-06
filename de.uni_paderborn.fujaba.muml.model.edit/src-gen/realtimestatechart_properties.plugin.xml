@@ -6,7 +6,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart"
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers.RealtimestatechartEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>

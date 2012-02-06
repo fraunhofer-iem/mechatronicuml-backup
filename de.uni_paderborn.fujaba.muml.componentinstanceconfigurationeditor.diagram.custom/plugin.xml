@@ -41,7 +41,7 @@
    
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.1">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"

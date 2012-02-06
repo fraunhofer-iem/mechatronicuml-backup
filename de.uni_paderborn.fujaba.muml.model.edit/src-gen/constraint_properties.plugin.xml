@@ -6,7 +6,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/model/constraint"
+            uri="http://www.fujaba.de/muml/model/constraint/0.2.1"
             class="de.uni_paderborn.fujaba.muml.model.constraint.providers.ConstraintEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>

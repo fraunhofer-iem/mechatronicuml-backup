@@ -1671,7 +1671,7 @@
         <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
             featureName="name" dataValue="modelinstance"/>
         <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
-            featureName="nsURI" dataValue="http://de.fujaba.modelinstance"/>
+            featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.1"/>
         <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
             featureName="nsPrefix" dataValue="modelinstance"/>
       </changes>
@@ -14753,7 +14753,7 @@
   </releases>
   <releases date="2012-02-06T17:19:59.484+0100" label="0.2.1 - Region.statechart is a containment, new nsURI format.">
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
-        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.1" oldDataValue="http://de.fujaba.modelinstance"/>
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.1" oldDataValue="http://www.fujaba.de/modelinstance/0.2.1"/>
     <changes xsi:type="history:Set" element="muml.ecore#/" featureName="nsURI" dataValue="http://www.fujaba.de/muml/0.2.1"
         oldDataValue="http:///de/uni_paderborn/fujaba/muml"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model" featureName="nsURI"

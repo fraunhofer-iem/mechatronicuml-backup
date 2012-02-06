@@ -968,7 +968,6 @@ public class ModelinstanceEditor
 	// See http://www.eclipse.org/edapt/libraryexample.php
 	private void checkMigration(final URI resourceURI) {
 		String nsURI = ReleaseUtils.getNamespaceURI(resourceURI);
-		//nsURI = "http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart";
 		final Migrator migrator = MigratorRegistry.getInstance().getMigrator(
 				nsURI);
 		if (migrator != null) {

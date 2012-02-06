@@ -248,7 +248,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://de.fujaba.modelinstance">
+      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.2.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
@@ -258,7 +258,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.2.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2002"
                name="%metatype.name.AtomicComponent_2002"
@@ -268,7 +268,7 @@
             <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.2.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3004"
                name="%metatype.name.HybridPort_3004"
@@ -278,7 +278,7 @@
             <param name="semanticHint" value="3004"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.2.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.DiscretePort_3002"
                name="%metatype.name.DiscretePort_3002"
@@ -288,7 +288,7 @@
             <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.2.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ContinuousPort_3003"
                name="%metatype.name.ContinuousPort_3003"
@@ -534,7 +534,7 @@
          
          <child
                class="AtomicComponent"
-               packageNsUri="http:///de/uni_paderborn/fujaba/muml/model/component">
+               packageNsUri="http://www.fujaba.de/muml/model/component/0.2.1">
          </child>
          
       </category>

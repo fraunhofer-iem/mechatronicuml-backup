@@ -14,37 +14,37 @@
       <package
             class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage"
             genModel="model/muml.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/muml/model/component">
+            uri="http://www.fujaba.de/muml/model/component/0.2.1">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage"
             genModel="model/muml.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/muml/model/constraint">
+            uri="http://www.fujaba.de/muml/model/constraint/0.2.1">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.core.CorePackage"
             genModel="model/muml.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/muml/model/core">
+            uri="http://www.fujaba.de/muml/model/core/0.2.1">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.instance.InstancePackage"
             genModel="model/muml.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/muml/model/instance">
+            uri="http://www.fujaba.de/muml/model/instance/0.2.1">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage"
             genModel="model/muml.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/muml/model/pattern">
+            uri="http://www.fujaba.de/muml/model/pattern/0.2.1">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage"
             genModel="model/muml.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage"
             genModel="model/muml.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
+            uri="http://www.fujaba.de/muml/model/msgiface/0.2.1">
       </package>
    </extension>
 
