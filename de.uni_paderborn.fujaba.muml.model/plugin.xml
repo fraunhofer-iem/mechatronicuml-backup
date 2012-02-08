@@ -48,8 +48,14 @@
       </package>
    </extension>
    
-      <extension
+   <extension
          point="org.eclipse.emf.edapt.migrators">
+      <!--
+      	bingo: It would be nice to have this extension in the model.edapt plugin so that the model plugin
+      		   has no dependency to edapt.history (it should be possible to use muml without edapt).
+      		   But currently this is not possible, because the extension can only reference history files
+      		   that reside within the same plugin as the extension.
+      -->
       <migrator
             path="model/muml.history">
       </migrator>
