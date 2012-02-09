@@ -1688,18 +1688,6 @@
             featureName="value" dataValue="The modeling package is the root package for the SDM meta-model. It defines several abstract super classes which implement an extension mechanism as well as reoccuring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.modeling/model/sdm.ecore#/"
-          referenceName="eAnnotations" element="../../org.storydriven.modeling/model/sdm.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.modeling/model/sdm.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
-            featureName="source" dataValue="http://www.eclipse.org/edapt"/>
-      </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.modeling/model/sdm.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
-          referenceName="details" element="../../org.storydriven.modeling/model/sdm.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.modeling/model/sdm.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
-            featureName="key" dataValue="historyURI"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.modeling/model/sdm.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
-            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
-      </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.modeling/model/sdm.ecore#/"
           referenceName="eSubpackages" element="../../org.storydriven.modeling/model/sdm.ecore#//activities">
         <changes xsi:type="history:Set" element="../../org.storydriven.modeling/model/sdm.ecore#//activities"
             featureName="name" dataValue="activities"/>
@@ -2605,18 +2593,6 @@
             featureName="nsURI" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
         <changes xsi:type="history:Set" element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#/"
             featureName="nsPrefix" dataValue="ecore"/>
-      </changes>
-      <changes xsi:type="history:Create" target="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#/"
-          referenceName="eAnnotations" element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%">
-        <changes xsi:type="history:Set" element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
-            featureName="source" dataValue="http://www.eclipse.org/edapt"/>
-      </changes>
-      <changes xsi:type="history:Create" target="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
-          referenceName="details" element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0">
-        <changes xsi:type="history:Set" element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
-            featureName="key" dataValue="historyURI"/>
-        <changes xsi:type="history:Set" element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
-            featureName="value" dataValue="../../../resource/de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
       </changes>
       <changes xsi:type="history:Create" target="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#/"
           referenceName="eClassifiers" element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
