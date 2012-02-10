@@ -2,32 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-   <extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
-      <editor
-         id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID"
-         name="%editorName"
-         icon="icons/AtomicComponentDiagram.gif"
-         extensions="atomiccomponent_diagram"
-         default="true"
-         class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramActionBarContributor">
-      </editor>
-   </extension>
-
-   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-  	  <wizard
-  	       category="de.fujaba/de.fujaba.diagrams"
-  	       icon="icons/AtomicComponentDiagram.gif"
-  	       class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizard"
-  	       id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizard"
-  	       name="Atomic Component Diagram">
-  	     
-  	  	 <description>Creates a new Atomic Component Diagram.</description>
-      </wizard>
-   </extension>
-
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider

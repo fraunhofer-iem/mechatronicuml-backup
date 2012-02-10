@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
-    modelID="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
+    modelID="Realtimestatechart"
     diagramFileExtension="realtimestatechart_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
@@ -15,6 +15,7 @@
       itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy"
       canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy"
       iconProviderPriority="Low"
+      creationWizardCategoryID="de.fujaba/de.fujaba.diagrams"
       validationProviderPriority="Low"
       validationEnabled="true"
       validationDecorators="true">

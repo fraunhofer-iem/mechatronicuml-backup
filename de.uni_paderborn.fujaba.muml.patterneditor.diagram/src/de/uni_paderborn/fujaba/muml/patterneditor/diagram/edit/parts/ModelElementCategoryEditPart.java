@@ -20,7 +20,7 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Patterneditor"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Pattern"; //$NON-NLS-1$
 
 	/**
 	 * @generated

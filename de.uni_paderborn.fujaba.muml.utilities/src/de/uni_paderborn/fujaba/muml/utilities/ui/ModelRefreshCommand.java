@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.utilities.modelrefresh.ui;
+package de.uni_paderborn.fujaba.muml.utilities.ui;
 
 import java.util.Collections;
 

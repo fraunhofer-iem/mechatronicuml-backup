@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+
 <extension
-        point="org.eclipse.ui.menus">
-     <menuContribution
-           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-        <menu id="de.fujaba" label="Fujaba">
-           <command
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="popup:de.fujaba?after=utilities">
+      <separator
+            name="beforeMumlUtilities"
+            visible="true">
+      </separator>
+        <command
                  commandId="de.fujaba.core.ui.command.modelrefresh"
                  disabledIcon="icons/refresh_nav_dis.gif"
                  icon="icons/refresh_nav.gif"
@@ -21,20 +26,39 @@
                  </iterate>
               </visibleWhen>
            </command>
-           <separator
-                 name="additions">
-           </separator>
-        </menu>
-     </menuContribution>
-  </extension>
+           <command
+                 commandId="de.fujaba.core.ui.command.batchdiagramcreation"
+                 icon="icons/batchdiagram.gif"
+                 id="de.fujaba.core.ui.command.batchdiagramcreation"
+                 label="Batch Diagram Creation..."
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                 <iterate
+                       ifEmpty="true"
+                       operator="or">
+                 </iterate>
+              </visibleWhen>
+           </command>
+   </menuContribution>
+</extension>
+
+
   <extension
         point="org.eclipse.ui.commands">
 
      <command
            categoryId="de.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.muml.utilities.modelrefresh.ui.ModelRefreshCommand"
+           defaultHandler="de.uni_paderborn.fujaba.muml.utilities.ui.ModelRefreshCommand"
            description="Refresh Models"
            id="de.fujaba.core.ui.command.modelrefresh"
+           name="Refresh Models">
+     </command>
+     <command
+           categoryId="de.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.muml.utilities.ui.BatchDiagramCreationCommand"
+           description="Refresh Models"
+           id="de.fujaba.core.ui.command.batchdiagramcreation"
            name="Refresh Models">
      </command>
   </extension>

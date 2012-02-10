@@ -16,21 +16,21 @@
    </extension>
 
    <extension point="org.eclipse.ui.contexts" id="ui-context">
-		<?gmfgen generated="true"?>
-		<context
-	      description="%context.description"
-	      id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ui.diagramContext"
-	      name="%context.name"
-	      parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-	   	</context>
-	</extension>
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
 
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagramPresentation">
+         id="StructuredcomponentPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -43,7 +43,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagramPresentationIDE">
+         id="StructuredcomponentPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -53,7 +53,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagramRender">
+            id="StructuredcomponentRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -194,7 +194,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Structuredcomponent"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3005,3006,3007,3008"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
@@ -205,7 +205,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"/>
+            <method name="getType()" value="Structuredcomponent"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2001,3001,3002,3003,3005,3006,3007,3008"/>
@@ -447,11 +447,12 @@
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=additions">
+	         locationURI="popup:de.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+	            icon="icons/obj16/StructuredcomponentDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
-	            label="%initDiagramActionLabel"
+	            label="Initialize Structuredcomponent Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
@@ -484,6 +485,49 @@
          
       </category>
    </extension>
+<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/StructuredcomponentDiagramFile.gif"
+         extensions="structuredcomponent_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+
+<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/StructuredcomponentDiagramFile.gif"
+  	     category="de.fujaba/de.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+
+
+<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <?gmfgen generated="true"?>  
+      <editor
+            editorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
+         <information
+               editorName="Structuredcomponent Editor"
+               fileExtension="structuredcomponent_diagram"
+               fujabaEditor="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
+               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
+               modelId="Structuredcomponent"
+               useModelElementCategory="true">
+         </information>
+      </editor>
+   </extension>
+
 
 
 

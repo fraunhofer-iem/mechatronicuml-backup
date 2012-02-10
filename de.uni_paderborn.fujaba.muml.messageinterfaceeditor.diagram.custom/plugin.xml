@@ -2,31 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    
-   <extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
-      <editor
-         id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
-         name="%editorName"
-         icon="icons/MessageInterfaceDiagram.gif"
-         extensions="messageinterface_diagram"
-         default="true"
-         class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramActionBarContributor">
-      </editor>
-   </extension>
 
-   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-  	  <wizard
-  	       category="de.fujaba/de.fujaba.diagrams"
-           class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlCreationWizard"
-           icon="icons/MessageInterfaceDiagram.gif"
-           id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
-           name="Message-Interface Diagram">
-  	     
-  	  	 <description>Creates a new Message-Interface Diagram.</description>
-      </wizard>
-   </extension>
    
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <ParserProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.provider.CustomMessageinterfaceParserProvider">

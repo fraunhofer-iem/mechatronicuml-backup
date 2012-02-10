@@ -16,21 +16,21 @@
    </extension>
 
    <extension point="org.eclipse.ui.contexts" id="ui-context">
-		<?gmfgen generated="true"?>
-		<context
-	      description="%context.description"
-	      id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ui.diagramContext"
-	      name="%context.name"
-	      parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-	   	</context>
-	</extension>
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
 
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagramPresentation">
+         id="RealtimestatechartPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -43,7 +43,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagramPresentationIDE">
+         id="RealtimestatechartPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -53,7 +53,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagramRender">
+            id="RealtimestatechartRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -175,7 +175,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Realtimestatechart"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,3010,3001,3002,3003,3004,3005,3006,3016,3012,3013,3014,3015"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
@@ -186,7 +186,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            <method name="getType()" value="Realtimestatechart"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2004,3010,3001,3002,3003,3004,3005,3006,3016,3012,3013,3014,3015"/>
@@ -605,11 +605,12 @@
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=additions">
+	         locationURI="popup:de.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.createDiagram"
+	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.createDiagram"
-	            label="%initDiagramActionLabel"
+	            label="Initialize Realtimestatechart Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
@@ -642,6 +643,49 @@
          
       </category>
    </extension>
+<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/ModelinstanceDiagramFile.gif"
+         extensions="realtimestatechart_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+
+<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
+  	     category="de.fujaba/de.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+
+
+<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <?gmfgen generated="true"?>  
+      <editor
+            editorId="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID">
+         <information
+               editorName="Realtimestatechart Editor"
+               fileExtension="realtimestatechart_diagram"
+               fujabaEditor="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
+               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
+               modelId="Realtimestatechart"
+               useModelElementCategory="true">
+         </information>
+      </editor>
+   </extension>
+
 
 
 

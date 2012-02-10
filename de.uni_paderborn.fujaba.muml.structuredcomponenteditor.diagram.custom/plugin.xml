@@ -2,32 +2,8 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-   <extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
-      <editor
-         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
-         name="%editorName"
-         icon="icons/StructuredComponentDiagram.gif"
-         extensions="structuredcomponent_diagram"
-         default="true"
-         class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramActionBarContributor">
-      </editor>
-   </extension>
    
 
-   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-  	  <wizard
-  	       category="de.fujaba/de.fujaba.diagrams"
-  	       icon="icons/StructuredComponentDiagram.gif"
-  	       class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizard"
-  	       id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizard"
-  	       name="Structured Component Diagram">
-  	     
-  	  	 <description>Creates a new Structured Component Diagram.</description>
-      </wizard>
-   </extension>
    
    
    <extension

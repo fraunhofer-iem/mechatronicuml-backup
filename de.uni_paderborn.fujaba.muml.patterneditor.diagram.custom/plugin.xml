@@ -2,30 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-   <extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
-      <editor
-         id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID"
-         name="%editorName"
-         icon="icons/PatternDiagram.gif"
-         extensions="pattern_diagram"
-         default="true"
-         class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramActionBarContributor">
-      </editor>
-   </extension>
     
-   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-  	  <wizard
-  	       category="de.fujaba/de.fujaba.diagrams"
-  	     icon="icons/PatternDiagram.gif"
-  	     class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizard"
-  	     id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizard"
-  	     name="Pattern Diagram">
-  	  	 <description>Creates a new Pattern diagram.</description>
-      </wizard>
-   </extension>
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.2.1">

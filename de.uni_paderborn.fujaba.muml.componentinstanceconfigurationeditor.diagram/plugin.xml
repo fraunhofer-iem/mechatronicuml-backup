@@ -15,23 +15,134 @@
       </parser>
    </extension>
 
+	
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/InstanceDiagramFile.gif"
+         extensions="componentinstanceconfiguration_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+   
    <extension point="org.eclipse.ui.contexts" id="ui-context">
-		<?gmfgen generated="true"?>
-		<context
-	      description="%context.description"
-	      id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ui.diagramContext"
-	      name="%context.name"
-	      parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-	   	</context>
-	</extension>
-   
-   
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/InstanceDiagramFile.gif"
+  	     category="de.fujaba/de.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+
    	
+	
+	<extension point="org.eclipse.ui.menus">
+	   <?gmfgen generated="true"?>   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.createDiagram"
+	            icon="icons/obj16/InstanceDiagramFile.gif"
+	            id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.createDiagram"
+	            label="Initialize Componentinstanceconfiguration Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+
+	
+	<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+	
+	<extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.instance.category"
+            name="instance">
+         
+         <child
+               class="ComponentInstance"
+               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
+         </child>
+         
+         <child
+               class="HybridPortInstance"
+               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
+         </child>
+         
+         <child
+               class="DiscreteSinglePortInstance"
+               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
+         </child>
+         
+         <child
+               class="DiscreteMultiPortInstance"
+               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
+         </child>
+         
+         <child
+               class="ContinuousPortInstance"
+               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
+         </child>
+         
+      </category>
+   </extension>
+
+	
+	<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <?gmfgen generated="true"?>  
+      <editor
+            editorId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
+         <information
+               editorName="Componentinstanceconfiguration Editor"
+               fileExtension="componentinstanceconfiguration_diagram"
+               fujabaEditor="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor"
+               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.instance.category"
+               modelId="Componentinstanceconfiguration"
+               useModelElementCategory="false">
+         </information>
+      </editor>
+   </extension>
+
+
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagramPresentation">
+         id="ComponentinstanceconfigurationPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -44,7 +155,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagramPresentationIDE">
+         id="ComponentinstanceconfigurationPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -54,7 +165,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagramRender">
+            id="ComponentinstanceconfigurationRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -159,12 +270,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
-      
-      <!-- MANUALLY REMOVED: -->
-      
-      <!--
-      <?gmfgen generated="true"?>
-      -->   
+      <?gmfgen generated="true"?>   
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
@@ -186,10 +292,6 @@
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
             tab="property.tab.DiagramPropertySection">
          </propertySection>     
-         
-         <!-- MANUALLY REMOVED: -->
-         
-         <!--
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
@@ -198,7 +300,6 @@
             <input type="org.eclipse.gef.EditPart"/>
             <input type="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
          </propertySection>
-         -->
       </propertySections>
    </extension>
 
@@ -206,7 +307,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Componentinstanceconfiguration"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,2008,2005,2009,2007,3012,3010,3013,3014,3011"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003,4004"/>
       </viewProvider>
@@ -217,7 +318,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"/>
+            <method name="getType()" value="Componentinstanceconfiguration"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2004,2008,2005,2009,2007,3012,3010,3013,3014,3011"/>
@@ -592,67 +693,4 @@
             pluginid="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"
             priority="1"></factory>
    </extension>
-<extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="true"?>   
-	   <menuContribution
-	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=additions">
-	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.createDiagram"
-	            id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.createDiagram"
-	            label="%initDiagramActionLabel"
-	            style="push">
-	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
-          			</visibleWhen>
-	      </command>
-	   </menuContribution>
-	</extension>
-
-<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-<extension
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.instance.category"
-            name="instance">
-         
-         <child
-               class="ComponentInstance"
-               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
-         </child>
-         
-         <child
-               class="HybridPortInstance"
-               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
-         </child>
-         
-         <child
-               class="DiscreteSinglePortInstance"
-               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
-         </child>
-         
-         <child
-               class="DiscreteMultiPortInstance"
-               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
-         </child>
-         
-         <child
-               class="ContinuousPortInstance"
-               packageNsUri="http://www.fujaba.de/muml/model/instance/0.2.1">
-         </child>
-         
-      </category>
-   </extension>
-
-
 </plugin>

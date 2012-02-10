@@ -1,9 +1,21 @@
-«AROUND doSaveAs FOR gmfgen::GenEditorView-»
-	«EXPAND xpt::Common::generatedMemberComment»
-public void doSaveAs() {
-	performSaveAs(new org.eclipse.core.runtime.NullProgressMonitor());
-}
 
+«REM» Additionally implement IFujabaEditor «ENDREM»
+«AROUND implementsList FOR Sequence(String)-»
+«targetDef.proceed()», de.fujaba.newwizard.IFujabaEditor
+«ENDAROUND»
+
+«REM» Additional methods that should be generated «ENDREM»
+«AROUND additions FOR gmfgen::GenEditorView-»
+«EXPAND doSave»
+«EXPAND fujaba::xpt::FujabaEditor::FujabaEditor»
+«ENDAROUND»
+
+«AROUND getPreferencesHint FOR gmfgen::GenEditorView-»
+«REM» Do nothing, as fujaba::FujabaEditor::FujabaEditor already generates getPreferencesHint() for us «ENDREM»
+«ENDAROUND»
+
+«REM» We override the doSave() method to invoke validation «ENDREM»
+«DEFINE doSave FOR gmfgen::GenEditorView-»
 	«EXPAND xpt::Common::generatedMemberComment»
 @Override
 public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
@@ -11,5 +23,4 @@ public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 			.getDiagramView());
 	super.doSave(progressMonitor);
 }
-
-«ENDAROUND»
+«ENDDEFINE»

@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
-      <editor
-         id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
-         name="%editorName"
-         icon="icons/ComponentInstanceConfDiagram.gif"
-         extensions="componentinstanceconfiguration_diagram"
-         default="true"
-         class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramActionBarContributor">
-      </editor>
-   </extension>
-   
-
-   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-  	  <wizard
-  	       category="de.fujaba/de.fujaba.diagrams"
-  	       icon="icons/ComponentInstanceConfDiagram.gif"
-  	       class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlCreationWizard"
-  	       id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlCreationWizard"
-  	       name="ComponentInstance Configuration Diagram">
-  	     
-  	  	 <description>Creates a new ComponentInstance Configuration Diagram.</description>
-      </wizard>
-   </extension>
-   
-   
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
@@ -38,8 +10,7 @@
          </Priority>
       </editpartProvider>
    </extension>
-   
-    
+
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.1">
       
@@ -51,7 +22,7 @@
 
       </metamodel>
    </extension>
-   
+
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"/>

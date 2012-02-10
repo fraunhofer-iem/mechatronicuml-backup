@@ -1,11 +1,12 @@
-package de.uni_paderborn.fujaba.muml.model.util;
+package de.uni_paderborn.fujaba.common.utils;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
-public class ItemPropertyDescriptorUtil {
-	private ItemPropertyDescriptorUtil() {
-		
+public class FujabaEcoreUtil {
+	private FujabaEcoreUtil() {
+		// This class should not be instantiated; its methods should be used in
+		// a static way.
 	}
 
 	public static EObject deduceContainer(EObject object, EClass type) {
@@ -15,7 +16,7 @@ public class ItemPropertyDescriptorUtil {
 
 		// Make sure we do not return the same object
 		object = object.eContainer();
-		
+
 		// Walk up the containment hierarchy
 		while (object != null) {
 			if (type.isSuperTypeOf(object.eClass())) {

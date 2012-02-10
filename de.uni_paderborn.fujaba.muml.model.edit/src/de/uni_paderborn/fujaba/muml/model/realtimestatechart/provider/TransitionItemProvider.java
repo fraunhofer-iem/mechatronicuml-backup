@@ -33,6 +33,7 @@ import org.storydriven.modeling.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.utils.FujabaEcoreUtil;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
@@ -50,7 +51,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.ClockPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.MessageInstanceOfPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.TransitionMessageEventPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.util.ItemPropertyDescriptorUtil;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition} object.
@@ -319,7 +319,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				Collection<MessageType> choices = new ArrayList<MessageType>();
 				choices.add(null);
 				
-				RealtimeStatechart statechart = (RealtimeStatechart) ItemPropertyDescriptorUtil
+				RealtimeStatechart statechart = (RealtimeStatechart) FujabaEcoreUtil
 						.deduceContainer(
 								(EObject) message,
 								RealtimestatechartPackage.Literals.REALTIME_STATECHART);
@@ -414,7 +414,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				Collection<MessageType> choices = new ArrayList<MessageType>();
 				choices.add(null);
 				
-				RealtimeStatechart statechart = (RealtimeStatechart) ItemPropertyDescriptorUtil
+				RealtimeStatechart statechart = (RealtimeStatechart) FujabaEcoreUtil
 						.deduceContainer(
 								(EObject) message,
 								RealtimestatechartPackage.Literals.REALTIME_STATECHART);

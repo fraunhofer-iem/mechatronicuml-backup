@@ -17,14 +17,14 @@
 
       
    <extension point="org.eclipse.ui.contexts" id="ui-context">
-		<?gmfgen generated="true"?>
-		<context
-	      description="%context.description"
-	      id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ui.diagramContext"
-	      name="%context.name"
-	      parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-	   	</context>
-	</extension>
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
 
    
    	
@@ -481,11 +481,12 @@
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=additions">
+	         locationURI="popup:de.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.createDiagram"
+	            icon="icons/obj16/MessageinterfaceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.createDiagram"
-	            label="%initDiagramActionLabel"
+	            label="Initialize Messageinterface Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
@@ -518,6 +519,49 @@
          
       </category>
    </extension>
+<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/MessageinterfaceDiagramFile.gif"
+         extensions="messageinterface_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+
+<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/MessageinterfaceDiagramFile.gif"
+  	     category="de.fujaba/de.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+
+
+<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <?gmfgen generated="true"?>  
+      <editor
+            editorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID">
+         <information
+               editorName="Messageinterface Editor"
+               fileExtension="messageinterface_diagram"
+               fujabaEditor="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
+               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.messageinterface.category"
+               modelId="Messageinterface"
+               useModelElementCategory="true">
+         </information>
+      </editor>
+   </extension>
+
 
 
 

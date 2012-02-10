@@ -16,20 +16,20 @@
    </extension>
 
    <extension point="org.eclipse.ui.contexts" id="ui-context">
-		<?gmfgen generated="true"?>
-		<context
-	      description="%context.description"
-	      id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.ui.diagramContext"
-	      name="%context.name"
-	      parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-	   	</context>
-	</extension>
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="PatterneditorPresentation">
+         id="PatternPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -42,7 +42,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="PatterneditorPresentationIDE">
+         id="PatternPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -52,7 +52,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="PatterneditorRender">
+            id="PatternRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -170,7 +170,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Patterneditor"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pattern"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
@@ -181,7 +181,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Patterneditor"/>
+            <method name="getType()" value="Pattern"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2001,3001,3002"/>
@@ -503,11 +503,12 @@
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=additions">
+	         locationURI="popup:de.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.createDiagram"
+	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.createDiagram"
-	            label="%initDiagramActionLabel"
+	            label="Initialize Pattern Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
@@ -540,6 +541,49 @@
          
       </category>
    </extension>
+<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/ModelinstanceDiagramFile.gif"
+         extensions="pattern_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+
+<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
+  	     category="de.fujaba/de.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+
+
+<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <?gmfgen generated="true"?>  
+      <editor
+            editorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID">
+         <information
+               editorName="Pattern Editor"
+               fileExtension="pattern_diagram"
+               fujabaEditor="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
+               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
+               modelId="Pattern"
+               useModelElementCategory="true">
+         </information>
+      </editor>
+   </extension>
+
 
 
 
