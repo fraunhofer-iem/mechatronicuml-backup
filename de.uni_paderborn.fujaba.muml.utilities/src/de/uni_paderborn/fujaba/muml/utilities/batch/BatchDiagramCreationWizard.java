@@ -149,6 +149,7 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 		Map<String, IDiagramInformation> map = FujabaNewwizardPlugin
 				.getDefault().getDiagramInformationMap();
 
+		int work = 0;
 		for (EObject element : elements) {
 			// Ask extension point for editorId and diagramInformation for this
 			// element!
@@ -211,6 +212,10 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 			}
 			DiagramEditorUtil.setCharset(WorkspaceSynchronizer
 					.getFile(diagramResource));
+
+			// Show that the work was done.
+			work++;
+			progressMonitor.worked(work);
 		}
 		DiagramEditorUtil.setCharset(WorkspaceSynchronizer
 				.getFile(modelResource));
