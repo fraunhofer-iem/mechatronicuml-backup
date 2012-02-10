@@ -40,7 +40,7 @@ public class CustomDelegationInstanceReorientCommand extends
 		// Find out the new source and target
 		PortInstance source = getLink().getSource();
 		PortInstance target = getLink().getTarget();
-		switch (reorientDirection) {
+		switch (getReorientDirection()) {
 		case ReorientRelationshipRequest.REORIENT_SOURCE:
 			source = getNewSource();
 			break;

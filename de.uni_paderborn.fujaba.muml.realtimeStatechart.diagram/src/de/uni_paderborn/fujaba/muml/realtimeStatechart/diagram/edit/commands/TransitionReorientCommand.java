@@ -16,17 +16,17 @@ public class TransitionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected final int reorientDirection;
+	private final int reorientDirection;
 
 	/**
 	 * @generated
 	 */
-	protected final EObject oldEnd;
+	private final EObject oldEnd;
 
 	/**
 	 * @generated
 	 */
-	protected final EObject newEnd;
+	private final EObject newEnd;
 
 	/**
 	 * @generated
@@ -159,5 +159,12 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 */
 	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected int getReorientDirection() {
+		return reorientDirection;
 	}
 }

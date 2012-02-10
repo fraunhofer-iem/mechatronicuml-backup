@@ -149,4 +149,11 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 	protected de.uni_paderborn.fujaba.muml.model.pattern.Role getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.model.pattern.Role) newEnd;
 	}
+
+	/**
+	 * @generated
+	 */
+	protected int getReorientDirection() {
+		return reorientDirection;
+	}
 }

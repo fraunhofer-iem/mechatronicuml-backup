@@ -30,7 +30,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container;
+	private final de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container;
 
 	/**
 	 * @generated
@@ -40,6 +40,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
+		container = deduceContainer(source, target);
 	}
 
 	/**
@@ -140,9 +141,6 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern getContainer() {
-		if (container == null) {
-			container = deduceContainer();
-		}
 		return container;
 	}
 
@@ -151,7 +149,8 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern deduceContainer() {
+	private static de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern deduceContainer(
+			EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.

@@ -178,27 +178,12 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(elementTypeHint);
 		EObject domainElement = getSemanticElement(op.getSemanticAdapter());
-
 		if (domainElement != null
 				&& visualID != de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 						.getLinkWithClassVisualID(domainElement)) {
 			return false; // visual id for link EClass should match visual id from element type
 		}
-
 		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected org.eclipse.swt.graphics.RGB getForegroundColorFromPrefs(
-			IPreferenceStore prefStore) {
-
-		// Deactivated access to the PreferenceStore.
-		// return PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-
-		// All lines should be black, to fix bug #46 of Mechatronic UML.
-		return ColorConstants.black.getRGB();
 	}
 
 	/**
@@ -283,7 +268,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
+		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
+
+		// All lines should be black, see bug #46 of Mechatronic UML.
+		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
+
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -330,7 +319,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
+		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
+
+		// All lines should be black, see bug #46 of Mechatronic UML.
+		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
+
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -375,7 +368,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
+		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
+
+		// All lines should be black, see bug #46 of Mechatronic UML.
+		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
+
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -433,7 +430,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
+		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
+
+		// All lines should be black, see bug #46 of Mechatronic UML.
+		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
+
 		ViewUtil.setStructuralFeatureValue(edge,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -485,7 +486,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
+		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
+
+		// All lines should be black, see bug #46 of Mechatronic UML.
+		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
+
 		ViewUtil.setStructuralFeatureValue(edge,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));

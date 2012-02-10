@@ -16,17 +16,17 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected final int reorientDirection;
+	private final int reorientDirection;
 
 	/**
 	 * @generated
 	 */
-	protected final EObject oldEnd;
+	private final EObject oldEnd;
 
 	/**
 	 * @generated
 	 */
-	protected final EObject newEnd;
+	private final EObject newEnd;
 
 	/**
 	 * @generated
@@ -113,7 +113,9 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult reorientSource() throws ExecutionException {
+	protected CommandResult reorientSource()
+			throws org.eclipse.core.commands.ExecutionException,
+			ExecutionException {
 		getLink().setSource(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -121,7 +123,9 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult reorientTarget() throws ExecutionException {
+	protected CommandResult reorientTarget()
+			throws org.eclipse.core.commands.ExecutionException,
+			ExecutionException {
 		getLink().setTarget(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -160,4 +164,12 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 	protected de.uni_paderborn.fujaba.muml.model.instance.PortInstance getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.model.instance.PortInstance) newEnd;
 	}
+
+	/**
+	 * @generated
+	 */
+	protected int getReorientDirection() {
+		return reorientDirection;
+	}
+
 }

@@ -94,7 +94,7 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 	}
 
 	@Override
-	protected de.uni_paderborn.fujaba.muml.model.component.StructuredComponent deduceContainer() {
+	public de.uni_paderborn.fujaba.muml.model.component.StructuredComponent getContainer() {
 		return parentComponent;
 	}
 

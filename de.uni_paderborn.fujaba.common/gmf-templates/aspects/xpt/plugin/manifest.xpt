@@ -14,7 +14,7 @@
 
 «EXTENSION xpt::GenEditorGenerator»
 
-«DEFINE manifest FOR gmfgen::GenPlugin-»
+«AROUND manifest FOR gmfgen::GenPlugin-»
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
@@ -24,7 +24,17 @@ Bundle-ClassPath: .
 Bundle-Activator: «getActivatorQualifiedClassName()»
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: «editorGen.diagram.editPartsPackageName», 
+Export-Package: «EXPAND exportPackage»
+Require-Bundle: «EXPAND requireBundle»
+Bundle-ActivationPolicy: lazy
+«EXPAND xpt::plugin::manifest::executionEnvironment-»
+«ENDAROUND»
+
+
+
+«REM» List of exported Packages «ENDREM»
+
+«DEFINE exportPackage FOR gmfgen::GenPlugin»«editorGen.diagram.editPartsPackageName», 
  «editorGen.diagram.editPoliciesPackageName», 
  «editorGen.diagram.editCommandsPackageName»,
  «editorGen.editor.packageName»,
@@ -32,8 +42,12 @@ Export-Package: «editorGen.diagram.editPartsPackageName»,
 «IF editorGen.labelParsers->notEmpty()-»
  «editorGen.diagram.parsersPackageName»,
 «ENDIF-»
- «editorGen.propertySheet.packageName»
-Require-Bundle: org.eclipse.core.runtime,
+ «editorGen.propertySheet.packageName»«ENDDEFINE»
+
+
+«REM» List of required Bundles «ENDREM»
+
+«DEFINE requireBundle FOR gmfgen::GenPlugin»org.eclipse.core.runtime,
 «IF editorGen.application = null-»
  org.eclipse.core.resources,
 «ENDIF-»
@@ -79,11 +93,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.muml.common,
- de.fujaba.newwizard
-Bundle-ActivationPolicy: lazy
-«EXPAND executionEnvironment-»
-«ENDDEFINE»
-
-«DEFINE executionEnvironment FOR gmfgen::GenPlugin-»
-Bundle-RequiredExecutionEnvironment: «IF editorGen.jdkComplianceLevel() > 5»JavaSE-1.6«ELSE»J2SE-1.«editorGen.jdkComplianceLevel()»«ENDIF»
-«ENDDEFINE»
+ de.fujaba.newwizard«ENDDEFINE»

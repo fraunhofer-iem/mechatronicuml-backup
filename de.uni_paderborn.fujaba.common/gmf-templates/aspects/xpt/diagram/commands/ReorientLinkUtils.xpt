@@ -1,0 +1,15 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«EXTENSION xpt::diagram::Utils»
+
+«AROUND accessors FOR gmfgen::GenLink-»
+	«targetDef.proceed()»
+	«EXPAND reorientDirectionAccessor FOR modelFacet-»
+«ENDAROUND»
+
+«DEFINE reorientDirectionAccessor FOR gmfgen::LinkModelFacet-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected int getReorientDirection() {
+		return reorientDirection;
+	}
+«ENDDEFINE»

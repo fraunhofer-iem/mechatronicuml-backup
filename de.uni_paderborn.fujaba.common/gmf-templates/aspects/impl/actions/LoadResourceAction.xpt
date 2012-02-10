@@ -1,7 +1,7 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «EXTENSION xpt::StringOperations»
 
-«DEFINE executeMethod FOR gmfgen::LoadResourceAction-»
+«AROUND executeMethod FOR gmfgen::LoadResourceAction-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public Object execute(org.eclipse.core.commands.ExecutionEvent event) throws org.eclipse.core.commands.ExecutionException {
 		org.eclipse.ui.IEditorPart diagramEditor = org.eclipse.ui.handlers.HandlerUtil.getActiveEditorChecked(event);
@@ -20,4 +20,4 @@
 		loadResourceDialog.open();
 		return null;
 	}
-«ENDDEFINE»
+«ENDAROUND»

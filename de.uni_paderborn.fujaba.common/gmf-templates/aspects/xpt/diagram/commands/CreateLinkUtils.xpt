@@ -1,5 +1,7 @@
+«REM»
 «EXTENSION xpt::diagram::Utils»
-
+«ENDREM»
+«REM»
 «AROUND fields FOR gmfgen::TypeLinkModelFacet»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private final org.eclipse.emf.ecore.EObject source;
@@ -12,7 +14,8 @@
 	private «EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass» container;
 «ENDIF-»
 «ENDAROUND»
-
+«ENDREM»
+«REM»
 «AROUND containerAccessor FOR gmfgen::TypeLinkModelFacet-»
 «IF hasContainerOtherThanSource(self)-»
 
@@ -46,3 +49,4 @@
 	this.source = source;
 	this.target = target;
 «ENDAROUND»
+«ENDREM»

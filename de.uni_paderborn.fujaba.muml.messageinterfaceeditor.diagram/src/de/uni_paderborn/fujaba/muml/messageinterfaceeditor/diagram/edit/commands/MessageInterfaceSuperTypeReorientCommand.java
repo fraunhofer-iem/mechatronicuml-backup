@@ -150,4 +150,11 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 	protected de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) newEnd;
 	}
+
+	/**
+	 * @generated
+	 */
+	protected int getReorientDirection() {
+		return reorientDirection;
+	}
 }

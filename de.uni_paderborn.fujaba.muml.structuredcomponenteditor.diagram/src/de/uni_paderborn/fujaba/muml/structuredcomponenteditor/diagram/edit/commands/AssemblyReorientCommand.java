@@ -16,17 +16,17 @@ public class AssemblyReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected final int reorientDirection;
+	private final int reorientDirection;
 
 	/**
 	 * @generated
 	 */
-	protected final EObject oldEnd;
+	private final EObject oldEnd;
 
 	/**
 	 * @generated
 	 */
-	protected final EObject newEnd;
+	private final EObject newEnd;
 
 	/**
 	 * @generated
@@ -159,5 +159,12 @@ public class AssemblyReorientCommand extends EditElementCommand {
 	 */
 	protected de.uni_paderborn.fujaba.muml.model.component.Port getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.model.component.Port) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected int getReorientDirection() {
+		return reorientDirection;
 	}
 }

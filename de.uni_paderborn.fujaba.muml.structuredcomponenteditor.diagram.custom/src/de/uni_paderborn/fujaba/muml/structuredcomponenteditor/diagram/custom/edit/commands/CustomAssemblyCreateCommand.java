@@ -5,6 +5,7 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
+import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
@@ -100,7 +101,7 @@ public class CustomAssemblyCreateCommand extends AssemblyCreateCommand {
 	}
 	
 	@Override
-	protected de.uni_paderborn.fujaba.muml.model.component.StructuredComponent deduceContainer() {
+	public StructuredComponent getContainer() {
 		return sourceComponentPart.getParentComponent();
 	}
 

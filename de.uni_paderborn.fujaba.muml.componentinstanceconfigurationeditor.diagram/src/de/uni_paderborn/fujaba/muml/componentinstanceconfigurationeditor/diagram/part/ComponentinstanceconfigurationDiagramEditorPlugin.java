@@ -118,17 +118,7 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-
-		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
-
-		// Put all factories into one composed adapter factory.
-		factories.addAll(positivePriorityFactories);
 		fillItemProviderFactories(factories);
-		factories.addAll(negativePriorityFactories);
-
 		return new ComposedAdapterFactory(factories);
 	}
 
@@ -136,6 +126,15 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
+		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
+		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
+
+		// Custom Factories with positive priority
+		factories.addAll(positivePriorityFactories);
+
+		// Default Factories
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory());
 		factories
@@ -166,6 +165,9 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 		factories
 				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
 		factories.add(new TemplatesItemProviderAdapterFactory());
+
+		// Custom Factories with negative priority
+		factories.addAll(negativePriorityFactories);
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}

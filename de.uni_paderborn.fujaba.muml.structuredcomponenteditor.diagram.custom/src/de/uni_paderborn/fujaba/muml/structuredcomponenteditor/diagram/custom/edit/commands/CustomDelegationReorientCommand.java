@@ -50,9 +50,9 @@ public class CustomDelegationReorientCommand extends DelegationReorientCommand {
 	public boolean canExecute() {
 		Port newSource = getOldSource();
 		Port newTarget = getOldTarget();
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (getReorientDirection() == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			newSource = getNewSource();
-		} else if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		} else if (getReorientDirection() == ReorientRelationshipRequest.REORIENT_TARGET) {
 			newTarget = getNewTarget();
 		}
 

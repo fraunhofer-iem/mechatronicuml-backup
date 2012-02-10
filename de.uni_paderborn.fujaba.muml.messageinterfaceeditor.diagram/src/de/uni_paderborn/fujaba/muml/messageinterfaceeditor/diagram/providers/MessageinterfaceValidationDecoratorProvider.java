@@ -128,21 +128,18 @@ public class MessageinterfaceValidationDecoratorProvider extends
 
 			public void run() {
 				try {
-					TransactionalEditingDomain editingDomain = TransactionUtil
-							.getEditingDomain(fdiagram);
-					if (editingDomain != null) {
-						editingDomain.runExclusive(new Runnable() {
+					TransactionUtil.getEditingDomain(fdiagram).runExclusive(
+							new Runnable() {
 
-							public void run() {
-								for (Iterator it = decorators.iterator(); it
-										.hasNext();) {
-									IDecorator decorator = (IDecorator) it
-											.next();
-									decorator.refresh();
+								public void run() {
+									for (Iterator it = decorators.iterator(); it
+											.hasNext();) {
+										IDecorator decorator = (IDecorator) it
+												.next();
+										decorator.refresh();
+									}
 								}
-							}
-						});
-					}
+							});
 				} catch (Exception e) {
 					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 							.getInstance().logError(
