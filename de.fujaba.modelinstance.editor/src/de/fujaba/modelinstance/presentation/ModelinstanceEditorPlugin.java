@@ -23,6 +23,10 @@ import org.storydriven.modeling.provider.SDMEditPlugin;
  * @generated
  */
 public final class ModelinstanceEditorPlugin extends EMFPlugin {
+	
+	public static final String ID = "de.fujaba.modelinstance.editor";
+	
+	
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->

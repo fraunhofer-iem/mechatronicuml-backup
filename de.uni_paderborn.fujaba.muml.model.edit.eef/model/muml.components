@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_DYYIUFP7EeGBa86nseBk7A" documentation="Edition Context for component GenPackage">
+    <categories xmi:id="_DYYvYFP7EeGBa86nseBk7A" name="component">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYYvYVP7EeGBa86nseBk7A" name="ContinuousPort" views="_DYcZ-FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvYlP7EeGBa86nseBk7A" name="name" views="_DYcZ-lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvY1P7EeGBa86nseBk7A" name="comment" views="_DYcZ-1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvZFP7EeGBa86nseBk7A" name="incomingConnectors" views="_DYcZ_FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/incomingConnectors"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvZVP7EeGBa86nseBk7A" name="outgoingConnectors" views="_DYcZ_VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/outgoingConnectors"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvZlP7EeGBa86nseBk7A" name="component" views="_DYcZ_lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/component"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvZ1P7EeGBa86nseBk7A" name="kind" views="_DYcZ_1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ContinuousPort/kind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvaFP7EeGBa86nseBk7A" name="type" views="_DYcaAFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ContinuousPort/type"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ContinuousPort"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYYvaVP7EeGBa86nseBk7A" name="DiscretePort" views="_DYcaAVP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvalP7EeGBa86nseBk7A" name="name" views="_DYcaA1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYva1P7EeGBa86nseBk7A" name="comment" views="_DYcaBFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvbFP7EeGBa86nseBk7A" name="incomingConnectors" views="_DYcaBVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/incomingConnectors"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvbVP7EeGBa86nseBk7A" name="outgoingConnectors" views="_DYcaBlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/outgoingConnectors"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvblP7EeGBa86nseBk7A" name="component" views="_DYcaB1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/component"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvb1P7EeGBa86nseBk7A" name="behavior" views="_DYcaCFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/BehavioralElement/behavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvcFP7EeGBa86nseBk7A" name="refines" views="_DYcaCVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/refines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvcVP7EeGBa86nseBk7A" name="senderMessageInterface" views="_DYcaClP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/senderMessageInterface"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvclP7EeGBa86nseBk7A" name="receiverMessageInterface" views="_DYcaC1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/receiverMessageInterface"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvc1P7EeGBa86nseBk7A" name="adaptationBehavior" views="_DYcaDFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/adaptationBehavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvdFP7EeGBa86nseBk7A" name="roleAndAdaptationBehavior" views="_DYcaDVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/roleAndAdaptationBehavior"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYYvdVP7EeGBa86nseBk7A" name="ComponentPart" views="_DYcaDlP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvdlP7EeGBa86nseBk7A" name="comment" views="_DYcaEFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvd1P7EeGBa86nseBk7A" name="componentType" views="_DYcaEVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/componentType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYveFP7EeGBa86nseBk7A" name="parentComponent" views="_DYcaElP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/parentComponent"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYveVP7EeGBa86nseBk7A" name="fromRev" views="_DYcaE1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/fromRev"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvelP7EeGBa86nseBk7A" name="toRev" views="_DYcaFFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/toRev"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYve1P7EeGBa86nseBk7A" name="delegation" views="_DYcaFVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/delegation"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYYvfFP7EeGBa86nseBk7A" name="StructuredComponent" views="_DYcaFlP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvfVP7EeGBa86nseBk7A" name="name" views="_DYcaGFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvflP7EeGBa86nseBk7A" name="comment" views="_DYcaGVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvf1P7EeGBa86nseBk7A" name="referencingComponentParts" views="_DYcaGlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/referencingComponentParts"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvgFP7EeGBa86nseBk7A" name="componentType" views="_DYcaG1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/componentType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYYvgVP7EeGBa86nseBk7A" name="AtomicComponent" views="_DYcaHFP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvglP7EeGBa86nseBk7A" name="name" views="_DYcaHlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvg1P7EeGBa86nseBk7A" name="comment" views="_DYdA0FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvhFP7EeGBa86nseBk7A" name="referencingComponentParts" views="_DYdA0VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/referencingComponentParts"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvhVP7EeGBa86nseBk7A" name="componentType" views="_DYdA0lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/componentType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvhlP7EeGBa86nseBk7A" name="behavior" views="_DYdA01P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/BehavioralElement/behavior"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/AtomicComponent"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYYvh1P7EeGBa86nseBk7A" name="Assembly" views="_DYdA1FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYviFP7EeGBa86nseBk7A" name="fromPort" views="_DYdA1lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/fromPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYviVP7EeGBa86nseBk7A" name="toPort" views="_DYdA11P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/toPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvilP7EeGBa86nseBk7A" name="parentComponent" views="_DYdA2FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/parentComponent"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvi1P7EeGBa86nseBk7A" name="behavior" views="_DYdA2VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/BehavioralElement/behavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvjFP7EeGBa86nseBk7A" name="to" views="_DYdA2lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Assembly/to"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvjVP7EeGBa86nseBk7A" name="from" views="_DYdA21P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Assembly/from"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvjlP7EeGBa86nseBk7A" name="coordinationPattern" views="_DYdA3FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Assembly/coordinationPattern"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Assembly"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYYvj1P7EeGBa86nseBk7A" name="Delegation" views="_DYdA3VP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvkFP7EeGBa86nseBk7A" name="fromPort" views="_DYdA31P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/fromPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvkVP7EeGBa86nseBk7A" name="toPort" views="_DYdA4FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/toPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvklP7EeGBa86nseBk7A" name="parentComponent" views="_DYdA4VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/parentComponent"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvk1P7EeGBa86nseBk7A" name="componentPart" views="_DYdA4lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Delegation/componentPart"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Delegation"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYYvlFP7EeGBa86nseBk7A" name="HybridPort" views="_DYdA41P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvlVP7EeGBa86nseBk7A" name="name" views="_DYdA5VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvllP7EeGBa86nseBk7A" name="comment" views="_DYdA5lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYYvl1P7EeGBa86nseBk7A" name="incomingConnectors" views="_DYdA51P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/incomingConnectors"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWcFP7EeGBa86nseBk7A" name="outgoingConnectors" views="_DYdA6FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/outgoingConnectors"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWcVP7EeGBa86nseBk7A" name="component" views="_DYdA6VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/component"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWclP7EeGBa86nseBk7A" name="behavior" views="_DYdA6lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/BehavioralElement/behavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWc1P7EeGBa86nseBk7A" name="refines" views="_DYdA61P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/refines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWdFP7EeGBa86nseBk7A" name="senderMessageInterface" views="_DYdA7FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/senderMessageInterface"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWdVP7EeGBa86nseBk7A" name="receiverMessageInterface" views="_DYdA7VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/receiverMessageInterface"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWdlP7EeGBa86nseBk7A" name="adaptationBehavior" views="_DYdA7lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/adaptationBehavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWd1P7EeGBa86nseBk7A" name="roleAndAdaptationBehavior" views="_DYdA71P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort/roleAndAdaptationBehavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWeFP7EeGBa86nseBk7A" name="kind" views="_DYdA8FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ContinuousPort/kind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWeVP7EeGBa86nseBk7A" name="type" views="_DYdA8VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ContinuousPort/type"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/HybridPort"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_DYZWelP7EeGBa86nseBk7A" documentation="Edition Context for constraint GenPackage">
+    <categories xmi:id="_DYZWe1P7EeGBa86nseBk7A" name="constraint">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWfFP7EeGBa86nseBk7A" name="TextualConstraint" views="_DYbLzVP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWfVP7EeGBa86nseBk7A" name="correctness" views="_DYbLz1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/constraint/Constraint/correctness"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWflP7EeGBa86nseBk7A" name="background" views="_DYbL0FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/constraint/Constraint/background"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWf1P7EeGBa86nseBk7A" name="constrainableElement" views="_DYbL0VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/constraint/Constraint/constrainableElement"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/constraint/TextualConstraint"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/constraint"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_DYZWgFP7EeGBa86nseBk7A" documentation="Edition Context for core GenPackage">
+    <categories xmi:id="_DYZWgVP7EeGBa86nseBk7A" name="core">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWglP7EeGBa86nseBk7A" name="NaturalNumber" views="_DYdA9FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWg1P7EeGBa86nseBk7A" name="value" views="_DYdA9lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWhFP7EeGBa86nseBk7A" name="infinity" views="_DYdA91P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/infinity"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWhVP7EeGBa86nseBk7A" name="Cardinality" views="_DYdA-FP7EeGBa86nseBk7A">
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWhlP7EeGBa86nseBk7A" name="ActivityCallExpression" views="_DYdA-lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWh1P7EeGBa86nseBk7A" name="comment" views="_DYdA_FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWiFP7EeGBa86nseBk7A" name="callee" views="_DYdA_VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Invocation/callee"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWiVP7EeGBa86nseBk7A" name="activity" views="_DYdA_lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ActivityCallExpression/activity"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ActivityCallExpression"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_DYZWilP7EeGBa86nseBk7A" documentation="Edition Context for instance GenPackage">
+    <categories xmi:id="_DYZWi1P7EeGBa86nseBk7A" name="instance">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWjFP7EeGBa86nseBk7A" name="ComponentInstance" views="_DYbL1FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWjVP7EeGBa86nseBk7A" name="name" views="_DYbL1lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWjlP7EeGBa86nseBk7A" name="componentType" views="_DYbL11P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/componentType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWj1P7EeGBa86nseBk7A" name="ConnectorInstance" views="_DYbL2FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWkFP7EeGBa86nseBk7A" name="source" views="_DYbL2lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWkVP7EeGBa86nseBk7A" name="target" views="_DYbL21P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWklP7EeGBa86nseBk7A" name="connectorType" views="_DYbL3FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/connectorType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWk1P7EeGBa86nseBk7A" name="AssemblyInstance" views="_DYbL3VP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWlFP7EeGBa86nseBk7A" name="source" views="_DYbL31P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWlVP7EeGBa86nseBk7A" name="target" views="_DYbL4FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWllP7EeGBa86nseBk7A" name="connectorType" views="_DYbL4VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/connectorType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWl1P7EeGBa86nseBk7A" name="propagationDelayLowerBound" views="_DYbL4lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWmFP7EeGBa86nseBk7A" name="propagationDelayUpperBound" views="_DYbL41P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/AssemblyInstance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWmVP7EeGBa86nseBk7A" name="DelegationInstance" views="_DYbL5FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWmlP7EeGBa86nseBk7A" name="source" views="_DYbL5lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWm1P7EeGBa86nseBk7A" name="target" views="_DYbL51P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWnFP7EeGBa86nseBk7A" name="connectorType" views="_DYbL6FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/connectorType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DelegationInstance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWnVP7EeGBa86nseBk7A" name="ComponentInstanceConfiguration" views="_DYbL6VP7EeGBa86nseBk7A">
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWnlP7EeGBa86nseBk7A" name="ContinuousPortInstance" views="_DYbL61P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWn1P7EeGBa86nseBk7A" name="name" views="_DYbL7VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWoFP7EeGBa86nseBk7A" name="comment" views="_DYbL7lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWoVP7EeGBa86nseBk7A" name="portType" views="_DYbL71P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWolP7EeGBa86nseBk7A" name="componentInstance" views="_DYbL8FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/componentInstance"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWo1P7EeGBa86nseBk7A" name="incomingConnectorInstances" views="_DYbL8VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/incomingConnectorInstances"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWpFP7EeGBa86nseBk7A" name="outgoingConnectorInstances" views="_DYbL8lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/outgoingConnectorInstances"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ContinuousPortInstance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWpVP7EeGBa86nseBk7A" name="HybridPortInstance" views="_DYbL81P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWplP7EeGBa86nseBk7A" name="name" views="_DYbL9VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWp1P7EeGBa86nseBk7A" name="comment" views="_DYbL9lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWqFP7EeGBa86nseBk7A" name="portType" views="_DYbL91P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWqVP7EeGBa86nseBk7A" name="componentInstance" views="_DYbL-FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/componentInstance"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWqlP7EeGBa86nseBk7A" name="incomingConnectorInstances" views="_DYbysFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/incomingConnectorInstances"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWq1P7EeGBa86nseBk7A" name="outgoingConnectorInstances" views="_DYbysVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/outgoingConnectorInstances"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HybridPortInstance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWrFP7EeGBa86nseBk7A" name="DiscreteSinglePortInstance" views="_DYbyslP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWrVP7EeGBa86nseBk7A" name="name" views="_DYbytFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWrlP7EeGBa86nseBk7A" name="comment" views="_DYbytVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWr1P7EeGBa86nseBk7A" name="portType" views="_DYbytlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWsFP7EeGBa86nseBk7A" name="componentInstance" views="_DYbyt1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/componentInstance"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWsVP7EeGBa86nseBk7A" name="incomingConnectorInstances" views="_DYbyuFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/incomingConnectorInstances"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWslP7EeGBa86nseBk7A" name="outgoingConnectorInstances" views="_DYbyuVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/outgoingConnectorInstances"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWs1P7EeGBa86nseBk7A" name="multiPortInstance" views="_DYbyulP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteSinglePortInstance/multiPortInstance"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZWtFP7EeGBa86nseBk7A" name="DiscreteMultiPortInstance" views="_DYbyu1P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWtVP7EeGBa86nseBk7A" name="name" views="_DYbyvVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWtlP7EeGBa86nseBk7A" name="comment" views="_DYbyvlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZWt1P7EeGBa86nseBk7A" name="portType" views="_DYbyv1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9gFP7EeGBa86nseBk7A" name="componentInstance" views="_DYbywFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/componentInstance"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9gVP7EeGBa86nseBk7A" name="incomingConnectorInstances" views="_DYbywVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/incomingConnectorInstances"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9glP7EeGBa86nseBk7A" name="outgoingConnectorInstances" views="_DYbywlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/outgoingConnectorInstances"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteMultiPortInstance"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_DYZ9g1P7EeGBa86nseBk7A" documentation="Edition Context for pattern GenPackage">
+    <categories xmi:id="_DYZ9hFP7EeGBa86nseBk7A" name="pattern">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9hVP7EeGBa86nseBk7A" name="RoleConnector" views="_DYak1lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9hlP7EeGBa86nseBk7A" name="behavior" views="_DYbLoVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/BehavioralElement/behavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9h1P7EeGBa86nseBk7A" name="bidirectional" views="_DYbLolP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/bidirectional"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9iFP7EeGBa86nseBk7A" name="source" views="_DYbLo1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9iVP7EeGBa86nseBk7A" name="target" views="_DYbLpFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9ilP7EeGBa86nseBk7A" name="coordinationPattern" views="_DYbLpVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/coordinationPattern"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9i1P7EeGBa86nseBk7A" name="CoordinationPattern" views="_DYbLplP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9jFP7EeGBa86nseBk7A" name="name" views="_DYbLqFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9jVP7EeGBa86nseBk7A" name="Role" views="_DYbLqVP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9jlP7EeGBa86nseBk7A" name="name" views="_DYbLq1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9j1P7EeGBa86nseBk7A" name="behavior" views="_DYbLrFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/BehavioralElement/behavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9kFP7EeGBa86nseBk7A" name="incomingRoleConnector" views="_DYbLrVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/incomingRoleConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9kVP7EeGBa86nseBk7A" name="coordinationPattern" views="_DYbLrlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/coordinationPattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9klP7EeGBa86nseBk7A" name="senderMessageInterface" views="_DYbLr1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/senderMessageInterface"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9k1P7EeGBa86nseBk7A" name="receiverMessageInterface" views="_DYbLsFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/receiverMessageInterface"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9lFP7EeGBa86nseBk7A" name="port" views="_DYbLsVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/port"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9lVP7EeGBa86nseBk7A" name="adaptationBehavior" views="_DYbLslP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/adaptationBehavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9llP7EeGBa86nseBk7A" name="roleAndAdaptationBehavior" views="_DYbLs1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/roleAndAdaptationBehavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9l1P7EeGBa86nseBk7A" name="ordered" views="_DYbLtFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/ordered"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9mFP7EeGBa86nseBk7A" name="orderVariable" views="_DYbLtVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/orderVariable"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9mVP7EeGBa86nseBk7A" name="outgoingRoleConnector" views="_DYbLtlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/outgoingRoleConnector"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_DYZ9mlP7EeGBa86nseBk7A" documentation="Edition Context for realtimestatechart GenPackage">
+    <categories xmi:id="_DYZ9m1P7EeGBa86nseBk7A" name="realtimestatechart">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9nFP7EeGBa86nseBk7A" name="AbsoluteDeadline" views="_DYby0lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9nVP7EeGBa86nseBk7A" name="clock" views="_DYby1FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/AbsoluteDeadline/clock"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/AbsoluteDeadline"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9nlP7EeGBa86nseBk7A" name="RelativeDeadline" views="_DYby1VP7EeGBa86nseBk7A">
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RelativeDeadline"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9n1P7EeGBa86nseBk7A" name="Clock" views="_DYby11P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9oFP7EeGBa86nseBk7A" name="name" views="_DYby2VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9oVP7EeGBa86nseBk7A" name="statechart" views="_DYby2lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock/statechart"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9olP7EeGBa86nseBk7A" name="Region" views="_DYby21P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9o1P7EeGBa86nseBk7A" name="name" views="_DYby3VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9pFP7EeGBa86nseBk7A" name="priority" views="_DYby3lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9pVP7EeGBa86nseBk7A" name="parentState" views="_DYby31P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/parentState"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9plP7EeGBa86nseBk7A" name="State" views="_DYby4FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9p1P7EeGBa86nseBk7A" name="name" views="_DYby4lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9qFP7EeGBa86nseBk7A" name="outgoingTransitions" views="_DYby41P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9qVP7EeGBa86nseBk7A" name="incomingTransitions" views="_DYby5FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/incomingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9qlP7EeGBa86nseBk7A" name="statechart" views="_DYby5VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/statechart"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9q1P7EeGBa86nseBk7A" name="invariants" views="_DYby5lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/invariants"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9rFP7EeGBa86nseBk7A" name="initial" views="_DYby51P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/initial"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9rVP7EeGBa86nseBk7A" name="final" views="_DYby6FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/final"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9rlP7EeGBa86nseBk7A" name="urgent" views="_DYby6VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/urgent"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9r1P7EeGBa86nseBk7A" name="Transition" views="_DYby6lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9sFP7EeGBa86nseBk7A" name="priority" views="_DYby7FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9sVP7EeGBa86nseBk7A" name="target" views="_DYby7VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9slP7EeGBa86nseBk7A" name="source" views="_DYby7lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9s1P7EeGBa86nseBk7A" name="statechart" views="_DYby71P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/statechart"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9tFP7EeGBa86nseBk7A" name="clockResets" views="_DYby8FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/clockResets"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9tVP7EeGBa86nseBk7A" name="clockConstraints" views="_DYby8VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/clockConstraints"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9tlP7EeGBa86nseBk7A" name="absoluteDeadlines" views="_DYby8lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/absoluteDeadlines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9t1P7EeGBa86nseBk7A" name="blockable" views="_DYby81P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/blockable"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9uFP7EeGBa86nseBk7A" name="events" views="_DYby9FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/events"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9uVP7EeGBa86nseBk7A" name="ClockConstraint" views="_DYby9VP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9ulP7EeGBa86nseBk7A" name="clock" views="_DYby91P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ClockConstraint/clock"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9u1P7EeGBa86nseBk7A" name="operator" views="_DYby-FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ClockConstraint/operator"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ClockConstraint"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9vFP7EeGBa86nseBk7A" name="Action" views="_DYby-VP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9vVP7EeGBa86nseBk7A" name="name" views="_DYby-1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Action"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9vlP7EeGBa86nseBk7A" name="AsynchronousMessageEvent" views="_DYby_FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9v1P7EeGBa86nseBk7A" name="kind" views="_DYby_lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Event/kind"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9wFP7EeGBa86nseBk7A" name="DoEvent" views="_DYby_1P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9wVP7EeGBa86nseBk7A" name="kind" views="_DYbzAVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Event/kind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9wlP7EeGBa86nseBk7A" name="periodLower" views="_DYbzAlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/DoEvent/periodLower"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9w1P7EeGBa86nseBk7A" name="periodUpper" views="_DYbzA1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/DoEvent"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9xFP7EeGBa86nseBk7A" name="SynchronizationChannel" views="_DYbzBFP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9xVP7EeGBa86nseBk7A" name="comment" views="_DYbzBlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9xlP7EeGBa86nseBk7A" name="inParameter" views="_DYbzB1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Callable/inParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9x1P7EeGBa86nseBk7A" name="outParameter" views="_DYbzCFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Callable/outParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9yFP7EeGBa86nseBk7A" name="name" views="_DYbzCVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9yVP7EeGBa86nseBk7A" name="state" views="_DYbzClP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/SynchronizationChannel/state"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/SynchronizationChannel"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9ylP7EeGBa86nseBk7A" name="Synchronization" views="_DYbzC1P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9y1P7EeGBa86nseBk7A" name="comment" views="_DYcZwFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9zFP7EeGBa86nseBk7A" name="callee" views="_DYcZwVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Invocation/callee"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9zVP7EeGBa86nseBk7A" name="kind" views="_DYcZwlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Synchronization/kind"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Synchronization"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9zlP7EeGBa86nseBk7A" name="RealtimeStatechart" views="_DYcZw1P7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9z1P7EeGBa86nseBk7A" name="name" views="_DYcZxVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakkFP7EeGBa86nseBk7A" name="comment" views="_DYcZxlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakkVP7EeGBa86nseBk7A" name="behavioralElement" views="_DYcZx1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Behavior/behavioralElement"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakklP7EeGBa86nseBk7A" name="embeddingRegion" views="_DYcZyFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/embeddingRegion"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakk1P7EeGBa86nseBk7A" name="history" views="_DYcZyVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/history"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaklFP7EeGBa86nseBk7A" name="eventQueueSize" views="_DYcZylP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/eventQueueSize"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaklVP7EeGBa86nseBk7A" name="securityLevel" views="_DYcZy1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakllP7EeGBa86nseBk7A" name="utilisation" views="_DYcZzFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakl1P7EeGBa86nseBk7A" name="scheduleDocument" views="_DYcZzVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakmFP7EeGBa86nseBk7A" name="Message" views="_DYcZzlP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakmVP7EeGBa86nseBk7A" name="comment" views="_DYcZ0FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakmlP7EeGBa86nseBk7A" name="callee" views="_DYcZ0VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Invocation/callee"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Message"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakm1P7EeGBa86nseBk7A" name="EntryEvent" views="_DYcZ0lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaknFP7EeGBa86nseBk7A" name="kind" views="_DYcZ1FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Event/kind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaknVP7EeGBa86nseBk7A" name="clockResets" views="_DYcZ1VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryOrExitEvent/clockResets"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryEvent"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYaknlP7EeGBa86nseBk7A" name="ExitEvent" views="_DYcZ1lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakn1P7EeGBa86nseBk7A" name="kind" views="_DYcZ2FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Event/kind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakoFP7EeGBa86nseBk7A" name="clockResets" views="_DYcZ2VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryOrExitEvent/clockResets"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitEvent"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakoVP7EeGBa86nseBk7A" name="EntryPoint" views="_DYcZ2lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakolP7EeGBa86nseBk7A" name="name" views="_DYcZ3FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYako1P7EeGBa86nseBk7A" name="outgoingTransitions" views="_DYcZ3VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakpFP7EeGBa86nseBk7A" name="incomingTransitions" views="_DYcZ3lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/incomingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakpVP7EeGBa86nseBk7A" name="statechart" views="_DYcZ31P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/statechart"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakplP7EeGBa86nseBk7A" name="ExitPoint" views="_DYcZ4FP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakp1P7EeGBa86nseBk7A" name="name" views="_DYcZ4lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakqFP7EeGBa86nseBk7A" name="outgoingTransitions" views="_DYcZ41P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakqVP7EeGBa86nseBk7A" name="incomingTransitions" views="_DYcZ5FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/incomingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakqlP7EeGBa86nseBk7A" name="statechart" views="_DYcZ5VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/statechart"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakq1P7EeGBa86nseBk7A" name="StateEntryPoint" views="_DYcZ5lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakrFP7EeGBa86nseBk7A" name="name" views="_DYcZ6FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakrVP7EeGBa86nseBk7A" name="outgoingTransitions" views="_DYcZ6VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakrlP7EeGBa86nseBk7A" name="incomingTransitions" views="_DYcZ6lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/incomingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakr1P7EeGBa86nseBk7A" name="statechart" views="_DYcZ61P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/statechart"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaksFP7EeGBa86nseBk7A" name="state" views="_DYcZ7FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateEntryPoint/state"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaksVP7EeGBa86nseBk7A" name="entryPoint" views="_DYcZ7VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoint"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateEntryPoint"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakslP7EeGBa86nseBk7A" name="StateExitPoint" views="_DYcZ7lP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaks1P7EeGBa86nseBk7A" name="name" views="_DYcZ8FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaktFP7EeGBa86nseBk7A" name="outgoingTransitions" views="_DYcZ8VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaktVP7EeGBa86nseBk7A" name="incomingTransitions" views="_DYcZ8lP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/incomingTransitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYaktlP7EeGBa86nseBk7A" name="statechart" views="_DYcZ81P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/statechart"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakt1P7EeGBa86nseBk7A" name="state" views="_DYcZ9FP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateExitPoint/state"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakuFP7EeGBa86nseBk7A" name="exitPoint" views="_DYcZ9VP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoint"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateExitPoint"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_DYakuVP7EeGBa86nseBk7A" documentation="Edition Context for msgiface GenPackage">
+    <categories xmi:id="_DYakulP7EeGBa86nseBk7A" name="msgiface">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYaku1P7EeGBa86nseBk7A" name="MessageInterface" views="_DYbyxVP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakvFP7EeGBa86nseBk7A" name="name" views="_DYbyx1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakvVP7EeGBa86nseBk7A" name="superType" views="_DYbyyFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface/superType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakvlP7EeGBa86nseBk7A" name="MessageType" views="_DYbyyVP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakv1P7EeGBa86nseBk7A" name="comment" views="_DYbyy1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakwFP7EeGBa86nseBk7A" name="inParameter" views="_DYbyzFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Callable/inParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakwVP7EeGBa86nseBk7A" name="outParameter" views="_DYbyzVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Callable/outParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakwlP7EeGBa86nseBk7A" name="name" views="_DYbyzlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakw1P7EeGBa86nseBk7A" name="messageInterface" views="_DYbyz1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType/messageInterface"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_DYakxFP7EeGBa86nseBk7A" documentation="Edition Context for deployment GenPackage">
+    <categories xmi:id="_DYakxVP7EeGBa86nseBk7A" name="deployment">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakxlP7EeGBa86nseBk7A" name="Deployment" views="_DYbLuVP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakx1P7EeGBa86nseBk7A" name="componentInstanceConfiguration" views="_DYbLu1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/Deployment"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYakyFP7EeGBa86nseBk7A" name="HardwareNode" views="_DYbLvFP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakyVP7EeGBa86nseBk7A" name="deployment" views="_DYbLvlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwareNode/deployment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakylP7EeGBa86nseBk7A" name="deployedInstances" views="_DYbLv1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwareNode/deployedInstances"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwareNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYaky1P7EeGBa86nseBk7A" name="HardwarePort" views="_DYbLwFP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakzFP7EeGBa86nseBk7A" name="hardwareNode" views="_DYbLwlP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwarePort/hardwareNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakzVP7EeGBa86nseBk7A" name="outgoingCommunicationLink" views="_DYbLw1P7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakzlP7EeGBa86nseBk7A" name="incomingCommunicationLink" views="_DYbLxFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYakz1P7EeGBa86nseBk7A" name="deployedPortInstance" views="_DYbLxVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwarePort/deployedPortInstance"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwarePort"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYak0FP7EeGBa86nseBk7A" name="CommunicationLink" views="_DYbLxlP7EeGBa86nseBk7A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYak0VP7EeGBa86nseBk7A" name="deployment" views="_DYbLyFP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/deployment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYak0lP7EeGBa86nseBk7A" name="source" views="_DYbLyVP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYak01P7EeGBa86nseBk7A" name="target" views="_DYbLylP7EeGBa86nseBk7A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/target"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_DYak1FP7EeGBa86nseBk7A" documentation="Views repository for pattern GenPackage" name="pattern">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_DYak1VP7EeGBa86nseBk7A" name="pattern">
+      <views xmi:id="_DYak1lP7EeGBa86nseBk7A" name="RoleConnector">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbLoFP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLoVP7EeGBa86nseBk7A" name="behavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLolP7EeGBa86nseBk7A" name="bidirectional">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLo1P7EeGBa86nseBk7A" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLpFP7EeGBa86nseBk7A" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLpVP7EeGBa86nseBk7A" name="coordinationPattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbLplP7EeGBa86nseBk7A" name="CoordinationPattern">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbLp1P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLqFP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbLqVP7EeGBa86nseBk7A" name="Role">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbLqlP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLq1P7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLrFP7EeGBa86nseBk7A" name="behavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLrVP7EeGBa86nseBk7A" name="incomingRoleConnector">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLrlP7EeGBa86nseBk7A" name="coordinationPattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLr1P7EeGBa86nseBk7A" name="senderMessageInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLsFP7EeGBa86nseBk7A" name="receiverMessageInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLsVP7EeGBa86nseBk7A" name="port">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLslP7EeGBa86nseBk7A" name="adaptationBehavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLs1P7EeGBa86nseBk7A" name="roleAndAdaptationBehavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLtFP7EeGBa86nseBk7A" name="ordered">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLtVP7EeGBa86nseBk7A" name="orderVariable">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLtlP7EeGBa86nseBk7A" name="outgoingRoleConnector">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_DYbLt1P7EeGBa86nseBk7A" documentation="Views repository for deployment GenPackage" name="deployment">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_DYbLuFP7EeGBa86nseBk7A" name="deployment">
+      <views xmi:id="_DYbLuVP7EeGBa86nseBk7A" name="Deployment">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbLulP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLu1P7EeGBa86nseBk7A" name="componentInstanceConfiguration">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbLvFP7EeGBa86nseBk7A" name="HardwareNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbLvVP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLvlP7EeGBa86nseBk7A" name="deployment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLv1P7EeGBa86nseBk7A" name="deployedInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbLwFP7EeGBa86nseBk7A" name="HardwarePort">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbLwVP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLwlP7EeGBa86nseBk7A" name="hardwareNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLw1P7EeGBa86nseBk7A" name="outgoingCommunicationLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLxFP7EeGBa86nseBk7A" name="incomingCommunicationLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLxVP7EeGBa86nseBk7A" name="deployedPortInstance">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbLxlP7EeGBa86nseBk7A" name="CommunicationLink">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbLx1P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLyFP7EeGBa86nseBk7A" name="deployment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLyVP7EeGBa86nseBk7A" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLylP7EeGBa86nseBk7A" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_DYbLy1P7EeGBa86nseBk7A" documentation="Views repository for constraint GenPackage" name="constraint">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_DYbLzFP7EeGBa86nseBk7A" name="constraint">
+      <views xmi:id="_DYbLzVP7EeGBa86nseBk7A" name="TextualConstraint">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbLzlP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbLz1P7EeGBa86nseBk7A" name="correctness">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL0FP7EeGBa86nseBk7A" name="background">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL0VP7EeGBa86nseBk7A" name="constrainableElement">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_DYbL0lP7EeGBa86nseBk7A" documentation="Views repository for instance GenPackage" name="instance">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_DYbL01P7EeGBa86nseBk7A" name="instance">
+      <views xmi:id="_DYbL1FP7EeGBa86nseBk7A" name="ComponentInstance">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbL1VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL1lP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL11P7EeGBa86nseBk7A" name="componentType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbL2FP7EeGBa86nseBk7A" name="ConnectorInstance">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbL2VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL2lP7EeGBa86nseBk7A" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL21P7EeGBa86nseBk7A" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL3FP7EeGBa86nseBk7A" name="connectorType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbL3VP7EeGBa86nseBk7A" name="AssemblyInstance">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbL3lP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL31P7EeGBa86nseBk7A" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL4FP7EeGBa86nseBk7A" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL4VP7EeGBa86nseBk7A" name="connectorType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL4lP7EeGBa86nseBk7A" name="propagationDelayLowerBound">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL41P7EeGBa86nseBk7A" name="propagationDelayUpperBound">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbL5FP7EeGBa86nseBk7A" name="DelegationInstance">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbL5VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL5lP7EeGBa86nseBk7A" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL51P7EeGBa86nseBk7A" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL6FP7EeGBa86nseBk7A" name="connectorType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbL6VP7EeGBa86nseBk7A" name="ComponentInstanceConfiguration">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbL6lP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+        </elements>
+      </views>
+      <views xmi:id="_DYbL61P7EeGBa86nseBk7A" name="ContinuousPortInstance">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbL7FP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL7VP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL7lP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL71P7EeGBa86nseBk7A" name="portType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL8FP7EeGBa86nseBk7A" name="componentInstance">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL8VP7EeGBa86nseBk7A" name="incomingConnectorInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL8lP7EeGBa86nseBk7A" name="outgoingConnectorInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbL81P7EeGBa86nseBk7A" name="HybridPortInstance">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbL9FP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL9VP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL9lP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL91P7EeGBa86nseBk7A" name="portType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbL-FP7EeGBa86nseBk7A" name="componentInstance">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbysFP7EeGBa86nseBk7A" name="incomingConnectorInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbysVP7EeGBa86nseBk7A" name="outgoingConnectorInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbyslP7EeGBa86nseBk7A" name="DiscreteSinglePortInstance">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbys1P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbytFP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbytVP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbytlP7EeGBa86nseBk7A" name="portType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyt1P7EeGBa86nseBk7A" name="componentInstance">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyuFP7EeGBa86nseBk7A" name="incomingConnectorInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyuVP7EeGBa86nseBk7A" name="outgoingConnectorInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyulP7EeGBa86nseBk7A" name="multiPortInstance">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbyu1P7EeGBa86nseBk7A" name="DiscreteMultiPortInstance">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbyvFP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyvVP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyvlP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyv1P7EeGBa86nseBk7A" name="portType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbywFP7EeGBa86nseBk7A" name="componentInstance">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbywVP7EeGBa86nseBk7A" name="incomingConnectorInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbywlP7EeGBa86nseBk7A" name="outgoingConnectorInstances">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_DYbyw1P7EeGBa86nseBk7A" documentation="Views repository for msgiface GenPackage" name="msgiface">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_DYbyxFP7EeGBa86nseBk7A" name="msgiface">
+      <views xmi:id="_DYbyxVP7EeGBa86nseBk7A" name="MessageInterface">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbyxlP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyx1P7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyyFP7EeGBa86nseBk7A" name="superType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbyyVP7EeGBa86nseBk7A" name="MessageType">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbyylP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyy1P7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyzFP7EeGBa86nseBk7A" name="inParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyzVP7EeGBa86nseBk7A" name="outParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyzlP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbyz1P7EeGBa86nseBk7A" name="messageInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_DYby0FP7EeGBa86nseBk7A" documentation="Views repository for realtimestatechart GenPackage" name="realtimestatechart">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_DYby0VP7EeGBa86nseBk7A" name="realtimestatechart">
+      <views xmi:id="_DYby0lP7EeGBa86nseBk7A" name="AbsoluteDeadline">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby01P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby1FP7EeGBa86nseBk7A" name="clock">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYby1VP7EeGBa86nseBk7A" name="RelativeDeadline">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby1lP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+        </elements>
+      </views>
+      <views xmi:id="_DYby11P7EeGBa86nseBk7A" name="Clock">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby2FP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby2VP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby2lP7EeGBa86nseBk7A" name="statechart">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYby21P7EeGBa86nseBk7A" name="Region">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby3FP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby3VP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby3lP7EeGBa86nseBk7A" name="priority">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby31P7EeGBa86nseBk7A" name="parentState">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYby4FP7EeGBa86nseBk7A" name="State">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby4VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby4lP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby41P7EeGBa86nseBk7A" name="outgoingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby5FP7EeGBa86nseBk7A" name="incomingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby5VP7EeGBa86nseBk7A" name="statechart">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby5lP7EeGBa86nseBk7A" name="invariants">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby51P7EeGBa86nseBk7A" name="initial">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby6FP7EeGBa86nseBk7A" name="final">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby6VP7EeGBa86nseBk7A" name="urgent">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYby6lP7EeGBa86nseBk7A" name="Transition">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby61P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby7FP7EeGBa86nseBk7A" name="priority">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby7VP7EeGBa86nseBk7A" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby7lP7EeGBa86nseBk7A" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby71P7EeGBa86nseBk7A" name="statechart">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby8FP7EeGBa86nseBk7A" name="clockResets">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby8VP7EeGBa86nseBk7A" name="clockConstraints">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby8lP7EeGBa86nseBk7A" name="absoluteDeadlines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby81P7EeGBa86nseBk7A" name="blockable">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby9FP7EeGBa86nseBk7A" name="events">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYby9VP7EeGBa86nseBk7A" name="ClockConstraint">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby9lP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby91P7EeGBa86nseBk7A" name="clock">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby-FP7EeGBa86nseBk7A" name="operator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYby-VP7EeGBa86nseBk7A" name="Action">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby-lP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby-1P7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYby_FP7EeGBa86nseBk7A" name="AsynchronousMessageEvent">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYby_VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby_lP7EeGBa86nseBk7A" name="kind">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYby_1P7EeGBa86nseBk7A" name="DoEvent">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbzAFP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbzAVP7EeGBa86nseBk7A" name="kind">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbzAlP7EeGBa86nseBk7A" name="periodLower">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbzA1P7EeGBa86nseBk7A" name="periodUpper">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbzBFP7EeGBa86nseBk7A" name="SynchronizationChannel">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbzBVP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbzBlP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbzB1P7EeGBa86nseBk7A" name="inParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbzCFP7EeGBa86nseBk7A" name="outParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbzCVP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYbzClP7EeGBa86nseBk7A" name="state">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYbzC1P7EeGBa86nseBk7A" name="Synchronization">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYbzDFP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZwFP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZwVP7EeGBa86nseBk7A" name="callee">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZwlP7EeGBa86nseBk7A" name="kind">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcZw1P7EeGBa86nseBk7A" name="RealtimeStatechart">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZxFP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZxVP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZxlP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZx1P7EeGBa86nseBk7A" name="behavioralElement">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZyFP7EeGBa86nseBk7A" name="embeddingRegion">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZyVP7EeGBa86nseBk7A" name="history">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZylP7EeGBa86nseBk7A" name="eventQueueSize">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZy1P7EeGBa86nseBk7A" name="securityLevel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZzFP7EeGBa86nseBk7A" name="utilisation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZzVP7EeGBa86nseBk7A" name="scheduleDocument">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcZzlP7EeGBa86nseBk7A" name="Message">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZz1P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ0FP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ0VP7EeGBa86nseBk7A" name="callee">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcZ0lP7EeGBa86nseBk7A" name="EntryEvent">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZ01P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ1FP7EeGBa86nseBk7A" name="kind">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ1VP7EeGBa86nseBk7A" name="clockResets">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcZ1lP7EeGBa86nseBk7A" name="ExitEvent">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZ11P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ2FP7EeGBa86nseBk7A" name="kind">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ2VP7EeGBa86nseBk7A" name="clockResets">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcZ2lP7EeGBa86nseBk7A" name="EntryPoint">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZ21P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ3FP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ3VP7EeGBa86nseBk7A" name="outgoingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ3lP7EeGBa86nseBk7A" name="incomingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ31P7EeGBa86nseBk7A" name="statechart">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcZ4FP7EeGBa86nseBk7A" name="ExitPoint">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZ4VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ4lP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ41P7EeGBa86nseBk7A" name="outgoingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ5FP7EeGBa86nseBk7A" name="incomingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ5VP7EeGBa86nseBk7A" name="statechart">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcZ5lP7EeGBa86nseBk7A" name="StateEntryPoint">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZ51P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ6FP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ6VP7EeGBa86nseBk7A" name="outgoingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ6lP7EeGBa86nseBk7A" name="incomingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ61P7EeGBa86nseBk7A" name="statechart">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ7FP7EeGBa86nseBk7A" name="state">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ7VP7EeGBa86nseBk7A" name="entryPoint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcZ7lP7EeGBa86nseBk7A" name="StateExitPoint">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZ71P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ8FP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ8VP7EeGBa86nseBk7A" name="outgoingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ8lP7EeGBa86nseBk7A" name="incomingTransitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ81P7EeGBa86nseBk7A" name="statechart">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ9FP7EeGBa86nseBk7A" name="state">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ9VP7EeGBa86nseBk7A" name="exitPoint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_DYcZ9lP7EeGBa86nseBk7A" documentation="Views repository for component GenPackage" name="component">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_DYcZ91P7EeGBa86nseBk7A" name="component">
+      <views xmi:id="_DYcZ-FP7EeGBa86nseBk7A" name="ContinuousPort">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcZ-VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ-lP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ-1P7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ_FP7EeGBa86nseBk7A" name="incomingConnectors">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ_VP7EeGBa86nseBk7A" name="outgoingConnectors">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ_lP7EeGBa86nseBk7A" name="component">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcZ_1P7EeGBa86nseBk7A" name="kind">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaAFP7EeGBa86nseBk7A" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcaAVP7EeGBa86nseBk7A" name="DiscretePort">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcaAlP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaA1P7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaBFP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaBVP7EeGBa86nseBk7A" name="incomingConnectors">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaBlP7EeGBa86nseBk7A" name="outgoingConnectors">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaB1P7EeGBa86nseBk7A" name="component">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaCFP7EeGBa86nseBk7A" name="behavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaCVP7EeGBa86nseBk7A" name="refines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaClP7EeGBa86nseBk7A" name="senderMessageInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaC1P7EeGBa86nseBk7A" name="receiverMessageInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaDFP7EeGBa86nseBk7A" name="adaptationBehavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaDVP7EeGBa86nseBk7A" name="roleAndAdaptationBehavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcaDlP7EeGBa86nseBk7A" name="ComponentPart">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcaD1P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaEFP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaEVP7EeGBa86nseBk7A" name="componentType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaElP7EeGBa86nseBk7A" name="parentComponent">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaE1P7EeGBa86nseBk7A" name="fromRev">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaFFP7EeGBa86nseBk7A" name="toRev">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaFVP7EeGBa86nseBk7A" name="delegation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcaFlP7EeGBa86nseBk7A" name="StructuredComponent">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcaF1P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaGFP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaGVP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaGlP7EeGBa86nseBk7A" name="referencingComponentParts">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaG1P7EeGBa86nseBk7A" name="componentType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYcaHFP7EeGBa86nseBk7A" name="AtomicComponent">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYcaHVP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYcaHlP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA0FP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA0VP7EeGBa86nseBk7A" name="referencingComponentParts">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA0lP7EeGBa86nseBk7A" name="componentType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA01P7EeGBa86nseBk7A" name="behavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYdA1FP7EeGBa86nseBk7A" name="Assembly">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYdA1VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA1lP7EeGBa86nseBk7A" name="fromPort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA11P7EeGBa86nseBk7A" name="toPort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA2FP7EeGBa86nseBk7A" name="parentComponent">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA2VP7EeGBa86nseBk7A" name="behavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA2lP7EeGBa86nseBk7A" name="to">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA21P7EeGBa86nseBk7A" name="from">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA3FP7EeGBa86nseBk7A" name="coordinationPattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYdA3VP7EeGBa86nseBk7A" name="Delegation">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYdA3lP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA31P7EeGBa86nseBk7A" name="fromPort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA4FP7EeGBa86nseBk7A" name="toPort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA4VP7EeGBa86nseBk7A" name="parentComponent">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA4lP7EeGBa86nseBk7A" name="componentPart">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYdA41P7EeGBa86nseBk7A" name="HybridPort">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYdA5FP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA5VP7EeGBa86nseBk7A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA5lP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA51P7EeGBa86nseBk7A" name="incomingConnectors">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA6FP7EeGBa86nseBk7A" name="outgoingConnectors">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA6VP7EeGBa86nseBk7A" name="component">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA6lP7EeGBa86nseBk7A" name="behavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA61P7EeGBa86nseBk7A" name="refines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA7FP7EeGBa86nseBk7A" name="senderMessageInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA7VP7EeGBa86nseBk7A" name="receiverMessageInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA7lP7EeGBa86nseBk7A" name="adaptationBehavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA71P7EeGBa86nseBk7A" name="roleAndAdaptationBehavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA8FP7EeGBa86nseBk7A" name="kind">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA8VP7EeGBa86nseBk7A" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_DYdA8lP7EeGBa86nseBk7A" documentation="Views repository for core GenPackage" name="core">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_DYdA81P7EeGBa86nseBk7A" name="core">
+      <views xmi:id="_DYdA9FP7EeGBa86nseBk7A" name="NaturalNumber">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYdA9VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA9lP7EeGBa86nseBk7A" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA91P7EeGBa86nseBk7A" name="infinity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_DYdA-FP7EeGBa86nseBk7A" name="Cardinality">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYdA-VP7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+        </elements>
+      </views>
+      <views xmi:id="_DYdA-lP7EeGBa86nseBk7A" name="ActivityCallExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_DYdA-1P7EeGBa86nseBk7A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA_FP7EeGBa86nseBk7A" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA_VP7EeGBa86nseBk7A" name="callee">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYdA_lP7EeGBa86nseBk7A" name="activity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

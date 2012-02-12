@@ -156,11 +156,6 @@ public class ModelinstanceEditor
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, ITabbedPropertySheetPageContributor {
 	
 	/**
-	 * @generated NOT
-	 */
-	public static final String PROPERTIES_CONTRIBUTOR = "de.fujaba.properties";
-
-	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1883,6 +1878,6 @@ public class ModelinstanceEditor
 	 * @generated NOT
 	 */
 	public String getContributorId() {
-	    return PROPERTIES_CONTRIBUTOR;
+	    return ModelinstanceEditorPlugin.ID;
 	}
 }
