@@ -77,7 +77,7 @@ Bundle-ActivationPolicy: lazy
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
 «ENDIF-»
 «FOREACH getAllRequiredPlugins()->asSequence() AS id-»
- «REM»«IF id.xpandSplit('\\.')->last() = 'edit'»«IF id <> 'org.eclipse.emf.ecore.edit'»«id».eef;visibility:=reexport,«ENDIF»«ENDIF»«ENDREM»«IF id.xpandSplit('\\.')->last() = 'edit'»«IF id = 'de.uni_paderborn.fujaba.muml.model.edit'»«id».eef;visibility:=reexport,«ENDIF»«ENDIF»
+ «IF id.xpandSplit('\\.')->last() = 'edit'»«id».eef;visibility:=reexport,«ENDIF»
  «id»;visibility:=reexport,
 «ENDFOREACH-»
  org.eclipse.gef;visibility:=reexport,

@@ -18,6 +18,8 @@ import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gef.KeyHandler;
+import org.eclipse.gef.KeyStroke;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
@@ -42,6 +44,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorMatchingStrategy;
@@ -387,6 +390,16 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
 				provider, getDiagramGraphicalViewer());
+
+		// Begin added to bind delete keyboard shortcut to "Delete From Model" action, not Delete From Diagram (default)
+		KeyHandler keyHandler = getDiagramGraphicalViewer().getKeyHandler();
+		keyHandler.put(
+				KeyStroke.getPressed(SWT.DEL, 127, 0),
+				getActionRegistry().getAction(
+						ActionIds.ACTION_DELETE_FROM_MODEL));
+		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0), getActionRegistry()
+				.getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
+		// End added
 	}
 
 }
