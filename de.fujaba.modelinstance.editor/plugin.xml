@@ -41,7 +41,8 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.fujaba.modelinstance.editor">
+            contributorId="de.fujaba.modelinstance.editor"
+            labelProvider="de.fujaba.modelinstance.presentation.ModelinstanceSheetLabelProvider">
          <propertyCategory
                category="default">
          </propertyCategory>
