@@ -1,18 +1,7 @@
-﻿/*
- * Copyright (c) 2007, 2010 Borland Software Corporation and others
- * 
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *    Dmitry Stadnik (Borland) - initial API and implementation
- */
-
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «EXTENSION xpt::GenEditorGenerator»
+«EXTENSION xpt::StringOperations»
 
 «AROUND manifest FOR gmfgen::GenPlugin-»
 Manifest-Version: 1.0
@@ -88,9 +77,11 @@ Bundle-ActivationPolicy: lazy
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
 «ENDIF-»
 «FOREACH getAllRequiredPlugins()->asSequence() AS id-»
+ «REM»«IF id.xpandSplit('\\.')->last() = 'edit'»«IF id <> 'org.eclipse.emf.ecore.edit'»«id».eef;visibility:=reexport,«ENDIF»«ENDIF»«ENDREM»«IF id.xpandSplit('\\.')->last() = 'edit'»«IF id = 'de.uni_paderborn.fujaba.muml.model.edit'»«id».eef;visibility:=reexport,«ENDIF»«ENDIF»
  «id»;visibility:=reexport,
 «ENDFOREACH-»
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.muml.common,
- de.fujaba.newwizard«ENDDEFINE»
+ de.fujaba.newwizard,
+ org.eclipse.emf.eef.runtime«ENDDEFINE»

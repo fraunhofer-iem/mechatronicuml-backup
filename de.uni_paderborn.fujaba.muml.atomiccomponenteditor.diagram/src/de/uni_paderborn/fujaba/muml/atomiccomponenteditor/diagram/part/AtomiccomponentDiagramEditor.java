@@ -16,7 +16,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.palette.PaletteRoot;
@@ -103,14 +102,6 @@ public class AtomiccomponentDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	@Override
-	public PreferencesHint getPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
-	}
-
-	/**
-	 * @generated
-	 */
 	public String getContributorId() {
 		return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.ID;
 	}
@@ -186,83 +177,6 @@ public class AtomiccomponentDiagramEditor extends DiagramDocumentEditor
 	 */
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public void doSave(IProgressMonitor progressMonitor) {
-		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
-				.getDiagramView());
-		super.doSave(progressMonitor);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public boolean isValidDiagramElement(EObject diagramElement) {
-		IAdaptable adapter = new EObjectAdapter(diagramElement);
-		IOperation operation = new CreateDiagramViewOperation(
-				adapter,
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
-				getPreferencesHint());
-		return ViewService.getInstance().provides(operation);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public boolean isValidTopLevelNodeElement(EObject diagramElement,
-			EObject topLevelNodeElement) {
-		Diagram diagram = ViewService
-				.getInstance()
-				.createDiagram(
-						diagramElement,
-						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
-						getPreferencesHint());
-		IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
-		IOperation operation = new CreateNodeViewOperation(adapter, diagram,
-				null, 0, false, getPreferencesHint());
-		return ViewService.getInstance().provides(operation);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public ExtendableElement createDiagramElement() {
-
-		return null;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	public CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
-			Collection<EObject> elements) {
-		List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramUpdater
-				.getModelElementCategory_1000SemanticChildren(diagram);
-		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
-				childDescriptors.size());
-
-		for (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor d : childDescriptors) {
-			if (!elements.contains(d.getModelElement())) {
-				continue;
-			}
-			java.lang.String hint = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
-					.getType(d.getVisualID());
-			IAdaptable elementAdapter = new InitialElementAdapter(
-					d.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, true,
-					getPreferencesHint());
-			viewDescriptors.add(descriptor);
-		}
-		return new CreateViewRequest(viewDescriptors);
 	}
 
 	/**
@@ -388,6 +302,91 @@ public class AtomiccomponentDiagramEditor extends DiagramDocumentEditor
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
 				provider, getDiagramGraphicalViewer());
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void doSave(IProgressMonitor progressMonitor) {
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+				.getDiagramView());
+		super.doSave(progressMonitor);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean isValidDiagramElement(EObject diagramElement) {
+		IAdaptable adapter = new EObjectAdapter(diagramElement);
+		IOperation operation = new CreateDiagramViewOperation(
+				adapter,
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
+				getPreferencesHint());
+		return ViewService.getInstance().provides(operation);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean isValidTopLevelNodeElement(EObject diagramElement,
+			EObject topLevelNodeElement) {
+		Diagram diagram = ViewService
+				.getInstance()
+				.createDiagram(
+						diagramElement,
+						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
+						getPreferencesHint());
+		IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
+		IOperation operation = new CreateNodeViewOperation(adapter, diagram,
+				null, 0, false, getPreferencesHint());
+		return ViewService.getInstance().provides(operation);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public ExtendableElement createDiagramElement() {
+
+		return null;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	public CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
+			Collection<EObject> elements) {
+		List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramUpdater
+				.getModelElementCategory_1000SemanticChildren(diagram);
+		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
+				childDescriptors.size());
+
+		for (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor d : childDescriptors) {
+			if (!elements.contains(d.getModelElement())) {
+				continue;
+			}
+			java.lang.String hint = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
+					.getType(d.getVisualID());
+			IAdaptable elementAdapter = new InitialElementAdapter(
+					d.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
+					elementAdapter, Node.class, hint, ViewUtil.APPEND, true,
+					getPreferencesHint());
+			viewDescriptors.add(descriptor);
+		}
+		return new CreateViewRequest(viewDescriptors);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public PreferencesHint getPreferencesHint() {
+		return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 }

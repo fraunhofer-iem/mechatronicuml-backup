@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.sheet;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;

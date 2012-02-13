@@ -131,7 +131,8 @@
           <propertyTab
              category="domain"
              id="property.tab.domain"
-             label="%tab.domain"/>
+             label="Advanced"/>
+
       </propertyTabs>
    </extension>
 
@@ -561,6 +562,32 @@
          </information>
       </editor>
    </extension>
+<extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram">
+         <propertyTab
+               label="Base"
+               category="domain"
+               id="Base">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+
+<extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="property.section.eef"
+               tab="Base">
+            <input type="org.eclipse.gmf.runtime.notation.View"></input>
+            <input type="org.eclipse.gef.EditPart"></input>
+         </propertySection>
+      </propertySections>
+   </extension>
+
 
 
 

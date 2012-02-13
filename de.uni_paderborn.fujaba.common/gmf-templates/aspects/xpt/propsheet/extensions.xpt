@@ -1,17 +1,44 @@
-«REM»
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
-«AROUND section FOR gmfgen::GenCustomPropertyTab-»
-«IF iD = 'domain'-»
+«REM» EEF: Add Property Tab and Property Section «ENDREM»
+«AROUND extensions FOR gmfgen::GenPropertySheet-»
+«targetDef.proceed()»
 
-«ELSE-»
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="«editorGen.plugin.iD»">
+         <propertyTab
+               label="Base"
+               category="domain"
+               id="Base">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="«editorGen.plugin.iD»">
          <propertySection
-            id="property.section.«iD»" 
-            tab="property.tab.«iD»"
-«EXPAND filter FOR filter-»
-            class="«getQualifiedClassName()»">
-«EXPAND input FOR filter-»
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="property.section.eef"
+               tab="Base">
+            <input type="org.eclipse.gmf.runtime.notation.View"></input>
+            <input type="org.eclipse.gef.EditPart"></input>
          </propertySection>
-«ENDIF-»
+      </propertySections>
+   </extension>
 «ENDAROUND»
-«ENDREM»
+
+
+«REM» Rename Tab Core -> Advanced «ENDREM»
+«AROUND tab FOR gmfgen::GenCustomPropertyTab-»
+«IF iD = 'domain'-»
+          <propertyTab
+             category="domain"
+             id="property.tab.«iD»"
+             label="Advanced"/>
+«ELSE-»
+«targetDef.proceed()»
+«ENDIF»
+«ENDAROUND»

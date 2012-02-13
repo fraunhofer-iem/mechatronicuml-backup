@@ -15,7 +15,25 @@
       </parser>
    </extension>
 
-   <extension point="org.eclipse.ui.contexts" id="ui-context">
+	
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/AtomiccomponentDiagramFile.gif"
+         extensions="atomiccomponent_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+   	<extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
@@ -24,6 +42,85 @@
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
    	</extension>
+
+   	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
+  	     category="de.fujaba/de.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.menus">
+	   <?gmfgen generated="true"?>   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.createDiagram"
+	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
+	            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.createDiagram"
+	            label="Initialize Atomiccomponent Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+
+	
+	<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+	
+	<extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.components.category"
+            name="component">
+         
+         <child
+               class="AtomicComponent"
+               packageNsUri="http://www.fujaba.de/muml/model/component/0.2.1">
+         </child>
+         
+      </category>
+   </extension>
+
+	
+	<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <?gmfgen generated="true"?>  
+      <editor
+            editorId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID">
+         <information
+               editorName="Atomiccomponent Editor"
+               fileExtension="atomiccomponent_diagram"
+               fujabaEditor="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
+               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
+               modelId="Atomiccomponent"
+               useModelElementCategory="true">
+         </information>
+      </editor>
+   </extension>
+
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
@@ -152,7 +249,8 @@
           <propertyTab
              category="domain"
              id="property.tab.domain"
-             label="%tab.domain"/>
+             label="Advanced"/>
+
       </propertyTabs>
    </extension>
 
@@ -186,6 +284,32 @@
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
             <input type="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.navigator.AtomiccomponentAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram">
+         <propertyTab
+               label="Base"
+               category="domain"
+               id="Base">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="property.section.eef"
+               tab="Base">
+            <input type="org.eclipse.gmf.runtime.notation.View"></input>
+            <input type="org.eclipse.gef.EditPart"></input>
          </propertySection>
       </propertySections>
    </extension>
@@ -492,102 +616,4 @@
             pluginid="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"
             priority="1"></factory>
    </extension>
-
-
-
-
-
-<extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="true"?>   
-	   <menuContribution
-	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=diagrams">
-	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.createDiagram"
-	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
-	            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.createDiagram"
-	            label="Initialize Atomiccomponent Diagram"
-	            style="push">
-	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
-          			</visibleWhen>
-	      </command>
-	   </menuContribution>
-	</extension>
-
-<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-
-<extension
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.components.category"
-            name="component">
-         
-         <child
-               class="AtomicComponent"
-               packageNsUri="http://www.fujaba.de/muml/model/component/0.2.1">
-         </child>
-         
-      </category>
-   </extension>
-<extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
-      <editor
-         id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID"
-         name="%editorName"
-         icon="icons/obj16/AtomiccomponentDiagramFile.gif"
-         extensions="atomiccomponent_diagram"
-         default="true"
-         class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramActionBarContributor">
-      </editor>
-   	</extension>
-
-<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-      <?gmfgen generated="true"?>
-  	  <wizard
-  	     name="%newWizardName"
-  	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
-  	     category="de.fujaba/de.fujaba.diagrams"
-  	     class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizard"
-  	     id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizardID">
-  	  	 <description>%newWizardDesc</description>  
-      </wizard>
-   	</extension>
-
-
-<extension
-         point="de.fujaba.newwizard.diagraminformation">
-      <?gmfgen generated="true"?>  
-      <editor
-            editorId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID">
-         <information
-               editorName="Atomiccomponent Editor"
-               fileExtension="atomiccomponent_diagram"
-               fujabaEditor="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
-               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
-               modelId="Atomiccomponent"
-               useModelElementCategory="true">
-         </information>
-      </editor>
-   </extension>
-
-
-
-
-
-
-
-
 </plugin>

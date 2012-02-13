@@ -51,6 +51,8 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.common;bundle-version="1.0.0",
  org.eclipse.emf.ecore.editor,
  de.uni_paderborn.fujaba.common,
- de.fujaba.newwizard
+ de.fujaba.newwizard,
+ de.uni_paderborn.fujaba.muml.model.edit.eef;visibility:=reexport,
+ org.eclipse.emf.eef.runtime
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

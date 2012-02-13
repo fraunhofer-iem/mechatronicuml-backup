@@ -52,7 +52,10 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType AtomicComponent_2002 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2002"); //$NON-NLS-1$
-
+	/**
+	 * @generated
+	 */
+	public static final IElementType HybridPort_3004 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -61,10 +64,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ContinuousPort_3003 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ContinuousPort_3003"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType HybridPort_3004 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
