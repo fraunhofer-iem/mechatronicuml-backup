@@ -48,16 +48,22 @@ public interface AssemblyInstance extends ConnectorInstance {
 
 	/**
 	 * Returns the value of the '<em><b>Propagation Delay Lower Bound</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Propagation Delay Lower Bound</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The lower bound of the propagation delay of this assembly instance. 
+	 * The propagation delay defines how long a message needs from its sender to
+	 * its receiver port instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Propagation Delay Lower Bound</em>' attribute.
 	 * @see #setPropagationDelayLowerBound(int)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_PropagationDelayLowerBound()
-	 * @model
+	 * @model default="0"
 	 * @generated
 	 */
 	int getPropagationDelayLowerBound();
@@ -74,16 +80,22 @@ public interface AssemblyInstance extends ConnectorInstance {
 
 	/**
 	 * Returns the value of the '<em><b>Propagation Delay Upper Bound</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Propagation Delay Upper Bound</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The upper bound of the propagation delay of this assembly instance. 
+	 * The propagation delay defines how long a message needs from its sender to
+	 * its receiver port instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Propagation Delay Upper Bound</em>' attribute.
 	 * @see #setPropagationDelayUpperBound(int)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_PropagationDelayUpperBound()
-	 * @model
+	 * @model default="0"
 	 * @generated
 	 */
 	int getPropagationDelayUpperBound();

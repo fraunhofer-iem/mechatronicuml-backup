@@ -67,7 +67,6 @@ public interface State extends Vertex {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The do event. It is executed periodically while the corresponding state is active.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Do Event</em>' containment reference.
 	 * @see #setDoEvent(DoEvent)
@@ -93,7 +92,6 @@ public interface State extends Vertex {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The exit action is exectuted once when the corresponding state is left.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Exit Event</em>' containment reference.
 	 * @see #setExitEvent(ExitEvent)
@@ -119,7 +117,6 @@ public interface State extends Vertex {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The entry action is exectuted once when the corresponding state is entered.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Entry Event</em>' containment reference.
 	 * @see #setEntryEvent(EntryEvent)

@@ -204,7 +204,6 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Available Clocks</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AvailableClocks()
@@ -298,7 +297,6 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This attribute specifies whether this realtime statechart is embedded into a region or not.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Embedded</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_Embedded()

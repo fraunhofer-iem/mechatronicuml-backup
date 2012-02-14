@@ -15,8 +15,9 @@ import org.eclipse.emf.ecore.EDataType;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a concrete port specification which provides the continuous functionality of a port.
- * \todosd{Add attributes and references in future releases.}
+ * This class represents a concrete port specification which provides the 
+ * continuous functionality of a port. A continuous port emits a signal value.
+ * A signal value has a data type and it has concrete values at all points in time.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -70,6 +71,10 @@ public interface ContinuousPort extends Port {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the data type of the signal value which is emitted or received by 
+	 * the continuous port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(EDataType)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getContinuousPort_Type()

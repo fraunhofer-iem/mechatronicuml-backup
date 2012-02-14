@@ -13,7 +13,12 @@ package de.uni_paderborn.fujaba.muml.model.component;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a hybrid port which acts as a A/D or an D/A converter.
+ * This class represents a hybrid port which acts as a bridge between continuous
+ * controllers and discrete software. A hybrid port emits or receives a signal value 
+ * which has a data type and a concrete value at all points in time. Then, the
+ * hybrid port discretizes the signal value in given time intervals and provides the
+ * value as variable to its Real-Time Statechart. The hybrid port does not define message
+ * interfaces.
  * \todosd{Add attributes and references in future releases.}
  * <!-- end-model-doc -->
  *

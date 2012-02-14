@@ -77,7 +77,6 @@ public interface Transition extends ExtendableElement, Prioritizable {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The state which is the target of this transition.
-	 * \todosd{discuss for v0.2:change cardinality to 1..1}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Vertex)
@@ -105,7 +104,6 @@ public interface Transition extends ExtendableElement, Prioritizable {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The state which is the source of this transition.
-	 * \todosd{discuss for v0.2: change cardinality to 1..1}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Vertex)

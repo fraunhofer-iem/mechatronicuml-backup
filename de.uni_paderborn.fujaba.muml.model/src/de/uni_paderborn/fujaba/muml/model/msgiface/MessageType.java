@@ -40,6 +40,9 @@ public interface MessageType extends Callable, NamedElement {
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This is the message interface where this message type is defined in.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Interface</em>' container reference.
 	 * @see #setMessageInterface(MessageInterface)
 	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageType_MessageInterface()
