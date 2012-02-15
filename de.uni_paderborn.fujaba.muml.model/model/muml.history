@@ -14768,5 +14768,65 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)"
         oldDataValue="self.vertices.oclAsType(State)->isUnique(name) "/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Deployment exists in the software lifecycle to bridge the gap between what a software developer could know about the execution environment and what the environment's developer could know about the deployable software.\footnote{C. Szyperski, Foreword to Proceedings of Component Deployment, IFIP/ACM Working Conference, Berlin 2002}"
+        oldDataValue="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Deployment exists in the software lifecycle to bridge the gap between what a software developer could know about the execution environment and what the environment's developer could know about the deployable software.\footnote{C. Szyperski, Foreword to Proceedings of Component Deployment, IFIP/ACM Working Conference, Berlin 2002}"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on nodes."
+        oldDataValue="Deployment exists in the software lifecycle to bridge the gap between what a software developer could know about the execution environment and what the environment's developer could know about the deployable software.\footnote{C. Szyperski, Foreword to Proceedings of Component Deployment, IFIP/ACM Working Conference, Berlin 2002}"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on nodes."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A target used for the deployment of connectors between component instances."
+        oldDataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on nodes."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on nodes."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Hardware ports  are used to communicate&#xD;&#xA;with other hardware nodes and with component instances."
+        oldDataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on nodes."/>
   </releases>
 </history:History>
