@@ -14761,5 +14761,12 @@
       </operation>
     </changes>
   </releases>
-  <releases/>
+  <releases>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()"
+        oldDataValue="self.vertices.oclAsType(State)->notEmpty()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)"
+        oldDataValue="self.vertices.oclAsType(State)->isUnique(name) "/>
+  </releases>
 </history:History>

@@ -1478,8 +1478,8 @@
           <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="UniqueNameOfStates" value="self.vertices.oclAsType(State)->isUnique(name) "/>
-          <details key="MinOneState" value="self.vertices.oclAsType(State)->notEmpty()"/>
+          <details key="UniqueNameOfStates" value="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)"/>
+          <details key="MinOneState" value="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()"/>
           <details key="NoCycles" value="-- If we are contained within a statechart...&#xA;(not self.embeddingRegion.parentState.statechart.oclIsUndefined())&#xA;&#xA;implies&#xA;&#xA;-- ... then we must not be a super statechart of it.&#xA;(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
