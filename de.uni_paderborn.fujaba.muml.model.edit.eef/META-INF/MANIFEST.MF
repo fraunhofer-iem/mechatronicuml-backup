@@ -12,9 +12,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.modeling.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.common;bundle-version="1.0.0",
  de.fujaba.modelinstance.edit;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.emf.eef.runtime;bundle-version="0.9.1",
- org.eclipse.gef;bundle-version="3.7.1",
- org.eclipse.gmf.runtime.notation;bundle-version="1.4.1"
+ org.eclipse.emf.eef.runtime;bundle-version="0.9.1"
 Export-Package: de.uni_paderborn.fujaba.muml.model.component.providers,
  de.uni_paderborn.fujaba.muml.model.constraint.providers,
  de.uni_paderborn.fujaba.muml.model.core.providers,
