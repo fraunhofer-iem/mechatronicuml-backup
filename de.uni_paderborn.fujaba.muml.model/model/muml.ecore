@@ -1666,7 +1666,7 @@
           <details key="constraints" value="OneOutgoingTransition"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Entry points are defined points on a state that can be used to reach inner states.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
+          <details key="documentation" value="An EntyPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  EntryPoint is used to activate a dedicated inner state of an embedded statechart."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
@@ -1677,7 +1677,7 @@
           <details key="constraints" value="AtMostOneOutgoingTransition"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todoib{\textbf{Suggestion:} Exit points are defined points on a state that can be used to exit inner states.}&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
+          <details key="documentation" value="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  ExitPoint is used to deactivate a dedicated inner state of an embedded statechart."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="AtMostOneOutgoingTransition" value="self.outgoingTransitions->size() &lt;= 1"/>
@@ -1688,7 +1688,7 @@
           <details key="constraints" value="AtLeastOneIncomingTransition"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The entry point that is assigned to a state. It is derived from the entry point of the statechart, the state embeds.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
+          <details key="documentation" value="The StateEntryPoint is assigned to a state. An EntyPoint is an intermediate pseudostate which reference EntryPoints of embedded statecharts. The incoming transitions are chained with the outgoing transition of the referenced EntryPoints on the lower hierarchy level."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="AtLeastOneIncomingTransition" value="self.incomingTransitions ->size()>0"/>
@@ -1703,7 +1703,7 @@
           <details key="constraints" value="OneOutgoingTransition"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The exit point that is assigned to a state. It is derived from the exit point of the statechart, the state embeds.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
+          <details key="documentation" value="The StateExitPoint is assigned to a state. An EntyPoint is an intermediate pseudostate which reference ExitPoints of embedded statecharts. The incoming transition of the referenced ExitPoints on the lower hierarchy level are chained with the outgoing transition of the StateExitPoint."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
