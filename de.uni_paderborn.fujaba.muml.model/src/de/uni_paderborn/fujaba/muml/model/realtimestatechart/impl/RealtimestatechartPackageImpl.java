@@ -1689,7 +1689,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueNameOfStates MinOneState NoCycles"
-		   });																																		
+		   });																																			
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 
@@ -1794,7 +1794,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniqueNameOfStates", "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)",
 			 "MinOneState", "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()",
 			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"
-		   });									
+		   });										
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 
 		   source, 

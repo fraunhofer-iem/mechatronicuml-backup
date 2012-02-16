@@ -1502,7 +1502,11 @@
           </eAnnotations>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddingRegion" eType="#//model/realtimestatechart/Region"
-            eOpposite="#//model/realtimestatechart/Region/statechart"/>
+            eOpposite="#//model/realtimestatechart/Region/statechart">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="If the real-time statechart is embedded into a region of a composite state,&#xD;&#xA;than this reference returns the region of this state. If the real-time statechart&#xD;&#xA;is not embedded, this reference will be undefined."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
             eType="#//model/realtimestatechart/Transition" containment="true" eOpposite="#//model/realtimestatechart/Transition/statechart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -974,7 +974,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "AtLeastOneMessageInterface DiscretePortRequiresBehavior"
-		   });						
+		   });								
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1055,7 +1055,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   new String[] {
 			 "AtLeastOneMessageInterface", "self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))",
 			 "DiscretePortRequiresBehavior", "-- clarify if this also holds for hybrid ports\nnot self.behavior.oclIsUndefined()"
-		   });							
+		   });									
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 

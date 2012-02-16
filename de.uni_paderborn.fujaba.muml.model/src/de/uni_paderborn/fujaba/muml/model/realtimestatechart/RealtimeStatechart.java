@@ -58,6 +58,11 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the real-time statechart is embedded into a region of a composite state,
+	 * than this reference returns the region of this state. If the real-time statechart
+	 * is not embedded, this reference will be undefined.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Embedding Region</em>' container reference.
 	 * @see #setEmbeddingRegion(Region)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_EmbeddingRegion()
