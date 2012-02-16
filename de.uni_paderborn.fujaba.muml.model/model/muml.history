@@ -14828,5 +14828,9 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="Hardware ports  are used to communicate&#xD;&#xA;with other hardware nodes and with component instances."
         oldDataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on nodes."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoint"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoint"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
   </releases>
 </history:History>

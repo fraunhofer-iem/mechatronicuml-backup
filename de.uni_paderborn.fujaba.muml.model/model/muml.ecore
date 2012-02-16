@@ -1696,7 +1696,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
             eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/stateEntryPoints"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoint" lowerBound="1"
-            eType="#//model/realtimestatechart/EntryPoint"/>
+            upperBound="-1" eType="#//model/realtimestatechart/EntryPoint"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="StateExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -1711,7 +1711,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
             eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/stateExitPoints"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoint" lowerBound="1"
-            eType="#//model/realtimestatechart/ExitPoint"/>
+            upperBound="-1" eType="#//model/realtimestatechart/ExitPoint"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="msgiface" nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.1"
