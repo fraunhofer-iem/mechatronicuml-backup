@@ -8,15 +8,18 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,14 +37,14 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
  */
 public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	/**
-	 * The cached value of the '{@link #getEntryPoint() <em>Entry Point</em>}' reference.
+	 * The cached value of the '{@link #getEntryPoint() <em>Entry Point</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEntryPoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected EntryPoint entryPoint;
+	protected EList<EntryPoint> entryPoint;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,37 +69,11 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryPoint getEntryPoint() {
-		if (entryPoint != null && entryPoint.eIsProxy()) {
-			InternalEObject oldEntryPoint = (InternalEObject)entryPoint;
-			entryPoint = (EntryPoint)eResolveProxy(oldEntryPoint);
-			if (entryPoint != oldEntryPoint) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT, oldEntryPoint, entryPoint));
-			}
+	public EList<EntryPoint> getEntryPoint() {
+		if (entryPoint == null) {
+			entryPoint = new EObjectResolvingEList<EntryPoint>(EntryPoint.class, this, RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT);
 		}
 		return entryPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntryPoint basicGetEntryPoint() {
-		return entryPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEntryPoint(EntryPoint newEntryPoint) {
-		EntryPoint oldEntryPoint = entryPoint;
-		entryPoint = newEntryPoint;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT, oldEntryPoint, entryPoint));
 	}
 
 	/**
@@ -195,8 +172,7 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__STATE:
 				return getState();
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
-				if (resolve) return getEntryPoint();
-				return basicGetEntryPoint();
+				return getEntryPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,6 +182,7 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -213,7 +190,8 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 				setState((State)newValue);
 				return;
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
-				setEntryPoint((EntryPoint)newValue);
+				getEntryPoint().clear();
+				getEntryPoint().addAll((Collection<? extends EntryPoint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,7 +209,7 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 				setState((State)null);
 				return;
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
-				setEntryPoint((EntryPoint)null);
+				getEntryPoint().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -248,7 +226,7 @@ public class StateEntryPointImpl extends VertexImpl implements StateEntryPoint {
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__STATE:
 				return getState() != null;
 			case RealtimestatechartPackage.STATE_ENTRY_POINT__ENTRY_POINT:
-				return entryPoint != null;
+				return entryPoint != null && !entryPoint.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

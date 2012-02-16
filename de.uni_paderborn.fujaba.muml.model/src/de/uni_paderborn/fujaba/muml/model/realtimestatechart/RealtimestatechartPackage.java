@@ -1863,7 +1863,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_ENTRY_POINT__STATE = VERTEX_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entry Point</b></em>' reference.
+	 * The feature id for the '<em><b>Entry Point</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1954,7 +1954,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_EXIT_POINT__STATE = VERTEX_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Exit Point</b></em>' reference.
+	 * The feature id for the '<em><b>Exit Point</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2978,10 +2978,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getStateEntryPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getEntryPoint <em>Entry Point</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getEntryPoint <em>Entry Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entry Point</em>'.
+	 * @return the meta object for the reference list '<em>Entry Point</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getEntryPoint()
 	 * @see #getStateEntryPoint()
 	 * @generated
@@ -3010,10 +3010,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getStateExitPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getExitPoint <em>Exit Point</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getExitPoint <em>Exit Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Exit Point</em>'.
+	 * @return the meta object for the reference list '<em>Exit Point</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getExitPoint()
 	 * @see #getStateExitPoint()
 	 * @generated
@@ -3862,7 +3862,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass STATE_ENTRY_POINT = eINSTANCE.getStateEntryPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Entry Point</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Entry Point</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3888,7 +3888,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass STATE_EXIT_POINT = eINSTANCE.getStateExitPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Exit Point</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Exit Point</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -947,7 +947,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "self.vertices.oclAsType(State)->isUnique(name) ";
+	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)";
 
 	/**
 	 * Validates the UniqueNameOfStates constraint of '<em>Realtime Statechart</em>'.
@@ -976,7 +976,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION = "self.vertices.oclAsType(State)->notEmpty()";
+	protected static final String REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION = "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()";
 
 	/**
 	 * Validates the MinOneState constraint of '<em>Realtime Statechart</em>'.

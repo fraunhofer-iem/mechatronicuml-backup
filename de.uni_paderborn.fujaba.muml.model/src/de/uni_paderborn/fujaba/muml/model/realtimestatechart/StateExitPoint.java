@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,10 +15,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The exit point that is assigned to a state. It is derived from the exit point of the statechart, the state embeds.
- * \paragraph{Note}
- * We need this subclass, because GMF forbids using the same semantic
- * element for different notational elements within the same container.
+ * The StateExitPoint is assigned to a state. An EntyPoint is an intermediate pseudostate which reference ExitPoints of embedded statecharts. The incoming transition of the referenced ExitPoints on the lower hierarchy level are chained with the outgoing transition of the StateExitPoint.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -34,30 +33,20 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  */
 public interface StateExitPoint extends Vertex {
 	/**
-	 * Returns the value of the '<em><b>Exit Point</b></em>' reference.
+	 * Returns the value of the '<em><b>Exit Point</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Exit Point</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exit Point</em>' reference.
-	 * @see #setExitPoint(ExitPoint)
+	 * @return the value of the '<em>Exit Point</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateExitPoint_ExitPoint()
 	 * @model required="true"
 	 * @generated
 	 */
-	ExitPoint getExitPoint();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getExitPoint <em>Exit Point</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Exit Point</em>' reference.
-	 * @see #getExitPoint()
-	 * @generated
-	 */
-	void setExitPoint(ExitPoint value);
+	EList<ExitPoint> getExitPoint();
 
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' container reference.

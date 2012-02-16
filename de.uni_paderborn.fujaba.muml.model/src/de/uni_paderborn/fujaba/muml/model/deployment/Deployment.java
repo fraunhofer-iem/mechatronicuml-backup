@@ -16,6 +16,10 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguratio
  * A representation of the model object '<em><b>Deployment</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Deployment exists in the software lifecycle to bridge the gap between what a software developer could know about the execution environment and what the environment's developer could know about the deployable software.\footnote{C. Szyperski, Foreword to Proceedings of Component Deployment, IFIP/ACM Working Conference, Berlin 2002}
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

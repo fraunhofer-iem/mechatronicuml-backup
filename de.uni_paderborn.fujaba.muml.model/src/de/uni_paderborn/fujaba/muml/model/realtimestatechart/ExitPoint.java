@@ -13,10 +13,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * \todoib{\textbf{Suggestion:} Exit points are defined points on a state that can be used to exit inner states.}
- * \paragraph{Note}
- * We need this subclass, because GMF forbids using the same semantic
- * element for different notational elements within the same container.
+ * An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  ExitPoint is used to deactivate a dedicated inner state of an embedded statechart.
  * <!-- end-model-doc -->
  *
  *

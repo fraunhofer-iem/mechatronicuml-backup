@@ -1625,11 +1625,11 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(stateEntryPointEClass, StateEntryPoint.class, "StateEntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateEntryPoint_State(), this.getState(), this.getState_StateEntryPoints(), "state", null, 1, 1, StateEntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStateEntryPoint_EntryPoint(), this.getEntryPoint(), null, "entryPoint", null, 1, 1, StateEntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateEntryPoint_EntryPoint(), this.getEntryPoint(), null, "entryPoint", null, 1, -1, StateEntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateExitPointEClass, StateExitPoint.class, "StateExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateExitPoint_State(), this.getState(), this.getState_StateExitPoints(), "state", null, 1, 1, StateExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStateExitPoint_ExitPoint(), this.getExitPoint(), null, "exitPoint", null, 1, 1, StateExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateExitPoint_ExitPoint(), this.getExitPoint(), null, "exitPoint", null, 1, -1, StateExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(synchronizationKindEEnum, SynchronizationKind.class, "SynchronizationKind");
@@ -1791,8 +1791,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (realtimeStatechartEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueNameOfStates", "self.vertices.oclAsType(State)->isUnique(name) ",
-			 "MinOneState", "self.vertices.oclAsType(State)->notEmpty()",
+			 "UniqueNameOfStates", "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)",
+			 "MinOneState", "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()",
 			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"
 		   });									
 		addAnnotation

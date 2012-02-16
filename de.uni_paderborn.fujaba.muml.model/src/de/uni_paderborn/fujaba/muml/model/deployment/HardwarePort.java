@@ -16,6 +16,11 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * A representation of the model object '<em><b>Hardware Port</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Hardware ports  are used to communicate
+ * with other hardware nodes and with component instances.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

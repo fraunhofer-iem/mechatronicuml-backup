@@ -16,6 +16,11 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
  * A representation of the model object '<em><b>Hardware Node</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A run-time computational resource which generally has at least memory and processing capabilities. 
+ * Component instances may reside on nodes.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

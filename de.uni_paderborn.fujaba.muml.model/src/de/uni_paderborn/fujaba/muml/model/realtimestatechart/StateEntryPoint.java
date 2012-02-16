@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,10 +15,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The entry point that is assigned to a state. It is derived from the entry point of the statechart, the state embeds.
- * \paragraph{Note}
- * We need this subclass, because GMF forbids using the same semantic
- * element for different notational elements within the same container.
+ * The StateEntryPoint is assigned to a state. An EntyPoint is an intermediate pseudostate which reference EntryPoints of embedded statecharts. The incoming transitions are chained with the outgoing transition of the referenced EntryPoints on the lower hierarchy level.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -34,30 +33,20 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  */
 public interface StateEntryPoint extends Vertex {
 	/**
-	 * Returns the value of the '<em><b>Entry Point</b></em>' reference.
+	 * Returns the value of the '<em><b>Entry Point</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entry Point</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entry Point</em>' reference.
-	 * @see #setEntryPoint(EntryPoint)
+	 * @return the value of the '<em>Entry Point</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateEntryPoint_EntryPoint()
 	 * @model required="true"
 	 * @generated
 	 */
-	EntryPoint getEntryPoint();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getEntryPoint <em>Entry Point</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entry Point</em>' reference.
-	 * @see #getEntryPoint()
-	 * @generated
-	 */
-	void setEntryPoint(EntryPoint value);
+	EList<EntryPoint> getEntryPoint();
 
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' container reference.

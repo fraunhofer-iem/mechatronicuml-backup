@@ -44,7 +44,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Behavior;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='self.vertices.oclAsType(State)->isUnique(name) ' MinOneState='self.vertices.oclAsType(State)->notEmpty()' NoCycles='-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)' MinOneState='self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()' NoCycles='-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueNameOfStates MinOneState NoCycles'"
  * @generated
  */

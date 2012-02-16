@@ -437,7 +437,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });	
+		   });					
 	}
 
 	/**
@@ -447,13 +447,13 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
 		addAnnotation
 		  (hardwareNodeEClass, 
 		   source, 
 		   new String[] {
 			 "SameConfiguration", "self.deployedInstance.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"
-		   });
+		   });			
 	}
 
 } //DeploymentPackageImpl
