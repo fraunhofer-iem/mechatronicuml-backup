@@ -101,7 +101,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_wNInMVQVEeGwRdAy0MocEA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_wNInMlQVEeGwRdAy0MocEA" fontColor="4210752" fontName="Sans" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="muml.ecore#//model/msgiface/MessageInterface/superType"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wNInM1QVEeGwRdAy0MocEA" points="[66, 10, 66, 10]$[119, 10, 119, 10]$[119, 90, 119, 90]$[9, 90, 9, 90]$[9, 21, 9, 21]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wNInM1QVEeGwRdAy0MocEA" points="[71, 0, 71, 0]$[119, 0, 119, 0]$[119, 90, 119, 90]$[9, 90, 9, 90]$[9, 20, 9, 20]"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_wNInOFQVEeGwRdAy0MocEA" type="3002" source="_wM6kwFQVEeGwRdAy0MocEA" target="_wNGK8FQVEeGwRdAy0MocEA">
     <children xmi:type="notation:Node" xmi:id="_wNInPFQVEeGwRdAy0MocEA" type="4011">
