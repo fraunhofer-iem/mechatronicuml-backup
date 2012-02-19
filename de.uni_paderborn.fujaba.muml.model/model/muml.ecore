@@ -296,7 +296,7 @@
             <details key="documentation" value="Return the toPort as a DiscretePort if possible"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fromDiscretePort" ordered="false"
@@ -306,7 +306,7 @@
             <details key="documentation" value="Return the fromPort as a DiscretePort if possible"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="toContinuousPort" ordered="false"
@@ -316,7 +316,7 @@
             <details key="documentation" value="Return the toPort as a ContinuesPort if possible"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort) then&#xA;&#x9;self.toPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::ContinuousPort) then&#xA;&#x9;self.toPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fromContinuousPort"
@@ -326,7 +326,7 @@
             <details key="documentation" value="Return the fromPort as a ContinuousPort if possible"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) then&#xA;&#x9;self.fromPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::ContinuousPort) then&#xA;&#x9;self.fromPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

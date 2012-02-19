@@ -1092,25 +1092,25 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getConnectorType_ToDiscretePort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then\n\tself.toPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif"
+			 "derivation", "if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::DiscretePort) then\n\tself.toPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif"
 		   });			
 		addAnnotation
 		  (getConnectorType_FromDiscretePort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::DiscretePort) then\n\tself.fromPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif"
+			 "derivation", "if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::DiscretePort) then\n\tself.fromPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif"
 		   });			
 		addAnnotation
 		  (getConnectorType_ToContinuousPort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort) then\n\tself.toPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif"
+			 "derivation", "if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::ContinuousPort) then\n\tself.toPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif"
 		   });			
 		addAnnotation
 		  (getConnectorType_FromContinuousPort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) then\n\tself.fromPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif"
+			 "derivation", "if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::ContinuousPort) then\n\tself.fromPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif"
 		   });				
 		addAnnotation
 		  (assemblyEClass, 

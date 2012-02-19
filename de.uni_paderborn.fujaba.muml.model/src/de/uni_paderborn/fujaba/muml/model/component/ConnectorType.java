@@ -128,7 +128,7 @@ public interface ConnectorType extends ExtendableElement {
 	 * @see #setToDiscretePort(DiscretePort)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getConnectorType_ToDiscretePort()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then\n\tself.toPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::DiscretePort) then\n\tself.toPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif'"
 	 * @generated
 	 */
 	DiscretePort getToDiscretePort();
@@ -154,7 +154,7 @@ public interface ConnectorType extends ExtendableElement {
 	 * @see #setFromDiscretePort(DiscretePort)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getConnectorType_FromDiscretePort()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::DiscretePort) then\n\tself.fromPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::DiscretePort) then\n\tself.fromPort.oclAsType(component::DiscretePort)\nelse\n\tnull\nendif'"
 	 * @generated
 	 */
 	DiscretePort getFromDiscretePort();
@@ -180,7 +180,7 @@ public interface ConnectorType extends ExtendableElement {
 	 * @see #setToContinuousPort(ContinuousPort)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getConnectorType_ToContinuousPort()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort) then\n\tself.toPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::ContinuousPort) then\n\tself.toPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif'"
 	 * @generated
 	 */
 	ContinuousPort getToContinuousPort();
@@ -206,7 +206,7 @@ public interface ConnectorType extends ExtendableElement {
 	 * @see #setFromContinuousPort(ContinuousPort)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getConnectorType_FromContinuousPort()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) then\n\tself.fromPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::ContinuousPort) then\n\tself.fromPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif'"
 	 * @generated
 	 */
 	ContinuousPort getFromContinuousPort();

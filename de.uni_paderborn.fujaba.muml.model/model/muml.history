@@ -14901,5 +14901,17 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/embeddingRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="If the real-time statechart is embedded into a region of a composite state,&#xD;&#xA;than this reference returns the region of this state. If the real-time statechart&#xD;&#xA;is not embedded, this reference will be undefined."
         oldDataValue="If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromDiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/toContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::ContinuousPort) then&#xA;&#x9;self.toPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.toPort.oclIsUndefined() and self.toPort.oclIsKindOf(component::ContinuousPort) then&#xA;&#x9;self.toPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/fromContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::ContinuousPort) then&#xA;&#x9;self.fromPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"
+        oldDataValue="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsKindOf(component::ContinuousPort) then&#xA;&#x9;self.fromPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
   </releases>
 </history:History>
