@@ -1164,6 +1164,13 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDelegation_DelegationBetweenDiscretePortsRequiresSameCoordinationPattern(delegation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegation_DelegationBetweenDiscretePortsRequiresSameRoles(delegation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegation_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_ValidDiscreteInPortCombination(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_ValidDiscreteOutPortCombination(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_ValidDiscreteInOutPortCombination(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_ValidContinuousInPortCombination(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_ValidContinuousOutPortCombination(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_ValidHybridInPortCombination(delegation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegation_ValidHybridOutPortCombination(delegation, diagnostics, context);
 		return result;
 	}
 
@@ -1333,6 +1340,230 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart",
 				 DELEGATION__DISCRETE_MULTI_PORT_DELEGATION_REQUIRES_MULTI_PORT_OR_SINGLE_PORT_AND_MULTI_PART__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidDiscreteInPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__VALID_DISCRETE_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidDiscreteInPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_ValidDiscreteInPortCombination(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidDiscreteInPortCombination",
+				 DELEGATION__VALID_DISCRETE_IN_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidDiscreteOutPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__VALID_DISCRETE_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidDiscreteOutPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_ValidDiscreteOutPortCombination(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidDiscreteOutPortCombination",
+				 DELEGATION__VALID_DISCRETE_OUT_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidDiscreteInOutPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__VALID_DISCRETE_IN_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidDiscreteInOutPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_ValidDiscreteInOutPortCombination(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidDiscreteInOutPortCombination",
+				 DELEGATION__VALID_DISCRETE_IN_OUT_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidContinuousInPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__VALID_CONTINUOUS_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidContinuousInPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_ValidContinuousInPortCombination(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidContinuousInPortCombination",
+				 DELEGATION__VALID_CONTINUOUS_IN_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidContinuousOutPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidContinuousOutPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_ValidContinuousOutPortCombination(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidContinuousOutPortCombination",
+				 DELEGATION__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidHybridInPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidHybridInPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_ValidHybridInPortCombination(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidHybridInPortCombination",
+				 DELEGATION__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidHybridOutPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidHybridOutPortCombination constraint of '<em>Delegation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegation_ValidHybridOutPortCombination(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION,
+				 delegation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidHybridOutPortCombination",
+				 DELEGATION__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

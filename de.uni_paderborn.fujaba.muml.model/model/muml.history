@@ -15590,5 +15590,75 @@
         featureName="defaultValueLiteral" dataValue=""/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/isDiscreteInOutPort"
         featureName="defaultValueLiteral" dataValue="false" oldDataValue=""/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+          featureName="key" dataValue="ValidDiscreteInPortCombination"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+          featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+          featureName="key" dataValue="ValidDiscreteOutPortCombination"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+          featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+          featureName="key" dataValue="ValidDiscreteInOutPortCombination"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+          featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+          featureName="key" dataValue="ValidContinuousInPortCombination"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+          featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+          featureName="key" dataValue="ValidContinuousOutPortCombination"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+          featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10"
+          featureName="key" dataValue="ValidHybridInPortCombination"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10"
+          featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11"
+          featureName="key" dataValue="ValidHybridOutPortCombination"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11"
+          featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"
+        oldDataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"
+        oldDataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+        featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"
+        oldDataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+        featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"
+        oldDataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10"
+        featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"
+        oldDataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11"
+        featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"
+        oldDataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
+        oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
   </releases>
 </history:History>
