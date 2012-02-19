@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.component.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -26,6 +27,10 @@ import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#isIsContinuousInPort <em>Is Continuous In Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#isIsContinuousOutPort <em>Is Continuous Out Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#isIsHybridInPort <em>Is Hybrid In Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#isIsHybridOutPort <em>Is Hybrid Out Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +66,46 @@ public class HybridPortImpl extends DiscretePortImpl implements HybridPort {
 	 * @ordered
 	 */
 	protected EDataType type;
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsContinuousInPort() <em>Is Continuous In Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsContinuousInPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_CONTINUOUS_IN_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsContinuousOutPort() <em>Is Continuous Out Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsContinuousOutPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_CONTINUOUS_OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsHybridInPort() <em>Is Hybrid In Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsHybridInPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_HYBRID_IN_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.HYBRID_PORT__IS_HYBRID_IN_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsHybridOutPort() <em>Is Hybrid Out Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsHybridOutPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_HYBRID_OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.HYBRID_PORT__IS_HYBRID_OUT_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,6 +190,42 @@ public class HybridPortImpl extends DiscretePortImpl implements HybridPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsContinuousInPort() {
+		return (Boolean)IS_CONTINUOUS_IN_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsContinuousOutPort() {
+		return (Boolean)IS_CONTINUOUS_OUT_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsHybridInPort() {
+		return (Boolean)IS_HYBRID_IN_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsHybridOutPort() {
+		return (Boolean)IS_HYBRID_OUT_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -153,6 +234,14 @@ public class HybridPortImpl extends DiscretePortImpl implements HybridPort {
 			case ComponentPackage.HYBRID_PORT__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
+			case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_IN_PORT:
+				return isIsContinuousInPort();
+			case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_OUT_PORT:
+				return isIsContinuousOutPort();
+			case ComponentPackage.HYBRID_PORT__IS_HYBRID_IN_PORT:
+				return isIsHybridInPort();
+			case ComponentPackage.HYBRID_PORT__IS_HYBRID_OUT_PORT:
+				return isIsHybridOutPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,6 +295,14 @@ public class HybridPortImpl extends DiscretePortImpl implements HybridPort {
 				return kind != KIND_EDEFAULT;
 			case ComponentPackage.HYBRID_PORT__TYPE:
 				return type != null;
+			case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_IN_PORT:
+				return IS_CONTINUOUS_IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_OUT_PORT:
+				return IS_CONTINUOUS_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.HYBRID_PORT__IS_HYBRID_IN_PORT:
+				return IS_HYBRID_IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.HYBRID_PORT__IS_HYBRID_OUT_PORT:
+				return IS_HYBRID_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,6 +318,8 @@ public class HybridPortImpl extends DiscretePortImpl implements HybridPort {
 			switch (derivedFeatureID) {
 				case ComponentPackage.HYBRID_PORT__KIND: return ComponentPackage.CONTINUOUS_PORT__KIND;
 				case ComponentPackage.HYBRID_PORT__TYPE: return ComponentPackage.CONTINUOUS_PORT__TYPE;
+				case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_IN_PORT: return ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT;
+				case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_OUT_PORT: return ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT;
 				default: return -1;
 			}
 		}
@@ -238,6 +337,8 @@ public class HybridPortImpl extends DiscretePortImpl implements HybridPort {
 			switch (baseFeatureID) {
 				case ComponentPackage.CONTINUOUS_PORT__KIND: return ComponentPackage.HYBRID_PORT__KIND;
 				case ComponentPackage.CONTINUOUS_PORT__TYPE: return ComponentPackage.HYBRID_PORT__TYPE;
+				case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT: return ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_IN_PORT;
+				case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT: return ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_OUT_PORT;
 				default: return -1;
 			}
 		}

@@ -354,6 +354,24 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getContinuousPort_IsContinuousInPort() {
+		return (EAttribute)continuousPortEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContinuousPort_IsContinuousOutPort() {
+		return (EAttribute)continuousPortEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDiscretePort() {
 		return discretePortEClass;
 	}
@@ -401,6 +419,33 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EReference getDiscretePort_RoleAndAdaptationBehavior() {
 		return (EReference)discretePortEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiscretePort_IsDiscreteInPort() {
+		return (EAttribute)discretePortEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiscretePort_IsDiscreteOutPort() {
+		return (EAttribute)discretePortEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiscretePort_IsDiscreteInOutPort() {
+		return (EAttribute)discretePortEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -624,6 +669,24 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getConnectorType_ToHybridPort() {
+		return (EReference)connectorTypeEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConnectorType_FromHybridPort() {
+		return (EReference)connectorTypeEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAssembly() {
 		return assemblyEClass;
 	}
@@ -696,6 +759,24 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getHybridPort_IsHybridInPort() {
+		return (EAttribute)hybridPortEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHybridPort_IsHybridOutPort() {
+		return (EAttribute)hybridPortEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getComponentKind() {
 		return componentKindEEnum;
 	}
@@ -753,6 +834,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		continuousPortEClass = createEClass(CONTINUOUS_PORT);
 		createEAttribute(continuousPortEClass, CONTINUOUS_PORT__KIND);
 		createEReference(continuousPortEClass, CONTINUOUS_PORT__TYPE);
+		createEAttribute(continuousPortEClass, CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT);
+		createEAttribute(continuousPortEClass, CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT);
 
 		discretePortEClass = createEClass(DISCRETE_PORT);
 		createEReference(discretePortEClass, DISCRETE_PORT__REFINES);
@@ -760,6 +843,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(discretePortEClass, DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE);
 		createEReference(discretePortEClass, DISCRETE_PORT__ADAPTATION_BEHAVIOR);
 		createEReference(discretePortEClass, DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR);
+		createEAttribute(discretePortEClass, DISCRETE_PORT__IS_DISCRETE_IN_PORT);
+		createEAttribute(discretePortEClass, DISCRETE_PORT__IS_DISCRETE_OUT_PORT);
+		createEAttribute(discretePortEClass, DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT);
 
 		componentPartEClass = createEClass(COMPONENT_PART);
 		createEReference(componentPartEClass, COMPONENT_PART__COMPONENT_TYPE);
@@ -785,6 +871,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(connectorTypeEClass, CONNECTOR_TYPE__FROM_DISCRETE_PORT);
 		createEReference(connectorTypeEClass, CONNECTOR_TYPE__TO_CONTINUOUS_PORT);
 		createEReference(connectorTypeEClass, CONNECTOR_TYPE__FROM_CONTINUOUS_PORT);
+		createEReference(connectorTypeEClass, CONNECTOR_TYPE__TO_HYBRID_PORT);
+		createEReference(connectorTypeEClass, CONNECTOR_TYPE__FROM_HYBRID_PORT);
 
 		assemblyEClass = createEClass(ASSEMBLY);
 		createEReference(assemblyEClass, ASSEMBLY__TO);
@@ -797,6 +885,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		behavioralConnectorEClass = createEClass(BEHAVIORAL_CONNECTOR);
 
 		hybridPortEClass = createEClass(HYBRID_PORT);
+		createEAttribute(hybridPortEClass, HYBRID_PORT__IS_HYBRID_IN_PORT);
+		createEAttribute(hybridPortEClass, HYBRID_PORT__IS_HYBRID_OUT_PORT);
 
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
@@ -876,6 +966,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(continuousPortEClass, ContinuousPort.class, "ContinuousPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContinuousPort_Kind(), this.getContinuousPortDirectionKind(), "kind", null, 1, 1, ContinuousPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContinuousPort_Type(), theEcorePackage.getEDataType(), null, "type", null, 1, 1, ContinuousPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContinuousPort_IsContinuousInPort(), ecorePackage.getEBoolean(), "isContinuousInPort", "false", 0, 1, ContinuousPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContinuousPort_IsContinuousOutPort(), ecorePackage.getEBoolean(), "isContinuousOutPort", "false", 0, 1, ContinuousPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(discretePortEClass, DiscretePort.class, "DiscretePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscretePort_Refines(), thePatternPackage.getRole(), thePatternPackage.getRole_Port(), "refines", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -883,6 +975,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getDiscretePort_ReceiverMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "receiverMessageInterface", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePort_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePort_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiscretePort_IsDiscreteInPort(), ecorePackage.getEBoolean(), "isDiscreteInPort", "false", 0, 1, DiscretePort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiscretePort_IsDiscreteOutPort(), ecorePackage.getEBoolean(), "isDiscreteOutPort", "false", 0, 1, DiscretePort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiscretePort_IsDiscreteInOutPort(), ecorePackage.getEBoolean(), "isDiscreteInOutPort", "false", 0, 1, DiscretePort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentPartEClass, ComponentPart.class, "ComponentPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentPart_ComponentType(), this.getComponent(), this.getComponent_ReferencingComponentParts(), "componentType", null, 1, 1, ComponentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -904,10 +999,12 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getConnectorType_FromPort(), this.getPort(), this.getPort_OutgoingConnectors(), "fromPort", null, 1, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorType_ToPort(), this.getPort(), this.getPort_IncomingConnectors(), "toPort", null, 1, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorType_ParentComponent(), this.getStructuredComponent(), this.getStructuredComponent_Connectors(), "parentComponent", null, 0, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectorType_ToDiscretePort(), this.getDiscretePort(), null, "toDiscretePort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getConnectorType_FromDiscretePort(), this.getDiscretePort(), null, "fromDiscretePort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getConnectorType_ToContinuousPort(), this.getContinuousPort(), null, "toContinuousPort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getConnectorType_FromContinuousPort(), this.getContinuousPort(), null, "fromContinuousPort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getConnectorType_ToDiscretePort(), this.getDiscretePort(), null, "toDiscretePort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getConnectorType_FromDiscretePort(), this.getDiscretePort(), null, "fromDiscretePort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getConnectorType_ToContinuousPort(), this.getContinuousPort(), null, "toContinuousPort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getConnectorType_FromContinuousPort(), this.getContinuousPort(), null, "fromContinuousPort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getConnectorType_ToHybridPort(), this.getHybridPort(), null, "toHybridPort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getConnectorType_FromHybridPort(), this.getHybridPort(), null, "fromHybridPort", null, 0, 1, ConnectorType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(assemblyEClass, Assembly.class, "Assembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssembly_To(), this.getComponentPart(), this.getComponentPart_ToRev(), "to", null, 1, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -920,6 +1017,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(behavioralConnectorEClass, BehavioralConnector.class, "BehavioralConnector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(hybridPortEClass, HybridPort.class, "HybridPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getHybridPort_IsHybridInPort(), ecorePackage.getEBoolean(), "isHybridInPort", "false", 0, 1, HybridPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHybridPort_IsHybridOutPort(), ecorePackage.getEBoolean(), "isHybridOutPort", "false", 0, 1, HybridPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentKindEEnum, ComponentKind.class, "ComponentKind");
@@ -968,13 +1067,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"
-		   });						
+		   });										
 		addAnnotation
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "AtLeastOneMessageInterface DiscretePortRequiresBehavior"
-		   });								
+		   });														
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -992,12 +1091,12 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "SoftwareComponentRequiresBehavior"
-		   });															
+		   });																			
 		addAnnotation
 		  (assemblyEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"
+			 "constraints", "NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
 		   });							
 		addAnnotation
 		  (delegationEClass, 
@@ -1010,7 +1109,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"
-		   });				
+		   });								
 	}
 
 	/**
@@ -1048,14 +1147,44 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   new String[] {
 			 "LowerBoundMustBeZeroOrOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.lowerBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.lowerBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1\n\tendif\n)",
 			 "UpperBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.upperBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.upperBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.upperBound.value = 1\n\tendif\n)"
-		   });						
+		   });					
+		addAnnotation
+		  (getContinuousPort_IsContinuousInPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.kind = component::ContinuousPortDirectionKind::IN"
+		   });			
+		addAnnotation
+		  (getContinuousPort_IsContinuousOutPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.kind = component::ContinuousPortDirectionKind::OUT"
+		   });				
 		addAnnotation
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
 			 "AtLeastOneMessageInterface", "self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))",
 			 "DiscretePortRequiresBehavior", "-- clarify if this also holds for hybrid ports\nnot self.behavior.oclIsUndefined()"
-		   });									
+		   });								
+		addAnnotation
+		  (getDiscretePort_IsDiscreteInPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "not self.receiverMessageInterface.oclIsUndefined() and self.senderMessageInterface.oclIsUndefined()"
+		   });			
+		addAnnotation
+		  (getDiscretePort_IsDiscreteOutPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "not self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()"
+		   });			
+		addAnnotation
+		  (getDiscretePort_IsDiscreteInOutPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "not self.receiverMessageInterface.oclIsUndefined() and not self.senderMessageInterface.oclIsUndefined()"
+		   });				
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1111,6 +1240,18 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::ContinuousPort) then\n\tself.fromPort.oclAsType(component::ContinuousPort)\nelse\n\tnull\nendif"
+		   });			
+		addAnnotation
+		  (getConnectorType_ToHybridPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::HybridPort) then\n\tself.toPort.oclAsType(component::HybridPort)\nelse\n\tnull\nendif"
+		   });			
+		addAnnotation
+		  (getConnectorType_FromHybridPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::HybridPort) then\n\tself.fromPort.oclAsType(component::HybridPort)\nelse\n\tnull\nendif"
 		   });				
 		addAnnotation
 		  (assemblyEClass, 
@@ -1121,7 +1262,14 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "AssemblyBetweenDiscretePortsRequiresCoordinationPattern", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\t-- assembly between two discrete ports requires a coordination pattern\n\tnot self.coordinationPattern.oclIsUndefined()\nelse\n\ttrue\nendif",
 			 "AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n\t\tand\n\t\t-- both refinements must belong to the same pattern\n\t\tself.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern\nelse\n\ttrue\nendif",
 			 "AssemblyBetweenDiscretePortsRequiresDifferentRoles", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n\t\tand\n\t\t-- both ports should have different roles (unless the pattern has only one role)\n\t\t(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name <> self.toDiscretePort.refines.name))\nelse\n\ttrue\nendif",
-			 "AssemblyBetweenDiscretePortsSameMessageInterfaces", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\t-- message interfaces must be compatible\n\tself.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface\n\tand\n\tself.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface\nelse\n\ttrue\nendif"
+			 "AssemblyBetweenDiscretePortsSameMessageInterfaces", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\t-- message interfaces must be compatible\n\tself.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface\n\tand\n\tself.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface\nelse\n\ttrue\nendif",
+			 "ValidDiscreteInPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort\n\t)",
+			 "ValidDiscreteOutPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort\n\t)",
+			 "ValidDiscreteInOutPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort\n\t)",
+			 "ValidContinuousInPortCombination", "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort\n\timplies (\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n\t\tor\n\t\tnot self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort\n\t)",
+			 "ValidContinuousOutPortCombination", "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\n\timplies (\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n\t\tor\n\t\tnot self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort\n\t)",
+			 "ValidHybridInPortCombination", "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\n\timplies (\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n\t)",
+			 "ValidHybridOutPortCombination", "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort\n\timplies (\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n\t)"
 		   });							
 		addAnnotation
 		  (delegationEClass, 
@@ -1139,6 +1287,18 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   new String[] {
 			 "LowerBoundMustBeZeroOrOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.lowerBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.lowerBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1\n\tendif\n)",
 			 "UpperBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.upperBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.upperBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.upperBound.value = 1\n\tendif\n)"
+		   });			
+		addAnnotation
+		  (getHybridPort_IsHybridInPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "-- XXX: is this the definition of an IN port?\nself.isContinuousInPort"
+		   });			
+		addAnnotation
+		  (getHybridPort_IsHybridOutPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "-- XXX: is this the definition of an OUT port?\nself.isContinuousOutPort"
 		   });			
 	}
 

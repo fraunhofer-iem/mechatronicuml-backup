@@ -702,6 +702,13 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsRequiresDifferentRoles(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsSameMessageInterfaces(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidDiscreteInPortCombination(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidDiscreteOutPortCombination(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidDiscreteInOutPortCombination(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidContinuousInPortCombination(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidContinuousOutPortCombination(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidHybridInPortCombination(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_ValidHybridOutPortCombination(assembly, diagnostics, context);
 		return result;
 	}
 
@@ -904,6 +911,234 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "AssemblyBetweenDiscretePortsSameMessageInterfaces",
 				 ASSEMBLY__ASSEMBLY_BETWEEN_DISCRETE_PORTS_SAME_MESSAGE_INTERFACES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidDiscreteInPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_DISCRETE_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidDiscreteInPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidDiscreteInPortCombination(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidDiscreteInPortCombination",
+				 ASSEMBLY__VALID_DISCRETE_IN_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidDiscreteOutPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_DISCRETE_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidDiscreteOutPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidDiscreteOutPortCombination(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidDiscreteOutPortCombination",
+				 ASSEMBLY__VALID_DISCRETE_OUT_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidDiscreteInOutPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_DISCRETE_IN_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidDiscreteInOutPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidDiscreteInOutPortCombination(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidDiscreteInOutPortCombination",
+				 ASSEMBLY__VALID_DISCRETE_IN_OUT_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidContinuousInPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_CONTINUOUS_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n" +
+		"\t\tor\n" +
+		"\t\tnot self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidContinuousInPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidContinuousInPortCombination(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidContinuousInPortCombination",
+				 ASSEMBLY__VALID_CONTINUOUS_IN_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidContinuousOutPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n" +
+		"\t\tor\n" +
+		"\t\tnot self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidContinuousOutPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidContinuousOutPortCombination(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidContinuousOutPortCombination",
+				 ASSEMBLY__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidHybridInPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidHybridInPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidHybridInPortCombination(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidHybridInPortCombination",
+				 ASSEMBLY__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidHybridOutPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort\n" +
+		"\timplies (\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n" +
+		"\t)";
+
+	/**
+	 * Validates the ValidHybridOutPortCombination constraint of '<em>Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssembly_ValidHybridOutPortCombination(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY,
+				 assembly,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidHybridOutPortCombination",
+				 ASSEMBLY__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -62,6 +62,8 @@ public class ContinuousPortItemProvider
 
 			addKindPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addIsContinuousInPortPropertyDescriptor(object);
+			addIsContinuousOutPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +113,50 @@ public class ContinuousPortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Continuous In Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsContinuousInPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContinuousPort_isContinuousInPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_isContinuousInPort_feature", "_UI_ContinuousPort_type"),
+				 ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Continuous Out Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsContinuousOutPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContinuousPort_isContinuousOutPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_isContinuousOutPort_feature", "_UI_ContinuousPort_type"),
+				 ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns ContinuousPort.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,6 +194,8 @@ public class ContinuousPortItemProvider
 
 		switch (notification.getFeatureID(ContinuousPort.class)) {
 			case ComponentPackage.CONTINUOUS_PORT__KIND:
+			case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT:
+			case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

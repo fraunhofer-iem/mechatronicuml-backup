@@ -28,6 +28,9 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isIsDiscreteInPort <em>Is Discrete In Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isIsDiscreteOutPort <em>Is Discrete Out Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isIsDiscreteInOutPort <em>Is Discrete In Out Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -178,5 +181,53 @@ public interface DiscretePort extends Port, BehavioralElement {
 	 * @generated
 	 */
 	void setRoleAndAdaptationBehavior(Behavior value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the discrete port is an IN port
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Is Discrete In Port</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_IsDiscreteInPort()
+	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.receiverMessageInterface.oclIsUndefined() and self.senderMessageInterface.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean isIsDiscreteInPort();
+
+	/**
+	 * Returns the value of the '<em><b>Is Discrete Out Port</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the discrete port is an OUT port
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Is Discrete Out Port</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_IsDiscreteOutPort()
+	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean isIsDiscreteOutPort();
+
+	/**
+	 * Returns the value of the '<em><b>Is Discrete In Out Port</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the discrete port is an IN OUT port
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Is Discrete In Out Port</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_IsDiscreteInOutPort()
+	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.receiverMessageInterface.oclIsUndefined() and not self.senderMessageInterface.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean isIsDiscreteInOutPort();
 
 } // DiscretePort

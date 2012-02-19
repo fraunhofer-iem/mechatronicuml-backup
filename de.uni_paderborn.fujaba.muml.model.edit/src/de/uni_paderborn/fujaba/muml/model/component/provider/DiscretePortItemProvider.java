@@ -20,6 +20,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -65,6 +67,9 @@ public class DiscretePortItemProvider
 			addReceiverMessageInterfacePropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
+			addIsDiscreteInPortPropertyDescriptor(object);
+			addIsDiscreteOutPortPropertyDescriptor(object);
+			addIsDiscreteInOutPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -203,6 +208,72 @@ public class DiscretePortItemProvider
 
 
 	/**
+	 * This adds a property descriptor for the Is Discrete In Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsDiscreteInPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePort_isDiscreteInPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_isDiscreteInPort_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__IS_DISCRETE_IN_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Discrete Out Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsDiscreteOutPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePort_isDiscreteOutPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_isDiscreteOutPort_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__IS_DISCRETE_OUT_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Discrete In Out Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsDiscreteInOutPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePort_isDiscreteInOutPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_isDiscreteInOutPort_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns DiscretePort.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -237,6 +308,14 @@ public class DiscretePortItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DiscretePort.class)) {
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT:
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT:
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

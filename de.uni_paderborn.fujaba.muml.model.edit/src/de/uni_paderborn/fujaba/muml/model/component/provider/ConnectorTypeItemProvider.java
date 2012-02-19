@@ -66,6 +66,8 @@ public class ConnectorTypeItemProvider
 			addFromDiscretePortPropertyDescriptor(object);
 			addToContinuousPortPropertyDescriptor(object);
 			addFromContinuousPortPropertyDescriptor(object);
+			addToHybridPortPropertyDescriptor(object);
+			addFromHybridPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -219,6 +221,50 @@ public class ConnectorTypeItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the To Hybrid Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addToHybridPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorType_toHybridPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorType_toHybridPort_feature", "_UI_ConnectorType_type"),
+				 ComponentPackage.Literals.CONNECTOR_TYPE__TO_HYBRID_PORT,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the From Hybrid Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFromHybridPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorType_fromHybridPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorType_fromHybridPort_feature", "_UI_ConnectorType_type"),
+				 ComponentPackage.Literals.CONNECTOR_TYPE__FROM_HYBRID_PORT,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

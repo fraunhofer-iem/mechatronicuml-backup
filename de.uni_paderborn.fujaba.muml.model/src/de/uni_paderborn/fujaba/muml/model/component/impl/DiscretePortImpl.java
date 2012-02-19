@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.component.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -34,6 +35,9 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isIsDiscreteInPort <em>Is Discrete In Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isIsDiscreteOutPort <em>Is Discrete Out Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isIsDiscreteInOutPort <em>Is Discrete In Out Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,6 +103,36 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @ordered
 	 */
 	protected Behavior roleAndAdaptationBehavior;
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsDiscreteInPort() <em>Is Discrete In Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsDiscreteInPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_DISCRETE_IN_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__IS_DISCRETE_IN_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsDiscreteOutPort() <em>Is Discrete Out Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsDiscreteOutPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_DISCRETE_OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__IS_DISCRETE_OUT_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsDiscreteInOutPort() <em>Is Discrete In Out Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsDiscreteInOutPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_DISCRETE_IN_OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -396,6 +430,33 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsDiscreteInPort() {
+		return (Boolean)IS_DISCRETE_IN_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsDiscreteOutPort() {
+		return (Boolean)IS_DISCRETE_OUT_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsDiscreteInOutPort() {
+		return (Boolean)IS_DISCRETE_IN_OUT_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -454,6 +515,12 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				if (resolve) return getRoleAndAdaptationBehavior();
 				return basicGetRoleAndAdaptationBehavior();
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT:
+				return isIsDiscreteInPort();
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT:
+				return isIsDiscreteOutPort();
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
+				return isIsDiscreteInOutPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -539,6 +606,12 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return adaptationBehavior != null;
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				return roleAndAdaptationBehavior != null;
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT:
+				return IS_DISCRETE_IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT:
+				return IS_DISCRETE_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
+				return IS_DISCRETE_IN_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

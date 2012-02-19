@@ -120,6 +120,28 @@
             <details key="documentation" value="Defines the data type of the signal value which is emitted or received by &#xD;&#xA;the continuous port."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isContinuousInPort"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute indicates if the continuous port is an IN port"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::IN"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isContinuousOutPort"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute indicates if the continuous port is an OUT port"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::OUT"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//model/component/Port #//model/core/BehavioralElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -160,6 +182,38 @@
             eType="#//model/core/Behavior">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior and the sub-port behavior. Thus, this real-time&#xD;&#xA;statechart only contains one state which embeds the real-time statecharts&#xD;&#xA;specifying the adaptation behavior and the sub-port behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteInPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute indicates if the discrete port is an IN port"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="not self.receiverMessageInterface.oclIsUndefined() and self.senderMessageInterface.oclIsUndefined()"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteOutPort"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute indicates if the discrete port is an OUT port"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="not self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteInOutPort"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute indicates if the discrete port is an IN OUT port"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="not self.receiverMessageInterface.oclIsUndefined() and not self.senderMessageInterface.oclIsUndefined()"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -290,8 +344,8 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="toDiscretePort" ordered="false"
-            eType="#//model/component/DiscretePort" volatile="true" transient="true"
-            derived="true">
+            eType="#//model/component/DiscretePort" changeable="false" volatile="true"
+            transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Return the toPort as a DiscretePort if possible"/>
           </eAnnotations>
@@ -300,8 +354,8 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fromDiscretePort" ordered="false"
-            eType="#//model/component/DiscretePort" volatile="true" transient="true"
-            derived="true">
+            eType="#//model/component/DiscretePort" changeable="false" volatile="true"
+            transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Return the fromPort as a DiscretePort if possible"/>
           </eAnnotations>
@@ -310,8 +364,8 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="toContinuousPort" ordered="false"
-            eType="#//model/component/ContinuousPort" volatile="true" transient="true"
-            derived="true">
+            eType="#//model/component/ContinuousPort" changeable="false" volatile="true"
+            transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Return the toPort as a ContinuesPort if possible"/>
           </eAnnotations>
@@ -320,13 +374,33 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fromContinuousPort"
-            ordered="false" eType="#//model/component/ContinuousPort" volatile="true"
-            transient="true" derived="true">
+            ordered="false" eType="#//model/component/ContinuousPort" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Return the fromPort as a ContinuousPort if possible"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::ContinuousPort) then&#xA;&#x9;self.fromPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="toHybridPort" ordered="false"
+            eType="#//model/component/HybridPort" changeable="false" volatile="true"
+            transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Return the toPort as a HybridPort if possible"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::HybridPort) then&#xA;&#x9;self.toPort.oclAsType(component::HybridPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="fromHybridPort" ordered="false"
+            eType="#//model/component/HybridPort" changeable="false" volatile="true"
+            transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Return the fromPort as a HybridPort if possible"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::HybridPort) then&#xA;&#x9;self.fromPort.oclAsType(component::HybridPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -335,7 +409,7 @@
           <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"/>
+          <details key="constraints" value="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="NoSelfAssembliesForSinglePorts" value="self.fromPort.cardinality.upperBound.value &lt;= 1&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
@@ -345,6 +419,13 @@
               value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
           <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
           <details key="AssemblyBetweenDiscretePortsSameMessageInterfaces" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- message interfaces must be compatible&#xA;&#x9;self.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface&#xA;&#x9;and&#xA;&#x9;self.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface&#xA;else&#xA;&#x9;true&#xA;endif"/>
+          <details key="ValidDiscreteInPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
+          <details key="ValidDiscreteOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"/>
+          <details key="ValidDiscreteInOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort&#xA;&#x9;)"/>
+          <details key="ValidContinuousInPortCombination" value="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort&#xA;&#x9;)"/>
+          <details key="ValidContinuousOutPortCombination" value="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort&#xA;&#x9;)"/>
+          <details key="ValidHybridInPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
+          <details key="ValidHybridOutPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1"
             eType="#//model/component/ComponentPart" eOpposite="#//model/component/ComponentPart/toRev">
@@ -425,6 +506,26 @@
           <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
           <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
         </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHybridInPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute indicates if the hybrid port is an IN port"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="-- XXX: is this the definition of an IN port?&#xA;self.isContinuousInPort"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHybridOutPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute indicates if the hybrid port is an OUT port"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="-- XXX: is this the definition of an OUT port?&#xA;self.isContinuousOutPort"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="ContinuousPortDirectionKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

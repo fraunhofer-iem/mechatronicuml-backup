@@ -62,6 +62,10 @@ public class HybridPortItemProvider
 
 			addKindPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addIsContinuousInPortPropertyDescriptor(object);
+			addIsContinuousOutPortPropertyDescriptor(object);
+			addIsHybridInPortPropertyDescriptor(object);
+			addIsHybridOutPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -110,6 +114,94 @@ public class HybridPortItemProvider
 				 null));
 	}
 	
+	/**
+	 * This adds a property descriptor for the Is Continuous In Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsContinuousInPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContinuousPort_isContinuousInPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_isContinuousInPort_feature", "_UI_ContinuousPort_type"),
+				 ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Continuous Out Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsContinuousOutPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContinuousPort_isContinuousOutPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_isContinuousOutPort_feature", "_UI_ContinuousPort_type"),
+				 ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Hybrid In Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsHybridInPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HybridPort_isHybridInPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HybridPort_isHybridInPort_feature", "_UI_HybridPort_type"),
+				 ComponentPackage.Literals.HYBRID_PORT__IS_HYBRID_IN_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Hybrid Out Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsHybridOutPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HybridPort_isHybridOutPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HybridPort_isHybridOutPort_feature", "_UI_HybridPort_type"),
+				 ComponentPackage.Literals.HYBRID_PORT__IS_HYBRID_OUT_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
 	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
 		// do nothing (bug #222)
 	}
@@ -156,6 +248,10 @@ public class HybridPortItemProvider
 
 		switch (notification.getFeatureID(HybridPort.class)) {
 			case ComponentPackage.HYBRID_PORT__KIND:
+			case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_IN_PORT:
+			case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_OUT_PORT:
+			case ComponentPackage.HYBRID_PORT__IS_HYBRID_IN_PORT:
+			case ComponentPackage.HYBRID_PORT__IS_HYBRID_OUT_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

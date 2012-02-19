@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
@@ -36,6 +37,8 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getFromDiscretePort <em>From Discrete Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getToContinuousPort <em>To Continuous Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getFromContinuousPort <em>From Continuous Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getToHybridPort <em>To Hybrid Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getFromHybridPort <em>From Hybrid Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,6 +104,26 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate FROM_CONTINUOUS_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.CONNECTOR_TYPE__FROM_CONTINUOUS_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getToHybridPort() <em>To Hybrid Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToHybridPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TO_HYBRID_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.CONNECTOR_TYPE__TO_HYBRID_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getFromHybridPort() <em>From Hybrid Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromHybridPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate FROM_HYBRID_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.CONNECTOR_TYPE__FROM_HYBRID_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -305,15 +328,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToDiscretePort(DiscretePort newToDiscretePort) {
-		TO_DISCRETE_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newToDiscretePort);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DiscretePort getFromDiscretePort() {
 		return (DiscretePort)FROM_DISCRETE_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -325,15 +339,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 	 */
 	public DiscretePort basicGetFromDiscretePort() {
 		return (DiscretePort)FROM_DISCRETE_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFromDiscretePort(DiscretePort newFromDiscretePort) {
-		FROM_DISCRETE_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newFromDiscretePort);
 	}
 
 	/**
@@ -359,15 +364,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToContinuousPort(ContinuousPort newToContinuousPort) {
-		TO_CONTINUOUS_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newToContinuousPort);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ContinuousPort getFromContinuousPort() {
 		return (ContinuousPort)FROM_CONTINUOUS_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -386,8 +382,35 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFromContinuousPort(ContinuousPort newFromContinuousPort) {
-		FROM_CONTINUOUS_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newFromContinuousPort);
+	public HybridPort getToHybridPort() {
+		return (HybridPort)TO_HYBRID_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HybridPort basicGetToHybridPort() {
+		return (HybridPort)TO_HYBRID_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HybridPort getFromHybridPort() {
+		return (HybridPort)FROM_HYBRID_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HybridPort basicGetFromHybridPort() {
+		return (HybridPort)FROM_HYBRID_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -475,6 +498,12 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 			case ComponentPackage.CONNECTOR_TYPE__FROM_CONTINUOUS_PORT:
 				if (resolve) return getFromContinuousPort();
 				return basicGetFromContinuousPort();
+			case ComponentPackage.CONNECTOR_TYPE__TO_HYBRID_PORT:
+				if (resolve) return getToHybridPort();
+				return basicGetToHybridPort();
+			case ComponentPackage.CONNECTOR_TYPE__FROM_HYBRID_PORT:
+				if (resolve) return getFromHybridPort();
+				return basicGetFromHybridPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -497,18 +526,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 			case ComponentPackage.CONNECTOR_TYPE__PARENT_COMPONENT:
 				setParentComponent((StructuredComponent)newValue);
 				return;
-			case ComponentPackage.CONNECTOR_TYPE__TO_DISCRETE_PORT:
-				setToDiscretePort((DiscretePort)newValue);
-				return;
-			case ComponentPackage.CONNECTOR_TYPE__FROM_DISCRETE_PORT:
-				setFromDiscretePort((DiscretePort)newValue);
-				return;
-			case ComponentPackage.CONNECTOR_TYPE__TO_CONTINUOUS_PORT:
-				setToContinuousPort((ContinuousPort)newValue);
-				return;
-			case ComponentPackage.CONNECTOR_TYPE__FROM_CONTINUOUS_PORT:
-				setFromContinuousPort((ContinuousPort)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -529,18 +546,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 				return;
 			case ComponentPackage.CONNECTOR_TYPE__PARENT_COMPONENT:
 				setParentComponent((StructuredComponent)null);
-				return;
-			case ComponentPackage.CONNECTOR_TYPE__TO_DISCRETE_PORT:
-				setToDiscretePort((DiscretePort)null);
-				return;
-			case ComponentPackage.CONNECTOR_TYPE__FROM_DISCRETE_PORT:
-				setFromDiscretePort((DiscretePort)null);
-				return;
-			case ComponentPackage.CONNECTOR_TYPE__TO_CONTINUOUS_PORT:
-				setToContinuousPort((ContinuousPort)null);
-				return;
-			case ComponentPackage.CONNECTOR_TYPE__FROM_CONTINUOUS_PORT:
-				setFromContinuousPort((ContinuousPort)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -568,6 +573,10 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 				return TO_CONTINUOUS_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.CONNECTOR_TYPE__FROM_CONTINUOUS_PORT:
 				return FROM_CONTINUOUS_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.CONNECTOR_TYPE__TO_HYBRID_PORT:
+				return TO_HYBRID_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.CONNECTOR_TYPE__FROM_HYBRID_PORT:
+				return FROM_HYBRID_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
