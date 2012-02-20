@@ -44,6 +44,8 @@
           <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousPort/kind"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/ContinuousPort/type"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousPort/isContinuousInPort"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/DiscretePort">
           <genFeatures notify="false" createChild="false" propertyCategory="General"
@@ -56,6 +58,9 @@
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/adaptationBehavior"/>
           <genFeatures notify="false" createChild="false" propertyCategory="Behavior"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/roleAndAdaptationBehavior"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DiscretePort/isDiscreteInPort"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DiscretePort/isDiscreteOutPort"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DiscretePort/isDiscreteInOutPort"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/ComponentPart">
           <genFeatures notify="false" createChild="false" propertyCategory="General"
@@ -94,6 +99,8 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/component/ConnectorType/toContinuousPort"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/ConnectorType/fromContinuousPort"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/ConnectorType/toHybridPort"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/ConnectorType/fromHybridPort"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/Assembly">
           <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="ConnectedComponents"
@@ -108,7 +115,10 @@
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/Delegation/componentPart"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/component/BehavioralConnector"/>
-        <genClasses ecoreClass="muml.ecore#//model/component/HybridPort"/>
+        <genClasses ecoreClass="muml.ecore#//model/component/HybridPort">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/HybridPort/isHybridInPort"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/HybridPort/isHybridOutPort"/>
+        </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/constraint">

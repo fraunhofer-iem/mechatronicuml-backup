@@ -1743,7 +1743,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getState_Events(), 
 		   source, 
 		   new String[] {
-			 "derivation", "Set { entryEvent, exitEvent, doEvent }"
+			 "derivation", "Set{entryEvent,exitEvent,doEvent }->select(x | not x.oclIsUndefined())"
 		   });				
 		addAnnotation
 		  (getState_Simple(), 
@@ -1829,7 +1829,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getMessage_InstanceOf(), 
 		   source, 
 		   new String[] {
-			 "derivation", "callee.oclAsType(msgiface::MessageType)"
+			 "derivation", "callee->any(x | x.oclIsKindOf(msgiface::MessageType)).oclAsType(msgiface::MessageType)"
 		   });									
 		addAnnotation
 		  (entryPointEClass, 

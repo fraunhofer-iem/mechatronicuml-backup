@@ -1283,7 +1283,7 @@
             upperBound="-1" eType="#//model/realtimestatechart/StateEvent" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="Set { entryEvent, exitEvent, doEvent }"/>
+            <details key="derivation" value="Set{entryEvent,exitEvent,doEvent }->select(x | not x.oclIsUndefined())"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This derived reference returns all StateEvents of this state. The StateEvents of&#xD;&#xA;this state are all entry-, do- and exit-Events."/>
@@ -1752,7 +1752,7 @@
             <details key="documentation" value="Retrieves the message type this message is typed over."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="callee.oclAsType(msgiface::MessageType)"/>
+            <details key="derivation" value="callee->any(x | x.oclIsKindOf(msgiface::MessageType)).oclAsType(msgiface::MessageType)"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

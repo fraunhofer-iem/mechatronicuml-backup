@@ -15660,5 +15660,11 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
         oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/events/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="Set{entryEvent,exitEvent,doEvent }->select(x | not x.oclIsUndefined())"
+        oldDataValue="Set { entryEvent, exitEvent, doEvent }"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Message/instanceOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="callee->any(x | x.oclIsKindOf(msgiface::MessageType)).oclAsType(msgiface::MessageType)"
+        oldDataValue="callee.oclAsType(msgiface::MessageType)"/>
   </releases>
 </history:History>

@@ -184,7 +184,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>Events</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_Events()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='Set { entryEvent, exitEvent, doEvent }'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='Set{entryEvent,exitEvent,doEvent }->select(x | not x.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<StateEvent> getEvents();
