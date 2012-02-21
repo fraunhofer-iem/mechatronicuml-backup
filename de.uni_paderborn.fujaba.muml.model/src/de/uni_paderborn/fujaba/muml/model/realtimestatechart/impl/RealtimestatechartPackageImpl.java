@@ -1785,7 +1785,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getSynchronization_SyncChannel(), 
 		   source, 
 		   new String[] {
-			 "derivation", "callee.oclAsType(SynchronizationChannel)"
+			 "derivation", "callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)"
 		   });						
 		addAnnotation
 		  (realtimeStatechartEClass, 

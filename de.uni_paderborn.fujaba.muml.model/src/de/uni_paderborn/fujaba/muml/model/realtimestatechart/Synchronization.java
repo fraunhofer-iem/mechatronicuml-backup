@@ -40,7 +40,7 @@ public interface Synchronization extends Invocation {
 	 * @return the value of the '<em>Sync Channel</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_SyncChannel()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='callee.oclAsType(SynchronizationChannel)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)'"
 	 * @generated
 	 */
 	SynchronizationChannel getSyncChannel();
