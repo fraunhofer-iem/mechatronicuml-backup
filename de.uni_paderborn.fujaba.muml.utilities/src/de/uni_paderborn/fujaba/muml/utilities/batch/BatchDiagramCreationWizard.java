@@ -183,11 +183,17 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 			}
 			
 			// Diagram name
-			String elementLabel = element.eClass().getName();
-			
+			String elementType = element.eClass().getName();
+	
 			// Build URI for the new diagram file  
-			IPath diagramDirectory = getModelPath().removeLastSegments(1).append(elementLabel);
-
+			IPath diagramDirectory = getModelPath().removeLastSegments(1).append(elementType);
+			
+			String elementLabel = element.eClass().getName();
+			if (element instanceof org.storydriven.modeling.NamedElement) 
+			{
+				org.storydriven.modeling.NamedElement namedElement = (org.storydriven.modeling.NamedElement)element;
+				elementLabel = namedElement.getName();
+			}
 			 
 			String diagramFilename = getUniqueFileName(diagramDirectory, elementLabel, diagramInformation.getFileExtension());
 			IPath diagramPath = diagramDirectory.append(diagramFilename);
