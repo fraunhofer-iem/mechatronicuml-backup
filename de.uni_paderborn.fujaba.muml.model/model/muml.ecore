@@ -1562,14 +1562,13 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Two transitions can synchron fire. One transition is the sender, the other the receiver. This means that both transitions (exactly one sender and one receiver) must be activated and has to fire at the same time. "/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="syncChannel" lowerBound="1"
-            eType="#//model/realtimestatechart/SynchronizationChannel" changeable="false"
-            volatile="true" transient="true" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="syncChannel" eType="#//model/realtimestatechart/SynchronizationChannel"
+            changeable="false" volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="the channel that is used by the synchronization"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)"/>
+            <details key="derivation" value="if not callee.oclIsUndefined() then&#xD;&#xA;&#x9;callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"

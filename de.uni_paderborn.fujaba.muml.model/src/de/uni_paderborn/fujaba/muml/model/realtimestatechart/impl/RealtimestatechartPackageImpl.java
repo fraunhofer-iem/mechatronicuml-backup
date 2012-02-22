@@ -1578,7 +1578,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getSynchronizationChannel_State(), this.getState(), this.getState_Channels(), "state", null, 1, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(synchronizationEClass, Synchronization.class, "Synchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSynchronization_SyncChannel(), this.getSynchronizationChannel(), null, "syncChannel", null, 1, 1, Synchronization.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getSynchronization_SyncChannel(), this.getSynchronizationChannel(), null, "syncChannel", null, 0, 1, Synchronization.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSynchronization_Kind(), this.getSynchronizationKind(), "kind", null, 1, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(prioritizableEClass, Prioritizable.class, "Prioritizable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1785,7 +1785,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getSynchronization_SyncChannel(), 
 		   source, 
 		   new String[] {
-			 "derivation", "callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)"
+			 "derivation", "if not callee.oclIsUndefined() then\r\n\tcallee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)\r\nelse\r\n\tnull\r\nendif\r\n\r\n"
 		   });						
 		addAnnotation
 		  (realtimeStatechartEClass, 

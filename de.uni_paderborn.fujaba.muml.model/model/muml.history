@@ -15669,5 +15669,19 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/syncChannel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)"
         oldDataValue="callee.oclAsType(SynchronizationChannel)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/syncChannel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.oclIsUndefined() then&#xD;&#xA;self.callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"
+        oldDataValue="callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/syncChannel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.oclIsUndefined() then&#xD;&#xA;&#x9;self.callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"
+        oldDataValue="if not self.oclIsUndefined() then&#xD;&#xA;self.callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/syncChannel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.callee.oclIsUndefined() then&#xD;&#xA;&#x9;self.callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"
+        oldDataValue="if not self.oclIsUndefined() then&#xD;&#xA;&#x9;self.callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/syncChannel"
+        featureName="lowerBound" dataValue="0" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/syncChannel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not callee.oclIsUndefined() then&#xD;&#xA;&#x9;callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"
+        oldDataValue="if not self.callee.oclIsUndefined() then&#xD;&#xA;&#x9;self.callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"/>
   </releases>
 </history:History>
