@@ -115,28 +115,27 @@ public class MsgifaceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(messageInterface, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(messageInterface, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(messageInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMessageInterface_NoSelfGeneralization(messageInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMessageInterface_NoBidirectionalGeneralization(messageInterface, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMessageInterface_NoCyclicGeneralization(messageInterface, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMessageInterface_UniqueMessageTypeNames(messageInterface, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMessageInterface_NoMessageTypeOrNotAtLeastTwoGeneralizations(messageInterface, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the NoSelfGeneralization constraint of '<em>Message Interface</em>'.
+	 * The cached validation expression for the NoCyclicGeneralization constraint of '<em>Message Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MESSAGE_INTERFACE__NO_SELF_GENERALIZATION__EEXPRESSION = "self.superType->forAll(x|x<>self)";
+	protected static final String MESSAGE_INTERFACE__NO_CYCLIC_GENERALIZATION__EEXPRESSION = "not self->closure(superType)->includes(self)";
 
 	/**
-	 * Validates the NoSelfGeneralization constraint of '<em>Message Interface</em>'.
+	 * Validates the NoCyclicGeneralization constraint of '<em>Message Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMessageInterface_NoSelfGeneralization(MessageInterface messageInterface, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMessageInterface_NoCyclicGeneralization(MessageInterface messageInterface, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(MsgifacePackage.Literals.MESSAGE_INTERFACE,
@@ -144,37 +143,8 @@ public class MsgifaceValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "NoSelfGeneralization",
-				 MESSAGE_INTERFACE__NO_SELF_GENERALIZATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the NoBidirectionalGeneralization constraint of '<em>Message Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MESSAGE_INTERFACE__NO_BIDIRECTIONAL_GENERALIZATION__EEXPRESSION = "self.superType->forAll(x|x.superType->forAll(y|y<>self))";
-
-	/**
-	 * Validates the NoBidirectionalGeneralization constraint of '<em>Message Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMessageInterface_NoBidirectionalGeneralization(MessageInterface messageInterface, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(MsgifacePackage.Literals.MESSAGE_INTERFACE,
-				 messageInterface,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "NoBidirectionalGeneralization",
-				 MESSAGE_INTERFACE__NO_BIDIRECTIONAL_GENERALIZATION__EEXPRESSION,
+				 "NoCyclicGeneralization",
+				 MESSAGE_INTERFACE__NO_CYCLIC_GENERALIZATION__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -28,8 +28,8 @@ import org.storydriven.modeling.NamedElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageInterface()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoSelfGeneralization='self.superType->forAll(x|x<>self)' NoBidirectionalGeneralization='self.superType->forAll(x|x.superType->forAll(y|y<>self))' UniqueMessageTypeNames='self.messageTypes->isUnique(name)' NoMessageTypeOrNotAtLeastTwoGeneralizations='self.messageTypes->size()>=1 or self.superType->size()>=2'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoCyclicGeneralization='not self->closure(superType)->includes(self)' UniqueMessageTypeNames='self.messageTypes->isUnique(name)' NoMessageTypeOrNotAtLeastTwoGeneralizations='self.messageTypes->size()>=1 or self.superType->size()>=2'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations'"
  * @generated
  */
 public interface MessageInterface extends NamedElement {

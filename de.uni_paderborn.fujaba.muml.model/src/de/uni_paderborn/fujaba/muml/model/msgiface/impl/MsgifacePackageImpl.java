@@ -318,7 +318,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		  (messageInterfaceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
+			 "constraints", "NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
 		   });							
 		addAnnotation
 		  (messageTypeEClass, 
@@ -340,8 +340,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		  (messageInterfaceEClass, 
 		   source, 
 		   new String[] {
-			 "NoSelfGeneralization", "self.superType->forAll(x|x<>self)",
-			 "NoBidirectionalGeneralization", "self.superType->forAll(x|x.superType->forAll(y|y<>self))",
+			 "NoCyclicGeneralization", "not self->closure(superType)->includes(self)",
 			 "UniqueMessageTypeNames", "self.messageTypes->isUnique(name)",
 			 "NoMessageTypeOrNotAtLeastTwoGeneralizations", "self.messageTypes->size()>=1 or self.superType->size()>=2"
 		   });					

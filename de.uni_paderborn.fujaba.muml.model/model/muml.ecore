@@ -1846,13 +1846,12 @@
           <details key="documentation" value="This class represents a message interface. A message interface specifies which messages are allowed to be sent or received by a port or role."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="NoSelfGeneralization" value="self.superType->forAll(x|x&lt;>self)"/>
-          <details key="NoBidirectionalGeneralization" value="self.superType->forAll(x|x.superType->forAll(y|y&lt;>self))"/>
+          <details key="NoCyclicGeneralization" value="not self->closure(superType)->includes(self)"/>
           <details key="UniqueMessageTypeNames" value="self.messageTypes->isUnique(name)"/>
           <details key="NoMessageTypeOrNotAtLeastTwoGeneralizations" value="self.messageTypes->size()>=1 or self.superType->size()>=2"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
+          <details key="constraints" value="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="superType" upperBound="-1"
             eType="#//model/msgiface/MessageInterface">

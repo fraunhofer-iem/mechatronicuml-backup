@@ -7774,31 +7774,31 @@
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.2/@changes.258/@element">
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.258/@element"
+            featureName="key" dataValue="NoSelfGeneralization"/>
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.258/@element"
+            featureName="value" dataValue="self.superType->forAll(x|x&lt;>self)"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
         <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="key" dataValue="NoSelfGeneralization"/>
+            featureName="key" dataValue="NoBidirectionalGeneralization"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="value" dataValue="self.superType->forAll(x|x&lt;>self)"/>
+            featureName="value" dataValue="self.superType->forAll(x|x.superType->forAll(y|y&lt;>self))"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
         <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="key" dataValue="NoBidirectionalGeneralization"/>
+            featureName="key" dataValue="UniqueMessageTypeNames"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="value" dataValue="self.superType->forAll(x|x.superType->forAll(y|y&lt;>self))"/>
+            featureName="value" dataValue="self.messageTypes->isUnique(name)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
         <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
-            featureName="key" dataValue="UniqueMessageTypeNames"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
-            featureName="value" dataValue="self.messageTypes->isUnique(name)"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
             featureName="key" dataValue="NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
             featureName="value" dataValue="self.messageTypes->size()>=1 or self.superType->size()>=2"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface"
@@ -15762,5 +15762,21 @@
         <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
       </element>
     </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="NoCyclicGeneralization" oldDataValue="NoBidirectionalGeneralization"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="not self->closure(superType)->includes(self)"
+        oldDataValue="self.superType->forAll(x|x.superType->forAll(y|y&lt;>self))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="NoSelfGeneralization NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
+        oldDataValue="NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="NoSelfGeneralization"
+          value="self.superType->forAll(x|x&lt;>self)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
+        oldDataValue="NoSelfGeneralization NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
   </releases>
 </history:History>
