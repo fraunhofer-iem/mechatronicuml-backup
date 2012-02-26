@@ -5223,34 +5223,34 @@
             featureName="value" dataValue="This class represents a hybrid port which acts as a A/D or an D/A converter.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="eAnnotations" element="#//@releases.2/@changes.253/@element">
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.253/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.2/@changes.253/@element"
+          referenceName="details" element="#//@releases.2/@changes.253/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.253/@element/@details.0"
             featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.253/@element/@details.0"
             featureName="value" dataValue="LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="eAnnotations" element="#//@releases.2/@changes.254/@element">
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.254/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.2/@changes.254/@element"
+          referenceName="details" element="#//@releases.2/@changes.254/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.254/@element/@details.0"
             featureName="key" dataValue="LowerBoundMustBeZeroOrOne"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.254/@element/@details.0"
             featureName="value" dataValue="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+      <changes xsi:type="history:Create" target="#//@releases.2/@changes.254/@element"
+          referenceName="details" element="#//@releases.2/@changes.254/@element/@details.1">
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.254/@element/@details.1"
             featureName="key" dataValue="UpperBoundMustBeOne"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        <changes xsi:type="history:Set" element="#//@releases.2/@changes.254/@element/@details.1"
             featureName="value" dataValue="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance" referenceName="eClassifiers"
@@ -15683,5 +15683,84 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/syncChannel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if not callee.oclIsUndefined() then&#xD;&#xA;&#x9;callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"
         oldDataValue="if not self.callee.oclIsUndefined() then&#xD;&#xA;&#x9;self.callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="(not self.component.oclIsUndefined() and not self.behavior.oclIsUndefined()"
+        oldDataValue="-- clarify if this also holds for hybrid ports&#xA;not self.behavior.oclIsUndefined()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="(not self.component.oclIsUndefined() and not self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies not self.behavior.oclIsUndefined()"
+        oldDataValue="(not self.component.oclIsUndefined() and not self.behavior.oclIsUndefined()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- this also holds for a hybrid port&#xA;(not self.component.oclIsUndefined() and not self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies not self.behavior.oclIsUndefined()"
+        oldDataValue="(not self.component.oclIsUndefined() and not self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="DiscretePortAtStructuredComponentHasNoBehavior"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="DiscretePortRequiresRole"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="not self.refines.oclIsUndefined()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="key" dataValue="DiscretePortAndRoleSameMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessage"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageInterface = self.refines.senderMessageInterface&#xA;&#x9; and&#xA;&#x9; self.receiverMessageInterface = self.refines.receiverMessageInterface&#xA;&#x9;)"
+        oldDataValue="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessage"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="key" dataValue="SingleRoleRequiresSinglePort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="value" dataValue="if not self.refines.oclIsUndefined() and not self.refines.cardinality.oclIsUndefined() and not self.refines.cardinality.upperBound.oclIundefined() then&#xA;&#x9;(self.refines.cardinality.upperBound.value = 1) implies not self.isMultiPort&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="AtLeastOneMessageInterface DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortAndRoleSameMessageInterface SingleRoleRequiresSinglePort"
+        oldDataValue="AtLeastOneMessageInterface DiscretePortRequiresBehavior"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="value" dataValue="if not self.refines.oclIsUndefined() and not self.refines.cardinality.oclIsUndefined() and not self.refines.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;(self.refines.cardinality.upperBound.value = 1) implies not self.isMultiPort&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="if not self.refines.oclIsUndefined() and not self.refines.cardinality.oclIsUndefined() and not self.refines.cardinality.upperBound.oclIundefined() then&#xA;&#x9;(self.refines.cardinality.upperBound.value = 1) implies not self.isMultiPort&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()"
+        oldDataValue="not self.refines.oclIsUndefined()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="StructuredComponentValidPorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="StructuredComponentValidPort" oldDataValue="StructuredComponentValidPorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="StructuredComponentValidPorts" oldDataValue="StructuredComponentValidPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort or port.oclIsTypeOf(component::HybridPort)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentValidPorts"
+        oldDataValue="UniqueComponentPartsWithinStructuredComponent"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="StructuredComponentNoHybridPort" oldDataValue="StructuredComponentValidPorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"
+        oldDataValue="self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort or port.oclIsTypeOf(component::HybridPort)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort"
+        oldDataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentValidPorts"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/HybridPort"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/HybridPort"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
+        <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
+      </element>
+    </changes>
   </releases>
 </history:History>

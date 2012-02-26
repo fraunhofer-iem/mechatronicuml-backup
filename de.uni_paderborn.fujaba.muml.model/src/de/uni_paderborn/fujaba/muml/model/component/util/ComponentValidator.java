@@ -398,6 +398,10 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageInterface(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageInterface(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_SingleRoleRequiresSinglePort(discretePort, diagnostics, context);
 		return result;
 	}
 
@@ -436,8 +440,9 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_BEHAVIOR__EEXPRESSION = "-- clarify if this also holds for hybrid ports\n" +
-		"not self.behavior.oclIsUndefined()";
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_BEHAVIOR__EEXPRESSION = "-- this also holds for a hybrid port\n" +
+		"(not self.component.oclIsUndefined() and not self.component.oclIsTypeOf(component::StructuredComponent))\n" +
+		"\timplies not self.behavior.oclIsUndefined()";
 
 	/**
 	 * Validates the DiscretePortRequiresBehavior constraint of '<em>Discrete Port</em>'.
@@ -455,6 +460,131 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "DiscretePortRequiresBehavior",
 				 DISCRETE_PORT__DISCRETE_PORT_REQUIRES_BEHAVIOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DiscretePortAtStructuredComponentHasNoBehavior constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION = "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n" +
+		"\timplies self.behavior.oclIsUndefined()";
+
+	/**
+	 * Validates the DiscretePortAtStructuredComponentHasNoBehavior constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscretePortAtStructuredComponentHasNoBehavior",
+				 DISCRETE_PORT__DISCRETE_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DiscretePortRequiresRole constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION = "self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()";
+
+	/**
+	 * Validates the DiscretePortRequiresRole constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_DiscretePortRequiresRole(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscretePortRequiresRole",
+				 DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DiscretePortAndRoleSameMessageInterface constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_INTERFACE__EEXPRESSION = "not self.refines.oclIsUndefined() implies\n" +
+		"\t(self.senderMessageInterface = self.refines.senderMessageInterface\n" +
+		"\t and\n" +
+		"\t self.receiverMessageInterface = self.refines.receiverMessageInterface\n" +
+		"\t)";
+
+	/**
+	 * Validates the DiscretePortAndRoleSameMessageInterface constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_DiscretePortAndRoleSameMessageInterface(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscretePortAndRoleSameMessageInterface",
+				 DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_INTERFACE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the SingleRoleRequiresSinglePort constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__SINGLE_ROLE_REQUIRES_SINGLE_PORT__EEXPRESSION = "if not self.refines.oclIsUndefined() and not self.refines.cardinality.oclIsUndefined() and not self.refines.cardinality.upperBound.oclIsUndefined() then\n" +
+		"\t(self.refines.cardinality.upperBound.value = 1) implies not self.isMultiPort\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the SingleRoleRequiresSinglePort constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_SingleRoleRequiresSinglePort(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SingleRoleRequiresSinglePort",
+				 DISCRETE_PORT__SINGLE_ROLE_REQUIRES_SINGLE_PORT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -588,6 +718,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateComponent_ContinuousComponentHasOnlyContinuousPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_HybridComponentHasOnlyHybridPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_UniqueComponentPartsWithinStructuredComponent(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentNoHybridPort(structuredComponent, diagnostics, context);
 		return result;
 	}
 
@@ -615,6 +746,35 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniqueComponentPartsWithinStructuredComponent",
 				 STRUCTURED_COMPONENT__UNIQUE_COMPONENT_PARTS_WITHIN_STRUCTURED_COMPONENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the StructuredComponentNoHybridPort constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_COMPONENT__STRUCTURED_COMPONENT_NO_HYBRID_PORT__EEXPRESSION = "self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))";
+
+	/**
+	 * Validates the StructuredComponentNoHybridPort constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredComponent_StructuredComponentNoHybridPort(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT,
+				 structuredComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "StructuredComponentNoHybridPort",
+				 STRUCTURED_COMPONENT__STRUCTURED_COMPONENT_NO_HYBRID_PORT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1595,101 +1755,13 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageInterface(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHybridPort_LowerBoundMustBeZeroOrOne(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHybridPort_UpperBoundMustBeOne(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageInterface(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_SingleRoleRequiresSinglePort(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateContinuousPort_LowerBoundMustBeZeroOrOne(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateContinuousPort_UpperBoundMustBeOne(hybridPort, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the LowerBoundMustBeZeroOrOne constraint of '<em>Hybrid Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String HYBRID_PORT__LOWER_BOUND_MUST_BE_ZERO_OR_ONE__EEXPRESSION = "-- This Constraint is fulfilled, if no Cardinality exists.\n" +
-		"-- But that is okay, as then another Problem-Marker is shown,\n" +
-		"-- because Cardinality.lowerBound is 1..1\n" +
-		"self.cardinality.oclIsUndefined() or (\n" +
-		"\tif self.cardinality.lowerBound.oclIsUndefined() then\n" +
-		"\t\tfalse\n" +
-		"\telse\n" +
-		"\t\tself.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1\n" +
-		"\tendif\n" +
-		")";
-
-	/**
-	 * Validates the LowerBoundMustBeZeroOrOne constraint of '<em>Hybrid Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHybridPort_LowerBoundMustBeZeroOrOne(HybridPort hybridPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "LowerBoundMustBeZeroOrOne", getObjectLabel(hybridPort, context) },
-						 new Object[] { hybridPort },
-						 context));
-			}
-			return false;
-		}
-		return validateContinuousPort_LowerBoundMustBeZeroOrOne(hybridPort, diagnostics, context);
-	}
-
-	/**
-	 * The cached validation expression for the UpperBoundMustBeOne constraint of '<em>Hybrid Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String HYBRID_PORT__UPPER_BOUND_MUST_BE_ONE__EEXPRESSION = "-- This Constraint is fulfilled, if no Cardinality exists.\n" +
-		"-- But that is okay, as then another Problem-Marker is shown,\n" +
-		"-- because Cardinality.upperBound is 1..1\n" +
-		"self.cardinality.oclIsUndefined() or (\n" +
-		"\tif self.cardinality.upperBound.oclIsUndefined() then\n" +
-		"\t\tfalse\n" +
-		"\telse\n" +
-		"\t\tself.cardinality.upperBound.value = 1\n" +
-		"\tendif\n" +
-		")";
-
-	/**
-	 * Validates the UpperBoundMustBeOne constraint of '<em>Hybrid Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHybridPort_UpperBoundMustBeOne(HybridPort hybridPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "UpperBoundMustBeOne", getObjectLabel(hybridPort, context) },
-						 new Object[] { hybridPort },
-						 context));
-			}
-			return false;
-		}
-		return validateContinuousPort_UpperBoundMustBeOne(hybridPort, diagnostics, context);
 	}
 
 	/**

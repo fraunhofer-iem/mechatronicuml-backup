@@ -148,11 +148,15 @@
           <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="AtLeastOneMessageInterface DiscretePortRequiresBehavior"/>
+          <details key="constraints" value="AtLeastOneMessageInterface DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortAndRoleSameMessageInterface SingleRoleRequiresSinglePort"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="AtLeastOneMessageInterface" value="self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))"/>
-          <details key="DiscretePortRequiresBehavior" value="-- clarify if this also holds for hybrid ports&#xA;not self.behavior.oclIsUndefined()"/>
+          <details key="DiscretePortRequiresBehavior" value="-- this also holds for a hybrid port&#xA;(not self.component.oclIsUndefined() and not self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
+          <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
+          <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()"/>
+          <details key="DiscretePortAndRoleSameMessageInterface" value="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageInterface = self.refines.senderMessageInterface&#xA;&#x9; and&#xA;&#x9; self.receiverMessageInterface = self.refines.receiverMessageInterface&#xA;&#x9;)"/>
+          <details key="SingleRoleRequiresSinglePort" value="if not self.refines.oclIsUndefined() and not self.refines.cardinality.oclIsUndefined() and not self.refines.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;(self.refines.cardinality.upperBound.value = 1) implies not self.isMultiPort&#xA;else&#xA;&#x9;true&#xA;endif"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/pattern/Role"
             eOpposite="#//model/pattern/Role/port">
@@ -291,10 +295,11 @@
           <details key="documentation" value="This class represents a structured component which is capable of including arbitraryly many component parts.&#xD;&#xA;&#xD;&#xA;Component types are implemented as a variation of the composite design pattern. &#xD;&#xA;Concerning the composite pattern this class represents the role &quot;composite&quot;. &#xD;&#xA;However structured components do not contain component types directly like &#xD;&#xA;in the original composite pattern. Instead they contain component parts which &#xD;&#xA;are typed by component types. The reason for this is to get a clear distinction&#xD;&#xA; between the component type level and the component instance level."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="UniqueComponentPartsWithinStructuredComponent"/>
+          <details key="constraints" value="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="UniqueComponentPartsWithinStructuredComponent" value="self.embeddedParts->isUnique(p | p.componentType)"/>
+          <details key="StructuredComponentNoHybridPort" value="self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts" lowerBound="1"
             upperBound="-1" eType="#//model/component/ComponentPart" containment="true"
@@ -505,13 +510,6 @@
       <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/DiscretePort #//model/component/ContinuousPort">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
-          <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHybridInPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
