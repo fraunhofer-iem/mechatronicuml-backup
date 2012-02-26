@@ -15,7 +15,25 @@
       </parser>
    </extension>
 
-   <extension point="org.eclipse.ui.contexts" id="ui-context">
+	
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/ModelinstanceDiagramFile.gif"
+         extensions="pattern_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+   	<extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
@@ -24,6 +42,85 @@
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
    	</extension>
+
+   	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
+  	     category="de.fujaba/de.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.menus">
+	   <?gmfgen generated="true"?>   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.createDiagram"
+	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
+	            id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.createDiagram"
+	            label="Initialize Pattern Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+
+	
+	<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+	
+	<extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.pattern.category"
+            name="pattern">
+         
+         <child
+               class="CoordinationPattern"
+               packageNsUri="http://www.fujaba.de/muml/model/pattern/0.2.1">
+         </child>
+         
+      </category>
+   </extension>
+
+	
+	<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <?gmfgen generated="true"?>  
+      <editor
+            editorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID">
+         <information
+               editorName="Pattern Editor"
+               fileExtension="pattern_diagram"
+               fujabaEditor="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
+               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
+               modelId="Pattern"
+               useModelElementCategory="true">
+         </information>
+      </editor>
+   </extension>
+
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
@@ -64,6 +161,30 @@
       </GlobalActionHandlerProvider>
    </extension>
 
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlMarkerNavigationProvider">
+         <MarkerType name="de.uni_paderborn.fujaba.muml.patterneditor.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Pattern Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
@@ -163,6 +284,54 @@
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
             <input type="de.uni_paderborn.fujaba.muml.patterneditor.diagram.navigator.MumlAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>
+      <propertyTabs
+            contributorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram">
+         <propertyTab
+               label="Base"
+               category="domain"
+               id="Base">
+         </propertyTab>
+         <propertyTab
+               label="Documentation"
+               category="extra"
+               id="Documentation"
+               afterTab="Documentation">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>
+      <propertySections
+            contributorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="property.section.eef"
+               tab="Base">
+            <input type="org.eclipse.gmf.runtime.notation.View"></input>
+            <input type="org.eclipse.gef.EditPart"></input>
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>
+      <propertySections
+            contributorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="org.storydriven.modeling.section.CommentableElement"
+               tab="Documentation">
+            <input type="org.eclipse.gmf.runtime.notation.View"></input>
+            <input type="org.eclipse.gef.EditPart"></input>
          </propertySection>
       </propertySections>
    </extension>
@@ -479,140 +648,4 @@
             pluginid="de.uni_paderborn.fujaba.muml.patterneditor.diagram"
             priority="1"></factory>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
-      <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlMarkerNavigationProvider">
-         <MarkerType name="de.uni_paderborn.fujaba.muml.patterneditor.diagram.diagnostic"/>
-         <Priority name="Lowest"/>
-      </MarkerNavigationProvider>
-   </extension>
-
-<extension id="diagnostic" name="Pattern Plugin problems" point="org.eclipse.core.resources.markers">
-      <?gmfgen generated="true"?>
-      <super type="org.eclipse.core.resources.problemmarker"/>
-      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
-      <persistent value="true"/>
-   </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
-      <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlValidationDecoratorProvider">
-         <Priority name="Lowest"/>
-         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
-         <context decoratorTargets="PRIMARY_VIEW"/>
-      </decoratorProvider>
-   </extension>
-<extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="true"?>   
-	   <menuContribution
-	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=diagrams">
-	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.createDiagram"
-	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
-	            id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.createDiagram"
-	            label="Initialize Pattern Diagram"
-	            style="push">
-	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
-          			</visibleWhen>
-	      </command>
-	   </menuContribution>
-	</extension>
-
-<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-<extension
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.pattern.category"
-            name="pattern">
-         
-         <child
-               class="CoordinationPattern"
-               packageNsUri="http://www.fujaba.de/muml/model/pattern/0.2.1">
-         </child>
-         
-      </category>
-   </extension>
-<extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
-      <editor
-         id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID"
-         name="%editorName"
-         icon="icons/obj16/ModelinstanceDiagramFile.gif"
-         extensions="pattern_diagram"
-         default="true"
-         class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramActionBarContributor">
-      </editor>
-   	</extension>
-
-<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-      <?gmfgen generated="true"?>
-  	  <wizard
-  	     name="%newWizardName"
-  	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
-  	     category="de.fujaba/de.fujaba.diagrams"
-  	     class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizard"
-  	     id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlCreationWizardID">
-  	  	 <description>%newWizardDesc</description>  
-      </wizard>
-   	</extension>
-
-
-<extension
-         point="de.fujaba.newwizard.diagraminformation">
-      <?gmfgen generated="true"?>  
-      <editor
-            editorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID">
-         <information
-               editorName="Pattern Editor"
-               fileExtension="pattern_diagram"
-               fujabaEditor="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
-               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
-               modelId="Pattern"
-               useModelElementCategory="true">
-         </information>
-      </editor>
-   </extension>
-<extension
-         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram">
-         <propertyTab
-               label="Base"
-               category="domain"
-               id="Base">
-         </propertyTab>
-      </propertyTabs>
-   </extension>
-
-<extension
-         point="org.eclipse.ui.views.properties.tabbed.propertySections">
-      <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram">
-         <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="property.section.eef"
-               tab="Base">
-            <input type="org.eclipse.gmf.runtime.notation.View"></input>
-            <input type="org.eclipse.gef.EditPart"></input>
-         </propertySection>
-      </propertySections>
-   </extension>
-
-
-
-
-
-
 </plugin>

@@ -15,7 +15,25 @@
       </parser>
    </extension>
 
-   <extension point="org.eclipse.ui.contexts" id="ui-context">
+	
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/StructuredcomponentDiagramFile.gif"
+         extensions="structuredcomponent_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+   	<extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
@@ -24,6 +42,84 @@
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
    	</extension>
+
+   	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/StructuredcomponentDiagramFile.gif"
+  	     category="de.fujaba/de.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.menus">
+	   <?gmfgen generated="true"?>   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+	            icon="icons/obj16/StructuredcomponentDiagramFile.gif"
+	            id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+	            label="Initialize Structuredcomponent Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+
+	
+	<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+	
+	<extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.components.category"
+            name="component">
+         
+         <child
+               class="StructuredComponent"
+               packageNsUri="http://www.fujaba.de/muml/model/component/0.2.1">
+         </child>
+         
+      </category>
+   </extension>
+
+	
+	<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <?gmfgen generated="true"?>  
+      <editor
+            editorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
+         <information
+               editorName="Structuredcomponent Editor"
+               fileExtension="structuredcomponent_diagram"
+               fujabaEditor="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
+               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
+               modelId="Structuredcomponent"
+               useModelElementCategory="true">
+         </information>
+      </editor>
+   </extension>
 
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
@@ -191,6 +287,54 @@
       </propertySections>
    </extension>
 
+
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>
+      <propertyTabs
+            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram">
+         <propertyTab
+               label="Base"
+               category="domain"
+               id="Base">
+         </propertyTab>
+         <propertyTab
+               label="Documentation"
+               category="extra"
+               id="Documentation"
+               afterTab="Documentation">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>
+      <propertySections
+            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="property.section.eef"
+               tab="Base">
+            <input type="org.eclipse.gmf.runtime.notation.View"></input>
+            <input type="org.eclipse.gef.EditPart"></input>
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>
+      <propertySections
+            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="org.storydriven.modeling.section.CommentableElement"
+               tab="Documentation">
+            <input type="org.eclipse.gmf.runtime.notation.View"></input>
+            <input type="org.eclipse.gef.EditPart"></input>
+         </propertySection>
+      </propertySections>
+   </extension>
+
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlViewProvider">
@@ -241,7 +385,13 @@
       </IconProvider>
    </extension>
 
-   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.fujaba.de/modelinstance/0.2.1">
@@ -377,10 +527,7 @@
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
-	   
-	   
-      
-	      <extension point="org.eclipse.ui.commands" id="update-cmd">
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
@@ -431,141 +578,14 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
-      <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider">
-         <Priority name="Lowest"/>
-      </ParserProvider>
-   </extension>
-<extension
+
+   <!-- optionally, specify keybindings -->
+
+   <extension
          point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
       <factory
             class="de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomItemProviderFactory"
             pluginid="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"
             priority="1"></factory>
    </extension>
-<extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="true"?>   
-	   <menuContribution
-	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=diagrams">
-	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
-	            icon="icons/obj16/StructuredcomponentDiagramFile.gif"
-	            id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
-	            label="Initialize Structuredcomponent Diagram"
-	            style="push">
-	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
-          			</visibleWhen>
-	      </command>
-	   </menuContribution>
-	</extension>
-
-<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-<extension
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.components.category"
-            name="component">
-         
-         <child
-               class="StructuredComponent"
-               packageNsUri="http://www.fujaba.de/muml/model/component/0.2.1">
-         </child>
-         
-      </category>
-   </extension>
-<extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
-      <editor
-         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
-         name="%editorName"
-         icon="icons/obj16/StructuredcomponentDiagramFile.gif"
-         extensions="structuredcomponent_diagram"
-         default="true"
-         class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramActionBarContributor">
-      </editor>
-   	</extension>
-
-<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-      <?gmfgen generated="true"?>
-  	  <wizard
-  	     name="%newWizardName"
-  	     icon="icons/obj16/StructuredcomponentDiagramFile.gif"
-  	     category="de.fujaba/de.fujaba.diagrams"
-  	     class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizard"
-  	     id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizardID">
-  	  	 <description>%newWizardDesc</description>  
-      </wizard>
-   	</extension>
-
-
-<extension
-         point="de.fujaba.newwizard.diagraminformation">
-      <?gmfgen generated="true"?>  
-      <editor
-            editorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
-         <information
-               editorName="Structuredcomponent Editor"
-               fileExtension="structuredcomponent_diagram"
-               fujabaEditor="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
-               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
-               modelId="Structuredcomponent"
-               useModelElementCategory="true">
-         </information>
-      </editor>
-   </extension>
-<extension
-         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram">
-         <propertyTab
-               label="Base"
-               category="domain"
-               id="Base">
-         </propertyTab>
-      </propertyTabs>
-   </extension>
-
-<extension
-         point="org.eclipse.ui.views.properties.tabbed.propertySections">
-      <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram">
-         <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="property.section.eef"
-               tab="Base">
-            <input type="org.eclipse.gmf.runtime.notation.View"></input>
-            <input type="org.eclipse.gef.EditPart"></input>
-         </propertySection>
-      </propertySections>
-   </extension>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- optionally, specify keybindings -->
 </plugin>

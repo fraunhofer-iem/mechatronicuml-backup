@@ -44,13 +44,13 @@
             contributorId="de.fujaba.modelinstance.editor"
             labelProvider="de.fujaba.modelinstance.presentation.ModelinstanceSheetLabelProvider">
          <propertyCategory
-               category="default">
+               category="domain">
          </propertyCategory>
          <propertyCategory
                category="extended">
          </propertyCategory>
          <propertyCategory
-               category="advanced">
+               category="extra">
          </propertyCategory>
       </propertyContributor>
    </extension>
@@ -62,8 +62,13 @@
             contributorId="de.fujaba.modelinstance.editor">
          <propertyTab
                label="Base"
-               category="default"
+               category="domain"
                id="Base">
+         </propertyTab>
+         <propertyTab
+               label="Documentation"
+               category="extra"
+               id="Documentation">
          </propertyTab>
       </propertyTabs>
    </extension>
@@ -78,6 +83,12 @@
                id="EEF"
                tab="Base">
              <input type="org.eclipse.emf.ecore.EObject" />
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="org.storydriven.modeling.section.CommentableElement"
+               tab="Documentation">
+             <input type="org.storydriven.modeling.CommentableElement" />
          </propertySection>
 	  </propertySections>
    </extension>
