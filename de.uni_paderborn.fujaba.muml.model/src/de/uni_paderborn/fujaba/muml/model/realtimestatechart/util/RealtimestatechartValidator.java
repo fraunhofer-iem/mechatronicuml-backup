@@ -241,7 +241,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(state, diagnostics, context);
-		if (result || diagnostics != null) result &= validateState_OneInvarianPerClock(state, diagnostics, context);
+		if (result || diagnostics != null) result &= validateState_OneInvariantPerClock(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_OneInitialState(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_NoOutgoingTransitionOfFinalState(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_NoRegionsOfFinalState(state, diagnostics, context);
@@ -255,20 +255,20 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the OneInvarianPerClock constraint of '<em>State</em>'.
+	 * The cached validation expression for the OneInvariantPerClock constraint of '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__ONE_INVARIAN_PER_CLOCK__EEXPRESSION = "self.invariants->isUnique(clock)";
+	protected static final String STATE__ONE_INVARIANT_PER_CLOCK__EEXPRESSION = "self.invariants->isUnique(clock)";
 
 	/**
-	 * Validates the OneInvarianPerClock constraint of '<em>State</em>'.
+	 * Validates the OneInvariantPerClock constraint of '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateState_OneInvarianPerClock(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateState_OneInvariantPerClock(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(RealtimestatechartPackage.Literals.STATE,
@@ -276,8 +276,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "OneInvarianPerClock",
-				 STATE__ONE_INVARIAN_PER_CLOCK__EEXPRESSION,
+				 "OneInvariantPerClock",
+				 STATE__ONE_INVARIANT_PER_CLOCK__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -1670,7 +1670,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (stateEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"
+			 "constraints", "OneInvariantPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"
 		   });																										
 		addAnnotation
 		  (transitionEClass, 
@@ -1728,7 +1728,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (stateEClass, 
 		   source, 
 		   new String[] {
-			 "OneInvarianPerClock", "self.invariants->isUnique(clock)",
+			 "OneInvariantPerClock", "self.invariants->isUnique(clock)",
 			 "OneInitialState", "not self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->isEmpty()",
 			 "NoOutgoingTransitionOfFinalState", "self.final implies self.outgoingTransitions->isEmpty()",
 			 "NoRegionsOfFinalState", "self.final implies self.regions->isEmpty()",
