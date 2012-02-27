@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
@@ -91,9 +92,7 @@ public class FujabaCommonPlugin implements BundleActivator {
 			String pluginid, boolean positivePriority) {
 		List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		
-		if (pluginid == null) {
-			throw new IllegalArgumentException("The argument pluginid must not be null");
-		}
+		Assert.isNotNull(pluginid, "The argument pluginid must not be null");
 
 		List<IConfigurationElement> elements = Arrays
 				.asList(Platform
@@ -103,7 +102,7 @@ public class FujabaCommonPlugin implements BundleActivator {
 
 		List<IConfigurationElement> validElements = new ArrayList<IConfigurationElement>();
 		
-		// Use only those extensions that have a wrong value for the pluginid attribute.
+		// Use only those extensions that have a correct value for the pluginid attribute.
 		for (IConfigurationElement element : elements) {
 			if (pluginid.equals(element.getAttribute("pluginid"))) {
 				validElements.add(element);
