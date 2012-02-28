@@ -44,11 +44,10 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy());
 
-		// Not installing the EditPolicy with the key EditPolicyRoles.CANONICAL_ROLE guarantees that the "Delete from Diagram" Action is visible. 
 		installEditPolicy(
-				"CustomCanonical",
+				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy(
-						false));
+						true));
 
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}

@@ -243,42 +243,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Default1Group_title;
+	public static String RealtimeStatechart1Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Default1Group_desc;
+	public static String RealtimeStatechart1Group_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechart2Group_title;
+	public static String RealtimeState2Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechart2Group_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String RealtimeState3Group_title;
-
-	/**
-	 * @generated
-	 */
-	public static String RealtimeState3Group_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Statechart1CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Statechart1CreationTool_desc;
+	public static String RealtimeState2Group_desc;
 
 	/**
 	 * @generated
@@ -433,7 +413,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ModelElementCategory_1000_links;
+	public static String NavigatorGroupName_StateExitPoint_3015_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateExitPoint_3015_outgoinglinks;
 
 	/**
 	 * @generated
@@ -448,12 +433,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_EntryPoint_3012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_EntryPoint_3012_outgoinglinks;
+	public static String NavigatorGroupName_RealtimeStatechart_1000_links;
 
 	/**
 	 * @generated
@@ -468,22 +448,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_StateExitPoint_3015_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateExitPoint_3015_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_ExitPoint_3013_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ExitPoint_3013_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3012_outgoinglinks;
 
 	/**
 	 * @generated

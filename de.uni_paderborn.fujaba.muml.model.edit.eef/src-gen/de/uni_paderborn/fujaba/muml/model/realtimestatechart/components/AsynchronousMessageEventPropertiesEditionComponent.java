@@ -67,8 +67,10 @@ public class AsynchronousMessageEventPropertiesEditionComponent extends SinglePa
 			if (isAccessible(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.kind)) {
 				basePart.initKind((EEnum) RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEType(), asynchronousMessageEvent.getKind());
 			}
+			// FIXME NO VALID CASE INTO template public updater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : message, AsynchronousMessageEvent, AsynchronousMessageEvent.
 			// init filters
 			
+			// FIXME NO VALID CASE INTO template public filterUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : message, AsynchronousMessageEvent, AsynchronousMessageEvent.
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -80,6 +82,7 @@ public class AsynchronousMessageEventPropertiesEditionComponent extends SinglePa
 
 
 
+
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
@@ -87,6 +90,9 @@ public class AsynchronousMessageEventPropertiesEditionComponent extends SinglePa
 	protected EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.kind) {
 			return RealtimestatechartPackage.eINSTANCE.getEvent_Kind();
+		}
+		if (editorKey == RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message) {
+			return RealtimestatechartPackage.eINSTANCE.getAsynchronousMessageEvent_Message();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -101,6 +107,9 @@ public class AsynchronousMessageEventPropertiesEditionComponent extends SinglePa
 		if (RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.kind == event.getAffectedEditor()) {
 			asynchronousMessageEvent.setKind((EventKind)event.getNewValue());
 		}
+		if (RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message == event.getAffectedEditor()) {
+			// FIXME INVALID CASE you must override the template 'declareEObjectUpdater' for the case : message, AsynchronousMessageEvent, AsynchronousMessageEvent.
+		}
 	}
 
 	/**
@@ -113,10 +122,21 @@ public class AsynchronousMessageEventPropertiesEditionComponent extends SinglePa
 			if (RealtimestatechartPackage.eINSTANCE.getEvent_Kind().equals(msg.getFeature()) && isAccessible(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.kind))
 				basePart.setKind((Enumerator)msg.getNewValue());
 			
+			// FIXME INVALID CASE INTO template public liveUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : message, AsynchronousMessageEvent, AsynchronousMessageEvent.
 			
 		}
 	}
 
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
+	 * 
+	 */
+	public boolean isRequired(Object key, int kind) {
+		return key == RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message;
+	}
 
 	/**
 	 * {@inheritDoc}

@@ -198,6 +198,9 @@ public class RealtimestatechartViewsRepository {
 			
 			public static String kind = "realtimestatechart::AsynchronousMessageEvent::properties::kind";
 			
+			
+			public static String message = "realtimestatechart::AsynchronousMessageEvent::properties::message";
+			
 	
 		}
 	

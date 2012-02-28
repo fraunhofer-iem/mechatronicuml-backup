@@ -41,8 +41,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.providers.InstanceMessages;
 /**
  * 
  * 
- * 
- * 
  */
 public class DelegationInstancePropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, DelegationInstancePropertiesEditionPart {
 
@@ -208,8 +206,8 @@ public class DelegationInstancePropertiesEditionPartImpl extends CompositeProper
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-		
-		// End of user code
+
+// End of user code
 	}
 
 	/**

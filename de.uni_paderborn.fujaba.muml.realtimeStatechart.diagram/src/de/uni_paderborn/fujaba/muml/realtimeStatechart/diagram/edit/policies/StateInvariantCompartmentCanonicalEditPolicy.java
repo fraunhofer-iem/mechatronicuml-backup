@@ -2,11 +2,9 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -28,7 +26,6 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class StateInvariantCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
 
 	public StateInvariantCompartmentCanonicalEditPolicy() {

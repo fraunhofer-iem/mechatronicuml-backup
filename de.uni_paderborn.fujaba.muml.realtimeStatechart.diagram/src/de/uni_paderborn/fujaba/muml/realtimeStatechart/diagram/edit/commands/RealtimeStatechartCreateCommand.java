@@ -12,8 +12,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-
 /**
  * @generated
  */
@@ -43,6 +41,10 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getElementToEdit();
+		if (container.getStatechart() != null) {
+			return false;
+		}
 		return true;
 
 	}
@@ -55,8 +57,8 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createRealtimeStatechart();
 
-		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
-		owner.getModelElements().add(newElement);
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getElementToEdit();
+		owner.setStatechart(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -69,8 +69,6 @@ public class ExitEventPropertiesEditionPartForm extends CompositePropertiesEditi
 		protected List<ViewerFilter> clockResetsFilters = new ArrayList<ViewerFilter>();
 
 
-		
-		
 
 	/**
 	 * Default constructor
@@ -266,8 +264,8 @@ public class ExitEventPropertiesEditionPartForm extends CompositePropertiesEditi
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-		
-		// End of user code
+
+// End of user code
 	}
 
 	/**

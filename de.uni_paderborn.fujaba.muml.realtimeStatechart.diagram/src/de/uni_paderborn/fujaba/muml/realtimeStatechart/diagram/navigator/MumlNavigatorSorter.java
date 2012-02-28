@@ -10,7 +10,7 @@ public class MumlNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7019;
+	private static final int GROUP_CATEGORY = 7020;
 
 	/**
 	 * @generated

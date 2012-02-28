@@ -31,7 +31,6 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.storydriven.modeling.SDMPackage;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -73,11 +72,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 	 * Settings for state EObjectFlatComboViewer
 	 */
 	private	EObjectFlatComboSettings stateSettings;
-	
-	/**
-	 * Settings for exitPoint EObjectFlatComboViewer
-	 */
-	private	EObjectFlatComboSettings exitPointSettings;
 	
 	
 	/**
@@ -130,13 +124,7 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 				// set the button mode
 				basePart.setStateButtonMode(ButtonsModeEnum.BROWSE);
 			}
-			if (isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint)) {
-				// init part
-				exitPointSettings = new EObjectFlatComboSettings(stateExitPoint, RealtimestatechartPackage.eINSTANCE.getStateExitPoint_ExitPoint());
-				basePart.initExitPoint(exitPointSettings);
-				// set the button mode
-				basePart.setExitPointButtonMode(ButtonsModeEnum.BROWSE);
-			}
+			// FIXME NO VALID CASE INTO template public updater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : exitPoint, StateExitPoint, StateExitPoint.
 			// init filters
 			
 			basePart.addFilterToOutgoingTransitions(new ViewerFilter() {
@@ -205,21 +193,7 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 			// Start of user code for additional businessfilters for state
 			// End of user code
 			
-			basePart.addFilterToExitPoint(new ViewerFilter() {
-			
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-			 */
-			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				return (element instanceof ExitPoint);
-				}
-			
-			});
-			// Start of user code for additional businessfilters for exitPoint
-			// End of user code
-			
+			// FIXME NO VALID CASE INTO template public filterUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : exitPoint, StateExitPoint, StateExitPoint.
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -327,20 +301,7 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 			}
 		}
 		if (RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint == event.getAffectedEditor()) {
-			if (event.getKind() == PropertiesEditionEvent.SET) {
-				exitPointSettings.setToReference((ExitPoint)event.getNewValue());
-			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
-				ExitPoint eObject = RealtimestatechartFactory.eINSTANCE.createExitPoint();
-				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(eObject, PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy policy = provider.getPolicy(context);
-					if (policy != null) {
-						policy.execute();
-					}
-				}
-				exitPointSettings.setToReference(eObject);
-			}
+			// FIXME INVALID CASE you must override the template 'declareEObjectUpdater' for the case : exitPoint, StateExitPoint, StateExitPoint.
 		}
 	}
 
@@ -366,8 +327,7 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 				basePart.setStatechart((EObject)msg.getNewValue());
 			if (RealtimestatechartPackage.eINSTANCE.getStateExitPoint_State().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.state))
 				basePart.setState((EObject)msg.getNewValue());
-			if (RealtimestatechartPackage.eINSTANCE.getStateExitPoint_ExitPoint().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint))
-				basePart.setExitPoint((EObject)msg.getNewValue());
+			// FIXME INVALID CASE INTO template public liveUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : exitPoint, StateExitPoint, StateExitPoint.
 			
 		}
 	}

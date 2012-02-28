@@ -15783,5 +15783,41 @@
         oldDataValue="OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="key" dataValue="OneInvariantPerClock" oldDataValue="OneInvarianPerClock"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        featureName="name" dataValue="statechart"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        featureName="volatile" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="derivation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="documentation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This derived reference only exists because GMF needs it to visualize the same statechart as Diagram Element and as Top Level Node."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
   </releases>
 </history:History>

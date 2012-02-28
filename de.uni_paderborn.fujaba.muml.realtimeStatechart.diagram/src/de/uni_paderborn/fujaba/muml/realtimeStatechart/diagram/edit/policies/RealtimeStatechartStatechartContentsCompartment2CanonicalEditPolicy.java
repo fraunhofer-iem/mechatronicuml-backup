@@ -26,7 +26,6 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class RealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy
 		extends CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
 
 	public RealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy() {

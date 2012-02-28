@@ -28,8 +28,8 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class StateActionCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
+
 	/**
 	 * @generated
 	 */

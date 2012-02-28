@@ -81,6 +81,7 @@ public class RealtimeStatechartItemProvider
 			addEmbeddedPropertyDescriptor(object);
 			addAllAvailableAttributesPropertyDescriptor(object);
 			addAllAvailableOperationsPropertyDescriptor(object);
+			addStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -388,6 +389,28 @@ public class RealtimeStatechartItemProvider
 				 false,
 				 false,
 				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RealtimeStatechart_statechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_statechart_feature", "_UI_RealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATECHART,
+				 true,
+				 false,
+				 true,
 				 null,
 				 null,
 				 null));

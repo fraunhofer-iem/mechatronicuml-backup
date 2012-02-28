@@ -1701,6 +1701,16 @@
             <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
+            eType="#//model/realtimestatechart/RealtimeStatechart" volatile="true"
+            transient="true" derived="true" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the same statechart as Diagram Element and as Top Level Node."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

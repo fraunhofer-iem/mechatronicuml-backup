@@ -26,7 +26,6 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class StateRegionCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
 
 	public StateRegionCompartmentCanonicalEditPolicy() {

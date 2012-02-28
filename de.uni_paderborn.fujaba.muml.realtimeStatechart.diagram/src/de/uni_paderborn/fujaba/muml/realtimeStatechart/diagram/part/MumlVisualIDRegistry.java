@@ -6,9 +6,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.ModelinstancePackage;
-
 /**
  * This registry is used to determine which type of visual object should be
  * created for the corresponding Diagram, Node, ChildNode or Link represented
@@ -86,9 +83,9 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (ModelinstancePackage.eINSTANCE.getModelElementCategory()
-				.isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((ModelElementCategory) domainElement)) {
+		if (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getRealtimeStatechart().isSuperTypeOf(domainElement.eClass())
+				&& isDiagram((de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -430,7 +427,8 @@ public class MumlVisualIDRegistry {
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(ModelElementCategory element) {
+	private static boolean isDiagram(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart element) {
 		return true;
 	}
 

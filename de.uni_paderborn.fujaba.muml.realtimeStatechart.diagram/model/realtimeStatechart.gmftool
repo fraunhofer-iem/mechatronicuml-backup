@@ -6,13 +6,6 @@
   <palette
       title="StatechartPalette">
     <tools
-        xsi:type="gmftool:CreationTool"
-        title="Statechart"
-        description="Creates a new Statechart">
-      <smallIcon
-          xsi:type="gmftool:DefaultImage"/>
-    </tools>
-    <tools
         xsi:type="gmftool:ToolGroup"
         title="Realtime Statechart"
         description="Can be casted on statechart"

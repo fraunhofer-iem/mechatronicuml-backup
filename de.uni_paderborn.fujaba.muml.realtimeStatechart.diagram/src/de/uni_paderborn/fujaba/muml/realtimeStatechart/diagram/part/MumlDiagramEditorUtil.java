@@ -49,9 +49,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.ModelinstanceFactory;
-
 /**
  * @generated
  */
@@ -178,7 +175,7 @@ public class MumlDiagramEditorUtil {
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				ModelElementCategory model = createInitialModel();
+				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService
@@ -228,8 +225,9 @@ public class MumlDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static ModelElementCategory createInitialModel() {
-		return ModelinstanceFactory.eINSTANCE.createModelElementCategory();
+	private static de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart createInitialModel() {
+		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createRealtimeStatechart();
 	}
 
 	/**
@@ -238,7 +236,8 @@ public class MumlDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static void attachModelToResource(ModelElementCategory model,
+	private static void attachModelToResource(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart model,
 			Resource resource) {
 		resource.getContents().add(model);
 	}

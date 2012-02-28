@@ -568,6 +568,9 @@
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_DYZ9v1P7EeGBa86nseBk7A" name="kind" views="_DYby_lP7EeGBa86nseBk7A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Event/kind"/>
         </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ivECMWE_EeG9nPGonucJeQ" name="message" views="_sCXZkGE_EeG9nPGonucJeQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent/message"/>
+        </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_DYZ9wFP7EeGBa86nseBk7A" name="DoEvent" views="_DYby_1P7EeGBa86nseBk7A">
@@ -1303,6 +1306,9 @@
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_DYby_lP7EeGBa86nseBk7A" name="kind">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_sCXZkGE_EeG9nPGonucJeQ" name="message">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
         </elements>
       </views>

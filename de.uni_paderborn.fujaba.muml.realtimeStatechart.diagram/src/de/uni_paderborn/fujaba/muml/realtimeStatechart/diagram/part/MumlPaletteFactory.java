@@ -23,35 +23,20 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
-		paletteRoot.add(createDefault1Group());
-		paletteRoot.add(createRealtimeStatechart2Group());
-		paletteRoot.add(createRealtimeState3Group());
-	}
-
-	/**
-	 * Creates "Default" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createDefault1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Default1Group_title);
-		paletteContainer.setId("createDefault1Group"); //$NON-NLS-1$
-		paletteContainer
-				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Default1Group_desc);
-		paletteContainer.add(createStatechart1CreationTool());
-		return paletteContainer;
+		paletteRoot.add(createRealtimeStatechart1Group());
+		paletteRoot.add(createRealtimeState2Group());
 	}
 
 	/**
 	 * Creates "Realtime Statechart" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createRealtimeStatechart2Group() {
+	private PaletteContainer createRealtimeStatechart1Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart2Group_title);
-		paletteContainer.setId("createRealtimeStatechart2Group"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart1Group_title);
+		paletteContainer.setId("createRealtimeStatechart1Group"); //$NON-NLS-1$
 		paletteContainer
-				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart2Group_desc);
+				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart1Group_desc);
 		paletteContainer.add(createState1CreationTool());
 		paletteContainer.add(createTransition2CreationTool());
 		paletteContainer.add(createEntryPoint3CreationTool());
@@ -63,12 +48,12 @@ public class MumlPaletteFactory {
 	 * Creates "Realtime State" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createRealtimeState3Group() {
+	private PaletteContainer createRealtimeState2Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState3Group_title);
-		paletteContainer.setId("createRealtimeState3Group"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState2Group_title);
+		paletteContainer.setId("createRealtimeState2Group"); //$NON-NLS-1$
 		paletteContainer
-				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState3Group_desc);
+				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState2Group_desc);
 		paletteContainer.add(createEntryAction1CreationTool());
 		paletteContainer.add(createDoAction2CreationTool());
 		paletteContainer.add(createExitAction3CreationTool());
@@ -76,24 +61,6 @@ public class MumlPaletteFactory {
 		paletteContainer.add(createStateEntryPoint5CreationTool());
 		paletteContainer.add(createStateExitPoint6CreationTool());
 		return paletteContainer;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createStatechart1CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2004);
-		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3016);
-		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Statechart1CreationTool_title,
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Statechart1CreationTool_desc,
-				types);
-		entry.setId("createStatechart1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2004));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
 	}
 
 	/**

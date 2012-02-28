@@ -17,7 +17,7 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 		super.init(workbench, selection);
 
 		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewModelinstanceWizard.gif")); //$NON-NLS-1$
+				.getBundledImageDescriptor("icons/wizban/NewRealtimestatechartWizard.gif")); //$NON-NLS-1$
 
 	}
 

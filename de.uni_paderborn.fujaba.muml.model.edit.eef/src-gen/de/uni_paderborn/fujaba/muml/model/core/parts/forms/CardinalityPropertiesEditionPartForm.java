@@ -34,6 +34,9 @@ import de.uni_paderborn.fujaba.muml.model.core.providers.CoreMessages;
  */
 public class CardinalityPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, CardinalityPropertiesEditionPart {
 
+
+
+
 	/**
 	 * Default constructor
 	 * @param editionComponent the {@link IPropertiesEditionComponent} that manage this part
@@ -112,8 +115,8 @@ public class CardinalityPropertiesEditionPartForm extends CompositePropertiesEdi
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-		
-		// End of user code
+
+// End of user code
 	}
 
 

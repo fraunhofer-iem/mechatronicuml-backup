@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlAbstractExpression[20];
+		this.expressions = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlAbstractExpression[21];
 	}
 
 	/**
@@ -60,6 +60,7 @@ public class MumlOCLFactory {
 					"(\nif self.state.channels->first() = self then\n\t\'ch: \'\nelse\n\t\'\'\nendif\n).concat(\n\n-- BEGIN: The actual name of the Clock\n\nif self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\n\t\'(\'.concat(\n\t\tself.containedParameters->iterate(param; result : String = \'\' | \n\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t\tparam.name.concat(\' : \').concat(\n\t\t\t\t\tif param.eType.oclIsUndefined() then\n\t\t\t\t\t\t\'null\'\n\t\t\t\t\telse\n\t\t\t\t\t\tparam.eType.name\n\t\t\t\t\tendif\n\t\t\t\t)\n\t\t\t)\n\t\t)\n\t).concat(\')\')\n\n-- END: The actual name of the Clock\n\n).concat(\nif self.state.channels->last() = self then\n\t\';\'\nelse\n\t\',\'\nendif\n)", //$NON-NLS-1$
 					"\'region\'", //$NON-NLS-1$
 					"self.parentState.getUniqueRegionPriority(0)", //$NON-NLS-1$
+					"\'statechart\'", //$NON-NLS-1$
 					"\'entrypoint\'", //$NON-NLS-1$
 					"\'exitpoint\'", //$NON-NLS-1$
 					"(\n\n-- Attributes\n\n\tif self.attributes->isEmpty() then\n\t\t\'\'\n\telse\n\t\t\'var: \'.concat(\n\t\t\tself.attributes->iterate(attribute; result : String = \'\' |\n\t\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t\t\t(\n\t\t\t\t\t\tif attribute.eType.name.oclIsUndefined() then\n\t\t\t\t\t\t\t\'\'\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\tattribute.eType.name.concat(\' \')\n\t\t\t\t\t\tendif\n\t\t\t\t\t).concat(\n\t\t\t\t\t\tif attribute.name.oclIsUndefined() then\n\t\t\t\t\t\t\t\'\'\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\tattribute.name\n\t\t\t\t\t\tendif\n\t\t\t\t\t)\n\t\t\t\t)\n\t\t\t)\n\t\t).concat(\'; \')\n\tendif\n).concat(\n\n-- Operations\n\n\tif self.operations->isEmpty() then\n\t\t\'\'\n\telse\n\t\t\'op: \'.concat(\n\t\t\tself.operations->iterate(operation; result : String = \'\' |\n\t\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t\t\t(\n\t\t\t\t\t\tif operation.eType.name.oclIsUndefined() then\n\t\t\t\t\t\t\t\'\'\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\toperation.eType.name.concat(\' \')\n\t\t\t\t\t\tendif\n\t\t\t\t\t).concat(\n\t\t\t\t\t\tif operation.name.oclIsUndefined() then\n\t\t\t\t\t\t\t\'\'\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\toperation.name\n\t\t\t\t\t\tendif\n\t\t\t\t\t)\n\t\t\t\t)\n\t\t\t)\n\t\t).concat(\'; \')\n\tendif\n).concat(\n\n-- Clocks\n\n\tif self.clocks->isEmpty() then\n\t\t\'\'\n\telse\n\t\t\'cl: \'.concat(\n\t\t\tself.clocks->iterate(clock; result : String = \'\' |\n\t\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t\t\tif clock.name.oclIsUndefined() then\n\t\t\t\t\t\t\'\'\n\t\t\t\t\telse\n\t\t\t\t\t\tclock.name\n\t\t\t\t\tendif\n\t\t\t\t)\n\t\t\t)\n\t\t).concat(\'; \')\n\tendif\n)", //$NON-NLS-1$

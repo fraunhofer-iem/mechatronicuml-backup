@@ -75,12 +75,12 @@ public class DiscreteSinglePortInstancePropertiesEditionPartForm extends Composi
 	protected Text comment;
 	protected EObjectFlatComboViewer portType;
 	protected EObjectFlatComboViewer componentInstance;
-	protected ReferencesTable incomingConnectorInstances;
-	protected List<ViewerFilter> incomingConnectorInstancesBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> incomingConnectorInstancesFilters = new ArrayList<ViewerFilter>();
-	protected ReferencesTable outgoingConnectorInstances;
-	protected List<ViewerFilter> outgoingConnectorInstancesBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> outgoingConnectorInstancesFilters = new ArrayList<ViewerFilter>();
+		protected ReferencesTable incomingConnectorInstances;
+		protected List<ViewerFilter> incomingConnectorInstancesBusinessFilters = new ArrayList<ViewerFilter>();
+		protected List<ViewerFilter> incomingConnectorInstancesFilters = new ArrayList<ViewerFilter>();
+		protected ReferencesTable outgoingConnectorInstances;
+		protected List<ViewerFilter> outgoingConnectorInstancesBusinessFilters = new ArrayList<ViewerFilter>();
+		protected List<ViewerFilter> outgoingConnectorInstancesFilters = new ArrayList<ViewerFilter>();
 	protected EObjectFlatComboViewer multiPortInstance;
 
 
@@ -523,8 +523,8 @@ public class DiscreteSinglePortInstancePropertiesEditionPartForm extends Composi
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-		
-		// End of user code
+
+// End of user code
 	}
 
 	/**

@@ -40,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Behavior;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableAttributes <em>All Available Attributes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableOperations <em>All Available Operations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStatechart <em>Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -344,6 +345,32 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @generated
 	 */
 	EList<EOperation> getAllAvailableOperations();
+
+	/**
+	 * Returns the value of the '<em><b>Statechart</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived reference only exists because GMF needs it to visualize the same statechart as Diagram Element and as Top Level Node.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Statechart</em>' containment reference.
+	 * @see #setStatechart(RealtimeStatechart)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_Statechart()
+	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self'"
+	 * @generated
+	 */
+	RealtimeStatechart getStatechart();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStatechart <em>Statechart</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Statechart</em>' containment reference.
+	 * @see #getStatechart()
+	 * @generated
+	 */
+	void setStatechart(RealtimeStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->

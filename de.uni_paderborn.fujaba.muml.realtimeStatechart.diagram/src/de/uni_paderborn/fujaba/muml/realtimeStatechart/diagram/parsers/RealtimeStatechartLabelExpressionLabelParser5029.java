@@ -23,12 +23,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class RealtimeStatechartLabelExpressionLabelParser5019 implements
+public class RealtimeStatechartLabelExpressionLabelParser5029 implements
 		IParser {
 	/**
 	 * @generated
 	 */
-	public RealtimeStatechartLabelExpressionLabelParser5019() {
+	public RealtimeStatechartLabelExpressionLabelParser5029() {
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class RealtimeStatechartLabelExpressionLabelParser5019 implements
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						12,
+						13,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getRealtimeStatechart(), null)
 				.evaluate(target);

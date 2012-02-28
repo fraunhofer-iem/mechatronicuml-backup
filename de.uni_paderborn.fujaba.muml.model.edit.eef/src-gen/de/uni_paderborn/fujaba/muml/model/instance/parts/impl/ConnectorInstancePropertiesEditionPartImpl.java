@@ -48,7 +48,6 @@ public class ConnectorInstancePropertiesEditionPartImpl extends CompositePropert
 	protected EObjectFlatComboViewer target;
 	protected EObjectFlatComboViewer connectorType;
 
-	
 
 
 	/**
@@ -207,8 +206,8 @@ public class ConnectorInstancePropertiesEditionPartImpl extends CompositePropert
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-		
-		// End of user code
+
+// End of user code
 	}
 
 	/**

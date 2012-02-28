@@ -23,35 +23,35 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser realtimeStatechartName_5018Parser;
+	protected IParser realtimeStatechartName_5028Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getRealtimeStatechartName_5018Parser() {
-		if (realtimeStatechartName_5018Parser == null) {
+	protected IParser getRealtimeStatechartName_5028Parser() {
+		if (realtimeStatechartName_5028Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			realtimeStatechartName_5018Parser = parser;
+			realtimeStatechartName_5028Parser = parser;
 		}
-		return realtimeStatechartName_5018Parser;
+		return realtimeStatechartName_5028Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5019 realtimeStatechartLabel_5019Parser;
+	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5029 realtimeStatechartLabel_5029Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getRealtimeStatechartLabel_5019Parser() {
-		if (realtimeStatechartLabel_5019Parser == null) {
-			realtimeStatechartLabel_5019Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5019();
+	protected IParser getRealtimeStatechartLabel_5029Parser() {
+		if (realtimeStatechartLabel_5029Parser == null) {
+			realtimeStatechartLabel_5029Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5029();
 		}
-		return realtimeStatechartLabel_5019Parser;
+		return realtimeStatechartLabel_5029Parser;
 	}
 
 	/**
@@ -238,44 +238,6 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser stateEntryPointName_5024Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getStateEntryPointName_5024Parser() {
-		if (stateEntryPointName_5024Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
-					features);
-			stateEntryPointName_5024Parser = parser;
-		}
-		return stateEntryPointName_5024Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser stateExitPointName_5025Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getStateExitPointName_5025Parser() {
-		if (stateExitPointName_5025Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
-					features);
-			stateExitPointName_5025Parser = parser;
-		}
-		return stateExitPointName_5025Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected IParser entryPointName_5020Parser;
 
 	/**
@@ -314,6 +276,44 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected IParser stateEntryPointName_5024Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getStateEntryPointName_5024Parser() {
+		if (stateEntryPointName_5024Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			stateEntryPointName_5024Parser = parser;
+		}
+		return stateEntryPointName_5024Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser stateExitPointName_5025Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getStateExitPointName_5025Parser() {
+		if (stateExitPointName_5025Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			stateExitPointName_5025Parser = parser;
+		}
+		return stateExitPointName_5025Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001 transitionLabel_6001Parser;
 
 	/**
@@ -347,9 +347,9 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID:
-			return getRealtimeStatechartName_5018Parser();
+			return getRealtimeStatechartName_5028Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getRealtimeStatechartLabel_5019Parser();
+			return getRealtimeStatechartLabel_5029Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
 			return getStateName_5017Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:

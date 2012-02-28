@@ -7,9 +7,14 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.impl;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
@@ -20,13 +25,21 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
+import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
+import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -46,6 +59,9 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers.Realtimes
 public class AsynchronousMessageEventPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, AsynchronousMessageEventPropertiesEditionPart {
 
 	protected EMFComboViewer kind;
+protected ReferencesTable message;
+protected List<ViewerFilter> messageBusinessFilters = new ArrayList<ViewerFilter>();
+protected List<ViewerFilter> messageFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -83,9 +99,9 @@ public class AsynchronousMessageEventPropertiesEditionPartImpl extends Composite
 	 */
 	public void createControls(Composite view) { 
 		CompositionSequence asynchronousMessageEventStep = new BindingCompositionSequence(propertiesEditionComponent);
-		asynchronousMessageEventStep
-			.addStep(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.class)
-			.addStep(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.kind);
+		CompositionStep propertiesStep = asynchronousMessageEventStep.addStep(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.class);
+		propertiesStep.addStep(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.kind);
+		propertiesStep.addStep(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message);
 		
 		
 		composer = new PartComposer(asynchronousMessageEventStep) {
@@ -97,6 +113,9 @@ public class AsynchronousMessageEventPropertiesEditionPartImpl extends Composite
 				}
 				if (key == RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.kind) {
 					return createKindEMFComboViewer(parent);
+				}
+				if (key == RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message) {
+					return createMessageAdvancedTableComposition(parent);
 				}
 				return parent;
 			}
@@ -146,6 +165,54 @@ public class AsynchronousMessageEventPropertiesEditionPartImpl extends Composite
 		return parent;
 	}
 
+	/**
+	 * @param container
+	 * 
+	 */
+	protected Composite createMessageAdvancedTableComposition(Composite parent) {
+		this.message = new ReferencesTable(RealtimestatechartMessages.AsynchronousMessageEventPropertiesEditionPart_MessageLabel, new ReferencesTableListener() {
+			public void handleAdd() { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(AsynchronousMessageEventPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				message.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(AsynchronousMessageEventPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				message.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(AsynchronousMessageEventPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				message.refresh();
+			}
+			public void handleRemove(EObject element) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(AsynchronousMessageEventPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				message.refresh();
+			}
+			public void navigateTo(EObject element) { }
+		});
+		for (ViewerFilter filter : this.messageFilters) {
+			this.message.addFilter(filter);
+		}
+		this.message.setHelpText(propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message, RealtimestatechartViewsRepository.SWT_KIND));
+		this.message.createControls(parent);
+		this.message.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(AsynchronousMessageEventPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
+		GridData messageData = new GridData(GridData.FILL_HORIZONTAL);
+		messageData.horizontalSpan = 3;
+		this.message.setLayoutData(messageData);
+		this.message.setLowerBound(1);
+		this.message.setUpperBound(1);
+		message.setID(RealtimestatechartViewsRepository.AsynchronousMessageEvent.Properties.message);
+		message.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		return parent;
+	}
+
 
 
 	/**
@@ -156,8 +223,8 @@ public class AsynchronousMessageEventPropertiesEditionPartImpl extends Composite
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-		
-		// End of user code
+
+// End of user code
 	}
 
 	/**
@@ -189,6 +256,65 @@ public class AsynchronousMessageEventPropertiesEditionPartImpl extends Composite
 	 */
 	public void setKind(Enumerator newValue) {
 		kind.modelUpdating(new StructuredSelection(newValue));
+	}
+
+
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.AsynchronousMessageEventPropertiesEditionPart#initMessage(EObject current, EReference containingFeature, EReference feature)
+	 */
+	public void initMessage(ReferencesTableSettings settings) {
+		if (current.eResource() != null && current.eResource().getResourceSet() != null)
+			this.resourceSet = current.eResource().getResourceSet();
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		message.setContentProvider(contentProvider);
+		message.setInput(settings);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.AsynchronousMessageEventPropertiesEditionPart#updateMessage()
+	 * 
+	 */
+	public void updateMessage() {
+	message.refresh();
+}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.AsynchronousMessageEventPropertiesEditionPart#addFilterMessage(ViewerFilter filter)
+	 * 
+	 */
+	public void addFilterToMessage(ViewerFilter filter) {
+		messageFilters.add(filter);
+		if (this.message != null) {
+			this.message.addFilter(filter);
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.AsynchronousMessageEventPropertiesEditionPart#addBusinessFilterMessage(ViewerFilter filter)
+	 * 
+	 */
+	public void addBusinessFilterToMessage(ViewerFilter filter) {
+		messageBusinessFilters.add(filter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.AsynchronousMessageEventPropertiesEditionPart#isContainedInMessageTable(EObject element)
+	 * 
+	 */
+	public boolean isContainedInMessageTable(EObject element) {
+		return ((ReferencesTableSettings)message.getInput()).contains(element);
 	}
 
 

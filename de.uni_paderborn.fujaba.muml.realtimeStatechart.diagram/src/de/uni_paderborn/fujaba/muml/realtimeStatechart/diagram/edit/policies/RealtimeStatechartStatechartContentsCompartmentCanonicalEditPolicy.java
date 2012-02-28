@@ -26,7 +26,6 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class RealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
 
 	public RealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy() {
@@ -99,7 +98,7 @@ public class RealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getRealtimeStatechartStatechartContentsCompartment_7014SemanticChildren(viewObject);
+				.getRealtimeStatechartStatechartContentsCompartment_7018SemanticChildren(viewObject);
 
 	}
 

@@ -105,14 +105,6 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	@Override
-	public PreferencesHint getPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
-	}
-
-	/**
-	 * @generated
-	 */
 	public String getContributorId() {
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.ID;
 	}
@@ -188,83 +180,6 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 	 */
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public void doSave(IProgressMonitor progressMonitor) {
-		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
-				.getDiagramView());
-		super.doSave(progressMonitor);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public boolean isValidDiagramElement(EObject diagramElement) {
-		IAdaptable adapter = new EObjectAdapter(diagramElement);
-		IOperation operation = new CreateDiagramViewOperation(
-				adapter,
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID,
-				getPreferencesHint());
-		return ViewService.getInstance().provides(operation);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public boolean isValidTopLevelNodeElement(EObject diagramElement,
-			EObject topLevelNodeElement) {
-		Diagram diagram = ViewService
-				.getInstance()
-				.createDiagram(
-						diagramElement,
-						de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID,
-						getPreferencesHint());
-		IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
-		IOperation operation = new CreateNodeViewOperation(adapter, diagram,
-				null, 0, false, getPreferencesHint());
-		return ViewService.getInstance().provides(operation);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public ExtendableElement createDiagramElement() {
-
-		return null;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	public CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
-			Collection<EObject> elements) {
-		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getModelElementCategory_1000SemanticChildren(diagram);
-		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
-				childDescriptors.size());
-
-		for (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor d : childDescriptors) {
-			if (!elements.contains(d.getModelElement())) {
-				continue;
-			}
-			java.lang.String hint = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getType(d.getVisualID());
-			IAdaptable elementAdapter = new InitialElementAdapter(
-					d.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, true,
-					getPreferencesHint());
-			viewDescriptors.add(descriptor);
-		}
-		return new CreateViewRequest(viewDescriptors);
 	}
 
 	/**
@@ -400,6 +315,92 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0), getActionRegistry()
 				.getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
 		// End added
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void doSave(IProgressMonitor progressMonitor) {
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+				.getDiagramView());
+		super.doSave(progressMonitor);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean isValidDiagramElement(EObject diagramElement) {
+		IAdaptable adapter = new EObjectAdapter(diagramElement);
+		IOperation operation = new CreateDiagramViewOperation(
+				adapter,
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID,
+				getPreferencesHint());
+		return ViewService.getInstance().provides(operation);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean isValidTopLevelNodeElement(EObject diagramElement,
+			EObject topLevelNodeElement) {
+		Diagram diagram = ViewService
+				.getInstance()
+				.createDiagram(
+						diagramElement,
+						de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID,
+						getPreferencesHint());
+		IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
+		IOperation operation = new CreateNodeViewOperation(adapter, diagram,
+				null, 0, false, getPreferencesHint());
+		return ViewService.getInstance().provides(operation);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public ExtendableElement createDiagramElement() {
+
+		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createRealtimeStatechart();
+
+	}
+
+	/**
+	 * @generated
+	 */
+	public CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
+			Collection<EObject> elements) {
+		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
+				.getRealtimeStatechart_1000SemanticChildren(diagram);
+		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
+				childDescriptors.size());
+
+		for (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor d : childDescriptors) {
+			if (!elements.contains(d.getModelElement())) {
+				continue;
+			}
+			java.lang.String hint = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+					.getType(d.getVisualID());
+			IAdaptable elementAdapter = new InitialElementAdapter(
+					d.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
+					elementAdapter, Node.class, hint, ViewUtil.APPEND, true,
+					getPreferencesHint());
+			viewDescriptors.add(descriptor);
+		}
+		return new CreateViewRequest(viewDescriptors);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public PreferencesHint getPreferencesHint() {
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 }
