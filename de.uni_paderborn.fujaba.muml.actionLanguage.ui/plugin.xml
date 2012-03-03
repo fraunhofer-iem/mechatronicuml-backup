@@ -146,5 +146,57 @@
             class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.objectContribution1"
+            objectClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
+               id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.action1"
+               label="open Action Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.objectContribution2"
+            objectClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
+               id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.action2"
+               label="open Action Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.objectContribution3"
+            objectClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
+               id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.action3"
+               label="open Action Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.objectContribution4"
+            objectClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
+               id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.action4"
+               label="open Action Editor">
+         </action>
+      </objectContribution>
+   </extension>
 
 </plugin>

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.popup.actions;
+package de.uni_paderborn.fujaba.muml.ui.popup.actions;
 
 import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.runtime.CoreException;
