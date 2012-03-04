@@ -1687,7 +1687,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateEntryPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"
+			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateExitPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"
 		   });																													
 		addAnnotation
 		  (doEventEClass, 
@@ -1768,8 +1768,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "SetTargetAndSource", "self.target->notEmpty() and self.source->notEmpty()",
 			 "NoCrossingOfRegionBorders", "self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or\r\nself.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=\r\nself.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or \t\t\t\t\r\nself.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=\r\nself.target.oclAsType(StateExitPoint).statechart.embeddingRegion",
-			 "EntryPointMustOnlyPointToStatesOrStateEntryPoints", "not (self.source.oclIsKindOf(EntryPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateEntryPoint)))",
-			 "ExitPointMustOnlyPointToStatesOrStateExitPoints", "not (self.source.oclIsKindOf(ExitPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateExitPoint)))",
+			 "EntryPointMustOnlyPointToStatesOrStateEntryPoints", "self.source.oclIsKindOf(EntryPoint) implies (\n\tself.target.oclIsKindOf(State)\n\tor self.target.oclIsKindOf(StateEntryPoint)\n)",
+			 "ExitPointMustOnlyPointToStatesOrStateExitPoints", "self.source.oclIsKindOf(ExitPoint) implies (\n\tself.target.oclIsKindOf(State) \n\tor self.target.oclIsKindOf(StateExitPoint)\n)",
 			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "not self.triggerMessageEvent.message.oclIsUndefined() implies\nself.triggerMessageEvent.message.ownedParameterBindings->isEmpty()",
 			 "ValidTriggerMessageEvents", "let a : msgiface::MessageInterface =\n(\n\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\n\telse\n\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\n\t\telse\n\t\t\tnull\n\t\tendif\n\tendif\n) in\nnot triggerMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf)",
 			 "ValidRaiseMessageEvents", "let a : msgiface::MessageInterface =\n(\n\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface\n\telse\n\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).senderMessageInterface\n\t\telse\n\t\t\tnull\n\t\tendif\n\tendif\n) in\nnot raiseMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf)",

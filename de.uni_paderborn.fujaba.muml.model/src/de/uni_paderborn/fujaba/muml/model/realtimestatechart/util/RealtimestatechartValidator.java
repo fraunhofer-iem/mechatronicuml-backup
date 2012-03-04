@@ -571,7 +571,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateTransition_SetTargetAndSource(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_NoCrossingOfRegionBorders(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_EntryPointMustOnlyPointToStatesOrStateEntryPoints(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_ExitPointMustOnlyPointToStatesOrStateEntryPoints(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_ExitPointMustOnlyPointToStatesOrStateExitPoints(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidTriggerMessageEvents(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidRaiseMessageEvents(transition, diagnostics, context);
@@ -648,7 +648,10 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__ENTRY_POINT_MUST_ONLY_POINT_TO_STATES_OR_STATE_ENTRY_POINTS__EEXPRESSION = "not (self.source.oclIsKindOf(EntryPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateEntryPoint)))";
+	protected static final String TRANSITION__ENTRY_POINT_MUST_ONLY_POINT_TO_STATES_OR_STATE_ENTRY_POINTS__EEXPRESSION = "self.source.oclIsKindOf(EntryPoint) implies (\n" +
+		"\tself.target.oclIsKindOf(State)\n" +
+		"\tor self.target.oclIsKindOf(StateEntryPoint)\n" +
+		")";
 
 	/**
 	 * Validates the EntryPointMustOnlyPointToStatesOrStateEntryPoints constraint of '<em>Transition</em>'.
@@ -672,31 +675,35 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the ExitPointMustOnlyPointToStatesOrStateEntryPoints constraint of '<em>Transition</em>'.
+	 * The cached validation expression for the ExitPointMustOnlyPointToStatesOrStateExitPoints constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTransition_ExitPointMustOnlyPointToStatesOrStateEntryPoints(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ExitPointMustOnlyPointToStatesOrStateEntryPoints", getObjectLabel(transition, context) },
-						 new Object[] { transition },
-						 context));
-			}
-			return false;
-		}
-		return true;
+	protected static final String TRANSITION__EXIT_POINT_MUST_ONLY_POINT_TO_STATES_OR_STATE_EXIT_POINTS__EEXPRESSION = "self.source.oclIsKindOf(ExitPoint) implies (\n" +
+		"\tself.target.oclIsKindOf(State) \n" +
+		"\tor self.target.oclIsKindOf(StateExitPoint)\n" +
+		")";
+
+	/**
+	 * Validates the ExitPointMustOnlyPointToStatesOrStateExitPoints constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_ExitPointMustOnlyPointToStatesOrStateExitPoints(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ExitPointMustOnlyPointToStatesOrStateExitPoints",
+				 TRANSITION__EXIT_POINT_MUST_ONLY_POINT_TO_STATES_OR_STATE_EXIT_POINTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

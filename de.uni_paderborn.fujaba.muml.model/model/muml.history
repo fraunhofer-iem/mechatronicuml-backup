@@ -15925,5 +15925,17 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
         featureName="value" dataValue="self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1"
         oldDataValue="not self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->isEmpty()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="self.source.oclIsKindOf(EntryPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State)&#xA;&#x9;or self.target.oclIsKindOf(StateEntryPoint)&#xA;)"
+        oldDataValue="not (self.source.oclIsKindOf(EntryPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateEntryPoint)))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="self.source.oclIsKindOf(ExitPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State) &#xA;&#x9;orself.target.oclIsKindOf(StateExitPoint)&#xA;)"
+        oldDataValue="not (self.source.oclIsKindOf(ExitPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateExitPoint)))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="self.source.oclIsKindOf(ExitPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State) &#xA;&#x9;or self.target.oclIsKindOf(StateExitPoint)&#xA;)"
+        oldDataValue="self.source.oclIsKindOf(ExitPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State) &#xA;&#x9;orself.target.oclIsKindOf(StateExitPoint)&#xA;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateExitPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"
+        oldDataValue="SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateEntryPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"/>
   </releases>
 </history:History>
