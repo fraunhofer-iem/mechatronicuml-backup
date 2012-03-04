@@ -15819,5 +15819,35 @@
         featureName="containment" dataValue="true" oldDataValue="false"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"
         featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/CoordinationPattern"
+        referenceName="eAnnotations" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="key" dataValue="constraints"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="value" dataValue="OnlyRolesOfSameCoordinationPattern"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/CoordinationPattern"
+        referenceName="eAnnotations" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="OnlyRolesOfSameCoordinationPattern"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="UniqueRoleNames" oldDataValue="OnlyRolesOfSameCoordinationPattern"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.roles->isUnique(name)" oldDataValue="(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniqueRoleNames" oldDataValue="OnlyRolesOfSameCoordinationPattern"/>
   </releases>
 </history:History>

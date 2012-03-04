@@ -512,7 +512,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyRolesOfSameCoordinationPattern"
-		   });													
+		   });								
+		addAnnotation
+		  (coordinationPatternEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueRoleNames"
+		   });								
 		addAnnotation
 		  (roleEClass, 
 		   source, 
@@ -534,7 +540,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "OnlyRolesOfSameCoordinationPattern", "(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"
-		   });									
+		   });								
+		addAnnotation
+		  (coordinationPatternEClass, 
+		   source, 
+		   new String[] {
+			 "UniqueRoleNames", "self.roles->isUnique(name)"
+		   });				
 		addAnnotation
 		  (getCoordinationPattern_Pattern(), 
 		   source, 

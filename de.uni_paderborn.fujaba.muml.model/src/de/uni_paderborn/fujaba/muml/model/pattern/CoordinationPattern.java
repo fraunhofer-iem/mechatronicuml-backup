@@ -30,7 +30,8 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)'"
  * @generated
  */
 public interface CoordinationPattern extends NamedElement, ConstrainableElement {

@@ -157,7 +157,46 @@ public class PatternValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCoordinationPattern(CoordinationPattern coordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(coordinationPattern, diagnostics, context);
+		if (!validate_NoCircularContainment(coordinationPattern, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCoordinationPattern_UniqueRoleNames(coordinationPattern, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the UniqueRoleNames constraint of '<em>Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COORDINATION_PATTERN__UNIQUE_ROLE_NAMES__EEXPRESSION = "self.roles->isUnique(name)";
+
+	/**
+	 * Validates the UniqueRoleNames constraint of '<em>Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCoordinationPattern_UniqueRoleNames(CoordinationPattern coordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PatternPackage.Literals.COORDINATION_PATTERN,
+				 coordinationPattern,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueRoleNames",
+				 COORDINATION_PATTERN__UNIQUE_ROLE_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
