@@ -1687,7 +1687,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateEntryPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents"
+			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateEntryPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"
 		   });																													
 		addAnnotation
 		  (doEventEClass, 
@@ -1705,19 +1705,19 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OneOutgoingTransition"
+			 "constraints", "OneOutgoingTransition EntryPointAndTargetSameStatechart"
 		   });				
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtMostOneOutgoingTransition"
+			 "constraints", "AtMostOneOutgoingTransition OneIncomingTransition ExitPointAndSourceSameStatechart"
 		   });				
 		addAnnotation
 		  (stateEntryPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtLeastOneIncomingTransition"
+			 "constraints", "AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"
 		   });				
 		addAnnotation
 		  (stateExitPointEClass, 
@@ -1772,7 +1772,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "ExitPointMustOnlyPointToStatesOrStateExitPoints", "not (self.source.oclIsKindOf(ExitPoint) and (not self.target.oclIsKindOf(State) and not self.target.oclIsKindOf(StateExitPoint)))",
 			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "not self.triggerMessageEvent.message.oclIsUndefined() implies\nself.triggerMessageEvent.message.ownedParameterBindings->isEmpty()",
 			 "ValidTriggerMessageEvents", "let a : msgiface::MessageInterface =\n(\n\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\n\telse\n\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\n\t\telse\n\t\t\tnull\n\t\tendif\n\tendif\n) in\nnot triggerMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf)",
-			 "ValidRaiseMessageEvents", "let a : msgiface::MessageInterface =\n(\n\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface\n\telse\n\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).senderMessageInterface\n\t\telse\n\t\t\tnull\n\t\tendif\n\tendif\n) in\nnot raiseMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf)"
+			 "ValidRaiseMessageEvents", "let a : msgiface::MessageInterface =\n(\n\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface\n\telse\n\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).senderMessageInterface\n\t\telse\n\t\t\tnull\n\t\tendif\n\tendif\n) in\nnot raiseMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf)",
+			 "EntryPointOutgoingTransitionNoAdditionalElements", "(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::EntryPoint))\n\timplies (\n\t\tself.synchronization.oclIsUndefined()\n\t\tand self.clockResets->isEmpty()\n\t\tand self.triggerMessageEvent.oclIsUndefined()\n\t\tand self.raiseMessageEvent.oclIsUndefined()\n\t\tand self.clockConstraints->isEmpty()\n\t\tand self.absoluteDeadlines->isEmpty()\n\t\tand self.relativeDeadline.oclIsUndefined()\n\t\tand self.guard.oclIsUndefined()\n\t\tand self.events->isEmpty()\n\t\tand self.action.oclIsUndefined()\n\t)",
+			 "StateExitPointOutgoingTransitionNoAdditionalElements", "(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::StateExitPoint))\n\timplies (\n\t\tself.synchronization.oclIsUndefined()\n\t\tand self.clockResets->isEmpty()\n\t\tand self.triggerMessageEvent.oclIsUndefined()\n\t\tand self.raiseMessageEvent.oclIsUndefined()\n\t\tand self.clockConstraints->isEmpty()\n\t\tand self.absoluteDeadlines->isEmpty()\n\t\tand self.relativeDeadline.oclIsUndefined()\n\t\tand self.guard.oclIsUndefined()\n\t\tand self.events->isEmpty()\n\t\tand self.action.oclIsUndefined()\n\t)"
 		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 
@@ -1852,19 +1854,23 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
-			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
+			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1",
+			 "EntryPointAndTargetSameStatechart", "self.outgoingTransitions->size() = 1 implies\n\t(not self.outgoingTransitions->at(1).target.oclIsUndefined()\n\t and self.outgoingTransitions->at(1).target.statechart = self.statechart\n\t)"
 		   });				
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "AtMostOneOutgoingTransition", "self.outgoingTransitions->size() <= 1"
+			 "AtMostOneOutgoingTransition", "self.outgoingTransitions->size() <= 1",
+			 "OneIncomingTransition", "self.incomingTransitions->size() = 1",
+			 "ExitPointAndSourceSameStatechart", "self.incomingTransitions->size() = 1 implies\n\t(not self.incomingTransitions->at(1).source.oclIsUndefined()\n\t and self.incomingTransitions->at(1).source.statechart = self.statechart\n\t)"
 		   });				
 		addAnnotation
 		  (stateEntryPointEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->size()>0"
+			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->size()>0",
+			 "AtLeastOneOutgoingTransition", "self.outgoingTransitions->size() > 0"
 		   });				
 		addAnnotation
 		  (stateExitPointEClass, 

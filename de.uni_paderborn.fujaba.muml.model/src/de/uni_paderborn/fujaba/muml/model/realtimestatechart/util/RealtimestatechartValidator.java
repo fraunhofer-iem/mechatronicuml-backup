@@ -575,6 +575,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidTriggerMessageEvents(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidRaiseMessageEvents(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_EntryPointOutgoingTransitionNoAdditionalElements(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_StateExitPointOutgoingTransitionNoAdditionalElements(transition, diagnostics, context);
 		return result;
 	}
 
@@ -804,6 +806,88 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ValidRaiseMessageEvents",
 				 TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the EntryPointOutgoingTransitionNoAdditionalElements constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__ENTRY_POINT_OUTGOING_TRANSITION_NO_ADDITIONAL_ELEMENTS__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::EntryPoint))\n" +
+		"\timplies (\n" +
+		"\t\tself.synchronization.oclIsUndefined()\n" +
+		"\t\tand self.clockResets->isEmpty()\n" +
+		"\t\tand self.triggerMessageEvent.oclIsUndefined()\n" +
+		"\t\tand self.raiseMessageEvent.oclIsUndefined()\n" +
+		"\t\tand self.clockConstraints->isEmpty()\n" +
+		"\t\tand self.absoluteDeadlines->isEmpty()\n" +
+		"\t\tand self.relativeDeadline.oclIsUndefined()\n" +
+		"\t\tand self.guard.oclIsUndefined()\n" +
+		"\t\tand self.events->isEmpty()\n" +
+		"\t\tand self.action.oclIsUndefined()\n" +
+		"\t)";
+
+	/**
+	 * Validates the EntryPointOutgoingTransitionNoAdditionalElements constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_EntryPointOutgoingTransitionNoAdditionalElements(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "EntryPointOutgoingTransitionNoAdditionalElements",
+				 TRANSITION__ENTRY_POINT_OUTGOING_TRANSITION_NO_ADDITIONAL_ELEMENTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the StateExitPointOutgoingTransitionNoAdditionalElements constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__STATE_EXIT_POINT_OUTGOING_TRANSITION_NO_ADDITIONAL_ELEMENTS__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::StateExitPoint))\n" +
+		"\timplies (\n" +
+		"\t\tself.synchronization.oclIsUndefined()\n" +
+		"\t\tand self.clockResets->isEmpty()\n" +
+		"\t\tand self.triggerMessageEvent.oclIsUndefined()\n" +
+		"\t\tand self.raiseMessageEvent.oclIsUndefined()\n" +
+		"\t\tand self.clockConstraints->isEmpty()\n" +
+		"\t\tand self.absoluteDeadlines->isEmpty()\n" +
+		"\t\tand self.relativeDeadline.oclIsUndefined()\n" +
+		"\t\tand self.guard.oclIsUndefined()\n" +
+		"\t\tand self.events->isEmpty()\n" +
+		"\t\tand self.action.oclIsUndefined()\n" +
+		"\t)";
+
+	/**
+	 * Validates the StateExitPointOutgoingTransitionNoAdditionalElements constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_StateExitPointOutgoingTransitionNoAdditionalElements(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "StateExitPointOutgoingTransitionNoAdditionalElements",
+				 TRANSITION__STATE_EXIT_POINT_OUTGOING_TRANSITION_NO_ADDITIONAL_ELEMENTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1104,6 +1188,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntryPoint_OneOutgoingTransition(entryPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntryPoint_EntryPointAndTargetSameStatechart(entryPoint, diagnostics, context);
 		return result;
 	}
 
@@ -1137,6 +1222,38 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the EntryPointAndTargetSameStatechart constraint of '<em>Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ENTRY_POINT__ENTRY_POINT_AND_TARGET_SAME_STATECHART__EEXPRESSION = "self.outgoingTransitions->size() = 1 implies\n" +
+		"\t(not self.outgoingTransitions->at(1).target.oclIsUndefined()\n" +
+		"\t and self.outgoingTransitions->at(1).target.statechart = self.statechart\n" +
+		"\t)";
+
+	/**
+	 * Validates the EntryPointAndTargetSameStatechart constraint of '<em>Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEntryPoint_EntryPointAndTargetSameStatechart(EntryPoint entryPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.ENTRY_POINT,
+				 entryPoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "EntryPointAndTargetSameStatechart",
+				 ENTRY_POINT__ENTRY_POINT_AND_TARGET_SAME_STATECHART__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1152,6 +1269,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExitPoint_AtMostOneOutgoingTransition(exitPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExitPoint_OneIncomingTransition(exitPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExitPoint_ExitPointAndSourceSameStatechart(exitPoint, diagnostics, context);
 		return result;
 	}
 
@@ -1185,6 +1304,67 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the OneIncomingTransition constraint of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EXIT_POINT__ONE_INCOMING_TRANSITION__EEXPRESSION = "self.incomingTransitions->size() = 1";
+
+	/**
+	 * Validates the OneIncomingTransition constraint of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExitPoint_OneIncomingTransition(ExitPoint exitPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.EXIT_POINT,
+				 exitPoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OneIncomingTransition",
+				 EXIT_POINT__ONE_INCOMING_TRANSITION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ExitPointAndSourceSameStatechart constraint of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EXIT_POINT__EXIT_POINT_AND_SOURCE_SAME_STATECHART__EEXPRESSION = "self.incomingTransitions->size() = 1 implies\n" +
+		"\t(not self.incomingTransitions->at(1).source.oclIsUndefined()\n" +
+		"\t and self.incomingTransitions->at(1).source.statechart = self.statechart\n" +
+		"\t)";
+
+	/**
+	 * Validates the ExitPointAndSourceSameStatechart constraint of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExitPoint_ExitPointAndSourceSameStatechart(ExitPoint exitPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.EXIT_POINT,
+				 exitPoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ExitPointAndSourceSameStatechart",
+				 EXIT_POINT__EXIT_POINT_AND_SOURCE_SAME_STATECHART__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1200,6 +1380,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(stateEntryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(stateEntryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStateEntryPoint_AtLeastOneIncomingTransition(stateEntryPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStateEntryPoint_AtLeastOneOutgoingTransition(stateEntryPoint, diagnostics, context);
 		return result;
 	}
 
@@ -1227,6 +1408,35 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "AtLeastOneIncomingTransition",
 				 STATE_ENTRY_POINT__AT_LEAST_ONE_INCOMING_TRANSITION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AtLeastOneOutgoingTransition constraint of '<em>State Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STATE_ENTRY_POINT__AT_LEAST_ONE_OUTGOING_TRANSITION__EEXPRESSION = "self.outgoingTransitions->size() > 0";
+
+	/**
+	 * Validates the AtLeastOneOutgoingTransition constraint of '<em>State Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStateEntryPoint_AtLeastOneOutgoingTransition(StateEntryPoint stateEntryPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.STATE_ENTRY_POINT,
+				 stateEntryPoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AtLeastOneOutgoingTransition",
+				 STATE_ENTRY_POINT__AT_LEAST_ONE_OUTGOING_TRANSITION__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

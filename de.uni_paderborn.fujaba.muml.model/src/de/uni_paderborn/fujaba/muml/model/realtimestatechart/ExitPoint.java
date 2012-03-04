@@ -18,8 +18,8 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getExitPoint()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtMostOneOutgoingTransition'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtMostOneOutgoingTransition='self.outgoingTransitions->size() <= 1'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtMostOneOutgoingTransition OneIncomingTransition ExitPointAndSourceSameStatechart'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtMostOneOutgoingTransition='self.outgoingTransitions->size() <= 1' OneIncomingTransition='self.incomingTransitions->size() = 1' ExitPointAndSourceSameStatechart='self.incomingTransitions->size() = 1 implies\n\t(not self.incomingTransitions->at(1).source.oclIsUndefined()\n\t and self.incomingTransitions->at(1).source.statechart = self.statechart\n\t)'"
  * @generated
  */
 public interface ExitPoint extends Vertex {
