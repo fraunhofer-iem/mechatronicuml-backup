@@ -624,7 +624,10 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_UniqueComponentPartsWithinStructuredComponent(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentNoHybridPort(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidParts(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidParts(structuredComponent, diagnostics, context);
 		return result;
 	}
 
@@ -687,20 +690,42 @@ public class ComponentValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the ValidComponentType constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+		"or self.componentType = component::ComponentKind::HYBRID_COMPONENT";
+
+	/**
+	 * Validates the ValidComponentType constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredComponent_ValidComponentType(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT,
+				 structuredComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidComponentType",
+				 STRUCTURED_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * The cached validation expression for the NoCyclicComponentPartHierarchy constraint of '<em>Structured Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "not self->closure(\n" +
-		"\tembeddedParts->collect(\n" +
-		"\t\tif componentType.oclIsTypeOf(component::StructuredComponent) then\n" +
-		"\t\t\tcomponentType.oclAsType(component::StructuredComponent)\n" +
-		"\t\telse\n" +
-		"\t\t\tnull\n" +
-		"\t\tendif\n" +
-		"\t)->select(not oclIsUndefined())\n" +
-		")->includes(self)";
+	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "not self.allStructuredComponentsInHierarchy->includes(self)";
 
 	/**
 	 * Validates the NoCyclicComponentPartHierarchy constraint of '<em>Structured Component</em>'.
@@ -718,6 +743,80 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "NoCyclicComponentPartHierarchy",
 				 STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DiscreteStructuredComponentValidParts constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+		"implies\n" +
+		"\t-- collect all atomic components from parent parts and union them\n" +
+		"\t-- with own atomic components\n" +
+		"\tself.allAtomicComponentsInHierarchy->union(\n" +
+		"\t\tself.embeddedParts->select(\n" +
+		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n" +
+		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n" +
+		"\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)";
+
+	/**
+	 * Validates the DiscreteStructuredComponentValidParts constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredComponent_DiscreteStructuredComponentValidParts(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT,
+				 structuredComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscreteStructuredComponentValidParts",
+				 STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the HybridStructuredComponentValidParts constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "self.componentType = component::ComponentKind::HYBRID_COMPONENT\n" +
+		"implies\n" +
+		"\t-- collect all atomic components from parent parts and union them\n" +
+		"\t-- with own atomic components\n" +
+		"\tself.allAtomicComponentsInHierarchy->union(\n" +
+		"\t\tself.embeddedParts->select(\n" +
+		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n" +
+		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n" +
+		"\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)";
+
+	/**
+	 * Validates the HybridStructuredComponentValidParts constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredComponent_HybridStructuredComponentValidParts(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT,
+				 structuredComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "HybridStructuredComponentValidParts",
+				 STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
