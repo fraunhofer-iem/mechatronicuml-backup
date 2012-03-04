@@ -152,9 +152,6 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentHasOnlyDiscretePorts(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_ContinuousComponentHasOnlyContinuousPorts(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_HybridComponentHasOnlyHybridPorts(component, diagnostics, context);
 		return result;
 	}
 
@@ -182,95 +179,6 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniquePortNames",
 				 COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the SoftwareComponentHasOnlyDiscretePorts constraint of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COMPONENT__SOFTWARE_COMPONENT_HAS_ONLY_DISCRETE_PORTS__EEXPRESSION = "-- use typeOf otherwise hybrid ports are also allowed\n" +
-		"self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort))";
-
-	/**
-	 * Validates the SoftwareComponentHasOnlyDiscretePorts constraint of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateComponent_SoftwareComponentHasOnlyDiscretePorts(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.COMPONENT,
-				 component,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "SoftwareComponentHasOnlyDiscretePorts",
-				 COMPONENT__SOFTWARE_COMPONENT_HAS_ONLY_DISCRETE_PORTS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ContinuousComponentHasOnlyContinuousPorts constraint of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COMPONENT__CONTINUOUS_COMPONENT_HAS_ONLY_CONTINUOUS_PORTS__EEXPRESSION = "-- use typeOf otherwise hybrid ports are also allowed\n" +
-		"self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::ContinuousPort))";
-
-	/**
-	 * Validates the ContinuousComponentHasOnlyContinuousPorts constraint of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateComponent_ContinuousComponentHasOnlyContinuousPorts(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.COMPONENT,
-				 component,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ContinuousComponentHasOnlyContinuousPorts",
-				 COMPONENT__CONTINUOUS_COMPONENT_HAS_ONLY_CONTINUOUS_PORTS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the HybridComponentHasOnlyHybridPorts constraint of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COMPONENT__HYBRID_COMPONENT_HAS_ONLY_HYBRID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::HYBRID_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::HybridPort))";
-
-	/**
-	 * Validates the HybridComponentHasOnlyHybridPorts constraint of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateComponent_HybridComponentHasOnlyHybridPorts(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.COMPONENT,
-				 component,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "HybridComponentHasOnlyHybridPorts",
-				 COMPONENT__HYBRID_COMPONENT_HAS_ONLY_HYBRID_PORTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -714,11 +622,9 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(structuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentHasOnlyDiscretePorts(structuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_ContinuousComponentHasOnlyContinuousPorts(structuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_HybridComponentHasOnlyHybridPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_UniqueComponentPartsWithinStructuredComponent(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentNoHybridPort(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(structuredComponent, diagnostics, context);
 		return result;
 	}
 
@@ -781,6 +687,43 @@ public class ComponentValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the NoCyclicComponentPartHierarchy constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "not self->closure(\n" +
+		"\tembeddedParts->collect(\n" +
+		"\t\tif componentType.oclIsTypeOf(component::StructuredComponent) then\n" +
+		"\t\t\tcomponentType.oclAsType(component::StructuredComponent)\n" +
+		"\t\telse\n" +
+		"\t\t\tnull\n" +
+		"\t\tendif\n" +
+		"\t)->select(not oclIsUndefined())\n" +
+		")->includes(self)";
+
+	/**
+	 * Validates the NoCyclicComponentPartHierarchy constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredComponent_NoCyclicComponentPartHierarchy(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT,
+				 structuredComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NoCyclicComponentPartHierarchy",
+				 STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -796,10 +739,10 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(atomicComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentHasOnlyDiscretePorts(atomicComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_ContinuousComponentHasOnlyContinuousPorts(atomicComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_HybridComponentHasOnlyHybridPorts(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentRequiresBehavior(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_ValidComponentType(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentValidPorts(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_ContinuousComponentValidPorts(atomicComponent, diagnostics, context);
 		return result;
 	}
 
@@ -827,6 +770,100 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "SoftwareComponentRequiresBehavior",
 				 ATOMIC_COMPONENT__SOFTWARE_COMPONENT_REQUIRES_BEHAVIOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidComponentType constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ATOMIC_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+		"or self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT";
+
+	/**
+	 * Validates the ValidComponentType constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAtomicComponent_ValidComponentType(AtomicComponent atomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ATOMIC_COMPONENT,
+				 atomicComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidComponentType",
+				 ATOMIC_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the SoftwareComponentValidPorts constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+		"\timplies (\n" +
+		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))\n" +
+		"\t)";
+
+	/**
+	 * Validates the SoftwareComponentValidPorts constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAtomicComponent_SoftwareComponentValidPorts(AtomicComponent atomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ATOMIC_COMPONENT,
+				 atomicComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SoftwareComponentValidPorts",
+				 ATOMIC_COMPONENT__SOFTWARE_COMPONENT_VALID_PORTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ContinuousComponentValidPorts constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT\n" +
+		"\timplies (\n" +
+		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n" +
+		"\t)";
+
+	/**
+	 * Validates the ContinuousComponentValidPorts constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAtomicComponent_ContinuousComponentValidPorts(AtomicComponent atomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ATOMIC_COMPONENT,
+				 atomicComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ContinuousComponentValidPorts",
+				 ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

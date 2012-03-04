@@ -34,8 +34,8 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePortNames SoftwareComponentHasOnlyDiscretePorts ContinuousComponentHasOnlyContinuousPorts HybridComponentHasOnlyHybridPorts'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='self.ports->isUnique(name)' SoftwareComponentHasOnlyDiscretePorts='-- use typeOf otherwise hybrid ports are also allowed\nself.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort))' ContinuousComponentHasOnlyContinuousPorts='-- use typeOf otherwise hybrid ports are also allowed\nself.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::ContinuousPort))' HybridComponentHasOnlyHybridPorts='self.componentType = component::ComponentKind::HYBRID_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::HybridPort))'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePortNames'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='self.ports->isUnique(name)'"
  * @generated
  */
 public interface Component extends NamedElement, CommentableElement, ConstrainableElement {

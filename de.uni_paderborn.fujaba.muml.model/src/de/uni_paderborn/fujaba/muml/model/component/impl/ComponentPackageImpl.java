@@ -1060,7 +1060,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniquePortNames SoftwareComponentHasOnlyDiscretePorts ContinuousComponentHasOnlyContinuousPorts HybridComponentHasOnlyHybridPorts"
+			 "constraints", "UniquePortNames"
 		   });															
 		addAnnotation
 		  (continuousPortEClass, 
@@ -1084,13 +1084,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (structuredComponentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort"
+			 "constraints", "UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort NoCyclicComponentPartHierarchy"
 		   });							
 		addAnnotation
 		  (atomicComponentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "SoftwareComponentRequiresBehavior"
+			 "constraints", "SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts"
 		   });																			
 		addAnnotation
 		  (assemblyEClass, 
@@ -1118,10 +1118,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "UniquePortNames", "self.ports->isUnique(name)",
-			 "SoftwareComponentHasOnlyDiscretePorts", "-- use typeOf otherwise hybrid ports are also allowed\nself.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::DiscretePort))",
-			 "ContinuousComponentHasOnlyContinuousPorts", "-- use typeOf otherwise hybrid ports are also allowed\nself.componentType = component::ComponentKind::CONTINUOUS_COMPONENT implies self.ports->forAll(port | port.oclIsTypeOf(component::ContinuousPort))",
-			 "HybridComponentHasOnlyHybridPorts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT implies self.ports->forAll(port | port.oclIsKindOf(component::HybridPort))"
+			 "UniquePortNames", "self.ports->isUnique(name)"
 		   });										
 		addAnnotation
 		  (getPort_Connectors(), 
@@ -1208,13 +1205,18 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "UniqueComponentPartsWithinStructuredComponent", "self.embeddedParts->isUnique(p | p.componentType)",
-			 "StructuredComponentNoHybridPort", "self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"
+			 "StructuredComponentNoHybridPort", "self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))",
+			 "ValidComponentType", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT",
+			 "NoCyclicComponentPartHierarchy", "not self->closure(\n\tembeddedParts->collect(\n\t\tif componentType.oclIsTypeOf(component::StructuredComponent) then\n\t\t\tcomponentType.oclAsType(component::StructuredComponent)\n\t\telse\n\t\t\tnull\n\t\tendif\n\t)->select(not oclIsUndefined())\n)->includes(self)"
 		   });					
 		addAnnotation
 		  (atomicComponentEClass, 
 		   source, 
 		   new String[] {
-			 "SoftwareComponentRequiresBehavior", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())"
+			 "SoftwareComponentRequiresBehavior", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())",
+			 "ValidComponentType", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT",
+			 "SoftwareComponentValidPorts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))\n\t)",
+			 "ContinuousComponentValidPorts", "self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n\t)"
 		   });								
 		addAnnotation
 		  (getConnectorType_ToDiscretePort(), 

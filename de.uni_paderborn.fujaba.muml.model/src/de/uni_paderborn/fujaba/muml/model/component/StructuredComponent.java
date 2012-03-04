@@ -33,8 +33,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentPartsWithinStructuredComponent='self.embeddedParts->isUnique(p | p.componentType)' StructuredComponentNoHybridPort='self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort NoCyclicComponentPartHierarchy'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentPartsWithinStructuredComponent='self.embeddedParts->isUnique(p | p.componentType)' StructuredComponentNoHybridPort='self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))' ValidComponentType='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT' NoCyclicComponentPartHierarchy='not self->closure(\n\tembeddedParts->collect(\n\t\tif componentType.oclIsTypeOf(component::StructuredComponent) then\n\t\t\tcomponentType.oclAsType(component::StructuredComponent)\n\t\telse\n\t\t\tnull\n\t\tendif\n\t)->select(not oclIsUndefined())\n)->includes(self)'"
  * @generated
  */
 public interface StructuredComponent extends Component {
