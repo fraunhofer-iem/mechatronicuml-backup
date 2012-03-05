@@ -727,7 +727,7 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "not self.allStructuredComponentsInHierarchy->includes(self)";
+	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "not self.allStructuredComponents->includes(self)";
 
 	/**
 	 * Validates the NoCyclicComponentPartHierarchy constraint of '<em>Structured Component</em>'.
@@ -760,7 +760,7 @@ public class ComponentValidator extends EObjectValidator {
 		"implies\n" +
 		"\t-- collect all atomic components from parent parts and union them\n" +
 		"\t-- with own atomic components\n" +
-		"\tself.allAtomicComponentsInHierarchy->union(\n" +
+		"\tself.allAtomicComponents->union(\n" +
 		"\t\tself.embeddedParts->select(\n" +
 		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n" +
 		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n" +
@@ -797,7 +797,7 @@ public class ComponentValidator extends EObjectValidator {
 		"implies\n" +
 		"\t-- collect all atomic components from parent parts and union them\n" +
 		"\t-- with own atomic components\n" +
-		"\tself.allAtomicComponentsInHierarchy->union(\n" +
+		"\tself.allAtomicComponents->union(\n" +
 		"\t\tself.embeddedParts->select(\n" +
 		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n" +
 		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n" +

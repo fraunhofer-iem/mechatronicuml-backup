@@ -847,22 +847,22 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__CONNECTORS = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>All Structured Components In Hierarchy</b></em>' containment reference list.
+	 * The feature id for the '<em><b>All Structured Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS_IN_HIERARCHY = COMPONENT_FEATURE_COUNT + 2;
+	int STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>All Atomic Components In Hierarchy</b></em>' containment reference list.
+	 * The feature id for the '<em><b>All Atomic Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS_IN_HIERARCHY = COMPONENT_FEATURE_COUNT + 3;
+	int STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Structured Component</em>' class.
@@ -2174,26 +2174,26 @@ public interface ComponentPackage extends EPackage {
 	EReference getStructuredComponent_Connectors();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllStructuredComponentsInHierarchy <em>All Structured Components In Hierarchy</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllStructuredComponents <em>All Structured Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>All Structured Components In Hierarchy</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllStructuredComponentsInHierarchy()
+	 * @return the meta object for the containment reference list '<em>All Structured Components</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllStructuredComponents()
 	 * @see #getStructuredComponent()
 	 * @generated
 	 */
-	EReference getStructuredComponent_AllStructuredComponentsInHierarchy();
+	EReference getStructuredComponent_AllStructuredComponents();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllAtomicComponentsInHierarchy <em>All Atomic Components In Hierarchy</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllAtomicComponents <em>All Atomic Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>All Atomic Components In Hierarchy</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllAtomicComponentsInHierarchy()
+	 * @return the meta object for the containment reference list '<em>All Atomic Components</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllAtomicComponents()
 	 * @see #getStructuredComponent()
 	 * @generated
 	 */
-	EReference getStructuredComponent_AllAtomicComponentsInHierarchy();
+	EReference getStructuredComponent_AllAtomicComponents();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.AtomicComponent <em>Atomic Component</em>}'.
@@ -2771,20 +2771,20 @@ public interface ComponentPackage extends EPackage {
 		EReference STRUCTURED_COMPONENT__CONNECTORS = eINSTANCE.getStructuredComponent_Connectors();
 
 		/**
-		 * The meta object literal for the '<em><b>All Structured Components In Hierarchy</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>All Structured Components</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS_IN_HIERARCHY = eINSTANCE.getStructuredComponent_AllStructuredComponentsInHierarchy();
+		EReference STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS = eINSTANCE.getStructuredComponent_AllStructuredComponents();
 
 		/**
-		 * The meta object literal for the '<em><b>All Atomic Components In Hierarchy</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>All Atomic Components</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS_IN_HIERARCHY = eINSTANCE.getStructuredComponent_AllAtomicComponentsInHierarchy();
+		EReference STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = eINSTANCE.getStructuredComponent_AllAtomicComponents();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AtomicComponentImpl <em>Atomic Component</em>}' class.
