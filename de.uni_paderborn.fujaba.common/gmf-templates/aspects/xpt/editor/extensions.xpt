@@ -1,0 +1,123 @@
+«EXTENSION MetaModel»
+«EXTENSION xpt::StringOperations»
+«EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::editor::GenDiagram»
+«EXTENSION fujaba::Fujaba»
+
+
+«AROUND extensions FOR gmfgen::GenEditorGenerator»
+	«REM» We want to remove the extension popupMenus with id init-diagram-extension. «ENDREM»
+	«REM» But unfortenately there are no rules for each extension, and so do not call«ENDREM»
+	«REM» targetDef.proceed(), but copy only those extensions that we want. «ENDREM»
+	
+	«REM» BEGIN COPIED: «ENDREM»
+	<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <editor
+         id="«editor.iD»"
+         name="%editorName"
+         icon="«editor.iconPathX»"
+         extensions="«diagramFileExtension»"
+         default="true"
+         class="«editor.getQualifiedClassName()»"
+         matchingStrategy="«diagram.getMatchingStrategyQualifiedClassName()»"
+         contributorClass="«editor.getActionBarContributorQualifiedClassName()»">
+      </editor>
+   	</extension>
+   	<extension point="org.eclipse.ui.contexts" id="ui-context">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <context
+         description="%context.description"
+         id="«editor.contextID»"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
+
+   	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="«diagram.creationWizardIconPathX»"
+  	     category="«diagram.creationWizardCategoryID»"
+  	     class="«diagram.getCreationWizardQualifiedClassName()»"
+  	     id="«diagram.getCreationWizardQualifiedClassName()»ID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+	«REM» END COPIED «ENDREM»
+	
+	«REM» Here we start to define our own extensions «ENDREM»
+	«EXPAND menus»
+	«EXPAND commands»
+	«EXPAND modelelementcategory»
+	«EXPAND diagraminformation»
+«ENDAROUND»
+
+«DEFINE menus FOR gmfgen::GenEditorGenerator»
+	<extension point="org.eclipse.ui.menus">
+	   «EXPAND xpt::Common::xmlGeneratedTag»   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=diagrams">
+	      <command
+	            commandId="«plugin.iD».createDiagram"
+	            icon="«diagram.creationWizardIconPathX»"
+	            id="«plugin.iD».createDiagram"
+	            label="Initialize «modelID» Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+«ENDDEFINE»
+
+«DEFINE commands FOR gmfgen::GenEditorGenerator»
+	<extension point="org.eclipse.ui.commands">
+		«EXPAND xpt::Common::xmlGeneratedTag»
+		<command
+			categoryId="de.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="«diagram.getInitDiagramFileActionQualifiedClassName()»"
+			id="«plugin.iD».createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+«ENDDEFINE»
+
+«DEFINE modelelementcategory FOR gmfgen::GenEditorGenerator»
+	<extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      «EXPAND xpt::Common::xmlGeneratedTag»  
+      <category
+            key="«getReflectionPackageName(diagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgiface', '\\.messageinterface')».category"
+            name="«diagram.topLevelNodes->first().getDomainMetaClass().genPackage.ecorePackage.name»">
+         «FOREACH diagram.topLevelNodes.getDomainMetaClass() AS node»
+         <child
+               class="«node.ecoreClass.name»"
+               packageNsUri="«node.genPackage.ecorePackage.nsURI»">
+         </child>
+         «ENDFOREACH»
+      </category>
+   </extension>
+«ENDDEFINE»
+
+«DEFINE diagraminformation FOR gmfgen::GenEditorGenerator»
+	<extension
+         point="de.fujaba.newwizard.diagraminformation">
+      «EXPAND xpt::Common::xmlGeneratedTag»  
+      <editor
+            editorId="«editor.iD»">
+         <information
+               editorName="«modelID» Editor"
+               fileExtension="«diagramFileExtension»"
+               fujabaEditor="«editor.getQualifiedClassName()»"
+               modelElementCategoryKey="«modelElementCategoryKey(diagram)»"
+               modelId="«modelID»"
+               useModelElementCategory="«IF usesModelElementCategory(diagram)»true«ELSE»false«ENDIF»">
+         </information>
+      </editor>
+   </extension>
+«ENDDEFINE»

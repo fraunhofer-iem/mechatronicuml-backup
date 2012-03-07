@@ -1,0 +1,82 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION MetaModel»
+«EXTENSION xpt::StringOperations»
+«EXTENSION fujaba::Fujaba»
+
+«REM» Implementation of IFujabaEditor interface «ENDREM»
+
+«DEFINE isValidDiagramElement FOR gmfgen::GenEditorView»
+	«EXPAND xpt::Common::generatedMemberComment»
+@Override
+public boolean isValidDiagramElement(org.eclipse.emf.ecore.EObject diagramElement) {
+	org.eclipse.core.runtime.IAdaptable adapter = new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(diagramElement);
+	org.eclipse.gmf.runtime.common.core.service.IOperation operation = new org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation(adapter,
+			«editorGen.diagram.getEditPartQualifiedClassName()».MODEL_ID, getPreferencesHint());
+	return org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().provides(operation);
+}
+«ENDDEFINE»
+
+
+
+«DEFINE isValidTopLevelNodeElement FOR gmfgen::GenEditorView»
+	«EXPAND xpt::Common::generatedMemberComment»
+@Override
+public boolean isValidTopLevelNodeElement(org.eclipse.emf.ecore.EObject diagramElement,
+		org.eclipse.emf.ecore.EObject topLevelNodeElement) {
+	org.eclipse.gmf.runtime.notation.Diagram diagram = org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().createDiagram(diagramElement,
+			«editorGen.diagram.getEditPartQualifiedClassName()».MODEL_ID, getPreferencesHint());
+		org.eclipse.core.runtime.IAdaptable adapter = new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(topLevelNodeElement);
+	org.eclipse.gmf.runtime.common.core.service.IOperation operation = new org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation(adapter, diagram,
+			null, 0, false, getPreferencesHint());
+	return org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().provides(operation);
+}
+«ENDDEFINE»
+
+
+
+«DEFINE createDiagramElement FOR gmfgen::GenEditorView»
+	«EXPAND xpt::Common::generatedMemberComment»
+@Override
+public org.storydriven.modeling.ExtendableElement createDiagramElement() {
+	«IF usesModelElementCategory(editorGen.diagram)»
+		return null;
+	«ELSE»
+		return «EXPAND MetaModel::NewInstance FOR editorGen.diagram.domainDiagramElement»;
+	«ENDIF»
+}
+«ENDDEFINE»
+
+
+
+«DEFINE getCreatePersistedViewsRequest FOR gmfgen::GenEditorView»
+	«EXPAND xpt::Common::generatedMemberComment»
+public org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest getCreatePersistedViewsRequest(org.eclipse.gmf.runtime.notation.Diagram diagram, java.util.Collection<org.eclipse.emf.ecore.EObject> elements) {
+	java.util.List<«editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»> childDescriptors = «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodCall FOR editorGen.diagram»(diagram);
+		java.util.List<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor> viewDescriptors = new java.util.ArrayList<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor>(childDescriptors.size());
+
+		for («editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()» d : childDescriptors) {
+		if (!elements.contains(d.getModelElement())) {
+			continue;
+		}
+		java.lang.String hint = «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('d.getVisualID()') FOR editorGen.diagram»;
+		org.eclipse.core.runtime.IAdaptable elementAdapter = new de.fujaba.newwizard.InitialElementAdapter(
+				d.getModelElement(), hint);
+		org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor(
+				elementAdapter, org.eclipse.gmf.runtime.notation.Node.class, hint, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, true,
+				getPreferencesHint());
+		viewDescriptors.add(descriptor);
+	}
+	return new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest(viewDescriptors);
+}
+«ENDDEFINE»
+
+
+
+«DEFINE getPreferencesHint FOR gmfgen::GenEditorView»
+	«EXPAND xpt::Common::generatedMemberComment»
+@Override
+public org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint getPreferencesHint() {
+	return «editorGen.plugin.getActivatorQualifiedClassName()».DIAGRAM_PREFERENCES_HINT;
+}
+«ENDDEFINE»
