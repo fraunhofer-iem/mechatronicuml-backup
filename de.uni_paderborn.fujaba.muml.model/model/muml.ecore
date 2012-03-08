@@ -2,15 +2,15 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml"
-    nsURI="http://www.fujaba.de/muml/0.2.1" nsPrefix="muml">
+    nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="This package is the base package for all MechatronicUML models, editors &#xD;&#xA;and algorithms. Plugins contributing to MechatronicUML should use &#xD;&#xA;de.uni_paderborn.fujaba.muml as a base package."/>
   </eAnnotations>
-  <eSubpackages name="model" nsURI="http://www.fujaba.de/muml/model/0.2.1" nsPrefix="model">
+  <eSubpackages name="model" nsURI="http://www.fujaba.de/muml/model/0.2.2" nsPrefix="model">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The model package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination pattern."/>
     </eAnnotations>
-    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.2.1"
+    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.2.2"
         nsPrefix="component">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -574,7 +574,7 @@
         </eLiterals>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.2.1"
+    <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.2.2"
         nsPrefix="constraint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package constraint provides abstract super classes for modeling different&#xD;&#xA;kinds of constraints that may be attached to ConstrainableElements of the&#xD;&#xA;MechatronicUML meta-model. "/>
@@ -639,7 +639,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.2.1" nsPrefix="core">
+    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.2.2" nsPrefix="core">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package contains several core classes that are used by classes from several other packages.&#xD;&#xA;It provides abstract base classes for Statecharts, meta-model elements that use a statechart to&#xD;&#xA;define their behavior and meta-model elements that may carry a constraint.&#xD;&#xA;Additionally, the package provides classes for modeling cardinalites as natural numbers including&#xD;&#xA;infinity."/>
       </eAnnotations>
@@ -772,7 +772,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.2.1"
+    <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.2.2"
         nsPrefix="instance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1000,7 +1000,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.2.1"
+    <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.2.2"
         nsPrefix="pattern">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1154,7 +1154,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1"
+    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.2"
         nsPrefix="realtimestatechart">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1879,7 +1879,7 @@
             upperBound="-1" eType="#//model/realtimestatechart/ExitPoint"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="msgiface" nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.1"
+    <eSubpackages name="msgiface" nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.2"
         nsPrefix="msgiface">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1939,7 +1939,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.2.1"
+    <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.2.2"
         nsPrefix="deployment">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>

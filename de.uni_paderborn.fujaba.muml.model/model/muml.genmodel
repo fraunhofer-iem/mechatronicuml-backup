@@ -82,6 +82,8 @@
           <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="General"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/embeddedParts"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/connectors"/>
+          <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/allStructuredComponents"/>
+          <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/allAtomicComponents"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/AtomicComponent"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/component/ConnectorType">

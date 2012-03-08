@@ -14761,7 +14761,7 @@
       </operation>
     </changes>
   </releases>
-  <releases>
+  <releases date="2012-03-08T15:46:19.592+0100" label="">
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
         featureName="value" dataValue="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()"
         oldDataValue="self.vertices.oclAsType(State)->notEmpty()"/>
@@ -16229,5 +16229,29 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.allStructuredComponents->collect(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xA;)->asOrderedSet()"
         oldDataValue="self.allStructuredComponentsInHierarchy->collect(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xA;)->asOrderedSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#/" featureName="nsURI" dataValue="http://www.fujaba.de/muml/0.2.2"
+        oldDataValue="http://www.fujaba.de/muml/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/component/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/constraint/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/constraint/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/core/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/core/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/instance/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/instance/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/pattern/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.2.2"
+        oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/msgiface/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/msgiface/0.2.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/deployment/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.2.1"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.2" oldDataValue="http://www.fujaba.de/modelinstance/0.2.1"/>
   </releases>
+  <releases/>
 </history:History>
