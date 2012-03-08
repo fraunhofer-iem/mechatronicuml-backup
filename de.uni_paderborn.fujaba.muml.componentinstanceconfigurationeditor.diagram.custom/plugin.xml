@@ -38,7 +38,8 @@
    </extension>
 
 
-   <!-- this was moved into plugin.xml of the generated editor ( -->
+   <!-- this was moved into plugin.xml of the generated editor -->
+   <!--
    <extension
          point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
       <factory
@@ -47,5 +48,5 @@
             priority="1">
       </factory>
    </extension>
-   
+   -->
 </plugin>
