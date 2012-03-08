@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.Operation;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,7 +60,7 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EOperation> operations;
+	protected EList<Operation> operations;
 	/**
 	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -67,7 +69,7 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EAttribute> attributes;
+	protected EList<Attribute> attributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,9 +155,9 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EOperation> getOperations() {
+	public EList<Operation> getOperations() {
 		if (operations == null) {
-			operations = new EObjectContainmentEList<EOperation>(EOperation.class, this, CorePackage.BEHAVIOR__OPERATIONS);
+			operations = new EObjectContainmentEList<Operation>(Operation.class, this, CorePackage.BEHAVIOR__OPERATIONS);
 		}
 		return operations;
 	}
@@ -165,9 +167,9 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EAttribute> getAttributes() {
+	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
-			attributes = new EObjectContainmentEList<EAttribute>(EAttribute.class, this, CorePackage.BEHAVIOR__ATTRIBUTES);
+			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, CorePackage.BEHAVIOR__ATTRIBUTES);
 		}
 		return attributes;
 	}
@@ -239,11 +241,11 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 				return;
 			case CorePackage.BEHAVIOR__OPERATIONS:
 				getOperations().clear();
-				getOperations().addAll((Collection<? extends EOperation>)newValue);
+				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
 			case CorePackage.BEHAVIOR__ATTRIBUTES:
 				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends EAttribute>)newValue);
+				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

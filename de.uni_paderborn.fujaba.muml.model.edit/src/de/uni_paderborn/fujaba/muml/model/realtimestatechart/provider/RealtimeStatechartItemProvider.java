@@ -27,6 +27,7 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
@@ -75,13 +76,10 @@ public class RealtimeStatechartItemProvider
 			addHistoryPropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
 			addFlatPropertyDescriptor(object);
-			addSecurityLevelPropertyDescriptor(object);
-			addUtilisationPropertyDescriptor(object);
-			addScheduleDocumentPropertyDescriptor(object);
 			addEmbeddedPropertyDescriptor(object);
+			addStatechartPropertyDescriptor(object);
 			addAllAvailableAttributesPropertyDescriptor(object);
 			addAllAvailableOperationsPropertyDescriptor(object);
-			addStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -263,72 +261,6 @@ public class RealtimeStatechartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Security Level feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityLevelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_securityLevel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_securityLevel_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__SECURITY_LEVEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Utilisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUtilisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_utilisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_utilisation_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__UTILISATION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Schedule Document feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScheduleDocumentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_scheduleDocument_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_scheduleDocument_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__SCHEDULE_DOCUMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Embedded feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -491,9 +423,6 @@ public class RealtimeStatechartItemProvider
 			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
 			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
-			case RealtimestatechartPackage.REALTIME_STATECHART__SECURITY_LEVEL:
-			case RealtimestatechartPackage.REALTIME_STATECHART__UTILISATION:
-			case RealtimestatechartPackage.REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -518,6 +447,16 @@ public class RealtimeStatechartItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.BEHAVIOR__OPERATIONS,
+				 CoreFactory.eINSTANCE.createOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
+				 CoreFactory.eINSTANCE.createAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

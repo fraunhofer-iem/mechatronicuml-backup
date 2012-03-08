@@ -79,7 +79,6 @@ public class RoleItemProvider
 			addPortPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
-			addOrderVariablePropertyDescriptor(object);
 			addOutgoingRoleConnectorPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
 		}
@@ -322,28 +321,6 @@ public class RoleItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Order Variable feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOrderVariablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_orderVariable_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_orderVariable_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__ORDER_VARIABLE,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

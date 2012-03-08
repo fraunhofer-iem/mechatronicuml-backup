@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EOperation;
@@ -13,6 +14,7 @@ import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.core.Operation;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,13 +36,10 @@ import de.uni_paderborn.fujaba.muml.model.core.Behavior;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getSecurityLevel <em>Security Level</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getUtilisation <em>Utilisation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableAttributes <em>All Available Attributes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableOperations <em>All Available Operations</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStatechart <em>Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -220,83 +219,6 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	EList<Clock> getAvailableClocks();
 
 	/**
-	 * Returns the value of the '<em><b>Security Level</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * needed for WCET-analysis
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Security Level</em>' attribute.
-	 * @see #setSecurityLevel(int)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_SecurityLevel()
-	 * @model default="0"
-	 * @generated
-	 */
-	int getSecurityLevel();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getSecurityLevel <em>Security Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Security Level</em>' attribute.
-	 * @see #getSecurityLevel()
-	 * @generated
-	 */
-	void setSecurityLevel(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Utilisation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * needed for WCET-analysis
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Utilisation</em>' attribute.
-	 * @see #setUtilisation(double)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_Utilisation()
-	 * @model
-	 * @generated
-	 */
-	double getUtilisation();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getUtilisation <em>Utilisation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Utilisation</em>' attribute.
-	 * @see #getUtilisation()
-	 * @generated
-	 */
-	void setUtilisation(double value);
-
-	/**
-	 * Returns the value of the '<em><b>Schedule Document</b></em>' attribute.
-	 * The default value is <code>"\\\"schedule.xml\\\""</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * needed for WCET-analysis
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Schedule Document</em>' attribute.
-	 * @see #setScheduleDocument(String)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_ScheduleDocument()
-	 * @model default="\\\"schedule.xml\\\""
-	 * @generated
-	 */
-	String getScheduleDocument();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schedule Document</em>' attribute.
-	 * @see #getScheduleDocument()
-	 * @generated
-	 */
-	void setScheduleDocument(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Embedded</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
@@ -314,7 +236,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 
 	/**
 	 * Returns the value of the '<em><b>All Available Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EAttribute}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>All Available Attributes</em>' reference list isn't clear,
@@ -323,15 +245,15 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>All Available Attributes</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableAttributes()
-	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asSet()'"
 	 * @generated
 	 */
-	EList<EAttribute> getAllAvailableAttributes();
+	EList<Attribute> getAllAvailableAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>All Available Operations</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EOperation}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>All Available Operations</em>' reference list isn't clear,
@@ -340,11 +262,11 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>All Available Operations</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableOperations()
-	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()'"
 	 * @generated
 	 */
-	EList<EOperation> getAllAvailableOperations();
+	EList<Operation> getAllAvailableOperations();
 
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' containment reference.

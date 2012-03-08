@@ -1,0 +1,86 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package de.uni_paderborn.fujaba.muml.model.core;
+
+import org.storydriven.modeling.CommentableElement;
+import org.storydriven.modeling.NamedElement;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Parameter</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * A parameter is used to specify parameters of an operation. A parameter defines a type.
+ * <!-- end-model-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Parameter#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Parameter#getOperation <em>Operation</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getParameter()
+ * @model
+ * @generated
+ */
+public interface Parameter extends NamedElement, CommentableElement {
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The type of this parameter.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Type</em>' reference.
+	 * @see #setType(DataType)
+	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getParameter_Type()
+	 * @model required="true"
+	 * @generated
+	 */
+	DataType getType();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.Parameter#getType <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' reference.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(DataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.Operation#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The operation which contains this parameter. Since parameters cannot exist without the operation, the operation must be set.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Operation</em>' container reference.
+	 * @see #setOperation(Operation)
+	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getParameter_Operation()
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Operation#getParameters
+	 * @model opposite="parameters" required="true" transient="false"
+	 * @generated
+	 */
+	Operation getOperation();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.Parameter#getOperation <em>Operation</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation</em>' container reference.
+	 * @see #getOperation()
+	 * @generated
+	 */
+	void setOperation(Operation value);
+
+} // Parameter

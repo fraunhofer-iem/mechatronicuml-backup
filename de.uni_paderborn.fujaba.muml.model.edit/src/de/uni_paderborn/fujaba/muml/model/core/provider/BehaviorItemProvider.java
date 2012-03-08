@@ -26,6 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
@@ -208,6 +209,16 @@ public class BehaviorItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.BEHAVIOR__OPERATIONS,
+				 CoreFactory.eINSTANCE.createOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
+				 CoreFactory.eINSTANCE.createAttribute()));
 	}
 
 	/**

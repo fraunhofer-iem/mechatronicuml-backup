@@ -55,7 +55,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#isOrdered <em>Ordered</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getOrderVariable <em>Order Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  * </ul>
@@ -173,16 +172,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected boolean ordered = ORDERED_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getOrderVariable() <em>Order Variable</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderVariable()
-	 * @generated
-	 * @ordered
-	 */
-	protected EAttribute orderVariable;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingRoleConnector() <em>Outgoing Role Connector</em>}' reference.
@@ -647,44 +636,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOrderVariable() {
-		if (orderVariable != null && orderVariable.eIsProxy()) {
-			InternalEObject oldOrderVariable = (InternalEObject)orderVariable;
-			orderVariable = (EAttribute)eResolveProxy(oldOrderVariable);
-			if (orderVariable != oldOrderVariable) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ORDER_VARIABLE, oldOrderVariable, orderVariable));
-			}
-		}
-		return orderVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute basicGetOrderVariable() {
-		return orderVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOrderVariable(EAttribute newOrderVariable) {
-		EAttribute oldOrderVariable = orderVariable;
-		orderVariable = newOrderVariable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ORDER_VARIABLE, oldOrderVariable, orderVariable));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RoleConnector getOutgoingRoleConnector() {
 		if (outgoingRoleConnector != null && outgoingRoleConnector.eIsProxy()) {
 			InternalEObject oldOutgoingRoleConnector = (InternalEObject)outgoingRoleConnector;
@@ -849,9 +800,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicGetRoleAndAdaptationBehavior();
 			case PatternPackage.ROLE__ORDERED:
 				return isOrdered();
-			case PatternPackage.ROLE__ORDER_VARIABLE:
-				if (resolve) return getOrderVariable();
-				return basicGetOrderVariable();
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				if (resolve) return getOutgoingRoleConnector();
 				return basicGetOutgoingRoleConnector();
@@ -906,9 +854,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ORDERED:
 				setOrdered((Boolean)newValue);
 				return;
-			case PatternPackage.ROLE__ORDER_VARIABLE:
-				setOrderVariable((EAttribute)newValue);
-				return;
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				setOutgoingRoleConnector((RoleConnector)newValue);
 				return;
@@ -957,9 +902,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ORDERED:
 				setOrdered(ORDERED_EDEFAULT);
 				return;
-			case PatternPackage.ROLE__ORDER_VARIABLE:
-				setOrderVariable((EAttribute)null);
-				return;
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				setOutgoingRoleConnector((RoleConnector)null);
 				return;
@@ -997,8 +939,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return roleAndAdaptationBehavior != null;
 			case PatternPackage.ROLE__ORDERED:
 				return ordered != ORDERED_EDEFAULT;
-			case PatternPackage.ROLE__ORDER_VARIABLE:
-				return orderVariable != null;
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				return outgoingRoleConnector != null;
 			case PatternPackage.ROLE__ROLE_CONNECTOR:

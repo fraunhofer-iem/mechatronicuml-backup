@@ -42,10 +42,10 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/ContinuousPort">
           <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousPort/kind"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/component/ContinuousPort/type"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousPort/isContinuousInPort"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/component/ContinuousPort/type"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/DiscretePort">
           <genFeatures notify="false" createChild="false" propertyCategory="General"
@@ -145,6 +145,16 @@
       </nestedGenPackages>
       <nestedGenPackages prefix="Core" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/core">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//model/core/PrimitiveTypes">
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/VOID"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/BOOLEAN"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/BYTE"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/SHORT"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/INT"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/LONG"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/DOUBLE"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/STRING"/>
+        </genEnums>
         <genClasses ecoreClass="muml.ecore#//model/core/NaturalNumber">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/NaturalNumber/value"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/NaturalNumber/infinity"/>
@@ -180,6 +190,25 @@
         <genClasses ecoreClass="muml.ecore#//model/core/ActivityCallExpression">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/core/ActivityCallExpression/activity"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/core/Attribute">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/core/Attribute/type"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/core/Operation">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/returnType"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/parameters"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/implementations"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/core/Parameter">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/core/Parameter/type"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/core/Parameter/operation"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/core/DataType"/>
+        <genClasses ecoreClass="muml.ecore#//model/core/PrimitiveDataType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/PrimitiveDataType/primitiveType"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.model"
@@ -273,8 +302,6 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/roleAndAdaptationBehavior"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/pattern/Role/ordered"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/orderVariable"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/outgoingRoleConnector"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -416,14 +443,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/eventQueueSize"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/flat"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/availableClocks"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/embedded"/>
-          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"/>
-          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"/>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf">
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
           </genOperations>

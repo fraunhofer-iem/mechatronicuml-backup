@@ -266,7 +266,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	public EReference getRole_RoleConnector() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(11);
+		return (EReference)roleEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -346,17 +346,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_OrderVariable() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getRole_OutgoingRoleConnector() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(10);
+		return (EReference)roleEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -408,7 +399,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(roleEClass, ROLE__ADAPTATION_BEHAVIOR);
 		createEReference(roleEClass, ROLE__ROLE_AND_ADAPTATION_BEHAVIOR);
 		createEAttribute(roleEClass, ROLE__ORDERED);
-		createEReference(roleEClass, ROLE__ORDER_VARIABLE);
 		createEReference(roleEClass, ROLE__OUTGOING_ROLE_CONNECTOR);
 		createEReference(roleEClass, ROLE__ROLE_CONNECTOR);
 	}
@@ -477,7 +467,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getRole_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRole_Ordered(), theEcorePackage.getEBoolean(), "ordered", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_OrderVariable(), ecorePackage.getEAttribute(), null, "orderVariable", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_OutgoingRoleConnector(), this.getRoleConnector(), this.getRoleConnector_Source(), "outgoingRoleConnector", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_RoleConnector(), this.getRoleConnector(), null, "roleConnector", null, 0, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
@@ -524,7 +513,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"
-		   });												
+		   });											
 	}
 
 	/**
@@ -561,7 +550,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')",
 			 "RoleHasConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()",
 			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()"
-		   });												
+		   });											
 		addAnnotation
 		  (getRole_RoleConnector(), 
 		   source, 

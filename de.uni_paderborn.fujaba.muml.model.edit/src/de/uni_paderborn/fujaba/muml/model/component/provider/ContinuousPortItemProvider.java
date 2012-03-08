@@ -61,9 +61,9 @@ public class ContinuousPortItemProvider
 			super.getPropertyDescriptors(object);
 
 			addKindPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
 			addIsContinuousInPortPropertyDescriptor(object);
 			addIsContinuousOutPortPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}

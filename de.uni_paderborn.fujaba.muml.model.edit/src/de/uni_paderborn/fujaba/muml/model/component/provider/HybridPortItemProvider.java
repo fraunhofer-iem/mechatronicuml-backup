@@ -61,9 +61,9 @@ public class HybridPortItemProvider
 			super.getPropertyDescriptors(object);
 
 			addKindPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
 			addIsContinuousInPortPropertyDescriptor(object);
 			addIsContinuousOutPortPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 			addIsHybridInPortPropertyDescriptor(object);
 			addIsHybridOutPortPropertyDescriptor(object);
 		}

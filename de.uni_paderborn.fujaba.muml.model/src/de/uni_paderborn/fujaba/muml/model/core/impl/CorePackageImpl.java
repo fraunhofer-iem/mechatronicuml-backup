@@ -8,11 +8,13 @@ package de.uni_paderborn.fujaba.muml.model.core.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
@@ -23,13 +25,19 @@ import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
 import de.uni_paderborn.fujaba.muml.model.core.util.CoreValidator;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
@@ -90,6 +98,48 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass activityCallExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass primitiveDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum primitiveTypesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -336,6 +386,123 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAttribute() {
+		return attributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttribute_Type() {
+		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOperation() {
+		return operationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperation_ReturnType() {
+		return (EReference)operationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperation_Parameters() {
+		return (EReference)operationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperation_Implementations() {
+		return (EReference)operationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameter() {
+		return parameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameter_Type() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameter_Operation() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDataType() {
+		return dataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPrimitiveDataType() {
+		return primitiveDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPrimitiveDataType_PrimitiveType() {
+		return (EAttribute)primitiveDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getPrimitiveTypes() {
+		return primitiveTypesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CoreFactory getCoreFactory() {
 		return (CoreFactory)getEFactoryInstance();
 	}
@@ -380,6 +547,26 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		activityCallExpressionEClass = createEClass(ACTIVITY_CALL_EXPRESSION);
 		createEReference(activityCallExpressionEClass, ACTIVITY_CALL_EXPRESSION__ACTIVITY);
+
+		attributeEClass = createEClass(ATTRIBUTE);
+		createEReference(attributeEClass, ATTRIBUTE__TYPE);
+
+		operationEClass = createEClass(OPERATION);
+		createEReference(operationEClass, OPERATION__RETURN_TYPE);
+		createEReference(operationEClass, OPERATION__PARAMETERS);
+		createEReference(operationEClass, OPERATION__IMPLEMENTATIONS);
+
+		parameterEClass = createEClass(PARAMETER);
+		createEReference(parameterEClass, PARAMETER__TYPE);
+		createEReference(parameterEClass, PARAMETER__OPERATION);
+
+		dataTypeEClass = createEClass(DATA_TYPE);
+
+		primitiveDataTypeEClass = createEClass(PRIMITIVE_DATA_TYPE);
+		createEAttribute(primitiveDataTypeEClass, PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE);
+
+		// Create enums
+		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
 	}
 
 	/**
@@ -410,6 +597,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
+		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -418,6 +606,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Add supertypes to classes
 		activityCallExpressionEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		activityCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		attributeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		attributeEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		operationEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		operationEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		parameterEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		parameterEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		dataTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		dataTypeEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -446,11 +643,39 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavior_BehavioralElement(), this.getBehavioralElement(), this.getBehavioralElement_Behavior(), "behavioralElement", null, 0, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehavior_Operations(), ecorePackage.getEOperation(), null, "operations", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehavior_Attributes(), ecorePackage.getEAttribute(), null, "attributes", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavior_Operations(), this.getOperation(), null, "operations", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavior_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(activityCallExpressionEClass, ActivityCallExpression.class, "ActivityCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivityCallExpression_Activity(), theActivitiesPackage.getActivity(), null, "activity", null, 1, 1, ActivityCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOperation_ReturnType(), this.getDataType(), null, "returnType", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Parameters(), this.getParameter(), this.getParameter_Operation(), "parameters", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Implementations(), theExpressionsPackage.getExpression(), null, "implementations", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameter_Type(), this.getDataType(), null, "type", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameter_Operation(), this.getOperation(), this.getOperation_Parameters(), "operation", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(primitiveDataTypeEClass, PrimitiveDataType.class, "PrimitiveDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPrimitiveDataType_PrimitiveType(), this.getPrimitiveTypes(), "primitiveType", "PrimitiveTypes.VOID", 1, 1, PrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.VOID);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.BOOLEAN);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.BYTE);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.SHORT);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.LONG);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.DOUBLE);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.STRING);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -489,7 +714,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });													
+		   });																							
 	}
 
 	/**
@@ -511,7 +736,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"
-		   });												
+		   });																						
 	}
 
 } //CorePackageImpl

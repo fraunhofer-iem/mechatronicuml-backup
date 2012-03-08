@@ -14,7 +14,7 @@
       <package
             class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage"
             genModel="model/muml.genmodel"
-            uri="http://www.fujaba.de/muml/model/component/0.2.2">
+            uri="http://www.fujaba.de/muml/model/component/0.2.3">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage"
@@ -24,7 +24,7 @@
       <package
             class="de.uni_paderborn.fujaba.muml.model.core.CorePackage"
             genModel="model/muml.genmodel"
-            uri="http://www.fujaba.de/muml/model/core/0.2.2">
+            uri="http://www.fujaba.de/muml/model/core/0.2.3">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.instance.InstancePackage"
@@ -34,12 +34,12 @@
       <package
             class="de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage"
             genModel="model/muml.genmodel"
-            uri="http://www.fujaba.de/muml/model/pattern/0.2.2">
+            uri="http://www.fujaba.de/muml/model/pattern/0.2.3">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage"
             genModel="model/muml.genmodel"
-            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.2.2">
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.2.3">
       </package>
       <package
             class="de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage"

@@ -45,7 +45,7 @@ public interface PatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.2.2";
+	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.2.3";
 
 	/**
 	 * The package namespace name.
@@ -346,22 +346,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE__ORDERED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Order Variable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ORDER_VARIABLE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing Role Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OUTGOING_ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int ROLE__OUTGOING_ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
@@ -370,7 +361,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int ROLE__ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -379,7 +370,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 
 	/**
@@ -600,17 +591,6 @@ public interface PatternPackage extends EPackage {
 	EAttribute getRole_Ordered();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable <em>Order Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Order Variable</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_OrderVariable();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -808,14 +788,6 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROLE__ORDERED = eINSTANCE.getRole_Ordered();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Variable</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE__ORDER_VARIABLE = eINSTANCE.getRole_OrderVariable();
 
 		/**
 		 * The meta object literal for the '<em><b>Outgoing Role Connector</b></em>' reference feature.

@@ -683,49 +683,49 @@
             featureName="value" dataValue="The behavioral element this statechart belongs to."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/core/Behavior"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Behavior/operations">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.29/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.29/@changes.0/@element"
             featureName="name" dataValue="operations"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.29/@changes.0/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.29/@changes.0/@element"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.29/@changes.0/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Behavior/operations"
-          referenceName="eAnnotations" element="muml.ecore#//model/core/Behavior/operations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.29/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.29/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.29/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Behavior/operations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/core/Behavior/operations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.29/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.3/@changes.29/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.29/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.29/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A behavior may define a set of EOperations as signatures of helper functions. These operations&#xD;&#xA;may be called by the behavior specification and may access the attributes of&#xD;&#xA;the behavior specification. The EOperations are contained in the behavior."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/core/Behavior"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Behavior/attributes">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.31/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.31/@changes.0/@element"
             featureName="name" dataValue="attributes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.31/@changes.0/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.31/@changes.0/@element"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.31/@changes.0/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Behavior/attributes"
-          referenceName="eAnnotations" element="muml.ecore#//model/core/Behavior/attributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.31/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.31/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.31/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Behavior/attributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/core/Behavior/attributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.31/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.3/@changes.31/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.31/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.31/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A behavior may define a set of EAttributes in order to store data. The attributes&#xD;&#xA;may be used by the operations of the behavior and the behavior specification itself.&#xD;&#xA;The attributes are contained in the behavior."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model" referenceName="eSubpackages"
@@ -4604,12 +4604,12 @@
             featureName="value" dataValue="Decides the direction of a continous port."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ContinuousPort/type">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/type"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.26/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.26/@changes.0/@element"
             featureName="name" dataValue="type"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/type"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.26/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/type"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.26/@changes.0/@element"
             featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component" referenceName="eClassifiers"
@@ -6149,22 +6149,22 @@
             featureName="eType" referenceValue="muml.ecore#//model/core/Behavior"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/Role/orderVariable">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/orderVariable"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.33/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.33/@changes.0/@element"
             featureName="name" dataValue="orderVariable"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/orderVariable"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.33/@changes.0/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/orderVariable"
-          referenceName="eAnnotations" element="muml.ecore#//model/pattern/Role/orderVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/orderVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.33/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.33/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.33/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/orderVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/pattern/Role/orderVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/orderVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.33/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.3/@changes.33/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.33/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/orderVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.33/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This attribute defines the order on the instances of the multi-role. It must be defined in the real-time statechart of this role and it must be of type integer."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role"
@@ -7244,64 +7244,64 @@
             featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks->asSet()"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.35/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.35/@changes.0/@element"
             featureName="name" dataValue="securityLevel"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.35/@changes.0/@element"
             featureName="defaultValueLiteral" dataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.35/@changes.0/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.35/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.35/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.35/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.35/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.3/@changes.35/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.35/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/securityLevel/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.35/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="needed for WCET-analysis"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.36/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.36/@changes.0/@element"
             featureName="name" dataValue="utilisation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.36/@changes.0/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.36/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.36/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.36/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.36/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.3/@changes.36/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.36/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/utilisation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.36/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="needed for WCET-analysis"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.37/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.37/@changes.0/@element"
             featureName="name" dataValue="scheduleDocument"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.37/@changes.0/@element"
             featureName="defaultValueLiteral" dataValue="\&quot;schedule.xml\&quot;"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.37/@changes.0/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.37/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.37/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.37/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.37/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.3/@changes.37/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.37/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/scheduleDocument/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.37/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="needed for WCET-analysis"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
@@ -11718,34 +11718,34 @@
             featureName="eSuperTypes" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ETypedElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.47/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element"
             featureName="name" dataValue="allAvailableOperations"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element"
             featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.47/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.47/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.47/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.3/@changes.47/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.47/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.modeling/model/sdm.ecore#//activities/OperationExtension"
@@ -12116,34 +12116,34 @@
             featureName="eSuperTypes" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.42/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element"
             featureName="name" dataValue="allAvailableAttributes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element"
             featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.42/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.42/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.42/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.3/@changes.42/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.42/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asSet()"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.modeling/model/sdm.ecore#//patterns/AttributeAssignment"
@@ -16252,6 +16252,1125 @@
         dataValue="http://www.fujaba.de/muml/model/deployment/0.2.2" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.2.1"/>
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.2" oldDataValue="http://www.fujaba.de/modelinstance/0.2.1"/>
+  </releases>
+  <releases date="2012-03-08T17:29:06.352+0100" label="0.2.3">
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/Attribute">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute"
+            featureName="name" dataValue="Attribute"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/Attribute"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/Attribute"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>Attribute</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Attribute"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Attribute/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Attribute/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Attribute/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Implementation of an Attribute of a behavior which has a certain type."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Attribute"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>Implementation of an Attribute of a behavior which has a certain type.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/Operation">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation"
+            featureName="name" dataValue="Operation"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/Operation"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/Operation"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>Operation</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="An operation specifies a behavior that can be called with a list of concrete parameters and may return a return value."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Operation"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>An operation specifies a behavior that can be called with a list of concrete parameters and may return a return value.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/Parameter">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter"
+            featureName="name" dataValue="Parameter"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/Parameter"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/Parameter"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>Parameter</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Parameter"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="A parameter is used to specify parameters of an operation. A parameter defines a type."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Parameter"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>A parameter is used to specify parameters of an operation. A parameter defines a type.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/PrimitiveTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes"
+            featureName="name" dataValue="PrimitiveTypes"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eLiterals" element="muml.ecore#//model/core/PrimitiveTypes/VOID">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/VOID"
+            featureName="name" dataValue="VOID"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/VOID"
+            featureName="literal" dataValue="VOID"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eLiterals" element="muml.ecore#//model/core/PrimitiveTypes/BOOLEAN">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/BOOLEAN"
+            featureName="name" dataValue="BOOLEAN"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/BOOLEAN"
+            featureName="literal" dataValue="BOOLEAN"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/BOOLEAN"
+            featureName="value" dataValue="1" oldDataValue="0"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eLiterals" element="muml.ecore#//model/core/PrimitiveTypes/BYTE">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/BYTE"
+            featureName="name" dataValue="BYTE"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/BYTE"
+            featureName="literal" dataValue="BYTE"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/BYTE"
+            featureName="value" dataValue="2" oldDataValue="0"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eLiterals" element="muml.ecore#//model/core/PrimitiveTypes/SHORT">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/SHORT"
+            featureName="name" dataValue="SHORT"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/SHORT"
+            featureName="literal" dataValue="SHORT"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/SHORT"
+            featureName="value" dataValue="3" oldDataValue="0"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eLiterals" element="muml.ecore#//model/core/PrimitiveTypes/INT">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/INT"
+            featureName="name" dataValue="INT"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/INT"
+            featureName="literal" dataValue="INT"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/INT"
+            featureName="value" dataValue="4" oldDataValue="0"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eLiterals" element="muml.ecore#//model/core/PrimitiveTypes/LONG">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/LONG"
+            featureName="name" dataValue="LONG"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/LONG"
+            featureName="literal" dataValue="LONG"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/LONG"
+            featureName="value" dataValue="5" oldDataValue="0"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eLiterals" element="muml.ecore#//model/core/PrimitiveTypes/DOUBLE">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/DOUBLE"
+            featureName="name" dataValue="DOUBLE"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/DOUBLE"
+            featureName="literal" dataValue="DOUBLE"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/DOUBLE"
+            featureName="value" dataValue="6" oldDataValue="0"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eLiterals" element="muml.ecore#//model/core/PrimitiveTypes/STRING">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/STRING"
+            featureName="name" dataValue="STRING"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/STRING"
+            featureName="literal" dataValue="STRING"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/STRING"
+            featureName="value" dataValue="7" oldDataValue="0"/>
+      </changes>
+      <operation name="createEnumeration">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>PrimitiveTypes</dataValue>
+        </parameters>
+        <parameters name="literals">
+          <dataValue>VOID</dataValue>
+          <dataValue>BOOLEAN</dataValue>
+          <dataValue>BYTE</dataValue>
+          <dataValue>SHORT</dataValue>
+          <dataValue>INT</dataValue>
+          <dataValue>LONG</dataValue>
+          <dataValue>DOUBLE</dataValue>
+          <dataValue>STRING</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/PrimitiveTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/PrimitiveTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Defines all primitive types that may be used for attributes, parameters, and operations."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/PrimitiveTypes"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>Defines all primitive types that may be used for attributes, parameters, and operations.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/DataType">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/DataType"
+            featureName="name" dataValue="DataType"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/DataType"
+            featureName="abstract" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/DataType"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/DataType"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>DataType</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>true</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/DataType"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/DataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/DataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/DataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/DataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/DataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/DataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Abstract super class for all types that may be used for attributes, parameters, and operations."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/DataType"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>Abstract super class for all types that may be used for attributes, parameters, and operations.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/PrimitiveDataType">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType"
+            featureName="name" dataValue="PrimitiveDataType"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/PrimitiveDataType"
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/DataType"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>PrimitiveDataType</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="muml.ecore#//model/core/DataType"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveDataType"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/PrimitiveDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/PrimitiveDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="This data type represents a primitive data type and refers to the PrimitiveDataType enumeration for specifying the concrete primitive type."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/PrimitiveDataType"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>This data type represents a primitive data type and refers to the PrimitiveDataType enumeration for specifying the concrete primitive type.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Attribute"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Attribute/type">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/type"
+            featureName="name" dataValue="type"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/type"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/type"
+            featureName="eType" referenceValue="muml.ecore#//model/core/DataType"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/Attribute"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>type</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/DataType"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Operation/returnType">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/returnType"
+            featureName="name" dataValue="returnType"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/returnType"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/returnType"
+            featureName="eType" referenceValue="muml.ecore#//model/core/DataType"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/Operation"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>returnType</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/DataType"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Parameter"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Parameter/type">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/type"
+            featureName="name" dataValue="type"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/type"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/type"
+            featureName="eType" referenceValue="muml.ecore#//model/core/DataType"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/Parameter"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>type</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/DataType"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Attribute/type"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Attribute/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Attribute/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Attribute/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Attribute/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The type of this attribute."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Attribute/type"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The type of this attribute.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation/returnType"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Operation/returnType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/returnType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation/returnType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Operation/returnType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/returnType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/returnType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The type of the return value of this operation."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Operation/returnType"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The type of the return value of this operation.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Parameter/type"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The type of this parameter."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Parameter/type"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The type of this parameter.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Operation/parameters">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/parameters"
+            featureName="name" dataValue="parameters"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/parameters"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/parameters"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/parameters"
+            featureName="eType" referenceValue="muml.ecore#//model/core/Parameter"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/Operation"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>parameters</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/Parameter"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Parameter"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Parameter/operation">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/operation"
+            featureName="name" dataValue="operation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/operation"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/operation"
+            featureName="eType" referenceValue="muml.ecore#//model/core/Operation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/operation"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/core/Operation/parameters"/>
+      </changes>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/parameters"
+          featureName="eOpposite" referenceValue="muml.ecore#//model/core/Parameter/operation"/>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/Parameter"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>operation</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/Operation"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite">
+          <referenceValue element="muml.ecore#//model/core/Operation/parameters"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation/parameters"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Operation/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Operation/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The parameters of this operation."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Operation/parameters"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The parameters of this operation.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Parameter/operation"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Parameter/operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Parameter/operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Parameter/operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/operation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The operation which contains this parameter. Since parameters cannot exist without the operation, the operation must be set."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Parameter/operation"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The operation which contains this parameter. Since parameters cannot exist without the operation, the operation must be set.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Operation/implementations">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/implementations"
+            featureName="name" dataValue="implementations"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/implementations"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/implementations"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/implementations"
+            featureName="eType" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/Operation"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>implementations</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation/implementations"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/Operation/implementations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/implementations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Operation/implementations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/Operation/implementations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/implementations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Operation/implementations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The implementation for this operation. MechatronicUML supports the annotation of multiple implementations for an operation to support different target languages."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/Operation/implementations"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The implementation for this operation. MechatronicUML supports the annotation of multiple implementations for an operation to support different target languages.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveDataType"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType"
+            featureName="name" dataValue="primitiveType"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType"
+            featureName="defaultValueLiteral" dataValue="PrimitiveTypes.VOID"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType"
+            featureName="eType" referenceValue="muml.ecore#//model/core/PrimitiveTypes"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/PrimitiveDataType"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>primitiveType</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/PrimitiveTypes"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue>PrimitiveTypes.VOID</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/core/0.2.3" oldDataValue="http://www.fujaba.de/muml/model/core/0.2.2"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/component/ContinuousPort"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Defines the data type of the signal value which is emitted or received by &#xD;&#xA;the continuous port."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.26/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ContinuousPort/type">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/type"
+            featureName="name" dataValue="type"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/type"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/type"
+            featureName="eType" referenceValue="muml.ecore#//model/core/DataType"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/component/ContinuousPort"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>type</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/DataType"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.2.3" oldDataValue="http://www.fujaba.de/muml/model/component/0.2.2"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/core/Behavior"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="operations" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EOperation"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A behavior may define a set of EOperations as signatures of helper functions. These operations&#xD;&#xA;may be called by the behavior specification and may access the attributes of&#xD;&#xA;the behavior specification. The EOperations are contained in the behavior."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.29/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Behavior"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Behavior/operations">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations"
+            featureName="name" dataValue="operations"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/operations"
+            featureName="eType" referenceValue="muml.ecore#//model/core/Operation"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/Behavior"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>operations</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/Operation"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/core/Behavior"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="attributes" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A behavior may define a set of EAttributes in order to store data. The attributes&#xD;&#xA;may be used by the operations of the behavior and the behavior specification itself.&#xD;&#xA;The attributes are contained in the behavior."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.31/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/Behavior"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/Behavior/attributes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes"
+            featureName="name" dataValue="attributes"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes"
+            featureName="eType" referenceValue="muml.ecore#//model/core/Attribute"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/Behavior"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>attributes</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/Attribute"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/pattern/Role"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="orderVariable" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This attribute defines the order on the instances of the multi-role. It must be defined in the real-time statechart of this role and it must be of type integer."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.33/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/pattern/0.2.3" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.2.2"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EAttribute" name="securityLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="0">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="needed for WCET-analysis"/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.35/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EAttribute" name="utilisation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="needed for WCET-analysis"/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.36/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EAttribute" name="scheduleDocument" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral="\&quot;schedule.xml\&quot;">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="needed for WCET-analysis"/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.37/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+            featureName="name" dataValue="allAvailableAttributes"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+            featureName="eType" referenceValue="muml.ecore#//model/core/Attribute"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>allAvailableAttributes</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/Attribute"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
+      <operation name="makeFeatureVolatile">
+        <parameters name="feature">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"/>
+        </parameters>
+        <parameters name="trans">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="derived">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="changeable">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asSet()"/>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="allAvailableAttributes" ordered="false"
+            upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"
+            changeable="false" volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asSet()"/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.42/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+            featureName="name" dataValue="allAvailableOperations"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+            featureName="eType" referenceValue="muml.ecore#//model/core/Operation"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>allAvailableOperations</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/Operation"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
+      <operation name="makeFeatureVolatile">
+        <parameters name="feature">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"/>
+        </parameters>
+        <parameters name="trans">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="derived">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="changeable">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()"/>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="allAvailableOperations" ordered="false"
+            upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"
+            changeable="false" volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()"/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.3/@changes.47/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.2.3"
+        oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.2.2"/>
+  </releases>
+  <releases date="2012-03-08T17:37:42.608+0100" label="0.2.3">
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.4" oldDataValue="http://www.fujaba.de/modelinstance/0.2.2"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.3" oldDataValue="http://www.fujaba.de/modelinstance/0.2.4"/>
   </releases>
   <releases/>
 </history:History>

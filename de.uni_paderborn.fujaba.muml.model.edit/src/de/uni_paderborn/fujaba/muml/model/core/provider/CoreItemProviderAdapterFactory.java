@@ -144,6 +144,98 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.Attribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeItemProvider attributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeAdapter() {
+		if (attributeItemProvider == null) {
+			attributeItemProvider = new AttributeItemProvider(this);
+		}
+
+		return attributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.Operation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OperationItemProvider operationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOperationAdapter() {
+		if (operationItemProvider == null) {
+			operationItemProvider = new OperationItemProvider(this);
+		}
+
+		return operationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.Parameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterItemProvider parameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterAdapter() {
+		if (parameterItemProvider == null) {
+			parameterItemProvider = new ParameterItemProvider(this);
+		}
+
+		return parameterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PrimitiveDataTypeItemProvider primitiveDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPrimitiveDataTypeAdapter() {
+		if (primitiveDataTypeItemProvider == null) {
+			primitiveDataTypeItemProvider = new PrimitiveDataTypeItemProvider(this);
+		}
+
+		return primitiveDataTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +337,10 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
 		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
 		if (activityCallExpressionItemProvider != null) activityCallExpressionItemProvider.dispose();
+		if (attributeItemProvider != null) attributeItemProvider.dispose();
+		if (operationItemProvider != null) operationItemProvider.dispose();
+		if (parameterItemProvider != null) parameterItemProvider.dispose();
+		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 	}
 
 }

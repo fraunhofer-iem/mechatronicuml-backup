@@ -45,7 +45,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.2.2";
+	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.2.3";
 
 	/**
 	 * The package namespace name.
@@ -1416,58 +1416,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__AVAILABLE_CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
-
-	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
-
-	/**
-	 * The feature id for the '<em><b>All Available Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
-
-	/**
-	 * The feature id for the '<em><b>All Available Operations</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 17;
+	int REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' containment reference.
@@ -1476,7 +1431,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 18;
+	int REALTIME_STATECHART__STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>All Available Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>All Available Operations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Realtime Statechart</em>' class.
@@ -1485,7 +1458,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 19;
+	int REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl <em>Message</em>}' class.
@@ -2809,39 +2782,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getRealtimeStatechart_AvailableClocks();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getSecurityLevel <em>Security Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Security Level</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getSecurityLevel()
-	 * @see #getRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getRealtimeStatechart_SecurityLevel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getUtilisation <em>Utilisation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Utilisation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getUtilisation()
-	 * @see #getRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getRealtimeStatechart_Utilisation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Schedule Document</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getScheduleDocument()
-	 * @see #getRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getRealtimeStatechart_ScheduleDocument();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3726,30 +3666,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getRealtimeStatechart_AvailableClocks();
-
-		/**
-		 * The meta object literal for the '<em><b>Security Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REALTIME_STATECHART__SECURITY_LEVEL = eINSTANCE.getRealtimeStatechart_SecurityLevel();
-
-		/**
-		 * The meta object literal for the '<em><b>Utilisation</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REALTIME_STATECHART__UTILISATION = eINSTANCE.getRealtimeStatechart_Utilisation();
-
-		/**
-		 * The meta object literal for the '<em><b>Schedule Document</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REALTIME_STATECHART__SCHEDULE_DOCUMENT = eINSTANCE.getRealtimeStatechart_ScheduleDocument();
 
 		/**
 		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.

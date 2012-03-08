@@ -346,7 +346,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getContinuousPort_Type() {
-		return (EReference)continuousPortEClass.getEStructuralFeatures().get(1);
+		return (EReference)continuousPortEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -355,7 +355,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EAttribute getContinuousPort_IsContinuousInPort() {
-		return (EAttribute)continuousPortEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)continuousPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -364,7 +364,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EAttribute getContinuousPort_IsContinuousOutPort() {
-		return (EAttribute)continuousPortEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)continuousPortEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -851,9 +851,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		continuousPortEClass = createEClass(CONTINUOUS_PORT);
 		createEAttribute(continuousPortEClass, CONTINUOUS_PORT__KIND);
-		createEReference(continuousPortEClass, CONTINUOUS_PORT__TYPE);
 		createEAttribute(continuousPortEClass, CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT);
 		createEAttribute(continuousPortEClass, CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT);
+		createEReference(continuousPortEClass, CONTINUOUS_PORT__TYPE);
 
 		discretePortEClass = createEClass(DISCRETE_PORT);
 		createEReference(discretePortEClass, DISCRETE_PORT__REFINES);
@@ -985,9 +985,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		initEClass(continuousPortEClass, ContinuousPort.class, "ContinuousPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContinuousPort_Kind(), this.getContinuousPortDirectionKind(), "kind", null, 1, 1, ContinuousPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContinuousPort_Type(), theEcorePackage.getEDataType(), null, "type", null, 1, 1, ContinuousPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContinuousPort_IsContinuousInPort(), ecorePackage.getEBoolean(), "isContinuousInPort", "false", 0, 1, ContinuousPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContinuousPort_IsContinuousOutPort(), ecorePackage.getEBoolean(), "isContinuousOutPort", "false", 0, 1, ContinuousPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContinuousPort_Type(), theCorePackage.getDataType(), null, "type", null, 1, 1, ContinuousPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discretePortEClass, DiscretePort.class, "DiscretePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscretePort_Refines(), thePatternPackage.getRole(), thePatternPackage.getRole_Port(), "refines", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1089,7 +1089,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"
-		   });										
+		   });									
 		addAnnotation
 		  (discretePortEClass, 
 		   source, 
@@ -1160,7 +1160,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   new String[] {
 			 "LowerBoundMustBeZeroOrOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.lowerBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.lowerBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1\n\tendif\n)",
 			 "UpperBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.upperBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.upperBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.upperBound.value = 1\n\tendif\n)"
-		   });					
+		   });				
 		addAnnotation
 		  (getContinuousPort_IsContinuousInPort(), 
 		   source, 

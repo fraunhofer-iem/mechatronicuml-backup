@@ -64,36 +64,26 @@ public interface Behavior extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EOperation}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A behavior may define a set of EOperations as signatures of helper functions. These operations
-	 * may be called by the behavior specification and may access the attributes of
-	 * the behavior specification. The EOperations are contained in the behavior.
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operations</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavior_Operations()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EOperation> getOperations();
+	EList<Operation> getOperations();
 
 	/**
 	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EAttribute}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A behavior may define a set of EAttributes in order to store data. The attributes
-	 * may be used by the operations of the behavior and the behavior specification itself.
-	 * The attributes are contained in the behavior.
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavior_Attributes()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EAttribute> getAttributes();
+	EList<Attribute> getAttributes();
 
 } // Behavior

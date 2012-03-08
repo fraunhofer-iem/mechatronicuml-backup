@@ -48,7 +48,7 @@ public interface ComponentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.2.2";
+	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.2.3";
 
 	/**
 	 * The package namespace name.
@@ -394,22 +394,13 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__KIND = PORT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__TYPE = PORT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Is Continuous In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT = PORT_FEATURE_COUNT + 2;
+	int CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT = PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Continuous Out Port</b></em>' attribute.
@@ -418,7 +409,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT = PORT_FEATURE_COUNT + 3;
+	int CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT = PORT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__TYPE = PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Continuous Port</em>' class.
@@ -1699,22 +1699,13 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__KIND = DISCRETE_PORT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__TYPE = DISCRETE_PORT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Is Continuous In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__IS_CONTINUOUS_IN_PORT = DISCRETE_PORT_FEATURE_COUNT + 2;
+	int HYBRID_PORT__IS_CONTINUOUS_IN_PORT = DISCRETE_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Continuous Out Port</b></em>' attribute.
@@ -1723,7 +1714,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__IS_CONTINUOUS_OUT_PORT = DISCRETE_PORT_FEATURE_COUNT + 3;
+	int HYBRID_PORT__IS_CONTINUOUS_OUT_PORT = DISCRETE_PORT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__TYPE = DISCRETE_PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Hybrid In Port</b></em>' attribute.

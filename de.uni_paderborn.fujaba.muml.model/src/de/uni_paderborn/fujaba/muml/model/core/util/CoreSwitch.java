@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.ExtendableElement;
+import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.TypedElement;
 import org.storydriven.modeling.calls.Invocation;
 import org.storydriven.modeling.expressions.Expression;
@@ -140,6 +141,52 @@ public class CoreSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CorePackage.ATTRIBUTE: {
+				Attribute attribute = (Attribute)theEObject;
+				T result = caseAttribute(attribute);
+				if (result == null) result = caseNamedElement(attribute);
+				if (result == null) result = caseCommentableElement(attribute);
+				if (result == null) result = caseExtendableElement(attribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.OPERATION: {
+				Operation operation = (Operation)theEObject;
+				T result = caseOperation(operation);
+				if (result == null) result = caseNamedElement(operation);
+				if (result == null) result = caseCommentableElement(operation);
+				if (result == null) result = caseExtendableElement(operation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.PARAMETER: {
+				Parameter parameter = (Parameter)theEObject;
+				T result = caseParameter(parameter);
+				if (result == null) result = caseNamedElement(parameter);
+				if (result == null) result = caseCommentableElement(parameter);
+				if (result == null) result = caseExtendableElement(parameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.DATA_TYPE: {
+				DataType dataType = (DataType)theEObject;
+				T result = caseDataType(dataType);
+				if (result == null) result = caseNamedElement(dataType);
+				if (result == null) result = caseCommentableElement(dataType);
+				if (result == null) result = caseExtendableElement(dataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.PRIMITIVE_DATA_TYPE: {
+				PrimitiveDataType primitiveDataType = (PrimitiveDataType)theEObject;
+				T result = casePrimitiveDataType(primitiveDataType);
+				if (result == null) result = caseDataType(primitiveDataType);
+				if (result == null) result = caseNamedElement(primitiveDataType);
+				if (result == null) result = caseCommentableElement(primitiveDataType);
+				if (result == null) result = caseExtendableElement(primitiveDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -235,6 +282,81 @@ public class CoreSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttribute(Attribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOperation(Operation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameter(Parameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataType(DataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrimitiveDataType(PrimitiveDataType object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -306,6 +428,21 @@ public class CoreSwitch<T> {
 	 * @generated
 	 */
 	public T caseExpression(Expression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
