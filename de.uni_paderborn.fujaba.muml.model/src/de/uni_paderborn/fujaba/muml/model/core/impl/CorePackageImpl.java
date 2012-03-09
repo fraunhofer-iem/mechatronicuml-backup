@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesPackage;
@@ -25,14 +26,17 @@ import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
+import de.uni_paderborn.fujaba.muml.model.core.CompositeDataType;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
+import de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
@@ -133,6 +137,27 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass primitiveDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arrayDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass innerDeclarationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -494,6 +519,78 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCompositeDataType() {
+		return compositeDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCompositeDataType_InnerDeclaration() {
+		return (EReference)compositeDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArrayDataType() {
+		return arrayDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArrayDataType_Cardinality() {
+		return (EAttribute)arrayDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInnerDeclaration() {
+		return innerDeclarationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInnerDeclaration_Key() {
+		return (EAttribute)innerDeclarationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInnerDeclaration_Parent() {
+		return (EReference)innerDeclarationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInnerDeclaration_Type() {
+		return (EReference)innerDeclarationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPrimitiveTypes() {
 		return primitiveTypesEEnum;
 	}
@@ -565,6 +662,17 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		primitiveDataTypeEClass = createEClass(PRIMITIVE_DATA_TYPE);
 		createEAttribute(primitiveDataTypeEClass, PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE);
 
+		compositeDataTypeEClass = createEClass(COMPOSITE_DATA_TYPE);
+		createEReference(compositeDataTypeEClass, COMPOSITE_DATA_TYPE__INNER_DECLARATION);
+
+		arrayDataTypeEClass = createEClass(ARRAY_DATA_TYPE);
+		createEAttribute(arrayDataTypeEClass, ARRAY_DATA_TYPE__CARDINALITY);
+
+		innerDeclarationEClass = createEClass(INNER_DECLARATION);
+		createEAttribute(innerDeclarationEClass, INNER_DECLARATION__KEY);
+		createEReference(innerDeclarationEClass, INNER_DECLARATION__PARENT);
+		createEReference(innerDeclarationEClass, INNER_DECLARATION__TYPE);
+
 		// Create enums
 		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
 	}
@@ -598,6 +706,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -615,6 +724,10 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		dataTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		dataTypeEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
+		compositeDataTypeEClass.getESuperTypes().add(this.getDataType());
+		arrayDataTypeEClass.getESuperTypes().add(this.getCompositeDataType());
+		innerDeclarationEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		innerDeclarationEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -666,6 +779,17 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(primitiveDataTypeEClass, PrimitiveDataType.class, "PrimitiveDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrimitiveDataType_PrimitiveType(), this.getPrimitiveTypes(), "primitiveType", "PrimitiveTypes.VOID", 1, 1, PrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(compositeDataTypeEClass, CompositeDataType.class, "CompositeDataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCompositeDataType_InnerDeclaration(), this.getInnerDeclaration(), this.getInnerDeclaration_Parent(), "innerDeclaration", null, 1, -1, CompositeDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArrayDataType_Cardinality(), theEcorePackage.getEInt(), "cardinality", "1", 1, -1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(innerDeclarationEClass, InnerDeclaration.class, "InnerDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInnerDeclaration_Key(), theEcorePackage.getEInt(), "key", null, 0, 1, InnerDeclaration.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInnerDeclaration_Parent(), this.getCompositeDataType(), this.getCompositeDataType_InnerDeclaration(), "parent", null, 1, 1, InnerDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInnerDeclaration_Type(), this.getDataType(), null, "type", null, 1, 1, InnerDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.VOID);
@@ -714,7 +838,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });																									
+		   });																																	
 	}
 
 	/**
@@ -736,7 +860,19 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"
-		   });																								
+		   });																												
+		addAnnotation
+		  (arrayDataTypeEClass, 
+		   source, 
+		   new String[] {
+			 "ArrayIndexOutOfBounce", "self.innerDeclaration->size() <= self.cardinality"
+		   });				
+		addAnnotation
+		  (getInnerDeclaration_Key(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.parent.oclAsType(ArrayDataType).innerDeclaration->indexOf(self)"
+		   });		
 	}
 
 } //CorePackageImpl

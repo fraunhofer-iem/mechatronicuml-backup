@@ -127,6 +127,18 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createPrimitiveDataTypeAdapter();
 			}
 			@Override
+			public Adapter caseCompositeDataType(CompositeDataType object) {
+				return createCompositeDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseArrayDataType(ArrayDataType object) {
+				return createArrayDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseInnerDeclaration(InnerDeclaration object) {
+				return createInnerDeclarationAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -321,6 +333,48 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPrimitiveDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.CompositeDataType <em>Composite Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.CompositeDataType
+	 * @generated
+	 */
+	public Adapter createCompositeDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType <em>Array Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.ArrayDataType
+	 * @generated
+	 */
+	public Adapter createArrayDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration <em>Inner Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration
+	 * @generated
+	 */
+	public Adapter createInnerDeclarationAdapter() {
 		return null;
 	}
 

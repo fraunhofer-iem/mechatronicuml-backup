@@ -846,6 +846,53 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitiveType" lowerBound="1"
             eType="#//model/core/PrimitiveTypes" defaultValueLiteral="PrimitiveTypes.VOID"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="CompositeDataType" abstract="true"
+          eSuperTypes="#//model/core/DataType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Abstract super class for composite types like Arrays that may be used for attributes, parameters, and operations."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="innerDeclaration" lowerBound="1"
+            upperBound="-1" eType="#//model/core/InnerDeclaration" containment="true"
+            eOpposite="#//model/core/InnerDeclaration/parent"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ArrayDataType" eSuperTypes="#//model/core/CompositeDataType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This data type represents an array data type and specifies the maximum cardinality of inner data types."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ArrayIndexOutOfBounce" value="self.innerDeclaration->size() &lt;= self.cardinality"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
+            upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+            defaultValueLiteral="1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This property specifies the maximum number of composite elements."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class specifies the data type of an element of the composition. "/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+            changeable="false" volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.parent.oclAsType(ArrayDataType).innerDeclaration->indexOf(self)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+            eType="#//model/core/CompositeDataType" eOpposite="#//model/core/CompositeDataType/innerDeclaration">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This reference points to the parent of the innerdeclaration class."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+            eType="#//model/core/DataType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This reference points to the definition of the data type."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.2.2"
         nsPrefix="instance">

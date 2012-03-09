@@ -17451,5 +17451,472 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/core/Behavior/attributes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="A behavior may define a set of Attributes in order to store data. The attributes&#xD;&#xA;may be used by the operations of the behavior and the behavior specification itself.&#xD;&#xA;The attributes are contained in the behavior."
         oldDataValue="A behavior may define a set of Attributes in order to store data. The attributes"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/CompositeDataType">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType"
+            featureName="name" dataValue="CompositeDataType"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType"
+            featureName="abstract" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/CompositeDataType"
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/DataType"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>CompositeDataType</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="muml.ecore#//model/core/DataType"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>true</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/CompositeDataType"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/CompositeDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/CompositeDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/CompositeDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Abstract super class for composite types like Arrays that may be used for attributes, parameters, and operations."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/CompositeDataType"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>Abstract super class for composite types like Arrays that may be used for attributes, parameters, and operations.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/ArrayDataType">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType"
+            featureName="name" dataValue="ArrayDataType"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/ArrayDataType"
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/CompositeDataType"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>ArrayDataType</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="muml.ecore#//model/core/CompositeDataType"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="This data type represents an array data type and specifies the maximum cardinality of inner data types."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/ArrayDataType"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>This data type represents an array data type and specifies the maximum cardinality of inner data types.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/ArrayDataType/cardinality">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality"
+            featureName="name" dataValue="cardinality"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality"
+            featureName="defaultValueLiteral" dataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality"
+            featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/ArrayDataType"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>cardinality</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue>1</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/cardinality"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/ArrayDataType/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/ArrayDataType/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="This property specifies the maximum number of composite elements."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/ArrayDataType/cardinality"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>This property specifies the maximum number of composite elements.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+          element="muml.ecore#//model/core/InnerDeclaration">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration"
+            featureName="name" dataValue="InnerDeclaration"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/InnerDeclaration"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/core/InnerDeclaration"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/core"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>InnerDeclaration</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/InnerDeclaration/key">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key"
+            featureName="name" dataValue="key"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key"
+            featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/InnerDeclaration"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>key</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue xsi:nil="true"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/CompositeDataType/innerDeclaration">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"
+            featureName="name" dataValue="innerDeclaration"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"
+            featureName="eType" referenceValue="muml.ecore#//model/core/InnerDeclaration"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/ArrayDataType"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>innerDeclaration</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/InnerDeclaration"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/InnerDeclaration/parent">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/parent"
+            featureName="name" dataValue="parent"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/parent"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/parent"
+            featureName="eType" referenceValue="muml.ecore#//model/core/ArrayDataType"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/parent"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/core/CompositeDataType/innerDeclaration"/>
+      </changes>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"
+          featureName="eOpposite" referenceValue="muml.ecore#//model/core/InnerDeclaration/parent"/>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/InnerDeclaration"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>parent</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/ArrayDataType"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite">
+          <referenceValue element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
+      <operation name="makeFeatureVolatile">
+        <parameters name="feature">
+          <referenceValue element="muml.ecore#//model/core/InnerDeclaration/key"/>
+        </parameters>
+        <parameters name="trans">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="derived">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="changeable">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration/key"
+        referenceName="eAnnotations" element="muml.ecore#//model/core/InnerDeclaration/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/core/InnerDeclaration/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="derivation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.parent.oclAsType(ArrayDataType).innerDeclaration->indexOf(self)"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/InnerDeclaration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/InnerDeclaration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="This class specifies the data type of an element of the composition. "/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/InnerDeclaration"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>This class specifies the data type of an element of the composition. </dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration/parent"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/InnerDeclaration/parent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/parent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration/parent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/InnerDeclaration/parent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/parent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/parent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="This reference points to the parent of the innerdeclaration class."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/InnerDeclaration/parent"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>This reference points to the parent of the innerdeclaration class.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/InnerDeclaration/type">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/type"
+            featureName="name" dataValue="type"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/type"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/type"
+            featureName="eType" referenceValue="muml.ecore#//model/core/DataType"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/InnerDeclaration"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>type</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/DataType"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration/type"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/InnerDeclaration/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/InnerDeclaration/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/InnerDeclaration/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="This reference points to the definition of the data type."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/InnerDeclaration/type"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>This reference points to the definition of the data type.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Move" target="muml.ecore#//model/core/CompositeDataType"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"
+          source="muml.ecore#//model/core/ArrayDataType"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/InnerDeclaration/parent"
+          featureName="eType" referenceValue="muml.ecore#//model/core/CompositeDataType"
+          oldReferenceValue="muml.ecore#//model/core/ArrayDataType"/>
+      <operation name="pullFeature">
+        <parameters name="features">
+          <referenceValue element="muml.ecore#//model/core/CompositeDataType/innerDeclaration"/>
+        </parameters>
+        <parameters name="targetClass">
+          <referenceValue element="muml.ecore#//model/core/CompositeDataType"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+            featureName="source" dataValue="http://www.eclipse.org/gmf/2005/constraints"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+            featureName="key" dataValue="ocl"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+            featureName="value" dataValue="self.innerDeclaration->size() &lt;= self.cardinality"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.5/@changes.31/@element">
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.31/@element"
+            featureName="key" dataValue="description"/>
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.31/@element"
+            featureName="value" dataValue="This constraint ensures that an array has less or equal inner declarations."/>
+      </changes>
+      <operation name="newGMFConstraint">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/ArrayDataType"/>
+        </parameters>
+        <parameters name="ocl">
+          <dataValue>self.innerDeclaration->size() &lt;= self.cardinality</dataValue>
+        </parameters>
+        <parameters name="description">
+          <dataValue>This constraint ensures that an array has less or equal inner declarations.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"
+        oldDataValue="http://www.eclipse.org/gmf/2005/constraints"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="ArrayIndexOutOfBounce" oldDataValue="ocl"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="description" value="This constraint ensures that an array has less or equal inner declarations."/>
+    </changes>
   </releases>
 </history:History>

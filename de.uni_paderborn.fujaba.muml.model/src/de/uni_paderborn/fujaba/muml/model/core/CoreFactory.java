@@ -89,6 +89,24 @@ public interface CoreFactory extends EFactory {
 	PrimitiveDataType createPrimitiveDataType();
 
 	/**
+	 * Returns a new object of class '<em>Array Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Array Data Type</em>'.
+	 * @generated
+	 */
+	ArrayDataType createArrayDataType();
+
+	/**
+	 * Returns a new object of class '<em>Inner Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Inner Declaration</em>'.
+	 * @generated
+	 */
+	InnerDeclaration createInnerDeclaration();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

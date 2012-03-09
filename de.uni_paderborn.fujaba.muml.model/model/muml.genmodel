@@ -210,6 +210,18 @@
         <genClasses ecoreClass="muml.ecore#//model/core/PrimitiveDataType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/PrimitiveDataType/primitiveType"/>
         </genClasses>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/core/CompositeDataType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/CompositeDataType/innerDeclaration"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/core/ArrayDataType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/ArrayDataType/cardinality"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/core/InnerDeclaration">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/InnerDeclaration/key"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/core/InnerDeclaration/parent"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/core/InnerDeclaration/type"/>
+        </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/instance">

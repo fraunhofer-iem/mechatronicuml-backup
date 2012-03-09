@@ -117,6 +117,12 @@ public class CoreValidator extends EObjectValidator {
 				return validateDataType((DataType)value, diagnostics, context);
 			case CorePackage.PRIMITIVE_DATA_TYPE:
 				return validatePrimitiveDataType((PrimitiveDataType)value, diagnostics, context);
+			case CorePackage.COMPOSITE_DATA_TYPE:
+				return validateCompositeDataType((CompositeDataType)value, diagnostics, context);
+			case CorePackage.ARRAY_DATA_TYPE:
+				return validateArrayDataType((ArrayDataType)value, diagnostics, context);
+			case CorePackage.INNER_DECLARATION:
+				return validateInnerDeclaration((InnerDeclaration)value, diagnostics, context);
 			case CorePackage.PRIMITIVE_TYPES:
 				return validatePrimitiveTypes((PrimitiveTypes)value, diagnostics, context);
 			default:
@@ -299,6 +305,33 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validatePrimitiveDataType(PrimitiveDataType primitiveDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(primitiveDataType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCompositeDataType(CompositeDataType compositeDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(compositeDataType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateArrayDataType(ArrayDataType arrayDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(arrayDataType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInnerDeclaration(InnerDeclaration innerDeclaration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(innerDeclaration, diagnostics, context);
 	}
 
 	/**

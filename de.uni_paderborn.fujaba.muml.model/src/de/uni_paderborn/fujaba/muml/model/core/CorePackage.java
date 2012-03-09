@@ -676,6 +676,225 @@ public interface CorePackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.CompositeDataTypeImpl <em>Composite Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CompositeDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getCompositeDataType()
+	 * @generated
+	 */
+	int COMPOSITE_DATA_TYPE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DATA_TYPE__COMMENT = DATA_TYPE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inner Declaration</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DATA_TYPE__INNER_DECLARATION = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Composite Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.ArrayDataTypeImpl <em>Array Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.ArrayDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getArrayDataType()
+	 * @generated
+	 */
+	int ARRAY_DATA_TYPE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE__ANNOTATION = COMPOSITE_DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE__EXTENSION = COMPOSITE_DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE__NAME = COMPOSITE_DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE__COMMENT = COMPOSITE_DATA_TYPE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inner Declaration</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE__INNER_DECLARATION = COMPOSITE_DATA_TYPE__INNER_DECLARATION;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE__CARDINALITY = COMPOSITE_DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Array Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE_FEATURE_COUNT = COMPOSITE_DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.InnerDeclarationImpl <em>Inner Declaration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.InnerDeclarationImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getInnerDeclaration()
+	 * @generated
+	 */
+	int INNER_DECLARATION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_DECLARATION__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_DECLARATION__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_DECLARATION__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_DECLARATION__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_DECLARATION__KEY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_DECLARATION__PARENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_DECLARATION__TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Inner Declaration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_DECLARATION_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -683,7 +902,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getPrimitiveTypes()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPES = 11;
+	int PRIMITIVE_TYPES = 14;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.
@@ -983,6 +1202,91 @@ public interface CorePackage extends EPackage {
 	EAttribute getPrimitiveDataType_PrimitiveType();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.CompositeDataType <em>Composite Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Composite Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.CompositeDataType
+	 * @generated
+	 */
+	EClass getCompositeDataType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.core.CompositeDataType#getInnerDeclaration <em>Inner Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Inner Declaration</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.CompositeDataType#getInnerDeclaration()
+	 * @see #getCompositeDataType()
+	 * @generated
+	 */
+	EReference getCompositeDataType_InnerDeclaration();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType <em>Array Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Array Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.ArrayDataType
+	 * @generated
+	 */
+	EClass getArrayDataType();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Cardinality</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality()
+	 * @see #getArrayDataType()
+	 * @generated
+	 */
+	EAttribute getArrayDataType_Cardinality();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration <em>Inner Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Inner Declaration</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration
+	 * @generated
+	 */
+	EClass getInnerDeclaration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration#getKey()
+	 * @see #getInnerDeclaration()
+	 * @generated
+	 */
+	EAttribute getInnerDeclaration_Key();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration#getParent()
+	 * @see #getInnerDeclaration()
+	 * @generated
+	 */
+	EReference getInnerDeclaration_Parent();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration#getType()
+	 * @see #getInnerDeclaration()
+	 * @generated
+	 */
+	EReference getInnerDeclaration_Type();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1259,6 +1563,76 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE = eINSTANCE.getPrimitiveDataType_PrimitiveType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.CompositeDataTypeImpl <em>Composite Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CompositeDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getCompositeDataType()
+		 * @generated
+		 */
+		EClass COMPOSITE_DATA_TYPE = eINSTANCE.getCompositeDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Inner Declaration</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_DATA_TYPE__INNER_DECLARATION = eINSTANCE.getCompositeDataType_InnerDeclaration();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.ArrayDataTypeImpl <em>Array Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.ArrayDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getArrayDataType()
+		 * @generated
+		 */
+		EClass ARRAY_DATA_TYPE = eINSTANCE.getArrayDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARRAY_DATA_TYPE__CARDINALITY = eINSTANCE.getArrayDataType_Cardinality();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.InnerDeclarationImpl <em>Inner Declaration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.InnerDeclarationImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getInnerDeclaration()
+		 * @generated
+		 */
+		EClass INNER_DECLARATION = eINSTANCE.getInnerDeclaration();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INNER_DECLARATION__KEY = eINSTANCE.getInnerDeclaration_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INNER_DECLARATION__PARENT = eINSTANCE.getInnerDeclaration_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INNER_DECLARATION__TYPE = eINSTANCE.getInnerDeclaration_Type();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}' enum.
