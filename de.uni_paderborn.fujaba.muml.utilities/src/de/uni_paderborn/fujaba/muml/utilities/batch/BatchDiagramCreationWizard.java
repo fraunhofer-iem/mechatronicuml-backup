@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
-import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation;
@@ -38,22 +38,24 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.storydriven.modeling.NamedElement;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelinstancePackage;
+import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.commands.CreateDiagramCommand;
 import de.fujaba.newwizard.diagrams.DiagramEditorUtil;
 import de.fujaba.newwizard.diagrams.IDiagramInformation;
-import de.fujaba.newwizard.diagrams.pages.DiagramContentsSelectionPage;
+import de.uni_paderborn.fujaba.muml.utilities.ui.pages.DiagramHierarchyContentsSelectionPage;
 
 public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 	private TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
 			.createEditingDomain();
 
 	private IStructuredSelection selection;
-	private DiagramContentsSelectionPage diagramContentsSelectionPage;
+	private DiagramHierarchyContentsSelectionPage diagramContentsSelectionPage;
 
 	public IPath getModelPath() {
 		@SuppressWarnings("rawtypes")
@@ -74,16 +76,17 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 		}
 		return null;
 	}
-	
+
 	public Resource getModelResource() {
-		URI modelURI = URI.createPlatformResourceURI(getModelPath().toOSString(), true);
+		URI modelURI = URI.createPlatformResourceURI(getModelPath()
+				.toOSString(), true);
 		return editingDomain.getResourceSet().getResource(modelURI, true);
 
 	}
 
 	@Override
 	public void addPages() {
-		diagramContentsSelectionPage = createDiagramContentsSelectionPage();
+		diagramContentsSelectionPage = createSelectionPage();
 		addPage(diagramContentsSelectionPage);
 	}
 
@@ -93,14 +96,14 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 		diagramContentsSelectionPage.resourceChanged(getModelResource());
 	}
 
-	protected DiagramContentsSelectionPage createDiagramContentsSelectionPage() {
-		DiagramContentsSelectionPage diagramContentsSelectionPage = new DiagramContentsSelectionPage(
+	protected DiagramHierarchyContentsSelectionPage createSelectionPage() {
+		DiagramHierarchyContentsSelectionPage selectionPage = new DiagramHierarchyContentsSelectionPage(
 				"diagram elements", null, null);
 
-		diagramContentsSelectionPage.setTitle("Select source elements");
-		diagramContentsSelectionPage
+		selectionPage.setTitle("Select source elements");
+		selectionPage
 				.setDescription("Select all elements to use as diagram element.");
-		return diagramContentsSelectionPage;
+		return selectionPage;
 	}
 
 	@Override
@@ -144,12 +147,13 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 	 * @param elements
 	 * @param progressMonitor
 	 */
-	public void createDiagrams(Collection<EObject> elements, IProgressMonitor progressMonitor) {
+	public void createDiagrams(Collection<EObject> elements,
+			IProgressMonitor progressMonitor) {
 		progressMonitor.beginTask(
 				Messages.DiagramEditorUtil_CreateDiagramProgressTask,
 				elements.size());
-		
-		final Resource modelResource = getModelResource(); 
+
+		final Resource modelResource = getModelResource();
 
 		Map<String, IDiagramInformation> map = FujabaNewwizardPlugin
 				.getDefault().getDiagramInformationMap();
@@ -163,7 +167,8 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 			IDiagramInformation diagramInformation = null;
 			for (IDiagramInformation information : map.values()) {
 				String modelId = information.getModelId();
-				boolean useCategory = ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY.isSuperTypeOf(information.getDiagramElementClass());
+				boolean useCategory = ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY
+						.isSuperTypeOf(information.getDiagramElementClass());
 				if (!useCategory && isValidDiagramElement(modelId, element)) {
 					diagramElement = element;
 					contents = Collections.emptyList();
@@ -179,36 +184,40 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 				diagramInformation = information;
 				break;
 			}
-			
+
 			if (diagramInformation != null) {
 				// Diagram name
-				String elementType = element.eClass().getName();
-		
-				// Build URI for the new diagram file  
-				IPath diagramDirectory = getModelPath().removeLastSegments(1).append(elementType);
-				
-				String elementLabel = element.eClass().getName();
-				if (element instanceof org.storydriven.modeling.NamedElement) 
-				{
-					org.storydriven.modeling.NamedElement namedElement = (org.storydriven.modeling.NamedElement)element;
-					elementLabel = namedElement.getName();
-				}
-				 
-				String diagramFilename = getUniqueFileName(diagramDirectory, elementLabel, diagramInformation.getFileExtension());
-				IPath diagramPath = diagramDirectory.append(diagramFilename);
-				URI diagramURI = URI.createPlatformResourceURI(diagramPath.toOSString(), true);
+				String elementLabel = getElementLabel(element);
+
+				// Build URI for the new diagram file
+				IPath diagramDirectory = getModelPath().removeLastSegments(1);
 	
+				// Create subdirectories for all container elements that are checked.
+				for (EObject container : getContainmentHierarchy(element)) {
+					if (elements.contains(container) || container instanceof ModelElementCategory) {
+						diagramDirectory = diagramDirectory.append(getElementLabel(container));
+					}
+				}
+
+				String diagramFilename = getUniqueFileName(diagramDirectory,
+						elementLabel, diagramInformation.getFileExtension());
+				IPath diagramPath = diagramDirectory.append(diagramFilename);
+				URI diagramURI = URI.createPlatformResourceURI(
+						diagramPath.toOSString(), true);
+
 				// Resource
 				final Resource diagramResource = editingDomain.getResourceSet()
 						.createResource(diagramURI);
-	
+
 				AbstractTransactionalCommand command = new CreateDiagramCommand(
 						editingDomain,
 						Messages.DiagramEditorUtil_CreateDiagramCommandLabel,
 						Collections.EMPTY_LIST, modelResource, diagramResource,
-						diagramElement, contents, diagramURI.lastSegment(), diagramInformation);
+						diagramElement, contents, diagramURI.lastSegment(),
+						diagramInformation);
 				try {
-					OperationHistoryFactory.getOperationHistory().execute(command,
+					OperationHistoryFactory.getOperationHistory().execute(
+							command,
 							new SubProgressMonitor(progressMonitor, 1), null);
 				} catch (ExecutionException e) {
 					FujabaNewwizardPlugin.getDefault().logError(
@@ -225,32 +234,48 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 		DiagramEditorUtil.setCharset(WorkspaceSynchronizer
 				.getFile(modelResource));
 	}
-	
+
+	private LinkedList<EObject> getContainmentHierarchy(EObject element) {
+		LinkedList<EObject> hierarchy = new LinkedList<EObject>();
+		EObject container = element.eContainer();
+		while (container != null && !(container instanceof RootNode)) {
+			hierarchy.add(0, container);
+			container = container.eContainer();
+		}
+		return hierarchy;
+	}
+
+	private String getElementLabel(EObject element) {
+		String label = null;
+		if (element instanceof NamedElement) {
+			label = ((NamedElement) element).getName();
+		} else if (element instanceof ModelElementCategory) {
+			label = ((ModelElementCategory) element).getName();
+		}
+
+		if (label == null || label.equals("")) {
+			label = element.eClass().getName();
+		}
+		
+		return label;
+	}
+
 	private boolean isValidDiagramElement(String modelId, EObject diagramElement) {
-		final PreferencesHint preferencesHint = null; // TODO: Is this okay? If yes, replace variable by null.
 		IAdaptable adapter = new EObjectAdapter(diagramElement);
-		IOperation operation = new CreateDiagramViewOperation(
-				adapter,
-				modelId,
-				preferencesHint);
+		IOperation operation = new CreateDiagramViewOperation(adapter, modelId,
+				null);
 		return ViewService.getInstance().provides(operation);
 	}
 
 	private boolean isValidTopLevelNodeElement(String modelId,
-			EObject diagramElement,
-			EObject topLevelNodeElement) {
-		final PreferencesHint preferencesHint = null; // TODO: Is this okay? If yes, replace variable by null.
-		Diagram diagram = ViewService
-				.createDiagram(
-						diagramElement,
-						modelId,
-						preferencesHint);
+			EObject diagramElement, EObject topLevelNodeElement) {
+		Diagram diagram = ViewService.createDiagram(diagramElement, modelId,
+				null);
 		IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
 		IOperation operation = new CreateNodeViewOperation(adapter, diagram,
-				null, 0, false, preferencesHint);
+				null, 0, false, null);
 		return ViewService.getInstance().provides(operation);
 	}
-
 
 	private static String getUniqueFileName(IPath containerFullPath,
 			String fileName, String extension) {
