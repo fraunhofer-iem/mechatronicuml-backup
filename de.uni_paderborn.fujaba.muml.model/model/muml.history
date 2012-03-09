@@ -17372,7 +17372,7 @@
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.3" oldDataValue="http://www.fujaba.de/modelinstance/0.2.4"/>
   </releases>
-  <releases>
+  <releases date="2012-03-09T16:12:05.800+0100" label="0.2.4">
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/type"
           referenceName="eAnnotations" element="muml.ecore#//model/component/ContinuousPort/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -17918,5 +17918,22 @@
         referenceName="details">
       <element xsi:type="ecore:EStringToStringMapEntry" key="description" value="This constraint ensures that an array has less or equal inner declarations."/>
     </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+          featureName="key" dataValue="ArrayIndexOutOfBounce"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+          featureName="value" dataValue="self.innerDeclaration->size() &lt;= self.cardinality"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="InnerDeclarationEqualTypeViolation" oldDataValue="ArrayIndexOutOfBounce"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="self.innerDeclaration.type->asSet()->select(not oclIsUndefined())->size() = 1"
+        oldDataValue="self.innerDeclaration->size() &lt;= self.cardinality"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/core/0.2.4" oldDataValue="http://www.fujaba.de/muml/model/core/0.2.3"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.4" oldDataValue="http://www.fujaba.de/modelinstance/0.2.3"/>
   </releases>
+  <releases/>
 </history:History>

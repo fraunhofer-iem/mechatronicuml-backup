@@ -865,7 +865,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		  (arrayDataTypeEClass, 
 		   source, 
 		   new String[] {
-			 "ArrayIndexOutOfBounce", "self.innerDeclaration->size() <= self.cardinality"
+			 "ArrayIndexOutOfBounce", "self.innerDeclaration->size() <= self.cardinality",
+			 "InnerDeclarationEqualTypeViolation", "self.innerDeclaration.type->asSet()->select(not oclIsUndefined())->size() = 1"
 		   });				
 		addAnnotation
 		  (getInnerDeclaration_Key(), 

@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getArrayDataType()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ArrayIndexOutOfBounce='self.innerDeclaration->size() <= self.cardinality'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ArrayIndexOutOfBounce='self.innerDeclaration->size() <= self.cardinality' InnerDeclarationEqualTypeViolation='self.innerDeclaration.type->asSet()->select(not oclIsUndefined())->size() = 1'"
  * @generated
  */
 public interface ArrayDataType extends CompositeDataType {
