@@ -1,42 +1,28 @@
 package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.KeyHandler;
 import org.eclipse.gef.KeyStroke;
 import org.eclipse.gef.palette.PaletteRoot;
-import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
-import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
-import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation;
-import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -57,16 +43,12 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
-import org.storydriven.modeling.ExtendableElement;
-
-import de.fujaba.newwizard.IFujabaEditor;
-import de.fujaba.newwizard.InitialElementAdapter;
 
 /**
  * @generated
  */
 public class AtomiccomponentDiagramEditor extends DiagramDocumentEditor
-		implements IGotoMarker, IFujabaEditor {
+		implements IGotoMarker {
 
 	/**
 	 * @generated
@@ -331,74 +313,7 @@ public class AtomiccomponentDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	@Override
-	public boolean isValidDiagramElement(EObject diagramElement) {
-		IAdaptable adapter = new EObjectAdapter(diagramElement);
-		IOperation operation = new CreateDiagramViewOperation(
-				adapter,
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
-				getPreferencesHint());
-		return ViewService.getInstance().provides(operation);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public boolean isValidTopLevelNodeElement(EObject diagramElement,
-			EObject topLevelNodeElement) {
-		Diagram diagram = ViewService
-				.getInstance()
-				.createDiagram(
-						diagramElement,
-						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
-						getPreferencesHint());
-		IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
-		IOperation operation = new CreateNodeViewOperation(adapter, diagram,
-				null, 0, false, getPreferencesHint());
-		return ViewService.getInstance().provides(operation);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public ExtendableElement createDiagramElement() {
-
-		return null;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	public CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
-			Collection<EObject> elements) {
-		List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramUpdater
-				.getModelElementCategory_1000SemanticChildren(diagram);
-		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
-				childDescriptors.size());
-
-		for (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor d : childDescriptors) {
-			if (!elements.contains(d.getModelElement())) {
-				continue;
-			}
-			java.lang.String hint = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
-					.getType(d.getVisualID());
-			IAdaptable elementAdapter = new InitialElementAdapter(
-					d.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, true,
-					getPreferencesHint());
-			viewDescriptors.add(descriptor);
-		}
-		return new CreateViewRequest(viewDescriptors);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public PreferencesHint getPreferencesHint() {
+	protected PreferencesHint getPreferencesHint() {
 		return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 

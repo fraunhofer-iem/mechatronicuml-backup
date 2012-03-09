@@ -107,17 +107,39 @@
 	
 	<extension
          point="de.fujaba.newwizard.diagraminformation">
-      <?gmfgen generated="true"?>  
+      <?gmfgen generated="true"?>
       <editor
-            editorId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID">
-         <information
-               editorName="Atomiccomponent Editor"
-               fileExtension="atomiccomponent_diagram"
-               fujabaEditor="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
-               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
-               modelId="Atomiccomponent"
-               useModelElementCategory="true">
-         </information>
+            preferencesHint="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID"
+            editorName="Atomiccomponent Editor"
+            fileExtension="atomiccomponent_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
+            modelId="Atomiccomponent">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/modelinstance/0.2.1"
+               className="ModelElementCategory">
+         </diagramElement>
+         
+         <node
+               domainElement="AtomicComponent"
+               semanticHint="2002">
+         </node>
+         
+         <node
+               domainElement="HybridPort"
+               semanticHint="3004">
+         </node>
+         
+         <node
+               domainElement="DiscretePort"
+               semanticHint="3002">
+         </node>
+         
+         <node
+               domainElement="ContinuousPort"
+               semanticHint="3003">
+         </node>
+         
       </editor>
    </extension>
 

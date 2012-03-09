@@ -107,17 +107,29 @@
 	
 	<extension
          point="de.fujaba.newwizard.diagraminformation">
-      <?gmfgen generated="true"?>  
+      <?gmfgen generated="true"?>
       <editor
-            editorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID">
-         <information
-               editorName="Messageinterface Editor"
-               fileExtension="messageinterface_diagram"
-               fujabaEditor="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
-               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.messageinterface.category"
-               modelId="Messageinterface"
-               useModelElementCategory="true">
-         </information>
+            preferencesHint="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
+            editorName="Messageinterface Editor"
+            fileExtension="messageinterface_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.messageinterface.category"
+            modelId="Messageinterface">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/modelinstance/0.2.1"
+               className="ModelElementCategory">
+         </diagramElement>
+         
+         <node
+               domainElement="MessageInterface"
+               semanticHint="2003">
+         </node>
+         
+         <node
+               domainElement="MessageType"
+               semanticHint="3004">
+         </node>
+         
       </editor>
    </extension>
 

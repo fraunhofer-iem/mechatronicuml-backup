@@ -107,17 +107,24 @@
 «DEFINE diagraminformation FOR gmfgen::GenEditorGenerator»
 	<extension
          point="de.fujaba.newwizard.diagraminformation">
-      «EXPAND xpt::Common::xmlGeneratedTag»  
+      «EXPAND xpt::Common::xmlGeneratedTag»
       <editor
-            editorId="«editor.iD»">
-         <information
-               editorName="«modelID» Editor"
-               fileExtension="«diagramFileExtension»"
-               fujabaEditor="«editor.getQualifiedClassName()»"
-               modelElementCategoryKey="«modelElementCategoryKey(diagram)»"
-               modelId="«modelID»"
-               useModelElementCategory="«IF usesModelElementCategory(diagram)»true«ELSE»false«ENDIF»">
-         </information>
+            preferencesHint="«plugin.iD»"
+            editorId="«editor.iD»"
+            editorName="«modelID» Editor"
+            fileExtension="«diagramFileExtension»"
+            modelElementCategoryKey="«modelElementCategoryKey(diagram)»"
+            modelId="«modelID»">
+         <diagramElement
+               packageNsURI="«diagram.domainDiagramElement.genPackage.ecorePackage.nsURI»"
+               className="«diagram.domainDiagramElement.ecoreClass.name»">
+         </diagramElement>
+         «FOREACH diagram.getAllNodes() AS container»
+         <node
+               domainElement="«container.modelFacet.metaClass.ecoreClass.name»"
+               semanticHint="«container.visualID»">
+         </node>
+         «ENDFOREACH»
       </editor>
    </extension>
 «ENDDEFINE»

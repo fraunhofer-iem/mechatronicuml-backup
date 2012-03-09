@@ -107,17 +107,34 @@
 	
 	<extension
          point="de.fujaba.newwizard.diagraminformation">
-      <?gmfgen generated="true"?>  
+      <?gmfgen generated="true"?>
       <editor
-            editorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID">
-         <information
-               editorName="Pattern Editor"
-               fileExtension="pattern_diagram"
-               fujabaEditor="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
-               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
-               modelId="Pattern"
-               useModelElementCategory="true">
-         </information>
+            preferencesHint="de.uni_paderborn.fujaba.muml.patterneditor.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID"
+            editorName="Pattern Editor"
+            fileExtension="pattern_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
+            modelId="Pattern">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/modelinstance/0.2.1"
+               className="ModelElementCategory">
+         </diagramElement>
+         
+         <node
+               domainElement="CoordinationPattern"
+               semanticHint="2001">
+         </node>
+         
+         <node
+               domainElement="CoordinationPattern"
+               semanticHint="3001">
+         </node>
+         
+         <node
+               domainElement="Role"
+               semanticHint="3002">
+         </node>
+         
       </editor>
    </extension>
 

@@ -1,17 +1,6 @@
-
-«REM» Additionally implement IFujabaEditor «ENDREM»
-«AROUND implementsList FOR Sequence(String)-»
-«targetDef.proceed()», de.fujaba.newwizard.IFujabaEditor
-«ENDAROUND»
-
 «REM» Additional methods that should be generated «ENDREM»
 «AROUND additions FOR gmfgen::GenEditorView-»
 «EXPAND doSave»
-«EXPAND fujaba::xpt::FujabaEditor::FujabaEditor»
-«ENDAROUND»
-
-«AROUND getPreferencesHint FOR gmfgen::GenEditorView-»
-«REM» Do nothing, as fujaba::FujabaEditor::FujabaEditor already generates getPreferencesHint() for us «ENDREM»
 «ENDAROUND»
 
 «REM» We override the doSave() method to invoke validation «ENDREM»
@@ -24,9 +13,6 @@ public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 	super.doSave(progressMonitor);
 }
 «ENDDEFINE»
-
-
-
 
 «REM» Change registration for Delete Key: Delete From Model should be invoked, not Delete From Diagram «ENDREM»
 «AROUND configureGraphicalViewer FOR gmfgen::GenEditorView-»

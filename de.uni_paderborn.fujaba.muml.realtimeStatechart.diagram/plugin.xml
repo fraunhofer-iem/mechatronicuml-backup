@@ -107,17 +107,84 @@
 	
 	<extension
          point="de.fujaba.newwizard.diagraminformation">
-      <?gmfgen generated="true"?>  
+      <?gmfgen generated="true"?>
       <editor
-            editorId="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID">
-         <information
-               editorName="Realtimestatechart Editor"
-               fileExtension="realtimestatechart_diagram"
-               fujabaEditor="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
-               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
-               modelId="Realtimestatechart"
-               useModelElementCategory="false">
-         </information>
+            preferencesHint="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"
+            editorName="Realtimestatechart Editor"
+            fileExtension="realtimestatechart_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
+            modelId="Realtimestatechart">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1"
+               className="RealtimeStatechart">
+         </diagramElement>
+         
+         <node
+               domainElement="RealtimeStatechart"
+               semanticHint="2005">
+         </node>
+         
+         <node
+               domainElement="State"
+               semanticHint="3010">
+         </node>
+         
+         <node
+               domainElement="EntryEvent"
+               semanticHint="3001">
+         </node>
+         
+         <node
+               domainElement="DoEvent"
+               semanticHint="3002">
+         </node>
+         
+         <node
+               domainElement="ExitEvent"
+               semanticHint="3003">
+         </node>
+         
+         <node
+               domainElement="ClockConstraint"
+               semanticHint="3004">
+         </node>
+         
+         <node
+               domainElement="SynchronizationChannel"
+               semanticHint="3005">
+         </node>
+         
+         <node
+               domainElement="Region"
+               semanticHint="3006">
+         </node>
+         
+         <node
+               domainElement="RealtimeStatechart"
+               semanticHint="3016">
+         </node>
+         
+         <node
+               domainElement="EntryPoint"
+               semanticHint="3012">
+         </node>
+         
+         <node
+               domainElement="ExitPoint"
+               semanticHint="3013">
+         </node>
+         
+         <node
+               domainElement="StateEntryPoint"
+               semanticHint="3014">
+         </node>
+         
+         <node
+               domainElement="StateExitPoint"
+               semanticHint="3015">
+         </node>
+         
       </editor>
    </extension>
 

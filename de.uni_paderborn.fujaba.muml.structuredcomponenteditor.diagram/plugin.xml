@@ -107,17 +107,59 @@
 	
 	<extension
          point="de.fujaba.newwizard.diagraminformation">
-      <?gmfgen generated="true"?>  
+      <?gmfgen generated="true"?>
       <editor
-            editorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
-         <information
-               editorName="Structuredcomponent Editor"
-               fileExtension="structuredcomponent_diagram"
-               fujabaEditor="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
-               modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
-               modelId="Structuredcomponent"
-               useModelElementCategory="true">
-         </information>
+            preferencesHint="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
+            editorName="Structuredcomponent Editor"
+            fileExtension="structuredcomponent_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
+            modelId="Structuredcomponent">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/modelinstance/0.2.1"
+               className="ModelElementCategory">
+         </diagramElement>
+         
+         <node
+               domainElement="StructuredComponent"
+               semanticHint="2001">
+         </node>
+         
+         <node
+               domainElement="HybridPort"
+               semanticHint="3001">
+         </node>
+         
+         <node
+               domainElement="DiscretePort"
+               semanticHint="3002">
+         </node>
+         
+         <node
+               domainElement="ContinuousPort"
+               semanticHint="3003">
+         </node>
+         
+         <node
+               domainElement="ComponentPart"
+               semanticHint="3005">
+         </node>
+         
+         <node
+               domainElement="HybridPort"
+               semanticHint="3006">
+         </node>
+         
+         <node
+               domainElement="DiscretePort"
+               semanticHint="3007">
+         </node>
+         
+         <node
+               domainElement="ContinuousPort"
+               semanticHint="3008">
+         </node>
+         
       </editor>
    </extension>
 
