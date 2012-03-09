@@ -236,6 +236,52 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArrayDataTypeItemProvider arrayDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArrayDataTypeAdapter() {
+		if (arrayDataTypeItemProvider == null) {
+			arrayDataTypeItemProvider = new ArrayDataTypeItemProvider(this);
+		}
+
+		return arrayDataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InnerDeclarationItemProvider innerDeclarationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInnerDeclarationAdapter() {
+		if (innerDeclarationItemProvider == null) {
+			innerDeclarationItemProvider = new InnerDeclarationItemProvider(this);
+		}
+
+		return innerDeclarationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -341,6 +387,8 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (operationItemProvider != null) operationItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
+		if (arrayDataTypeItemProvider != null) arrayDataTypeItemProvider.dispose();
+		if (innerDeclarationItemProvider != null) innerDeclarationItemProvider.dispose();
 	}
 
 }
