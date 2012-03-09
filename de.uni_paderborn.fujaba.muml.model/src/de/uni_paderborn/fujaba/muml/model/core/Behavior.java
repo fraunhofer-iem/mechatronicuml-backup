@@ -67,6 +67,11 @@ public interface Behavior extends EObject {
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A behavior may define a set of Operations as signatures of helper functions. These operations
+	 * may be called by the behavior specification and may access the attributes of
+	 * the behavior specification. The Operations are contained in the behavior.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operations</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavior_Operations()
 	 * @model containment="true"
@@ -79,6 +84,11 @@ public interface Behavior extends EObject {
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A behavior may define a set of Attributes in order to store data. The attributes
+	 * may be used by the operations of the behavior and the behavior specification itself.
+	 * The attributes are contained in the behavior.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavior_Attributes()
 	 * @model containment="true"

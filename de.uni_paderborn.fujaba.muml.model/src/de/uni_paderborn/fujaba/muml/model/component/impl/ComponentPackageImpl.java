@@ -1089,7 +1089,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"
-		   });									
+		   });										
 		addAnnotation
 		  (discretePortEClass, 
 		   source, 
@@ -1172,7 +1172,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "self.kind = component::ContinuousPortDirectionKind::OUT"
-		   });				
+		   });					
 		addAnnotation
 		  (discretePortEClass, 
 		   source, 

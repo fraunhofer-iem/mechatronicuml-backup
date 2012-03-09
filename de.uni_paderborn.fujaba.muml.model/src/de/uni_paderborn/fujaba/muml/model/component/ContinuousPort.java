@@ -74,6 +74,9 @@ public interface ContinuousPort extends Port {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the data type of the signal value which is emitted or received by 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(DataType)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getContinuousPort_Type()

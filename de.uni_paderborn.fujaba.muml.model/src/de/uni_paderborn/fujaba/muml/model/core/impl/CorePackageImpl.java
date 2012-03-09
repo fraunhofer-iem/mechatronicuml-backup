@@ -714,7 +714,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });																							
+		   });																									
 	}
 
 	/**
@@ -736,7 +736,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"
-		   });																						
+		   });																								
 	}
 
 } //CorePackageImpl

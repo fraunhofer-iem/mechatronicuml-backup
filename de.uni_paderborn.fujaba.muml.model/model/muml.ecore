@@ -134,7 +134,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-            eType="#//model/core/DataType"/>
+            eType="#//model/core/DataType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Defines the data type of the signal value which is emitted or received by "/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//model/component/Port #//model/core/BehavioralElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -742,9 +746,17 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
-            eType="#//model/core/Operation" containment="true"/>
+            eType="#//model/core/Operation" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A behavior may define a set of Operations as signatures of helper functions. These operations&#xD;&#xA;may be called by the behavior specification and may access the attributes of&#xD;&#xA;the behavior specification. The Operations are contained in the behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-            eType="#//model/core/Attribute" containment="true"/>
+            eType="#//model/core/Attribute" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A behavior may define a set of Attributes in order to store data. The attributes&#xD;&#xA;may be used by the operations of the behavior and the behavior specification itself.&#xD;&#xA;The attributes are contained in the behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
