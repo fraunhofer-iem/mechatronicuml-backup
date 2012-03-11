@@ -22,7 +22,7 @@ public class CustomStateChannelCompartmentEditPart extends
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			// use horizontal layout
-			constrainedToolbarLayout.setVertical(false);
+			constrainedToolbarLayout.setHorizontal(true);
 		}
 		return rcf;
 	}

@@ -22,20 +22,22 @@ public class CustomStateRegionCompartmentEditPart extends
 		super(view);
 	}
 
-	@Override
-	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
-		if (layoutManager instanceof ConstrainedToolbarLayout) {
-			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
-			constrainedToolbarLayout.setStretchMajorAxis(true);
-			constrainedToolbarLayout.setStretchMinorAxis(true);
-		}
-
-		return result;
-	}
+	// Begin deactivated; is generated now
+//	@Override
+//	public IFigure createFigure() {
+//		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
+//				.createFigure();
+//		LayoutManager layoutManager = result.getContentPane()
+//				.getLayoutManager();
+//		if (layoutManager instanceof ConstrainedToolbarLayout) {
+//			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
+//			constrainedToolbarLayout.setStretchMajorAxis(true);
+//			constrainedToolbarLayout.setStretchMinorAxis(true);
+//		}
+//
+//		return result;
+//	}
+	// End deactivated
 
 	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {

@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -40,7 +41,19 @@ public class RealtimeStatechartStatechartContentsCompartmentEditPart extends
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
 				.createFigure();
+
 		result.setTitleVisibility(false);
+
+		// Begin added to always stretch list layouts
+		LayoutManager layoutManager = result.getContentPane()
+				.getLayoutManager();
+		if (layoutManager instanceof ConstrainedToolbarLayout) {
+			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
+			constrainedToolbarLayout.setStretchMajorAxis(true);
+			constrainedToolbarLayout.setStretchMinorAxis(true);
+		}
+		// End added
+
 		return result;
 	}
 

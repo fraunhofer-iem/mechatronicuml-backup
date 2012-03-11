@@ -47,24 +47,29 @@ public class CustomRegionRegionContentsCompartmentEditPart extends
 	// new CustomRegionRegionContentsCompartmentItemSemanticEditPolicy());
 	// }
 
-	@Override
-	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
-		if (layoutManager instanceof ConstrainedToolbarLayout) {
-			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
-			constrainedToolbarLayout.setStretchMajorAxis(true);
-			constrainedToolbarLayout.setStretchMinorAxis(true);
-		}
-		
-		// Begin: Fix for Mechatronic-UML Bug #116
-		result.setBorder(null);
-		// End Fix
-		
-		return result;
-
-	}
+	
+	// Begin deactivated; is generated now.
+	
+//	@Override
+//	public IFigure createFigure() {
+//		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
+//				.createFigure();
+//		LayoutManager layoutManager = result.getContentPane()
+//				.getLayoutManager();
+//		if (layoutManager instanceof ConstrainedToolbarLayout) {
+//			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
+//			constrainedToolbarLayout.setStretchMajorAxis(true);
+//			constrainedToolbarLayout.setStretchMinorAxis(true);
+//		}
+//		
+//		// Begin: Fix for Mechatronic-UML Bug #116
+//		result.setBorder(null);
+//		// End Fix
+//		
+//		return result;
+//
+//	}
+	
+	// End deactivated
 
 }
