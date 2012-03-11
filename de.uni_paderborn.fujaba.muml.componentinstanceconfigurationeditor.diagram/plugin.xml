@@ -447,10 +447,10 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart" id="ComponentInstanceConfiguration_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart" id="ComponentInstance_2004"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart" id="HybridPortInstance_2008"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart" id="DiscreteSinglePortInstance_2005"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart" id="HybridPortInstance_2008"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart" id="DiscreteSinglePortInstance_2005"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart" id="DiscreteMultiPortInstance_2009"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart" id="ContinuousPortInstance_2007"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart" id="ContinuousPortInstance_2007"/>
          <context elements="ComponentInstanceConfiguration_1000,ComponentInstance_2004,HybridPortInstance_2008,DiscreteSinglePortInstance_2005,DiscreteMultiPortInstance_2009,ContinuousPortInstance_2007"/>
       </modelingAssistantProvider>
    </extension>

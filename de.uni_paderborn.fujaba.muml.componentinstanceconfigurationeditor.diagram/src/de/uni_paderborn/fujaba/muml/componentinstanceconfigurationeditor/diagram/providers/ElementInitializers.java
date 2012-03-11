@@ -36,7 +36,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							7,
+							1,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getHybridPortInstance(), null).evaluate(
 							instance);
@@ -55,7 +55,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							8,
+							2,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getDiscreteSinglePortInstance(), null)
 					.evaluate(instance);
@@ -74,7 +74,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							9,
+							3,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getDiscreteMultiPortInstance(), null)
 					.evaluate(instance);
@@ -93,7 +93,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							10,
+							5,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getContinuousPortInstance(), null)
 					.evaluate(instance);
@@ -164,7 +164,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_3014(
+	public void init_DiscreteSinglePortInstance_3017(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -192,6 +192,25 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getContinuousPortInstance(), null)
 					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ComponentInstance_3016(
+			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							0,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getComponentInstance(), null).evaluate(
+							instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin

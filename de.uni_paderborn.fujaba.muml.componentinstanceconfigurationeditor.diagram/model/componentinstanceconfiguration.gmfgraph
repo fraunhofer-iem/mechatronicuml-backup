@@ -15,7 +15,7 @@
             xsi:type="gmfgraph:GridLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="DiscreteSinglePortInstancesCompartment"
+            name="DiscreteSinglePortInstancesCompartmentFigure"
             outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -27,11 +27,43 @@
           accessor="getFigureDiscreteSinglePortInstancesCompartment"
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="ComponentInstanceConfigurationFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ComponentInstanceConfigurationFigure"
+          lineKind="LINE_DASH">
+        <layoutData
+            xsi:type="gmfgraph:GridLayoutData"
+            grabExcessHorizontalSpace="true"
+            grabExcessVerticalSpace="true"
+            verticalAlignment="FILL"
+            horizontalAlignment="FILL"/>
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ComponentInstanceConfigurationContentsCompartmentFigure"
+            outline="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"
+              verticalAlignment="FILL"
+              horizontalAlignment="FILL"/>
+          <layout
+              xsi:type="gmfgraph:GridLayout"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getFigureComponentInstanceConfigurationContentsCompartmentFigure"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="ComponentInstance">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -73,6 +105,20 @@
           dy="30"/>
     </facets>
   </nodes>
+  <nodes
+      name="ComponentInstanceConfiguration"
+      figure="ComponentInstanceConfigurationFigure"/>
+  <nodes
+      name="InnerPort">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="24"
+          dy="24"/>
+    </facets>
+  </nodes>
   <connections
       name="Delegation">
     <figure
@@ -87,6 +133,17 @@
       name="DiscreteMultiPortInstanceCompartment"
       figure="DiscreteMultiPortInstanceFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <compartments
+      name="ComponentInstanceContentsCompartment">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
+    <accessor
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.1/@accessors.1"/>
+  </compartments>
+  <compartments
+      name="ComponentInstanceConfigurationContentsCompartment"
+      figure="ComponentInstanceConfigurationFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="ComponentName"
       elementIcon="false">

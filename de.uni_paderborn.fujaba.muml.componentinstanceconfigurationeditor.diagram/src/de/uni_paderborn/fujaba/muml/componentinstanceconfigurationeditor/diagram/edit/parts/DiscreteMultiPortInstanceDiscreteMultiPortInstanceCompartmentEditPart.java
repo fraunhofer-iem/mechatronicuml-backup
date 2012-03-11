@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
@@ -19,7 +20,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPa
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7001;
+	public static final int VISUAL_ID = 7005;
 
 	/**
 	 * @generated
@@ -49,7 +50,19 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPa
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
 				.createFigure();
+
 		result.setTitleVisibility(false);
+
+		// Begin added to always stretch list layouts
+		LayoutManager layoutManager = result.getContentPane()
+				.getLayoutManager();
+		if (layoutManager instanceof ConstrainedToolbarLayout) {
+			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
+			constrainedToolbarLayout.setStretchMajorAxis(true);
+			constrainedToolbarLayout.setStretchMinorAxis(true);
+		}
+		// End added
+
 		return result;
 	}
 

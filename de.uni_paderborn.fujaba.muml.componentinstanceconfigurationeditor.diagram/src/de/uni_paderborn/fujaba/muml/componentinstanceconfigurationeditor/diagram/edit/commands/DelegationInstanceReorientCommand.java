@@ -113,9 +113,7 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult reorientSource()
-			throws org.eclipse.core.commands.ExecutionException,
-			ExecutionException {
+	protected CommandResult reorientSource() throws ExecutionException {
 		getLink().setSource(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -123,9 +121,7 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult reorientTarget()
-			throws org.eclipse.core.commands.ExecutionException,
-			ExecutionException {
+	protected CommandResult reorientTarget() throws ExecutionException {
 		getLink().setTarget(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -171,5 +167,4 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 	protected int getReorientDirection() {
 		return reorientDirection;
 	}
-
 }

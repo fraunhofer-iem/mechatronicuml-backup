@@ -26,7 +26,6 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
 
 	public DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy() {
@@ -99,7 +98,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
-				.getDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment_7001SemanticChildren(viewObject);
+				.getDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment_7005SemanticChildren(viewObject);
 
 	}
 

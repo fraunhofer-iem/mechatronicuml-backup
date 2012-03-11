@@ -66,7 +66,7 @@ public class CustomComponentInstanceEditPart extends ComponentInstanceEditPart {
 		return plate;
 	}
 
-	public class CustomComponentFigure extends ComponentFigure {
+	public class CustomComponentFigure extends StructuredComponentFigure {
 		public CustomComponentFigure() {
 			super();
 			this.getFigureComponentNameFigure().setTextUnderline(true);

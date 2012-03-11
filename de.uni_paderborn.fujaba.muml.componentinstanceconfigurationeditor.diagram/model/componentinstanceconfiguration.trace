@@ -2,6 +2,7 @@
 <trace:TraceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces visualID="2004" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstanceConfiguration') and _containmentMF_.name = 'componentInstances')">
     <nodeLabelTraces visualID="5002" queryText="true"/>
+    <compartmentTraces visualID="7002" queryText="true"/>
   </nodeTraces>
   <nodeTraces visualID="2005" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DiscreteSinglePortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstanceConfiguration') and _containmentMF_.name = 'parentPortInstancesDerived')">
     <nodeLabelTraces visualID="5004" queryText="true"/>
@@ -14,6 +15,7 @@
   </nodeTraces>
   <nodeTraces visualID="2009" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DiscreteMultiPortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstanceConfiguration') and _containmentMF_.name = 'parentPortInstancesDerived')">
     <nodeLabelTraces visualID="5010" queryText="true"/>
+    <compartmentTraces visualID="7006" queryText="true"/>
   </nodeTraces>
   <childNodeTraces visualID="3010" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DiscreteSinglePortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstance') and _containmentMF_.name = 'portInstances')">
     <nodeLabelTraces visualID="5007" queryText="true"/>
@@ -26,9 +28,18 @@
   </childNodeTraces>
   <childNodeTraces visualID="3013" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DiscreteMultiPortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstance') and _containmentMF_.name = 'portInstances')">
     <nodeLabelTraces visualID="5009" queryText="true"/>
-    <compartmentTraces visualID="7001" queryText="true"/>
+    <compartmentTraces visualID="7005" queryText="true"/>
   </childNodeTraces>
-  <childNodeTraces visualID="3014" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DiscreteSinglePortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DiscreteMultiPortInstance') and _containmentMF_.name = 'subPortInstances')"/>
+  <childNodeTraces visualID="3015" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstanceConfiguration') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstance') and _containmentMF_.name = 'embeddedCIC')">
+    <compartmentTraces visualID="7003" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3016" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'ComponentInstanceConfiguration') and _containmentMF_.name = 'componentInstances')">
+    <nodeLabelTraces visualID="5011" queryText="true"/>
+    <compartmentTraces visualID="7004" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3017" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DiscreteSinglePortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DiscreteMultiPortInstance') and _containmentMF_.name = 'subPortInstances')">
+    <nodeLabelTraces visualID="5012" queryText="true"/>
+  </childNodeTraces>
   <linkTraces visualID="4003" queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'AssemblyInstance')"/>
   <linkTraces visualID="4004" queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/instance/0.2.1' and _eClass_.name = 'DelegationInstance')"/>
 </trace:TraceModel>

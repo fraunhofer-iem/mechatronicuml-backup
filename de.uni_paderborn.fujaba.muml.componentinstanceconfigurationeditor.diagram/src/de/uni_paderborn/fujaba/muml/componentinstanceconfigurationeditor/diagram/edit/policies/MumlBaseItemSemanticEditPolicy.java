@@ -375,7 +375,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE.getPortInstance()); //$NON-NLS-1$
 					Object sourceVal = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									11,
+									7,
 									de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 											.getPortInstance(), env).evaluate(
 									source,

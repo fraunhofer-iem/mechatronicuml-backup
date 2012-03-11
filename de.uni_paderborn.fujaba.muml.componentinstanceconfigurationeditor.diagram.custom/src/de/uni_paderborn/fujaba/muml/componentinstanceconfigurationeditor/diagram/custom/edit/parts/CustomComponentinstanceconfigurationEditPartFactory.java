@@ -36,7 +36,6 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 				
 			case DiscreteMultiPortInstance2EditPart.VISUAL_ID:
 				return new CustomDiscreteMultiPortInstance2EditPart(view);
-
 			
 			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID:
 				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart(view);
@@ -62,8 +61,8 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			case ComponentInstanceEditPart.VISUAL_ID:
 				return new CustomComponentInstanceEditPart(view);
 		
-//			case ComponentInstanceComponentCompartmentEditPart.VISUAL_ID:
-//				return new CustomComponentInstanceComponentCompartmentEditPart(
+//			case ComponentInstanceComponentInstanceCompartmentEditPart.VISUAL_ID:
+//				return new CustomComponentInstanceComponentInstanceCompartmentEditPart(
 //						view);
 			}
 		}
