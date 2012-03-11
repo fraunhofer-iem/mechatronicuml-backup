@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Common
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.common
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.common;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.common.edit.parts,
@@ -19,4 +19,5 @@ Require-Bundle: org.eclipse.draw2d;bundle-version="3.6.1",
  org.storydriven.modeling.edit;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
 
