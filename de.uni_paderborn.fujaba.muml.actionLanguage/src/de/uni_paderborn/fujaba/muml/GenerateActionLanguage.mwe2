@@ -11,9 +11,12 @@ var runtimeProject = "../${projectName}"
 
 Workflow {
 	bean = StandaloneSetup {
+		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "org.storydriven.modeling.expressions.ExpressionsPackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage"
+	
+		// registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.genmodel"
+	
 	}
 
 	component = DirectoryCleaner {
@@ -37,9 +40,7 @@ Workflow {
 			fragment = grammarAccess.GrammarAccessFragment {}
 
 			// generates Java API for the generated EPackages
-			// fragment = ecore.EcoreGeneratorFragment {
-			// 		referencedGenModels = "platform:/resource/org.storydriven.modeling/model/sdm.uml.genmodel, platform:/resource/de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.genmodel"
-			// }
+			// fragment = ecore.EcoreGeneratorFragment {}
 
 			// the serialization component
 			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
@@ -63,7 +64,6 @@ Workflow {
 			fragment = validation.JavaValidatorFragment {
 			// composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
 			// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-				registerForImportedPackages = true
 			}
 
 			// scoping and exporting API
@@ -83,8 +83,8 @@ Workflow {
 			fragment = labeling.LabelProviderFragment {}
 
 			// outline API 
-			fragment = outline.TransformerFragment {}
-			fragment = outline.OutlineNodeAdapterFactoryFragment {}
+            fragment = outline.OutlineTreeProviderFragment {}
+            fragment = outline.QuickOutlineFragment {}
 
 			// java-based API for content assistance 
 			fragment = contentAssist.JavaBasedContentAssistFragment {}
@@ -95,6 +95,11 @@ Workflow {
 					classSplitting = true
 				}
 			}
+
+			// provides a compare view
+            fragment = compare.CompareFragment {
+                fileExtensions = file.extensions
+            }
 
 			fragment = builder.BuilderIntegrationFragment {}
 

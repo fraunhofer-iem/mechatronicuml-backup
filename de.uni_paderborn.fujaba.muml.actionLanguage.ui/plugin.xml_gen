@@ -139,6 +139,58 @@
 
 
 
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="de.uni_paderborn.fujaba.muml.ActionLanguage.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="de.uni_paderborn.fujaba.muml.ActionLanguage.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="de.uni_paderborn.fujaba.muml.ActionLanguage.compare.contentViewers"
+            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="action">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="de.uni_paderborn.fujaba.muml.ActionLanguage.compare.contentMergeViewers"
+            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="action" label="ActionLanguage Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="de.uni_paderborn.fujaba.muml.ActionLanguage.editors.documentProviders"
+            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="action">
+    </provider>
+  </extension>
    <!-- quickfix marker resolution generator -->
    <extension
          point="org.eclipse.ui.ide.markerResolution">

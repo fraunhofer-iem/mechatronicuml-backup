@@ -14,793 +14,879 @@ import java.util.ArrayList;
 public class InternalActionLanguageLexer extends Lexer {
     public static final int RULE_BOOLEAN=5;
     public static final int RULE_ID=6;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int T__21=21;
     public static final int RULE_ANY_OTHER=12;
-    public static final int T29=29;
-    public static final int T28=28;
-    public static final int T27=27;
-    public static final int T26=26;
-    public static final int T25=25;
+    public static final int T__20=20;
     public static final int EOF=-1;
-    public static final int T24=24;
-    public static final int T23=23;
-    public static final int T22=22;
-    public static final int T21=21;
-    public static final int T20=20;
+    public static final int T__19=19;
+    public static final int T__51=51;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
     public static final int RULE_NUMBER=4;
+    public static final int T__14=14;
+    public static final int T__13=13;
     public static final int RULE_INT=7;
-    public static final int T38=38;
-    public static final int T37=37;
-    public static final int T39=39;
-    public static final int T34=34;
-    public static final int T33=33;
-    public static final int T36=36;
-    public static final int T35=35;
-    public static final int T30=30;
-    public static final int T32=32;
-    public static final int T31=31;
-    public static final int T49=49;
-    public static final int T48=48;
-    public static final int T43=43;
-    public static final int Tokens=52;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
     public static final int RULE_SL_COMMENT=10;
-    public static final int T42=42;
-    public static final int T41=41;
-    public static final int T40=40;
-    public static final int T47=47;
-    public static final int T46=46;
-    public static final int T45=45;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T44=44;
+    public static final int T__30=30;
+    public static final int T__31=31;
     public static final int RULE_STRING=8;
-    public static final int T50=50;
-    public static final int T13=13;
-    public static final int T14=14;
-    public static final int T15=15;
+    public static final int T__32=32;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=11;
-    public static final int T51=51;
-    public static final int T16=16;
-    public static final int T17=17;
-    public static final int T18=18;
-    public static final int T19=19;
+
+    // delegates
+    // delegators
+
     public InternalActionLanguageLexer() {;} 
     public InternalActionLanguageLexer(CharStream input) {
-        super(input);
+        this(input, new RecognizerSharedState());
+    }
+    public InternalActionLanguageLexer(CharStream input, RecognizerSharedState state) {
+        super(input,state);
+
     }
     public String getGrammarFileName() { return "../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g"; }
 
-    // $ANTLR start T13
-    public final void mT13() throws RecognitionException {
+    // $ANTLR start "T__13"
+    public final void mT__13() throws RecognitionException {
         try {
-            int _type = T13;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:10:5: ( '=' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:10:7: '='
+            int _type = T__13;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:11:7: ( '=' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:11:9: '='
             {
             match('='); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T13
+    // $ANTLR end "T__13"
 
-    // $ANTLR start T14
-    public final void mT14() throws RecognitionException {
+    // $ANTLR start "T__14"
+    public final void mT__14() throws RecognitionException {
         try {
-            int _type = T14;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:11:5: ( ':=' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:11:7: ':='
+            int _type = T__14;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:12:7: ( ':=' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:12:9: ':='
             {
             match(":="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T14
+    // $ANTLR end "T__14"
 
-    // $ANTLR start T15
-    public final void mT15() throws RecognitionException {
+    // $ANTLR start "T__15"
+    public final void mT__15() throws RecognitionException {
         try {
-            int _type = T15;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:12:5: ( '+=' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:12:7: '+='
+            int _type = T__15;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:13:7: ( '+=' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:13:9: '+='
             {
             match("+="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T15
+    // $ANTLR end "T__15"
 
-    // $ANTLR start T16
-    public final void mT16() throws RecognitionException {
+    // $ANTLR start "T__16"
+    public final void mT__16() throws RecognitionException {
         try {
-            int _type = T16;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:13:5: ( '=+' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:13:7: '=+'
+            int _type = T__16;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:14:7: ( '=+' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:14:9: '=+'
             {
             match("=+"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T16
+    // $ANTLR end "T__16"
 
-    // $ANTLR start T17
-    public final void mT17() throws RecognitionException {
+    // $ANTLR start "T__17"
+    public final void mT__17() throws RecognitionException {
         try {
-            int _type = T17;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:14:5: ( '-=' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:14:7: '-='
+            int _type = T__17;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:15:7: ( '-=' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:15:9: '-='
             {
             match("-="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T17
+    // $ANTLR end "T__17"
 
-    // $ANTLR start T18
-    public final void mT18() throws RecognitionException {
+    // $ANTLR start "T__18"
+    public final void mT__18() throws RecognitionException {
         try {
-            int _type = T18;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:15:5: ( '=-' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:15:7: '=-'
+            int _type = T__18;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:16:7: ( '=-' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:16:9: '=-'
             {
             match("=-"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T18
+    // $ANTLR end "T__18"
 
-    // $ANTLR start T19
-    public final void mT19() throws RecognitionException {
+    // $ANTLR start "T__19"
+    public final void mT__19() throws RecognitionException {
         try {
-            int _type = T19;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:16:5: ( '++' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:16:7: '++'
+            int _type = T__19;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:17:7: ( '++' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:17:9: '++'
             {
             match("++"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T19
+    // $ANTLR end "T__19"
 
-    // $ANTLR start T20
-    public final void mT20() throws RecognitionException {
+    // $ANTLR start "T__20"
+    public final void mT__20() throws RecognitionException {
         try {
-            int _type = T20;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:17:5: ( '--' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:17:7: '--'
+            int _type = T__20;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:18:7: ( '--' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:18:9: '--'
             {
             match("--"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T20
+    // $ANTLR end "T__20"
 
-    // $ANTLR start T21
-    public final void mT21() throws RecognitionException {
+    // $ANTLR start "T__21"
+    public final void mT__21() throws RecognitionException {
         try {
-            int _type = T21;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:18:5: ( '&' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:18:7: '&'
+            int _type = T__21;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:19:7: ( '&' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:19:9: '&'
             {
             match('&'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T21
+    // $ANTLR end "T__21"
 
-    // $ANTLR start T22
-    public final void mT22() throws RecognitionException {
+    // $ANTLR start "T__22"
+    public final void mT__22() throws RecognitionException {
         try {
-            int _type = T22;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:19:5: ( '&&' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:19:7: '&&'
+            int _type = T__22;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:20:7: ( '&&' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:20:9: '&&'
             {
             match("&&"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T22
+    // $ANTLR end "T__22"
 
-    // $ANTLR start T23
-    public final void mT23() throws RecognitionException {
+    // $ANTLR start "T__23"
+    public final void mT__23() throws RecognitionException {
         try {
-            int _type = T23;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:20:5: ( '|' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:20:7: '|'
+            int _type = T__23;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:21:7: ( '|' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:21:9: '|'
             {
             match('|'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T23
+    // $ANTLR end "T__23"
 
-    // $ANTLR start T24
-    public final void mT24() throws RecognitionException {
+    // $ANTLR start "T__24"
+    public final void mT__24() throws RecognitionException {
         try {
-            int _type = T24;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:21:5: ( '||' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:21:7: '||'
+            int _type = T__24;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:22:7: ( '||' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:22:9: '||'
             {
             match("||"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T24
+    // $ANTLR end "T__24"
 
-    // $ANTLR start T25
-    public final void mT25() throws RecognitionException {
+    // $ANTLR start "T__25"
+    public final void mT__25() throws RecognitionException {
         try {
-            int _type = T25;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:22:5: ( 'xor' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:22:7: 'xor'
+            int _type = T__25;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:23:7: ( 'xor' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:23:9: 'xor'
             {
             match("xor"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T25
+    // $ANTLR end "T__25"
 
-    // $ANTLR start T26
-    public final void mT26() throws RecognitionException {
+    // $ANTLR start "T__26"
+    public final void mT__26() throws RecognitionException {
         try {
-            int _type = T26;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:23:5: ( '=>' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:23:7: '=>'
+            int _type = T__26;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:24:7: ( '=>' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:24:9: '=>'
             {
             match("=>"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T26
+    // $ANTLR end "T__26"
 
-    // $ANTLR start T27
-    public final void mT27() throws RecognitionException {
+    // $ANTLR start "T__27"
+    public final void mT__27() throws RecognitionException {
         try {
-            int _type = T27;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:24:5: ( '<=>' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:24:7: '<=>'
+            int _type = T__27;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:25:7: ( '<=>' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:25:9: '<=>'
             {
             match("<=>"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T27
+    // $ANTLR end "T__27"
 
-    // $ANTLR start T28
-    public final void mT28() throws RecognitionException {
+    // $ANTLR start "T__28"
+    public final void mT__28() throws RecognitionException {
         try {
-            int _type = T28;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:25:5: ( '+' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:25:7: '+'
+            int _type = T__28;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:26:7: ( '+' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:26:9: '+'
             {
             match('+'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T28
+    // $ANTLR end "T__28"
 
-    // $ANTLR start T29
-    public final void mT29() throws RecognitionException {
+    // $ANTLR start "T__29"
+    public final void mT__29() throws RecognitionException {
         try {
-            int _type = T29;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:26:5: ( '-' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:26:7: '-'
+            int _type = T__29;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:27:7: ( '-' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:27:9: '-'
             {
             match('-'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T29
+    // $ANTLR end "T__29"
 
-    // $ANTLR start T30
-    public final void mT30() throws RecognitionException {
+    // $ANTLR start "T__30"
+    public final void mT__30() throws RecognitionException {
         try {
-            int _type = T30;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:27:5: ( '*' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:27:7: '*'
+            int _type = T__30;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:28:7: ( '*' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:28:9: '*'
             {
             match('*'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T30
+    // $ANTLR end "T__30"
 
-    // $ANTLR start T31
-    public final void mT31() throws RecognitionException {
+    // $ANTLR start "T__31"
+    public final void mT__31() throws RecognitionException {
         try {
-            int _type = T31;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:28:5: ( '/' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:28:7: '/'
+            int _type = T__31;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:29:7: ( '/' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:29:9: '/'
             {
             match('/'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T31
+    // $ANTLR end "T__31"
 
-    // $ANTLR start T32
-    public final void mT32() throws RecognitionException {
+    // $ANTLR start "T__32"
+    public final void mT__32() throws RecognitionException {
         try {
-            int _type = T32;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:29:5: ( '%' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:29:7: '%'
+            int _type = T__32;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:30:7: ( '%' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:30:9: '%'
             {
             match('%'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T32
+    // $ANTLR end "T__32"
 
-    // $ANTLR start T33
-    public final void mT33() throws RecognitionException {
+    // $ANTLR start "T__33"
+    public final void mT__33() throws RecognitionException {
         try {
-            int _type = T33;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:30:5: ( '^' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:30:7: '^'
+            int _type = T__33;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:31:7: ( '^' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:31:9: '^'
             {
             match('^'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T33
+    // $ANTLR end "T__33"
 
-    // $ANTLR start T34
-    public final void mT34() throws RecognitionException {
+    // $ANTLR start "T__34"
+    public final void mT__34() throws RecognitionException {
         try {
-            int _type = T34;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:31:5: ( '<' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:31:7: '<'
+            int _type = T__34;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:32:7: ( '<' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:32:9: '<'
             {
             match('<'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T34
+    // $ANTLR end "T__34"
 
-    // $ANTLR start T35
-    public final void mT35() throws RecognitionException {
+    // $ANTLR start "T__35"
+    public final void mT__35() throws RecognitionException {
         try {
-            int _type = T35;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:32:5: ( '<=' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:32:7: '<='
+            int _type = T__35;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:33:7: ( '<=' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:33:9: '<='
             {
             match("<="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T35
+    // $ANTLR end "T__35"
 
-    // $ANTLR start T36
-    public final void mT36() throws RecognitionException {
+    // $ANTLR start "T__36"
+    public final void mT__36() throws RecognitionException {
         try {
-            int _type = T36;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:33:5: ( '==' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:33:7: '=='
+            int _type = T__36;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:34:7: ( '==' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:34:9: '=='
             {
             match("=="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T36
+    // $ANTLR end "T__36"
 
-    // $ANTLR start T37
-    public final void mT37() throws RecognitionException {
+    // $ANTLR start "T__37"
+    public final void mT__37() throws RecognitionException {
         try {
-            int _type = T37;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:34:5: ( '>=' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:34:7: '>='
+            int _type = T__37;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:35:7: ( '>=' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:35:9: '>='
             {
             match(">="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T37
+    // $ANTLR end "T__37"
 
-    // $ANTLR start T38
-    public final void mT38() throws RecognitionException {
+    // $ANTLR start "T__38"
+    public final void mT__38() throws RecognitionException {
         try {
-            int _type = T38;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:35:5: ( '>' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:35:7: '>'
+            int _type = T__38;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:36:7: ( '>' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:36:9: '>'
             {
             match('>'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T38
+    // $ANTLR end "T__38"
 
-    // $ANTLR start T39
-    public final void mT39() throws RecognitionException {
+    // $ANTLR start "T__39"
+    public final void mT__39() throws RecognitionException {
         try {
-            int _type = T39;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:36:5: ( '<>' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:36:7: '<>'
+            int _type = T__39;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:37:7: ( '<>' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:37:9: '<>'
             {
             match("<>"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T39
+    // $ANTLR end "T__39"
 
-    // $ANTLR start T40
-    public final void mT40() throws RecognitionException {
+    // $ANTLR start "T__40"
+    public final void mT__40() throws RecognitionException {
         try {
-            int _type = T40;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:37:5: ( 'not' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:37:7: 'not'
+            int _type = T__40;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:38:7: ( 'not' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:38:9: 'not'
             {
             match("not"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T40
+    // $ANTLR end "T__40"
 
-    // $ANTLR start T41
-    public final void mT41() throws RecognitionException {
+    // $ANTLR start "T__41"
+    public final void mT__41() throws RecognitionException {
         try {
-            int _type = T41;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:38:5: ( '{' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:38:7: '{'
+            int _type = T__41;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:39:7: ( '{' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:39:9: '{'
             {
             match('{'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T41
+    // $ANTLR end "T__41"
 
-    // $ANTLR start T42
-    public final void mT42() throws RecognitionException {
+    // $ANTLR start "T__42"
+    public final void mT__42() throws RecognitionException {
         try {
-            int _type = T42;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:39:5: ( '}' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:39:7: '}'
+            int _type = T__42;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:40:7: ( '}' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:40:9: '}'
             {
             match('}'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T42
+    // $ANTLR end "T__42"
 
-    // $ANTLR start T43
-    public final void mT43() throws RecognitionException {
+    // $ANTLR start "T__43"
+    public final void mT__43() throws RecognitionException {
         try {
-            int _type = T43;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:40:5: ( 'for' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:40:7: 'for'
+            int _type = T__43;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:41:7: ( 'for' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:41:9: 'for'
             {
             match("for"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T43
+    // $ANTLR end "T__43"
 
-    // $ANTLR start T44
-    public final void mT44() throws RecognitionException {
+    // $ANTLR start "T__44"
+    public final void mT__44() throws RecognitionException {
         try {
-            int _type = T44;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:41:5: ( '(' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:41:7: '('
+            int _type = T__44;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:42:7: ( '(' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:42:9: '('
             {
             match('('); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T44
+    // $ANTLR end "T__44"
 
-    // $ANTLR start T45
-    public final void mT45() throws RecognitionException {
+    // $ANTLR start "T__45"
+    public final void mT__45() throws RecognitionException {
         try {
-            int _type = T45;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:42:5: ( ';' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:42:7: ';'
+            int _type = T__45;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:43:7: ( ';' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:43:9: ';'
             {
             match(';'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T45
+    // $ANTLR end "T__45"
 
-    // $ANTLR start T46
-    public final void mT46() throws RecognitionException {
+    // $ANTLR start "T__46"
+    public final void mT__46() throws RecognitionException {
         try {
-            int _type = T46;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:43:5: ( ')' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:43:7: ')'
+            int _type = T__46;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:44:7: ( ')' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:44:9: ')'
             {
             match(')'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T46
+    // $ANTLR end "T__46"
 
-    // $ANTLR start T47
-    public final void mT47() throws RecognitionException {
+    // $ANTLR start "T__47"
+    public final void mT__47() throws RecognitionException {
         try {
-            int _type = T47;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:44:5: ( 'while' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:44:7: 'while'
+            int _type = T__47;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:45:7: ( 'while' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:45:9: 'while'
             {
             match("while"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T47
+    // $ANTLR end "T__47"
 
-    // $ANTLR start T48
-    public final void mT48() throws RecognitionException {
+    // $ANTLR start "T__48"
+    public final void mT__48() throws RecognitionException {
         try {
-            int _type = T48;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:45:5: ( 'do' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:45:7: 'do'
+            int _type = T__48;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:46:7: ( 'do' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:46:9: 'do'
             {
             match("do"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T48
+    // $ANTLR end "T__48"
 
-    // $ANTLR start T49
-    public final void mT49() throws RecognitionException {
+    // $ANTLR start "T__49"
+    public final void mT__49() throws RecognitionException {
         try {
-            int _type = T49;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:46:5: ( 'if' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:46:7: 'if'
+            int _type = T__49;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:47:7: ( 'if' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:47:9: 'if'
             {
             match("if"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T49
+    // $ANTLR end "T__49"
 
-    // $ANTLR start T50
-    public final void mT50() throws RecognitionException {
+    // $ANTLR start "T__50"
+    public final void mT__50() throws RecognitionException {
         try {
-            int _type = T50;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:47:5: ( 'elseif' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:47:7: 'elseif'
+            int _type = T__50;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:48:7: ( 'elseif' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:48:9: 'elseif'
             {
             match("elseif"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T50
+    // $ANTLR end "T__50"
 
-    // $ANTLR start T51
-    public final void mT51() throws RecognitionException {
+    // $ANTLR start "T__51"
+    public final void mT__51() throws RecognitionException {
         try {
-            int _type = T51;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:48:5: ( 'else' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:48:7: 'else'
+            int _type = T__51;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:49:7: ( 'else' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:49:9: 'else'
             {
             match("else"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T51
+    // $ANTLR end "T__51"
 
-    // $ANTLR start RULE_NUMBER
+    // $ANTLR start "RULE_NUMBER"
     public final void mRULE_NUMBER() throws RecognitionException {
         try {
             int _type = RULE_NUMBER;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3884:13: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3884:15: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3883:13: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3883:15: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3884:15: ( '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3883:15: ( '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -813,7 +899,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3884:16: '0' .. '9'
+            	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3883:16: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -825,7 +911,7 @@ public class InternalActionLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3884:27: ( '.' ( '0' .. '9' )+ )?
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3883:27: ( '.' ( '0' .. '9' )+ )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -834,10 +920,10 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3884:28: '.' ( '0' .. '9' )+
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3883:28: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3884:32: ( '0' .. '9' )+
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3883:32: ( '0' .. '9' )+
                     int cnt2=0;
                     loop2:
                     do {
@@ -851,7 +937,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3884:33: '0' .. '9'
+                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3883:33: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -876,21 +962,23 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_NUMBER
+    // $ANTLR end "RULE_NUMBER"
 
-    // $ANTLR start RULE_BOOLEAN
+    // $ANTLR start "RULE_BOOLEAN"
     public final void mRULE_BOOLEAN() throws RecognitionException {
         try {
             int _type = RULE_BOOLEAN;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3886:14: ( ( 'true' | 'false' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3886:16: ( 'true' | 'false' )
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3885:14: ( ( 'true' | 'false' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3885:16: ( 'true' | 'false' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3886:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3885:16: ( 'true' | 'false' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -902,13 +990,13 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("3886:16: ( 'true' | 'false' )", 4, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3886:17: 'true'
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3885:17: 'true'
                     {
                     match("true"); 
 
@@ -916,7 +1004,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3886:24: 'false'
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3885:24: 'false'
                     {
                     match("false"); 
 
@@ -929,21 +1017,23 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_BOOLEAN
+    // $ANTLR end "RULE_BOOLEAN"
 
-    // $ANTLR start RULE_ID
+    // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3888:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3888:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3887:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3887:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3888:11: ( '^' )?
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3887:11: ( '^' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -952,7 +1042,7 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3888:11: '^'
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3887:11: '^'
                     {
                     match('^'); 
 
@@ -966,12 +1056,11 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
             else {
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
 
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3888:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3887:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -991,10 +1080,9 @@ public class InternalActionLanguageLexer extends Lexer {
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -1008,21 +1096,23 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ID
+    // $ANTLR end "RULE_ID"
 
-    // $ANTLR start RULE_INT
+    // $ANTLR start "RULE_INT"
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3890:10: ( ( '0' .. '9' )+ )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3890:12: ( '0' .. '9' )+
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3889:10: ( ( '0' .. '9' )+ )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3889:12: ( '0' .. '9' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3890:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3889:12: ( '0' .. '9' )+
             int cnt7=0;
             loop7:
             do {
@@ -1036,7 +1126,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3890:13: '0' .. '9'
+            	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3889:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1055,21 +1145,23 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_INT
+    // $ANTLR end "RULE_INT"
 
-    // $ANTLR start RULE_STRING
+    // $ANTLR start "RULE_STRING"
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1081,16 +1173,16 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("3892:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 10, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -1099,41 +1191,39 @@ public class InternalActionLanguageLexer extends Lexer {
                         if ( (LA8_0=='\\') ) {
                             alt8=1;
                         }
-                        else if ( ((LA8_0>='\u0000' && LA8_0<='!')||(LA8_0>='#' && LA8_0<='[')||(LA8_0>=']' && LA8_0<='\uFFFE')) ) {
+                        else if ( ((LA8_0>='\u0000' && LA8_0<='!')||(LA8_0>='#' && LA8_0<='[')||(LA8_0>=']' && LA8_0<='\uFFFF')) ) {
                             alt8=2;
                         }
 
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
+                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
@@ -1149,10 +1239,10 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop9:
                     do {
                         int alt9=3;
@@ -1161,41 +1251,39 @@ public class InternalActionLanguageLexer extends Lexer {
                         if ( (LA9_0=='\\') ) {
                             alt9=1;
                         }
-                        else if ( ((LA9_0>='\u0000' && LA9_0<='&')||(LA9_0>='(' && LA9_0<='[')||(LA9_0>=']' && LA9_0<='\uFFFE')) ) {
+                        else if ( ((LA9_0>='\u0000' && LA9_0<='&')||(LA9_0>='(' && LA9_0<='[')||(LA9_0>=']' && LA9_0<='\uFFFF')) ) {
                             alt9=2;
                         }
 
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
+                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3892:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3891:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
@@ -1216,23 +1304,25 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_STRING
+    // $ANTLR end "RULE_STRING"
 
-    // $ANTLR start RULE_ML_COMMENT
+    // $ANTLR start "RULE_ML_COMMENT"
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3894:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3894:19: '/*' ( options {greedy=false; } : . )* '*/'
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3893:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3893:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3894:24: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3893:24: ( options {greedy=false; } : . )*
             loop11:
             do {
                 int alt11=2;
@@ -1244,20 +1334,20 @@ public class InternalActionLanguageLexer extends Lexer {
                     if ( (LA11_1=='/') ) {
                         alt11=2;
                     }
-                    else if ( ((LA11_1>='\u0000' && LA11_1<='.')||(LA11_1>='0' && LA11_1<='\uFFFE')) ) {
+                    else if ( ((LA11_1>='\u0000' && LA11_1<='.')||(LA11_1>='0' && LA11_1<='\uFFFF')) ) {
                         alt11=1;
                     }
 
 
                 }
-                else if ( ((LA11_0>='\u0000' && LA11_0<=')')||(LA11_0>='+' && LA11_0<='\uFFFE')) ) {
+                else if ( ((LA11_0>='\u0000' && LA11_0<=')')||(LA11_0>='+' && LA11_0<='\uFFFF')) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3894:52: .
+            	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3893:52: .
             	    {
             	    matchAny(); 
 
@@ -1274,46 +1364,47 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ML_COMMENT
+    // $ANTLR end "RULE_ML_COMMENT"
 
-    // $ANTLR start RULE_SL_COMMENT
+    // $ANTLR start "RULE_SL_COMMENT"
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3896:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3896:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3895:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3895:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3896:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3895:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop12:
             do {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( ((LA12_0>='\u0000' && LA12_0<='\t')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\uFFFE')) ) {
+                if ( ((LA12_0>='\u0000' && LA12_0<='\t')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\uFFFF')) ) {
                     alt12=1;
                 }
 
 
                 switch (alt12) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3896:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3895:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
+            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -1324,7 +1415,7 @@ public class InternalActionLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3896:40: ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3895:40: ( ( '\\r' )? '\\n' )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -1333,9 +1424,9 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3896:41: ( '\\r' )? '\\n'
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3895:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3896:41: ( '\\r' )?
+                    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3895:41: ( '\\r' )?
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -1344,7 +1435,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     switch (alt13) {
                         case 1 :
-                            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3896:41: '\\r'
+                            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3895:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1363,21 +1454,23 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_SL_COMMENT
+    // $ANTLR end "RULE_SL_COMMENT"
 
-    // $ANTLR start RULE_WS
+    // $ANTLR start "RULE_WS"
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3898:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3898:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3897:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3897:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3898:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3897:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt15=0;
             loop15:
             do {
@@ -1398,10 +1491,9 @@ public class InternalActionLanguageLexer extends Lexer {
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -1419,367 +1511,370 @@ public class InternalActionLanguageLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_WS
+    // $ANTLR end "RULE_WS"
 
-    // $ANTLR start RULE_ANY_OTHER
+    // $ANTLR start "RULE_ANY_OTHER"
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3900:16: ( . )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3900:18: .
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3899:16: ( . )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3899:18: .
             {
             matchAny(); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ANY_OTHER
+    // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:8: ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | T37 | T38 | T39 | T40 | T41 | T42 | T43 | T44 | T45 | T46 | T47 | T48 | T49 | T50 | T51 | RULE_NUMBER | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | RULE_NUMBER | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt16=48;
         alt16 = dfa16.predict(input);
         switch (alt16) {
             case 1 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:10: T13
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:10: T__13
                 {
-                mT13(); 
+                mT__13(); 
 
                 }
                 break;
             case 2 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:14: T14
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:16: T__14
                 {
-                mT14(); 
+                mT__14(); 
 
                 }
                 break;
             case 3 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:18: T15
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:22: T__15
                 {
-                mT15(); 
+                mT__15(); 
 
                 }
                 break;
             case 4 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:22: T16
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:28: T__16
                 {
-                mT16(); 
+                mT__16(); 
 
                 }
                 break;
             case 5 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:26: T17
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:34: T__17
                 {
-                mT17(); 
+                mT__17(); 
 
                 }
                 break;
             case 6 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:30: T18
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:40: T__18
                 {
-                mT18(); 
+                mT__18(); 
 
                 }
                 break;
             case 7 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:34: T19
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:46: T__19
                 {
-                mT19(); 
+                mT__19(); 
 
                 }
                 break;
             case 8 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:38: T20
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:52: T__20
                 {
-                mT20(); 
+                mT__20(); 
 
                 }
                 break;
             case 9 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:42: T21
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:58: T__21
                 {
-                mT21(); 
+                mT__21(); 
 
                 }
                 break;
             case 10 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:46: T22
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:64: T__22
                 {
-                mT22(); 
+                mT__22(); 
 
                 }
                 break;
             case 11 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:50: T23
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:70: T__23
                 {
-                mT23(); 
+                mT__23(); 
 
                 }
                 break;
             case 12 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:54: T24
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:76: T__24
                 {
-                mT24(); 
+                mT__24(); 
 
                 }
                 break;
             case 13 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:58: T25
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:82: T__25
                 {
-                mT25(); 
+                mT__25(); 
 
                 }
                 break;
             case 14 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:62: T26
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:88: T__26
                 {
-                mT26(); 
+                mT__26(); 
 
                 }
                 break;
             case 15 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:66: T27
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:94: T__27
                 {
-                mT27(); 
+                mT__27(); 
 
                 }
                 break;
             case 16 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:70: T28
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:100: T__28
                 {
-                mT28(); 
+                mT__28(); 
 
                 }
                 break;
             case 17 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:74: T29
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:106: T__29
                 {
-                mT29(); 
+                mT__29(); 
 
                 }
                 break;
             case 18 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:78: T30
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:112: T__30
                 {
-                mT30(); 
+                mT__30(); 
 
                 }
                 break;
             case 19 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:82: T31
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:118: T__31
                 {
-                mT31(); 
+                mT__31(); 
 
                 }
                 break;
             case 20 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:86: T32
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:124: T__32
                 {
-                mT32(); 
+                mT__32(); 
 
                 }
                 break;
             case 21 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:90: T33
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:130: T__33
                 {
-                mT33(); 
+                mT__33(); 
 
                 }
                 break;
             case 22 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:94: T34
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:136: T__34
                 {
-                mT34(); 
+                mT__34(); 
 
                 }
                 break;
             case 23 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:98: T35
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:142: T__35
                 {
-                mT35(); 
+                mT__35(); 
 
                 }
                 break;
             case 24 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:102: T36
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:148: T__36
                 {
-                mT36(); 
+                mT__36(); 
 
                 }
                 break;
             case 25 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:106: T37
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:154: T__37
                 {
-                mT37(); 
+                mT__37(); 
 
                 }
                 break;
             case 26 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:110: T38
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:160: T__38
                 {
-                mT38(); 
+                mT__38(); 
 
                 }
                 break;
             case 27 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:114: T39
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:166: T__39
                 {
-                mT39(); 
+                mT__39(); 
 
                 }
                 break;
             case 28 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:118: T40
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:172: T__40
                 {
-                mT40(); 
+                mT__40(); 
 
                 }
                 break;
             case 29 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:122: T41
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:178: T__41
                 {
-                mT41(); 
+                mT__41(); 
 
                 }
                 break;
             case 30 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:126: T42
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:184: T__42
                 {
-                mT42(); 
+                mT__42(); 
 
                 }
                 break;
             case 31 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:130: T43
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:190: T__43
                 {
-                mT43(); 
+                mT__43(); 
 
                 }
                 break;
             case 32 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:134: T44
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:196: T__44
                 {
-                mT44(); 
+                mT__44(); 
 
                 }
                 break;
             case 33 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:138: T45
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:202: T__45
                 {
-                mT45(); 
+                mT__45(); 
 
                 }
                 break;
             case 34 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:142: T46
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:208: T__46
                 {
-                mT46(); 
+                mT__46(); 
 
                 }
                 break;
             case 35 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:146: T47
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:214: T__47
                 {
-                mT47(); 
+                mT__47(); 
 
                 }
                 break;
             case 36 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:150: T48
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:220: T__48
                 {
-                mT48(); 
+                mT__48(); 
 
                 }
                 break;
             case 37 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:154: T49
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:226: T__49
                 {
-                mT49(); 
+                mT__49(); 
 
                 }
                 break;
             case 38 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:158: T50
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:232: T__50
                 {
-                mT50(); 
+                mT__50(); 
 
                 }
                 break;
             case 39 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:162: T51
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:238: T__51
                 {
-                mT51(); 
+                mT__51(); 
 
                 }
                 break;
             case 40 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:166: RULE_NUMBER
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:244: RULE_NUMBER
                 {
                 mRULE_NUMBER(); 
 
                 }
                 break;
             case 41 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:178: RULE_BOOLEAN
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:256: RULE_BOOLEAN
                 {
                 mRULE_BOOLEAN(); 
 
                 }
                 break;
             case 42 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:191: RULE_ID
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:269: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 43 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:199: RULE_INT
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:277: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 44 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:208: RULE_STRING
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:286: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 45 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:220: RULE_ML_COMMENT
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:298: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 46 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:236: RULE_SL_COMMENT
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:314: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 47 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:252: RULE_WS
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:330: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 48 :
-                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:260: RULE_ANY_OTHER
+                // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:1:338: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1809,38 +1904,38 @@ public class InternalActionLanguageLexer extends Lexer {
         "\uffff\1\60\2\uffff\2\60\1\163\1\154\2\uffff\2\145\3\uffff\2\145"+
         "\4\60\1\146\3\uffff\1\60\1\uffff";
     static final String DFA16_maxS =
-        "\1\ufffe\1\76\3\75\1\46\1\174\1\157\1\76\1\uffff\1\57\1\uffff\1"+
+        "\1\uffff\1\76\3\75\1\46\1\174\1\157\1\76\1\uffff\1\57\1\uffff\1"+
         "\172\1\75\1\157\2\uffff\1\157\3\uffff\1\150\1\157\1\146\1\154\2"+
-        "\71\1\uffff\1\162\1\uffff\2\ufffe\22\uffff\1\162\1\uffff\1\76\12"+
+        "\71\1\uffff\1\162\1\uffff\2\uffff\22\uffff\1\162\1\uffff\1\76\12"+
         "\uffff\1\164\2\uffff\1\162\1\154\3\uffff\1\151\2\172\1\163\1\71"+
         "\1\165\2\uffff\1\172\2\uffff\2\172\1\163\1\154\2\uffff\2\145\3\uffff"+
         "\2\145\4\172\1\146\3\uffff\1\172\1\uffff";
     static final String DFA16_acceptS =
         "\11\uffff\1\22\1\uffff\1\24\3\uffff\1\35\1\36\1\uffff\1\40\1\41"+
         "\1\42\6\uffff\1\50\1\uffff\1\52\2\uffff\1\57\1\60\1\4\1\6\1\16\1"+
-        "\30\1\1\1\2\1\7\1\3\1\20\1\5\1\10\1\21\1\12\1\11\1\14\1\13\1\uffff"+
-        "\1\52\1\uffff\1\33\1\26\1\22\1\56\1\55\1\23\1\24\1\25\1\31\1\32"+
+        "\30\1\1\1\2\1\3\1\7\1\20\1\5\1\10\1\21\1\12\1\11\1\14\1\13\1\uffff"+
+        "\1\52\1\uffff\1\33\1\26\1\22\1\55\1\56\1\23\1\24\1\25\1\31\1\32"+
         "\1\uffff\1\35\1\36\2\uffff\1\40\1\41\1\42\6\uffff\1\54\1\57\1\uffff"+
         "\1\17\1\27\4\uffff\1\44\1\45\2\uffff\1\15\1\34\1\37\7\uffff\1\47"+
         "\1\51\1\43\1\uffff\1\46";
     static final String DFA16_specialS =
-        "\151\uffff}>";
+        "\1\0\35\uffff\1\1\1\2\111\uffff}>";
     static final String[] DFA16_transitionS = {
             "\11\41\2\40\2\41\1\40\22\41\1\40\1\41\1\36\2\41\1\13\1\5\1\37"+
             "\1\22\1\24\1\11\1\3\1\41\1\4\1\32\1\12\12\31\1\2\1\23\1\10\1"+
             "\1\1\15\2\41\32\35\3\41\1\14\1\35\1\41\3\35\1\26\1\30\1\21\2"+
             "\35\1\27\4\35\1\16\5\35\1\34\2\35\1\25\1\7\2\35\1\17\1\6\1\20"+
-            "\uff81\41",
+            "\uff82\41",
             "\1\42\1\uffff\1\43\17\uffff\1\45\1\44",
             "\1\47",
-            "\1\50\21\uffff\1\51",
+            "\1\51\21\uffff\1\50",
             "\1\54\17\uffff\1\53",
             "\1\56",
             "\1\60",
             "\1\62",
             "\1\64\1\65",
             "",
-            "\1\71\4\uffff\1\70",
+            "\1\70\4\uffff\1\71",
             "",
             "\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\75",
@@ -1860,8 +1955,8 @@ public class InternalActionLanguageLexer extends Lexer {
             "",
             "\1\114",
             "",
-            "\uffff\115",
-            "\uffff\115",
+            "\0\115",
+            "\0\115",
             "",
             "",
             "",
@@ -1953,7 +2048,7 @@ public class InternalActionLanguageLexer extends Lexer {
         }
     }
 
-    class DFA16 extends DFA {
+    static class DFA16 extends DFA {
 
         public DFA16(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
@@ -1967,7 +2062,109 @@ public class InternalActionLanguageLexer extends Lexer {
             this.transition = DFA16_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | T37 | T38 | T39 | T40 | T41 | T42 | T43 | T44 | T45 | T46 | T47 | T48 | T49 | T50 | T51 | RULE_NUMBER | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | RULE_NUMBER | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            IntStream input = _input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA16_0 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA16_0=='=') ) {s = 1;}
+
+                        else if ( (LA16_0==':') ) {s = 2;}
+
+                        else if ( (LA16_0=='+') ) {s = 3;}
+
+                        else if ( (LA16_0=='-') ) {s = 4;}
+
+                        else if ( (LA16_0=='&') ) {s = 5;}
+
+                        else if ( (LA16_0=='|') ) {s = 6;}
+
+                        else if ( (LA16_0=='x') ) {s = 7;}
+
+                        else if ( (LA16_0=='<') ) {s = 8;}
+
+                        else if ( (LA16_0=='*') ) {s = 9;}
+
+                        else if ( (LA16_0=='/') ) {s = 10;}
+
+                        else if ( (LA16_0=='%') ) {s = 11;}
+
+                        else if ( (LA16_0=='^') ) {s = 12;}
+
+                        else if ( (LA16_0=='>') ) {s = 13;}
+
+                        else if ( (LA16_0=='n') ) {s = 14;}
+
+                        else if ( (LA16_0=='{') ) {s = 15;}
+
+                        else if ( (LA16_0=='}') ) {s = 16;}
+
+                        else if ( (LA16_0=='f') ) {s = 17;}
+
+                        else if ( (LA16_0=='(') ) {s = 18;}
+
+                        else if ( (LA16_0==';') ) {s = 19;}
+
+                        else if ( (LA16_0==')') ) {s = 20;}
+
+                        else if ( (LA16_0=='w') ) {s = 21;}
+
+                        else if ( (LA16_0=='d') ) {s = 22;}
+
+                        else if ( (LA16_0=='i') ) {s = 23;}
+
+                        else if ( (LA16_0=='e') ) {s = 24;}
+
+                        else if ( ((LA16_0>='0' && LA16_0<='9')) ) {s = 25;}
+
+                        else if ( (LA16_0=='.') ) {s = 26;}
+
+                        else if ( (LA16_0=='t') ) {s = 28;}
+
+                        else if ( ((LA16_0>='A' && LA16_0<='Z')||LA16_0=='_'||(LA16_0>='a' && LA16_0<='c')||(LA16_0>='g' && LA16_0<='h')||(LA16_0>='j' && LA16_0<='m')||(LA16_0>='o' && LA16_0<='s')||(LA16_0>='u' && LA16_0<='v')||(LA16_0>='y' && LA16_0<='z')) ) {s = 29;}
+
+                        else if ( (LA16_0=='\"') ) {s = 30;}
+
+                        else if ( (LA16_0=='\'') ) {s = 31;}
+
+                        else if ( ((LA16_0>='\t' && LA16_0<='\n')||LA16_0=='\r'||LA16_0==' ') ) {s = 32;}
+
+                        else if ( ((LA16_0>='\u0000' && LA16_0<='\b')||(LA16_0>='\u000B' && LA16_0<='\f')||(LA16_0>='\u000E' && LA16_0<='\u001F')||LA16_0=='!'||(LA16_0>='#' && LA16_0<='$')||LA16_0==','||(LA16_0>='?' && LA16_0<='@')||(LA16_0>='[' && LA16_0<=']')||LA16_0=='`'||(LA16_0>='~' && LA16_0<='\uFFFF')) ) {s = 33;}
+
+                        else s = 27;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA16_30 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA16_30>='\u0000' && LA16_30<='\uFFFF')) ) {s = 77;}
+
+                        else s = 33;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA16_31 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA16_31>='\u0000' && LA16_31<='\uFFFF')) ) {s = 77;}
+
+                        else s = 33;
+
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 16, _s, input);
+            error(nvae);
+            throw nvae;
         }
     }
  
