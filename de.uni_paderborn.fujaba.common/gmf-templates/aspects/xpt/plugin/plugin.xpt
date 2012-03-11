@@ -1,6 +1,7 @@
 ﻿«AROUND additions FOR gmfgen::GenPlugin»
    <extension
          point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
+   «EXPAND xpt::Common::xmlGeneratedTag»   
       <factory
             class="de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomItemProviderFactory"
             pluginid="«self.iD»"
