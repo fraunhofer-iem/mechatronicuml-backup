@@ -638,6 +638,7 @@
 
    <extension
          point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
+   <?gmfgen generated="true"?>
       <factory
             class="de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomItemProviderFactory"
             pluginid="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
