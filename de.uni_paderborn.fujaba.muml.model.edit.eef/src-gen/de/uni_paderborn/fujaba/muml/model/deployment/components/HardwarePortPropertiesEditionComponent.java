@@ -202,7 +202,7 @@ public class HardwarePortPropertiesEditionComponent extends SinglePartProperties
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == DeploymentViewsRepository.HardwarePort.Properties.hardwareNode) {
 			return DeploymentPackage.eINSTANCE.getHardwarePort_HardwareNode();
 		}

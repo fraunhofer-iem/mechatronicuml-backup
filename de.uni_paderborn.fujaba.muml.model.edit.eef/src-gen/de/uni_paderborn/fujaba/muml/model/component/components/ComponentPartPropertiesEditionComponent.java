@@ -242,7 +242,7 @@ public class ComponentPartPropertiesEditionComponent extends SinglePartPropertie
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == ComponentViewsRepository.ComponentPart.Properties.comment) {
 			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
 		}
