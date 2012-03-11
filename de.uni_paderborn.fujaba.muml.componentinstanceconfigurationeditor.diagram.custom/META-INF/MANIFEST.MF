@@ -21,3 +21,4 @@ Export-Package: de.uni_paderborn.fujaba.muml.componentinstanceconfigurationedito
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.parts,
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.policies,
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.providers
+Bundle-ActivationPolicy: lazy
