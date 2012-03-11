@@ -11,9 +11,9 @@ import org.eclipse.ocl.Environment;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.EcoreFactory;
-import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
+import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.options.ParsingOptions;
 
 /**
@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[21];
+		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[12];
 	}
 
 	/**
@@ -61,15 +61,6 @@ public class MumlOCLFactory {
 					"\'port\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"\'port\'", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"\'port\'", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"\'port\'", //$NON-NLS-1$
 					"if self.componentType.oclIsUndefined() then\n    \'null\'\nelse\n\tself.componentType.name.concat(\' [\'.concat(\n\t(\n\tif not (self.cardinality.lowerBound.infinity xor self.cardinality.upperBound.infinity) and self.cardinality.lowerBound.value = self.cardinality.upperBound.value then\n\t\tself.cardinality.lowerBound.toString()\n\telse\n\t\tself.cardinality.lowerBound.toString().concat(\'..\'.concat(self.cardinality.upperBound.toString()))\n\tendif\n\t)\n\t).concat(\']\'))\nendif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

@@ -225,7 +225,7 @@ public class ElementInitializers {
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							11,
+							0,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
@@ -240,7 +240,7 @@ public class ElementInitializers {
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							12,
+							1,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -252,7 +252,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							13,
+							2,
 							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 									.getHybridPort(), null).evaluate(instance);
 			instance.setName((String) value_1);
@@ -276,7 +276,7 @@ public class ElementInitializers {
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							14,
+							3,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
@@ -291,7 +291,7 @@ public class ElementInitializers {
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							15,
+							4,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -303,7 +303,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							16,
+							5,
 							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 									.getDiscretePort(), null)
 					.evaluate(instance);
@@ -328,7 +328,7 @@ public class ElementInitializers {
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							17,
+							6,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
@@ -343,7 +343,7 @@ public class ElementInitializers {
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							18,
+							7,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -355,7 +355,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							19,
+							8,
 							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 									.getContinuousPort(), null).evaluate(
 							instance);

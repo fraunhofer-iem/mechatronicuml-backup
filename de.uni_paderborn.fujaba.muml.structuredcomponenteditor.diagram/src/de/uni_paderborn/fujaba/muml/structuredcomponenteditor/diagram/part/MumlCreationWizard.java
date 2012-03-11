@@ -29,4 +29,5 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor.ID;
 
 	}
+
 }

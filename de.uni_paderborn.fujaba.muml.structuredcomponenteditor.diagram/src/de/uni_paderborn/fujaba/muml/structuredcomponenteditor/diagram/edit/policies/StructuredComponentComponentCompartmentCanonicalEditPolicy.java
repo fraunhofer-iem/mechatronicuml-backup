@@ -26,7 +26,6 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class StructuredComponentComponentCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
 
 	public StructuredComponentComponentCompartmentCanonicalEditPolicy() {
@@ -73,6 +72,7 @@ public class StructuredComponentComponentCompartmentCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
+
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
