@@ -186,11 +186,6 @@ public class AtomiccomponentNavigatorContentProvider implements
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(
-					selectViewsByType(
-							topViews,
-							de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID),
-					file, false));
 			return result.toArray();
 		}
 
