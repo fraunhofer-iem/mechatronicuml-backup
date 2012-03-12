@@ -26,11 +26,9 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
-import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
@@ -105,7 +103,7 @@ public class RegionItemProvider
 	 * @generated NOT
 	 */
 	protected void addStatechartPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor statechartPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+		ItemPropertyDescriptor statechartPropertyDescriptor = new ItemPropertyDescriptor(
 				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Region_statechart_feature"),
@@ -150,20 +148,36 @@ public class RegionItemProvider
 		};
 		
 		itemPropertyDescriptors.add(statechartPropertyDescriptor);
-		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_RealtimeStatechart_clocks_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_clocks_feature", "_UI_RealtimeStatechart_type"),
-			 RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS,
-			 true,
-			 false,
-			 false,
-			 null,
-			 getString("_UI_StatechartPropertyCategory"),
-			 null,
-			 statechartPropertyDescriptor));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__STATECHART);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -206,6 +220,9 @@ public class RegionItemProvider
 			case RealtimestatechartPackage.REGION__PRIORITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case RealtimestatechartPackage.REGION__STATECHART:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -220,6 +237,11 @@ public class RegionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__STATECHART,
+				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 	}
 
 	/**
