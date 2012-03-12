@@ -116,7 +116,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
             modelId="Atomiccomponent">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/modelinstance/0.2.1"
+               packageNsURI="http://www.fujaba.de/modelinstance/0.2.4"
                className="ModelElementCategory">
          </diagramElement>
          
@@ -420,7 +420,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.2.1">
+      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.2.4">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
