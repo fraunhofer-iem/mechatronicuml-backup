@@ -20,7 +20,7 @@ public class ContinuousPortItemSemanticEditPolicy
 	 */
 	public ContinuousPortItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3003);
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3007);
 	}
 
 	/**

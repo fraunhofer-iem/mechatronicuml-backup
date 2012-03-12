@@ -2,8 +2,6 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -16,12 +14,12 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 public class ComponentInstanceComponentInstanceContentsCompartmentEditPart
-		extends ListCompartmentEditPart {
+		extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7002;
+	public static final int VISUAL_ID = 7007;
 
 	/**
 	 * @generated
@@ -29,13 +27,6 @@ public class ComponentInstanceComponentInstanceContentsCompartmentEditPart
 	public ComponentInstanceComponentInstanceContentsCompartmentEditPart(
 			View view) {
 		super(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected boolean hasModelChildrenChanged(Notification evt) {
-		return false;
 	}
 
 	/**
@@ -91,24 +82,6 @@ public class ComponentInstanceComponentInstanceContentsCompartmentEditPart
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void refreshVisibility() {
-		final View notationView = getNotationView();
-		final boolean hasChildren = notationView.getChildren().size() > 0;
-		setVisibility(hasChildren);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	protected void handleNotificationEvent(Notification event) {
-		refreshVisibility();
-		super.handleNotificationEvent(event);
 	}
 
 }

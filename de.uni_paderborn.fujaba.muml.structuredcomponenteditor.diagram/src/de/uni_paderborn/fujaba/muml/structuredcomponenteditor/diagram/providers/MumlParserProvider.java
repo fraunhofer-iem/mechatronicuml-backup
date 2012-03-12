@@ -23,149 +23,149 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser structuredComponentName_5010Parser;
+	protected IParser structuredComponentName_5018Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getStructuredComponentName_5010Parser() {
-		if (structuredComponentName_5010Parser == null) {
+	protected IParser getStructuredComponentName_5018Parser() {
+		if (structuredComponentName_5018Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			structuredComponentName_5010Parser = parser;
+			structuredComponentName_5018Parser = parser;
 		}
-		return structuredComponentName_5010Parser;
+		return structuredComponentName_5018Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser hybridPortName_5001Parser;
+	protected IParser hybridPortName_5011Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getHybridPortName_5001Parser() {
-		if (hybridPortName_5001Parser == null) {
+	protected IParser getHybridPortName_5011Parser() {
+		if (hybridPortName_5011Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			hybridPortName_5001Parser = parser;
+			hybridPortName_5011Parser = parser;
 		}
-		return hybridPortName_5001Parser;
+		return hybridPortName_5011Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser discretePortName_5002Parser;
+	protected IParser discretePortName_5012Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getDiscretePortName_5002Parser() {
-		if (discretePortName_5002Parser == null) {
+	protected IParser getDiscretePortName_5012Parser() {
+		if (discretePortName_5012Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			discretePortName_5002Parser = parser;
+			discretePortName_5012Parser = parser;
 		}
-		return discretePortName_5002Parser;
+		return discretePortName_5012Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser continuousPortName_5003Parser;
+	protected IParser continuousPortName_5013Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getContinuousPortName_5003Parser() {
-		if (continuousPortName_5003Parser == null) {
+	protected IParser getContinuousPortName_5013Parser() {
+		if (continuousPortName_5013Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			continuousPortName_5003Parser = parser;
+			continuousPortName_5013Parser = parser;
 		}
-		return continuousPortName_5003Parser;
+		return continuousPortName_5013Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5009 componentPartLabel_5009Parser;
+	protected de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5017 componentPartLabel_5017Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getComponentPartLabel_5009Parser() {
-		if (componentPartLabel_5009Parser == null) {
-			componentPartLabel_5009Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5009();
+	protected IParser getComponentPartLabel_5017Parser() {
+		if (componentPartLabel_5017Parser == null) {
+			componentPartLabel_5017Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5017();
 		}
-		return componentPartLabel_5009Parser;
+		return componentPartLabel_5017Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser hybridPortName_5005Parser;
+	protected IParser hybridPortName_5014Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getHybridPortName_5005Parser() {
-		if (hybridPortName_5005Parser == null) {
+	protected IParser getHybridPortName_5014Parser() {
+		if (hybridPortName_5014Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			hybridPortName_5005Parser = parser;
+			hybridPortName_5014Parser = parser;
 		}
-		return hybridPortName_5005Parser;
+		return hybridPortName_5014Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser discretePortName_5006Parser;
+	protected IParser discretePortName_5015Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getDiscretePortName_5006Parser() {
-		if (discretePortName_5006Parser == null) {
+	protected IParser getDiscretePortName_5015Parser() {
+		if (discretePortName_5015Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			discretePortName_5006Parser = parser;
+			discretePortName_5015Parser = parser;
 		}
-		return discretePortName_5006Parser;
+		return discretePortName_5015Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser continuousPortName_5007Parser;
+	protected IParser continuousPortName_5016Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getContinuousPortName_5007Parser() {
-		if (continuousPortName_5007Parser == null) {
+	protected IParser getContinuousPortName_5016Parser() {
+		if (continuousPortName_5016Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			continuousPortName_5007Parser = parser;
+			continuousPortName_5016Parser = parser;
 		}
-		return continuousPortName_5007Parser;
+		return continuousPortName_5016Parser;
 	}
 
 	/**
@@ -174,21 +174,21 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentNameEditPart.VISUAL_ID:
-			return getStructuredComponentName_5010Parser();
+			return getStructuredComponentName_5018Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID:
-			return getHybridPortName_5001Parser();
+			return getHybridPortName_5011Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
-			return getDiscretePortName_5002Parser();
+			return getDiscretePortName_5012Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
-			return getContinuousPortName_5003Parser();
+			return getContinuousPortName_5013Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getComponentPartLabel_5009Parser();
+			return getComponentPartLabel_5017Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortName2EditPart.VISUAL_ID:
-			return getHybridPortName_5005Parser();
+			return getHybridPortName_5014Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortName2EditPart.VISUAL_ID:
-			return getDiscretePortName_5006Parser();
+			return getDiscretePortName_5015Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortName2EditPart.VISUAL_ID:
-			return getContinuousPortName_5007Parser();
+			return getContinuousPortName_5016Parser();
 		}
 		return null;
 	}

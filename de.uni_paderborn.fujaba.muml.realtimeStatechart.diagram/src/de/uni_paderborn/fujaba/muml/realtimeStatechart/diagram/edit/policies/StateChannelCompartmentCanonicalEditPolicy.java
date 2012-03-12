@@ -97,7 +97,7 @@ public class StateChannelCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getStateChannelCompartment_7015SemanticChildren(viewObject);
+				.getStateChannelCompartment_7022SemanticChildren(viewObject);
 
 	}
 

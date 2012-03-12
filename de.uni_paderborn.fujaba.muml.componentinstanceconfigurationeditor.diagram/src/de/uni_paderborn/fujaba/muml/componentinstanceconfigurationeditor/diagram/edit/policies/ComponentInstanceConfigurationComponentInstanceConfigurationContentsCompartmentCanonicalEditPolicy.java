@@ -98,7 +98,7 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
-				.getComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartment_7003SemanticChildren(viewObject);
+				.getComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartment_7009SemanticChildren(viewObject);
 
 	}
 

@@ -4,11 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.impl;
 
 // Start of user code for imports
-
-
-
-
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -77,7 +72,9 @@ public class StateExitPointPropertiesEditionPartImpl extends CompositeProperties
 	protected List<ViewerFilter> incomingTransitionsFilters = new ArrayList<ViewerFilter>();
 	protected EObjectFlatComboViewer statechart;
 	protected EObjectFlatComboViewer state;
-	protected EObjectFlatComboViewer exitPoint;
+	protected ReferencesTable exitPoint;
+	protected List<ViewerFilter> exitPointBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> exitPointFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -147,7 +144,7 @@ public class StateExitPointPropertiesEditionPartImpl extends CompositeProperties
 					return createStateFlatComboViewer(parent);
 				}
 				if (key == RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint) {
-					return createExitPointFlatComboViewer(parent);
+					return createExitPointAdvancedReferencesTable(parent);
 				}
 				return parent;
 			}
@@ -425,26 +422,84 @@ public class StateExitPointPropertiesEditionPartImpl extends CompositeProperties
 	}
 
 	/**
-	 * @param parent the parent composite
 	 * 
 	 */
-	protected Composite createExitPointFlatComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, RealtimestatechartMessages.StateExitPointPropertiesEditionPart_ExitPointLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint, RealtimestatechartViewsRepository.SWT_KIND));
-		exitPoint = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint, RealtimestatechartViewsRepository.SWT_KIND));
-		exitPoint.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-		exitPoint.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			public void selectionChanged(SelectionChangedEvent event) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateExitPointPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, null, getExitPoint()));
+	protected Composite createExitPointAdvancedReferencesTable(Composite parent) {
+		this.exitPoint = new ReferencesTable(RealtimestatechartMessages.StateExitPointPropertiesEditionPart_ExitPointLabel, new ReferencesTableListener() {
+			public void handleAdd() { addExitPoint(); }
+			public void handleEdit(EObject element) { editExitPoint(element); }
+			public void handleMove(EObject element, int oldIndex, int newIndex) { moveExitPoint(element, oldIndex, newIndex); }
+			public void handleRemove(EObject element) { removeFromExitPoint(element); }
+			public void navigateTo(EObject element) { }
+		});
+		this.exitPoint.setHelpText(propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint, RealtimestatechartViewsRepository.SWT_KIND));
+		this.exitPoint.createControls(parent);
+		this.exitPoint.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateExitPointPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
 			}
-
+			
 		});
 		GridData exitPointData = new GridData(GridData.FILL_HORIZONTAL);
-		exitPoint.setLayoutData(exitPointData);
+		exitPointData.horizontalSpan = 3;
+		this.exitPoint.setLayoutData(exitPointData);
+		this.exitPoint.disableMove();
 		exitPoint.setID(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		exitPoint.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
 		return parent;
+	}
+
+	/**
+	 * 
+	 */
+	protected void addExitPoint() {
+		TabElementTreeSelectionDialog dialog = new TabElementTreeSelectionDialog(exitPoint.getInput(), exitPointFilters, exitPointBusinessFilters,
+		"exitPoint", propertiesEditionComponent.getEditingContext().getAdapterFactory(), current.eResource()) {
+			@Override
+			public void process(IStructuredSelection selection) {
+				for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
+					EObject elem = (EObject) iter.next();
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateExitPointPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint,
+						PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, elem));
+				}
+				exitPoint.refresh();
+			}
+		};
+		dialog.open();
+	}
+
+	/**
+	 * 
+	 */
+	protected void moveExitPoint(EObject element, int oldIndex, int newIndex) {
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateExitPointPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+		exitPoint.refresh();
+	}
+
+	/**
+	 * 
+	 */
+	protected void removeFromExitPoint(EObject element) {
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateExitPointPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+		exitPoint.refresh();
+	}
+
+	/**
+	 * 
+	 */
+	protected void editExitPoint(EObject element) {
+		EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
+		PropertiesEditingProvider provider = (PropertiesEditingProvider)adapterFactory.adapt(element, PropertiesEditingProvider.class);
+		if (provider != null) {
+			PropertiesEditingPolicy policy = provider.getPolicy(context);
+			if (policy != null) {
+				policy.execute();
+				exitPoint.refresh();
+			}
+		}
 	}
 
 
@@ -457,8 +512,8 @@ public class StateExitPointPropertiesEditionPartImpl extends CompositeProperties
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**
@@ -740,55 +795,30 @@ public class StateExitPointPropertiesEditionPartImpl extends CompositeProperties
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateExitPointPropertiesEditionPart#getExitPoint()
-	 * 
-	 */
-	public EObject getExitPoint() {
-		if (exitPoint.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) exitPoint.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
-				return (EObject) firstElement;
-		}
-		return null;
-	}
+
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateExitPointPropertiesEditionPart#initExitPoint(EObjectFlatComboSettings)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateExitPointPropertiesEditionPart#initExitPoint(org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings)
 	 */
-	public void initExitPoint(EObjectFlatComboSettings settings) {
+	public void initExitPoint(ReferencesTableSettings settings) {
+		if (current.eResource() != null && current.eResource().getResourceSet() != null)
+			this.resourceSet = current.eResource().getResourceSet();
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		exitPoint.setContentProvider(contentProvider);
 		exitPoint.setInput(settings);
-		if (current != null) {
-			exitPoint.setSelection(new StructuredSelection(settings.getValue()));
-		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateExitPointPropertiesEditionPart#setExitPoint(EObject newValue)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateExitPointPropertiesEditionPart#updateExitPoint()
 	 * 
 	 */
-	public void setExitPoint(EObject newValue) {
-		if (newValue != null) {
-			exitPoint.setSelection(new StructuredSelection(newValue));
-		} else {
-			exitPoint.setSelection(new StructuredSelection()); //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateExitPointPropertiesEditionPart#setExitPointButtonMode(ButtonsModeEnum newValue)
-	 */
-	public void setExitPointButtonMode(ButtonsModeEnum newValue) {
-		exitPoint.setButtonMode(newValue);
-	}
+	public void updateExitPoint() {
+	exitPoint.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -797,7 +827,7 @@ public class StateExitPointPropertiesEditionPartImpl extends CompositeProperties
 	 * 
 	 */
 	public void addFilterToExitPoint(ViewerFilter filter) {
-		exitPoint.addFilter(filter);
+		exitPointFilters.add(filter);
 	}
 
 	/**
@@ -807,7 +837,17 @@ public class StateExitPointPropertiesEditionPartImpl extends CompositeProperties
 	 * 
 	 */
 	public void addBusinessFilterToExitPoint(ViewerFilter filter) {
-		exitPoint.addBusinessRuleFilter(filter);
+		exitPointBusinessFilters.add(filter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateExitPointPropertiesEditionPart#isContainedInExitPointTable(EObject element)
+	 * 
+	 */
+	public boolean isContainedInExitPointTable(EObject element) {
+		return ((ReferencesTableSettings)exitPoint.getInput()).contains(element);
 	}
 
 

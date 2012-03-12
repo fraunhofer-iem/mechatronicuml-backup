@@ -66,7 +66,7 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateDelegationInstance_4004(
+				.getLinkConstraints().canCreateDelegationInstance_4006(
 						getContainer(), getSource(), getTarget());
 	}
 

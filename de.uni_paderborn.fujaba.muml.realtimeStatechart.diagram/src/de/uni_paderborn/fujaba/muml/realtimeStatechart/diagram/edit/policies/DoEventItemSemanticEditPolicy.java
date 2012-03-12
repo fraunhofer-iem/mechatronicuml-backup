@@ -20,7 +20,7 @@ public class DoEventItemSemanticEditPolicy
 	 */
 	public DoEventItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.DoEvent_3002);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.DoEvent_3019);
 	}
 
 	/**

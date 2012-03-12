@@ -98,7 +98,7 @@ public class RealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getRealtimeStatechartStatechartContentsCompartment_7018SemanticChildren(viewObject);
+				.getRealtimeStatechartStatechartContentsCompartment_7019SemanticChildren(viewObject);
 
 	}
 

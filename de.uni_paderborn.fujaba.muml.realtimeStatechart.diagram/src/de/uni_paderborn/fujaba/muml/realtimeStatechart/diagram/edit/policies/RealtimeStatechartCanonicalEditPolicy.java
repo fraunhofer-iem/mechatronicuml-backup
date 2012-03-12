@@ -96,7 +96,7 @@ public class RealtimeStatechartCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getRealtimeStatechart_2005SemanticChildren(viewObject);
+				.getRealtimeStatechart_2006SemanticChildren(viewObject);
 
 	}
 

@@ -4,12 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.pattern.parts.forms;
 
 // Start of user code for imports
-
-
-
-
-
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -85,7 +79,6 @@ public class RolePropertiesEditionPartForm extends CompositePropertiesEditionPar
 	protected EObjectFlatComboViewer adaptationBehavior;
 	protected EObjectFlatComboViewer roleAndAdaptationBehavior;
 	protected Button ordered;
-	protected EObjectFlatComboViewer orderVariable;
 	protected EObjectFlatComboViewer outgoingRoleConnector;
 
 
@@ -137,7 +130,6 @@ public class RolePropertiesEditionPartForm extends CompositePropertiesEditionPar
 		propertiesStep.addStep(PatternViewsRepository.Role.Properties.adaptationBehavior);
 		propertiesStep.addStep(PatternViewsRepository.Role.Properties.roleAndAdaptationBehavior);
 		propertiesStep.addStep(PatternViewsRepository.Role.Properties.ordered);
-		propertiesStep.addStep(PatternViewsRepository.Role.Properties.orderVariable);
 		propertiesStep.addStep(PatternViewsRepository.Role.Properties.outgoingRoleConnector);
 		
 		
@@ -177,9 +169,6 @@ public class RolePropertiesEditionPartForm extends CompositePropertiesEditionPar
 				}
 				if (key == PatternViewsRepository.Role.Properties.ordered) {
 					return createOrderedCheckbox(widgetFactory, parent);
-				}
-				if (key == PatternViewsRepository.Role.Properties.orderVariable) {
-					return createOrderVariableFlatComboViewer(parent, widgetFactory);
 				}
 				if (key == PatternViewsRepository.Role.Properties.outgoingRoleConnector) {
 					return createOutgoingRoleConnectorFlatComboViewer(parent, widgetFactory);
@@ -568,36 +557,6 @@ public class RolePropertiesEditionPartForm extends CompositePropertiesEditionPar
 	 * @param widgetFactory factory to use to instanciante widget of the form
 	 * 
 	 */
-	protected Composite createOrderVariableFlatComboViewer(Composite parent, FormToolkit widgetFactory) {
-		FormUtils.createPartLabel(widgetFactory, parent, PatternMessages.RolePropertiesEditionPart_OrderVariableLabel, propertiesEditionComponent.isRequired(PatternViewsRepository.Role.Properties.orderVariable, PatternViewsRepository.FORM_KIND));
-		orderVariable = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(PatternViewsRepository.Role.Properties.orderVariable, PatternViewsRepository.FORM_KIND));
-		widgetFactory.adapt(orderVariable);
-		orderVariable.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-		GridData orderVariableData = new GridData(GridData.FILL_HORIZONTAL);
-		orderVariable.setLayoutData(orderVariableData);
-		orderVariable.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
-			 */
-			public void selectionChanged(SelectionChangedEvent event) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RolePropertiesEditionPartForm.this, PatternViewsRepository.Role.Properties.orderVariable, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getOrderVariable()));
-			}
-
-		});
-		orderVariable.setID(PatternViewsRepository.Role.Properties.orderVariable);
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(PatternViewsRepository.Role.Properties.orderVariable, PatternViewsRepository.FORM_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
-	/**
-	 * @param parent the parent composite
-	 * @param widgetFactory factory to use to instanciante widget of the form
-	 * 
-	 */
 	protected Composite createOutgoingRoleConnectorFlatComboViewer(Composite parent, FormToolkit widgetFactory) {
 		FormUtils.createPartLabel(widgetFactory, parent, PatternMessages.RolePropertiesEditionPart_OutgoingRoleConnectorLabel, propertiesEditionComponent.isRequired(PatternViewsRepository.Role.Properties.outgoingRoleConnector, PatternViewsRepository.FORM_KIND));
 		outgoingRoleConnector = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(PatternViewsRepository.Role.Properties.outgoingRoleConnector, PatternViewsRepository.FORM_KIND));
@@ -633,8 +592,8 @@ public class RolePropertiesEditionPartForm extends CompositePropertiesEditionPar
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**
@@ -1237,77 +1196,6 @@ public class RolePropertiesEditionPartForm extends CompositePropertiesEditionPar
 		} else {
 			ordered.setSelection(false);
 		}
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#getOrderVariable()
-	 * 
-	 */
-	public EObject getOrderVariable() {
-		if (orderVariable.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) orderVariable.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
-				return (EObject) firstElement;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#initOrderVariable(EObjectFlatComboSettings)
-	 */
-	public void initOrderVariable(EObjectFlatComboSettings settings) {
-		orderVariable.setInput(settings);
-		if (current != null) {
-			orderVariable.setSelection(new StructuredSelection(settings.getValue()));
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#setOrderVariable(EObject newValue)
-	 * 
-	 */
-	public void setOrderVariable(EObject newValue) {
-		if (newValue != null) {
-			orderVariable.setSelection(new StructuredSelection(newValue));
-		} else {
-			orderVariable.setSelection(new StructuredSelection()); //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#setOrderVariableButtonMode(ButtonsModeEnum newValue)
-	 */
-	public void setOrderVariableButtonMode(ButtonsModeEnum newValue) {
-		orderVariable.setButtonMode(newValue);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#addFilterOrderVariable(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToOrderVariable(ViewerFilter filter) {
-		orderVariable.addFilter(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#addBusinessFilterOrderVariable(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToOrderVariable(ViewerFilter filter) {
-		orderVariable.addBusinessRuleFilter(filter);
 	}
 
 

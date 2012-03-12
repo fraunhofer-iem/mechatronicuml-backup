@@ -20,7 +20,7 @@ public class ClockConstraintItemSemanticEditPolicy
 	 */
 	public ClockConstraintItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ClockConstraint_3004);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ClockConstraint_3021);
 	}
 
 	/**

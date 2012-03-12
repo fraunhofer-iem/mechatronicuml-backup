@@ -51,43 +51,52 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StructuredComponent_2001 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StructuredComponent_2001"); //$NON-NLS-1$
+	public static final IElementType StructuredComponent_2002 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StructuredComponent_2002"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType HybridPort_3001 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3001"); //$NON-NLS-1$
+	public static final IElementType HybridPort_3009 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3009"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType DiscretePort_3002 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3002"); //$NON-NLS-1$
+	public static final IElementType DiscretePort_3010 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3010"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType ContinuousPort_3003 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3003"); //$NON-NLS-1$
+	public static final IElementType ContinuousPort_3011 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3011"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentPart_3005 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3005"); //$NON-NLS-1$
+	public static final IElementType ComponentPart_3012 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3012"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType HybridPort_3006 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3006"); //$NON-NLS-1$
+	public static final IElementType HybridPort_3013 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3013"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType DiscretePort_3007 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3007"); //$NON-NLS-1$
+	public static final IElementType DiscretePort_3014 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3014"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType ContinuousPort_3008 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3008"); //$NON-NLS-1$
+	public static final IElementType ContinuousPort_3015 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3015"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType Delegation_4001 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Delegation_4001"); //$NON-NLS-1$
+	public static final IElementType Delegation_4003 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Delegation_4003"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType Assembly_4002 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Assembly_4002"); //$NON-NLS-1$
+	public static final IElementType Assembly_4004 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Assembly_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -204,52 +213,52 @@ public class MumlElementTypes {
 					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					StructuredComponent_2001,
+					StructuredComponent_2002,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getStructuredComponent());
 
 			elements.put(
-					HybridPort_3001,
+					HybridPort_3009,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getHybridPort());
 
 			elements.put(
-					DiscretePort_3002,
+					DiscretePort_3010,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getDiscretePort());
 
 			elements.put(
-					ContinuousPort_3003,
+					ContinuousPort_3011,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
 
 			elements.put(
-					ComponentPart_3005,
+					ComponentPart_3012,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getComponentPart());
 
 			elements.put(
-					HybridPort_3006,
+					HybridPort_3013,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getHybridPort());
 
 			elements.put(
-					DiscretePort_3007,
+					DiscretePort_3014,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getDiscretePort());
 
 			elements.put(
-					ContinuousPort_3008,
+					ContinuousPort_3015,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
 
 			elements.put(
-					Delegation_4001,
+					Delegation_4003,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getDelegation());
 
 			elements.put(
-					Assembly_4002,
+					Assembly_4004,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getAssembly());
 		}
@@ -270,16 +279,16 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(StructuredComponent_2001);
-			KNOWN_ELEMENT_TYPES.add(HybridPort_3001);
-			KNOWN_ELEMENT_TYPES.add(DiscretePort_3002);
-			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3003);
-			KNOWN_ELEMENT_TYPES.add(ComponentPart_3005);
-			KNOWN_ELEMENT_TYPES.add(HybridPort_3006);
-			KNOWN_ELEMENT_TYPES.add(DiscretePort_3007);
-			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3008);
-			KNOWN_ELEMENT_TYPES.add(Delegation_4001);
-			KNOWN_ELEMENT_TYPES.add(Assembly_4002);
+			KNOWN_ELEMENT_TYPES.add(StructuredComponent_2002);
+			KNOWN_ELEMENT_TYPES.add(HybridPort_3009);
+			KNOWN_ELEMENT_TYPES.add(DiscretePort_3010);
+			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3011);
+			KNOWN_ELEMENT_TYPES.add(ComponentPart_3012);
+			KNOWN_ELEMENT_TYPES.add(HybridPort_3013);
+			KNOWN_ELEMENT_TYPES.add(DiscretePort_3014);
+			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3015);
+			KNOWN_ELEMENT_TYPES.add(Delegation_4003);
+			KNOWN_ELEMENT_TYPES.add(Assembly_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -292,25 +301,25 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID:
-			return StructuredComponent_2001;
+			return StructuredComponent_2002;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return HybridPort_3001;
+			return HybridPort_3009;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-			return DiscretePort_3002;
+			return DiscretePort_3010;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-			return ContinuousPort_3003;
+			return ContinuousPort_3011;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-			return ComponentPart_3005;
+			return ComponentPart_3012;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID:
-			return HybridPort_3006;
+			return HybridPort_3013;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart.VISUAL_ID:
-			return DiscretePort_3007;
+			return DiscretePort_3014;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart.VISUAL_ID:
-			return ContinuousPort_3008;
+			return ContinuousPort_3015;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
-			return Delegation_4001;
+			return Delegation_4003;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
-			return Assembly_4002;
+			return Assembly_4004;
 		}
 		return null;
 	}

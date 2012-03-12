@@ -12,33 +12,12 @@
       </editpartProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.1">
-      
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"
-		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.helpers.ComponentInstanceEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>
-
-      </metamodel>
-   </extension>
-
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"/>
-      </binding>
-   </extension>
-
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.providers.CustomComponentinstanceconfigurationParserProvider">
          <Priority name="Low"/>
       </ParserProvider>
    </extension>
 
-
-   <!-- this was moved into plugin.xml of the generated editor -->
    <extension
          point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
       <factory

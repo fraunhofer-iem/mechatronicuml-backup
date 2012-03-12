@@ -5,10 +5,10 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5002;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5018;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 
-public class CustomComponentInstanceLabelExpressionLabelParser5002 extends ComponentInstanceLabelExpressionLabelParser5002 {
+public class CustomComponentInstanceLabelExpressionLabelParser5018 extends ComponentInstanceLabelExpressionLabelParser5018 {
 
 	@Override
 	protected IStatus updateValues(EObject target, String newString)

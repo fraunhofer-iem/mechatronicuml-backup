@@ -71,7 +71,7 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistMessageInterfaceSuperType_4003(
+				.getLinkConstraints().canExistMessageInterfaceSuperType_4004(
 						getNewSource(), getOldTarget());
 	}
 
@@ -83,7 +83,7 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistMessageInterfaceSuperType_4003(
+				.getLinkConstraints().canExistMessageInterfaceSuperType_4004(
 						getOldSource(), getNewTarget());
 	}
 

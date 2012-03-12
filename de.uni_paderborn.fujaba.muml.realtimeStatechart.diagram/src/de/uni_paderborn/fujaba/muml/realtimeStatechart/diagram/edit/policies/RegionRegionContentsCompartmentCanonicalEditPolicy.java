@@ -98,7 +98,7 @@ public class RegionRegionContentsCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getRegionRegionContentsCompartment_7003SemanticChildren(viewObject);
+				.getRegionRegionContentsCompartment_7024SemanticChildren(viewObject);
 
 	}
 

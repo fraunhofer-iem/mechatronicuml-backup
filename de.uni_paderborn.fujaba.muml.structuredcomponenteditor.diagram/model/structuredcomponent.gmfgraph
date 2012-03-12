@@ -48,6 +48,11 @@
           dy="24"/>
     </facets>
   </nodes>
+  <nodes
+      name="CoordinationPattern">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.patterneditor.diagram/model/pattern.gmfgraph#CoordinationPatternFigure"/>
+  </nodes>
   <connections
       name="Delegation">
     <figure
@@ -57,6 +62,11 @@
       name="Assembly">
     <figure
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ConnectorFigure"/>
+  </connections>
+  <connections
+      name="Refinement">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.patterneditor.diagram/model/pattern.gmfgraph#RolePatternFigure"/>
   </connections>
   <compartments
       name="ComponentCompartment">

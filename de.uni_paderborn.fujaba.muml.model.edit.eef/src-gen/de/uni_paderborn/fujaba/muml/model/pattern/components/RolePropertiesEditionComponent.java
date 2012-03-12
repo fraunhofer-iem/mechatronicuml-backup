@@ -8,10 +8,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -103,11 +101,6 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 	private	EObjectFlatComboSettings roleAndAdaptationBehaviorSettings;
 	
 	/**
-	 * Settings for orderVariable EObjectFlatComboViewer
-	 */
-	private	EObjectFlatComboSettings orderVariableSettings;
-	
-	/**
 	 * Settings for outgoingRoleConnector EObjectFlatComboViewer
 	 */
 	private	EObjectFlatComboSettings outgoingRoleConnectorSettings;
@@ -196,13 +189,6 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 			}
 			if (isAccessible(PatternViewsRepository.Role.Properties.ordered)) {
 				basePart.setOrdered(role.isOrdered());
-			}
-			if (isAccessible(PatternViewsRepository.Role.Properties.orderVariable)) {
-				// init part
-				orderVariableSettings = new EObjectFlatComboSettings(role, PatternPackage.eINSTANCE.getRole_OrderVariable());
-				basePart.initOrderVariable(orderVariableSettings);
-				// set the button mode
-				basePart.setOrderVariableButtonMode(ButtonsModeEnum.BROWSE);
 			}
 			if (isAccessible(PatternViewsRepository.Role.Properties.outgoingRoleConnector)) {
 				// init part
@@ -337,21 +323,6 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 			// End of user code
 			
 			
-			basePart.addFilterToOrderVariable(new ViewerFilter() {
-			
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-			 */
-			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				return (element instanceof String && element.equals("")) || (element instanceof EAttribute); //$NON-NLS-1$ 
-				}
-			
-			});
-			// Start of user code for additional businessfilters for orderVariable
-			// End of user code
-			
 			basePart.addFilterToOutgoingRoleConnector(new ViewerFilter() {
 			
 			/**
@@ -374,7 +345,6 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 		}
 		setInitializing(false);
 	}
-
 
 
 
@@ -423,9 +393,6 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 		}
 		if (editorKey == PatternViewsRepository.Role.Properties.ordered) {
 			return PatternPackage.eINSTANCE.getRole_Ordered();
-		}
-		if (editorKey == PatternViewsRepository.Role.Properties.orderVariable) {
-			return PatternPackage.eINSTANCE.getRole_OrderVariable();
 		}
 		if (editorKey == PatternViewsRepository.Role.Properties.outgoingRoleConnector) {
 			return PatternPackage.eINSTANCE.getRole_OutgoingRoleConnector();
@@ -563,22 +530,6 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 		if (PatternViewsRepository.Role.Properties.ordered == event.getAffectedEditor()) {
 			role.setOrdered((Boolean)event.getNewValue());
 		}
-		if (PatternViewsRepository.Role.Properties.orderVariable == event.getAffectedEditor()) {
-			if (event.getKind() == PropertiesEditionEvent.SET) {
-				orderVariableSettings.setToReference((EAttribute)event.getNewValue());
-			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
-				EAttribute eObject = EcoreFactory.eINSTANCE.createEAttribute();
-				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(eObject, PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy policy = provider.getPolicy(context);
-					if (policy != null) {
-						policy.execute();
-					}
-				}
-				orderVariableSettings.setToReference(eObject);
-			}
-		}
 		if (PatternViewsRepository.Role.Properties.outgoingRoleConnector == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
 				outgoingRoleConnectorSettings.setToReference((RoleConnector)event.getNewValue());
@@ -630,8 +581,6 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 			if (PatternPackage.eINSTANCE.getRole_Ordered().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.Role.Properties.ordered))
 				basePart.setOrdered((Boolean)msg.getNewValue());
 			
-			if (PatternPackage.eINSTANCE.getRole_OrderVariable().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.Role.Properties.orderVariable))
-				basePart.setOrderVariable((EObject)msg.getNewValue());
 			if (PatternPackage.eINSTANCE.getRole_OutgoingRoleConnector().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.Role.Properties.outgoingRoleConnector))
 				basePart.setOutgoingRoleConnector((EObject)msg.getNewValue());
 			

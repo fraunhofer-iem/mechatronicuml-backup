@@ -26,7 +26,7 @@ public class MessageInterfaceSuperTypeEditPart extends ConnectionNodeEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4003;
+	public static final int VISUAL_ID = 4004;
 
 	/**
 	 * @generated

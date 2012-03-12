@@ -30,5 +30,53 @@ public class CoreEEFAdapterFactory extends CoreAdapterFactory {
 	public Adapter createActivityCallExpressionAdapter() {
 		return new ActivityCallExpressionPropertiesEditionProvider();
 	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.core.util.CoreAdapterFactory#createAttributeAdapter()
+	 * 
+	 */
+	public Adapter createAttributeAdapter() {
+		return new AttributePropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.core.util.CoreAdapterFactory#createOperationAdapter()
+	 * 
+	 */
+	public Adapter createOperationAdapter() {
+		return new OperationPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.core.util.CoreAdapterFactory#createParameterAdapter()
+	 * 
+	 */
+	public Adapter createParameterAdapter() {
+		return new ParameterPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.core.util.CoreAdapterFactory#createPrimitiveDataTypeAdapter()
+	 * 
+	 */
+	public Adapter createPrimitiveDataTypeAdapter() {
+		return new PrimitiveDataTypePropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.core.util.CoreAdapterFactory#createArrayDataTypeAdapter()
+	 * 
+	 */
+	public Adapter createArrayDataTypeAdapter() {
+		return new ArrayDataTypePropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.core.util.CoreAdapterFactory#createInnerDeclarationAdapter()
+	 * 
+	 */
+	public Adapter createInnerDeclarationAdapter() {
+		return new InnerDeclarationPropertiesEditionProvider();
+	}
 
 }

@@ -4,8 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.instance.parts.impl;
 
 // Start of user code for imports
-
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
@@ -206,8 +204,8 @@ public class DelegationInstancePropertiesEditionPartImpl extends CompositeProper
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**

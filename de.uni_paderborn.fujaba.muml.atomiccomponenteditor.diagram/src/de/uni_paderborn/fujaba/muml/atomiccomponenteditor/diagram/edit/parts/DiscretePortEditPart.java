@@ -52,7 +52,7 @@ public class DiscretePortEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3002;
+	public static final int VISUAL_ID = 3006;
 
 	/**
 	 * @generated

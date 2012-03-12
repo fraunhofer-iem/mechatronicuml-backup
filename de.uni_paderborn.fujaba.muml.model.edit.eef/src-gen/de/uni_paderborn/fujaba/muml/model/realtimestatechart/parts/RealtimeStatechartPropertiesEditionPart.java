@@ -169,48 +169,6 @@ public interface RealtimeStatechartPropertiesEditionPart {
 	public void setEventQueueSize(String newValue);
 
 
-	/**
-	 * @return the securityLevel
-	 * 
-	 */
-	public String getSecurityLevel();
-
-	/**
-	 * Defines a new securityLevel
-	 * @param newValue the new securityLevel to set
-	 * 
-	 */
-	public void setSecurityLevel(String newValue);
-
-
-	/**
-	 * @return the utilisation
-	 * 
-	 */
-	public String getUtilisation();
-
-	/**
-	 * Defines a new utilisation
-	 * @param newValue the new utilisation to set
-	 * 
-	 */
-	public void setUtilisation(String newValue);
-
-
-	/**
-	 * @return the scheduleDocument
-	 * 
-	 */
-	public String getScheduleDocument();
-
-	/**
-	 * Defines a new scheduleDocument
-	 * @param newValue the new scheduleDocument to set
-	 * 
-	 */
-	public void setScheduleDocument(String newValue);
-
-
 
 
 
@@ -223,7 +181,7 @@ public interface RealtimeStatechartPropertiesEditionPart {
 	public String getTitle();
 
 	// Start of user code for additional methods
-
-// End of user code
+	
+	// End of user code
 
 }

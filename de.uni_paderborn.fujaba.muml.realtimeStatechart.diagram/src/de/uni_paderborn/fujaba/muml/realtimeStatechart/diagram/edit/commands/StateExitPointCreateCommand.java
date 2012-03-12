@@ -57,7 +57,7 @@ public class StateExitPointCreateCommand extends EditElementCommand {
 		owner.getStateExitPoints().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_StateExitPoint_3015(newElement);
+				.getInstance().init_StateExitPoint_3028(newElement);
 
 		doConfigure(newElement, monitor, info);
 

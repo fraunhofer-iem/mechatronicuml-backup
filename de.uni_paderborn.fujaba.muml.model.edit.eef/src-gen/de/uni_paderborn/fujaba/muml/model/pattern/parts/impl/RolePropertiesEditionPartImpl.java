@@ -4,12 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.pattern.parts.impl;
 
 // Start of user code for imports
-
-
-
-
-
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -82,7 +76,6 @@ public class RolePropertiesEditionPartImpl extends CompositePropertiesEditionPar
 	protected EObjectFlatComboViewer adaptationBehavior;
 	protected EObjectFlatComboViewer roleAndAdaptationBehavior;
 	protected Button ordered;
-	protected EObjectFlatComboViewer orderVariable;
 	protected EObjectFlatComboViewer outgoingRoleConnector;
 
 
@@ -132,7 +125,6 @@ public class RolePropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		propertiesStep.addStep(PatternViewsRepository.Role.Properties.adaptationBehavior);
 		propertiesStep.addStep(PatternViewsRepository.Role.Properties.roleAndAdaptationBehavior);
 		propertiesStep.addStep(PatternViewsRepository.Role.Properties.ordered);
-		propertiesStep.addStep(PatternViewsRepository.Role.Properties.orderVariable);
 		propertiesStep.addStep(PatternViewsRepository.Role.Properties.outgoingRoleConnector);
 		
 		
@@ -172,9 +164,6 @@ public class RolePropertiesEditionPartImpl extends CompositePropertiesEditionPar
 				}
 				if (key == PatternViewsRepository.Role.Properties.ordered) {
 					return createOrderedCheckbox(parent);
-				}
-				if (key == PatternViewsRepository.Role.Properties.orderVariable) {
-					return createOrderVariableFlatComboViewer(parent);
 				}
 				if (key == PatternViewsRepository.Role.Properties.outgoingRoleConnector) {
 					return createOutgoingRoleConnectorFlatComboViewer(parent);
@@ -519,29 +508,6 @@ public class RolePropertiesEditionPartImpl extends CompositePropertiesEditionPar
 	 * @param parent the parent composite
 	 * 
 	 */
-	protected Composite createOrderVariableFlatComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, PatternMessages.RolePropertiesEditionPart_OrderVariableLabel, propertiesEditionComponent.isRequired(PatternViewsRepository.Role.Properties.orderVariable, PatternViewsRepository.SWT_KIND));
-		orderVariable = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(PatternViewsRepository.Role.Properties.orderVariable, PatternViewsRepository.SWT_KIND));
-		orderVariable.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-		orderVariable.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			public void selectionChanged(SelectionChangedEvent event) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RolePropertiesEditionPartImpl.this, PatternViewsRepository.Role.Properties.orderVariable, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, null, getOrderVariable()));
-			}
-
-		});
-		GridData orderVariableData = new GridData(GridData.FILL_HORIZONTAL);
-		orderVariable.setLayoutData(orderVariableData);
-		orderVariable.setID(PatternViewsRepository.Role.Properties.orderVariable);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(PatternViewsRepository.Role.Properties.orderVariable, PatternViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
-	/**
-	 * @param parent the parent composite
-	 * 
-	 */
 	protected Composite createOutgoingRoleConnectorFlatComboViewer(Composite parent) {
 		SWTUtils.createPartLabel(parent, PatternMessages.RolePropertiesEditionPart_OutgoingRoleConnectorLabel, propertiesEditionComponent.isRequired(PatternViewsRepository.Role.Properties.outgoingRoleConnector, PatternViewsRepository.SWT_KIND));
 		outgoingRoleConnector = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(PatternViewsRepository.Role.Properties.outgoingRoleConnector, PatternViewsRepository.SWT_KIND));
@@ -571,8 +537,8 @@ public class RolePropertiesEditionPartImpl extends CompositePropertiesEditionPar
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**
@@ -1175,77 +1141,6 @@ public class RolePropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		} else {
 			ordered.setSelection(false);
 		}
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#getOrderVariable()
-	 * 
-	 */
-	public EObject getOrderVariable() {
-		if (orderVariable.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) orderVariable.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
-				return (EObject) firstElement;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#initOrderVariable(EObjectFlatComboSettings)
-	 */
-	public void initOrderVariable(EObjectFlatComboSettings settings) {
-		orderVariable.setInput(settings);
-		if (current != null) {
-			orderVariable.setSelection(new StructuredSelection(settings.getValue()));
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#setOrderVariable(EObject newValue)
-	 * 
-	 */
-	public void setOrderVariable(EObject newValue) {
-		if (newValue != null) {
-			orderVariable.setSelection(new StructuredSelection(newValue));
-		} else {
-			orderVariable.setSelection(new StructuredSelection()); //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#setOrderVariableButtonMode(ButtonsModeEnum newValue)
-	 */
-	public void setOrderVariableButtonMode(ButtonsModeEnum newValue) {
-		orderVariable.setButtonMode(newValue);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#addFilterOrderVariable(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToOrderVariable(ViewerFilter filter) {
-		orderVariable.addFilter(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.parts.RolePropertiesEditionPart#addBusinessFilterOrderVariable(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToOrderVariable(ViewerFilter filter) {
-		orderVariable.addBusinessRuleFilter(filter);
 	}
 
 

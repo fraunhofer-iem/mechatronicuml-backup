@@ -96,7 +96,7 @@ public class ComponentInstance2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
-				.getComponentInstance_3016SemanticChildren(viewObject);
+				.getComponentInstance_3024SemanticChildren(viewObject);
 
 	}
 

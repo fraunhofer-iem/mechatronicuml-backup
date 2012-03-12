@@ -24,7 +24,7 @@ public class ComponentInstanceConfigurationItemSemanticEditPolicy
 	 */
 	public ComponentInstanceConfigurationItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3015);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023);
 	}
 
 	/**

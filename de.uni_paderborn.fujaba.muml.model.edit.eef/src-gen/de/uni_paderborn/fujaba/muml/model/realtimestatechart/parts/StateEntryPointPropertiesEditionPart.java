@@ -212,31 +212,20 @@ public interface StateEntryPointPropertiesEditionPart {
 	public void addBusinessFilterToState(ViewerFilter filter);
 
 
-	/**
-	 * @return the entryPoint
-	 * 
-	 */
-	public EObject getEntryPoint();
+
 
 	/**
 	 * Init the entryPoint
-	 * @param settings the combo setting
+	 * @param settings settings for the entryPoint ReferencesTable 
 	 */
-	public void initEntryPoint(EObjectFlatComboSettings settings);
+	public void initEntryPoint(ReferencesTableSettings settings);
 
 	/**
-	 * Defines a new entryPoint
-	 * @param newValue the new entryPoint to set
+	 * Update the entryPoint
+	 * @param newValue the entryPoint to update
 	 * 
 	 */
-	public void setEntryPoint(EObject newValue);
-
-	/**
-	 * Defines the button mode
-	 * @param newValue the new mode to set
-	 * 
-	 */
-	public void setEntryPointButtonMode(ButtonsModeEnum newValue);
+	public void updateEntryPoint();
 
 	/**
 	 * Adds the given filter to the entryPoint edition editor.
@@ -258,6 +247,12 @@ public interface StateEntryPointPropertiesEditionPart {
 	 */
 	public void addBusinessFilterToEntryPoint(ViewerFilter filter);
 
+	/**
+	 * @return true if the given element is contained inside the entryPoint table
+	 * 
+	 */
+	public boolean isContainedInEntryPointTable(EObject element);
+
 
 
 
@@ -271,7 +266,7 @@ public interface StateEntryPointPropertiesEditionPart {
 	public String getTitle();
 
 	// Start of user code for additional methods
-
-// End of user code
+	
+	// End of user code
 
 }

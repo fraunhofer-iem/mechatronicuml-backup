@@ -98,7 +98,7 @@ public class ComponentInstanceComponentInstanceContentsCompartment2CanonicalEdit
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
-				.getComponentInstanceComponentInstanceContentsCompartment_7004SemanticChildren(viewObject);
+				.getComponentInstanceComponentInstanceContentsCompartment_7010SemanticChildren(viewObject);
 
 	}
 

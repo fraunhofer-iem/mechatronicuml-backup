@@ -12,18 +12,18 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
-import org.storydriven.modeling.expressions.Expression;
 
 import com.google.inject.Injector;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
 
 public class ActionLanguageResource {
 	private static Injector injector = null;
 	private static String loadError = "";
 	
-	public static Resource getXtextResource(List<EAttribute> attributeList) {
+	public static Resource getXtextResource(List<Attribute> attributeList) {
 		if (injector == null) {
 			injector = new ActionLanguageStandaloneSetup().createInjectorAndDoEMFRegistration();
 		}
@@ -44,7 +44,7 @@ public class ActionLanguageResource {
 			loadError = resource.getErrors().toString();
 		}
 	}
-	public static EObject loadFromString(String text, List<EAttribute> attributeList) {
+	public static EObject loadFromString(String text, List<Attribute> attributeList) {
 		Resource resource = getXtextResource(attributeList);
 		EObject expression = null;
 		try {
@@ -64,7 +64,7 @@ public class ActionLanguageResource {
 		return expression;
 	}
 	
-	public static String serializeEObject(EObject object, List<EAttribute> attributeList) {
+	public static String serializeEObject(EObject object, List<Attribute> attributeList) {
 		if (!(object instanceof Block)) {
 			return null;
 		}

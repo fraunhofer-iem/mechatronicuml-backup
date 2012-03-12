@@ -37,10 +37,9 @@
         href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3001"
+        visualID="3009"
         editPartClassName="HybridPortEditPart"
         itemSemanticEditPolicyClassName="HybridPortItemSemanticEditPolicy"
-        notationViewFactoryClassName="HybridPortViewFactory"
         canonicalEditPolicyClassName="HybridPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HybridPortGraphicalNodeEditPolicy"
         createCommandClassName="HybridPortCreateCommand"
@@ -112,10 +111,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5001"
+          visualID="5011"
           editPartClassName="HybridPortNameEditPart"
-          itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="HybridPortNameViewFactory">
+          itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -131,10 +129,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3002"
+        visualID="3010"
         editPartClassName="DiscretePortEditPart"
         itemSemanticEditPolicyClassName="DiscretePortItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscretePortViewFactory"
         canonicalEditPolicyClassName="DiscretePortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DiscretePortGraphicalNodeEditPolicy"
         createCommandClassName="DiscretePortCreateCommand"
@@ -206,10 +203,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5002"
+          visualID="5012"
           editPartClassName="DiscretePortNameEditPart"
-          itemSemanticEditPolicyClassName="DiscretePortNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="DiscretePortNameViewFactory">
+          itemSemanticEditPolicyClassName="DiscretePortNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -225,10 +221,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3003"
+        visualID="3011"
         editPartClassName="ContinuousPortEditPart"
         itemSemanticEditPolicyClassName="ContinuousPortItemSemanticEditPolicy"
-        notationViewFactoryClassName="ContinuousPortViewFactory"
         canonicalEditPolicyClassName="ContinuousPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ContinuousPortGraphicalNodeEditPolicy"
         createCommandClassName="ContinuousPortCreateCommand"
@@ -300,10 +295,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5003"
+          visualID="5013"
           editPartClassName="ContinuousPortNameEditPart"
-          itemSemanticEditPolicyClassName="ContinuousPortNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ContinuousPortNameViewFactory">
+          itemSemanticEditPolicyClassName="ContinuousPortNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -318,10 +312,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3005"
+        visualID="3012"
         editPartClassName="ComponentPartEditPart"
         itemSemanticEditPolicyClassName="ComponentPartItemSemanticEditPolicy"
-        notationViewFactoryClassName="ComponentPartViewFactory"
         canonicalEditPolicyClassName="ComponentPartCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6"
         graphicalNodeEditPolicyClassName="ComponentPartGraphicalNodeEditPolicy"
@@ -386,10 +379,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5009"
+          visualID="5017"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="ComponentPartLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -408,10 +400,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3006"
+        visualID="3013"
         editPartClassName="HybridPort2EditPart"
         itemSemanticEditPolicyClassName="HybridPort2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="HybridPortViewFactory"
         canonicalEditPolicyClassName="HybridPort2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HybridPort2GraphicalNodeEditPolicy"
         createCommandClassName="HybridPort2CreateCommand"
@@ -483,10 +474,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5005"
+          visualID="5014"
           editPartClassName="HybridPortName2EditPart"
-          itemSemanticEditPolicyClassName="HybridPortName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="HybridPortNameViewFactory">
+          itemSemanticEditPolicyClassName="HybridPortName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -502,10 +492,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3007"
+        visualID="3014"
         editPartClassName="DiscretePort2EditPart"
         itemSemanticEditPolicyClassName="DiscretePort2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscretePortViewFactory"
         canonicalEditPolicyClassName="DiscretePort2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DiscretePort2GraphicalNodeEditPolicy"
         createCommandClassName="DiscretePort2CreateCommand"
@@ -577,10 +566,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5006"
+          visualID="5015"
           editPartClassName="DiscretePortName2EditPart"
-          itemSemanticEditPolicyClassName="DiscretePortName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DiscretePortNameViewFactory">
+          itemSemanticEditPolicyClassName="DiscretePortName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -596,10 +584,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3008"
+        visualID="3015"
         editPartClassName="ContinuousPort2EditPart"
         itemSemanticEditPolicyClassName="ContinuousPort2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ContinuousPortViewFactory"
         canonicalEditPolicyClassName="ContinuousPort2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ContinuousPort2GraphicalNodeEditPolicy"
         createCommandClassName="ContinuousPort2CreateCommand"
@@ -671,10 +658,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5007"
+          visualID="5016"
           editPartClassName="ContinuousPortName2EditPart"
-          itemSemanticEditPolicyClassName="ContinuousPortName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ContinuousPortNameViewFactory">
+          itemSemanticEditPolicyClassName="ContinuousPortName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -689,10 +675,9 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2001"
+        visualID="2002"
         editPartClassName="StructuredComponentEditPart"
         itemSemanticEditPolicyClassName="StructuredComponentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StructuredComponentViewFactory"
         canonicalEditPolicyClassName="StructuredComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
         compartments="//@diagram/@compartments.0"
@@ -721,10 +706,9 @@
             href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
       <labels
-          visualID="5010"
+          visualID="5018"
           editPartClassName="StructuredComponentNameEditPart"
-          itemSemanticEditPolicyClassName="StructuredComponentNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredComponentNameViewFactory">
+          itemSemanticEditPolicyClassName="StructuredComponentNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -744,10 +728,9 @@
       </labels>
     </topLevelNodes>
     <links
-        visualID="4001"
+        visualID="4003"
         editPartClassName="DelegationEditPart"
         itemSemanticEditPolicyClassName="DelegationItemSemanticEditPolicy"
-        notationViewFactoryClassName="DelegationViewFactory"
         createCommandClassName="DelegationCreateCommand"
         reorientCommandClassName="DelegationReorientCommand">
       <diagramRunTimeClass
@@ -773,10 +756,9 @@
       </modelFacet>
     </links>
     <links
-        visualID="4002"
+        visualID="4004"
         editPartClassName="AssemblyEditPart"
         itemSemanticEditPolicyClassName="AssemblyItemSemanticEditPolicy"
-        notationViewFactoryClassName="AssemblyViewFactory"
         createCommandClassName="AssemblyCreateCommand"
         reorientCommandClassName="AssemblyReorientCommand">
       <diagramRunTimeClass
@@ -802,10 +784,9 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7001"
+        visualID="7002"
         editPartClassName="StructuredComponentComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="StructuredComponentComponentCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StructuredComponentComponentCompartmentViewFactory"
         canonicalEditPolicyClassName="StructuredComponentComponentCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.3"
         title="ComponentCompartment"
@@ -974,7 +955,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
-        className="ComponentPartLabelExpressionLabelParser5009"
+        className="ComponentPartLabelExpressionLabelParser5017"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ComponentPart"/>

@@ -16,7 +16,7 @@ public class DelegationInstanceItemSemanticEditPolicy
 	 */
 	public DelegationInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DelegationInstance_4004);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DelegationInstance_4006);
 	}
 
 	/**

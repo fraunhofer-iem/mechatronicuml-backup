@@ -57,7 +57,7 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 		owner.getMessageTypes().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers
-				.getInstance().init_MessageType_3004(newElement);
+				.getInstance().init_MessageType_3005(newElement);
 
 		doConfigure(newElement, monitor, info);
 

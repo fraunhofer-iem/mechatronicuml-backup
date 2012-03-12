@@ -211,16 +211,16 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		}
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return createAtomicComponent_2002(domainElement, containerView,
+			return createAtomicComponent_2003(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return createHybridPort_3004(domainElement, containerView, index,
+			return createHybridPort_3005(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-			return createDiscretePort_3002(domainElement, containerView, index,
+			return createDiscretePort_3006(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-			return createContinuousPort_3003(domainElement, containerView,
+			return createContinuousPort_3007(domainElement, containerView,
 					index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -245,7 +245,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createAtomicComponent_2002(EObject domainElement,
+	public Node createAtomicComponent_2003(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -286,7 +286,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5002 = createLabel(
+		Node label5009 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID));
@@ -296,7 +296,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createHybridPort_3004(EObject domainElement,
+	public Node createHybridPort_3005(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -336,22 +336,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5003 = createLabel(
+		Node label5006 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID));
-		label5003.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5006.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5003 = (Location) label5003.getLayoutConstraint();
-		location5003.setX(0);
-		location5003.setY(5);
+		Location location5006 = (Location) label5006.getLayoutConstraint();
+		location5006.setX(0);
+		location5006.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createDiscretePort_3002(EObject domainElement,
+	public Node createDiscretePort_3006(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -391,22 +391,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5004 = createLabel(
+		Node label5007 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
-		label5004.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5007.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5004 = (Location) label5004.getLayoutConstraint();
-		location5004.setX(0);
-		location5004.setY(5);
+		Location location5007 = (Location) label5007.getLayoutConstraint();
+		location5007.setX(0);
+		location5007.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createContinuousPort_3003(EObject domainElement,
+	public Node createContinuousPort_3007(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -446,15 +446,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5005 = createLabel(
+		Node label5008 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID));
-		label5005.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5008.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5005 = (Location) label5005.getLayoutConstraint();
-		location5005.setX(0);
-		location5005.setY(5);
+		Location location5008 = (Location) label5008.getLayoutConstraint();
+		location5008.setX(0);
+		location5008.setY(5);
 		return node;
 	}
 

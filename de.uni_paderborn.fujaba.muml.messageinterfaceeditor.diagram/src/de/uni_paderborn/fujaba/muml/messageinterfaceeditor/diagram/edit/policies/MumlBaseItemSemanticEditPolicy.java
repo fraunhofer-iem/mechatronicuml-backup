@@ -325,7 +325,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateMessageInterfaceSuperType_4003(
+		public boolean canCreateMessageInterfaceSuperType_4004(
 				de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface source,
 				de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface target) {
 			if (source != null) {
@@ -334,13 +334,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 			}
 
-			return canExistMessageInterfaceSuperType_4003(source, target);
+			return canExistMessageInterfaceSuperType_4004(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistMessageInterfaceSuperType_4003(
+		public boolean canExistMessageInterfaceSuperType_4004(
 				de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface source,
 				de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface target) {
 			return true;

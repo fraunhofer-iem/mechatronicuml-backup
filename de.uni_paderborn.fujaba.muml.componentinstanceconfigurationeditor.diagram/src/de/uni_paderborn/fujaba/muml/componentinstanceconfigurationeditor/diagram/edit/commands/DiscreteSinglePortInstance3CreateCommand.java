@@ -58,7 +58,7 @@ public class DiscreteSinglePortInstance3CreateCommand extends
 		owner.getSubPortInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
-				.getInstance().init_DiscreteSinglePortInstance_3017(newElement);
+				.getInstance().init_DiscreteSinglePortInstance_3021(newElement);
 
 		doConfigure(newElement, monitor, info);
 

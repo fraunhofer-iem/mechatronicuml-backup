@@ -84,16 +84,16 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 					"Navigator?Diagram?http://www.fujaba.de/modelinstance/0.2.1?ModelElementCategory", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/model/component/0.2.1?AtomicComponent", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.AtomicComponent_2002); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/model/component/0.2.3?AtomicComponent", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.AtomicComponent_2003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.2.1?HybridPort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3004); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.2.3?HybridPort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3005); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.2.1?DiscretePort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3002); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.2.3?DiscretePort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3006); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.2.1?ContinuousPort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3003); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.2.3?ContinuousPort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3007); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -153,13 +153,13 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000Text(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2002Text(view);
+			return getAtomicComponent_2003Text(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return getHybridPort_3004Text(view);
+			return getHybridPort_3005Text(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-			return getDiscretePort_3002Text(view);
+			return getDiscretePort_3006Text(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-			return getContinuousPort_3003Text(view);
+			return getContinuousPort_3007Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -184,10 +184,10 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getAtomicComponent_2002Text(View view) {
+	private String getAtomicComponent_2003Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.AtomiccomponentParserProvider
 				.getParser(
-						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.AtomicComponent_2002,
+						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.AtomicComponent_2003,
 						view.getElement() != null ? view.getElement() : view,
 						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 								.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID));
@@ -198,7 +198,7 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		} else {
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5002); //$NON-NLS-1$
+							"Parser was not found for label " + 5009); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -206,10 +206,10 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getHybridPort_3004Text(View view) {
+	private String getHybridPort_3005Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.AtomiccomponentParserProvider
 				.getParser(
-						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3004,
+						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3005,
 						view.getElement() != null ? view.getElement() : view,
 						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 								.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID));
@@ -220,7 +220,7 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		} else {
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5003); //$NON-NLS-1$
+							"Parser was not found for label " + 5006); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -228,10 +228,10 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getDiscretePort_3002Text(View view) {
+	private String getDiscretePort_3006Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.AtomiccomponentParserProvider
 				.getParser(
-						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3002,
+						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3006,
 						view.getElement() != null ? view.getElement() : view,
 						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 								.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
@@ -242,7 +242,7 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		} else {
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5004); //$NON-NLS-1$
+							"Parser was not found for label " + 5007); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -250,10 +250,10 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getContinuousPort_3003Text(View view) {
+	private String getContinuousPort_3007Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.AtomiccomponentParserProvider
 				.getParser(
-						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3003,
+						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3007,
 						view.getElement() != null ? view.getElement() : view,
 						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 								.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID));
@@ -264,7 +264,7 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		} else {
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5005); //$NON-NLS-1$
+							"Parser was not found for label " + 5008); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

@@ -23,6 +23,24 @@ public class CoreMessages extends NLS {
 	public static String ActivityCallExpressionPropertiesEditionPart_PropertiesGroupLabel;
 
 	
+	public static String AttributePropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String OperationPropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String ParameterPropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String PrimitiveDataTypePropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String ArrayDataTypePropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String InnerDeclarationPropertiesEditionPart_PropertiesGroupLabel;
+
+	
 	public static String NaturalNumber_ReadOnly;
 
 	
@@ -41,6 +59,42 @@ public class CoreMessages extends NLS {
 	public static String ActivityCallExpression_Part_Title;
 
 	
+	public static String Attribute_ReadOnly;
+
+	
+	public static String Attribute_Part_Title;
+
+	
+	public static String Operation_ReadOnly;
+
+	
+	public static String Operation_Part_Title;
+
+	
+	public static String Parameter_ReadOnly;
+
+	
+	public static String Parameter_Part_Title;
+
+	
+	public static String PrimitiveDataType_ReadOnly;
+
+	
+	public static String PrimitiveDataType_Part_Title;
+
+	
+	public static String ArrayDataType_ReadOnly;
+
+	
+	public static String ArrayDataType_Part_Title;
+
+	
+	public static String InnerDeclaration_ReadOnly;
+
+	
+	public static String InnerDeclaration_Part_Title;
+
+	
 	public static String NaturalNumberPropertiesEditionPart_ValueLabel;
 
 	
@@ -54,6 +108,66 @@ public class CoreMessages extends NLS {
 
 	
 	public static String ActivityCallExpressionPropertiesEditionPart_ActivityLabel;
+
+	
+	public static String AttributePropertiesEditionPart_NameLabel;
+
+	
+	public static String AttributePropertiesEditionPart_CommentLabel;
+
+	
+	public static String AttributePropertiesEditionPart_TypeLabel;
+
+	
+	public static String OperationPropertiesEditionPart_NameLabel;
+
+	
+	public static String OperationPropertiesEditionPart_CommentLabel;
+
+	
+	public static String OperationPropertiesEditionPart_ReturnTypeLabel;
+
+	
+	public static String ParameterPropertiesEditionPart_NameLabel;
+
+	
+	public static String ParameterPropertiesEditionPart_CommentLabel;
+
+	
+	public static String ParameterPropertiesEditionPart_TypeLabel;
+
+	
+	public static String ParameterPropertiesEditionPart_OperationLabel;
+
+	
+	public static String PrimitiveDataTypePropertiesEditionPart_NameLabel;
+
+	
+	public static String PrimitiveDataTypePropertiesEditionPart_CommentLabel;
+
+	
+	public static String PrimitiveDataTypePropertiesEditionPart_PrimitiveTypeLabel;
+
+	
+	public static String ArrayDataTypePropertiesEditionPart_NameLabel;
+
+	
+	public static String ArrayDataTypePropertiesEditionPart_CommentLabel;
+
+	
+	public static String ArrayDataTypePropertiesEditionPart_CardinalityLabel;
+
+	
+	public static String InnerDeclarationPropertiesEditionPart_NameLabel;
+
+	
+	public static String InnerDeclarationPropertiesEditionPart_CommentLabel;
+
+	
+	public static String InnerDeclarationPropertiesEditionPart_Parent_Label;
+
+	
+	public static String InnerDeclarationPropertiesEditionPart_TypeLabel;
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;
@@ -104,8 +218,8 @@ public class CoreMessages extends NLS {
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
 
 	// Start of user code for additionnal NLS Constants
-
-// End of user code
+	
+	// End of user code
 
 	static {
 		// initialize resource bundle

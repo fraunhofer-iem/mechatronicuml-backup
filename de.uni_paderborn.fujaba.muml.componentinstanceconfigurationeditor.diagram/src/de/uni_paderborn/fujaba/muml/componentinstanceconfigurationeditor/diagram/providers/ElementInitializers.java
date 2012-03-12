@@ -12,7 +12,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ComponentInstance_2004(
+	public void init_ComponentInstance_2010(
 			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -31,7 +31,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPortInstance_2008(
+	public void init_HybridPortInstance_2011(
 			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -50,7 +50,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_2005(
+	public void init_DiscreteSinglePortInstance_2012(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -69,7 +69,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteMultiPortInstance_2009(
+	public void init_DiscreteMultiPortInstance_2013(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -88,7 +88,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPortInstance_2007(
+	public void init_ContinuousPortInstance_2014(
 			de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -107,7 +107,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPortInstance_3012(
+	public void init_HybridPortInstance_3018(
 			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -126,7 +126,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_3010(
+	public void init_DiscreteSinglePortInstance_3019(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -145,7 +145,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteMultiPortInstance_3013(
+	public void init_DiscreteMultiPortInstance_3020(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -164,7 +164,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_3017(
+	public void init_DiscreteSinglePortInstance_3021(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -183,7 +183,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPortInstance_3011(
+	public void init_ContinuousPortInstance_3022(
 			de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -202,7 +202,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ComponentInstance_3016(
+	public void init_ComponentInstance_3024(
 			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory

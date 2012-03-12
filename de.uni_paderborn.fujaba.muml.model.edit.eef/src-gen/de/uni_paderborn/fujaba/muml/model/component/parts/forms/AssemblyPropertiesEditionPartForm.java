@@ -3,6 +3,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.parts.forms;
 
+// Start of user code for imports
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
@@ -33,8 +34,6 @@ import org.eclipse.ui.forms.widgets.Section;
 import de.uni_paderborn.fujaba.muml.model.component.parts.AssemblyPropertiesEditionPart;
 import de.uni_paderborn.fujaba.muml.model.component.parts.ComponentViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.component.providers.ComponentMessages;
-
-// Start of user code for imports
 
 
 // End of user code
@@ -371,8 +370,8 @@ public class AssemblyPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**

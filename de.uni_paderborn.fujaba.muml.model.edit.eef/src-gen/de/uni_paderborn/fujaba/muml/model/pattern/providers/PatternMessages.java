@@ -89,9 +89,6 @@ public class PatternMessages extends NLS {
 	public static String RolePropertiesEditionPart_OrderedLabel;
 
 	
-	public static String RolePropertiesEditionPart_OrderVariableLabel;
-
-	
 	public static String RolePropertiesEditionPart_OutgoingRoleConnectorLabel;
 
 	
@@ -143,8 +140,8 @@ public class PatternMessages extends NLS {
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
 
 	// Start of user code for additionnal NLS Constants
-
-// End of user code
+	
+	// End of user code
 
 	static {
 		// initialize resource bundle

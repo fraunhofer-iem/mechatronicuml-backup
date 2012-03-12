@@ -6,7 +6,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/muml/model/pattern/0.2.1"
+            uri="http://www.fujaba.de/muml/model/pattern/0.2.3"
             class="de.uni_paderborn.fujaba.muml.model.pattern.providers.PatternEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -25,7 +25,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.constraint.providers.ConstraintPropertiesEditionPartProvider">
+            providerClass="de.uni_paderborn.fujaba.muml.model.msgiface.providers.MsgifacePropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
    <extension
@@ -37,7 +37,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.msgiface.providers.MsgifacePropertiesEditionPartProvider">
+            providerClass="de.uni_paderborn.fujaba.muml.model.component.providers.ComponentPropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
    <extension
@@ -49,7 +49,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.component.providers.ComponentPropertiesEditionPartProvider">
+            providerClass="de.uni_paderborn.fujaba.muml.model.constraint.providers.ConstraintPropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
    <extension

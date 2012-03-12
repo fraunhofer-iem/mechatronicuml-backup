@@ -57,7 +57,7 @@ public class ComponentPartCreateCommand extends EditElementCommand {
 		owner.getEmbeddedParts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.ElementInitializers
-				.getInstance().init_ComponentPart_3005(newElement);
+				.getInstance().init_ComponentPart_3012(newElement);
 
 		doConfigure(newElement, monitor, info);
 

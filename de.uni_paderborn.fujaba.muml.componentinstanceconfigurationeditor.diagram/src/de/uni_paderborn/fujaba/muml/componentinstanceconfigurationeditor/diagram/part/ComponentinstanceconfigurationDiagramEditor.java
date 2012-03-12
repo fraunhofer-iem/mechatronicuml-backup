@@ -87,6 +87,13 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	/**
 	 * @generated
 	 */
+	protected PreferencesHint getPreferencesHint() {
+		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+	}
+
+	/**
+	 * @generated
+	 */
 	public String getContributorId() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.ID;
 	}
@@ -307,14 +314,6 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
 				.getDiagramView());
 		super.doSave(progressMonitor);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	protected PreferencesHint getPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 }

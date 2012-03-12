@@ -4,13 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.impl;
 
 // Start of user code for imports
-
-
-
-
-
-
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
@@ -64,9 +57,6 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	protected EObjectFlatComboViewer embeddingRegion;
 	protected Button history;
 	protected Text eventQueueSize;
-	protected Text securityLevel;
-	protected Text utilisation;
-	protected Text scheduleDocument;
 
 
 
@@ -111,9 +101,6 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.embeddingRegion);
 		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history);
 		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize);
-		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel);
-		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation);
-		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument);
 		
 		
 		composer = new PartComposer(realtimeStatechart_Step) {
@@ -140,15 +127,6 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 				}
 				if (key == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize) {
 					return createEventQueueSizeText(parent);
-				}
-				if (key == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel) {
-					return createSecurityLevelText(parent);
-				}
-				if (key == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation) {
-					return createUtilisationText(parent);
-				}
-				if (key == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument) {
-					return createScheduleDocumentText(parent);
 				}
 				return parent;
 			}
@@ -382,144 +360,6 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 		return parent;
 	}
 
-	
-	protected Composite createSecurityLevelText(Composite parent) {
-		SWTUtils.createPartLabel(parent, RealtimestatechartMessages.RealtimeStatechartPropertiesEditionPart_SecurityLevelLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel, RealtimestatechartViewsRepository.SWT_KIND));
-		securityLevel = new Text(parent, SWT.BORDER);
-		GridData securityLevelData = new GridData(GridData.FILL_HORIZONTAL);
-		securityLevel.setLayoutData(securityLevelData);
-		securityLevel.addFocusListener(new FocusAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, securityLevel.getText()));
-			}
-
-		});
-		securityLevel.addKeyListener(new KeyAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, securityLevel.getText()));
-				}
-			}
-
-		});
-		EditingUtils.setID(securityLevel, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel);
-		EditingUtils.setEEFtype(securityLevel, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
-	
-	protected Composite createUtilisationText(Composite parent) {
-		SWTUtils.createPartLabel(parent, RealtimestatechartMessages.RealtimeStatechartPropertiesEditionPart_UtilisationLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation, RealtimestatechartViewsRepository.SWT_KIND));
-		utilisation = new Text(parent, SWT.BORDER);
-		GridData utilisationData = new GridData(GridData.FILL_HORIZONTAL);
-		utilisation.setLayoutData(utilisationData);
-		utilisation.addFocusListener(new FocusAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, utilisation.getText()));
-			}
-
-		});
-		utilisation.addKeyListener(new KeyAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, utilisation.getText()));
-				}
-			}
-
-		});
-		EditingUtils.setID(utilisation, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation);
-		EditingUtils.setEEFtype(utilisation, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
-	
-	protected Composite createScheduleDocumentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, RealtimestatechartMessages.RealtimeStatechartPropertiesEditionPart_ScheduleDocumentLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument, RealtimestatechartViewsRepository.SWT_KIND));
-		scheduleDocument = new Text(parent, SWT.BORDER);
-		GridData scheduleDocumentData = new GridData(GridData.FILL_HORIZONTAL);
-		scheduleDocument.setLayoutData(scheduleDocumentData);
-		scheduleDocument.addFocusListener(new FocusAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, scheduleDocument.getText()));
-			}
-
-		});
-		scheduleDocument.addKeyListener(new KeyAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, scheduleDocument.getText()));
-				}
-			}
-
-		});
-		EditingUtils.setID(scheduleDocument, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument);
-		EditingUtils.setEEFtype(scheduleDocument, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
 
 
 	/**
@@ -530,8 +370,8 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**
@@ -772,81 +612,6 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 			eventQueueSize.setText(newValue);
 		} else {
 			eventQueueSize.setText(""); //$NON-NLS-1$
-		}
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getSecurityLevel()
-	 * 
-	 */
-	public String getSecurityLevel() {
-		return securityLevel.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setSecurityLevel(String newValue)
-	 * 
-	 */
-	public void setSecurityLevel(String newValue) {
-		if (newValue != null) {
-			securityLevel.setText(newValue);
-		} else {
-			securityLevel.setText(""); //$NON-NLS-1$
-		}
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getUtilisation()
-	 * 
-	 */
-	public String getUtilisation() {
-		return utilisation.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setUtilisation(String newValue)
-	 * 
-	 */
-	public void setUtilisation(String newValue) {
-		if (newValue != null) {
-			utilisation.setText(newValue);
-		} else {
-			utilisation.setText(""); //$NON-NLS-1$
-		}
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getScheduleDocument()
-	 * 
-	 */
-	public String getScheduleDocument() {
-		return scheduleDocument.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setScheduleDocument(String newValue)
-	 * 
-	 */
-	public void setScheduleDocument(String newValue) {
-		if (newValue != null) {
-			scheduleDocument.setText(newValue);
-		} else {
-			scheduleDocument.setText(""); //$NON-NLS-1$
 		}
 	}
 

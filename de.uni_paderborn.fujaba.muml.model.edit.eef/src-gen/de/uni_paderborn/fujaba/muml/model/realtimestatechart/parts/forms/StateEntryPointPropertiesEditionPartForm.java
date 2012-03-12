@@ -4,11 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.forms;
 
 // Start of user code for imports
-
-
-
-
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -80,7 +75,9 @@ public class StateEntryPointPropertiesEditionPartForm extends CompositePropertie
 		protected List<ViewerFilter> incomingTransitionsFilters = new ArrayList<ViewerFilter>();
 	protected EObjectFlatComboViewer statechart;
 	protected EObjectFlatComboViewer state;
-	protected EObjectFlatComboViewer entryPoint;
+		protected ReferencesTable entryPoint;
+		protected List<ViewerFilter> entryPointBusinessFilters = new ArrayList<ViewerFilter>();
+		protected List<ViewerFilter> entryPointFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -152,7 +149,7 @@ public class StateEntryPointPropertiesEditionPartForm extends CompositePropertie
 					return createStateFlatComboViewer(parent, widgetFactory);
 				}
 				if (key == RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint) {
-					return createEntryPointFlatComboViewer(parent, widgetFactory);
+					return createEntryPointReferencesTable(widgetFactory, parent);
 				}
 				return parent;
 			}
@@ -439,33 +436,84 @@ public class StateEntryPointPropertiesEditionPartForm extends CompositePropertie
 	}
 
 	/**
-	 * @param parent the parent composite
-	 * @param widgetFactory factory to use to instanciante widget of the form
 	 * 
 	 */
-	protected Composite createEntryPointFlatComboViewer(Composite parent, FormToolkit widgetFactory) {
-		FormUtils.createPartLabel(widgetFactory, parent, RealtimestatechartMessages.StateEntryPointPropertiesEditionPart_EntryPointLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint, RealtimestatechartViewsRepository.FORM_KIND));
-		entryPoint = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint, RealtimestatechartViewsRepository.FORM_KIND));
-		widgetFactory.adapt(entryPoint);
-		entryPoint.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-		GridData entryPointData = new GridData(GridData.FILL_HORIZONTAL);
-		entryPoint.setLayoutData(entryPointData);
-		entryPoint.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
-			 */
-			public void selectionChanged(SelectionChangedEvent event) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateEntryPointPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getEntryPoint()));
-			}
-
+	protected Composite createEntryPointReferencesTable(FormToolkit widgetFactory, Composite parent) {
+		this.entryPoint = new ReferencesTable(RealtimestatechartMessages.StateEntryPointPropertiesEditionPart_EntryPointLabel, new ReferencesTableListener	() {
+			public void handleAdd() { addEntryPoint(); }
+			public void handleEdit(EObject element) { editEntryPoint(element); }
+			public void handleMove(EObject element, int oldIndex, int newIndex) { moveEntryPoint(element, oldIndex, newIndex); }
+			public void handleRemove(EObject element) { removeFromEntryPoint(element); }
+			public void navigateTo(EObject element) { }
 		});
+		this.entryPoint.setHelpText(propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint, RealtimestatechartViewsRepository.FORM_KIND));
+		this.entryPoint.createControls(parent, widgetFactory);
+		this.entryPoint.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateEntryPointPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
+		GridData entryPointData = new GridData(GridData.FILL_HORIZONTAL);
+		entryPointData.horizontalSpan = 3;
+		this.entryPoint.setLayoutData(entryPointData);
+		this.entryPoint.disableMove();
 		entryPoint.setID(RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint);
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint, RealtimestatechartViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		entryPoint.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
 		return parent;
+	}
+
+	/**
+	 * 
+	 */
+	protected void addEntryPoint() {
+		TabElementTreeSelectionDialog dialog = new TabElementTreeSelectionDialog(entryPoint.getInput(), entryPointFilters, entryPointBusinessFilters,
+		"entryPoint", propertiesEditionComponent.getEditingContext().getAdapterFactory(), current.eResource()) {
+			@Override
+			public void process(IStructuredSelection selection) {
+				for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
+					EObject elem = (EObject) iter.next();
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateEntryPointPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint,
+						PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, elem));
+				}
+				entryPoint.refresh();
+			}
+		};
+		dialog.open();
+	}
+
+	/**
+	 * 
+	 */
+	protected void moveEntryPoint(EObject element, int oldIndex, int newIndex) {
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateEntryPointPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+		entryPoint.refresh();
+	}
+
+	/**
+	 * 
+	 */
+	protected void removeFromEntryPoint(EObject element) {
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StateEntryPointPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+		entryPoint.refresh();
+	}
+
+	/**
+	 * 
+	 */
+	protected void editEntryPoint(EObject element) {
+		EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
+		PropertiesEditingProvider provider = (PropertiesEditingProvider)adapterFactory.adapt(element, PropertiesEditingProvider.class);
+		if (provider != null) {
+			PropertiesEditingPolicy policy = provider.getPolicy(context);
+			if (policy != null) {
+				policy.execute();
+				entryPoint.refresh();
+			}
+		}
 	}
 
 
@@ -478,8 +526,8 @@ public class StateEntryPointPropertiesEditionPartForm extends CompositePropertie
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**
@@ -761,55 +809,30 @@ public class StateEntryPointPropertiesEditionPartForm extends CompositePropertie
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateEntryPointPropertiesEditionPart#getEntryPoint()
-	 * 
-	 */
-	public EObject getEntryPoint() {
-		if (entryPoint.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) entryPoint.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
-				return (EObject) firstElement;
-		}
-		return null;
-	}
+
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateEntryPointPropertiesEditionPart#initEntryPoint(EObjectFlatComboSettings)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateEntryPointPropertiesEditionPart#initEntryPoint(org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings)
 	 */
-	public void initEntryPoint(EObjectFlatComboSettings settings) {
+	public void initEntryPoint(ReferencesTableSettings settings) {
+		if (current.eResource() != null && current.eResource().getResourceSet() != null)
+			this.resourceSet = current.eResource().getResourceSet();
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		entryPoint.setContentProvider(contentProvider);
 		entryPoint.setInput(settings);
-		if (current != null) {
-			entryPoint.setSelection(new StructuredSelection(settings.getValue()));
-		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateEntryPointPropertiesEditionPart#setEntryPoint(EObject newValue)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateEntryPointPropertiesEditionPart#updateEntryPoint()
 	 * 
 	 */
-	public void setEntryPoint(EObject newValue) {
-		if (newValue != null) {
-			entryPoint.setSelection(new StructuredSelection(newValue));
-		} else {
-			entryPoint.setSelection(new StructuredSelection()); //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateEntryPointPropertiesEditionPart#setEntryPointButtonMode(ButtonsModeEnum newValue)
-	 */
-	public void setEntryPointButtonMode(ButtonsModeEnum newValue) {
-		entryPoint.setButtonMode(newValue);
-	}
+	public void updateEntryPoint() {
+	entryPoint.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -818,7 +841,7 @@ public class StateEntryPointPropertiesEditionPartForm extends CompositePropertie
 	 * 
 	 */
 	public void addFilterToEntryPoint(ViewerFilter filter) {
-		entryPoint.addFilter(filter);
+		entryPointFilters.add(filter);
 	}
 
 	/**
@@ -828,7 +851,17 @@ public class StateEntryPointPropertiesEditionPartForm extends CompositePropertie
 	 * 
 	 */
 	public void addBusinessFilterToEntryPoint(ViewerFilter filter) {
-		entryPoint.addBusinessRuleFilter(filter);
+		entryPointBusinessFilters.add(filter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.StateEntryPointPropertiesEditionPart#isContainedInEntryPointTable(EObject element)
+	 * 
+	 */
+	public boolean isContainedInEntryPointTable(EObject element) {
+		return ((ReferencesTableSettings)entryPoint.getInput()).contains(element);
 	}
 
 

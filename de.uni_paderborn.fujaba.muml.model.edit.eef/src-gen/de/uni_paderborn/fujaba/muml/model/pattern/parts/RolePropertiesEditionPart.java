@@ -420,53 +420,6 @@ public interface RolePropertiesEditionPart {
 
 
 	/**
-	 * @return the orderVariable
-	 * 
-	 */
-	public EObject getOrderVariable();
-
-	/**
-	 * Init the orderVariable
-	 * @param settings the combo setting
-	 */
-	public void initOrderVariable(EObjectFlatComboSettings settings);
-
-	/**
-	 * Defines a new orderVariable
-	 * @param newValue the new orderVariable to set
-	 * 
-	 */
-	public void setOrderVariable(EObject newValue);
-
-	/**
-	 * Defines the button mode
-	 * @param newValue the new mode to set
-	 * 
-	 */
-	public void setOrderVariableButtonMode(ButtonsModeEnum newValue);
-
-	/**
-	 * Adds the given filter to the orderVariable edition editor.
-	 * 
-	 * @param filter
-	 *            a viewer filter
-	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
-	 * 
-	 */
-	public void addFilterToOrderVariable(ViewerFilter filter);
-
-	/**
-	 * Adds the given filter to the orderVariable edition editor.
-	 * 
-	 * @param filter
-	 *            a viewer filter
-	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
-	 * 
-	 */
-	public void addBusinessFilterToOrderVariable(ViewerFilter filter);
-
-
-	/**
 	 * @return the outgoingRoleConnector
 	 * 
 	 */
@@ -525,7 +478,7 @@ public interface RolePropertiesEditionPart {
 	public String getTitle();
 
 	// Start of user code for additional methods
-
-// End of user code
+	
+	// End of user code
 
 }

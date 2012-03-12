@@ -94,9 +94,6 @@ public class PatternViewsRepository {
 			public static String ordered = "pattern::Role::properties::ordered";
 			
 			
-			public static String orderVariable = "pattern::Role::properties::orderVariable";
-			
-			
 			public static String outgoingRoleConnector = "pattern::Role::properties::outgoingRoleConnector";
 			
 	

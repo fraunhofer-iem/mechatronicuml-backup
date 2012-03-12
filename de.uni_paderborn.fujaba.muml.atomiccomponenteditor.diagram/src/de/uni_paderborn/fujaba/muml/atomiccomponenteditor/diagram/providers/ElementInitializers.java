@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_AtomicComponent_2002(
+	public void init_AtomicComponent_2003(
 			de.uni_paderborn.fujaba.muml.model.component.AtomicComponent instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
@@ -33,7 +33,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPort_3004(
+	public void init_HybridPort_3005(
 			de.uni_paderborn.fujaba.muml.model.component.HybridPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -84,7 +84,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscretePort_3002(
+	public void init_DiscretePort_3006(
 			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -136,7 +136,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPort_3003(
+	public void init_ContinuousPort_3007(
 			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE

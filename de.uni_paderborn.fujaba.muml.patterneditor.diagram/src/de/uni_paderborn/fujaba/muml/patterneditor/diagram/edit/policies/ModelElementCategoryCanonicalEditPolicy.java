@@ -297,7 +297,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-						.getCoordinationPattern_2001ContainedLinks(view));
+						.getCoordinationPattern_2002ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -308,7 +308,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-						.getCoordinationPattern_3001ContainedLinks(view));
+						.getCoordinationPattern_3003ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -319,7 +319,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-						.getRole_3002ContainedLinks(view));
+						.getRole_3004ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -330,7 +330,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-						.getRoleConnector_4002ContainedLinks(view));
+						.getRoleConnector_4004ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPort_3001(
+	public void init_HybridPort_3009(
 			de.uni_paderborn.fujaba.muml.model.component.HybridPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -65,7 +65,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscretePort_3002(
+	public void init_DiscretePort_3010(
 			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -117,7 +117,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPort_3003(
+	public void init_ContinuousPort_3011(
 			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -169,7 +169,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ComponentPart_3005(
+	public void init_ComponentPart_3012(
 			de.uni_paderborn.fujaba.muml.model.component.ComponentPart instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -214,7 +214,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPort_3006(
+	public void init_HybridPort_3013(
 			de.uni_paderborn.fujaba.muml.model.component.HybridPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -265,7 +265,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscretePort_3007(
+	public void init_DiscretePort_3014(
 			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -317,7 +317,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPort_3008(
+	public void init_ContinuousPort_3015(
 			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE

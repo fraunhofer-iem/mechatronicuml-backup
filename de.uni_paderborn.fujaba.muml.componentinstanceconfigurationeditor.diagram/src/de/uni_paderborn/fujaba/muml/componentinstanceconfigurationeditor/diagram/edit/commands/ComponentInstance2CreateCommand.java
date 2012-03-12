@@ -57,7 +57,7 @@ public class ComponentInstance2CreateCommand extends EditElementCommand {
 		owner.getComponentInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
-				.getInstance().init_ComponentInstance_3016(newElement);
+				.getInstance().init_ComponentInstance_3024(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -275,9 +275,6 @@ public class RealtimestatechartMessages extends NLS {
 	public static String AsynchronousMessageEventPropertiesEditionPart_KindLabel;
 
 	
-	public static String AsynchronousMessageEventPropertiesEditionPart_MessageLabel;
-
-	
 	public static String DoEventPropertiesEditionPart_KindLabel;
 
 	
@@ -327,15 +324,6 @@ public class RealtimestatechartMessages extends NLS {
 
 	
 	public static String RealtimeStatechartPropertiesEditionPart_EventQueueSizeLabel;
-
-	
-	public static String RealtimeStatechartPropertiesEditionPart_SecurityLevelLabel;
-
-	
-	public static String RealtimeStatechartPropertiesEditionPart_UtilisationLabel;
-
-	
-	public static String RealtimeStatechartPropertiesEditionPart_ScheduleDocumentLabel;
 
 	
 	public static String MessagePropertiesEditionPart_CommentLabel;
@@ -464,8 +452,8 @@ public class RealtimestatechartMessages extends NLS {
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
 
 	// Start of user code for additionnal NLS Constants
-
-// End of user code
+	
+	// End of user code
 
 	static {
 		// initialize resource bundle

@@ -57,7 +57,7 @@ public class ContinuousPortInstanceCreateCommand extends EditElementCommand {
 		owner.getParentPortInstancesDerived().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
-				.getInstance().init_ContinuousPortInstance_2007(newElement);
+				.getInstance().init_ContinuousPortInstance_2014(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -66,7 +66,7 @@ public class AssemblyInstanceCreateCommand extends EditElementCommand {
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateAssemblyInstance_4003(
+				.getLinkConstraints().canCreateAssemblyInstance_4005(
 						getContainer(), getSource(), getTarget());
 	}
 

@@ -115,17 +115,6 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 				basePart.setEventQueueSize(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), realtimeStatechart.getEventQueueSize()));
 			}
 			
-			if (isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel)) {
-				basePart.setSecurityLevel(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), realtimeStatechart.getSecurityLevel()));
-			}
-			
-			if (isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation)) {
-				basePart.setUtilisation(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEDouble(), realtimeStatechart.getUtilisation()));
-			}
-			
-			if (realtimeStatechart.getScheduleDocument() != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument))
-				basePart.setScheduleDocument(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), realtimeStatechart.getScheduleDocument()));
-			
 			// init filters
 			
 			
@@ -161,9 +150,6 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 			
 			
 			
-			
-			
-			
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -171,9 +157,6 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 		}
 		setInitializing(false);
 	}
-
-
-
 
 
 
@@ -205,15 +188,6 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 		}
 		if (editorKey == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize) {
 			return RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_EventQueueSize();
-		}
-		if (editorKey == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel) {
-			return RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_SecurityLevel();
-		}
-		if (editorKey == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation) {
-			return RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_Utilisation();
-		}
-		if (editorKey == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument) {
-			return RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_ScheduleDocument();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -267,15 +241,6 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 		if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize == event.getAffectedEditor()) {
 			realtimeStatechart.setEventQueueSize((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
 		}
-		if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel == event.getAffectedEditor()) {
-			realtimeStatechart.setSecurityLevel((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
-		}
-		if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation == event.getAffectedEditor()) {
-			realtimeStatechart.setUtilisation((EEFConverterUtil.createDoubleFromString(EcorePackage.eINSTANCE.getEDouble(), (String)event.getNewValue())));
-		}
-		if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument == event.getAffectedEditor()) {
-			realtimeStatechart.setScheduleDocument((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
-		}
 	}
 
 	/**
@@ -311,27 +276,6 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 					basePart.setEventQueueSize(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
 				} else {
 					basePart.setEventQueueSize("");
-				}
-			}
-			if (RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_SecurityLevel().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel)) {
-				if (msg.getNewValue() != null) {
-					basePart.setSecurityLevel(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
-				} else {
-					basePart.setSecurityLevel("");
-				}
-			}
-			if (RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_Utilisation().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation)) {
-				if (msg.getNewValue() != null) {
-					basePart.setUtilisation(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEDouble(), msg.getNewValue()));
-				} else {
-					basePart.setUtilisation("");
-				}
-			}
-			if (RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_ScheduleDocument().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument)) {
-				if (msg.getNewValue() != null) {
-					basePart.setScheduleDocument(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
-				} else {
-					basePart.setScheduleDocument("");
 				}
 			}
 			
@@ -386,27 +330,6 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_EventQueueSize().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_EventQueueSize().getEAttributeType(), newValue);
-				}
-				if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.securityLevel == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_SecurityLevel().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_SecurityLevel().getEAttributeType(), newValue);
-				}
-				if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.utilisation == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_Utilisation().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_Utilisation().getEAttributeType(), newValue);
-				}
-				if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.scheduleDocument == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_ScheduleDocument().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_ScheduleDocument().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

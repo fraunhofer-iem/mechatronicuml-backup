@@ -30,10 +30,9 @@
     <domainDiagramElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
     <childNodes
-        visualID="3010"
+        visualID="3017"
         editPartClassName="StateEditPart"
         itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateViewFactory"
         canonicalEditPolicyClassName="StateCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.10 //@diagram/@childNodes.11"
         compartments="//@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4"
@@ -71,10 +70,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5017"
+          visualID="5044"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateNameViewFactory">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -94,10 +92,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3001"
+        visualID="3018"
         editPartClassName="EntryEventEditPart"
         itemSemanticEditPolicyClassName="EntryEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntryEventViewFactory"
         canonicalEditPolicyClassName="EntryEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EntryEventGraphicalNodeEditPolicy"
         createCommandClassName="EntryEventCreateCommand"
@@ -125,10 +122,9 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/entryEvent"/>
       </modelFacet>
       <labels
-          visualID="5004"
+          visualID="5030"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="EntryEventLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -146,10 +142,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3002"
+        visualID="3019"
         editPartClassName="DoEventEditPart"
         itemSemanticEditPolicyClassName="DoEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="DoEventViewFactory"
         canonicalEditPolicyClassName="DoEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DoEventGraphicalNodeEditPolicy"
         createCommandClassName="DoEventCreateCommand"
@@ -193,10 +188,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5005"
+          visualID="5031"
           editPartClassName="WrappingLabel3EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DoEventLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -214,10 +208,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3003"
+        visualID="3020"
         editPartClassName="ExitEventEditPart"
         itemSemanticEditPolicyClassName="ExitEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExitEventViewFactory"
         canonicalEditPolicyClassName="ExitEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ExitEventGraphicalNodeEditPolicy"
         createCommandClassName="ExitEventCreateCommand"
@@ -245,10 +238,9 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/exitEvent"/>
       </modelFacet>
       <labels
-          visualID="5006"
+          visualID="5032"
           editPartClassName="WrappingLabel4EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ExitEventLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -266,10 +258,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3004"
+        visualID="3021"
         editPartClassName="ClockConstraintEditPart"
         itemSemanticEditPolicyClassName="ClockConstraintItemSemanticEditPolicy"
-        notationViewFactoryClassName="ClockConstraintViewFactory"
         canonicalEditPolicyClassName="ClockConstraintCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ClockConstraintGraphicalNodeEditPolicy"
         createCommandClassName="ClockConstraintCreateCommand"
@@ -297,10 +288,9 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/invariants"/>
       </modelFacet>
       <labels
-          visualID="5007"
+          visualID="5033"
           editPartClassName="WrappingLabel5EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ClockConstraintLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -318,10 +308,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3005"
+        visualID="3022"
         editPartClassName="SynchronizationChannelEditPart"
         itemSemanticEditPolicyClassName="SynchronizationChannelItemSemanticEditPolicy"
-        notationViewFactoryClassName="SynchronizationChannelViewFactory"
         canonicalEditPolicyClassName="SynchronizationChannelCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SynchronizationChannelGraphicalNodeEditPolicy"
         createCommandClassName="SynchronizationChannelCreateCommand"
@@ -358,10 +347,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5008"
+          visualID="5034"
           editPartClassName="WrappingLabel6EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
-          notationViewFactoryClassName="SynchronizationChannelLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -379,10 +367,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3006"
+        visualID="3023"
         editPartClassName="RegionEditPart"
         itemSemanticEditPolicyClassName="RegionItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionViewFactory"
         canonicalEditPolicyClassName="RegionCanonicalEditPolicy"
         compartments="//@diagram/@compartments.5"
         graphicalNodeEditPolicyClassName="RegionGraphicalNodeEditPolicy"
@@ -434,10 +421,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5010"
+          visualID="5039"
           editPartClassName="RegionNameEditPart"
-          itemSemanticEditPolicyClassName="RegionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionNameViewFactory">
+          itemSemanticEditPolicyClassName="RegionNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -453,10 +439,9 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5011"
+          visualID="5040"
           editPartClassName="RegionPriorityEditPart"
-          itemSemanticEditPolicyClassName="RegionPriorityItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionPriorityViewFactory">
+          itemSemanticEditPolicyClassName="RegionPriorityItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -476,10 +461,9 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5012"
+          visualID="5041"
           editPartClassName="WrappingLabel7EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -493,10 +477,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3016"
+        visualID="3024"
         editPartClassName="RealtimeStatechart2EditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechart2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechart2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.9"
         compartments="//@diagram/@compartments.6"
@@ -521,10 +504,9 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/statechart"/>
       </modelFacet>
       <labels
-          visualID="5026"
+          visualID="5037"
           editPartClassName="RealtimeStatechartName2EditPart"
-          itemSemanticEditPolicyClassName="RealtimeStatechartName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="RealtimeStatechartNameViewFactory">
+          itemSemanticEditPolicyClassName="RealtimeStatechartName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -539,10 +521,9 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5027"
-          editPartClassName="WrappingLabel10EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy"
-          notationViewFactoryClassName="RealtimeStatechartLabelViewFactory"
+          visualID="5038"
+          editPartClassName="WrappingLabel8EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -557,10 +538,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3012"
+        visualID="3025"
         editPartClassName="EntryPointEditPart"
         itemSemanticEditPolicyClassName="EntryPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntryPointViewFactory"
         canonicalEditPolicyClassName="EntryPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EntryPointGraphicalNodeEditPolicy"
         createCommandClassName="EntryPointCreateCommand"
@@ -598,10 +578,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5020"
+          visualID="5035"
           editPartClassName="EntryPointNameEditPart"
-          itemSemanticEditPolicyClassName="EntryPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="EntryPointNameViewFactory">
+          itemSemanticEditPolicyClassName="EntryPointNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -618,10 +597,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3013"
+        visualID="3026"
         editPartClassName="ExitPointEditPart"
         itemSemanticEditPolicyClassName="ExitPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExitPointViewFactory"
         canonicalEditPolicyClassName="ExitPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ExitPointGraphicalNodeEditPolicy"
         createCommandClassName="ExitPointCreateCommand"
@@ -660,10 +638,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5021"
+          visualID="5036"
           editPartClassName="ExitPointNameEditPart"
-          itemSemanticEditPolicyClassName="ExitPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ExitPointNameViewFactory">
+          itemSemanticEditPolicyClassName="ExitPointNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -680,10 +657,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3014"
+        visualID="3027"
         editPartClassName="StateEntryPointEditPart"
         itemSemanticEditPolicyClassName="StateEntryPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateEntryPointViewFactory"
         canonicalEditPolicyClassName="StateEntryPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StateEntryPointGraphicalNodeEditPolicy"
         createCommandClassName="StateEntryPointCreateCommand"
@@ -721,10 +697,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5024"
+          visualID="5042"
           editPartClassName="StateEntryPointNameEditPart"
-          itemSemanticEditPolicyClassName="StateEntryPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateEntryPointNameViewFactory">
+          itemSemanticEditPolicyClassName="StateEntryPointNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -741,10 +716,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3015"
+        visualID="3028"
         editPartClassName="StateExitPointEditPart"
         itemSemanticEditPolicyClassName="StateExitPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateExitPointViewFactory"
         canonicalEditPolicyClassName="StateExitPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StateExitPointGraphicalNodeEditPolicy"
         createCommandClassName="StateExitPointCreateCommand"
@@ -783,10 +757,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5025"
+          visualID="5043"
           editPartClassName="StateExitPointNameEditPart"
-          itemSemanticEditPolicyClassName="StateExitPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateExitPointNameViewFactory">
+          itemSemanticEditPolicyClassName="StateExitPointNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -802,10 +775,9 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2005"
+        visualID="2006"
         editPartClassName="RealtimeStatechartEditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.9"
         compartments="//@diagram/@compartments.0"
@@ -829,10 +801,9 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/statechart"/>
       </modelFacet>
       <labels
-          visualID="5028"
+          visualID="5045"
           editPartClassName="RealtimeStatechartNameEditPart"
-          itemSemanticEditPolicyClassName="RealtimeStatechartNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="RealtimeStatechartNameViewFactory">
+          itemSemanticEditPolicyClassName="RealtimeStatechartNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -847,10 +818,9 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5029"
+          visualID="5046"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="RealtimeStatechartLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -864,10 +834,9 @@
       </labels>
     </topLevelNodes>
     <links
-        visualID="4001"
+        visualID="4002"
         editPartClassName="TransitionEditPart"
         itemSemanticEditPolicyClassName="TransitionItemSemanticEditPolicy"
-        notationViewFactoryClassName="TransitionViewFactory"
         createCommandClassName="TransitionCreateCommand"
         reorientCommandClassName="TransitionReorientCommand">
       <diagramRunTimeClass
@@ -902,10 +871,9 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition/target"/>
       </modelFacet>
       <labels
-          visualID="6001"
-          editPartClassName="WrappingLabel8EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
+          visualID="6003"
+          editPartClassName="WrappingLabel9EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -922,10 +890,9 @@
             parser="//@labelParsers/@implementations.9"/>
       </labels>
       <labels
-          visualID="6002"
-          editPartClassName="WrappingLabel9EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
+          visualID="6004"
+          editPartClassName="WrappingLabel10EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy"
           readOnly="true"
           alignment="SOURCE">
         <diagramRunTimeClass
@@ -947,10 +914,9 @@
           sourceEnd="//@expressionProviders/@providers.0/@expressions.20"/>
     </links>
     <compartments
-        visualID="7018"
+        visualID="7019"
         editPartClassName="RealtimeStatechartStatechartContentsCompartmentEditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartStatechartContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
@@ -966,10 +932,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7011"
+        visualID="7020"
         editPartClassName="StateActionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateActionCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateActionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateActionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3"
         title="ActionCompartment"
@@ -984,16 +949,16 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7012"
+        visualID="7021"
         editPartClassName="StateRegionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateRegionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.6"
         title="RegionCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.0">
+        node="//@diagram/@childNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -1002,10 +967,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7015"
+        visualID="7022"
         editPartClassName="StateChannelCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateChannelCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateChannelCompartmentViewFactory"
         canonicalEditPolicyClassName="StateChannelCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="ChannelCompartment"
@@ -1020,10 +984,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7016"
+        visualID="7023"
         editPartClassName="StateInvariantCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateInvariantCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateInvariantCompartmentViewFactory"
         canonicalEditPolicyClassName="StateInvariantCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.4"
         title="InvariantCompartment"
@@ -1038,16 +1001,16 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7003"
+        visualID="7024"
         editPartClassName="RegionRegionContentsCompartmentEditPart"
         itemSemanticEditPolicyClassName="RegionRegionContentsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionRegionContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RegionRegionContentsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.7"
         title="RegionContentsCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.6">
+        node="//@diagram/@childNodes.6"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -1056,10 +1019,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7017"
+        visualID="7025"
         editPartClassName="RealtimeStatechartStatechartContentsCompartment2EditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartStatechartContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
@@ -1437,7 +1399,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
-        className="EntryEventLabelExpressionLabelParser5004"
+        className="EntryEventLabelExpressionLabelParser5030"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/EntryEvent"/>
@@ -1445,7 +1407,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
-        className="DoEventLabelExpressionLabelParser5005"
+        className="DoEventLabelExpressionLabelParser5031"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/DoEvent"/>
@@ -1453,7 +1415,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
-        className="ExitEventLabelExpressionLabelParser5006"
+        className="ExitEventLabelExpressionLabelParser5032"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ExitEvent"/>
@@ -1461,7 +1423,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
-        className="ClockConstraintLabelExpressionLabelParser5007"
+        className="ClockConstraintLabelExpressionLabelParser5033"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ClockConstraint"/>
@@ -1469,7 +1431,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
-        className="SynchronizationChannelLabelExpressionLabelParser5008"
+        className="SynchronizationChannelLabelExpressionLabelParser5034"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/SynchronizationChannel"/>
@@ -1480,7 +1442,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.1/@modelFacet"
-        className="RealtimeStatechartLabelExpressionLabelParser5027"
+        className="RealtimeStatechartLabelExpressionLabelParser5038"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
@@ -1488,7 +1450,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
-        className="RegionLabelExpressionLabelParser5012"
+        className="RegionLabelExpressionLabelParser5041"
         viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region"/>
@@ -1496,7 +1458,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
-        className="RealtimeStatechartLabelExpressionLabelParser5029"
+        className="RealtimeStatechartLabelExpressionLabelParser5046"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
@@ -1504,7 +1466,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.0/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6001"
+        className="TransitionLabelExpressionLabelParser6003"
         viewExpression="//@expressionProviders/@providers.0/@expressions.18">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -1512,7 +1474,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6002"
+        className="TransitionLabelExpressionLabelParser6004"
         viewExpression="//@expressionProviders/@providers.0/@expressions.19">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>

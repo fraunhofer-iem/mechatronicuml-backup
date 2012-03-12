@@ -2,10 +2,11 @@ package de.uni_paderborn.fujaba.muml.scoping;
 
 import java.util.List;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.xtext.scoping.IScopeProvider;
 
 import com.google.inject.Provider;
+
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 
 public class ActionLanguageScopeProviderFactory implements Provider<IScopeProvider> {
@@ -20,7 +21,7 @@ public class ActionLanguageScopeProviderFactory implements Provider<IScopeProvid
 		return scopeProvider;
 	}
 	
-	public static void setAttributeList(List<EAttribute> attributeList) {
+	public static void setAttributeList(List<Attribute> attributeList) {
 		getScopeProvider().setAttributeList(attributeList);
 	}
 

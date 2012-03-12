@@ -57,7 +57,7 @@ public class RegionCreateCommand extends EditElementCommand {
 		owner.getRegions().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_Region_3006(newElement);
+				.getInstance().init_Region_3023(newElement);
 
 		doConfigure(newElement, monitor, info);
 

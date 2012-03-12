@@ -20,7 +20,7 @@ public class MessageTypeItemSemanticEditPolicy
 	 */
 	public MessageTypeItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3004);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3005);
 	}
 
 	/**

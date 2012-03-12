@@ -44,7 +44,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3005;
+	public static final int VISUAL_ID = 3012;
 
 	/**
 	 * @generated

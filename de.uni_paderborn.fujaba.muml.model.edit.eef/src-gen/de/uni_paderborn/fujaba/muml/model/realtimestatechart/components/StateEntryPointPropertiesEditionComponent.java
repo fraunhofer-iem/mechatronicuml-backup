@@ -31,6 +31,7 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.storydriven.modeling.SDMPackage;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -72,6 +73,11 @@ public class StateEntryPointPropertiesEditionComponent extends SinglePartPropert
 	 * Settings for state EObjectFlatComboViewer
 	 */
 	private	EObjectFlatComboSettings stateSettings;
+	
+	/**
+	 * Settings for entryPoint ReferencesTable
+	 */
+	private	ReferencesTableSettings entryPointSettings;
 	
 	
 	/**
@@ -124,7 +130,10 @@ public class StateEntryPointPropertiesEditionComponent extends SinglePartPropert
 				// set the button mode
 				basePart.setStateButtonMode(ButtonsModeEnum.BROWSE);
 			}
-			// FIXME NO VALID CASE INTO template public updater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : entryPoint, StateEntryPoint, StateEntryPoint.
+			if (isAccessible(RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint)) {
+				entryPointSettings = new ReferencesTableSettings(stateEntryPoint, RealtimestatechartPackage.eINSTANCE.getStateEntryPoint_EntryPoint());
+				basePart.initEntryPoint(entryPointSettings);
+			}
 			// init filters
 			
 			basePart.addFilterToOutgoingTransitions(new ViewerFilter() {
@@ -193,7 +202,24 @@ public class StateEntryPointPropertiesEditionComponent extends SinglePartPropert
 			// Start of user code for additional businessfilters for state
 			// End of user code
 			
-			// FIXME NO VALID CASE INTO template public filterUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : entryPoint, StateEntryPoint, StateEntryPoint.
+			basePart.addFilterToEntryPoint(new ViewerFilter() {
+			
+				/**
+				 * {@inheritDoc}
+				 * 
+				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+				 */
+				public boolean select(Viewer viewer, Object parentElement, Object element) {
+					if (element instanceof EObject)
+						return (!basePart.isContainedInEntryPointTable((EObject)element));
+					return element instanceof Resource;
+				}
+			
+			});
+			basePart.addFilterToEntryPoint(new EObjectFilter(RealtimestatechartPackage.eINSTANCE.getEntryPoint()));
+			// Start of user code for additional businessfilters for entryPoint
+			// End of user code
+			
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -301,7 +327,15 @@ public class StateEntryPointPropertiesEditionComponent extends SinglePartPropert
 			}
 		}
 		if (RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint == event.getAffectedEditor()) {
-			// FIXME INVALID CASE you must override the template 'declareEObjectUpdater' for the case : entryPoint, StateEntryPoint, StateEntryPoint.
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				if (event.getNewValue() instanceof EntryPoint) {
+					entryPointSettings.addToReference((EObject) event.getNewValue());
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				entryPointSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				entryPointSettings.move(event.getNewIndex(), (EntryPoint) event.getNewValue());
+			}
 		}
 	}
 
@@ -327,7 +361,8 @@ public class StateEntryPointPropertiesEditionComponent extends SinglePartPropert
 				basePart.setStatechart((EObject)msg.getNewValue());
 			if (RealtimestatechartPackage.eINSTANCE.getStateEntryPoint_State().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.StateEntryPoint.Properties.state))
 				basePart.setState((EObject)msg.getNewValue());
-			// FIXME INVALID CASE INTO template public liveUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : entryPoint, StateEntryPoint, StateEntryPoint.
+			if (RealtimestatechartPackage.eINSTANCE.getStateEntryPoint_EntryPoint().equals(msg.getFeature())  && isAccessible(RealtimestatechartViewsRepository.StateEntryPoint.Properties.entryPoint))
+				basePart.updateEntryPoint();
 			
 		}
 	}

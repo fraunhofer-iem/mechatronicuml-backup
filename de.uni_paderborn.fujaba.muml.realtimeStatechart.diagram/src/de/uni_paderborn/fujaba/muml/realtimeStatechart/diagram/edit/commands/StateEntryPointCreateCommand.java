@@ -57,7 +57,7 @@ public class StateEntryPointCreateCommand extends EditElementCommand {
 		owner.getStateEntryPoints().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_StateEntryPoint_3014(newElement);
+				.getInstance().init_StateEntryPoint_3027(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -70,7 +70,7 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistCoordinationPatternRoles_4001(
+				.getLinkConstraints().canExistCoordinationPatternRoles_4003(
 						getNewSource(), getOldTarget());
 	}
 
@@ -82,7 +82,7 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistCoordinationPatternRoles_4001(
+				.getLinkConstraints().canExistCoordinationPatternRoles_4003(
 						getOldSource(), getNewTarget());
 	}
 

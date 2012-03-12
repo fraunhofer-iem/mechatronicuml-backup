@@ -198,9 +198,6 @@ public class RealtimestatechartViewsRepository {
 			
 			public static String kind = "realtimestatechart::AsynchronousMessageEvent::properties::kind";
 			
-			
-			public static String message = "realtimestatechart::AsynchronousMessageEvent::properties::message";
-			
 	
 		}
 	
@@ -299,15 +296,6 @@ public class RealtimestatechartViewsRepository {
 			
 			
 			public static String eventQueueSize = "realtimestatechart::RealtimeStatechart_::properties::eventQueueSize";
-			
-			
-			public static String securityLevel = "realtimestatechart::RealtimeStatechart_::properties::securityLevel";
-			
-			
-			public static String utilisation = "realtimestatechart::RealtimeStatechart_::properties::utilisation";
-			
-			
-			public static String scheduleDocument = "realtimestatechart::RealtimeStatechart_::properties::scheduleDocument";
 			
 	
 		}

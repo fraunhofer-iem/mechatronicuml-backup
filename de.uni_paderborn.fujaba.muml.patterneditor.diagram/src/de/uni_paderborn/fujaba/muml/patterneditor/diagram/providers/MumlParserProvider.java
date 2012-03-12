@@ -23,39 +23,39 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser coordinationPatternName_5001Parser;
+	protected IParser coordinationPatternName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getCoordinationPatternName_5001Parser() {
-		if (coordinationPatternName_5001Parser == null) {
+	protected IParser getCoordinationPatternName_5003Parser() {
+		if (coordinationPatternName_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser(
 					features);
-			coordinationPatternName_5001Parser = parser;
+			coordinationPatternName_5003Parser = parser;
 		}
-		return coordinationPatternName_5001Parser;
+		return coordinationPatternName_5003Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser roleName_5002Parser;
+	protected IParser roleName_5004Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getRoleName_5002Parser() {
-		if (roleName_5002Parser == null) {
+	protected IParser getRoleName_5004Parser() {
+		if (roleName_5004Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser(
 					features);
-			roleName_5002Parser = parser;
+			roleName_5004Parser = parser;
 		}
-		return roleName_5002Parser;
+		return roleName_5004Parser;
 	}
 
 	/**
@@ -64,9 +64,9 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID:
-			return getCoordinationPatternName_5001Parser();
+			return getCoordinationPatternName_5003Parser();
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
-			return getRoleName_5002Parser();
+			return getRoleName_5004Parser();
 		}
 		return null;
 	}

@@ -35,7 +35,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3012"
+        visualID="3018"
         editPartClassName="HybridPortInstance2EditPart"
         itemSemanticEditPolicyClassName="HybridPortInstance2ItemSemanticEditPolicy"
         notationViewFactoryClassName="HybridPortInstanceViewFactory"
@@ -77,7 +77,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5006"
+          visualID="5013"
           editPartClassName="HybridPortInstanceName2EditPart"
           itemSemanticEditPolicyClassName="HybridPortInstanceName2ItemSemanticEditPolicy"
           notationViewFactoryClassName="HybridPortInstanceNameViewFactory">
@@ -96,7 +96,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3010"
+        visualID="3019"
         editPartClassName="DiscreteSinglePortInstance2EditPart"
         itemSemanticEditPolicyClassName="DiscreteSinglePortInstance2ItemSemanticEditPolicy"
         notationViewFactoryClassName="DiscreteSinglePortInstanceViewFactory"
@@ -138,7 +138,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5007"
+          visualID="5014"
           editPartClassName="DiscreteSinglePortInstanceName2EditPart"
           itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceName2ItemSemanticEditPolicy"
           notationViewFactoryClassName="DiscreteSinglePortInstanceNameViewFactory">
@@ -157,7 +157,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3013"
+        visualID="3020"
         editPartClassName="DiscreteMultiPortInstance2EditPart"
         itemSemanticEditPolicyClassName="DiscreteMultiPortInstance2ItemSemanticEditPolicy"
         notationViewFactoryClassName="DiscreteMultiPortInstanceViewFactory"
@@ -200,7 +200,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5009"
+          visualID="5016"
           editPartClassName="DiscreteMultiPortInstanceName2EditPart"
           itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceName2ItemSemanticEditPolicy"
           notationViewFactoryClassName="DiscreteMultiPortInstanceNameViewFactory">
@@ -218,7 +218,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3017"
+        visualID="3021"
         editPartClassName="DiscreteSinglePortInstance3EditPart"
         itemSemanticEditPolicyClassName="DiscreteSinglePortInstance3ItemSemanticEditPolicy"
         notationViewFactoryClassName="DiscreteSinglePortInstanceViewFactory"
@@ -259,7 +259,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5012"
+          visualID="5015"
           editPartClassName="DiscreteSinglePortInstanceName3EditPart"
           itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceName3ItemSemanticEditPolicy"
           notationViewFactoryClassName="DiscreteSinglePortInstanceNameViewFactory">
@@ -278,7 +278,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3011"
+        visualID="3022"
         editPartClassName="ContinuousPortInstance2EditPart"
         itemSemanticEditPolicyClassName="ContinuousPortInstance2ItemSemanticEditPolicy"
         notationViewFactoryClassName="ContinuousPortInstanceViewFactory"
@@ -320,7 +320,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5008"
+          visualID="5017"
           editPartClassName="ContinuousPortInstanceName2EditPart"
           itemSemanticEditPolicyClassName="ContinuousPortInstanceName2ItemSemanticEditPolicy"
           notationViewFactoryClassName="ContinuousPortInstanceNameViewFactory">
@@ -338,7 +338,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3015"
+        visualID="3023"
         editPartClassName="ComponentInstanceConfigurationEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceConfigurationItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentInstanceConfigurationViewFactory"
@@ -366,7 +366,7 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3016"
+        visualID="3024"
         editPartClassName="ComponentInstance2EditPart"
         itemSemanticEditPolicyClassName="ComponentInstance2ItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentInstanceViewFactory"
@@ -408,7 +408,7 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5011"
+          visualID="5018"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
           notationViewFactoryClassName="ComponentInstanceLabelViewFactory">
@@ -428,7 +428,7 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2004"
+        visualID="2010"
         editPartClassName="ComponentInstanceEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentInstanceViewFactory"
@@ -469,7 +469,7 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5002"
+          visualID="5019"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
           notationViewFactoryClassName="ComponentInstanceLabelViewFactory">
@@ -489,7 +489,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2008"
+        visualID="2011"
         editPartClassName="HybridPortInstanceEditPart"
         itemSemanticEditPolicyClassName="HybridPortInstanceItemSemanticEditPolicy"
         notationViewFactoryClassName="HybridPortInstanceViewFactory"
@@ -529,7 +529,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5003"
+          visualID="5020"
           editPartClassName="HybridPortInstanceNameEditPart"
           itemSemanticEditPolicyClassName="HybridPortInstanceNameItemSemanticEditPolicy"
           notationViewFactoryClassName="HybridPortInstanceNameViewFactory">
@@ -547,7 +547,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2005"
+        visualID="2012"
         editPartClassName="DiscreteSinglePortInstanceEditPart"
         itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceItemSemanticEditPolicy"
         notationViewFactoryClassName="DiscreteSinglePortInstanceViewFactory"
@@ -587,7 +587,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5004"
+          visualID="5021"
           editPartClassName="DiscreteSinglePortInstanceNameEditPart"
           itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceNameItemSemanticEditPolicy"
           notationViewFactoryClassName="DiscreteSinglePortInstanceNameViewFactory">
@@ -605,7 +605,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2009"
+        visualID="2013"
         editPartClassName="DiscreteMultiPortInstanceEditPart"
         itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceItemSemanticEditPolicy"
         notationViewFactoryClassName="DiscreteMultiPortInstanceViewFactory"
@@ -646,7 +646,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5010"
+          visualID="5022"
           editPartClassName="DiscreteMultiPortInstanceNameEditPart"
           itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceNameItemSemanticEditPolicy"
           notationViewFactoryClassName="DiscreteMultiPortInstanceNameViewFactory">
@@ -664,7 +664,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2007"
+        visualID="2014"
         editPartClassName="ContinuousPortInstanceEditPart"
         itemSemanticEditPolicyClassName="ContinuousPortInstanceItemSemanticEditPolicy"
         notationViewFactoryClassName="ContinuousPortInstanceViewFactory"
@@ -704,7 +704,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5005"
+          visualID="5023"
           editPartClassName="ContinuousPortInstanceNameEditPart"
           itemSemanticEditPolicyClassName="ContinuousPortInstanceNameItemSemanticEditPolicy"
           notationViewFactoryClassName="ContinuousPortInstanceNameViewFactory">
@@ -722,7 +722,7 @@
       </labels>
     </topLevelNodes>
     <links
-        visualID="4003"
+        visualID="4005"
         editPartClassName="AssemblyInstanceEditPart"
         itemSemanticEditPolicyClassName="AssemblyInstanceItemSemanticEditPolicy"
         notationViewFactoryClassName="AssemblyInstanceViewFactory"
@@ -751,7 +751,7 @@
       </modelFacet>
     </links>
     <links
-        visualID="4004"
+        visualID="4006"
         editPartClassName="DelegationInstanceEditPart"
         itemSemanticEditPolicyClassName="DelegationInstanceItemSemanticEditPolicy"
         notationViewFactoryClassName="DelegationInstanceViewFactory"
@@ -782,7 +782,7 @@
           sourceEnd="//@expressionProviders/@providers.0/@expressions.7"/>
     </links>
     <compartments
-        visualID="7002"
+        visualID="7007"
         editPartClassName="ComponentInstanceComponentInstanceContentsCompartmentEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceComponentInstanceContentsCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentInstanceComponentInstanceContentsCompartmentViewFactory"
@@ -791,7 +791,8 @@
         title="ComponentInstanceContentsCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -800,7 +801,7 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7005"
+        visualID="7008"
         editPartClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart"
         itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentViewFactory"
@@ -818,7 +819,7 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7003"
+        visualID="7009"
         editPartClassName="ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentViewFactory"
@@ -837,7 +838,7 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7004"
+        visualID="7010"
         editPartClassName="ComponentInstanceComponentInstanceContentsCompartment2EditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceComponentInstanceContentsCompartment2ItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentInstanceComponentInstanceContentsCompartmentViewFactory"
@@ -846,7 +847,8 @@
         title="ComponentInstanceContentsCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.6">
+        node="//@diagram/@childNodes.6"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -855,7 +857,7 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7006"
+        visualID="7011"
         editPartClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart"
         itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2ItemSemanticEditPolicy"
         notationViewFactoryClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentViewFactory"
@@ -1514,7 +1516,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.0/@modelFacet"
-        className="ComponentInstanceLabelExpressionLabelParser5011"
+        className="ComponentInstanceLabelExpressionLabelParser5018"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance"/>
@@ -1522,7 +1524,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
-        className="ComponentInstanceLabelExpressionLabelParser5002"
+        className="ComponentInstanceLabelExpressionLabelParser5019"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance"/>

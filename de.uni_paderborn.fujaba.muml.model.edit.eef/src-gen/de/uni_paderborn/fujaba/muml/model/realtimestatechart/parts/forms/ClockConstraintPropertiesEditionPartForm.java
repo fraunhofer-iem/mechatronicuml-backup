@@ -4,8 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.forms;
 
 // Start of user code for imports
-
-
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
@@ -200,8 +198,8 @@ public class ClockConstraintPropertiesEditionPartForm extends CompositePropertie
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**

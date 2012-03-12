@@ -14,7 +14,6 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -22,19 +21,19 @@ import org.storydriven.modeling.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator;
 
 public class ActionStorage implements IStorage {
 	
 	private Action action;
-	private List<EAttribute> attributeList;
+	private List<Attribute> attributeList;
 	private Expression currentExpression;
 	
 	public ActionStorage(EObject model) {
@@ -83,7 +82,7 @@ public class ActionStorage implements IStorage {
 		return null;
 	}
 	
-	public List<EAttribute> getAttributeList() {
+	public List<Attribute> getAttributeList() {
 		return attributeList;
 	}
 

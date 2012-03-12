@@ -98,7 +98,7 @@ public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramUpdater
-				.getMessageInterfaceMessageTypeCompartment_7003SemanticChildren(viewObject);
+				.getMessageInterfaceMessageTypeCompartment_7004SemanticChildren(viewObject);
 
 	}
 

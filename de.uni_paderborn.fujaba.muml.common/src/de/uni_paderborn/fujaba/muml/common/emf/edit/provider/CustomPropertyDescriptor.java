@@ -2,13 +2,11 @@ package de.uni_paderborn.fujaba.muml.common.emf.edit.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
 import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -41,6 +39,7 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialog
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExtension;
 import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -198,7 +197,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			super(composite, feature);
 		}
 		
-		private List<EAttribute> getAllAvailableAttributes() {
+		private List<Attribute> getAllAvailableAttributes() {
 			EObject containerObject = dialog.getContainerObject();
 			if (containerObject instanceof StateEvent) {
 				return ((RealtimeStatechart) containerObject.eContainer().eContainer()).getAllAvailableAttributes();

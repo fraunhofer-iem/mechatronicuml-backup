@@ -16,7 +16,7 @@ public class MessageInterfaceSuperTypeItemSemanticEditPolicy
 	 */
 	public MessageInterfaceSuperTypeItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4003);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4004);
 	}
 
 	/**

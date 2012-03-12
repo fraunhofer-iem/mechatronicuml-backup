@@ -4,11 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.msgiface.parts.forms;
 
 // Start of user code for imports
-
-
-
-
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -453,8 +448,8 @@ public class MessageTypePropertiesEditionPartForm extends CompositePropertiesEdi
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**

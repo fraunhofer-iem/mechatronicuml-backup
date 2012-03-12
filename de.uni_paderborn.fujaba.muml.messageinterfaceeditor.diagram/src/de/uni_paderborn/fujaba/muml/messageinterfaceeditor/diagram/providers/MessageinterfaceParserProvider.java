@@ -23,35 +23,35 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser messageInterfaceName_5005Parser;
+	protected IParser messageInterfaceName_5009Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageInterfaceName_5005Parser() {
-		if (messageInterfaceName_5005Parser == null) {
+	protected IParser getMessageInterfaceName_5009Parser() {
+		if (messageInterfaceName_5009Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);
-			messageInterfaceName_5005Parser = parser;
+			messageInterfaceName_5009Parser = parser;
 		}
-		return messageInterfaceName_5005Parser;
+		return messageInterfaceName_5009Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5007 messageTypeLabel_5007Parser;
+	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5008 messageTypeLabel_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageTypeLabel_5007Parser() {
-		if (messageTypeLabel_5007Parser == null) {
-			messageTypeLabel_5007Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5007();
+	protected IParser getMessageTypeLabel_5008Parser() {
+		if (messageTypeLabel_5008Parser == null) {
+			messageTypeLabel_5008Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5008();
 		}
-		return messageTypeLabel_5007Parser;
+		return messageTypeLabel_5008Parser;
 	}
 
 	/**
@@ -60,9 +60,9 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID:
-			return getMessageInterfaceName_5005Parser();
+			return getMessageInterfaceName_5009Parser();
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getMessageTypeLabel_5007Parser();
+			return getMessageTypeLabel_5008Parser();
 		}
 		return null;
 	}

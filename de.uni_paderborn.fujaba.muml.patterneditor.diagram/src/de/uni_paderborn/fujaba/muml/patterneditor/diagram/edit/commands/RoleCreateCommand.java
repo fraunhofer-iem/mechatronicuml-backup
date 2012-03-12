@@ -61,7 +61,7 @@ public class RoleCreateCommand extends EditElementCommand {
 		owner.getRoles().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers
-				.getInstance().init_Role_3002(newElement);
+				.getInstance().init_Role_3004(newElement);
 
 		doConfigure(newElement, monitor, info);
 

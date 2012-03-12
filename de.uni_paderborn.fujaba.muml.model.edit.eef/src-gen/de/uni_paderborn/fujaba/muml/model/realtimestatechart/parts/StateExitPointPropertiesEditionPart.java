@@ -212,31 +212,20 @@ public interface StateExitPointPropertiesEditionPart {
 	public void addBusinessFilterToState(ViewerFilter filter);
 
 
-	/**
-	 * @return the exitPoint
-	 * 
-	 */
-	public EObject getExitPoint();
+
 
 	/**
 	 * Init the exitPoint
-	 * @param settings the combo setting
+	 * @param settings settings for the exitPoint ReferencesTable 
 	 */
-	public void initExitPoint(EObjectFlatComboSettings settings);
+	public void initExitPoint(ReferencesTableSettings settings);
 
 	/**
-	 * Defines a new exitPoint
-	 * @param newValue the new exitPoint to set
+	 * Update the exitPoint
+	 * @param newValue the exitPoint to update
 	 * 
 	 */
-	public void setExitPoint(EObject newValue);
-
-	/**
-	 * Defines the button mode
-	 * @param newValue the new mode to set
-	 * 
-	 */
-	public void setExitPointButtonMode(ButtonsModeEnum newValue);
+	public void updateExitPoint();
 
 	/**
 	 * Adds the given filter to the exitPoint edition editor.
@@ -258,6 +247,12 @@ public interface StateExitPointPropertiesEditionPart {
 	 */
 	public void addBusinessFilterToExitPoint(ViewerFilter filter);
 
+	/**
+	 * @return true if the given element is contained inside the exitPoint table
+	 * 
+	 */
+	public boolean isContainedInExitPointTable(EObject element);
+
 
 
 
@@ -271,7 +266,7 @@ public interface StateExitPointPropertiesEditionPart {
 	public String getTitle();
 
 	// Start of user code for additional methods
-
-// End of user code
+	
+	// End of user code
 
 }

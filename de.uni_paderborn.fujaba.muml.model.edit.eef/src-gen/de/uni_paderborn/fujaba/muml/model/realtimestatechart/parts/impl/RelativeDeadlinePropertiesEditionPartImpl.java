@@ -4,9 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.impl;
 
 // Start of user code for imports
-
-
-
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
@@ -111,8 +108,8 @@ public class RelativeDeadlinePropertiesEditionPartImpl extends CompositeProperti
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 

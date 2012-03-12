@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CoordinationPattern_2001(
+	public void init_CoordinationPattern_2002(
 			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
@@ -165,7 +165,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Role_3002(
+	public void init_Role_3004(
 			de.uni_paderborn.fujaba.muml.model.pattern.Role instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory

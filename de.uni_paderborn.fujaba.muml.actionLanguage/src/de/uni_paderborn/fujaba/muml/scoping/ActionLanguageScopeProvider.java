@@ -11,7 +11,7 @@ import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 /**
  * This class contains custom scoping description.
@@ -21,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
  *
  */
 public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
-	private List<EAttribute> attributeList = null;
+	private List<Attribute> attributeList = null;
 	
 	public ActionLanguageScopeProvider() {
 		super();
@@ -39,7 +39,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		return Scopes.scopeFor(attributeList);
 	}
 	
-	public void setAttributeList(List<EAttribute> attributeList) {
+	public void setAttributeList(List<Attribute> attributeList) {
 		this.attributeList = attributeList;
 	}
 

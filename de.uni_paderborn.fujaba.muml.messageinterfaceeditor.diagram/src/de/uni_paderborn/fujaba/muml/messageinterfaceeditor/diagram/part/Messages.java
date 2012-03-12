@@ -288,27 +288,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterface_2003_incominglinks;
+	public static String NavigatorGroupName_MessageInterface_2004_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterface_2003_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterfaceSuperType_4003_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterfaceSuperType_4003_source;
+	public static String NavigatorGroupName_MessageInterface_2004_outgoinglinks;
 
 	/**
 	 * @generated

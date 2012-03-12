@@ -69,7 +69,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container = (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) getLink()
 				.eContainer();
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleConnector_4002(container,
+				.getLinkConstraints().canExistRoleConnector_4004(container,
 						getLink(), getNewSource(), target);
 	}
 
@@ -88,7 +88,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container = (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) getLink()
 				.eContainer();
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleConnector_4002(container,
+				.getLinkConstraints().canExistRoleConnector_4004(container,
 						getLink(), source, getNewTarget());
 	}
 

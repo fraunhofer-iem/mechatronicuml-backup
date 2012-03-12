@@ -288,47 +288,47 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_3002_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_3002_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_CoordinationPattern_3001_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPatternRoles_4001_target;
+	public static String NavigatorGroupName_RoleConnector_4004_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPatternRoles_4001_source;
+	public static String NavigatorGroupName_RoleConnector_4004_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4002_target;
+	public static String NavigatorGroupName_CoordinationPattern_3003_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4002_source;
+	public static String NavigatorGroupName_CoordinationPatternRoles_4003_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPattern_2001_outgoinglinks;
+	public static String NavigatorGroupName_CoordinationPatternRoles_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationPattern_2002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Role_3004_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Role_3004_outgoinglinks;
 
 	/**
 	 * @generated

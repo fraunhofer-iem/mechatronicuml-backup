@@ -16,7 +16,7 @@ public class AssemblyInstanceItemSemanticEditPolicy
 	 */
 	public AssemblyInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.AssemblyInstance_4003);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.AssemblyInstance_4005);
 	}
 
 	/**

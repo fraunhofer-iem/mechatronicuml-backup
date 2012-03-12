@@ -66,7 +66,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateTransition_4001(getContainer(),
+				.getLinkConstraints().canCreateTransition_4002(getContainer(),
 						getSource(), getTarget());
 	}
 
@@ -86,7 +86,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_Transition_4001(newElement);
+				.getInstance().init_Transition_4002(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);

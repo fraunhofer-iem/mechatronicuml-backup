@@ -46,7 +46,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageInterface1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageInterface1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2003));
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2004));
 		entry.setId("createMessageInterface1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom/icons/MessageInterface.gif")); //$NON-NLS-1$
@@ -62,10 +62,10 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageType2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageType2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3004));
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3005));
 		entry.setId("createMessageType2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3004));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -78,7 +78,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Generalization3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Generalization3CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4003));
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4004));
 		entry.setId("createGeneralization3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Generalization.gif")); //$NON-NLS-1$

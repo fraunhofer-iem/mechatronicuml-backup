@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_State_3010(
+	public void init_State_3017(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
@@ -32,7 +32,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DoEvent_3002(
+	public void init_DoEvent_3019(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
@@ -55,7 +55,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_SynchronizationChannel_3005(
+	public void init_SynchronizationChannel_3022(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
@@ -74,7 +74,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Region_3006(
+	public void init_Region_3023(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
@@ -112,7 +112,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_EntryPoint_3012(
+	public void init_EntryPoint_3025(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
@@ -130,7 +130,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ExitPoint_3013(
+	public void init_ExitPoint_3026(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
@@ -148,7 +148,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_StateEntryPoint_3014(
+	public void init_StateEntryPoint_3027(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
@@ -167,7 +167,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_StateExitPoint_3015(
+	public void init_StateExitPoint_3028(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
@@ -186,7 +186,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Transition_4001(
+	public void init_Transition_4002(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory

@@ -53,7 +53,7 @@ public class MessageInterfaceSuperTypeCreateCommand extends EditElementCommand {
 		}
 		// target may be null here but it's possible to check constraint
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateMessageInterfaceSuperType_4003(
+				.getLinkConstraints().canCreateMessageInterfaceSuperType_4004(
 						getSource(), getTarget());
 	}
 

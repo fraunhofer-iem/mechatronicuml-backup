@@ -4,7 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.impl;
 
 // Start of user code for imports
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -51,9 +50,6 @@ import org.eclipse.swt.widgets.Group;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.ExitEventPropertiesEditionPart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimestatechartViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers.RealtimestatechartMessages;
-
-
-
 
 
 // End of user code
@@ -262,8 +258,8 @@ public class ExitEventPropertiesEditionPartImpl extends CompositePropertiesEditi
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**

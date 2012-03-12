@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers;
+package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers;
 
 import java.util.Collections;
 
@@ -23,24 +23,18 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class MessageTypeLabelExpressionLabelParser5007 implements IParser {
+public class ComponentPartLabelExpressionLabelParser5017 implements IParser {
 	/**
 	 * @generated
 	 */
-	public MessageTypeLabelExpressionLabelParser5007() {
+	public ComponentPartLabelExpressionLabelParser5017() {
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getEditString(IAdaptable element, int flags) {
-		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
-				.getExpression(
-						3,
-						de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
-								.getMessageType(), null).evaluate(target);
-		return String.valueOf(result);
+		return getPrintString(element, flags);
 	}
 
 	/**
@@ -82,11 +76,11 @@ public class MessageTypeLabelExpressionLabelParser5007 implements IParser {
 	 */
 	public String getPrintString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
+		Object result = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						2,
-						de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
-								.getMessageType(), null).evaluate(target);
+						11,
+						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+								.getComponentPart(), null).evaluate(target);
 		return String.valueOf(result);
 	}
 

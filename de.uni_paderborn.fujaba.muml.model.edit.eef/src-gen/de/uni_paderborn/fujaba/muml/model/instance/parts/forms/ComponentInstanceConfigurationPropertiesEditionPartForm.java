@@ -4,8 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.instance.parts.forms;
 
 // Start of user code for imports
-
-
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
@@ -115,8 +113,8 @@ public class ComponentInstanceConfigurationPropertiesEditionPartForm extends Com
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 

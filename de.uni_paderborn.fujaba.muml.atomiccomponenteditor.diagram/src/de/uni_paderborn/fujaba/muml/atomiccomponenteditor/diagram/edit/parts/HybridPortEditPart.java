@@ -52,7 +52,7 @@ public class HybridPortEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3004;
+	public static final int VISUAL_ID = 3005;
 
 	/**
 	 * @generated

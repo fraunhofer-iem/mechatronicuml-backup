@@ -16,7 +16,7 @@ public class RoleConnectorItemSemanticEditPolicy
 	 */
 	public RoleConnectorItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4002);
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4004);
 	}
 
 	/**

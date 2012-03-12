@@ -57,7 +57,7 @@ public class DiscreteMultiPortInstance2CreateCommand extends EditElementCommand 
 		owner.getPortInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
-				.getInstance().init_DiscreteMultiPortInstance_3013(newElement);
+				.getInstance().init_DiscreteMultiPortInstance_3020(newElement);
 
 		doConfigure(newElement, monitor, info);
 

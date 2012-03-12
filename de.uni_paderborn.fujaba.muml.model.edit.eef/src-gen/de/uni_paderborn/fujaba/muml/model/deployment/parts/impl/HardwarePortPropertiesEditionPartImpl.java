@@ -4,7 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.deployment.parts.impl;
 
 // Start of user code for imports
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -308,8 +307,8 @@ public class HardwarePortPropertiesEditionPartImpl extends CompositePropertiesEd
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-
-// End of user code
+		
+		// End of user code
 	}
 
 	/**

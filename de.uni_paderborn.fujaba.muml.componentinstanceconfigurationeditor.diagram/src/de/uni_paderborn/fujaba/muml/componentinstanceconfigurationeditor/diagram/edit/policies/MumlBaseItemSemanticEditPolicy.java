@@ -328,29 +328,29 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateAssemblyInstance_4003(
+		public boolean canCreateAssemblyInstance_4005(
 				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.model.instance.PortInstance source,
 				de.uni_paderborn.fujaba.muml.model.instance.PortInstance target) {
-			return canExistAssemblyInstance_4003(container, null, source,
+			return canExistAssemblyInstance_4005(container, null, source,
 					target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateDelegationInstance_4004(
+		public boolean canCreateDelegationInstance_4006(
 				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.model.instance.PortInstance source,
 				de.uni_paderborn.fujaba.muml.model.instance.PortInstance target) {
-			return canExistDelegationInstance_4004(container, null, source,
+			return canExistDelegationInstance_4006(container, null, source,
 					target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistAssemblyInstance_4003(
+		public boolean canExistAssemblyInstance_4005(
 				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.model.instance.PortInstance source,
@@ -361,7 +361,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistDelegationInstance_4004(
+		public boolean canExistDelegationInstance_4006(
 				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.model.instance.PortInstance source,

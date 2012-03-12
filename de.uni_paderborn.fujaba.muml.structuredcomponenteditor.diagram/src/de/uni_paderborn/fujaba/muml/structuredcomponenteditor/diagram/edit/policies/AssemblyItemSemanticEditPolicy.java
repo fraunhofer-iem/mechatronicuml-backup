@@ -16,7 +16,7 @@ public class AssemblyItemSemanticEditPolicy
 	 */
 	public AssemblyItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Assembly_4002);
+				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Assembly_4004);
 	}
 
 	/**

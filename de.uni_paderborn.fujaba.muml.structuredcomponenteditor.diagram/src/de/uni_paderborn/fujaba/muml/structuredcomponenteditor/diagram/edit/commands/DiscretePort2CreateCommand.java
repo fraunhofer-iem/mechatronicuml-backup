@@ -57,7 +57,7 @@ public class DiscretePort2CreateCommand extends EditElementCommand {
 		owner.getPortsDerived().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.ElementInitializers
-				.getInstance().init_DiscretePort_3007(newElement);
+				.getInstance().init_DiscretePort_3014(newElement);
 
 		doConfigure(newElement, monitor, info);
 
