@@ -48,6 +48,7 @@ import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.commands.CreateDiagramCommand;
 import de.fujaba.newwizard.diagrams.DiagramEditorUtil;
 import de.fujaba.newwizard.diagrams.IDiagramInformation;
+import de.uni_paderborn.fujaba.muml.utilities.UtilitiesPlugin;
 import de.uni_paderborn.fujaba.muml.utilities.ui.pages.DiagramHierarchyContentsSelectionPage;
 
 public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
@@ -98,7 +99,8 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 
 	protected DiagramHierarchyContentsSelectionPage createSelectionPage() {
 		DiagramHierarchyContentsSelectionPage selectionPage = new DiagramHierarchyContentsSelectionPage(
-				"diagram elements", null, null);
+				"diagram elements", null, null, UtilitiesPlugin.getDefault()
+						.getItemProvidersAdapterFactory());
 
 		selectionPage.setTitle("Select source elements");
 		selectionPage
@@ -111,9 +113,11 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 		this.selection = selection;
 	}
 
+	@Override
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
+			@Override
 			protected void execute(IProgressMonitor monitor)
 					throws CoreException, InterruptedException {
 				Collection<EObject> elements = diagramContentsSelectionPage

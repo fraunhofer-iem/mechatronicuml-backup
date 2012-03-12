@@ -11,10 +11,29 @@ package «editorGen.editor.packageName»;
 «EXPAND xpt::Common::generatedClassComment»
 public class «creationWizardClassName» extends «EXPAND superClass» {
 	«EXPAND initialize»
-	«EXPAND fujaba::impl::Common::editorId»
+	«EXPAND getEditorId»
+	«EXPAND getItemProvidersAdapterFactory»
 	«EXPAND additions-»
 }
 «ENDAROUND»
+
+«DEFINE getEditorId FOR gmfgen::GenDiagram»
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getEditorId() {
+		return «editorGen.editor.getQualifiedClassName()».ID;
+
+	}
+«ENDDEFINE»
+
+«DEFINE getItemProvidersAdapterFactory FOR gmfgen::GenDiagram»
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public org.eclipse.emf.common.notify.AdapterFactory getItemProvidersAdapterFactory() {
+		return «editorGen.plugin.getActivatorQualifiedClassName()».getInstance()
+				.getItemProvidersAdapterFactory();
+	}
+«ENDDEFINE»
 
 «DEFINE superClass FOR gmfgen::GenDiagram»de.fujaba.newwizard.diagrams.AbstractFujabaDiagramNewWizard«ENDDEFINE»
 

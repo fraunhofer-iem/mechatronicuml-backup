@@ -17,6 +17,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0",
  de.fujaba.modelinstance;bundle-version="1.0.0",
  org.storydriven.modeling;bundle-version="1.0.0",
- org.eclipse.gmf.runtime.diagram.core;bundle-version="1.4.0"
+ org.eclipse.gmf.runtime.diagram.core;bundle-version="1.4.0",
+ de.fujaba.modelinstance.edit;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.model;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.model.edit;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.common;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

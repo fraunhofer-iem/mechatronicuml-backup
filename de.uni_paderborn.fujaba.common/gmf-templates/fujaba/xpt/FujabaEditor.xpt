@@ -1,9 +1,0 @@
-
-«REM» Methods that implement IFujabaEditor «ENDREM»
-«DEFINE FujabaEditor FOR gmfgen::GenEditorView»
-	«EXPAND fujaba::impl::FujabaEditor::isValidDiagramElement»
-	«EXPAND fujaba::impl::FujabaEditor::isValidTopLevelNodeElement»
-	«EXPAND fujaba::impl::FujabaEditor::createDiagramElement»
-	«EXPAND fujaba::impl::FujabaEditor::getCreatePersistedViewsRequest»
-	«EXPAND fujaba::impl::FujabaEditor::getPreferencesHint»
-«ENDDEFINE»

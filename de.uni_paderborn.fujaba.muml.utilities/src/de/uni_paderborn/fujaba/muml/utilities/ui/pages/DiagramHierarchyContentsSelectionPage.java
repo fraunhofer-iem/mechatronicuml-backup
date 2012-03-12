@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.utilities.ui.pages;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -17,8 +18,8 @@ public class DiagramHierarchyContentsSelectionPage extends
 	protected HierarchyCheckedTreeViewer hierarchyTreeViewer;
 
 	public DiagramHierarchyContentsSelectionPage(String pageId,
-			IDiagramElementValidator validator, String modelElementCategoryKey) {
-		super(pageId, validator, modelElementCategoryKey);
+			IDiagramElementValidator validator, String modelElementCategoryKey, AdapterFactory adapterFactory) {
+		super(pageId, validator, modelElementCategoryKey, adapterFactory);
 	}
 
 	@Override
