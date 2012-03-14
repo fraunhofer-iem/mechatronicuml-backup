@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.utilities.batch;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
@@ -146,10 +147,6 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * This method should be called within a workspace modify operation since it
 	 * creates resources.
-	 * 
-	 * @param modelURI
-	 * @param elements
-	 * @param progressMonitor
 	 */
 	public void createDiagrams(Collection<EObject> elements,
 			IProgressMonitor progressMonitor) {
@@ -159,77 +156,73 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 
 		final Resource modelResource = getModelResource();
 
-		Map<String, IDiagramInformation> map = FujabaNewwizardPlugin
+		Map<String, IDiagramInformation> diagramInformationMap = FujabaNewwizardPlugin
 				.getDefault().getDiagramInformationMap();
+		Map<EObject, ElementInformation> elementInformationMap = new HashMap<EObject, ElementInformation>();
 
-		int work = 0;
+		// For each selected element find out if it can be used to create a
+		// Diagram and how.
 		for (EObject element : elements) {
-			// Ask extension point for editorId and diagramInformation for this
-			// element!
-			EObject diagramElement = null;
-			Collection<EObject> contents = null;
-			IDiagramInformation diagramInformation = null;
-			for (IDiagramInformation information : map.values()) {
-				String modelId = information.getModelId();
-				boolean useCategory = ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY
-						.isSuperTypeOf(information.getDiagramElementClass());
-				if (!useCategory && isValidDiagramElement(modelId, element)) {
-					diagramElement = element;
-					contents = Collections.emptyList();
-				} else if (useCategory
-						&& element.eContainer() instanceof ModelElementCategory
-						&& isValidTopLevelNodeElement(modelId,
-								element.eContainer(), element)) {
-					diagramElement = null;
-					contents = Collections.singletonList(element);
-				} else {
-					continue;
+			ElementInformation elementInformation = getElementInformation(
+					element, diagramInformationMap);
+			if (elementInformation != null) {
+				elementInformationMap.put(element, elementInformation);
+			}
+		}
+
+		// For each element within the elementInformationMap create the Diagram.
+		int work = 0;
+		for (Map.Entry<EObject, ElementInformation> entry : elementInformationMap
+				.entrySet()) {
+			EObject element = entry.getKey();
+			ElementInformation elementInformation = entry.getValue();
+
+			IDiagramInformation diagramInformation = elementInformation.diagramInformation;
+			EObject diagramElement = elementInformation.diagramElement;
+			Collection<EObject> contents = elementInformation.contents;
+
+			// Diagram name
+			String elementLabel = getElementLabel(element);
+
+			// Build URI for the new diagram file
+			IPath diagramDirectory = getModelPath().removeLastSegments(1);
+
+			// Create subdirectories for all container elements that are
+			// checked.
+			for (EObject container : getContainmentHierarchy(element)) {
+				if (elements.contains(container)
+						&& elementInformationMap.containsKey(container)
+						|| container instanceof ModelElementCategory) {
+					diagramDirectory = diagramDirectory
+							.append(getElementLabel(container));
 				}
-				diagramInformation = information;
-				break;
 			}
 
-			if (diagramInformation != null) {
-				// Diagram name
-				String elementLabel = getElementLabel(element);
+			String diagramFilename = getUniqueFileName(diagramDirectory,
+					elementLabel, diagramInformation.getFileExtension());
+			IPath diagramPath = diagramDirectory.append(diagramFilename);
+			URI diagramURI = URI.createPlatformResourceURI(
+					diagramPath.toOSString(), true);
 
-				// Build URI for the new diagram file
-				IPath diagramDirectory = getModelPath().removeLastSegments(1);
-	
-				// Create subdirectories for all container elements that are checked.
-				for (EObject container : getContainmentHierarchy(element)) {
-					if (elements.contains(container) || container instanceof ModelElementCategory) {
-						diagramDirectory = diagramDirectory.append(getElementLabel(container));
-					}
-				}
+			// Resource
+			final Resource diagramResource = editingDomain.getResourceSet()
+					.createResource(diagramURI);
 
-				String diagramFilename = getUniqueFileName(diagramDirectory,
-						elementLabel, diagramInformation.getFileExtension());
-				IPath diagramPath = diagramDirectory.append(diagramFilename);
-				URI diagramURI = URI.createPlatformResourceURI(
-						diagramPath.toOSString(), true);
-
-				// Resource
-				final Resource diagramResource = editingDomain.getResourceSet()
-						.createResource(diagramURI);
-
-				AbstractTransactionalCommand command = new CreateDiagramCommand(
-						editingDomain,
-						Messages.DiagramEditorUtil_CreateDiagramCommandLabel,
-						Collections.EMPTY_LIST, modelResource, diagramResource,
-						diagramElement, contents, diagramURI.lastSegment(),
-						diagramInformation);
-				try {
-					OperationHistoryFactory.getOperationHistory().execute(
-							command,
-							new SubProgressMonitor(progressMonitor, 1), null);
-				} catch (ExecutionException e) {
-					FujabaNewwizardPlugin.getDefault().logError(
-							"Unable to create model and diagramResource", e); //$NON-NLS-1$
-				}
-				DiagramEditorUtil.setCharset(WorkspaceSynchronizer
-						.getFile(diagramResource));
+			AbstractTransactionalCommand command = new CreateDiagramCommand(
+					editingDomain,
+					Messages.DiagramEditorUtil_CreateDiagramCommandLabel,
+					Collections.EMPTY_LIST, modelResource, diagramResource,
+					diagramElement, contents, diagramURI.lastSegment(),
+					diagramInformation);
+			try {
+				OperationHistoryFactory.getOperationHistory().execute(command,
+						new SubProgressMonitor(progressMonitor, 1), null);
+			} catch (ExecutionException e) {
+				FujabaNewwizardPlugin.getDefault().logError(
+						"Unable to create model and diagramResource", e); //$NON-NLS-1$
 			}
+			DiagramEditorUtil.setCharset(WorkspaceSynchronizer
+					.getFile(diagramResource));
 
 			// Show that the work was done.
 			work++;
@@ -237,6 +230,27 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 		}
 		DiagramEditorUtil.setCharset(WorkspaceSynchronizer
 				.getFile(modelResource));
+	}
+
+	private ElementInformation getElementInformation(EObject element,
+			Map<String, IDiagramInformation> map) {
+		for (IDiagramInformation information : map.values()) {
+			String modelId = information.getModelId();
+			boolean useCategory = ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY
+					.isSuperTypeOf(information.getDiagramElementClass());
+			if (!useCategory && isValidDiagramElement(modelId, element)) {
+				Collection<EObject> contents = Collections.emptyList();
+				return new ElementInformation(element, contents, information);
+			} else if (useCategory
+					&& element.eContainer() instanceof ModelElementCategory
+					&& isValidTopLevelNodeElement(modelId,
+							element.eContainer(), element)) {
+				Collection<EObject> contents = Collections
+						.singletonList(element);
+				return new ElementInformation(null, contents, information);
+			}
+		}
+		return null;
 	}
 
 	private LinkedList<EObject> getContainmentHierarchy(EObject element) {
@@ -304,5 +318,22 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 			}
 		}
 		return filePath.lastSegment();
+	}
+	
+	private class ElementInformation {
+		public IDiagramInformation diagramInformation;
+		public Collection<EObject> contents;
+		public EObject diagramElement;
+
+		public ElementInformation(EObject diagramElement,
+				Collection<EObject> contents,
+				IDiagramInformation diagramInformation) {
+			this.diagramElement = diagramElement;
+			this.contents = contents;
+			this.diagramInformation = diagramInformation;
+		}
+
+
+
 	}
 }
