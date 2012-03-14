@@ -5,14 +5,12 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.policies.CustomComponentPartItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
@@ -55,6 +53,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	 * Called whenever the EditPart is going to be activated. Initializes
 	 * objects.
 	 */
+	@Override
 	public void activate() {
 		updateCardinality();
 		super.activate();
@@ -67,15 +66,9 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
 		Object feature = notification.getFeature();
-		if (feature instanceof EReference) {
-			EReference reference = (EReference) feature;
-			if (reference.getContainerClass() == ComponentPart.class) {
-				int featureID = notification
-						.getFeatureID(ComponentPartImpl.class);
-				if (featureID == ComponentPackage.COMPONENT_PART__CARDINALITY) {
-					updateCardinality();
-				}
-			}
+		if (ComponentPackage.Literals.COMPONENT_PART__CARDINALITY
+				.equals(feature)) {
+			updateCardinality();
 		}
 		super.handleNotificationEvent(notification);
 	}
