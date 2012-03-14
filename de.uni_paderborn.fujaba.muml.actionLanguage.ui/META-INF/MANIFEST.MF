@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.uni_paderborn.fujaba.muml.actionLanguage.ui
+Bundle-Name: MechatronicUML ActionLanguage (UI)
 Bundle-Vendor: Software Engineering Group, University of Paderborn
 Bundle-Version: 0.2.0.qualifier
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionLanguage.ui; singleton:=true
