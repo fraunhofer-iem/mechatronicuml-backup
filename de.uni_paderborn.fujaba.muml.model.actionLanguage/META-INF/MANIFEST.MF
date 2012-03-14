@@ -7,8 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: Software Engineering Group, University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.model.actionLanguage,
- de.uni_paderborn.fujaba.muml.model.actionLanguage.impl,
- de.uni_paderborn.fujaba.muml.model.actionLanguage.util
 Require-Bundle: org.storydriven.modeling;visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Export-Package: de.uni_paderborn.fujaba.muml.model.actionLanguage,
+ de.uni_paderborn.fujaba.muml.model.actionLanguage.util

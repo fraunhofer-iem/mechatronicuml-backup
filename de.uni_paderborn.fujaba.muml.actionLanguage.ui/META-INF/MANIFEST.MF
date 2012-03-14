@@ -16,7 +16,5 @@ Require-Bundle: org.eclipse.ui.ide;bundle-version="3.7.0",
  de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.2.0",
  de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram;bundle-version="0.2.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: de.uni_paderborn.fujaba.muml.ui,
- de.uni_paderborn.fujaba.muml.ui.contentassist.antlr
 Bundle-Activator: de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator
 Import-Package: org.apache.log4j;version="1.2.15"

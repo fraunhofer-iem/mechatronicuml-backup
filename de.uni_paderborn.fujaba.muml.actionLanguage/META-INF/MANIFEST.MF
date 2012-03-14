@@ -11,8 +11,5 @@ Require-Bundle: org.eclipse.xtext.generator;resolution:=optional,
  de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.2.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.uni_paderborn.fujaba.muml,
- de.uni_paderborn.fujaba.muml.services,
- de.uni_paderborn.fujaba.muml.parseTreeConstruction,
- de.uni_paderborn.fujaba.muml.parser.antlr,
  de.uni_paderborn.fujaba.muml.parser.antlr.internal,
- de.uni_paderborn.fujaba.muml.validation
+ de.uni_paderborn.fujaba.muml.services
