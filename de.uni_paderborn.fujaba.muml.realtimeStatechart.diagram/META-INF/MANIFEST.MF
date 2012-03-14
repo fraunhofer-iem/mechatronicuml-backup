@@ -7,8 +7,8 @@ Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts, 
- de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies, 
+Export-Package: de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands,
  de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part,
  de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers,
@@ -36,29 +36,21 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.render,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
- 
  org.eclipse.draw2d;visibility:=reexport,
- 
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
- 
  de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model.edit.eef;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model.edit;visibility:=reexport,
- 
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit.eef;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
- 
  de.fujaba.modelinstance;visibility:=reexport,
  de.fujaba.modelinstance.edit.eef;visibility:=reexport,
  de.fujaba.modelinstance.edit;visibility:=reexport,
- 
  org.storydriven.modeling;visibility:=reexport,
  org.storydriven.modeling.edit.eef;visibility:=reexport,
  org.storydriven.modeling.edit;visibility:=reexport,
- 
  org.eclipse.ocl.ecore;visibility:=reexport,
- 
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.common,
