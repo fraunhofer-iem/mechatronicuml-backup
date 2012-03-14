@@ -5,12 +5,4 @@ Bundle-Vendor: Software Engineering Group, University of Paderborn
 Bundle-Version: 0.2.0.qualifier
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionLanguage.generator; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.xpand;visibility:=reexport,
- org.eclipse.xtend;visibility:=reexport,
- org.eclipse.xtext;visibility:=reexport,
- org.eclipse.emf.mwe2.launch;resolution:=optional,
- org.eclipse.emf.mwe.utils;visibility:=reexport,
- org.eclipse.xtend.typesystem.emf;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="0.2.0";visibility:=reexport
-Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

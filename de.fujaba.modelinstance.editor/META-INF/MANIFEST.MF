@@ -9,21 +9,11 @@ Bundle-Vendor: Software Engineering Group, University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.fujaba.modelinstance.presentation
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.core.resources;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.eclipse.emf.edit.ui;visibility:=reexport,
- org.eclipse.ui.ide;visibility:=reexport,
- org.eclipse.emf.ecore.edit;visibility:=reexport,
- org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.100",
+Require-Bundle: org.eclipse.ui.ide;visibility:=reexport,
  org.eclipse.emf.eef.runtime;bundle-version="0.9.1",
  org.eclipse.emf.edapt.history;bundle-version="0.3.0",
- org.storydriven.modeling,
- org.storydriven.modeling.edit,
- de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0",
  de.uni_paderborn.fujaba.muml.model.edit;bundle-version="0.2.0",
  de.uni_paderborn.fujaba.muml.model.edit.eef;bundle-version="0.2.0",
- de.fujaba.modelinstance.edit;bundle-version="0.2.0";visibility:=reexport,
  de.fujaba.modelinstance.edit.eef;bundle-version="0.2.0",
  org.eclipse.emf.ecore.edit.eef;bundle-version="0.2.0",
  org.storydriven.modeling.edit.eef;bundle-version="0.2.0"
