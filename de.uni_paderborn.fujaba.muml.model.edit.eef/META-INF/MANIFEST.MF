@@ -1,18 +1,18 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.uni_paderborn.fujaba.muml.model.edit.eef
+Bundle-Name: MechatronicUML Edit-Support (Extended)
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.edit.eef;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 0.2.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.eclipse.emf.eef.runtime;bundle-version="0.9.1",
+ de.uni_paderborn.fujaba.common;bundle-version="0.2.0",
+ de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0";visibility:=reexport,
+ de.fujaba.modelinstance.edit;bundle-version="0.2.0";visibility:=reexport,
  org.storydriven.modeling;visibility:=reexport,
- org.storydriven.modeling.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.common;bundle-version="1.0.0",
- de.fujaba.modelinstance.edit;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.emf.eef.runtime;bundle-version="0.9.1"
+ org.storydriven.modeling.edit;visibility:=reexport
 Export-Package: de.uni_paderborn.fujaba.muml.model.component.providers,
  de.uni_paderborn.fujaba.muml.model.constraint.providers,
  de.uni_paderborn.fujaba.muml.model.core.providers,
@@ -21,3 +21,4 @@ Export-Package: de.uni_paderborn.fujaba.muml.model.component.providers,
  de.uni_paderborn.fujaba.muml.model.msgiface.providers,
  de.uni_paderborn.fujaba.muml.model.pattern.providers,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers
+Bundle-Vendor: Software Engineering Group, University of Paderborn

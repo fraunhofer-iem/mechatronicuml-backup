@@ -452,7 +452,9 @@
   </diagram>
   <plugin
       iD="de.uni_paderborn.fujaba.muml.patterneditor.diagram"
-      name="Pattern Plugin">
+      name="Coordination Pattern Diagram-Editor"
+      provider="Software Engineering Group, University of Paderborn"
+      version="0.2.0.qualifier">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>

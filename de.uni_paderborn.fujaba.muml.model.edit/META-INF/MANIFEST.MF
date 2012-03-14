@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: MechatronicUML Edit-Support
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.edit;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin$Implementation
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
@@ -18,12 +18,12 @@ Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
  de.uni_paderborn.fujaba.muml.model.pattern.provider,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.storydriven.modeling;visibility:=reexport,
  org.storydriven.modeling.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.common;bundle-version="1.0.0",
- de.fujaba.modelinstance.edit;bundle-version="1.0.0";visibility:=reexport
+ de.uni_paderborn.fujaba.common;bundle-version="0.2.0",
+ de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0";visibility:=reexport,
+ de.fujaba.modelinstance.edit;bundle-version="0.2.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.eclipse.emf.ecore.edit.eef
+Bundle-Name: Ecore Meta-Model Edit-Support (Extended)
 Bundle-SymbolicName: org.eclipse.emf.ecore.edit.eef;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 0.2.0.qualifier
 Require-Bundle:  org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.emf.eef.runtime;bundle-version="0.9.1"
 Export-Package: org.eclipse.emf.ecore.providers
+Bundle-Vendor: Software Engineering Group, University of Paderborn

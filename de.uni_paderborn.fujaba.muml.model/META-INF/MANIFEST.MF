@@ -1,18 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: MechatronicUML Meta-Model
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.2.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
- org.storydriven.modeling;bundle-version="1.0.0";visibility:=reexport,
- de.uni_paderborn.fujaba.common;bundle-version="1.0.0",
- de.fujaba.modelinstance;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.emf.edapt.history;bundle-version="0.3.0"
+ org.storydriven.modeling;visibility:=reexport,
+ org.eclipse.emf.edapt.history;bundle-version="0.3.0",
+ de.fujaba.modelinstance;bundle-version="0.2.0";visibility:=reexport,
+ de.uni_paderborn.fujaba.common;bundle-version="0.2.0"
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.muml.model.component,
  de.uni_paderborn.fujaba.muml.model.component.impl,
@@ -38,3 +37,4 @@ Export-Package: de.uni_paderborn.fujaba.muml.model.component,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.util
+Bundle-Vendor: Software Engineering Group, University of Paderborn

@@ -1,12 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.uni_paderborn.fujaba.muml.actionLanguage.ui
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, University of Paderborn
+Bundle-Version: 0.2.0.qualifier
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionLanguage.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: de.uni_paderborn.fujaba.muml.actionLanguage;visibility:=reexport,
- org.eclipse.xtext.ui,
+Require-Bundle: org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",
  org.eclipse.xtext.ui.shared,
@@ -14,11 +13,12 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.actionLanguage;visibility:=reexport
  org.antlr.runtime,
  org.eclipse.xtext.builder,
  org.eclipse.jdt.core;bundle-version="3.6.2",
- de.uni_paderborn.fujaba.muml.model;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram;bundle-version="1.0.0",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
- org.eclipse.compare
+ org.eclipse.compare,
+ de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="0.2.0";visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.2.0",
+ de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0",
+ de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram;bundle-version="0.2.0"
 Import-Package: org.apache.log4j,
  org.eclipse.gmf.runtime.diagram.ui.editparts
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

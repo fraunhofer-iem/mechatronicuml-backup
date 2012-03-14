@@ -889,7 +889,8 @@
   </diagram>
   <plugin
       iD="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"
-      name="Structuredcomponent Plugin"
+      name="Structured Component Diagram-Editor"
+      provider="Software Engineering Group, University of Paderborn"
       activatorClassName="StructuredcomponentDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>

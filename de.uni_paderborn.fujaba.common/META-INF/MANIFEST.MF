@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Common
+Bundle-Name: Fujaba Common Plugin
 Bundle-SymbolicName: de.uni_paderborn.fujaba.common;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.2.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.common.adapter,
@@ -21,7 +21,7 @@ Require-Bundle: org.eclipse.emf.edit;bundle-version="2.6.0",
  org.eclipse.gmf.runtime.emf.ui.properties;bundle-version="1.4.0",
  org.eclipse.ui.views,
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.100",
- de.fujaba.modelinstance;bundle-version="1.0.0",
- org.eclipse.gmf.codegen;bundle-version="2.2.200"
+ de.fujaba.modelinstance;bundle-version="0.2.0"
 Bundle-Activator: de.uni_paderborn.fujaba.common.FujabaCommonPlugin
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Software Engineering Group, University of Paderborn
