@@ -756,6 +756,8 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 
 		switch (notification.getFeatureID(Transition.class)) {
 			case RealtimestatechartPackage.TRANSITION__PRIORITY:
+			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
+			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

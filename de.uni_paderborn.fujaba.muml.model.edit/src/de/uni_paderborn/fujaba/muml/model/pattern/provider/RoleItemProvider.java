@@ -28,6 +28,7 @@ import org.storydriven.modeling.provider.NamedElementItemProvider;
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
@@ -359,8 +360,8 @@ public class RoleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(PatternPackage.Literals.ROLE__CARDINALITY);
-			childrenFeatures.add(PatternPackage.Literals.ROLE__ADAPTATION_BEHAVIOR);
 		}
 		return childrenFeatures;
 	}
@@ -423,11 +424,13 @@ public class RoleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
+			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
 			case PatternPackage.ROLE__ORDERED:
+			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case PatternPackage.ROLE__CONSTRAINT:
 			case PatternPackage.ROLE__CARDINALITY:
-			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -448,13 +451,13 @@ public class RoleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternPackage.Literals.ROLE__CARDINALITY,
-				 CoreFactory.eINSTANCE.createCardinality()));
+				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternPackage.Literals.ROLE__ADAPTATION_BEHAVIOR,
-				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
+				(PatternPackage.Literals.ROLE__CARDINALITY,
+				 CoreFactory.eINSTANCE.createCardinality()));
 	}
 
 	/**

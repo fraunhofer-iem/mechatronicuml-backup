@@ -202,6 +202,9 @@ public class ComponentInstanceConfigurationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInstanceConfiguration.class)) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

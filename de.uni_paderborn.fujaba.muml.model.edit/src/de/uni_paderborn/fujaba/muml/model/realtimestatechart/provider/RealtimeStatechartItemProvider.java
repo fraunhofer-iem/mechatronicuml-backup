@@ -423,7 +423,11 @@ public class RealtimeStatechartItemProvider
 			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
 			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
+			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
+			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
+			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:

@@ -291,7 +291,6 @@ public class StateItemProvider
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_EVENT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__INVARIANTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__CHANNELS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EVENTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__STATE_ENTRY_POINTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__STATE_EXIT_POINTS);
 		}
@@ -351,6 +350,7 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__INITIAL:
 			case RealtimestatechartPackage.STATE__FINAL:
 			case RealtimestatechartPackage.STATE__URGENT:
+			case RealtimestatechartPackage.STATE__EVENTS:
 			case RealtimestatechartPackage.STATE__SIMPLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -360,7 +360,6 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__ENTRY_EVENT:
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 			case RealtimestatechartPackage.STATE__CHANNELS:
-			case RealtimestatechartPackage.STATE__EVENTS:
 			case RealtimestatechartPackage.STATE__STATE_ENTRY_POINTS:
 			case RealtimestatechartPackage.STATE__STATE_EXIT_POINTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -412,21 +411,6 @@ public class StateItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createDoEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createEntryEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createExitEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__STATE_ENTRY_POINTS,
 				 RealtimestatechartFactory.eINSTANCE.createStateEntryPoint()));
 
@@ -434,31 +418,6 @@ public class StateItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__STATE_EXIT_POINTS,
 				 RealtimestatechartFactory.eINSTANCE.createStateExitPoint()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.STATE__DO_EVENT ||
-			childFeature == RealtimestatechartPackage.Literals.STATE__EVENTS ||
-			childFeature == RealtimestatechartPackage.Literals.STATE__EXIT_EVENT ||
-			childFeature == RealtimestatechartPackage.Literals.STATE__ENTRY_EVENT;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

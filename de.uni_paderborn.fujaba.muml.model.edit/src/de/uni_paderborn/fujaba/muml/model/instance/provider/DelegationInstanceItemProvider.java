@@ -7,6 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance} object.
@@ -90,6 +93,12 @@ public class DelegationInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DelegationInstance.class)) {
+			case InstancePackage.DELEGATION_INSTANCE__DELEGATION_TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

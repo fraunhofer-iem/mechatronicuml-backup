@@ -29,6 +29,7 @@ import org.storydriven.modeling.provider.NamedElementItemProvider;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
@@ -197,6 +198,7 @@ public class ComponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ComponentPackage.Literals.COMPONENT__PORTS);
 		}
 		return childrenFeatures;
@@ -245,6 +247,7 @@ public class ComponentItemProvider
 			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ComponentPackage.COMPONENT__CONSTRAINT:
 			case ComponentPackage.COMPONENT__PORTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -262,6 +265,11 @@ public class ComponentItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -20,9 +20,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType} object.
@@ -291,6 +293,17 @@ public class ConnectorTypeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ConnectorType.class)) {
+			case ComponentPackage.CONNECTOR_TYPE__TO_DISCRETE_PORT:
+			case ComponentPackage.CONNECTOR_TYPE__FROM_DISCRETE_PORT:
+			case ComponentPackage.CONNECTOR_TYPE__TO_CONTINUOUS_PORT:
+			case ComponentPackage.CONNECTOR_TYPE__FROM_CONTINUOUS_PORT:
+			case ComponentPackage.CONNECTOR_TYPE__TO_HYBRID_PORT:
+			case ComponentPackage.CONNECTOR_TYPE__FROM_HYBRID_PORT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

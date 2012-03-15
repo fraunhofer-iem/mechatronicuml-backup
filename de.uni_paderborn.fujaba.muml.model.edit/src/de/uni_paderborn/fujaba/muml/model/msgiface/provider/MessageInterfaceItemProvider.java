@@ -204,6 +204,9 @@ public class MessageInterfaceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MessageInterface.class)) {
+			case MsgifacePackage.MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

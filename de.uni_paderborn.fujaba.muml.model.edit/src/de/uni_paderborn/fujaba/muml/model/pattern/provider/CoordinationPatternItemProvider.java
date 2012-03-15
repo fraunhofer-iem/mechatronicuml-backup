@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
@@ -104,6 +105,8 @@ public class CoordinationPatternItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__ROLES);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__CONNECTOR);
 		}
 		return childrenFeatures;
@@ -159,6 +162,11 @@ public class CoordinationPatternItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CoordinationPattern.class)) {
+			case PatternPackage.COORDINATION_PATTERN__PATTERN:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case PatternPackage.COORDINATION_PATTERN__CONSTRAINT:
+			case PatternPackage.COORDINATION_PATTERN__ROLES:
 			case PatternPackage.COORDINATION_PATTERN__CONNECTOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -176,6 +184,16 @@ public class CoordinationPatternItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternPackage.Literals.COORDINATION_PATTERN__ROLES,
+				 PatternFactory.eINSTANCE.createRole()));
 
 		newChildDescriptors.add
 			(createChildParameter

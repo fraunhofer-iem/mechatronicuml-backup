@@ -102,8 +102,6 @@ public class StructuredComponentItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_PARTS);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS);
-			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS);
-			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS);
 		}
 		return childrenFeatures;
 	}
@@ -158,10 +156,12 @@ public class StructuredComponentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructuredComponent.class)) {
-			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS:
-			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS:
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS:
+			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

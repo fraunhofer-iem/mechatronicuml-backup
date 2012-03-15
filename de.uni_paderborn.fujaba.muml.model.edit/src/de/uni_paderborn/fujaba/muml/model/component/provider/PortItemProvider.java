@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescripto
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
@@ -245,6 +246,7 @@ public class PortItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ComponentPackage.Literals.PORT__CARDINALITY);
 		}
 		return childrenFeatures;
@@ -301,9 +303,11 @@ public class PortItemProvider
 
 		switch (notification.getFeatureID(Port.class)) {
 			case ComponentPackage.PORT__COMMENT:
+			case ComponentPackage.PORT__CONNECTORS:
 			case ComponentPackage.PORT__IS_MULTI_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ComponentPackage.PORT__CONSTRAINT:
 			case ComponentPackage.PORT__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -321,6 +325,11 @@ public class PortItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter

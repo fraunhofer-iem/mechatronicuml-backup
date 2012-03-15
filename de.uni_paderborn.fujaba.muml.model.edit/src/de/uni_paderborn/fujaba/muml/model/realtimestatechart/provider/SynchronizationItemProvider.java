@@ -150,6 +150,7 @@ public class SynchronizationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Synchronization.class)) {
+			case RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL:
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

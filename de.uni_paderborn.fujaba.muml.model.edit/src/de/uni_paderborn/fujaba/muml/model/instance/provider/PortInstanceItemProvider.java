@@ -246,6 +246,7 @@ public class PortInstanceItemProvider
 
 		switch (notification.getFeatureID(PortInstance.class)) {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
+			case InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

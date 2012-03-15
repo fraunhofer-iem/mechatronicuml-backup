@@ -199,7 +199,6 @@ public class ComponentPartItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY);
-			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
 		}
 		return childrenFeatures;
 	}
@@ -256,11 +255,11 @@ public class ComponentPartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentPart.class)) {
+			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 			case ComponentPackage.COMPONENT_PART__IS_MULTI_PART:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

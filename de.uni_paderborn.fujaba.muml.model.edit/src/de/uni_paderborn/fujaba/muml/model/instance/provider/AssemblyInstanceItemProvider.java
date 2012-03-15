@@ -145,6 +145,7 @@ public class AssemblyInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AssemblyInstance.class)) {
+			case InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE:
 			case InstancePackage.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND:
 			case InstancePackage.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
