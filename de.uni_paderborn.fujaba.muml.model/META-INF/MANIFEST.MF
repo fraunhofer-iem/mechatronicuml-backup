@@ -11,7 +11,7 @@ Require-Bundle: org.storydriven.modeling;visibility:=reexport,
  de.fujaba.modelinstance;bundle-version="0.2.0";visibility:=reexport,
  de.uni_paderborn.fujaba.common;bundle-version="0.2.0"
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Software Engineering Group, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.model.component,
  de.uni_paderborn.fujaba.muml.model.component.util,
  de.uni_paderborn.fujaba.muml.model.constraint,

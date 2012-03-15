@@ -12,4 +12,4 @@ Require-Bundle: org.eclipse.ui,
  de.fujaba.newwizard;bundle-version="0.2.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-Vendor: Software Engineering Group, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

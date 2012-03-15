@@ -15,4 +15,4 @@ Export-Package: de.uni_paderborn.fujaba.muml.model.component.providers,
  de.uni_paderborn.fujaba.muml.model.msgiface.providers,
  de.uni_paderborn.fujaba.muml.model.pattern.providers,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers
-Bundle-Vendor: Software Engineering Group, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

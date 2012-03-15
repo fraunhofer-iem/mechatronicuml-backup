@@ -5,7 +5,7 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.edit;singleton:=true
 Bundle-Version: 0.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin$Implementation
-Bundle-Vendor: Software Engineering Group, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,

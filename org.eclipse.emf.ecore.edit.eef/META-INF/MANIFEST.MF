@@ -7,4 +7,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.emf.eef.runtime;bundle-version="0.9.1"
 Export-Package: org.eclipse.emf.ecore.providers
-Bundle-Vendor: Software Engineering Group, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

@@ -946,7 +946,7 @@
   <plugin
       iD="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"
       name="Componentinstanceconfiguration Diagram-Editor"
-      provider="Software Engineering Group, University of Paderborn"
+      provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.2.0.qualifier"
       activatorClassName="ComponentinstanceconfigurationDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
