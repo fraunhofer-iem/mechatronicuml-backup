@@ -11,7 +11,7 @@
       <ePackage href="http://ns.storydriven.org/sdm/0.1.0#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="rtsc">
-      <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1#/"/>
+      <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.2.3#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="expressions">
       <ePackage href="http://ns.storydriven.org/sdm/0.1.0#//expressions"/>
