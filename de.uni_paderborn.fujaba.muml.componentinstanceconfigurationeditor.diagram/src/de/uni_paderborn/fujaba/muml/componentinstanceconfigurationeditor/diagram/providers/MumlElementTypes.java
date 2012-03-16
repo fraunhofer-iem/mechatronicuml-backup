@@ -97,6 +97,11 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType DiscreteSinglePortInstance_3025 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3025"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType AssemblyInstance_4005 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AssemblyInstance_4005"); //$NON-NLS-1$
 	/**
 	 * @generated
@@ -280,6 +285,11 @@ public class MumlElementTypes {
 							.getComponentInstance());
 
 			elements.put(
+					DiscreteSinglePortInstance_3025,
+					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+							.getDiscreteSinglePortInstance());
+
+			elements.put(
 					AssemblyInstance_4005,
 					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 							.getAssemblyInstance());
@@ -318,6 +328,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ContinuousPortInstance_3022);
 			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfiguration_3023);
 			KNOWN_ELEMENT_TYPES.add(ComponentInstance_3024);
+			KNOWN_ELEMENT_TYPES.add(DiscreteSinglePortInstance_3025);
 			KNOWN_ELEMENT_TYPES.add(AssemblyInstance_4005);
 			KNOWN_ELEMENT_TYPES.add(DelegationInstance_4006);
 		}
@@ -355,6 +366,8 @@ public class MumlElementTypes {
 			return ComponentInstanceConfiguration_3023;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
 			return ComponentInstance_3024;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance4EditPart.VISUAL_ID:
+			return DiscreteSinglePortInstance_3025;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 			return AssemblyInstance_4005;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:

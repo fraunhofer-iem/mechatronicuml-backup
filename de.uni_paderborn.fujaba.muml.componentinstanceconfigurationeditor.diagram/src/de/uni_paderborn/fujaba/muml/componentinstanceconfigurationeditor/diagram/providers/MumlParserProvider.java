@@ -224,6 +224,25 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected IParser discreteSinglePortInstanceName_5024Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDiscreteSinglePortInstanceName_5024Parser() {
+		if (discreteSinglePortInstanceName_5024Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser(
+					features);
+			discreteSinglePortInstanceName_5024Parser = parser;
+		}
+		return discreteSinglePortInstanceName_5024Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
@@ -248,6 +267,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getContinuousPortInstanceName_5017Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 			return getComponentInstanceLabel_5018Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName4EditPart.VISUAL_ID:
+			return getDiscreteSinglePortInstanceName_5024Parser();
 		}
 		return null;
 	}

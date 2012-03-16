@@ -393,6 +393,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3025_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3025_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_DiscreteMultiPortInstance_2013_incominglinks;
 
 	/**

@@ -97,14 +97,15 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDiscreteSinglePortInstance4CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.DiscreteSinglePortInstance4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.DiscreteSinglePortInstance4CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3019));
 		entry.setId("createDiscreteSinglePortInstance4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -112,14 +113,15 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDiscreteMultiPortInstance5CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.DiscreteMultiPortInstance5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.DiscreteMultiPortInstance5CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3020));
 		entry.setId("createDiscreteMultiPortInstance5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -127,14 +129,15 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createContinuousPortInstance6CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.ContinuousPortInstance6CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.ContinuousPortInstance6CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ContinuousPortInstance_3022));
 		entry.setId("createContinuousPortInstance6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ContinuousPort.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -142,14 +145,15 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createHybridPortInstance7CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.HybridPortInstance7CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.HybridPortInstance7CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HybridPortInstance_3018));
 		entry.setId("createHybridPortInstance7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
