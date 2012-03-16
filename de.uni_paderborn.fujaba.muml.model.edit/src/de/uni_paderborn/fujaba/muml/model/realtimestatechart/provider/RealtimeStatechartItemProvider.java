@@ -77,7 +77,6 @@ public class RealtimeStatechartItemProvider
 			addEventQueueSizePropertyDescriptor(object);
 			addFlatPropertyDescriptor(object);
 			addEmbeddedPropertyDescriptor(object);
-			addStatechartPropertyDescriptor(object);
 			addAllAvailableAttributesPropertyDescriptor(object);
 			addAllAvailableOperationsPropertyDescriptor(object);
 		}
@@ -327,28 +326,6 @@ public class RealtimeStatechartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Statechart feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatechartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_statechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_statechart_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATECHART,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -425,7 +402,6 @@ public class RealtimeStatechartItemProvider
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
-			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

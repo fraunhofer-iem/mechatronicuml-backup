@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 
@@ -61,16 +62,14 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
-		{
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart childElement = modelElement
-					.getStatechart();
-			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
-			}
+
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+				.getNodeVisualID(view, modelElement) == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID) {
+			result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
+					modelElement,
+					de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID));
 		}
+
 		return result;
 	}
 
@@ -102,6 +101,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -140,6 +140,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -171,6 +172,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -201,6 +203,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -249,6 +252,7 @@ public class MumlDiagramUpdater {
 						childElement, visualID));
 			}
 		}
+
 		return result;
 	}
 
@@ -279,6 +283,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -309,6 +314,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -339,6 +345,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -367,6 +374,7 @@ public class MumlDiagramUpdater {
 						childElement, visualID));
 			}
 		}
+
 		return result;
 	}
 
@@ -397,7 +405,15 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Iterator<EObject> getPhantomNodesIterator(Resource resource) {
+		return resource.getAllContents();
 	}
 
 	/**

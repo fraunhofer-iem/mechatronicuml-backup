@@ -1,0 +1,20 @@
+«EXTENSION aspects::xpt::diagram::PhantomElement»
+
+«REM»
+We add a special treatment of the case that a phantom node is of the same type as its container.
+In this case, we just derive the container (see helper method derivesContainer() in PhantomElement.qvto)
+«ENDREM»
+
+«AROUND canExecuteMethod FOR gmfgen::GenNode»
+«IF derivesContainer(self)»
+«EXPAND xpt::Common::generatedMemberComment»
+	public boolean canExecute() {
+		// This command must not be used. No elements are allowed to be created, because this is a phantom node, which derives the container node.
+		return false;
+	}
+«ELSE-»
+	«targetDef.proceed()»
+«ENDIF»
+
+
+«ENDAROUND»

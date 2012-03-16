@@ -11,7 +11,6 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -54,14 +53,6 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			((EditPart) c.get(i)).activate();
 		}
 		super.refreshOnActivate();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getRealtimeStatechart_Statechart();
 	}
 
 	/**

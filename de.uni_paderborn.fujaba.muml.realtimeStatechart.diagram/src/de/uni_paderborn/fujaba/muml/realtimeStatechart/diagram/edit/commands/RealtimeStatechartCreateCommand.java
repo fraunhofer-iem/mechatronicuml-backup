@@ -4,6 +4,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -41,12 +42,8 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getElementToEdit();
-		if (container.getStatechart() != null) {
-			return false;
-		}
-		return true;
-
+		// This command must not be used. No elements are allowed to be created, because this is a phantom node, which derives the container node.
+		return false;
 	}
 
 	/**
@@ -54,11 +51,17 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
+		// Uncomment to put "phantom" objects into the diagram file.		
+		// org.eclipse.emf.ecore.resource.Resource resource = 
+		// 		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).getContainer().eResource();
+		// if (resource == null) {
+		// 	return null;
+		// }
+		Resource resource = getElementToEdit().eResource();
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createRealtimeStatechart();
 
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getElementToEdit();
-		owner.setStatechart(newElement);
+		resource.getContents().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

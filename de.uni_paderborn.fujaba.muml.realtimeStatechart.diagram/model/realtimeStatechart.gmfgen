@@ -823,10 +823,6 @@
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/statechart"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/statechart"/>
       </modelFacet>
       <labels
           visualID="5045"

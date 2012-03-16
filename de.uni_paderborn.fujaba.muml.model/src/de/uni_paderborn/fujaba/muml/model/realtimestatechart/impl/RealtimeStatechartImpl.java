@@ -63,7 +63,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableAttributes <em>All Available Attributes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableOperations <em>All Available Operations</em>}</li>
  * </ul>
@@ -221,16 +220,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate EMBEDDED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__EMBEDDED).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getStatechart() <em>Statechart</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatechart()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate STATECHART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATECHART).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getAllAvailableAttributes() <em>All Available Attributes</em>}' reference list.
@@ -548,38 +537,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RealtimeStatechart getStatechart() {
-		return (RealtimeStatechart)STATECHART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
-		// TODO: implement this method to set the contained 'Statechart' containment reference
-		// -> this method is automatically invoked to keep the containment relationship in synch
-		// -> do not modify other features
-		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStatechart(RealtimeStatechart newStatechart) {
-		STATECHART__ESETTING_DELEGATE.dynamicSet(this, null, 0, newStatechart);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean isSuperStatechartOf(RealtimeStatechart statechart) {
@@ -676,8 +633,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
-				return basicSetStatechart(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -731,8 +686,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getAvailableClocks();
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
 				return isEmbedded();
-			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
-				return getStatechart();
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
 				return getAllAvailableAttributes();
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
@@ -785,9 +738,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				setEventQueueSize((Integer)newValue);
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
-				setStatechart((RealtimeStatechart)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -830,9 +780,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				setEventQueueSize(EVENT_QUEUE_SIZE_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
-				setStatechart((RealtimeStatechart)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -871,8 +818,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return AVAILABLE_CLOCKS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
 				return EMBEDDED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
-				return STATECHART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
 				return ALL_AVAILABLE_ATTRIBUTES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:

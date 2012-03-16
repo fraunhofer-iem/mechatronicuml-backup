@@ -449,7 +449,6 @@
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/flat"/>
           <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/availableClocks"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/RealtimeStatechart/embedded"/>
-          <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/statechart"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableAttributes"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations"/>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf">
