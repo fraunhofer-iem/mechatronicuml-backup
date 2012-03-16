@@ -1,4 +1,5 @@
 package de.uni_paderborn.fujaba.muml.tests;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
@@ -27,14 +28,52 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * <p>
+ * JUnit4 Test case for our muml.genmodel. It tests, if the genmodel conforms to
+ * our own modeling conventions.
+ * </p>
+ * 
+ * <p>
+ * <em>For example:</em> Containment features that are not derived features
+ * should have the <code>GenFeature.children</code> feature set to
+ * <code>true</code>.
+ * </p>
+ * 
+ * @author bingo
+ * 
+ */
 public class GenmodelTest {
 
-	public static final String GENMODEL_PROJECT = "de.uni_paderborn.fujaba.muml.model";
-	public static final String GENMODEL_PATH = "/model/muml.genmodel";
+	/**
+	 * The workspace-relative path to the muml.model project.
+	 */
+	private static final String GENMODEL_PROJECT = "de.uni_paderborn.fujaba.muml.model";
 
+	/**
+	 * The project-relative path to the muml.genmodel file.
+	 */
+	private static final String GENMODEL_PATH = "/model/muml.genmodel";
+
+	/**
+	 * The genmodel resource to work on (will be loaded in setUpBeforeClass()).
+	 */
 	private static Resource genmodel;
 
+	/**
+	 * Traverses the containment hierarchy starting the the specified
+	 * <code>element</code> and visits all found elements using the
+	 * <code>visitor</code>.
+	 * 
+	 * @param element
+	 *            The start element.
+	 * @param visitor
+	 *            The visitor to use.
+	 */
 	private void traverse(EObject element, IVisitor visitor) {
+		if (element == null) {
+			return;
+		}
 		if (visitor.visit(element)) {
 			for (EObject child : element.eContents()) {
 				traverse(child, visitor);
@@ -42,16 +81,38 @@ public class GenmodelTest {
 		}
 	}
 
+	/**
+	 * Interface for visitors that can be used to visit genmodel elements.
+	 * 
+	 * @author ingo
+	 * 
+	 */
 	private interface IVisitor {
+		/**
+		 * Visits this element.
+		 * 
+		 * @param element
+		 *            The element to visit.
+		 * @return <code>true</code>, if children of the <code>element</code>
+		 *         should be visited, too.
+		 */
 		boolean visit(EObject element);
 	}
 
-	private String getHierarchicalLabelFor(EObject element) {
+	/**
+	 * Gets a qualified label for the given element (e.g.
+	 * package.package.element).
+	 * 
+	 * @param element
+	 *            The element to get a label for
+	 * @return The label
+	 */
+	private String getQualifiedLabel(EObject element) {
 
 		StringBuffer buffer = new StringBuffer();
 
 		while (element != null) {
-			String label = getLabelFor(element);
+			String label = getLabel(element);
 			if (label != null) {
 				buffer.insert(0, '.');
 				buffer.insert(0, label);
@@ -63,12 +124,19 @@ public class GenmodelTest {
 		return buffer.toString();
 	}
 
-	private String getLabelFor(EObject element) {
+	/**
+	 * Gets a label for the given element (e.g. by getting its name).
+	 * 
+	 * @param element
+	 *            The element to get a label for
+	 * @return The label
+	 */
+	private String getLabel(EObject element) {
 		if (element instanceof ENamedElement) {
 			return ((ENamedElement) element).getName();
 		}
 		if (element instanceof GenBase) {
-			return getLabelFor(((GenBase) element).getEcoreModelElement());
+			return getLabel(((GenBase) element).getEcoreModelElement());
 		}
 		if (element != null) {
 			return element.eClass().getName();
@@ -76,6 +144,13 @@ public class GenmodelTest {
 		return null;
 	}
 
+	/**
+	 * Initializes this test class by loading the genmodel. All tests in this
+	 * class are executed on the loaded genmodel, afterwards.
+	 * 
+	 * @throws Exception
+	 *             In case an exception occurs to make the test fail.
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		URI uri = URI.createPlatformResourceURI(GENMODEL_PROJECT
@@ -118,11 +193,24 @@ public class GenmodelTest {
 		EcoreUtil.resolveAll(resourceSet);
 	}
 
+	/**
+	 * Deinitializes this class by resetting the genmodel to <code>null</code>.
+	 * 
+	 * @throws Exception
+	 *             In case an exception occurs to make the test fail.
+	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 		genmodel = null;
 	}
 
+	/**
+	 * Auxiliary method to get the root element of the genmodel (should be of
+	 * type GenModel, which is tested in separate tests).
+	 * 
+	 * @return The root element, or
+	 *         <code>null</null> if there is something wrong with the genmodel.
+	 */
 	private GenModel getRootElement() {
 		EList<EObject> contents = genmodel.getContents();
 		if (contents.size() == 1) {
@@ -134,6 +222,9 @@ public class GenmodelTest {
 		return null;
 	}
 
+	/**
+	 * Tests, if the genmodel has contents.
+	 */
 	@Test
 	public void notEmptyGenmodel() {
 		EList<EObject> contents = genmodel.getContents();
@@ -142,6 +233,9 @@ public class GenmodelTest {
 		}
 	}
 
+	/**
+	 * Tests, if the genmodel has a valid root element (of type GenModel).
+	 */
 	@Test
 	public void validRootElement() {
 		EList<EObject> contents = genmodel.getContents();
@@ -150,6 +244,9 @@ public class GenmodelTest {
 		}
 	}
 
+	/**
+	 * Tests, if the genmodel has only one root element.
+	 */
 	@Test
 	public void singleGenmodelRoots() {
 		EList<EObject> contents = genmodel.getContents();
@@ -158,6 +255,9 @@ public class GenmodelTest {
 		}
 	}
 
+	/**
+	 * Tests, if the 'Children' setting is set correctly.
+	 */
 	@Test
 	public void validChildrenSetting() {
 		traverse(getRootElement(), new IVisitor() {
@@ -174,7 +274,7 @@ public class GenmodelTest {
 								&& !reference.isDerived();
 
 						if (genFeature.isChildren() != children) {
-							fail(getHierarchicalLabelFor(genFeature)
+							fail(getQualifiedLabel(genFeature)
 									+ ": 'Children' must be set to "
 									+ Boolean.valueOf(children).toString()
 									+ ".");
@@ -187,6 +287,9 @@ public class GenmodelTest {
 		});
 	}
 
+	/**
+	 * Tests, if the 'Create Children' setting is set correctly.
+	 */
 	@Test
 	public void validCreateChildrenSetting() {
 		traverse(getRootElement(), new IVisitor() {
@@ -203,7 +306,7 @@ public class GenmodelTest {
 								&& !reference.isDerived();
 
 						if (genFeature.isChildren() != createChildren) {
-							fail(getHierarchicalLabelFor(genFeature)
+							fail(getQualifiedLabel(genFeature)
 									+ ": 'Create Children' must be set to "
 									+ Boolean.valueOf(createChildren)
 											.toString() + ".");
@@ -216,6 +319,9 @@ public class GenmodelTest {
 		});
 	}
 
+	/**
+	 * Tests, if the 'Notify' setting is set correctly.
+	 */
 	@Test
 	public void validNotifySetting() {
 		traverse(getRootElement(), new IVisitor() {
@@ -229,7 +335,7 @@ public class GenmodelTest {
 						EReference reference = (EReference) ecoreFeature;
 
 						if (reference.isDerived() && !genFeature.isNotify()) {
-							fail(getHierarchicalLabelFor(genFeature)
+							fail(getQualifiedLabel(genFeature)
 									+ ": 'Notify' must be set to "
 									+ Boolean.valueOf(true).toString() + ".");
 						}
@@ -238,16 +344,6 @@ public class GenmodelTest {
 				return true;
 			}
 
-		});
-	}
-
-	@Test
-	public void validNotifySettings() {
-		traverse(getRootElement(), new IVisitor() {
-			@Override
-			public boolean visit(EObject element) {
-				return true;
-			}
 		});
 	}
 
