@@ -87,6 +87,13 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
+	protected PreferencesHint getPreferencesHint() {
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+	}
+
+	/**
+	 * @generated
+	 */
 	public String getContributorId() {
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.ID;
 	}
@@ -307,14 +314,6 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
 				.getDiagramView());
 		super.doSave(progressMonitor);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	protected PreferencesHint getPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 }

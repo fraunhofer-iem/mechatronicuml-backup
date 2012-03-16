@@ -50,67 +50,54 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType RealtimeStatechart_2006 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.RealtimeStatechart_2006"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType State_3017 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_3017"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType EntryEvent_3018 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryEvent_3018"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType DoEvent_3019 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.DoEvent_3019"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType ExitEvent_3020 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitEvent_3020"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType ClockConstraint_3021 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ClockConstraint_3021"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType SynchronizationChannel_3022 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.SynchronizationChannel_3022"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType Region_3023 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.Region_3023"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType RealtimeStatechart_3024 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.RealtimeStatechart_3024"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType EntryPoint_3025 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryPoint_3025"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType ExitPoint_3026 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitPoint_3026"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType StateEntryPoint_3027 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3027"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType StateExitPoint_3028 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3028"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
