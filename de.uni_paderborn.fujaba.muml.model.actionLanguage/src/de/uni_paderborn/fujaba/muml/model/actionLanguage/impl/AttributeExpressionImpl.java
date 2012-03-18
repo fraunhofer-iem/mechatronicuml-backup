@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -41,7 +42,7 @@ public class AttributeExpressionImpl extends ExpressionImpl implements Attribute
 	 * @generated
 	 * @ordered
 	 */
-	protected EAttribute attribute;
+	protected Attribute attribute;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,10 +68,10 @@ public class AttributeExpressionImpl extends ExpressionImpl implements Attribute
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute() {
+	public Attribute getAttribute() {
 		if (attribute != null && attribute.eIsProxy()) {
 			InternalEObject oldAttribute = (InternalEObject)attribute;
-			attribute = (EAttribute)eResolveProxy(oldAttribute);
+			attribute = (Attribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionLanguagePackage.ATTRIBUTE_EXPRESSION__ATTRIBUTE, oldAttribute, attribute));
@@ -84,7 +85,7 @@ public class AttributeExpressionImpl extends ExpressionImpl implements Attribute
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute basicGetAttribute() {
+	public Attribute basicGetAttribute() {
 		return attribute;
 	}
 
@@ -93,8 +94,8 @@ public class AttributeExpressionImpl extends ExpressionImpl implements Attribute
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAttribute(EAttribute newAttribute) {
-		EAttribute oldAttribute = attribute;
+	public void setAttribute(Attribute newAttribute) {
+		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ATTRIBUTE_EXPRESSION__ATTRIBUTE, oldAttribute, attribute));
@@ -124,7 +125,7 @@ public class AttributeExpressionImpl extends ExpressionImpl implements Attribute
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionLanguagePackage.ATTRIBUTE_EXPRESSION__ATTRIBUTE:
-				setAttribute((EAttribute)newValue);
+				setAttribute((Attribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,7 +140,7 @@ public class AttributeExpressionImpl extends ExpressionImpl implements Attribute
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionLanguagePackage.ATTRIBUTE_EXPRESSION__ATTRIBUTE:
-				setAttribute((EAttribute)null);
+				setAttribute((Attribute)null);
 				return;
 		}
 		super.eUnset(featureID);

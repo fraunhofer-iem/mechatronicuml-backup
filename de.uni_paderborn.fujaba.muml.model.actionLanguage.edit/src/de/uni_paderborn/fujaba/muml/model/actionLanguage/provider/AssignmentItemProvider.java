@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -296,6 +297,11 @@ public class AssignmentItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createAttributeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
+				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
 
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -99,7 +100,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * @generated
 	 * @ordered
 	 */
-	protected EAttribute attribute;
+	protected Attribute attribute;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,10 +211,10 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute() {
+	public Attribute getAttribute() {
 		if (attribute != null && attribute.eIsProxy()) {
 			InternalEObject oldAttribute = (InternalEObject)attribute;
-			attribute = (EAttribute)eResolveProxy(oldAttribute);
+			attribute = (Attribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE, oldAttribute, attribute));
@@ -227,7 +228,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute basicGetAttribute() {
+	public Attribute basicGetAttribute() {
 		return attribute;
 	}
 
@@ -236,8 +237,8 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAttribute(EAttribute newAttribute) {
-		EAttribute oldAttribute = attribute;
+	public void setAttribute(Attribute newAttribute) {
+		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE, oldAttribute, attribute));
@@ -296,7 +297,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 				setIncrementDecrementOperator((IncrementDecrementOperator)newValue);
 				return;
 			case ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE:
-				setAttribute((EAttribute)newValue);
+				setAttribute((Attribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -320,7 +321,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 				setIncrementDecrementOperator(INCREMENT_DECREMENT_OPERATOR_EDEFAULT);
 				return;
 			case ActionLanguagePackage.ASSIGNMENT__ATTRIBUTE:
-				setAttribute((EAttribute)null);
+				setAttribute((Attribute)null);
 				return;
 		}
 		super.eUnset(featureID);

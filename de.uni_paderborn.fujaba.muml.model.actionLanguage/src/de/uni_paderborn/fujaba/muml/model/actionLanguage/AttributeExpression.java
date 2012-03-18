@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import org.eclipse.emf.ecore.EAttribute;
 
 import org.storydriven.modeling.expressions.Expression;
@@ -36,12 +37,12 @@ public interface AttributeExpression extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attribute</em>' reference.
-	 * @see #setAttribute(EAttribute)
+	 * @see #setAttribute(Attribute)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAttributeExpression_Attribute()
 	 * @model
 	 * @generated
 	 */
-	EAttribute getAttribute();
+	Attribute getAttribute();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getAttribute <em>Attribute</em>}' reference.
@@ -51,6 +52,6 @@ public interface AttributeExpression extends Expression {
 	 * @see #getAttribute()
 	 * @generated
 	 */
-	void setAttribute(EAttribute value);
+	void setAttribute(Attribute value);
 
 } // AttributeExpression

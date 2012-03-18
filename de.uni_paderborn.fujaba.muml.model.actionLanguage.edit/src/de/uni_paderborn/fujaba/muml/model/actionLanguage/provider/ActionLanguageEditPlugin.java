@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -47,6 +48,7 @@ public final class ActionLanguageEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,
+		     MumlEditPlugin.INSTANCE,
 		     SDMEditPlugin.INSTANCE,
 		   });
 	}

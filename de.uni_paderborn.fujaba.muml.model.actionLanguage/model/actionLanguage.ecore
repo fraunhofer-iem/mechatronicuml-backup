@@ -210,7 +210,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="incrementDecrementOperator"
         eType="#//IncrementDecrementOperator"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForLoop" eSuperTypes="#//Loop">
     <eStructuralFeatures xsi:type="ecore:EReference" name="initalizeExpression" eType="#//Assignment"
@@ -232,6 +232,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute"/>
   </eClassifiers>
 </ecore:EPackage>
