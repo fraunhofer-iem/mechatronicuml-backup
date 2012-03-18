@@ -198,5 +198,18 @@
          </action>
       </objectContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.objectContribution5"
+            objectClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorGuard"
+               id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.action5"
+               label="open Guard Editor">
+         </action>
+      </objectContribution>
+   </extension>
 
 </plugin>

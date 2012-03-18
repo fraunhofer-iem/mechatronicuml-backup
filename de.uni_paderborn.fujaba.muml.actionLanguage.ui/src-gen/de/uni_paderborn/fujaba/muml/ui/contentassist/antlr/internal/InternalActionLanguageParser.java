@@ -9807,17 +9807,17 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3604:1: ( ( RULE_ID ) )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3605:1: ( RULE_ID )
             {
-             before(grammarAccess.getAssignmentAccess().getAttributeEAttributeCrossReference_0_0()); 
+             before(grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0()); 
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3606:1: ( RULE_ID )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3607:1: RULE_ID
             {
-             before(grammarAccess.getAssignmentAccess().getAttributeEAttributeIDTerminalRuleCall_0_0_1()); 
+             before(grammarAccess.getAssignmentAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__Assignment__AttributeAssignment_07369); 
-             after(grammarAccess.getAssignmentAccess().getAttributeEAttributeIDTerminalRuleCall_0_0_1()); 
+             after(grammarAccess.getAssignmentAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); 
 
             }
 
-             after(grammarAccess.getAssignmentAccess().getAttributeEAttributeCrossReference_0_0()); 
+             after(grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0()); 
 
             }
 
@@ -9975,17 +9975,17 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3668:1: ( ( RULE_ID ) )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3669:1: ( RULE_ID )
             {
-             before(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeCrossReference_0_0()); 
+             before(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0()); 
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3670:1: ( RULE_ID )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3671:1: RULE_ID
             {
-             before(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeIDTerminalRuleCall_0_0_1()); 
+             before(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__ForLoopCountingExpression__AttributeAssignment_07501); 
-             after(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeIDTerminalRuleCall_0_0_1()); 
+             after(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); 
 
             }
 
-             after(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeCrossReference_0_0()); 
+             after(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0()); 
 
             }
 
@@ -10518,17 +10518,17 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3868:1: ( ( RULE_ID ) )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3869:1: ( RULE_ID )
             {
-             before(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeCrossReference_1_1_0()); 
+             before(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_1_1_0()); 
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3870:1: ( RULE_ID )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3871:1: RULE_ID
             {
-             before(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeIDTerminalRuleCall_1_1_0_1()); 
+             before(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeIDTerminalRuleCall_1_1_0_1()); 
             match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__AttributeExpression__AttributeAssignment_1_17914); 
-             after(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeIDTerminalRuleCall_1_1_0_1()); 
+             after(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeIDTerminalRuleCall_1_1_0_1()); 
 
             }
 
-             after(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeCrossReference_1_1_0()); 
+             after(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_1_1_0()); 
 
             }
 

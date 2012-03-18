@@ -5,7 +5,6 @@ package de.uni_paderborn.fujaba.muml.scoping;
 
 import java.util.List;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
@@ -29,7 +28,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	//IScope scope_Assignment_attribute(Assignment assignment, EReference ref) {
 	//IScope scope_EAttribute(Assignment assignment, EReference ref) {
-	IScope scope_EAttribute(Object object, EReference ref) {
+	IScope scope_Attribute(Object object, EReference ref) {
 		// this is called whenever an EAttribute is needed
 		// (regardless if it's an assignment or BinaryLogicExpression etc.)
 		//System.out.println(this);

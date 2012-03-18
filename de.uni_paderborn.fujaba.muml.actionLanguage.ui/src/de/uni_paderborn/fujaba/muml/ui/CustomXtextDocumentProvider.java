@@ -43,7 +43,7 @@ public class CustomXtextDocumentProvider extends XtextDocumentProvider {
 	protected void doSaveDocument(IProgressMonitor monitor, Object element, IDocument document, boolean overwrite) throws CoreException {
 		//Status s = new Status(IStatus.ERROR, EditorsUI.PLUGIN_ID, IStatus.ERROR, "foo", null);
 		//throw new CoreException(s);
-		ActionStorage storage = (ActionStorage) ((XtextReadonlyEditorInput) element).getStorage();
+		IModelStorage storage = (IModelStorage) ((XtextReadonlyEditorInput) element).getStorage();
 		storage.save(document.get());
 	}
 

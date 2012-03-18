@@ -600,7 +600,7 @@ ruleAssignment returns [EObject current=null]
         }
 	otherlv_0=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getAssignmentAccess().getAttributeEAttributeCrossReference_0_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0()); 
 	}
 
 )
@@ -693,7 +693,7 @@ ruleForLoopCountingExpression returns [EObject current=null]
         }
 	otherlv_0=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeCrossReference_0_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0()); 
 	}
 
 )
@@ -1198,7 +1198,7 @@ ruleAttributeExpression returns [EObject current=null]
         }
 	otherlv_2=RULE_ID
 	{
-		newLeafNode(otherlv_2, grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeCrossReference_1_1_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_1_1_0()); 
 	}
 
 )

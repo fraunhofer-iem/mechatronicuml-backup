@@ -1375,7 +1375,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     
             otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleAssignment1235); 
 
-            		newLeafNode(otherlv_0, grammarAccess.getAssignmentAccess().getAttributeEAttributeCrossReference_0_0()); 
+            		newLeafNode(otherlv_0, grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0()); 
             	
 
             }
@@ -1609,7 +1609,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     
             otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleForLoopCountingExpression1411); 
 
-            		newLeafNode(otherlv_0, grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeCrossReference_0_0()); 
+            		newLeafNode(otherlv_0, grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0()); 
             	
 
             }
@@ -2957,7 +2957,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                             
                     otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleAttributeExpression2475); 
 
-                    		newLeafNode(otherlv_2, grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeCrossReference_1_1_0()); 
+                    		newLeafNode(otherlv_2, grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_1_1_0()); 
                     	
 
                     }

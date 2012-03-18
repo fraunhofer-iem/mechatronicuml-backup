@@ -13,6 +13,9 @@
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="rtsc">
       <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.2.3#/"/>
     </metamodelDeclarations>
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="core">
+      <ePackage href="http://www.fujaba.de/muml/model/core/0.2.4#/"/>
+    </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="expressions">
       <ePackage href="http://ns.storydriven.org/sdm/0.1.0#//expressions"/>
     </metamodelDeclarations>
@@ -123,7 +126,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ExpressionStartRule">
-      <type metamodel="/0/@metamodelDeclarations.4">
+      <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
@@ -141,8 +144,8 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
           <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+            <type metamodel="/0/@metamodelDeclarations.4">
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.4#//Attribute"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -170,8 +173,8 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
           <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+            <type metamodel="/0/@metamodelDeclarations.4">
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.4#//Attribute"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -192,13 +195,13 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Expression">
-      <type metamodel="/0/@metamodelDeclarations.4">
+      <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ArithmeticExpression">
-      <type metamodel="/0/@metamodelDeclarations.4">
+      <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
@@ -219,7 +222,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ComparisonExpression">
-      <type metamodel="/0/@metamodelDeclarations.4">
+      <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
@@ -242,7 +245,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="BinaryLogicExpression">
-      <type metamodel="/0/@metamodelDeclarations.4">
+      <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
@@ -271,7 +274,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="UnaryExpression">
-      <type metamodel="/0/@metamodelDeclarations.4">
+      <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
@@ -289,7 +292,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LiteralExpression">
-      <type metamodel="/0/@metamodelDeclarations.4">
+      <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
@@ -311,7 +314,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="AttributeExpression">
-      <type metamodel="/0/@metamodelDeclarations.4">
+      <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://ns.storydriven.org/sdm/0.1.0#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
@@ -324,8 +327,8 @@
           </elements>
           <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
             <terminal xsi:type="xtext:CrossReference">
-              <type metamodel="/0/@metamodelDeclarations.1">
-                <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+              <type metamodel="/0/@metamodelDeclarations.4">
+                <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.4#//Attribute"/>
               </type>
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
             </terminal>

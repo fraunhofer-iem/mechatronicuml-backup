@@ -1645,12 +1645,12 @@ protected class ExpressionStartRule_IfStatementParserRuleCall_4 extends RuleCall
 /************ begin Rule Assignment ****************
  *
  * Assignment returns actionLanguage::Assignment:
- * 	attribute=[ecore::EAttribute] (assignOperator=AssignOperator assignExpression=Expression |
+ * 	attribute=[core::Attribute] (assignOperator=AssignOperator assignExpression=Expression |
  * 	incrementDecrementOperator=IncrementDecrementOperator) ";";
  *
  **/
 
-// attribute=[ecore::EAttribute] (assignOperator=AssignOperator assignExpression=Expression |
+// attribute=[core::Attribute] (assignOperator=AssignOperator assignExpression=Expression |
 // incrementDecrementOperator=IncrementDecrementOperator) ";"
 protected class Assignment_Group extends GroupToken {
 	
@@ -1680,7 +1680,7 @@ protected class Assignment_Group extends GroupToken {
 
 }
 
-// attribute=[ecore::EAttribute]
+// attribute=[core::Attribute]
 protected class Assignment_AttributeAssignment_0 extends AssignmentToken  {
 	
 	public Assignment_AttributeAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1705,9 +1705,9 @@ protected class Assignment_AttributeAssignment_0 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("attribute");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getAssignmentAccess().getAttributeEAttributeCrossReference_0_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getAssignmentAccess().getAttributeEAttributeCrossReference_0_0(); 
+				element = grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0(); 
 				return obj;
 			}
 		}
@@ -1906,12 +1906,12 @@ protected class Assignment_SemicolonKeyword_2 extends KeywordToken  {
 /************ begin Rule ForLoopCountingExpression ****************
  *
  * ForLoopCountingExpression returns actionLanguage::Assignment:
- * 	attribute=[ecore::EAttribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
+ * 	attribute=[core::Attribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
  * 	assignExpression=Expression);
  *
  **/
 
-// attribute=[ecore::EAttribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
+// attribute=[core::Attribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
 // assignExpression=Expression)
 protected class ForLoopCountingExpression_Group extends GroupToken {
 	
@@ -1941,7 +1941,7 @@ protected class ForLoopCountingExpression_Group extends GroupToken {
 
 }
 
-// attribute=[ecore::EAttribute]
+// attribute=[core::Attribute]
 protected class ForLoopCountingExpression_AttributeAssignment_0 extends AssignmentToken  {
 	
 	public ForLoopCountingExpression_AttributeAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1966,9 +1966,9 @@ protected class ForLoopCountingExpression_AttributeAssignment_0 extends Assignme
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("attribute");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeCrossReference_0_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeCrossReference_0_0(); 
+				element = grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0(); 
 				return obj;
 			}
 		}
@@ -3364,11 +3364,11 @@ protected class LiteralExpression_ValueAssignment_1_1 extends AssignmentToken  {
 /************ begin Rule AttributeExpression ****************
  *
  * AttributeExpression returns expressions::Expression:
- * 	LiteralExpression | {actionLanguage::AttributeExpression} attribute=[ecore::EAttribute];
+ * 	LiteralExpression | {actionLanguage::AttributeExpression} attribute=[core::Attribute];
  *
  **/
 
-// LiteralExpression | {actionLanguage::AttributeExpression} attribute=[ecore::EAttribute]
+// LiteralExpression | {actionLanguage::AttributeExpression} attribute=[core::Attribute]
 protected class AttributeExpression_Alternatives extends AlternativesToken {
 
 	public AttributeExpression_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3437,7 +3437,7 @@ protected class AttributeExpression_LiteralExpressionParserRuleCall_0 extends Ru
 	}	
 }
 
-// {actionLanguage::AttributeExpression} attribute=[ecore::EAttribute]
+// {actionLanguage::AttributeExpression} attribute=[core::Attribute]
 protected class AttributeExpression_Group_1 extends GroupToken {
 	
 	public AttributeExpression_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3492,7 +3492,7 @@ protected class AttributeExpression_AttributeExpressionAction_1_0 extends Action
 	}
 }
 
-// attribute=[ecore::EAttribute]
+// attribute=[core::Attribute]
 protected class AttributeExpression_AttributeAssignment_1_1 extends AssignmentToken  {
 	
 	public AttributeExpression_AttributeAssignment_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3518,9 +3518,9 @@ protected class AttributeExpression_AttributeAssignment_1_1 extends AssignmentTo
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("attribute");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeCrossReference_1_1_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_1_1_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeCrossReference_1_1_0(); 
+				element = grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_1_1_0(); 
 				return obj;
 			}
 		}

@@ -3602,12 +3602,12 @@ rule__Assignment__AttributeAssignment_0
     }
 :
 (
-{ before(grammarAccess.getAssignmentAccess().getAttributeEAttributeCrossReference_0_0()); }
+{ before(grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0()); }
 (
-{ before(grammarAccess.getAssignmentAccess().getAttributeEAttributeIDTerminalRuleCall_0_0_1()); }
-	RULE_ID{ after(grammarAccess.getAssignmentAccess().getAttributeEAttributeIDTerminalRuleCall_0_0_1()); }
+{ before(grammarAccess.getAssignmentAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); }
+	RULE_ID{ after(grammarAccess.getAssignmentAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); }
 )
-{ after(grammarAccess.getAssignmentAccess().getAttributeEAttributeCrossReference_0_0()); }
+{ after(grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0()); }
 )
 
 ;
@@ -3666,12 +3666,12 @@ rule__ForLoopCountingExpression__AttributeAssignment_0
     }
 :
 (
-{ before(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeCrossReference_0_0()); }
+{ before(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0()); }
 (
-{ before(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeIDTerminalRuleCall_0_0_1()); }
-	RULE_ID{ after(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeIDTerminalRuleCall_0_0_1()); }
+{ before(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); }
+	RULE_ID{ after(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); }
 )
-{ after(grammarAccess.getForLoopCountingExpressionAccess().getAttributeEAttributeCrossReference_0_0()); }
+{ after(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0()); }
 )
 
 ;
@@ -3866,12 +3866,12 @@ rule__AttributeExpression__AttributeAssignment_1_1
     }
 :
 (
-{ before(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeCrossReference_1_1_0()); }
+{ before(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_1_1_0()); }
 (
-{ before(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeIDTerminalRuleCall_1_1_0_1()); }
-	RULE_ID{ after(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeIDTerminalRuleCall_1_1_0_1()); }
+{ before(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeIDTerminalRuleCall_1_1_0_1()); }
+	RULE_ID{ after(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeIDTerminalRuleCall_1_1_0_1()); }
 )
-{ after(grammarAccess.getAttributeExpressionAccess().getAttributeEAttributeCrossReference_1_1_0()); }
+{ after(grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_1_1_0()); }
 )
 
 ;

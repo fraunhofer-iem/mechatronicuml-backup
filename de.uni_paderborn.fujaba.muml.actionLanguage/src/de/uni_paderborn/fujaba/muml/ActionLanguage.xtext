@@ -9,6 +9,8 @@ import "platform:/resource/org.storydriven.modeling/model/sdm.ecore" as modeling
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart" as rtsc
 
+import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core" as core
+
 import "platform:/resource/org.storydriven.modeling/model/sdm.ecore#//expressions" as expressions
 
 
@@ -42,11 +44,11 @@ ExpressionStartRule returns expressions::Expression:
 	;	
 	
   Assignment returns actionLanguage::Assignment:
-	(attribute=[ecore::EAttribute]
+	(attribute=[core::Attribute]
 	((assignOperator=AssignOperator assignExpression=Expression) | incrementDecrementOperator=IncrementDecrementOperator) ';');
 
     ForLoopCountingExpression returns actionLanguage::Assignment:
-	(attribute=[ecore::EAttribute]
+	(attribute=[core::Attribute]
 	 (incrementDecrementOperator=IncrementDecrementOperator |(assignOperator=AssignOperator assignExpression=Expression)) );	
 
 Expression returns expressions::Expression:
@@ -78,7 +80,7 @@ LiteralExpression returns expressions::Expression:
 	
 AttributeExpression returns expressions::Expression:
 	 LiteralExpression  |
-	{actionLanguage::AttributeExpression}  attribute=[ecore::EAttribute]
+	{actionLanguage::AttributeExpression}  attribute=[core::Attribute]
 	;			
 	
 IdentifierOrValue returns ecore::EString:
