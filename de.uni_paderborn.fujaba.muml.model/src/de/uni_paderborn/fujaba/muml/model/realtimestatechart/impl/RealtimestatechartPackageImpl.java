@@ -1786,13 +1786,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getRealtimeStatechart_AllAvailableAttributes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asSet()"
+			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asOrderedSet()"
 		   });		
 		addAnnotation
 		  (getRealtimeStatechart_AllAvailableOperations(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()"
+			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()"
 		   });											
 		addAnnotation
 		  (getMessage_InstanceOf(), 

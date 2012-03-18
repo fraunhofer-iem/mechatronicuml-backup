@@ -1826,14 +1826,14 @@
             upperBound="-1" eType="#//model/core/Attribute" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asSet()"/>
+            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asOrderedSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableOperations"
             upperBound="-1" eType="#//model/core/Operation" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()"/>
+            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

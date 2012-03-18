@@ -245,7 +245,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>All Available Attributes</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableAttributes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Attribute> getAllAvailableAttributes();
@@ -262,7 +262,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>All Available Operations</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableOperations()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Operation> getAllAvailableOperations();
