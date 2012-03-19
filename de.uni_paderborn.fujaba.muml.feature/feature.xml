@@ -304,4 +304,32 @@
          version="1.0.0.qualifier"
          unpack="false"/>
 
+   <plugin
+         id="de.fujaba.modelinstance.edit.eef"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.model.edit.eef"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.edit.eef"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.modeling.edit.eef"
+         download-size="0"
+         install-size="0"
+         version="0.2.0.qualifier"
+         unpack="false"/>
+
 </feature>
