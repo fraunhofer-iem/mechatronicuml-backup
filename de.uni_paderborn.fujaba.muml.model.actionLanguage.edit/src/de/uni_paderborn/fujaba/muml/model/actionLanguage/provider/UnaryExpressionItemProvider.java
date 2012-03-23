@@ -254,6 +254,11 @@ public class UnaryExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add

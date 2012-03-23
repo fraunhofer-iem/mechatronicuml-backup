@@ -301,6 +301,11 @@ public class AssignmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add

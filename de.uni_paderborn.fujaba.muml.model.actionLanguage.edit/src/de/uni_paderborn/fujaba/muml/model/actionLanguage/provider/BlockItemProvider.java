@@ -226,6 +226,11 @@ public class BlockItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add

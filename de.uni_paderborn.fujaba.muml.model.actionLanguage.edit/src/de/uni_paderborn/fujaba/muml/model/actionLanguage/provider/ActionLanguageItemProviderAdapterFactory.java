@@ -375,6 +375,29 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OperationCallItemProvider operationCallItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOperationCallAdapter() {
+		if (operationCallItemProvider == null) {
+			operationCallItemProvider = new OperationCallItemProvider(this);
+		}
+
+		return operationCallItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,6 +509,7 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		if (forLoopItemProvider != null) forLoopItemProvider.dispose();
 		if (ifStatementItemProvider != null) ifStatementItemProvider.dispose();
 		if (attributeExpressionItemProvider != null) attributeExpressionItemProvider.dispose();
+		if (operationCallItemProvider != null) operationCallItemProvider.dispose();
 	}
 
 }

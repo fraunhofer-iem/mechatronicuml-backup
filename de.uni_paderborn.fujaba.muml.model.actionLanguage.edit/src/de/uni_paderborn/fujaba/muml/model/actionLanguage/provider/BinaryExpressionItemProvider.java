@@ -217,6 +217,11 @@ public class BinaryExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
@@ -348,6 +353,11 @@ public class BinaryExpressionItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createAttributeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
