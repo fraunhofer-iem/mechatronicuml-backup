@@ -1377,6 +1377,88 @@ public interface ActionLanguagePackage extends EPackage {
 	int ATTRIBUTE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getOperationCall()
+	 * @generated
+	 */
+	int OPERATION_CALL = 15;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL__OPERATION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parameter Binding</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL__PARAMETER_BINDING = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Operation Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1384,7 +1466,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLogicOperator()
 	 * @generated
 	 */
-	int LOGIC_OPERATOR = 15;
+	int LOGIC_OPERATOR = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator <em>Comparing Operator</em>}' enum.
@@ -1394,7 +1476,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getComparingOperator()
 	 * @generated
 	 */
-	int COMPARING_OPERATOR = 16;
+	int COMPARING_OPERATOR = 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
@@ -1404,7 +1486,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int ARITHMETIC_OPERATOR = 17;
+	int ARITHMETIC_OPERATOR = 18;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}' enum.
@@ -1414,7 +1496,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 18;
+	int ASSIGN_OPERATOR = 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -1424,7 +1506,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 19;
+	int INCREMENT_DECREMENT_OPERATOR = 20;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator <em>Comparison Operator</em>}' enum.
@@ -1434,7 +1516,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getComparisonOperator()
 	 * @generated
 	 */
-	int COMPARISON_OPERATOR = 20;
+	int COMPARISON_OPERATOR = 21;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator <em>Unary Operator</em>}' enum.
@@ -1444,7 +1526,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getUnaryOperator()
 	 * @generated
 	 */
-	int UNARY_OPERATOR = 21;
+	int UNARY_OPERATOR = 22;
 
 
 	/**
@@ -1893,6 +1975,38 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttributeExpression_Attribute();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall <em>Operation Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operation Call</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall
+	 * @generated
+	 */
+	EClass getOperationCall();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Operation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getOperation()
+	 * @see #getOperationCall()
+	 * @generated
+	 */
+	EReference getOperationCall_Operation();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getParameterBinding <em>Parameter Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter Binding</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getParameterBinding()
+	 * @see #getOperationCall()
+	 * @generated
+	 */
+	EReference getOperationCall_ParameterBinding();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}'.
@@ -2351,6 +2465,32 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ATTRIBUTE_EXPRESSION__ATTRIBUTE = eINSTANCE.getAttributeExpression_Attribute();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getOperationCall()
+		 * @generated
+		 */
+		EClass OPERATION_CALL = eINSTANCE.getOperationCall();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_CALL__OPERATION = eINSTANCE.getOperationCall_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter Binding</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_CALL__PARAMETER_BINDING = eINSTANCE.getOperationCall_ParameterBinding();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}' enum.

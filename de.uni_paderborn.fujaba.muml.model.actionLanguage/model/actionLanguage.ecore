@@ -234,4 +234,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="AttributeExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationCall" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

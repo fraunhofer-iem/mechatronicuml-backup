@@ -143,6 +143,15 @@ public interface ActionLanguageFactory extends EFactory {
 	AttributeExpression createAttributeExpression();
 
 	/**
+	 * Returns a new object of class '<em>Operation Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operation Call</em>'.
+	 * @generated
+	 */
+	OperationCall createOperationCall();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

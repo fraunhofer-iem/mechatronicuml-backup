@@ -138,6 +138,10 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 				return createAttributeExpressionAdapter();
 			}
 			@Override
+			public Adapter caseOperationCall(OperationCall object) {
+				return createOperationCallAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -380,6 +384,20 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAttributeExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall <em>Operation Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall
+	 * @generated
+	 */
+	public Adapter createOperationCallAdapter() {
 		return null;
 	}
 

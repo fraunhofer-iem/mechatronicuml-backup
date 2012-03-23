@@ -74,6 +74,7 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 			case ActionLanguagePackage.FOR_LOOP: return createForLoop();
 			case ActionLanguagePackage.IF_STATEMENT: return createIfStatement();
 			case ActionLanguagePackage.ATTRIBUTE_EXPRESSION: return createAttributeExpression();
+			case ActionLanguagePackage.OPERATION_CALL: return createOperationCall();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -261,6 +262,16 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	public AttributeExpression createAttributeExpression() {
 		AttributeExpressionImpl attributeExpression = new AttributeExpressionImpl();
 		return attributeExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperationCall createOperationCall() {
+		OperationCallImpl operationCall = new OperationCallImpl();
+		return operationCall;
 	}
 
 	/**

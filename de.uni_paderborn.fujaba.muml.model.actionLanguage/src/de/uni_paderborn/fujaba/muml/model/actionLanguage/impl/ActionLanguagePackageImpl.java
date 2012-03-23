@@ -26,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOpera
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator;
@@ -165,6 +166,13 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	private EClass attributeExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operationCallEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -669,6 +677,33 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOperationCall() {
+		return operationCallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperationCall_Operation() {
+		return (EReference)operationCallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperationCall_ParameterBinding() {
+		return (EReference)operationCallEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getLogicOperator() {
 		return logicOperatorEEnum;
 	}
@@ -812,6 +847,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		attributeExpressionEClass = createEClass(ATTRIBUTE_EXPRESSION);
 		createEReference(attributeExpressionEClass, ATTRIBUTE_EXPRESSION__ATTRIBUTE);
 
+		operationCallEClass = createEClass(OPERATION_CALL);
+		createEReference(operationCallEClass, OPERATION_CALL__OPERATION);
+		createEReference(operationCallEClass, OPERATION_CALL__PARAMETER_BINDING);
+
 		// Create enums
 		logicOperatorEEnum = createEEnum(LOGIC_OPERATOR);
 		comparingOperatorEEnum = createEEnum(COMPARING_OPERATOR);
@@ -869,6 +908,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		forLoopEClass.getESuperTypes().add(this.getLoop());
 		ifStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		attributeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		operationCallEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(textualExpressionEClass, TextualExpression.class, "TextualExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -927,6 +967,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		initEClass(attributeExpressionEClass, AttributeExpression.class, "AttributeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttributeExpression_Attribute(), theCorePackage.getAttribute(), null, "attribute", null, 0, 1, AttributeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(operationCallEClass, OperationCall.class, "OperationCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOperationCall_Operation(), theCorePackage.getOperation(), null, "operation", null, 1, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationCall_ParameterBinding(), theCorePackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(logicOperatorEEnum, LogicOperator.class, "LogicOperator");
