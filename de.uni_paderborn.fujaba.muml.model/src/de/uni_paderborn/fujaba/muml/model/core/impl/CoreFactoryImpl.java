@@ -73,6 +73,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case CorePackage.ARRAY_DATA_TYPE: return createArrayDataType();
 			case CorePackage.INNER_DECLARATION: return createInnerDeclaration();
+			case CorePackage.PARAMETER_BINDING: return createParameterBinding();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -196,6 +197,16 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public InnerDeclaration createInnerDeclaration() {
 		InnerDeclarationImpl innerDeclaration = new InnerDeclarationImpl();
 		return innerDeclaration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParameterBinding createParameterBinding() {
+		ParameterBindingImpl parameterBinding = new ParameterBindingImpl();
+		return parameterBinding;
 	}
 
 	/**

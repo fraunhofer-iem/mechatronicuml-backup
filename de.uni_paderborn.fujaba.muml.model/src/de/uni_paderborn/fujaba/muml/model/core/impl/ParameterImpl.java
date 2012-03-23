@@ -35,7 +35,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.ParameterImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.ParameterImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.ParameterImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
  *
@@ -155,91 +154,6 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operation getOperation() {
-		if (eContainerFeatureID() != CorePackage.PARAMETER__OPERATION) return null;
-		return (Operation)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOperation(Operation newOperation, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newOperation, CorePackage.PARAMETER__OPERATION, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOperation(Operation newOperation) {
-		if (newOperation != eInternalContainer() || (eContainerFeatureID() != CorePackage.PARAMETER__OPERATION && newOperation != null)) {
-			if (EcoreUtil.isAncestor(this, newOperation))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newOperation != null)
-				msgs = ((InternalEObject)newOperation).eInverseAdd(this, CorePackage.OPERATION__PARAMETERS, Operation.class, msgs);
-			msgs = basicSetOperation(newOperation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.PARAMETER__OPERATION, newOperation, newOperation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CorePackage.PARAMETER__OPERATION:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetOperation((Operation)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CorePackage.PARAMETER__OPERATION:
-				return basicSetOperation(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case CorePackage.PARAMETER__OPERATION:
-				return eInternalContainer().eInverseRemove(this, CorePackage.OPERATION__PARAMETERS, Operation.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -248,8 +162,6 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 			case CorePackage.PARAMETER__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case CorePackage.PARAMETER__OPERATION:
-				return getOperation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -267,9 +179,6 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 				return;
 			case CorePackage.PARAMETER__TYPE:
 				setType((DataType)newValue);
-				return;
-			case CorePackage.PARAMETER__OPERATION:
-				setOperation((Operation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,9 +198,6 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 			case CorePackage.PARAMETER__TYPE:
 				setType((DataType)null);
 				return;
-			case CorePackage.PARAMETER__OPERATION:
-				setOperation((Operation)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -308,8 +214,6 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case CorePackage.PARAMETER__TYPE:
 				return type != null;
-			case CorePackage.PARAMETER__OPERATION:
-				return getOperation() != null;
 		}
 		return super.eIsSet(featureID);
 	}

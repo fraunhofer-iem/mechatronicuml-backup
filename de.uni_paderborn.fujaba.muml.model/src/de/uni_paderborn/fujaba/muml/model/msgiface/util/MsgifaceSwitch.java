@@ -83,6 +83,7 @@ public class MsgifaceSwitch<T> extends Switch<T> {
 				MessageInterface messageInterface = (MessageInterface)theEObject;
 				T result = caseMessageInterface(messageInterface);
 				if (result == null) result = caseNamedElement(messageInterface);
+				if (result == null) result = caseCommentableElement(messageInterface);
 				if (result == null) result = caseExtendableElement(messageInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -90,7 +91,6 @@ public class MsgifaceSwitch<T> extends Switch<T> {
 			case MsgifacePackage.MESSAGE_TYPE: {
 				MessageType messageType = (MessageType)theEObject;
 				T result = caseMessageType(messageType);
-				if (result == null) result = caseCallable(messageType);
 				if (result == null) result = caseNamedElement(messageType);
 				if (result == null) result = caseCommentableElement(messageType);
 				if (result == null) result = caseExtendableElement(messageType);
@@ -173,21 +173,6 @@ public class MsgifaceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Callable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Callable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCallable(Callable object) {
 		return null;
 	}
 

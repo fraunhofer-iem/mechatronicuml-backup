@@ -6,6 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface;
 
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import org.eclipse.emf.common.util.EList;
+import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.calls.Callable;
 
@@ -26,6 +29,7 @@ import org.storydriven.modeling.calls.Callable;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,7 +38,7 @@ import org.storydriven.modeling.calls.Callable;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueParameterNames'"
  * @generated
  */
-public interface MessageType extends Callable, NamedElement {
+public interface MessageType extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Message Interface</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.
@@ -61,5 +65,21 @@ public interface MessageType extends Callable, NamedElement {
 	 * @generated
 	 */
 	void setMessageInterface(MessageInterface value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageType_Parameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getParameters();
 
 } // MessageType

@@ -209,7 +209,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: {
 				SynchronizationChannel synchronizationChannel = (SynchronizationChannel)theEObject;
 				T result = caseSynchronizationChannel(synchronizationChannel);
-				if (result == null) result = caseCallable(synchronizationChannel);
 				if (result == null) result = caseNamedElement(synchronizationChannel);
 				if (result == null) result = caseCommentableElement(synchronizationChannel);
 				if (result == null) result = caseExtendableElement(synchronizationChannel);
@@ -219,8 +218,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.SYNCHRONIZATION: {
 				Synchronization synchronization = (Synchronization)theEObject;
 				T result = caseSynchronization(synchronization);
-				if (result == null) result = caseInvocation(synchronization);
-				if (result == null) result = caseCommentableElement(synchronization);
 				if (result == null) result = caseExtendableElement(synchronization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -264,8 +261,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.MESSAGE: {
 				Message message = (Message)theEObject;
 				T result = caseMessage(message);
-				if (result == null) result = caseInvocation(message);
-				if (result == null) result = caseCommentableElement(message);
 				if (result == null) result = caseExtendableElement(message);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -779,21 +774,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Invocation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Invocation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInvocation(Invocation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -805,21 +785,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBehavior(Behavior object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Callable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Callable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCallable(Callable object) {
 		return null;
 	}
 

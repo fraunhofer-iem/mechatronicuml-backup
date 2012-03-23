@@ -43,8 +43,8 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.OperationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.OperationImpl#getReturnType <em>Return Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.OperationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.OperationImpl#getImplementations <em>Implementations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.OperationImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,16 +82,6 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 	protected DataType returnType;
 
 	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> parameters;
-
-	/**
 	 * The cached value of the '{@link #getImplementations() <em>Implementations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,6 +90,16 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 	 * @ordered
 	 */
 	protected EList<Expression> implementations;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,7 +186,7 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 	 */
 	public EList<Parameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentWithInverseEList<Parameter>(Parameter.class, this, CorePackage.OPERATION__PARAMETERS, CorePackage.PARAMETER__OPERATION);
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, CorePackage.OPERATION__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -208,28 +208,13 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CorePackage.OPERATION__PARAMETERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CorePackage.OPERATION__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case CorePackage.OPERATION__IMPLEMENTATIONS:
 				return ((InternalEList<?>)getImplementations()).basicRemove(otherEnd, msgs);
+			case CorePackage.OPERATION__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -247,10 +232,10 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 			case CorePackage.OPERATION__RETURN_TYPE:
 				if (resolve) return getReturnType();
 				return basicGetReturnType();
-			case CorePackage.OPERATION__PARAMETERS:
-				return getParameters();
 			case CorePackage.OPERATION__IMPLEMENTATIONS:
 				return getImplementations();
+			case CorePackage.OPERATION__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -270,13 +255,13 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 			case CorePackage.OPERATION__RETURN_TYPE:
 				setReturnType((DataType)newValue);
 				return;
-			case CorePackage.OPERATION__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
 			case CorePackage.OPERATION__IMPLEMENTATIONS:
 				getImplementations().clear();
 				getImplementations().addAll((Collection<? extends Expression>)newValue);
+				return;
+			case CorePackage.OPERATION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -296,11 +281,11 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 			case CorePackage.OPERATION__RETURN_TYPE:
 				setReturnType((DataType)null);
 				return;
-			case CorePackage.OPERATION__PARAMETERS:
-				getParameters().clear();
-				return;
 			case CorePackage.OPERATION__IMPLEMENTATIONS:
 				getImplementations().clear();
+				return;
+			case CorePackage.OPERATION__PARAMETERS:
+				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -318,10 +303,10 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case CorePackage.OPERATION__RETURN_TYPE:
 				return returnType != null;
-			case CorePackage.OPERATION__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 			case CorePackage.OPERATION__IMPLEMENTATIONS:
 				return implementations != null && !implementations.isEmpty();
+			case CorePackage.OPERATION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

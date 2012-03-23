@@ -139,6 +139,10 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createInnerDeclarationAdapter();
 			}
 			@Override
+			public Adapter caseParameterBinding(ParameterBinding object) {
+				return createParameterBindingAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -375,6 +379,20 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInnerDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding <em>Parameter Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.ParameterBinding
+	 * @generated
+	 */
+	public Adapter createParameterBindingAdapter() {
 		return null;
 	}
 

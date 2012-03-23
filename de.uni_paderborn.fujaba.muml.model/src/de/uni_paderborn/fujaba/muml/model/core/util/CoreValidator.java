@@ -123,6 +123,8 @@ public class CoreValidator extends EObjectValidator {
 				return validateArrayDataType((ArrayDataType)value, diagnostics, context);
 			case CorePackage.INNER_DECLARATION:
 				return validateInnerDeclaration((InnerDeclaration)value, diagnostics, context);
+			case CorePackage.PARAMETER_BINDING:
+				return validateParameterBinding((ParameterBinding)value, diagnostics, context);
 			case CorePackage.PRIMITIVE_TYPES:
 				return validatePrimitiveTypes((PrimitiveTypes)value, diagnostics, context);
 			default:
@@ -332,6 +334,15 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateInnerDeclaration(InnerDeclaration innerDeclaration, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(innerDeclaration, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameterBinding(ParameterBinding parameterBinding, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(parameterBinding, diagnostics, context);
 	}
 
 	/**

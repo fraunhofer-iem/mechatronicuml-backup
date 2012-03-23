@@ -927,6 +927,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSynchronizationChannel_Parameters() {
+		return (EReference)synchronizationChannelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSynchronization() {
 		return synchronizationEClass;
 	}
@@ -947,6 +956,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EAttribute getSynchronization_Kind() {
 		return (EAttribute)synchronizationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSynchronization_ParameterBinding() {
+		return (EReference)synchronizationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1127,6 +1145,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EReference getMessage_InstanceOf() {
 		return (EReference)messageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessage_ParameterBinding() {
+		return (EReference)messageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1339,10 +1366,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		synchronizationChannelEClass = createEClass(SYNCHRONIZATION_CHANNEL);
 		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__STATE);
+		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__PARAMETERS);
 
 		synchronizationEClass = createEClass(SYNCHRONIZATION);
 		createEReference(synchronizationEClass, SYNCHRONIZATION__SYNC_CHANNEL);
 		createEAttribute(synchronizationEClass, SYNCHRONIZATION__KIND);
+		createEReference(synchronizationEClass, SYNCHRONIZATION__PARAMETER_BINDING);
 
 		prioritizableEClass = createEClass(PRIORITIZABLE);
 		createEAttribute(prioritizableEClass, PRIORITIZABLE__PRIORITY);
@@ -1369,6 +1398,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		messageEClass = createEClass(MESSAGE);
 		createEReference(messageEClass, MESSAGE__INSTANCE_OF);
+		createEReference(messageEClass, MESSAGE__PARAMETER_BINDING);
 
 		entryEventEClass = createEClass(ENTRY_EVENT);
 
@@ -1419,7 +1449,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
-		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 
 		// Create type parameters
@@ -1440,15 +1469,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		asynchronousMessageEventEClass.getESuperTypes().add(this.getTransitionEvent());
 		doEventEClass.getESuperTypes().add(this.getStateEvent());
 		entryOrExitEventEClass.getESuperTypes().add(this.getStateEvent());
-		synchronizationChannelEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		synchronizationChannelEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		synchronizationEClass.getESuperTypes().add(theCallsPackage.getInvocation());
+		synchronizationChannelEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		synchronizationEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		realtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		realtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		realtimeStatechartEClass.getESuperTypes().add(theCorePackage.getBehavior());
 		transitionEventEClass.getESuperTypes().add(this.getEvent());
 		stateEventEClass.getESuperTypes().add(this.getEvent());
-		messageEClass.getESuperTypes().add(theCallsPackage.getInvocation());
+		messageEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		entryEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
 		exitEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
 		entryPointEClass.getESuperTypes().add(this.getVertex());
@@ -1546,10 +1575,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(synchronizationChannelEClass, SynchronizationChannel.class, "SynchronizationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSynchronizationChannel_State(), this.getState(), this.getState_Channels(), "state", null, 1, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSynchronizationChannel_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(synchronizationEClass, Synchronization.class, "Synchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSynchronization_SyncChannel(), this.getSynchronizationChannel(), null, "syncChannel", null, 0, 1, Synchronization.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getSynchronization_SyncChannel(), this.getSynchronizationChannel(), null, "syncChannel", null, 0, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSynchronization_Kind(), this.getSynchronizationKind(), "kind", null, 1, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSynchronization_ParameterBinding(), theCorePackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(prioritizableEClass, Prioritizable.class, "Prioritizable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrioritizable_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Prioritizable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1580,7 +1611,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(stateEventEClass, StateEvent.class, "StateEvent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessage_InstanceOf(), theMsgifacePackage.getMessageType(), null, "instanceOf", null, 1, 1, Message.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_InstanceOf(), theMsgifacePackage.getMessageType(), null, "instanceOf", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_ParameterBinding(), theCorePackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entryEventEClass, EntryEvent.class, "EntryEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1650,13 +1682,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "ValidLowerUpperPeriod"
-		   });																		
+		   });																	
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueNameOfStates MinOneState NoCycles"
-		   });																																
+		   });																															
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 
@@ -1749,13 +1781,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "ValidLowerUpperPeriod", "self.periodLower >= 1 and self.periodLower <= self.periodUpper"
-		   });													
-		addAnnotation
-		  (getSynchronization_SyncChannel(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if not callee.oclIsUndefined() then\r\n\tcallee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)\r\nelse\r\n\tnull\r\nendif\r\n\r\n"
-		   });						
+		   });																	
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
@@ -1793,13 +1819,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()"
-		   });											
-		addAnnotation
-		  (getMessage_InstanceOf(), 
-		   source, 
-		   new String[] {
-			 "derivation", "callee->any(x | x.oclIsKindOf(msgiface::MessageType)).oclAsType(msgiface::MessageType)"
-		   });									
+		   });																		
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 

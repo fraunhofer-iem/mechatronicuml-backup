@@ -790,12 +790,6 @@
             <details key="documentation" value="The type of the return value of this operation."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-            eType="#//model/core/Parameter" containment="true" eOpposite="#//model/core/Parameter/operation">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The parameters of this operation."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
             eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
             containment="true">
@@ -803,6 +797,8 @@
             <details key="documentation" value="The implementation for this operation. MechatronicUML supports the annotation of multiple implementations for an operation to support different target languages."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+            eType="#//model/core/Parameter" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -812,12 +808,6 @@
             eType="#//model/core/DataType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The type of this parameter."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
-            eType="#//model/core/Operation" eOpposite="#//model/core/Operation/parameters">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The operation which contains this parameter. Since parameters cannot exist without the operation, the operation must be set."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -893,6 +883,13 @@
             <details key="documentation" value="This reference points to the definition of the data type."/>
           </eAnnotations>
         </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+            eType="#//model/core/Parameter"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
+            containment="true"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.2.2"
@@ -1697,7 +1694,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Defines a type of a synchronization channel that can be used to synchronize&#xA;between statecharts contained as substatecharts in the same state.&#xA;Serves as a type for Synchronizations."/>
         </eAnnotations>
@@ -1707,18 +1704,16 @@
             <details key="documentation" value="The state in which this synchronization channel is defined."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+            eType="#//model/core/Parameter" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
+      <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Two transitions can synchron fire. One transition is the sender, the other the receiver. This means that both transitions (exactly one sender and one receiver) must be activated and has to fire at the same time. "/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="syncChannel" eType="#//model/realtimestatechart/SynchronizationChannel"
-            changeable="false" volatile="true" transient="true" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="syncChannel" eType="#//model/realtimestatechart/SynchronizationChannel">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="the channel that is used by the synchronization"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not callee.oclIsUndefined() then&#xD;&#xA;&#x9;callee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
@@ -1727,6 +1722,8 @@
             <details key="documentation" value="Decides the kind: Is this a send or a reveive synchronization?"/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
+            eType="#//model/core/ParameterBinding" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Prioritizable" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1873,20 +1870,18 @@
           <details key="documentation" value="A StateEvent is an event that occurs within a state of a real-time statechart.&#xD;&#xA;StateEvents may only be trigger events."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
+      <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The messages are exchanged between components in order to communicate&#xD;&#xA;asynchronously. A message is typed over a message type and provides a &#xD;&#xA;binding of all parameters defined by the message type to concrete values."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
-            eType="#//model/msgiface/MessageType" changeable="false" volatile="true"
-            transient="true" derived="true">
+            eType="#//model/msgiface/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Retrieves the message type this message is typed over."/>
           </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="callee->any(x | x.oclIsKindOf(msgiface::MessageType)).oclAsType(msgiface::MessageType)"/>
-          </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
+            eType="#//model/core/ParameterBinding" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="EventKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1980,7 +1975,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package defines the message interfaces. A MessageInterface defines a set&#xD;&#xA;of event signatures using the class MessageType. These message types are used&#xD;&#xA;to type the events within a realtime statechart. "/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="MessageInterface" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="MessageInterface" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a message interface. A message interface specifies which messages are allowed to be sent or received by a port or role."/>
         </eAnnotations>
@@ -2012,7 +2007,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the list of parameters. The message type inherits from&#xD;&#xA;callable because concrete events in a real-time statechart must provide a &#xD;&#xA;parameter mapping for the parameters of the message type as it is defined for&#xD;&#xA;method invocations."/>
         </eAnnotations>
@@ -2028,6 +2023,8 @@
             <details key="documentation" value="This is the message interface where this message type is defined in."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+            eType="#//model/core/Parameter" containment="true"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.2.2"

@@ -26,8 +26,8 @@ import org.storydriven.modeling.expressions.Expression;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Operation#getReturnType <em>Return Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Operation#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Operation#getImplementations <em>Implementations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Operation#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,16 +64,11 @@ public interface Operation extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.Parameter#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The parameters of this operation.
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getOperation_Parameters()
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Parameter#getOperation
-	 * @model opposite="operation" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
