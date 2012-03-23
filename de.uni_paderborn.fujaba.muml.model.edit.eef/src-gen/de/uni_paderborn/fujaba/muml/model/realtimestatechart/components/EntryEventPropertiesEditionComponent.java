@@ -7,20 +7,19 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.components;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.filters.EObjectFilter;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -77,7 +76,7 @@ public class EntryEventPropertiesEditionComponent extends SinglePartPropertiesEd
 			final EntryEventPropertiesEditionPart basePart = (EntryEventPropertiesEditionPart)editingPart;
 			// init values
 			if (isAccessible(RealtimestatechartViewsRepository.EntryEvent.Properties.kind)) {
-				basePart.initKind((EEnum) RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEType(), entryEvent.getKind());
+				basePart.initKind(EEFUtils.choiceOfValues(entryEvent, RealtimestatechartPackage.eINSTANCE.getEvent_Kind()), entryEvent.getKind());
 			}
 			if (isAccessible(RealtimestatechartViewsRepository.EntryEvent.Properties.clockResets)) {
 				clockResetsSettings = new ReferencesTableSettings(entryEvent, RealtimestatechartPackage.eINSTANCE.getEntryOrExitEvent_ClockResets());
@@ -157,10 +156,10 @@ public class EntryEventPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			EntryEventPropertiesEditionPart basePart = (EntryEventPropertiesEditionPart)editingPart;
 			if (RealtimestatechartPackage.eINSTANCE.getEvent_Kind().equals(msg.getFeature()) && isAccessible(RealtimestatechartViewsRepository.EntryEvent.Properties.kind))
-				basePart.setKind((Enumerator)msg.getNewValue());
+				basePart.setKind((EventKind)msg.getNewValue());
 			
 			if (RealtimestatechartPackage.eINSTANCE.getEntryOrExitEvent_ClockResets().equals(msg.getFeature())  && isAccessible(RealtimestatechartViewsRepository.EntryEvent.Properties.clockResets))
 				basePart.updateClockResets();
@@ -182,7 +181,7 @@ public class EntryEventPropertiesEditionComponent extends SinglePartPropertiesEd
 				if (RealtimestatechartViewsRepository.EntryEvent.Properties.kind == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEAttributeType(), newValue);
 				}

@@ -9,11 +9,9 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
@@ -458,7 +456,7 @@ public class ContinuousPortPropertiesEditionPartImpl extends CompositeProperties
 		SWTUtils.createPartLabel(parent, ComponentMessages.ContinuousPortPropertiesEditionPart_KindLabel, propertiesEditionComponent.isRequired(ComponentViewsRepository.ContinuousPort.Properties.kind, ComponentViewsRepository.SWT_KIND));
 		kind = new EMFComboViewer(parent);
 		kind.setContentProvider(new ArrayContentProvider());
-		kind.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
+		kind.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
 		GridData kindData = new GridData(GridData.FILL_HORIZONTAL);
 		kind.getCombo().setLayoutData(kindData);
 		kind.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -757,17 +755,17 @@ public class ContinuousPortPropertiesEditionPartImpl extends CompositeProperties
 	 * 
 	 */
 	public Enumerator getKind() {
-		EEnumLiteral selection = (EEnumLiteral) ((StructuredSelection) kind.getSelection()).getFirstElement();
-		return selection.getInstance();
+		Enumerator selection = (Enumerator) ((StructuredSelection) kind.getSelection()).getFirstElement();
+		return selection;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.component.parts.ContinuousPortPropertiesEditionPart#initKind(EEnum eenum, Enumerator current)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.parts.ContinuousPortPropertiesEditionPart#initKind(Object input, Enumerator current)
 	 */
-	public void initKind(EEnum eenum, Enumerator current) {
-		kind.setInput(eenum.getELiterals());
+	public void initKind(Object input, Enumerator current) {
+		kind.setInput(input);
 		kind.modelUpdating(new StructuredSelection(current));
 	}
 

@@ -32,6 +32,20 @@ public interface MessageInterfacePropertiesEditionPart {
 	public void setName(String newValue);
 
 
+	/**
+	 * @return the comment
+	 * 
+	 */
+	public String getComment();
+
+	/**
+	 * Defines a new comment
+	 * @param newValue the new comment to set
+	 * 
+	 */
+	public void setComment(String newValue);
+
+
 
 
 	/**

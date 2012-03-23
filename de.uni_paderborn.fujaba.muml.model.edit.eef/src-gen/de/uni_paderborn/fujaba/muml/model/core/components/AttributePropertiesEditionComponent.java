@@ -51,7 +51,7 @@ public class AttributePropertiesEditionComponent extends SinglePartPropertiesEdi
 	/**
 	 * Settings for type EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings typeSettings;
+	private EObjectFlatComboSettings typeSettings;
 	
 	
 	/**
@@ -174,7 +174,7 @@ public class AttributePropertiesEditionComponent extends SinglePartPropertiesEdi
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			AttributePropertiesEditionPart basePart = (AttributePropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.Attribute.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -220,14 +220,14 @@ public class AttributePropertiesEditionComponent extends SinglePartPropertiesEdi
 				if (CoreViewsRepository.Attribute.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (CoreViewsRepository.Attribute.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}

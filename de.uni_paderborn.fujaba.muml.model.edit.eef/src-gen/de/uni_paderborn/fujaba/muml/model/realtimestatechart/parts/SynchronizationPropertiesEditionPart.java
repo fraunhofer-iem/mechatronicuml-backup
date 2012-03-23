@@ -5,7 +5,6 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
@@ -22,64 +21,50 @@ import org.eclipse.jface.viewers.ViewerFilter;
 public interface SynchronizationPropertiesEditionPart {
 
 	/**
-	 * @return the comment
+	 * @return the syncChannel
 	 * 
 	 */
-	public String getComment();
+	public EObject getSyncChannel();
 
 	/**
-	 * Defines a new comment
-	 * @param newValue the new comment to set
-	 * 
-	 */
-	public void setComment(String newValue);
-
-
-	/**
-	 * @return the callee
-	 * 
-	 */
-	public EObject getCallee();
-
-	/**
-	 * Init the callee
+	 * Init the syncChannel
 	 * @param settings the combo setting
 	 */
-	public void initCallee(EObjectFlatComboSettings settings);
+	public void initSyncChannel(EObjectFlatComboSettings settings);
 
 	/**
-	 * Defines a new callee
-	 * @param newValue the new callee to set
+	 * Defines a new syncChannel
+	 * @param newValue the new syncChannel to set
 	 * 
 	 */
-	public void setCallee(EObject newValue);
+	public void setSyncChannel(EObject newValue);
 
 	/**
 	 * Defines the button mode
 	 * @param newValue the new mode to set
 	 * 
 	 */
-	public void setCalleeButtonMode(ButtonsModeEnum newValue);
+	public void setSyncChannelButtonMode(ButtonsModeEnum newValue);
 
 	/**
-	 * Adds the given filter to the callee edition editor.
+	 * Adds the given filter to the syncChannel edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToCallee(ViewerFilter filter);
+	public void addFilterToSyncChannel(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the callee edition editor.
+	 * Adds the given filter to the syncChannel edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToCallee(ViewerFilter filter);
+	public void addBusinessFilterToSyncChannel(ViewerFilter filter);
 
 
 	/**
@@ -90,10 +75,10 @@ public interface SynchronizationPropertiesEditionPart {
 
 	/**
 	 * Init the kind
-	 * @param eenum the enum to manage
+	 * @param input the viewer input
 	 * @param current the current value
 	 */
-	public void initKind(EEnum eenum, Enumerator current);
+	public void initKind(Object input, Enumerator current);
 
 	/**
 	 * Defines a new kind

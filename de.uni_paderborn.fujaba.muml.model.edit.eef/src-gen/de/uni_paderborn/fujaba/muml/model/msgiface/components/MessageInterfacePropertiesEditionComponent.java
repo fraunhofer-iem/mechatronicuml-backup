@@ -78,11 +78,15 @@ public class MessageInterfacePropertiesEditionComponent extends SinglePartProper
 			if (messageInterface.getName() != null && isAccessible(MsgifaceViewsRepository.MessageInterface.Properties.name))
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), messageInterface.getName()));
 			
+			if (messageInterface.getComment() != null && isAccessible(MsgifaceViewsRepository.MessageInterface.Properties.comment))
+				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), messageInterface.getComment()));
+			
 			if (isAccessible(MsgifaceViewsRepository.MessageInterface.Properties.superType)) {
 				superTypeSettings = new ReferencesTableSettings(messageInterface, MsgifacePackage.eINSTANCE.getMessageInterface_SuperType());
 				basePart.initSuperType(superTypeSettings);
 			}
 			// init filters
+			
 			
 			basePart.addFilterToSuperType(new ViewerFilter() {
 			
@@ -114,6 +118,7 @@ public class MessageInterfacePropertiesEditionComponent extends SinglePartProper
 
 
 
+
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
@@ -121,6 +126,9 @@ public class MessageInterfacePropertiesEditionComponent extends SinglePartProper
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == MsgifaceViewsRepository.MessageInterface.Properties.name) {
 			return SDMPackage.eINSTANCE.getNamedElement_Name();
+		}
+		if (editorKey == MsgifaceViewsRepository.MessageInterface.Properties.comment) {
+			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
 		}
 		if (editorKey == MsgifaceViewsRepository.MessageInterface.Properties.superType) {
 			return MsgifacePackage.eINSTANCE.getMessageInterface_SuperType();
@@ -137,6 +145,9 @@ public class MessageInterfacePropertiesEditionComponent extends SinglePartProper
 		MessageInterface messageInterface = (MessageInterface)semanticObject;
 		if (MsgifaceViewsRepository.MessageInterface.Properties.name == event.getAffectedEditor()) {
 			messageInterface.setName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
+		}
+		if (MsgifaceViewsRepository.MessageInterface.Properties.comment == event.getAffectedEditor()) {
+			messageInterface.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
 		}
 		if (MsgifaceViewsRepository.MessageInterface.Properties.superType == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.ADD) {
@@ -156,13 +167,20 @@ public class MessageInterfacePropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			MessageInterfacePropertiesEditionPart basePart = (MessageInterfacePropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(MsgifaceViewsRepository.MessageInterface.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
+				}
+			}
+			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(MsgifaceViewsRepository.MessageInterface.Properties.comment)) {
+				if (msg.getNewValue() != null) {
+					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
+				} else {
+					basePart.setComment("");
 				}
 			}
 			if (MsgifacePackage.eINSTANCE.getMessageInterface_SuperType().equals(msg.getFeature())  && isAccessible(MsgifaceViewsRepository.MessageInterface.Properties.superType))
@@ -195,9 +213,16 @@ public class MessageInterfacePropertiesEditionComponent extends SinglePartProper
 				if (MsgifaceViewsRepository.MessageInterface.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+				}
+				if (MsgifaceViewsRepository.MessageInterface.Properties.comment == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+					}
+					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

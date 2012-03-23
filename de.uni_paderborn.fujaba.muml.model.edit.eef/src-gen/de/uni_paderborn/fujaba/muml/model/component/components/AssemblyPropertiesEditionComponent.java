@@ -54,37 +54,37 @@ public class AssemblyPropertiesEditionComponent extends SinglePartPropertiesEdit
 	/**
 	 * Settings for fromPort EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings fromPortSettings;
+	private EObjectFlatComboSettings fromPortSettings;
 	
 	/**
 	 * Settings for toPort EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings toPortSettings;
+	private EObjectFlatComboSettings toPortSettings;
 	
 	/**
 	 * Settings for parentComponent EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings parentComponentSettings;
+	private EObjectFlatComboSettings parentComponentSettings;
 	
 	/**
 	 * Settings for behavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings behaviorSettings;
+	private EObjectFlatComboSettings behaviorSettings;
 	
 	/**
 	 * Settings for to EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings toSettings;
+	private EObjectFlatComboSettings toSettings;
 	
 	/**
 	 * Settings for from EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings fromSettings;
+	private EObjectFlatComboSettings fromSettings;
 	
 	/**
 	 * Settings for coordinationPattern EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings coordinationPatternSettings;
+	private EObjectFlatComboSettings coordinationPatternSettings;
 	
 	
 	/**
@@ -433,7 +433,7 @@ public class AssemblyPropertiesEditionComponent extends SinglePartPropertiesEdit
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			AssemblyPropertiesEditionPart basePart = (AssemblyPropertiesEditionPart)editingPart;
 			if (ComponentPackage.eINSTANCE.getConnectorType_FromPort().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.Assembly.Properties.fromPort))
 				basePart.setFromPort((EObject)msg.getNewValue());

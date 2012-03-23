@@ -57,6 +57,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.providers.MsgifaceMessages;
 public class MessageInterfacePropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, MessageInterfacePropertiesEditionPart {
 
 	protected Text name;
+	protected Text comment;
 	protected ReferencesTable superType;
 	protected List<ViewerFilter> superTypeBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> superTypeFilters = new ArrayList<ViewerFilter>();
@@ -99,6 +100,7 @@ public class MessageInterfacePropertiesEditionPartImpl extends CompositeProperti
 		CompositionSequence messageInterfaceStep = new BindingCompositionSequence(propertiesEditionComponent);
 		CompositionStep propertiesStep = messageInterfaceStep.addStep(MsgifaceViewsRepository.MessageInterface.Properties.class);
 		propertiesStep.addStep(MsgifaceViewsRepository.MessageInterface.Properties.name);
+		propertiesStep.addStep(MsgifaceViewsRepository.MessageInterface.Properties.comment);
 		propertiesStep.addStep(MsgifaceViewsRepository.MessageInterface.Properties.superType);
 		
 		
@@ -111,6 +113,9 @@ public class MessageInterfacePropertiesEditionPartImpl extends CompositeProperti
 				}
 				if (key == MsgifaceViewsRepository.MessageInterface.Properties.name) {
 					return createNameText(parent);
+				}
+				if (key == MsgifaceViewsRepository.MessageInterface.Properties.comment) {
+					return createCommentText(parent);
 				}
 				if (key == MsgifaceViewsRepository.MessageInterface.Properties.superType) {
 					return createSuperTypeAdvancedReferencesTable(parent);
@@ -179,6 +184,52 @@ public class MessageInterfacePropertiesEditionPartImpl extends CompositeProperti
 		EditingUtils.setID(name, MsgifaceViewsRepository.MessageInterface.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(MsgifaceViewsRepository.MessageInterface.Properties.name, MsgifaceViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createCommentText(Composite parent) {
+		SWTUtils.createPartLabel(parent, MsgifaceMessages.MessageInterfacePropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(MsgifaceViewsRepository.MessageInterface.Properties.comment, MsgifaceViewsRepository.SWT_KIND));
+		comment = new Text(parent, SWT.BORDER);
+		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
+		comment.setLayoutData(commentData);
+		comment.addFocusListener(new FocusAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageInterfacePropertiesEditionPartImpl.this, MsgifaceViewsRepository.MessageInterface.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+			}
+
+		});
+		comment.addKeyListener(new KeyAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageInterfacePropertiesEditionPartImpl.this, MsgifaceViewsRepository.MessageInterface.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+				}
+			}
+
+		});
+		EditingUtils.setID(comment, MsgifaceViewsRepository.MessageInterface.Properties.comment);
+		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(MsgifaceViewsRepository.MessageInterface.Properties.comment, MsgifaceViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 		return parent;
 	}
 
@@ -298,6 +349,31 @@ public class MessageInterfacePropertiesEditionPartImpl extends CompositeProperti
 			name.setText(newValue);
 		} else {
 			name.setText(""); //$NON-NLS-1$
+		}
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageInterfacePropertiesEditionPart#getComment()
+	 * 
+	 */
+	public String getComment() {
+		return comment.getText();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageInterfacePropertiesEditionPart#setComment(String newValue)
+	 * 
+	 */
+	public void setComment(String newValue) {
+		if (newValue != null) {
+			comment.setText(newValue);
+		} else {
+			comment.setText(""); //$NON-NLS-1$
 		}
 	}
 

@@ -60,17 +60,17 @@ public class TransitionPropertiesEditionComponent extends SinglePartPropertiesEd
 	/**
 	 * Settings for target EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings targetSettings;
+	private EObjectFlatComboSettings targetSettings;
 	
 	/**
 	 * Settings for source EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings sourceSettings;
+	private EObjectFlatComboSettings sourceSettings;
 	
 	/**
 	 * Settings for statechart EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings statechartSettings;
+	private EObjectFlatComboSettings statechartSettings;
 	
 	/**
 	 * Settings for clockResets ReferencesTable
@@ -227,7 +227,8 @@ public class TransitionPropertiesEditionComponent extends SinglePartPropertiesEd
 			// Start of user code for additional businessfilters for clockResets
 			// End of user code
 			
-			basePart.addFilterToClockConstraints(new ViewerFilter() {
+			if (isAccessible(RealtimestatechartViewsRepository.Transition.Properties.clockConstraints)) {
+				basePart.addFilterToClockConstraints(new ViewerFilter() {
 			
 					/**
 					 * {@inheritDoc}
@@ -238,11 +239,12 @@ public class TransitionPropertiesEditionComponent extends SinglePartPropertiesEd
 						return (element instanceof String && element.equals("")) || (element instanceof ClockConstraint); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for clockConstraints
+				});
+				// Start of user code for additional businessfilters for clockConstraints
 			// End of user code
-			
-			basePart.addFilterToAbsoluteDeadlines(new ViewerFilter() {
+			}
+			if (isAccessible(RealtimestatechartViewsRepository.Transition.Properties.absoluteDeadlines)) {
+				basePart.addFilterToAbsoluteDeadlines(new ViewerFilter() {
 			
 					/**
 					 * {@inheritDoc}
@@ -253,12 +255,13 @@ public class TransitionPropertiesEditionComponent extends SinglePartPropertiesEd
 						return (element instanceof String && element.equals("")) || (element instanceof AbsoluteDeadline); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for absoluteDeadlines
+				});
+				// Start of user code for additional businessfilters for absoluteDeadlines
 			// End of user code
+			}
 			
-			
-			basePart.addFilterToEvents(new ViewerFilter() {
+			if (isAccessible(RealtimestatechartViewsRepository.Transition.Properties.events)) {
+				basePart.addFilterToEvents(new ViewerFilter() {
 			
 					/**
 					 * {@inheritDoc}
@@ -269,10 +272,10 @@ public class TransitionPropertiesEditionComponent extends SinglePartPropertiesEd
 						return (element instanceof String && element.equals("")) || (element instanceof TransitionEvent); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for events
+				});
+				// Start of user code for additional businessfilters for events
 			// End of user code
-			
+			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -477,7 +480,7 @@ public class TransitionPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			TransitionPropertiesEditionPart basePart = (TransitionPropertiesEditionPart)editingPart;
 			if (RealtimestatechartPackage.eINSTANCE.getPrioritizable_Priority().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Transition.Properties.priority)) {
 				if (msg.getNewValue() != null) {
@@ -543,14 +546,14 @@ public class TransitionPropertiesEditionComponent extends SinglePartPropertiesEd
 				if (RealtimestatechartViewsRepository.Transition.Properties.priority == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getPrioritizable_Priority().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getPrioritizable_Priority().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getPrioritizable_Priority().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.Transition.Properties.blockable == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getTransition_Blockable().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getTransition_Blockable().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getTransition_Blockable().getEAttributeType(), newValue);
 				}

@@ -14,8 +14,6 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
-import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
-import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.EObjectFlatComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
@@ -24,15 +22,9 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.FocusAdapter;
-import org.eclipse.swt.events.FocusEvent;
-import org.eclipse.swt.events.KeyAdapter;
-import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -51,8 +43,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers.Realtimes
  */
 public class MessagePropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, MessagePropertiesEditionPart {
 
-	protected Text comment;
-	protected EObjectFlatComboViewer callee;
+	protected EObjectFlatComboViewer instanceOf_;
 
 
 
@@ -92,9 +83,9 @@ public class MessagePropertiesEditionPartForm extends CompositePropertiesEdition
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
 		CompositionSequence messageStep = new BindingCompositionSequence(propertiesEditionComponent);
-		CompositionStep propertiesStep = messageStep.addStep(RealtimestatechartViewsRepository.Message.Properties.class);
-		propertiesStep.addStep(RealtimestatechartViewsRepository.Message.Properties.comment);
-		propertiesStep.addStep(RealtimestatechartViewsRepository.Message.Properties.callee);
+		messageStep
+			.addStep(RealtimestatechartViewsRepository.Message.Properties.class)
+			.addStep(RealtimestatechartViewsRepository.Message.Properties.instanceOf_);
 		
 		
 		composer = new PartComposer(messageStep) {
@@ -104,11 +95,8 @@ public class MessagePropertiesEditionPartForm extends CompositePropertiesEdition
 				if (key == RealtimestatechartViewsRepository.Message.Properties.class) {
 					return createPropertiesGroup(widgetFactory, parent);
 				}
-				if (key == RealtimestatechartViewsRepository.Message.Properties.comment) {
-					return 		createCommentText(widgetFactory, parent);
-				}
-				if (key == RealtimestatechartViewsRepository.Message.Properties.callee) {
-					return createCalleeFlatComboViewer(parent, widgetFactory);
+				if (key == RealtimestatechartViewsRepository.Message.Properties.instanceOf_) {
+					return createInstanceOf_FlatComboViewer(parent, widgetFactory);
 				}
 				return parent;
 			}
@@ -132,59 +120,19 @@ public class MessagePropertiesEditionPartForm extends CompositePropertiesEdition
 		return propertiesGroup;
 	}
 
-	
-	protected Composite createCommentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, RealtimestatechartMessages.MessagePropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Message.Properties.comment, RealtimestatechartViewsRepository.FORM_KIND));
-		comment = widgetFactory.createText(parent, ""); //$NON-NLS-1$
-		comment.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
-		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
-		comment.setLayoutData(commentData);
-		comment.addFocusListener(new FocusAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessagePropertiesEditionPartForm.this, RealtimestatechartViewsRepository.Message.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-			}
-		});
-		comment.addKeyListener(new KeyAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessagePropertiesEditionPartForm.this, RealtimestatechartViewsRepository.Message.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-				}
-			}
-		});
-		EditingUtils.setID(comment, RealtimestatechartViewsRepository.Message.Properties.comment);
-		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.Message.Properties.comment, RealtimestatechartViewsRepository.FORM_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
 	/**
 	 * @param parent the parent composite
 	 * @param widgetFactory factory to use to instanciante widget of the form
 	 * 
 	 */
-	protected Composite createCalleeFlatComboViewer(Composite parent, FormToolkit widgetFactory) {
-		FormUtils.createPartLabel(widgetFactory, parent, RealtimestatechartMessages.MessagePropertiesEditionPart_CalleeLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Message.Properties.callee, RealtimestatechartViewsRepository.FORM_KIND));
-		callee = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Message.Properties.callee, RealtimestatechartViewsRepository.FORM_KIND));
-		widgetFactory.adapt(callee);
-		callee.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-		GridData calleeData = new GridData(GridData.FILL_HORIZONTAL);
-		callee.setLayoutData(calleeData);
-		callee.addSelectionChangedListener(new ISelectionChangedListener() {
+	protected Composite createInstanceOf_FlatComboViewer(Composite parent, FormToolkit widgetFactory) {
+		FormUtils.createPartLabel(widgetFactory, parent, RealtimestatechartMessages.MessagePropertiesEditionPart_InstanceOf_Label, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Message.Properties.instanceOf_, RealtimestatechartViewsRepository.FORM_KIND));
+		instanceOf_ = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Message.Properties.instanceOf_, RealtimestatechartViewsRepository.FORM_KIND));
+		widgetFactory.adapt(instanceOf_);
+		instanceOf_.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+		GridData instanceOf_Data = new GridData(GridData.FILL_HORIZONTAL);
+		instanceOf_.setLayoutData(instanceOf_Data);
+		instanceOf_.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			/**
 			 * {@inheritDoc}
@@ -193,12 +141,12 @@ public class MessagePropertiesEditionPartForm extends CompositePropertiesEdition
 			 */
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessagePropertiesEditionPartForm.this, RealtimestatechartViewsRepository.Message.Properties.callee, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getCallee()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessagePropertiesEditionPartForm.this, RealtimestatechartViewsRepository.Message.Properties.instanceOf_, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getInstanceOf_()));
 			}
 
 		});
-		callee.setID(RealtimestatechartViewsRepository.Message.Properties.callee);
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.Message.Properties.callee, RealtimestatechartViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		instanceOf_.setID(RealtimestatechartViewsRepository.Message.Properties.instanceOf_);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.Message.Properties.instanceOf_, RealtimestatechartViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 		return parent;
 	}
 
@@ -219,37 +167,12 @@ public class MessagePropertiesEditionPartForm extends CompositePropertiesEdition
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#getComment()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#getInstanceOf_()
 	 * 
 	 */
-	public String getComment() {
-		return comment.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#setComment(String newValue)
-	 * 
-	 */
-	public void setComment(String newValue) {
-		if (newValue != null) {
-			comment.setText(newValue);
-		} else {
-			comment.setText(""); //$NON-NLS-1$
-		}
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#getCallee()
-	 * 
-	 */
-	public EObject getCallee() {
-		if (callee.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) callee.getSelection()).getFirstElement();
+	public EObject getInstanceOf_() {
+		if (instanceOf_.getSelection() instanceof StructuredSelection) {
+			Object firstElement = ((StructuredSelection) instanceOf_.getSelection()).getFirstElement();
 			if (firstElement instanceof EObject)
 				return (EObject) firstElement;
 		}
@@ -259,56 +182,56 @@ public class MessagePropertiesEditionPartForm extends CompositePropertiesEdition
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#initCallee(EObjectFlatComboSettings)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#initInstanceOf_(EObjectFlatComboSettings)
 	 */
-	public void initCallee(EObjectFlatComboSettings settings) {
-		callee.setInput(settings);
+	public void initInstanceOf_(EObjectFlatComboSettings settings) {
+		instanceOf_.setInput(settings);
 		if (current != null) {
-			callee.setSelection(new StructuredSelection(settings.getValue()));
+			instanceOf_.setSelection(new StructuredSelection(settings.getValue()));
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#setCallee(EObject newValue)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#setInstanceOf_(EObject newValue)
 	 * 
 	 */
-	public void setCallee(EObject newValue) {
+	public void setInstanceOf_(EObject newValue) {
 		if (newValue != null) {
-			callee.setSelection(new StructuredSelection(newValue));
+			instanceOf_.setSelection(new StructuredSelection(newValue));
 		} else {
-			callee.setSelection(new StructuredSelection()); //$NON-NLS-1$
+			instanceOf_.setSelection(new StructuredSelection()); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#setCalleeButtonMode(ButtonsModeEnum newValue)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#setInstanceOf_ButtonMode(ButtonsModeEnum newValue)
 	 */
-	public void setCalleeButtonMode(ButtonsModeEnum newValue) {
-		callee.setButtonMode(newValue);
+	public void setInstanceOf_ButtonMode(ButtonsModeEnum newValue) {
+		instanceOf_.setButtonMode(newValue);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#addFilterCallee(ViewerFilter filter)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#addFilterInstanceOf_(ViewerFilter filter)
 	 * 
 	 */
-	public void addFilterToCallee(ViewerFilter filter) {
-		callee.addFilter(filter);
+	public void addFilterToInstanceOf_(ViewerFilter filter) {
+		instanceOf_.addFilter(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#addBusinessFilterCallee(ViewerFilter filter)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.MessagePropertiesEditionPart#addBusinessFilterInstanceOf_(ViewerFilter filter)
 	 * 
 	 */
-	public void addBusinessFilterToCallee(ViewerFilter filter) {
-		callee.addBusinessRuleFilter(filter);
+	public void addBusinessFilterToInstanceOf_(ViewerFilter filter) {
+		instanceOf_.addBusinessRuleFilter(filter);
 	}
 
 

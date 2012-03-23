@@ -284,25 +284,16 @@ public class RealtimestatechartMessages extends NLS {
 	public static String DoEventPropertiesEditionPart_PeriodUpperLabel;
 
 	
-	public static String SynchronizationChannelPropertiesEditionPart_CommentLabel;
-
-	
-	public static String SynchronizationChannelPropertiesEditionPart_InParameterLabel;
-
-	
-	public static String SynchronizationChannelPropertiesEditionPart_OutParameterLabel;
-
-	
 	public static String SynchronizationChannelPropertiesEditionPart_NameLabel;
+
+	
+	public static String SynchronizationChannelPropertiesEditionPart_CommentLabel;
 
 	
 	public static String SynchronizationChannelPropertiesEditionPart_StateLabel;
 
 	
-	public static String SynchronizationPropertiesEditionPart_CommentLabel;
-
-	
-	public static String SynchronizationPropertiesEditionPart_CalleeLabel;
+	public static String SynchronizationPropertiesEditionPart_SyncChannelLabel;
 
 	
 	public static String SynchronizationPropertiesEditionPart_KindLabel;
@@ -326,10 +317,7 @@ public class RealtimestatechartMessages extends NLS {
 	public static String RealtimeStatechartPropertiesEditionPart_EventQueueSizeLabel;
 
 	
-	public static String MessagePropertiesEditionPart_CommentLabel;
-
-	
-	public static String MessagePropertiesEditionPart_CalleeLabel;
+	public static String MessagePropertiesEditionPart_InstanceOf_Label;
 
 	
 	public static String EntryEventPropertiesEditionPart_KindLabel;

@@ -46,7 +46,7 @@ public class AbsoluteDeadlinePropertiesEditionComponent extends SinglePartProper
 	/**
 	 * Settings for clock EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings clockSettings;
+	private EObjectFlatComboSettings clockSettings;
 	
 	
 	/**
@@ -149,7 +149,7 @@ public class AbsoluteDeadlinePropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			AbsoluteDeadlinePropertiesEditionPart basePart = (AbsoluteDeadlinePropertiesEditionPart)editingPart;
 			if (RealtimestatechartPackage.eINSTANCE.getAbsoluteDeadline_Clock().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.AbsoluteDeadline.Properties.clock))
 				basePart.setClock((EObject)msg.getNewValue());

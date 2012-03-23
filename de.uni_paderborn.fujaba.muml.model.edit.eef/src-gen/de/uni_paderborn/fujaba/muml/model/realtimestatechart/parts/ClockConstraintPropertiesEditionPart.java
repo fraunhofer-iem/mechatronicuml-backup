@@ -5,7 +5,6 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
@@ -76,10 +75,10 @@ public interface ClockConstraintPropertiesEditionPart {
 
 	/**
 	 * Init the operator
-	 * @param eenum the enum to manage
+	 * @param input the viewer input
 	 * @param current the current value
 	 */
-	public void initOperator(EEnum eenum, Enumerator current);
+	public void initOperator(Object input, Enumerator current);
 
 	/**
 	 * Defines a new operator

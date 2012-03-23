@@ -51,7 +51,6 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 	protected Text name;
 	protected Text comment;
 	protected EObjectFlatComboViewer type;
-	protected EObjectFlatComboViewer operation;
 
 
 
@@ -93,7 +92,6 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 		propertiesStep.addStep(CoreViewsRepository.Parameter.Properties.name);
 		propertiesStep.addStep(CoreViewsRepository.Parameter.Properties.comment);
 		propertiesStep.addStep(CoreViewsRepository.Parameter.Properties.type);
-		propertiesStep.addStep(CoreViewsRepository.Parameter.Properties.operation);
 		
 		
 		composer = new PartComposer(parameterStep) {
@@ -111,9 +109,6 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 				}
 				if (key == CoreViewsRepository.Parameter.Properties.type) {
 					return createTypeFlatComboViewer(parent);
-				}
-				if (key == CoreViewsRepository.Parameter.Properties.operation) {
-					return createOperationFlatComboViewer(parent);
 				}
 				return parent;
 			}
@@ -251,29 +246,6 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 		return parent;
 	}
 
-	/**
-	 * @param parent the parent composite
-	 * 
-	 */
-	protected Composite createOperationFlatComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, CoreMessages.ParameterPropertiesEditionPart_OperationLabel, propertiesEditionComponent.isRequired(CoreViewsRepository.Parameter.Properties.operation, CoreViewsRepository.SWT_KIND));
-		operation = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(CoreViewsRepository.Parameter.Properties.operation, CoreViewsRepository.SWT_KIND));
-		operation.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-		operation.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			public void selectionChanged(SelectionChangedEvent event) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ParameterPropertiesEditionPartImpl.this, CoreViewsRepository.Parameter.Properties.operation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, null, getOperation()));
-			}
-
-		});
-		GridData operationData = new GridData(GridData.FILL_HORIZONTAL);
-		operation.setLayoutData(operationData);
-		operation.setID(CoreViewsRepository.Parameter.Properties.operation);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.Parameter.Properties.operation, CoreViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
 
 
 	/**
@@ -406,77 +378,6 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 	 */
 	public void addBusinessFilterToType(ViewerFilter filter) {
 		type.addBusinessRuleFilter(filter);
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#getOperation()
-	 * 
-	 */
-	public EObject getOperation() {
-		if (operation.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) operation.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
-				return (EObject) firstElement;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#initOperation(EObjectFlatComboSettings)
-	 */
-	public void initOperation(EObjectFlatComboSettings settings) {
-		operation.setInput(settings);
-		if (current != null) {
-			operation.setSelection(new StructuredSelection(settings.getValue()));
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#setOperation(EObject newValue)
-	 * 
-	 */
-	public void setOperation(EObject newValue) {
-		if (newValue != null) {
-			operation.setSelection(new StructuredSelection(newValue));
-		} else {
-			operation.setSelection(new StructuredSelection()); //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#setOperationButtonMode(ButtonsModeEnum newValue)
-	 */
-	public void setOperationButtonMode(ButtonsModeEnum newValue) {
-		operation.setButtonMode(newValue);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#addFilterOperation(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToOperation(ViewerFilter filter) {
-		operation.addFilter(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#addBusinessFilterOperation(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToOperation(ViewerFilter filter) {
-		operation.addBusinessRuleFilter(filter);
 	}
 
 

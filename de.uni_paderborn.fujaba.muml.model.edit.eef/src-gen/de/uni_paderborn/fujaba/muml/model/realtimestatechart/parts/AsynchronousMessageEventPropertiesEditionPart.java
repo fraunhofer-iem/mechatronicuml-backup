@@ -5,7 +5,6 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
 
 
 
@@ -25,10 +24,10 @@ public interface AsynchronousMessageEventPropertiesEditionPart {
 
 	/**
 	 * Init the kind
-	 * @param eenum the enum to manage
+	 * @param input the viewer input
 	 * @param current the current value
 	 */
-	public void initKind(EEnum eenum, Enumerator current);
+	public void initKind(Object input, Enumerator current);
 
 	/**
 	 * Defines a new kind

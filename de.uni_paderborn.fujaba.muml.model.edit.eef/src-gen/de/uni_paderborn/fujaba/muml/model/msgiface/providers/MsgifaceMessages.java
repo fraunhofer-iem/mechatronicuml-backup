@@ -35,19 +35,16 @@ public class MsgifaceMessages extends NLS {
 	public static String MessageInterfacePropertiesEditionPart_NameLabel;
 
 	
+	public static String MessageInterfacePropertiesEditionPart_CommentLabel;
+
+	
 	public static String MessageInterfacePropertiesEditionPart_SuperTypeLabel;
 
 	
-	public static String MessageTypePropertiesEditionPart_CommentLabel;
-
-	
-	public static String MessageTypePropertiesEditionPart_InParameterLabel;
-
-	
-	public static String MessageTypePropertiesEditionPart_OutParameterLabel;
-
-	
 	public static String MessageTypePropertiesEditionPart_NameLabel;
+
+	
+	public static String MessageTypePropertiesEditionPart_CommentLabel;
 
 	
 	public static String MessageTypePropertiesEditionPart_MessageInterfaceLabel;

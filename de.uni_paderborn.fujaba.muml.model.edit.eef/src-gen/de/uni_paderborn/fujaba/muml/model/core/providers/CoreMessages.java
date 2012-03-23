@@ -137,9 +137,6 @@ public class CoreMessages extends NLS {
 	public static String ParameterPropertiesEditionPart_TypeLabel;
 
 	
-	public static String ParameterPropertiesEditionPart_OperationLabel;
-
-	
 	public static String PrimitiveDataTypePropertiesEditionPart_NameLabel;
 
 	

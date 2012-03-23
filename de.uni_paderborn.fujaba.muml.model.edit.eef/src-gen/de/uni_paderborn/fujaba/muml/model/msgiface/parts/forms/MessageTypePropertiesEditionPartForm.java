@@ -4,20 +4,13 @@
 package de.uni_paderborn.fujaba.muml.model.msgiface.parts.forms;
 
 // Start of user code for imports
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
-import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
@@ -26,14 +19,8 @@ import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.EObjectFlatComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
-import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
-import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
-import org.eclipse.emf.eef.runtime.ui.widgets.TabElementTreeSelectionDialog;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
-import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
-import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -42,8 +29,6 @@ import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -66,14 +51,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.providers.MsgifaceMessages;
  */
 public class MessageTypePropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, MessageTypePropertiesEditionPart {
 
-	protected Text comment;
-		protected ReferencesTable inParameter;
-		protected List<ViewerFilter> inParameterBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> inParameterFilters = new ArrayList<ViewerFilter>();
-		protected ReferencesTable outParameter;
-		protected List<ViewerFilter> outParameterBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> outParameterFilters = new ArrayList<ViewerFilter>();
 	protected Text name;
+	protected Text comment;
 	protected EObjectFlatComboViewer messageInterface;
 
 
@@ -115,10 +94,8 @@ public class MessageTypePropertiesEditionPartForm extends CompositePropertiesEdi
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
 		CompositionSequence messageTypeStep = new BindingCompositionSequence(propertiesEditionComponent);
 		CompositionStep propertiesStep = messageTypeStep.addStep(MsgifaceViewsRepository.MessageType.Properties.class);
-		propertiesStep.addStep(MsgifaceViewsRepository.MessageType.Properties.comment);
-		propertiesStep.addStep(MsgifaceViewsRepository.MessageType.Properties.inParameter);
-		propertiesStep.addStep(MsgifaceViewsRepository.MessageType.Properties.outParameter);
 		propertiesStep.addStep(MsgifaceViewsRepository.MessageType.Properties.name);
+		propertiesStep.addStep(MsgifaceViewsRepository.MessageType.Properties.comment);
 		propertiesStep.addStep(MsgifaceViewsRepository.MessageType.Properties.messageInterface);
 		
 		
@@ -129,17 +106,11 @@ public class MessageTypePropertiesEditionPartForm extends CompositePropertiesEdi
 				if (key == MsgifaceViewsRepository.MessageType.Properties.class) {
 					return createPropertiesGroup(widgetFactory, parent);
 				}
-				if (key == MsgifaceViewsRepository.MessageType.Properties.comment) {
-					return 		createCommentText(widgetFactory, parent);
-				}
-				if (key == MsgifaceViewsRepository.MessageType.Properties.inParameter) {
-					return createInParameterReferencesTable(widgetFactory, parent);
-				}
-				if (key == MsgifaceViewsRepository.MessageType.Properties.outParameter) {
-					return createOutParameterReferencesTable(widgetFactory, parent);
-				}
 				if (key == MsgifaceViewsRepository.MessageType.Properties.name) {
 					return 		createNameText(widgetFactory, parent);
+				}
+				if (key == MsgifaceViewsRepository.MessageType.Properties.comment) {
+					return 		createCommentText(widgetFactory, parent);
 				}
 				if (key == MsgifaceViewsRepository.MessageType.Properties.messageInterface) {
 					return createMessageInterfaceFlatComboViewer(parent, widgetFactory);
@@ -164,208 +135,6 @@ public class MessageTypePropertiesEditionPartForm extends CompositePropertiesEdi
 		propertiesGroup.setLayout(propertiesGroupLayout);
 		propertiesSection.setClient(propertiesGroup);
 		return propertiesGroup;
-	}
-
-	
-	protected Composite createCommentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, MsgifaceMessages.MessageTypePropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(MsgifaceViewsRepository.MessageType.Properties.comment, MsgifaceViewsRepository.FORM_KIND));
-		comment = widgetFactory.createText(parent, ""); //$NON-NLS-1$
-		comment.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
-		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
-		comment.setLayoutData(commentData);
-		comment.addFocusListener(new FocusAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-			}
-		});
-		comment.addKeyListener(new KeyAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-				}
-			}
-		});
-		EditingUtils.setID(comment, MsgifaceViewsRepository.MessageType.Properties.comment);
-		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(MsgifaceViewsRepository.MessageType.Properties.comment, MsgifaceViewsRepository.FORM_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
-	/**
-	 * 
-	 */
-	protected Composite createInParameterReferencesTable(FormToolkit widgetFactory, Composite parent) {
-		this.inParameter = new ReferencesTable(MsgifaceMessages.MessageTypePropertiesEditionPart_InParameterLabel, new ReferencesTableListener	() {
-			public void handleAdd() { addInParameter(); }
-			public void handleEdit(EObject element) { editInParameter(element); }
-			public void handleMove(EObject element, int oldIndex, int newIndex) { moveInParameter(element, oldIndex, newIndex); }
-			public void handleRemove(EObject element) { removeFromInParameter(element); }
-			public void navigateTo(EObject element) { }
-		});
-		this.inParameter.setHelpText(propertiesEditionComponent.getHelpContent(MsgifaceViewsRepository.MessageType.Properties.inParameter, MsgifaceViewsRepository.FORM_KIND));
-		this.inParameter.createControls(parent, widgetFactory);
-		this.inParameter.addSelectionListener(new SelectionAdapter() {
-			
-			public void widgetSelected(SelectionEvent e) {
-				if (e.item != null && e.item.getData() instanceof EObject) {
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.inParameter, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
-				}
-			}
-			
-		});
-		GridData inParameterData = new GridData(GridData.FILL_HORIZONTAL);
-		inParameterData.horizontalSpan = 3;
-		this.inParameter.setLayoutData(inParameterData);
-		this.inParameter.disableMove();
-		inParameter.setID(MsgifaceViewsRepository.MessageType.Properties.inParameter);
-		inParameter.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
-		return parent;
-	}
-
-	/**
-	 * 
-	 */
-	protected void addInParameter() {
-		TabElementTreeSelectionDialog dialog = new TabElementTreeSelectionDialog(inParameter.getInput(), inParameterFilters, inParameterBusinessFilters,
-		"inParameter", propertiesEditionComponent.getEditingContext().getAdapterFactory(), current.eResource()) {
-			@Override
-			public void process(IStructuredSelection selection) {
-				for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
-					EObject elem = (EObject) iter.next();
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.inParameter,
-						PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, elem));
-				}
-				inParameter.refresh();
-			}
-		};
-		dialog.open();
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveInParameter(EObject element, int oldIndex, int newIndex) {
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.inParameter, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
-		inParameter.refresh();
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromInParameter(EObject element) {
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.inParameter, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
-		inParameter.refresh();
-	}
-
-	/**
-	 * 
-	 */
-	protected void editInParameter(EObject element) {
-		EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
-		PropertiesEditingProvider provider = (PropertiesEditingProvider)adapterFactory.adapt(element, PropertiesEditingProvider.class);
-		if (provider != null) {
-			PropertiesEditingPolicy policy = provider.getPolicy(context);
-			if (policy != null) {
-				policy.execute();
-				inParameter.refresh();
-			}
-		}
-	}
-
-	/**
-	 * 
-	 */
-	protected Composite createOutParameterReferencesTable(FormToolkit widgetFactory, Composite parent) {
-		this.outParameter = new ReferencesTable(MsgifaceMessages.MessageTypePropertiesEditionPart_OutParameterLabel, new ReferencesTableListener	() {
-			public void handleAdd() { addOutParameter(); }
-			public void handleEdit(EObject element) { editOutParameter(element); }
-			public void handleMove(EObject element, int oldIndex, int newIndex) { moveOutParameter(element, oldIndex, newIndex); }
-			public void handleRemove(EObject element) { removeFromOutParameter(element); }
-			public void navigateTo(EObject element) { }
-		});
-		this.outParameter.setHelpText(propertiesEditionComponent.getHelpContent(MsgifaceViewsRepository.MessageType.Properties.outParameter, MsgifaceViewsRepository.FORM_KIND));
-		this.outParameter.createControls(parent, widgetFactory);
-		this.outParameter.addSelectionListener(new SelectionAdapter() {
-			
-			public void widgetSelected(SelectionEvent e) {
-				if (e.item != null && e.item.getData() instanceof EObject) {
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.outParameter, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
-				}
-			}
-			
-		});
-		GridData outParameterData = new GridData(GridData.FILL_HORIZONTAL);
-		outParameterData.horizontalSpan = 3;
-		this.outParameter.setLayoutData(outParameterData);
-		this.outParameter.disableMove();
-		outParameter.setID(MsgifaceViewsRepository.MessageType.Properties.outParameter);
-		outParameter.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
-		return parent;
-	}
-
-	/**
-	 * 
-	 */
-	protected void addOutParameter() {
-		TabElementTreeSelectionDialog dialog = new TabElementTreeSelectionDialog(outParameter.getInput(), outParameterFilters, outParameterBusinessFilters,
-		"outParameter", propertiesEditionComponent.getEditingContext().getAdapterFactory(), current.eResource()) {
-			@Override
-			public void process(IStructuredSelection selection) {
-				for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
-					EObject elem = (EObject) iter.next();
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.outParameter,
-						PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, elem));
-				}
-				outParameter.refresh();
-			}
-		};
-		dialog.open();
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveOutParameter(EObject element, int oldIndex, int newIndex) {
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.outParameter, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
-		outParameter.refresh();
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromOutParameter(EObject element) {
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.outParameter, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
-		outParameter.refresh();
-	}
-
-	/**
-	 * 
-	 */
-	protected void editOutParameter(EObject element) {
-		EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
-		PropertiesEditingProvider provider = (PropertiesEditingProvider)adapterFactory.adapt(element, PropertiesEditingProvider.class);
-		if (provider != null) {
-			PropertiesEditingPolicy policy = provider.getPolicy(context);
-			if (policy != null) {
-				policy.execute();
-				outParameter.refresh();
-			}
-		}
 	}
 
 	
@@ -405,6 +174,46 @@ public class MessageTypePropertiesEditionPartForm extends CompositePropertiesEdi
 		EditingUtils.setID(name, MsgifaceViewsRepository.MessageType.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(MsgifaceViewsRepository.MessageType.Properties.name, MsgifaceViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createCommentText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, MsgifaceMessages.MessageTypePropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(MsgifaceViewsRepository.MessageType.Properties.comment, MsgifaceViewsRepository.FORM_KIND));
+		comment = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		comment.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
+		comment.setLayoutData(commentData);
+		comment.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+			}
+		});
+		comment.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(MessageTypePropertiesEditionPartForm.this, MsgifaceViewsRepository.MessageType.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(comment, MsgifaceViewsRepository.MessageType.Properties.comment);
+		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(MsgifaceViewsRepository.MessageType.Properties.comment, MsgifaceViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 		return parent;
 	}
 
@@ -455,143 +264,6 @@ public class MessageTypePropertiesEditionPartForm extends CompositePropertiesEdi
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#getComment()
-	 * 
-	 */
-	public String getComment() {
-		return comment.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#setComment(String newValue)
-	 * 
-	 */
-	public void setComment(String newValue) {
-		if (newValue != null) {
-			comment.setText(newValue);
-		} else {
-			comment.setText(""); //$NON-NLS-1$
-		}
-	}
-
-
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#initInParameter(org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings)
-	 */
-	public void initInParameter(ReferencesTableSettings settings) {
-		if (current.eResource() != null && current.eResource().getResourceSet() != null)
-			this.resourceSet = current.eResource().getResourceSet();
-		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
-		inParameter.setContentProvider(contentProvider);
-		inParameter.setInput(settings);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#updateInParameter()
-	 * 
-	 */
-	public void updateInParameter() {
-	inParameter.refresh();
-}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#addFilterInParameter(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToInParameter(ViewerFilter filter) {
-		inParameterFilters.add(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#addBusinessFilterInParameter(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToInParameter(ViewerFilter filter) {
-		inParameterBusinessFilters.add(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#isContainedInInParameterTable(EObject element)
-	 * 
-	 */
-	public boolean isContainedInInParameterTable(EObject element) {
-		return ((ReferencesTableSettings)inParameter.getInput()).contains(element);
-	}
-
-
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#initOutParameter(org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings)
-	 */
-	public void initOutParameter(ReferencesTableSettings settings) {
-		if (current.eResource() != null && current.eResource().getResourceSet() != null)
-			this.resourceSet = current.eResource().getResourceSet();
-		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
-		outParameter.setContentProvider(contentProvider);
-		outParameter.setInput(settings);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#updateOutParameter()
-	 * 
-	 */
-	public void updateOutParameter() {
-	outParameter.refresh();
-}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#addFilterOutParameter(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToOutParameter(ViewerFilter filter) {
-		outParameterFilters.add(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#addBusinessFilterOutParameter(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToOutParameter(ViewerFilter filter) {
-		outParameterBusinessFilters.add(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#isContainedInOutParameterTable(EObject element)
-	 * 
-	 */
-	public boolean isContainedInOutParameterTable(EObject element) {
-		return ((ReferencesTableSettings)outParameter.getInput()).contains(element);
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
 	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#getName()
 	 * 
 	 */
@@ -610,6 +282,31 @@ public class MessageTypePropertiesEditionPartForm extends CompositePropertiesEdi
 			name.setText(newValue);
 		} else {
 			name.setText(""); //$NON-NLS-1$
+		}
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#getComment()
+	 * 
+	 */
+	public String getComment() {
+		return comment.getText();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.parts.MessageTypePropertiesEditionPart#setComment(String newValue)
+	 * 
+	 */
+	public void setComment(String newValue) {
+		if (newValue != null) {
+			comment.setText(newValue);
+		} else {
+			comment.setText(""); //$NON-NLS-1$
 		}
 	}
 

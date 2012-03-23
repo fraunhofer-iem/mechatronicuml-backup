@@ -51,7 +51,7 @@ public class HardwareNodePropertiesEditionComponent extends SinglePartProperties
 	/**
 	 * Settings for deployment EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings deploymentSettings;
+	private EObjectFlatComboSettings deploymentSettings;
 	
 	/**
 	 * Settings for deployedInstances ReferencesTable
@@ -196,7 +196,7 @@ public class HardwareNodePropertiesEditionComponent extends SinglePartProperties
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			HardwareNodePropertiesEditionPart basePart = (HardwareNodePropertiesEditionPart)editingPart;
 			if (DeploymentPackage.eINSTANCE.getHardwareNode_Deployment().equals(msg.getFeature()) && basePart != null && isAccessible(DeploymentViewsRepository.HardwareNode.Properties.deployment_))
 				basePart.setDeployment((EObject)msg.getNewValue());

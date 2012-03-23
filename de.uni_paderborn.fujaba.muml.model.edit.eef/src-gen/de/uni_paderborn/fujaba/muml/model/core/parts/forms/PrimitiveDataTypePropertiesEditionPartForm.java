@@ -5,10 +5,8 @@ package de.uni_paderborn.fujaba.muml.model.core.parts.forms;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
@@ -223,7 +221,7 @@ public class PrimitiveDataTypePropertiesEditionPartForm extends CompositePropert
 		FormUtils.createPartLabel(widgetFactory, parent, CoreMessages.PrimitiveDataTypePropertiesEditionPart_PrimitiveTypeLabel, propertiesEditionComponent.isRequired(CoreViewsRepository.PrimitiveDataType.Properties.primitiveType, CoreViewsRepository.FORM_KIND));
 		primitiveType = new EMFComboViewer(parent);
 		primitiveType.setContentProvider(new ArrayContentProvider());
-		primitiveType.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
+		primitiveType.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
 		GridData primitiveTypeData = new GridData(GridData.FILL_HORIZONTAL);
 		primitiveType.getCombo().setLayoutData(primitiveTypeData);
 		primitiveType.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -316,17 +314,17 @@ public class PrimitiveDataTypePropertiesEditionPartForm extends CompositePropert
 	 * 
 	 */
 	public Enumerator getPrimitiveType() {
-		EEnumLiteral selection = (EEnumLiteral) ((StructuredSelection) primitiveType.getSelection()).getFirstElement();
-		return selection.getInstance();
+		Enumerator selection = (Enumerator) ((StructuredSelection) primitiveType.getSelection()).getFirstElement();
+		return selection;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.PrimitiveDataTypePropertiesEditionPart#initPrimitiveType(EEnum eenum, Enumerator current)
+	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.PrimitiveDataTypePropertiesEditionPart#initPrimitiveType(Object input, Enumerator current)
 	 */
-	public void initPrimitiveType(EEnum eenum, Enumerator current) {
-		primitiveType.setInput(eenum.getELiterals());
+	public void initPrimitiveType(Object input, Enumerator current) {
+		primitiveType.setInput(input);
 		primitiveType.modelUpdating(new StructuredSelection(current));
 	}
 

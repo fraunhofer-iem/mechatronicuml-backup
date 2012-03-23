@@ -5,7 +5,6 @@ package de.uni_paderborn.fujaba.muml.model.core.parts;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
 
 
 
@@ -53,10 +52,10 @@ public interface PrimitiveDataTypePropertiesEditionPart {
 
 	/**
 	 * Init the primitiveType
-	 * @param eenum the enum to manage
+	 * @param input the viewer input
 	 * @param current the current value
 	 */
-	public void initPrimitiveType(EEnum eenum, Enumerator current);
+	public void initPrimitiveType(Object input, Enumerator current);
 
 	/**
 	 * Defines a new primitiveType

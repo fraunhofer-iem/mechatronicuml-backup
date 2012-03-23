@@ -232,16 +232,10 @@ public class RealtimestatechartViewsRepository {
 		public static class Properties {
 	
 			
-			public static String comment = "realtimestatechart::SynchronizationChannel::properties::comment";
-			
-			
-			public static String inParameter = "realtimestatechart::SynchronizationChannel::properties::inParameter";
-			
-			
-			public static String outParameter = "realtimestatechart::SynchronizationChannel::properties::outParameter";
-			
-			
 			public static String name = "realtimestatechart::SynchronizationChannel::properties::name";
+			
+			
+			public static String comment = "realtimestatechart::SynchronizationChannel::properties::comment";
 			
 			
 			public static String state = "realtimestatechart::SynchronizationChannel::properties::state";
@@ -259,10 +253,7 @@ public class RealtimestatechartViewsRepository {
 		public static class Properties {
 	
 			
-			public static String comment = "realtimestatechart::Synchronization::properties::comment";
-			
-			
-			public static String callee = "realtimestatechart::Synchronization::properties::callee";
+			public static String syncChannel = "realtimestatechart::Synchronization::properties::syncChannel";
 			
 			
 			public static String kind = "realtimestatechart::Synchronization::properties::kind";
@@ -310,10 +301,7 @@ public class RealtimestatechartViewsRepository {
 		public static class Properties {
 	
 			
-			public static String comment = "realtimestatechart::Message::properties::comment";
-			
-			
-			public static String callee = "realtimestatechart::Message::properties::callee";
+			public static String instanceOf_ = "realtimestatechart::Message::properties::instanceOf";
 			
 	
 		}

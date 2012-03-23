@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
@@ -30,10 +29,8 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.storydriven.modeling.SDMPackage;
 
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.parts.CoreViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart;
@@ -54,12 +51,7 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 	/**
 	 * Settings for type EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings typeSettings;
-	
-	/**
-	 * Settings for operation EObjectFlatComboViewer
-	 */
-	private	EObjectFlatComboSettings operationSettings;
+	private EObjectFlatComboSettings typeSettings;
 	
 	
 	/**
@@ -100,13 +92,6 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 				// set the button mode
 				basePart.setTypeButtonMode(ButtonsModeEnum.BROWSE);
 			}
-			if (isAccessible(CoreViewsRepository.Parameter.Properties.operation)) {
-				// init part
-				operationSettings = new EObjectFlatComboSettings(parameter, CorePackage.eINSTANCE.getParameter_Operation());
-				basePart.initOperation(operationSettings);
-				// set the button mode
-				basePart.setOperationButtonMode(ButtonsModeEnum.BROWSE);
-			}
 			// init filters
 			
 			
@@ -125,21 +110,6 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 			// Start of user code for additional businessfilters for type
 			// End of user code
 			
-			basePart.addFilterToOperation(new ViewerFilter() {
-			
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-			 */
-			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				return (element instanceof Operation);
-				}
-			
-			});
-			// Start of user code for additional businessfilters for operation
-			// End of user code
-			
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -147,7 +117,6 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 		}
 		setInitializing(false);
 	}
-
 
 
 
@@ -167,9 +136,6 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 		}
 		if (editorKey == CoreViewsRepository.Parameter.Properties.type) {
 			return CorePackage.eINSTANCE.getParameter_Type();
-		}
-		if (editorKey == CoreViewsRepository.Parameter.Properties.operation) {
-			return CorePackage.eINSTANCE.getParameter_Operation();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -201,22 +167,6 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 				}
 			}
 		}
-		if (CoreViewsRepository.Parameter.Properties.operation == event.getAffectedEditor()) {
-			if (event.getKind() == PropertiesEditionEvent.SET) {
-				operationSettings.setToReference((Operation)event.getNewValue());
-			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
-				Operation eObject = CoreFactory.eINSTANCE.createOperation();
-				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(eObject, PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy policy = provider.getPolicy(context);
-					if (policy != null) {
-						policy.execute();
-					}
-				}
-				operationSettings.setToReference(eObject);
-			}
-		}
 	}
 
 	/**
@@ -224,7 +174,7 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			ParameterPropertiesEditionPart basePart = (ParameterPropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.Parameter.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -242,8 +192,6 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 			}
 			if (CorePackage.eINSTANCE.getParameter_Type().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.Parameter.Properties.type))
 				basePart.setType((EObject)msg.getNewValue());
-			if (CorePackage.eINSTANCE.getParameter_Operation().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.Parameter.Properties.operation))
-				basePart.setOperation((EObject)msg.getNewValue());
 			
 		}
 	}
@@ -256,7 +204,7 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 	 * 
 	 */
 	public boolean isRequired(Object key, int kind) {
-		return key == CoreViewsRepository.Parameter.Properties.name || key == CoreViewsRepository.Parameter.Properties.type || key == CoreViewsRepository.Parameter.Properties.operation;
+		return key == CoreViewsRepository.Parameter.Properties.name || key == CoreViewsRepository.Parameter.Properties.type;
 	}
 
 	/**
@@ -272,14 +220,14 @@ public class ParameterPropertiesEditionComponent extends SinglePartPropertiesEdi
 				if (CoreViewsRepository.Parameter.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (CoreViewsRepository.Parameter.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}

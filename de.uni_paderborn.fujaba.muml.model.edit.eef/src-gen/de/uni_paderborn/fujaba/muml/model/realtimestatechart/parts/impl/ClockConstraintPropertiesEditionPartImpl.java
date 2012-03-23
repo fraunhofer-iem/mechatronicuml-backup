@@ -5,11 +5,9 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.impl;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
@@ -154,7 +152,7 @@ public class ClockConstraintPropertiesEditionPartImpl extends CompositePropertie
 		SWTUtils.createPartLabel(parent, RealtimestatechartMessages.ClockConstraintPropertiesEditionPart_OperatorLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.ClockConstraint.Properties.operator, RealtimestatechartViewsRepository.SWT_KIND));
 		operator = new EMFComboViewer(parent);
 		operator.setContentProvider(new ArrayContentProvider());
-		operator.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
+		operator.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
 		GridData operatorData = new GridData(GridData.FILL_HORIZONTAL);
 		operator.getCombo().setLayoutData(operatorData);
 		operator.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -268,17 +266,17 @@ public class ClockConstraintPropertiesEditionPartImpl extends CompositePropertie
 	 * 
 	 */
 	public Enumerator getOperator() {
-		EEnumLiteral selection = (EEnumLiteral) ((StructuredSelection) operator.getSelection()).getFirstElement();
-		return selection.getInstance();
+		Enumerator selection = (Enumerator) ((StructuredSelection) operator.getSelection()).getFirstElement();
+		return selection;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.ClockConstraintPropertiesEditionPart#initOperator(EEnum eenum, Enumerator current)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.ClockConstraintPropertiesEditionPart#initOperator(Object input, Enumerator current)
 	 */
-	public void initOperator(EEnum eenum, Enumerator current) {
-		operator.setInput(eenum.getELiterals());
+	public void initOperator(Object input, Enumerator current) {
+		operator.setInput(input);
 		operator.modelUpdating(new StructuredSelection(current));
 	}
 

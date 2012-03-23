@@ -47,17 +47,17 @@ public class ConnectorInstancePropertiesEditionComponent extends SinglePartPrope
 	/**
 	 * Settings for source EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings sourceSettings;
+	private EObjectFlatComboSettings sourceSettings;
 	
 	/**
 	 * Settings for target EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings targetSettings;
+	private EObjectFlatComboSettings targetSettings;
 	
 	/**
 	 * Settings for connectorType EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings connectorTypeSettings;
+	private EObjectFlatComboSettings connectorTypeSettings;
 	
 	
 	/**
@@ -238,7 +238,7 @@ public class ConnectorInstancePropertiesEditionComponent extends SinglePartPrope
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			ConnectorInstancePropertiesEditionPart basePart = (ConnectorInstancePropertiesEditionPart)editingPart;
 			if (InstancePackage.eINSTANCE.getConnectorInstance_Source().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ConnectorInstance.Properties.source))
 				basePart.setSource((EObject)msg.getNewValue());

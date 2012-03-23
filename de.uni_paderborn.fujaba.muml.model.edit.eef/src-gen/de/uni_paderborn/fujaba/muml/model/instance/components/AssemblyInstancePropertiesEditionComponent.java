@@ -51,17 +51,17 @@ public class AssemblyInstancePropertiesEditionComponent extends SinglePartProper
 	/**
 	 * Settings for source EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings sourceSettings;
+	private EObjectFlatComboSettings sourceSettings;
 	
 	/**
 	 * Settings for target EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings targetSettings;
+	private EObjectFlatComboSettings targetSettings;
 	
 	/**
 	 * Settings for connectorType EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings connectorTypeSettings;
+	private EObjectFlatComboSettings connectorTypeSettings;
 	
 	
 	/**
@@ -266,7 +266,7 @@ public class AssemblyInstancePropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			AssemblyInstancePropertiesEditionPart basePart = (AssemblyInstancePropertiesEditionPart)editingPart;
 			if (InstancePackage.eINSTANCE.getConnectorInstance_Source().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.AssemblyInstance.Properties.source))
 				basePart.setSource((EObject)msg.getNewValue());
@@ -316,14 +316,14 @@ public class AssemblyInstancePropertiesEditionComponent extends SinglePartProper
 				if (InstanceViewsRepository.AssemblyInstance.Properties.propagationDelayLowerBound == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(InstancePackage.eINSTANCE.getAssemblyInstance_PropagationDelayLowerBound().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(InstancePackage.eINSTANCE.getAssemblyInstance_PropagationDelayLowerBound().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(InstancePackage.eINSTANCE.getAssemblyInstance_PropagationDelayLowerBound().getEAttributeType(), newValue);
 				}
 				if (InstanceViewsRepository.AssemblyInstance.Properties.propagationDelayUpperBound == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(InstancePackage.eINSTANCE.getAssemblyInstance_PropagationDelayUpperBound().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(InstancePackage.eINSTANCE.getAssemblyInstance_PropagationDelayUpperBound().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(InstancePackage.eINSTANCE.getAssemblyInstance_PropagationDelayUpperBound().getEAttributeType(), newValue);
 				}

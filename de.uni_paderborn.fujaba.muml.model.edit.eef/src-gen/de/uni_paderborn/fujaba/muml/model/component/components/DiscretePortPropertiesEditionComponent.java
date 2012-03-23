@@ -72,37 +72,37 @@ public class DiscretePortPropertiesEditionComponent extends SinglePartProperties
 	/**
 	 * Settings for component EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings componentSettings;
+	private EObjectFlatComboSettings componentSettings;
 	
 	/**
 	 * Settings for behavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings behaviorSettings;
+	private EObjectFlatComboSettings behaviorSettings;
 	
 	/**
 	 * Settings for refines EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings refinesSettings;
+	private EObjectFlatComboSettings refinesSettings;
 	
 	/**
 	 * Settings for senderMessageInterface EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings senderMessageInterfaceSettings;
+	private EObjectFlatComboSettings senderMessageInterfaceSettings;
 	
 	/**
 	 * Settings for receiverMessageInterface EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings receiverMessageInterfaceSettings;
+	private EObjectFlatComboSettings receiverMessageInterfaceSettings;
 	
 	/**
 	 * Settings for adaptationBehavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings adaptationBehaviorSettings;
+	private EObjectFlatComboSettings adaptationBehaviorSettings;
 	
 	/**
 	 * Settings for roleAndAdaptationBehavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings roleAndAdaptationBehaviorSettings;
+	private EObjectFlatComboSettings roleAndAdaptationBehaviorSettings;
 	
 	
 	/**
@@ -545,7 +545,7 @@ public class DiscretePortPropertiesEditionComponent extends SinglePartProperties
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			DiscretePortPropertiesEditionPart basePart = (DiscretePortPropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.DiscretePort.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -607,14 +607,14 @@ public class DiscretePortPropertiesEditionComponent extends SinglePartProperties
 				if (ComponentViewsRepository.DiscretePort.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.DiscretePort.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}

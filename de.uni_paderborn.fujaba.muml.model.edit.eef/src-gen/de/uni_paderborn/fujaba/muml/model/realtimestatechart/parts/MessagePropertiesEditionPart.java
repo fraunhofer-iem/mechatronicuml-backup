@@ -20,64 +20,50 @@ import org.eclipse.jface.viewers.ViewerFilter;
 public interface MessagePropertiesEditionPart {
 
 	/**
-	 * @return the comment
+	 * @return the instanceOf
 	 * 
 	 */
-	public String getComment();
+	public EObject getInstanceOf_();
 
 	/**
-	 * Defines a new comment
-	 * @param newValue the new comment to set
-	 * 
-	 */
-	public void setComment(String newValue);
-
-
-	/**
-	 * @return the callee
-	 * 
-	 */
-	public EObject getCallee();
-
-	/**
-	 * Init the callee
+	 * Init the instanceOf
 	 * @param settings the combo setting
 	 */
-	public void initCallee(EObjectFlatComboSettings settings);
+	public void initInstanceOf_(EObjectFlatComboSettings settings);
 
 	/**
-	 * Defines a new callee
-	 * @param newValue the new callee to set
+	 * Defines a new instanceOf
+	 * @param newValue the new instanceOf to set
 	 * 
 	 */
-	public void setCallee(EObject newValue);
+	public void setInstanceOf_(EObject newValue);
 
 	/**
 	 * Defines the button mode
 	 * @param newValue the new mode to set
 	 * 
 	 */
-	public void setCalleeButtonMode(ButtonsModeEnum newValue);
+	public void setInstanceOf_ButtonMode(ButtonsModeEnum newValue);
 
 	/**
-	 * Adds the given filter to the callee edition editor.
+	 * Adds the given filter to the instanceOf edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToCallee(ViewerFilter filter);
+	public void addFilterToInstanceOf_(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the callee edition editor.
+	 * Adds the given filter to the instanceOf edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToCallee(ViewerFilter filter);
+	public void addBusinessFilterToInstanceOf_(ViewerFilter filter);
 
 
 

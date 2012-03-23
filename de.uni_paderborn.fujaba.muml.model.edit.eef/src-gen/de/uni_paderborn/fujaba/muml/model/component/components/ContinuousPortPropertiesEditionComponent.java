@@ -7,9 +7,7 @@ package de.uni_paderborn.fujaba.muml.model.component.components;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -24,6 +22,7 @@ import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingCo
 import org.eclipse.emf.eef.runtime.impl.filters.EObjectFilter;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
 import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
@@ -69,12 +68,12 @@ public class ContinuousPortPropertiesEditionComponent extends SinglePartProperti
 	/**
 	 * Settings for component EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings componentSettings;
+	private EObjectFlatComboSettings componentSettings;
 	
 	/**
 	 * Settings for type EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings typeSettings;
+	private EObjectFlatComboSettings typeSettings;
 	
 	
 	/**
@@ -124,7 +123,7 @@ public class ContinuousPortPropertiesEditionComponent extends SinglePartProperti
 				basePart.setComponentButtonMode(ButtonsModeEnum.BROWSE);
 			}
 			if (isAccessible(ComponentViewsRepository.ContinuousPort.Properties.kind)) {
-				basePart.initKind((EEnum) ComponentPackage.eINSTANCE.getContinuousPort_Kind().getEType(), continuousPort.getKind());
+				basePart.initKind(EEFUtils.choiceOfValues(continuousPort, ComponentPackage.eINSTANCE.getContinuousPort_Kind()), continuousPort.getKind());
 			}
 			if (isAccessible(ComponentViewsRepository.ContinuousPort.Properties.type)) {
 				// init part
@@ -322,7 +321,7 @@ public class ContinuousPortPropertiesEditionComponent extends SinglePartProperti
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			ContinuousPortPropertiesEditionPart basePart = (ContinuousPortPropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.ContinuousPort.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -345,7 +344,7 @@ public class ContinuousPortPropertiesEditionComponent extends SinglePartProperti
 			if (ComponentPackage.eINSTANCE.getPort_Component().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.ContinuousPort.Properties.component_))
 				basePart.setComponent((EObject)msg.getNewValue());
 			if (ComponentPackage.eINSTANCE.getContinuousPort_Kind().equals(msg.getFeature()) && isAccessible(ComponentViewsRepository.ContinuousPort.Properties.kind))
-				basePart.setKind((Enumerator)msg.getNewValue());
+				basePart.setKind((ContinuousPortDirectionKind)msg.getNewValue());
 			
 			if (ComponentPackage.eINSTANCE.getContinuousPort_Type().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.ContinuousPort.Properties.type))
 				basePart.setType((EObject)msg.getNewValue());
@@ -377,21 +376,21 @@ public class ContinuousPortPropertiesEditionComponent extends SinglePartProperti
 				if (ComponentViewsRepository.ContinuousPort.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.ContinuousPort.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.ContinuousPort.Properties.kind == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ComponentPackage.eINSTANCE.getContinuousPort_Kind().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ComponentPackage.eINSTANCE.getContinuousPort_Kind().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ComponentPackage.eINSTANCE.getContinuousPort_Kind().getEAttributeType(), newValue);
 				}

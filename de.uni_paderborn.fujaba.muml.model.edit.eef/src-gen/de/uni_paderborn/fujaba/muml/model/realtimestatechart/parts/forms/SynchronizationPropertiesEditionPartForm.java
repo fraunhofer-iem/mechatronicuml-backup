@@ -5,11 +5,9 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.forms;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
@@ -19,7 +17,6 @@ import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
-import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.EObjectFlatComboViewer;
@@ -30,15 +27,9 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.FocusAdapter;
-import org.eclipse.swt.events.FocusEvent;
-import org.eclipse.swt.events.KeyAdapter;
-import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -57,8 +48,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers.Realtimes
  */
 public class SynchronizationPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, SynchronizationPropertiesEditionPart {
 
-	protected Text comment;
-	protected EObjectFlatComboViewer callee;
+	protected EObjectFlatComboViewer syncChannel;
 	protected EMFComboViewer kind;
 
 
@@ -100,8 +90,7 @@ public class SynchronizationPropertiesEditionPartForm extends CompositePropertie
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
 		CompositionSequence synchronizationStep = new BindingCompositionSequence(propertiesEditionComponent);
 		CompositionStep propertiesStep = synchronizationStep.addStep(RealtimestatechartViewsRepository.Synchronization.Properties.class);
-		propertiesStep.addStep(RealtimestatechartViewsRepository.Synchronization.Properties.comment);
-		propertiesStep.addStep(RealtimestatechartViewsRepository.Synchronization.Properties.callee);
+		propertiesStep.addStep(RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel);
 		propertiesStep.addStep(RealtimestatechartViewsRepository.Synchronization.Properties.kind);
 		
 		
@@ -112,11 +101,8 @@ public class SynchronizationPropertiesEditionPartForm extends CompositePropertie
 				if (key == RealtimestatechartViewsRepository.Synchronization.Properties.class) {
 					return createPropertiesGroup(widgetFactory, parent);
 				}
-				if (key == RealtimestatechartViewsRepository.Synchronization.Properties.comment) {
-					return 		createCommentText(widgetFactory, parent);
-				}
-				if (key == RealtimestatechartViewsRepository.Synchronization.Properties.callee) {
-					return createCalleeFlatComboViewer(parent, widgetFactory);
+				if (key == RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel) {
+					return createSyncChannelFlatComboViewer(parent, widgetFactory);
 				}
 				if (key == RealtimestatechartViewsRepository.Synchronization.Properties.kind) {
 					return createKindEMFComboViewer(widgetFactory, parent);
@@ -143,59 +129,19 @@ public class SynchronizationPropertiesEditionPartForm extends CompositePropertie
 		return propertiesGroup;
 	}
 
-	
-	protected Composite createCommentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, RealtimestatechartMessages.SynchronizationPropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Synchronization.Properties.comment, RealtimestatechartViewsRepository.FORM_KIND));
-		comment = widgetFactory.createText(parent, ""); //$NON-NLS-1$
-		comment.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
-		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
-		comment.setLayoutData(commentData);
-		comment.addFocusListener(new FocusAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SynchronizationPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.Synchronization.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-			}
-		});
-		comment.addKeyListener(new KeyAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SynchronizationPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.Synchronization.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-				}
-			}
-		});
-		EditingUtils.setID(comment, RealtimestatechartViewsRepository.Synchronization.Properties.comment);
-		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.Synchronization.Properties.comment, RealtimestatechartViewsRepository.FORM_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
 	/**
 	 * @param parent the parent composite
 	 * @param widgetFactory factory to use to instanciante widget of the form
 	 * 
 	 */
-	protected Composite createCalleeFlatComboViewer(Composite parent, FormToolkit widgetFactory) {
-		FormUtils.createPartLabel(widgetFactory, parent, RealtimestatechartMessages.SynchronizationPropertiesEditionPart_CalleeLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Synchronization.Properties.callee, RealtimestatechartViewsRepository.FORM_KIND));
-		callee = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Synchronization.Properties.callee, RealtimestatechartViewsRepository.FORM_KIND));
-		widgetFactory.adapt(callee);
-		callee.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-		GridData calleeData = new GridData(GridData.FILL_HORIZONTAL);
-		callee.setLayoutData(calleeData);
-		callee.addSelectionChangedListener(new ISelectionChangedListener() {
+	protected Composite createSyncChannelFlatComboViewer(Composite parent, FormToolkit widgetFactory) {
+		FormUtils.createPartLabel(widgetFactory, parent, RealtimestatechartMessages.SynchronizationPropertiesEditionPart_SyncChannelLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel, RealtimestatechartViewsRepository.FORM_KIND));
+		syncChannel = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel, RealtimestatechartViewsRepository.FORM_KIND));
+		widgetFactory.adapt(syncChannel);
+		syncChannel.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+		GridData syncChannelData = new GridData(GridData.FILL_HORIZONTAL);
+		syncChannel.setLayoutData(syncChannelData);
+		syncChannel.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			/**
 			 * {@inheritDoc}
@@ -204,12 +150,12 @@ public class SynchronizationPropertiesEditionPartForm extends CompositePropertie
 			 */
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SynchronizationPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.Synchronization.Properties.callee, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getCallee()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SynchronizationPropertiesEditionPartForm.this, RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getSyncChannel()));
 			}
 
 		});
-		callee.setID(RealtimestatechartViewsRepository.Synchronization.Properties.callee);
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.Synchronization.Properties.callee, RealtimestatechartViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		syncChannel.setID(RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel, RealtimestatechartViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 		return parent;
 	}
 
@@ -218,7 +164,7 @@ public class SynchronizationPropertiesEditionPartForm extends CompositePropertie
 		FormUtils.createPartLabel(widgetFactory, parent, RealtimestatechartMessages.SynchronizationPropertiesEditionPart_KindLabel, propertiesEditionComponent.isRequired(RealtimestatechartViewsRepository.Synchronization.Properties.kind, RealtimestatechartViewsRepository.FORM_KIND));
 		kind = new EMFComboViewer(parent);
 		kind.setContentProvider(new ArrayContentProvider());
-		kind.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
+		kind.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
 		GridData kindData = new GridData(GridData.FILL_HORIZONTAL);
 		kind.getCombo().setLayoutData(kindData);
 		kind.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -257,37 +203,12 @@ public class SynchronizationPropertiesEditionPartForm extends CompositePropertie
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#getComment()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#getSyncChannel()
 	 * 
 	 */
-	public String getComment() {
-		return comment.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#setComment(String newValue)
-	 * 
-	 */
-	public void setComment(String newValue) {
-		if (newValue != null) {
-			comment.setText(newValue);
-		} else {
-			comment.setText(""); //$NON-NLS-1$
-		}
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#getCallee()
-	 * 
-	 */
-	public EObject getCallee() {
-		if (callee.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) callee.getSelection()).getFirstElement();
+	public EObject getSyncChannel() {
+		if (syncChannel.getSelection() instanceof StructuredSelection) {
+			Object firstElement = ((StructuredSelection) syncChannel.getSelection()).getFirstElement();
 			if (firstElement instanceof EObject)
 				return (EObject) firstElement;
 		}
@@ -297,56 +218,56 @@ public class SynchronizationPropertiesEditionPartForm extends CompositePropertie
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#initCallee(EObjectFlatComboSettings)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#initSyncChannel(EObjectFlatComboSettings)
 	 */
-	public void initCallee(EObjectFlatComboSettings settings) {
-		callee.setInput(settings);
+	public void initSyncChannel(EObjectFlatComboSettings settings) {
+		syncChannel.setInput(settings);
 		if (current != null) {
-			callee.setSelection(new StructuredSelection(settings.getValue()));
+			syncChannel.setSelection(new StructuredSelection(settings.getValue()));
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#setCallee(EObject newValue)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#setSyncChannel(EObject newValue)
 	 * 
 	 */
-	public void setCallee(EObject newValue) {
+	public void setSyncChannel(EObject newValue) {
 		if (newValue != null) {
-			callee.setSelection(new StructuredSelection(newValue));
+			syncChannel.setSelection(new StructuredSelection(newValue));
 		} else {
-			callee.setSelection(new StructuredSelection()); //$NON-NLS-1$
+			syncChannel.setSelection(new StructuredSelection()); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#setCalleeButtonMode(ButtonsModeEnum newValue)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#setSyncChannelButtonMode(ButtonsModeEnum newValue)
 	 */
-	public void setCalleeButtonMode(ButtonsModeEnum newValue) {
-		callee.setButtonMode(newValue);
+	public void setSyncChannelButtonMode(ButtonsModeEnum newValue) {
+		syncChannel.setButtonMode(newValue);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#addFilterCallee(ViewerFilter filter)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#addFilterSyncChannel(ViewerFilter filter)
 	 * 
 	 */
-	public void addFilterToCallee(ViewerFilter filter) {
-		callee.addFilter(filter);
+	public void addFilterToSyncChannel(ViewerFilter filter) {
+		syncChannel.addFilter(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#addBusinessFilterCallee(ViewerFilter filter)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#addBusinessFilterSyncChannel(ViewerFilter filter)
 	 * 
 	 */
-	public void addBusinessFilterToCallee(ViewerFilter filter) {
-		callee.addBusinessRuleFilter(filter);
+	public void addBusinessFilterToSyncChannel(ViewerFilter filter) {
+		syncChannel.addBusinessRuleFilter(filter);
 	}
 
 
@@ -357,17 +278,17 @@ public class SynchronizationPropertiesEditionPartForm extends CompositePropertie
 	 * 
 	 */
 	public Enumerator getKind() {
-		EEnumLiteral selection = (EEnumLiteral) ((StructuredSelection) kind.getSelection()).getFirstElement();
-		return selection.getInstance();
+		Enumerator selection = (Enumerator) ((StructuredSelection) kind.getSelection()).getFirstElement();
+		return selection;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#initKind(EEnum eenum, Enumerator current)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart#initKind(Object input, Enumerator current)
 	 */
-	public void initKind(EEnum eenum, Enumerator current) {
-		kind.setInput(eenum.getELiterals());
+	public void initKind(Object input, Enumerator current) {
+		kind.setInput(input);
 		kind.modelUpdating(new StructuredSelection(current));
 	}
 

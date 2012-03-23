@@ -47,17 +47,17 @@ public class CommunicationLinkPropertiesEditionComponent extends SinglePartPrope
 	/**
 	 * Settings for deployment EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings deploymentSettings;
+	private EObjectFlatComboSettings deploymentSettings;
 	
 	/**
 	 * Settings for source EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings sourceSettings;
+	private EObjectFlatComboSettings sourceSettings;
 	
 	/**
 	 * Settings for target EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings targetSettings;
+	private EObjectFlatComboSettings targetSettings;
 	
 	
 	/**
@@ -244,7 +244,7 @@ public class CommunicationLinkPropertiesEditionComponent extends SinglePartPrope
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			CommunicationLinkPropertiesEditionPart basePart = (CommunicationLinkPropertiesEditionPart)editingPart;
 			if (DeploymentPackage.eINSTANCE.getCommunicationLink_Deployment().equals(msg.getFeature()) && basePart != null && isAccessible(DeploymentViewsRepository.CommunicationLink.Properties.deployment_))
 				basePart.setDeployment((EObject)msg.getNewValue());

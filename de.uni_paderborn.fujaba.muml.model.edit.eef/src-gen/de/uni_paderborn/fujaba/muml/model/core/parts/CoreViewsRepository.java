@@ -123,9 +123,6 @@ public class CoreViewsRepository {
 			
 			public static String type = "core::Parameter::properties::type";
 			
-			
-			public static String operation = "core::Parameter::properties::operation";
-			
 	
 		}
 	

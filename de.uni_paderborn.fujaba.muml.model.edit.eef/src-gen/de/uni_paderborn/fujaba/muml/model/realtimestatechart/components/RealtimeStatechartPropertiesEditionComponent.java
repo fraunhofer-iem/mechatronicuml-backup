@@ -55,12 +55,12 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 	/**
 	 * Settings for behavioralElement EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings behavioralElementSettings;
+	private EObjectFlatComboSettings behavioralElementSettings;
 	
 	/**
 	 * Settings for embeddingRegion EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings embeddingRegionSettings;
+	private EObjectFlatComboSettings embeddingRegionSettings;
 	
 	
 	/**
@@ -248,7 +248,7 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			RealtimeStatechartPropertiesEditionPart basePart = (RealtimeStatechartPropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -306,28 +306,28 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 				if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_History().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_History().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_History().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_EventQueueSize().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_EventQueueSize().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_EventQueueSize().getEAttributeType(), newValue);
 				}

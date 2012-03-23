@@ -25,7 +25,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
-import org.storydriven.modeling.calls.provider.CallableItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
@@ -199,13 +198,5 @@ public class SynchronizationChannelItemProvider
 		return MumlEditPlugin.INSTANCE;
 	}
 	
-	/**
-	 * @generated NOT
-	 */
-	@Override
-	protected void addOutParameterPropertyDescriptor(Object object) {
-		// do nothing here
-	}
-
 
 }

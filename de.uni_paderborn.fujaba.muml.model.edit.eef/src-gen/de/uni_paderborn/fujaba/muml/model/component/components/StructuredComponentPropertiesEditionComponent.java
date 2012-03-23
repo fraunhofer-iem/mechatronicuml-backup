@@ -7,9 +7,7 @@ package de.uni_paderborn.fujaba.muml.model.component.components;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -23,6 +21,7 @@ import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingCo
 import org.eclipse.emf.eef.runtime.impl.filters.EObjectFilter;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -90,7 +89,7 @@ public class StructuredComponentPropertiesEditionComponent extends SinglePartPro
 				basePart.initReferencingComponentParts(referencingComponentPartsSettings);
 			}
 			if (isAccessible(ComponentViewsRepository.StructuredComponent.Properties.componentType)) {
-				basePart.initComponentType((EEnum) ComponentPackage.eINSTANCE.getComponent_ComponentType().getEType(), structuredComponent.getComponentType());
+				basePart.initComponentType(EEFUtils.choiceOfValues(structuredComponent, ComponentPackage.eINSTANCE.getComponent_ComponentType()), structuredComponent.getComponentType());
 			}
 			// init filters
 			
@@ -182,7 +181,7 @@ public class StructuredComponentPropertiesEditionComponent extends SinglePartPro
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			StructuredComponentPropertiesEditionPart basePart = (StructuredComponentPropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.StructuredComponent.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -201,7 +200,7 @@ public class StructuredComponentPropertiesEditionComponent extends SinglePartPro
 			if (ComponentPackage.eINSTANCE.getComponent_ReferencingComponentParts().equals(msg.getFeature())  && isAccessible(ComponentViewsRepository.StructuredComponent.Properties.referencingComponentParts))
 				basePart.updateReferencingComponentParts();
 			if (ComponentPackage.eINSTANCE.getComponent_ComponentType().equals(msg.getFeature()) && isAccessible(ComponentViewsRepository.StructuredComponent.Properties.componentType))
-				basePart.setComponentType((Enumerator)msg.getNewValue());
+				basePart.setComponentType((ComponentKind)msg.getNewValue());
 			
 			
 		}
@@ -231,21 +230,21 @@ public class StructuredComponentPropertiesEditionComponent extends SinglePartPro
 				if (ComponentViewsRepository.StructuredComponent.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.StructuredComponent.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.StructuredComponent.Properties.componentType == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ComponentPackage.eINSTANCE.getComponent_ComponentType().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ComponentPackage.eINSTANCE.getComponent_ComponentType().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ComponentPackage.eINSTANCE.getComponent_ComponentType().getEAttributeType(), newValue);
 				}

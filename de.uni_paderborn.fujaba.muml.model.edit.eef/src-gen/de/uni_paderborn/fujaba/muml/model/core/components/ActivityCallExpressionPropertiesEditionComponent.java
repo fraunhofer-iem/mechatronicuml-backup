@@ -55,12 +55,12 @@ public class ActivityCallExpressionPropertiesEditionComponent extends SinglePart
 	/**
 	 * Settings for callee EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings calleeSettings;
+	private EObjectFlatComboSettings calleeSettings;
 	
 	/**
 	 * Settings for activity EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings activitySettings;
+	private EObjectFlatComboSettings activitySettings;
 	
 	
 	/**
@@ -214,7 +214,7 @@ public class ActivityCallExpressionPropertiesEditionComponent extends SinglePart
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			ActivityCallExpressionPropertiesEditionPart basePart = (ActivityCallExpressionPropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.ActivityCallExpression.Properties.comment)) {
 				if (msg.getNewValue() != null) {
@@ -255,7 +255,7 @@ public class ActivityCallExpressionPropertiesEditionComponent extends SinglePart
 				if (CoreViewsRepository.ActivityCallExpression.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}

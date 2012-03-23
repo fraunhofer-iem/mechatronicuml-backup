@@ -54,7 +54,6 @@ public class ParameterPropertiesEditionPartForm extends CompositePropertiesEditi
 	protected Text name;
 	protected Text comment;
 	protected EObjectFlatComboViewer type;
-	protected EObjectFlatComboViewer operation;
 
 
 
@@ -98,7 +97,6 @@ public class ParameterPropertiesEditionPartForm extends CompositePropertiesEditi
 		propertiesStep.addStep(CoreViewsRepository.Parameter.Properties.name);
 		propertiesStep.addStep(CoreViewsRepository.Parameter.Properties.comment);
 		propertiesStep.addStep(CoreViewsRepository.Parameter.Properties.type);
-		propertiesStep.addStep(CoreViewsRepository.Parameter.Properties.operation);
 		
 		
 		composer = new PartComposer(parameterStep) {
@@ -116,9 +114,6 @@ public class ParameterPropertiesEditionPartForm extends CompositePropertiesEditi
 				}
 				if (key == CoreViewsRepository.Parameter.Properties.type) {
 					return createTypeFlatComboViewer(parent, widgetFactory);
-				}
-				if (key == CoreViewsRepository.Parameter.Properties.operation) {
-					return createOperationFlatComboViewer(parent, widgetFactory);
 				}
 				return parent;
 			}
@@ -249,36 +244,6 @@ public class ParameterPropertiesEditionPartForm extends CompositePropertiesEditi
 		});
 		type.setID(CoreViewsRepository.Parameter.Properties.type);
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.Parameter.Properties.type, CoreViewsRepository.FORM_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
-	/**
-	 * @param parent the parent composite
-	 * @param widgetFactory factory to use to instanciante widget of the form
-	 * 
-	 */
-	protected Composite createOperationFlatComboViewer(Composite parent, FormToolkit widgetFactory) {
-		FormUtils.createPartLabel(widgetFactory, parent, CoreMessages.ParameterPropertiesEditionPart_OperationLabel, propertiesEditionComponent.isRequired(CoreViewsRepository.Parameter.Properties.operation, CoreViewsRepository.FORM_KIND));
-		operation = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(CoreViewsRepository.Parameter.Properties.operation, CoreViewsRepository.FORM_KIND));
-		widgetFactory.adapt(operation);
-		operation.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-		GridData operationData = new GridData(GridData.FILL_HORIZONTAL);
-		operation.setLayoutData(operationData);
-		operation.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
-			 */
-			public void selectionChanged(SelectionChangedEvent event) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ParameterPropertiesEditionPartForm.this, CoreViewsRepository.Parameter.Properties.operation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getOperation()));
-			}
-
-		});
-		operation.setID(CoreViewsRepository.Parameter.Properties.operation);
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.Parameter.Properties.operation, CoreViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 		return parent;
 	}
 
@@ -414,77 +379,6 @@ public class ParameterPropertiesEditionPartForm extends CompositePropertiesEditi
 	 */
 	public void addBusinessFilterToType(ViewerFilter filter) {
 		type.addBusinessRuleFilter(filter);
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#getOperation()
-	 * 
-	 */
-	public EObject getOperation() {
-		if (operation.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) operation.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
-				return (EObject) firstElement;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#initOperation(EObjectFlatComboSettings)
-	 */
-	public void initOperation(EObjectFlatComboSettings settings) {
-		operation.setInput(settings);
-		if (current != null) {
-			operation.setSelection(new StructuredSelection(settings.getValue()));
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#setOperation(EObject newValue)
-	 * 
-	 */
-	public void setOperation(EObject newValue) {
-		if (newValue != null) {
-			operation.setSelection(new StructuredSelection(newValue));
-		} else {
-			operation.setSelection(new StructuredSelection()); //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#setOperationButtonMode(ButtonsModeEnum newValue)
-	 */
-	public void setOperationButtonMode(ButtonsModeEnum newValue) {
-		operation.setButtonMode(newValue);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#addFilterOperation(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToOperation(ViewerFilter filter) {
-		operation.addFilter(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ParameterPropertiesEditionPart#addBusinessFilterOperation(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToOperation(ViewerFilter filter) {
-		operation.addBusinessRuleFilter(filter);
 	}
 
 

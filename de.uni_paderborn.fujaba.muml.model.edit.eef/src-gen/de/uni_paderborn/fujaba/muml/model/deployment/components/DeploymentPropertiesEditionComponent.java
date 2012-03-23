@@ -46,7 +46,7 @@ public class DeploymentPropertiesEditionComponent extends SinglePartPropertiesEd
 	/**
 	 * Settings for componentInstanceConfiguration EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings componentInstanceConfigurationSettings;
+	private EObjectFlatComboSettings componentInstanceConfigurationSettings;
 	
 	
 	/**
@@ -149,7 +149,7 @@ public class DeploymentPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			DeploymentPropertiesEditionPart basePart = (DeploymentPropertiesEditionPart)editingPart;
 			if (DeploymentPackage.eINSTANCE.getDeployment_ComponentInstanceConfiguration().equals(msg.getFeature()) && basePart != null && isAccessible(DeploymentViewsRepository.Deployment_.Properties.componentInstanceConfiguration))
 				basePart.setComponentInstanceConfiguration((EObject)msg.getNewValue());

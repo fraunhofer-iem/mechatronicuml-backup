@@ -7,19 +7,18 @@ package de.uni_paderborn.fujaba.muml.model.constraint.components;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
 import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
@@ -51,7 +50,7 @@ public class TextualConstraintPropertiesEditionComponent extends SinglePartPrope
 	/**
 	 * Settings for constrainableElement EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings constrainableElementSettings;
+	private EObjectFlatComboSettings constrainableElementSettings;
 	
 	
 	/**
@@ -80,7 +79,7 @@ public class TextualConstraintPropertiesEditionComponent extends SinglePartPrope
 			final TextualConstraintPropertiesEditionPart basePart = (TextualConstraintPropertiesEditionPart)editingPart;
 			// init values
 			if (isAccessible(ConstraintViewsRepository.TextualConstraint.Properties.correctness)) {
-				basePart.initCorrectness((EEnum) ConstraintPackage.eINSTANCE.getConstraint_Correctness().getEType(), textualConstraint.getCorrectness());
+				basePart.initCorrectness(EEFUtils.choiceOfValues(textualConstraint, ConstraintPackage.eINSTANCE.getConstraint_Correctness()), textualConstraint.getCorrectness());
 			}
 			if (isAccessible(ConstraintViewsRepository.TextualConstraint.Properties.background)) {
 				basePart.setBackground(textualConstraint.isBackground());
@@ -174,10 +173,10 @@ public class TextualConstraintPropertiesEditionComponent extends SinglePartPrope
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			TextualConstraintPropertiesEditionPart basePart = (TextualConstraintPropertiesEditionPart)editingPart;
 			if (ConstraintPackage.eINSTANCE.getConstraint_Correctness().equals(msg.getFeature()) && isAccessible(ConstraintViewsRepository.TextualConstraint.Properties.correctness))
-				basePart.setCorrectness((Enumerator)msg.getNewValue());
+				basePart.setCorrectness((Correctness)msg.getNewValue());
 			
 			if (ConstraintPackage.eINSTANCE.getConstraint_Background().equals(msg.getFeature()) && basePart != null && isAccessible(ConstraintViewsRepository.TextualConstraint.Properties.background))
 				basePart.setBackground((Boolean)msg.getNewValue());
@@ -212,14 +211,14 @@ public class TextualConstraintPropertiesEditionComponent extends SinglePartPrope
 				if (ConstraintViewsRepository.TextualConstraint.Properties.correctness == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ConstraintPackage.eINSTANCE.getConstraint_Correctness().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ConstraintPackage.eINSTANCE.getConstraint_Correctness().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ConstraintPackage.eINSTANCE.getConstraint_Correctness().getEAttributeType(), newValue);
 				}
 				if (ConstraintViewsRepository.TextualConstraint.Properties.background == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ConstraintPackage.eINSTANCE.getConstraint_Background().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ConstraintPackage.eINSTANCE.getConstraint_Background().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ConstraintPackage.eINSTANCE.getConstraint_Background().getEAttributeType(), newValue);
 				}

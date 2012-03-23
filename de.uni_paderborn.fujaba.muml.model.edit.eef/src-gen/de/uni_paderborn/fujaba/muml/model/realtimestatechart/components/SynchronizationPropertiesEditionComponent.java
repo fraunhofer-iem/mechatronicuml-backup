@@ -7,34 +7,29 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.components;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
-import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.calls.Callable;
-import org.storydriven.modeling.calls.CallsPackage;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimestatechartViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.SynchronizationPropertiesEditionPart;
@@ -53,9 +48,9 @@ public class SynchronizationPropertiesEditionComponent extends SinglePartPropert
 
 	
 	/**
-	 * Settings for callee EObjectFlatComboViewer
+	 * Settings for syncChannel EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings calleeSettings;
+	private EObjectFlatComboSettings syncChannelSettings;
 	
 	
 	/**
@@ -83,22 +78,18 @@ public class SynchronizationPropertiesEditionComponent extends SinglePartPropert
 			final Synchronization synchronization = (Synchronization)elt;
 			final SynchronizationPropertiesEditionPart basePart = (SynchronizationPropertiesEditionPart)editingPart;
 			// init values
-			if (synchronization.getComment() != null && isAccessible(RealtimestatechartViewsRepository.Synchronization.Properties.comment))
-				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), synchronization.getComment()));
-			
-			if (isAccessible(RealtimestatechartViewsRepository.Synchronization.Properties.callee)) {
+			if (isAccessible(RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel)) {
 				// init part
-				calleeSettings = new EObjectFlatComboSettings(synchronization, CallsPackage.eINSTANCE.getInvocation_Callee());
-				basePart.initCallee(calleeSettings);
+				syncChannelSettings = new EObjectFlatComboSettings(synchronization, RealtimestatechartPackage.eINSTANCE.getSynchronization_SyncChannel());
+				basePart.initSyncChannel(syncChannelSettings);
 				// set the button mode
-				basePart.setCalleeButtonMode(ButtonsModeEnum.BROWSE);
+				basePart.setSyncChannelButtonMode(ButtonsModeEnum.BROWSE);
 			}
 			if (isAccessible(RealtimestatechartViewsRepository.Synchronization.Properties.kind)) {
-				basePart.initKind((EEnum) RealtimestatechartPackage.eINSTANCE.getSynchronization_Kind().getEType(), synchronization.getKind());
+				basePart.initKind(EEFUtils.choiceOfValues(synchronization, RealtimestatechartPackage.eINSTANCE.getSynchronization_Kind()), synchronization.getKind());
 			}
 			// init filters
-			
-			basePart.addFilterToCallee(new ViewerFilter() {
+			basePart.addFilterToSyncChannel(new ViewerFilter() {
 			
 			/**
 			 * {@inheritDoc}
@@ -106,11 +97,11 @@ public class SynchronizationPropertiesEditionComponent extends SinglePartPropert
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				return (element instanceof String && element.equals("")) || (element instanceof Callable); //$NON-NLS-1$ 
+				return (element instanceof String && element.equals("")) || (element instanceof SynchronizationChannel); //$NON-NLS-1$ 
 				}
 			
 			});
-			// Start of user code for additional businessfilters for callee
+			// Start of user code for additional businessfilters for syncChannel
 			// End of user code
 			
 			
@@ -126,17 +117,13 @@ public class SynchronizationPropertiesEditionComponent extends SinglePartPropert
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
-		if (editorKey == RealtimestatechartViewsRepository.Synchronization.Properties.comment) {
-			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
-		}
-		if (editorKey == RealtimestatechartViewsRepository.Synchronization.Properties.callee) {
-			return CallsPackage.eINSTANCE.getInvocation_Callee();
+		if (editorKey == RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel) {
+			return RealtimestatechartPackage.eINSTANCE.getSynchronization_SyncChannel();
 		}
 		if (editorKey == RealtimestatechartViewsRepository.Synchronization.Properties.kind) {
 			return RealtimestatechartPackage.eINSTANCE.getSynchronization_Kind();
@@ -151,21 +138,20 @@ public class SynchronizationPropertiesEditionComponent extends SinglePartPropert
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Synchronization synchronization = (Synchronization)semanticObject;
-		if (RealtimestatechartViewsRepository.Synchronization.Properties.comment == event.getAffectedEditor()) {
-			synchronization.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
-		}
-		if (RealtimestatechartViewsRepository.Synchronization.Properties.callee == event.getAffectedEditor()) {
+		if (RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				calleeSettings.setToReference((Callable)event.getNewValue());
+				syncChannelSettings.setToReference((SynchronizationChannel)event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
-				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, calleeSettings, editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				SynchronizationChannel eObject = RealtimestatechartFactory.eINSTANCE.createSynchronizationChannel();
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(eObject, PropertiesEditingProvider.class);
 				if (provider != null) {
 					PropertiesEditingPolicy policy = provider.getPolicy(context);
-					if (policy instanceof CreateEditingPolicy) {
+					if (policy != null) {
 						policy.execute();
 					}
 				}
+				syncChannelSettings.setToReference(eObject);
 			}
 		}
 		if (RealtimestatechartViewsRepository.Synchronization.Properties.kind == event.getAffectedEditor()) {
@@ -178,19 +164,12 @@ public class SynchronizationPropertiesEditionComponent extends SinglePartPropert
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			SynchronizationPropertiesEditionPart basePart = (SynchronizationPropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Synchronization.Properties.comment)) {
-				if (msg.getNewValue() != null) {
-					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
-				} else {
-					basePart.setComment("");
-				}
-			}
-			if (CallsPackage.eINSTANCE.getInvocation_Callee().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Synchronization.Properties.callee))
-				basePart.setCallee((EObject)msg.getNewValue());
+			if (RealtimestatechartPackage.eINSTANCE.getSynchronization_SyncChannel().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Synchronization.Properties.syncChannel))
+				basePart.setSyncChannel((EObject)msg.getNewValue());
 			if (RealtimestatechartPackage.eINSTANCE.getSynchronization_Kind().equals(msg.getFeature()) && isAccessible(RealtimestatechartViewsRepository.Synchronization.Properties.kind))
-				basePart.setKind((Enumerator)msg.getNewValue());
+				basePart.setKind((SynchronizationKind)msg.getNewValue());
 			
 			
 		}
@@ -217,17 +196,10 @@ public class SynchronizationPropertiesEditionComponent extends SinglePartPropert
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
 			try {
-				if (RealtimestatechartViewsRepository.Synchronization.Properties.comment == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
-				}
 				if (RealtimestatechartViewsRepository.Synchronization.Properties.kind == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getSynchronization_Kind().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getSynchronization_Kind().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getSynchronization_Kind().getEAttributeType(), newValue);
 				}

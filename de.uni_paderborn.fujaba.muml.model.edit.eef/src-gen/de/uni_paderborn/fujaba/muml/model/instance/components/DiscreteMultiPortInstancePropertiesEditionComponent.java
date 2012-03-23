@@ -58,12 +58,12 @@ public class DiscreteMultiPortInstancePropertiesEditionComponent extends SingleP
 	/**
 	 * Settings for portType EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings portTypeSettings;
+	private EObjectFlatComboSettings portTypeSettings;
 	
 	/**
 	 * Settings for componentInstance EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings componentInstanceSettings;
+	private EObjectFlatComboSettings componentInstanceSettings;
 	
 	/**
 	 * Settings for incomingConnectorInstances ReferencesTable
@@ -312,7 +312,7 @@ public class DiscreteMultiPortInstancePropertiesEditionComponent extends SingleP
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			DiscreteMultiPortInstancePropertiesEditionPart basePart = (DiscreteMultiPortInstancePropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteMultiPortInstance.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -364,14 +364,14 @@ public class DiscreteMultiPortInstancePropertiesEditionComponent extends SingleP
 				if (InstanceViewsRepository.DiscreteMultiPortInstance.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (InstanceViewsRepository.DiscreteMultiPortInstance.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}

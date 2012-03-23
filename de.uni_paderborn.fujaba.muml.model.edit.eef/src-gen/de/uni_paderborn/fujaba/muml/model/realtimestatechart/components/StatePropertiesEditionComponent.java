@@ -68,7 +68,7 @@ public class StatePropertiesEditionComponent extends SinglePartPropertiesEditing
 	/**
 	 * Settings for statechart EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings statechartSettings;
+	private EObjectFlatComboSettings statechartSettings;
 	
 	/**
 	 * Settings for invariants ReferencesTable
@@ -185,7 +185,8 @@ public class StatePropertiesEditionComponent extends SinglePartPropertiesEditing
 			// Start of user code for additional businessfilters for statechart
 			// End of user code
 			
-			basePart.addFilterToInvariants(new ViewerFilter() {
+			if (isAccessible(RealtimestatechartViewsRepository.State.Properties.invariants)) {
+				basePart.addFilterToInvariants(new ViewerFilter() {
 			
 					/**
 					 * {@inheritDoc}
@@ -196,10 +197,10 @@ public class StatePropertiesEditionComponent extends SinglePartPropertiesEditing
 						return (element instanceof String && element.equals("")) || (element instanceof ClockConstraint); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for invariants
+				});
+				// Start of user code for additional businessfilters for invariants
 			// End of user code
-			
+			}
 			
 			
 			
@@ -342,7 +343,7 @@ public class StatePropertiesEditionComponent extends SinglePartPropertiesEditing
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			StatePropertiesEditionPart basePart = (StatePropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.State.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -396,28 +397,28 @@ public class StatePropertiesEditionComponent extends SinglePartPropertiesEditing
 				if (RealtimestatechartViewsRepository.State.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.State.Properties.initial == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getState_Initial().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getState_Initial().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getState_Initial().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.State.Properties.final_ == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getState_Final().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getState_Final().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getState_Final().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.State.Properties.urgent == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getState_Urgent().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getState_Urgent().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getState_Urgent().getEAttributeType(), newValue);
 				}

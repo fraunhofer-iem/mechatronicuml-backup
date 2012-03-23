@@ -7,9 +7,7 @@ package de.uni_paderborn.fujaba.muml.model.component.components;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -25,6 +23,7 @@ import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingCo
 import org.eclipse.emf.eef.runtime.impl.filters.EObjectFilter;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
 import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
@@ -76,42 +75,42 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 	/**
 	 * Settings for component EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings componentSettings;
+	private EObjectFlatComboSettings componentSettings;
 	
 	/**
 	 * Settings for behavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings behaviorSettings;
+	private EObjectFlatComboSettings behaviorSettings;
 	
 	/**
 	 * Settings for refines EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings refinesSettings;
+	private EObjectFlatComboSettings refinesSettings;
 	
 	/**
 	 * Settings for senderMessageInterface EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings senderMessageInterfaceSettings;
+	private EObjectFlatComboSettings senderMessageInterfaceSettings;
 	
 	/**
 	 * Settings for receiverMessageInterface EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings receiverMessageInterfaceSettings;
+	private EObjectFlatComboSettings receiverMessageInterfaceSettings;
 	
 	/**
 	 * Settings for adaptationBehavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings adaptationBehaviorSettings;
+	private EObjectFlatComboSettings adaptationBehaviorSettings;
 	
 	/**
 	 * Settings for roleAndAdaptationBehavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings roleAndAdaptationBehaviorSettings;
+	private EObjectFlatComboSettings roleAndAdaptationBehaviorSettings;
 	
 	/**
 	 * Settings for type EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings typeSettings;
+	private EObjectFlatComboSettings typeSettings;
 	
 	
 	/**
@@ -203,7 +202,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 				basePart.setRoleAndAdaptationBehaviorButtonMode(ButtonsModeEnum.BROWSE);
 			}
 			if (isAccessible(ComponentViewsRepository.HybridPort.Properties.kind)) {
-				basePart.initKind((EEnum) ComponentPackage.eINSTANCE.getContinuousPort_Kind().getEType(), hybridPort.getKind());
+				basePart.initKind(EEFUtils.choiceOfValues(hybridPort, ComponentPackage.eINSTANCE.getContinuousPort_Kind()), hybridPort.getKind());
 			}
 			if (isAccessible(ComponentViewsRepository.HybridPort.Properties.type)) {
 				// init part
@@ -605,7 +604,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			HybridPortPropertiesEditionPart basePart = (HybridPortPropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -640,7 +639,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			if (ComponentPackage.eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.roleAndAdaptationBehavior))
 				basePart.setRoleAndAdaptationBehavior((EObject)msg.getNewValue());
 			if (ComponentPackage.eINSTANCE.getContinuousPort_Kind().equals(msg.getFeature()) && isAccessible(ComponentViewsRepository.HybridPort.Properties.kind))
-				basePart.setKind((Enumerator)msg.getNewValue());
+				basePart.setKind((ContinuousPortDirectionKind)msg.getNewValue());
 			
 			if (ComponentPackage.eINSTANCE.getContinuousPort_Type().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.type))
 				basePart.setType((EObject)msg.getNewValue());
@@ -672,21 +671,21 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 				if (ComponentViewsRepository.HybridPort.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.HybridPort.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.HybridPort.Properties.kind == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ComponentPackage.eINSTANCE.getContinuousPort_Kind().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ComponentPackage.eINSTANCE.getContinuousPort_Kind().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ComponentPackage.eINSTANCE.getContinuousPort_Kind().getEAttributeType(), newValue);
 				}

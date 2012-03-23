@@ -52,17 +52,17 @@ public class HardwarePortPropertiesEditionComponent extends SinglePartProperties
 	/**
 	 * Settings for hardwareNode EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings hardwareNodeSettings;
+	private EObjectFlatComboSettings hardwareNodeSettings;
 	
 	/**
 	 * Settings for outgoingCommunicationLink EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings outgoingCommunicationLinkSettings;
+	private EObjectFlatComboSettings outgoingCommunicationLinkSettings;
 	
 	/**
 	 * Settings for incomingCommunicationLink EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings incomingCommunicationLinkSettings;
+	private EObjectFlatComboSettings incomingCommunicationLinkSettings;
 	
 	/**
 	 * Settings for deployedPortInstance ReferencesTable
@@ -291,7 +291,7 @@ public class HardwarePortPropertiesEditionComponent extends SinglePartProperties
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			HardwarePortPropertiesEditionPart basePart = (HardwarePortPropertiesEditionPart)editingPart;
 			if (DeploymentPackage.eINSTANCE.getHardwarePort_HardwareNode().equals(msg.getFeature()) && basePart != null && isAccessible(DeploymentViewsRepository.HardwarePort.Properties.hardwareNode))
 				basePart.setHardwareNode((EObject)msg.getNewValue());

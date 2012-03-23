@@ -51,7 +51,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 	/**
 	 * Settings for componentType EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings componentTypeSettings;
+	private EObjectFlatComboSettings componentTypeSettings;
 	
 	
 	/**
@@ -163,7 +163,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			ComponentInstancePropertiesEditionPart basePart = (ComponentInstancePropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ComponentInstance.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -202,7 +202,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 				if (InstanceViewsRepository.ComponentInstance.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}

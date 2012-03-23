@@ -25,6 +25,9 @@ public class MsgifaceViewsRepository {
 			public static String name = "msgiface::MessageInterface::properties::name";
 			
 			
+			public static String comment = "msgiface::MessageInterface::properties::comment";
+			
+			
 			public static String superType = "msgiface::MessageInterface::properties::superType";
 			
 	
@@ -40,16 +43,10 @@ public class MsgifaceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String comment = "msgiface::MessageType::properties::comment";
-			
-			
-			public static String inParameter = "msgiface::MessageType::properties::inParameter";
-			
-			
-			public static String outParameter = "msgiface::MessageType::properties::outParameter";
-			
-			
 			public static String name = "msgiface::MessageType::properties::name";
+			
+			
+			public static String comment = "msgiface::MessageType::properties::comment";
 			
 			
 			public static String messageInterface = "msgiface::MessageType::properties::messageInterface";

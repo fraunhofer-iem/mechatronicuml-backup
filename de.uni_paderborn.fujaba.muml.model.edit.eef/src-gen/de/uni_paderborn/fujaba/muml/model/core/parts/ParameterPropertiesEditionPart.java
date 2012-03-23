@@ -94,53 +94,6 @@ public interface ParameterPropertiesEditionPart {
 	public void addBusinessFilterToType(ViewerFilter filter);
 
 
-	/**
-	 * @return the operation
-	 * 
-	 */
-	public EObject getOperation();
-
-	/**
-	 * Init the operation
-	 * @param settings the combo setting
-	 */
-	public void initOperation(EObjectFlatComboSettings settings);
-
-	/**
-	 * Defines a new operation
-	 * @param newValue the new operation to set
-	 * 
-	 */
-	public void setOperation(EObject newValue);
-
-	/**
-	 * Defines the button mode
-	 * @param newValue the new mode to set
-	 * 
-	 */
-	public void setOperationButtonMode(ButtonsModeEnum newValue);
-
-	/**
-	 * Adds the given filter to the operation edition editor.
-	 * 
-	 * @param filter
-	 *            a viewer filter
-	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
-	 * 
-	 */
-	public void addFilterToOperation(ViewerFilter filter);
-
-	/**
-	 * Adds the given filter to the operation edition editor.
-	 * 
-	 * @param filter
-	 *            a viewer filter
-	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
-	 * 
-	 */
-	public void addBusinessFilterToOperation(ViewerFilter filter);
-
-
 
 
 

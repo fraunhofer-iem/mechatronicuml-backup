@@ -51,7 +51,7 @@ public class ClockPropertiesEditionComponent extends SinglePartPropertiesEditing
 	/**
 	 * Settings for statechart EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings statechartSettings;
+	private EObjectFlatComboSettings statechartSettings;
 	
 	
 	/**
@@ -165,7 +165,7 @@ public class ClockPropertiesEditionComponent extends SinglePartPropertiesEditing
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			ClockPropertiesEditionPart basePart = (ClockPropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Clock.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -204,7 +204,7 @@ public class ClockPropertiesEditionComponent extends SinglePartPropertiesEditing
 				if (RealtimestatechartViewsRepository.Clock.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}

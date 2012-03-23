@@ -7,9 +7,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.components;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -20,6 +18,7 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
@@ -67,7 +66,7 @@ public class DoEventPropertiesEditionComponent extends SinglePartPropertiesEditi
 			final DoEventPropertiesEditionPart basePart = (DoEventPropertiesEditionPart)editingPart;
 			// init values
 			if (isAccessible(RealtimestatechartViewsRepository.DoEvent.Properties.kind)) {
-				basePart.initKind((EEnum) RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEType(), doEvent.getKind());
+				basePart.initKind(EEFUtils.choiceOfValues(doEvent, RealtimestatechartPackage.eINSTANCE.getEvent_Kind()), doEvent.getKind());
 			}
 			if (isAccessible(RealtimestatechartViewsRepository.DoEvent.Properties.periodLower)) {
 				basePart.setPeriodLower(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), doEvent.getPeriodLower()));
@@ -134,10 +133,10 @@ public class DoEventPropertiesEditionComponent extends SinglePartPropertiesEditi
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			DoEventPropertiesEditionPart basePart = (DoEventPropertiesEditionPart)editingPart;
 			if (RealtimestatechartPackage.eINSTANCE.getEvent_Kind().equals(msg.getFeature()) && isAccessible(RealtimestatechartViewsRepository.DoEvent.Properties.kind))
-				basePart.setKind((Enumerator)msg.getNewValue());
+				basePart.setKind((EventKind)msg.getNewValue());
 			
 			if (RealtimestatechartPackage.eINSTANCE.getDoEvent_PeriodLower().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.DoEvent.Properties.periodLower)) {
 				if (msg.getNewValue() != null) {
@@ -171,21 +170,21 @@ public class DoEventPropertiesEditionComponent extends SinglePartPropertiesEditi
 				if (RealtimestatechartViewsRepository.DoEvent.Properties.kind == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getEvent_Kind().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.DoEvent.Properties.periodLower == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getDoEvent_PeriodLower().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getDoEvent_PeriodLower().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getDoEvent_PeriodLower().getEAttributeType(), newValue);
 				}
 				if (RealtimestatechartViewsRepository.DoEvent.Properties.periodUpper == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getDoEvent_PeriodUpper().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getDoEvent_PeriodUpper().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getDoEvent_PeriodUpper().getEAttributeType(), newValue);
 				}

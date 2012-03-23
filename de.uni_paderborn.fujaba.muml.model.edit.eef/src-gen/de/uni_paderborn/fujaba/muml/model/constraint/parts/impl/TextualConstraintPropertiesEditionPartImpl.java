@@ -5,11 +5,9 @@ package de.uni_paderborn.fujaba.muml.model.constraint.parts.impl;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
@@ -140,7 +138,7 @@ public class TextualConstraintPropertiesEditionPartImpl extends CompositePropert
 		SWTUtils.createPartLabel(parent, ConstraintMessages.TextualConstraintPropertiesEditionPart_CorrectnessLabel, propertiesEditionComponent.isRequired(ConstraintViewsRepository.TextualConstraint.Properties.correctness, ConstraintViewsRepository.SWT_KIND));
 		correctness = new EMFComboViewer(parent);
 		correctness.setContentProvider(new ArrayContentProvider());
-		correctness.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
+		correctness.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
 		GridData correctnessData = new GridData(GridData.FILL_HORIZONTAL);
 		correctness.getCombo().setLayoutData(correctnessData);
 		correctness.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -233,17 +231,17 @@ public class TextualConstraintPropertiesEditionPartImpl extends CompositePropert
 	 * 
 	 */
 	public Enumerator getCorrectness() {
-		EEnumLiteral selection = (EEnumLiteral) ((StructuredSelection) correctness.getSelection()).getFirstElement();
-		return selection.getInstance();
+		Enumerator selection = (Enumerator) ((StructuredSelection) correctness.getSelection()).getFirstElement();
+		return selection;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.constraint.parts.TextualConstraintPropertiesEditionPart#initCorrectness(EEnum eenum, Enumerator current)
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.parts.TextualConstraintPropertiesEditionPart#initCorrectness(Object input, Enumerator current)
 	 */
-	public void initCorrectness(EEnum eenum, Enumerator current) {
-		correctness.setInput(eenum.getELiterals());
+	public void initCorrectness(Object input, Enumerator current) {
+		correctness.setInput(input);
 		correctness.modelUpdating(new StructuredSelection(current));
 	}
 

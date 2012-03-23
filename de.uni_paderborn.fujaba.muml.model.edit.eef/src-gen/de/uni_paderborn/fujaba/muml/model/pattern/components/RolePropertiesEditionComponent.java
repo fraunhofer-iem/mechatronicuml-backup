@@ -63,27 +63,27 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 	/**
 	 * Settings for behavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings behaviorSettings;
+	private EObjectFlatComboSettings behaviorSettings;
 	
 	/**
 	 * Settings for incomingRoleConnector EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings incomingRoleConnectorSettings;
+	private EObjectFlatComboSettings incomingRoleConnectorSettings;
 	
 	/**
 	 * Settings for coordinationPattern EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings coordinationPatternSettings;
+	private EObjectFlatComboSettings coordinationPatternSettings;
 	
 	/**
 	 * Settings for senderMessageInterface EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings senderMessageInterfaceSettings;
+	private EObjectFlatComboSettings senderMessageInterfaceSettings;
 	
 	/**
 	 * Settings for receiverMessageInterface EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings receiverMessageInterfaceSettings;
+	private EObjectFlatComboSettings receiverMessageInterfaceSettings;
 	
 	/**
 	 * Settings for port ReferencesTable
@@ -93,17 +93,17 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 	/**
 	 * Settings for adaptationBehavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings adaptationBehaviorSettings;
+	private EObjectFlatComboSettings adaptationBehaviorSettings;
 	
 	/**
 	 * Settings for roleAndAdaptationBehavior EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings roleAndAdaptationBehaviorSettings;
+	private EObjectFlatComboSettings roleAndAdaptationBehaviorSettings;
 	
 	/**
 	 * Settings for outgoingRoleConnector EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings outgoingRoleConnectorSettings;
+	private EObjectFlatComboSettings outgoingRoleConnectorSettings;
 	
 	
 	/**
@@ -553,7 +553,7 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			RolePropertiesEditionPart basePart = (RolePropertiesEditionPart)editingPart;
 			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.Role.Properties.name)) {
 				if (msg.getNewValue() != null) {
@@ -611,14 +611,14 @@ public class RolePropertiesEditionComponent extends SinglePartPropertiesEditingC
 				if (PatternViewsRepository.Role.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (PatternViewsRepository.Role.Properties.ordered == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(PatternPackage.eINSTANCE.getRole_Ordered().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(PatternPackage.eINSTANCE.getRole_Ordered().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(PatternPackage.eINSTANCE.getRole_Ordered().getEAttributeType(), newValue);
 				}

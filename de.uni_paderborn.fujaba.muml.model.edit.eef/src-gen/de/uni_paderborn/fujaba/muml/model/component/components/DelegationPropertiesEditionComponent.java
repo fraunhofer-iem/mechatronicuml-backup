@@ -50,22 +50,22 @@ public class DelegationPropertiesEditionComponent extends SinglePartPropertiesEd
 	/**
 	 * Settings for fromPort EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings fromPortSettings;
+	private EObjectFlatComboSettings fromPortSettings;
 	
 	/**
 	 * Settings for toPort EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings toPortSettings;
+	private EObjectFlatComboSettings toPortSettings;
 	
 	/**
 	 * Settings for parentComponent EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings parentComponentSettings;
+	private EObjectFlatComboSettings parentComponentSettings;
 	
 	/**
 	 * Settings for componentPart EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings componentPartSettings;
+	private EObjectFlatComboSettings componentPartSettings;
 	
 	
 	/**
@@ -290,7 +290,7 @@ public class DelegationPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			DelegationPropertiesEditionPart basePart = (DelegationPropertiesEditionPart)editingPart;
 			if (ComponentPackage.eINSTANCE.getConnectorType_FromPort().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.Delegation.Properties.fromPort))
 				basePart.setFromPort((EObject)msg.getNewValue());

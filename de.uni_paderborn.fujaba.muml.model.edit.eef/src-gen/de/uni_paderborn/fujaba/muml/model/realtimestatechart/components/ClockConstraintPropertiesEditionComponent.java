@@ -7,19 +7,18 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.components;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
@@ -51,7 +50,7 @@ public class ClockConstraintPropertiesEditionComponent extends SinglePartPropert
 	/**
 	 * Settings for clock EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings clockSettings;
+	private EObjectFlatComboSettings clockSettings;
 	
 	
 	/**
@@ -87,7 +86,7 @@ public class ClockConstraintPropertiesEditionComponent extends SinglePartPropert
 				basePart.setClockButtonMode(ButtonsModeEnum.BROWSE);
 			}
 			if (isAccessible(RealtimestatechartViewsRepository.ClockConstraint.Properties.operator)) {
-				basePart.initOperator((EEnum) RealtimestatechartPackage.eINSTANCE.getClockConstraint_Operator().getEType(), clockConstraint.getOperator());
+				basePart.initOperator(EEFUtils.choiceOfValues(clockConstraint, RealtimestatechartPackage.eINSTANCE.getClockConstraint_Operator()), clockConstraint.getOperator());
 			}
 			// init filters
 			basePart.addFilterToClock(new ViewerFilter() {
@@ -165,12 +164,12 @@ public class ClockConstraintPropertiesEditionComponent extends SinglePartPropert
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			ClockConstraintPropertiesEditionPart basePart = (ClockConstraintPropertiesEditionPart)editingPart;
 			if (RealtimestatechartPackage.eINSTANCE.getClockConstraint_Clock().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.ClockConstraint.Properties.clock))
 				basePart.setClock((EObject)msg.getNewValue());
 			if (RealtimestatechartPackage.eINSTANCE.getClockConstraint_Operator().equals(msg.getFeature()) && isAccessible(RealtimestatechartViewsRepository.ClockConstraint.Properties.operator))
-				basePart.setOperator((Enumerator)msg.getNewValue());
+				basePart.setOperator((ComparingOperator)msg.getNewValue());
 			
 			
 		}
@@ -200,7 +199,7 @@ public class ClockConstraintPropertiesEditionComponent extends SinglePartPropert
 				if (RealtimestatechartViewsRepository.ClockConstraint.Properties.operator == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getClockConstraint_Operator().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RealtimestatechartPackage.eINSTANCE.getClockConstraint_Operator().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RealtimestatechartPackage.eINSTANCE.getClockConstraint_Operator().getEAttributeType(), newValue);
 				}

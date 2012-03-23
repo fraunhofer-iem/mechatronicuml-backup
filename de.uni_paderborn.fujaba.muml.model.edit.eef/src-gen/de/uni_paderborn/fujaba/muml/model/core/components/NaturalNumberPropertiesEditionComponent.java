@@ -119,7 +119,7 @@ public class NaturalNumberPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			NaturalNumberPropertiesEditionPart basePart = (NaturalNumberPropertiesEditionPart)editingPart;
 			if (CorePackage.eINSTANCE.getNaturalNumber_Value().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.NaturalNumber.Properties.value)) {
 				if (msg.getNewValue() != null) {
@@ -149,14 +149,14 @@ public class NaturalNumberPropertiesEditionComponent extends SinglePartPropertie
 				if (CoreViewsRepository.NaturalNumber.Properties.value == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(CorePackage.eINSTANCE.getNaturalNumber_Value().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNaturalNumber_Value().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNaturalNumber_Value().getEAttributeType(), newValue);
 				}
 				if (CoreViewsRepository.NaturalNumber.Properties.infinity == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(CorePackage.eINSTANCE.getNaturalNumber_Infinity().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNaturalNumber_Infinity().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNaturalNumber_Infinity().getEAttributeType(), newValue);
 				}
