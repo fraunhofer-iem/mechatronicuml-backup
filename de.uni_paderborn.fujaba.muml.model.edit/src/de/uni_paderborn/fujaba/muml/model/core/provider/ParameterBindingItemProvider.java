@@ -11,7 +11,7 @@ import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,23 +30,20 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.storydriven.modeling.SDMPackage;
 
 import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
 
-import org.storydriven.modeling.provider.NamedElementItemProvider;
+import org.storydriven.modeling.provider.ExtendableElementItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.Operation} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class OperationItemProvider
-	extends NamedElementItemProvider
+public class ParameterBindingItemProvider
+	extends ExtendableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -59,7 +56,7 @@ public class OperationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OperationItemProvider(AdapterFactory adapterFactory) {
+	public ParameterBindingItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -74,48 +71,25 @@ public class OperationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
-			addReturnTypePropertyDescriptor(object);
+			addParameterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Return Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReturnTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Operation_returnType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_returnType_feature", "_UI_Operation_type"),
-				 CorePackage.Literals.OPERATION__RETURN_TYPE,
+				 getString("_UI_ParameterBinding_parameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterBinding_parameter_feature", "_UI_ParameterBinding_type"),
+				 CorePackage.Literals.PARAMETER_BINDING__PARAMETER,
 				 true,
 				 false,
 				 true,
@@ -136,8 +110,7 @@ public class OperationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.OPERATION__IMPLEMENTATIONS);
-			childrenFeatures.add(CorePackage.Literals.OPERATION__PARAMETERS);
+			childrenFeatures.add(CorePackage.Literals.PARAMETER_BINDING__VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -156,14 +129,14 @@ public class OperationItemProvider
 	}
 
 	/**
-	 * This returns Operation.gif.
+	 * This returns ParameterBinding.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Operation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ParameterBinding"));
 	}
 
 	/**
@@ -174,10 +147,7 @@ public class OperationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Operation)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Operation_type") :
-			getString("_UI_Operation_type") + " " + label;
+		return getString("_UI_ParameterBinding_type");
 	}
 
 	/**
@@ -191,12 +161,8 @@ public class OperationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Operation.class)) {
-			case CorePackage.OPERATION__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case CorePackage.OPERATION__IMPLEMENTATIONS:
-			case CorePackage.OPERATION__PARAMETERS:
+		switch (notification.getFeatureID(ParameterBinding.class)) {
+			case CorePackage.PARAMETER_BINDING__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -216,78 +182,73 @@ public class OperationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createNotExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.OPERATION__PARAMETERS,
-				 CoreFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

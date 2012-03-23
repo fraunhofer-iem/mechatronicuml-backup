@@ -13,6 +13,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,11 +23,14 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.modeling.provider.ExtendableElementItemProvider;
 import org.storydriven.modeling.calls.provider.InvocationItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization} object.
@@ -35,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
  * @generated
  */
 public class SynchronizationItemProvider
-	extends InvocationItemProvider
+	extends ExtendableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -114,6 +118,36 @@ public class SynchronizationItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.SYNCHRONIZATION__PARAMETER_BINDING);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns Synchronization.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,7 +166,8 @@ public class SynchronizationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Synchronization)object).getComment();
+		SynchronizationKind labelValue = ((Synchronization)object).getKind();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Synchronization_type") :
 			getString("_UI_Synchronization_type") + " " + label;
@@ -154,6 +189,9 @@ public class SynchronizationItemProvider
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION__PARAMETER_BINDING:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -168,6 +206,11 @@ public class SynchronizationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__PARAMETER_BINDING,
+				 CoreFactory.eINSTANCE.createParameterBinding()));
 	}
 
 	/**

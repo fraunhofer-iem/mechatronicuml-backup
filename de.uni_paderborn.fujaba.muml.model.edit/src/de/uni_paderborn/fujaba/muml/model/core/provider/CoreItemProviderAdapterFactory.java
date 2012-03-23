@@ -282,6 +282,29 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterBindingItemProvider parameterBindingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterBindingAdapter() {
+		if (parameterBindingItemProvider == null) {
+			parameterBindingItemProvider = new ParameterBindingItemProvider(this);
+		}
+
+		return parameterBindingItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +412,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 		if (arrayDataTypeItemProvider != null) arrayDataTypeItemProvider.dispose();
 		if (innerDeclarationItemProvider != null) innerDeclarationItemProvider.dispose();
+		if (parameterBindingItemProvider != null) parameterBindingItemProvider.dispose();
 	}
 
 }
