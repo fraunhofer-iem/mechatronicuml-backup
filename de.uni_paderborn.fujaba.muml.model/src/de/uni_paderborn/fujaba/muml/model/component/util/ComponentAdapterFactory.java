@@ -136,6 +136,10 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createHybridPortAdapter();
 			}
 			@Override
+			public Adapter casePatternOccurrence(PatternOccurrence object) {
+				return createPatternOccurrenceAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -340,6 +344,20 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHybridPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence <em>Pattern Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence
+	 * @generated
+	 */
+	public Adapter createPatternOccurrenceAdapter() {
 		return null;
 	}
 

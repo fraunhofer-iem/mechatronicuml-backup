@@ -127,6 +127,8 @@ public class ComponentValidator extends EObjectValidator {
 				return validateBehavioralConnector((BehavioralConnector)value, diagnostics, context);
 			case ComponentPackage.HYBRID_PORT:
 				return validateHybridPort((HybridPort)value, diagnostics, context);
+			case ComponentPackage.PATTERN_OCCURRENCE:
+				return validatePatternOccurrence((PatternOccurrence)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_KIND:
 				return validateComponentKind((ComponentKind)value, diagnostics, context);
 			case ComponentPackage.CONTINUOUS_PORT_DIRECTION_KIND:
@@ -1964,6 +1966,15 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateContinuousPort_LowerBoundMustBeZeroOrOne(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuousPort_UpperBoundMustBeOne(hybridPort, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePatternOccurrence(PatternOccurrence patternOccurrence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(patternOccurrence, diagnostics, context);
 	}
 
 	/**

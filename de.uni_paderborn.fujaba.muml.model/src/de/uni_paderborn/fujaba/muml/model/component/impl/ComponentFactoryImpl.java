@@ -79,6 +79,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.ASSEMBLY: return createAssembly();
 			case ComponentPackage.DELEGATION: return createDelegation();
 			case ComponentPackage.HYBRID_PORT: return createHybridPort();
+			case ComponentPackage.PATTERN_OCCURRENCE: return createPatternOccurrence();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -196,6 +197,16 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public HybridPort createHybridPort() {
 		HybridPortImpl hybridPort = new HybridPortImpl();
 		return hybridPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatternOccurrence createPatternOccurrence() {
+		PatternOccurrenceImpl patternOccurrence = new PatternOccurrenceImpl();
+		return patternOccurrence;
 	}
 
 	/**

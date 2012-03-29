@@ -78,6 +78,7 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 			case InstancePackage.HYBRID_PORT_INSTANCE: return createHybridPortInstance();
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE: return createDiscreteSinglePortInstance();
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE: return createDiscreteMultiPortInstance();
+			case InstancePackage.PATTERN_INSTANCE: return createPatternInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -171,6 +172,16 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	public DiscreteMultiPortInstance createDiscreteMultiPortInstance() {
 		DiscreteMultiPortInstanceImpl discreteMultiPortInstance = new DiscreteMultiPortInstanceImpl();
 		return discreteMultiPortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatternInstance createPatternInstance() {
+		PatternInstanceImpl patternInstance = new PatternInstanceImpl();
+		return patternInstance;
 	}
 
 	/**

@@ -573,6 +573,12 @@
           </eAnnotations>
         </eLiterals>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PatternOccurrence" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+            eType="#//model/pattern/CoordinationPattern"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1"
+            upperBound="-1" eType="#//model/component/Port"/>
+      </eClassifiers>
     </eSubpackages>
     <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.2.2"
         nsPrefix="constraint">
@@ -1118,6 +1124,12 @@
             <details key="documentation" value="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances."/>
           </eAnnotations>
         </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PatternInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" lowerBound="1"
+            upperBound="-1" eType="#//model/instance/PortInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="patternOccurrence"
+            lowerBound="1" eType="#//model/component/PatternOccurrence"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.2.3"

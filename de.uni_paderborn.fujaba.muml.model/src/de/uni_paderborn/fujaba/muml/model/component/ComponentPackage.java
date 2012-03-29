@@ -1753,6 +1753,61 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT_FEATURE_COUNT = DISCRETE_PORT_FEATURE_COUNT + 6;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl <em>Pattern Occurrence</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPatternOccurrence()
+	 * @generated
+	 */
+	int PATTERN_OCCURRENCE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_OCCURRENCE__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_OCCURRENCE__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_OCCURRENCE__PATTERN = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_OCCURRENCE__PORTS = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Pattern Occurrence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_OCCURRENCE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1760,7 +1815,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentKind()
 	 * @generated
 	 */
-	int COMPONENT_KIND = 12;
+	int COMPONENT_KIND = 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}' enum.
@@ -1770,7 +1825,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortDirectionKind()
 	 * @generated
 	 */
-	int CONTINUOUS_PORT_DIRECTION_KIND = 13;
+	int CONTINUOUS_PORT_DIRECTION_KIND = 14;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Component <em>Component</em>}'.
@@ -2421,6 +2476,38 @@ public interface ComponentPackage extends EPackage {
 	EAttribute getHybridPort_IsHybridOutPort();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence <em>Pattern Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pattern Occurrence</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence
+	 * @generated
+	 */
+	EClass getPatternOccurrence();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence#getPattern <em>Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Pattern</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence#getPattern()
+	 * @see #getPatternOccurrence()
+	 * @generated
+	 */
+	EReference getPatternOccurrence_Pattern();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence#getPorts <em>Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Ports</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence#getPorts()
+	 * @see #getPatternOccurrence()
+	 * @generated
+	 */
+	EReference getPatternOccurrence_Ports();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2965,6 +3052,32 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HYBRID_PORT__IS_HYBRID_OUT_PORT = eINSTANCE.getHybridPort_IsHybridOutPort();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl <em>Pattern Occurrence</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPatternOccurrence()
+		 * @generated
+		 */
+		EClass PATTERN_OCCURRENCE = eINSTANCE.getPatternOccurrence();
+
+		/**
+		 * The meta object literal for the '<em><b>Pattern</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATTERN_OCCURRENCE__PATTERN = eINSTANCE.getPatternOccurrence_Pattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Ports</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATTERN_OCCURRENCE__PORTS = eINSTANCE.getPatternOccurrence_Ports();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.

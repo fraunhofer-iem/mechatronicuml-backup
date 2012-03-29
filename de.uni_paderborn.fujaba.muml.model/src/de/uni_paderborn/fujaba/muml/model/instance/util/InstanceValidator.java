@@ -122,6 +122,8 @@ public class InstanceValidator extends EObjectValidator {
 				return validateDiscreteSinglePortInstance((DiscreteSinglePortInstance)value, diagnostics, context);
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE:
 				return validateDiscreteMultiPortInstance((DiscreteMultiPortInstance)value, diagnostics, context);
+			case InstancePackage.PATTERN_INSTANCE:
+				return validatePatternInstance((PatternInstance)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -263,6 +265,15 @@ public class InstanceValidator extends EObjectValidator {
 	 */
 	public boolean validateDiscreteMultiPortInstance(DiscreteMultiPortInstance discreteMultiPortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(discreteMultiPortInstance, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePatternInstance(PatternInstance patternInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(patternInstance, diagnostics, context);
 	}
 
 	/**

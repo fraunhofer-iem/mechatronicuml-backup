@@ -31,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.util.ComponentValidator;
@@ -139,6 +140,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	private EClass hybridPortEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass patternOccurrenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -795,6 +803,33 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPatternOccurrence() {
+		return patternOccurrenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPatternOccurrence_Pattern() {
+		return (EReference)patternOccurrenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPatternOccurrence_Ports() {
+		return (EReference)patternOccurrenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getComponentKind() {
 		return componentKindEEnum;
 	}
@@ -908,6 +943,10 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEAttribute(hybridPortEClass, HYBRID_PORT__IS_HYBRID_IN_PORT);
 		createEAttribute(hybridPortEClass, HYBRID_PORT__IS_HYBRID_OUT_PORT);
 
+		patternOccurrenceEClass = createEClass(PATTERN_OCCURRENCE);
+		createEReference(patternOccurrenceEClass, PATTERN_OCCURRENCE__PATTERN);
+		createEReference(patternOccurrenceEClass, PATTERN_OCCURRENCE__PORTS);
+
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
 		continuousPortDirectionKindEEnum = createEEnum(CONTINUOUS_PORT_DIRECTION_KIND);
@@ -968,6 +1007,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		behavioralConnectorEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		hybridPortEClass.getESuperTypes().add(this.getDiscretePort());
 		hybridPortEClass.getESuperTypes().add(this.getContinuousPort());
+		patternOccurrenceEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1041,6 +1081,10 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(hybridPortEClass, HybridPort.class, "HybridPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHybridPort_IsHybridInPort(), ecorePackage.getEBoolean(), "isHybridInPort", "false", 0, 1, HybridPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHybridPort_IsHybridOutPort(), ecorePackage.getEBoolean(), "isHybridOutPort", "false", 0, 1, HybridPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(patternOccurrenceEClass, PatternOccurrence.class, "PatternOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPatternOccurrence_Pattern(), thePatternPackage.getCoordinationPattern(), null, "pattern", null, 1, 1, PatternOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPatternOccurrence_Ports(), this.getPort(), null, "ports", null, 1, -1, PatternOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentKindEEnum, ComponentKind.class, "ComponentKind");

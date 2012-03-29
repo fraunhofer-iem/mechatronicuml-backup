@@ -18314,5 +18314,342 @@
         <parameters name="opposite"/>
       </operation>
     </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component" referenceName="eClassifiers"
+          element="muml.ecore#//model/component/PatternOccurrence">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/PatternOccurrence"
+            featureName="name" dataValue="PatternOccurrence"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/component/PatternOccurrence"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/component"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>PatternOccurrence</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component" referenceName="eClassifiers"
+          element="#//@releases.6/@changes.37/@element">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.37/@element"
+            featureName="name" dataValue="RoleOccurrence"/>
+        <changes xsi:type="history:Add" element="#//@releases.6/@changes.37/@element"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/component"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>RoleOccurrence</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/PatternOccurrence"
+          referenceName="eStructuralFeatures" element="#//@releases.6/@changes.38/@element">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+            featureName="name" dataValue="roles"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+            featureName="eType" referenceValue="#//@releases.6/@changes.37/@element"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/component/PatternOccurrence"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>roles</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="#//@releases.6/@changes.37/@element"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.37/@element"
+          referenceName="eStructuralFeatures" element="#//@releases.6/@changes.37/@element/patternOccurrence">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.37/@element/patternOccurrence"
+            featureName="name" dataValue="patternOccurrence"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.37/@element/patternOccurrence"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.37/@element/patternOccurrence"
+            featureName="eType" referenceValue="muml.ecore#//model/component/PatternOccurrence"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.37/@element/patternOccurrence"
+            featureName="eOpposite" referenceValue="#//@releases.6/@changes.38/@element"/>
+      </changes>
+      <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+          featureName="eOpposite" referenceValue="#//@releases.6/@changes.37/@element/patternOccurrence"/>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="#//@releases.6/@changes.37/@element"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>patternOccurrence</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/component/PatternOccurrence"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite">
+          <referenceValue element="#//@releases.6/@changes.38/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+          featureName="name" dataValue="roleOccurrences" oldDataValue="roles"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="#//@releases.6/@changes.38/@element"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>roleOccurrences</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/PatternOccurrence"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/PatternOccurrence/pattern">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/PatternOccurrence/pattern"
+            featureName="name" dataValue="pattern"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/PatternOccurrence/pattern"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/PatternOccurrence/pattern"
+            featureName="eType" referenceValue="muml.ecore#//model/pattern/CoordinationPattern"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/component/PatternOccurrence"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>pattern</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/pattern/CoordinationPattern"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.37/@element"
+          referenceName="eStructuralFeatures" element="#//@releases.6/@changes.37/@element/role">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.37/@element/role"
+            featureName="name" dataValue="role"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.37/@element/role"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.37/@element/role"
+            featureName="eType" referenceValue="muml.ecore#//model/pattern/Role"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="#//@releases.6/@changes.37/@element"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>role</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/pattern/Role"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component" referenceName="eClassifiers">
+      <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+          featureName="eOpposite" oldReferenceValue="#//@releases.6/@changes.37/@element/patternOccurrence"/>
+      <changes xsi:type="history:Set" element="#//@releases.6/@changes.38/@element"
+          featureName="eType" oldReferenceValue="#//@releases.6/@changes.37/@element"/>
+      <element xsi:type="ecore:EClass" name="RoleOccurrence" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="patternOccurrence"
+            lowerBound="1" eType="ecore:EClass muml.ecore#//model/component/PatternOccurrence"
+            eOpposite="#//@releases.6/@changes.38/@element"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1"
+            eType="ecore:EClass muml.ecore#//model/pattern/Role"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/PatternOccurrence"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="roleOccurrences" lowerBound="1" upperBound="-1"
+          containment="true"/>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/PatternOccurrence"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/PatternOccurrence/ports">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/PatternOccurrence/ports"
+            featureName="name" dataValue="ports"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/PatternOccurrence/ports"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/PatternOccurrence/ports"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/PatternOccurrence/ports"
+            featureName="eType" referenceValue="muml.ecore#//model/component/Port"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/component/PatternOccurrence"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>ports</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/component/Port"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance" referenceName="eClassifiers"
+          element="muml.ecore#//model/instance/PatternInstance">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PatternInstance"
+            featureName="name" dataValue="PatternInstance"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/instance/PatternInstance"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/instance"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>PatternInstance</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PatternInstance"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/PatternInstance/portInstances">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PatternInstance/portInstances"
+            featureName="name" dataValue="portInstances"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PatternInstance/portInstances"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PatternInstance/portInstances"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PatternInstance/portInstances"
+            featureName="eType" referenceValue="muml.ecore#//model/instance/PortInstance"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/instance/PatternInstance"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>portInstances</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/instance/PortInstance"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PatternInstance"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/PatternInstance/patternOccurrence">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PatternInstance/patternOccurrence"
+            featureName="name" dataValue="patternOccurrence"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PatternInstance/patternOccurrence"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PatternInstance/patternOccurrence"
+            featureName="eType" referenceValue="muml.ecore#//model/component/PatternOccurrence"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/instance/PatternInstance"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>patternOccurrence</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/component/PatternOccurrence"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
   </releases>
 </history:History>
