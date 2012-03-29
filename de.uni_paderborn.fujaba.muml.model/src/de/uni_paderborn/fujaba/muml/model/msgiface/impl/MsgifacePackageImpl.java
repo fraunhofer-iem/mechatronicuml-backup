@@ -366,7 +366,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueParameterNames", "self.containedParameters->isUnique(name)"
+			 "UniqueParameterNames", "self.parameters->isUnique(name)"
 		   });		
 	}
 

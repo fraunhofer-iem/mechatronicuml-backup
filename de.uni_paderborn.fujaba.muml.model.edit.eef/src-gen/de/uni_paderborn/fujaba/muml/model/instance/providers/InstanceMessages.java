@@ -41,6 +41,9 @@ public class InstanceMessages extends NLS {
 	public static String DiscreteMultiPortInstancePropertiesEditionPart_PropertiesGroupLabel;
 
 	
+	public static String PatternInstancePropertiesEditionPart_PropertiesGroupLabel;
+
+	
 	public static String ComponentInstance_ReadOnly;
 
 	
@@ -93,6 +96,12 @@ public class InstanceMessages extends NLS {
 
 	
 	public static String DiscreteMultiPortInstance_Part_Title;
+
+	
+	public static String PatternInstance_ReadOnly;
+
+	
+	public static String PatternInstance_Part_Title;
 
 	
 	public static String ComponentInstancePropertiesEditionPart_NameLabel;
@@ -207,6 +216,15 @@ public class InstanceMessages extends NLS {
 
 	
 	public static String DiscreteMultiPortInstancePropertiesEditionPart_OutgoingConnectorInstancesLabel;
+
+	
+	public static String PatternInstancePropertiesEditionPart_NameLabel;
+
+	
+	public static String PatternInstancePropertiesEditionPart_PortInstancesLabel;
+
+	
+	public static String PatternInstancePropertiesEditionPart_PatternOccurrenceLabel;
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;

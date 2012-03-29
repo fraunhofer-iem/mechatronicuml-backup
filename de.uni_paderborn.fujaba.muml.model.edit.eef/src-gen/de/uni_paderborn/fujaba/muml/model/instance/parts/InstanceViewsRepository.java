@@ -236,4 +236,25 @@ public class InstanceViewsRepository {
 	
 	}
 
+	/**
+	 * PatternInstance view descriptor
+	 * 
+	 */
+	public static class PatternInstance {
+		public static class Properties {
+	
+			
+			public static String name = "instance::PatternInstance::properties::name";
+			
+			
+			public static String portInstances = "instance::PatternInstance::properties::portInstances";
+			
+			
+			public static String patternOccurrence = "instance::PatternInstance::properties::patternOccurrence";
+			
+	
+		}
+	
+	}
+
 }

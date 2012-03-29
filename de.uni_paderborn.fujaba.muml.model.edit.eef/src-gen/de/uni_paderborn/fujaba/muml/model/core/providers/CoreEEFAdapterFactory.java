@@ -3,8 +3,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.providers;
 
-import org.eclipse.emf.common.notify.Adapter;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.eclipse.emf.common.notify.Adapter;
 import de.uni_paderborn.fujaba.muml.model.core.util.CoreAdapterFactory;
 
 
@@ -77,6 +79,14 @@ public class CoreEEFAdapterFactory extends CoreAdapterFactory {
 	 */
 	public Adapter createInnerDeclarationAdapter() {
 		return new InnerDeclarationPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.core.util.CoreAdapterFactory#createParameterBindingAdapter()
+	 * 
+	 */
+	public Adapter createParameterBindingAdapter() {
+		return new ParameterBindingPropertiesEditionProvider();
 	}
 
 }

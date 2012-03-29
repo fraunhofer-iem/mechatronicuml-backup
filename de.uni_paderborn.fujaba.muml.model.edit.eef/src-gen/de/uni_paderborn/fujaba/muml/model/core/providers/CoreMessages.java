@@ -41,6 +41,9 @@ public class CoreMessages extends NLS {
 	public static String InnerDeclarationPropertiesEditionPart_PropertiesGroupLabel;
 
 	
+	public static String ParameterBindingPropertiesEditionPart_PropertiesGroupLabel;
+
+	
 	public static String NaturalNumber_ReadOnly;
 
 	
@@ -93,6 +96,12 @@ public class CoreMessages extends NLS {
 
 	
 	public static String InnerDeclaration_Part_Title;
+
+	
+	public static String ParameterBinding_ReadOnly;
+
+	
+	public static String ParameterBinding_Part_Title;
 
 	
 	public static String NaturalNumberPropertiesEditionPart_ValueLabel;
@@ -165,6 +174,9 @@ public class CoreMessages extends NLS {
 
 	
 	public static String InnerDeclarationPropertiesEditionPart_TypeLabel;
+
+	
+	public static String ParameterBindingPropertiesEditionPart_ParameterLabel;
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;

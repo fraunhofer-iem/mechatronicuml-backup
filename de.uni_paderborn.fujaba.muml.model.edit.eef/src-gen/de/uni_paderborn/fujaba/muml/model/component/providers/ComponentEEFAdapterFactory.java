@@ -3,8 +3,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.providers;
 
-import org.eclipse.emf.common.notify.Adapter;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.eclipse.emf.common.notify.Adapter;
 import de.uni_paderborn.fujaba.muml.model.component.util.ComponentAdapterFactory;
 
 
@@ -77,6 +79,14 @@ public class ComponentEEFAdapterFactory extends ComponentAdapterFactory {
 	 */
 	public Adapter createHybridPortAdapter() {
 		return new HybridPortPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.component.util.ComponentAdapterFactory#createPatternOccurrenceAdapter()
+	 * 
+	 */
+	public Adapter createPatternOccurrenceAdapter() {
+		return new PatternOccurrencePropertiesEditionProvider();
 	}
 
 }

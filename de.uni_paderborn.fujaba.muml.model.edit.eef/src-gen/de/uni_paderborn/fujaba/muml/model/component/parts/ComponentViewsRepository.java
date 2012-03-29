@@ -281,4 +281,22 @@ public class ComponentViewsRepository {
 	
 	}
 
+	/**
+	 * PatternOccurrence view descriptor
+	 * 
+	 */
+	public static class PatternOccurrence {
+		public static class Properties {
+	
+			
+			public static String pattern = "component::PatternOccurrence::properties::pattern";
+			
+			
+			public static String ports = "component::PatternOccurrence::properties::ports";
+			
+	
+		}
+	
+	}
+
 }

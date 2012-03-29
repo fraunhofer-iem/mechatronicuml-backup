@@ -194,4 +194,19 @@ public class CoreViewsRepository {
 	
 	}
 
+	/**
+	 * ParameterBinding view descriptor
+	 * 
+	 */
+	public static class ParameterBinding {
+		public static class Properties {
+	
+			
+			public static String parameter = "core::ParameterBinding::properties::parameter";
+			
+	
+		}
+	
+	}
+
 }

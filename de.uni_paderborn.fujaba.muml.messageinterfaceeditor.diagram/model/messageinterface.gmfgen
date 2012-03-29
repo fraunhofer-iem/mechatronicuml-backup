@@ -38,6 +38,7 @@
         visualID="3005"
         editPartClassName="MessageTypeEditPart"
         itemSemanticEditPolicyClassName="MessageTypeItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeViewFactory"
         canonicalEditPolicyClassName="MessageTypeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="MessageTypeGraphicalNodeEditPolicy"
         createCommandClassName="MessageTypeCreateCommand"
@@ -76,7 +77,8 @@
       <labels
           visualID="5008"
           editPartClassName="WrappingLabelEditPart"
-          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageTypeLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -89,9 +91,10 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2004"
+        visualID="2005"
         editPartClassName="MessageInterfaceEditPart"
         itemSemanticEditPolicyClassName="MessageInterfaceItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageInterfaceViewFactory"
         canonicalEditPolicyClassName="MessageInterfaceCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="MessageInterfaceGraphicalNodeEditPolicy"
@@ -128,9 +131,10 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5009"
+          visualID="5010"
           editPartClassName="MessageInterfaceNameEditPart"
-          itemSemanticEditPolicyClassName="MessageInterfaceNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="MessageInterfaceNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageInterfaceNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -153,6 +157,7 @@
         visualID="4004"
         editPartClassName="MessageInterfaceSuperTypeEditPart"
         itemSemanticEditPolicyClassName="MessageInterfaceSuperTypeItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageInterfaceSuperTypeViewFactory"
         createCommandClassName="MessageInterfaceSuperTypeCreateCommand"
         reorientCommandClassName="MessageInterfaceSuperTypeReorientCommand">
       <diagramRunTimeClass
@@ -170,9 +175,10 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7004"
+        visualID="7005"
         editPartClassName="MessageInterfaceMessageTypeCompartmentEditPart"
         itemSemanticEditPolicyClassName="MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageInterfaceMessageTypeCompartmentViewFactory"
         canonicalEditPolicyClassName="MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="MessageTypeCompartment"
@@ -328,7 +334,7 @@
       <expressions
           body="'messagetype'"/>
       <expressions
-          body="(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat('(').concat(&#xA;&#x9;self.containedParameters->iterate(&#xA;&#x9;&#x9;parameter; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.eType.oclIsUndefined() or parameter.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.upperBound > 1 then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- array type&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- XXX: the type conversion is needed but why?&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;OrderedSet{ 1 .. parameter.upperBound.oclAsType(Integer) }->iterate(i : Integer; o : Sequence(Integer) = Sequence{1} |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if o->first() * 10 = i then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;o->prepend(o->first() * 10)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;o&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)->iterate(d : Integer; s : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;let itoa : String = OrderedSet{'0','1','2','3','4','5','6','7','8','9'}->at(parameter.upperBound.oclAsType(Integer).abs().div(d).mod(10) + 1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;in s.concat(itoa)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(']')&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;)&#xA;).concat(')')"/>
+          body="(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat('(').concat(&#xA;&#x9;self.parameters->iterate(&#xA;&#x9;&#x9;parameter; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.type.oclIsUndefined() or parameter.type.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.type.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;if not parameter.type.oclIsUndefined() and parameter.type.oclIsKindOf(core::ArrayDataType) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- array type&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- XXX: the type conversion is needed but why?&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;OrderedSet{ 1 .. 3 }->iterate(i : Integer; o : Sequence(Integer) = Sequence{1} |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if o->first() * 10 = i then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;o->prepend(o->first() * 10)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;o&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)->iterate(d : Integer; s : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;let itoa : String = OrderedSet{'0','1','2','3','4','5','6','7','8','9'}->at(parameter.type.oclAsType(core::ArrayDataType).cardinality.oclAsType(Integer)->asOrderedSet()->first().abs().div(d).mod(10) + 1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;in s.concat(itoa)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(']')&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;)&#xA;).concat(')')"/>
       <expressions
           body="if self.name.oclIsUndefined() then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.name&#xA;endif"/>
     </providers>

@@ -117,6 +117,12 @@
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/HybridPort/isHybridInPort"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/HybridPort/isHybridOutPort"/>
         </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/component/PatternOccurrence">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/component/PatternOccurrence/pattern"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/component/PatternOccurrence/ports"/>
+        </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/constraint">
@@ -194,29 +200,33 @@
         <genClasses ecoreClass="muml.ecore#//model/core/Operation">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/returnType"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/parameters"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/implementations"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/implementations"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/parameters"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/Parameter">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/core/Parameter/type"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/core/Parameter/operation"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/core/DataType"/>
         <genClasses ecoreClass="muml.ecore#//model/core/PrimitiveDataType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/PrimitiveDataType/primitiveType"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/core/CompositeDataType">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/CompositeDataType/innerDeclaration"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/CompositeDataType/innerDeclaration"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/ArrayDataType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/ArrayDataType/cardinality"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/InnerDeclaration">
-          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/InnerDeclaration/key"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/core/InnerDeclaration/parent"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/InnerDeclaration/key"/>
+          <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/core/InnerDeclaration/parent"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/core/InnerDeclaration/type"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/core/ParameterBinding">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/core/ParameterBinding/parameter"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/ParameterBinding/value"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.model"
@@ -274,6 +284,12 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteMultiPortInstance">
           <genFeatures children="true" createChild="true" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/instance/PatternInstance">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/instance/PatternInstance/portInstances"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/instance/PatternInstance/patternOccurrence"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml.model"
@@ -430,10 +446,12 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/SynchronizationChannel">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/SynchronizationChannel/state"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/Synchronization">
           <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Synchronization/syncChannel"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Synchronization/kind"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Prioritizable">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
@@ -463,6 +481,7 @@
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/StateEvent"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/Message">
           <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Message/instanceOf"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Message/parameterBinding"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryEvent"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitEvent"/>
@@ -489,6 +508,7 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/msgiface/MessageType">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/msgiface/MessageType/messageInterface"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/msgiface/MessageType/parameters"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Deployment" basePackage="de.uni_paderborn.fujaba.muml.model"

@@ -5,13 +5,13 @@ package de.uni_paderborn.fujaba.muml.model.core.providers;
 
 import java.util.List;
 
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
-
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
+import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+
+
 import de.uni_paderborn.fujaba.muml.model.core.components.OperationPropertiesEditionComponent;
 
 /**

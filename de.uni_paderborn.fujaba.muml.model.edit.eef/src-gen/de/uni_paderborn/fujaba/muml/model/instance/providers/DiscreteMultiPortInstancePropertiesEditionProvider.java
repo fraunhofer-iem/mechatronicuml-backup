@@ -5,13 +5,13 @@ package de.uni_paderborn.fujaba.muml.model.instance.providers;
 
 import java.util.List;
 
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
+import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
 
-import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+
 import de.uni_paderborn.fujaba.muml.model.instance.components.DiscreteMultiPortInstancePropertiesEditionComponent;
 
 /**

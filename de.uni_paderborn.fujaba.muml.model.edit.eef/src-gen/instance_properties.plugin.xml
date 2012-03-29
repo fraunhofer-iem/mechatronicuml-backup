@@ -13,13 +13,25 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.core.providers.CorePropertiesEditionPartProvider">
+            providerClass="de.uni_paderborn.fujaba.muml.model.msgiface.providers.MsgifacePropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.constraint.providers.ConstraintPropertiesEditionPartProvider">
+            providerClass="de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers.RealtimestatechartPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="de.uni_paderborn.fujaba.muml.model.pattern.providers.PatternPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="de.uni_paderborn.fujaba.muml.model.core.providers.CorePropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
    <extension
@@ -43,19 +55,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.msgiface.providers.MsgifacePropertiesEditionPartProvider">
-      </PropertiesEditionPartProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
-      <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers.RealtimestatechartPropertiesEditionPartProvider">
-      </PropertiesEditionPartProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
-      <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.pattern.providers.PatternPropertiesEditionPartProvider">
+            providerClass="de.uni_paderborn.fujaba.muml.model.constraint.providers.ConstraintPropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
 
@@ -160,6 +160,14 @@
                tab="Base">
              <input
                     type="de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="de.uni_paderborn.fujaba.muml.model.instance.section.PatternInstance"
+               tab="Base">
+             <input
+                    type="de.uni_paderborn.fujaba.muml.model.instance.PatternInstance">
              </input>
          </propertySection>
       </propertySections>

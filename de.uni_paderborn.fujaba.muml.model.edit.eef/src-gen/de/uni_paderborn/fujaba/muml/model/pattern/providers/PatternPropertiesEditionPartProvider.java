@@ -3,16 +3,15 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern.providers;
 
+import de.uni_paderborn.fujaba.muml.model.pattern.parts.PatternViewsRepository;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.parts.PatternViewsRepository;
-import de.uni_paderborn.fujaba.muml.model.pattern.parts.forms.CoordinationPatternPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.pattern.parts.forms.RoleConnectorPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.pattern.parts.forms.RolePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.pattern.parts.impl.CoordinationPatternPropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.pattern.parts.impl.RoleConnectorPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.pattern.parts.forms.CoordinationPatternPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.pattern.parts.impl.CoordinationPatternPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.pattern.parts.forms.RolePropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.pattern.parts.impl.RolePropertiesEditionPartImpl;
 
 

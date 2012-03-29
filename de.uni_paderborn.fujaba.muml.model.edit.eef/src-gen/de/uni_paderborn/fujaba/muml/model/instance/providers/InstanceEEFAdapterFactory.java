@@ -3,8 +3,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.providers;
 
-import org.eclipse.emf.common.notify.Adapter;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.eclipse.emf.common.notify.Adapter;
 import de.uni_paderborn.fujaba.muml.model.instance.util.InstanceAdapterFactory;
 
 
@@ -77,6 +79,14 @@ public class InstanceEEFAdapterFactory extends InstanceAdapterFactory {
 	 */
 	public Adapter createDiscreteMultiPortInstanceAdapter() {
 		return new DiscreteMultiPortInstancePropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.util.InstanceAdapterFactory#createPatternInstanceAdapter()
+	 * 
+	 */
+	public Adapter createPatternInstanceAdapter() {
+		return new PatternInstancePropertiesEditionProvider();
 	}
 
 }

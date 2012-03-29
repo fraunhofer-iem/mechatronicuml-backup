@@ -71,6 +71,7 @@ public class InnerDeclarationItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addKeyPropertyDescriptor(object);
+			addParentPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -112,10 +113,32 @@ public class InnerDeclarationItemProvider
 				 getString("_UI_InnerDeclaration_key_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_InnerDeclaration_key_feature", "_UI_InnerDeclaration_type"),
 				 CorePackage.Literals.INNER_DECLARATION__KEY,
-				 false,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InnerDeclaration_parent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InnerDeclaration_parent_feature", "_UI_InnerDeclaration_type"),
+				 CorePackage.Literals.INNER_DECLARATION__PARENT,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

@@ -67,7 +67,6 @@ public class MessagePropertiesEditionComponent extends SinglePartPropertiesEditi
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -90,7 +89,6 @@ public class MessagePropertiesEditionComponent extends SinglePartPropertiesEditi
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
-			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof MessageType);
 				}
@@ -114,7 +112,6 @@ public class MessagePropertiesEditionComponent extends SinglePartPropertiesEditi
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == RealtimestatechartViewsRepository.Message.Properties.instanceOf_) {
 			return RealtimestatechartPackage.eINSTANCE.getMessage_InstanceOf();
@@ -127,12 +124,11 @@ public class MessagePropertiesEditionComponent extends SinglePartPropertiesEditi
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Message message = (Message)semanticObject;
 		if (RealtimestatechartViewsRepository.Message.Properties.instanceOf_ == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				instanceOf_Settings.setToReference(event.getNewValue());
+				instanceOf_Settings.setToReference((MessageType)event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				MessageType eObject = MsgifaceFactory.eINSTANCE.createMessageType();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -152,13 +148,11 @@ public class MessagePropertiesEditionComponent extends SinglePartPropertiesEditi
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			MessagePropertiesEditionPart basePart = (MessagePropertiesEditionPart)editingPart;
-			if (RealtimestatechartPackage.eINSTANCE.getMessage_InstanceOf().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Message.Properties.instanceOf_)) {
+			if (RealtimestatechartPackage.eINSTANCE.getMessage_InstanceOf().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Message.Properties.instanceOf_))
 				basePart.setInstanceOf_((EObject)msg.getNewValue());
-			}
 			
 		}
 	}
@@ -170,7 +164,6 @@ public class MessagePropertiesEditionComponent extends SinglePartPropertiesEditi
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
-	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == RealtimestatechartViewsRepository.Message.Properties.instanceOf_;
 	}
@@ -181,7 +174,6 @@ public class MessagePropertiesEditionComponent extends SinglePartPropertiesEditi
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {

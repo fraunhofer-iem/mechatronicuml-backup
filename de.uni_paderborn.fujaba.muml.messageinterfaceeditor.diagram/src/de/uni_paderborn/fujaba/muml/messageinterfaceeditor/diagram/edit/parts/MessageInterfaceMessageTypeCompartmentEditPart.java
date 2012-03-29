@@ -20,7 +20,7 @@ public class MessageInterfaceMessageTypeCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7004;
+	public static final int VISUAL_ID = 7005;
 
 	/**
 	 * @generated

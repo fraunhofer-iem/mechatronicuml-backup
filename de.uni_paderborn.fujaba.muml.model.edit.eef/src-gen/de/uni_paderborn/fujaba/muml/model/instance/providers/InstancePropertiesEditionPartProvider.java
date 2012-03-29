@@ -3,29 +3,30 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.providers;
 
+import de.uni_paderborn.fujaba.muml.model.instance.parts.InstanceViewsRepository;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
-import de.uni_paderborn.fujaba.muml.model.instance.parts.InstanceViewsRepository;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.AssemblyInstancePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.ComponentInstanceConfigurationPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.ComponentInstancePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.ConnectorInstancePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.ContinuousPortInstancePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.DelegationInstancePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.DiscreteMultiPortInstancePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.DiscreteSinglePortInstancePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.HybridPortInstancePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.AssemblyInstancePropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.ComponentInstanceConfigurationPropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.ComponentInstancePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.ConnectorInstancePropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.ConnectorInstancePropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.ContinuousPortInstancePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.AssemblyInstancePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.AssemblyInstancePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.DelegationInstancePropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.DelegationInstancePropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.DiscreteMultiPortInstancePropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.DiscreteSinglePortInstancePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.ComponentInstanceConfigurationPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.ComponentInstanceConfigurationPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.ContinuousPortInstancePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.ContinuousPortInstancePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.HybridPortInstancePropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.HybridPortInstancePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.DiscreteSinglePortInstancePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.DiscreteSinglePortInstancePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.DiscreteMultiPortInstancePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.DiscreteMultiPortInstancePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.forms.PatternInstancePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.instance.parts.impl.PatternInstancePropertiesEditionPartImpl;
 
 
 
@@ -104,6 +105,12 @@ public class InstancePropertiesEditionPartProvider implements IPropertiesEdition
 				return new DiscreteMultiPortInstancePropertiesEditionPartImpl(component);
 			if (kind == InstanceViewsRepository.FORM_KIND)
 				return new DiscreteMultiPortInstancePropertiesEditionPartForm(component);
+		}
+		if (key == InstanceViewsRepository.PatternInstance.class) {
+			if (kind == InstanceViewsRepository.SWT_KIND)
+				return new PatternInstancePropertiesEditionPartImpl(component);
+			if (kind == InstanceViewsRepository.FORM_KIND)
+				return new PatternInstancePropertiesEditionPartForm(component);
 		}
 		return null;
 	}

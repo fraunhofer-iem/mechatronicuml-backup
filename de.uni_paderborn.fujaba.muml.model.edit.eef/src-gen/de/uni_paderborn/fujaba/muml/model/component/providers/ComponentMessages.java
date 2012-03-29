@@ -38,6 +38,9 @@ public class ComponentMessages extends NLS {
 	public static String HybridPortPropertiesEditionPart_PropertiesGroupLabel;
 
 	
+	public static String PatternOccurrencePropertiesEditionPart_PropertiesGroupLabel;
+
+	
 	public static String ContinuousPort_ReadOnly;
 
 	
@@ -84,6 +87,12 @@ public class ComponentMessages extends NLS {
 
 	
 	public static String HybridPort_Part_Title;
+
+	
+	public static String PatternOccurrence_ReadOnly;
+
+	
+	public static String PatternOccurrence_Part_Title;
 
 	
 	public static String ContinuousPortPropertiesEditionPart_NameLabel;
@@ -255,6 +264,12 @@ public class ComponentMessages extends NLS {
 
 	
 	public static String HybridPortPropertiesEditionPart_TypeLabel;
+
+	
+	public static String PatternOccurrencePropertiesEditionPart_PatternLabel;
+
+	
+	public static String PatternOccurrencePropertiesEditionPart_PortsLabel;
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;

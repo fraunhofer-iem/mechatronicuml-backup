@@ -3,19 +3,18 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.providers;
 
+import de.uni_paderborn.fujaba.muml.model.deployment.parts.DeploymentViewsRepository;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
-import de.uni_paderborn.fujaba.muml.model.deployment.parts.DeploymentViewsRepository;
-import de.uni_paderborn.fujaba.muml.model.deployment.parts.forms.CommunicationLinkPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.deployment.parts.forms.DeploymentPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.deployment.parts.forms.HardwareNodePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.deployment.parts.forms.HardwarePortPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.deployment.parts.impl.CommunicationLinkPropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.parts.impl.DeploymentPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.deployment.parts.forms.HardwareNodePropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.deployment.parts.impl.HardwareNodePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.deployment.parts.forms.HardwarePortPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.deployment.parts.impl.HardwarePortPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.deployment.parts.forms.CommunicationLinkPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.deployment.parts.impl.CommunicationLinkPropertiesEditionPartImpl;
 
 
 
