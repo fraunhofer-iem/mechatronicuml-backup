@@ -3,13 +3,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.providers;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.parts.MsgifaceViewsRepository;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
+
+import de.uni_paderborn.fujaba.muml.model.msgiface.parts.MsgifaceViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.msgiface.parts.forms.MessageInterfacePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.msgiface.parts.impl.MessageInterfacePropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.parts.forms.MessageTypePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.msgiface.parts.impl.MessageInterfacePropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.parts.impl.MessageTypePropertiesEditionPartImpl;
 
 

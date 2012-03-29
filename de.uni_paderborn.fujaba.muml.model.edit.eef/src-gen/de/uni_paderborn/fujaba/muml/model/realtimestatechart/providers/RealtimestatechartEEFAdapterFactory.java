@@ -3,10 +3,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.providers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Adapter;
+
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.util.RealtimestatechartAdapterFactory;
 
 

@@ -3,10 +3,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.providers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Adapter;
+
 import de.uni_paderborn.fujaba.muml.model.component.util.ComponentAdapterFactory;
 
 

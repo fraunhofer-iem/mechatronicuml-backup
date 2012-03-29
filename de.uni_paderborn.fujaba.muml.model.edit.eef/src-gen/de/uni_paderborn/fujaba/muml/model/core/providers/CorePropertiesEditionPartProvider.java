@@ -3,30 +3,31 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.providers;
 
-import de.uni_paderborn.fujaba.muml.model.core.parts.CoreViewsRepository;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import de.uni_paderborn.fujaba.muml.model.core.parts.forms.NaturalNumberPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.NaturalNumberPropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.core.parts.forms.CardinalityPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.CardinalityPropertiesEditionPartImpl;
+
+import de.uni_paderborn.fujaba.muml.model.core.parts.CoreViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.core.parts.forms.ActivityCallExpressionPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.ActivityCallExpressionPropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.core.parts.forms.AttributePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.AttributePropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.core.parts.forms.OperationPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.OperationPropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.core.parts.forms.ParameterPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.ParameterPropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.core.parts.forms.PrimitiveDataTypePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.PrimitiveDataTypePropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.core.parts.forms.ArrayDataTypePropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.ArrayDataTypePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.forms.AttributePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.core.parts.forms.CardinalityPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.core.parts.forms.InnerDeclarationPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.core.parts.impl.InnerDeclarationPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.forms.NaturalNumberPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.core.parts.forms.OperationPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.core.parts.forms.ParameterBindingPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.core.parts.forms.ParameterPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.core.parts.forms.PrimitiveDataTypePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.ActivityCallExpressionPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.ArrayDataTypePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.AttributePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.CardinalityPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.InnerDeclarationPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.NaturalNumberPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.OperationPropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.core.parts.impl.ParameterBindingPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.ParameterPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.parts.impl.PrimitiveDataTypePropertiesEditionPartImpl;
 
 
 

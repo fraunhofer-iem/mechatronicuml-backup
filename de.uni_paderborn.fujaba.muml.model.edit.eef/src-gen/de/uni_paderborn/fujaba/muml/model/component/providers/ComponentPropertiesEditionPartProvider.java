@@ -3,28 +3,29 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.providers;
 
-import de.uni_paderborn.fujaba.muml.model.component.parts.ComponentViewsRepository;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import de.uni_paderborn.fujaba.muml.model.component.parts.forms.ContinuousPortPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.component.parts.impl.ContinuousPortPropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.component.parts.forms.DiscretePortPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.component.parts.impl.DiscretePortPropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.component.parts.forms.ComponentPartPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.component.parts.impl.ComponentPartPropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.component.parts.forms.StructuredComponentPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.component.parts.impl.StructuredComponentPropertiesEditionPartImpl;
-import de.uni_paderborn.fujaba.muml.model.component.parts.forms.AtomicComponentPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.component.parts.impl.AtomicComponentPropertiesEditionPartImpl;
+
+import de.uni_paderborn.fujaba.muml.model.component.parts.ComponentViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.component.parts.forms.AssemblyPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.component.parts.impl.AssemblyPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.forms.AtomicComponentPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.component.parts.forms.ComponentPartPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.component.parts.forms.ContinuousPortPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.component.parts.forms.DelegationPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.component.parts.impl.DelegationPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.forms.DiscretePortPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.component.parts.forms.HybridPortPropertiesEditionPartForm;
-import de.uni_paderborn.fujaba.muml.model.component.parts.impl.HybridPortPropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.component.parts.forms.PatternOccurrencePropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.component.parts.forms.StructuredComponentPropertiesEditionPartForm;
+import de.uni_paderborn.fujaba.muml.model.component.parts.impl.AssemblyPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.impl.AtomicComponentPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.impl.ComponentPartPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.impl.ContinuousPortPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.impl.DelegationPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.impl.DiscretePortPropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.impl.HybridPortPropertiesEditionPartImpl;
 import de.uni_paderborn.fujaba.muml.model.component.parts.impl.PatternOccurrencePropertiesEditionPartImpl;
+import de.uni_paderborn.fujaba.muml.model.component.parts.impl.StructuredComponentPropertiesEditionPartImpl;
 
 
 
