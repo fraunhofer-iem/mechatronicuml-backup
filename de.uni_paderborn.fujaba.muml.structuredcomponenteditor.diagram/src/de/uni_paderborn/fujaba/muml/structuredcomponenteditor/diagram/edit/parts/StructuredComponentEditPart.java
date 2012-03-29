@@ -1,5 +1,7 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -44,7 +46,7 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2002;
+	public static final int VISUAL_ID = 2003;
 
 	/**
 	 * @generated
@@ -489,11 +491,6 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureChildren.grabExcessHorizontalSpace = true;
 			constraintFFigureChildren.grabExcessVerticalSpace = true;
 			this.add(fFigureChildren, constraintFFigureChildren);
-
-			GridLayout layoutFFigureChildren = new GridLayout();
-			layoutFFigureChildren.numColumns = 1;
-			layoutFFigureChildren.makeColumnsEqualWidth = true;
-			fFigureChildren.setLayoutManager(layoutFFigureChildren);
 
 		}
 

@@ -71,7 +71,7 @@
   <compartments
       name="ComponentCompartment">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
     <accessor
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.1/@accessors.1"/>
   </compartments>

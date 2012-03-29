@@ -96,7 +96,7 @@ public class StructuredComponentCanonicalEditPolicy extends CanonicalEditPolicy 
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
-				.getStructuredComponent_2002SemanticChildren(viewObject);
+				.getStructuredComponent_2003SemanticChildren(viewObject);
 
 	}
 

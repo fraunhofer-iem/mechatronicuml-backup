@@ -23,20 +23,20 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser structuredComponentName_5018Parser;
+	protected IParser structuredComponentName_5019Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getStructuredComponentName_5018Parser() {
-		if (structuredComponentName_5018Parser == null) {
+	protected IParser getStructuredComponentName_5019Parser() {
+		if (structuredComponentName_5019Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			structuredComponentName_5018Parser = parser;
+			structuredComponentName_5019Parser = parser;
 		}
-		return structuredComponentName_5018Parser;
+		return structuredComponentName_5019Parser;
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentNameEditPart.VISUAL_ID:
-			return getStructuredComponentName_5018Parser();
+			return getStructuredComponentName_5019Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID:
 			return getHybridPortName_5011Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
