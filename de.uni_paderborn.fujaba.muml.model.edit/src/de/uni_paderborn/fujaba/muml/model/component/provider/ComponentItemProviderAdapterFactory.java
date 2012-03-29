@@ -259,6 +259,29 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PatternOccurrenceItemProvider patternOccurrenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPatternOccurrenceAdapter() {
+		if (patternOccurrenceItemProvider == null) {
+			patternOccurrenceItemProvider = new PatternOccurrenceItemProvider(this);
+		}
+
+		return patternOccurrenceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -365,6 +388,7 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (assemblyItemProvider != null) assemblyItemProvider.dispose();
 		if (delegationItemProvider != null) delegationItemProvider.dispose();
 		if (hybridPortItemProvider != null) hybridPortItemProvider.dispose();
+		if (patternOccurrenceItemProvider != null) patternOccurrenceItemProvider.dispose();
 	}
 
 }

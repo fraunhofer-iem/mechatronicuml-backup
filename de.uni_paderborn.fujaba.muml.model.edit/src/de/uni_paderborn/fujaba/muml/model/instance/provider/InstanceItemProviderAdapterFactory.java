@@ -282,6 +282,29 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PatternInstanceItemProvider patternInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPatternInstanceAdapter() {
+		if (patternInstanceItemProvider == null) {
+			patternInstanceItemProvider = new PatternInstanceItemProvider(this);
+		}
+
+		return patternInstanceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +412,7 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		if (hybridPortInstanceItemProvider != null) hybridPortInstanceItemProvider.dispose();
 		if (discreteSinglePortInstanceItemProvider != null) discreteSinglePortInstanceItemProvider.dispose();
 		if (discreteMultiPortInstanceItemProvider != null) discreteMultiPortInstanceItemProvider.dispose();
+		if (patternInstanceItemProvider != null) patternInstanceItemProvider.dispose();
 	}
 
 }
