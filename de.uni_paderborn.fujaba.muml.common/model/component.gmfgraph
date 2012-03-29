@@ -110,8 +110,6 @@
               grabExcessVerticalSpace="true"
               verticalAlignment="FILL"
               horizontalAlignment="FILL"/>
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
         </children>
       </actualFigure>
       <accessors
