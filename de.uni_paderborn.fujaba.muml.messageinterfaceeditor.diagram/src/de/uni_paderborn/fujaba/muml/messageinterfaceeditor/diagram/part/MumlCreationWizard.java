@@ -39,4 +39,5 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 				.getInstance().getItemProvidersAdapterFactory();
 	}
+
 }

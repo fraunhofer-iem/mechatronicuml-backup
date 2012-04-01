@@ -14,18 +14,18 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class MessageInterfaceMessageTypeCompartmentEditPart extends
+public class MessageTypeParametersCompartmentEditPart extends
 		ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7005;
+	public static final int VISUAL_ID = 7006;
 
 	/**
 	 * @generated
 	 */
-	public MessageInterfaceMessageTypeCompartmentEditPart(View view) {
+	public MessageTypeParametersCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -40,7 +40,7 @@ public class MessageInterfaceMessageTypeCompartmentEditPart extends
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageInterfaceMessageTypeCompartmentEditPart_title;
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageTypeParametersCompartmentEditPart_title;
 	}
 
 	/**
@@ -72,23 +72,22 @@ public class MessageInterfaceMessageTypeCompartmentEditPart extends
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageTypeParametersCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageTypeParametersCompartmentCanonicalEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected void setRatio(Double ratio) {
-		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
-			super.setRatio(ratio);
-		}
+		// nothing to do -- parent layout does not accept Double constraints as ratio
+		// super.setRatio(ratio); 
 	}
 
 	// Fix to hide this Compartment, if it has no children. See also GMF bug:

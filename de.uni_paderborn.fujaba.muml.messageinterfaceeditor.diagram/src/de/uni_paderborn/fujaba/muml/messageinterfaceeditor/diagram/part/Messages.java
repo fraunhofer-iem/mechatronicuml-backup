@@ -268,12 +268,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Generalization3CreationTool_title;
+	public static String Parameter3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Generalization3CreationTool_desc;
+	public static String Parameter3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Generalization4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Generalization4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -283,7 +293,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String MessageTypeParametersCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
 	 * @generated
@@ -304,11 +324,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
 	 * @generated

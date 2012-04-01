@@ -24,14 +24,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
+public class MessageTypeParametersCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
-	public MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy() {
+	public MessageTypeParametersCompartmentCanonicalEditPolicy() {
 	}
 
-	public MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy(
+	public MessageTypeParametersCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
@@ -53,7 +53,7 @@ public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
-				.getMessageInterface_MessageTypes();
+				.getMessageType_Parameters();
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID;
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 								.getVisualID(childView)) {
@@ -98,7 +98,7 @@ public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramUpdater
-				.getMessageInterfaceMessageTypesCompartment_7005SemanticChildren(viewObject);
+				.getMessageTypeParametersCompartment_7006SemanticChildren(viewObject);
 
 	}
 
@@ -115,7 +115,7 @@ public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 	}
 

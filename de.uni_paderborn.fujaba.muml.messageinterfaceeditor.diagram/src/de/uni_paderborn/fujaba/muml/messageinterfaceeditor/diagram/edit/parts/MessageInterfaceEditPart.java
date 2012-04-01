@@ -124,12 +124,12 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureMessageInterfaceNameLabel());
+							.getFigureMessageInterfaceNameLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureMessageInterfaceCompartmentMessageType();
+					.getFigureMessageTypesCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -147,7 +147,7 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureMessageInterfaceCompartmentMessageType();
+					.getFigureMessageTypesCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -181,8 +181,7 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
-			return getPrimaryShape()
-					.getFigureMessageInterfaceCompartmentMessageType();
+			return getPrimaryShape().getFigureMessageTypesCompartmentFigure();
 		}
 		return getContentPane();
 	}
@@ -363,11 +362,11 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureMessageInterfaceNameLabel;
+		private WrappingLabel fFigureMessageInterfaceNameLabelFigure;
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureMessageInterfaceCompartmentMessageType;
+		private RectangleFigure fFigureMessageTypesCompartmentFigure;
 
 		/**
 		 * @generated
@@ -389,51 +388,51 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureMessageInterfaceNameLabel = new WrappingLabel();
-			fFigureMessageInterfaceNameLabel.setText("");
+			fFigureMessageInterfaceNameLabelFigure = new WrappingLabel();
+			fFigureMessageInterfaceNameLabelFigure.setText("");
 
-			fFigureMessageInterfaceNameLabel
-					.setFont(FFIGUREMESSAGEINTERFACENAMELABEL_FONT);
+			fFigureMessageInterfaceNameLabelFigure
+					.setFont(FFIGUREMESSAGEINTERFACENAMELABELFIGURE_FONT);
 
-			GridData constraintFFigureMessageInterfaceNameLabel = new GridData();
-			constraintFFigureMessageInterfaceNameLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureMessageInterfaceNameLabel.horizontalAlignment = GridData.CENTER;
-			constraintFFigureMessageInterfaceNameLabel.horizontalIndent = 0;
-			constraintFFigureMessageInterfaceNameLabel.horizontalSpan = 1;
-			constraintFFigureMessageInterfaceNameLabel.verticalSpan = 1;
-			constraintFFigureMessageInterfaceNameLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureMessageInterfaceNameLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureMessageInterfaceNameLabel,
-					constraintFFigureMessageInterfaceNameLabel);
+			GridData constraintFFigureMessageInterfaceNameLabelFigure = new GridData();
+			constraintFFigureMessageInterfaceNameLabelFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageInterfaceNameLabelFigure.horizontalAlignment = GridData.CENTER;
+			constraintFFigureMessageInterfaceNameLabelFigure.horizontalIndent = 0;
+			constraintFFigureMessageInterfaceNameLabelFigure.horizontalSpan = 1;
+			constraintFFigureMessageInterfaceNameLabelFigure.verticalSpan = 1;
+			constraintFFigureMessageInterfaceNameLabelFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageInterfaceNameLabelFigure.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageInterfaceNameLabelFigure,
+					constraintFFigureMessageInterfaceNameLabelFigure);
 
-			fFigureMessageInterfaceCompartmentMessageType = new RectangleFigure();
-			fFigureMessageInterfaceCompartmentMessageType.setOutline(false);
+			fFigureMessageTypesCompartmentFigure = new RectangleFigure();
+			fFigureMessageTypesCompartmentFigure.setOutline(false);
 
-			GridData constraintFFigureMessageInterfaceCompartmentMessageType = new GridData();
-			constraintFFigureMessageInterfaceCompartmentMessageType.verticalAlignment = GridData.CENTER;
-			constraintFFigureMessageInterfaceCompartmentMessageType.horizontalAlignment = GridData.FILL;
-			constraintFFigureMessageInterfaceCompartmentMessageType.horizontalIndent = 0;
-			constraintFFigureMessageInterfaceCompartmentMessageType.horizontalSpan = 1;
-			constraintFFigureMessageInterfaceCompartmentMessageType.verticalSpan = 1;
-			constraintFFigureMessageInterfaceCompartmentMessageType.grabExcessHorizontalSpace = true;
-			constraintFFigureMessageInterfaceCompartmentMessageType.grabExcessVerticalSpace = false;
-			this.add(fFigureMessageInterfaceCompartmentMessageType,
-					constraintFFigureMessageInterfaceCompartmentMessageType);
+			GridData constraintFFigureMessageTypesCompartmentFigure = new GridData();
+			constraintFFigureMessageTypesCompartmentFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageTypesCompartmentFigure.horizontalAlignment = GridData.FILL;
+			constraintFFigureMessageTypesCompartmentFigure.horizontalIndent = 0;
+			constraintFFigureMessageTypesCompartmentFigure.horizontalSpan = 1;
+			constraintFFigureMessageTypesCompartmentFigure.verticalSpan = 1;
+			constraintFFigureMessageTypesCompartmentFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageTypesCompartmentFigure.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageTypesCompartmentFigure,
+					constraintFFigureMessageTypesCompartmentFigure);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureMessageInterfaceNameLabel() {
-			return fFigureMessageInterfaceNameLabel;
+		public WrappingLabel getFigureMessageInterfaceNameLabelFigure() {
+			return fFigureMessageInterfaceNameLabelFigure;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureMessageInterfaceCompartmentMessageType() {
-			return fFigureMessageInterfaceCompartmentMessageType;
+		public RectangleFigure getFigureMessageTypesCompartmentFigure() {
+			return fFigureMessageTypesCompartmentFigure;
 		}
 
 	}
@@ -441,7 +440,7 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREMESSAGEINTERFACENAMELABEL_FONT = new Font(
+	static final Font FFIGUREMESSAGEINTERFACENAMELABELFIGURE_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 10, SWT.BOLD);
 

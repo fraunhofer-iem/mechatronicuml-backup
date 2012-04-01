@@ -11,9 +11,9 @@ import org.eclipse.ocl.Environment;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.EcoreFactory;
-import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
+import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.options.ParsingOptions;
 
 /**
@@ -52,7 +52,7 @@ public class MumlOCLFactory {
 			final String[] exprBodies = new String[] {
 					"\'Interface\'", //$NON-NLS-1$
 					"\'messagetype\'", //$NON-NLS-1$
-					"(\n\tif self.name.oclIsUndefined() then\n\t\t\'null\'\n\telse\n\t\tself.name\n\tendif\n).concat(\'(\').concat(\n\tself.parameters->iterate(\n\t\tparameter; result : String = \'\' | (if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t(\n\t\t\t\tif parameter.name.oclIsUndefined() then\n\t\t\t\t\t\'null\'\n\t\t\t\telse\n\t\t\t\t\tparameter.name\n\t\t\t\tendif\n\t\t\t).concat(\' : \').concat(\n\t\t\t\tif parameter.type.oclIsUndefined() or parameter.type.name.oclIsUndefined() then\n\t\t\t\t\t\'null\'\n\t\t\t\telse\n\t\t\t\t\tparameter.type.name\n\t\t\t\tendif\n\t\t\t).concat(\n\t\t\t\tif not parameter.type.oclIsUndefined() and parameter.type.oclIsKindOf(core::ArrayDataType) then\n\t\t\t\t\t-- array type\n\t\t\t\t\t\'[\'.concat(\n\t\t\t\t\t\t-- XXX: the type conversion is needed but why?\n\t\t\t\t\t\tOrderedSet{ 1 .. 3 }->iterate(i : Integer; o : Sequence(Integer) = Sequence{1} |\n\t\t\t\t\t\t\tif o->first() * 10 = i then\n\t\t\t\t\t\t\t\to->prepend(o->first() * 10)\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\to\n\t\t\t\t\t\t\tendif\n\t\t\t\t\t\t)->iterate(d : Integer; s : String = \'\' |\n\t\t\t\t\t\t\tlet itoa : String = OrderedSet{\'0\',\'1\',\'2\',\'3\',\'4\',\'5\',\'6\',\'7\',\'8\',\'9\'}->at(parameter.type.oclAsType(core::ArrayDataType).cardinality.oclAsType(Integer)->asOrderedSet()->first().abs().div(d).mod(10) + 1)\n\t\t\t\t\t\t\tin s.concat(itoa)\n\t\t\t\t\t\t)\n\t\t\t\t\t).concat(\']\')\n\t\t\t\telse\n\t\t\t\t\t\'\'\n\t\t\t\tendif\n\t\t\t)\n\t\t)\n\t)\n).concat(\')\')", //$NON-NLS-1$
+					"(\n\tif self.eContainer().oclAsType(msgiface::MessageType).parameters->first() = self then\n\t\t\'\'\n\telse\n\t\t\' \'\n\tendif\n).concat(\n\tif self.name.oclIsUndefined() then\n\t\t\'null\'\n\telse\n\t\tself.name\n\tendif\n).concat(\n\tif self.type.oclIsUndefined() or self.type.name.oclIsUndefined() then\n\t\t\'\'\n\telse\n\t\t\' : \'.concat(self.type.name)\n\tendif\n).concat(\n\tif self.eContainer().oclAsType(msgiface::MessageType).parameters->last() = self then\n\t\t\',\'\n\telse\n\t\t\',\'\n\tendif\n)", //$NON-NLS-1$
 					"if self.name.oclIsUndefined() then\n\t\'null\'\nelse\n\tself.name\nendif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

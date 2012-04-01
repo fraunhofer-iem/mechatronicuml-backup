@@ -149,8 +149,4 @@ public class ModelElementSelectionPage extends WizardPage {
 		return true;
 	}
 
-	public TreeViewer getModelViewer() {
-		return modelViewer;
-	}
-
 }

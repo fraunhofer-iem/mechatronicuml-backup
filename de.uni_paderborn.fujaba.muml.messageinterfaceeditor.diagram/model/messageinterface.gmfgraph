@@ -32,7 +32,7 @@
         </layout>
         <children
             xsi:type="gmfgraph:Label"
-            name="MessageInterfaceNameLabel">
+            name="MessageInterfaceNameLabelFigure">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"/>
@@ -43,7 +43,7 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="MessageInterfaceCompartmentMessageType"
+            name="MessageTypesCompartmentFigure"
             outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -52,8 +52,10 @@
         </children>
       </actualFigure>
       <accessors
+          accessor="getFigureMessageInterfaceNameLabelFigure"
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
       <accessors
+          accessor="getFigureMessageTypesCompartmentFigure"
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
@@ -68,22 +70,54 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="MessageTypeFigure"
-          outline="false">
+          outline="false"
+          fill="false">
         <layout
-            xsi:type="gmfgraph:GridLayout"
-            equalWidth="false"/>
+            xsi:type="gmfgraph:FlowLayout"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            majorAlignment="FILL"
+            majorSpacing="0"
+            minorSpacing="0"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="MessageTypeExprLable">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              horizontalAlignment="FILL"/>
-        </children>
+            name="MessageTypeNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="OpeningParenthesesLabelFigure"
+            text="("/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ParametersCompartmentFigure"
+            outline="false"
+            fill="false"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ClosingParenthesesLabelFigure"
+            text=")"/>
       </actualFigure>
       <accessors
-          accessor="getFigureMessageTypeExprLable"
+          accessor="getFigureMessageTypeNameLabelFigure"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureParametersCompartmentFigure"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors
+        name="ParameterFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ParameterFigure"
+          outline="false"
+          fill="false">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ParameterLabel"
+            text=""/>
+      </actualFigure>
+      <accessors
+          accessor="getFigureParameterLabel"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
@@ -106,15 +140,30 @@
           dy="-1"/>
     </facets>
   </nodes>
+  <nodes
+      name="Parameter"
+      figure="ParameterFigure"
+      resizeConstraint="NONE">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="-1"
+          dy="-1"/>
+    </facets>
+  </nodes>
   <connections
       name="Generalization"
       figure="GeneralizationFigure"/>
   <compartments
-      name="MessageTypeCompartment"
+      name="MessageTypesCompartment"
       figure="MessageInterfaceFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments
+      name="ParametersCompartment"
+      figure="MessageTypeFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <labels
-      name="MessageTypeExpr"
+      name="MessageTypeName"
       figure="MessageTypeFigure"
       resizeConstraint="NONE"
       elementIcon="false"
@@ -125,4 +174,10 @@
       resizeConstraint="NONE"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="ParameterName"
+      figure="ParameterFigure"
+      resizeConstraint="NONE"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
 </gmfgraph:Canvas>

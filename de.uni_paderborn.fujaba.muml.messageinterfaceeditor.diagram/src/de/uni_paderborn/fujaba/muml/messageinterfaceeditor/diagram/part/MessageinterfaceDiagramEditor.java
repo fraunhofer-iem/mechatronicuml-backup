@@ -87,7 +87,6 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	@Override
 	protected PreferencesHint getPreferencesHint() {
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
@@ -170,16 +169,6 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 	 */
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public void doSave(IProgressMonitor progressMonitor) {
-		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
-				.getDiagramView());
-		super.doSave(progressMonitor);
 	}
 
 	/**
@@ -315,6 +304,16 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0), getActionRegistry()
 				.getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
 		// End added
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void doSave(IProgressMonitor progressMonitor) {
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+				.getDiagramView());
+		super.doSave(progressMonitor);
 	}
 
 }

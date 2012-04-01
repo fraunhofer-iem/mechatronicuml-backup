@@ -34,7 +34,8 @@ public class MumlPaletteFactory {
 		paletteContainer.setId("createMessageinterfaceeditor1Group"); //$NON-NLS-1$
 		paletteContainer.add(createMessageInterface1CreationTool());
 		paletteContainer.add(createMessageType2CreationTool());
-		paletteContainer.add(createGeneralization3CreationTool());
+		paletteContainer.add(createParameter3CreationTool());
+		paletteContainer.add(createGeneralization4CreationTool());
 		return paletteContainer;
 	}
 
@@ -73,13 +74,29 @@ public class MumlPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createGeneralization3CreationTool() {
+	private ToolEntry createParameter3CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Parameter3CreationTool_title,
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Parameter3CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3006));
+		entry.setId("createParameter3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3006));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createGeneralization4CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Generalization3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Generalization3CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Generalization4CreationTool_title,
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Generalization4CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4004));
-		entry.setId("createGeneralization3CreationTool"); //$NON-NLS-1$
+		entry.setId("createGeneralization4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Generalization.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());

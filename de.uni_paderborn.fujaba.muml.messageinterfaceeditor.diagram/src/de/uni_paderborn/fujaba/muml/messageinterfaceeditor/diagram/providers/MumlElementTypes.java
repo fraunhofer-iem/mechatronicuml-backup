@@ -52,12 +52,14 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType MessageInterface_2005 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2005"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType MessageType_3005 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3005"); //$NON-NLS-1$
-
+	/**
+	 * @generated
+	 */
+	public static final IElementType Parameter_3006 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -188,6 +190,11 @@ public class MumlElementTypes {
 							.getMessageType());
 
 			elements.put(
+					Parameter_3006,
+					de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+							.getParameter());
+
+			elements.put(
 					MessageInterfaceSuperType_4004,
 					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
 							.getMessageInterface_SuperType());
@@ -211,6 +218,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
 			KNOWN_ELEMENT_TYPES.add(MessageInterface_2005);
 			KNOWN_ELEMENT_TYPES.add(MessageType_3005);
+			KNOWN_ELEMENT_TYPES.add(Parameter_3006);
 			KNOWN_ELEMENT_TYPES.add(MessageInterfaceSuperType_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -227,6 +235,8 @@ public class MumlElementTypes {
 			return MessageInterface_2005;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3005;
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return Parameter_3006;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
 			return MessageInterfaceSuperType_4004;
 		}

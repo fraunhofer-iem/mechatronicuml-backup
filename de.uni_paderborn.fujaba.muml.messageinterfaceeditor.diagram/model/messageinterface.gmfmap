@@ -53,32 +53,58 @@
             </initializers>
           </domainInitializer>
           <labelMappings
-              xsi:type="gmfmap:ExpressionLabelMapping">
+              xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="messageinterface.gmfgraph#MessageTypeExpr"/>
-            <viewExpression
-                body="(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat('(').concat(&#xA;&#x9;self.parameters->iterate(&#xA;&#x9;&#x9;parameter; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.type.oclIsUndefined() or parameter.type.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.type.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;if not parameter.type.oclIsUndefined() and parameter.type.oclIsKindOf(core::ArrayDataType) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- array type&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- XXX: the type conversion is needed but why?&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;OrderedSet{ 1 .. 3 }->iterate(i : Integer; o : Sequence(Integer) = Sequence{1} |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if o->first() * 10 = i then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;o->prepend(o->first() * 10)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;o&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)->iterate(d : Integer; s : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;let itoa : String = OrderedSet{'0','1','2','3','4','5','6','7','8','9'}->at(parameter.type.oclAsType(core::ArrayDataType).cardinality.oclAsType(Integer)->asOrderedSet()->first().abs().div(d).mod(10) + 1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;in s.concat(itoa)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(']')&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;)&#xA;).concat(')')"/>
-            <editExpression
-                body="if self.name.oclIsUndefined() then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.name&#xA;endif"/>
+                href="messageinterface.gmfgraph#MessageTypeName"/>
+            <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="messageinterface.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="messageinterface.gmfgraph#MessageType"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType/parameters"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"/>
+              <labelMappings
+                  xsi:type="gmfmap:ExpressionLabelMapping">
+                <diagramLabel
+                    href="messageinterface.gmfgraph#ParameterName"/>
+                <viewExpression
+                    body="(&#xA;&#x9;if self.eContainer().oclAsType(msgiface::MessageType).parameters->first() = self then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' '&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.type.oclIsUndefined() or self.type.name.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' : '.concat(self.type.name)&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.eContainer().oclAsType(msgiface::MessageType).parameters->last() = self then&#xA;-- NOTE: normally we should use the empty string here, but then we need to update labels of other Parameters to prevent missing comma-delimiters.&#xA;&#x9;&#x9;','&#xA;&#x9;else&#xA;&#x9;&#x9;','&#xA;&#x9;endif&#xA;)"/>
+                <editExpression
+                    body="if self.name.oclIsUndefined() then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.name&#xA;endif"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="messageinterface.gmftool#//@palette/@tools.0/@tools.2"/>
+              <diagramNode
+                  href="messageinterface.gmfgraph#Parameter"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0">
+            <compartment
+                href="messageinterface.gmfgraph#ParametersCompartment"/>
+          </compartments>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
         <compartment
-            href="messageinterface.gmfgraph#MessageTypeCompartment"/>
+            href="messageinterface.gmfgraph#MessageTypesCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="messageinterface.gmftool#//@palette/@tools.0/@tools.2"/>
+        href="messageinterface.gmftool#//@palette/@tools.0/@tools.3"/>
     <diagramLink
         href="messageinterface.gmfgraph#Generalization"/>
     <linkMetaFeature

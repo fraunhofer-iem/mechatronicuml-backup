@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
+
 import de.fujaba.newwizard.ui.commands.AbstractCreateDiagramFileCommand;
 
 /**

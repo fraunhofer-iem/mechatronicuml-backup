@@ -28,6 +28,13 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Parameter"
+          description="Create new Parameter">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Generalization"
           description="Create new Generalization">
         <smallIcon

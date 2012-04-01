@@ -42,16 +42,35 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5008 messageTypeLabel_5008Parser;
+	protected IParser messageTypeName_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageTypeLabel_5008Parser() {
-		if (messageTypeLabel_5008Parser == null) {
-			messageTypeLabel_5008Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5008();
+	protected IParser getMessageTypeName_5008Parser() {
+		if (messageTypeName_5008Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
+					features);
+			messageTypeName_5008Parser = parser;
 		}
-		return messageTypeLabel_5008Parser;
+		return messageTypeName_5008Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5011 parameterLabel_5011Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getParameterLabel_5011Parser() {
+		if (parameterLabel_5011Parser == null) {
+			parameterLabel_5011Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5011();
+		}
+		return parameterLabel_5011Parser;
 	}
 
 	/**
@@ -62,7 +81,9 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID:
 			return getMessageInterfaceName_5010Parser();
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getMessageTypeLabel_5008Parser();
+			return getMessageTypeName_5008Parser();
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+			return getParameterLabel_5011Parser();
 		}
 		return null;
 	}

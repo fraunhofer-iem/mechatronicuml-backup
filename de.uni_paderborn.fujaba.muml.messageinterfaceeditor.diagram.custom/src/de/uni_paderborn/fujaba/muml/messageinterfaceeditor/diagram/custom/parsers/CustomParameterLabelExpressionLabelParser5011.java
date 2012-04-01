@@ -4,18 +4,20 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.modeling.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageTypeLabelExpressionLabelParser5008;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5011;
 
-public class CustomMessageTypeLabelExpressionLabelParser5008 extends
-		MessageTypeLabelExpressionLabelParser5008 {
+/**
+ * @generated
+ */
+public class CustomParameterLabelExpressionLabelParser5011 extends
+		ParameterLabelExpressionLabelParser5011 {
 
-
+	@Override
 	protected IStatus updateValues(EObject target, String newString)
 			throws ExecutionException {
-		MessageType messageType = (MessageType) target;
-		messageType.setName(newString);
+		((NamedElement) target).setName(newString);
 		return Status.OK_STATUS;
 	}
 

@@ -131,5 +131,4 @@ public class MessageInterfaceSuperTypeEditPart extends ConnectionNodeEditPart
 
 		super.handleNotificationEvent(notification);
 	}
-
 }
