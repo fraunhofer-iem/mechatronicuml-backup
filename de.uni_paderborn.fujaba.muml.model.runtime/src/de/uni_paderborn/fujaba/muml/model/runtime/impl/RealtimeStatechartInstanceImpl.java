@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
@@ -19,9 +20,11 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -192,14 +195,21 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 * 
+	 * Returns all States of the real-time statechart. This method has been implemented in Java rather than OCL
+	 * to improve the run-time performance.
 	 */
 	public EList<State> getStates() {
-		// TODO: implement this method to return the 'States' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		
+		EList<State> states = new BasicEList<State>(this.getInstanceOf().getVertices().size());
+		for(Vertex curObject : this.getInstanceOf().getVertices()){
+			if (curObject instanceof State){
+				states.add((State)curObject);
+			}
+		}
+		
+		return states;
 	}
 
 	/**
