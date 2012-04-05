@@ -161,6 +161,7 @@
   <compartments
       name="ParametersCompartment"
       figure="MessageTypeFigure"
+      collapsible="true"
       accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <labels
       name="MessageTypeName"
