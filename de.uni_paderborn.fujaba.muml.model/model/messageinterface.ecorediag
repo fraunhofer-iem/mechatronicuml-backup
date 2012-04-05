@@ -48,7 +48,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zOv-E1QVEeGwRdAy0MocEA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_zOvXAVQVEeGwRdAy0MocEA" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Callable"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//calls/Callable"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zOvXAlQVEeGwRdAy0MocEA" x="183" y="15"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_zOv-FlQVEeGwRdAy0MocEA" type="1001">
@@ -67,7 +67,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zOwlKFQVEeGwRdAy0MocEA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_zOv-F1QVEeGwRdAy0MocEA" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zOv-GFQVEeGwRdAy0MocEA" x="5" y="75" width="148"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_zOwlK1QVEeGwRdAy0MocEA" type="1001">

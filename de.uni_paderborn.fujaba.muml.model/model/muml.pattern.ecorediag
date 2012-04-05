@@ -140,7 +140,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_wfwtVbnqEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_wfwtS7nqEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wfwtTLnqEeC8CvP5OVqITA" x="354" y="542" width="142"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_wfwtZrnqEeC8CvP5OVqITA" type="1001">
