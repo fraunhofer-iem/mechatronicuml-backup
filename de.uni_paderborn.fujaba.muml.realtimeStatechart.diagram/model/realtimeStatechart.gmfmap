@@ -14,7 +14,7 @@
         <diagramLabel
             href="realtimeStatechart.gmfgraph#StatechartNameLabel"/>
         <features
-            href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
@@ -39,7 +39,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'State'"/>
             </initializers>
@@ -49,7 +49,7 @@
             <diagramLabel
                 href="realtimeStatechart.gmfgraph#StateNameLabel"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -97,7 +97,7 @@
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                       <value
                           body="'action'"/>
                     </initializers>
@@ -173,7 +173,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   <value
                       body="'channel'"/>
                 </initializers>
@@ -204,7 +204,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   <value
                       body="'region'"/>
                 </initializers>
@@ -226,7 +226,7 @@
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                       <value
                           body="'statechart'"/>
                     </initializers>
@@ -239,7 +239,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#RegionNameLabel"/>
                 <features
-                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping"
@@ -287,7 +287,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   <value
                       body="'stateentrypoint'"/>
                 </initializers>
@@ -297,7 +297,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
                 <features
-                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -318,7 +318,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   <value
                       body="'stateexitpoint'"/>
                 </initializers>
@@ -328,7 +328,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
                 <features
-                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -372,7 +372,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'entrypoint'"/>
             </initializers>
@@ -382,7 +382,7 @@
             <diagramLabel
                 href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -404,7 +404,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'exitpoint'"/>
             </initializers>
@@ -414,7 +414,7 @@
             <diagramLabel
                 href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

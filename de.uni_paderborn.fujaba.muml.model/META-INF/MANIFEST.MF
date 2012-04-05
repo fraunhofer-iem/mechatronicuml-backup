@@ -6,7 +6,7 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.storydriven.modeling;visibility:=reexport,
+Require-Bundle: org.storydriven.core;visibility:=reexport,
  org.eclipse.emf.edapt.history;bundle-version="0.3.0",
  de.fujaba.modelinstance;bundle-version="0.2.0";visibility:=reexport,
  de.uni_paderborn.fujaba.common;bundle-version="0.2.0"

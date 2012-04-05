@@ -4,10 +4,10 @@
     <categories xmi:id="_BoreEXnTEeGrRf6KRZl4qA" name="component">
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreEnnTEeGrRf6KRZl4qA" name="ContinuousPort" views="_BossNXnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreE3nTEeGrRf6KRZl4qA" name="name" views="_BossN3nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreFHnTEeGrRf6KRZl4qA" name="comment" views="_BossOHnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreFXnTEeGrRf6KRZl4qA" name="incomingConnectors" views="_BossOXnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/incomingConnectors"/>
@@ -28,10 +28,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreGnnTEeGrRf6KRZl4qA" name="DiscretePort" views="_BossPnnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreG3nTEeGrRf6KRZl4qA" name="name" views="_BossQHnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreHHnTEeGrRf6KRZl4qA" name="comment" views="_BossQXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreHXnTEeGrRf6KRZl4qA" name="incomingConnectors" views="_BossQnnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/incomingConnectors"/>
@@ -64,7 +64,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreJnnTEeGrRf6KRZl4qA" name="ComponentPart" views="_BossS3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreJ3nTEeGrRf6KRZl4qA" name="comment" views="_BossTXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreKHnTEeGrRf6KRZl4qA" name="componentType" views="_BossTnnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/componentType"/>
@@ -85,10 +85,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreLXnTEeGrRf6KRZl4qA" name="StructuredComponent" views="_BossU3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreLnnTEeGrRf6KRZl4qA" name="name" views="_BossVXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreL3nTEeGrRf6KRZl4qA" name="comment" views="_BossVnnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreMHnTEeGrRf6KRZl4qA" name="referencingComponentParts" views="_BossV3nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/referencingComponentParts"/>
@@ -100,10 +100,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreMnnTEeGrRf6KRZl4qA" name="AtomicComponent" views="_BossWXnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreM3nTEeGrRf6KRZl4qA" name="name" views="_BossW3nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreNHnTEeGrRf6KRZl4qA" name="comment" views="_BossXHnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreNXnTEeGrRf6KRZl4qA" name="referencingComponentParts" views="_BossXXnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/referencingComponentParts"/>
@@ -157,10 +157,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreRXnTEeGrRf6KRZl4qA" name="HybridPort" views="_Bossb3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreRnnTEeGrRf6KRZl4qA" name="name" views="_BosscXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreR3nTEeGrRf6KRZl4qA" name="comment" views="_BosscnnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreSHnTEeGrRf6KRZl4qA" name="incomingConnectors" views="_Bossc3nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/incomingConnectors"/>
@@ -242,10 +242,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreYnnTEeGrRf6KRZl4qA" name="ActivityCallExpression" views="_BosF4HnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreY3nTEeGrRf6KRZl4qA" name="comment" views="_BosF4nnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreZHnTEeGrRf6KRZl4qA" name="callee" views="_BosF43nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//calls/Invocation/callee"/>
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.core/model/core.ecore#//calls/Invocation/callee"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreZXnTEeGrRf6KRZl4qA" name="activity" views="_BosF5HnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ActivityCallExpression/activity"/>
@@ -254,10 +254,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreZnnTEeGrRf6KRZl4qA" name="Attribute" views="_BosF5XnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreZ3nTEeGrRf6KRZl4qA" name="name" views="_BosF53nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreaHnTEeGrRf6KRZl4qA" name="comment" views="_BosF6HnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreaXnTEeGrRf6KRZl4qA" name="type" views="_BosF6XnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute/type"/>
@@ -266,10 +266,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreannTEeGrRf6KRZl4qA" name="Operation" views="_BosF6nnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Borea3nTEeGrRf6KRZl4qA" name="name" views="_BosF7HnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorebHnTEeGrRf6KRZl4qA" name="comment" views="_BosF7XnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorebXnTEeGrRf6KRZl4qA" name="returnType" views="_BosF7nnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Operation/returnType"/>
@@ -278,10 +278,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorebnnTEeGrRf6KRZl4qA" name="Parameter" views="_BosF73nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Boreb3nTEeGrRf6KRZl4qA" name="name" views="_BosF8XnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorecHnTEeGrRf6KRZl4qA" name="comment" views="_BosF8nnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorecXnTEeGrRf6KRZl4qA" name="type" views="_BosF83nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter/type"/>
@@ -290,10 +290,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorecnnTEeGrRf6KRZl4qA" name="PrimitiveDataType" views="_BosF9HnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Borec3nTEeGrRf6KRZl4qA" name="name" views="_BosF9nnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoredHnTEeGrRf6KRZl4qA" name="comment" views="_BosF93nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoredXnTEeGrRf6KRZl4qA" name="primitiveType" views="_BosF-HnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/PrimitiveDataType/primitiveType"/>
@@ -302,10 +302,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorednnTEeGrRf6KRZl4qA" name="ArrayDataType" views="_BosF-XnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bored3nTEeGrRf6KRZl4qA" name="name" views="_BosF-3nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreeHnTEeGrRf6KRZl4qA" name="comment" views="_BosF_HnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoreeXnTEeGrRf6KRZl4qA" name="cardinality" views="_BosF_XnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ArrayDataType/cardinality"/>
@@ -314,10 +314,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoreennTEeGrRf6KRZl4qA" name="InnerDeclaration" views="_BosF_nnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Boree3nTEeGrRf6KRZl4qA" name="name" views="_BosGAHnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorefHnTEeGrRf6KRZl4qA" name="comment" views="_BosGAXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorefXnTEeGrRf6KRZl4qA" name="parent" views="_BosGAnnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/InnerDeclaration/parent"/>
@@ -340,7 +340,7 @@
     <categories xmi:id="_BoregnnTEeGrRf6KRZl4qA" name="instance">
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Boreg3nTEeGrRf6KRZl4qA" name="ComponentInstance" views="_BossmHnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorehHnTEeGrRf6KRZl4qA" name="name" views="_BossmnnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorehXnTEeGrRf6KRZl4qA" name="componentType" views="_Bossm3nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/componentType"/>
@@ -394,10 +394,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorelXnTEeGrRf6KRZl4qA" name="ContinuousPortInstance" views="_Bossr3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorelnnTEeGrRf6KRZl4qA" name="name" views="_BosssXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Borel3nTEeGrRf6KRZl4qA" name="comment" views="_BosssnnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoremHnTEeGrRf6KRZl4qA" name="portType" views="_Bosss3nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
@@ -415,10 +415,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorenHnTEeGrRf6KRZl4qA" name="HybridPortInstance" views="_Bosst3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorenXnTEeGrRf6KRZl4qA" name="name" views="_BossuXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorennnTEeGrRf6KRZl4qA" name="comment" views="_BossunnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Boren3nTEeGrRf6KRZl4qA" name="portType" views="_Bossu3nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
@@ -436,10 +436,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Boreo3nTEeGrRf6KRZl4qA" name="DiscreteSinglePortInstance" views="_Bossv3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorepHnTEeGrRf6KRZl4qA" name="name" views="_BosswXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorepXnTEeGrRf6KRZl4qA" name="comment" views="_BosswnnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorepnnTEeGrRf6KRZl4qA" name="portType" views="_Bossw3nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
@@ -460,10 +460,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Boreq3nTEeGrRf6KRZl4qA" name="DiscreteMultiPortInstance" views="_BossyHnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorerHnTEeGrRf6KRZl4qA" name="name" views="_BossynnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorerXnTEeGrRf6KRZl4qA" name="comment" views="_Bossy3nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorernnTEeGrRf6KRZl4qA" name="portType" views="_BosszHnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
@@ -481,7 +481,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BoresnnTEeGrRf6KRZl4qA" name="PatternInstance" views="_Boss0HnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bores3nTEeGrRf6KRZl4qA" name="name" views="_Boss0nnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BoretHnTEeGrRf6KRZl4qA" name="portInstances" views="_Boss03nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PatternInstance/portInstances"/>
@@ -516,13 +516,13 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorevnnTEeGrRf6KRZl4qA" name="CoordinationPattern" views="_BosFyHnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Borev3nTEeGrRf6KRZl4qA" name="name" views="_BosFynnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorewHnTEeGrRf6KRZl4qA" name="Role" views="_BosFy3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorewXnTEeGrRf6KRZl4qA" name="name" views="_BosFzXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorewnnTEeGrRf6KRZl4qA" name="behavior" views="_BosFznnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/BehavioralElement/behavior"/>
@@ -572,7 +572,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Bore0XnTEeGrRf6KRZl4qA" name="Clock" views="_BosFWnnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore0nnTEeGrRf6KRZl4qA" name="name" views="_BosFXHnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore03nTEeGrRf6KRZl4qA" name="statechart" views="_BosFXXnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock/statechart"/>
@@ -581,7 +581,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Bore1HnTEeGrRf6KRZl4qA" name="Region" views="_BosFXnnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore1XnTEeGrRf6KRZl4qA" name="name" views="_BosFYHnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore1nnTEeGrRf6KRZl4qA" name="priority" views="_BosFYXnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
@@ -593,7 +593,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Bore2HnTEeGrRf6KRZl4qA" name="State" views="_BosFY3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore2XnTEeGrRf6KRZl4qA" name="name" views="_BosFZXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore2nnTEeGrRf6KRZl4qA" name="outgoingTransitions" views="_BosFZnnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
@@ -659,7 +659,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Bore7nnTEeGrRf6KRZl4qA" name="Action" views="_BosFfHnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore73nTEeGrRf6KRZl4qA" name="name" views="_BosFfnnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Action"/>
       </bindings>
@@ -683,10 +683,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Bore9nnTEeGrRf6KRZl4qA" name="SynchronizationChannel" views="_BosFh3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore93nTEeGrRf6KRZl4qA" name="name" views="_BosFiXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore-HnTEeGrRf6KRZl4qA" name="comment" views="_BosFinnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore-XnTEeGrRf6KRZl4qA" name="state" views="_BosFi3nTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/SynchronizationChannel/state"/>
@@ -704,10 +704,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Bore_XnTEeGrRf6KRZl4qA" name="RealtimeStatechart" views="_BosFkHnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore_nnTEeGrRf6KRZl4qA" name="name" views="_BosFknnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Bore_3nTEeGrRf6KRZl4qA" name="comment" views="_BosFk3nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorfAHnTEeGrRf6KRZl4qA" name="behavioralElement" views="_BosFlHnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Behavior/behavioralElement"/>
@@ -749,7 +749,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorfDHnTEeGrRf6KRZl4qA" name="EntryPoint" views="_BosFo3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorfDXnTEeGrRf6KRZl4qA" name="name" views="_BosFpXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorfDnnTEeGrRf6KRZl4qA" name="outgoingTransitions" views="_BosFpnnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
@@ -764,7 +764,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorfEXnTEeGrRf6KRZl4qA" name="ExitPoint" views="_BosFqXnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorfEnnTEeGrRf6KRZl4qA" name="name" views="_BosFq3nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BorfE3nTEeGrRf6KRZl4qA" name="outgoingTransitions" views="_BosFrHnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
@@ -779,7 +779,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BorfFnnTEeGrRf6KRZl4qA" name="StateEntryPoint" views="_BosFr3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFIHnTEeGrRf6KRZl4qA" name="name" views="_BosFsXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFIXnTEeGrRf6KRZl4qA" name="outgoingTransitions" views="_BosFsnnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
@@ -800,7 +800,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BosFJnnTEeGrRf6KRZl4qA" name="StateExitPoint" views="_BosFt3nTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFJ3nTEeGrRf6KRZl4qA" name="name" views="_BosFuXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFKHnTEeGrRf6KRZl4qA" name="outgoingTransitions" views="_BosFunnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
@@ -826,10 +826,10 @@
     <categories xmi:id="_BosFLnnTEeGrRf6KRZl4qA" name="msgiface">
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BosFL3nTEeGrRf6KRZl4qA" name="MessageInterface" views="_BosFSXnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFMHnTEeGrRf6KRZl4qA" name="name" views="_BosFS3nTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFMXnTEeGrRf6KRZl4qA" name="comment" views="_BosFTHnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFMnnTEeGrRf6KRZl4qA" name="superType" views="_BosFTXnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface/superType"/>
@@ -838,10 +838,10 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BosFM3nTEeGrRf6KRZl4qA" name="MessageType" views="_BosFTnnTEeGrRf6KRZl4qA">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFNHnTEeGrRf6KRZl4qA" name="name" views="_BosFUHnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFNXnTEeGrRf6KRZl4qA" name="comment" views="_BosFUXnTEeGrRf6KRZl4qA">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BosFNnnTEeGrRf6KRZl4qA" name="messageInterface" views="_BosFUnnTEeGrRf6KRZl4qA">
           <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType/messageInterface"/>

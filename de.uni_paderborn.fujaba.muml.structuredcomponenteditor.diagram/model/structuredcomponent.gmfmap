@@ -16,7 +16,7 @@
         <diagramLabel
             href="structuredcomponent.gmfgraph#ComponentName"/>
         <features
-            href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -75,7 +75,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'port'"/>
             </initializers>
@@ -85,7 +85,7 @@
             <diagramLabel
                 href="structuredcomponent.gmfgraph#PortExternalLabel"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -146,7 +146,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'port'"/>
             </initializers>
@@ -156,7 +156,7 @@
             <diagramLabel
                 href="structuredcomponent.gmfgraph#PortExternalLabel"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -217,7 +217,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'port'"/>
             </initializers>
@@ -227,7 +227,7 @@
             <diagramLabel
                 href="structuredcomponent.gmfgraph#PortExternalLabel"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

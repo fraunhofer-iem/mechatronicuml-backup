@@ -17,7 +17,7 @@
             xsi:type="gmfmap:FeatureValueSpec">
           <feature
               xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           <value
               body="'pattern'"/>
         </initializers>
@@ -31,7 +31,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'role1'"/>
             </initializers>
@@ -91,7 +91,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'role2'"/>
             </initializers>
@@ -200,7 +200,7 @@
             <diagramLabel
                 href="pattern.gmfgraph#CoordinationPatternName"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <diagramNode
               href="pattern.gmfgraph#CoordinationPattern"/>
@@ -219,7 +219,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'role'"/>
             </initializers>
@@ -269,7 +269,7 @@
             <diagramLabel
                 href="pattern.gmfgraph#RoleName"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

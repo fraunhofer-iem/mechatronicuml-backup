@@ -5,13 +5,13 @@ import "platform:/resource/de.uni_paderborn.fujaba.muml.model.actionLanguage/mod
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-import "platform:/resource/org.storydriven.modeling/model/sdm.ecore" as modeling
+import "platform:/resource/org.storydriven.core/model/core.ecore" as modeling
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart" as rtsc
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core" as core
 
-import "platform:/resource/org.storydriven.modeling/model/sdm.ecore#//expressions" as expressions
+import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" as expressions
 
 
 Block returns actionLanguage::Block:

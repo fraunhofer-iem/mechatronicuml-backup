@@ -73,7 +73,7 @@
             editorPattern=""
             editPattern="">
           <metaFeatures
-              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -115,7 +115,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.12">
             <feature
-                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -167,7 +167,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -201,7 +201,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.0">
             <feature
-                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -212,7 +212,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.1">
                 <feature
-                    href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                    href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -261,7 +261,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.5">
                 <feature
-                    href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                    href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">

@@ -17,7 +17,7 @@
             xsi:type="gmfmap:FeatureValueSpec">
           <feature
               xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           <value
               body="'Interface'"/>
         </initializers>
@@ -27,7 +27,7 @@
         <diagramLabel
             href="messageinterface.gmfgraph#MessageInterfaceName"/>
         <features
-            href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -47,7 +47,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'messagetype'"/>
             </initializers>
@@ -57,7 +57,7 @@
             <diagramLabel
                 href="messageinterface.gmfgraph#MessageTypeName"/>
             <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -77,7 +77,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   <value
                       body="'p'"/>
                 </initializers>

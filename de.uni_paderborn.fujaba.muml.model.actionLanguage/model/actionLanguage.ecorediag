@@ -540,7 +540,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_9tqPw0BHEeGJUJqE0wsbsg"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_9toakUBHEeGJUJqE0wsbsg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/Expression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9toakkBHEeGJUJqE0wsbsg" x="240" y="201" width="516"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="__nmM4EBHEeGJUJqE0wsbsg" type="1001">
