@@ -36,7 +36,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.util.InstanceValidator;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
@@ -129,13 +128,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	private EClass discreteMultiPortInstanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass patternInstanceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -535,33 +527,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPatternInstance() {
-		return patternInstanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPatternInstance_PortInstances() {
-		return (EReference)patternInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPatternInstance_PatternOccurrence() {
-		return (EReference)patternInstanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public InstanceFactory getInstanceFactory() {
 		return (InstanceFactory)getEFactoryInstance();
 	}
@@ -628,10 +593,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		discreteMultiPortInstanceEClass = createEClass(DISCRETE_MULTI_PORT_INSTANCE);
 		createEReference(discreteMultiPortInstanceEClass, DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES);
-
-		patternInstanceEClass = createEClass(PATTERN_INSTANCE);
-		createEReference(patternInstanceEClass, PATTERN_INSTANCE__PORT_INSTANCES);
-		createEReference(patternInstanceEClass, PATTERN_INSTANCE__PATTERN_OCCURRENCE);
 	}
 
 	/**
@@ -681,7 +642,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		discretePortInstanceEClass.getESuperTypes().add(this.getPortInstance());
 		discreteSinglePortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
 		discreteMultiPortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
-		patternInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentInstanceEClass, ComponentInstance.class, "ComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -729,10 +689,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		initEClass(discreteMultiPortInstanceEClass, DiscreteMultiPortInstance.class, "DiscreteMultiPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteMultiPortInstance_SubPortInstances(), this.getDiscreteSinglePortInstance(), this.getDiscreteSinglePortInstance_MultiPortInstance(), "subPortInstances", null, 0, -1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(patternInstanceEClass, PatternInstance.class, "PatternInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPatternInstance_PortInstances(), this.getPortInstance(), null, "portInstances", null, 1, -1, PatternInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPatternInstance_PatternOccurrence(), theComponentPackage.getPatternOccurrence(), null, "patternOccurrence", null, 1, 1, PatternInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

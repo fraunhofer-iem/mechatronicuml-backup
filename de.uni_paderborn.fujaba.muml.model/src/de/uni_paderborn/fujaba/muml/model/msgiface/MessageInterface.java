@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.msgiface;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 
 /**
@@ -33,7 +32,7 @@ import org.storydriven.modeling.NamedElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations'"
  * @generated
  */
-public interface MessageInterface extends NamedElement, CommentableElement {
+public interface MessageInterface extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Super Type</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface}.

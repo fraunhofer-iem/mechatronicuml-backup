@@ -48,7 +48,7 @@ public interface MsgifacePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/msgiface/0.2.2";
+	String eNS_URI = "http://www.fujaba.de/muml/model/msgiface/0.2.1";
 
 	/**
 	 * The package namespace name.
@@ -104,22 +104,13 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_INTERFACE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Super Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE__SUPER_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int MESSAGE_INTERFACE__SUPER_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Message Types</b></em>' containment reference list.
@@ -128,7 +119,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE__MESSAGE_TYPES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_INTERFACE__MESSAGE_TYPES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>All Available Message Types</b></em>' reference list.
@@ -137,7 +128,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Message Interface</em>' class.
@@ -146,7 +137,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int MESSAGE_INTERFACE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl <em>Message Type</em>}' class.
@@ -165,7 +156,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int MESSAGE_TYPE__ANNOTATION = CallsPackage.CALLABLE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -174,16 +165,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int MESSAGE_TYPE__EXTENSION = CallsPackage.CALLABLE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -192,7 +174,43 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int MESSAGE_TYPE__COMMENT = CallsPackage.CALLABLE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__IN_PARAMETER = CallsPackage.CALLABLE__IN_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__OUT_PARAMETER = CallsPackage.CALLABLE__OUT_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__CONTAINED_PARAMETERS = CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Message Interface</b></em>' container reference.
@@ -201,16 +219,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE__PARAMETERS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_TYPE__MESSAGE_INTERFACE = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Message Type</em>' class.
@@ -219,7 +228,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int MESSAGE_TYPE_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface <em>Message Interface</em>}'.
@@ -284,17 +293,6 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMessageType_MessageInterface();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getParameters()
-	 * @see #getMessageType()
-	 * @generated
-	 */
-	EReference getMessageType_Parameters();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -369,14 +367,6 @@ public interface MsgifacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_TYPE__MESSAGE_INTERFACE = eINSTANCE.getMessageType_MessageInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MESSAGE_TYPE__PARAMETERS = eINSTANCE.getMessageType_Parameters();
 
 	}
 

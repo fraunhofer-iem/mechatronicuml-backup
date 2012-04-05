@@ -6,26 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.impl.NamedElementImpl;
 import org.storydriven.modeling.calls.impl.CallableImpl;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
-import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,44 +27,33 @@ import java.util.Collection;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getMessageInterface <em>Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MessageTypeImpl extends NamedElementImpl implements MessageType {
+public class MessageTypeImpl extends CallableImpl implements MessageType {
 	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> parameters;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,8 +79,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComment() {
-		return comment;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -106,11 +88,11 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__NAME, oldName, name));
 	}
 
 	/**
@@ -159,18 +141,6 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, MsgifacePackage.MESSAGE_TYPE__PARAMETERS);
-		}
-		return parameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -192,8 +162,6 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 		switch (featureID) {
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				return basicSetMessageInterface(null, msgs);
-			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -220,12 +188,10 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
-				return getComment();
+			case MsgifacePackage.MESSAGE_TYPE__NAME:
+				return getName();
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				return getMessageInterface();
-			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
-				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,15 +205,11 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
-				setComment((String)newValue);
+			case MsgifacePackage.MESSAGE_TYPE__NAME:
+				setName((String)newValue);
 				return;
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				setMessageInterface((MessageInterface)newValue);
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -261,14 +223,11 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
-				setComment(COMMENT_EDEFAULT);
+			case MsgifacePackage.MESSAGE_TYPE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				setMessageInterface((MessageInterface)null);
-				return;
-			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
-				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -282,12 +241,10 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case MsgifacePackage.MESSAGE_TYPE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				return getMessageInterface() != null;
-			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -299,9 +256,9 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
+		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
-				case MsgifacePackage.MESSAGE_TYPE__COMMENT: return SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
+				case MsgifacePackage.MESSAGE_TYPE__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
 				default: return -1;
 			}
 		}
@@ -315,9 +272,9 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
+		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
-				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return MsgifacePackage.MESSAGE_TYPE__COMMENT;
+				case SDMPackage.NAMED_ELEMENT__NAME: return MsgifacePackage.MESSAGE_TYPE__NAME;
 				default: return -1;
 			}
 		}
@@ -334,8 +291,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

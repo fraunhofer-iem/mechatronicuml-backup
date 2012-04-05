@@ -48,7 +48,7 @@ public interface InstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/instance/0.2.2";
+	String eNS_URI = "http://www.fujaba.de/muml/model/instance/0.2.1";
 
 	/**
 	 * The package namespace name.
@@ -1123,70 +1123,6 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PatternInstanceImpl <em>Pattern Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.PatternInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getPatternInstance()
-	 * @generated
-	 */
-	int PATTERN_INSTANCE = 11;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_INSTANCE__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_INSTANCE__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_INSTANCE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Port Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Pattern Occurrence</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_INSTANCE__PATTERN_OCCURRENCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Pattern Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance <em>Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1539,38 +1475,6 @@ public interface InstancePackage extends EPackage {
 	EReference getDiscreteMultiPortInstance_SubPortInstances();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance <em>Pattern Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pattern Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PatternInstance
-	 * @generated
-	 */
-	EClass getPatternInstance();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance#getPortInstances <em>Port Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Port Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PatternInstance#getPortInstances()
-	 * @see #getPatternInstance()
-	 * @generated
-	 */
-	EReference getPatternInstance_PortInstances();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance#getPatternOccurrence <em>Pattern Occurrence</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pattern Occurrence</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PatternInstance#getPatternOccurrence()
-	 * @see #getPatternInstance()
-	 * @generated
-	 */
-	EReference getPatternInstance_PatternOccurrence();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1877,32 +1781,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES = eINSTANCE.getDiscreteMultiPortInstance_SubPortInstances();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PatternInstanceImpl <em>Pattern Instance</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.PatternInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getPatternInstance()
-		 * @generated
-		 */
-		EClass PATTERN_INSTANCE = eINSTANCE.getPatternInstance();
-
-		/**
-		 * The meta object literal for the '<em><b>Port Instances</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PATTERN_INSTANCE__PORT_INSTANCES = eINSTANCE.getPatternInstance_PortInstances();
-
-		/**
-		 * The meta object literal for the '<em><b>Pattern Occurrence</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PATTERN_INSTANCE__PATTERN_OCCURRENCE = eINSTANCE.getPatternInstance_PatternOccurrence();
 
 	}
 

@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
 import org.eclipse.emf.ecore.EDataType;
 
 
@@ -25,9 +24,9 @@ import org.eclipse.emf.ecore.EDataType;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getKind <em>Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#isIsContinuousInPort <em>Is Continuous In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#isIsContinuousOutPort <em>Is Continuous Out Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,14 +75,15 @@ public interface ContinuousPort extends Port {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Defines the data type of the signal value which is emitted or received by 
+	 * the continuous port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(DataType)
+	 * @see #setType(EDataType)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getContinuousPort_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	DataType getType();
+	EDataType getType();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType <em>Type</em>}' reference.
@@ -93,7 +93,7 @@ public interface ContinuousPort extends Port {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(DataType value);
+	void setType(EDataType value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Continuous In Port</b></em>' attribute.

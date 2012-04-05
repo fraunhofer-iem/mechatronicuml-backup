@@ -713,7 +713,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String TRANSITION__TRIGGER_MESSAGE_EVENTS_MUST_NOT_HAVE_AN_OWNED_PARAMETER_BINDING__EEXPRESSION = "not self.triggerMessageEvent.message.oclIsUndefined() implies\n" +
-		"self.triggerMessageEvent.message.parameterBinding->isEmpty()";
+		"self.triggerMessageEvent.message.ownedParameterBindings->isEmpty()";
 
 	/**
 	 * Validates the TriggerMessageEventsMustNotHaveAnOwnedParameterBinding constraint of '<em>Transition</em>'.

@@ -1,29 +1,36 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: MechatronicUML Meta-Model
+Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model;singleton:=true
-Bundle-Version: 0.2.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.storydriven.core;visibility:=reexport,
- org.eclipse.emf.edapt.history;bundle-version="0.3.0",
- de.fujaba.modelinstance;bundle-version="0.2.0";visibility:=reexport,
- de.uni_paderborn.fujaba.common;bundle-version="0.2.0"
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.storydriven.modeling;bundle-version="1.0.0";visibility:=reexport,
+ de.uni_paderborn.fujaba.common;bundle-version="1.0.0",
+ de.fujaba.modelinstance;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.emf.edapt.history;bundle-version="0.3.0"
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.model.component,
+ de.uni_paderborn.fujaba.muml.model.component.impl,
  de.uni_paderborn.fujaba.muml.model.component.util,
  de.uni_paderborn.fujaba.muml.model.constraint,
+ de.uni_paderborn.fujaba.muml.model.constraint.impl,
  de.uni_paderborn.fujaba.muml.model.constraint.util,
  de.uni_paderborn.fujaba.muml.model.core,
+ de.uni_paderborn.fujaba.muml.model.core.impl,
  de.uni_paderborn.fujaba.muml.model.core.util,
  de.uni_paderborn.fujaba.muml.model.deployment,
+ de.uni_paderborn.fujaba.muml.model.deployment.impl,
  de.uni_paderborn.fujaba.muml.model.deployment.util,
  de.uni_paderborn.fujaba.muml.model.instance,
  de.uni_paderborn.fujaba.muml.model.instance.impl,
  de.uni_paderborn.fujaba.muml.model.instance.util,
  de.uni_paderborn.fujaba.muml.model.msgiface,
+ de.uni_paderborn.fujaba.muml.model.msgiface.impl,
  de.uni_paderborn.fujaba.muml.model.msgiface.util,
  de.uni_paderborn.fujaba.muml.model.pattern,
  de.uni_paderborn.fujaba.muml.model.pattern.impl,

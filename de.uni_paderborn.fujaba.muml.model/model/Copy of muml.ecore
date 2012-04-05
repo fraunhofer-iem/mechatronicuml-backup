@@ -20,7 +20,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package components contains all classes for modeling atomic and structured components.&#xD;&#xA;Components are defined on the type level and may be instantiated in a component instance configuration."/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//model/core/ConstrainableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
         </eAnnotations>
@@ -48,7 +48,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//model/core/ConstrainableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Ports represent the interaction points between a component and the components environment."/>
         </eAnnotations>
@@ -218,7 +218,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"/>
         </eAnnotations>
@@ -352,7 +352,7 @@
           <details key="constraints" value="SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts"/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This abstract class is the common super class of delegations and assemblies."/>
         </eAnnotations>
@@ -573,7 +573,7 @@
           </eAnnotations>
         </eLiterals>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PatternOccurrence" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="PatternOccurrence" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
             eType="#//model/pattern/CoordinationPattern"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1"
@@ -585,7 +585,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package constraint provides abstract super classes for modeling different&#xD;&#xA;kinds of constraints that may be attached to ConstrainableElements of the&#xD;&#xA;MechatronicUML meta-model. "/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
         </eAnnotations>
@@ -632,12 +632,12 @@
           <details key="documentation" value="A verifiable constraint is a dynamic semantics constraint that will be used for&#xD;&#xA;verification of the model. This class serves as a super class for all types of &#xD;&#xA;verifiable constraints."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TextualConstraint" eSuperTypes="#//model/constraint/VerifiableConstraint ../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="TextualConstraint" eSuperTypes="#//model/constraint/VerifiableConstraint ../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents all verifable constraints that can be entered as a string in a predefined&#xD;&#xA;constraint language like, e.g., CTL or TCTL. Therefore, it contains a textual expression&#xD;&#xA;which is used to store the constraint text and the language."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="textualExpression"
-            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/TextualExpression"
+            eType="ecore:EClass ../../org.storydriven.core/model/sdm.ecore#//expressions/TextualExpression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A textual expression which stores the constraint text and the language in which &#xD;&#xA;the constraint is specified."/>
@@ -764,12 +764,18 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//calls/Invocation ../../org.storydriven.core/model/sdm.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An Expression that represents an activity."/>
         </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="activity" ordered="false"
+            lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/sdm.ecore#//activities/Activity">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Implementation of an Attribute of a behavior which has a certain type."/>
         </eAnnotations>
@@ -780,7 +786,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An operation specifies a behavior that can be called with a list of concrete parameters and may return a return value."/>
         </eAnnotations>
@@ -791,7 +797,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
-            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+            eType="ecore:EClass ../../org.storydriven.core/model/sdm.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The implementation for this operation. MechatronicUML supports the annotation of multiple implementations for an operation to support different target languages."/>
@@ -800,7 +806,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
             eType="#//model/core/Parameter" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A parameter is used to specify parameters of an operation. A parameter defines a type."/>
         </eAnnotations>
@@ -824,7 +830,7 @@
         <eLiterals name="DOUBLE" value="6"/>
         <eLiterals name="STRING" value="7"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Abstract super class for all types that may be used for attributes, parameters, and operations."/>
         </eAnnotations>
@@ -861,7 +867,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class specifies the data type of an element of the composition. "/>
         </eAnnotations>
@@ -884,11 +890,11 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
             eType="#//model/core/Parameter"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+            eType="ecore:EClass ../../org.storydriven.core/model/sdm.ecore#//expressions/Expression"
             containment="true"/>
       </eClassifiers>
     </eSubpackages>
@@ -902,7 +908,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package instance contains all classes for building configurations of component instances.&#xD;&#xA;&#xD;&#xA;Component instances are built from component types and connected by connectors. The resulting structure is a component instance configuration."/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a component instance. It is an instantiation of a component."/>
         </eAnnotations>
@@ -925,7 +931,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
         </eAnnotations>
@@ -947,7 +953,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PortInstance" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="PortInstance" abstract="true" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A port instance is a port of a component at instance level."/>
         </eAnnotations>
@@ -1032,7 +1038,7 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration"
-          eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+          eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class encapsules represents a configuration.&#xD;&#xA;&#xD;&#xA;It contains all component instances and connector instances that belong to a concrete configuration.&#xD;&#xA;&#xD;&#xA;\todosd{implement ocl derived for parent port isntances derived}"/>
         </eAnnotations>
@@ -1119,7 +1125,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PatternInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="PatternInstance" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" lowerBound="1"
             upperBound="-1" eType="#//model/instance/PortInstance"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="patternOccurrence"
@@ -1167,7 +1173,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/core/ConstrainableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
         </eAnnotations>
@@ -1199,7 +1205,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/core/ConstrainableElement #//model/core/BehavioralElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement #//model/core/ConstrainableElement #//model/core/BehavioralElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
@@ -1315,7 +1321,7 @@
           <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents clocks of a realtime statechart."/>
         </eAnnotations>
@@ -1326,7 +1332,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/realtimestatechart/Prioritizable">
+      <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement #//model/realtimestatechart/Prioritizable">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
         </eAnnotations>
@@ -1461,7 +1467,7 @@
             eType="#//model/realtimestatechart/StateExitPoint" containment="true"
             eOpposite="#//model/realtimestatechart/StateExitPoint/state"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a node in a realtime statechart that is connected with other nodes via transitions."/>
         </eAnnotations>
@@ -1501,7 +1507,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement #//model/realtimestatechart/Prioritizable">
+      <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement #//model/realtimestatechart/Prioritizable">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateExitPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"/>
         </eAnnotations>
@@ -1593,7 +1599,7 @@
             <details key="documentation" value="Needed for failure propagation."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.core/model/sdm.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).&#xD;&#xA;\todosd{restrict type of expression to ComparisionExpression or NotExpression or BinaryLogicExpression}"/>
@@ -1625,19 +1631,19 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-            eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/ComparingOperator"
+            eType="ecore:EEnum ../../org.storydriven.core/model/sdm.ecore#//expressions/ComparingOperator"
             defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The operator that is used in this clock constraint."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An action is used as a side effect of a transition as well as within a state. Each transition can&#xD;&#xA;only define one action. A state can define up to three actions (one for state entry, one for state&#xD;&#xA;exit, one while dwelling within the state).&#xD;&#xA;"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" lowerBound="1"
-            upperBound="-1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+            upperBound="-1" eType="ecore:EClass ../../org.storydriven.core/model/sdm.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="An action has a defined expression, which can be expressed in different languages."/>
@@ -1700,7 +1706,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Defines a type of a synchronization channel that can be used to synchronize&#xA;between statecharts contained as substatecharts in the same state.&#xA;Serves as a type for Synchronizations."/>
         </eAnnotations>
@@ -1713,7 +1719,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
             eType="#//model/core/Parameter" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Two transitions can synchron fire. One transition is the sender, the other the receiver. This means that both transitions (exactly one sender and one receiver) must be activated and has to fire at the same time. "/>
         </eAnnotations>
@@ -1741,7 +1747,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//model/core/Behavior">
+      <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement #//model/core/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
         </eAnnotations>
@@ -1876,7 +1882,7 @@
           <details key="documentation" value="A StateEvent is an event that occurs within a state of a real-time statechart.&#xD;&#xA;StateEvents may only be trigger events."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The messages are exchanged between components in order to communicate&#xD;&#xA;asynchronously. A message is typed over a message type and provides a &#xD;&#xA;binding of all parameters defined by the message type to concrete values."/>
         </eAnnotations>
@@ -1981,7 +1987,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package defines the message interfaces. A MessageInterface defines a set&#xD;&#xA;of event signatures using the class MessageType. These message types are used&#xD;&#xA;to type the events within a realtime statechart. "/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="MessageInterface" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="MessageInterface" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a message interface. A message interface specifies which messages are allowed to be sent or received by a port or role."/>
         </eAnnotations>
@@ -2013,7 +2019,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.core/model/sdm.ecore#//NamedElement ../../org.storydriven.core/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the list of parameters. The message type inherits from&#xD;&#xA;callable because concrete events in a real-time statechart must provide a &#xD;&#xA;parameter mapping for the parameters of the message type as it is defined for&#xD;&#xA;method invocations."/>
         </eAnnotations>

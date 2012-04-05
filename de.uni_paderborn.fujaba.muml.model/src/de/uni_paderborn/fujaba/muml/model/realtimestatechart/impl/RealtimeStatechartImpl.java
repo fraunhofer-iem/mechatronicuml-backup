@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -34,7 +33,6 @@ import de.uni_paderborn.fujaba.common.algorithm.ISearchVisitor;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -62,9 +60,13 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getEventQueueSize <em>Event Queue Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getSecurityLevel <em>Security Level</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getUtilisation <em>Utilisation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getScheduleDocument <em>Schedule Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableAttributes <em>All Available Attributes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableOperations <em>All Available Operations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getStatechart <em>Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,7 +111,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Operation> operations;
+	protected EList<EOperation> operations;
 
 	/**
 	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
@@ -119,7 +121,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> attributes;
+	protected EList<EAttribute> attributes;
 
 	/**
 	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
@@ -212,6 +214,66 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	protected EStructuralFeature.Internal.SettingDelegate AVAILABLE_CLOCKS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__AVAILABLE_CLOCKS).getSettingDelegate();
 
 	/**
+	 * The default value of the '{@link #getSecurityLevel() <em>Security Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecurityLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SECURITY_LEVEL_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getSecurityLevel() <em>Security Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecurityLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected int securityLevel = SECURITY_LEVEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUtilisation() <em>Utilisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtilisation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double UTILISATION_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getUtilisation() <em>Utilisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtilisation()
+	 * @generated
+	 * @ordered
+	 */
+	protected double utilisation = UTILISATION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getScheduleDocument() <em>Schedule Document</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScheduleDocument()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SCHEDULE_DOCUMENT_EDEFAULT = "\\\"schedule.xml\\\"";
+
+	/**
+	 * The cached value of the '{@link #getScheduleDocument() <em>Schedule Document</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScheduleDocument()
+	 * @generated
+	 * @ordered
+	 */
+	protected String scheduleDocument = SCHEDULE_DOCUMENT_EDEFAULT;
+
+	/**
 	 * The cached setting delegate for the '{@link #isEmbedded() <em>Embedded</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,6 +302,16 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_OPERATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getStatechart() <em>Statechart</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatechart()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate STATECHART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATECHART).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -346,9 +418,9 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Operation> getOperations() {
+	public EList<EOperation> getOperations() {
 		if (operations == null) {
-			operations = new EObjectContainmentEList<Operation>(Operation.class, this, RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS);
+			operations = new EObjectContainmentEList<EOperation>(EOperation.class, this, RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS);
 		}
 		return operations;
 	}
@@ -358,9 +430,9 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttributes() {
+	public EList<EAttribute> getAttributes() {
 		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES);
+			attributes = new EObjectContainmentEList<EAttribute>(EAttribute.class, this, RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES);
 		}
 		return attributes;
 	}
@@ -506,6 +578,69 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getSecurityLevel() {
+		return securityLevel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSecurityLevel(int newSecurityLevel) {
+		int oldSecurityLevel = securityLevel;
+		securityLevel = newSecurityLevel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__SECURITY_LEVEL, oldSecurityLevel, securityLevel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getUtilisation() {
+		return utilisation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUtilisation(double newUtilisation) {
+		double oldUtilisation = utilisation;
+		utilisation = newUtilisation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__UTILISATION, oldUtilisation, utilisation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getScheduleDocument() {
+		return scheduleDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setScheduleDocument(String newScheduleDocument) {
+		String oldScheduleDocument = scheduleDocument;
+		scheduleDocument = newScheduleDocument;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__SCHEDULE_DOCUMENT, oldScheduleDocument, scheduleDocument));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
@@ -520,8 +655,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Attribute> getAllAvailableAttributes() {
-		return (EList<Attribute>)ALL_AVAILABLE_ATTRIBUTES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<EAttribute> getAllAvailableAttributes() {
+		return (EList<EAttribute>)ALL_AVAILABLE_ATTRIBUTES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -530,8 +665,40 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Operation> getAllAvailableOperations() {
-		return (EList<Operation>)ALL_AVAILABLE_OPERATIONS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<EOperation> getAllAvailableOperations() {
+		return (EList<EOperation>)ALL_AVAILABLE_OPERATIONS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RealtimeStatechart getStatechart() {
+		return (RealtimeStatechart)STATECHART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
+		// TODO: implement this method to set the contained 'Statechart' containment reference
+		// -> this method is automatically invoked to keep the containment relationship in synch
+		// -> do not modify other features
+		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStatechart(RealtimeStatechart newStatechart) {
+		STATECHART__ESETTING_DELEGATE.dynamicSet(this, null, 0, newStatechart);
 	}
 
 	/**
@@ -633,6 +800,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
+				return basicSetStatechart(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -684,12 +853,20 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return isFlat();
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
 				return getAvailableClocks();
+			case RealtimestatechartPackage.REALTIME_STATECHART__SECURITY_LEVEL:
+				return getSecurityLevel();
+			case RealtimestatechartPackage.REALTIME_STATECHART__UTILISATION:
+				return getUtilisation();
+			case RealtimestatechartPackage.REALTIME_STATECHART__SCHEDULE_DOCUMENT:
+				return getScheduleDocument();
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
 				return isEmbedded();
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
 				return getAllAvailableAttributes();
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				return getAllAvailableOperations();
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
+				return getStatechart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -711,11 +888,11 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:
 				getOperations().clear();
-				getOperations().addAll((Collection<? extends Operation>)newValue);
+				getOperations().addAll((Collection<? extends EOperation>)newValue);
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
 				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
+				getAttributes().addAll((Collection<? extends EAttribute>)newValue);
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
 				setEmbeddingRegion((Region)newValue);
@@ -737,6 +914,18 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				setEventQueueSize((Integer)newValue);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SECURITY_LEVEL:
+				setSecurityLevel((Integer)newValue);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__UTILISATION:
+				setUtilisation((Double)newValue);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SCHEDULE_DOCUMENT:
+				setScheduleDocument((String)newValue);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
+				setStatechart((RealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -780,6 +969,18 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				setEventQueueSize(EVENT_QUEUE_SIZE_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SECURITY_LEVEL:
+				setSecurityLevel(SECURITY_LEVEL_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__UTILISATION:
+				setUtilisation(UTILISATION_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SCHEDULE_DOCUMENT:
+				setScheduleDocument(SCHEDULE_DOCUMENT_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
+				setStatechart((RealtimeStatechart)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -816,12 +1017,20 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return FLAT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
 				return AVAILABLE_CLOCKS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.REALTIME_STATECHART__SECURITY_LEVEL:
+				return securityLevel != SECURITY_LEVEL_EDEFAULT;
+			case RealtimestatechartPackage.REALTIME_STATECHART__UTILISATION:
+				return utilisation != UTILISATION_EDEFAULT;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SCHEDULE_DOCUMENT:
+				return SCHEDULE_DOCUMENT_EDEFAULT == null ? scheduleDocument != null : !SCHEDULE_DOCUMENT_EDEFAULT.equals(scheduleDocument);
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
 				return EMBEDDED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
 				return ALL_AVAILABLE_ATTRIBUTES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				return ALL_AVAILABLE_OPERATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATECHART:
+				return STATECHART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -890,6 +1099,12 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		result.append(history);
 		result.append(", eventQueueSize: ");
 		result.append(eventQueueSize);
+		result.append(", securityLevel: ");
+		result.append(securityLevel);
+		result.append(", utilisation: ");
+		result.append(utilisation);
+		result.append(", scheduleDocument: ");
+		result.append(scheduleDocument);
 		result.append(')');
 		return result.toString();
 	}

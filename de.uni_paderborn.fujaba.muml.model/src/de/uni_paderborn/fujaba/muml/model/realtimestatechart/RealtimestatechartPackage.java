@@ -45,7 +45,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.2.3";
+	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.2.1";
 
 	/**
 	 * The package namespace name.
@@ -1106,7 +1106,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int SYNCHRONIZATION_CHANNEL__ANNOTATION = CallsPackage.CALLABLE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1115,16 +1115,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int SYNCHRONIZATION_CHANNEL__EXTENSION = CallsPackage.CALLABLE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1133,7 +1124,43 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SYNCHRONIZATION_CHANNEL__COMMENT = CallsPackage.CALLABLE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__IN_PARAMETER = CallsPackage.CALLABLE__IN_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__OUT_PARAMETER = CallsPackage.CALLABLE__OUT_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS = CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' container reference.
@@ -1142,16 +1169,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__STATE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__PARAMETERS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SYNCHRONIZATION_CHANNEL__STATE = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Synchronization Channel</em>' class.
@@ -1160,7 +1178,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1169,7 +1187,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int SYNCHRONIZATION__ANNOTATION = CallsPackage.INVOCATION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1178,7 +1196,34 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int SYNCHRONIZATION__EXTENSION = CallsPackage.INVOCATION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION__COMMENT = CallsPackage.INVOCATION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION__OWNED_PARAMETER_BINDINGS = CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Callee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION__CALLEE = CallsPackage.INVOCATION__CALLEE;
 
 	/**
 	 * The feature id for the '<em><b>Sync Channel</b></em>' reference.
@@ -1187,7 +1232,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__SYNC_CHANNEL = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int SYNCHRONIZATION__SYNC_CHANNEL = CallsPackage.INVOCATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1196,16 +1241,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__KIND = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Parameter Binding</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION__PARAMETER_BINDING = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int SYNCHRONIZATION__KIND = CallsPackage.INVOCATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Synchronization</em>' class.
@@ -1214,7 +1250,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int SYNCHRONIZATION_FEATURE_COUNT = CallsPackage.INVOCATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -1380,13 +1416,40 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__AVAILABLE_CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>All Available Attributes</b></em>' reference list.
@@ -1395,7 +1458,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>All Available Operations</b></em>' reference list.
@@ -1404,7 +1467,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Statechart</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>Realtime Statechart</em>' class.
@@ -1413,7 +1485,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl <em>Message</em>}' class.
@@ -1432,7 +1504,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int MESSAGE__ANNOTATION = CallsPackage.INVOCATION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1441,7 +1513,34 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int MESSAGE__EXTENSION = CallsPackage.INVOCATION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__COMMENT = CallsPackage.INVOCATION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__OWNED_PARAMETER_BINDINGS = CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Callee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__CALLEE = CallsPackage.INVOCATION__CALLEE;
 
 	/**
 	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
@@ -1450,16 +1549,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__INSTANCE_OF = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parameter Binding</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE__PARAMETER_BINDING = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int MESSAGE__INSTANCE_OF = CallsPackage.INVOCATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -1468,7 +1558,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_FEATURE_COUNT = CallsPackage.INVOCATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryEventImpl <em>Entry Event</em>}' class.
@@ -2568,17 +2658,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getSynchronizationChannel_State();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getParameters()
-	 * @see #getSynchronizationChannel()
-	 * @generated
-	 */
-	EReference getSynchronizationChannel_Parameters();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization <em>Synchronization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2609,17 +2688,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSynchronization_Kind();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getParameterBinding <em>Parameter Binding</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameter Binding</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getParameterBinding()
-	 * @see #getSynchronization()
-	 * @generated
-	 */
-	EReference getSynchronization_ParameterBinding();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable <em>Prioritizable</em>}'.
@@ -2741,6 +2809,39 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getRealtimeStatechart_AvailableClocks();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getSecurityLevel <em>Security Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Security Level</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getSecurityLevel()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getRealtimeStatechart_SecurityLevel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getUtilisation <em>Utilisation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Utilisation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getUtilisation()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getRealtimeStatechart_Utilisation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Schedule Document</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getScheduleDocument()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getRealtimeStatechart_ScheduleDocument();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2772,6 +2873,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRealtimeStatechart_AllAvailableOperations();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStatechart <em>Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStatechart()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EReference getRealtimeStatechart_Statechart();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event <em>Event</em>}'.
@@ -2834,17 +2946,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMessage_InstanceOf();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message#getParameterBinding <em>Parameter Binding</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameter Binding</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message#getParameterBinding()
-	 * @see #getMessage()
-	 * @generated
-	 */
-	EReference getMessage_ParameterBinding();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent <em>Entry Event</em>}'.
@@ -3509,14 +3610,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference SYNCHRONIZATION_CHANNEL__STATE = eINSTANCE.getSynchronizationChannel_State();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYNCHRONIZATION_CHANNEL__PARAMETERS = eINSTANCE.getSynchronizationChannel_Parameters();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3541,14 +3634,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYNCHRONIZATION__KIND = eINSTANCE.getSynchronization_Kind();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameter Binding</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYNCHRONIZATION__PARAMETER_BINDING = eINSTANCE.getSynchronization_ParameterBinding();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizableImpl <em>Prioritizable</em>}' class.
@@ -3643,6 +3728,30 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getRealtimeStatechart_AvailableClocks();
 
 		/**
+		 * The meta object literal for the '<em><b>Security Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REALTIME_STATECHART__SECURITY_LEVEL = eINSTANCE.getRealtimeStatechart_SecurityLevel();
+
+		/**
+		 * The meta object literal for the '<em><b>Utilisation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REALTIME_STATECHART__UTILISATION = eINSTANCE.getRealtimeStatechart_Utilisation();
+
+		/**
+		 * The meta object literal for the '<em><b>Schedule Document</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REALTIME_STATECHART__SCHEDULE_DOCUMENT = eINSTANCE.getRealtimeStatechart_ScheduleDocument();
+
+		/**
 		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3665,6 +3774,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS = eINSTANCE.getRealtimeStatechart_AllAvailableOperations();
+
+		/**
+		 * The meta object literal for the '<em><b>Statechart</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REALTIME_STATECHART__STATECHART = eINSTANCE.getRealtimeStatechart_Statechart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EventImpl <em>Event</em>}' class.
@@ -3721,14 +3838,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE__INSTANCE_OF = eINSTANCE.getMessage_InstanceOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameter Binding</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MESSAGE__PARAMETER_BINDING = eINSTANCE.getMessage_ParameterBinding();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryEventImpl <em>Entry Event</em>}' class.

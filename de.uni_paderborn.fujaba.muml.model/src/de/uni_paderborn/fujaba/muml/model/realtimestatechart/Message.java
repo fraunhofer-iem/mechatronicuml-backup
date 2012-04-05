@@ -6,12 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import org.storydriven.modeling.calls.Invocation;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-import org.eclipse.emf.common.util.EList;
-import org.storydriven.modeling.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +25,6 @@ import org.storydriven.modeling.ExtendableElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message#getParameterBinding <em>Parameter Binding</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +32,7 @@ import org.storydriven.modeling.ExtendableElement;
  * @model
  * @generated
  */
-public interface Message extends ExtendableElement {
+public interface Message extends Invocation {
 	/**
 	 * Returns the value of the '<em><b>Instance Of</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -45,37 +41,11 @@ public interface Message extends ExtendableElement {
 	 * Retrieves the message type this message is typed over.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Instance Of</em>' reference.
-	 * @see #setInstanceOf(MessageType)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getMessage_InstanceOf()
-	 * @model required="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='callee->any(x | x.oclIsKindOf(msgiface::MessageType)).oclAsType(msgiface::MessageType)'"
 	 * @generated
 	 */
 	MessageType getInstanceOf();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message#getInstanceOf <em>Instance Of</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Instance Of</em>' reference.
-	 * @see #getInstanceOf()
-	 * @generated
-	 */
-	void setInstanceOf(MessageType value);
-
-	/**
-	 * Returns the value of the '<em><b>Parameter Binding</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parameter Binding</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameter Binding</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getMessage_ParameterBinding()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ParameterBinding> getParameterBinding();
 
 } // Message

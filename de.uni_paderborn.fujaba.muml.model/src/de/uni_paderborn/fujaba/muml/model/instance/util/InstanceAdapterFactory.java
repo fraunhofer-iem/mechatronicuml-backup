@@ -129,10 +129,6 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 				return createDiscreteMultiPortInstanceAdapter();
 			}
 			@Override
-			public Adapter casePatternInstance(PatternInstance object) {
-				return createPatternInstanceAdapter();
-			}
-			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -315,20 +311,6 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscreteMultiPortInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance <em>Pattern Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PatternInstance
-	 * @generated
-	 */
-	public Adapter createPatternInstanceAdapter() {
 		return null;
 	}
 

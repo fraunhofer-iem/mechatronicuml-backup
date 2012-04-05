@@ -6,23 +6,13 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.modeling.impl.ExtendableElementImpl;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.modeling.calls.impl.InvocationImpl;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,31 +22,22 @@ import org.eclipse.emf.common.util.EList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl#getParameterBinding <em>Parameter Binding</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MessageImpl extends ExtendableElementImpl implements Message {
+public class MessageImpl extends InvocationImpl implements Message {
 	/**
-	 * The cached value of the '{@link #getInstanceOf() <em>Instance Of</em>}' reference.
+	 * The cached setting delegate for the '{@link #getInstanceOf() <em>Instance Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInstanceOf()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageType instanceOf;
-	/**
-	 * The cached value of the '{@link #getParameterBinding() <em>Parameter Binding</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameterBinding()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ParameterBinding> parameterBinding;
+	protected EStructuralFeature.Internal.SettingDelegate INSTANCE_OF__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF).getSettingDelegate();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,15 +63,7 @@ public class MessageImpl extends ExtendableElementImpl implements Message {
 	 * @generated
 	 */
 	public MessageType getInstanceOf() {
-		if (instanceOf != null && instanceOf.eIsProxy()) {
-			InternalEObject oldInstanceOf = (InternalEObject)instanceOf;
-			instanceOf = (MessageType)eResolveProxy(oldInstanceOf);
-			if (instanceOf != oldInstanceOf) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.MESSAGE__INSTANCE_OF, oldInstanceOf, instanceOf));
-			}
-		}
-		return instanceOf;
+		return (MessageType)INSTANCE_OF__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -99,45 +72,7 @@ public class MessageImpl extends ExtendableElementImpl implements Message {
 	 * @generated
 	 */
 	public MessageType basicGetInstanceOf() {
-		return instanceOf;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInstanceOf(MessageType newInstanceOf) {
-		MessageType oldInstanceOf = instanceOf;
-		instanceOf = newInstanceOf;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.MESSAGE__INSTANCE_OF, oldInstanceOf, instanceOf));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ParameterBinding> getParameterBinding() {
-		if (parameterBinding == null) {
-			parameterBinding = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, RealtimestatechartPackage.MESSAGE__PARAMETER_BINDING);
-		}
-		return parameterBinding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RealtimestatechartPackage.MESSAGE__PARAMETER_BINDING:
-				return ((InternalEList<?>)getParameterBinding()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return (MessageType)INSTANCE_OF__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -151,48 +86,8 @@ public class MessageImpl extends ExtendableElementImpl implements Message {
 			case RealtimestatechartPackage.MESSAGE__INSTANCE_OF:
 				if (resolve) return getInstanceOf();
 				return basicGetInstanceOf();
-			case RealtimestatechartPackage.MESSAGE__PARAMETER_BINDING:
-				return getParameterBinding();
 		}
 		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RealtimestatechartPackage.MESSAGE__INSTANCE_OF:
-				setInstanceOf((MessageType)newValue);
-				return;
-			case RealtimestatechartPackage.MESSAGE__PARAMETER_BINDING:
-				getParameterBinding().clear();
-				getParameterBinding().addAll((Collection<? extends ParameterBinding>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RealtimestatechartPackage.MESSAGE__INSTANCE_OF:
-				setInstanceOf((MessageType)null);
-				return;
-			case RealtimestatechartPackage.MESSAGE__PARAMETER_BINDING:
-				getParameterBinding().clear();
-				return;
-		}
-		super.eUnset(featureID);
 	}
 
 	/**
@@ -204,9 +99,7 @@ public class MessageImpl extends ExtendableElementImpl implements Message {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.MESSAGE__INSTANCE_OF:
-				return instanceOf != null;
-			case RealtimestatechartPackage.MESSAGE__PARAMETER_BINDING:
-				return parameterBinding != null && !parameterBinding.isEmpty();
+				return INSTANCE_OF__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

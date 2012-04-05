@@ -107,26 +107,6 @@ public class CoreValidator extends EObjectValidator {
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case CorePackage.ACTIVITY_CALL_EXPRESSION:
 				return validateActivityCallExpression((ActivityCallExpression)value, diagnostics, context);
-			case CorePackage.ATTRIBUTE:
-				return validateAttribute((Attribute)value, diagnostics, context);
-			case CorePackage.OPERATION:
-				return validateOperation((Operation)value, diagnostics, context);
-			case CorePackage.PARAMETER:
-				return validateParameter((Parameter)value, diagnostics, context);
-			case CorePackage.DATA_TYPE:
-				return validateDataType((DataType)value, diagnostics, context);
-			case CorePackage.PRIMITIVE_DATA_TYPE:
-				return validatePrimitiveDataType((PrimitiveDataType)value, diagnostics, context);
-			case CorePackage.COMPOSITE_DATA_TYPE:
-				return validateCompositeDataType((CompositeDataType)value, diagnostics, context);
-			case CorePackage.ARRAY_DATA_TYPE:
-				return validateArrayDataType((ArrayDataType)value, diagnostics, context);
-			case CorePackage.INNER_DECLARATION:
-				return validateInnerDeclaration((InnerDeclaration)value, diagnostics, context);
-			case CorePackage.PARAMETER_BINDING:
-				return validateParameterBinding((ParameterBinding)value, diagnostics, context);
-			case CorePackage.PRIMITIVE_TYPES:
-				return validatePrimitiveTypes((PrimitiveTypes)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -262,96 +242,6 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateActivityCallExpression(ActivityCallExpression activityCallExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(activityCallExpression, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAttribute(Attribute attribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(attribute, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateOperation(Operation operation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(operation, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateParameter(Parameter parameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(parameter, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDataType(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(dataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePrimitiveDataType(PrimitiveDataType primitiveDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(primitiveDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCompositeDataType(CompositeDataType compositeDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(compositeDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateArrayDataType(ArrayDataType arrayDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(arrayDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateInnerDeclaration(InnerDeclaration innerDeclaration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(innerDeclaration, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateParameterBinding(ParameterBinding parameterBinding, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(parameterBinding, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePrimitiveTypes(PrimitiveTypes primitiveTypes, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
 	}
 
 	/**
