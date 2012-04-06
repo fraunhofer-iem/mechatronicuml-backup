@@ -31,7 +31,7 @@ import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSett
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
@@ -40,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.parts.AtomicComponentPropertiesEditionPart;
 import de.uni_paderborn.fujaba.muml.model.component.parts.ComponentViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+
 
 
 // End of user code
@@ -84,6 +84,7 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -91,11 +92,13 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 			final AtomicComponent atomicComponent = (AtomicComponent)elt;
 			final AtomicComponentPropertiesEditionPart basePart = (AtomicComponentPropertiesEditionPart)editingPart;
 			// init values
-			if (atomicComponent.getName() != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.name))
+			if (atomicComponent.getName() != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), atomicComponent.getName()));
+			}
 			
-			if (atomicComponent.getComment() != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.comment))
+			if (atomicComponent.getComment() != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.comment)) {
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), atomicComponent.getComment()));
+			}
 			
 			if (isAccessible(ComponentViewsRepository.AtomicComponent.Properties.referencingComponentParts)) {
 				referencingComponentPartsSettings = new ReferencesTableSettings(atomicComponent, ComponentPackage.eINSTANCE.getComponent_ReferencingComponentParts());
@@ -106,7 +109,10 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 			}
 			if (isAccessible(ComponentViewsRepository.AtomicComponent.Properties.behavior)) {
 				// init part
-				behaviorSettings = new EObjectFlatComboSettings(atomicComponent, CorePackage.eINSTANCE.getBehavioralElement_Behavior());
+				behaviorSettings = new EObjectFlatComboSettings(
+						atomicComponent,
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+								.getBehavioralElement_Behavior());
 				basePart.initBehavior(behaviorSettings);
 				// set the button mode
 				basePart.setBehaviorButtonMode(ButtonsModeEnum.BROWSE);
@@ -121,9 +127,11 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
+				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
+					if (element instanceof EObject) {
 						return (!basePart.isContainedInReferencingComponentPartsTable((EObject)element));
+					}
 					return element instanceof Resource;
 				}
 			
@@ -140,6 +148,7 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof Behavior); //$NON-NLS-1$ 
 				}
@@ -167,12 +176,13 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == ComponentViewsRepository.AtomicComponent.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		if (editorKey == ComponentViewsRepository.AtomicComponent.Properties.comment) {
-			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
+			return CorePackage.eINSTANCE.getCommentableElement_Comment();
 		}
 		if (editorKey == ComponentViewsRepository.AtomicComponent.Properties.referencingComponentParts) {
 			return ComponentPackage.eINSTANCE.getComponent_ReferencingComponentParts();
@@ -181,7 +191,8 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 			return ComponentPackage.eINSTANCE.getComponent_ComponentType();
 		}
 		if (editorKey == ComponentViewsRepository.AtomicComponent.Properties.behavior) {
-			return CorePackage.eINSTANCE.getBehavioralElement_Behavior();
+			return de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getBehavioralElement_Behavior();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -191,6 +202,7 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		AtomicComponent atomicComponent = (AtomicComponent)semanticObject;
 		if (ComponentViewsRepository.AtomicComponent.Properties.name == event.getAffectedEditor()) {
@@ -215,7 +227,7 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 		}
 		if (ComponentViewsRepository.AtomicComponent.Properties.behavior == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				behaviorSettings.setToReference((Behavior)event.getNewValue());
+				behaviorSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, behaviorSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -233,30 +245,37 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			AtomicComponentPropertiesEditionPart basePart = (AtomicComponentPropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.comment)) {
+			if (CorePackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.comment)) {
 				if (msg.getNewValue() != null) {
 					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setComment("");
 				}
 			}
-			if (ComponentPackage.eINSTANCE.getComponent_ReferencingComponentParts().equals(msg.getFeature())  && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.referencingComponentParts))
+			if (ComponentPackage.eINSTANCE.getComponent_ReferencingComponentParts().equals(msg.getFeature())  && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.referencingComponentParts)) {
 				basePart.updateReferencingComponentParts();
-			if (ComponentPackage.eINSTANCE.getComponent_ComponentType().equals(msg.getFeature()) && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.componentType))
+			}
+			if (ComponentPackage.eINSTANCE.getComponent_ComponentType().equals(msg.getFeature()) && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.componentType)) {
 				basePart.setComponentType((ComponentKind)msg.getNewValue());
+			}
 			
-			if (CorePackage.eINSTANCE.getBehavioralElement_Behavior().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.AtomicComponent.Properties.behavior))
+			if (de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getBehavioralElement_Behavior().equals(msg.getFeature())
+					&& basePart != null
+					&& isAccessible(ComponentViewsRepository.AtomicComponent.Properties.behavior)) {
 				basePart.setBehavior((EObject)msg.getNewValue());
+			}
 			
 		}
 	}
@@ -268,6 +287,7 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == ComponentViewsRepository.AtomicComponent.Properties.name;
 	}
@@ -278,6 +298,7 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -285,16 +306,16 @@ public class AtomicComponentPropertiesEditionComponent extends SinglePartPropert
 				if (ComponentViewsRepository.AtomicComponent.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.AtomicComponent.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.AtomicComponent.Properties.componentType == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();

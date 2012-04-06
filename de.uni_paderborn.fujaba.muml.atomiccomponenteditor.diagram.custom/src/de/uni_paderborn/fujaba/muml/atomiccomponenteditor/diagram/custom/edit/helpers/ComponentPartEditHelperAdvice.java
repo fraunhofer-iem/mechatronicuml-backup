@@ -24,6 +24,7 @@ public class ComponentPartEditHelperAdvice extends AbstractEditHelperAdvice {
 	 * ComponentPart. This is necessary to prevent deletion of all Ports that
 	 * were derived.
 	 */
+	@Override
 	protected ICommand getBeforeDestroyElementCommand(
 			final DestroyElementRequest request) {
 		return new DestroyElementCommand(request) {

@@ -16,5 +16,5 @@ Require-Bundle: org.eclipse.ui.ide;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model.edit.eef;bundle-version="0.2.0",
  de.fujaba.modelinstance.edit.eef;bundle-version="0.2.0",
  org.eclipse.emf.ecore.edit.eef;bundle-version="0.2.0",
- org.storydriven.modeling.edit.eef;bundle-version="0.2.0"
+ org.storydriven.core.edit.eef;bundle-version="0.2.0"
 Bundle-ActivationPolicy: lazy

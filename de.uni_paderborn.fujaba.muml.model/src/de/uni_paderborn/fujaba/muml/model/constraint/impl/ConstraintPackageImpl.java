@@ -12,8 +12,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.ExpressionsPackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -316,7 +315,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
+		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
@@ -325,11 +324,11 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		constraintEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
+		constraintEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 		modelingConstraintEClass.getESuperTypes().add(this.getConstraint());
 		verifiableConstraintEClass.getESuperTypes().add(this.getConstraint());
 		textualConstraintEClass.getESuperTypes().add(this.getVerifiableConstraint());
-		textualConstraintEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
+		textualConstraintEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

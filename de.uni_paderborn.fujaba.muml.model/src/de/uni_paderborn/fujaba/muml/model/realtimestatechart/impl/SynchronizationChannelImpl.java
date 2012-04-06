@@ -6,16 +6,22 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.calls.impl.CallableImpl;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
@@ -27,33 +33,44 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChan
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SynchronizationChannelImpl extends CallableImpl implements SynchronizationChannel {
+public class SynchronizationChannelImpl extends NamedElementImpl implements SynchronizationChannel {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,8 +96,8 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getComment() {
+		return comment;
 	}
 
 	/**
@@ -88,11 +105,11 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -141,6 +158,18 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -162,6 +191,8 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return basicSetState(null, msgs);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -188,10 +219,12 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
-				return getName();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
+				return getComment();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,14 +234,19 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
-				setName((String)newValue);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
+				setComment((String)newValue);
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)newValue);
+				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,11 +260,14 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
-				setName(NAME_EDEFAULT);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
+				setComment(COMMENT_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)null);
+				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
+				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -240,10 +281,12 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState() != null;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -255,9 +298,9 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
+		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
+				case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -271,9 +314,9 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
+		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case SDMPackage.NAMED_ELEMENT__NAME: return RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT;
 				default: return -1;
 			}
 		}
@@ -290,8 +333,8 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (comment: ");
+		result.append(comment);
 		result.append(')');
 		return result.toString();
 	}

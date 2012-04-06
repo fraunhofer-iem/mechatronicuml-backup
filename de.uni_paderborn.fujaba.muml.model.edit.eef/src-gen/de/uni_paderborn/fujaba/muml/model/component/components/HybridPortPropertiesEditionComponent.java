@@ -32,7 +32,7 @@ import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSett
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -42,7 +42,6 @@ import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.parts.ComponentViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.component.parts.HybridPortPropertiesEditionPart;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory;
@@ -131,6 +130,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -138,11 +138,13 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			final HybridPort hybridPort = (HybridPort)elt;
 			final HybridPortPropertiesEditionPart basePart = (HybridPortPropertiesEditionPart)editingPart;
 			// init values
-			if (hybridPort.getName() != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.name))
+			if (hybridPort.getName() != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), hybridPort.getName()));
+			}
 			
-			if (hybridPort.getComment() != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.comment))
+			if (hybridPort.getComment() != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.comment)) {
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), hybridPort.getComment()));
+			}
 			
 			if (isAccessible(ComponentViewsRepository.HybridPort.Properties.incomingConnectors)) {
 				incomingConnectorsSettings = new ReferencesTableSettings(hybridPort, ComponentPackage.eINSTANCE.getPort_IncomingConnectors());
@@ -161,7 +163,10 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			}
 			if (isAccessible(ComponentViewsRepository.HybridPort.Properties.behavior)) {
 				// init part
-				behaviorSettings = new EObjectFlatComboSettings(hybridPort, CorePackage.eINSTANCE.getBehavioralElement_Behavior());
+				behaviorSettings = new EObjectFlatComboSettings(
+						hybridPort,
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+								.getBehavioralElement_Behavior());
 				basePart.initBehavior(behaviorSettings);
 				// set the button mode
 				basePart.setBehaviorButtonMode(ButtonsModeEnum.BROWSE);
@@ -221,9 +226,11 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
+				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
+					if (element instanceof EObject) {
 						return (!basePart.isContainedInIncomingConnectorsTable((EObject)element));
+					}
 					return element instanceof Resource;
 				}
 			
@@ -239,9 +246,11 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
+				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
+					if (element instanceof EObject) {
 						return (!basePart.isContainedInOutgoingConnectorsTable((EObject)element));
+					}
 					return element instanceof Resource;
 				}
 			
@@ -257,6 +266,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof Component); //$NON-NLS-1$ 
 				}
@@ -272,6 +282,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof Behavior); //$NON-NLS-1$ 
 				}
@@ -287,6 +298,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof Role); //$NON-NLS-1$ 
 				}
@@ -302,6 +314,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof MessageInterface); //$NON-NLS-1$ 
 				}
@@ -317,6 +330,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof MessageInterface); //$NON-NLS-1$ 
 				}
@@ -332,6 +346,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof Behavior); //$NON-NLS-1$ 
 				}
@@ -347,6 +362,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof Behavior); //$NON-NLS-1$ 
 				}
@@ -363,6 +379,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof DataType);
 				}
@@ -398,12 +415,13 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == ComponentViewsRepository.HybridPort.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		if (editorKey == ComponentViewsRepository.HybridPort.Properties.comment) {
-			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
+			return CorePackage.eINSTANCE.getCommentableElement_Comment();
 		}
 		if (editorKey == ComponentViewsRepository.HybridPort.Properties.incomingConnectors) {
 			return ComponentPackage.eINSTANCE.getPort_IncomingConnectors();
@@ -415,7 +433,8 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 			return ComponentPackage.eINSTANCE.getPort_Component();
 		}
 		if (editorKey == ComponentViewsRepository.HybridPort.Properties.behavior) {
-			return CorePackage.eINSTANCE.getBehavioralElement_Behavior();
+			return de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getBehavioralElement_Behavior();
 		}
 		if (editorKey == ComponentViewsRepository.HybridPort.Properties.refines) {
 			return ComponentPackage.eINSTANCE.getDiscretePort_Refines();
@@ -446,6 +465,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		HybridPort hybridPort = (HybridPort)semanticObject;
 		if (ComponentViewsRepository.HybridPort.Properties.name == event.getAffectedEditor()) {
@@ -478,7 +498,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 		}
 		if (ComponentViewsRepository.HybridPort.Properties.component_ == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				componentSettings.setToReference((Component)event.getNewValue());
+				componentSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, componentSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -492,7 +512,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 		}
 		if (ComponentViewsRepository.HybridPort.Properties.behavior == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				behaviorSettings.setToReference((Behavior)event.getNewValue());
+				behaviorSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, behaviorSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -506,7 +526,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 		}
 		if (ComponentViewsRepository.HybridPort.Properties.refines == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				refinesSettings.setToReference((Role)event.getNewValue());
+				refinesSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				Role eObject = PatternFactory.eINSTANCE.createRole();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -522,7 +542,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 		}
 		if (ComponentViewsRepository.HybridPort.Properties.senderMessageInterface == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				senderMessageInterfaceSettings.setToReference((MessageInterface)event.getNewValue());
+				senderMessageInterfaceSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				MessageInterface eObject = MsgifaceFactory.eINSTANCE.createMessageInterface();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -538,7 +558,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 		}
 		if (ComponentViewsRepository.HybridPort.Properties.receiverMessageInterface == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				receiverMessageInterfaceSettings.setToReference((MessageInterface)event.getNewValue());
+				receiverMessageInterfaceSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				MessageInterface eObject = MsgifaceFactory.eINSTANCE.createMessageInterface();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -554,7 +574,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 		}
 		if (ComponentViewsRepository.HybridPort.Properties.adaptationBehavior == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				adaptationBehaviorSettings.setToReference((Behavior)event.getNewValue());
+				adaptationBehaviorSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, adaptationBehaviorSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -568,7 +588,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 		}
 		if (ComponentViewsRepository.HybridPort.Properties.roleAndAdaptationBehavior == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				roleAndAdaptationBehaviorSettings.setToReference((Behavior)event.getNewValue());
+				roleAndAdaptationBehaviorSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, roleAndAdaptationBehaviorSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -585,7 +605,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 		}
 		if (ComponentViewsRepository.HybridPort.Properties.type == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				typeSettings.setToReference((DataType)event.getNewValue());
+				typeSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, typeSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -603,46 +623,61 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			HybridPortPropertiesEditionPart basePart = (HybridPortPropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.comment)) {
+			if (CorePackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.comment)) {
 				if (msg.getNewValue() != null) {
 					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setComment("");
 				}
 			}
-			if (ComponentPackage.eINSTANCE.getPort_IncomingConnectors().equals(msg.getFeature())  && isAccessible(ComponentViewsRepository.HybridPort.Properties.incomingConnectors))
+			if (ComponentPackage.eINSTANCE.getPort_IncomingConnectors().equals(msg.getFeature())  && isAccessible(ComponentViewsRepository.HybridPort.Properties.incomingConnectors)) {
 				basePart.updateIncomingConnectors();
-			if (ComponentPackage.eINSTANCE.getPort_OutgoingConnectors().equals(msg.getFeature())  && isAccessible(ComponentViewsRepository.HybridPort.Properties.outgoingConnectors))
+			}
+			if (ComponentPackage.eINSTANCE.getPort_OutgoingConnectors().equals(msg.getFeature())  && isAccessible(ComponentViewsRepository.HybridPort.Properties.outgoingConnectors)) {
 				basePart.updateOutgoingConnectors();
-			if (ComponentPackage.eINSTANCE.getPort_Component().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.component_))
+			}
+			if (ComponentPackage.eINSTANCE.getPort_Component().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.component_)) {
 				basePart.setComponent((EObject)msg.getNewValue());
-			if (CorePackage.eINSTANCE.getBehavioralElement_Behavior().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.behavior))
+			}
+			if (de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getBehavioralElement_Behavior().equals(msg.getFeature())
+					&& basePart != null
+					&& isAccessible(ComponentViewsRepository.HybridPort.Properties.behavior)) {
 				basePart.setBehavior((EObject)msg.getNewValue());
-			if (ComponentPackage.eINSTANCE.getDiscretePort_Refines().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.refines))
+			}
+			if (ComponentPackage.eINSTANCE.getDiscretePort_Refines().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.refines)) {
 				basePart.setRefines((EObject)msg.getNewValue());
-			if (ComponentPackage.eINSTANCE.getDiscretePort_SenderMessageInterface().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.senderMessageInterface))
+			}
+			if (ComponentPackage.eINSTANCE.getDiscretePort_SenderMessageInterface().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.senderMessageInterface)) {
 				basePart.setSenderMessageInterface((EObject)msg.getNewValue());
-			if (ComponentPackage.eINSTANCE.getDiscretePort_ReceiverMessageInterface().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.receiverMessageInterface))
+			}
+			if (ComponentPackage.eINSTANCE.getDiscretePort_ReceiverMessageInterface().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.receiverMessageInterface)) {
 				basePart.setReceiverMessageInterface((EObject)msg.getNewValue());
-			if (ComponentPackage.eINSTANCE.getDiscretePort_AdaptationBehavior().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.adaptationBehavior))
+			}
+			if (ComponentPackage.eINSTANCE.getDiscretePort_AdaptationBehavior().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.adaptationBehavior)) {
 				basePart.setAdaptationBehavior((EObject)msg.getNewValue());
-			if (ComponentPackage.eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.roleAndAdaptationBehavior))
+			}
+			if (ComponentPackage.eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.roleAndAdaptationBehavior)) {
 				basePart.setRoleAndAdaptationBehavior((EObject)msg.getNewValue());
-			if (ComponentPackage.eINSTANCE.getContinuousPort_Kind().equals(msg.getFeature()) && isAccessible(ComponentViewsRepository.HybridPort.Properties.kind))
+			}
+			if (ComponentPackage.eINSTANCE.getContinuousPort_Kind().equals(msg.getFeature()) && isAccessible(ComponentViewsRepository.HybridPort.Properties.kind)) {
 				basePart.setKind((ContinuousPortDirectionKind)msg.getNewValue());
+			}
 			
-			if (ComponentPackage.eINSTANCE.getContinuousPort_Type().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.type))
+			if (ComponentPackage.eINSTANCE.getContinuousPort_Type().equals(msg.getFeature()) && basePart != null && isAccessible(ComponentViewsRepository.HybridPort.Properties.type)) {
 				basePart.setType((EObject)msg.getNewValue());
+			}
 			
 		}
 	}
@@ -654,6 +689,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == ComponentViewsRepository.HybridPort.Properties.name || key == ComponentViewsRepository.HybridPort.Properties.kind || key == ComponentViewsRepository.HybridPort.Properties.type;
 	}
@@ -664,6 +700,7 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -671,16 +708,16 @@ public class HybridPortPropertiesEditionComponent extends SinglePartPropertiesEd
 				if (ComponentViewsRepository.HybridPort.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.HybridPort.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 				if (ComponentViewsRepository.HybridPort.Properties.kind == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();

@@ -6,19 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.impl.NamedElementImpl;
+
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.SDMPackage;
-
-import org.storydriven.modeling.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -161,7 +156,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case CorePackage.DATA_TYPE__COMMENT: return SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
+				case CorePackage.DATA_TYPE__COMMENT: return org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -177,7 +172,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.DATA_TYPE__COMMENT;
+				case org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.DATA_TYPE__COMMENT;
 				default: return -1;
 			}
 		}

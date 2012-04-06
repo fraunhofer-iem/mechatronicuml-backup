@@ -13,6 +13,18 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
+            providerClass="de.uni_paderborn.fujaba.muml.model.instance.providers.InstancePropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="de.uni_paderborn.fujaba.muml.model.component.providers.ComponentPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
             providerClass="de.uni_paderborn.fujaba.muml.model.msgiface.providers.MsgifacePropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
@@ -25,37 +37,25 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.pattern.providers.PatternPropertiesEditionPartProvider">
-      </PropertiesEditionPartProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
-      <PropertiesEditionPartProvider
             providerClass="de.uni_paderborn.fujaba.muml.model.core.providers.CorePropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.component.providers.ComponentPropertiesEditionPartProvider">
+            providerClass="de.uni_paderborn.fujaba.muml.model.constraint.providers.ConstraintPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="de.uni_paderborn.fujaba.muml.model.pattern.providers.PatternPropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider
             providerClass="de.uni_paderborn.fujaba.muml.model.deployment.providers.DeploymentPropertiesEditionPartProvider">
-      </PropertiesEditionPartProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
-      <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.instance.providers.InstancePropertiesEditionPartProvider">
-      </PropertiesEditionPartProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
-      <PropertiesEditionPartProvider
-            providerClass="de.uni_paderborn.fujaba.muml.model.constraint.providers.ConstraintPropertiesEditionPartProvider">
       </PropertiesEditionPartProvider>
    </extension>
 

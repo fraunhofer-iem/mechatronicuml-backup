@@ -6,7 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import org.storydriven.modeling.calls.Invocation;
+import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.ExtendableElement;
+
+import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +25,7 @@ import org.storydriven.modeling.calls.Invocation;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSyncChannel <em>Sync Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getKind <em>Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getParameterBinding <em>Parameter Binding</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,7 +33,7 @@ import org.storydriven.modeling.calls.Invocation;
  * @model
  * @generated
  */
-public interface Synchronization extends Invocation {
+public interface Synchronization extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Sync Channel</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -38,12 +42,22 @@ public interface Synchronization extends Invocation {
 	 * the channel that is used by the synchronization
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sync Channel</em>' reference.
+	 * @see #setSyncChannel(SynchronizationChannel)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_SyncChannel()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not callee.oclIsUndefined() then\r\n\tcallee->any(x | x.oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)\r\nelse\r\n\tnull\r\nendif\r\n\r\n'"
+	 * @model
 	 * @generated
 	 */
 	SynchronizationChannel getSyncChannel();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSyncChannel <em>Sync Channel</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sync Channel</em>' reference.
+	 * @see #getSyncChannel()
+	 * @generated
+	 */
+	void setSyncChannel(SynchronizationChannel value);
 
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
@@ -72,5 +86,21 @@ public interface Synchronization extends Invocation {
 	 * @generated
 	 */
 	void setKind(SynchronizationKind value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameter Binding</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameter Binding</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameter Binding</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_ParameterBinding()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ParameterBinding> getParameterBinding();
 
 } // Synchronization

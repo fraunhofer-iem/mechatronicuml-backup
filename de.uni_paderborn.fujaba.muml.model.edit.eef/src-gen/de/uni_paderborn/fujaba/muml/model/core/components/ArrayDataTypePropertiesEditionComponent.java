@@ -22,10 +22,9 @@ import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.parts.ArrayDataTypePropertiesEditionPart;
 import de.uni_paderborn.fujaba.muml.model.core.parts.CoreViewsRepository;
 
@@ -61,6 +60,7 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -68,15 +68,19 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 			final ArrayDataType arrayDataType = (ArrayDataType)elt;
 			final ArrayDataTypePropertiesEditionPart basePart = (ArrayDataTypePropertiesEditionPart)editingPart;
 			// init values
-			if (arrayDataType.getName() != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.name))
+			if (arrayDataType.getName() != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), arrayDataType.getName()));
+			}
 			
-			if (arrayDataType.getComment() != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.comment))
+			if (arrayDataType.getComment() != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.comment)) {
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), arrayDataType.getComment()));
+			}
 			
 			if (arrayDataType.getCardinality() != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.cardinality))
+			 {
 				basePart.setCardinality(arrayDataType.getCardinality());
 			// init filters
+			}
 			
 			
 			
@@ -97,15 +101,17 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == CoreViewsRepository.ArrayDataType.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		if (editorKey == CoreViewsRepository.ArrayDataType.Properties.comment) {
-			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
+			return CorePackage.eINSTANCE.getCommentableElement_Comment();
 		}
 		if (editorKey == CoreViewsRepository.ArrayDataType.Properties.cardinality) {
-			return CorePackage.eINSTANCE.getArrayDataType_Cardinality();
+			return de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getArrayDataType_Cardinality();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -115,6 +121,7 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		ArrayDataType arrayDataType = (ArrayDataType)semanticObject;
 		if (CoreViewsRepository.ArrayDataType.Properties.name == event.getAffectedEditor()) {
@@ -135,24 +142,28 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			ArrayDataTypePropertiesEditionPart basePart = (ArrayDataTypePropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.comment)) {
+			if (CorePackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.comment)) {
 				if (msg.getNewValue() != null) {
 					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setComment("");
 				}
 			}
-			if (CorePackage.eINSTANCE.getArrayDataType_Cardinality().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.cardinality)) {
+			if (de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getArrayDataType_Cardinality().equals(msg.getFeature())
+					&& basePart != null
+					&& isAccessible(CoreViewsRepository.ArrayDataType.Properties.cardinality)) {
 				basePart.setCardinality(((ArrayDataType)semanticObject).getCardinality());
 			}
 			
@@ -166,6 +177,7 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == CoreViewsRepository.ArrayDataType.Properties.name || key == CoreViewsRepository.ArrayDataType.Properties.cardinality;
 	}
@@ -176,6 +188,7 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -183,21 +196,26 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 				if (CoreViewsRepository.ArrayDataType.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (CoreViewsRepository.ArrayDataType.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 				if (CoreViewsRepository.ArrayDataType.Properties.cardinality == event.getAffectedEditor()) {
 					BasicDiagnostic chain = new BasicDiagnostic();
 					for (Iterator iterator = ((List)event.getNewValue()).iterator(); iterator.hasNext();) {
-						chain.add(Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getArrayDataType_Cardinality().getEAttributeType(), iterator.next()));
+						chain.add(Diagnostician.INSTANCE
+								.validate(
+										de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+												.getArrayDataType_Cardinality()
+												.getEAttributeType(), iterator
+												.next()));
 					}
 					ret = chain;
 				}

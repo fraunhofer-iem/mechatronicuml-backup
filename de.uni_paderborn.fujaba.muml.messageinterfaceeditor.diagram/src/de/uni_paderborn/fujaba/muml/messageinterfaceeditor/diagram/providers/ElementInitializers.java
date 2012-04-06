@@ -49,6 +49,24 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_Parameter_3006(
+			de.uni_paderborn.fujaba.muml.model.core.Parameter instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							2,
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+									.getParameter(), null).evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 				.getInstance().getElementInitializers();

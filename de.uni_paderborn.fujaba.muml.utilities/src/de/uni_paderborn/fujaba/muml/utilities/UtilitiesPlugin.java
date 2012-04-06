@@ -10,12 +10,8 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.storydriven.modeling.activities.expressions.provider.ExpressionsItemProviderAdapterFactory;
-import org.storydriven.modeling.activities.provider.ActivitiesItemProviderAdapterFactory;
-import org.storydriven.modeling.calls.provider.CallsItemProviderAdapterFactory;
-import org.storydriven.modeling.patterns.provider.PatternsItemProviderAdapterFactory;
-import org.storydriven.modeling.provider.SDMItemProviderAdapterFactory;
-import org.storydriven.modeling.templates.provider.TemplatesItemProviderAdapterFactory;
+import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
+import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
@@ -108,11 +104,11 @@ public class UtilitiesPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ModelinstanceItemProviderAdapterFactory());
-		factories.add(new SDMItemProviderAdapterFactory());
+		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories
-				.add(new org.storydriven.modeling.expressions.provider.ExpressionsItemProviderAdapterFactory());
+				.add(new org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory());
 		factories.add(new CallsItemProviderAdapterFactory());
 		factories
 				.add(new org.storydriven.modeling.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());

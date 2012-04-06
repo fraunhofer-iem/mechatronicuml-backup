@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance;
 
-import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
-
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.NamedElement;
 
-import org.storydriven.modeling.NamedElement;
+import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
 
 /**
  * <!-- begin-user-doc -->

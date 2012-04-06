@@ -3,7 +3,6 @@
 */
 package de.uni_paderborn.fujaba.muml.ui.contentassist;
 
-import de.uni_paderborn.fujaba.muml.ui.contentassist.AbstractActionLanguageProposalProvider;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */

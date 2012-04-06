@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CoordinationPattern_2002(
+	public void init_CoordinationPattern_2003(
 			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory

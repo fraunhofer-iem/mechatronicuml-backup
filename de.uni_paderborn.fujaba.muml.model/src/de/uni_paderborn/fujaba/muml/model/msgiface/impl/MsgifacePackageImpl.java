@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.calls.CallsPackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -211,6 +209,15 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMessageType_Parameters() {
+		return (EReference)messageTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MsgifaceFactory getMsgifaceFactory() {
 		return (MsgifaceFactory)getEFactoryInstance();
 	}
@@ -241,6 +248,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
 		createEReference(messageTypeEClass, MESSAGE_TYPE__MESSAGE_INTERFACE);
+		createEReference(messageTypeEClass, MESSAGE_TYPE__PARAMETERS);
 	}
 
 	/**
@@ -267,17 +275,18 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
-		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
+		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		messageInterfaceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		messageTypeEClass.getESuperTypes().add(theCallsPackage.getCallable());
-		messageTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		messageInterfaceEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		messageInterfaceEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		messageTypeEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		messageTypeEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -287,6 +296,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageType_MessageInterface(), this.getMessageInterface(), this.getMessageInterface_MessageTypes(), "messageInterface", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageType_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -354,7 +364,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueParameterNames", "self.containedParameters->isUnique(name)"
+			 "UniqueParameterNames", "self.parameters->isUnique(name)"
 		   });		
 	}
 

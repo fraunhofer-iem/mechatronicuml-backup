@@ -51,7 +51,7 @@ public class AtomiccomponentValidationDecoratorProvider extends
 	/**
 	 * @generated
 	 */
-	private static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.ID
+	private static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin.ID
 			+ ".diagnostic"; //$NON-NLS-1$
 
 	/**
@@ -83,7 +83,7 @@ public class AtomiccomponentValidationDecoratorProvider extends
 			if (!(ed instanceof DiagramEditDomain)) {
 				return;
 			}
-			if (((DiagramEditDomain) ed).getEditorPart() instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor) {
+			if (((DiagramEditDomain) ed).getEditorPart() instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditor) {
 				decoratorTarget.installDecorator(KEY, new StatusDecorator(
 						decoratorTarget));
 			}
@@ -140,7 +140,7 @@ public class AtomiccomponentValidationDecoratorProvider extends
 								}
 							});
 				} catch (Exception e) {
-					de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+					de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 							.getInstance().logError(
 									"Decorator refresh failure", e); //$NON-NLS-1$
 				}
@@ -175,7 +175,7 @@ public class AtomiccomponentValidationDecoratorProvider extends
 							}
 						});
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 						.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
 			}
 		}
@@ -212,7 +212,7 @@ public class AtomiccomponentValidationDecoratorProvider extends
 				markers = resource.findMarkers(MARKER_TYPE, true,
 						IResource.DEPTH_INFINITE);
 			} catch (CoreException e) {
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 						.getInstance().logError(
 								"Validation markers refresh failure", e); //$NON-NLS-1$
 			}
@@ -439,7 +439,7 @@ public class AtomiccomponentValidationDecoratorProvider extends
 			try {
 				return marker.getType();
 			} catch (CoreException e) {
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 						.getInstance().logError(
 								"Validation marker refresh failure", e); //$NON-NLS-1$
 				return ""; //$NON-NLS-1$

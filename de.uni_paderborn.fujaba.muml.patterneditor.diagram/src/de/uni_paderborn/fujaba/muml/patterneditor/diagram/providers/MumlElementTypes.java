@@ -51,7 +51,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationPattern_2002 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_2002"); //$NON-NLS-1$
+	public static final IElementType CoordinationPattern_2003 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_2003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -188,7 +188,7 @@ public class MumlElementTypes {
 					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					CoordinationPattern_2002,
+					CoordinationPattern_2003,
 					de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
 							.getCoordinationPattern());
 
@@ -229,7 +229,7 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_2002);
+			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_2003);
 			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_3003);
 			KNOWN_ELEMENT_TYPES.add(Role_3004);
 			KNOWN_ELEMENT_TYPES.add(CoordinationPatternRoles_4003);
@@ -246,7 +246,7 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
-			return CoordinationPattern_2002;
+			return CoordinationPattern_2003;
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 			return CoordinationPattern_3003;
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:

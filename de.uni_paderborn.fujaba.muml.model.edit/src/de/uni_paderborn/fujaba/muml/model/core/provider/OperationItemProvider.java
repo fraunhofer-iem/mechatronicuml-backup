@@ -7,22 +7,13 @@
 package de.uni_paderborn.fujaba.muml.model.core.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,12 +23,15 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.provider.NamedElementItemProvider;
 
-import org.storydriven.modeling.SDMPackage;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.Operation;
 
-import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
 
-import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.Operation} object.
@@ -95,7 +89,7 @@ public class OperationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_CommentableElement_comment_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
 				 false,
@@ -117,7 +111,7 @@ public class OperationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Operation_returnType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_returnType_feature", "_UI_Operation_type"),
-				 CorePackage.Literals.OPERATION__RETURN_TYPE,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__RETURN_TYPE,
 				 true,
 				 false,
 				 true,
@@ -139,7 +133,7 @@ public class OperationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Operation_implementations_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_implementations_feature", "_UI_Operation_type"),
-				 CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 true,
 				 false,
 				 false,
@@ -161,7 +155,7 @@ public class OperationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Operation_parameters_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_parameters_feature", "_UI_Operation_type"),
-				 CorePackage.Literals.OPERATION__PARAMETERS,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__PARAMETERS,
 				 true,
 				 false,
 				 false,
@@ -182,8 +176,8 @@ public class OperationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.OPERATION__IMPLEMENTATIONS);
-			childrenFeatures.add(CorePackage.Literals.OPERATION__PARAMETERS);
+			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS);
+			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -238,11 +232,11 @@ public class OperationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Operation.class)) {
-			case CorePackage.OPERATION__COMMENT:
+			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.OPERATION__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case CorePackage.OPERATION__IMPLEMENTATIONS:
-			case CorePackage.OPERATION__PARAMETERS:
+			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.OPERATION__IMPLEMENTATIONS:
+			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.OPERATION__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -262,77 +256,42 @@ public class OperationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createTextualExpression()));
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ExpressionsFactory.eINSTANCE.createNotExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createNotExpression()));
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.OPERATION__PARAMETERS,
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__PARAMETERS,
 				 CoreFactory.eINSTANCE.createParameter()));
 	}
 

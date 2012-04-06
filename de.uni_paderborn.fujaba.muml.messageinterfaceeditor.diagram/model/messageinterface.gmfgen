@@ -72,7 +72,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.1">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -91,7 +91,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -127,6 +127,15 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType/parameters"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType/parameters"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.2">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5011"
@@ -180,7 +189,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.0">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -203,7 +212,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -413,6 +422,8 @@
       <expressions
           body="'messagetype'"/>
       <expressions
+          body="'p'"/>
+      <expressions
           body="(&#xA;&#x9;if self.eContainer().oclAsType(msgiface::MessageType).parameters->first() = self then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' '&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.type.oclIsUndefined() or self.type.name.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' : '.concat(self.type.name)&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.eContainer().oclAsType(msgiface::MessageType).parameters->last() = self then&#xA;-- NOTE: normally we should use the empty string here, but then we need to update labels of other Parameters to prevent missing comma-delimiters.&#xA;&#x9;&#x9;','&#xA;&#x9;else&#xA;&#x9;&#x9;','&#xA;&#x9;endif&#xA;)"/>
       <expressions
           body="if self.name.oclIsUndefined() then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.name&#xA;endif"/>
@@ -425,8 +436,8 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
         className="ParameterLabelExpressionLabelParser5011"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.2"
-        editExpression="//@expressionProviders/@providers.0/@expressions.3">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.3"
+        editExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Parameter"/>
     </implementations>

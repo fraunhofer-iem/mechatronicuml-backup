@@ -56,6 +56,9 @@ public class ParameterCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.msgiface.MessageType owner = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageType) getElementToEdit();
 		owner.getParameters().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers
+				.getInstance().init_Parameter_3006(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

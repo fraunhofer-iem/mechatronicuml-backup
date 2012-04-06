@@ -20,13 +20,9 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.storydriven.modeling.activities.expressions.provider.ExpressionsItemProviderAdapterFactory;
-import org.storydriven.modeling.activities.provider.ActivitiesItemProviderAdapterFactory;
-import org.storydriven.modeling.calls.provider.CallsItemProviderAdapterFactory;
-import org.storydriven.modeling.patterns.provider.PatternsItemProviderAdapterFactory;
-import org.storydriven.modeling.provider.SDMItemProviderAdapterFactory;
-import org.storydriven.modeling.templates.provider.TemplatesItemProviderAdapterFactory;
+import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 
+import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
 /**
@@ -84,6 +80,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
@@ -95,6 +92,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
@@ -152,18 +150,8 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ModelinstanceItemProviderAdapterFactory());
-		factories.add(new SDMItemProviderAdapterFactory());
-		factories.add(new ActivitiesItemProviderAdapterFactory());
+		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.modeling.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		factories.add(new CallsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.modeling.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		factories.add(new PatternsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		factories.add(new TemplatesItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);

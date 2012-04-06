@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.storydriven.modeling.SDMPackage;
 
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
@@ -45,7 +44,7 @@ public interface PatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.2.1";
+	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.2.3";
 
 	/**
 	 * The package namespace name.
@@ -144,7 +143,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int COORDINATION_PATTERN__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -153,7 +152,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
+	int COORDINATION_PATTERN__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -162,7 +161,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int COORDINATION_PATTERN__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -171,7 +170,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int COORDINATION_PATTERN__CONSTRAINT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -180,7 +179,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__ROLES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COORDINATION_PATTERN__ROLES = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Connector</b></em>' containment reference.
@@ -189,7 +188,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COORDINATION_PATTERN__CONNECTOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -198,7 +197,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COORDINATION_PATTERN__PATTERN = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Pattern</em>' class.
@@ -207,7 +206,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COORDINATION_PATTERN_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl <em>Role</em>}' class.
@@ -226,7 +225,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int ROLE__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -235,7 +234,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
+	int ROLE__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -244,7 +243,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int ROLE__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -253,7 +252,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ROLE__CONSTRAINT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -262,7 +261,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE__BEHAVIOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Role Connector</b></em>' reference.
@@ -271,7 +270,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__INCOMING_ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE__INCOMING_ROLE_CONNECTOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
@@ -280,7 +279,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__COORDINATION_PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE__COORDINATION_PATTERN = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
@@ -289,7 +288,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__SENDER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE__SENDER_MESSAGE_INTERFACE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
@@ -298,7 +297,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ROLE__RECEIVER_MESSAGE_INTERFACE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -307,7 +306,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int ROLE__CARDINALITY = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
@@ -316,7 +315,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PORT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int ROLE__PORT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -325,7 +324,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ADAPTATION_BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int ROLE__ADAPTATION_BEHAVIOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -334,7 +333,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -343,16 +342,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ORDERED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Order Variable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ORDER_VARIABLE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int ROLE__ORDERED = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Role Connector</b></em>' reference.
@@ -361,7 +351,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OUTGOING_ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int ROLE__OUTGOING_ROLE_CONNECTOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
@@ -370,7 +360,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int ROLE__ROLE_CONNECTOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -379,7 +369,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int ROLE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 
 	/**
@@ -600,17 +590,6 @@ public interface PatternPackage extends EPackage {
 	EAttribute getRole_Ordered();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable <em>Order Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Order Variable</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_OrderVariable();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -808,14 +787,6 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROLE__ORDERED = eINSTANCE.getRole_Ordered();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Variable</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE__ORDER_VARIABLE = eINSTANCE.getRole_OrderVariable();
 
 		/**
 		 * The meta object literal for the '<em><b>Outgoing Role Connector</b></em>' reference feature.

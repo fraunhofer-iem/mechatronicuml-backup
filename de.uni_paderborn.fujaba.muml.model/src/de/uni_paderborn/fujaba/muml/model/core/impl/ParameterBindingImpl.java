@@ -6,21 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.impl.ExtendableElementImpl;
+
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.storydriven.modeling.expressions.Expression;
-
-import org.storydriven.modeling.impl.ExtendableElementImpl;
 
 /**
  * <!-- begin-user-doc -->

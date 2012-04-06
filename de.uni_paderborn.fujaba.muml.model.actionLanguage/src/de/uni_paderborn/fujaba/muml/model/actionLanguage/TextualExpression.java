@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

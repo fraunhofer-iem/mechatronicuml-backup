@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.modeling.impl.NamedElementImpl;
+import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.common.algorithm.BreadthFirstSearchAlgorithm;
 import de.uni_paderborn.fujaba.common.algorithm.ISearchVisitor;

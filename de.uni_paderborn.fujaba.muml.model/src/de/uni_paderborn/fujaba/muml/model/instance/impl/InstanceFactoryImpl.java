@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +41,7 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 */
 	public static InstanceFactory init() {
 		try {
-			InstanceFactory theInstanceFactory = (InstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/instance/0.2.1"); 
+			InstanceFactory theInstanceFactory = (InstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/instance/0.2.2"); 
 			if (theInstanceFactory != null) {
 				return theInstanceFactory;
 			}
@@ -78,6 +79,7 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 			case InstancePackage.HYBRID_PORT_INSTANCE: return createHybridPortInstance();
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE: return createDiscreteSinglePortInstance();
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE: return createDiscreteMultiPortInstance();
+			case InstancePackage.PATTERN_INSTANCE: return createPatternInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -171,6 +173,16 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	public DiscreteMultiPortInstance createDiscreteMultiPortInstance() {
 		DiscreteMultiPortInstanceImpl discreteMultiPortInstance = new DiscreteMultiPortInstanceImpl();
 		return discreteMultiPortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatternInstance createPatternInstance() {
+		PatternInstanceImpl patternInstance = new PatternInstanceImpl();
+		return patternInstance;
 	}
 
 	/**

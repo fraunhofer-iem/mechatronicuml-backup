@@ -66,7 +66,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.0">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -89,7 +89,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.5">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -186,7 +186,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.2">
                 <feature
-                    href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -353,7 +353,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.6">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -410,7 +410,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.8">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
@@ -427,7 +427,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.10">
                 <feature
-                    href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -449,7 +449,7 @@
             parser="//@labelParsers/@implementations.5"
             viewPattern="">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -535,7 +535,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.5">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -592,7 +592,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.11">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -612,7 +612,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.5">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -654,7 +654,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.12">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -674,7 +674,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.5">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -715,7 +715,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.15">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -735,7 +735,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.5">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -777,7 +777,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.16">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -797,7 +797,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.5">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -839,7 +839,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.5">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels

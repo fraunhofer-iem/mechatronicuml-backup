@@ -6,8 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.calls.Callable;
+import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +27,7 @@ import org.storydriven.modeling.calls.Callable;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getState <em>State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,7 +35,7 @@ import org.storydriven.modeling.calls.Callable;
  * @model
  * @generated
  */
-public interface SynchronizationChannel extends Callable, NamedElement {
+public interface SynchronizationChannel extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getChannels <em>Channels</em>}'.
@@ -58,5 +62,21 @@ public interface SynchronizationChannel extends Callable, NamedElement {
 	 * @generated
 	 */
 	void setState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_Parameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getParameters();
 
 } // SynchronizationChannel

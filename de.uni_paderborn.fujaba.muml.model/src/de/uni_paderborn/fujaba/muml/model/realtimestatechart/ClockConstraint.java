@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.modeling.expressions.ComparingOperator;
+import org.storydriven.core.expressions.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
@@ -96,7 +96,7 @@ public interface ClockConstraint extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
 	 * The default value is <code>"ComparingOperator.LESS_OR_EQUAL"</code>.
-	 * The literals are from the enumeration {@link org.storydriven.modeling.expressions.ComparingOperator}.
+	 * The literals are from the enumeration {@link org.storydriven.core.expressions.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
@@ -107,7 +107,7 @@ public interface ClockConstraint extends EObject {
 	 * The operator that is used in this clock constraint.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
-	 * @see org.storydriven.modeling.expressions.ComparingOperator
+	 * @see org.storydriven.core.expressions.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClockConstraint_Operator()
 	 * @model default="ComparingOperator.LESS_OR_EQUAL" required="true"
@@ -120,7 +120,7 @@ public interface ClockConstraint extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operator</em>' attribute.
-	 * @see org.storydriven.modeling.expressions.ComparingOperator
+	 * @see org.storydriven.core.expressions.ComparingOperator
 	 * @see #getOperator()
 	 * @generated
 	 */

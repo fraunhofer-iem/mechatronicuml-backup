@@ -11,8 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import org.storydriven.modeling.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->

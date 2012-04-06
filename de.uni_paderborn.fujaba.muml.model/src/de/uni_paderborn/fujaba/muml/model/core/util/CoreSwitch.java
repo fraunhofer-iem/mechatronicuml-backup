@@ -7,23 +7,31 @@
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
 import de.uni_paderborn.fujaba.muml.model.core.*;
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.ExtendableElement;
-import org.storydriven.modeling.TypedElement;
-import org.storydriven.modeling.calls.Invocation;
-import org.storydriven.modeling.expressions.Expression;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.NamedElement;
+import org.storydriven.core.TypedElement;
+import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
+import de.uni_paderborn.fujaba.muml.model.core.CompositeDataType;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
+import de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +46,7 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
  * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage
  * @generated
  */
-public class CoreSwitch<T> {
+public class CoreSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -60,14 +68,16 @@ public class CoreSwitch<T> {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -77,26 +87,7 @@ public class CoreSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case CorePackage.NATURAL_NUMBER: {
@@ -132,11 +123,93 @@ public class CoreSwitch<T> {
 			case CorePackage.ACTIVITY_CALL_EXPRESSION: {
 				ActivityCallExpression activityCallExpression = (ActivityCallExpression)theEObject;
 				T result = caseActivityCallExpression(activityCallExpression);
-				if (result == null) result = caseInvocation(activityCallExpression);
 				if (result == null) result = caseExpression(activityCallExpression);
-				if (result == null) result = caseCommentableElement(activityCallExpression);
 				if (result == null) result = caseTypedElement(activityCallExpression);
+				if (result == null) result = caseCommentableElement(activityCallExpression);
 				if (result == null) result = caseExtendableElement(activityCallExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.ATTRIBUTE: {
+				Attribute attribute = (Attribute)theEObject;
+				T result = caseAttribute(attribute);
+				if (result == null) result = caseNamedElement(attribute);
+				if (result == null) result = caseCommentableElement(attribute);
+				if (result == null) result = caseExtendableElement(attribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.OPERATION: {
+				Operation operation = (Operation)theEObject;
+				T result = caseOperation(operation);
+				if (result == null) result = caseNamedElement(operation);
+				if (result == null) result = caseCommentableElement(operation);
+				if (result == null) result = caseExtendableElement(operation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.PARAMETER: {
+				Parameter parameter = (Parameter)theEObject;
+				T result = caseParameter(parameter);
+				if (result == null) result = caseNamedElement(parameter);
+				if (result == null) result = caseCommentableElement(parameter);
+				if (result == null) result = caseExtendableElement(parameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.DATA_TYPE: {
+				DataType dataType = (DataType)theEObject;
+				T result = caseDataType(dataType);
+				if (result == null) result = caseNamedElement(dataType);
+				if (result == null) result = caseCommentableElement(dataType);
+				if (result == null) result = caseExtendableElement(dataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.PRIMITIVE_DATA_TYPE: {
+				PrimitiveDataType primitiveDataType = (PrimitiveDataType)theEObject;
+				T result = casePrimitiveDataType(primitiveDataType);
+				if (result == null) result = caseDataType(primitiveDataType);
+				if (result == null) result = caseNamedElement(primitiveDataType);
+				if (result == null) result = caseCommentableElement(primitiveDataType);
+				if (result == null) result = caseExtendableElement(primitiveDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.COMPOSITE_DATA_TYPE: {
+				CompositeDataType compositeDataType = (CompositeDataType)theEObject;
+				T result = caseCompositeDataType(compositeDataType);
+				if (result == null) result = caseDataType(compositeDataType);
+				if (result == null) result = caseNamedElement(compositeDataType);
+				if (result == null) result = caseCommentableElement(compositeDataType);
+				if (result == null) result = caseExtendableElement(compositeDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.ARRAY_DATA_TYPE: {
+				ArrayDataType arrayDataType = (ArrayDataType)theEObject;
+				T result = caseArrayDataType(arrayDataType);
+				if (result == null) result = caseCompositeDataType(arrayDataType);
+				if (result == null) result = caseDataType(arrayDataType);
+				if (result == null) result = caseNamedElement(arrayDataType);
+				if (result == null) result = caseCommentableElement(arrayDataType);
+				if (result == null) result = caseExtendableElement(arrayDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.INNER_DECLARATION: {
+				InnerDeclaration innerDeclaration = (InnerDeclaration)theEObject;
+				T result = caseInnerDeclaration(innerDeclaration);
+				if (result == null) result = caseNamedElement(innerDeclaration);
+				if (result == null) result = caseCommentableElement(innerDeclaration);
+				if (result == null) result = caseExtendableElement(innerDeclaration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.PARAMETER_BINDING: {
+				ParameterBinding parameterBinding = (ParameterBinding)theEObject;
+				T result = caseParameterBinding(parameterBinding);
+				if (result == null) result = caseExtendableElement(parameterBinding);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -235,6 +308,141 @@ public class CoreSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttribute(Attribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOperation(Operation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameter(Parameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataType(DataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrimitiveDataType(PrimitiveDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeDataType(CompositeDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Array Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Array Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArrayDataType(ArrayDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Inner Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Inner Declaration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInnerDeclaration(InnerDeclaration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter Binding</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterBinding(ParameterBinding object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -261,21 +469,6 @@ public class CoreSwitch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Invocation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Invocation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInvocation(Invocation object) {
 		return null;
 	}
 
@@ -310,6 +503,21 @@ public class CoreSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -320,6 +528,7 @@ public class CoreSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

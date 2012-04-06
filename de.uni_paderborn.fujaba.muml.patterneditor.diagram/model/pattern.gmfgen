@@ -73,7 +73,7 @@
             editorPattern=""
             editPattern="">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -115,7 +115,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.12">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -167,15 +167,14 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2002"
+        visualID="2003"
         editPartClassName="CoordinationPatternEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternViewFactory"
         canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="CoordinationPatternGraphicalNodeEditPolicy"
@@ -201,7 +200,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.0">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -212,7 +211,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.1">
                 <feature
-                    href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -261,7 +260,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.5">
                 <feature
-                    href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -387,10 +386,9 @@
           targetEnd="//@expressionProviders/@providers.0/@expressions.15"/>
     </links>
     <compartments
-        visualID="7002"
+        visualID="7003"
         editPartClassName="CoordinationPatternCoordinationPatternContainerCompartmentEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternCoordinationPatternContainerCompartmentViewFactory"
         canonicalEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
         title="CoordinationPatternContainerCompartment"

@@ -38,6 +38,7 @@
         visualID="3005"
         editPartClassName="HybridPortEditPart"
         itemSemanticEditPolicyClassName="HybridPortItemSemanticEditPolicy"
+        notationViewFactoryClassName="HybridPortViewFactory"
         canonicalEditPolicyClassName="HybridPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HybridPortGraphicalNodeEditPolicy"
         createCommandClassName="HybridPortCreateCommand"
@@ -103,7 +104,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.3">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -121,7 +122,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -195,7 +196,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.6">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -213,7 +214,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -287,7 +288,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.9">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -305,12 +306,12 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2003"
+        visualID="2004"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
@@ -344,12 +345,12 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.0">
             <feature
-                href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5009"
+          visualID="5010"
           editPartClassName="AtomicComponentNameEditPart"
           itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy">
         <diagramRunTimeClass
@@ -366,7 +367,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -408,55 +409,40 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.general"
-        name="Atomiccomponent Diagram">
+        iD="de.uni_paderborn.fujaba.muml.diagram.general"
+        name="Muml Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.appearance"
+          iD="de.uni_paderborn.fujaba.muml.diagram.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.connections"
+          iD="de.uni_paderborn.fujaba.muml.diagram.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.printing"
+          iD="de.uni_paderborn.fujaba.muml.diagram.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.rulersAndGrid"
+          iD="de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"
+      iD="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram"
       name="Atomiccomponent Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
-      version="0.2.0.qualifier"
-      activatorClassName="AtomiccomponentDiagramEditorPlugin">
+      version="0.2.0.qualifier">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>
-  <editor
-      className="AtomiccomponentDiagramEditor"
-      iconPath="icons/obj16/AtomiccomponentDiagramFile.gif"/>
-  <navigator
-      domainContentProviderClassName="AtomiccomponentDomainNavigatorContentProvider"
-      domainLabelProviderClassName="AtomiccomponentDomainNavigatorLabelProvider"
-      domainNavigatorItemClassName="AtomiccomponentDomainNavigatorItem"
-      contentProviderClassName="AtomiccomponentNavigatorContentProvider"
-      labelProviderClassName="AtomiccomponentNavigatorLabelProvider"
-      linkHelperClassName="AtomiccomponentNavigatorLinkHelper"
-      sorterClassName="AtomiccomponentNavigatorSorter"
-      actionProviderClassName="AtomiccomponentNavigatorActionProvider"
-      abstractNavigatorItemClassName="AtomiccomponentAbstractNavigatorItem"
-      navigatorGroupClassName="AtomiccomponentNavigatorGroup"
-      navigatorItemClassName="AtomiccomponentNavigatorItem"
-      uriInputTesterClassName="AtomiccomponentUriEditorInputTester">
+  <editor/>
+  <navigator>
     <childReferences
         child="//@diagram"/>
     <childReferences
@@ -473,8 +459,7 @@
         child="//@diagram/@topLevelNodes.0"/>
   </navigator>
   <diagramUpdater/>
-  <propertySheet
-      labelProviderClassName="AtomiccomponentSheetLabelProvider">
+  <propertySheet>
     <tabs
         xsi:type="gmfgen:GenStandardPropertyTab"
         iD="appearance"/>
@@ -484,8 +469,7 @@
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
         iD="domain"
-        label="Core"
-        className="AtomiccomponentPropertySection">
+        label="Core">
       <filter
           xsi:type="gmfgen:TypeTabFilter">
         <types>org.eclipse.gmf.runtime.notation.View</types>
@@ -522,7 +506,6 @@
     </providers>
   </expressionProviders>
   <labelParsers
-      className="AtomiccomponentParserProvider"
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"

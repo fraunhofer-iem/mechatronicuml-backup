@@ -7,8 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.NamedElement;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ import org.storydriven.modeling.expressions.Expression;
 public interface Action extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.storydriven.modeling.expressions.Expression}.
+	 * The list contents are of type {@link org.storydriven.core.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

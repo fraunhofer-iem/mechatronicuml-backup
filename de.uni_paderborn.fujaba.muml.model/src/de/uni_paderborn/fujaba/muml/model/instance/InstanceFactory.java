@@ -107,6 +107,15 @@ public interface InstanceFactory extends EFactory {
 	DiscreteMultiPortInstance createDiscreteMultiPortInstance();
 
 	/**
+	 * Returns a new object of class '<em>Pattern Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pattern Instance</em>'.
+	 * @generated
+	 */
+	PatternInstance createPatternInstance();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

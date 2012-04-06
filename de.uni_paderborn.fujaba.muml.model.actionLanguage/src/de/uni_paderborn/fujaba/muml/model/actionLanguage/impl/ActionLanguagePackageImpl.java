@@ -6,6 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.expressions.ExpressionsPackage;
+
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
@@ -31,7 +39,6 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
-
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -40,20 +47,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import org.eclipse.emf.common.util.URI;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.storydriven.modeling.SDMPackage;
-
-import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -299,6 +293,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTextualExpression() {
 		return textualExpressionEClass;
 	}
@@ -308,6 +303,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTextualExpression_ExpressionText() {
 		return (EAttribute)textualExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -317,6 +313,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTextualExpression_Language() {
 		return (EAttribute)textualExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -326,6 +323,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTextualExpression_LanguageVersion() {
 		return (EAttribute)textualExpressionEClass.getEStructuralFeatures().get(2);
 	}
@@ -335,6 +333,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLiteralExpression() {
 		return literalExpressionEClass;
 	}
@@ -344,6 +343,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLiteralExpression_Value() {
 		return (EAttribute)literalExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -353,6 +353,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLiteralExpression_ValueType() {
 		return (EReference)literalExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -362,6 +363,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getUnaryExpression() {
 		return unaryExpressionEClass;
 	}
@@ -371,6 +373,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getUnaryExpression_UnaryExpression() {
 		return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -380,6 +383,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUnaryExpression_UnaryOperator() {
 		return (EAttribute)unaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -389,6 +393,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBinaryExpression() {
 		return binaryExpressionEClass;
 	}
@@ -398,6 +403,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBinaryExpression_LeftExpression() {
 		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -407,6 +413,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBinaryExpression_RightExpression() {
 		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -416,6 +423,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComparisonExpression() {
 		return comparisonExpressionEClass;
 	}
@@ -425,6 +433,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComparisonExpression_Operator() {
 		return (EAttribute)comparisonExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -434,6 +443,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getArithmeticExpression() {
 		return arithmeticExpressionEClass;
 	}
@@ -443,6 +453,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArithmeticExpression_Operator() {
 		return (EAttribute)arithmeticExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -452,6 +463,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBinaryLogicExpression() {
 		return binaryLogicExpressionEClass;
 	}
@@ -461,6 +473,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBinaryLogicExpression_Operator() {
 		return (EAttribute)binaryLogicExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -470,6 +483,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBlock() {
 		return blockEClass;
 	}
@@ -479,6 +493,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBlock_Expressions() {
 		return (EReference)blockEClass.getEStructuralFeatures().get(0);
 	}
@@ -488,6 +503,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLoop() {
 		return loopEClass;
 	}
@@ -497,6 +513,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLoop_Block() {
 		return (EReference)loopEClass.getEStructuralFeatures().get(0);
 	}
@@ -506,6 +523,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLoop_LoopTest() {
 		return (EReference)loopEClass.getEStructuralFeatures().get(1);
 	}
@@ -515,6 +533,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getWhileLoop() {
 		return whileLoopEClass;
 	}
@@ -524,6 +543,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDoWhileLoop() {
 		return doWhileLoopEClass;
 	}
@@ -533,6 +553,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAssignment() {
 		return assignmentEClass;
 	}
@@ -542,6 +563,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAssignment_AssignOperator() {
 		return (EAttribute)assignmentEClass.getEStructuralFeatures().get(0);
 	}
@@ -551,6 +573,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAssignment_AssignExpression() {
 		return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
 	}
@@ -560,6 +583,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAssignment_IncrementDecrementOperator() {
 		return (EAttribute)assignmentEClass.getEStructuralFeatures().get(2);
 	}
@@ -569,6 +593,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAssignment_Attribute() {
 		return (EReference)assignmentEClass.getEStructuralFeatures().get(3);
 	}
@@ -578,6 +603,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getForLoop() {
 		return forLoopEClass;
 	}
@@ -587,6 +613,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getForLoop_InitalizeExpression() {
 		return (EReference)forLoopEClass.getEStructuralFeatures().get(0);
 	}
@@ -596,6 +623,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getForLoop_CountingExpression() {
 		return (EReference)forLoopEClass.getEStructuralFeatures().get(1);
 	}
@@ -605,6 +633,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIfStatement() {
 		return ifStatementEClass;
 	}
@@ -614,6 +643,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIfStatement_IfCondition() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -623,6 +653,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIfStatement_IfBlock() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -632,6 +663,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIfStatement_ElseIfConditions() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(2);
 	}
@@ -641,6 +673,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIfStatement_ElseIfBlocks() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(3);
 	}
@@ -650,6 +683,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIfStatement_ElseBlock() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(4);
 	}
@@ -659,6 +693,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAttributeExpression() {
 		return attributeExpressionEClass;
 	}
@@ -668,6 +703,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAttributeExpression_Attribute() {
 		return (EReference)attributeExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -677,6 +713,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOperationCall() {
 		return operationCallEClass;
 	}
@@ -686,6 +723,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOperationCall_Operation() {
 		return (EReference)operationCallEClass.getEStructuralFeatures().get(0);
 	}
@@ -695,6 +733,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOperationCall_ParameterBinding() {
 		return (EReference)operationCallEClass.getEStructuralFeatures().get(1);
 	}
@@ -704,6 +743,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getLogicOperator() {
 		return logicOperatorEEnum;
 	}
@@ -713,6 +753,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getComparingOperator() {
 		return comparingOperatorEEnum;
 	}
@@ -722,6 +763,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getArithmeticOperator() {
 		return arithmeticOperatorEEnum;
 	}
@@ -731,6 +773,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -740,6 +783,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getIncrementDecrementOperator() {
 		return incrementDecrementOperatorEEnum;
 	}
@@ -749,6 +793,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getComparisonOperator() {
 		return comparisonOperatorEEnum;
 	}
@@ -758,6 +803,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getUnaryOperator() {
 		return unaryOperatorEEnum;
 	}
@@ -767,6 +813,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActionLanguageFactory getActionLanguageFactory() {
 		return (ActionLanguageFactory)getEFactoryInstance();
 	}

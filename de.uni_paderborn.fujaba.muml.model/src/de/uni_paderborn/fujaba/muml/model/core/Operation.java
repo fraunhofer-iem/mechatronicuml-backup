@@ -7,11 +7,9 @@
 package de.uni_paderborn.fujaba.muml.model.core;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.NamedElement;
-
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,7 +73,7 @@ public interface Operation extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Implementations</b></em>' containment reference list.
-	 * The list contents are of type {@link org.storydriven.modeling.expressions.Expression}.
+	 * The list contents are of type {@link org.storydriven.core.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

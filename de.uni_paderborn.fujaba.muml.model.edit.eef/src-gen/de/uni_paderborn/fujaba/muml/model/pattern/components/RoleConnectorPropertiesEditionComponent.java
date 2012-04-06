@@ -89,6 +89,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -135,6 +136,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof Behavior); //$NON-NLS-1$ 
 				}
@@ -151,6 +153,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof Role);
 				}
@@ -166,6 +169,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof Role);
 				}
@@ -181,6 +185,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof CoordinationPattern);
 				}
@@ -208,6 +213,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == PatternViewsRepository.RoleConnector.Properties.behavior) {
 			return CorePackage.eINSTANCE.getBehavioralElement_Behavior();
@@ -232,11 +238,12 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		RoleConnector roleConnector = (RoleConnector)semanticObject;
 		if (PatternViewsRepository.RoleConnector.Properties.behavior == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				behaviorSettings.setToReference((Behavior)event.getNewValue());
+				behaviorSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, behaviorSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -253,7 +260,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 		}
 		if (PatternViewsRepository.RoleConnector.Properties.source == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				sourceSettings.setToReference((Role)event.getNewValue());
+				sourceSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				Role eObject = PatternFactory.eINSTANCE.createRole();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -269,7 +276,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 		}
 		if (PatternViewsRepository.RoleConnector.Properties.target == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				targetSettings.setToReference((Role)event.getNewValue());
+				targetSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				Role eObject = PatternFactory.eINSTANCE.createRole();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -285,7 +292,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 		}
 		if (PatternViewsRepository.RoleConnector.Properties.coordinationPattern == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				coordinationPatternSettings.setToReference((CoordinationPattern)event.getNewValue());
+				coordinationPatternSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				CoordinationPattern eObject = PatternFactory.eINSTANCE.createCoordinationPattern();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -305,20 +312,26 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			RoleConnectorPropertiesEditionPart basePart = (RoleConnectorPropertiesEditionPart)editingPart;
-			if (CorePackage.eINSTANCE.getBehavioralElement_Behavior().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.behavior))
+			if (CorePackage.eINSTANCE.getBehavioralElement_Behavior().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.behavior)) {
 				basePart.setBehavior((EObject)msg.getNewValue());
-			if (PatternPackage.eINSTANCE.getRoleConnector_Bidirectional().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.bidirectional))
+			}
+			if (PatternPackage.eINSTANCE.getRoleConnector_Bidirectional().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.bidirectional)) {
 				basePart.setBidirectional((Boolean)msg.getNewValue());
+			}
 			
-			if (PatternPackage.eINSTANCE.getRoleConnector_Source().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.source))
+			if (PatternPackage.eINSTANCE.getRoleConnector_Source().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.source)) {
 				basePart.setSource((EObject)msg.getNewValue());
-			if (PatternPackage.eINSTANCE.getRoleConnector_Target().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.target))
+			}
+			if (PatternPackage.eINSTANCE.getRoleConnector_Target().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.target)) {
 				basePart.setTarget((EObject)msg.getNewValue());
-			if (PatternPackage.eINSTANCE.getRoleConnector_CoordinationPattern().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.coordinationPattern))
+			}
+			if (PatternPackage.eINSTANCE.getRoleConnector_CoordinationPattern().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.RoleConnector.Properties.coordinationPattern)) {
 				basePart.setCoordinationPattern((EObject)msg.getNewValue());
+			}
 			
 		}
 	}
@@ -330,6 +343,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == PatternViewsRepository.RoleConnector.Properties.source || key == PatternViewsRepository.RoleConnector.Properties.target || key == PatternViewsRepository.RoleConnector.Properties.coordinationPattern;
 	}
@@ -340,6 +354,7 @@ public class RoleConnectorPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {

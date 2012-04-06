@@ -6,26 +6,20 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
-
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.storydriven.core.impl.NamedElementImpl;
 
-import org.storydriven.modeling.impl.NamedElementImpl;
+import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * <!-- begin-user-doc -->

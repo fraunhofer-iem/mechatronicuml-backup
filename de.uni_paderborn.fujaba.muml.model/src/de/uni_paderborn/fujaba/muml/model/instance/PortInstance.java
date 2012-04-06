@@ -7,8 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.instance;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.NamedElement;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 

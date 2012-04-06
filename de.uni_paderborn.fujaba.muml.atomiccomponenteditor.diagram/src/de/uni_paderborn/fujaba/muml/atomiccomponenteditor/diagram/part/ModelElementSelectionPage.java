@@ -88,11 +88,11 @@ public class ModelElementSelectionPage extends WizardPage {
 		modelViewer.getTree().setLayoutData(layoutData);
 		modelViewer
 				.setContentProvider(new AdapterFactoryContentProvider(
-						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 								.getInstance().getItemProvidersAdapterFactory()));
 		modelViewer
 				.setLabelProvider(new AdapterFactoryLabelProvider(
-						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+						de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 								.getInstance().getItemProvidersAdapterFactory()));
 		if (selectedModelElement != null) {
 			modelViewer.setInput(selectedModelElement.eResource());

@@ -27,7 +27,7 @@ import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
@@ -72,6 +72,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -79,8 +80,9 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 			final ComponentInstance componentInstance = (ComponentInstance)elt;
 			final ComponentInstancePropertiesEditionPart basePart = (ComponentInstancePropertiesEditionPart)editingPart;
 			// init values
-			if (componentInstance.getName() != null && isAccessible(InstanceViewsRepository.ComponentInstance.Properties.name))
+			if (componentInstance.getName() != null && isAccessible(InstanceViewsRepository.ComponentInstance.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), componentInstance.getName()));
+			}
 			
 			if (isAccessible(InstanceViewsRepository.ComponentInstance.Properties.componentType)) {
 				// init part
@@ -98,6 +100,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof Component);
 				}
@@ -122,9 +125,10 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == InstanceViewsRepository.ComponentInstance.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		if (editorKey == InstanceViewsRepository.ComponentInstance.Properties.componentType) {
 			return InstancePackage.eINSTANCE.getComponentInstance_ComponentType();
@@ -137,6 +141,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		ComponentInstance componentInstance = (ComponentInstance)semanticObject;
 		if (InstanceViewsRepository.ComponentInstance.Properties.name == event.getAffectedEditor()) {
@@ -144,7 +149,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 		}
 		if (InstanceViewsRepository.ComponentInstance.Properties.componentType == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				componentTypeSettings.setToReference((Component)event.getNewValue());
+				componentTypeSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, componentTypeSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -162,18 +167,20 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			ComponentInstancePropertiesEditionPart basePart = (ComponentInstancePropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ComponentInstance.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ComponentInstance.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (InstancePackage.eINSTANCE.getComponentInstance_ComponentType().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ComponentInstance.Properties.componentType))
+			if (InstancePackage.eINSTANCE.getComponentInstance_ComponentType().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ComponentInstance.Properties.componentType)) {
 				basePart.setComponentType((EObject)msg.getNewValue());
+			}
 			
 		}
 	}
@@ -185,6 +192,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == InstanceViewsRepository.ComponentInstance.Properties.name || key == InstanceViewsRepository.ComponentInstance.Properties.componentType;
 	}
@@ -195,6 +203,7 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -202,9 +211,9 @@ public class ComponentInstancePropertiesEditionComponent extends SinglePartPrope
 				if (InstanceViewsRepository.ComponentInstance.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

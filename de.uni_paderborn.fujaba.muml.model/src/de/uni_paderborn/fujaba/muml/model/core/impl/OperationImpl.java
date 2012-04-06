@@ -6,33 +6,24 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.impl.NamedElementImpl;
 
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.SDMPackage;
-
-import org.storydriven.modeling.expressions.Expression;
-
-import org.storydriven.modeling.impl.NamedElementImpl;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
+import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -320,7 +311,7 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case CorePackage.OPERATION__COMMENT: return SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
+				case CorePackage.OPERATION__COMMENT: return org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -336,7 +327,7 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.OPERATION__COMMENT;
+				case org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.OPERATION__COMMENT;
 				default: return -1;
 			}
 		}

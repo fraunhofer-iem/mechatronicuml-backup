@@ -7,19 +7,32 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.util;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
-
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.ExtendableElement;
-import org.storydriven.modeling.TypedElement;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.TypedElement;
+import org.storydriven.core.expressions.Expression;
 
-import org.storydriven.modeling.expressions.Expression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
+
 
 /**
  * <!-- begin-user-doc -->

@@ -29,12 +29,14 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getEmbeddedParts <em>Embedded Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllStructuredComponents <em>All Structured Components</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllAtomicComponents <em>All Atomic Components</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort NoCyclicComponentPartHierarchy'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentPartsWithinStructuredComponent='self.embeddedParts->isUnique(p | p.componentType)' StructuredComponentNoHybridPort='self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))' ValidComponentType='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT' NoCyclicComponentPartHierarchy='not self->closure(\n\tembeddedParts->collect(\n\t\tif componentType.oclIsTypeOf(component::StructuredComponent) then\n\t\t\tcomponentType.oclAsType(component::StructuredComponent)\n\t\telse\n\t\t\tnull\n\t\tendif\n\t)->select(not oclIsUndefined())\n)->includes(self)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentPartsWithinStructuredComponent='self.embeddedParts->isUnique(p | p.componentType)' StructuredComponentNoHybridPort='self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))' ValidComponentType='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT' NoCyclicComponentPartHierarchy='not self.allStructuredComponents->includes(self)' DiscreteStructuredComponentValidParts='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)' HybridStructuredComponentValidParts='self.componentType = component::ComponentKind::HYBRID_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)' DiscreteStructuredComponentValidPorts='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\n\t)' HybridStructuredComponentValidPorts='self.componentType = component::ComponentKind::HYBRID_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\n\t)'"
  * @generated
  */
 public interface StructuredComponent extends Component {
@@ -71,5 +73,62 @@ public interface StructuredComponent extends Component {
 	 * @generated
 	 */
 	EList<ConnectorType> getConnectors();
+
+	/**
+	 * Returns the value of the '<em><b>All Structured Components</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Transitive closure of all StructuredComponents which are used (specified
+	 * as a componentType for a ComponentPart) in the component hierarchy.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>All Structured Components</em>' containment reference list.
+	 * @see #isSetAllStructuredComponents()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent_AllStructuredComponents()
+	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self->closure(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::StructuredComponent)\n\t)->collect(componentType.oclAsType(component::StructuredComponent))\n)'"
+	 * @generated
+	 */
+	EList<StructuredComponent> getAllStructuredComponents();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllStructuredComponents <em>All Structured Components</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>All Structured Components</em>' containment reference list is set.
+	 * @see #getAllStructuredComponents()
+	 * @generated
+	 */
+	boolean isSetAllStructuredComponents();
+
+	/**
+	 * Returns the value of the '<em><b>All Atomic Components</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.AtomicComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Transitive closure of all AtomicComponents which are used (specified
+	 * as a componentType for a ComponentPart) in the component hierarchy.
+	 * Note: AtomicComponents from directly embeddedParts are NOT included
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>All Atomic Components</em>' containment reference list.
+	 * @see #isSetAllAtomicComponents()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent_AllAtomicComponents()
+	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.allStructuredComponents->collect(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\n)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<AtomicComponent> getAllAtomicComponents();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getAllAtomicComponents <em>All Atomic Components</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>All Atomic Components</em>' containment reference list is set.
+	 * @see #getAllAtomicComponents()
+	 * @generated
+	 */
+	boolean isSetAllAtomicComponents();
 
 } // StructuredComponent

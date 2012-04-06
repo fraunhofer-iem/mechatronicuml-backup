@@ -53,6 +53,69 @@ public interface CoreFactory extends EFactory {
 	ActivityCallExpression createActivityCallExpression();
 
 	/**
+	 * Returns a new object of class '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute</em>'.
+	 * @generated
+	 */
+	Attribute createAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operation</em>'.
+	 * @generated
+	 */
+	Operation createOperation();
+
+	/**
+	 * Returns a new object of class '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter</em>'.
+	 * @generated
+	 */
+	Parameter createParameter();
+
+	/**
+	 * Returns a new object of class '<em>Primitive Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Primitive Data Type</em>'.
+	 * @generated
+	 */
+	PrimitiveDataType createPrimitiveDataType();
+
+	/**
+	 * Returns a new object of class '<em>Array Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Array Data Type</em>'.
+	 * @generated
+	 */
+	ArrayDataType createArrayDataType();
+
+	/**
+	 * Returns a new object of class '<em>Inner Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Inner Declaration</em>'.
+	 * @generated
+	 */
+	InnerDeclaration createInnerDeclaration();
+
+	/**
+	 * Returns a new object of class '<em>Parameter Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter Binding</em>'.
+	 * @generated
+	 */
+	ParameterBinding createParameterBinding();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

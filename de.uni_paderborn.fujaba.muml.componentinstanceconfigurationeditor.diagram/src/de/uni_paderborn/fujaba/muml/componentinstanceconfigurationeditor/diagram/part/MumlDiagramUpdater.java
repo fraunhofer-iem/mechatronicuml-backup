@@ -94,6 +94,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -135,6 +136,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -176,6 +178,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -204,6 +207,7 @@ public class MumlDiagramUpdater {
 						childElement, visualID));
 			}
 		}
+
 		return result;
 	}
 
@@ -234,6 +238,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -264,6 +269,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -292,6 +298,7 @@ public class MumlDiagramUpdater {
 						childElement, visualID));
 			}
 		}
+
 		return result;
 	}
 
@@ -322,6 +329,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 

@@ -22,7 +22,7 @@ public class MumlMarkerNavigationProvider extends
 	/**
 	 * @generated
 	 */
-	public static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.ID
+	public static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin.ID
 			+ ".diagnostic"; //$NON-NLS-1$
 
 	/**
@@ -59,7 +59,7 @@ public class MumlMarkerNavigationProvider extends
 		try {
 			resource.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_ZERO);
 		} catch (CoreException e) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError(
 							"Failed to delete validation markers", e); //$NON-NLS-1$
 		}
@@ -87,7 +87,7 @@ public class MumlMarkerNavigationProvider extends
 			}
 			marker.setAttribute(IMarker.SEVERITY, markerSeverity);
 		} catch (CoreException e) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError(
 							"Failed to create validation marker", e); //$NON-NLS-1$
 		}

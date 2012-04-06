@@ -14,11 +14,10 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 	/**
 	 * @generated
 	 */
-	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/wizban/NewModelinstanceWizard.gif")); //$NON-NLS-1$
 
 	}
@@ -28,7 +27,7 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 	 */
 	@Override
 	public String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditor.ID;
 
 	}
 
@@ -37,7 +36,7 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+		return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getItemProvidersAdapterFactory();
 	}
 

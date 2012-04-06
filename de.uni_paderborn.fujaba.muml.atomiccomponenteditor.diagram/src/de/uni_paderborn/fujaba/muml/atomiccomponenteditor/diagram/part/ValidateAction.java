@@ -72,7 +72,7 @@ public class ValidateAction extends Action {
 							}
 						}).run(new NullProgressMonitor());
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 						.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 			}
 		}
@@ -98,7 +98,7 @@ public class ValidateAction extends Action {
 				}
 			}
 		} catch (Exception e) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 		}
 	}

@@ -18,7 +18,7 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.model.pattern.parts.CoordinationPatternPropertiesEditionPart;
@@ -56,6 +56,7 @@ public class CoordinationPatternPropertiesEditionComponent extends SinglePartPro
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -63,8 +64,9 @@ public class CoordinationPatternPropertiesEditionComponent extends SinglePartPro
 			final CoordinationPattern coordinationPattern = (CoordinationPattern)elt;
 			final CoordinationPatternPropertiesEditionPart basePart = (CoordinationPatternPropertiesEditionPart)editingPart;
 			// init values
-			if (coordinationPattern.getName() != null && isAccessible(PatternViewsRepository.CoordinationPattern.Properties.name))
+			if (coordinationPattern.getName() != null && isAccessible(PatternViewsRepository.CoordinationPattern.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), coordinationPattern.getName()));
+			}
 			
 			// init filters
 			
@@ -83,9 +85,10 @@ public class CoordinationPatternPropertiesEditionComponent extends SinglePartPro
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == PatternViewsRepository.CoordinationPattern.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -95,6 +98,7 @@ public class CoordinationPatternPropertiesEditionComponent extends SinglePartPro
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		CoordinationPattern coordinationPattern = (CoordinationPattern)semanticObject;
 		if (PatternViewsRepository.CoordinationPattern.Properties.name == event.getAffectedEditor()) {
@@ -106,10 +110,11 @@ public class CoordinationPatternPropertiesEditionComponent extends SinglePartPro
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			CoordinationPatternPropertiesEditionPart basePart = (CoordinationPatternPropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.CoordinationPattern.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(PatternViewsRepository.CoordinationPattern.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
@@ -127,6 +132,7 @@ public class CoordinationPatternPropertiesEditionComponent extends SinglePartPro
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == PatternViewsRepository.CoordinationPattern.Properties.name;
 	}
@@ -137,6 +143,7 @@ public class CoordinationPatternPropertiesEditionComponent extends SinglePartPro
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -144,9 +151,9 @@ public class CoordinationPatternPropertiesEditionComponent extends SinglePartPro
 				if (PatternViewsRepository.CoordinationPattern.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

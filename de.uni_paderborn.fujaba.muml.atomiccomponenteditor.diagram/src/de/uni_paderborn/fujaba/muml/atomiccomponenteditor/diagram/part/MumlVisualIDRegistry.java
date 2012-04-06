@@ -21,7 +21,7 @@ public class MumlVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.atomiccomponent.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -63,7 +63,7 @@ public class MumlVisualIDRegistry {
 		} catch (NumberFormatException e) {
 			if (Boolean.TRUE.toString().equalsIgnoreCase(
 					Platform.getDebugOption(DEBUG_KEY))) {
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 						.getInstance().logError(
 								"Unable to parse view type as a visualID number: "
 										+ type);

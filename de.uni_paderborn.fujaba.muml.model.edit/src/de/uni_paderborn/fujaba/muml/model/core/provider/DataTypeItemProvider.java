@@ -7,19 +7,12 @@
 package de.uni_paderborn.fujaba.muml.model.core.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,10 +22,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.NamedElementItemProvider;
 
-import org.storydriven.modeling.SDMPackage;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
 
-import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.DataType} object.
@@ -87,7 +82,7 @@ public class DataTypeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_CommentableElement_comment_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
 				 false,
@@ -122,7 +117,7 @@ public class DataTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataType.class)) {
-			case CorePackage.DATA_TYPE__COMMENT:
+			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -6,14 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.storydriven.core.provider.CoreEditPlugin;
 
-import org.storydriven.modeling.provider.SDMEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the ActionLanguage edit plugin.
@@ -49,7 +47,7 @@ public final class ActionLanguageEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
-		     SDMEditPlugin.INSTANCE,
+		     CoreEditPlugin.INSTANCE,
 		   });
 	}
 

@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.component.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -16,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,9 +25,9 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl#isIsContinuousInPort <em>Is Continuous In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl#isIsContinuousOutPort <em>Is Continuous Out Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,16 +54,6 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	protected ContinuousPortDirectionKind kind = KIND_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EDataType type;
-
-	/**
 	 * The cached setting delegate for the '{@link #isIsContinuousInPort() <em>Is Continuous In Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,6 +71,15 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate IS_CONTINUOUS_OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT).getSettingDelegate();
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,10 +126,10 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getType() {
+	public DataType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (EDataType)eResolveProxy(oldType);
+			type = (DataType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.CONTINUOUS_PORT__TYPE, oldType, type));
@@ -144,7 +143,7 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType basicGetType() {
+	public DataType basicGetType() {
 		return type;
 	}
 
@@ -153,8 +152,8 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(EDataType newType) {
-		EDataType oldType = type;
+	public void setType(DataType newType) {
+		DataType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.CONTINUOUS_PORT__TYPE, oldType, type));
@@ -188,13 +187,13 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 		switch (featureID) {
 			case ComponentPackage.CONTINUOUS_PORT__KIND:
 				return getKind();
-			case ComponentPackage.CONTINUOUS_PORT__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
 			case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT:
 				return isIsContinuousInPort();
 			case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT:
 				return isIsContinuousOutPort();
+			case ComponentPackage.CONTINUOUS_PORT__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,7 +210,7 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 				setKind((ContinuousPortDirectionKind)newValue);
 				return;
 			case ComponentPackage.CONTINUOUS_PORT__TYPE:
-				setType((EDataType)newValue);
+				setType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,7 +228,7 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 				setKind(KIND_EDEFAULT);
 				return;
 			case ComponentPackage.CONTINUOUS_PORT__TYPE:
-				setType((EDataType)null);
+				setType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -245,12 +244,12 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 		switch (featureID) {
 			case ComponentPackage.CONTINUOUS_PORT__KIND:
 				return kind != KIND_EDEFAULT;
-			case ComponentPackage.CONTINUOUS_PORT__TYPE:
-				return type != null;
 			case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT:
 				return IS_CONTINUOUS_IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT:
 				return IS_CONTINUOUS_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.CONTINUOUS_PORT__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}

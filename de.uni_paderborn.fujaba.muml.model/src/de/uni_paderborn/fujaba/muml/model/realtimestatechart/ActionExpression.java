@@ -6,8 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.NamedElement;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

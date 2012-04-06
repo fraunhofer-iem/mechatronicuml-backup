@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +28,7 @@ import org.storydriven.modeling.expressions.Expression;
 public interface Block extends Expression {
 	/**
 	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.storydriven.modeling.expressions.Expression}.
+	 * The list contents are of type {@link org.storydriven.core.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,

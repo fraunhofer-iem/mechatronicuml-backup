@@ -7,15 +7,36 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
 /**
  * <!-- begin-user-doc -->

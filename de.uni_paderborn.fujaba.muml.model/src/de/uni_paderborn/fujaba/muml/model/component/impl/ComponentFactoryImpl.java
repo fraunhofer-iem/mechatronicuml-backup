@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
 /**
@@ -42,7 +43,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 */
 	public static ComponentFactory init() {
 		try {
-			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/component/0.2.1"); 
+			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/component/0.2.3"); 
 			if (theComponentFactory != null) {
 				return theComponentFactory;
 			}
@@ -79,6 +80,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.ASSEMBLY: return createAssembly();
 			case ComponentPackage.DELEGATION: return createDelegation();
 			case ComponentPackage.HYBRID_PORT: return createHybridPort();
+			case ComponentPackage.PATTERN_OCCURRENCE: return createPatternOccurrence();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -196,6 +198,16 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public HybridPort createHybridPort() {
 		HybridPortImpl hybridPort = new HybridPortImpl();
 		return hybridPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatternOccurrence createPatternOccurrence() {
+		PatternOccurrenceImpl patternOccurrence = new PatternOccurrenceImpl();
+		return patternOccurrence;
 	}
 
 	/**

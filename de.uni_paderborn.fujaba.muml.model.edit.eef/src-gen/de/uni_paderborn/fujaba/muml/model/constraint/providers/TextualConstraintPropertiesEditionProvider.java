@@ -40,6 +40,7 @@ public class TextualConstraintPropertiesEditionProvider extends PropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext)
 	 * 
 	 */
+	@Override
 	public boolean provides(PropertiesEditingContext editingContext) {
 		return (editingContext.getEObject() instanceof TextualConstraint) 
 					&& (ConstraintPackage.eINSTANCE.getTextualConstraint() == editingContext.getEObject().eClass());
@@ -50,6 +51,7 @@ public class TextualConstraintPropertiesEditionProvider extends PropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
 	 * 
 	 */
+	@Override
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
 		return (editingContext.getEObject() instanceof TextualConstraint) && (TextualConstraintPropertiesEditionComponent.BASE_PART.equals(part));
 	}
@@ -59,6 +61,7 @@ public class TextualConstraintPropertiesEditionProvider extends PropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.Class)
 	 * 
 	 */
+	@Override
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
 		return (editingContext.getEObject() instanceof TextualConstraint) && (refinement == TextualConstraintPropertiesEditionComponent.class);
@@ -69,6 +72,7 @@ public class TextualConstraintPropertiesEditionProvider extends PropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.Class)
 	 * 
 	 */
+	@Override
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
 		return (editingContext.getEObject() instanceof TextualConstraint) && ((TextualConstraintPropertiesEditionComponent.BASE_PART.equals(part) && refinement == TextualConstraintPropertiesEditionComponent.class));
@@ -79,6 +83,7 @@ public class TextualConstraintPropertiesEditionProvider extends PropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
 	 * 
 	 */
+	@Override
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
 		if (editingContext.getEObject() instanceof TextualConstraint) {
 			return new TextualConstraintPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
@@ -91,10 +96,12 @@ public class TextualConstraintPropertiesEditionProvider extends PropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String)
 	 * 
 	 */
+	@Override
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof TextualConstraint) {
-			if (TextualConstraintPropertiesEditionComponent.BASE_PART.equals(part))
+			if (TextualConstraintPropertiesEditionComponent.BASE_PART.equals(part)) {
 				return new TextualConstraintPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			}
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -103,12 +110,14 @@ public class TextualConstraintPropertiesEditionProvider extends PropertiesEditin
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String, java.lang.Class)
 	 */
+	@Override
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof TextualConstraint) {
 			if (TextualConstraintPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == TextualConstraintPropertiesEditionComponent.class)
+				&& refinement == TextualConstraintPropertiesEditionComponent.class) {
 				return new TextualConstraintPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			}
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

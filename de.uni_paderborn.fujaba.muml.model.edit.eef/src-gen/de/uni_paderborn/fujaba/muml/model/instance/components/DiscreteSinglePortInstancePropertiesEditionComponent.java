@@ -31,7 +31,7 @@ import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSett
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
@@ -100,6 +100,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -107,11 +108,13 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 			final DiscreteSinglePortInstance discreteSinglePortInstance = (DiscreteSinglePortInstance)elt;
 			final DiscreteSinglePortInstancePropertiesEditionPart basePart = (DiscreteSinglePortInstancePropertiesEditionPart)editingPart;
 			// init values
-			if (discreteSinglePortInstance.getName() != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.name))
+			if (discreteSinglePortInstance.getName() != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), discreteSinglePortInstance.getName()));
+			}
 			
-			if (discreteSinglePortInstance.getComment() != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.comment))
+			if (discreteSinglePortInstance.getComment() != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.comment)) {
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), discreteSinglePortInstance.getComment()));
+			}
 			
 			if (isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.portType)) {
 				// init part
@@ -152,6 +155,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof Port);
 				}
@@ -167,6 +171,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof ComponentInstance); //$NON-NLS-1$ 
 				}
@@ -182,9 +187,11 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
+				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
+					if (element instanceof EObject) {
 						return (!basePart.isContainedInIncomingConnectorInstancesTable((EObject)element));
+					}
 					return element instanceof Resource;
 				}
 			
@@ -200,9 +207,11 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
+				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
+					if (element instanceof EObject) {
 						return (!basePart.isContainedInOutgoingConnectorInstancesTable((EObject)element));
+					}
 					return element instanceof Resource;
 				}
 			
@@ -218,6 +227,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof DiscreteMultiPortInstance); //$NON-NLS-1$ 
 				}
@@ -247,12 +257,13 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == InstanceViewsRepository.DiscreteSinglePortInstance.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		if (editorKey == InstanceViewsRepository.DiscreteSinglePortInstance.Properties.comment) {
-			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
+			return CorePackage.eINSTANCE.getCommentableElement_Comment();
 		}
 		if (editorKey == InstanceViewsRepository.DiscreteSinglePortInstance.Properties.portType) {
 			return InstancePackage.eINSTANCE.getPortInstance_PortType();
@@ -277,6 +288,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		DiscreteSinglePortInstance discreteSinglePortInstance = (DiscreteSinglePortInstance)semanticObject;
 		if (InstanceViewsRepository.DiscreteSinglePortInstance.Properties.name == event.getAffectedEditor()) {
@@ -287,7 +299,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 		}
 		if (InstanceViewsRepository.DiscreteSinglePortInstance.Properties.portType == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				portTypeSettings.setToReference((Port)event.getNewValue());
+				portTypeSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, portTypeSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -301,7 +313,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 		}
 		if (InstanceViewsRepository.DiscreteSinglePortInstance.Properties.componentInstance == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				componentInstanceSettings.setToReference((ComponentInstance)event.getNewValue());
+				componentInstanceSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				ComponentInstance eObject = InstanceFactory.eINSTANCE.createComponentInstance();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -339,7 +351,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 		}
 		if (InstanceViewsRepository.DiscreteSinglePortInstance.Properties.multiPortInstance == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				multiPortInstanceSettings.setToReference((DiscreteMultiPortInstance)event.getNewValue());
+				multiPortInstanceSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				DiscreteMultiPortInstance eObject = InstanceFactory.eINSTANCE.createDiscreteMultiPortInstance();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -359,33 +371,39 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			DiscreteSinglePortInstancePropertiesEditionPart basePart = (DiscreteSinglePortInstancePropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.comment)) {
+			if (CorePackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.comment)) {
 				if (msg.getNewValue() != null) {
 					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setComment("");
 				}
 			}
-			if (InstancePackage.eINSTANCE.getPortInstance_PortType().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.portType))
+			if (InstancePackage.eINSTANCE.getPortInstance_PortType().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.portType)) {
 				basePart.setPortType((EObject)msg.getNewValue());
-			if (InstancePackage.eINSTANCE.getPortInstance_ComponentInstance().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.componentInstance))
+			}
+			if (InstancePackage.eINSTANCE.getPortInstance_ComponentInstance().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.componentInstance)) {
 				basePart.setComponentInstance((EObject)msg.getNewValue());
-			if (InstancePackage.eINSTANCE.getPortInstance_IncomingConnectorInstances().equals(msg.getFeature())  && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.incomingConnectorInstances))
+			}
+			if (InstancePackage.eINSTANCE.getPortInstance_IncomingConnectorInstances().equals(msg.getFeature())  && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.incomingConnectorInstances)) {
 				basePart.updateIncomingConnectorInstances();
-			if (InstancePackage.eINSTANCE.getPortInstance_OutgoingConnectorInstances().equals(msg.getFeature())  && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.outgoingConnectorInstances))
+			}
+			if (InstancePackage.eINSTANCE.getPortInstance_OutgoingConnectorInstances().equals(msg.getFeature())  && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.outgoingConnectorInstances)) {
 				basePart.updateOutgoingConnectorInstances();
-			if (InstancePackage.eINSTANCE.getDiscreteSinglePortInstance_MultiPortInstance().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.multiPortInstance))
+			}
+			if (InstancePackage.eINSTANCE.getDiscreteSinglePortInstance_MultiPortInstance().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.DiscreteSinglePortInstance.Properties.multiPortInstance)) {
 				basePart.setMultiPortInstance((EObject)msg.getNewValue());
+			}
 			
 		}
 	}
@@ -397,6 +415,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == InstanceViewsRepository.DiscreteSinglePortInstance.Properties.name || key == InstanceViewsRepository.DiscreteSinglePortInstance.Properties.portType;
 	}
@@ -407,6 +426,7 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -414,16 +434,16 @@ public class DiscreteSinglePortInstancePropertiesEditionComponent extends Single
 				if (InstanceViewsRepository.DiscreteSinglePortInstance.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (InstanceViewsRepository.DiscreteSinglePortInstance.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

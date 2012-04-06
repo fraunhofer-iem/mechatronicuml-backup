@@ -27,11 +27,11 @@ public abstract class MumlAbstractExpression {
 	 * @generated
 	 */
 	protected void setStatus(int severity, String message, Throwable throwable) {
-		String pluginID = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.ID;
+		String pluginID = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin.ID;
 		this.status = new Status(severity, pluginID, -1,
 				(message != null) ? message : "", throwable); //$NON-NLS-1$
 		if (!this.status.isOK()) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance()
 					.logError(
 							"Expression problem:" + message + "body:" + body(), throwable); //$NON-NLS-1$ //$NON-NLS-2$
@@ -99,7 +99,7 @@ public abstract class MumlAbstractExpression {
 			try {
 				return doEvaluate(context, env);
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 						.getInstance().logError(
 								"Expression evaluation failure: " + body(), e); //$NON-NLS-1$
 			}

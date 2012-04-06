@@ -98,6 +98,15 @@ public interface ComponentFactory extends EFactory {
 	HybridPort createHybridPort();
 
 	/**
+	 * Returns a new object of class '<em>Pattern Occurrence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pattern Occurrence</em>'.
+	 * @generated
+	 */
+	PatternOccurrence createPatternOccurrence();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

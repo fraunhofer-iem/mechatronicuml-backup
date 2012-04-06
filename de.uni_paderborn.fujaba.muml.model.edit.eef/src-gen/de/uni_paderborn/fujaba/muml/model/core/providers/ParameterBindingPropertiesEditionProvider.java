@@ -40,7 +40,6 @@ public class ParameterBindingPropertiesEditionProvider extends PropertiesEditing
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext)
 	 * 
 	 */
-	@Override
 	public boolean provides(PropertiesEditingContext editingContext) {
 		return (editingContext.getEObject() instanceof ParameterBinding) 
 					&& (CorePackage.eINSTANCE.getParameterBinding() == editingContext.getEObject().eClass());
@@ -51,7 +50,6 @@ public class ParameterBindingPropertiesEditionProvider extends PropertiesEditing
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
 	 * 
 	 */
-	@Override
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
 		return (editingContext.getEObject() instanceof ParameterBinding) && (ParameterBindingPropertiesEditionComponent.BASE_PART.equals(part));
 	}
@@ -61,7 +59,6 @@ public class ParameterBindingPropertiesEditionProvider extends PropertiesEditing
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.Class)
 	 * 
 	 */
-	@Override
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
 		return (editingContext.getEObject() instanceof ParameterBinding) && (refinement == ParameterBindingPropertiesEditionComponent.class);
@@ -72,7 +69,6 @@ public class ParameterBindingPropertiesEditionProvider extends PropertiesEditing
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.Class)
 	 * 
 	 */
-	@Override
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
 		return (editingContext.getEObject() instanceof ParameterBinding) && ((ParameterBindingPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ParameterBindingPropertiesEditionComponent.class));
@@ -83,7 +79,6 @@ public class ParameterBindingPropertiesEditionProvider extends PropertiesEditing
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
 	 * 
 	 */
-	@Override
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
 		if (editingContext.getEObject() instanceof ParameterBinding) {
 			return new ParameterBindingPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
@@ -96,12 +91,10 @@ public class ParameterBindingPropertiesEditionProvider extends PropertiesEditing
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String)
 	 * 
 	 */
-	@Override
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof ParameterBinding) {
-			if (ParameterBindingPropertiesEditionComponent.BASE_PART.equals(part)) {
+			if (ParameterBindingPropertiesEditionComponent.BASE_PART.equals(part))
 				return new ParameterBindingPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
-			}
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -110,14 +103,12 @@ public class ParameterBindingPropertiesEditionProvider extends PropertiesEditing
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String, java.lang.Class)
 	 */
-	@Override
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof ParameterBinding) {
 			if (ParameterBindingPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ParameterBindingPropertiesEditionComponent.class) {
+				&& refinement == ParameterBindingPropertiesEditionComponent.class)
 				return new ParameterBindingPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
-			}
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

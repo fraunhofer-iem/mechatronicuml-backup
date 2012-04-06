@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance;
 
-import org.storydriven.modeling.ExtendableElement;
+import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 

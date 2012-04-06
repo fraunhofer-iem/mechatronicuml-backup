@@ -7,19 +7,12 @@
 package de.uni_paderborn.fujaba.muml.model.core.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,10 +22,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.NamedElementItemProvider;
 
-import org.storydriven.modeling.SDMPackage;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration;
 
-import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration} object.
@@ -90,7 +85,7 @@ public class InnerDeclarationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_CommentableElement_comment_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
 				 false,
@@ -112,7 +107,7 @@ public class InnerDeclarationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_InnerDeclaration_key_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_InnerDeclaration_key_feature", "_UI_InnerDeclaration_type"),
-				 CorePackage.Literals.INNER_DECLARATION__KEY,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.INNER_DECLARATION__KEY,
 				 true,
 				 false,
 				 false,
@@ -134,7 +129,7 @@ public class InnerDeclarationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_InnerDeclaration_parent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_InnerDeclaration_parent_feature", "_UI_InnerDeclaration_type"),
-				 CorePackage.Literals.INNER_DECLARATION__PARENT,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.INNER_DECLARATION__PARENT,
 				 true,
 				 false,
 				 false,
@@ -156,7 +151,7 @@ public class InnerDeclarationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_InnerDeclaration_type_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_InnerDeclaration_type_feature", "_UI_InnerDeclaration_type"),
-				 CorePackage.Literals.INNER_DECLARATION__TYPE,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.INNER_DECLARATION__TYPE,
 				 true,
 				 false,
 				 true,
@@ -202,8 +197,8 @@ public class InnerDeclarationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InnerDeclaration.class)) {
-			case CorePackage.INNER_DECLARATION__COMMENT:
-			case CorePackage.INNER_DECLARATION__KEY:
+			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.INNER_DECLARATION__COMMENT:
+			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.INNER_DECLARATION__KEY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

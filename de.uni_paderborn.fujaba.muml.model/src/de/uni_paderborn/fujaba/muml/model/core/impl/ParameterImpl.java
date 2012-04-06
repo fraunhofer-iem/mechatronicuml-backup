@@ -6,25 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.impl.NamedElementImpl;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.SDMPackage;
-
-import org.storydriven.modeling.impl.NamedElementImpl;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -227,7 +218,7 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case CorePackage.PARAMETER__COMMENT: return SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
+				case CorePackage.PARAMETER__COMMENT: return org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -243,7 +234,7 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.PARAMETER__COMMENT;
+				case org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.PARAMETER__COMMENT;
 				default: return -1;
 			}
 		}

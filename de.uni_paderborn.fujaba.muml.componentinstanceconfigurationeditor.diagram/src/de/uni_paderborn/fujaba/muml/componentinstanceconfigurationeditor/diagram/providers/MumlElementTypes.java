@@ -98,7 +98,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType DiscreteSinglePortInstance_3025 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3025"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */

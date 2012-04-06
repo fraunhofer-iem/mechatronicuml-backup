@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
-import org.storydriven.modeling.NamedElement;
+import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
@@ -38,7 +37,6 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered <em>Ordered</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable <em>Order Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}</li>
  * </ul>
@@ -292,31 +290,6 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * @generated
 	 */
 	void setOrdered(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Order Variable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This attribute defines the order on the instances of the multi-role. It must be defined in the real-time statechart of this role and it must be of type integer.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Order Variable</em>' reference.
-	 * @see #setOrderVariable(EAttribute)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_OrderVariable()
-	 * @model
-	 * @generated
-	 */
-	EAttribute getOrderVariable();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOrderVariable <em>Order Variable</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Variable</em>' reference.
-	 * @see #getOrderVariable()
-	 * @generated
-	 */
-	void setOrderVariable(EAttribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Outgoing Role Connector</b></em>' reference.

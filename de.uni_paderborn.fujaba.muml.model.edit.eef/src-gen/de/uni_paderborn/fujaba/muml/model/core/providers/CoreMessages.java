@@ -113,12 +113,6 @@ public class CoreMessages extends NLS {
 	public static String ActivityCallExpressionPropertiesEditionPart_CommentLabel;
 
 	
-	public static String ActivityCallExpressionPropertiesEditionPart_CalleeLabel;
-
-	
-	public static String ActivityCallExpressionPropertiesEditionPart_ActivityLabel;
-
-	
 	public static String AttributePropertiesEditionPart_NameLabel;
 
 	

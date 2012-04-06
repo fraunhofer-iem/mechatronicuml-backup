@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
-import org.eclipse.emf.ecore.EAttribute;
+import org.storydriven.core.expressions.Expression;
 
-import org.storydriven.modeling.expressions.Expression;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 /**
  * <!-- begin-user-doc -->

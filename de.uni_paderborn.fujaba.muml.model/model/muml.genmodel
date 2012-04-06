@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.model/src"
     modelPluginID="de.uni_paderborn.fujaba.muml.model" modelName="Muml" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.storydriven.core/model/sdm.uml.genmodel#//modeling">
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.storydriven.core/model/core.uml.genmodel#//core">
   <foreignModel>muml.ecore</foreignModel>
   <foreignModel>../../de.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Muml" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
@@ -189,10 +189,7 @@
           <genFeatures children="true" createChild="true" propertyCategory="General"
               ecoreFeature="ecore:EReference muml.ecore#//model/core/Behavior/attributes"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/core/ActivityCallExpression">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/core/ActivityCallExpression/activity"/>
-        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/core/ActivityCallExpression"/>
         <genClasses ecoreClass="muml.ecore#//model/core/Attribute">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/core/Attribute/type"/>

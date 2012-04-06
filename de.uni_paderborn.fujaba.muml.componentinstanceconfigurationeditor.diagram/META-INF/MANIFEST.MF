@@ -40,7 +40,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.storydriven.core;visibility:=reexport,
- org.storydriven.modeling.edit;visibility:=reexport,
+ org.storydriven.core.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model.edit;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
@@ -55,7 +55,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.model.edit.eef;visibility:=reexport,
  org.eclipse.emf.eef.runtime,
  de.fujaba.modelinstance.edit.eef;visibility:=reexport,
- org.storydriven.modeling.edit.eef;visibility:=reexport,
+ org.storydriven.core.edit.eef;visibility:=reexport,
  org.eclipse.emf.ecore.edit.eef;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

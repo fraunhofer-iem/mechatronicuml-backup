@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 /**
  * @generated
@@ -30,7 +30,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getCoordinationPatternName_5003Parser() {
 		if (coordinationPatternName_5003Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser(
 					features);
@@ -49,7 +49,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getRoleName_5004Parser() {
 		if (roleName_5004Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser(
 					features);

@@ -86,9 +86,9 @@
          </propertySection>
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="org.storydriven.modeling.section.CommentableElement"
+               id="org.storydriven.core.section.CommentableElement"
                tab="Documentation">
-             <input type="org.storydriven.modeling.CommentableElement" />
+             <input type="org.storydriven.core.CommentableElement" />
          </propertySection>
 	  </propertySections>
    </extension>

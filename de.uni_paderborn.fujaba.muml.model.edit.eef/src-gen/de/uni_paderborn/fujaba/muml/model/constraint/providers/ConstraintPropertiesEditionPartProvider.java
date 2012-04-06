@@ -3,11 +3,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.constraint.providers;
 
+import de.uni_paderborn.fujaba.muml.model.constraint.parts.ConstraintViewsRepository;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
-import de.uni_paderborn.fujaba.muml.model.constraint.parts.ConstraintViewsRepository;
 import de.uni_paderborn.fujaba.muml.model.constraint.parts.forms.TextualConstraintPropertiesEditionPartForm;
 import de.uni_paderborn.fujaba.muml.model.constraint.parts.impl.TextualConstraintPropertiesEditionPartImpl;
 

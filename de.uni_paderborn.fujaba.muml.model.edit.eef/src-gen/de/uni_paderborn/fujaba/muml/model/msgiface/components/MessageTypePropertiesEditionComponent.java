@@ -26,7 +26,7 @@ import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
@@ -72,6 +72,7 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -79,11 +80,13 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 			final MessageType messageType = (MessageType)elt;
 			final MessageTypePropertiesEditionPart basePart = (MessageTypePropertiesEditionPart)editingPart;
 			// init values
-			if (messageType.getName() != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.name))
+			if (messageType.getName() != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), messageType.getName()));
+			}
 			
-			if (messageType.getComment() != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.comment))
+			if (messageType.getComment() != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.comment)) {
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), messageType.getComment()));
+			}
 			
 			if (isAccessible(MsgifaceViewsRepository.MessageType.Properties.messageInterface)) {
 				// init part
@@ -102,6 +105,7 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof MessageInterface);
 				}
@@ -127,12 +131,13 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == MsgifaceViewsRepository.MessageType.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		if (editorKey == MsgifaceViewsRepository.MessageType.Properties.comment) {
-			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
+			return CorePackage.eINSTANCE.getCommentableElement_Comment();
 		}
 		if (editorKey == MsgifaceViewsRepository.MessageType.Properties.messageInterface) {
 			return MsgifacePackage.eINSTANCE.getMessageType_MessageInterface();
@@ -145,6 +150,7 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		MessageType messageType = (MessageType)semanticObject;
 		if (MsgifaceViewsRepository.MessageType.Properties.name == event.getAffectedEditor()) {
@@ -155,7 +161,7 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 		}
 		if (MsgifaceViewsRepository.MessageType.Properties.messageInterface == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				messageInterfaceSettings.setToReference((MessageInterface)event.getNewValue());
+				messageInterfaceSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				MessageInterface eObject = MsgifaceFactory.eINSTANCE.createMessageInterface();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -175,25 +181,27 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			MessageTypePropertiesEditionPart basePart = (MessageTypePropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.comment)) {
+			if (CorePackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.comment)) {
 				if (msg.getNewValue() != null) {
 					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setComment("");
 				}
 			}
-			if (MsgifacePackage.eINSTANCE.getMessageType_MessageInterface().equals(msg.getFeature()) && basePart != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.messageInterface))
+			if (MsgifacePackage.eINSTANCE.getMessageType_MessageInterface().equals(msg.getFeature()) && basePart != null && isAccessible(MsgifaceViewsRepository.MessageType.Properties.messageInterface)) {
 				basePart.setMessageInterface((EObject)msg.getNewValue());
+			}
 			
 		}
 	}
@@ -205,6 +213,7 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == MsgifaceViewsRepository.MessageType.Properties.name || key == MsgifaceViewsRepository.MessageType.Properties.messageInterface;
 	}
@@ -215,6 +224,7 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -222,16 +232,16 @@ public class MessageTypePropertiesEditionComponent extends SinglePartPropertiesE
 				if (MsgifaceViewsRepository.MessageType.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (MsgifaceViewsRepository.MessageType.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
 import org.eclipse.emf.ecore.EDataType;
-
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

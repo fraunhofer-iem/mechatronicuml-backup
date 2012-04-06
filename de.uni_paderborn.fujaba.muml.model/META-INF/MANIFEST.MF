@@ -9,10 +9,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
- org.storydriven.modeling;bundle-version="1.0.0";visibility:=reexport,
- de.uni_paderborn.fujaba.common;bundle-version="1.0.0",
- de.fujaba.modelinstance;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.emf.edapt.history;bundle-version="0.3.0"
+ de.uni_paderborn.fujaba.common,
+ de.fujaba.modelinstance,
+ org.eclipse.emf.edapt.history,
+ org.storydriven.core
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.muml.model.component,
  de.uni_paderborn.fujaba.muml.model.component.impl,

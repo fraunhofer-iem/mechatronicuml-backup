@@ -8,9 +8,9 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
  de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0",
  de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.2.0",
- de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="0.2.0",
  de.uni_paderborn.fujaba.common;bundle-version="0.2.0",
- org.storydriven.modeling.edit
+ org.storydriven.core.edit,
+ de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="0.2.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.common.edit.parts,

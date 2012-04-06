@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.modeling.NamedElement;
+import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 

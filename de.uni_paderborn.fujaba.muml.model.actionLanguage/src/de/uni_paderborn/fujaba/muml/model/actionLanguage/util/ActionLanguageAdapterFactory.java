@@ -7,19 +7,33 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.util;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.TypedElement;
+import org.storydriven.core.expressions.Expression;
 
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.ExtendableElement;
-import org.storydriven.modeling.TypedElement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
-import org.storydriven.modeling.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -402,13 +416,13 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.modeling.ExtendableElement
+	 * @see org.storydriven.core.ExtendableElement
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
@@ -416,13 +430,13 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.TypedElement <em>Typed Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.TypedElement <em>Typed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.modeling.TypedElement
+	 * @see org.storydriven.core.TypedElement
 	 * @generated
 	 */
 	public Adapter createTypedElementAdapter() {
@@ -430,13 +444,13 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.CommentableElement <em>Commentable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.modeling.CommentableElement
+	 * @see org.storydriven.core.CommentableElement
 	 * @generated
 	 */
 	public Adapter createCommentableElementAdapter() {
@@ -444,13 +458,13 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.expressions.Expression <em>Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.modeling.expressions.Expression
+	 * @see org.storydriven.core.expressions.Expression
 	 * @generated
 	 */
 	public Adapter createExpressionAdapter() {

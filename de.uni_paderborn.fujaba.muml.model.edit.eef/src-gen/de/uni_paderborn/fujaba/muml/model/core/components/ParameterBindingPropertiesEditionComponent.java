@@ -67,6 +67,7 @@ public class ParameterBindingPropertiesEditionComponent extends SinglePartProper
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -89,6 +90,7 @@ public class ParameterBindingPropertiesEditionComponent extends SinglePartProper
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof Parameter);
 				}
@@ -112,6 +114,7 @@ public class ParameterBindingPropertiesEditionComponent extends SinglePartProper
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == CoreViewsRepository.ParameterBinding.Properties.parameter) {
 			return CorePackage.eINSTANCE.getParameterBinding_Parameter();
@@ -124,11 +127,12 @@ public class ParameterBindingPropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		ParameterBinding parameterBinding = (ParameterBinding)semanticObject;
 		if (CoreViewsRepository.ParameterBinding.Properties.parameter == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				parameterSettings.setToReference((Parameter)event.getNewValue());
+				parameterSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				Parameter eObject = CoreFactory.eINSTANCE.createParameter();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -148,11 +152,13 @@ public class ParameterBindingPropertiesEditionComponent extends SinglePartProper
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			ParameterBindingPropertiesEditionPart basePart = (ParameterBindingPropertiesEditionPart)editingPart;
-			if (CorePackage.eINSTANCE.getParameterBinding_Parameter().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.ParameterBinding.Properties.parameter))
+			if (CorePackage.eINSTANCE.getParameterBinding_Parameter().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.ParameterBinding.Properties.parameter)) {
 				basePart.setParameter((EObject)msg.getNewValue());
+			}
 			
 		}
 	}
@@ -164,6 +170,7 @@ public class ParameterBindingPropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == CoreViewsRepository.ParameterBinding.Properties.parameter;
 	}
@@ -174,6 +181,7 @@ public class ParameterBindingPropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {

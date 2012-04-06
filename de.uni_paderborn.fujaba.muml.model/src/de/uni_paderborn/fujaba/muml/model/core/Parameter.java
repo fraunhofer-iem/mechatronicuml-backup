@@ -6,8 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core;
 
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.NamedElement;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

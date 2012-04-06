@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public interface ConstraintPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/constraint/0.2.1";
+	String eNS_URI = "http://www.fujaba.de/muml/model/constraint/0.2.2";
 
 	/**
 	 * The package namespace name.
@@ -83,7 +83,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int CONSTRAINT__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -92,7 +92,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int CONSTRAINT__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Correctness</b></em>' attribute.
@@ -101,7 +101,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__CORRECTNESS = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int CONSTRAINT__CORRECTNESS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute.
@@ -110,7 +110,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__BACKGROUND = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int CONSTRAINT__BACKGROUND = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Constrainable Element</b></em>' container reference.
@@ -119,7 +119,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__CONSTRAINABLE_ELEMENT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int CONSTRAINT__CONSTRAINABLE_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -128,7 +128,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int CONSTRAINT_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.constraint.impl.ModelingConstraintImpl <em>Modeling Constraint</em>}' class.

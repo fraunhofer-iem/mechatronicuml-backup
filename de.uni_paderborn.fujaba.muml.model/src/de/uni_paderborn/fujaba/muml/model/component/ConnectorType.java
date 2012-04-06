@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import org.storydriven.modeling.ExtendableElement;
+import org.storydriven.core.ExtendableElement;
 
 
 /**

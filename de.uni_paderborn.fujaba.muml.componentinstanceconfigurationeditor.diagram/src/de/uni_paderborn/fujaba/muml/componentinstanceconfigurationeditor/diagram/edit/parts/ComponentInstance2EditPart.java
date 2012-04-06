@@ -507,11 +507,6 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureChildren.grabExcessVerticalSpace = true;
 			this.add(fFigureChildren, constraintFFigureChildren);
 
-			GridLayout layoutFFigureChildren = new GridLayout();
-			layoutFFigureChildren.numColumns = 1;
-			layoutFFigureChildren.makeColumnsEqualWidth = true;
-			fFigureChildren.setLayoutManager(layoutFFigureChildren);
-
 		}
 
 		/**

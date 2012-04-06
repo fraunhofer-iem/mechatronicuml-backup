@@ -6,16 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
+import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

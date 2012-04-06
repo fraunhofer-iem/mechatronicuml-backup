@@ -31,7 +31,7 @@ import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSett
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
@@ -94,6 +94,7 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -101,11 +102,13 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 			final ContinuousPortInstance continuousPortInstance = (ContinuousPortInstance)elt;
 			final ContinuousPortInstancePropertiesEditionPart basePart = (ContinuousPortInstancePropertiesEditionPart)editingPart;
 			// init values
-			if (continuousPortInstance.getName() != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.name))
+			if (continuousPortInstance.getName() != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), continuousPortInstance.getName()));
+			}
 			
-			if (continuousPortInstance.getComment() != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.comment))
+			if (continuousPortInstance.getComment() != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.comment)) {
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), continuousPortInstance.getComment()));
+			}
 			
 			if (isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.portType)) {
 				// init part
@@ -139,6 +142,7 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof Port);
 				}
@@ -154,6 +158,7 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof ComponentInstance); //$NON-NLS-1$ 
 				}
@@ -169,9 +174,11 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
+				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
+					if (element instanceof EObject) {
 						return (!basePart.isContainedInIncomingConnectorInstancesTable((EObject)element));
+					}
 					return element instanceof Resource;
 				}
 			
@@ -187,9 +194,11 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
+				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
+					if (element instanceof EObject) {
 						return (!basePart.isContainedInOutgoingConnectorInstancesTable((EObject)element));
+					}
 					return element instanceof Resource;
 				}
 			
@@ -218,12 +227,13 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == InstanceViewsRepository.ContinuousPortInstance.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		if (editorKey == InstanceViewsRepository.ContinuousPortInstance.Properties.comment) {
-			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
+			return CorePackage.eINSTANCE.getCommentableElement_Comment();
 		}
 		if (editorKey == InstanceViewsRepository.ContinuousPortInstance.Properties.portType) {
 			return InstancePackage.eINSTANCE.getPortInstance_PortType();
@@ -245,6 +255,7 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		ContinuousPortInstance continuousPortInstance = (ContinuousPortInstance)semanticObject;
 		if (InstanceViewsRepository.ContinuousPortInstance.Properties.name == event.getAffectedEditor()) {
@@ -255,7 +266,7 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 		}
 		if (InstanceViewsRepository.ContinuousPortInstance.Properties.portType == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				portTypeSettings.setToReference((Port)event.getNewValue());
+				portTypeSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, portTypeSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -269,7 +280,7 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 		}
 		if (InstanceViewsRepository.ContinuousPortInstance.Properties.componentInstance == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				componentInstanceSettings.setToReference((ComponentInstance)event.getNewValue());
+				componentInstanceSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				ComponentInstance eObject = InstanceFactory.eINSTANCE.createComponentInstance();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -311,31 +322,36 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			ContinuousPortInstancePropertiesEditionPart basePart = (ContinuousPortInstancePropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.comment)) {
+			if (CorePackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.comment)) {
 				if (msg.getNewValue() != null) {
 					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setComment("");
 				}
 			}
-			if (InstancePackage.eINSTANCE.getPortInstance_PortType().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.portType))
+			if (InstancePackage.eINSTANCE.getPortInstance_PortType().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.portType)) {
 				basePart.setPortType((EObject)msg.getNewValue());
-			if (InstancePackage.eINSTANCE.getPortInstance_ComponentInstance().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.componentInstance))
+			}
+			if (InstancePackage.eINSTANCE.getPortInstance_ComponentInstance().equals(msg.getFeature()) && basePart != null && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.componentInstance)) {
 				basePart.setComponentInstance((EObject)msg.getNewValue());
-			if (InstancePackage.eINSTANCE.getPortInstance_IncomingConnectorInstances().equals(msg.getFeature())  && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.incomingConnectorInstances))
+			}
+			if (InstancePackage.eINSTANCE.getPortInstance_IncomingConnectorInstances().equals(msg.getFeature())  && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.incomingConnectorInstances)) {
 				basePart.updateIncomingConnectorInstances();
-			if (InstancePackage.eINSTANCE.getPortInstance_OutgoingConnectorInstances().equals(msg.getFeature())  && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.outgoingConnectorInstances))
+			}
+			if (InstancePackage.eINSTANCE.getPortInstance_OutgoingConnectorInstances().equals(msg.getFeature())  && isAccessible(InstanceViewsRepository.ContinuousPortInstance.Properties.outgoingConnectorInstances)) {
 				basePart.updateOutgoingConnectorInstances();
+			}
 			
 		}
 	}
@@ -347,6 +363,7 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == InstanceViewsRepository.ContinuousPortInstance.Properties.name || key == InstanceViewsRepository.ContinuousPortInstance.Properties.portType;
 	}
@@ -357,6 +374,7 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -364,16 +382,16 @@ public class ContinuousPortInstancePropertiesEditionComponent extends SinglePart
 				if (InstanceViewsRepository.ContinuousPortInstance.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (InstanceViewsRepository.ContinuousPortInstance.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

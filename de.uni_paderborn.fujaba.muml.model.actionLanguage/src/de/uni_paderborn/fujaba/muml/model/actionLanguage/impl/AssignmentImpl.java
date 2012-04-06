@@ -6,24 +6,20 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.impl.ExpressionImpl;
+
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
-
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.storydriven.modeling.expressions.Expression;
-
-import org.storydriven.modeling.expressions.impl.ExpressionImpl;
 
 /**
  * <!-- begin-user-doc -->

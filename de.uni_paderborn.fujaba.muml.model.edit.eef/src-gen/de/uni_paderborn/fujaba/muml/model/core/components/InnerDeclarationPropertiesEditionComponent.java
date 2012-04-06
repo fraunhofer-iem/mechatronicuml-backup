@@ -27,10 +27,9 @@ import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.core.CompositeDataType;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
 import de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration;
 import de.uni_paderborn.fujaba.muml.model.core.parts.CoreViewsRepository;
@@ -78,6 +77,7 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -85,22 +85,30 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 			final InnerDeclaration innerDeclaration = (InnerDeclaration)elt;
 			final InnerDeclarationPropertiesEditionPart basePart = (InnerDeclarationPropertiesEditionPart)editingPart;
 			// init values
-			if (innerDeclaration.getName() != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.name))
+			if (innerDeclaration.getName() != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), innerDeclaration.getName()));
+			}
 			
-			if (innerDeclaration.getComment() != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.comment))
+			if (innerDeclaration.getComment() != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.comment)) {
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), innerDeclaration.getComment()));
+			}
 			
 			if (isAccessible(CoreViewsRepository.InnerDeclaration.Properties.parent_)) {
 				// init part
-				parent_Settings = new EObjectFlatComboSettings(innerDeclaration, CorePackage.eINSTANCE.getInnerDeclaration_Parent());
+				parent_Settings = new EObjectFlatComboSettings(
+						innerDeclaration,
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+								.getInnerDeclaration_Parent());
 				basePart.initParent_(parent_Settings);
 				// set the button mode
 				basePart.setParent_ButtonMode(ButtonsModeEnum.BROWSE);
 			}
 			if (isAccessible(CoreViewsRepository.InnerDeclaration.Properties.type)) {
 				// init part
-				typeSettings = new EObjectFlatComboSettings(innerDeclaration, CorePackage.eINSTANCE.getInnerDeclaration_Type());
+				typeSettings = new EObjectFlatComboSettings(
+						innerDeclaration,
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+								.getInnerDeclaration_Type());
 				basePart.initType(typeSettings);
 				// set the button mode
 				basePart.setTypeButtonMode(ButtonsModeEnum.BROWSE);
@@ -115,6 +123,7 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof CompositeDataType);
 				}
@@ -130,6 +139,7 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
+			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof DataType);
 				}
@@ -156,18 +166,21 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == CoreViewsRepository.InnerDeclaration.Properties.name) {
-			return SDMPackage.eINSTANCE.getNamedElement_Name();
+			return CorePackage.eINSTANCE.getNamedElement_Name();
 		}
 		if (editorKey == CoreViewsRepository.InnerDeclaration.Properties.comment) {
-			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
+			return CorePackage.eINSTANCE.getCommentableElement_Comment();
 		}
 		if (editorKey == CoreViewsRepository.InnerDeclaration.Properties.parent_) {
-			return CorePackage.eINSTANCE.getInnerDeclaration_Parent();
+			return de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getInnerDeclaration_Parent();
 		}
 		if (editorKey == CoreViewsRepository.InnerDeclaration.Properties.type) {
-			return CorePackage.eINSTANCE.getInnerDeclaration_Type();
+			return de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getInnerDeclaration_Type();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -177,6 +190,7 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		InnerDeclaration innerDeclaration = (InnerDeclaration)semanticObject;
 		if (CoreViewsRepository.InnerDeclaration.Properties.name == event.getAffectedEditor()) {
@@ -187,7 +201,7 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 		}
 		if (CoreViewsRepository.InnerDeclaration.Properties.parent_ == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				parent_Settings.setToReference((CompositeDataType)event.getNewValue());
+				parent_Settings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, parent_Settings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -201,7 +215,7 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 		}
 		if (CoreViewsRepository.InnerDeclaration.Properties.type == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				typeSettings.setToReference((DataType)event.getNewValue());
+				typeSettings.setToReference(event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, typeSettings, editingContext.getAdapterFactory());
 				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
@@ -219,27 +233,36 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			InnerDeclarationPropertiesEditionPart basePart = (InnerDeclarationPropertiesEditionPart)editingPart;
-			if (SDMPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.name)) {
+			if (CorePackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (SDMPackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.comment)) {
+			if (CorePackage.eINSTANCE.getCommentableElement_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.comment)) {
 				if (msg.getNewValue() != null) {
 					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
 					basePart.setComment("");
 				}
 			}
-			if (CorePackage.eINSTANCE.getInnerDeclaration_Parent().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.parent_))
+			if (de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getInnerDeclaration_Parent().equals(msg.getFeature())
+					&& basePart != null
+					&& isAccessible(CoreViewsRepository.InnerDeclaration.Properties.parent_)) {
 				basePart.setParent_((EObject)msg.getNewValue());
-			if (CorePackage.eINSTANCE.getInnerDeclaration_Type().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.InnerDeclaration.Properties.type))
+			}
+			if (de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getInnerDeclaration_Type().equals(msg.getFeature())
+					&& basePart != null
+					&& isAccessible(CoreViewsRepository.InnerDeclaration.Properties.type)) {
 				basePart.setType((EObject)msg.getNewValue());
+			}
 			
 		}
 	}
@@ -251,6 +274,7 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
+	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == CoreViewsRepository.InnerDeclaration.Properties.name || key == CoreViewsRepository.InnerDeclaration.Properties.parent_ || key == CoreViewsRepository.InnerDeclaration.Properties.type;
 	}
@@ -261,6 +285,7 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
@@ -268,16 +293,16 @@ public class InnerDeclarationPropertiesEditionComponent extends SinglePartProper
 				if (CoreViewsRepository.InnerDeclaration.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (CoreViewsRepository.InnerDeclaration.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(SDMPackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

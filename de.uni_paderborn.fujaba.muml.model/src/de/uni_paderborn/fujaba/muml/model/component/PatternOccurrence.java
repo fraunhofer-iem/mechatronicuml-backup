@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
-
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.ExtendableElement;
 
-import org.storydriven.modeling.ExtendableElement;
+import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 
 /**
  * <!-- begin-user-doc -->

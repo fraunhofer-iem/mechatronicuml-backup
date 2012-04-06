@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 /**
  * @generated
@@ -30,7 +30,7 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getMessageInterfaceName_5010Parser() {
 		if (messageInterfaceName_5010Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);
@@ -49,7 +49,7 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getMessageTypeName_5008Parser() {
 		if (messageTypeName_5008Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);

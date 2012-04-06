@@ -23,12 +23,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.provider.NamedElementItemProvider;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -96,7 +95,7 @@ public class RealtimeStatechartItemProvider
 				 getResourceLocator(),
 				 getString("_UI_CommentableElement_comment_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
 				 false,
@@ -118,7 +117,7 @@ public class RealtimeStatechartItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Behavior_behavioralElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_behavioralElement_feature", "_UI_Behavior_type"),
-				 CorePackage.Literals.BEHAVIOR__BEHAVIORAL_ELEMENT,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__BEHAVIORAL_ELEMENT,
 				 true,
 				 false,
 				 true,
@@ -140,7 +139,7 @@ public class RealtimeStatechartItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Behavior_operations_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_operations_feature", "_UI_Behavior_type"),
-				 CorePackage.Literals.BEHAVIOR__OPERATIONS,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS,
 				 true,
 				 false,
 				 false,
@@ -162,7 +161,7 @@ public class RealtimeStatechartItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Behavior_attributes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_attributes_feature", "_UI_Behavior_type"),
-				 CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
 				 true,
 				 false,
 				 false,
@@ -337,8 +336,8 @@ public class RealtimeStatechartItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.BEHAVIOR__OPERATIONS);
-			childrenFeatures.add(CorePackage.Literals.BEHAVIOR__ATTRIBUTES);
+			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS);
+			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__ATTRIBUTES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__TRANSITIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS);
@@ -430,12 +429,12 @@ public class RealtimeStatechartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.BEHAVIOR__OPERATIONS,
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS,
 				 CoreFactory.eINSTANCE.createOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
 				 CoreFactory.eINSTANCE.createAttribute()));
 
 		newChildDescriptors.add

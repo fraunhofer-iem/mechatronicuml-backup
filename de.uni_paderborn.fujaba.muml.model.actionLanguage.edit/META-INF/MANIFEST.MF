@@ -9,7 +9,7 @@ Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University o
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.model.actionLanguage.provider
-Require-Bundle: org.storydriven.modeling.edit;visibility:=reexport,
+Require-Bundle: org.storydriven.core.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.2.0";visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model.edit;bundle-version="0.2.0"
 Bundle-ActivationPolicy: lazy

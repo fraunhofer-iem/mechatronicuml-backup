@@ -49,8 +49,6 @@ import de.uni_paderborn.fujaba.muml.model.core.providers.CoreMessages;
 public class ActivityCallExpressionPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ActivityCallExpressionPropertiesEditionPart {
 
 	protected Text comment;
-	protected EObjectFlatComboViewer callee;
-	protected EObjectFlatComboViewer activity;
 
 
 
@@ -88,10 +86,9 @@ public class ActivityCallExpressionPropertiesEditionPartImpl extends CompositePr
 	 */
 	public void createControls(Composite view) { 
 		CompositionSequence activityCallExpressionStep = new BindingCompositionSequence(propertiesEditionComponent);
-		CompositionStep propertiesStep = activityCallExpressionStep.addStep(CoreViewsRepository.ActivityCallExpression.Properties.class);
-		propertiesStep.addStep(CoreViewsRepository.ActivityCallExpression.Properties.comment);
-		propertiesStep.addStep(CoreViewsRepository.ActivityCallExpression.Properties.callee);
-		propertiesStep.addStep(CoreViewsRepository.ActivityCallExpression.Properties.activity);
+		activityCallExpressionStep
+			.addStep(CoreViewsRepository.ActivityCallExpression.Properties.class)
+			.addStep(CoreViewsRepository.ActivityCallExpression.Properties.comment);
 		
 		
 		composer = new PartComposer(activityCallExpressionStep) {
@@ -103,12 +100,6 @@ public class ActivityCallExpressionPropertiesEditionPartImpl extends CompositePr
 				}
 				if (key == CoreViewsRepository.ActivityCallExpression.Properties.comment) {
 					return createCommentText(parent);
-				}
-				if (key == CoreViewsRepository.ActivityCallExpression.Properties.callee) {
-					return createCalleeFlatComboViewer(parent);
-				}
-				if (key == CoreViewsRepository.ActivityCallExpression.Properties.activity) {
-					return createActivityFlatComboViewer(parent);
 				}
 				return parent;
 			}
@@ -177,52 +168,6 @@ public class ActivityCallExpressionPropertiesEditionPartImpl extends CompositePr
 		return parent;
 	}
 
-	/**
-	 * @param parent the parent composite
-	 * 
-	 */
-	protected Composite createCalleeFlatComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, CoreMessages.ActivityCallExpressionPropertiesEditionPart_CalleeLabel, propertiesEditionComponent.isRequired(CoreViewsRepository.ActivityCallExpression.Properties.callee, CoreViewsRepository.SWT_KIND));
-		callee = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(CoreViewsRepository.ActivityCallExpression.Properties.callee, CoreViewsRepository.SWT_KIND));
-		callee.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-		callee.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			public void selectionChanged(SelectionChangedEvent event) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ActivityCallExpressionPropertiesEditionPartImpl.this, CoreViewsRepository.ActivityCallExpression.Properties.callee, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, null, getCallee()));
-			}
-
-		});
-		GridData calleeData = new GridData(GridData.FILL_HORIZONTAL);
-		callee.setLayoutData(calleeData);
-		callee.setID(CoreViewsRepository.ActivityCallExpression.Properties.callee);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.ActivityCallExpression.Properties.callee, CoreViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
-	/**
-	 * @param parent the parent composite
-	 * 
-	 */
-	protected Composite createActivityFlatComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, CoreMessages.ActivityCallExpressionPropertiesEditionPart_ActivityLabel, propertiesEditionComponent.isRequired(CoreViewsRepository.ActivityCallExpression.Properties.activity, CoreViewsRepository.SWT_KIND));
-		activity = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(CoreViewsRepository.ActivityCallExpression.Properties.activity, CoreViewsRepository.SWT_KIND));
-		activity.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-		activity.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			public void selectionChanged(SelectionChangedEvent event) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ActivityCallExpressionPropertiesEditionPartImpl.this, CoreViewsRepository.ActivityCallExpression.Properties.activity, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, null, getActivity()));
-			}
-
-		});
-		GridData activityData = new GridData(GridData.FILL_HORIZONTAL);
-		activity.setLayoutData(activityData);
-		activity.setID(CoreViewsRepository.ActivityCallExpression.Properties.activity);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.ActivityCallExpression.Properties.activity, CoreViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		return parent;
-	}
-
 
 
 	/**
@@ -259,148 +204,6 @@ public class ActivityCallExpressionPropertiesEditionPartImpl extends CompositePr
 		} else {
 			comment.setText(""); //$NON-NLS-1$
 		}
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#getCallee()
-	 * 
-	 */
-	public EObject getCallee() {
-		if (callee.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) callee.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
-				return (EObject) firstElement;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#initCallee(EObjectFlatComboSettings)
-	 */
-	public void initCallee(EObjectFlatComboSettings settings) {
-		callee.setInput(settings);
-		if (current != null) {
-			callee.setSelection(new StructuredSelection(settings.getValue()));
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#setCallee(EObject newValue)
-	 * 
-	 */
-	public void setCallee(EObject newValue) {
-		if (newValue != null) {
-			callee.setSelection(new StructuredSelection(newValue));
-		} else {
-			callee.setSelection(new StructuredSelection()); //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#setCalleeButtonMode(ButtonsModeEnum newValue)
-	 */
-	public void setCalleeButtonMode(ButtonsModeEnum newValue) {
-		callee.setButtonMode(newValue);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#addFilterCallee(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToCallee(ViewerFilter filter) {
-		callee.addFilter(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#addBusinessFilterCallee(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToCallee(ViewerFilter filter) {
-		callee.addBusinessRuleFilter(filter);
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#getActivity()
-	 * 
-	 */
-	public EObject getActivity() {
-		if (activity.getSelection() instanceof StructuredSelection) {
-			Object firstElement = ((StructuredSelection) activity.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
-				return (EObject) firstElement;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#initActivity(EObjectFlatComboSettings)
-	 */
-	public void initActivity(EObjectFlatComboSettings settings) {
-		activity.setInput(settings);
-		if (current != null) {
-			activity.setSelection(new StructuredSelection(settings.getValue()));
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#setActivity(EObject newValue)
-	 * 
-	 */
-	public void setActivity(EObject newValue) {
-		if (newValue != null) {
-			activity.setSelection(new StructuredSelection(newValue));
-		} else {
-			activity.setSelection(new StructuredSelection()); //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#setActivityButtonMode(ButtonsModeEnum newValue)
-	 */
-	public void setActivityButtonMode(ButtonsModeEnum newValue) {
-		activity.setButtonMode(newValue);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#addFilterActivity(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToActivity(ViewerFilter filter) {
-		activity.addFilter(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ActivityCallExpressionPropertiesEditionPart#addBusinessFilterActivity(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToActivity(ViewerFilter filter) {
-		activity.addBusinessRuleFilter(filter);
 	}
 
 

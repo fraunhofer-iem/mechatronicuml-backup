@@ -35,7 +35,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 	 */
 	public CoordinationPatternItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2002);
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2003);
 	}
 
 	/**

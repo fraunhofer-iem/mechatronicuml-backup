@@ -23,8 +23,8 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.provider.NamedElementItemProvider;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
@@ -32,7 +32,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
@@ -93,7 +92,7 @@ public class PortItemProvider
 				 getResourceLocator(),
 				 getString("_UI_CommentableElement_comment_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
 				 false,
@@ -115,7 +114,7 @@ public class PortItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ConstrainableElement_constraint_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 true,
 				 false,
 				 true,
@@ -151,7 +150,8 @@ public class PortItemProvider
 						"_UI_PropertyDescriptor_description",
 						"_UI_Cardinality_lowerBound_feature",
 						"_UI_Cardinality_type"),
-				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__LOWER_BOUND,
+						true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, rootPropertyDescriptor));
 		
@@ -162,7 +162,8 @@ public class PortItemProvider
 						"_UI_PropertyDescriptor_description",
 						"_UI_Cardinality_upperBound_feature",
 						"_UI_Cardinality_type"),
-				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__UPPER_BOUND,
+						true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, rootPropertyDescriptor));
 	}
@@ -246,7 +247,7 @@ public class PortItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ComponentPackage.Literals.PORT__CARDINALITY);
 		}
 		return childrenFeatures;
@@ -328,7 +329,7 @@ public class PortItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add

@@ -6,8 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.constraint;
 
-import org.storydriven.modeling.ExtendableElement;
-import org.storydriven.modeling.expressions.TextualExpression;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.expressions.TextualExpression;
 
 /**
  * <!-- begin-user-doc -->

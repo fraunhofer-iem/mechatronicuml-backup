@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core;
 
-import org.storydriven.modeling.ExtendableElement;
-
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

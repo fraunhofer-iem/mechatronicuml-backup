@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;

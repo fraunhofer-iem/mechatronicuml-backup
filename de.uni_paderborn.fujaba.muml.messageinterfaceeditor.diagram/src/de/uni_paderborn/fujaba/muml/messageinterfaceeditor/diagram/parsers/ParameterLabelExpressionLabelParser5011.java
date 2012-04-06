@@ -37,7 +37,7 @@ public class ParameterLabelExpressionLabelParser5011 implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						3,
+						4,
 						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 								.getParameter(), null).evaluate(target);
 		return String.valueOf(result);
@@ -84,7 +84,7 @@ public class ParameterLabelExpressionLabelParser5011 implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						2,
+						3,
 						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 								.getParameter(), null).evaluate(target);
 		return String.valueOf(result);

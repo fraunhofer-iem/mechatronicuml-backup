@@ -22,7 +22,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.modeling.SDMPackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
@@ -93,7 +92,8 @@ public class DoEventItemProvider
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				"Action Name", "The Name of the Action",
-				SDMPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
+				org.storydriven.core.CorePackage.Literals.NAMED_ELEMENT__NAME,
+				true, false, false,
 				null, null, null, rootPropertyDescriptor));
 
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(

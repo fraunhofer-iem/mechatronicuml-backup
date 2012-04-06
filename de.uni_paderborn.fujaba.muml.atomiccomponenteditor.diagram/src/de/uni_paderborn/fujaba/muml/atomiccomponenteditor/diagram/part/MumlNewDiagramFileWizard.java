@@ -138,7 +138,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 								diagramRootElementSelectionPage
 										.getModelElement(),
 								de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
-								de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+								de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
@@ -152,16 +152,16 @@ public class MumlNewDiagramFileWizard extends Wizard {
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorUtil
 					.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError(
 							"Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance()
 					.logError(
 							"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
@@ -202,7 +202,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 							new CreateDiagramViewOperation(
 									new EObjectAdapter(selectedModelElement),
 									de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
-									de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+									de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null
 					: de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;

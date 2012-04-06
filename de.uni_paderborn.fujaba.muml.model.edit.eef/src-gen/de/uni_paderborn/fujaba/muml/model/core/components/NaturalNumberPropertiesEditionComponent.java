@@ -56,6 +56,7 @@ public class NaturalNumberPropertiesEditionComponent extends SinglePartPropertie
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
+	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -89,6 +90,7 @@ public class NaturalNumberPropertiesEditionComponent extends SinglePartPropertie
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
+	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == CoreViewsRepository.NaturalNumber.Properties.value) {
 			return CorePackage.eINSTANCE.getNaturalNumber_Value();
@@ -104,6 +106,7 @@ public class NaturalNumberPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		NaturalNumber naturalNumber = (NaturalNumber)semanticObject;
 		if (CoreViewsRepository.NaturalNumber.Properties.value == event.getAffectedEditor()) {
@@ -118,6 +121,7 @@ public class NaturalNumberPropertiesEditionComponent extends SinglePartPropertie
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			NaturalNumberPropertiesEditionPart basePart = (NaturalNumberPropertiesEditionPart)editingPart;
@@ -128,8 +132,9 @@ public class NaturalNumberPropertiesEditionComponent extends SinglePartPropertie
 					basePart.setValue("");
 				}
 			}
-			if (CorePackage.eINSTANCE.getNaturalNumber_Infinity().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.NaturalNumber.Properties.infinity))
+			if (CorePackage.eINSTANCE.getNaturalNumber_Infinity().equals(msg.getFeature()) && basePart != null && isAccessible(CoreViewsRepository.NaturalNumber.Properties.infinity)) {
 				basePart.setInfinity((Boolean)msg.getNewValue());
+			}
 			
 			
 		}
@@ -142,6 +147,7 @@ public class NaturalNumberPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {

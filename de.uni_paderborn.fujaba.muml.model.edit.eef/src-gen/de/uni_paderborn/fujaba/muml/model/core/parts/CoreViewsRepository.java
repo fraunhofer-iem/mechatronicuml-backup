@@ -54,12 +54,6 @@ public class CoreViewsRepository {
 			
 			public static String comment = "core::ActivityCallExpression::properties::comment";
 			
-			
-			public static String callee = "core::ActivityCallExpression::properties::callee";
-			
-			
-			public static String activity = "core::ActivityCallExpression::properties::activity";
-			
 	
 		}
 	

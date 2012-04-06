@@ -303,6 +303,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
@@ -314,16 +324,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_MessageInterface_2005_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_source;
 
 	/**
 	 * @generated
