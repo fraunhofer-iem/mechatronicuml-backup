@@ -19549,5 +19549,24 @@
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.6" oldDataValue="http://www.fujaba.de/modelinstance/0.2.5"/>
   </releases>
-  <releases/>
+  <releases>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//ExtendableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references."
+        oldDataValue="Abstract base class for the whole SDM model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references."/>
+    <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"
+        referenceName="eAnnotations" element="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="documentation"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The comment string that can be used to attach arbitrary information to CommentableElements."/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#/"
+        featureName="nsURI" dataValue="http://www.storydriven.org/core/0.2.0" oldDataValue="http://ns.storydriven.org/core/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions"
+        featureName="nsURI" dataValue="http://www.storydriven.org/core/expressions/0.2.0"
+        oldDataValue="http://ns.storydriven.org/core/expressions/0.2.0"/>
+  </releases>
 </history:History>
