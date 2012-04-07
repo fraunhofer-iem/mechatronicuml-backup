@@ -19568,5 +19568,8 @@
     <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions"
         featureName="nsURI" dataValue="http://www.storydriven.org/core/expressions/0.2.0"
         oldDataValue="http://ns.storydriven.org/core/expressions/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."
+        oldDataValue="The modeling package is the root package for the SDM meta-model. It defines several abstract super classes which implement an extension mechanism as well as reoccuring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."/>
   </releases>
 </history:History>
