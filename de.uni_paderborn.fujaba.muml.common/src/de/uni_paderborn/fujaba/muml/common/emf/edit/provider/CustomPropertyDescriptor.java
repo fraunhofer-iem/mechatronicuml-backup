@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListDialogEx
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExtension;
-import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
+import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
@@ -214,7 +214,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			String initialString = "";
 			if (!oldValues.isEmpty()) {
 				EObject eobject = (EObject) oldValues.iterator().next();
-				initialString = ActionLanguageResource.serializeEObject(eobject, getAllAvailableAttributes());
+				initialString = LanguageResource.serializeEObject(eobject, getAllAvailableAttributes());
 				if (initialString == null) {
 					initialString = "// warning: existing expressions will be replaced!";
 				}
@@ -223,7 +223,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			SimpleTextualDialogExtension.ITextParser parser = new SimpleTextualDialogExtension.ITextParser() {
 				@Override
 				public Object parse(String text) {
-					return ActionLanguageResource.loadFromString(text, getAllAvailableAttributes());
+					return LanguageResource.loadFromString(text, getAllAvailableAttributes());
 				}
 			};
 			textDialog = new SimpleTextualDialogExtension(dialog, initialString, parser);			
