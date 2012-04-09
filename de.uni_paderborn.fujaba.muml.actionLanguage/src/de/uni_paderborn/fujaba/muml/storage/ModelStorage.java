@@ -1,5 +1,7 @@
-package de.uni_paderborn.fujaba.muml.ui;
+package de.uni_paderborn.fujaba.muml.storage;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
@@ -14,13 +16,17 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
+import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
-import de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator;
 
 public abstract class ModelStorage<T> implements IModelStorage {
+	private EObject container;
 	private T model;
 	private List<Attribute> attributeList;
+	
+	public ModelStorage(EObject container) {
+		this.container = container;
+	}
 	
 	@Override
 	public IPath getFullPath() {
@@ -41,6 +47,11 @@ public abstract class ModelStorage<T> implements IModelStorage {
 	@Override
 	public List<Attribute> getAttributeList() {
 		return attributeList;
+	}
+	
+	@Override
+	public EObject getContainer() {
+		return container;
 	}
 
 	public boolean equals(Object object) {
@@ -63,14 +74,41 @@ public abstract class ModelStorage<T> implements IModelStorage {
 	}
 
 	protected Expression parseExpression(String text) throws CoreException {
-		Expression expression = (Expression) ActionLanguageResource.loadFromString(text, getAttributeList());
-		String error = ActionLanguageResource.getloadErrorMessage();
+		Expression expression = (Expression) LanguageResource.loadFromString(text, getAttributeList());
+		String error = LanguageResource.getloadErrorMessage();
 		if (!error.equals("")) {
-			String pluginId = ActionLanguageActivator.getInstance().getBundle().getSymbolicName();
+			String pluginId = "FIXME"; //ActionLanguageActivator.getInstance().getBundle().getSymbolicName();
 			IStatus status = new Status(IStatus.ERROR, pluginId, IStatus.ERROR, error, null);
 			throw new CoreException(status);
 		}
 		return expression;
+	}
+	
+	protected String serializeExpression(EObject object) {
+		String text = LanguageResource.serializeEObject(object, getAttributeList());
+		return text;
+	}
+	
+	@Override
+	public String serialize() {
+		InputStream istream = null;
+		String text = "";
+		try {
+			istream = getContents();
+		} catch (CoreException e) {
+			// should not happen
+			e.printStackTrace();
+		}
+		try {
+			int available = istream.available();
+			byte[] byteArray = new byte[available];
+			istream.read(byteArray);
+			text = new String(byteArray);
+		} catch (IOException e) {
+			// should not happen
+			e.printStackTrace();
+		}
+		return text;
 	}
 
 	protected static EStructuralFeature getFeatureByName(EObject object, String name) {

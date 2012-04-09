@@ -7,7 +7,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.ui.editor.model.JavaClassPathResourceForIEditorInputFactory;
 
-import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
+import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 public class CustomResourceForEditorInputFactory extends JavaClassPathResourceForIEditorInputFactory {
@@ -20,6 +20,6 @@ public class CustomResourceForEditorInputFactory extends JavaClassPathResourceFo
 	@Override
 	protected Resource createResource(IStorage storage) throws CoreException {
 		//System.out.println(storage);
-		return ActionLanguageResource.getXtextResource(attributeList);
+		return LanguageResource.getXtextResource(attributeList);
 	}
 }

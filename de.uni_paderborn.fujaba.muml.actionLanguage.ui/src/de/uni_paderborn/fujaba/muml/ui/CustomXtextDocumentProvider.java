@@ -15,6 +15,8 @@ import org.eclipse.xtext.validation.IResourceValidator;
 
 import com.google.inject.Inject;
 
+import de.uni_paderborn.fujaba.muml.storage.IModelStorage;
+
 public class CustomXtextDocumentProvider extends XtextDocumentProvider {
 	
 	@Inject

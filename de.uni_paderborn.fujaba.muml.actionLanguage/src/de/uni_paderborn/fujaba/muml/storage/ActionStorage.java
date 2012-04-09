@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.ui;
+package de.uni_paderborn.fujaba.muml.storage;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -9,7 +9,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.ActionLanguageResource;
+import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
@@ -24,6 +24,7 @@ public class ActionStorage extends ModelStorage<Action> {
 	private Expression currentExpression;
 	
 	public ActionStorage(EObject model) {
+		super(model);
 		Action action = null;
 		List<Attribute> attributeList = null;
 		if (model instanceof DoEvent) {
@@ -45,7 +46,7 @@ public class ActionStorage extends ModelStorage<Action> {
 		setModel(action);
 		setAttributeList(attributeList);
 	}
-		
+
 	private Action addAction(EObject model) {
 		Action action = RealtimestatechartFactory.eINSTANCE.createAction();
 		action.setName("");
@@ -53,6 +54,7 @@ public class ActionStorage extends ModelStorage<Action> {
 		return action;
 	}
 
+	@Override
 	public InputStream getContents() throws CoreException {
 		String text = "{\n\t\n}";
 		for (Expression expression : getModel().getExpressions()) {
@@ -61,11 +63,12 @@ public class ActionStorage extends ModelStorage<Action> {
 			}
 		}
 		if (currentExpression != null) {
-			text = ActionLanguageResource.serializeEObject(currentExpression, getAttributeList());
+			text = LanguageResource.serializeEObject(currentExpression, getAttributeList());
 		}
 		return new ByteArrayInputStream(text.getBytes());
 	}
 
+	@Override
 	public void save(String text) throws CoreException {
 		Expression expression = parseExpression(text);
 		List<Expression> list = new ArrayList<Expression>();
@@ -77,7 +80,14 @@ public class ActionStorage extends ModelStorage<Action> {
 			list.remove(index);
 		}
 		list.add(index, expression);
+		currentExpression = expression;
 		setFeature(getModel(), "expressions", list);
+	}
+	
+	@Override
+	public void save(EObject object) throws CoreException {
+		String text = serializeExpression(object);
+		save(text);
 	}
 
 	@Override

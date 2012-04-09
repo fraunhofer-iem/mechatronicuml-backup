@@ -20,8 +20,8 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.ui.editor.XtextReadonlyEditorInput;
 
+import de.uni_paderborn.fujaba.muml.storage.IModelStorage;
 import de.uni_paderborn.fujaba.muml.ui.CustomResourceForEditorInputFactory;
-import de.uni_paderborn.fujaba.muml.ui.IModelStorage;
 
 public abstract class OpenEditorBase implements IObjectActionDelegate {
 

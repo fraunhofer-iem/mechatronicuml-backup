@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml;
+package de.uni_paderborn.fujaba.muml.common;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -6,29 +6,40 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
 
 import com.google.inject.Injector;
+import com.google.inject.Key;
+import com.google.inject.name.Names;
 
+import de.uni_paderborn.fujaba.muml.ActionLanguageStandaloneSetup;
+import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
-import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
 
-public class ActionLanguageResource {
+public class LanguageResource {
 	private static Injector injector = null;
 	private static String loadError = "";
 	
+	public static void setInjector(Injector inj) {
+		System.out.println("set injector");
+		injector = inj;
+	}
+	
 	public static Resource getXtextResource(List<Attribute> attributeList) {
 		if (injector == null) {
+			//throw new IllegalStateException("injector is null - call setInjector first");
+			// this is a relict for the initial action "editor" - will be removed
 			injector = new ActionLanguageStandaloneSetup().createInjectorAndDoEMFRegistration();
 		}
 		XtextResourceSet resSet = injector.getInstance(XtextResourceSet.class);
-		Resource resource = resSet.createResource(URI.createURI("dummy.action"));
+		String ext = injector.getInstance(Key.get(String.class, Names.named(Constants.FILE_EXTENSIONS)));
+		Resource resource = resSet.createResource(URI.createURI("dummy." + ext));
 		ActionLanguageScopeProviderFactory.setAttributeList(attributeList);
 		return resource;
 	}

@@ -211,5 +211,14 @@
          </action>
       </objectContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.uni_paderborn.fujaba.muml.ui.view.EmbeddedXtextEditorView"
+            id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.view1"
+            name="Embedded Xtext Editor"
+            restorable="true">
+      </view>
+   </extension>
 
 </plugin>

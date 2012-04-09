@@ -10,6 +10,7 @@ import com.google.inject.Provider;
 import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
 
 
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
