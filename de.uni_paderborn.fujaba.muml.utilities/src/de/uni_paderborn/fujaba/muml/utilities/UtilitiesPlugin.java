@@ -12,6 +12,12 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
@@ -110,11 +116,9 @@ public class UtilitiesPlugin extends AbstractUIPlugin {
 		factories
 				.add(new org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory());
 		factories.add(new CallsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.modeling.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
+		factories.add(new CallsExpressionsItemProviderAdapterFactory());
 		factories.add(new PatternsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
+		factories.add(new PatternsExpressionsItemProviderAdapterFactory());
 		factories.add(new TemplatesItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority

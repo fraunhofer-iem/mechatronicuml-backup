@@ -9,7 +9,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide;bundle-version="3.6.2",
  de.uni_paderborn.fujaba.muml.model.edit;bundle-version="0.2.0",
  de.uni_paderborn.fujaba.common;bundle-version="0.2.0",
- de.fujaba.newwizard;bundle-version="0.2.0"
+ de.fujaba.newwizard;bundle-version="0.2.0",
+ org.storydriven.storydiagrams.edit;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
