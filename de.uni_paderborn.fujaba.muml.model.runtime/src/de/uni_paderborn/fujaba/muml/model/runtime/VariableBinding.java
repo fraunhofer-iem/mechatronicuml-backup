@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
-
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.ExtendableElement;
 
-import org.storydriven.modeling.ExtendableElement;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 /**
  * <!-- begin-user-doc -->

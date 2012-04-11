@@ -6,22 +6,21 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
-
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
@@ -33,16 +32,6 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.storydriven.modeling.SDMPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -499,7 +488,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		// Obtain other dependent packages
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
-		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
+		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
@@ -515,11 +504,11 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimePortInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
 		runtimeRoleInstanceEClass.getESuperTypes().add(thePatternPackage.getRole());
 		runtimeRoleInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
-		messageQueueEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
-		realtimeStatechartInstanceEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
-		runtimeMessageEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		runtimeParameterEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		variableBindingEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
+		messageQueueEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
+		realtimeStatechartInstanceEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
+		runtimeMessageEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		runtimeParameterEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		variableBindingEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(runtimeComponentInstanceEClass, RuntimeComponentInstance.class, "RuntimeComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

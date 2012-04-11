@@ -6,16 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.storydriven.core.CorePackage;
 
-import org.storydriven.modeling.SDMPackage;
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -472,7 +470,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int MESSAGE_QUEUE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -481,7 +479,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int MESSAGE_QUEUE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -490,7 +488,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__SIZE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int MESSAGE_QUEUE__SIZE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
@@ -499,7 +497,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__MESSAGES = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int MESSAGE_QUEUE__MESSAGES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Behavioral Element</b></em>' container reference.
@@ -508,7 +506,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__RUNTIME_BEHAVIORAL_ELEMENT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_QUEUE__RUNTIME_BEHAVIORAL_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Message Queue</em>' class.
@@ -517,7 +515,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int MESSAGE_QUEUE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl <em>Realtime Statechart Instance</em>}' class.
@@ -536,7 +534,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int REALTIME_STATECHART_INSTANCE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -545,7 +543,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int REALTIME_STATECHART_INSTANCE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Behavioral Element</b></em>' container reference.
@@ -554,7 +552,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
@@ -563,7 +561,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__INSTANCE_OF = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int REALTIME_STATECHART_INSTANCE__INSTANCE_OF = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>States</b></em>' reference list.
@@ -572,7 +570,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__STATES = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int REALTIME_STATECHART_INSTANCE__STATES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Active</b></em>' reference.
@@ -581,7 +579,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__ACTIVE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int REALTIME_STATECHART_INSTANCE__ACTIVE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list.
@@ -590,7 +588,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Variable Bindings</b></em>' containment reference list.
@@ -599,7 +597,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Realtime Statechart Instance</em>' class.
@@ -608,7 +606,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
+	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeMessageImpl <em>Message</em>}' class.
@@ -627,7 +625,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int RUNTIME_MESSAGE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -636,7 +634,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
+	int RUNTIME_MESSAGE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -645,7 +643,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int RUNTIME_MESSAGE__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -654,7 +652,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE__PARAMETERS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RUNTIME_MESSAGE__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -663,7 +661,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RUNTIME_MESSAGE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeParameterImpl <em>Parameter</em>}' class.
@@ -682,7 +680,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int RUNTIME_PARAMETER__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -691,7 +689,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
+	int RUNTIME_PARAMETER__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -700,7 +698,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int RUNTIME_PARAMETER__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' container reference.
@@ -709,7 +707,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER__MESSAGE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RUNTIME_PARAMETER__MESSAGE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' reference.
@@ -718,7 +716,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER__VALUE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RUNTIME_PARAMETER__VALUE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -727,7 +725,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RUNTIME_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl <em>Variable Binding</em>}' class.
@@ -746,7 +744,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int VARIABLE_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -755,7 +753,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int VARIABLE_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -764,7 +762,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__ATTRIBUTE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int VARIABLE_BINDING__ATTRIBUTE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' reference.
@@ -773,7 +771,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__VALUE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int VARIABLE_BINDING__VALUE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Variable Binding</em>' class.
@@ -782,7 +780,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int VARIABLE_BINDING_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeBehavioralElementImpl <em>Behavioral Element</em>}' class.

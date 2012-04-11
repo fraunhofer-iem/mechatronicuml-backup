@@ -6,26 +6,29 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
-import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.NamedElement;
 
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.ExtendableElement;
-import org.storydriven.modeling.NamedElement;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
+import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -298,13 +301,13 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.modeling.ExtendableElement
+	 * @see org.storydriven.core.ExtendableElement
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
@@ -312,13 +315,13 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.modeling.NamedElement
+	 * @see org.storydriven.core.NamedElement
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
@@ -340,13 +343,13 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.CommentableElement <em>Commentable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.modeling.CommentableElement
+	 * @see org.storydriven.core.CommentableElement
 	 * @generated
 	 */
 	public Adapter createCommentableElementAdapter() {

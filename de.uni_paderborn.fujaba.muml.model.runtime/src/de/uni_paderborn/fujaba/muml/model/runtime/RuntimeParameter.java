@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.storydriven.modeling.NamedElement;
+import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

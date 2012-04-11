@@ -6,15 +6,22 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
+import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeFactory;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,23 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.impl.NamedElementImpl;
 
-import org.storydriven.modeling.impl.NamedElementImpl;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
 
 /**
  * <!-- begin-user-doc -->

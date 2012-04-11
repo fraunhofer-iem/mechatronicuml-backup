@@ -6,24 +6,28 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
-import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.NamedElement;
 
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.ExtendableElement;
-import org.storydriven.modeling.NamedElement;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
+import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
