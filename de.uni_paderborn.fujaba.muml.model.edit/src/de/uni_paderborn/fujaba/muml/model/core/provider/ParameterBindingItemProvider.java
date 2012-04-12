@@ -25,6 +25,11 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
+import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -200,6 +205,16 @@ public class ParameterBindingItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
@@ -232,6 +247,41 @@ public class ParameterBindingItemProvider
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**

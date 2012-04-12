@@ -17,8 +17,9 @@ Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
  de.uni_paderborn.fujaba.muml.model.msgiface.provider,
  de.uni_paderborn.fujaba.muml.model.pattern.provider,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider
-Require-Bundle: org.storydriven.core.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.common;bundle-version="0.2.0",
+Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.2.0",
  de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0";visibility:=reexport,
- de.fujaba.modelinstance.edit;bundle-version="0.2.0";visibility:=reexport
+ de.fujaba.modelinstance.edit;bundle-version="0.2.0";visibility:=reexport,
+ org.storydriven.storydiagrams.edit,
+ org.storydriven.core.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

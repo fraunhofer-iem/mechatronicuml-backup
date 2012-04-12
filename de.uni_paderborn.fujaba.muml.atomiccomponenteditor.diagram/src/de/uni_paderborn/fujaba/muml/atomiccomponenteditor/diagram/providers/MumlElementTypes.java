@@ -52,6 +52,7 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType AtomicComponent_2004 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.AtomicComponent_2004"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */

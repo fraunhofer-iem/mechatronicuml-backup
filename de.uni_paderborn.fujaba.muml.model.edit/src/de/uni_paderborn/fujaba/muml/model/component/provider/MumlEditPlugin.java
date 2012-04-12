@@ -10,6 +10,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.storydriven.core.provider.CoreEditPlugin;
+import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
 
 import de.fujaba.modelinstance.provider.ModelinstanceEditPlugin;
 
@@ -45,9 +46,10 @@ public final class MumlEditPlugin extends EMFPlugin {
 	public MumlEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
 		     ModelinstanceEditPlugin.INSTANCE,
-		     CoreEditPlugin.INSTANCE,
+		     StorydiagramsEditPlugin.INSTANCE,
 		   });
 	}
 

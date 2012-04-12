@@ -4,9 +4,10 @@ Bundle-Name: MechatronicUML Edit-Support (Extended)
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.edit.eef;singleton:=true
 Bundle-Version: 0.2.0.qualifier
 Require-Bundle: org.eclipse.emf.eef.runtime;bundle-version="0.9.1",
- de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0";visibility:=reexport,
- de.fujaba.modelinstance.edit;bundle-version="0.2.0";visibility:=reexport,
- org.storydriven.core.edit;visibility:=reexport
+ de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0",
+ de.fujaba.modelinstance.edit;bundle-version="0.2.0",
+ org.storydriven.core.edit,
+ org.storydriven.storydiagrams.edit;bundle-version="1.0.0"
 Export-Package: de.uni_paderborn.fujaba.muml.model.component.providers,
  de.uni_paderborn.fujaba.muml.model.constraint.providers,
  de.uni_paderborn.fujaba.muml.model.core.providers,

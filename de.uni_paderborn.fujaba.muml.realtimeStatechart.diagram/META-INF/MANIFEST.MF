@@ -56,6 +56,9 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.muml.common,
  de.fujaba.newwizard,
- org.eclipse.emf.eef.runtime
+ org.eclipse.emf.eef.runtime,
+ org.storydriven.storydiagrams;visibility:=reexport,
+ org.storydriven.storydiagrams.edit.eef;visibility:=reexport,
+ org.storydriven.storydiagrams.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
