@@ -24,27 +24,35 @@
       <import plugin="de.uni_paderborn.fujaba.muml.model.edit.eef" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="de.fujaba.modelinstance.edit.eef" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.edit.eef" version="0.2.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.modeling.edit.eef" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.modeling"/>
+      <import plugin="org.storydriven.core"/>
       <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.logging" version="1.1.1" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.emf.edit" version="2.7.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jdt.core" version="3.7.3" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.7.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.ui"/>
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.compare"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.emf.compare.match"/>
       <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.emf.compare.diff"/>
+      <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.views"/>
-      <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.ui.navigator.resources"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.ecore.editor"/>
@@ -59,14 +67,15 @@
       <import plugin="org.eclipse.draw2d"/>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="org.storydriven.modeling.edit"/>
+      <import plugin="org.storydriven.core.edit"/>
       <import plugin="org.eclipse.ocl.ecore"/>
       <import plugin="org.eclipse.emf.validation"/>
       <import plugin="org.eclipse.gef"/>
+      <import plugin="org.storydriven.storydiagrams"/>
+      <import plugin="org.storydriven.storydiagrams.edit"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edapt.migration" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edapt.declaration" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.core" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.6.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
@@ -74,10 +83,12 @@
       <import plugin="org.eclipse.uml2.codegen.ecore" version="1.6.0" match="compatible"/>
       <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.uml2.common.edit" version="1.5.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.eef.runtime" version="1.0.2" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.editor" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface" version="3.6.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.6.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.uml2.common.edit" version="1.5.0" match="compatible"/>
    </requires>
 
    <plugin
@@ -270,35 +281,63 @@
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling"
+         id="org.storydriven.core"
          download-size="0"
          install-size="0"
          version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.diagram"
+         id="org.storydriven.core.edit"
          download-size="0"
          install-size="0"
          version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.diagram.custom"
+         id="org.storydriven.core.edit.eef"
+         download-size="0"
+         install-size="0"
+         version="0.2.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams"
          download-size="0"
          install-size="0"
          version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.diagram.ocl"
+         id="org.storydriven.storydiagrams.edit"
          download-size="0"
          install-size="0"
          version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.edit"
+         id="org.storydriven.storydiagrams.edit.eef"
+         download-size="0"
+         install-size="0"
+         version="0.2.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams.diagram"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams.diagram.ocl"
          download-size="0"
          install-size="0"
          version="1.0.0.qualifier"
@@ -326,7 +365,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.edit.eef"
+         id="org.storydriven.storydiagrams.edit.eef"
          download-size="0"
          install-size="0"
          version="0.2.0.qualifier"

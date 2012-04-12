@@ -434,7 +434,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram"
+      iD="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"
       name="Atomiccomponent Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.2.0.qualifier">

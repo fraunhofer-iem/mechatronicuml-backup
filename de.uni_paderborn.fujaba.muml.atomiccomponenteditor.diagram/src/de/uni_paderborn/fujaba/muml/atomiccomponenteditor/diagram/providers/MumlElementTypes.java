@@ -47,24 +47,24 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ModelElementCategory_1000 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
+	public static final IElementType ModelElementCategory_1000 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AtomicComponent_2004 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.AtomicComponent_2004"); //$NON-NLS-1$
+	public static final IElementType AtomicComponent_2004 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType HybridPort_3005 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.HybridPort_3005"); //$NON-NLS-1$
+	public static final IElementType HybridPort_3005 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType DiscretePort_3006 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.DiscretePort_3006"); //$NON-NLS-1$
+	public static final IElementType DiscretePort_3006 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.DiscretePort_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ContinuousPort_3007 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.ContinuousPort_3007"); //$NON-NLS-1$
+	public static final IElementType ContinuousPort_3007 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ContinuousPort_3007"); //$NON-NLS-1$
 
 	/**
 	 * @generated

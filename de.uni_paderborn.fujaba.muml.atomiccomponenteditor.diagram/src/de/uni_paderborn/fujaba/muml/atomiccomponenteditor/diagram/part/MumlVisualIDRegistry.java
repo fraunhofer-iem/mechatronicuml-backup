@@ -21,7 +21,7 @@ public class MumlVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.atomiccomponent.diagram/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated

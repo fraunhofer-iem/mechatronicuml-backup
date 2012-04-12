@@ -41,7 +41,7 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.atomiccomponent.diagram"; //$NON-NLS-1$
+	public static final String ID = "de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated
