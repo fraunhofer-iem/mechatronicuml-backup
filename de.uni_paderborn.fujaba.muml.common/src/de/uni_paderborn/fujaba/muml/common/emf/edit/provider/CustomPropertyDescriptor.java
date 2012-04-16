@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
@@ -97,22 +98,24 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			// }
 
 			// If the creation dialog should be shown, check which one.
-			// if (create) {
-			// // Which creation dialog should be shown?
-			// if (CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS
-			// .equals(feature)) {
-			// return new InvocationParameterBindingCreationCellEditor(
-			// parent, feature);
-			// } else if
-			// (RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS.equals(feature))
-			// {
-			// return new ActionCellEditor(parent, feature);
-			// } else if (feature.isMany()) {
-			// return new MultiFeatureCreationCellEditor(parent, feature);
-			// } else {
-			// // Don't show a creation dialog
-			// }
-			// }
+			if (create) {
+				// Which creation dialog should be shown?
+				if (RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS
+						.equals(feature)) {
+					return new ActionCellEditor(parent, feature);
+
+					// } else if
+					// (CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS
+					// .equals(feature)) {
+					// return new InvocationParameterBindingCreationCellEditor(
+					// parent, feature);
+
+				} else if (feature.isMany()) {
+					return new MultiFeatureCreationCellEditor(parent, feature);
+				} else {
+					// Don't show a creation dialog
+				}
+			}
 		}
 		return super.createPropertyEditor(parent);
 	}
@@ -186,7 +189,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		protected abstract Object getResult();
 
 	}
-	
+
 	public class ActionCellEditor extends MultiFeatureCreationCellEditor {
 		private Collection<?> oldValues;
 		private SimpleTextualDialogExtension textDialog;
@@ -195,13 +198,15 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		public ActionCellEditor(Composite composite, EStructuralFeature feature) {
 			super(composite, feature);
 		}
-		
+
 		private List<Attribute> getAllAvailableAttributes() {
 			EObject containerObject = dialog.getContainerObject();
 			if (containerObject instanceof StateEvent) {
-				return ((RealtimeStatechart) containerObject.eContainer().eContainer()).getAllAvailableAttributes();
+				return ((RealtimeStatechart) containerObject.eContainer()
+						.eContainer()).getAllAvailableAttributes();
 			} else if (containerObject instanceof Transition) {
-				return ((Transition) containerObject).getStatechart().getAllAvailableAttributes();
+				return ((Transition) containerObject).getStatechart()
+						.getAllAvailableAttributes();
 			}
 			return null;
 		}
@@ -209,32 +214,39 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		@Override
 		protected void addExtensions() {
 			// store old values because if OK is pressed the old property value
-			// is always overridden (see ExtensibleCreationDialog) with an empty collection
+			// is always overridden (see ExtensibleCreationDialog) with an empty
+			// collection
 			oldValues = EcoreUtil.copyAll(getCurrentValues());
 			String initialString = "";
 			if (!oldValues.isEmpty()) {
 				EObject eobject = (EObject) oldValues.iterator().next();
-				initialString = LanguageResource.serializeEObject(eobject, getAllAvailableAttributes());
+				initialString = LanguageResource.serializeEObject(eobject,
+						getAllAvailableAttributes());
 				if (initialString == null) {
 					initialString = "// warning: existing expressions will be replaced!";
 				}
 			}
-			
+
 			SimpleTextualDialogExtension.ITextParser parser = new SimpleTextualDialogExtension.ITextParser() {
 				@Override
 				public Object parse(String text) {
-					return LanguageResource.loadFromString(text, getAllAvailableAttributes());
+					return LanguageResource.loadFromString(text,
+							getAllAvailableAttributes());
 				}
 			};
-			textDialog = new SimpleTextualDialogExtension(dialog, initialString, parser);			
-		
+			textDialog = new SimpleTextualDialogExtension(dialog,
+					initialString, parser);
+
 			useParserDialogExtension = new UseParserDialogExtension(dialog);
-			dialog.addExtension(useParserDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_ALWAYS_VISIBLE);
+			dialog.addExtension(useParserDialogExtension,
+					ExtensibleCreationDialog.EXTENSION_GROUP_ALWAYS_VISIBLE);
 			super.addExtensions();
 			// add the objectsListDialogExtension object after it's created
-			useParserDialogExtension.setObjectsListDialogExtension(objectsListDialogExtension);
+			useParserDialogExtension
+					.setObjectsListDialogExtension(objectsListDialogExtension);
 			useParserDialogExtension.setTextualDialogExtension(textDialog);
-			dialog.addExtension(textDialog, ExtensibleCreationDialog.EXTENSION_GROUP_XTEXT_PARSER);
+			dialog.addExtension(textDialog,
+					ExtensibleCreationDialog.EXTENSION_GROUP_XTEXT_PARSER);
 		}
 
 		@Override
@@ -249,7 +261,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			list.add(model);
 			return list;
 		}
-		
+
 	}
 
 	public class MultiFeatureCreationCellEditor extends
@@ -279,9 +291,12 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			objectsListDialogExtension
 					.setPropertySheetDialogExtension(propertySheetDialogExtension);
 
-			dialog.addExtension(objectCreationDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
-			dialog.addExtension(objectsListDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
-			dialog.addExtension(propertySheetDialogExtension, ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
+			dialog.addExtension(objectCreationDialogExtension,
+					ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
+			dialog.addExtension(objectsListDialogExtension,
+					ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
+			dialog.addExtension(propertySheetDialogExtension,
+					ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
 		}
 
 		@Override
