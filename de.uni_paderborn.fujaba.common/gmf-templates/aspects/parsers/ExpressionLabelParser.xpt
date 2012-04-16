@@ -1,3 +1,5 @@
+
+«REM» Make "updateValues" and "validateValues" protected. «ENDREM»
 «AROUND body FOR gmfgen::ExpressionLabelParser»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public String getEditString(org.eclipse.core.runtime.IAdaptable element, int flags) {
@@ -57,4 +59,16 @@
 		throw new org.eclipse.core.commands.ExecutionException("Please implement parsing and value modification"); 
 	}
 «EXPAND impl::parsers::ExpressionLabelParser::extraMethods-»
+«ENDAROUND»
+
+
+«REM» Added empty method "initializeEnvironment" to be overriden by subclasses «ENDREM»
+«AROUND additions FOR gmfgen::ExpressionLabelParser-»
+	«targetDef.proceed()»
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
+			java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {
+
+	}
 «ENDAROUND»
