@@ -51,8 +51,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	protected Text name;
 	protected Text comment;
 	protected Text cardinality;
-	protected Button editCardinality;
-	private EList cardinalityList;
 
 
 
@@ -72,7 +70,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * 			createFigure(org.eclipse.swt.widgets.Composite)
 	 * 
 	 */
-	@Override
 	public Composite createFigure(final Composite parent) {
 		view = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
@@ -89,7 +86,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * 			createControls(org.eclipse.swt.widgets.Composite)
 	 * 
 	 */
-	@Override
 	public void createControls(Composite view) { 
 		CompositionSequence arrayDataTypeStep = new BindingCompositionSequence(propertiesEditionComponent);
 		CompositionStep propertiesStep = arrayDataTypeStep.addStep(CoreViewsRepository.ArrayDataType.Properties.class);
@@ -112,7 +108,7 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 					return createCommentText(parent);
 				}
 				if (key == CoreViewsRepository.ArrayDataType.Properties.cardinality) {
-					return createCardinalityMultiValuedEditor(parent);
+					return createCardinalityText(parent);
 				}
 				return parent;
 			}
@@ -152,9 +148,8 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null) {
+				if (propertiesEditionComponent != null)
 					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArrayDataTypePropertiesEditionPartImpl.this, CoreViewsRepository.ArrayDataType.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
-				}
 			}
 
 		});
@@ -170,16 +165,15 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 			@SuppressWarnings("synthetic-access")
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null) {
+					if (propertiesEditionComponent != null)
 						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArrayDataTypePropertiesEditionPartImpl.this, CoreViewsRepository.ArrayDataType.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
-					}
 				}
 			}
 
 		});
 		EditingUtils.setID(name, CoreViewsRepository.ArrayDataType.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.ArrayDataType.Properties.name, CoreViewsRepository.SWT_KIND), null); 
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.ArrayDataType.Properties.name, CoreViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 		return parent;
 	}
 
@@ -200,9 +194,8 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null) {
+				if (propertiesEditionComponent != null)
 					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArrayDataTypePropertiesEditionPartImpl.this, CoreViewsRepository.ArrayDataType.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-				}
 			}
 
 		});
@@ -218,59 +211,61 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 			@SuppressWarnings("synthetic-access")
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null) {
+					if (propertiesEditionComponent != null)
 						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArrayDataTypePropertiesEditionPartImpl.this, CoreViewsRepository.ArrayDataType.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-					}
 				}
 			}
 
 		});
 		EditingUtils.setID(comment, CoreViewsRepository.ArrayDataType.Properties.comment);
 		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.ArrayDataType.Properties.comment, CoreViewsRepository.SWT_KIND), null); 
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.ArrayDataType.Properties.comment, CoreViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 		return parent;
 	}
 
-	protected Composite createCardinalityMultiValuedEditor(Composite parent) {
-		cardinality = new Text(parent, SWT.BORDER | SWT.READ_ONLY);
+	
+	protected Composite createCardinalityText(Composite parent) {
+		SWTUtils.createPartLabel(parent, CoreMessages.ArrayDataTypePropertiesEditionPart_CardinalityLabel, propertiesEditionComponent.isRequired(CoreViewsRepository.ArrayDataType.Properties.cardinality, CoreViewsRepository.SWT_KIND));
+		cardinality = new Text(parent, SWT.BORDER);
 		GridData cardinalityData = new GridData(GridData.FILL_HORIZONTAL);
-		cardinalityData.horizontalSpan = 2;
 		cardinality.setLayoutData(cardinalityData);
-		EditingUtils.setID(cardinality, CoreViewsRepository.ArrayDataType.Properties.cardinality);
-		EditingUtils.setEEFtype(cardinality, "eef::MultiValuedEditor::field"); //$NON-NLS-1$
-		editCardinality = new Button(parent, SWT.NONE);
-		editCardinality.setText(CoreMessages.ArrayDataTypePropertiesEditionPart_CardinalityLabel);
-		GridData editCardinalityData = new GridData();
-		editCardinality.setLayoutData(editCardinalityData);
-		editCardinality.addSelectionListener(new SelectionAdapter() {
+		cardinality.addFocusListener(new FocusAdapter() {
 
 			/**
 			 * {@inheritDoc}
 			 * 
-			 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
 			 */
 			@Override
-			public void widgetSelected(SelectionEvent e) {
-				EEFFeatureEditorDialog dialog = new EEFFeatureEditorDialog(
-						cardinality.getShell(), "ArrayDataType", new AdapterFactoryLabelProvider(adapterFactory), //$NON-NLS-1$
-						cardinalityList, CorePackage.eINSTANCE
-								.getArrayDataType_Cardinality().getEType(),
-						null,
-						false, true, 
-						null, null);
-				if (dialog.open() == Window.OK) {
-					cardinalityList = dialog.getResult();
-					if (cardinalityList == null) {
-						cardinalityList = new BasicEList();
-					}
-					cardinality.setText(cardinalityList.toString());
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArrayDataTypePropertiesEditionPartImpl.this, CoreViewsRepository.ArrayDataType.Properties.cardinality, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new BasicEList(cardinalityList)));
-					setHasChanged(true);
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArrayDataTypePropertiesEditionPartImpl.this, CoreViewsRepository.ArrayDataType.Properties.cardinality, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, cardinality.getText()));
+			}
+
+		});
+		cardinality.addKeyListener(new KeyAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArrayDataTypePropertiesEditionPartImpl.this, CoreViewsRepository.ArrayDataType.Properties.cardinality, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, cardinality.getText()));
 				}
 			}
+
 		});
-		EditingUtils.setID(editCardinality, CoreViewsRepository.ArrayDataType.Properties.cardinality);
-		EditingUtils.setEEFtype(editCardinality, "eef::MultiValuedEditor::browsebutton"); //$NON-NLS-1$
+		EditingUtils.setID(cardinality, CoreViewsRepository.ArrayDataType.Properties.cardinality);
+		EditingUtils.setEEFtype(cardinality, "eef::Text"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CoreViewsRepository.ArrayDataType.Properties.cardinality, CoreViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 		return parent;
 	}
 
@@ -282,7 +277,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
 		
@@ -295,7 +289,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ArrayDataTypePropertiesEditionPart#getName()
 	 * 
 	 */
-	@Override
 	public String getName() {
 		return name.getText();
 	}
@@ -306,7 +299,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ArrayDataTypePropertiesEditionPart#setName(String newValue)
 	 * 
 	 */
-	@Override
 	public void setName(String newValue) {
 		if (newValue != null) {
 			name.setText(newValue);
@@ -322,7 +314,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ArrayDataTypePropertiesEditionPart#getComment()
 	 * 
 	 */
-	@Override
 	public String getComment() {
 		return comment.getText();
 	}
@@ -333,7 +324,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ArrayDataTypePropertiesEditionPart#setComment(String newValue)
 	 * 
 	 */
-	@Override
 	public void setComment(String newValue) {
 		if (newValue != null) {
 			comment.setText(newValue);
@@ -349,42 +339,19 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ArrayDataTypePropertiesEditionPart#getCardinality()
 	 * 
 	 */
-	@Override
-	public EList getCardinality() {
-		return cardinalityList;
+	public String getCardinality() {
+		return cardinality.getText();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ArrayDataTypePropertiesEditionPart#setCardinality(EList newValue)
+	 * @see de.uni_paderborn.fujaba.muml.model.core.parts.ArrayDataTypePropertiesEditionPart#setCardinality(String newValue)
 	 * 
 	 */
-	@Override
-	public void setCardinality(EList newValue) {
-		cardinalityList = newValue;
+	public void setCardinality(String newValue) {
 		if (newValue != null) {
-			cardinality.setText(cardinalityList.toString());
-		} else {
-			cardinality.setText(""); //$NON-NLS-1$
-		}
-	}
-
-	@Override
-	public void addToCardinality(Object newValue) {
-		cardinalityList.add(newValue);
-		if (newValue != null) {
-			cardinality.setText(cardinalityList.toString());
-		} else {
-			cardinality.setText(""); //$NON-NLS-1$
-		}
-	}
-
-	@Override
-	public void removeToCardinality(Object newValue) {
-		cardinalityList.remove(newValue);
-		if (newValue != null) {
-			cardinality.setText(cardinalityList.toString());
+			cardinality.setText(newValue);
 		} else {
 			cardinality.setText(""); //$NON-NLS-1$
 		}
@@ -402,7 +369,6 @@ public class ArrayDataTypePropertiesEditionPartImpl extends CompositePropertiesE
 	 * @see org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart#getTitle()
 	 * 
 	 */
-	@Override
 	public String getTitle() {
 		return CoreMessages.ArrayDataType_Part_Title;
 	}

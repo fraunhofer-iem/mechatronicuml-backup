@@ -4,9 +4,6 @@
 package de.uni_paderborn.fujaba.muml.model.core.components;
 
 // Start of user code for imports
-import java.util.Iterator;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -20,7 +17,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
 import org.storydriven.core.CorePackage;
 
@@ -76,11 +72,11 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), arrayDataType.getComment()));
 			}
 			
-			if (arrayDataType.getCardinality() != null && isAccessible(CoreViewsRepository.ArrayDataType.Properties.cardinality))
-			 {
-				basePart.setCardinality(arrayDataType.getCardinality());
-			// init filters
+			if (isAccessible(CoreViewsRepository.ArrayDataType.Properties.cardinality)) {
+				basePart.setCardinality(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), arrayDataType.getCardinality()));
 			}
+			
+			// init filters
 			
 			
 			
@@ -131,10 +127,7 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 			arrayDataType.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
 		}
 		if (CoreViewsRepository.ArrayDataType.Properties.cardinality == event.getAffectedEditor()) {
-			if (event.getKind() == PropertiesEditionEvent.SET) {
-				arrayDataType.getCardinality().clear();
-				arrayDataType.getCardinality().addAll(((List) event.getNewValue()));
-			}
+			arrayDataType.setCardinality((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
 		}
 	}
 
@@ -164,7 +157,11 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 					.getArrayDataType_Cardinality().equals(msg.getFeature())
 					&& basePart != null
 					&& isAccessible(CoreViewsRepository.ArrayDataType.Properties.cardinality)) {
-				basePart.setCardinality(((ArrayDataType)semanticObject).getCardinality());
+				if (msg.getNewValue() != null) {
+					basePart.setCardinality(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+				} else {
+					basePart.setCardinality("");
+				}
 			}
 			
 		}
@@ -208,16 +205,20 @@ public class ArrayDataTypePropertiesEditionComponent extends SinglePartPropertie
 					ret = Diagnostician.INSTANCE.validate(CorePackage.eINSTANCE.getCommentableElement_Comment().getEAttributeType(), newValue);
 				}
 				if (CoreViewsRepository.ArrayDataType.Properties.cardinality == event.getAffectedEditor()) {
-					BasicDiagnostic chain = new BasicDiagnostic();
-					for (Iterator iterator = ((List)event.getNewValue()).iterator(); iterator.hasNext();) {
-						chain.add(Diagnostician.INSTANCE
-								.validate(
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EEFConverterUtil
+								.createFromString(
 										de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 												.getArrayDataType_Cardinality()
-												.getEAttributeType(), iterator
-												.next()));
+												.getEAttributeType(),
+										(String) newValue);
 					}
-					ret = chain;
+					ret = Diagnostician.INSTANCE
+							.validate(
+									de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+											.getArrayDataType_Cardinality()
+											.getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

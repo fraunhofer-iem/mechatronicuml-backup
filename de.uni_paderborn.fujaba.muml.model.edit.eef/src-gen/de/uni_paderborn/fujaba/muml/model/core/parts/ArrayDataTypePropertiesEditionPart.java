@@ -48,26 +48,14 @@ public interface ArrayDataTypePropertiesEditionPart {
 	 * @return the cardinality
 	 * 
 	 */
-	public EList getCardinality();
+	public String getCardinality();
 
 	/**
 	 * Defines a new cardinality
 	 * @param newValue the new cardinality to set
 	 * 
 	 */
-	public void setCardinality(EList newValue);
-
-	/**
-	 * Add a value to the cardinality multivalued attribute.
-	 * @param newValue the value to add
-	 */
-	public void addToCardinality(Object newValue);
-
-	/**
-	 * Remove a value to the cardinality multivalued attribute.
-	 * @param newValue the value to remove
-	 */
-	public void removeToCardinality(Object newValue);
+	public void setCardinality(String newValue);
 
 
 
