@@ -122,12 +122,9 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 				if (newGenericType.eInternalContainer() == null) {
 					msgs = newGenericType.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, null, msgs);
 				}
-				if (msgs != null) {
-					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, oldGenericType, genericType));
-				}
 			}
 		}
 		return genericType;
@@ -154,11 +151,7 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 		genericTypeESet = true;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, oldGenericType, newGenericType, !oldGenericTypeESet);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -172,23 +165,18 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 	public void setGenericType(EGenericType newGenericType) {
 		if (newGenericType != genericType) {
 			NotificationChain msgs = null;
-			if (genericType != null) {
+			if (genericType != null)
 				msgs = ((InternalEObject)genericType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, null, msgs);
-			}
-			if (newGenericType != null) {
+			if (newGenericType != null)
 				msgs = ((InternalEObject)newGenericType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, null, msgs);
-			}
 			msgs = basicSetGenericType(newGenericType, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
 		else {
 			boolean oldGenericTypeESet = genericTypeESet;
 			genericTypeESet = true;
-			if (eNotificationRequired()) {
+			if (eNotificationRequired())
 				eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, newGenericType, newGenericType, !oldGenericTypeESet));
-			}
 		}
 	}
 
@@ -204,11 +192,7 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 		genericTypeESet = false;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, oldGenericType, null, oldGenericTypeESet);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -224,16 +208,13 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 			NotificationChain msgs = null;
 			msgs = ((InternalEObject)genericType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, null, msgs);
 			msgs = basicUnsetGenericType(msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
 		else {
 			boolean oldGenericTypeESet = genericTypeESet;
 			genericTypeESet = false;
-			if (eNotificationRequired()) {
+			if (eNotificationRequired())
 				eNotify(new ENotificationImpl(this, Notification.UNSET, CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE, null, null, oldGenericTypeESet));
-			}
 		}
 	}
 
@@ -267,11 +248,7 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 		activity = newActivity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, newActivity);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -285,20 +262,15 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 	public void setActivity(Activity newActivity) {
 		if (newActivity != activity) {
 			NotificationChain msgs = null;
-			if (activity != null) {
+			if (activity != null)
 				msgs = ((InternalEObject)activity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, null, msgs);
-			}
-			if (newActivity != null) {
+			if (newActivity != null)
 				msgs = ((InternalEObject)newActivity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, null, msgs);
-			}
 			msgs = basicSetActivity(newActivity, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, newActivity, newActivity));
-		}
 	}
 
 	/**
@@ -326,14 +298,10 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.ACTIVITY_CALL_EXPRESSION__TYPE:
-				if (resolve) {
-					return getType();
-				}
+				if (resolve) return getType();
 				return basicGetType();
 			case CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE:
-				if (resolve) {
-					return getGenericType();
-				}
+				if (resolve) return getGenericType();
 				return basicGetGenericType();
 			case CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
 				return getActivity();

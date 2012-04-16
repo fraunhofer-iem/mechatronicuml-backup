@@ -23250,5 +23250,7 @@
         featureName="ordered" dataValue="false" oldDataValue="true"/>
     <changes xsi:type="history:Add" element="muml.ecore#//model/core/ActivityCallExpression"
         featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Invocation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality"
+        featureName="upperBound" dataValue="1" oldDataValue="-1"/>
   </releases>
 </history:History>

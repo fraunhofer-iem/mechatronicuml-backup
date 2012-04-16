@@ -10,10 +10,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import org.eclipse.emf.common.notify.Notification;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,14 +32,23 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
  */
 public class ArrayDataTypeImpl extends CompositeDataTypeImpl implements ArrayDataType {
 	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute list.
+	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCardinality()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> cardinality;
+	protected static final int CARDINALITY_EDEFAULT = 1;
+	/**
+	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCardinality()
+	 * @generated
+	 * @ordered
+	 */
+	protected int cardinality = CARDINALITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,11 +74,20 @@ public class ArrayDataTypeImpl extends CompositeDataTypeImpl implements ArrayDat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getCardinality() {
-		if (cardinality == null) {
-			cardinality = new EDataTypeUniqueEList<Integer>(Integer.class, this, CorePackage.ARRAY_DATA_TYPE__CARDINALITY);
-		}
+	public int getCardinality() {
 		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCardinality(int newCardinality) {
+		int oldCardinality = cardinality;
+		cardinality = newCardinality;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ARRAY_DATA_TYPE__CARDINALITY, oldCardinality, cardinality));
 	}
 
 	/**
@@ -94,8 +114,7 @@ public class ArrayDataTypeImpl extends CompositeDataTypeImpl implements ArrayDat
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.ARRAY_DATA_TYPE__CARDINALITY:
-				getCardinality().clear();
-				getCardinality().addAll((Collection<? extends Integer>)newValue);
+				setCardinality((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -110,7 +129,7 @@ public class ArrayDataTypeImpl extends CompositeDataTypeImpl implements ArrayDat
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.ARRAY_DATA_TYPE__CARDINALITY:
-				getCardinality().clear();
+				setCardinality(CARDINALITY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -125,7 +144,7 @@ public class ArrayDataTypeImpl extends CompositeDataTypeImpl implements ArrayDat
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.ARRAY_DATA_TYPE__CARDINALITY:
-				return cardinality != null && !cardinality.isEmpty();
+				return cardinality != CARDINALITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

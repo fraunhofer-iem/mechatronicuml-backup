@@ -786,7 +786,7 @@ public interface CorePackage extends EPackage {
 	int ARRAY_DATA_TYPE__INNER_DECLARATION = COMPOSITE_DATA_TYPE__INNER_DECLARATION;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' attribute list.
+	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1268,10 +1268,10 @@ public interface CorePackage extends EPackage {
 	EClass getArrayDataType();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Cardinality</em>'.
+	 * @return the meta object for the attribute '<em>Cardinality</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality()
 	 * @see #getArrayDataType()
 	 * @generated
@@ -1652,7 +1652,7 @@ public interface CorePackage extends EPackage {
 		EClass ARRAY_DATA_TYPE = eINSTANCE.getArrayDataType();
 
 		/**
-		 * The meta object literal for the '<em><b>Cardinality</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
