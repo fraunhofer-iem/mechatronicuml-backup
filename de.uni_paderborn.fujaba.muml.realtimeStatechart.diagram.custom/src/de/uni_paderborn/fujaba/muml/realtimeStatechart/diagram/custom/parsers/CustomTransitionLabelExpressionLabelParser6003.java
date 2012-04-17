@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.storydriven.core.expressions.Expression;
 
+import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6003;
@@ -26,13 +27,25 @@ public class CustomTransitionLabelExpressionLabelParser6003 extends TransitionLa
 		env.put("actionExpression", getActionExpression(transition.getAction()));
 
 		typeEnv.put("guardExpression", EcorePackage.Literals.ESTRING);
-		env.put("guardExpression", getGuardExpression(transition.getGuard()));
+		env.put("guardExpression", getGuardExpression(transition));
 
 	}
 
-	private String getGuardExpression(Expression guard) {
+	private String getGuardExpression(Transition transition) {
+		Expression guard = transition.getGuard();
 		if (guard != null) {
-			// return getStringFor(guard)
+			String text = LanguageResource.serializeEObject(guard,
+				transition.getStatechart().getAllAvailableAttributes());
+			if (text != null) {
+				// text is at least "{}"
+				// remove some from the beginning...
+				char c = text.charAt(0);
+				while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
+					text = text.substring(1);
+					c = text.charAt(0);
+				}
+				return text;
+			}
 		}
 		return "";
 	}

@@ -6,7 +6,8 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.0",
  de.uni_paderborn.fujaba.muml.common;bundle-version="0.2.0",
- de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram;bundle-version="0.2.0"
+ de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram;bundle-version="0.2.0",
+ de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="0.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

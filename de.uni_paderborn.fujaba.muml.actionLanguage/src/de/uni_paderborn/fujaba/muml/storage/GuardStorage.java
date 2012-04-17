@@ -6,7 +6,6 @@ import java.io.InputStream;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
@@ -26,11 +25,10 @@ public class GuardStorage extends ModelStorage<Transition> {
 
 	@Override
 	public void save(String text) throws CoreException {
-		// FIXME: use expression instead of the TextualExpression
 		Expression expression = parseExpression(text);
-		TextualExpression textualExpression = ExpressionsFactory.eINSTANCE.createTextualExpression();
-		textualExpression.setExpressionText(text);
-		setFeature(getModel(), "guard", textualExpression);
+		//TextualExpression textualExpression = ExpressionsFactory.eINSTANCE.createTextualExpression();
+		//textualExpression.setExpressionText(text);
+		setFeature(getModel(), "guard", expression);
 	}
 	
 	@Override
