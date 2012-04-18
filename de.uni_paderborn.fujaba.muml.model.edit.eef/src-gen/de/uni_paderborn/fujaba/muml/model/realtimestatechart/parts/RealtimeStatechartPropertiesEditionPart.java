@@ -7,6 +7,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -167,6 +168,50 @@ public interface RealtimeStatechartPropertiesEditionPart {
 	 * 
 	 */
 	public void setEventQueueSize(String newValue);
+
+
+
+
+	/**
+	 * Init the operations
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initOperations(ReferencesTableSettings settings);
+
+	/**
+	 * Update the operations
+	 * @param newValue the operations to update
+	 * 
+	 */
+	public void updateOperations();
+
+	/**
+	 * Adds the given filter to the operations edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToOperations(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the operations edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToOperations(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the operations table
+	 * 
+	 */
+	public boolean isContainedInOperationsTable(EObject element);
 
 
 

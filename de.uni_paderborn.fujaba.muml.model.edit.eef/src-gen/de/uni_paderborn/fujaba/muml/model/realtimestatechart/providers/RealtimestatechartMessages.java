@@ -317,6 +317,9 @@ public class RealtimestatechartMessages extends NLS {
 	public static String RealtimeStatechartPropertiesEditionPart_EventQueueSizeLabel;
 
 	
+	public static String RealtimeStatechartPropertiesEditionPart_OperationsLabel;
+
+	
 	public static String MessagePropertiesEditionPart_InstanceOf_Label;
 
 	

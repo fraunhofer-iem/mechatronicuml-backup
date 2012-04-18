@@ -718,6 +718,9 @@
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_XA4t5ofhEeGKRNXs-p4DFA" name="eventQueueSize" views="_XA5VMIfhEeGKRNXs-p4DFA">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/eventQueueSize"/>
         </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_fucWEYmdEeG4rucWc4Qj8w" name="operations" views="_kRN9sImdEeG4rucWc4Qj8w">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Behavior/operations"/>
+        </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_XA4t54fhEeGKRNXs-p4DFA" name="Message" views="_XA5VMYfhEeGKRNXs-p4DFA">
@@ -1084,6 +1087,9 @@
           </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_XA5VMIfhEeGKRNXs-p4DFA" name="eventQueueSize">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_kRN9sImdEeG4rucWc4Qj8w" name="operations">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
         </elements>
       </views>

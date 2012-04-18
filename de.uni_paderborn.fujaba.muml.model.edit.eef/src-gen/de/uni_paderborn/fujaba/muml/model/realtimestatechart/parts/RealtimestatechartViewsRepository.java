@@ -288,6 +288,9 @@ public class RealtimestatechartViewsRepository {
 			
 			public static String eventQueueSize = "realtimestatechart::RealtimeStatechart_::properties::eventQueueSize";
 			
+			
+			public static String operations = "realtimestatechart::RealtimeStatechart_::properties::operations";
+			
 	
 		}
 	

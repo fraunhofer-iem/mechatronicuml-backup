@@ -56,7 +56,6 @@ public class ActionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -64,9 +63,8 @@ public class ActionPropertiesEditionComponent extends SinglePartPropertiesEditin
 			final Action action = (Action)elt;
 			final ActionPropertiesEditionPart basePart = (ActionPropertiesEditionPart)editingPart;
 			// init values
-			if (action.getName() != null && isAccessible(RealtimestatechartViewsRepository.Action.Properties.name)) {
+			if (action.getName() != null && isAccessible(RealtimestatechartViewsRepository.Action.Properties.name))
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), action.getName()));
-			}
 			
 			// init filters
 			
@@ -85,7 +83,6 @@ public class ActionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == RealtimestatechartViewsRepository.Action.Properties.name) {
 			return CorePackage.eINSTANCE.getNamedElement_Name();
@@ -98,7 +95,6 @@ public class ActionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Action action = (Action)semanticObject;
 		if (RealtimestatechartViewsRepository.Action.Properties.name == event.getAffectedEditor()) {
@@ -110,7 +106,6 @@ public class ActionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			ActionPropertiesEditionPart basePart = (ActionPropertiesEditionPart)editingPart;
@@ -132,7 +127,6 @@ public class ActionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
-	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == RealtimestatechartViewsRepository.Action.Properties.name;
 	}
@@ -143,7 +137,6 @@ public class ActionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {

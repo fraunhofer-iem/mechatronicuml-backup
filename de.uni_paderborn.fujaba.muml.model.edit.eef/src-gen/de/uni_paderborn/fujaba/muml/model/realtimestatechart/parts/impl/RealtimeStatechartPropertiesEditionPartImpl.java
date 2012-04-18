@@ -4,7 +4,11 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.impl;
 
 // Start of user code for imports
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
@@ -18,8 +22,12 @@ import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.EObjectFlatComboViewer;
+import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
+import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -57,6 +65,9 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	protected EObjectFlatComboViewer embeddingRegion;
 	protected Button history;
 	protected Text eventQueueSize;
+protected ReferencesTable operations;
+protected List<ViewerFilter> operationsBusinessFilters = new ArrayList<ViewerFilter>();
+protected List<ViewerFilter> operationsFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -76,6 +87,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * 			createFigure(org.eclipse.swt.widgets.Composite)
 	 * 
 	 */
+	@Override
 	public Composite createFigure(final Composite parent) {
 		view = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
@@ -92,6 +104,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * 			createControls(org.eclipse.swt.widgets.Composite)
 	 * 
 	 */
+	@Override
 	public void createControls(Composite view) { 
 		CompositionSequence realtimeStatechart_Step = new BindingCompositionSequence(propertiesEditionComponent);
 		CompositionStep propertiesStep = realtimeStatechart_Step.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.class);
@@ -101,6 +114,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.embeddingRegion);
 		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history);
 		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize);
+		propertiesStep.addStep(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations);
 		
 		
 		composer = new PartComposer(realtimeStatechart_Step) {
@@ -127,6 +141,9 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 				}
 				if (key == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize) {
 					return createEventQueueSizeText(parent);
+				}
+				if (key == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations) {
+					return createOperationsAdvancedTableComposition(parent);
 				}
 				return parent;
 			}
@@ -166,8 +183,9 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
+				if (propertiesEditionComponent != null) {
 					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+				}
 			}
 
 		});
@@ -183,15 +201,16 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 			@SuppressWarnings("synthetic-access")
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
+					if (propertiesEditionComponent != null) {
 						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+					}
 				}
 			}
 
 		});
 		EditingUtils.setID(name, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name, RealtimestatechartViewsRepository.SWT_KIND), null); 
 		return parent;
 	}
 
@@ -212,8 +231,9 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
+				if (propertiesEditionComponent != null) {
 					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+				}
 			}
 
 		});
@@ -229,15 +249,16 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 			@SuppressWarnings("synthetic-access")
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
+					if (propertiesEditionComponent != null) {
 						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+					}
 				}
 			}
 
 		});
 		EditingUtils.setID(comment, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.comment);
 		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.comment, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.comment, RealtimestatechartViewsRepository.SWT_KIND), null); 
 		return parent;
 	}
 
@@ -252,6 +273,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 
 		behavioralElement.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.behavioralElement, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, null, getBehavioralElement()));
 			}
@@ -260,7 +282,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 		GridData behavioralElementData = new GridData(GridData.FILL_HORIZONTAL);
 		behavioralElement.setLayoutData(behavioralElementData);
 		behavioralElement.setID(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.behavioralElement);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.behavioralElement, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.behavioralElement, RealtimestatechartViewsRepository.SWT_KIND), null); 
 		return parent;
 	}
 
@@ -275,6 +297,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 
 		embeddingRegion.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.embeddingRegion, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, null, getEmbeddingRegion()));
 			}
@@ -283,7 +306,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 		GridData embeddingRegionData = new GridData(GridData.FILL_HORIZONTAL);
 		embeddingRegion.setLayoutData(embeddingRegionData);
 		embeddingRegion.setID(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.embeddingRegion);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.embeddingRegion, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.embeddingRegion, RealtimestatechartViewsRepository.SWT_KIND), null); 
 		return parent;
 	}
 
@@ -299,9 +322,11 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 			 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
 			 * 	
 			 */
+			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if (propertiesEditionComponent != null)
+				if (propertiesEditionComponent != null) {
 					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new Boolean(history.getSelection())));
+				}
 			}
 
 		});
@@ -310,7 +335,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 		history.setLayoutData(historyData);
 		EditingUtils.setID(history, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history);
 		EditingUtils.setEEFtype(history, "eef::Checkbox"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history, RealtimestatechartViewsRepository.SWT_KIND), null); 
 		return parent;
 	}
 
@@ -331,8 +356,9 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
+				if (propertiesEditionComponent != null) {
 					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, eventQueueSize.getText()));
+				}
 			}
 
 		});
@@ -348,15 +374,70 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 			@SuppressWarnings("synthetic-access")
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
+					if (propertiesEditionComponent != null) {
 						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, eventQueueSize.getText()));
+					}
 				}
 			}
 
 		});
 		EditingUtils.setID(eventQueueSize, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize);
 		EditingUtils.setEEFtype(eventQueueSize, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize, RealtimestatechartViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize, RealtimestatechartViewsRepository.SWT_KIND), null); 
+		return parent;
+	}
+
+	/**
+	 * @param container
+	 * 
+	 */
+	protected Composite createOperationsAdvancedTableComposition(Composite parent) {
+		this.operations = new ReferencesTable(RealtimestatechartMessages.RealtimeStatechartPropertiesEditionPart_OperationsLabel, new ReferencesTableListener() {
+			@Override
+			public void handleAdd() { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				operations.refresh();
+			}
+			@Override
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				operations.refresh();
+			}
+			@Override
+			public void handleMove(EObject element, int oldIndex, int newIndex) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				operations.refresh();
+			}
+			@Override
+			public void handleRemove(EObject element) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				operations.refresh();
+			}
+			@Override
+			public void navigateTo(EObject element) { }
+		});
+		for (ViewerFilter filter : this.operationsFilters) {
+			this.operations.addFilter(filter);
+		}
+		this.operations.setHelpText(propertiesEditionComponent.getHelpContent(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations, RealtimestatechartViewsRepository.SWT_KIND));
+		this.operations.createControls(parent);
+		this.operations.addSelectionListener(new SelectionAdapter() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RealtimeStatechartPropertiesEditionPartImpl.this, RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
+		GridData operationsData = new GridData(GridData.FILL_HORIZONTAL);
+		operationsData.horizontalSpan = 3;
+		this.operations.setLayoutData(operationsData);
+		this.operations.setLowerBound(0);
+		this.operations.setUpperBound(-1);
+		operations.setID(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations);
+		operations.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		return parent;
 	}
 
@@ -368,6 +449,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@Override
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
 		
@@ -380,6 +462,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getName()
 	 * 
 	 */
+	@Override
 	public String getName() {
 		return name.getText();
 	}
@@ -390,6 +473,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setName(String newValue)
 	 * 
 	 */
+	@Override
 	public void setName(String newValue) {
 		if (newValue != null) {
 			name.setText(newValue);
@@ -405,6 +489,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getComment()
 	 * 
 	 */
+	@Override
 	public String getComment() {
 		return comment.getText();
 	}
@@ -415,6 +500,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setComment(String newValue)
 	 * 
 	 */
+	@Override
 	public void setComment(String newValue) {
 		if (newValue != null) {
 			comment.setText(newValue);
@@ -430,11 +516,13 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getBehavioralElement()
 	 * 
 	 */
+	@Override
 	public EObject getBehavioralElement() {
 		if (behavioralElement.getSelection() instanceof StructuredSelection) {
 			Object firstElement = ((StructuredSelection) behavioralElement.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
+			if (firstElement instanceof EObject) {
 				return (EObject) firstElement;
+			}
 		}
 		return null;
 	}
@@ -444,6 +532,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * 
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#initBehavioralElement(EObjectFlatComboSettings)
 	 */
+	@Override
 	public void initBehavioralElement(EObjectFlatComboSettings settings) {
 		behavioralElement.setInput(settings);
 		if (current != null) {
@@ -457,11 +546,12 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setBehavioralElement(EObject newValue)
 	 * 
 	 */
+	@Override
 	public void setBehavioralElement(EObject newValue) {
 		if (newValue != null) {
 			behavioralElement.setSelection(new StructuredSelection(newValue));
 		} else {
-			behavioralElement.setSelection(new StructuredSelection()); //$NON-NLS-1$
+			behavioralElement.setSelection(new StructuredSelection()); 
 		}
 	}
 
@@ -470,6 +560,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * 
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setBehavioralElementButtonMode(ButtonsModeEnum newValue)
 	 */
+	@Override
 	public void setBehavioralElementButtonMode(ButtonsModeEnum newValue) {
 		behavioralElement.setButtonMode(newValue);
 	}
@@ -480,6 +571,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#addFilterBehavioralElement(ViewerFilter filter)
 	 * 
 	 */
+	@Override
 	public void addFilterToBehavioralElement(ViewerFilter filter) {
 		behavioralElement.addFilter(filter);
 	}
@@ -490,6 +582,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#addBusinessFilterBehavioralElement(ViewerFilter filter)
 	 * 
 	 */
+	@Override
 	public void addBusinessFilterToBehavioralElement(ViewerFilter filter) {
 		behavioralElement.addBusinessRuleFilter(filter);
 	}
@@ -501,11 +594,13 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getEmbeddingRegion()
 	 * 
 	 */
+	@Override
 	public EObject getEmbeddingRegion() {
 		if (embeddingRegion.getSelection() instanceof StructuredSelection) {
 			Object firstElement = ((StructuredSelection) embeddingRegion.getSelection()).getFirstElement();
-			if (firstElement instanceof EObject)
+			if (firstElement instanceof EObject) {
 				return (EObject) firstElement;
+			}
 		}
 		return null;
 	}
@@ -515,6 +610,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * 
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#initEmbeddingRegion(EObjectFlatComboSettings)
 	 */
+	@Override
 	public void initEmbeddingRegion(EObjectFlatComboSettings settings) {
 		embeddingRegion.setInput(settings);
 		if (current != null) {
@@ -528,11 +624,12 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setEmbeddingRegion(EObject newValue)
 	 * 
 	 */
+	@Override
 	public void setEmbeddingRegion(EObject newValue) {
 		if (newValue != null) {
 			embeddingRegion.setSelection(new StructuredSelection(newValue));
 		} else {
-			embeddingRegion.setSelection(new StructuredSelection()); //$NON-NLS-1$
+			embeddingRegion.setSelection(new StructuredSelection()); 
 		}
 	}
 
@@ -541,6 +638,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * 
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setEmbeddingRegionButtonMode(ButtonsModeEnum newValue)
 	 */
+	@Override
 	public void setEmbeddingRegionButtonMode(ButtonsModeEnum newValue) {
 		embeddingRegion.setButtonMode(newValue);
 	}
@@ -551,6 +649,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#addFilterEmbeddingRegion(ViewerFilter filter)
 	 * 
 	 */
+	@Override
 	public void addFilterToEmbeddingRegion(ViewerFilter filter) {
 		embeddingRegion.addFilter(filter);
 	}
@@ -561,6 +660,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#addBusinessFilterEmbeddingRegion(ViewerFilter filter)
 	 * 
 	 */
+	@Override
 	public void addBusinessFilterToEmbeddingRegion(ViewerFilter filter) {
 		embeddingRegion.addBusinessRuleFilter(filter);
 	}
@@ -572,6 +672,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getHistory()
 	 * 
 	 */
+	@Override
 	public Boolean getHistory() {
 		return Boolean.valueOf(history.getSelection());
 	}
@@ -582,6 +683,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setHistory(Boolean newValue)
 	 * 
 	 */
+	@Override
 	public void setHistory(Boolean newValue) {
 		if (newValue != null) {
 			history.setSelection(newValue.booleanValue());
@@ -597,6 +699,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#getEventQueueSize()
 	 * 
 	 */
+	@Override
 	public String getEventQueueSize() {
 		return eventQueueSize.getText();
 	}
@@ -607,12 +710,78 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#setEventQueueSize(String newValue)
 	 * 
 	 */
+	@Override
 	public void setEventQueueSize(String newValue) {
 		if (newValue != null) {
 			eventQueueSize.setText(newValue);
 		} else {
 			eventQueueSize.setText(""); //$NON-NLS-1$
 		}
+	}
+
+
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#initOperations(EObject current, EReference containingFeature, EReference feature)
+	 */
+	@Override
+	public void initOperations(ReferencesTableSettings settings) {
+		if (current.eResource() != null && current.eResource().getResourceSet() != null) {
+			this.resourceSet = current.eResource().getResourceSet();
+		}
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		operations.setContentProvider(contentProvider);
+		operations.setInput(settings);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#updateOperations()
+	 * 
+	 */
+	@Override
+	public void updateOperations() {
+	operations.refresh();
+}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#addFilterOperations(ViewerFilter filter)
+	 * 
+	 */
+	@Override
+	public void addFilterToOperations(ViewerFilter filter) {
+		operationsFilters.add(filter);
+		if (this.operations != null) {
+			this.operations.addFilter(filter);
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#addBusinessFilterOperations(ViewerFilter filter)
+	 * 
+	 */
+	@Override
+	public void addBusinessFilterToOperations(ViewerFilter filter) {
+		operationsBusinessFilters.add(filter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.parts.RealtimeStatechartPropertiesEditionPart#isContainedInOperationsTable(EObject element)
+	 * 
+	 */
+	@Override
+	public boolean isContainedInOperationsTable(EObject element) {
+		return ((ReferencesTableSettings)operations.getInput()).contains(element);
 	}
 
 
@@ -627,6 +796,7 @@ public class RealtimeStatechartPropertiesEditionPartImpl extends CompositeProper
 	 * @see org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart#getTitle()
 	 * 
 	 */
+	@Override
 	public String getTitle() {
 		return RealtimestatechartMessages.RealtimeStatechart_Part_Title;
 	}

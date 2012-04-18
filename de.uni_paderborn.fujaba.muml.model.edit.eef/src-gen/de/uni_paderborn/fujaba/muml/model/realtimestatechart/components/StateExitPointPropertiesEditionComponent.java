@@ -98,7 +98,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -106,9 +105,8 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 			final StateExitPoint stateExitPoint = (StateExitPoint)elt;
 			final StateExitPointPropertiesEditionPart basePart = (StateExitPointPropertiesEditionPart)editingPart;
 			// init values
-			if (stateExitPoint.getName() != null && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.name)) {
+			if (stateExitPoint.getName() != null && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.name))
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), stateExitPoint.getName()));
-			}
 			
 			if (isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.outgoingTransitions)) {
 				outgoingTransitionsSettings = new ReferencesTableSettings(stateExitPoint, RealtimestatechartPackage.eINSTANCE.getVertex_OutgoingTransitions());
@@ -145,11 +143,9 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
-				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject) {
+					if (element instanceof EObject)
 						return (!basePart.isContainedInOutgoingTransitionsTable((EObject)element));
-					}
 					return element instanceof Resource;
 				}
 			
@@ -165,11 +161,9 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
-				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject) {
+					if (element instanceof EObject)
 						return (!basePart.isContainedInIncomingTransitionsTable((EObject)element));
-					}
 					return element instanceof Resource;
 				}
 			
@@ -185,7 +179,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
-			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof String && element.equals("")) || (element instanceof RealtimeStatechart); //$NON-NLS-1$ 
 				}
@@ -201,7 +194,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
-			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof State);
 				}
@@ -217,11 +209,9 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 				 * 
 				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 				 */
-				@Override
 				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject) {
+					if (element instanceof EObject)
 						return (!basePart.isContainedInExitPointTable((EObject)element));
-					}
 					return element instanceof Resource;
 				}
 			
@@ -250,7 +240,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == RealtimestatechartViewsRepository.StateExitPoint.Properties.name) {
 			return CorePackage.eINSTANCE.getNamedElement_Name();
@@ -278,7 +267,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		StateExitPoint stateExitPoint = (StateExitPoint)semanticObject;
 		if (RealtimestatechartViewsRepository.StateExitPoint.Properties.name == event.getAffectedEditor()) {
@@ -308,7 +296,7 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 		}
 		if (RealtimestatechartViewsRepository.StateExitPoint.Properties.statechart == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				statechartSettings.setToReference(event.getNewValue());
+				statechartSettings.setToReference((RealtimeStatechart)event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				RealtimeStatechart eObject = RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -324,7 +312,7 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 		}
 		if (RealtimestatechartViewsRepository.StateExitPoint.Properties.state == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				stateSettings.setToReference(event.getNewValue());
+				stateSettings.setToReference((State)event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				State eObject = RealtimestatechartFactory.eINSTANCE.createState();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -355,7 +343,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			StateExitPointPropertiesEditionPart basePart = (StateExitPointPropertiesEditionPart)editingPart;
@@ -366,21 +353,16 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 					basePart.setName("");
 				}
 			}
-			if (RealtimestatechartPackage.eINSTANCE.getVertex_OutgoingTransitions().equals(msg.getFeature())  && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.outgoingTransitions)) {
+			if (RealtimestatechartPackage.eINSTANCE.getVertex_OutgoingTransitions().equals(msg.getFeature())  && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.outgoingTransitions))
 				basePart.updateOutgoingTransitions();
-			}
-			if (RealtimestatechartPackage.eINSTANCE.getVertex_IncomingTransitions().equals(msg.getFeature())  && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.incomingTransitions)) {
+			if (RealtimestatechartPackage.eINSTANCE.getVertex_IncomingTransitions().equals(msg.getFeature())  && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.incomingTransitions))
 				basePart.updateIncomingTransitions();
-			}
-			if (RealtimestatechartPackage.eINSTANCE.getVertex_Statechart().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.statechart)) {
+			if (RealtimestatechartPackage.eINSTANCE.getVertex_Statechart().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.statechart))
 				basePart.setStatechart((EObject)msg.getNewValue());
-			}
-			if (RealtimestatechartPackage.eINSTANCE.getStateExitPoint_State().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.state)) {
+			if (RealtimestatechartPackage.eINSTANCE.getStateExitPoint_State().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.state))
 				basePart.setState((EObject)msg.getNewValue());
-			}
-			if (RealtimestatechartPackage.eINSTANCE.getStateExitPoint_ExitPoint().equals(msg.getFeature())  && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint)) {
+			if (RealtimestatechartPackage.eINSTANCE.getStateExitPoint_ExitPoint().equals(msg.getFeature())  && isAccessible(RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint))
 				basePart.updateExitPoint();
-			}
 			
 		}
 	}
@@ -392,7 +374,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
-	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == RealtimestatechartViewsRepository.StateExitPoint.Properties.name || key == RealtimestatechartViewsRepository.StateExitPoint.Properties.state || key == RealtimestatechartViewsRepository.StateExitPoint.Properties.exitPoint;
 	}
@@ -403,7 +384,6 @@ public class StateExitPointPropertiesEditionComponent extends SinglePartProperti
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {

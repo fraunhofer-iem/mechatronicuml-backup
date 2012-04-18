@@ -72,7 +72,6 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -80,9 +79,8 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 			final Region region = (Region)elt;
 			final RegionPropertiesEditionPart basePart = (RegionPropertiesEditionPart)editingPart;
 			// init values
-			if (region.getName() != null && isAccessible(RealtimestatechartViewsRepository.Region.Properties.name)) {
+			if (region.getName() != null && isAccessible(RealtimestatechartViewsRepository.Region.Properties.name))
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), region.getName()));
-			}
 			
 			if (isAccessible(RealtimestatechartViewsRepository.Region.Properties.priority)) {
 				basePart.setPriority(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), region.getPriority()));
@@ -105,7 +103,6 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
-			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof State);
 				}
@@ -131,7 +128,6 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == RealtimestatechartViewsRepository.Region.Properties.name) {
 			return CorePackage.eINSTANCE.getNamedElement_Name();
@@ -150,7 +146,6 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Region region = (Region)semanticObject;
 		if (RealtimestatechartViewsRepository.Region.Properties.name == event.getAffectedEditor()) {
@@ -161,7 +156,7 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 		}
 		if (RealtimestatechartViewsRepository.Region.Properties.parentState == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				parentStateSettings.setToReference(event.getNewValue());
+				parentStateSettings.setToReference((State)event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				State eObject = RealtimestatechartFactory.eINSTANCE.createState();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -181,7 +176,6 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			RegionPropertiesEditionPart basePart = (RegionPropertiesEditionPart)editingPart;
@@ -199,9 +193,8 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 					basePart.setPriority("");
 				}
 			}
-			if (RealtimestatechartPackage.eINSTANCE.getRegion_ParentState().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Region.Properties.parentState)) {
+			if (RealtimestatechartPackage.eINSTANCE.getRegion_ParentState().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.Region.Properties.parentState))
 				basePart.setParentState((EObject)msg.getNewValue());
-			}
 			
 		}
 	}
@@ -213,7 +206,6 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
-	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == RealtimestatechartViewsRepository.Region.Properties.name || key == RealtimestatechartViewsRepository.Region.Properties.parentState;
 	}
@@ -224,7 +216,6 @@ public class RegionPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {

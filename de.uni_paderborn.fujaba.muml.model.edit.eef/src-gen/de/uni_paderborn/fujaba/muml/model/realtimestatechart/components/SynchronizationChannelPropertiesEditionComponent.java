@@ -72,7 +72,6 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	@Override
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
@@ -80,13 +79,11 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 			final SynchronizationChannel synchronizationChannel = (SynchronizationChannel)elt;
 			final SynchronizationChannelPropertiesEditionPart basePart = (SynchronizationChannelPropertiesEditionPart)editingPart;
 			// init values
-			if (synchronizationChannel.getName() != null && isAccessible(RealtimestatechartViewsRepository.SynchronizationChannel.Properties.name)) {
+			if (synchronizationChannel.getName() != null && isAccessible(RealtimestatechartViewsRepository.SynchronizationChannel.Properties.name))
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), synchronizationChannel.getName()));
-			}
 			
-			if (synchronizationChannel.getComment() != null && isAccessible(RealtimestatechartViewsRepository.SynchronizationChannel.Properties.comment)) {
+			if (synchronizationChannel.getComment() != null && isAccessible(RealtimestatechartViewsRepository.SynchronizationChannel.Properties.comment))
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), synchronizationChannel.getComment()));
-			}
 			
 			if (isAccessible(RealtimestatechartViewsRepository.SynchronizationChannel.Properties.state)) {
 				// init part
@@ -105,7 +102,6 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 			 * 
 			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 			 */
-			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				return (element instanceof State);
 				}
@@ -131,7 +127,6 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	@Override
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == RealtimestatechartViewsRepository.SynchronizationChannel.Properties.name) {
 			return CorePackage.eINSTANCE.getNamedElement_Name();
@@ -150,7 +145,6 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		SynchronizationChannel synchronizationChannel = (SynchronizationChannel)semanticObject;
 		if (RealtimestatechartViewsRepository.SynchronizationChannel.Properties.name == event.getAffectedEditor()) {
@@ -161,7 +155,7 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 		}
 		if (RealtimestatechartViewsRepository.SynchronizationChannel.Properties.state == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.SET) {
-				stateSettings.setToReference(event.getNewValue());
+				stateSettings.setToReference((State)event.getNewValue());
 			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
 				State eObject = RealtimestatechartFactory.eINSTANCE.createState();
 				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
@@ -181,7 +175,6 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	@Override
 	public void updatePart(Notification msg) {
 		if (editingPart.isVisible()) {
 			SynchronizationChannelPropertiesEditionPart basePart = (SynchronizationChannelPropertiesEditionPart)editingPart;
@@ -199,9 +192,8 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 					basePart.setComment("");
 				}
 			}
-			if (RealtimestatechartPackage.eINSTANCE.getSynchronizationChannel_State().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.SynchronizationChannel.Properties.state)) {
+			if (RealtimestatechartPackage.eINSTANCE.getSynchronizationChannel_State().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.SynchronizationChannel.Properties.state))
 				basePart.setState((EObject)msg.getNewValue());
-			}
 			
 		}
 	}
@@ -213,7 +205,6 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
-	@Override
 	public boolean isRequired(Object key, int kind) {
 		return key == RealtimestatechartViewsRepository.SynchronizationChannel.Properties.name || key == RealtimestatechartViewsRepository.SynchronizationChannel.Properties.state;
 	}
@@ -224,7 +215,6 @@ public class SynchronizationChannelPropertiesEditionComponent extends SinglePart
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validateValue(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	@Override
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {

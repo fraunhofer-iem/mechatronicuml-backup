@@ -26,11 +26,13 @@ import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -61,6 +63,11 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 	 */
 	private EObjectFlatComboSettings embeddingRegionSettings;
 	
+	/**
+	 * Settings for operations ReferencesTable
+	 */
+	protected ReferencesTableSettings operationsSettings;
+	
 	
 	/**
 	 * Default constructor
@@ -88,13 +95,11 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 			final RealtimeStatechart realtimeStatechart = (RealtimeStatechart)elt;
 			final RealtimeStatechartPropertiesEditionPart basePart = (RealtimeStatechartPropertiesEditionPart)editingPart;
 			// init values
-			if (realtimeStatechart.getName() != null
-					&& isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name)) {
+			if (realtimeStatechart.getName() != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.name)) {
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), realtimeStatechart.getName()));
 			}
 			
-			if (realtimeStatechart.getComment() != null
-					&& isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.comment)) {
+			if (realtimeStatechart.getComment() != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.comment)) {
 				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), realtimeStatechart.getComment()));
 			}
 			
@@ -122,6 +127,13 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 				basePart.setEventQueueSize(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), realtimeStatechart.getEventQueueSize()));
 			}
 			
+			if (isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations)) {
+				operationsSettings = new ReferencesTableSettings(
+						realtimeStatechart,
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+								.getBehavior_Operations());
+				basePart.initOperations(operationsSettings);
+			}
 			// init filters
 			
 			
@@ -159,6 +171,23 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 			
 			
 			
+			if (isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations)) {
+				basePart.addFilterToOperations(new ViewerFilter() {
+			
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					@Override
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						return (element instanceof String && element.equals("")) || (element instanceof Operation); //$NON-NLS-1$ 
+					}
+			
+				});
+				// Start of user code for additional businessfilters for operations
+				// End of user code
+			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -166,6 +195,7 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 		}
 		setInitializing(false);
 	}
+
 
 
 
@@ -199,6 +229,10 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 		}
 		if (editorKey == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize) {
 			return RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_EventQueueSize();
+		}
+		if (editorKey == RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations) {
+			return de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getBehavior_Operations();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -253,6 +287,31 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 		if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.eventQueueSize == event.getAffectedEditor()) {
 			realtimeStatechart.setEventQueueSize((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
 		}
+		if (RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, operationsSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				operationsSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				operationsSettings.move(event.getNewIndex(), (Operation) event.getNewValue());
+			}
+		}
 	}
 
 	/**
@@ -278,23 +337,15 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 				}
 			}
 			if (de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
-					.getBehavior_BehavioralElement().equals(
-					msg.getFeature())
+					.getBehavior_BehavioralElement().equals(msg.getFeature())
 					&& basePart != null
 					&& isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.behavioralElement)) {
 				basePart.setBehavioralElement((EObject)msg.getNewValue());
 			}
-			if (RealtimestatechartPackage.eINSTANCE
-					.getRealtimeStatechart_EmbeddingRegion().equals(
-							msg.getFeature())
-					&& basePart != null
-					&& isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.embeddingRegion)) {
+			if (RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_EmbeddingRegion().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.embeddingRegion)) {
 				basePart.setEmbeddingRegion((EObject)msg.getNewValue());
 			}
-			if (RealtimestatechartPackage.eINSTANCE
-					.getRealtimeStatechart_History().equals(msg.getFeature())
-					&& basePart != null
-					&& isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history)) {
+			if (RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart_History().equals(msg.getFeature()) && basePart != null && isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.history)) {
 				basePart.setHistory((Boolean)msg.getNewValue());
 			}
 			
@@ -304,6 +355,11 @@ public class RealtimeStatechartPropertiesEditionComponent extends SinglePartProp
 				} else {
 					basePart.setEventQueueSize("");
 				}
+			}
+			if (de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					.getBehavior_Operations().equals(msg.getFeature())
+					&& isAccessible(RealtimestatechartViewsRepository.RealtimeStatechart_.Properties.operations)) {
+				basePart.updateOperations();
 			}
 			
 		}
