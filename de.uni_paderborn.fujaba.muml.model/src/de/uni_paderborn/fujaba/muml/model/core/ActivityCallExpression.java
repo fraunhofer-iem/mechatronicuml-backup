@@ -33,25 +33,25 @@ import org.storydriven.storydiagrams.calls.Invocation;
 public interface ActivityCallExpression extends Invocation, Expression {
 
 	/**
-	 * Returns the value of the '<em><b>Activity</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Activity</em>' containment reference.
+	 * @return the value of the '<em>Activity</em>' reference.
 	 * @see #setActivity(Activity)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getActivityCallExpression_Activity()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Activity getActivity();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression#getActivity <em>Activity</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression#getActivity <em>Activity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Activity</em>' containment reference.
+	 * @param value the new value of the '<em>Activity</em>' reference.
 	 * @see #getActivity()
 	 * @generated
 	 */

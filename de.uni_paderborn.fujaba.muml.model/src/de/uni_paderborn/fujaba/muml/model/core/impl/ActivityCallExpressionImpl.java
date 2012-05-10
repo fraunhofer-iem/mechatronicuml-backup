@@ -55,7 +55,7 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 	 */
 	protected boolean genericTypeESet;
 	/**
-	 * The cached value of the '{@link #getActivity() <em>Activity</em>}' containment reference.
+	 * The cached value of the '{@link #getActivity() <em>Activity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getActivity()
@@ -235,6 +235,14 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 	 */
 	@Override
 	public Activity getActivity() {
+		if (activity != null && activity.eIsProxy()) {
+			InternalEObject oldActivity = (InternalEObject)activity;
+			activity = (Activity)eResolveProxy(oldActivity);
+			if (activity != oldActivity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, activity));
+			}
+		}
 		return activity;
 	}
 
@@ -243,14 +251,8 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetActivity(Activity newActivity, NotificationChain msgs) {
-		Activity oldActivity = activity;
-		activity = newActivity;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, newActivity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public Activity basicGetActivity() {
+		return activity;
 	}
 
 	/**
@@ -260,17 +262,10 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 	 */
 	@Override
 	public void setActivity(Activity newActivity) {
-		if (newActivity != activity) {
-			NotificationChain msgs = null;
-			if (activity != null)
-				msgs = ((InternalEObject)activity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, null, msgs);
-			if (newActivity != null)
-				msgs = ((InternalEObject)newActivity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, null, msgs);
-			msgs = basicSetActivity(newActivity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, newActivity, newActivity));
+		Activity oldActivity = activity;
+		activity = newActivity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, activity));
 	}
 
 	/**
@@ -283,8 +278,6 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 		switch (featureID) {
 			case CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE:
 				return basicUnsetGenericType(msgs);
-			case CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
-				return basicSetActivity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -304,7 +297,8 @@ public class ActivityCallExpressionImpl extends InvocationImpl implements Activi
 				if (resolve) return getGenericType();
 				return basicGetGenericType();
 			case CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
-				return getActivity();
+				if (resolve) return getActivity();
+				return basicGetActivity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

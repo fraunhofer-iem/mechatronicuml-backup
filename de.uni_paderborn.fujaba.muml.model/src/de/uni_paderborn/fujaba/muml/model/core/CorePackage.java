@@ -320,7 +320,7 @@ public interface CorePackage extends EPackage {
 	int ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE = CallsPackage.INVOCATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Activity</b></em>' containment reference.
+	 * The feature id for the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1110,10 +1110,10 @@ public interface CorePackage extends EPackage {
 	EClass getActivityCallExpression();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression#getActivity <em>Activity</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression#getActivity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Activity</em>'.
+	 * @return the meta object for the reference '<em>Activity</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression#getActivity()
 	 * @see #getActivityCallExpression()
 	 * @generated
@@ -1518,7 +1518,7 @@ public interface CorePackage extends EPackage {
 		EClass ACTIVITY_CALL_EXPRESSION = eINSTANCE.getActivityCallExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Activity</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Activity</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

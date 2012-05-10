@@ -106,7 +106,6 @@ public class ActivityCallExpressionItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(CorePackage.Literals.TYPED_ELEMENT__GENERIC_TYPE);
-			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.ACTIVITY_CALL_EXPRESSION__ACTIVITY);
 		}
 		return childrenFeatures;
 	}
@@ -161,8 +160,10 @@ public class ActivityCallExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ActivityCallExpression.class)) {
-			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE:
 			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -184,11 +185,6 @@ public class ActivityCallExpressionItemProvider
 			(createChildParameter
 				(CorePackage.Literals.TYPED_ELEMENT__GENERIC_TYPE,
 				 EcoreFactory.eINSTANCE.createEGenericType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.ACTIVITY_CALL_EXPRESSION__ACTIVITY,
-				 ActivitiesFactory.eINSTANCE.createActivity()));
 	}
 
 	/**

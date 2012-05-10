@@ -190,7 +190,7 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/core/Behavior/attributes"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/ActivityCallExpression">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/ActivityCallExpression/activity"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/core/ActivityCallExpression/activity"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/Attribute">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
