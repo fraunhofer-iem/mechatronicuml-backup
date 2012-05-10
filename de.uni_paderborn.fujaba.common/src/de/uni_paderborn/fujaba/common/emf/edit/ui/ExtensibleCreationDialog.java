@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.common.emf.edit.ui;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -134,7 +133,6 @@ public class ExtensibleCreationDialog extends Dialog {
 		return groupToExtensions.keySet();
 	}
 
-	
 	public Map<Object, List<IDialogExtension>> getGroupMap() {
 		return groupToExtensions;
 	}
@@ -228,8 +226,11 @@ public class ExtensibleCreationDialog extends Dialog {
 
 			// Hack to force notification (the real result will be set
 			// afterwards)
-			getItemPropertyDescriptor().setPropertyValue(containerObject,
-					Collections.EMPTY_LIST);
+			IItemPropertyDescriptor descriptor = getItemPropertyDescriptor();
+			if (descriptor != null) {
+				descriptor.setPropertyValue(containerObject,
+						Collections.EMPTY_LIST);
+			}
 			// End added
 
 			for (List<IDialogExtension> extensions : groupToExtensions.values()) {
@@ -248,9 +249,13 @@ public class ExtensibleCreationDialog extends Dialog {
 	// dialog is open (part of the fix of the Widget-Disposed bug).
 	@Override
 	public int open() {
-		mainPropertySection.pushRefreshProhibition();
+		if (mainPropertySection != null) {
+			mainPropertySection.pushRefreshProhibition();
+		}
 		int result = super.open();
-		mainPropertySection.popRefreshProhibition();
+		if (mainPropertySection != null) {
+			mainPropertySection.popRefreshProhibition();
+		}
 		return result;
 	}
 
@@ -276,7 +281,7 @@ public class ExtensibleCreationDialog extends Dialog {
 			itemPropertyDescriptor.setPropertyValue(containerObject, value);
 		}
 	}
-	
+
 	public void layout() {
 		container.layout(false);
 	}

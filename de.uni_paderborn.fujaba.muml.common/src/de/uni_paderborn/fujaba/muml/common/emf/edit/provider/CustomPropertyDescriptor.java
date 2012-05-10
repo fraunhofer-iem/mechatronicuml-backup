@@ -147,7 +147,9 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				public void applyEditorValue() {
 					// We must call refresh, after it is allowed again (part of
 					// the fix of the Widget-Disposed bug).
-					mainPropertySection.refresh();
+					if (mainPropertySection != null) {
+						mainPropertySection.refresh();
+					}
 				}
 
 				@Override

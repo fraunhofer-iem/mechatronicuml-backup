@@ -9,13 +9,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemProvider;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -40,8 +37,6 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 	private AdapterFactory adapterFactory;
 
-	private List<EClass> instanceClasses = new ArrayList<EClass>();
-
 	/**
 	 * The Create-Button.
 	 */
@@ -53,32 +48,6 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 		super(creationDialog);
 		this.adapterFactory = adapterFactory;
 
-		EStructuralFeature structuralFeature = creationDialog
-				.getStructuralFeature();
-		Assert.isLegal(structuralFeature.getEType() instanceof EClass);
-
-		EClass type = (EClass) structuralFeature.getEType();
-
-		IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
-				structuralFeature, IItemPropertySource.class);
-
-		if (ips != null) {
-			IItemPropertyDescriptor itemPropertyDescriptor = ips
-					.getPropertyDescriptor(
-							structuralFeature,
-							org.eclipse.emf.ecore.EcorePackage.Literals.ETYPED_ELEMENT__ETYPE);
-			Collection<?> choices = itemPropertyDescriptor
-					.getChoiceOfValues(structuralFeature);
-			for (Object choice : choices) {
-				org.eclipse.emf.ecore.EClassifier classifier = (org.eclipse.emf.ecore.EClassifier) choice;
-				if (classifier instanceof EClass
-						&& type.isSuperTypeOf((EClass) classifier)
-						&& !((EClass) classifier).isAbstract()) {
-					instanceClasses.add((EClass) classifier);
-				}
-			}
-		}
-
 	}
 
 	@Override
@@ -89,7 +58,7 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 	@Override
 	public void createMainArea(Composite parent) {
 		super.createMainArea(parent);
-		values = new ItemProvider(adapterFactory, instanceClasses);
+		values = new ItemProvider(adapterFactory, getInstanceClasses());
 		comboViewer = new ComboViewer(parent, SWT.NONE);
 
 		comboViewer
@@ -113,6 +82,40 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 			comboViewer.setSelection(new StructuredSelection(
 					new Object[] { values.getChildren().get(0) }));
 		}
+	}
+
+	protected List<EClass> getInstanceClasses() {
+		List<EClass> instanceClasses = new ArrayList<EClass>();
+		EStructuralFeature structuralFeature = getCreationDialog()
+				.getStructuralFeature();
+		Assert.isLegal(structuralFeature.getEType() instanceof EClass);
+
+		EClass type = getFeatureType(structuralFeature);
+
+		IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
+				structuralFeature, IItemPropertySource.class);
+
+		if (ips != null) {
+			IItemPropertyDescriptor itemPropertyDescriptor = ips
+					.getPropertyDescriptor(
+							structuralFeature,
+							org.eclipse.emf.ecore.EcorePackage.Literals.ETYPED_ELEMENT__ETYPE);
+			Collection<?> choices = itemPropertyDescriptor
+					.getChoiceOfValues(structuralFeature);
+			for (Object choice : choices) {
+				org.eclipse.emf.ecore.EClassifier classifier = (org.eclipse.emf.ecore.EClassifier) choice;
+				if (classifier instanceof EClass
+						&& type.isSuperTypeOf((EClass) classifier)
+						&& !((EClass) classifier).isAbstract()) {
+					instanceClasses.add((EClass) classifier);
+				}
+			}
+		}
+		return instanceClasses;
+	}
+
+	protected EClass getFeatureType(EStructuralFeature structuralFeature) {
+		return (EClass) structuralFeature.getEType();
 	}
 
 	@Override
