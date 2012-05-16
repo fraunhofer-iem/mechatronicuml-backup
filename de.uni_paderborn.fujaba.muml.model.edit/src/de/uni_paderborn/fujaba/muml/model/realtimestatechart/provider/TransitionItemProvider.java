@@ -388,22 +388,73 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 	 * This adds a property descriptor for the Raise Message Event feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addRaiseMessageEventPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_raiseMessageEvent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_raiseMessageEvent_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__RAISE_MESSAGE_EVENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		TransitionMessageEventPropertyDescriptor rootPropertyDescriptor = new TransitionMessageEventPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Transition_raiseMessageEvent_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Transition_raiseMessageEvent_feature",
+						"_UI_Transition_type"),
+				RealtimestatechartPackage.Literals.TRANSITION__EVENTS, true,
+				false, true, null,
+				getString("_UI_RaiseMessageEventPropertyCategory"), null);
+
+		rootPropertyDescriptor
+				.setInstanceClass(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT);
+		rootPropertyDescriptor.setEventKind(EventKind.RAISE);
+
+		IChainedPropertyDescriptor messagePropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AsynchronousMessageEvent_message_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_AsynchronousMessageEvent_message_feature",
+						"_UI_AsynchronousMessageEvent_type"),
+				RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE,
+				true, false, false, null,
+				getString("_UI_RaiseMessageEventPropertyCategory"), null,
+				rootPropertyDescriptor);
+
+		itemPropertyDescriptors.add(new MessageInstanceOfPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Message_instanceOf_feature"), getString(
+						"_UI_PropertyDescriptor_description",
+						"_UI_Message_instanceOf_feature", "_UI_Message_type"),
+				RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF, true,
+				false, true, null,
+				getString("_UI_RaiseMessageEventPropertyCategory"), null,
+				messagePropertyDescriptor) {
+
+			@Override
+			public Collection<?> getChoiceOfValues(Object message) {
+				Collection<MessageType> choices = new ArrayList<MessageType>();
+				choices.add(null);
+				
+				RealtimeStatechart statechart = (RealtimeStatechart) FujabaEcoreUtil
+						.deduceContainer(
+								(EObject) message,
+								RealtimestatechartPackage.Literals.REALTIME_STATECHART);
+				
+				BehavioralElement element = statechart.getBehavioralElement();
+				MessageInterface messageInterface = null;
+				if (element instanceof DiscretePort) {
+					messageInterface = ((DiscretePort) element).getReceiverMessageInterface();
+				} else if (element instanceof Role) {
+					messageInterface = ((Role) element).getReceiverMessageInterface();
+				}
+				if (messageInterface != null) {
+					choices.addAll(messageInterface.getAllAvailableMessageTypes());
+				}
+				return choices;
+			}
+		});
+
 	}
 
 	// FIXME: Removed due to metamodel changes
