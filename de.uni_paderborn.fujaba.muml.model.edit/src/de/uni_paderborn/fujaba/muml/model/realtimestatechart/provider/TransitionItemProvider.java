@@ -444,9 +444,9 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				BehavioralElement element = statechart.getBehavioralElement();
 				MessageInterface messageInterface = null;
 				if (element instanceof DiscretePort) {
-					messageInterface = ((DiscretePort) element).getReceiverMessageInterface();
+					messageInterface = ((DiscretePort) element).getSenderMessageInterface();
 				} else if (element instanceof Role) {
-					messageInterface = ((Role) element).getReceiverMessageInterface();
+					messageInterface = ((Role) element).getSenderMessageInterface();
 				}
 				if (messageInterface != null) {
 					choices.addAll(messageInterface.getAllAvailableMessageTypes());
