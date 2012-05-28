@@ -32,6 +32,7 @@ import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.storydriven.storydiagrams.calls.CallsPackage;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
@@ -455,109 +456,18 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			}
 		});
 
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Invocation_ownedParameterBindings_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Invocation_ownedParameterBindings_feature",
+						"_UI_Invocation_type"),
+				CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+				true, false, false, null,
+				getString("_UI_RaiseMessageEventPropertyCategory"), null,
+				messagePropertyDescriptor));
 	}
-
-	// FIXME: Removed due to metamodel changes
-
-	// /**
-	// * This adds a property descriptor for the Raise Message Event feature.
-	// <!--
-	// * begin-user-doc --> <!-- end-user-doc -->
-	// *
-	// * @generated NOT
-	// */
-	// protected void addRaiseMessageEventPropertyDescriptor(Object object) {
-	// TransitionMessageEventPropertyDescriptor rootPropertyDescriptor = new
-	// TransitionMessageEventPropertyDescriptor(
-	// ((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-	// getResourceLocator(),
-	// getString("_UI_Transition_raiseMessageEvent_feature"),
-	// getString("_UI_PropertyDescriptor_description",
-	// "_UI_Transition_raiseMessageEvent_feature", "_UI_Transition_type"),
-	// RealtimestatechartPackage.Literals.TRANSITION__EVENTS,
-	// true,
-	// false,
-	// true,
-	// null,
-	// getString("_UI_RaiseMessageEventPropertyCategory"),
-	// null);
-	//
-	// rootPropertyDescriptor.setInstanceClass(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT);
-	// rootPropertyDescriptor.setEventKind(EventKind.RAISE);
-	//
-	// IChainedPropertyDescriptor messagePropertyDescriptor = new
-	// DefaultChainedPropertyDescriptor(
-	// ((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-	// getResourceLocator(),
-	// getString("_UI_AsynchronousMessageEvent_message_feature"),
-	// getString("_UI_PropertyDescriptor_description",
-	// "_UI_AsynchronousMessageEvent_message_feature",
-	// "_UI_AsynchronousMessageEvent_type"),
-	// RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE,
-	// true,
-	// false,
-	// false,
-	// null,
-	// getString("_UI_RaiseMessageEventPropertyCategory"),
-	// null,
-	// rootPropertyDescriptor);
-	//
-	// itemPropertyDescriptors.add(new MessageInstanceOfPropertyDescriptor(
-	// ((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-	// getResourceLocator(),
-	// getString("_UI_Message_instanceOf_feature"),
-	// getString("_UI_PropertyDescriptor_description",
-	// "_UI_Message_instanceOf_feature", "_UI_Message_type"),
-	// RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF,
-	// true,
-	// false,
-	// true,
-	// null,
-	// getString("_UI_RaiseMessageEventPropertyCategory"),
-	// null,
-	// messagePropertyDescriptor)
-	// {
-	//
-	// @Override
-	// public Collection<?> getChoiceOfValues(Object message) {
-	// Collection<MessageType> choices = new ArrayList<MessageType>();
-	// choices.add(null);
-	//
-	// RealtimeStatechart statechart = (RealtimeStatechart) FujabaEcoreUtil
-	// .deduceContainer(
-	// (EObject) message,
-	// RealtimestatechartPackage.Literals.REALTIME_STATECHART);
-	//
-	// BehavioralElement element = statechart.getBehavioralElement();
-	// MessageInterface messageInterface = null;
-	// if (element instanceof DiscretePort) {
-	// messageInterface = ((DiscretePort) element).getSenderMessageInterface();
-	// } else if (element instanceof Role) {
-	// messageInterface = ((Role) element).getSenderMessageInterface();
-	// }
-	// if (messageInterface != null) {
-	// choices.addAll(messageInterface.getAllAvailableMessageTypes());
-	// }
-	// return choices;
-	// }
-	//
-	// });
-	//
-	// itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-	// ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-	// getResourceLocator(),
-	// getString("_UI_Invocation_ownedParameterBindings_feature"),
-	// getString("_UI_PropertyDescriptor_description",
-	// "_UI_Invocation_ownedParameterBindings_feature", "_UI_Invocation_type"),
-	// CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
-	// true,
-	// false,
-	// false,
-	// null,
-	// getString("_UI_RaiseMessageEventPropertyCategory"),
-	// null,
-	// messagePropertyDescriptor));
-	// }
 
 	/**
 	 * This adds a property descriptor for the Clock Constraints feature. <!--

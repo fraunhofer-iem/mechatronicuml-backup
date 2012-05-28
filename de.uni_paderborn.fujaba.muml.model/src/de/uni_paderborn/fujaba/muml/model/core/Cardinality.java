@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getCardinality()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LowerBoundMustBeLessOrEqualThanUpperBound'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LowerBoundMustBeLessOrEqualThanUpperBound='((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LowerBoundMustBeLessOrEqualThanUpperBound='((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)'"
  * @generated
  */
 public interface Cardinality extends EObject {

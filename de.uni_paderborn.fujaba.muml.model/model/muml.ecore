@@ -704,7 +704,7 @@
           <details key="constraints" value="LowerBoundMustBeLessOrEqualThanUpperBound"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="LowerBoundMustBeLessOrEqualThanUpperBound" value="((self.lowerBound.value &lt;= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"/>
+          <details key="LowerBoundMustBeLessOrEqualThanUpperBound" value="((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xA;and (self.lowerBound.infinity implies self.upperBound.infinity)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" lowerBound="1"
             eType="#//model/core/NaturalNumber" containment="true">

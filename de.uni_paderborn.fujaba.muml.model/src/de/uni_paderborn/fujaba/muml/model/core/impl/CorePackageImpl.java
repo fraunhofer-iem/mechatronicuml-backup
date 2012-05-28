@@ -893,7 +893,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		  (cardinalityEClass, 
 		   source, 
 		   new String[] {
-			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"
+			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
 		   });																										
 		addAnnotation
 		  (arrayDataTypeEClass, 
