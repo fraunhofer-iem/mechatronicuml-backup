@@ -17,7 +17,7 @@ public abstract class MumlAbstractNavigatorItem extends PlatformObject {
 		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 			public String getContributorId() {
-				return "de.uni_paderborn.fujaba.muml.atomiccomponent.diagram"; //$NON-NLS-1$
+				return "de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"; //$NON-NLS-1$
 			}
 		};
 		Platform.getAdapterManager().registerAdapters(

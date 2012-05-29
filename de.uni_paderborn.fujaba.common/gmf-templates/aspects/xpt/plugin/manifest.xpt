@@ -76,12 +76,11 @@ Bundle-ActivationPolicy: lazy
 «IF editorGen.application = null-»
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
 «ENDIF-»
-«FOREACH getAllRequiredPlugins()->asSequence() AS id-»
- «IF id.xpandSplit('\\.')->last() = 'edit'»«id».eef;visibility:=reexport,«ENDIF»
- «id»;visibility:=reexport,
+«FOREACH getAllRequiredPlugins()->asSequence() AS id-
+»«REM» EEF is deactivated, see #266. «IF id.xpandSplit('\\.')->last() = 'edit'»«id».eef;visibility:=reexport,«ENDIF»«ENDREM» «id»;visibility:=reexport,
 «ENDFOREACH-»
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.muml.common,
- de.fujaba.newwizard,
- org.eclipse.emf.eef.runtime«ENDDEFINE»
+ de.fujaba.newwizard«REM» #266
+ org.eclipse.emf.eef.runtime«ENDREM»«ENDDEFINE»

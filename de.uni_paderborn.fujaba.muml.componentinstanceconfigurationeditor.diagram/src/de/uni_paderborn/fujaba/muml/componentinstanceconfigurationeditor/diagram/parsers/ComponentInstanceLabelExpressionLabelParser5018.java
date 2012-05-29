@@ -2,11 +2,14 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 
 import java.util.Collections;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -76,11 +79,15 @@ public class ComponentInstanceLabelExpressionLabelParser5018 implements IParser 
 	 */
 	public String getPrintString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
+		Map<java.lang.String, EClassifier> typeEnv = new HashMap<java.lang.String, EClassifier>();
+		Map<java.lang.String, java.lang.Object> env = new HashMap<java.lang.String, java.lang.Object>();
+		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						6,
 						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-								.getComponentInstance(), null).evaluate(target);
+								.getComponentInstance(), typeEnv).evaluate(
+						target, env);
 		return String.valueOf(result);
 	}
 
@@ -117,6 +124,15 @@ public class ComponentInstanceLabelExpressionLabelParser5018 implements IParser 
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
 		throw new ExecutionException(
 				"Please implement parsing and value modification");
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void initializeEnvironment(
+			Map<java.lang.String, EClassifier> typeEnv,
+			Map<java.lang.String, java.lang.Object> env, EObject context) {
+
 	}
 
 }

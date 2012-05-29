@@ -22,6 +22,9 @@
          </propertyTab>
       </propertyTabs>
    </extension>
+«REM»
+   EEF-Deactivation #266
+
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       «EXPAND xpt::Common::xmlGeneratedTag»
@@ -50,6 +53,7 @@
          </propertySection>
       </propertySections>
    </extension>
+«ENDREM»
 «ENDAROUND»
 
 
