@@ -32,5 +32,11 @@
            name="Open Type Dialog">
      </command>
   </extension>
+ <extension
+       point="de.fujaba.newwizard.modelinitializer">
+    <initializer
+          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
+    </initializer>
+ </extension>
 	
 </plugin>

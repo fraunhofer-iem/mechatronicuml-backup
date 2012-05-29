@@ -29,7 +29,6 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.storydriven.core.ExtendableElement;
 
 import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.ModelinstanceFactory;
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
@@ -38,6 +37,7 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListDialogEx
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialogExtension;
 import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource;
+import de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer;
 
 public class OpenTypeDialogCommand extends AbstractHandler {
 
@@ -81,29 +81,17 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 							RootNode rootNode = (RootNode) rootContainer;
 							ModelElementCategory typeCategory = getTypeCategory(rootNode);
 							if (typeCategory == null) {
-								typeCategory = ModelinstanceFactory.eINSTANCE
-										.createModelElementCategory();
-								typeCategory.setKey(TYPES_CATEGORY_KEY);
-								typeCategory.setName(TYPES_CATEGORY_NAME);
-								List<ModelElementCategory> categories = new ArrayList<ModelElementCategory>(
-										rootNode.getCategories());
-								categories.add(typeCategory);
-
-								AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) TransactionUtil
-										.getEditingDomain(rootNode);
-								org.eclipse.emf.common.command.Command setCommand = org.eclipse.emf.edit.command.SetCommand
-										.create(editingDomain, rootNode,
-												ModelinstancePackage.Literals.ROOT_NODE__CATEGORIES,
-												categories);
-								editingDomain.getCommandStack().execute(
-										setCommand);
-
+								new TypeCategoryInitializer().initialize(rootNode);
 							}
-
-							AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) TransactionUtil
-									.getEditingDomain(typeCategory);
-
-							openTypeDialog(typeCategory, editingDomain);
+							typeCategory = getTypeCategory(rootNode);
+							if (typeCategory != null) {
+								AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) TransactionUtil
+										.getEditingDomain(typeCategory);
+	
+								openTypeDialog(typeCategory, editingDomain);
+							} else {
+								// TODO: Error message
+							}
 						}
 					}
 				}
@@ -152,7 +140,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 			protected List<EClass> getInstanceClasses() {
 				List<EClass> subClasses = getSubClasses(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.DATA_TYPE);
 				subClasses
-						.remove(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.ARRAY_DATA_TYPE);
+						.remove(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.PRIMITIVE_DATA_TYPE);
 				return subClasses;
 			}
 
