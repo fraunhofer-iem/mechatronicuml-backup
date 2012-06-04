@@ -455,18 +455,19 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				return choices;
 			}
 		});
-
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Invocation_ownedParameterBindings_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Invocation_ownedParameterBindings_feature",
-						"_UI_Invocation_type"),
-				CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
-				true, false, false, null,
-				getString("_UI_RaiseMessageEventPropertyCategory"), null,
-				messagePropertyDescriptor));
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_Message_parameterBinding_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_Message_parameterBinding_feature", "_UI_Message_type"),
+			 RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING,
+			 true,
+			 false,
+			 false,
+			 null,
+			 getString("_UI_RaiseMessageEventPropertyCategory"),
+			 null,
+			 messagePropertyDescriptor));
 	}
 
 	/**

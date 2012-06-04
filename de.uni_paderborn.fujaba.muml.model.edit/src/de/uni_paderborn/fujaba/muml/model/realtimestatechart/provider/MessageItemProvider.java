@@ -69,6 +69,7 @@ public class MessageItemProvider
 			super.getPropertyDescriptors(object);
 
 			addInstanceOfPropertyDescriptor(object);
+			addParameterBindingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,6 +93,28 @@ public class MessageItemProvider
 			 null,
 			 null,
 			 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameter Binding feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParameterBindingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Message_parameterBinding_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Message_parameterBinding_feature", "_UI_Message_type"),
+				 RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

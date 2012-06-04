@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.dialogs.Dialog;
@@ -128,6 +129,13 @@ public class ExtensibleCreationDialog extends Dialog {
 		}
 		return extensions;
 	}
+	private static Object getWrappedValue(Object value) {
+		if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
+			value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
+					.getEditableValue(value);
+		}
+		return value;
+	}
 
 	public Collection<Object> getRegisteredGroups() {
 		return groupToExtensions.keySet();
@@ -224,12 +232,16 @@ public class ExtensibleCreationDialog extends Dialog {
 				}
 			}
 
-			// Hack to force notification (the real result will be set
-			// afterwards)
+			// Hack to force notification
 			IItemPropertyDescriptor descriptor = getItemPropertyDescriptor();
 			if (descriptor != null) {
+				List<?> value = new ArrayList<Object>(
+						(List<?>) getWrappedValue(descriptor
+								.getPropertyValue(containerObject)));
 				descriptor.setPropertyValue(containerObject,
 						Collections.EMPTY_LIST);
+				descriptor.setPropertyValue(containerObject,
+						value);
 			}
 			// End added
 

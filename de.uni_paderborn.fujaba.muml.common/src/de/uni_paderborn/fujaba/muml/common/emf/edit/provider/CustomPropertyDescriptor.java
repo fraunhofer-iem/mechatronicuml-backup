@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -25,6 +26,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 
+import de.uni_paderborn.fujaba.common.descriptor.IDifferentObjectItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySection;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectCreationDialogExtension;
@@ -35,6 +37,9 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExte
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
@@ -88,14 +93,14 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			}
 
 			// Some properties override this rule:
-			// if (CallsPackage.Literals.CALLABLE__IN_PARAMETER.equals(feature)
-			// || CallsPackage.Literals.CALLABLE__OUT_PARAMETER
-			// .equals(feature)) {
-			// create = true;
-			// } else if (CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS
-			// .equals(feature)) {
-			// create = false;
-			// }
+//			if (CallsPackage.Literals.CALLABLE__IN_PARAMETER.equals(feature)
+//					|| CallsPackage.Literals.CALLABLE__OUT_PARAMETER
+//							.equals(feature)) {
+//				create = true;
+//			} else if (CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS
+//					.equals(feature)) {
+//				create = false;
+//			}
 
 			// If the creation dialog should be shown, check which one.
 			if (create) {
@@ -104,11 +109,10 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 						.equals(feature)) {
 					return new ActionCellEditor(parent, feature);
 
-					// } else if
-					// (CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS
-					// .equals(feature)) {
-					// return new InvocationParameterBindingCreationCellEditor(
-					// parent, feature);
+				} else if (RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING
+						.equals(feature)) {
+					return new MessageParameterBindingCreationCellEditor(
+							parent, feature);
 
 				} else if (feature.isMany()) {
 					return new MultiFeatureCreationCellEditor(parent, feature);
@@ -307,79 +311,77 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		}
 	}
 
-	// public class InvocationParameterBindingCreationCellEditor extends
-	// AbstractCreationCellEditor {
-	// private Invocation invocation;
-	//
-	// private PropertySheetDialogExtension propertySheetDialogExtension;
-	//
-	// public InvocationParameterBindingCreationCellEditor(
-	// Composite composite, EStructuralFeature feature) {
-	// super(composite, feature);
-	// }
-	//
-	// @Override
-	// protected void addExtensions() {
-	//
-	// IPropertySourceProvider provider;
-	// provider = new InvocationParameterBindingPropertySourceProvider(
-	// editingDomain);
-	//
-	// propertySheetDialogExtension = new PropertySheetDialogExtension(
-	// provider, dialog) {
-	//
-	// @Override
-	// public void okPressed() {
-	// super.okPressed();
-	// // Filter ParameterBindings:
-	// // Only return those ParameterBindings that have an
-	// // Parameter
-	// List<ParameterBinding> allBindings = (List<ParameterBinding>) invocation
-	// .getOwnedParameterBindings();
-	// List<ParameterBinding> filteredBindings = new
-	// ArrayList<ParameterBinding>();
-	//
-	// if (invocation.getCallee() != null) {
-	// List<EParameter> parameters = invocation.getCallee()
-	// .getContainedParameters();
-	//
-	// for (ParameterBinding binding : allBindings) {
-	// if (parameters.contains(binding.getParameter())) {
-	// filteredBindings.add(binding);
-	// }
-	// }
-	// }
-	//
-	// editingDomain
-	// .getCommandStack()
-	// .execute(
-	// SetCommand
-	// .create(editingDomain,
-	// invocation,
-	// CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
-	// filteredBindings));
-	// }
-	//
-	// };
-	// Object actualObject = object;
-	// if (itemPropertyDescriptor instanceof
-	// IDifferentObjectItemPropertyDescriptor) {
-	// actualObject = ((IDifferentObjectItemPropertyDescriptor)
-	// itemPropertyDescriptor)
-	// .getActualObject(object);
-	// }
-	//
-	// invocation = (Invocation) actualObject;
-	//
-	// propertySheetDialogExtension
-	// .setInitialObject((EObject) actualObject);
-	// dialog.addExtension(propertySheetDialogExtension,
-	// ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
-	// }
-	//
-	// @Override
-	// protected Object getResult() {
-	// return invocation.getOwnedParameterBindings();
-	// }
-	// }
+	public class MessageParameterBindingCreationCellEditor extends
+			AbstractCreationCellEditor {
+		private Message message;
+
+		private PropertySheetDialogExtension propertySheetDialogExtension;
+
+		public MessageParameterBindingCreationCellEditor(
+				Composite composite, EStructuralFeature feature) {
+			super(composite, feature);
+		}
+
+		@Override
+		protected void addExtensions() {
+
+			IPropertySourceProvider provider;
+			provider = new MessageParameterBindingPropertySourceProvider(
+					editingDomain);
+
+			propertySheetDialogExtension = new PropertySheetDialogExtension(
+					provider, dialog) {
+
+				@Override
+				public void okPressed() {
+					super.okPressed();
+					// Filter ParameterBindings:
+					// Only return those ParameterBindings that have an
+					// Parameter
+					List<ParameterBinding> allBindings = (List<ParameterBinding>) message
+							.getParameterBinding();
+					List<ParameterBinding> filteredBindings = new ArrayList<ParameterBinding>();
+
+					if (message.getInstanceOf() != null) {
+						List<Parameter> parameters = message.getInstanceOf()
+								.getParameters();
+
+						for (ParameterBinding binding : allBindings) {
+							// TODO:
+							//if (parameters.contains(binding.getParameter())) {
+								filteredBindings.add(binding);
+							//}
+						}
+					}
+
+					editingDomain
+							.getCommandStack()
+							.execute(
+									SetCommand
+											.create(editingDomain,
+													message,
+													RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING,
+													filteredBindings));
+				}
+
+			};
+			Object actualObject = object;
+			if (itemPropertyDescriptor instanceof IDifferentObjectItemPropertyDescriptor) {
+				actualObject = ((IDifferentObjectItemPropertyDescriptor) itemPropertyDescriptor)
+						.getActualObject(object);
+			}
+
+			message = (Message) actualObject;
+
+			propertySheetDialogExtension
+					.setInitialObject((EObject) actualObject);
+			dialog.addExtension(propertySheetDialogExtension,
+					ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
+		}
+
+		@Override
+		protected Object getResult() {
+			return message.getParameterBinding();
+		}
+	}
 }

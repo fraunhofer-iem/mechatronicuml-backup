@@ -480,7 +480,7 @@
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/StateEvent"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/Message">
           <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Message/instanceOf"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Message/parameterBinding"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Message/parameterBinding"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryEvent"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitEvent"/>
