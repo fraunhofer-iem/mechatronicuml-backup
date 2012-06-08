@@ -19,7 +19,7 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7009;
+	public static final int VISUAL_ID = 7013;
 
 	/**
 	 * @generated

@@ -10,8 +10,8 @@
         title="componentinstanceconfiguration">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ComponentInstance"
-          description="Create new ComponentInstance">
+          title="StructuredComponentInstance"
+          description="Create new StructuredComponentInstance">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ComponentInstance.gif"
@@ -69,6 +69,15 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/HybridPort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AtomicComponentInstance"
+          description="Create new AtomicComponentInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ComponentInstance.gif"
             bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>

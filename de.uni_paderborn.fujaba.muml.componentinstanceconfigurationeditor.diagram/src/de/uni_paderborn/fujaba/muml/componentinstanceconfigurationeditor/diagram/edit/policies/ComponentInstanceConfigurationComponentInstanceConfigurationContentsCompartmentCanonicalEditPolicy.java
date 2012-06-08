@@ -83,7 +83,7 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID;
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 								.getVisualID(childView)) {
@@ -98,7 +98,7 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
-				.getComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartment_7009SemanticChildren(viewObject);
+				.getComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartment_7013SemanticChildren(viewObject);
 
 	}
 
@@ -115,7 +115,7 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 	}
 

@@ -24,7 +24,7 @@ public class ComponentInstanceConfigurationItemSemanticEditPolicy
 	 */
 	public ComponentInstanceConfigurationItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3026);
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class ComponentInstanceConfigurationItemSemanticEditPolicy
 					Node cnode = (Node) cit.next();
 					switch (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 							.getVisualID(cnode)) {
-					case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
+					case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
 										cnode.getElement(), false))); // directlyOwned: true

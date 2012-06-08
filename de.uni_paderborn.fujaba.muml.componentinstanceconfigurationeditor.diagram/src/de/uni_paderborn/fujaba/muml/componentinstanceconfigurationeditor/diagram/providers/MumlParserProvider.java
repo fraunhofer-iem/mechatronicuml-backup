@@ -23,16 +23,16 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5019 componentInstanceLabel_5019Parser;
+	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser structuredComponentInstanceLabel_5026Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getComponentInstanceLabel_5019Parser() {
-		if (componentInstanceLabel_5019Parser == null) {
-			componentInstanceLabel_5019Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5019();
+	protected IParser getStructuredComponentInstanceLabel_5026Parser() {
+		if (structuredComponentInstanceLabel_5026Parser == null) {
+			structuredComponentInstanceLabel_5026Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser();
 		}
-		return componentInstanceLabel_5019Parser;
+		return structuredComponentInstanceLabel_5026Parser;
 	}
 
 	/**
@@ -109,6 +109,21 @@ public class MumlParserProvider extends AbstractProvider implements
 			continuousPortInstanceName_5023Parser = parser;
 		}
 		return continuousPortInstanceName_5023Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser atomicComponentInstanceLabel_5032Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getAtomicComponentInstanceLabel_5032Parser() {
+		if (atomicComponentInstanceLabel_5032Parser == null) {
+			atomicComponentInstanceLabel_5032Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser();
+		}
+		return atomicComponentInstanceLabel_5032Parser;
 	}
 
 	/**
@@ -209,16 +224,16 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5018 componentInstanceLabel_5018Parser;
+	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser structuredComponentInstanceLabel_5025Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getComponentInstanceLabel_5018Parser() {
-		if (componentInstanceLabel_5018Parser == null) {
-			componentInstanceLabel_5018Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5018();
+	protected IParser getStructuredComponentInstanceLabel_5025Parser() {
+		if (structuredComponentInstanceLabel_5025Parser == null) {
+			structuredComponentInstanceLabel_5025Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser();
 		}
-		return componentInstanceLabel_5018Parser;
+		return structuredComponentInstanceLabel_5025Parser;
 	}
 
 	/**
@@ -243,10 +258,105 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected IParser hybridPortInstanceName_5027Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getHybridPortInstanceName_5027Parser() {
+		if (hybridPortInstanceName_5027Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser(
+					features);
+			hybridPortInstanceName_5027Parser = parser;
+		}
+		return hybridPortInstanceName_5027Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser discreteSinglePortInstanceName_5028Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDiscreteSinglePortInstanceName_5028Parser() {
+		if (discreteSinglePortInstanceName_5028Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser(
+					features);
+			discreteSinglePortInstanceName_5028Parser = parser;
+		}
+		return discreteSinglePortInstanceName_5028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser discreteMultiPortInstanceName_5030Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDiscreteMultiPortInstanceName_5030Parser() {
+		if (discreteMultiPortInstanceName_5030Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser(
+					features);
+			discreteMultiPortInstanceName_5030Parser = parser;
+		}
+		return discreteMultiPortInstanceName_5030Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser discreteSinglePortInstanceName_5029Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDiscreteSinglePortInstanceName_5029Parser() {
+		if (discreteSinglePortInstanceName_5029Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser(
+					features);
+			discreteSinglePortInstanceName_5029Parser = parser;
+		}
+		return discreteSinglePortInstanceName_5029Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser continuousPortInstanceName_5031Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getContinuousPortInstanceName_5031Parser() {
+		if (continuousPortInstanceName_5031Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser(
+					features);
+			continuousPortInstanceName_5031Parser = parser;
+		}
+		return continuousPortInstanceName_5031Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getComponentInstanceLabel_5019Parser();
+			return getStructuredComponentInstanceLabel_5026Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID:
 			return getHybridPortInstanceName_5020Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID:
@@ -255,6 +365,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getDiscreteMultiPortInstanceName_5022Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceNameEditPart.VISUAL_ID:
 			return getContinuousPortInstanceName_5023Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+			return getAtomicComponentInstanceLabel_5032Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceName2EditPart.VISUAL_ID:
 			return getHybridPortInstanceName_5013Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName2EditPart.VISUAL_ID:
@@ -265,10 +377,20 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getDiscreteSinglePortInstanceName_5015Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceName2EditPart.VISUAL_ID:
 			return getContinuousPortInstanceName_5017Parser();
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getComponentInstanceLabel_5018Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+			return getStructuredComponentInstanceLabel_5025Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName4EditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstanceName_5024Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceName3EditPart.VISUAL_ID:
+			return getHybridPortInstanceName_5027Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName5EditPart.VISUAL_ID:
+			return getDiscreteSinglePortInstanceName_5028Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceName3EditPart.VISUAL_ID:
+			return getDiscreteMultiPortInstanceName_5030Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName6EditPart.VISUAL_ID:
+			return getDiscreteSinglePortInstanceName_5029Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceName3EditPart.VISUAL_ID:
+			return getContinuousPortInstanceName_5031Parser();
 		}
 		return null;
 	}

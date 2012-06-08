@@ -61,7 +61,7 @@
     </descriptors>
   </figures>
   <nodes
-      name="ComponentInstance">
+      name="StructuredComponentInstance">
     <figure
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
     <facets
@@ -117,6 +117,17 @@
       <defaultSize
           dx="24"
           dy="24"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="AtomicComponentInstance">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="130"
+          dy="47"/>
     </facets>
   </nodes>
   <connections
