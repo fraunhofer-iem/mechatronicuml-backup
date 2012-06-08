@@ -21,8 +21,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
@@ -39,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * @generated
  */
 public class ComponentInstanceConfigurationItemProvider
-	extends ExtendableElementItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -67,11 +69,34 @@ public class ComponentInstanceConfigurationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addComponentInstancesPropertyDescriptor(object);
 			addConnectorInstancesPropertyDescriptor(object);
 			addParentPortInstancesDerivedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 CorePackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -190,7 +215,10 @@ public class ComponentInstanceConfigurationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ComponentInstanceConfiguration_type");
+		String label = ((ComponentInstanceConfiguration)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ComponentInstanceConfiguration_type") :
+			getString("_UI_ComponentInstanceConfiguration_type") + " " + label;
 	}
 
 	/**
@@ -205,6 +233,7 @@ public class ComponentInstanceConfigurationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInstanceConfiguration.class)) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -240,7 +269,12 @@ public class ComponentInstanceConfigurationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES,
-				 InstanceFactory.eINSTANCE.createComponentInstance()));
+				 InstanceFactory.eINSTANCE.createStructuredComponentInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES,
+				 InstanceFactory.eINSTANCE.createAtomicComponentInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -75,29 +75,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComponentInstanceItemProvider componentInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createComponentInstanceAdapter() {
-		if (componentInstanceItemProvider == null) {
-			componentInstanceItemProvider = new ComponentInstanceItemProvider(this);
-		}
-
-		return componentInstanceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,6 +282,52 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StructuredComponentInstanceItemProvider structuredComponentInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStructuredComponentInstanceAdapter() {
+		if (structuredComponentInstanceItemProvider == null) {
+			structuredComponentInstanceItemProvider = new StructuredComponentInstanceItemProvider(this);
+		}
+
+		return structuredComponentInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AtomicComponentInstanceItemProvider atomicComponentInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAtomicComponentInstanceAdapter() {
+		if (atomicComponentInstanceItemProvider == null) {
+			atomicComponentInstanceItemProvider = new AtomicComponentInstanceItemProvider(this);
+		}
+
+		return atomicComponentInstanceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -403,7 +426,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (componentInstanceItemProvider != null) componentInstanceItemProvider.dispose();
 		if (connectorInstanceItemProvider != null) connectorInstanceItemProvider.dispose();
 		if (assemblyInstanceItemProvider != null) assemblyInstanceItemProvider.dispose();
 		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
@@ -413,6 +435,8 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		if (discreteSinglePortInstanceItemProvider != null) discreteSinglePortInstanceItemProvider.dispose();
 		if (discreteMultiPortInstanceItemProvider != null) discreteMultiPortInstanceItemProvider.dispose();
 		if (patternInstanceItemProvider != null) patternInstanceItemProvider.dispose();
+		if (structuredComponentInstanceItemProvider != null) structuredComponentInstanceItemProvider.dispose();
+		if (atomicComponentInstanceItemProvider != null) atomicComponentInstanceItemProvider.dispose();
 	}
 
 }
