@@ -1844,9 +1844,13 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DELEGATION__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n" +
+	protected static final String DELEGATION__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION = "-- not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) \r\n" +
+		"\r\n" +
+		"not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\r\n" +
+		"\timplies (\r\n" +
+		"\t\t(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort)\r\n" +
+		"\t\tor\r\n" +
+		"\t\t(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort)\r\n" +
 		"\t)";
 
 	/**
@@ -1876,9 +1880,9 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DELEGATION__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n" +
+	protected static final String DELEGATION__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\r\n" +
+		"\timplies (\r\n" +
+		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\r\n" +
 		"\t)";
 
 	/**
@@ -1908,10 +1912,10 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DELEGATION__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n" +
-		"\t)";
+	protected static final String DELEGATION__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() \r\n" +
+		"and \r\n" +
+		"self.fromHybridPort.isHybridOutPort \r\n" +
+		"implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) ";
 
 	/**
 	 * Validates the ValidHybridOutPortCombination constraint of '<em>Delegation</em>'.

@@ -467,7 +467,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getRole_Port(), theComponentPackage.getDiscretePort(), theComponentPackage.getDiscretePort_Refines(), "port", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRole_Ordered(), theEcorePackage.getEBoolean(), "ordered", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_Ordered(), theEcorePackage.getEBoolean(), "ordered", "", 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_OutgoingRoleConnector(), this.getRoleConnector(), this.getRoleConnector_Source(), "outgoingRoleConnector", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_RoleConnector(), this.getRoleConnector(), null, "roleConnector", null, 0, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
@@ -513,7 +513,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"
+			 "constraints", "MultiPortRequiresDefinedOrder OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"
 		   });											
 	}
 
@@ -547,7 +547,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "OrderOnlyForMultiPort", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)",
+			 "MultiPortRequiresDefinedOrder", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)",
 			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')",
 			 "RoleHasConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()",
 			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()"

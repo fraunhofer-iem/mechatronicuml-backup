@@ -521,7 +521,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__INVALID_CLOCK_CONSTRAINT_OPERATOR__EEXPRESSION = "self.invariants->forAll(invariant | Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))";
+	protected static final String STATE__INVALID_CLOCK_CONSTRAINT_OPERATOR__EEXPRESSION = "self.invariants->forAll(invariant | Set{core::expressions::ComparingOperator::LESS, core::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))";
 
 	/**
 	 * Validates the InvalidClockConstraintOperator constraint of '<em>State</em>'.
@@ -742,18 +742,18 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\n" +
-		"(\n" +
-		"\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n" +
-		"\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\n" +
-		"\telse\n" +
-		"\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n" +
-		"\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\n" +
-		"\t\telse\n" +
-		"\t\t\tnull\n" +
-		"\t\tendif\n" +
-		"\tendif\n" +
-		") in\n" +
+	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\r\n" +
+		"(\r\n" +
+		"\tif statechart.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then\r\n" +
+		"\t\tstatechart.getHighestParentStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\r\n" +
+		"\telse\r\n" +
+		"\t\tif statechart.getHighestParentStatechart().behavioralElement.oclIsKindOf(pattern::Role) then\r\n" +
+		"\t\t\tstatechart.getHighestParentStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\r\n" +
+		"\t\telse\r\n" +
+		"\t\t\tnull\r\n" +
+		"\t\tendif\r\n" +
+		"\tendif\r\n" +
+		") in\r\n" +
 		"not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf)";
 
 	/**

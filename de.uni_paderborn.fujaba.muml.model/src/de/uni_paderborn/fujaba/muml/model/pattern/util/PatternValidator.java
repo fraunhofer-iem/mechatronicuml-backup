@@ -214,7 +214,7 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_OrderOnlyForMultiPort(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_MultiPortRequiresDefinedOrder(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_OrderedRequiresIntegerOrderVariable(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleHasConnector(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
@@ -222,20 +222,20 @@ public class PatternValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the OrderOnlyForMultiPort constraint of '<em>Role</em>'.
+	 * The cached validation expression for the MultiPortRequiresDefinedOrder constraint of '<em>Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__ORDER_ONLY_FOR_MULTI_PORT__EEXPRESSION = "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)";
+	protected static final String ROLE__MULTI_PORT_REQUIRES_DEFINED_ORDER__EEXPRESSION = "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)";
 
 	/**
-	 * Validates the OrderOnlyForMultiPort constraint of '<em>Role</em>'.
+	 * Validates the MultiPortRequiresDefinedOrder constraint of '<em>Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRole_OrderOnlyForMultiPort(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRole_MultiPortRequiresDefinedOrder(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(PatternPackage.Literals.ROLE,
@@ -243,8 +243,8 @@ public class PatternValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "OrderOnlyForMultiPort",
-				 ROLE__ORDER_ONLY_FOR_MULTI_PORT__EEXPRESSION,
+				 "MultiPortRequiresDefinedOrder",
+				 ROLE__MULTI_PORT_REQUIRES_DEFINED_ORDER__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

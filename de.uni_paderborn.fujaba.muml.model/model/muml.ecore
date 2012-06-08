@@ -496,9 +496,9 @@
           <details key="ValidDiscreteOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
           <details key="ValidDiscreteInOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort&#xA;&#x9;)"/>
           <details key="ValidContinuousInPortCombination" value="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
-          <details key="ValidContinuousOutPortCombination" value="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
-          <details key="ValidHybridInPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
-          <details key="ValidHybridOutPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
+          <details key="ValidContinuousOutPortCombination" value="-- not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) &#xD;&#xA;&#xD;&#xA;not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort)&#xD;&#xA;&#x9;)"/>
+          <details key="ValidHybridInPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xD;&#xA;&#x9;)"/>
+          <details key="ValidHybridOutPortCombination" value="not self.fromHybridPort.oclIsUndefined() &#xD;&#xA;and &#xD;&#xA;self.fromHybridPort.isHybridOutPort &#xD;&#xA;implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) "/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" lowerBound="1"
             eType="#//model/component/ComponentPart" eOpposite="#//model/component/ComponentPart/delegation">
@@ -1210,10 +1210,10 @@
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"/>
+          <details key="constraints" value="MultiPortRequiresDefinedOrder OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="OrderOnlyForMultiPort" value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
+          <details key="MultiPortRequiresDefinedOrder" value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
           <details key="OrderedRequiresIntegerOrderVariable" value="self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType ='EInt')"/>
           <details key="RoleHasConnector" value="self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()"/>
           <details key="RoleRequiresBehavior" value="not self.behavior.oclIsUndefined()"/>
@@ -1262,7 +1262,8 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
             eType="#//model/core/Behavior"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordered" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordered" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+            defaultValueLiteral="">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This attribute marks a multi-role as being ordered. In an ordered multi-role, one of the contained integer attributes is used to define the order. Then, the instances of the multi-role are numbered from 1 to n for n instances."/>
           </eAnnotations>
@@ -1367,7 +1368,7 @@
           <details key="UniqueChannelNames" value="self.channels->isUnique(name)"/>
           <details key="UniqueRegionNames" value="self.regions->isUnique(name)"/>
           <details key="BoundOfInvariantGreaterOrEqualZero" value="self.invariants->forAll(bound.value >= 0)"/>
-          <details key="InvalidClockConstraintOperator" value="self.invariants->forAll(invariant | Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
+          <details key="InvalidClockConstraintOperator" value="self.invariants->forAll(invariant | Set{core::expressions::ComparingOperator::LESS, core::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
         </eAnnotations>
         <eOperations name="getUniqueRegionPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1520,7 +1521,7 @@
           <details key="EntryPointMustOnlyPointToStatesOrStateEntryPoints" value="self.source.oclIsKindOf(EntryPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State)&#xA;&#x9;or self.target.oclIsKindOf(StateEntryPoint)&#xA;)"/>
           <details key="ExitPointMustOnlyPointToStatesOrStateExitPoints" value="self.source.oclIsKindOf(ExitPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State) &#xA;&#x9;or self.target.oclIsKindOf(StateExitPoint)&#xA;)"/>
           <details key="TriggerMessageEventsMustNotHaveAnOwnedParameterBinding" value="not self.triggerMessageEvent.message.oclIsUndefined() implies&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"/>
-          <details key="ValidTriggerMessageEvents" value="let a : msgiface::MessageInterface =&#xA;(&#xA;&#x9;if statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;statechart.behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface&#xA;&#x9;else&#xA;&#x9;&#x9;if statechart.behavioralElement.oclIsKindOf(pattern::Role) then&#xA;&#x9;&#x9;&#x9;statechart.behavioralElement.oclAsType(pattern::Role).receiverMessageInterface&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;null&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;) in&#xA;not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf)"/>
+          <details key="ValidTriggerMessageEvents" value="let a : msgiface::MessageInterface =&#xD;&#xA;(&#xD;&#xA;&#x9;if statechart.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;&#x9;statechart.getHighestParentStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if statechart.getHighestParentStatechart().behavioralElement.oclIsKindOf(pattern::Role) then&#xD;&#xA;&#x9;&#x9;&#x9;statechart.getHighestParentStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;) in&#xD;&#xA;not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf)"/>
           <details key="ValidRaiseMessageEvents" value="let a : msgiface::MessageInterface =&#xA;(&#xA;&#x9;if statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;statechart.behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface&#xA;&#x9;else&#xA;&#x9;&#x9;if statechart.behavioralElement.oclIsKindOf(pattern::Role) then&#xA;&#x9;&#x9;&#x9;statechart.behavioralElement.oclAsType(pattern::Role).senderMessageInterface&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;null&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;) in&#xA;not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf)"/>
           <details key="EntryPointOutgoingTransitionNoAdditionalElements" value="(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::EntryPoint))&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.synchronization.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockResets->isEmpty()&#xA;&#x9;&#x9;and self.triggerMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xA;&#x9;&#x9;and self.events->isEmpty()&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xA;&#x9;)"/>
           <details key="StateExitPointOutgoingTransitionNoAdditionalElements" value="(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::StateExitPoint))&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.synchronization.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockResets->isEmpty()&#xA;&#x9;&#x9;and self.triggerMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xA;&#x9;&#x9;and self.events->isEmpty()&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xA;&#x9;)"/>
@@ -1762,9 +1763,10 @@
         <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eParameters name="statechart" lowerBound="1" eType="#//model/realtimestatechart/RealtimeStatechart"/>
         </eOperations>
-        <eOperations name="getHighestParentStatechart">
+        <eOperations name="getHighestParentStatechart" eType="#//model/realtimestatechart/RealtimeStatechart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
+            <details key="body" value="RealtimeStatechart rtsc = this;&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} &#xD;&#xA;return rtsc;"/>
           </eAnnotations>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddingRegion" eType="#//model/realtimestatechart/Region"

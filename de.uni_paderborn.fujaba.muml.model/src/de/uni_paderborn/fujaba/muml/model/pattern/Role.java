@@ -43,8 +43,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OrderOnlyForMultiPort OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OrderOnlyForMultiPort='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')' RoleHasConnector='self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()' RoleRequiresBehavior='not self.behavior.oclIsUndefined()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='MultiPortRequiresDefinedOrder OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL MultiPortRequiresDefinedOrder='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')' RoleHasConnector='self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()' RoleRequiresBehavior='not self.behavior.oclIsUndefined()'"
  * @generated
  */
 public interface Role extends NamedElement, ConstrainableElement, BehavioralElement {
@@ -268,6 +268,7 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 
 	/**
 	 * Returns the value of the '<em><b>Ordered</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -276,7 +277,7 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * @return the value of the '<em>Ordered</em>' attribute.
 	 * @see #setOrdered(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Ordered()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	boolean isOrdered();

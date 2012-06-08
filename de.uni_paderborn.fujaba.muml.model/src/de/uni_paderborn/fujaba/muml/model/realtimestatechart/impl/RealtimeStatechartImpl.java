@@ -575,10 +575,11 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getHighestParentStatechart() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public RealtimeStatechart getHighestParentStatechart() {
+		RealtimeStatechart rtsc = this;
+		while (rtsc.isEmbedded()==true)
+		{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} 
+		return rtsc;
 	}
 
 	/**

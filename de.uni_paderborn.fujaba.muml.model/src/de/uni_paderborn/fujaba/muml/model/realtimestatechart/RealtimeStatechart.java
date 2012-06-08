@@ -280,8 +280,9 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * Returns realtime statechart which represents the root of the hierarchy tree.
 	 * <!-- end-model-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='RealtimeStatechart rtsc = this;\r\nwhile (rtsc.isEmbedded()==true)\r\n{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} \r\nreturn rtsc;'"
 	 * @generated
 	 */
-	void getHighestParentStatechart();
+	RealtimeStatechart getHighestParentStatechart();
 
 } // RealtimeStatechart
