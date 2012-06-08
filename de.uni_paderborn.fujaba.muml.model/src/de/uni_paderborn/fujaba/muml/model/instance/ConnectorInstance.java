@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getConnectorInstance()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface ConnectorInstance extends ExtendableElement {

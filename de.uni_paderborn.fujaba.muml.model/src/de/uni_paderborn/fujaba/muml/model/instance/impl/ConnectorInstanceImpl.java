@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *
  * @generated
  */
-public class ConnectorInstanceImpl extends ExtendableElementImpl implements ConnectorInstance {
+public abstract class ConnectorInstanceImpl extends ExtendableElementImpl implements ConnectorInstance {
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->

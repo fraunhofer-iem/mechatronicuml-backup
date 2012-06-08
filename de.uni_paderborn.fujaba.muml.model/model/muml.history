@@ -23443,5 +23443,17 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="MultiPortRequiresDefinedOrder RoleHasConnector RoleRequiresBehavior"
         oldDataValue="MultiPortRequiresDefinedOrder OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ConnectorInstance"
+          featureName="abstract" dataValue="true" oldDataValue="false"/>
+      <operation name="makeAbstract">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/instance/ConnectorInstance"/>
+        </parameters>
+        <parameters name="subClass">
+          <referenceValue element="muml.ecore#//model/instance/AssemblyInstance"/>
+        </parameters>
+      </operation>
+    </changes>
   </releases>
 </history:History>

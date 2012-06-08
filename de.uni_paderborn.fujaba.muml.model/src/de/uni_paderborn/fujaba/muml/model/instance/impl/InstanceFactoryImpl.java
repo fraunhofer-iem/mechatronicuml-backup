@@ -70,7 +70,6 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case InstancePackage.CONNECTOR_INSTANCE: return createConnectorInstance();
 			case InstancePackage.ASSEMBLY_INSTANCE: return createAssemblyInstance();
 			case InstancePackage.DELEGATION_INSTANCE: return createDelegationInstance();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION: return createComponentInstanceConfiguration();
@@ -84,16 +83,6 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConnectorInstance createConnectorInstance() {
-		ConnectorInstanceImpl connectorInstance = new ConnectorInstanceImpl();
-		return connectorInstance;
 	}
 
 	/**
