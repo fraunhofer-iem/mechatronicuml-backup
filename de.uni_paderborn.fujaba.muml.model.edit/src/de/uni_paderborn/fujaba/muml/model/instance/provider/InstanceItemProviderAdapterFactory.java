@@ -75,29 +75,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConnectorInstanceItemProvider connectorInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConnectorInstanceAdapter() {
-		if (connectorInstanceItemProvider == null) {
-			connectorInstanceItemProvider = new ConnectorInstanceItemProvider(this);
-		}
-
-		return connectorInstanceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -426,7 +403,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (connectorInstanceItemProvider != null) connectorInstanceItemProvider.dispose();
 		if (assemblyInstanceItemProvider != null) assemblyInstanceItemProvider.dispose();
 		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
 		if (componentInstanceConfigurationItemProvider != null) componentInstanceConfigurationItemProvider.dispose();

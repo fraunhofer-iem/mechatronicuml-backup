@@ -279,11 +279,6 @@ public class ComponentInstanceConfigurationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES,
-				 InstanceFactory.eINSTANCE.createConnectorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES,
 				 InstanceFactory.eINSTANCE.createAssemblyInstance()));
 
 		newChildDescriptors.add
