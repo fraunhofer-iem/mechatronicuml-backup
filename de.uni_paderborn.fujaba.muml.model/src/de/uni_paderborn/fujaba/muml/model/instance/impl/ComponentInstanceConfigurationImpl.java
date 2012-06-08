@@ -8,13 +8,18 @@ package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.NamedElement;
+import org.storydriven.core.impl.CommentableElementImpl;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
@@ -30,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getConnectorInstances <em>Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}</li>
@@ -38,7 +44,27 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *
  * @generated
  */
-public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl implements ComponentInstanceConfiguration {
+public class ComponentInstanceConfigurationImpl extends CommentableElementImpl implements ComponentInstanceConfiguration {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -86,6 +112,27 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 	@Override
 	protected EClass eStaticClass() {
 		return InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME, oldName, name));
 	}
 
 	/**
@@ -170,6 +217,8 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
+				return getName();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return getComponentInstances();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
@@ -189,6 +238,9 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
+				setName((String)newValue);
+				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				getComponentInstances().clear();
 				getComponentInstances().addAll((Collection<? extends ComponentInstance>)newValue);
@@ -209,6 +261,9 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				getComponentInstances().clear();
 				return;
@@ -227,6 +282,8 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return componentInstances != null && !componentInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
@@ -235,6 +292,54 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 				return isSetParentPortInstancesDerived();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.NAMED_ELEMENT__NAME: return InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ComponentInstanceConfigurationImpl

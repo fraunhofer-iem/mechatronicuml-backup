@@ -128,6 +128,8 @@ public class InstanceSwitch<T> extends Switch<T> {
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION: {
 				ComponentInstanceConfiguration componentInstanceConfiguration = (ComponentInstanceConfiguration)theEObject;
 				T result = caseComponentInstanceConfiguration(componentInstanceConfiguration);
+				if (result == null) result = caseCommentableElement(componentInstanceConfiguration);
+				if (result == null) result = caseNamedElement(componentInstanceConfiguration);
 				if (result == null) result = caseExtendableElement(componentInstanceConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -191,6 +193,24 @@ public class InstanceSwitch<T> extends Switch<T> {
 				T result = casePatternInstance(patternInstance);
 				if (result == null) result = caseNamedElement(patternInstance);
 				if (result == null) result = caseExtendableElement(patternInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.STRUCTURED_COMPONENT_INSTANCE: {
+				StructuredComponentInstance structuredComponentInstance = (StructuredComponentInstance)theEObject;
+				T result = caseStructuredComponentInstance(structuredComponentInstance);
+				if (result == null) result = caseComponentInstance(structuredComponentInstance);
+				if (result == null) result = caseNamedElement(structuredComponentInstance);
+				if (result == null) result = caseExtendableElement(structuredComponentInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.ATOMIC_COMPONENT_INSTANCE: {
+				AtomicComponentInstance atomicComponentInstance = (AtomicComponentInstance)theEObject;
+				T result = caseAtomicComponentInstance(atomicComponentInstance);
+				if (result == null) result = caseComponentInstance(atomicComponentInstance);
+				if (result == null) result = caseNamedElement(atomicComponentInstance);
+				if (result == null) result = caseExtendableElement(atomicComponentInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -375,6 +395,36 @@ public class InstanceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePatternInstance(PatternInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Structured Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Structured Component Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStructuredComponentInstance(StructuredComponentInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Atomic Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Atomic Component Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAtomicComponentInstance(AtomicComponentInstance object) {
 		return null;
 	}
 

@@ -7,6 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.instance;
 
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
 import org.storydriven.core.ExtendableElement;
 
 /**
@@ -35,7 +37,7 @@ import org.storydriven.core.ExtendableElement;
  * @model
  * @generated
  */
-public interface ComponentInstanceConfiguration extends ExtendableElement {
+public interface ComponentInstanceConfiguration extends CommentableElement, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance}.

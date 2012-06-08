@@ -26,15 +26,6 @@ public interface InstanceFactory extends EFactory {
 	InstanceFactory eINSTANCE = de.uni_paderborn.fujaba.muml.model.instance.impl.InstanceFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Component Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Instance</em>'.
-	 * @generated
-	 */
-	ComponentInstance createComponentInstance();
-
-	/**
 	 * Returns a new object of class '<em>Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,6 +105,24 @@ public interface InstanceFactory extends EFactory {
 	 * @generated
 	 */
 	PatternInstance createPatternInstance();
+
+	/**
+	 * Returns a new object of class '<em>Structured Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Structured Component Instance</em>'.
+	 * @generated
+	 */
+	StructuredComponentInstance createStructuredComponentInstance();
+
+	/**
+	 * Returns a new object of class '<em>Atomic Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Atomic Component Instance</em>'.
+	 * @generated
+	 */
+	AtomicComponentInstance createAtomicComponentInstance();
 
 	/**
 	 * Returns the package supported by this factory.

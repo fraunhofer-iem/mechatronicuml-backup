@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -32,14 +33,14 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getEmbeddedCIC <em>Embedded CIC</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentPart <em>Component Part</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentInstanceImpl extends NamedElementImpl implements ComponentInstance {
+public abstract class ComponentInstanceImpl extends NamedElementImpl implements ComponentInstance {
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -51,16 +52,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	protected Component componentType;
 
 	/**
-	 * The cached value of the '{@link #getEmbeddedCIC() <em>Embedded CIC</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmbeddedCIC()
-	 * @generated
-	 * @ordered
-	 */
-	protected ComponentInstanceConfiguration embeddedCIC;
-
-	/**
 	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,6 +60,16 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	 * @ordered
 	 */
 	protected EList<PortInstance> portInstances;
+
+	/**
+	 * The cached value of the '{@link #getComponentPart() <em>Component Part</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentPart()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentPart componentPart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,54 +133,49 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInstanceConfiguration getEmbeddedCIC() {
-		return embeddedCIC;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEmbeddedCIC(ComponentInstanceConfiguration newEmbeddedCIC, NotificationChain msgs) {
-		ComponentInstanceConfiguration oldEmbeddedCIC = embeddedCIC;
-		embeddedCIC = newEmbeddedCIC;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC, oldEmbeddedCIC, newEmbeddedCIC);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEmbeddedCIC(ComponentInstanceConfiguration newEmbeddedCIC) {
-		if (newEmbeddedCIC != embeddedCIC) {
-			NotificationChain msgs = null;
-			if (embeddedCIC != null)
-				msgs = ((InternalEObject)embeddedCIC).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC, null, msgs);
-			if (newEmbeddedCIC != null)
-				msgs = ((InternalEObject)newEmbeddedCIC).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC, null, msgs);
-			msgs = basicSetEmbeddedCIC(newEmbeddedCIC, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC, newEmbeddedCIC, newEmbeddedCIC));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<PortInstance> getPortInstances() {
 		if (portInstances == null) {
 			portInstances = new EObjectContainmentWithInverseEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE);
 		}
 		return portInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentPart getComponentPart() {
+		if (componentPart != null && componentPart.eIsProxy()) {
+			InternalEObject oldComponentPart = (InternalEObject)componentPart;
+			componentPart = (ComponentPart)eResolveProxy(oldComponentPart);
+			if (componentPart != oldComponentPart) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART, oldComponentPart, componentPart));
+			}
+		}
+		return componentPart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentPart basicGetComponentPart() {
+		return componentPart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponentPart(ComponentPart newComponentPart) {
+		ComponentPart oldComponentPart = componentPart;
+		componentPart = newComponentPart;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART, oldComponentPart, componentPart));
 	}
 
 	/**
@@ -205,8 +201,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
-				return basicSetEmbeddedCIC(null, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
 		}
@@ -224,10 +218,11 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
-				return getEmbeddedCIC();
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return getPortInstances();
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
+				if (resolve) return getComponentPart();
+				return basicGetComponentPart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,12 +239,12 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				setComponentType((Component)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
-				setEmbeddedCIC((ComponentInstanceConfiguration)newValue);
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				getPortInstances().clear();
 				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
+				return;
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
+				setComponentPart((ComponentPart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -266,11 +261,11 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				setComponentType((Component)null);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
-				setEmbeddedCIC((ComponentInstanceConfiguration)null);
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				getPortInstances().clear();
+				return;
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
+				setComponentPart((ComponentPart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -286,10 +281,10 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				return componentType != null;
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
-				return embeddedCIC != null;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return portInstances != null && !portInstances.isEmpty();
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
+				return componentPart != null;
 		}
 		return super.eIsSet(featureID);
 	}

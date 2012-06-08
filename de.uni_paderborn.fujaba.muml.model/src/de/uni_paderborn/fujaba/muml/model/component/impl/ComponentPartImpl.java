@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.NamedElement;
 import org.storydriven.core.impl.CommentableElementImpl;
 
 import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
@@ -38,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getParentComponent <em>Parent Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getFromRev <em>From Rev</em>}</li>
@@ -52,6 +55,26 @@ import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
  * @generated
  */
 public class ComponentPartImpl extends CommentableElementImpl implements ComponentPart {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -145,6 +168,27 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentPackage.Literals.COMPONENT_PART;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__NAME, oldName, name));
 	}
 
 	/**
@@ -478,6 +522,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ComponentPackage.COMPONENT_PART__NAME:
+				return getName();
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
@@ -508,6 +554,9 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ComponentPackage.COMPONENT_PART__NAME:
+				setName((String)newValue);
+				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				setComponentType((Component)newValue);
 				return;
@@ -544,6 +593,9 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ComponentPackage.COMPONENT_PART__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				setComponentType((Component)null);
 				return;
@@ -577,6 +629,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ComponentPackage.COMPONENT_PART__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				return componentType != null;
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
@@ -595,6 +649,54 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				return isSetIsMultiPart();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.COMPONENT_PART__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.NAMED_ELEMENT__NAME: return ComponentPackage.COMPONENT_PART__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ComponentPartImpl

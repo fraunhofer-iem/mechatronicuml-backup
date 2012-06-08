@@ -70,7 +70,6 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case InstancePackage.COMPONENT_INSTANCE: return createComponentInstance();
 			case InstancePackage.CONNECTOR_INSTANCE: return createConnectorInstance();
 			case InstancePackage.ASSEMBLY_INSTANCE: return createAssemblyInstance();
 			case InstancePackage.DELEGATION_INSTANCE: return createDelegationInstance();
@@ -80,19 +79,11 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE: return createDiscreteSinglePortInstance();
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE: return createDiscreteMultiPortInstance();
 			case InstancePackage.PATTERN_INSTANCE: return createPatternInstance();
+			case InstancePackage.STRUCTURED_COMPONENT_INSTANCE: return createStructuredComponentInstance();
+			case InstancePackage.ATOMIC_COMPONENT_INSTANCE: return createAtomicComponentInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComponentInstance createComponentInstance() {
-		ComponentInstanceImpl componentInstance = new ComponentInstanceImpl();
-		return componentInstance;
 	}
 
 	/**
@@ -183,6 +174,26 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	public PatternInstance createPatternInstance() {
 		PatternInstanceImpl patternInstance = new PatternInstanceImpl();
 		return patternInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StructuredComponentInstance createStructuredComponentInstance() {
+		StructuredComponentInstanceImpl structuredComponentInstance = new StructuredComponentInstanceImpl();
+		return structuredComponentInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AtomicComponentInstance createAtomicComponentInstance() {
+		AtomicComponentInstanceImpl atomicComponentInstance = new AtomicComponentInstanceImpl();
+		return atomicComponentInstance;
 	}
 
 	/**

@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,13 +25,13 @@ import de.uni_paderborn.fujaba.muml.model.component.Component;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentType <em>Component Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedCIC <em>Embedded CIC</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentPart <em>Component Part</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface ComponentInstance extends NamedElement {
@@ -60,32 +61,6 @@ public interface ComponentInstance extends NamedElement {
 	void setComponentType(Component value);
 
 	/**
-	 * Returns the value of the '<em><b>Embedded CIC</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The component instances and connector instances that are embedded in this component instance
-	 * are contained by the component instance configuration.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Embedded CIC</em>' containment reference.
-	 * @see #setEmbeddedCIC(ComponentInstanceConfiguration)
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_EmbeddedCIC()
-	 * @model containment="true"
-	 * @generated
-	 */
-	ComponentInstanceConfiguration getEmbeddedCIC();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedCIC <em>Embedded CIC</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Embedded CIC</em>' containment reference.
-	 * @see #getEmbeddedCIC()
-	 * @generated
-	 */
-	void setEmbeddedCIC(ComponentInstanceConfiguration value);
-
-	/**
 	 * Returns the value of the '<em><b>Port Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}'.
@@ -101,5 +76,31 @@ public interface ComponentInstance extends NamedElement {
 	 * @generated
 	 */
 	EList<PortInstance> getPortInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Component Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component Part</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Part</em>' reference.
+	 * @see #setComponentPart(ComponentPart)
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_ComponentPart()
+	 * @model
+	 * @generated
+	 */
+	ComponentPart getComponentPart();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentPart <em>Component Part</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component Part</em>' reference.
+	 * @see #getComponentPart()
+	 * @generated
+	 */
+	void setComponentPart(ComponentPart value);
 
 } // ComponentInstance

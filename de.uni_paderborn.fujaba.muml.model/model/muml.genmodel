@@ -233,8 +233,9 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/ComponentInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/componentType"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/embeddedCIC"/>
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/portInstances"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/componentPart"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/ConnectorInstance">
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
@@ -290,6 +291,10 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/PatternInstance/patternOccurrence"/>
         </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/instance/StructuredComponentInstance">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/StructuredComponentInstance/embeddedCIC"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/instance/AtomicComponentInstance"/>
       </nestedGenPackages>
       <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/pattern">

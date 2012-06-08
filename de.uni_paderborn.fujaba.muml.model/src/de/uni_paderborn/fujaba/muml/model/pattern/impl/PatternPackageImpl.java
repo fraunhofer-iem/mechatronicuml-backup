@@ -513,7 +513,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "MultiPortRequiresDefinedOrder OrderedRequiresIntegerOrderVariable RoleHasConnector RoleRequiresBehavior"
+			 "constraints", "MultiPortRequiresDefinedOrder RoleHasConnector RoleRequiresBehavior"
 		   });											
 	}
 
