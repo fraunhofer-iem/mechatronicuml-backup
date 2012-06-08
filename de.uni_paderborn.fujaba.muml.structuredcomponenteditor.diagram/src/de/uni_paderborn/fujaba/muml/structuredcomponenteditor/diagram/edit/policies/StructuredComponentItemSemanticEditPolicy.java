@@ -26,7 +26,7 @@ public class StructuredComponentItemSemanticEditPolicy
 	 */
 	public StructuredComponentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.StructuredComponent_2003);
+				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.StructuredComponent_2004);
 	}
 
 	/**

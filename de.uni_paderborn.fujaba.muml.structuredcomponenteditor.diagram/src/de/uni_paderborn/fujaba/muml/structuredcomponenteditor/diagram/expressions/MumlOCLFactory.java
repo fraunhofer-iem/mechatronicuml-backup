@@ -61,7 +61,7 @@ public class MumlOCLFactory {
 					"\'port\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"if self.componentType.oclIsUndefined() then\n    \'null\'\nelse\n\tself.componentType.name.concat(\' [\'.concat(\n\t(\n\tif not (self.cardinality.lowerBound.infinity xor self.cardinality.upperBound.infinity) and self.cardinality.lowerBound.value = self.cardinality.upperBound.value then\n\t\tself.cardinality.lowerBound.toString()\n\telse\n\t\tself.cardinality.lowerBound.toString().concat(\'..\'.concat(self.cardinality.upperBound.toString()))\n\tendif\n\t)\n\t).concat(\']\'))\nendif", //$NON-NLS-1$
+					"self.name.concat(\' : \').concat(\r\n\r\n\tif self.componentType.oclIsUndefined() then\r\n    \t\t\'null\'\r\n\telse\r\n\t\tself.componentType.name.concat(\' [\'.concat(\r\n\t\t(\r\n\t\tif not (self.cardinality.lowerBound.infinity xor self.cardinality.upperBound.infinity) and self.cardinality.lowerBound.value = self.cardinality.upperBound.value then\r\n\t\t\tself.cardinality.lowerBound.toString()\r\n\t\telse\r\n\t\t\tself.cardinality.lowerBound.toString().concat(\'..\'.concat(self.cardinality.upperBound.toString()))\r\n\t\tendif\r\n\t\t)\r\n\t\t).concat(\']\'))\r\n\tendif\r\n)", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

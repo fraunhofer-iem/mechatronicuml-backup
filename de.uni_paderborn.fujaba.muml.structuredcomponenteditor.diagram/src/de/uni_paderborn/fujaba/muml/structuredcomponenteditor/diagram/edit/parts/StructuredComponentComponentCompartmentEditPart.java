@@ -19,7 +19,7 @@ public class StructuredComponentComponentCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7003;
+	public static final int VISUAL_ID = 7004;
 
 	/**
 	 * @generated
