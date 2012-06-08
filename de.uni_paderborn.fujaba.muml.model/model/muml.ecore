@@ -2002,9 +2002,10 @@
           <details key="NoCyclicGeneralization" value="not self->closure(superType)->includes(self)"/>
           <details key="UniqueMessageTypeNames" value="self.messageTypes->isUnique(name)"/>
           <details key="NoMessageTypeOrNotAtLeastTwoGeneralizations" value="self.messageTypes->size()>=1 or self.superType->size()>=2"/>
+          <details key="UniqueMessageInterfaceNames" value="MessageInterface.allInstances().name->count(self.name) = 1"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
+          <details key="constraints" value="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations UniqueMessageInterfaceNames"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="superType" upperBound="-1"
             eType="#//model/msgiface/MessageInterface">
