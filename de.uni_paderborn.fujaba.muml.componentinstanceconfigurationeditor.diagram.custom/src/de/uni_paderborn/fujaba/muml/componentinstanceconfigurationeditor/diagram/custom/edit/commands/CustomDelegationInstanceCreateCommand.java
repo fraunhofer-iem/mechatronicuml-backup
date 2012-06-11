@@ -6,6 +6,7 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
 
 /**
  * A customized DelegationInstanceCreateCommand. We make sure, an Delegation
@@ -54,25 +55,38 @@ public class CustomDelegationInstanceCreateCommand extends
 		}
 		return super.canExecute();
 	}
-	
-	@Override
-	public de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration getContainer(){
-		
-		ComponentInstance sourceComponentInstance = getSource()
-			.getComponentInstance();
 
-		if(getTarget()==null){
-			return (ComponentInstanceConfiguration) sourceComponentInstance.eContainer();
+	@Override
+	public de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration getContainer() {
+
+		ComponentInstance sourceComponentInstance = getSource()
+				.getComponentInstance();
+
+		if (getTarget() == null) {
+			return (ComponentInstanceConfiguration) sourceComponentInstance
+					.eContainer();
 		}
-		
+
 		ComponentInstance targetComponentInstance = getTarget()
-			.getComponentInstance();
-		
-		if(((sourceComponentInstance.getEmbeddedCIC()!=null && sourceComponentInstance.getEmbeddedCIC().getComponentInstances().contains(
-					targetComponentInstance)))){
-			return sourceComponentInstance.getEmbeddedCIC();
-		}else{
-			return targetComponentInstance.getEmbeddedCIC();
+				.getComponentInstance();
+
+		ComponentInstanceConfiguration sourceEmbeddedCIC = getEmbeddedCIC(sourceComponentInstance);
+		ComponentInstanceConfiguration targetEmbeddedCIC = getEmbeddedCIC(targetComponentInstance);
+		if (sourceEmbeddedCIC != null
+				&& sourceEmbeddedCIC.getComponentInstances().contains(
+						targetComponentInstance)) {
+			return sourceEmbeddedCIC;
+		} else {
+			return targetEmbeddedCIC;
 		}
+	}
+
+	private ComponentInstanceConfiguration getEmbeddedCIC(
+			ComponentInstance componentInstance) {
+		if (componentInstance instanceof StructuredComponentInstance) {
+			return ((StructuredComponentInstance) componentInstance)
+					.getEmbeddedCIC();
+		}
+		return null;
 	}
 }

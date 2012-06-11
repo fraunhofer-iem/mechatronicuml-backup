@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart;
@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.MumlEditPartFactory;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -58,8 +59,11 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			case HybridPortInstance2EditPart.VISUAL_ID:
 				return new CustomHybridPortInstance2EditPart(view);
 				
-			case ComponentInstanceEditPart.VISUAL_ID:
-				return new CustomComponentInstanceEditPart(view);
+			case AtomicComponentInstanceEditPart.VISUAL_ID:
+				return new CustomAtomicComponentInstanceEditPart(view);
+
+			case StructuredComponentInstanceEditPart.VISUAL_ID:
+				return new CustomStructuredComponentInstanceEditPart(view);
 		
 //			case ComponentInstanceComponentInstanceCompartmentEditPart.VISUAL_ID:
 //				return new CustomComponentInstanceComponentInstanceCompartmentEditPart(

@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
@@ -24,9 +24,9 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * @author bingo
  * 
  */
-public class CustomComponentInstanceEditPart extends ComponentInstanceEditPart {
+public class CustomStructuredComponentInstanceEditPart extends StructuredComponentInstanceEditPart {
 
-	public CustomComponentInstanceEditPart(View view) {
+	public CustomStructuredComponentInstanceEditPart(View view) {
 		super(view);
 	}
 
@@ -38,24 +38,18 @@ public class CustomComponentInstanceEditPart extends ComponentInstanceEditPart {
 	@Override
 	public void handleNotificationEvent(final Notification notification) {
 		Object feature = notification.getFeature();
-		if (feature instanceof EReference) {
-			EReference reference = (EReference) feature;
-			if (reference.getContainerClass() == ComponentInstance.class) {
-				int featureID = notification.getFeatureID(ComponentInstance.class);
-				//TODO: it was COMPONENT_INSTANCE__CONNECTOR_INSTANCES
-				if (featureID == InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC) {
-					// ((CanonicalEditPolicy)getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE)).refresh();
-					List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
-							.getRegisteredEditPolicies(this.getDiagramView()
-									.getElement());
-					for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
-							.hasNext();) {
-						CanonicalEditPolicy nextEditPolicy = it.next();
-						nextEditPolicy.refresh();
-					}
-				}
+		if (InstancePackage.Literals.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC.equals(feature)) {
+			// ((CanonicalEditPolicy)getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE)).refresh();
+			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+					.getRegisteredEditPolicies(this.getDiagramView()
+							.getElement());
+			for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
+					.hasNext();) {
+				CanonicalEditPolicy nextEditPolicy = it.next();
+				nextEditPolicy.refresh();
 			}
 		}
+
 		super.handleNotificationEvent(notification);
 	}
 
