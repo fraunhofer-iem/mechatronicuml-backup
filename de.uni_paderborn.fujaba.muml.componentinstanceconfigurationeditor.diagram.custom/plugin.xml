@@ -18,13 +18,4 @@
       </ParserProvider>
    </extension>
 
-   <extension
-         point="de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories">
-      <factory
-            class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomInstanceItemProviderAdapterFactory"
-            pluginid="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"
-            priority="1">
-      </factory>
-   </extension>
-
 </plugin>
