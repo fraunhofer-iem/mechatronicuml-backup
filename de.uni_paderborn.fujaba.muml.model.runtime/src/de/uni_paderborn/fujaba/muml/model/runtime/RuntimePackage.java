@@ -110,15 +110,6 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_COMPONENT_INSTANCE__COMPONENT_TYPE = InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Embedded CIC</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_COMPONENT_INSTANCE__EMBEDDED_CIC = InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC;
-
-	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,6 +117,15 @@ public interface RuntimePackage extends EPackage {
 	 * @ordered
 	 */
 	int RUNTIME_COMPONENT_INSTANCE__PORT_INSTANCES = InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Component Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_COMPONENT_INSTANCE__COMPONENT_PART = InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.

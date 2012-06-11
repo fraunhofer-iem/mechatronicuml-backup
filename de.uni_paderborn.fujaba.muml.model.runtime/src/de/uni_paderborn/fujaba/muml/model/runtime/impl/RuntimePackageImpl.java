@@ -13,6 +13,11 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.calls.CallsPackage;
+import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.templates.TemplatesPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -158,6 +163,11 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		RealtimestatechartPackage.eINSTANCE.eClass();
 		MsgifacePackage.eINSTANCE.eClass();
 		DeploymentPackage.eINSTANCE.eClass();
+		CallsPackage.eINSTANCE.eClass();
+		ActivitiesPackage.eINSTANCE.eClass();
+		CallsExpressionsPackage.eINSTANCE.eClass();
+		PatternsPackage.eINSTANCE.eClass();
+		TemplatesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theRuntimePackage.createPackageContents();
