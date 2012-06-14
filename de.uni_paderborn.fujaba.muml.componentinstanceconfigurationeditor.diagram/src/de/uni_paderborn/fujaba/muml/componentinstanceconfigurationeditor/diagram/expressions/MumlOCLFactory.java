@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[10];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[11];
 	}
 
 	/**
@@ -58,6 +58,7 @@ public class MumlOCLFactory {
 					"\'instance\'", //$NON-NLS-1$
 					"(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\' : \').concat(\r\n\tif self.componentType.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.componentType.name\r\n\tendif\r\n)", //$NON-NLS-1$
 					"\'instance\'", //$NON-NLS-1$
+					"\'configuration\'", //$NON-NLS-1$
 					"(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\' : \').concat(\r\n\tif self.componentType.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.componentType.name\r\n\tendif\r\n)", //$NON-NLS-1$
 					"self.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->isEmpty()", //$NON-NLS-1$
 			};

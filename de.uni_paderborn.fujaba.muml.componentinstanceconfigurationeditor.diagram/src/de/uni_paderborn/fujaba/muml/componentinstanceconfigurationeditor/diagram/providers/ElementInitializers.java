@@ -117,6 +117,17 @@ public class ElementInitializers {
 									.getStructuredComponentInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
+			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration newInstance_1_0 = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
+					.createComponentInstanceConfiguration();
+			instance.setEmbeddedCIC(newInstance_1_0);
+			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							8,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getComponentInstanceConfiguration(), null)
+					.evaluate(newInstance_1_0);
+			newInstance_1_0.setName((String) value_1_0_0);
+
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -212,6 +223,55 @@ public class ElementInitializers {
 									.getContinuousPortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_AtomicComponentInstance_3024(
+			de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							5,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getAtomicComponentInstance(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_StructuredComponentInstance_3025(
+			de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							7,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getStructuredComponentInstance(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration newInstance_1_0 = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
+					.createComponentInstanceConfiguration();
+			instance.setEmbeddedCIC(newInstance_1_0);
+			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							8,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getComponentInstanceConfiguration(), null)
+					.evaluate(newInstance_1_0);
+			newInstance_1_0.setName((String) value_1_0_0);
+
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

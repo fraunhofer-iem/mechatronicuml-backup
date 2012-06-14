@@ -224,6 +224,36 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5028 atomicComponentInstanceLabel_5028Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getAtomicComponentInstanceLabel_5028Parser() {
+		if (atomicComponentInstanceLabel_5028Parser == null) {
+			atomicComponentInstanceLabel_5028Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5028();
+		}
+		return atomicComponentInstanceLabel_5028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5029 structuredComponentInstanceLabel_5029Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getStructuredComponentInstanceLabel_5029Parser() {
+		if (structuredComponentInstanceLabel_5029Parser == null) {
+			structuredComponentInstanceLabel_5029Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5029();
+		}
+		return structuredComponentInstanceLabel_5029Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID:
@@ -248,6 +278,10 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getDiscreteMultiPortInstanceName_5016Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceName2EditPart.VISUAL_ID:
 			return getContinuousPortInstanceName_5017Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+			return getAtomicComponentInstanceLabel_5028Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
+			return getStructuredComponentInstanceLabel_5029Parser();
 		}
 		return null;
 	}

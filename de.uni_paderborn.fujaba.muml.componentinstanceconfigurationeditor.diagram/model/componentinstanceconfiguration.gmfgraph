@@ -33,27 +33,12 @@
           xsi:type="gmfgraph:Rectangle"
           name="ComponentInstanceConfigurationFigure"
           lineKind="LINE_DASH">
-        <layoutData
-            xsi:type="gmfgraph:GridLayoutData"
-            grabExcessHorizontalSpace="true"
-            grabExcessVerticalSpace="true"
-            verticalAlignment="FILL"
-            horizontalAlignment="FILL"/>
         <layout
-            xsi:type="gmfgraph:GridLayout"/>
+            xsi:type="gmfgraph:StackLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ComponentInstanceConfigurationContentsCompartmentFigure"
-            outline="false">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"
-              verticalAlignment="FILL"
-              horizontalAlignment="FILL"/>
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-        </children>
+            outline="false"/>
       </actualFigure>
       <accessors
           accessor="getFigureComponentInstanceConfigurationContentsCompartmentFigure"

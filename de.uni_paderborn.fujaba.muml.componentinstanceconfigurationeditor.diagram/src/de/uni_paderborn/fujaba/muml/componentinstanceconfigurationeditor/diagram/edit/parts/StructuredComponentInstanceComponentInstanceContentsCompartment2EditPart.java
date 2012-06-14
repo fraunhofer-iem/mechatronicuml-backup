@@ -14,18 +14,18 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart
+public class StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart
 		extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7012;
+	public static final int VISUAL_ID = 7014;
 
 	/**
 	 * @generated
 	 */
-	public StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart(
+	public StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart(
 			View view) {
 		super(view);
 	}
@@ -41,7 +41,7 @@ public class StructuredComponentInstanceComponentInstanceContentsCompartmentEdit
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart_title;
+		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.Messages.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart_title;
 	}
 
 	/**
@@ -73,14 +73,14 @@ public class StructuredComponentInstanceComponentInstanceContentsCompartmentEdit
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.StructuredComponentInstanceComponentInstanceContentsCompartmentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.StructuredComponentInstanceComponentInstanceContentsCompartment2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.StructuredComponentInstanceComponentInstanceContentsCompartmentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.StructuredComponentInstanceComponentInstanceContentsCompartment2CanonicalEditPolicy());
 	}
 
 	/**

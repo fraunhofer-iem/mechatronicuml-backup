@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HybridPortInstanceCreateCommand extends EditElementCommand {
+public class AtomicComponentInstance2CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public HybridPortInstanceCreateCommand(CreateElementRequest req) {
+	public AtomicComponentInstance2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -37,9 +37,12 @@ public class HybridPortInstanceCreateCommand extends EditElementCommand {
 		return container;
 	}
 
+	/**
+	 * @generated
+	 */
 	public boolean canExecute() {
-		// This command must not be used. The containment feature is not changable!
-		return false;
+		return true;
+
 	}
 
 	/**
@@ -47,14 +50,14 @@ public class HybridPortInstanceCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
-				.createHybridPortInstance();
+		de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
+				.createAtomicComponentInstance();
 
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getElementToEdit();
-		owner.getParentPortInstancesDerived().add(newElement);
+		owner.getComponentInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
-				.getInstance().init_HybridPortInstance_2011(newElement);
+				.getInstance().init_AtomicComponentInstance_3024(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +69,7 @@ public class HybridPortInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance newElement,
+			de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

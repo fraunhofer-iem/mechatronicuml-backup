@@ -26,12 +26,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class StructuredComponentInstanceLabelExpressionLabelParser5026
+public class StructuredComponentInstanceLabelExpressionLabelParser5029
 		implements IParser {
 	/**
 	 * @generated
 	 */
-	public StructuredComponentInstanceLabelExpressionLabelParser5026() {
+	public StructuredComponentInstanceLabelExpressionLabelParser5029() {
 	}
 
 	/**

@@ -15,12 +15,13 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HybridPortInstanceCreateCommand extends EditElementCommand {
+public class ComponentInstanceConfigurationCreateCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public HybridPortInstanceCreateCommand(CreateElementRequest req) {
+	public ComponentInstanceConfigurationCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -37,9 +38,16 @@ public class HybridPortInstanceCreateCommand extends EditElementCommand {
 		return container;
 	}
 
+	/**
+	 * @generated
+	 */
 	public boolean canExecute() {
-		// This command must not be used. The containment feature is not changable!
-		return false;
+		de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance container = (de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance) getElementToEdit();
+		if (container.getEmbeddedCIC() != null) {
+			return false;
+		}
+		return true;
+
 	}
 
 	/**
@@ -47,14 +55,11 @@ public class HybridPortInstanceCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
-				.createHybridPortInstance();
+		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
+				.createComponentInstanceConfiguration();
 
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getElementToEdit();
-		owner.getParentPortInstancesDerived().add(newElement);
-
-		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
-				.getInstance().init_HybridPortInstance_2011(newElement);
+		de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance) getElementToEdit();
+		owner.setEmbeddedCIC(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +71,7 @@ public class HybridPortInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance newElement,
+			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

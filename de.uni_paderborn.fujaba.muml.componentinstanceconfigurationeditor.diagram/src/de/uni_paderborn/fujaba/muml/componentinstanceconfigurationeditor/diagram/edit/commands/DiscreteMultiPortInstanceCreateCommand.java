@@ -37,9 +37,6 @@ public class DiscreteMultiPortInstanceCreateCommand extends EditElementCommand {
 		return container;
 	}
 
-	/**
-	 * @generated
-	 */
 	public boolean canExecute() {
 		// This command must not be used. The containment feature is not changable!
 		return false;

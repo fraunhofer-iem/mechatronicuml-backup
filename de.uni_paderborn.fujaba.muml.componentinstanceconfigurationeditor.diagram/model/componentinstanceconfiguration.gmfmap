@@ -233,6 +233,22 @@
           <value
               body="'instance'"/>
         </initializers>
+        <initializers
+            xsi:type="gmfmap:ReferenceNewElementSpec">
+          <feature
+              xsi:type="ecore:EReference"
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/StructuredComponentInstance/embeddedCIC"/>
+          <newElementInitializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              <value
+                  body="'configuration'"/>
+            </initializers>
+          </newElementInitializers>
+        </initializers>
       </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping">
@@ -266,7 +282,36 @@
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/portInstances"/>
       </children>
-      <compartments>
+      <children
+          compartment="//@nodes.5/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/StructuredComponentInstance/embeddedCIC"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration"/>
+          <diagramNode
+              href="componentinstanceconfiguration.gmfgraph#ComponentInstanceConfiguration"/>
+          <children
+              compartment="//@nodes.5/@ownedChild/@children.4/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.4/@ownedChild">
+            <containmentFeature
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/componentInstances"/>
+          </children>
+          <children
+              compartment="//@nodes.5/@ownedChild/@children.4/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.5/@ownedChild">
+            <containmentFeature
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/componentInstances"/>
+          </children>
+          <compartments
+              children="//@nodes.5/@ownedChild/@children.4/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.4/@ownedChild/@children.1">
+            <compartment
+                href="componentinstanceconfiguration.gmfgraph#ComponentInstanceConfigurationContentsCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.5/@ownedChild/@children.4">
         <compartment
             href="componentinstanceconfiguration.gmfgraph#ComponentInstanceContentsCompartment"/>
       </compartments>

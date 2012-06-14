@@ -18,7 +18,6 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -27,10 +26,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -42,13 +39,13 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class StructuredComponentInstanceEditPart extends
+public class AtomicComponentInstance2EditPart extends
 		AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2015;
+	public static final int VISUAL_ID = 3024;
 
 	/**
 	 * @generated
@@ -63,7 +60,7 @@ public class StructuredComponentInstanceEditPart extends
 	/**
 	 * @generated
 	 */
-	public StructuredComponentInstanceEditPart(View view) {
+	public AtomicComponentInstance2EditPart(View view) {
 		super(view);
 	}
 
@@ -76,12 +73,12 @@ public class StructuredComponentInstanceEditPart extends
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.StructuredComponentInstanceItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.AtomicComponentInstance2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.StructuredComponentInstanceCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.AtomicComponentInstance2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -126,30 +123,23 @@ public class StructuredComponentInstanceEditPart extends
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new StructuredComponentFigure();
+		return primaryShape = new ComponentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public StructuredComponentFigure getPrimaryShape() {
-		return (StructuredComponentFigure) primaryShape;
+	public ComponentFigure getPrimaryShape() {
+		return (ComponentFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart) {
-			((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel3EditPart) {
+			((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureChildren();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart) childEditPart)
-					.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart) {
@@ -195,14 +185,7 @@ public class StructuredComponentInstanceEditPart extends
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureChildren();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel3EditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart) {
@@ -260,9 +243,6 @@ public class StructuredComponentInstanceEditPart extends
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart) {
-			return getPrimaryShape().getFigureChildren();
-		}
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
@@ -364,51 +344,27 @@ public class StructuredComponentInstanceEditPart extends
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public EditPart getTargetEditPart(Request request) {
-		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
-					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart.VISUAL_ID));
-			}
-		}
-		return super.getTargetEditPart(request);
-	}
-
-	/**
-	 * @generated
-	 */
-	public class StructuredComponentFigure extends RectangleFigure {
+	public class ComponentFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		private WrappingLabel fFigureComponentNameFigure;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureChildren;
 
 		/**
 		 * @generated
 		 */
-		public StructuredComponentFigure() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			this.setLayoutManager(layoutThis);
-
+		public ComponentFigure() {
+			this.setLayoutManager(new StackLayout());
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5)));
 			createContents();
 		}
 
@@ -417,43 +373,17 @@ public class StructuredComponentInstanceEditPart extends
 		 */
 		private void createContents() {
 
-			RectangleFigure container0 = new RectangleFigure();
-			container0.setFill(false);
-			container0.setOutline(false);
-			container0.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
+			RectangleFigure componentIconRectangle0 = new RectangleFigure();
+			componentIconRectangle0.setFill(false);
+			componentIconRectangle0.setOutline(false);
 
-			GridData constraintContainer0 = new GridData();
-			constraintContainer0.verticalAlignment = GridData.BEGINNING;
-			constraintContainer0.horizontalAlignment = GridData.FILL;
-			constraintContainer0.horizontalIndent = 0;
-			constraintContainer0.horizontalSpan = 1;
-			constraintContainer0.verticalSpan = 1;
-			constraintContainer0.grabExcessHorizontalSpace = true;
-			constraintContainer0.grabExcessVerticalSpace = false;
-			this.add(container0, constraintContainer0);
+			this.add(componentIconRectangle0);
 
-			GridLayout layoutContainer0 = new GridLayout();
-			layoutContainer0.numColumns = 2;
-			layoutContainer0.makeColumnsEqualWidth = false;
-			container0.setLayoutManager(layoutContainer0);
-
-			fFigureComponentNameFigure = new WrappingLabel();
-			fFigureComponentNameFigure.setText("");
-
-			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
-
-			GridData constraintFFigureComponentNameFigure = new GridData();
-			constraintFFigureComponentNameFigure.verticalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentNameFigure.horizontalIndent = 0;
-			constraintFFigureComponentNameFigure.horizontalSpan = 1;
-			constraintFFigureComponentNameFigure.verticalSpan = 1;
-			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = false;
-			container0.add(fFigureComponentNameFigure,
-					constraintFFigureComponentNameFigure);
+			GridLayout layoutComponentIconRectangle0 = new GridLayout();
+			layoutComponentIconRectangle0.numColumns = 1;
+			layoutComponentIconRectangle0.makeColumnsEqualWidth = false;
+			componentIconRectangle0
+					.setLayoutManager(layoutComponentIconRectangle0);
 
 			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
@@ -471,8 +401,8 @@ public class StructuredComponentInstanceEditPart extends
 			constraintComponentIconFigure1.verticalSpan = 1;
 			constraintComponentIconFigure1.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure1.grabExcessVerticalSpace = false;
-			container0
-					.add(componentIconFigure1, constraintComponentIconFigure1);
+			componentIconRectangle0.add(componentIconFigure1,
+					constraintComponentIconFigure1);
 
 			componentIconFigure1.setLayoutManager(new StackLayout());
 
@@ -515,19 +445,33 @@ public class StructuredComponentInstanceEditPart extends
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
-			fFigureChildren = new RectangleFigure();
-			fFigureChildren.setFill(false);
-			fFigureChildren.setOutline(false);
+			RectangleFigure componentNameRectangle0 = new RectangleFigure();
+			componentNameRectangle0.setFill(false);
+			componentNameRectangle0.setOutline(false);
 
-			GridData constraintFFigureChildren = new GridData();
-			constraintFFigureChildren.verticalAlignment = GridData.FILL;
-			constraintFFigureChildren.horizontalAlignment = GridData.FILL;
-			constraintFFigureChildren.horizontalIndent = 0;
-			constraintFFigureChildren.horizontalSpan = 1;
-			constraintFFigureChildren.verticalSpan = 1;
-			constraintFFigureChildren.grabExcessHorizontalSpace = true;
-			constraintFFigureChildren.grabExcessVerticalSpace = true;
-			this.add(fFigureChildren, constraintFFigureChildren);
+			this.add(componentNameRectangle0);
+
+			GridLayout layoutComponentNameRectangle0 = new GridLayout();
+			layoutComponentNameRectangle0.numColumns = 1;
+			layoutComponentNameRectangle0.makeColumnsEqualWidth = false;
+			componentNameRectangle0
+					.setLayoutManager(layoutComponentNameRectangle0);
+
+			fFigureComponentNameFigure = new WrappingLabel();
+			fFigureComponentNameFigure.setText("");
+
+			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
+
+			GridData constraintFFigureComponentNameFigure = new GridData();
+			constraintFFigureComponentNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.FILL;
+			constraintFFigureComponentNameFigure.horizontalIndent = 0;
+			constraintFFigureComponentNameFigure.horizontalSpan = 1;
+			constraintFFigureComponentNameFigure.verticalSpan = 1;
+			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = true;
+			componentNameRectangle0.add(fFigureComponentNameFigure,
+					constraintFFigureComponentNameFigure);
 
 		}
 
@@ -536,13 +480,6 @@ public class StructuredComponentInstanceEditPart extends
 		 */
 		public WrappingLabel getFigureComponentNameFigure() {
 			return fFigureComponentNameFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureChildren() {
-			return fFigureChildren;
 		}
 
 	}

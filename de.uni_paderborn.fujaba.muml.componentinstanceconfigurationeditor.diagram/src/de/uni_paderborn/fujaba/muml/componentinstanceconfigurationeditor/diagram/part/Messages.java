@@ -333,12 +333,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart_title;
+	public static String ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart_title;
 
 	/**
 	 * @generated
@@ -348,42 +358,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_3020_incominglinks;
+	public static String NavigatorGroupName_AssemblyInstance_4005_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_3020_outgoinglinks;
+	public static String NavigatorGroupName_AssemblyInstance_4005_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_3022_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_3022_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3019_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3019_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_2014_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_2014_outgoinglinks;
+	public static String NavigatorGroupName_ComponentInstanceConfiguration_1000_links;
 
 	/**
 	 * @generated
@@ -408,12 +393,42 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_2013_incominglinks;
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3021_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_2013_outgoinglinks;
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3021_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3019_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3019_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContinuousPortInstance_2014_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContinuousPortInstance_2014_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_3020_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_3020_outgoinglinks;
 
 	/**
 	 * @generated
@@ -428,16 +443,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AssemblyInstance_4005_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AssemblyInstance_4005_source;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_HybridPortInstance_3018_incominglinks;
 
 	/**
@@ -448,17 +453,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ComponentInstanceConfiguration_1000_links;
+	public static String NavigatorGroupName_ContinuousPortInstance_3022_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3021_incominglinks;
+	public static String NavigatorGroupName_ContinuousPortInstance_3022_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3021_outgoinglinks;
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_2013_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_2013_outgoinglinks;
 
 	/**
 	 * @generated
