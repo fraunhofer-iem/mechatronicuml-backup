@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.common.emf.edit.ui.extensions;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,6 +19,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -30,6 +33,13 @@ import org.eclipse.swt.widgets.Table;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
 
 public class ObjectsListDialogExtension extends AbstractDialogExtension {
+	
+	public interface IFilter {
+		boolean select(EObject object);
+	}
+	
+	private Collection<IFilter> filters = new ArrayList<IFilter>();
+	
 	private Adapter hookAdapter = new AdapterImpl() {
 		@Override
 		public void notifyChanged(Notification notification) {
@@ -74,6 +84,14 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 			((EObject) object).eAdapters().add(hookAdapter);
 		}
 	}
+	
+	public void addFilter(IFilter filter) {
+		filters.add(filter);
+	}
+	
+	public void removeFilter(IFilter filter) {
+		filters.remove(filter);
+	}
 
 	@Override
 	public void initialize() {
@@ -105,6 +123,21 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 		Table tblParameterTable = objectsTableViewer.getTable();
 		tblParameterTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 				true, 1, 1));
+		
+		objectsTableViewer.addFilter(new ViewerFilter() {
+
+			@Override
+			public boolean select(Viewer viewer, Object parentElement,
+					Object element) {
+				for (IFilter filter : filters) {
+					if (!filter.select((EObject) element)) {
+						return false;
+					}
+				}
+				return true;
+			}
+			
+		});
 
 		// Create SelectionListener for objectsTableViewer to update
 		// Button-enablement accordingly

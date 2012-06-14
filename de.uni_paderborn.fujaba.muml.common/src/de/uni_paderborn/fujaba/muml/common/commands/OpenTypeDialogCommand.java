@@ -21,8 +21,11 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
@@ -38,6 +41,7 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialog
 import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource;
 import de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer;
+import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
 
 public class OpenTypeDialogCommand extends AbstractHandler {
 
@@ -47,8 +51,6 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
 
-	private static final String TYPES_CATEGORY_NAME = "types";
-
 	public OpenTypeDialogCommand() {
 		adapterFactory = MumlCommonPlugin.getInstance()
 				.getItemProvidersAdapterFactory();
@@ -56,14 +58,19 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) {
-		// Get shell and uri of current selection
+		// Get shell
 		shell = HandlerUtil.getActiveWorkbenchWindow(event).getShell();
+		if (shell == null) {
+			shell = PlatformUI.getWorkbench().getDisplay().getActiveShell();
+		}
+
+		// Get currently selected element
+		EObject element = null;
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 		if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
 			Object object = ((IStructuredSelection) selection)
 					.getFirstElement();
 
-			EObject element = null;
 			if (object instanceof GraphicalEditPart) {
 				element = ((GraphicalEditPart) object).getNotationView()
 						.getElement();
@@ -73,38 +80,40 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 				element = (org.eclipse.emf.ecore.EObject) adapter
 						.getAdapter(org.eclipse.emf.ecore.EObject.class);
 			}
-
-			if (element != null) {
-				// factories
-				// .add(new
-				// de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory());
-				//
-				Resource resource = element.eResource();
-				if (resource != null) {
-					EList<EObject> contents = resource.getContents();
-					if (!contents.isEmpty()) {
-						Object rootContainer = contents.get(0);
-						if (rootContainer instanceof RootNode) {
-							RootNode rootNode = (RootNode) rootContainer;
-							ModelElementCategory typeCategory = getTypeCategory(rootNode);
-							if (typeCategory == null) {
-								new TypeCategoryInitializer()
-										.initialize(rootNode);
-							}
-							typeCategory = getTypeCategory(rootNode);
-							if (typeCategory != null) {
-								AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) TransactionUtil
-										.getEditingDomain(typeCategory);
-
-								openTypeDialog(typeCategory, editingDomain);
-							} else {
-								// TODO: Error message
-							}
-						}
-					}
+		}
+		
+		// Get rootContainer of selected element.
+		EObject rootContainer = null;
+		if (element != null) {
+			Resource resource = element.eResource();
+			if (resource != null) {
+				EList<EObject> contents = resource.getContents();
+				if (!contents.isEmpty()) {
+					rootContainer = contents.get(0);
 				}
 			}
+		}
 
+		// Get ModelElementCategory for Types
+		ModelElementCategory typeCategory = null;
+		if (rootContainer instanceof RootNode) {
+			RootNode rootNode = (RootNode) rootContainer;
+			typeCategory = getTypeCategory(rootNode);
+			if (typeCategory == null) {
+				new TypeCategoryInitializer()
+						.initialize(rootNode);
+			}
+			typeCategory = getTypeCategory(rootNode);
+		}
+
+		// Open Type Dialog for this ModelElementCategory
+		if (typeCategory != null) {
+			AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) TransactionUtil
+					.getEditingDomain(typeCategory);
+
+			openTypeDialog(typeCategory, editingDomain);
+		} else {
+			// TODO: Error message
 		}
 
 		return null;
@@ -125,7 +134,6 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 		}
 
 		ExtensibleCreationDialog dialog = new ExtensibleCreationDialog(
-				// PlatformUI.getWorkbench().getDisplay().getActiveShell(),
 				shell,
 				labelProvider,
 				typeCategory,
@@ -174,6 +182,15 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 		ObjectsListDialogExtension objectsListDialogExtension = new ObjectsListDialogExtension(
 				dialog, adapterFactory, currentValues);
+		
+		objectsListDialogExtension.addFilter(new ObjectsListDialogExtension.IFilter() {
+			
+			@Override
+			public boolean select(EObject object) {
+				return !(object instanceof PrimitiveDataType); 
+			}
+
+		});
 
 		objectCreationDialogExtension
 				.setObjectsListDialogExtension(objectsListDialogExtension);
@@ -230,13 +247,6 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 						.getEditingDomain(object);
 			}
 
-			private AdapterFactory getAdapterFactory(Object object) {
-				AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
-				if (editingDomain != null) {
-					return editingDomain.getAdapterFactory();
-				}
-				return null;
-			}
 		};
 	}
 
