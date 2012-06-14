@@ -12,6 +12,6 @@ main() {
 
 
 	// Do something with the instances provided...
-	instance.rootObjects()[ComponentInstance].componentType;
+	//instance.rootObjects()[ComponentInstance].componentType;
 
 }

@@ -34,7 +34,7 @@ public class CreateInstancesCommand extends AbstractCommand {
 	public void execute() {
 		URI transformationURI = URI
 				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.reachanalysis.sdm.transform/transforms/forEachTransformation.qvto",
+						"/de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom/transforms/instances.qvto",
 						true);
 
 		// create executor and execution context
