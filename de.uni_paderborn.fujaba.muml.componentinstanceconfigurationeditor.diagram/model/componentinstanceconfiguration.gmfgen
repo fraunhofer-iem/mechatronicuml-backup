@@ -1024,6 +1024,12 @@
           title="componentinstanceconfiguration">
         <entries
             xsi:type="gmfgen:ToolEntry"
+            title="AtomicComponentInstance"
+            description="Create new AtomicComponentInstance"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentInstance.gif"
+            genNodes="//@diagram/@topLevelNodes.4 //@diagram/@childNodes.6"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
             title="StructuredComponentInstance"
             description="Create new StructuredComponentInstance"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentInstance.gif"
@@ -1064,12 +1070,6 @@
             description="Create new HybridPortInstance"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
             genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="AtomicComponentInstance"
-            description="Create new AtomicComponentInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentInstance.gif"
-            genNodes="//@diagram/@topLevelNodes.4 //@diagram/@childNodes.6"/>
       </groups>
     </palette>
     <preferencePages

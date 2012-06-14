@@ -248,82 +248,82 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StructuredComponentInstance1CreationTool_title;
+	public static String AtomicComponentInstance1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredComponentInstance1CreationTool_desc;
+	public static String AtomicComponentInstance1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String AssemblyInstance2CreationTool_title;
+	public static String StructuredComponentInstance2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AssemblyInstance2CreationTool_desc;
+	public static String StructuredComponentInstance2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DelegationInstance3CreationTool_title;
+	public static String AssemblyInstance3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DelegationInstance3CreationTool_desc;
+	public static String AssemblyInstance3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DiscreteSinglePortInstance4CreationTool_title;
+	public static String DelegationInstance4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DiscreteSinglePortInstance4CreationTool_desc;
+	public static String DelegationInstance4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DiscreteMultiPortInstance5CreationTool_title;
+	public static String DiscreteSinglePortInstance5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DiscreteMultiPortInstance5CreationTool_desc;
+	public static String DiscreteSinglePortInstance5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ContinuousPortInstance6CreationTool_title;
+	public static String DiscreteMultiPortInstance6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ContinuousPortInstance6CreationTool_desc;
+	public static String DiscreteMultiPortInstance6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String HybridPortInstance7CreationTool_title;
+	public static String ContinuousPortInstance7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HybridPortInstance7CreationTool_desc;
+	public static String ContinuousPortInstance7CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomicComponentInstance8CreationTool_title;
+	public static String HybridPortInstance8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomicComponentInstance8CreationTool_desc;
+	public static String HybridPortInstance8CreationTool_desc;
 
 	/**
 	 * @generated

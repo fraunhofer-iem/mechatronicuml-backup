@@ -31,7 +31,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.6"/>
+          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.7"/>
       <diagramNode
           href="componentinstanceconfiguration.gmfgraph#Port"/>
     </ownedChild>
@@ -62,7 +62,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.3"/>
+          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.4"/>
       <diagramNode
           href="componentinstanceconfiguration.gmfgraph#Port"/>
     </ownedChild>
@@ -93,7 +93,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="componentinstanceconfiguration.gmfgraph#DiscreteMultiPortInstance"/>
       <children
@@ -123,7 +123,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.3"/>
+              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="componentinstanceconfiguration.gmfgraph#InnerPort"/>
         </ownedChild>
@@ -161,7 +161,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.5"/>
+          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.6"/>
       <diagramNode
           href="componentinstanceconfiguration.gmfgraph#Port"/>
     </ownedChild>
@@ -192,7 +192,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.7"/>
+          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="componentinstanceconfiguration.gmfgraph#AtomicComponentInstance"/>
       <children
@@ -259,7 +259,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="componentinstanceconfiguration.gmfgraph#StructuredComponentInstance"/>
       <children
@@ -324,7 +324,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/connectorInstances"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.1"/>
+        href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.2"/>
     <diagramLink
         href="componentinstanceconfiguration.gmfgraph#Assembly"/>
     <sourceMetaFeature
@@ -341,7 +341,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/connectorInstances"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.2"/>
+        href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.3"/>
     <diagramLink
         href="componentinstanceconfiguration.gmfgraph#Delegation"/>
     <sourceMetaFeature
