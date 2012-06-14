@@ -7,7 +7,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.instantiation.InstantiationCommand;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CreateInstancesCommand;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -47,7 +47,7 @@ public class CustomAtomicComponentInstanceEditPart extends
 			if (editingDomain != null) {
 				ComponentInstance componentInstance = (ComponentInstance) getNotationView()
 						.getElement();
-				InstantiationCommand command = new InstantiationCommand(
+				CreateInstancesCommand command = new CreateInstancesCommand(
 						componentInstance);
 				editingDomain.getCommandStack().execute(command);
 			}

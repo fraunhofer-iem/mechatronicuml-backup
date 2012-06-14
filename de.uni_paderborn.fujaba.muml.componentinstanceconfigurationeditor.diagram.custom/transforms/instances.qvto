@@ -1,0 +1,17 @@
+transformation SCAPredictionTransformation(inout instance : Instance);
+
+modeltype Muml uses muml('http://www.fujaba.de/muml/0.2.2');
+modeltype Model uses muml::model('http://www.fujaba.de/muml/0.2.2');
+modeltype Component uses muml::model::component('http://www.fujaba.de/muml/0.2.2');
+modeltype Instance uses muml::model::instance('http://www.fujaba.de/muml/0.2.2');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main() {
+	log("QVT-O Script \"instances.qvto\" started.");
+
+
+	// Do something with the instances provided...
+	instance.rootObjects()[ComponentInstance].componentType;
+
+}

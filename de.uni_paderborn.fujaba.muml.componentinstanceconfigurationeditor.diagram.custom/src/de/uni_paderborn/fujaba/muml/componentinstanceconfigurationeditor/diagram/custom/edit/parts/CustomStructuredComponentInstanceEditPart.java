@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.instantiation.InstantiationCommand;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CreateInstancesCommand;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
@@ -56,7 +56,7 @@ public class CustomStructuredComponentInstanceEditPart extends
 			if (editingDomain != null) {
 				ComponentInstance componentInstance = (ComponentInstance) getNotationView()
 						.getElement();
-				InstantiationCommand command = new InstantiationCommand(
+				CreateInstancesCommand command = new CreateInstancesCommand(
 						componentInstance);
 				editingDomain.getCommandStack().execute(command);
 			}
