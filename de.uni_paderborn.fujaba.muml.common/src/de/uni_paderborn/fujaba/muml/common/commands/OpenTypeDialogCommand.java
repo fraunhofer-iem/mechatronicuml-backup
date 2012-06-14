@@ -43,9 +43,16 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 	private Shell shell;
 
+	private AdapterFactory adapterFactory;
+
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
 
 	private static final String TYPES_CATEGORY_NAME = "types";
+
+	public OpenTypeDialogCommand() {
+		adapterFactory = MumlCommonPlugin.getInstance()
+				.getItemProvidersAdapterFactory();
+	}
 
 	@Override
 	public Object execute(ExecutionEvent event) {
@@ -81,13 +88,14 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 							RootNode rootNode = (RootNode) rootContainer;
 							ModelElementCategory typeCategory = getTypeCategory(rootNode);
 							if (typeCategory == null) {
-								new TypeCategoryInitializer().initialize(rootNode);
+								new TypeCategoryInitializer()
+										.initialize(rootNode);
 							}
 							typeCategory = getTypeCategory(rootNode);
 							if (typeCategory != null) {
 								AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) TransactionUtil
 										.getEditingDomain(typeCategory);
-	
+
 								openTypeDialog(typeCategory, editingDomain);
 							} else {
 								// TODO: Error message
@@ -104,9 +112,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 	private void openTypeDialog(ModelElementCategory typeCategory,
 			AdapterFactoryEditingDomain editingDomain) {
-		AdapterFactory adapterFactory = MumlCommonPlugin.getInstance()
-				.getItemProvidersAdapterFactory();
-		
+
 		ILabelProvider labelProvider = null;
 		IPropertySourceProvider propertySourceProvider = null;
 		if (adapterFactory != null) {
@@ -114,8 +120,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 			propertySourceProvider = createPropertySourceProvider();
 		}
 
-		if (propertySourceProvider == null
-				|| labelProvider == null) {
+		if (propertySourceProvider == null || labelProvider == null) {
 			return;
 		}
 
@@ -125,8 +130,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 				labelProvider,
 				typeCategory,
 				ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				adapterFactory,
-				null);
+				adapterFactory, null);
 
 		// Create Extensions:
 		// Copied from
@@ -195,6 +199,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 	}
 
 	private IPropertySourceProvider createPropertySourceProvider() {
+
 		return new IPropertySourceProvider() {
 
 			@Override
@@ -202,13 +207,14 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 				if (object instanceof IPropertySource) {
 					return (IPropertySource) object;
 				}
-				AdapterFactory af = getAdapterFactory(object);
+				AdapterFactory af = adapterFactory;
 				if (af != null) {
-					IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
-							IItemPropertySource.class);
+					IItemPropertySource ips = (IItemPropertySource) af.adapt(
+							object, IItemPropertySource.class);
 					if (ips != null) {
 						EditingDomain ed = getEditingDomainFor(object);
-						return new CustomPropertySource(object, ips, af, ed, this, null);
+						return new CustomPropertySource(object, ips, af, ed,
+								this, null);
 					}
 				}
 				if (object instanceof IAdaptable) {
@@ -218,13 +224,14 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 				return null;
 			}
 
-			private AdapterFactoryEditingDomain getEditingDomainFor(Object object) {
+			private AdapterFactoryEditingDomain getEditingDomainFor(
+					Object object) {
 				return (AdapterFactoryEditingDomain) TransactionUtil
 						.getEditingDomain(object);
 			}
 
 			private AdapterFactory getAdapterFactory(Object object) {
-				AdapterFactoryEditingDomain editingDomain =getEditingDomainFor(object);
+				AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 				if (editingDomain != null) {
 					return editingDomain.getAdapterFactory();
 				}
