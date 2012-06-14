@@ -6,25 +6,26 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.instantiation.InstantiationCommand;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
-
-
 /**
- * A customized EditPart for ComponentInstances. A customized Figure will be used,
- * which underlines the text.
+ * A customized EditPart for ComponentInstances. A customized Figure will be
+ * used, which underlines the text.
  * 
  * @author bingo
  * 
  */
-public class CustomStructuredComponentInstanceEditPart extends StructuredComponentInstanceEditPart {
+public class CustomStructuredComponentInstanceEditPart extends
+		StructuredComponentInstanceEditPart {
 
 	public CustomStructuredComponentInstanceEditPart(View view) {
 		super(view);
@@ -34,11 +35,12 @@ public class CustomStructuredComponentInstanceEditPart extends StructuredCompone
 	protected IFigure createNodeShape() {
 		return primaryShape = new CustomComponentFigure();
 	}
-	
+
 	@Override
 	public void handleNotificationEvent(final Notification notification) {
 		Object feature = notification.getFeature();
-		if (InstancePackage.Literals.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC.equals(feature)) {
+		if (InstancePackage.Literals.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC
+				.equals(feature)) {
 			// ((CanonicalEditPolicy)getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE)).refresh();
 			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 					.getRegisteredEditPolicies(this.getDiagramView()
@@ -47,6 +49,16 @@ public class CustomStructuredComponentInstanceEditPart extends StructuredCompone
 					.hasNext();) {
 				CanonicalEditPolicy nextEditPolicy = it.next();
 				nextEditPolicy.refresh();
+			}
+		} else if (InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE
+				.equals(feature)) {
+			EditingDomain editingDomain = getEditingDomain();
+			if (editingDomain != null) {
+				ComponentInstance componentInstance = (ComponentInstance) getNotationView()
+						.getElement();
+				InstantiationCommand command = new InstantiationCommand(
+						componentInstance);
+				editingDomain.getCommandStack().execute(command);
 			}
 		}
 

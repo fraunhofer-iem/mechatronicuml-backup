@@ -94,10 +94,10 @@ public class AtomicComponentInstanceEditPart extends
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance3EditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance5EditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance3EditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance3EditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -123,14 +123,14 @@ public class AtomicComponentInstanceEditPart extends
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new StructuredComponentFigure();
+		return primaryShape = new ComponentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public StructuredComponentFigure getPrimaryShape() {
-		return (StructuredComponentFigure) primaryShape;
+	public ComponentFigure getPrimaryShape() {
+		return (ComponentFigure) primaryShape;
 	}
 
 	/**
@@ -142,46 +142,39 @@ public class AtomicComponentInstanceEditPart extends
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceComponentInstanceContentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureChildren();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceComponentInstanceContentsCompartmentEditPart) childEditPart)
-					.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance3EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NORTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance3EditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance5EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NORTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance5EditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance3EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NORTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance3EditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance3EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NORTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance3EditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
@@ -195,38 +188,31 @@ public class AtomicComponentInstanceEditPart extends
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel2EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceComponentInstanceContentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureChildren();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceComponentInstanceContentsCompartmentEditPart) childEditPart)
-					.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance3EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance3EditPart) childEditPart)
+					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance5EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance5EditPart) childEditPart)
+					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance3EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance3EditPart) childEditPart)
+					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance3EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance3EditPart) childEditPart)
+					.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
@@ -257,9 +243,6 @@ public class AtomicComponentInstanceEditPart extends
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceComponentInstanceContentsCompartmentEditPart) {
-			return getPrimaryShape().getFigureChildren();
-		}
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
@@ -367,27 +350,21 @@ public class AtomicComponentInstanceEditPart extends
 	/**
 	 * @generated
 	 */
-	public class StructuredComponentFigure extends RectangleFigure {
+	public class ComponentFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		private WrappingLabel fFigureComponentNameFigure;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureChildren;
 
 		/**
 		 * @generated
 		 */
-		public StructuredComponentFigure() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			this.setLayoutManager(layoutThis);
-
+		public ComponentFigure() {
+			this.setLayoutManager(new StackLayout());
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5)));
 			createContents();
 		}
 
@@ -396,43 +373,17 @@ public class AtomicComponentInstanceEditPart extends
 		 */
 		private void createContents() {
 
-			RectangleFigure container0 = new RectangleFigure();
-			container0.setFill(false);
-			container0.setOutline(false);
-			container0.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
+			RectangleFigure componentIconRectangle0 = new RectangleFigure();
+			componentIconRectangle0.setFill(false);
+			componentIconRectangle0.setOutline(false);
 
-			GridData constraintContainer0 = new GridData();
-			constraintContainer0.verticalAlignment = GridData.BEGINNING;
-			constraintContainer0.horizontalAlignment = GridData.FILL;
-			constraintContainer0.horizontalIndent = 0;
-			constraintContainer0.horizontalSpan = 1;
-			constraintContainer0.verticalSpan = 1;
-			constraintContainer0.grabExcessHorizontalSpace = true;
-			constraintContainer0.grabExcessVerticalSpace = false;
-			this.add(container0, constraintContainer0);
+			this.add(componentIconRectangle0);
 
-			GridLayout layoutContainer0 = new GridLayout();
-			layoutContainer0.numColumns = 2;
-			layoutContainer0.makeColumnsEqualWidth = false;
-			container0.setLayoutManager(layoutContainer0);
-
-			fFigureComponentNameFigure = new WrappingLabel();
-			fFigureComponentNameFigure.setText("");
-
-			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
-
-			GridData constraintFFigureComponentNameFigure = new GridData();
-			constraintFFigureComponentNameFigure.verticalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentNameFigure.horizontalIndent = 0;
-			constraintFFigureComponentNameFigure.horizontalSpan = 1;
-			constraintFFigureComponentNameFigure.verticalSpan = 1;
-			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = false;
-			container0.add(fFigureComponentNameFigure,
-					constraintFFigureComponentNameFigure);
+			GridLayout layoutComponentIconRectangle0 = new GridLayout();
+			layoutComponentIconRectangle0.numColumns = 1;
+			layoutComponentIconRectangle0.makeColumnsEqualWidth = false;
+			componentIconRectangle0
+					.setLayoutManager(layoutComponentIconRectangle0);
 
 			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
@@ -450,8 +401,8 @@ public class AtomicComponentInstanceEditPart extends
 			constraintComponentIconFigure1.verticalSpan = 1;
 			constraintComponentIconFigure1.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure1.grabExcessVerticalSpace = false;
-			container0
-					.add(componentIconFigure1, constraintComponentIconFigure1);
+			componentIconRectangle0.add(componentIconFigure1,
+					constraintComponentIconFigure1);
 
 			componentIconFigure1.setLayoutManager(new StackLayout());
 
@@ -494,19 +445,33 @@ public class AtomicComponentInstanceEditPart extends
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
-			fFigureChildren = new RectangleFigure();
-			fFigureChildren.setFill(false);
-			fFigureChildren.setOutline(false);
+			RectangleFigure componentNameRectangle0 = new RectangleFigure();
+			componentNameRectangle0.setFill(false);
+			componentNameRectangle0.setOutline(false);
 
-			GridData constraintFFigureChildren = new GridData();
-			constraintFFigureChildren.verticalAlignment = GridData.FILL;
-			constraintFFigureChildren.horizontalAlignment = GridData.FILL;
-			constraintFFigureChildren.horizontalIndent = 0;
-			constraintFFigureChildren.horizontalSpan = 1;
-			constraintFFigureChildren.verticalSpan = 1;
-			constraintFFigureChildren.grabExcessHorizontalSpace = true;
-			constraintFFigureChildren.grabExcessVerticalSpace = true;
-			this.add(fFigureChildren, constraintFFigureChildren);
+			this.add(componentNameRectangle0);
+
+			GridLayout layoutComponentNameRectangle0 = new GridLayout();
+			layoutComponentNameRectangle0.numColumns = 1;
+			layoutComponentNameRectangle0.makeColumnsEqualWidth = false;
+			componentNameRectangle0
+					.setLayoutManager(layoutComponentNameRectangle0);
+
+			fFigureComponentNameFigure = new WrappingLabel();
+			fFigureComponentNameFigure.setText("");
+
+			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
+
+			GridData constraintFFigureComponentNameFigure = new GridData();
+			constraintFFigureComponentNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.FILL;
+			constraintFFigureComponentNameFigure.horizontalIndent = 0;
+			constraintFFigureComponentNameFigure.horizontalSpan = 1;
+			constraintFFigureComponentNameFigure.verticalSpan = 1;
+			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = true;
+			componentNameRectangle0.add(fFigureComponentNameFigure,
+					constraintFFigureComponentNameFigure);
 
 		}
 
@@ -515,13 +480,6 @@ public class AtomicComponentInstanceEditPart extends
 		 */
 		public WrappingLabel getFigureComponentNameFigure() {
 			return fFigureComponentNameFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureChildren() {
-			return fFigureChildren;
 		}
 
 	}

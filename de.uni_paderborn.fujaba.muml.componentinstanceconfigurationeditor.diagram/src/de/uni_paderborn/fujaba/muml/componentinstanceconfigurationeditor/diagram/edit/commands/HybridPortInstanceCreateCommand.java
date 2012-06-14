@@ -41,8 +41,8 @@ public class HybridPortInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		return true;
-
+		// This command must not be used. The containment feature is not changable!
+		return false;
 	}
 
 	/**

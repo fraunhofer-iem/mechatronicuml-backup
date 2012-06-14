@@ -1,28 +1,26 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.parts;
 
-import java.util.Iterator;
-import java.util.List;
-
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.instantiation.InstantiationCommand;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
-
-
 /**
- * A customized EditPart for ComponentInstances. A customized Figure will be used,
- * which underlines the text.
+ * A customized EditPart for ComponentInstances. A customized Figure will be
+ * used, which underlines the text.
  * 
  * @author bingo
  * 
  */
-public class CustomAtomicComponentInstanceEditPart extends AtomicComponentInstanceEditPart {
+public class CustomAtomicComponentInstanceEditPart extends
+		StructuredComponentInstanceEditPart {
 
 	public CustomAtomicComponentInstanceEditPart(View view) {
 		super(view);
@@ -38,6 +36,24 @@ public class CustomAtomicComponentInstanceEditPart extends AtomicComponentInstan
 		NodeFigure plate = super.createNodePlate();
 		plate.setMinimumSize(new Dimension(0, 0));
 		return plate;
+	}
+
+	@Override
+	public void handleNotificationEvent(final Notification notification) {
+		Object feature = notification.getFeature();
+		if (InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE
+				.equals(feature)) {
+			EditingDomain editingDomain = getEditingDomain();
+			if (editingDomain != null) {
+				ComponentInstance componentInstance = (ComponentInstance) getNotationView()
+						.getElement();
+				InstantiationCommand command = new InstantiationCommand(
+						componentInstance);
+				editingDomain.getCommandStack().execute(command);
+			}
+		}
+
+		super.handleNotificationEvent(notification);
 	}
 
 	public class CustomComponentFigure extends StructuredComponentFigure {

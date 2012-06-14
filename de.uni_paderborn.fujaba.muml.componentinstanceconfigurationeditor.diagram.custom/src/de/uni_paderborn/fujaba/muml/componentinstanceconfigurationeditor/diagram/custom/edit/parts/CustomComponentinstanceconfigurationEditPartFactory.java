@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart;
@@ -58,9 +57,6 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 				
 			case HybridPortInstance2EditPart.VISUAL_ID:
 				return new CustomHybridPortInstance2EditPart(view);
-				
-			case AtomicComponentInstanceEditPart.VISUAL_ID:
-				return new CustomAtomicComponentInstanceEditPart(view);
 
 			case StructuredComponentInstanceEditPart.VISUAL_ID:
 				return new CustomStructuredComponentInstanceEditPart(view);

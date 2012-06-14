@@ -1,9 +1,9 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers;
 
 import java.util.Collections;
-
 import java.util.HashMap;
 import java.util.Map;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
@@ -26,11 +26,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class ComponentInstanceLabelExpressionLabelParser5018 implements IParser {
+public class StructuredComponentInstanceLabelExpressionLabelParser5026
+		implements IParser {
 	/**
 	 * @generated
 	 */
-	public ComponentInstanceLabelExpressionLabelParser5018() {
+	public StructuredComponentInstanceLabelExpressionLabelParser5026() {
 	}
 
 	/**
@@ -84,10 +85,10 @@ public class ComponentInstanceLabelExpressionLabelParser5018 implements IParser 
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						6,
+						8,
 						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-								.getComponentInstance(), typeEnv).evaluate(
-						target, env);
+								.getStructuredComponentInstance(), typeEnv)
+				.evaluate(target, env);
 		return String.valueOf(result);
 	}
 

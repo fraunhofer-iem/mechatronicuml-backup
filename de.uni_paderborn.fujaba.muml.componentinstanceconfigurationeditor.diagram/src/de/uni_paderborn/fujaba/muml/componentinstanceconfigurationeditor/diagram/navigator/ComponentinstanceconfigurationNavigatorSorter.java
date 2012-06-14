@@ -10,7 +10,7 @@ public class ComponentinstanceconfigurationNavigatorSorter extends ViewerSorter 
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7018;
+	private static final int GROUP_CATEGORY = 7014;
 
 	/**
 	 * @generated
