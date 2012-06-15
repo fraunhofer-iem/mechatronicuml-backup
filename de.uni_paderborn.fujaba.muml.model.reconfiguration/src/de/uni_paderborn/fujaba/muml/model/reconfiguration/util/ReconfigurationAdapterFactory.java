@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -106,6 +107,14 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createReconfigurationRuleAdapter();
 			}
 			@Override
+			public Adapter casePartDataType(PartDataType object) {
+				return createPartDataTypeAdapter();
+			}
+			@Override
+			public Adapter casePortDataType(PortDataType object) {
+				return createPortDataTypeAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -132,6 +141,10 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePort(Port object) {
 				return createPortAdapter();
+			}
+			@Override
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -238,6 +251,34 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType <em>Part Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType
+	 * @generated
+	 */
+	public Adapter createPartDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType <em>Port Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType
+	 * @generated
+	 */
+	public Adapter createPortDataTypeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -332,6 +373,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.DataType
+	 * @generated
+	 */
+	public Adapter createDataTypeAdapter() {
 		return null;
 	}
 

@@ -23,5 +23,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRule/inParameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRule/outParameters"/>
     </genClasses>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//PartDataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//PartDataType/componentPart"/>
+    </genClasses>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//PortDataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//PortDataType/port"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

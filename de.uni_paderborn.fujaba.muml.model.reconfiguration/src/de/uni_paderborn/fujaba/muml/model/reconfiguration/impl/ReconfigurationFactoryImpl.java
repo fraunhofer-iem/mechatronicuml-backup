@@ -64,6 +64,8 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.RECONFIGURATION_PORT: return createReconfigurationPort();
 			case ReconfigurationPackage.MANAGER: return createManager();
 			case ReconfigurationPackage.EXECUTOR: return createExecutor();
+			case ReconfigurationPackage.PART_DATA_TYPE: return createPartDataType();
+			case ReconfigurationPackage.PORT_DATA_TYPE: return createPortDataType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -107,6 +109,26 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public Executor createExecutor() {
 		ExecutorImpl executor = new ExecutorImpl();
 		return executor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartDataType createPartDataType() {
+		PartDataTypeImpl partDataType = new PartDataTypeImpl();
+		return partDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortDataType createPortDataType() {
+		PortDataTypeImpl portDataType = new PortDataTypeImpl();
+		return portDataType;
 	}
 
 	/**

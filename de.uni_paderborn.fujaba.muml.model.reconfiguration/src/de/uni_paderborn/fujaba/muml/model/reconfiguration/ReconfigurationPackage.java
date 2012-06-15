@@ -606,6 +606,135 @@ public interface ReconfigurationPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getPartDataType()
+	 * @generated
+	 */
+	int PART_DATA_TYPE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__ANNOTATION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__EXTENSION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__NAME = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__COMMENT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Component Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__COMPONENT_PART = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Part Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl <em>Port Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getPortDataType()
+	 * @generated
+	 */
+	int PORT_DATA_TYPE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__ANNOTATION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__EXTENSION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__NAME = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__COMMENT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__PORT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Port Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE_FEATURE_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent <em>Reconfigurable Structured Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -730,6 +859,48 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReconfigurationRule_OutParameters();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType <em>Part Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Part Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType
+	 * @generated
+	 */
+	EClass getPartDataType();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType#getComponentPart <em>Component Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Component Part</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType#getComponentPart()
+	 * @see #getPartDataType()
+	 * @generated
+	 */
+	EReference getPartDataType_ComponentPart();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType <em>Port Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType
+	 * @generated
+	 */
+	EClass getPortDataType();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType#getPort()
+	 * @see #getPortDataType()
+	 * @generated
+	 */
+	EReference getPortDataType_Port();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -860,6 +1031,42 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RECONFIGURATION_RULE__OUT_PARAMETERS = eINSTANCE.getReconfigurationRule_OutParameters();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getPartDataType()
+		 * @generated
+		 */
+		EClass PART_DATA_TYPE = eINSTANCE.getPartDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Part</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PART_DATA_TYPE__COMPONENT_PART = eINSTANCE.getPartDataType_ComponentPart();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl <em>Port Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getPortDataType()
+		 * @generated
+		 */
+		EClass PORT_DATA_TYPE = eINSTANCE.getPortDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_DATA_TYPE__PORT = eINSTANCE.getPortDataType_Port();
 
 	}
 

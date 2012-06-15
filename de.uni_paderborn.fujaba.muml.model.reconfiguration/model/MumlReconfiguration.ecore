@@ -56,4 +56,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outParameters" upperBound="-1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartDataType" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/DataType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A PartDataType is used to type a parameter of a reconfiguration rule over a component part of a structured component. Then, only a component instance which is typed over the respective component part may be passed as a parameter."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortDataType" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/DataType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A PortDataType is used to type a parameter of a reconfiguration rule over a port of a structured component. Then, only a port instance which is typed over the respective port may be passed as a parameter."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port"/>
+  </eClassifiers>
 </ecore:EPackage>

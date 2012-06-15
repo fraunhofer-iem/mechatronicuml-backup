@@ -24,6 +24,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory;
@@ -85,6 +87,20 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass reconfigurationRuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass partDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass portDataTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -270,6 +286,42 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPartDataType() {
+		return partDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPartDataType_ComponentPart() {
+		return (EReference)partDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPortDataType() {
+		return portDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPortDataType_Port() {
+		return (EReference)portDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ReconfigurationFactory getReconfigurationFactory() {
 		return (ReconfigurationFactory)getEFactoryInstance();
 	}
@@ -310,6 +362,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurationRuleEClass = createEClass(RECONFIGURATION_RULE);
 		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__IN_PARAMETERS);
 		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__OUT_PARAMETERS);
+
+		partDataTypeEClass = createEClass(PART_DATA_TYPE);
+		createEReference(partDataTypeEClass, PART_DATA_TYPE__COMPONENT_PART);
+
+		portDataTypeEClass = createEClass(PORT_DATA_TYPE);
+		createEReference(portDataTypeEClass, PORT_DATA_TYPE__PORT);
 	}
 
 	/**
@@ -353,6 +411,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		executorEClass.getESuperTypes().add(this.getReconfigurationController());
 		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		partDataTypeEClass.getESuperTypes().add(theCorePackage.getDataType());
+		portDataTypeEClass.getESuperTypes().add(theCorePackage.getDataType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(reconfigurableStructuredComponentEClass, ReconfigurableStructuredComponent.class, "ReconfigurableStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -372,6 +432,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(reconfigurationRuleEClass, ReconfigurationRule.class, "ReconfigurationRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationRule_InParameters(), theCorePackage.getParameter(), null, "inParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRule_OutParameters(), theCorePackage.getParameter(), null, "outParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(partDataTypeEClass, PartDataType.class, "PartDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPartDataType_ComponentPart(), theComponentPackage.getComponentPart(), null, "componentPart", null, 1, 1, PartDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(portDataTypeEClass, PortDataType.class, "PortDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPortDataType_Port(), theComponentPackage.getPort(), null, "port", null, 1, 1, PortDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -398,7 +464,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });							
+		   });									
 	}
 
 	/**
@@ -420,7 +486,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)"
-		   });			
+		   });					
 	}
 
 } //ReconfigurationPackageImpl

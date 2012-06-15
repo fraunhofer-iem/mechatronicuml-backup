@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -141,6 +142,26 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ReconfigurationPackage.PART_DATA_TYPE: {
+				PartDataType partDataType = (PartDataType)theEObject;
+				T result = casePartDataType(partDataType);
+				if (result == null) result = caseDataType(partDataType);
+				if (result == null) result = caseNamedElement(partDataType);
+				if (result == null) result = caseCommentableElement(partDataType);
+				if (result == null) result = caseExtendableElement(partDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.PORT_DATA_TYPE: {
+				PortDataType portDataType = (PortDataType)theEObject;
+				T result = casePortDataType(portDataType);
+				if (result == null) result = caseDataType(portDataType);
+				if (result == null) result = caseNamedElement(portDataType);
+				if (result == null) result = caseCommentableElement(portDataType);
+				if (result == null) result = caseExtendableElement(portDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -232,6 +253,36 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReconfigurationRule(ReconfigurationRule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Part Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Part Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePartDataType(PartDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePortDataType(PortDataType object) {
 		return null;
 	}
 
@@ -337,6 +388,21 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePort(Port object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataType(DataType object) {
 		return null;
 	}
 
