@@ -40,8 +40,8 @@ import org.storydriven.core.impl.NamedElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getInParameters <em>In Parameters</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getOutParameters <em>Out Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getReturnParameters <em>Return Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,24 +69,24 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInParameters() <em>In Parameters</em>}' containment reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInParameters()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Parameter> inParameters;
+	protected EList<Parameter> parameters;
 
 	/**
-	 * The cached value of the '{@link #getOutParameters() <em>Out Parameters</em>}' reference list.
+	 * The cached value of the '{@link #getReturnParameters() <em>Return Parameters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutParameters()
+	 * @see #getReturnParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Parameter> outParameters;
+	protected EList<Parameter> returnParameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,11 +133,11 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getInParameters() {
-		if (inParameters == null) {
-			inParameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_RULE__IN_PARAMETERS);
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS);
 		}
-		return inParameters;
+		return parameters;
 	}
 
 	/**
@@ -145,11 +145,11 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getOutParameters() {
-		if (outParameters == null) {
-			outParameters = new EObjectResolvingEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_RULE__OUT_PARAMETERS);
+	public EList<Parameter> getReturnParameters() {
+		if (returnParameters == null) {
+			returnParameters = new EObjectResolvingEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS);
 		}
-		return outParameters;
+		return returnParameters;
 	}
 
 	/**
@@ -160,8 +160,8 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__IN_PARAMETERS:
-				return ((InternalEList<?>)getInParameters()).basicRemove(otherEnd, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -176,10 +176,10 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
 				return getComment();
-			case ReconfigurationPackage.RECONFIGURATION_RULE__IN_PARAMETERS:
-				return getInParameters();
-			case ReconfigurationPackage.RECONFIGURATION_RULE__OUT_PARAMETERS:
-				return getOutParameters();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
+				return getParameters();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
+				return getReturnParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -196,13 +196,13 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
 				setComment((String)newValue);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__IN_PARAMETERS:
-				getInParameters().clear();
-				getInParameters().addAll((Collection<? extends Parameter>)newValue);
+			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__OUT_PARAMETERS:
-				getOutParameters().clear();
-				getOutParameters().addAll((Collection<? extends Parameter>)newValue);
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
+				getReturnParameters().clear();
+				getReturnParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,11 +219,11 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__IN_PARAMETERS:
-				getInParameters().clear();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
+				getParameters().clear();
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__OUT_PARAMETERS:
-				getOutParameters().clear();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
+				getReturnParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -239,10 +239,10 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ReconfigurationPackage.RECONFIGURATION_RULE__IN_PARAMETERS:
-				return inParameters != null && !inParameters.isEmpty();
-			case ReconfigurationPackage.RECONFIGURATION_RULE__OUT_PARAMETERS:
-				return outParameters != null && !outParameters.isEmpty();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
+				return returnParameters != null && !returnParameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

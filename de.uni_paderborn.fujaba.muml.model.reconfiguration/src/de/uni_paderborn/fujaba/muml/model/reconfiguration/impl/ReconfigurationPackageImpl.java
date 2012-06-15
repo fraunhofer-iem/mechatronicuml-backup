@@ -268,7 +268,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReconfigurationRule_InParameters() {
+	public EReference getReconfigurationRule_Parameters() {
 		return (EReference)reconfigurationRuleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -277,7 +277,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReconfigurationRule_OutParameters() {
+	public EReference getReconfigurationRule_ReturnParameters() {
 		return (EReference)reconfigurationRuleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -360,8 +360,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		executorEClass = createEClass(EXECUTOR);
 
 		reconfigurationRuleEClass = createEClass(RECONFIGURATION_RULE);
-		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__IN_PARAMETERS);
-		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__OUT_PARAMETERS);
+		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__PARAMETERS);
+		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__RETURN_PARAMETERS);
 
 		partDataTypeEClass = createEClass(PART_DATA_TYPE);
 		createEReference(partDataTypeEClass, PART_DATA_TYPE__COMPONENT_PART);
@@ -430,8 +430,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(executorEClass, Executor.class, "Executor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(reconfigurationRuleEClass, ReconfigurationRule.class, "ReconfigurationRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReconfigurationRule_InParameters(), theCorePackage.getParameter(), null, "inParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReconfigurationRule_OutParameters(), theCorePackage.getParameter(), null, "outParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationRule_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationRule_ReturnParameters(), theCorePackage.getParameter(), null, "returnParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(partDataTypeEClass, PartDataType.class, "PartDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartDataType_ComponentPart(), theComponentPackage.getComponentPart(), null, "componentPart", null, 1, 1, PartDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -25,8 +25,8 @@ import org.storydriven.core.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getInParameters <em>In Parameters</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getOutParameters <em>Out Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReturnParameters <em>Return Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,35 +36,35 @@ import org.storydriven.core.NamedElement;
  */
 public interface ReconfigurationRule extends NamedElement, CommentableElement {
 	/**
-	 * Returns the value of the '<em><b>In Parameters</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>In Parameters</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>In Parameters</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurationRule_InParameters()
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurationRule_Parameters()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Parameter> getInParameters();
+	EList<Parameter> getParameters();
 
 	/**
-	 * Returns the value of the '<em><b>Out Parameters</b></em>' reference list.
+	 * Returns the value of the '<em><b>Return Parameters</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Out Parameters</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Return Parameters</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Out Parameters</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurationRule_OutParameters()
+	 * @return the value of the '<em>Return Parameters</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurationRule_ReturnParameters()
 	 * @model
 	 * @generated
 	 */
-	EList<Parameter> getOutParameters();
+	EList<Parameter> getReturnParameters();
 
 } // ReconfigurationRule

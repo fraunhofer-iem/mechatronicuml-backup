@@ -578,22 +578,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_RULE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>In Parameters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__IN_PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_RULE__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Out Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Return Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__OUT_PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RECONFIGURATION_RULE__RETURN_PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -839,26 +839,26 @@ public interface ReconfigurationPackage extends EPackage {
 	EClass getReconfigurationRule();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getInParameters <em>In Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>In Parameters</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getInParameters()
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getParameters()
 	 * @see #getReconfigurationRule()
 	 * @generated
 	 */
-	EReference getReconfigurationRule_InParameters();
+	EReference getReconfigurationRule_Parameters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getOutParameters <em>Out Parameters</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReturnParameters <em>Return Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Out Parameters</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getOutParameters()
+	 * @return the meta object for the reference list '<em>Return Parameters</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReturnParameters()
 	 * @see #getReconfigurationRule()
 	 * @generated
 	 */
-	EReference getReconfigurationRule_OutParameters();
+	EReference getReconfigurationRule_ReturnParameters();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType <em>Part Data Type</em>}'.
@@ -1017,20 +1017,20 @@ public interface ReconfigurationPackage extends EPackage {
 		EClass RECONFIGURATION_RULE = eINSTANCE.getReconfigurationRule();
 
 		/**
-		 * The meta object literal for the '<em><b>In Parameters</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RECONFIGURATION_RULE__IN_PARAMETERS = eINSTANCE.getReconfigurationRule_InParameters();
+		EReference RECONFIGURATION_RULE__PARAMETERS = eINSTANCE.getReconfigurationRule_Parameters();
 
 		/**
-		 * The meta object literal for the '<em><b>Out Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Return Parameters</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RECONFIGURATION_RULE__OUT_PARAMETERS = eINSTANCE.getReconfigurationRule_OutParameters();
+		EReference RECONFIGURATION_RULE__RETURN_PARAMETERS = eINSTANCE.getReconfigurationRule_ReturnParameters();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
