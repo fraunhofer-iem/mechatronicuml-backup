@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentstorydiagram"
+    nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.3.0" nsPrefix="componentstorydiagram">
+  <eSubpackages name="controlflow" nsURI="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.0"
+      nsPrefix="controlflow">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryDiagram" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity ../../de.uni_paderborn.fujaba.muml.model.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryNode" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentStoryPattern"
+          lowerBound="1" eType="#//componentstorypattern/ComponentStoryPattern"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStopNode" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode"/>
+  </eSubpackages>
+  <eSubpackages name="componentstorypattern" nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.0"
+      nsPrefix="componentstorypattern">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryPattern"/>
+  </eSubpackages>
+</ecore:EPackage>
