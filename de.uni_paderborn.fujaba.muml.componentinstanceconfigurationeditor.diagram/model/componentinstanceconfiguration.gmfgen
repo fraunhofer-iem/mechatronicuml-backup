@@ -1689,13 +1689,13 @@
       <expressions
           body="'instance'"/>
       <expressions
-          body="(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(' : ').concat(&#xD;&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.componentType.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
+          body="let compName : String = if self.componentType.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPart.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;self.name.concat(partName.concat(' : '.concat(compName)))"/>
       <expressions
           body="'instance'"/>
       <expressions
           body="'configuration'"/>
       <expressions
-          body="(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(' : ').concat(&#xD;&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.componentType.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
+          body="let compName : String = if self.componentType.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPart.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;self.name.concat(partName.concat(' : '.concat(compName)))"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->isEmpty()"/>
@@ -1709,7 +1709,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.4/@labels.0/@modelFacet"
-        className="AtomicComponentInstanceLabelExpressionLabelParser5027"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/AtomicComponentInstance"/>
@@ -1717,7 +1716,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.0/@modelFacet"
-        className="AtomicComponentInstanceLabelExpressionLabelParser5028"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/AtomicComponentInstance"/>
@@ -1725,7 +1723,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.0/@modelFacet"
-        className="StructuredComponentInstanceLabelExpressionLabelParser5029"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/StructuredComponentInstance"/>
@@ -1733,7 +1730,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet"
-        className="StructuredComponentInstanceLabelExpressionLabelParser5026"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/StructuredComponentInstance"/>
