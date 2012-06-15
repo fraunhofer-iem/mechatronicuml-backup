@@ -6,8 +6,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.StructuredComponentComponentCompartmentItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy;
 
 /**
  * A custom CompartmentEditPart for a StructuredComponent. It prevents deletion
@@ -16,10 +16,10 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.polic
  * @author bingo
  * 
  */
-public class CustomStructuredComponentComponentCompartmentEditPart extends
-		StructuredComponentComponentCompartmentEditPart {
+public class CustomStaticStructuredComponentComponentCompartmentEditPart extends
+		StaticStructuredComponentComponentCompartmentEditPart {
 
-	public CustomStructuredComponentComponentCompartmentEditPart(View view) {
+	public CustomStaticStructuredComponentComponentCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -27,7 +27,7 @@ public class CustomStructuredComponentComponentCompartmentEditPart extends
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new StructuredComponentComponentCompartmentItemSemanticEditPolicy() {
+				new StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy() {
 					protected Command getSemanticCommand(
 							IEditCommandRequest request) {
 						if (request instanceof DestroyRequest) {

@@ -11,9 +11,8 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.MumlEditPartFactory;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -22,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlV
  * @author bingo
  * 
  */
-public class CustomStructuredcomponentEditPartFactory extends
+public class CustomStaticStructuredcomponentEditPartFactory extends
 		MumlEditPartFactory {
 
 	@Override
@@ -31,8 +30,8 @@ public class CustomStructuredcomponentEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case StructuredComponentEditPart.VISUAL_ID:
-				return new CustomStructuredComponentEditPart(view);
+			case StaticStructuredComponentEditPart.VISUAL_ID:
+				return new CustomStaticStructuredComponentEditPart(view);
 			case DiscretePortEditPart.VISUAL_ID:
 				return new CustomDiscretePortEditPart(view);
 			case ContinuousPortEditPart.VISUAL_ID:
@@ -47,8 +46,8 @@ public class CustomStructuredcomponentEditPartFactory extends
 				return new CustomHybridPortEditPart(view);
 			case ComponentPartEditPart.VISUAL_ID:
 				return new CustomComponentPartEditPart(view);
-			case StructuredComponentComponentCompartmentEditPart.VISUAL_ID:
-				return new CustomStructuredComponentComponentCompartmentEditPart(view);
+			case StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
+				return new CustomStaticStructuredComponentComponentCompartmentEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

@@ -4,12 +4,12 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart;
 
-public class CustomStructuredComponentEditPart extends
-		StructuredComponentEditPart {
+public class CustomStaticStructuredComponentEditPart extends
+		StaticStructuredComponentEditPart {
 
-	public CustomStructuredComponentEditPart(View view) {
+	public CustomStaticStructuredComponentEditPart(View view) {
 		super(view);
 	}
 

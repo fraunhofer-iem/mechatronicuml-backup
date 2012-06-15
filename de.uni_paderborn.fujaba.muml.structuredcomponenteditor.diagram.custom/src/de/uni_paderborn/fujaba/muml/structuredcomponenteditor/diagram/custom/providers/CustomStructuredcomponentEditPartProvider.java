@@ -1,6 +1,6 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.providers;
 
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.parts.CustomStructuredcomponentEditPartFactory;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.parts.CustomStaticStructuredcomponentEditPartFactory;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlEditPartProvider;
 
 /**
@@ -13,7 +13,7 @@ public class CustomStructuredcomponentEditPartProvider extends
 		MumlEditPartProvider {
 
 	public CustomStructuredcomponentEditPartProvider() {
-		setFactory(new CustomStructuredcomponentEditPartFactory());
+		setFactory(new CustomStaticStructuredcomponentEditPartFactory());
 		setAllowCaching(true);
 	}
 
