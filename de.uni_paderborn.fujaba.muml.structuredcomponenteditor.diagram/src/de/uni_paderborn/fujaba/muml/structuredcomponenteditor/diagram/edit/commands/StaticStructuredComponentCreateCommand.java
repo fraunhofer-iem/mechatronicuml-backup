@@ -17,12 +17,12 @@ import de.fujaba.modelinstance.ModelElementCategory;
 /**
  * @generated
  */
-public class StructuredComponentCreateCommand extends EditElementCommand {
+public class StaticStructuredComponentCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public StructuredComponentCreateCommand(CreateElementRequest req) {
+	public StaticStructuredComponentCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -52,8 +52,8 @@ public class StructuredComponentCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
-				.createStructuredComponent();
+		de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
+				.createStaticStructuredComponent();
 
 		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
@@ -68,7 +68,7 @@ public class StructuredComponentCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.component.StructuredComponent newElement,
+			de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

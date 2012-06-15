@@ -689,19 +689,19 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2004"
-        editPartClassName="StructuredComponentEditPart"
-        itemSemanticEditPolicyClassName="StructuredComponentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="StructuredComponentCanonicalEditPolicy"
+        visualID="2005"
+        editPartClassName="StaticStructuredComponentEditPart"
+        itemSemanticEditPolicyClassName="StaticStructuredComponentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="StaticStructuredComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
         compartments="//@diagram/@compartments.0"
-        graphicalNodeEditPolicyClassName="StructuredComponentGraphicalNodeEditPolicy"
-        createCommandClassName="StructuredComponentCreateCommand">
+        graphicalNodeEditPolicyClassName="StaticStructuredComponentGraphicalNodeEditPolicy"
+        createCommandClassName="StaticStructuredComponentCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="StructuredComponentEditHelper"/>
+          editHelperClassName="StaticStructuredComponentEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredComponentFigure"
@@ -713,16 +713,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/StructuredComponent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/StaticStructuredComponent"/>
         <containmentMetaFeature
             href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
             href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
       <labels
-          visualID="5020"
-          editPartClassName="StructuredComponentNameEditPart"
-          itemSemanticEditPolicyClassName="StructuredComponentNameItemSemanticEditPolicy">
+          visualID="5021"
+          editPartClassName="StaticStructuredComponentNameEditPart"
+          itemSemanticEditPolicyClassName="StaticStructuredComponentNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -800,10 +800,10 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7004"
-        editPartClassName="StructuredComponentComponentCompartmentEditPart"
-        itemSemanticEditPolicyClassName="StructuredComponentComponentCompartmentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="StructuredComponentComponentCompartmentCanonicalEditPolicy"
+        visualID="7005"
+        editPartClassName="StaticStructuredComponentComponentCompartmentEditPart"
+        itemSemanticEditPolicyClassName="StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="StaticStructuredComponentComponentCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.3"
         title="ComponentCompartment"
         canCollapse="false"

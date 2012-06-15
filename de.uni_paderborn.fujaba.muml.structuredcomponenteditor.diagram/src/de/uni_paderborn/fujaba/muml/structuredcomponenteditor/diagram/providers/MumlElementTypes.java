@@ -51,7 +51,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StructuredComponent_2004 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StructuredComponent_2004"); //$NON-NLS-1$
+	public static final IElementType StaticStructuredComponent_2005 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StaticStructuredComponent_2005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -213,9 +213,9 @@ public class MumlElementTypes {
 					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					StructuredComponent_2004,
+					StaticStructuredComponent_2005,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-							.getStructuredComponent());
+							.getStaticStructuredComponent());
 
 			elements.put(
 					HybridPort_3009,
@@ -279,7 +279,7 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(StructuredComponent_2004);
+			KNOWN_ELEMENT_TYPES.add(StaticStructuredComponent_2005);
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3009);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3010);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3011);
@@ -300,8 +300,8 @@ public class MumlElementTypes {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID:
-			return StructuredComponent_2004;
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
+			return StaticStructuredComponent_2005;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return HybridPort_3009;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:

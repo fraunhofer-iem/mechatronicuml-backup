@@ -10,7 +10,7 @@
         href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StaticStructuredComponent"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel

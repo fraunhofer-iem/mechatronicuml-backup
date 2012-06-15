@@ -97,7 +97,7 @@
             name="component">
          
          <child
-               class="StructuredComponent"
+               class="StaticStructuredComponent"
                packageNsUri="http://www.fujaba.de/muml/model/component/0.2.3">
          </child>
          
@@ -121,8 +121,8 @@
          </diagramElement>
          
          <node
-               domainElement="StructuredComponent"
-               semanticHint="2004">
+               domainElement="StaticStructuredComponent"
+               semanticHint="2005">
          </node>
          
          <node
@@ -358,7 +358,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Structuredcomponent"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,3009,3010,3011,3012,3013,3014,3015"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3009,3010,3011,3012,3013,3014,3015"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003,4004"/>
       </viewProvider>
    </extension>
@@ -371,16 +371,16 @@
             <method name="getType()" value="Structuredcomponent"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2004,3009,3010,3011,3012,3013,3014,3015"/>
+            <method name="getType()" value="2005,3009,3010,3011,3012,3013,3014,3015"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4003,4004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5020,5011,5012,5013,5017,5014,5015,5016"/>
+            <method name="getType()" value="5021,5011,5012,5013,5017,5014,5015,5016"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7004"/>
+            <method name="getType()" value="7005"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -391,8 +391,8 @@
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart" id="ModelElementCategory_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart" id="StructuredComponent_2004"/>
-         <context elements="ModelElementCategory_1000,StructuredComponent_2004"/>
+         <object class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart" id="StaticStructuredComponent_2005"/>
+         <context elements="ModelElementCategory_1000,StaticStructuredComponent_2005"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -424,12 +424,12 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.2.3">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StructuredComponent_2004"
-               name="%metatype.name.StructuredComponent_2004"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StaticStructuredComponent_2005"
+               name="%metatype.name.StaticStructuredComponent_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StructuredComponent"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.StructuredComponentEditHelper">
-            <param name="semanticHint" value="2004"/>
+               eclass="StaticStructuredComponent"
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.StaticStructuredComponentEditHelper">
+            <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.2.3">
@@ -532,7 +532,7 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ModelElementCategory_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StructuredComponent_2004"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StaticStructuredComponent_2005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3009"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3010"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3011"/>

@@ -42,13 +42,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class StructuredComponentNameEditPart extends CompartmentEditPart
+public class StaticStructuredComponentNameEditPart extends CompartmentEditPart
 		implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5020;
+	public static final int VISUAL_ID = 5021;
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class StructuredComponentNameEditPart extends CompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public StructuredComponentNameEditPart(View view) {
+	public StaticStructuredComponentNameEditPart(View view) {
 		super(view);
 	}
 
@@ -290,10 +290,10 @@ public class StructuredComponentNameEditPart extends CompartmentEditPart
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.StructuredComponent_2004,
+							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.StaticStructuredComponent_2005,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentNameEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

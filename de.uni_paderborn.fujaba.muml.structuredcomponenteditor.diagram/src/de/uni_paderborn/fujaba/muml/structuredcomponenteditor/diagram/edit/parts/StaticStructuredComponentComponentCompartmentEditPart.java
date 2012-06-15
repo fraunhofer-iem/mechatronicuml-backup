@@ -13,18 +13,18 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StructuredComponentComponentCompartmentEditPart extends
+public class StaticStructuredComponentComponentCompartmentEditPart extends
 		ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7004;
+	public static final int VISUAL_ID = 7005;
 
 	/**
 	 * @generated
 	 */
-	public StructuredComponentComponentCompartmentEditPart(View view) {
+	public StaticStructuredComponentComponentCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -32,7 +32,7 @@ public class StructuredComponentComponentCompartmentEditPart extends
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.Messages.StructuredComponentComponentCompartmentEditPart_title;
+		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.Messages.StaticStructuredComponentComponentCompartmentEditPart_title;
 	}
 
 	/**
@@ -64,14 +64,14 @@ public class StructuredComponentComponentCompartmentEditPart extends
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.StructuredComponentComponentCompartmentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.StructuredComponentComponentCompartmentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.StaticStructuredComponentComponentCompartmentCanonicalEditPolicy());
 	}
 
 	/**

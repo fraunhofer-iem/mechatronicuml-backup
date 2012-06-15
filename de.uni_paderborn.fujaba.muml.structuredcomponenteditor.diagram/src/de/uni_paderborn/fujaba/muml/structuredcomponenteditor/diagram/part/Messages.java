@@ -333,7 +333,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StructuredComponentComponentCompartmentEditPart_title;
+	public static String StaticStructuredComponentComponentCompartmentEditPart_title;
 
 	/**
 	 * @generated
