@@ -76,7 +76,7 @@ public class ReconfigurationRuleItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addOutParametersPropertyDescriptor(object);
+			addReturnParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -104,19 +104,19 @@ public class ReconfigurationRuleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Out Parameters feature.
+	 * This adds a property descriptor for the Return Parameters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutParametersPropertyDescriptor(Object object) {
+	protected void addReturnParametersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ReconfigurationRule_outParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_outParameters_feature", "_UI_ReconfigurationRule_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__OUT_PARAMETERS,
+				 getString("_UI_ReconfigurationRule_returnParameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_returnParameters_feature", "_UI_ReconfigurationRule_type"),
+				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RETURN_PARAMETERS,
 				 true,
 				 false,
 				 true,
@@ -137,7 +137,7 @@ public class ReconfigurationRuleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__IN_PARAMETERS);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -184,7 +184,7 @@ public class ReconfigurationRuleItemProvider
 			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__IN_PARAMETERS:
+			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -214,7 +214,7 @@ public class ReconfigurationRuleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__IN_PARAMETERS,
+				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS,
 				 CoreFactory.eINSTANCE.createParameter()));
 	}
 
