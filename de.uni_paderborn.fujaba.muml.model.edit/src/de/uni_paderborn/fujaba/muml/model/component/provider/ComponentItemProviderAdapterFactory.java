@@ -144,26 +144,26 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StructuredComponentItemProvider structuredComponentItemProvider;
+	protected StaticStructuredComponentItemProvider staticStructuredComponentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createStructuredComponentAdapter() {
-		if (structuredComponentItemProvider == null) {
-			structuredComponentItemProvider = new StructuredComponentItemProvider(this);
+	public Adapter createStaticStructuredComponentAdapter() {
+		if (staticStructuredComponentItemProvider == null) {
+			staticStructuredComponentItemProvider = new StaticStructuredComponentItemProvider(this);
 		}
 
-		return structuredComponentItemProvider;
+		return staticStructuredComponentItemProvider;
 	}
 
 	/**
@@ -383,7 +383,7 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (continuousPortItemProvider != null) continuousPortItemProvider.dispose();
 		if (discretePortItemProvider != null) discretePortItemProvider.dispose();
 		if (componentPartItemProvider != null) componentPartItemProvider.dispose();
-		if (structuredComponentItemProvider != null) structuredComponentItemProvider.dispose();
+		if (staticStructuredComponentItemProvider != null) staticStructuredComponentItemProvider.dispose();
 		if (atomicComponentItemProvider != null) atomicComponentItemProvider.dispose();
 		if (assemblyItemProvider != null) assemblyItemProvider.dispose();
 		if (delegationItemProvider != null) delegationItemProvider.dispose();
