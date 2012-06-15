@@ -46,7 +46,7 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent {
 	 * @return the value of the '<em>Controllers</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Controllers()
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getStructuredComponent
-	 * @model opposite="structuredComponent" containment="true"
+	 * @model opposite="structuredComponent" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<ReconfigurationController> getControllers();
@@ -62,6 +62,7 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent {
 	 * @return the value of the '<em>Manager</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Manager()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.controllers -> select(m | m.oclIsKindOf(Manager)) ->any(true)'"
 	 * @generated
 	 */
 	Manager getManager();
@@ -77,6 +78,7 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent {
 	 * @return the value of the '<em>Executor</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Executor()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)'"
 	 * @generated
 	 */
 	Executor getExecutor();

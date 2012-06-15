@@ -21,6 +21,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -51,6 +52,25 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * @ordered
 	 */
 	protected EList<ReconfigurationController> controllers;
+
+	/**
+	 * The cached setting delegate for the '{@link #getManager() <em>Manager</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManager()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate MANAGER__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__MANAGER).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getExecutor() <em>Executor</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExecutor()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate EXECUTOR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,8 +109,7 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * @generated
 	 */
 	public Manager getManager() {
-		Manager manager = basicGetManager();
-		return manager != null && manager.eIsProxy() ? (Manager)eResolveProxy((InternalEObject)manager) : manager;
+		return (Manager)MANAGER__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -99,10 +118,7 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * @generated
 	 */
 	public Manager basicGetManager() {
-		// TODO: implement this method to return the 'Manager' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Manager)MANAGER__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -111,8 +127,7 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * @generated
 	 */
 	public Executor getExecutor() {
-		Executor executor = basicGetExecutor();
-		return executor != null && executor.eIsProxy() ? (Executor)eResolveProxy((InternalEObject)executor) : executor;
+		return (Executor)EXECUTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -121,10 +136,7 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * @generated
 	 */
 	public Executor basicGetExecutor() {
-		// TODO: implement this method to return the 'Executor' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Executor)EXECUTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -219,9 +231,9 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
 				return controllers != null && !controllers.isEmpty();
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__MANAGER:
-				return basicGetManager() != null;
+				return MANAGER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR:
-				return basicGetExecutor() != null;
+				return EXECUTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -102,6 +102,10 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createExecutorAdapter();
 			}
 			@Override
+			public Adapter caseReconfigurationRule(ReconfigurationRule object) {
+				return createReconfigurationRuleAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -216,6 +220,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExecutorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule <em>Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule
+	 * @generated
+	 */
+	public Adapter createReconfigurationRuleAdapter() {
 		return null;
 	}
 

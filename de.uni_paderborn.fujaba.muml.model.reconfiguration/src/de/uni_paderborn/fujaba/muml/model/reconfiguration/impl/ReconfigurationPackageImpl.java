@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -77,6 +78,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass executorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurationRuleEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -235,6 +243,33 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getReconfigurationRule() {
+		return reconfigurationRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurationRule_InParameters() {
+		return (EReference)reconfigurationRuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurationRule_OutParameters() {
+		return (EReference)reconfigurationRuleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ReconfigurationFactory getReconfigurationFactory() {
 		return (ReconfigurationFactory)getEFactoryInstance();
 	}
@@ -271,6 +306,10 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		managerEClass = createEClass(MANAGER);
 
 		executorEClass = createEClass(EXECUTOR);
+
+		reconfigurationRuleEClass = createEClass(RECONFIGURATION_RULE);
+		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__IN_PARAMETERS);
+		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__OUT_PARAMETERS);
 	}
 
 	/**
@@ -299,6 +338,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		// Obtain other dependent packages
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -311,10 +351,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurationControllerEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		managerEClass.getESuperTypes().add(this.getReconfigurationController());
 		executorEClass.getESuperTypes().add(this.getReconfigurationController());
+		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(reconfigurableStructuredComponentEClass, ReconfigurableStructuredComponent.class, "ReconfigurableStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReconfigurableStructuredComponent_Controllers(), this.getReconfigurationController(), this.getReconfigurationController_StructuredComponent(), "controllers", null, 0, -1, ReconfigurableStructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurableStructuredComponent_Controllers(), this.getReconfigurationController(), this.getReconfigurationController_StructuredComponent(), "controllers", null, 0, -1, ReconfigurableStructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getReconfigurableStructuredComponent_Manager(), this.getManager(), null, "manager", null, 0, 1, ReconfigurableStructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurableStructuredComponent_Executor(), this.getExecutor(), null, "executor", null, 0, 1, ReconfigurableStructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
@@ -327,12 +369,18 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		initEClass(executorEClass, Executor.class, "Executor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(reconfigurationRuleEClass, ReconfigurationRule.class, "ReconfigurationRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getReconfigurationRule_InParameters(), theCorePackage.getParameter(), null, "inParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationRule_OutParameters(), theCorePackage.getParameter(), null, "outParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -350,7 +398,29 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });				
+		   });							
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		addAnnotation
+		  (getReconfigurableStructuredComponent_Manager(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.controllers -> select(m | m.oclIsKindOf(Manager)) ->any(true)"
+		   });		
+		addAnnotation
+		  (getReconfigurableStructuredComponent_Executor(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)"
+		   });			
 	}
 
 } //ReconfigurationPackageImpl

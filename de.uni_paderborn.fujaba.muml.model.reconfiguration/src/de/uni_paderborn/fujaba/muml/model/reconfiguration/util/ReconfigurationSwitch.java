@@ -132,6 +132,15 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ReconfigurationPackage.RECONFIGURATION_RULE: {
+				ReconfigurationRule reconfigurationRule = (ReconfigurationRule)theEObject;
+				T result = caseReconfigurationRule(reconfigurationRule);
+				if (result == null) result = caseNamedElement(reconfigurationRule);
+				if (result == null) result = caseCommentableElement(reconfigurationRule);
+				if (result == null) result = caseExtendableElement(reconfigurationRule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -208,6 +217,21 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExecutor(Executor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationRule(ReconfigurationRule object) {
 		return null;
 	}
 
