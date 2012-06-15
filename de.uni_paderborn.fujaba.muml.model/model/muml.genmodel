@@ -78,13 +78,7 @@
           <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/portsDerived"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ComponentPart/isMultiPart"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/component/StructuredComponent">
-          <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="General"
-              ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/embeddedParts"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/connectors"/>
-          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/allStructuredComponents"/>
-          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/allAtomicComponents"/>
-        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/component/StaticStructuredComponent"/>
         <genClasses ecoreClass="muml.ecore#//model/component/AtomicComponent"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/component/ConnectorType">
           <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="ConnectedPorts"
@@ -122,6 +116,13 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/component/PatternOccurrence/pattern"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/PatternOccurrence/ports"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/component/StructuredComponent">
+          <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="General"
+              ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/embeddedParts"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/connectors"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/allStructuredComponents"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/allAtomicComponents"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml.model"

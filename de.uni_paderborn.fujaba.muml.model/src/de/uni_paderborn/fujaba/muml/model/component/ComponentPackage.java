@@ -763,7 +763,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getStructuredComponent()
 	 * @generated
 	 */
-	int STRUCTURED_COMPONENT = 5;
+	int STRUCTURED_COMPONENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -881,6 +881,133 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURED_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StaticStructuredComponentImpl <em>Static Structured Component</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.StaticStructuredComponentImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getStaticStructuredComponent()
+	 * @generated
+	 */
+	int STATIC_STRUCTURED_COMPONENT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__ANNOTATION = STRUCTURED_COMPONENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__EXTENSION = STRUCTURED_COMPONENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__NAME = STRUCTURED_COMPONENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__COMMENT = STRUCTURED_COMPONENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__CONSTRAINT = STRUCTURED_COMPONENT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__PORTS = STRUCTURED_COMPONENT__PORTS;
+
+	/**
+	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__REFERENCING_COMPONENT_PARTS = STRUCTURED_COMPONENT__REFERENCING_COMPONENT_PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__COMPONENT_TYPE = STRUCTURED_COMPONENT__COMPONENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Embedded Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__EMBEDDED_PARTS = STRUCTURED_COMPONENT__EMBEDDED_PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__CONNECTORS = STRUCTURED_COMPONENT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>All Structured Components</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS = STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS;
+
+	/**
+	 * The feature id for the '<em><b>All Atomic Components</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS;
+
+	/**
+	 * The number of structural features of the '<em>Static Structured Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT_FEATURE_COUNT = STRUCTURED_COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AtomicComponentImpl <em>Atomic Component</em>}' class.
@@ -1824,7 +1951,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentKind()
 	 * @generated
 	 */
-	int COMPONENT_KIND = 13;
+	int COMPONENT_KIND = 14;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}' enum.
@@ -1834,7 +1961,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortDirectionKind()
 	 * @generated
 	 */
-	int CONTINUOUS_PORT_DIRECTION_KIND = 14;
+	int CONTINUOUS_PORT_DIRECTION_KIND = 15;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Component <em>Component</em>}'.
@@ -2193,6 +2320,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponentPart_IsMultiPart();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent <em>Static Structured Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Static Structured Component</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent
+	 * @generated
+	 */
+	EClass getStaticStructuredComponent();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}'.
@@ -2831,6 +2968,16 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPONENT_PART__IS_MULTI_PART = eINSTANCE.getComponentPart_IsMultiPart();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StaticStructuredComponentImpl <em>Static Structured Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.StaticStructuredComponentImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getStaticStructuredComponent()
+		 * @generated
+		 */
+		EClass STATIC_STRUCTURED_COMPONENT = eINSTANCE.getStaticStructuredComponent();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.

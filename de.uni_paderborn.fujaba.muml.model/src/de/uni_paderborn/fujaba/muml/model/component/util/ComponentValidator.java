@@ -114,8 +114,8 @@ public class ComponentValidator extends EObjectValidator {
 				return validateDiscretePort((DiscretePort)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_PART:
 				return validateComponentPart((ComponentPart)value, diagnostics, context);
-			case ComponentPackage.STRUCTURED_COMPONENT:
-				return validateStructuredComponent((StructuredComponent)value, diagnostics, context);
+			case ComponentPackage.STATIC_STRUCTURED_COMPONENT:
+				return validateStaticStructuredComponent((StaticStructuredComponent)value, diagnostics, context);
 			case ComponentPackage.ATOMIC_COMPONENT:
 				return validateAtomicComponent((AtomicComponent)value, diagnostics, context);
 			case ComponentPackage.CONNECTOR_TYPE:
@@ -130,6 +130,8 @@ public class ComponentValidator extends EObjectValidator {
 				return validateHybridPort((HybridPort)value, diagnostics, context);
 			case ComponentPackage.PATTERN_OCCURRENCE:
 				return validatePatternOccurrence((PatternOccurrence)value, diagnostics, context);
+			case ComponentPackage.STRUCTURED_COMPONENT:
+				return validateStructuredComponent((StructuredComponent)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_KIND:
 				return validateComponentKind((ComponentKind)value, diagnostics, context);
 			case ComponentPackage.CONTINUOUS_PORT_DIRECTION_KIND:
@@ -607,6 +609,33 @@ public class ComponentValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStaticStructuredComponent(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(staticStructuredComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_UniqueComponentPartsWithinStructuredComponent(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentNoHybridPort(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidParts(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidParts(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidPorts(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidPorts(staticStructuredComponent, diagnostics, context);
+		return result;
 	}
 
 	/**

@@ -53,13 +53,13 @@ public interface ComponentFactory extends EFactory {
 	ComponentPart createComponentPart();
 
 	/**
-	 * Returns a new object of class '<em>Structured Component</em>'.
+	 * Returns a new object of class '<em>Static Structured Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Structured Component</em>'.
+	 * @return a new object of class '<em>Static Structured Component</em>'.
 	 * @generated
 	 */
-	StructuredComponent createStructuredComponent();
+	StaticStructuredComponent createStaticStructuredComponent();
 
 	/**
 	 * Returns a new object of class '<em>Atomic Component</em>'.

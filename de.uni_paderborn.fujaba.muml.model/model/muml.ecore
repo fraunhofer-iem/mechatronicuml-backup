@@ -287,55 +287,10 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StructuredComponent" eSuperTypes="#//model/component/Component">
+      <eClassifiers xsi:type="ecore:EClass" name="StaticStructuredComponent" eSuperTypes="#//model/component/StructuredComponent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a structured component which is capable of including arbitraryly many component parts.&#xD;&#xA;&#xD;&#xA;Component types are implemented as a variation of the composite design pattern. &#xD;&#xA;Concerning the composite pattern this class represents the role &quot;composite&quot;. &#xD;&#xA;However structured components do not contain component types directly like &#xD;&#xA;in the original composite pattern. Instead they contain component parts which &#xD;&#xA;are typed by component types. The reason for this is to get a clear distinction&#xD;&#xA; between the component type level and the component instance level."/>
+          <details key="documentation" value="A static structured component is a structured component whose internal structure consisting of component part, ports, delegation, and assemblies cannot be changed during run-time."/>
         </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="StructuredComponentNoHybridPort" value="self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"/>
-          <details key="ValidComponentType" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentType = component::ComponentKind::HYBRID_COMPONENT"/>
-          <details key="NoCyclicComponentPartHierarchy" value="not self.allStructuredComponents->includes(self)"/>
-          <details key="DiscreteStructuredComponentValidParts" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)"/>
-          <details key="HybridStructuredComponentValidParts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)"/>
-          <details key="DiscreteStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xA;&#x9;)"/>
-          <details key="HybridStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts" lowerBound="1"
-            upperBound="-1" eType="#//model/component/ComponentPart" containment="true"
-            eOpposite="#//model/component/ComponentPart/parentComponent">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The component parts this structured component contains."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-            eType="#//model/component/ConnectorType" containment="true" eOpposite="#//model/component/ConnectorType/parentComponent">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The connectors this structured component contains. These can either be delegations or assemblies."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="allStructuredComponents"
-            upperBound="-1" eType="#//model/component/StructuredComponent" changeable="false"
-            volatile="true" transient="true" unsettable="true" derived="true" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self->closure(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::StructuredComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::StructuredComponent))&#xA;)"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Transitive closure of all StructuredComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="allAtomicComponents"
-            upperBound="-1" eType="#//model/component/AtomicComponent" changeable="false"
-            volatile="true" transient="true" unsettable="true" derived="true" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.allStructuredComponents->collect(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xA;)->asOrderedSet()"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Transitive closure of all AtomicComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy.&#xA;Note: AtomicComponents from directly embeddedParts are NOT included"/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" eSuperTypes="#//model/component/Component #//model/core/BehavioralElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -577,6 +532,57 @@
             eType="#//model/pattern/CoordinationPattern"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1"
             upperBound="-1" eType="#//model/component/Port"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="StructuredComponent" abstract="true"
+          eSuperTypes="#//model/component/Component">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a structured component which is capable of including arbitraryly many component parts."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="StructuredComponentNoHybridPort" value="self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"/>
+          <details key="ValidComponentType" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentType = component::ComponentKind::HYBRID_COMPONENT"/>
+          <details key="NoCyclicComponentPartHierarchy" value="not self.allStructuredComponents->includes(self)"/>
+          <details key="DiscreteStructuredComponentValidParts" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)"/>
+          <details key="HybridStructuredComponentValidParts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)"/>
+          <details key="DiscreteStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xA;&#x9;)"/>
+          <details key="HybridStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts" lowerBound="1"
+            upperBound="-1" eType="#//model/component/ComponentPart" containment="true"
+            eOpposite="#//model/component/ComponentPart/parentComponent">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The component parts this structured component contains."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+            eType="#//model/component/ConnectorType" containment="true" eOpposite="#//model/component/ConnectorType/parentComponent">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The connectors this structured component contains. These can either be delegations or assemblies."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="allStructuredComponents"
+            upperBound="-1" eType="#//model/component/StructuredComponent" changeable="false"
+            volatile="true" transient="true" unsettable="true" derived="true" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self->closure(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::StructuredComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::StructuredComponent))&#xA;)"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Transitive closure of all StructuredComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="allAtomicComponents"
+            upperBound="-1" eType="#//model/component/AtomicComponent" changeable="false"
+            volatile="true" transient="true" unsettable="true" derived="true" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.allStructuredComponents->collect(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xA;)->asOrderedSet()"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Transitive closure of all AtomicComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy.&#xA;Note: AtomicComponents from directly embeddedParts are NOT included"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.2.2"

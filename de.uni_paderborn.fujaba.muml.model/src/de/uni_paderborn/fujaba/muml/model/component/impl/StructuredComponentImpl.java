@@ -38,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
  *
  * @generated
  */
-public class StructuredComponentImpl extends ComponentImpl implements StructuredComponent {
+public abstract class StructuredComponentImpl extends ComponentImpl implements StructuredComponent {
 	/**
 	 * The cached value of the '{@link #getEmbeddedParts() <em>Embedded Parts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

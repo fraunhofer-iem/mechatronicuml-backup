@@ -140,14 +140,15 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.STRUCTURED_COMPONENT: {
-				StructuredComponent structuredComponent = (StructuredComponent)theEObject;
-				T result = caseStructuredComponent(structuredComponent);
-				if (result == null) result = caseComponent(structuredComponent);
-				if (result == null) result = caseNamedElement(structuredComponent);
-				if (result == null) result = caseCommentableElement(structuredComponent);
-				if (result == null) result = caseConstrainableElement(structuredComponent);
-				if (result == null) result = caseExtendableElement(structuredComponent);
+			case ComponentPackage.STATIC_STRUCTURED_COMPONENT: {
+				StaticStructuredComponent staticStructuredComponent = (StaticStructuredComponent)theEObject;
+				T result = caseStaticStructuredComponent(staticStructuredComponent);
+				if (result == null) result = caseStructuredComponent(staticStructuredComponent);
+				if (result == null) result = caseComponent(staticStructuredComponent);
+				if (result == null) result = caseNamedElement(staticStructuredComponent);
+				if (result == null) result = caseCommentableElement(staticStructuredComponent);
+				if (result == null) result = caseConstrainableElement(staticStructuredComponent);
+				if (result == null) result = caseExtendableElement(staticStructuredComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -215,6 +216,17 @@ public class ComponentSwitch<T> extends Switch<T> {
 				PatternOccurrence patternOccurrence = (PatternOccurrence)theEObject;
 				T result = casePatternOccurrence(patternOccurrence);
 				if (result == null) result = caseExtendableElement(patternOccurrence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentPackage.STRUCTURED_COMPONENT: {
+				StructuredComponent structuredComponent = (StructuredComponent)theEObject;
+				T result = caseStructuredComponent(structuredComponent);
+				if (result == null) result = caseComponent(structuredComponent);
+				if (result == null) result = caseNamedElement(structuredComponent);
+				if (result == null) result = caseCommentableElement(structuredComponent);
+				if (result == null) result = caseConstrainableElement(structuredComponent);
+				if (result == null) result = caseExtendableElement(structuredComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -294,6 +306,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentPart(ComponentPart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Static Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Static Structured Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStaticStructuredComponent(StaticStructuredComponent object) {
 		return null;
 	}
 

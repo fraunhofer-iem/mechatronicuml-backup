@@ -75,7 +75,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.CONTINUOUS_PORT: return createContinuousPort();
 			case ComponentPackage.DISCRETE_PORT: return createDiscretePort();
 			case ComponentPackage.COMPONENT_PART: return createComponentPart();
-			case ComponentPackage.STRUCTURED_COMPONENT: return createStructuredComponent();
+			case ComponentPackage.STATIC_STRUCTURED_COMPONENT: return createStaticStructuredComponent();
 			case ComponentPackage.ATOMIC_COMPONENT: return createAtomicComponent();
 			case ComponentPackage.ASSEMBLY: return createAssembly();
 			case ComponentPackage.DELEGATION: return createDelegation();
@@ -155,9 +155,9 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StructuredComponent createStructuredComponent() {
-		StructuredComponentImpl structuredComponent = new StructuredComponentImpl();
-		return structuredComponent;
+	public StaticStructuredComponent createStaticStructuredComponent() {
+		StaticStructuredComponentImpl staticStructuredComponent = new StaticStructuredComponentImpl();
+		return staticStructuredComponent;
 	}
 
 	/**

@@ -33,6 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.util.ComponentValidator;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
@@ -91,6 +92,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	private EClass componentPartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass staticStructuredComponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -561,6 +569,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStaticStructuredComponent() {
+		return staticStructuredComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getComponentPart_Cardinality() {
 		return (EReference)componentPartEClass.getEStructuralFeatures().get(5);
 	}
@@ -911,11 +928,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(componentPartEClass, COMPONENT_PART__PORTS_DERIVED);
 		createEAttribute(componentPartEClass, COMPONENT_PART__IS_MULTI_PART);
 
-		structuredComponentEClass = createEClass(STRUCTURED_COMPONENT);
-		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__EMBEDDED_PARTS);
-		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__CONNECTORS);
-		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS);
-		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS);
+		staticStructuredComponentEClass = createEClass(STATIC_STRUCTURED_COMPONENT);
 
 		atomicComponentEClass = createEClass(ATOMIC_COMPONENT);
 
@@ -947,6 +960,12 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		patternOccurrenceEClass = createEClass(PATTERN_OCCURRENCE);
 		createEReference(patternOccurrenceEClass, PATTERN_OCCURRENCE__PATTERN);
 		createEReference(patternOccurrenceEClass, PATTERN_OCCURRENCE__PORTS);
+
+		structuredComponentEClass = createEClass(STRUCTURED_COMPONENT);
+		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__EMBEDDED_PARTS);
+		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__CONNECTORS);
+		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS);
+		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS);
 
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
@@ -999,7 +1018,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		discretePortEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		componentPartEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		componentPartEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		structuredComponentEClass.getESuperTypes().add(this.getComponent());
+		staticStructuredComponentEClass.getESuperTypes().add(this.getStructuredComponent());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
 		atomicComponentEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		connectorTypeEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
@@ -1010,6 +1029,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		hybridPortEClass.getESuperTypes().add(this.getDiscretePort());
 		hybridPortEClass.getESuperTypes().add(this.getContinuousPort());
 		patternOccurrenceEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
+		structuredComponentEClass.getESuperTypes().add(this.getComponent());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1051,11 +1071,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getComponentPart_PortsDerived(), this.getPort(), null, "portsDerived", null, 0, -1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentPart_IsMultiPart(), theEcorePackage.getEBoolean(), "isMultiPart", "", 0, 1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(structuredComponentEClass, StructuredComponent.class, "StructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructuredComponent_EmbeddedParts(), this.getComponentPart(), this.getComponentPart_ParentComponent(), "embeddedParts", null, 1, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructuredComponent_Connectors(), this.getConnectorType(), this.getConnectorType_ParentComponent(), "connectors", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructuredComponent_AllStructuredComponents(), this.getStructuredComponent(), null, "allStructuredComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getStructuredComponent_AllAtomicComponents(), this.getAtomicComponent(), null, "allAtomicComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEClass(staticStructuredComponentEClass, StaticStructuredComponent.class, "StaticStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(atomicComponentEClass, AtomicComponent.class, "AtomicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1087,6 +1103,12 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(patternOccurrenceEClass, PatternOccurrence.class, "PatternOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPatternOccurrence_Pattern(), thePatternPackage.getCoordinationPattern(), null, "pattern", null, 1, 1, PatternOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPatternOccurrence_Ports(), this.getPort(), null, "ports", null, 1, -1, PatternOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(structuredComponentEClass, StructuredComponent.class, "StructuredComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStructuredComponent_EmbeddedParts(), this.getComponentPart(), this.getComponentPart_ParentComponent(), "embeddedParts", null, 1, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructuredComponent_Connectors(), this.getConnectorType(), this.getConnectorType_ParentComponent(), "connectors", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructuredComponent_AllStructuredComponents(), this.getStructuredComponent(), null, "allStructuredComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getStructuredComponent_AllAtomicComponents(), this.getAtomicComponent(), null, "allAtomicComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentKindEEnum, ComponentKind.class, "ComponentKind");
@@ -1147,13 +1169,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"
-		   });															
-		addAnnotation
-		  (structuredComponentEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts"
-		   });											
+		   });																	
 		addAnnotation
 		  (atomicComponentEClass, 
 		   source, 
@@ -1171,7 +1187,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
-		   });															
+		   });																		
+		addAnnotation
+		  (structuredComponentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts"
+		   });							
 	}
 
 	/**
@@ -1269,30 +1291,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "derivation", "self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity"
 		   });				
 		addAnnotation
-		  (structuredComponentEClass, 
-		   source, 
-		   new String[] {
-			 "StructuredComponentNoHybridPort", "self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))",
-			 "ValidComponentType", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT",
-			 "NoCyclicComponentPartHierarchy", "not self.allStructuredComponents->includes(self)",
-			 "DiscreteStructuredComponentValidParts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)",
-			 "HybridStructuredComponentValidParts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)",
-			 "DiscreteStructuredComponentValidPorts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\n\t)",
-			 "HybridStructuredComponentValidPorts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\n\t)"
-		   });				
-		addAnnotation
-		  (getStructuredComponent_AllStructuredComponents(), 
-		   source, 
-		   new String[] {
-			 "derivation", "self->closure(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::StructuredComponent)\n\t)->collect(componentType.oclAsType(component::StructuredComponent))\n)"
-		   });			
-		addAnnotation
-		  (getStructuredComponent_AllAtomicComponents(), 
-		   source, 
-		   new String[] {
-			 "derivation", "self.allStructuredComponents->collect(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\n)->asOrderedSet()"
-		   });				
-		addAnnotation
 		  (atomicComponentEClass, 
 		   source, 
 		   new String[] {
@@ -1383,7 +1381,31 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "-- XXX: is this the definition of an OUT port?\nself.isContinuousOutPort"
+		   });							
+		addAnnotation
+		  (structuredComponentEClass, 
+		   source, 
+		   new String[] {
+			 "StructuredComponentNoHybridPort", "self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))",
+			 "ValidComponentType", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT",
+			 "NoCyclicComponentPartHierarchy", "not self.allStructuredComponents->includes(self)",
+			 "DiscreteStructuredComponentValidParts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)",
+			 "HybridStructuredComponentValidParts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)",
+			 "DiscreteStructuredComponentValidPorts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\n\t)",
+			 "HybridStructuredComponentValidPorts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\n\t)"
+		   });				
+		addAnnotation
+		  (getStructuredComponent_AllStructuredComponents(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self->closure(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::StructuredComponent)\n\t)->collect(componentType.oclAsType(component::StructuredComponent))\n)"
 		   });			
+		addAnnotation
+		  (getStructuredComponent_AllAtomicComponents(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.allStructuredComponents->collect(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\n)->asOrderedSet()"
+		   });	
 	}
 
 } //ComponentPackageImpl

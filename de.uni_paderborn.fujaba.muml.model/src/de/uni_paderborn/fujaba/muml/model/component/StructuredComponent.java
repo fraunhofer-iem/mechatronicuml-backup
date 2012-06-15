@@ -15,13 +15,6 @@ import org.eclipse.emf.common.util.EList;
  *
  * <!-- begin-model-doc -->
  * This class represents a structured component which is capable of including arbitraryly many component parts.
- * 
- * Component types are implemented as a variation of the composite design pattern. 
- * Concerning the composite pattern this class represents the role "composite". 
- * However structured components do not contain component types directly like 
- * in the original composite pattern. Instead they contain component parts which 
- * are typed by component types. The reason for this is to get a clear distinction
- *  between the component type level and the component instance level.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -35,7 +28,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts'"
+ * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL StructuredComponentNoHybridPort='self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))' ValidComponentType='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT' NoCyclicComponentPartHierarchy='not self.allStructuredComponents->includes(self)' DiscreteStructuredComponentValidParts='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)' HybridStructuredComponentValidParts='self.componentType = component::ComponentKind::HYBRID_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)' DiscreteStructuredComponentValidPorts='self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\n\t)' HybridStructuredComponentValidPorts='self.componentType = component::ComponentKind::HYBRID_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\n\t)'"
  * @generated
  */

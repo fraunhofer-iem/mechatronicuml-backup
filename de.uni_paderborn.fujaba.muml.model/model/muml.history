@@ -4770,10 +4770,10 @@
             featureName="value" dataValue="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component" referenceName="eClassifiers"
-          element="muml.ecore#//model/component/StructuredComponent">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent"
+          element="muml.ecore#//model/component/StaticStructuredComponent">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StaticStructuredComponent"
             featureName="name" dataValue="StructuredComponent"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/component/StructuredComponent"
+        <changes xsi:type="history:Add" element="muml.ecore#//model/component/StaticStructuredComponent"
             featureName="eSuperTypes" referenceValue="muml.ecore#//model/component/Component"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart"
@@ -4783,7 +4783,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/parentComponent"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/parentComponent"
-            featureName="eType" referenceValue="muml.ecore#//model/component/StructuredComponent"/>
+            featureName="eType" referenceValue="muml.ecore#//model/component/StaticStructuredComponent"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/parentComponent"
           referenceName="eAnnotations" element="muml.ecore#//model/component/ComponentPart/parentComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -4797,19 +4797,19 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/parentComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The structured component type containing this component part."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/StaticStructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StaticStructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/StaticStructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StaticStructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StaticStructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This class represents a structured component which is capable of including arbitraryly many component parts.&#xD;&#xA;&#xD;&#xA;Component types are implemented as a variation of the composite design pattern. &#xD;&#xA;Concerning the composite pattern this class represents the role &quot;composite&quot;. &#xD;&#xA;However structured components do not contain component types directly like &#xD;&#xA;in the original composite pattern. Instead they contain component parts which &#xD;&#xA;are typed by component types. The reason for this is to get a clear distinction&#xD;&#xA; between the component type level and the component instance level."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent"
           referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
@@ -4821,7 +4821,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="value" dataValue="UniqueComponentPartsWithinStructuredComponent"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent"
           referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -4833,7 +4833,7 @@
         <changes xsi:type="history:Set" element="#//@releases.8/@changes.54/@element"
             featureName="value" dataValue="self.embeddedParts->isUnique(p | p.componentType)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent"
           referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/embeddedParts">
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/embeddedParts"
             featureName="name" dataValue="embeddedParts"/>
@@ -5004,9 +5004,9 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/parentComponent"
             featureName="name" dataValue="parentComponent"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/parentComponent"
-            featureName="eType" referenceValue="muml.ecore#//model/component/StructuredComponent"/>
+            featureName="eType" referenceValue="muml.ecore#//model/component/StaticStructuredComponent"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent"
           referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/connectors">
         <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/connectors"
             featureName="name" dataValue="connectors"/>
@@ -16010,13 +16010,13 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort NoCyclicComponentPartHierarchy"
         oldDataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent"
         referenceName="eStructuralFeatures" element="#//@releases.2/@changes.350/@element"/>
-    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/StructuredComponent"
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/StaticStructuredComponent"
         referenceName="eStructuralFeatures">
       <element xsi:type="ecore:EReference"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent"
         referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/allStructuredComponents">
       <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allStructuredComponents"
           featureName="name" dataValue="portsDerived"/>
@@ -16062,7 +16062,7 @@
           featureName="value" dataValue="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature."/>
     </changes>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allStructuredComponents"
-        featureName="eType" referenceValue="muml.ecore#//model/component/StructuredComponent"
+        featureName="eType" referenceValue="muml.ecore#//model/component/StaticStructuredComponent"
         oldReferenceValue="muml.ecore#//model/component/Port"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allStructuredComponents"
         featureName="name" dataValue="allStructuredComponentsInHierarchy" oldDataValue="portsDerived"/>
@@ -16072,7 +16072,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
         featureName="value" dataValue="not self.allStructuredComponentsInHierarchy->includes(self)"
         oldDataValue="not self->closure(&#xA;&#x9;embeddedParts->collect(&#xA;&#x9;&#x9;if componentType.oclIsTypeOf(component::StructuredComponent) then&#xA;&#x9;&#x9;&#x9;componentType.oclAsType(component::StructuredComponent)&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;null&#xA;&#x9;&#x9;endif&#xA;&#x9;)->select(not oclIsUndefined())&#xA;)->includes(self)"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StaticStructuredComponent"
         referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents">
       <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents"
           featureName="name" dataValue="allStructuredComponentsInHierarchy"/>
@@ -16091,7 +16091,7 @@
       <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents"
           featureName="containment" dataValue="true" oldDataValue="false"/>
       <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents"
-          featureName="eType" referenceValue="muml.ecore#//model/component/StructuredComponent"/>
+          featureName="eType" referenceValue="muml.ecore#//model/component/StaticStructuredComponent"/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/allAtomicComponents"
         referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
@@ -16136,7 +16136,7 @@
         oldDataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort NoCyclicComponentPartHierarchy"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents"
         featureName="eType" referenceValue="muml.ecore#//model/component/AtomicComponent"
-        oldReferenceValue="muml.ecore#//model/component/StructuredComponent"/>
+        oldReferenceValue="muml.ecore#//model/component/StaticStructuredComponent"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.allStructuredComponentsInHierarchy->collect(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xA;)"
         oldDataValue="self.allStructuredComponentsInHierarchy->collect(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;)->collect(componentType)&#xA;)"/>
@@ -23473,5 +23473,168 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
         featureName="value" dataValue="MessageInterface.allInstances().name->count(self.name) = 1"
         oldDataValue="MessageInterface.allInstances()->isUnique(name)"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/StaticStructuredComponent"
+          featureName="name" dataValue="StaticStructuredComponent" oldDataValue="StructuredComponent"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/component/StaticStructuredComponent"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>StaticStructuredComponent</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component" referenceName="eClassifiers"
+          element="muml.ecore#//model/component/StructuredComponent">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent"
+            featureName="name" dataValue="StructuredComponent"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent"
+            featureName="abstract" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/component/StructuredComponent"
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/component/Component"/>
+      </changes>
+      <changes xsi:type="history:Add" element="muml.ecore#//model/component/StaticStructuredComponent"
+          featureName="eSuperTypes" referenceValue="muml.ecore#//model/component/StructuredComponent"/>
+      <changes xsi:type="history:Remove" element="muml.ecore#//model/component/StaticStructuredComponent"
+          featureName="eSuperTypes" referenceValue="muml.ecore#//model/component/Component"/>
+      <operation name="extractSuperClass2">
+        <parameters name="subClasses">
+          <referenceValue element="muml.ecore#//model/component/StaticStructuredComponent"/>
+        </parameters>
+        <parameters name="toExtract"/>
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/component"/>
+        </parameters>
+        <parameters name="superClassName">
+          <dataValue>StructuredComponent</dataValue>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="superSuperClasses">
+          <referenceValue element="muml.ecore#//model/component/Component"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/allStructuredComponents"
+          featureName="eType" referenceValue="muml.ecore#//model/component/StructuredComponent"
+          oldReferenceValue="muml.ecore#//model/component/StaticStructuredComponent"/>
+      <operation name="generalizeReference">
+        <parameters name="reference">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent/allStructuredComponents"/>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="This class represents a structured component which is capable of including arbitraryly many component parts."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>This class represents a structured component which is capable of including arbitraryly many component parts.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/StaticStructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="A static structured component is a structured component whose internal structure consisting of component part, ports, delegation, and assemblies cannot be changed during run-time."
+          oldDataValue="This class represents a structured component which is capable of including arbitraryly many component parts.&#xD;&#xA;&#xD;&#xA;Component types are implemented as a variation of the composite design pattern. &#xD;&#xA;Concerning the composite pattern this class represents the role &quot;composite&quot;. &#xD;&#xA;However structured components do not contain component types directly like &#xD;&#xA;in the original composite pattern. Instead they contain component parts which &#xD;&#xA;are typed by component types. The reason for this is to get a clear distinction&#xD;&#xA; between the component type level and the component instance level."/>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/component/StaticStructuredComponent"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>A static structured component is a structured component whose internal structure consisting of component part, ports, delegation, and assemblies cannot be changed during run-time.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Move" target="muml.ecore#//model/component/StructuredComponent"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/embeddedParts"
+          source="muml.ecore#//model/component/StaticStructuredComponent"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/parentComponent"
+          featureName="eType" referenceValue="muml.ecore#//model/component/StructuredComponent"
+          oldReferenceValue="muml.ecore#//model/component/StaticStructuredComponent"/>
+      <operation name="pullFeature">
+        <parameters name="features">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent/embeddedParts"/>
+        </parameters>
+        <parameters name="targetClass">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Move" target="muml.ecore#//model/component/StructuredComponent"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/connectors"
+          source="muml.ecore#//model/component/StaticStructuredComponent"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ConnectorType/parentComponent"
+          featureName="eType" referenceValue="muml.ecore#//model/component/StructuredComponent"
+          oldReferenceValue="muml.ecore#//model/component/StaticStructuredComponent"/>
+      <operation name="pullFeature">
+        <parameters name="features">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent/connectors"/>
+        </parameters>
+        <parameters name="targetClass">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Move" target="muml.ecore#//model/component/StructuredComponent"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/allStructuredComponents"
+          source="muml.ecore#//model/component/StaticStructuredComponent"/>
+      <operation name="pullFeature">
+        <parameters name="features">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent/allStructuredComponents"/>
+        </parameters>
+        <parameters name="targetClass">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Move" target="muml.ecore#//model/component/StructuredComponent"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents"
+          source="muml.ecore#//model/component/StaticStructuredComponent"/>
+      <operation name="pullFeature">
+        <parameters name="features">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent/allAtomicComponents"/>
+        </parameters>
+        <parameters name="targetClass">
+          <referenceValue element="muml.ecore#//model/component/StructuredComponent"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/component/StructuredComponent"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        source="muml.ecore#//model/component/StaticStructuredComponent"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/component/StructuredComponent"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        source="muml.ecore#//model/component/StaticStructuredComponent"/>
   </releases>
 </history:History>
