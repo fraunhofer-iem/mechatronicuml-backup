@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<project default="create-eclipse-help" basedir=".">
+ 
+    <property name="current-loc" location="." />
+    <property name="workspace" location=".." />
+ 
+    <!-- html output goes here -->
+    <property name="htmldir" value="${current-loc}/html" />
+    <!-- path to xsl for eclipse 3.3 or newer -->
+    <property name="docbookdir" value="${current-loc}/lib/docbook-xsl-1.77/eclipse/eclipse33.xsl" />
+    <!-- transformation input comes from here -->
+    <property name="docbooksource" value="${current-loc}/input"/>
+    <!-- temporary transformation output goes here -->
+    <property name="docbooksource-tmp" value="${current-loc}/docbook-tmp"/>
+ 
+    <!-- use apache transformer -->
+	<path id="xalan.classpath">
+		<fileset dir="lib/xalan" id="xalan.fileset">
+			<include name="xalan.jar" />
+			<include name="xercesImpl.jar" />
+				<!--<include name="serializer.jar" />-->
+		</fileset>
+	</path>
+ 
+    <!-- declare ant task for xinclude -->
+	<path id="xinclude.classpath">
+		<fileset dir="lib" includes="xincluder.jar" />
+		<fileset dir="lib" includes="xinclude-task-0.2.jar" />
+	</path>
+ 
+    <!-- XSLT Chunking Properties -->
+    <property name="base.dir" value="${htmldir}"/>
+ 
+    <target name="clean" depends="clean-temporary-artifacts" description="Cleans up generated files.">
+        <delete dir="${htmldir}" />
+        <delete file="${current-loc}/toc.xml" />
+        <delete file="${current-loc}/plugin.xml" />
+    </target>
+ 
+    <target name="clean-temporary-artifacts" description="Cleans up generated files.">
+        <delete dir="${docbooksource-tmp}" />
+        <delete file="${current-loc}/xslt-output.xml" />
+    </target>
+ 
+    <target name="depends">
+        <mkdir dir="${htmldir}" />
+        <mkdir dir="${docbooksource-tmp}" />
+    </target>
+ 
+    <target name="create-eclipse-help" depends="clean, depends">
+ 
+    	<copy todir="${htmldir}/User Guide/images">
+    		<fileset dir="${docbooksource}/User Guide/images">
+    			<include name="**/*.png" />
+    		</fileset>
+    	</copy>
+    	<copy todir="${htmldir}/Developer Guide/images">
+    	    <fileset dir="${docbooksource}/Developer Guide/images">
+    	    	<include name="**/*.png" />
+    	    </fileset>
+    	</copy>
+    	
+        <xslt force="true" style="${docbookdir}" in="${docbooksource}/index.xml" out="xslt-output.xml">
+        	<classpath refid="xalan.classpath" />
+            <param name="manifest" expression="1"/>
+            <param name="base.dir" expression="${htmldir}/"/>
+            <param name="create.plugin.xml" expression="1"/>
+            <param name="chunker.output.indent" expression="yes"/>
+            <param name="navig.showtitles" expression="1"/>
+            <param name="suppress.navigation" expression="0"/>
+        	<param name="generate.toc" expression="
+        		book		toc,title
+        		chapter		toc,title
+        		sect1		toc,title
+        		sect2		toc,title
+        		sect3		toc,title" />
+        	<param name="ignore.image.scaling" expression="1" />
+        </xslt>
+    	
+        <replace file="${current-loc}/toc.xml" token="${current-loc}/" value=""/>
+ 
+        <antcall target="clean-temporary-artifacts" />
+    </target>
+ 
+</project>
