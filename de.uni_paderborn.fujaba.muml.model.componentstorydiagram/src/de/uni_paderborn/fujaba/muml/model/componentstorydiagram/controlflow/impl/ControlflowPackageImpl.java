@@ -16,9 +16,14 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.Comp
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeStrategy;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -53,6 +58,20 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 * @generated
 	 */
 	private EClass componentStopNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass controllerExchangeNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum controllerExchangeStrategyEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -164,6 +183,60 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getControllerExchangeNode() {
+		return controllerExchangeNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControllerExchangeNode_Deadline() {
+		return (EReference)controllerExchangeNodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControllerExchangeNode_ComponentStoryPattern() {
+		return (EReference)controllerExchangeNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getControllerExchangeNode_ControllerExchangeStrategy() {
+		return (EAttribute)controllerExchangeNodeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControllerExchangeNode_FadingFunctions() {
+		return (EReference)controllerExchangeNodeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getControllerExchangeStrategy() {
+		return controllerExchangeStrategyEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ControlflowFactory getControlflowFactory() {
 		return (ControlflowFactory)getEFactoryInstance();
 	}
@@ -193,6 +266,15 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		createEReference(componentStoryNodeEClass, COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN);
 
 		componentStopNodeEClass = createEClass(COMPONENT_STOP_NODE);
+
+		controllerExchangeNodeEClass = createEClass(CONTROLLER_EXCHANGE_NODE);
+		createEReference(controllerExchangeNodeEClass, CONTROLLER_EXCHANGE_NODE__DEADLINE);
+		createEReference(controllerExchangeNodeEClass, CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN);
+		createEAttribute(controllerExchangeNodeEClass, CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY);
+		createEReference(controllerExchangeNodeEClass, CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS);
+
+		// Create enums
+		controllerExchangeStrategyEEnum = createEEnum(CONTROLLER_EXCHANGE_STRATEGY);
 	}
 
 	/**
@@ -222,6 +304,7 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
 		ComponentstorypatternPackage theComponentstorypatternPackage = (ComponentstorypatternPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI);
+		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -232,6 +315,7 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		componentStoryDiagramEClass.getESuperTypes().add(theReconfigurationPackage.getReconfigurationRule());
 		componentStoryNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
 		componentStopNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
+		controllerExchangeNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentStoryDiagramEClass, ComponentStoryDiagram.class, "ComponentStoryDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -240,6 +324,18 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		initEReference(getComponentStoryNode_ComponentStoryPattern(), theComponentstorypatternPackage.getComponentStoryPattern(), null, "componentStoryPattern", null, 1, 1, ComponentStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentStopNodeEClass, ComponentStopNode.class, "ComponentStopNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(controllerExchangeNodeEClass, ControllerExchangeNode.class, "ControllerExchangeNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControllerExchangeNode_Deadline(), theRealtimestatechartPackage.getRelativeDeadline(), null, "deadline", null, 1, 1, ControllerExchangeNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControllerExchangeNode_ComponentStoryPattern(), theComponentstorypatternPackage.getComponentStoryPattern(), null, "componentStoryPattern", null, 1, 1, ControllerExchangeNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControllerExchangeNode_ControllerExchangeStrategy(), this.getControllerExchangeStrategy(), "controllerExchangeStrategy", "ControllerExchangeStrategy.ATOMIC_SWITCHING", 1, 1, ControllerExchangeNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControllerExchangeNode_FadingFunctions(), theComponentstorypatternPackage.getFadingFunction(), null, "fadingFunctions", null, 0, -1, ControllerExchangeNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(controllerExchangeStrategyEEnum, ControllerExchangeStrategy.class, "ControllerExchangeStrategy");
+		addEEnumLiteral(controllerExchangeStrategyEEnum, ControllerExchangeStrategy.ATOMIC_SWITCHING);
+		addEEnumLiteral(controllerExchangeStrategyEEnum, ControllerExchangeStrategy.FADING_FUNCTION);
+		addEEnumLiteral(controllerExchangeStrategyEEnum, ControllerExchangeStrategy.FLAT_SWITCHING);
 
 		// Create resource
 		createResource(eNS_URI);

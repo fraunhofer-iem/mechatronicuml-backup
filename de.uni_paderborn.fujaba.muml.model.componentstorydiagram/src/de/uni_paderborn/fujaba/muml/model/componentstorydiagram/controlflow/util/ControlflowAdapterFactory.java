@@ -95,6 +95,10 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 				return createComponentStopNodeAdapter();
 			}
 			@Override
+			public Adapter caseControllerExchangeNode(ControllerExchangeNode object) {
+				return createControllerExchangeNodeAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -181,6 +185,20 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentStopNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode <em>Controller Exchange Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode
+	 * @generated
+	 */
+	public Adapter createControllerExchangeNodeAdapter() {
 		return null;
 	}
 

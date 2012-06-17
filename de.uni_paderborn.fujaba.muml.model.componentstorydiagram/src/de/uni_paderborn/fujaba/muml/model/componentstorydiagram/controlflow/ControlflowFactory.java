@@ -53,6 +53,15 @@ public interface ControlflowFactory extends EFactory {
 	ComponentStopNode createComponentStopNode();
 
 	/**
+	 * Returns a new object of class '<em>Controller Exchange Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Controller Exchange Node</em>'.
+	 * @generated
+	 */
+	ControllerExchangeNode createControllerExchangeNode();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

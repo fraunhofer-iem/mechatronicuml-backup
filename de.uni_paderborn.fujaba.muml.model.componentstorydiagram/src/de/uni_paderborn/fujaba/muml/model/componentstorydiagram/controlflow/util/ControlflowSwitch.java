@@ -113,6 +113,16 @@ public class ControlflowSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE: {
+				ControllerExchangeNode controllerExchangeNode = (ControllerExchangeNode)theEObject;
+				T result = caseControllerExchangeNode(controllerExchangeNode);
+				if (result == null) result = caseActivityNode(controllerExchangeNode);
+				if (result == null) result = caseNamedElement(controllerExchangeNode);
+				if (result == null) result = caseCommentableElement(controllerExchangeNode);
+				if (result == null) result = caseExtendableElement(controllerExchangeNode);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -159,6 +169,21 @@ public class ControlflowSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentStopNode(ComponentStopNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Controller Exchange Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Controller Exchange Node</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseControllerExchangeNode(ControllerExchangeNode object) {
 		return null;
 	}
 

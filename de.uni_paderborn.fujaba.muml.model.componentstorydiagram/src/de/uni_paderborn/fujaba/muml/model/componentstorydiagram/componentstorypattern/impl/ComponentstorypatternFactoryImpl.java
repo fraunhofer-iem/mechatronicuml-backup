@@ -61,6 +61,14 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN: return createComponentStoryPattern();
+			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN_VARIABLE: return createComponentStoryPatternVariable();
+			case ComponentstorypatternPackage.COMPONENT_VARIABLE: return createComponentVariable();
+			case ComponentstorypatternPackage.PORT_VARIABLE: return createPortVariable();
+			case ComponentstorypatternPackage.PART_VARIABLE: return createPartVariable();
+			case ComponentstorypatternPackage.ASSEMBLY_VARIABLE: return createAssemblyVariable();
+			case ComponentstorypatternPackage.DELEGATION_VARIABLE: return createDelegationVariable();
+			case ComponentstorypatternPackage.CALL: return createCall();
+			case ComponentstorypatternPackage.FADING_FUNCTION: return createFadingFunction();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,6 +82,86 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public ComponentStoryPattern createComponentStoryPattern() {
 		ComponentStoryPatternImpl componentStoryPattern = new ComponentStoryPatternImpl();
 		return componentStoryPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentStoryPatternVariable createComponentStoryPatternVariable() {
+		ComponentStoryPatternVariableImpl componentStoryPatternVariable = new ComponentStoryPatternVariableImpl();
+		return componentStoryPatternVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentVariable createComponentVariable() {
+		ComponentVariableImpl componentVariable = new ComponentVariableImpl();
+		return componentVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortVariable createPortVariable() {
+		PortVariableImpl portVariable = new PortVariableImpl();
+		return portVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartVariable createPartVariable() {
+		PartVariableImpl partVariable = new PartVariableImpl();
+		return partVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssemblyVariable createAssemblyVariable() {
+		AssemblyVariableImpl assemblyVariable = new AssemblyVariableImpl();
+		return assemblyVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DelegationVariable createDelegationVariable() {
+		DelegationVariableImpl delegationVariable = new DelegationVariableImpl();
+		return delegationVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Call createCall() {
+		CallImpl call = new CallImpl();
+		return call;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FadingFunction createFadingFunction() {
+		FadingFunctionImpl fadingFunction = new FadingFunctionImpl();
+		return fadingFunction;
 	}
 
 	/**
