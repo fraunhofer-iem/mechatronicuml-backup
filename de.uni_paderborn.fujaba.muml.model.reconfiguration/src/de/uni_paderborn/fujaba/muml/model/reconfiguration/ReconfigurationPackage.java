@@ -394,13 +394,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Implementations</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONTROLLER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RECONFIGURATION_CONTROLLER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.
@@ -456,6 +465,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int MANAGER__STRUCTURED_COMPONENT = RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Implementations</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER__IMPLEMENTATIONS = RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -520,6 +538,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXECUTOR__STRUCTURED_COMPONENT = RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Implementations</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTOR__IMPLEMENTATIONS = RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Executor</em>' class.
@@ -735,6 +762,145 @@ public interface ReconfigurationPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurableComponent()
+	 * @generated
+	 */
+	int RECONFIGURABLE_COMPONENT = 8;
+
+	/**
+	 * The number of structural features of the '<em>Reconfigurable Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURABLE_COMPONENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImplementationImpl <em>Controller Implementation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImplementationImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationControllerImplementation()
+	 * @generated
+	 */
+	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Controller Implementation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.StatechartImplementationImpl <em>Statechart Implementation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.StatechartImplementationImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getStatechartImplementation()
+	 * @generated
+	 */
+	int STATECHART_IMPLEMENTATION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATECHART_IMPLEMENTATION__ANNOTATION = RECONFIGURATION_CONTROLLER_IMPLEMENTATION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATECHART_IMPLEMENTATION__EXTENSION = RECONFIGURATION_CONTROLLER_IMPLEMENTATION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATECHART_IMPLEMENTATION__NAME = RECONFIGURATION_CONTROLLER_IMPLEMENTATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATECHART_IMPLEMENTATION__COMMENT = RECONFIGURATION_CONTROLLER_IMPLEMENTATION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Implementation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATECHART_IMPLEMENTATION__IMPLEMENTATION = RECONFIGURATION_CONTROLLER_IMPLEMENTATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Statechart Implementation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATECHART_IMPLEMENTATION_FEATURE_COUNT = RECONFIGURATION_CONTROLLER_IMPLEMENTATION_FEATURE_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent <em>Reconfigurable Structured Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -807,6 +973,17 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReconfigurationController_StructuredComponent();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getImplementations <em>Implementations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Implementations</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getImplementations()
+	 * @see #getReconfigurationController()
+	 * @generated
+	 */
+	EReference getReconfigurationController_Implementations();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager <em>Manager</em>}'.
@@ -903,6 +1080,47 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getPortDataType_Port();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Reconfigurable Component</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent
+	 * @generated
+	 */
+	EClass getReconfigurableComponent();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation <em>Controller Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Controller Implementation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation
+	 * @generated
+	 */
+	EClass getReconfigurationControllerImplementation();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation <em>Statechart Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Statechart Implementation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation
+	 * @generated
+	 */
+	EClass getStatechartImplementation();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation#getImplementation <em>Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Implementation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation#getImplementation()
+	 * @see #getStatechartImplementation()
+	 * @generated
+	 */
+	EReference getStatechartImplementation_Implementation();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -987,6 +1205,14 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT = eINSTANCE.getReconfigurationController_StructuredComponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Implementations</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS = eINSTANCE.getReconfigurationController_Implementations();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1067,6 +1293,44 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_DATA_TYPE__PORT = eINSTANCE.getPortDataType_Port();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurableComponent()
+		 * @generated
+		 */
+		EClass RECONFIGURABLE_COMPONENT = eINSTANCE.getReconfigurableComponent();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImplementationImpl <em>Controller Implementation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImplementationImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationControllerImplementation()
+		 * @generated
+		 */
+		EClass RECONFIGURATION_CONTROLLER_IMPLEMENTATION = eINSTANCE.getReconfigurationControllerImplementation();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.StatechartImplementationImpl <em>Statechart Implementation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.StatechartImplementationImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getStatechartImplementation()
+		 * @generated
+		 */
+		EClass STATECHART_IMPLEMENTATION = eINSTANCE.getStatechartImplementation();
+
+		/**
+		 * The meta object literal for the '<em><b>Implementation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATECHART_IMPLEMENTATION__IMPLEMENTATION = eINSTANCE.getStatechartImplementation_Implementation();
 
 	}
 

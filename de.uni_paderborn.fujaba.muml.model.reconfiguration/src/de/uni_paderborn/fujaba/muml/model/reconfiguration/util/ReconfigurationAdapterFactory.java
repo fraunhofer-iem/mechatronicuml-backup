@@ -115,6 +115,18 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createPortDataTypeAdapter();
 			}
 			@Override
+			public Adapter caseReconfigurableComponent(ReconfigurableComponent object) {
+				return createReconfigurableComponentAdapter();
+			}
+			@Override
+			public Adapter caseReconfigurationControllerImplementation(ReconfigurationControllerImplementation object) {
+				return createReconfigurationControllerImplementationAdapter();
+			}
+			@Override
+			public Adapter caseStatechartImplementation(StatechartImplementation object) {
+				return createStatechartImplementationAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -275,6 +287,48 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent
+	 * @generated
+	 */
+	public Adapter createReconfigurableComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation <em>Controller Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation
+	 * @generated
+	 */
+	public Adapter createReconfigurationControllerImplementationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation <em>Statechart Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation
+	 * @generated
+	 */
+	public Adapter createStatechartImplementationAdapter() {
 		return null;
 	}
 

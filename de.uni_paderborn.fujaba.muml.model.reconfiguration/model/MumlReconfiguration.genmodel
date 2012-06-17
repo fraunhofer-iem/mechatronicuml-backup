@@ -16,6 +16,7 @@
     <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationPort"/>
     <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationController">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationController/structuredComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationController/implementations"/>
     </genClasses>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//Manager"/>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//Executor"/>
@@ -28,6 +29,11 @@
     </genClasses>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//PortDataType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//PortDataType/port"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurableComponent"/>
+    <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationControllerImplementation"/>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//StatechartImplementation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//StatechartImplementation/implementation"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

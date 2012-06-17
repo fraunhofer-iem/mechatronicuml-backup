@@ -66,6 +66,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.EXECUTOR: return createExecutor();
 			case ReconfigurationPackage.PART_DATA_TYPE: return createPartDataType();
 			case ReconfigurationPackage.PORT_DATA_TYPE: return createPortDataType();
+			case ReconfigurationPackage.STATECHART_IMPLEMENTATION: return createStatechartImplementation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -129,6 +130,16 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public PortDataType createPortDataType() {
 		PortDataTypeImpl portDataType = new PortDataTypeImpl();
 		return portDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatechartImplementation createStatechartImplementation() {
+		StatechartImplementationImpl statechartImplementation = new StatechartImplementationImpl();
+		return statechartImplementation;
 	}
 
 	/**

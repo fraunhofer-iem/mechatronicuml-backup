@@ -85,6 +85,7 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				ReconfigurableStructuredComponent reconfigurableStructuredComponent = (ReconfigurableStructuredComponent)theEObject;
 				T result = caseReconfigurableStructuredComponent(reconfigurableStructuredComponent);
 				if (result == null) result = caseStructuredComponent(reconfigurableStructuredComponent);
+				if (result == null) result = caseReconfigurableComponent(reconfigurableStructuredComponent);
 				if (result == null) result = caseComponent(reconfigurableStructuredComponent);
 				if (result == null) result = caseNamedElement(reconfigurableStructuredComponent);
 				if (result == null) result = caseCommentableElement(reconfigurableStructuredComponent);
@@ -159,6 +160,31 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(portDataType);
 				if (result == null) result = caseCommentableElement(portDataType);
 				if (result == null) result = caseExtendableElement(portDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURABLE_COMPONENT: {
+				ReconfigurableComponent reconfigurableComponent = (ReconfigurableComponent)theEObject;
+				T result = caseReconfigurableComponent(reconfigurableComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER_IMPLEMENTATION: {
+				ReconfigurationControllerImplementation reconfigurationControllerImplementation = (ReconfigurationControllerImplementation)theEObject;
+				T result = caseReconfigurationControllerImplementation(reconfigurationControllerImplementation);
+				if (result == null) result = caseNamedElement(reconfigurationControllerImplementation);
+				if (result == null) result = caseCommentableElement(reconfigurationControllerImplementation);
+				if (result == null) result = caseExtendableElement(reconfigurationControllerImplementation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.STATECHART_IMPLEMENTATION: {
+				StatechartImplementation statechartImplementation = (StatechartImplementation)theEObject;
+				T result = caseStatechartImplementation(statechartImplementation);
+				if (result == null) result = caseReconfigurationControllerImplementation(statechartImplementation);
+				if (result == null) result = caseNamedElement(statechartImplementation);
+				if (result == null) result = caseCommentableElement(statechartImplementation);
+				if (result == null) result = caseExtendableElement(statechartImplementation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -283,6 +309,51 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePortDataType(PortDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reconfigurable Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reconfigurable Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurableComponent(ReconfigurableComponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Controller Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Controller Implementation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationControllerImplementation(ReconfigurationControllerImplementation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Statechart Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Statechart Implementation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatechartImplementation(StatechartImplementation object) {
 		return null;
 	}
 

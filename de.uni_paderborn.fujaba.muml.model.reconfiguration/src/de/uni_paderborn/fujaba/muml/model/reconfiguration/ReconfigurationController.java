@@ -22,6 +22,7 @@ import org.storydriven.core.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getStructuredComponent <em>Structured Component</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getImplementations <em>Implementations</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,5 +58,31 @@ public interface ReconfigurationController extends NamedElement, CommentableElem
 	 * @generated
 	 */
 	void setStructuredComponent(ReconfigurableStructuredComponent value);
+
+	/**
+	 * Returns the value of the '<em><b>Implementations</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Implementations</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implementations</em>' containment reference.
+	 * @see #setImplementations(ReconfigurationControllerImplementation)
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurationController_Implementations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ReconfigurationControllerImplementation getImplementations();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getImplementations <em>Implementations</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implementations</em>' containment reference.
+	 * @see #getImplementations()
+	 * @generated
+	 */
+	void setImplementations(ReconfigurationControllerImplementation value);
 
 } // ReconfigurationController

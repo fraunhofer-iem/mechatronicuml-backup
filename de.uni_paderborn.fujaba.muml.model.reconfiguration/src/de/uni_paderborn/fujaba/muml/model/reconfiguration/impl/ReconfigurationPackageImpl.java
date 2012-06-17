@@ -26,13 +26,16 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -101,6 +104,27 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass portDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurableComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurationControllerImplementationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass statechartImplementationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -241,6 +265,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getReconfigurationController_Implementations() {
+		return (EReference)reconfigurationControllerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getManager() {
 		return managerEClass;
 	}
@@ -322,6 +355,42 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getReconfigurableComponent() {
+		return reconfigurableComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReconfigurationControllerImplementation() {
+		return reconfigurationControllerImplementationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStatechartImplementation() {
+		return statechartImplementationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStatechartImplementation_Implementation() {
+		return (EReference)statechartImplementationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ReconfigurationFactory getReconfigurationFactory() {
 		return (ReconfigurationFactory)getEFactoryInstance();
 	}
@@ -354,6 +423,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		reconfigurationControllerEClass = createEClass(RECONFIGURATION_CONTROLLER);
 		createEReference(reconfigurationControllerEClass, RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT);
+		createEReference(reconfigurationControllerEClass, RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS);
 
 		managerEClass = createEClass(MANAGER);
 
@@ -368,6 +438,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		portDataTypeEClass = createEClass(PORT_DATA_TYPE);
 		createEReference(portDataTypeEClass, PORT_DATA_TYPE__PORT);
+
+		reconfigurableComponentEClass = createEClass(RECONFIGURABLE_COMPONENT);
+
+		reconfigurationControllerImplementationEClass = createEClass(RECONFIGURATION_CONTROLLER_IMPLEMENTATION);
+
+		statechartImplementationEClass = createEClass(STATECHART_IMPLEMENTATION);
+		createEReference(statechartImplementationEClass, STATECHART_IMPLEMENTATION__IMPLEMENTATION);
 	}
 
 	/**
@@ -397,6 +474,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -404,6 +482,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		// Add supertypes to classes
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(theComponentPackage.getStructuredComponent());
+		reconfigurableStructuredComponentEClass.getESuperTypes().add(this.getReconfigurableComponent());
 		reconfigurationPortEClass.getESuperTypes().add(theComponentPackage.getPort());
 		reconfigurationControllerEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		reconfigurationControllerEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
@@ -413,6 +492,9 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		partDataTypeEClass.getESuperTypes().add(theCorePackage.getDataType());
 		portDataTypeEClass.getESuperTypes().add(theCorePackage.getDataType());
+		reconfigurationControllerImplementationEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		reconfigurationControllerImplementationEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		statechartImplementationEClass.getESuperTypes().add(this.getReconfigurationControllerImplementation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(reconfigurableStructuredComponentEClass, ReconfigurableStructuredComponent.class, "ReconfigurableStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -424,6 +506,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		initEClass(reconfigurationControllerEClass, ReconfigurationController.class, "ReconfigurationController", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationController_StructuredComponent(), this.getReconfigurableStructuredComponent(), this.getReconfigurableStructuredComponent_Controllers(), "structuredComponent", null, 1, 1, ReconfigurationController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationController_Implementations(), this.getReconfigurationControllerImplementation(), null, "implementations", null, 0, 1, ReconfigurationController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(managerEClass, Manager.class, "Manager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -438,6 +521,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		initEClass(portDataTypeEClass, PortDataType.class, "PortDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortDataType_Port(), theComponentPackage.getPort(), null, "port", null, 1, 1, PortDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(reconfigurableComponentEClass, ReconfigurableComponent.class, "ReconfigurableComponent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(reconfigurationControllerImplementationEClass, ReconfigurationControllerImplementation.class, "ReconfigurationControllerImplementation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(statechartImplementationEClass, StatechartImplementation.class, "StatechartImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStatechartImplementation_Implementation(), theRealtimestatechartPackage.getRealtimeStatechart(), null, "implementation", null, 1, 1, StatechartImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -464,7 +554,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });									
+		   });												
 	}
 
 	/**
@@ -486,7 +576,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)"
-		   });					
+		   });								
 	}
 
 } //ReconfigurationPackageImpl

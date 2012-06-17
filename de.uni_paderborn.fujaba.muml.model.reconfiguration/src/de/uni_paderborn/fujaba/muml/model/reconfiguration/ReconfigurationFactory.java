@@ -80,6 +80,15 @@ public interface ReconfigurationFactory extends EFactory {
 	PortDataType createPortDataType();
 
 	/**
+	 * Returns a new object of class '<em>Statechart Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Statechart Implementation</em>'.
+	 * @generated
+	 */
+	StatechartImplementation createStatechartImplementation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

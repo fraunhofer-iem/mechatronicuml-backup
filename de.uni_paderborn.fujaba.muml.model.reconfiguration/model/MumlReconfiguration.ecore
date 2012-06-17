@@ -11,7 +11,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="This package contains all classes which are needed to define reconfigurable components in MechatronicUML. A reconfigurable component may change its ports and, in case of a structured component, its inner structure. The supported structural changes include adding or removing embedded component instances, adding or removing port instances, adding or removing or redirecting assemblies and delegations."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponent" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponent" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent #//ReconfigurableComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfigurable structured component may change its internal structure at run-time. Therefore, it may instantiate or remove component instances that are typed over embedded component parts. In addition, assemblies and delegations in the structured component may be added, removed or redirected. The reconfiguration behavior in encapsulated in the reconfiguration controllers which are contained in the reconfigurable structured component."/>
     </eAnnotations>
@@ -42,6 +42,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="structuredComponent" lowerBound="1"
         eType="#//ReconfigurableStructuredComponent" eOpposite="#//ReconfigurableStructuredComponent/controllers"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" eType="#//ReconfigurationControllerImplementation"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="#//ReconfigurationController"/>
   <eClassifiers xsi:type="ecore:EClass" name="Executor" eSuperTypes="#//ReconfigurationController"/>
@@ -68,5 +70,24 @@
       <details key="documentation" value="A PortDataType is used to type a parameter of a reconfiguration rule over a port of a structured component. Then, only a port instance which is typed over the respective port may be passed as a parameter."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponent" abstract="true"
+      interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This interface needs to be implemented by all reconfigurable component types in order to distinguish them from static component types."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationControllerImplementation"
+      abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A controller implementation defines a behavioral model for a reconfiguration controller which may be directly executed or used for code generation. It is intended to be automatically generated out of the controller specification."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatechartImplementation" eSuperTypes="#//ReconfigurationControllerImplementation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Provides an implementation of a reconfiguration controller by means of a real-time statechart."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
   </eClassifiers>
 </ecore:EPackage>

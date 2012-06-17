@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ReconfigurableStructuredComponent extends StructuredComponent {
+public interface ReconfigurableStructuredComponent extends StructuredComponent, ReconfigurableComponent {
 	/**
 	 * Returns the value of the '<em><b>Controllers</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController}.

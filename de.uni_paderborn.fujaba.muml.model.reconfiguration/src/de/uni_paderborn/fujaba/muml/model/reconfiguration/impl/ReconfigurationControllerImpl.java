@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,6 +35,7 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImpl#getStructuredComponent <em>Structured Component</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImpl#getImplementations <em>Implementations</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +61,16 @@ public abstract class ReconfigurationControllerImpl extends NamedElementImpl imp
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getImplementations() <em>Implementations</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplementations()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReconfigurationControllerImplementation implementations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,6 +158,49 @@ public abstract class ReconfigurationControllerImpl extends NamedElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ReconfigurationControllerImplementation getImplementations() {
+		return implementations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetImplementations(ReconfigurationControllerImplementation newImplementations, NotificationChain msgs) {
+		ReconfigurationControllerImplementation oldImplementations = implementations;
+		implementations = newImplementations;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS, oldImplementations, newImplementations);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImplementations(ReconfigurationControllerImplementation newImplementations) {
+		if (newImplementations != implementations) {
+			NotificationChain msgs = null;
+			if (implementations != null)
+				msgs = ((InternalEObject)implementations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS, null, msgs);
+			if (newImplementations != null)
+				msgs = ((InternalEObject)newImplementations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS, null, msgs);
+			msgs = basicSetImplementations(newImplementations, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS, newImplementations, newImplementations));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -167,6 +222,8 @@ public abstract class ReconfigurationControllerImpl extends NamedElementImpl imp
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT:
 				return basicSetStructuredComponent(null, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS:
+				return basicSetImplementations(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -197,6 +254,8 @@ public abstract class ReconfigurationControllerImpl extends NamedElementImpl imp
 				return getComment();
 			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT:
 				return getStructuredComponent();
+			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS:
+				return getImplementations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,6 +273,9 @@ public abstract class ReconfigurationControllerImpl extends NamedElementImpl imp
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT:
 				setStructuredComponent((ReconfigurableStructuredComponent)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS:
+				setImplementations((ReconfigurationControllerImplementation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -233,6 +295,9 @@ public abstract class ReconfigurationControllerImpl extends NamedElementImpl imp
 			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT:
 				setStructuredComponent((ReconfigurableStructuredComponent)null);
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS:
+				setImplementations((ReconfigurationControllerImplementation)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -249,6 +314,8 @@ public abstract class ReconfigurationControllerImpl extends NamedElementImpl imp
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT:
 				return getStructuredComponent() != null;
+			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS:
+				return implementations != null;
 		}
 		return super.eIsSet(featureID);
 	}
