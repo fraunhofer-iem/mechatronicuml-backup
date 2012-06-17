@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 
 import java.util.Collection;
@@ -19,7 +18,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -39,12 +37,12 @@ import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurationControllerItemProvider
+public class ReconfigurationControllerImplementationItemProvider
 	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -58,7 +56,7 @@ public class ReconfigurationControllerItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationControllerItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationControllerImplementationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -101,36 +99,6 @@ public class ReconfigurationControllerItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,10 +106,10 @@ public class ReconfigurationControllerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurationController)object).getName();
+		String label = ((ReconfigurationControllerImplementation)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurationController_type") :
-			getString("_UI_ReconfigurationController_type") + " " + label;
+			getString("_UI_ReconfigurationControllerImplementation_type") :
+			getString("_UI_ReconfigurationControllerImplementation_type") + " " + label;
 	}
 
 	/**
@@ -155,12 +123,9 @@ public class ReconfigurationControllerItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReconfigurationController.class)) {
-			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__COMMENT:
+		switch (notification.getFeatureID(ReconfigurationControllerImplementation.class)) {
+			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER_IMPLEMENTATION__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -186,11 +151,6 @@ public class ReconfigurationControllerItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS,
-				 ReconfigurationFactory.eINSTANCE.createStatechartImplementation()));
 	}
 
 	/**

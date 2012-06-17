@@ -214,6 +214,29 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StatechartImplementationItemProvider statechartImplementationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStatechartImplementationAdapter() {
+		if (statechartImplementationItemProvider == null) {
+			statechartImplementationItemProvider = new StatechartImplementationItemProvider(this);
+		}
+
+		return statechartImplementationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -318,6 +341,7 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 		if (executorItemProvider != null) executorItemProvider.dispose();
 		if (partDataTypeItemProvider != null) partDataTypeItemProvider.dispose();
 		if (portDataTypeItemProvider != null) portDataTypeItemProvider.dispose();
+		if (statechartImplementationItemProvider != null) statechartImplementationItemProvider.dispose();
 	}
 
 }
