@@ -99,6 +99,190 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentStoryPatternVariableItemProvider componentStoryPatternVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentStoryPatternVariableAdapter() {
+		if (componentStoryPatternVariableItemProvider == null) {
+			componentStoryPatternVariableItemProvider = new ComponentStoryPatternVariableItemProvider(this);
+		}
+
+		return componentStoryPatternVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentVariableItemProvider componentVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentVariableAdapter() {
+		if (componentVariableItemProvider == null) {
+			componentVariableItemProvider = new ComponentVariableItemProvider(this);
+		}
+
+		return componentVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortVariableItemProvider portVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortVariableAdapter() {
+		if (portVariableItemProvider == null) {
+			portVariableItemProvider = new PortVariableItemProvider(this);
+		}
+
+		return portVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PartVariableItemProvider partVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPartVariableAdapter() {
+		if (partVariableItemProvider == null) {
+			partVariableItemProvider = new PartVariableItemProvider(this);
+		}
+
+		return partVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssemblyVariableItemProvider assemblyVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssemblyVariableAdapter() {
+		if (assemblyVariableItemProvider == null) {
+			assemblyVariableItemProvider = new AssemblyVariableItemProvider(this);
+		}
+
+		return assemblyVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DelegationVariableItemProvider delegationVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDelegationVariableAdapter() {
+		if (delegationVariableItemProvider == null) {
+			delegationVariableItemProvider = new DelegationVariableItemProvider(this);
+		}
+
+		return delegationVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CallItemProvider callItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCallAdapter() {
+		if (callItemProvider == null) {
+			callItemProvider = new CallItemProvider(this);
+		}
+
+		return callItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FadingFunctionItemProvider fadingFunctionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFadingFunctionAdapter() {
+		if (fadingFunctionItemProvider == null) {
+			fadingFunctionItemProvider = new FadingFunctionItemProvider(this);
+		}
+
+		return fadingFunctionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,6 +382,14 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 	 */
 	public void dispose() {
 		if (componentStoryPatternItemProvider != null) componentStoryPatternItemProvider.dispose();
+		if (componentStoryPatternVariableItemProvider != null) componentStoryPatternVariableItemProvider.dispose();
+		if (componentVariableItemProvider != null) componentVariableItemProvider.dispose();
+		if (portVariableItemProvider != null) portVariableItemProvider.dispose();
+		if (partVariableItemProvider != null) partVariableItemProvider.dispose();
+		if (assemblyVariableItemProvider != null) assemblyVariableItemProvider.dispose();
+		if (delegationVariableItemProvider != null) delegationVariableItemProvider.dispose();
+		if (callItemProvider != null) callItemProvider.dispose();
+		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
 	}
 
 }

@@ -4,16 +4,13 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider;
+package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
 
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider.ComponentStoryDiagramEditPlugin;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,8 +20,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,20 +27,25 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.core.CorePackage;
 
-import org.storydriven.storydiagrams.activities.provider.ActivityItemProvider;
+import org.storydriven.core.provider.NamedElementItemProvider;
+
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
+import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentStoryDiagramItemProvider
-	extends ActivityItemProvider
+public class FadingFunctionItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -58,7 +58,7 @@ public class ComponentStoryDiagramItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryDiagramItemProvider(AdapterFactory adapterFactory) {
+	public FadingFunctionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -73,25 +73,49 @@ public class ComponentStoryDiagramItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addReturnParametersPropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
+			addFromPortPropertyDescriptor(object);
+			addToPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Return Parameters feature.
+	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReturnParametersPropertyDescriptor(Object object) {
+	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ReconfigurationRule_returnParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_returnParameters_feature", "_UI_ReconfigurationRule_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RETURN_PARAMETERS,
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the From Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFromPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FadingFunction_fromPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FadingFunction_fromPort_feature", "_UI_FadingFunction_type"),
+				 ComponentstorypatternPackage.Literals.FADING_FUNCTION__FROM_PORT,
 				 true,
 				 false,
 				 true,
@@ -101,44 +125,36 @@ public class ComponentStoryDiagramItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the To Port feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS);
-		}
-		return childrenFeatures;
+	protected void addToPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FadingFunction_toPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FadingFunction_toPort_feature", "_UI_FadingFunction_type"),
+				 ComponentstorypatternPackage.Literals.FADING_FUNCTION__TO_PORT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns ComponentStoryDiagram.gif.
+	 * This returns FadingFunction.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentStoryDiagram"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FadingFunction"));
 	}
 
 	/**
@@ -149,10 +165,10 @@ public class ComponentStoryDiagramItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentStoryDiagram)object).getName();
+		String label = ((FadingFunction)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentStoryDiagram_type") :
-			getString("_UI_ComponentStoryDiagram_type") + " " + label;
+			getString("_UI_FadingFunction_type") :
+			getString("_UI_FadingFunction_type") + " " + label;
 	}
 
 	/**
@@ -166,9 +182,9 @@ public class ComponentStoryDiagramItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentStoryDiagram.class)) {
-			case ControlflowPackage.COMPONENT_STORY_DIAGRAM__PARAMETERS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+		switch (notification.getFeatureID(FadingFunction.class)) {
+			case ComponentstorypatternPackage.FADING_FUNCTION__COMMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -187,23 +203,13 @@ public class ComponentStoryDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createComponentStoryNode()));
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createComponentStopNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createControllerExchangeNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS,
-				 CoreFactory.eINSTANCE.createParameter()));
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 	/**

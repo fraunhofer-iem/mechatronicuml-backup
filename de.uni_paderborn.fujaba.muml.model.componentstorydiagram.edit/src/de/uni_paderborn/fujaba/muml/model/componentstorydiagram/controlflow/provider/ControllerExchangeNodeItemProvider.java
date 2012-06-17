@@ -7,13 +7,12 @@
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
+
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode;
 
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,20 +31,19 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-
-import org.storydriven.storydiagrams.activities.provider.ActivityItemProvider;
+import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentStoryDiagramItemProvider
-	extends ActivityItemProvider
+public class ControllerExchangeNodeItemProvider
+	extends ActivityNodeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -58,7 +56,7 @@ public class ComponentStoryDiagramItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryDiagramItemProvider(AdapterFactory adapterFactory) {
+	public ControllerExchangeNodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -73,29 +71,52 @@ public class ComponentStoryDiagramItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addReturnParametersPropertyDescriptor(object);
+			addComponentStoryPatternPropertyDescriptor(object);
+			addControllerExchangeStrategyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Return Parameters feature.
+	 * This adds a property descriptor for the Component Story Pattern feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReturnParametersPropertyDescriptor(Object object) {
+	protected void addComponentStoryPatternPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ReconfigurationRule_returnParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_returnParameters_feature", "_UI_ReconfigurationRule_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RETURN_PARAMETERS,
+				 getString("_UI_ControllerExchangeNode_componentStoryPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ControllerExchangeNode_componentStoryPattern_feature", "_UI_ControllerExchangeNode_type"),
+				 ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controller Exchange Strategy feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControllerExchangeStrategyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ControllerExchangeNode_controllerExchangeStrategy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ControllerExchangeNode_controllerExchangeStrategy_feature", "_UI_ControllerExchangeNode_type"),
+				 ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -112,7 +133,8 @@ public class ComponentStoryDiagramItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS);
+			childrenFeatures.add(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE);
+			childrenFeatures.add(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -131,14 +153,14 @@ public class ComponentStoryDiagramItemProvider
 	}
 
 	/**
-	 * This returns ComponentStoryDiagram.gif.
+	 * This returns ControllerExchangeNode.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentStoryDiagram"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ControllerExchangeNode"));
 	}
 
 	/**
@@ -149,10 +171,10 @@ public class ComponentStoryDiagramItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentStoryDiagram)object).getName();
+		String label = ((ControllerExchangeNode)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentStoryDiagram_type") :
-			getString("_UI_ComponentStoryDiagram_type") + " " + label;
+			getString("_UI_ControllerExchangeNode_type") :
+			getString("_UI_ControllerExchangeNode_type") + " " + label;
 	}
 
 	/**
@@ -166,8 +188,12 @@ public class ComponentStoryDiagramItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentStoryDiagram.class)) {
-			case ControlflowPackage.COMPONENT_STORY_DIAGRAM__PARAMETERS:
+		switch (notification.getFeatureID(ControllerExchangeNode.class)) {
+			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
+			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -187,23 +213,13 @@ public class ComponentStoryDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createComponentStoryNode()));
+				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE,
+				 RealtimestatechartFactory.eINSTANCE.createRelativeDeadline()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createComponentStopNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createControllerExchangeNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS,
-				 CoreFactory.eINSTANCE.createParameter()));
+				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS,
+				 ComponentstorypatternFactory.eINSTANCE.createFadingFunction()));
 	}
 
 	/**

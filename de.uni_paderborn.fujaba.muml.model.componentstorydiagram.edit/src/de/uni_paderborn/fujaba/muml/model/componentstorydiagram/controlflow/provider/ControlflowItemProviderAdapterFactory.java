@@ -145,6 +145,29 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ControllerExchangeNodeItemProvider controllerExchangeNodeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createControllerExchangeNodeAdapter() {
+		if (controllerExchangeNodeItemProvider == null) {
+			controllerExchangeNodeItemProvider = new ControllerExchangeNodeItemProvider(this);
+		}
+
+		return controllerExchangeNodeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -246,6 +269,7 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 		if (componentStoryDiagramItemProvider != null) componentStoryDiagramItemProvider.dispose();
 		if (componentStoryNodeItemProvider != null) componentStoryNodeItemProvider.dispose();
 		if (componentStopNodeItemProvider != null) componentStopNodeItemProvider.dispose();
+		if (controllerExchangeNodeItemProvider != null) controllerExchangeNodeItemProvider.dispose();
 	}
 
 }

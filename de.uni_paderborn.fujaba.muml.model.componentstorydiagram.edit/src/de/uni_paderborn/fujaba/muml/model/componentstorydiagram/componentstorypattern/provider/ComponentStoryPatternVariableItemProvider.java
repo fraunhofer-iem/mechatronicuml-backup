@@ -7,9 +7,9 @@
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider.ComponentStoryDiagramEditPlugin;
 
 import java.util.Collection;
@@ -20,7 +20,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -30,19 +29,22 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.core.CorePackage;
+
 import org.storydriven.core.provider.NamedElementItemProvider;
+
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
 import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentStoryPatternItemProvider
+public class ComponentStoryPatternVariableItemProvider
 	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -56,7 +58,7 @@ public class ComponentStoryPatternItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryPatternItemProvider(AdapterFactory adapterFactory) {
+	public ComponentStoryPatternVariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -72,6 +74,9 @@ public class ComponentStoryPatternItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addBindingSemanticsPropertyDescriptor(object);
+			addBindingOperatorPropertyDescriptor(object);
+			addBindingStatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -99,44 +104,80 @@ public class ComponentStoryPatternItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Binding Semantics feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN__THIS_VARIABLE);
-		}
-		return childrenFeatures;
+	protected void addBindingSemanticsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentStoryPatternVariable_bindingSemantics_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStoryPatternVariable_bindingSemantics_feature", "_UI_ComponentStoryPatternVariable_type"),
+				 ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Binding Operator feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addBindingOperatorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentStoryPatternVariable_bindingOperator_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStoryPatternVariable_bindingOperator_feature", "_UI_ComponentStoryPatternVariable_type"),
+				 ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns ComponentStoryPattern.gif.
+	 * This adds a property descriptor for the Binding State feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBindingStatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentStoryPatternVariable_bindingState_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStoryPatternVariable_bindingState_feature", "_UI_ComponentStoryPatternVariable_type"),
+				 ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_STATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns ComponentStoryPatternVariable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentStoryPattern"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentStoryPatternVariable"));
 	}
 
 	/**
@@ -147,10 +188,10 @@ public class ComponentStoryPatternItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentStoryPattern)object).getName();
+		String label = ((ComponentStoryPatternVariable)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentStoryPattern_type") :
-			getString("_UI_ComponentStoryPattern_type") + " " + label;
+			getString("_UI_ComponentStoryPatternVariable_type") :
+			getString("_UI_ComponentStoryPatternVariable_type") + " " + label;
 	}
 
 	/**
@@ -164,12 +205,12 @@ public class ComponentStoryPatternItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentStoryPattern.class)) {
-			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN__COMMENT:
+		switch (notification.getFeatureID(ComponentStoryPatternVariable.class)) {
+			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN_VARIABLE__COMMENT:
+			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS:
+			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR:
+			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_STATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN__THIS_VARIABLE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -195,11 +236,6 @@ public class ComponentStoryPatternItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN__THIS_VARIABLE,
-				 ComponentstorypatternFactory.eINSTANCE.createComponentVariable()));
 	}
 
 	/**

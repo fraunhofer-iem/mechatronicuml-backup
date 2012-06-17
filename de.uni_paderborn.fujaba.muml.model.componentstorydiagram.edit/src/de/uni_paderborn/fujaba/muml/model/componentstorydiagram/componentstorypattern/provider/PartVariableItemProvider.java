@@ -4,24 +4,18 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider;
+package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
-
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -34,18 +28,14 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-
-import org.storydriven.storydiagrams.activities.provider.ActivityItemProvider;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentStoryDiagramItemProvider
-	extends ActivityItemProvider
+public class PartVariableItemProvider
+	extends ComponentStoryPatternVariableItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -58,7 +48,7 @@ public class ComponentStoryDiagramItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryDiagramItemProvider(AdapterFactory adapterFactory) {
+	public PartVariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -73,25 +63,48 @@ public class ComponentStoryDiagramItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addReturnParametersPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
+			addCallPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Return Parameters feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReturnParametersPropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ReconfigurationRule_returnParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_returnParameters_feature", "_UI_ReconfigurationRule_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RETURN_PARAMETERS,
+				 getString("_UI_PartVariable_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PartVariable_type_feature", "_UI_PartVariable_type"),
+				 ComponentstorypatternPackage.Literals.PART_VARIABLE__TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Call feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCallPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PartVariable_call_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PartVariable_call_feature", "_UI_PartVariable_type"),
+				 ComponentstorypatternPackage.Literals.PART_VARIABLE__CALL,
 				 true,
 				 false,
 				 true,
@@ -112,7 +125,7 @@ public class ComponentStoryDiagramItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS);
+			childrenFeatures.add(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES);
 		}
 		return childrenFeatures;
 	}
@@ -131,14 +144,14 @@ public class ComponentStoryDiagramItemProvider
 	}
 
 	/**
-	 * This returns ComponentStoryDiagram.gif.
+	 * This returns PartVariable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentStoryDiagram"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PartVariable"));
 	}
 
 	/**
@@ -149,10 +162,10 @@ public class ComponentStoryDiagramItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentStoryDiagram)object).getName();
+		String label = ((PartVariable)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentStoryDiagram_type") :
-			getString("_UI_ComponentStoryDiagram_type") + " " + label;
+			getString("_UI_PartVariable_type") :
+			getString("_UI_PartVariable_type") + " " + label;
 	}
 
 	/**
@@ -166,8 +179,8 @@ public class ComponentStoryDiagramItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentStoryDiagram.class)) {
-			case ControlflowPackage.COMPONENT_STORY_DIAGRAM__PARAMETERS:
+		switch (notification.getFeatureID(PartVariable.class)) {
+			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -187,34 +200,8 @@ public class ComponentStoryDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createComponentStoryNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createComponentStopNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ControlflowFactory.eINSTANCE.createControllerExchangeNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS,
-				 CoreFactory.eINSTANCE.createParameter()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ComponentStoryDiagramEditPlugin.INSTANCE;
+				(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES,
+				 ComponentstorypatternFactory.eINSTANCE.createPortVariable()));
 	}
 
 }
