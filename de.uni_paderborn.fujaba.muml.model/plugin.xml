@@ -12,6 +12,20 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
+            uri="http://www.fujaba.de/muml/0.2.2"
+            class="de.uni_paderborn.fujaba.muml.MumlPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/0.2.2"
+            class="de.uni_paderborn.fujaba.muml.model.ModelPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
             uri="http://www.fujaba.de/muml/model/component/0.2.3"
             class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage"
             genModel="model/muml.genmodel"/>
@@ -65,6 +79,7 @@
             class="de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage"
             genModel="model/muml.genmodel"/>
    </extension>
+   
 
 
    <extension

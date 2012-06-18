@@ -17,6 +17,9 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import de.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.muml.MumlPackage;
+import de.uni_paderborn.fujaba.muml.impl.MumlPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.ModelPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
@@ -42,6 +45,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
