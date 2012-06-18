@@ -12,3 +12,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands,
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands
+Bundle-Activator: de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part.Activator

@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 import java.util.Collections;
 
 import org.eclipse.emf.common.command.AbstractCommand;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
@@ -11,6 +10,7 @@ import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 
 public class CreateInstancesCommand extends AbstractCommand {
@@ -28,23 +28,19 @@ public class CreateInstancesCommand extends AbstractCommand {
 
 	@Override
 	public void execute() {
-		URI transformationURI = URI
-				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom/transforms/instances.qvto",
-						true);
-
-		// create executor and execution context
-		TransformationExecutor executor = new TransformationExecutor(
-				transformationURI);
-		ExecutionContextImpl context = new ExecutionContextImpl();
-
 		// Bind componentInstance to input
 		ModelExtent input = new BasicModelExtent(
 				Collections.singletonList(componentInstance));
-		
 
 		// execute transformation
-		ExecutionDiagnostic result = executor.execute(context, input);
+		TransformationExecutor transformationExecutor = Activator.getInstance()
+				.getTransformationExecutor();
+
+		ExecutionContextImpl context = new ExecutionContextImpl();
+		
+		ExecutionDiagnostic result = transformationExecutor.execute(context,
+				input);
+		
 		if (result.getSeverity() != ExecutionDiagnostic.OK) {
 			System.out
 					.println("QVT-O ERROR on rule transformation. Message was:");
@@ -64,6 +60,4 @@ public class CreateInstancesCommand extends AbstractCommand {
 
 	}
 
-	private void instantiate(EObject object) {
-	}
 }
