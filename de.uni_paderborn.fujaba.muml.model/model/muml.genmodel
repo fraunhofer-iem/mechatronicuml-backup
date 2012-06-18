@@ -216,6 +216,8 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/ArrayDataType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/ArrayDataType/cardinality"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/core/ArrayDataType/type"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/InnerDeclaration">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/InnerDeclaration/key"/>

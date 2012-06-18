@@ -747,7 +747,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE__ANNOTATION = COMPOSITE_DATA_TYPE__ANNOTATION;
+	int ARRAY_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -756,7 +756,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE__EXTENSION = COMPOSITE_DATA_TYPE__EXTENSION;
+	int ARRAY_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -765,7 +765,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE__NAME = COMPOSITE_DATA_TYPE__NAME;
+	int ARRAY_DATA_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -774,16 +774,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE__COMMENT = COMPOSITE_DATA_TYPE__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Inner Declaration</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRAY_DATA_TYPE__INNER_DECLARATION = COMPOSITE_DATA_TYPE__INNER_DECLARATION;
+	int ARRAY_DATA_TYPE__COMMENT = DATA_TYPE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -792,7 +783,16 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE__CARDINALITY = COMPOSITE_DATA_TYPE_FEATURE_COUNT + 0;
+	int ARRAY_DATA_TYPE__CARDINALITY = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE__TYPE = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Array Data Type</em>' class.
@@ -801,7 +801,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE_FEATURE_COUNT = COMPOSITE_DATA_TYPE_FEATURE_COUNT + 1;
+	int ARRAY_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.InnerDeclarationImpl <em>Inner Declaration</em>}' class.
@@ -1279,6 +1279,17 @@ public interface CorePackage extends EPackage {
 	EAttribute getArrayDataType_Cardinality();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getType()
+	 * @see #getArrayDataType()
+	 * @generated
+	 */
+	EReference getArrayDataType_Type();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration <em>Inner Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1658,6 +1669,14 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ARRAY_DATA_TYPE__CARDINALITY = eINSTANCE.getArrayDataType_Cardinality();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARRAY_DATA_TYPE__TYPE = eINSTANCE.getArrayDataType_Type();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.InnerDeclarationImpl <em>Inner Declaration</em>}' class.

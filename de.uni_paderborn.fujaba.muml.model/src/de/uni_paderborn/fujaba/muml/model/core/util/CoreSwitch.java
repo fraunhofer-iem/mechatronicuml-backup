@@ -191,7 +191,6 @@ public class CoreSwitch<T> extends Switch<T> {
 			case CorePackage.ARRAY_DATA_TYPE: {
 				ArrayDataType arrayDataType = (ArrayDataType)theEObject;
 				T result = caseArrayDataType(arrayDataType);
-				if (result == null) result = caseCompositeDataType(arrayDataType);
 				if (result == null) result = caseDataType(arrayDataType);
 				if (result == null) result = caseNamedElement(arrayDataType);
 				if (result == null) result = caseCommentableElement(arrayDataType);

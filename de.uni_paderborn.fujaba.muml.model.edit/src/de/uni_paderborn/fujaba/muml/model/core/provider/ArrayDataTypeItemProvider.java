@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
  * @generated
  */
 public class ArrayDataTypeItemProvider
-	extends CompositeDataTypeItemProvider
+	extends DataTypeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -61,6 +61,7 @@ public class ArrayDataTypeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCardinalityPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,6 +84,28 @@ public class ArrayDataTypeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ArrayDataType_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ArrayDataType_type_feature", "_UI_ArrayDataType_type"),
+				 CorePackage.Literals.ARRAY_DATA_TYPE__TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

@@ -17879,18 +17879,18 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType"
-          referenceName="eAnnotations" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="eAnnotations" element="#//@releases.8/@changes.79/@element">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element"
             featureName="source" dataValue="http://www.eclipse.org/gmf/2005/constraints"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.79/@element"
+          referenceName="details" element="#//@releases.8/@changes.79/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element/@details.0"
             featureName="key" dataValue="ocl"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element/@details.0"
             featureName="value" dataValue="self.innerDeclaration->size() &lt;= self.cardinality"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.79/@element"
           referenceName="details" element="#//@releases.5/@changes.31/@element">
         <changes xsi:type="history:Set" element="#//@releases.5/@changes.31/@element"
             featureName="key" dataValue="description"/>
@@ -17909,25 +17909,25 @@
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element"
         featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"
         oldDataValue="http://www.eclipse.org/gmf/2005/constraints"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element/@details.0"
         featureName="key" dataValue="ArrayIndexOutOfBounce" oldDataValue="ocl"/>
-    <changes xsi:type="history:Delete" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Delete" target="#//@releases.8/@changes.79/@element"
         referenceName="details">
       <element xsi:type="ecore:EStringToStringMapEntry" key="description" value="This constraint ensures that an array has less or equal inner declarations."/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+    <changes xsi:type="history:Create" target="#//@releases.8/@changes.79/@element"
+        referenceName="details" element="#//@releases.8/@changes.79/@element/@details.1">
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element/@details.1"
           featureName="key" dataValue="ArrayIndexOutOfBounce"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element/@details.1"
           featureName="value" dataValue="self.innerDeclaration->size() &lt;= self.cardinality"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element/@details.1"
         featureName="key" dataValue="InnerDeclarationEqualTypeViolation" oldDataValue="ArrayIndexOutOfBounce"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.79/@element/@details.1"
         featureName="value" dataValue="self.innerDeclaration.type->asSet()->select(not oclIsUndefined())->size() = 1"
         oldDataValue="self.innerDeclaration->size() &lt;= self.cardinality"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/core" featureName="nsURI"
@@ -23636,5 +23636,47 @@
     <changes xsi:type="history:Move" target="muml.ecore#//model/component/StructuredComponent"
         referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
         source="muml.ecore#//model/component/StaticStructuredComponent"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Remove" element="muml.ecore#//model/core/ArrayDataType"
+          featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/CompositeDataType"/>
+      <operation name="removeSuperType">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/core/ArrayDataType"/>
+        </parameters>
+        <parameters name="superType">
+          <referenceValue element="muml.ecore#//model/core/CompositeDataType"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/core/ArrayDataType"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/DataType"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/core/ArrayDataType"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ArrayIndexOutOfBounce" value="self.innerDeclaration->size() &lt;= self.cardinality"/>
+        <details key="InnerDeclarationEqualTypeViolation" value="self.innerDeclaration.type->asSet()->select(not oclIsUndefined())->size() = 1"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/core/ArrayDataType/type">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/type"
+          featureName="name" dataValue="type"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/type"
+          featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/type"
+          featureName="eType" referenceValue="muml.ecore#//model/core/DataType"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/type"
+        referenceName="eAnnotations" element="muml.ecore#//model/core/ArrayDataType/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/ArrayDataType/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/core/ArrayDataType/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="This reference points to the definition of the data type."/>
+    </changes>
   </releases>
 </history:History>

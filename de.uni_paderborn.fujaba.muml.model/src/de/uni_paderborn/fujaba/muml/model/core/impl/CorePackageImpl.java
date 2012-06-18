@@ -559,6 +559,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getArrayDataType_Type() {
+		return (EReference)arrayDataTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInnerDeclaration() {
 		return innerDeclarationEClass;
 	}
@@ -697,6 +706,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		arrayDataTypeEClass = createEClass(ARRAY_DATA_TYPE);
 		createEAttribute(arrayDataTypeEClass, ARRAY_DATA_TYPE__CARDINALITY);
+		createEReference(arrayDataTypeEClass, ARRAY_DATA_TYPE__TYPE);
 
 		innerDeclarationEClass = createEClass(INNER_DECLARATION);
 		createEAttribute(innerDeclarationEClass, INNER_DECLARATION__KEY);
@@ -759,7 +769,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		dataTypeEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 		compositeDataTypeEClass.getESuperTypes().add(this.getDataType());
-		arrayDataTypeEClass.getESuperTypes().add(this.getCompositeDataType());
+		arrayDataTypeEClass.getESuperTypes().add(this.getDataType());
 		innerDeclarationEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		innerDeclarationEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		parameterBindingEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
@@ -818,6 +828,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArrayDataType_Cardinality(), theEcorePackage.getEInt(), "cardinality", "1", 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArrayDataType_Type(), this.getDataType(), null, "type", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(innerDeclarationEClass, InnerDeclaration.class, "InnerDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInnerDeclaration_Key(), theEcorePackage.getEInt(), "key", null, 0, 1, InnerDeclaration.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -898,14 +909,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
-		   });																										
-		addAnnotation
-		  (arrayDataTypeEClass, 
-		   source, 
-		   new String[] {
-			 "ArrayIndexOutOfBounce", "self.innerDeclaration->size() <= self.cardinality",
-			 "InnerDeclarationEqualTypeViolation", "self.innerDeclaration.type->asSet()->select(not oclIsUndefined())->size() = 1"
-		   });				
+		   });																													
 		addAnnotation
 		  (getInnerDeclaration_Key(), 
 		   source, 
