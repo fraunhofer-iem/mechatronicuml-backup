@@ -1,17 +1,111 @@
-transformation SCAPredictionTransformation(inout instance : Instance);
+transformation InstantiationTransformation(inout instance : InstancePackage);
 
-modeltype Muml uses muml('http://www.fujaba.de/muml/0.2.2');
-modeltype Model uses muml::model('http://www.fujaba.de/muml/0.2.2');
-modeltype Component uses muml::model::component('http://www.fujaba.de/muml/0.2.2');
-modeltype Instance uses muml::model::instance('http://www.fujaba.de/muml/0.2.2');
-
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.2.2');
+modeltype ModelPackage uses muml::model('http://www.fujaba.de/muml/0.2.2');
+modeltype CorePackage uses muml::model::core('http://www.fujaba.de/muml/0.2.2');
+modeltype ComponentPackage uses muml::model::component('http://www.fujaba.de/muml/0.2.2');
+modeltype InstancePackage uses muml::model::instance('http://www.fujaba.de/muml/0.2.2');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 main() {
 	log("QVT-O Script \"instances.qvto\" started.");
 
+	// process AtomicComponentInstances
+	instance.rootObjects()[AtomicComponentInstance]->forEach(ci) {
+		ci.portInstances := ci.componentType.createPortInstances();
+	};
+	
+	// process StructuredComponentInstances
+	instance.rootObjects()[StructuredComponentInstance]->forEach(ci) {
+		ci.portInstances := ci.componentType.createPortInstances();
+		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
+	};
+}
 
-	// Do something with the instances provided...
-	//instance.rootObjects()[ComponentInstance].componentType;
+// Queries
+query NaturalNumber::toInteger() : Integer {
+	if (self.infinity) then {
+		return -1;
+	} endif;
+	return self.value;
+}
+query Component::createPortInstances() : Set(PortInstance) {
+	var portInstances : Set(PortInstance);
+	self.ports->forEach(port) {
+		portInstances += port.createPortInstances();
+	};
+	return portInstances;
+}
+query Port::createPortInstances() : Set(PortInstance) {
+	return self.basicCreatePortInstances()
+}
+query Port::basicCreatePortInstances() : Set(PortInstance) {
+	var subPortInstances : Set(PortInstance);
+	var count : Integer := 0;
+	while (count < self.cardinality.lowerBound.toInteger()) {
+		var portInstance : PortInstance := self.createPortInstance();
+		portInstance.name := self.name + (count + 1).toString();
+		subPortInstances += portInstance;
+		count := count + 1;
+	};
+	return subPortInstances
+}
+query DiscretePort::createPortInstances() : Set(PortInstance) {
+	if (self.isMultiPort) then {
+		var multiPortInstance : DiscreteMultiPortInstance := new DiscreteMultiPortInstance(self);
+		return OrderedSet { multiPortInstance }
+		//return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subPortInstances[PortInstance])
+	} endif;
+	return self.basicCreatePortInstances()
+}
+// HybridPort inherits from DiscretePort, but should use the normal behavior!
+query HybridPort::createPortInstances() : Set(PortInstance) {
+	return self.basicCreatePortInstances()
+}
 
+query Port::createPortInstance() : PortInstance {
+	return null;
+}
+query DiscretePort::createPortInstance() : PortInstance {
+	return new DiscreteSinglePortInstance(self);
+}
+query ContinuousPort::createPortInstance() : PortInstance {
+	return new ContinuousPortInstance(self);
+}
+
+
+// Constructors
+constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(component : StructuredComponent) {
+	name := component.name;
+	component.embeddedParts.componentType[AtomicComponent]->forEach(s) {
+		componentInstances += new AtomicComponentInstance(s);
+	};
+	component.embeddedParts.componentType[StructuredComponent]->forEach(s) {
+		componentInstances += new StructuredComponentInstance(s);
+	};
+}
+constructor AtomicComponentInstance::AtomicComponentInstance(type : AtomicComponent) {
+	componentType := type;
+	name := type.name;
+	portInstances := type.createPortInstances();
+}
+constructor StructuredComponentInstance::StructuredComponentInstance(type : StructuredComponent) {
+	componentType := type;
+	name := type.name;
+	portInstances := type.createPortInstances();
+	embeddedCIC := new ComponentInstanceConfiguration(type);
+}
+constructor DiscreteMultiPortInstance::DiscreteMultiPortInstance(type : DiscretePort) {
+	portType := type;
+	name := type.name;
+	subPortInstances := type.basicCreatePortInstances()[DiscreteSinglePortInstance];
+}
+constructor DiscreteSinglePortInstance::DiscreteSinglePortInstance(type : DiscretePort) {
+	portType := type;
+}
+constructor ContinuousPortInstance::ContinuousPortInstance(type : ContinuousPort) {
+	portType := type;
+}
+constructor HybridPortInstance::HybridPortInstance(type : HybridPort) {
+	portType := type;
 }
