@@ -23678,5 +23678,7 @@
       <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="This reference points to the definition of the data type."/>
     </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"
+        featureName="containment" dataValue="false" oldDataValue="true"/>
   </releases>
 </history:History>

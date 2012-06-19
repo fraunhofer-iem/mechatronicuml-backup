@@ -32,6 +32,16 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  */
 public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl implements DiscreteSinglePortInstance {
 	/**
+	 * The cached value of the '{@link #getMultiPortInstance() <em>Multi Port Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMultiPortInstance()
+	 * @generated
+	 * @ordered
+	 */
+	protected DiscreteMultiPortInstance multiPortInstance;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -56,8 +66,24 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	 * @generated
 	 */
 	public DiscreteMultiPortInstance getMultiPortInstance() {
-		if (eContainerFeatureID() != InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE) return null;
-		return (DiscreteMultiPortInstance)eContainer();
+		if (multiPortInstance != null && multiPortInstance.eIsProxy()) {
+			InternalEObject oldMultiPortInstance = (InternalEObject)multiPortInstance;
+			multiPortInstance = (DiscreteMultiPortInstance)eResolveProxy(oldMultiPortInstance);
+			if (multiPortInstance != oldMultiPortInstance) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE, oldMultiPortInstance, multiPortInstance));
+			}
+		}
+		return multiPortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteMultiPortInstance basicGetMultiPortInstance() {
+		return multiPortInstance;
 	}
 
 	/**
@@ -66,7 +92,12 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	 * @generated
 	 */
 	public NotificationChain basicSetMultiPortInstance(DiscreteMultiPortInstance newMultiPortInstance, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newMultiPortInstance, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE, msgs);
+		DiscreteMultiPortInstance oldMultiPortInstance = multiPortInstance;
+		multiPortInstance = newMultiPortInstance;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE, oldMultiPortInstance, newMultiPortInstance);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -76,12 +107,10 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	 * @generated
 	 */
 	public void setMultiPortInstance(DiscreteMultiPortInstance newMultiPortInstance) {
-		if (newMultiPortInstance != eInternalContainer() || (eContainerFeatureID() != InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE && newMultiPortInstance != null)) {
-			if (EcoreUtil.isAncestor(this, newMultiPortInstance))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+		if (newMultiPortInstance != multiPortInstance) {
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
+			if (multiPortInstance != null)
+				msgs = ((InternalEObject)multiPortInstance).eInverseRemove(this, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES, DiscreteMultiPortInstance.class, msgs);
 			if (newMultiPortInstance != null)
 				msgs = ((InternalEObject)newMultiPortInstance).eInverseAdd(this, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES, DiscreteMultiPortInstance.class, msgs);
 			msgs = basicSetMultiPortInstance(newMultiPortInstance, msgs);
@@ -100,8 +129,8 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
+				if (multiPortInstance != null)
+					msgs = ((InternalEObject)multiPortInstance).eInverseRemove(this, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES, DiscreteMultiPortInstance.class, msgs);
 				return basicSetMultiPortInstance((DiscreteMultiPortInstance)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -127,24 +156,11 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE:
-				return eInternalContainer().eInverseRemove(this, InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES, DiscreteMultiPortInstance.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE:
-				return getMultiPortInstance();
+				if (resolve) return getMultiPortInstance();
+				return basicGetMultiPortInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,7 +204,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE:
-				return getMultiPortInstance() != null;
+				return multiPortInstance != null;
 		}
 		return super.eIsSet(featureID);
 	}
