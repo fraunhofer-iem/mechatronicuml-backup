@@ -692,6 +692,7 @@
         visualID="2005"
         editPartClassName="StaticStructuredComponentEditPart"
         itemSemanticEditPolicyClassName="StaticStructuredComponentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StaticStructuredComponentViewFactory"
         canonicalEditPolicyClassName="StaticStructuredComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
         compartments="//@diagram/@compartments.0"
@@ -722,7 +723,8 @@
       <labels
           visualID="5021"
           editPartClassName="StaticStructuredComponentNameEditPart"
-          itemSemanticEditPolicyClassName="StaticStructuredComponentNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="StaticStructuredComponentNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StaticStructuredComponentNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -803,6 +805,7 @@
         visualID="7005"
         editPartClassName="StaticStructuredComponentComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StaticStructuredComponentComponentCompartmentViewFactory"
         canonicalEditPolicyClassName="StaticStructuredComponentComponentCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.3"
         title="ComponentCompartment"
@@ -962,7 +965,7 @@
       <expressions
           body="1"/>
       <expressions
-          body="self.name.concat(' : ').concat(&#xD;&#xA;&#xD;&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xD;&#xA;    &#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.componentType.name.concat(' ['.concat(&#xD;&#xA;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;if not (self.cardinality.lowerBound.infinity xor self.cardinality.upperBound.infinity) and self.cardinality.lowerBound.value = self.cardinality.upperBound.value then&#xD;&#xA;&#x9;&#x9;&#x9;self.cardinality.lowerBound.toString()&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;self.cardinality.lowerBound.toString().concat('..'.concat(self.cardinality.upperBound.toString()))&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat(']'))&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
+          body="let partName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;let compName : String = if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif in&#xD;&#xA;partName.concat(' : '.concat(compName))"/>
     </providers>
   </expressionProviders>
   <labelParsers
