@@ -23680,5 +23680,14 @@
     </changes>
     <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"
         featureName="containment" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="key" dataValue="ComponentPartsHaveUniqueName"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="self.embeddedParts -> isUnique(name)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
+        oldDataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts"/>
   </releases>
 </history:History>

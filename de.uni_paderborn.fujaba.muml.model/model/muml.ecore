@@ -539,7 +539,7 @@
           <details key="documentation" value="This class represents a structured component which is capable of including arbitraryly many component parts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts"/>
+          <details key="constraints" value="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="StructuredComponentNoHybridPort" value="self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"/>
@@ -549,6 +549,7 @@
           <details key="HybridStructuredComponentValidParts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)"/>
           <details key="DiscreteStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xA;&#x9;)"/>
           <details key="HybridStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
+          <details key="ComponentPartsHaveUniqueName" value="self.embeddedParts -> isUnique(name)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts" lowerBound="1"
             upperBound="-1" eType="#//model/component/ComponentPart" containment="true"
