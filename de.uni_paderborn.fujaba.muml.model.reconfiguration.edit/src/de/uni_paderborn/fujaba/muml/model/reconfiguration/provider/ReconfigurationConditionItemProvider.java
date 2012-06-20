@@ -7,33 +7,47 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.storydriven.core.CorePackage;
+
+import org.storydriven.core.provider.NamedElementItemProvider;
+
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
+import org.storydriven.storydiagrams.calls.CallsFactory;
+
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutorItemProvider
-	extends ReconfigurationControllerItemProvider
+public class ReconfigurationConditionItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -46,7 +60,7 @@ public class ExecutorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutorItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationConditionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,8 +75,31 @@ public class ExecutorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -77,7 +114,7 @@ public class ExecutorItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.EXECUTOR__SPECIFICATION_ENTRIES);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_CONDITION__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -96,17 +133,6 @@ public class ExecutorItemProvider
 	}
 
 	/**
-	 * This returns Executor.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Executor"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,10 +140,10 @@ public class ExecutorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Executor)object).getName();
+		String label = ((ReconfigurationCondition)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Executor_type") :
-			getString("_UI_Executor_type") + " " + label;
+			getString("_UI_ReconfigurationCondition_type") :
+			getString("_UI_ReconfigurationCondition_type") + " " + label;
 	}
 
 	/**
@@ -131,8 +157,11 @@ public class ExecutorItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Executor.class)) {
-			case ReconfigurationPackage.EXECUTOR__SPECIFICATION_ENTRIES:
+		switch (notification.getFeatureID(ReconfigurationCondition.class)) {
+			case ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_CONDITION__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -152,8 +181,29 @@ public class ExecutorItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.EXECUTOR__SPECIFICATION_ENTRIES,
-				 ReconfigurationFactory.eINSTANCE.createExecutorSpecificationEntry()));
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.RECONFIGURATION_CONDITION__PARAMETERS,
+				 CoreFactory.eINSTANCE.createParameter()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MumlReconfigurationEditPlugin.INSTANCE;
 	}
 
 }

@@ -132,6 +132,7 @@ public class ReconfigurableStructuredComponentItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES);
 		}
 		return childrenFeatures;
 	}
@@ -187,6 +188,7 @@ public class ReconfigurableStructuredComponentItemProvider
 
 		switch (notification.getFeatureID(ReconfigurableStructuredComponent.class)) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -207,7 +209,12 @@ public class ReconfigurableStructuredComponentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationPort()));
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT__PORTS,
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -218,6 +225,11 @@ public class ReconfigurableStructuredComponentItemProvider
 			(createChildParameter
 				(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS,
 				 ReconfigurationFactory.eINSTANCE.createExecutor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES,
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessageType()));
 	}
 
 	/**

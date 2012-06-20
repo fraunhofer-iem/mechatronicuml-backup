@@ -7,9 +7,9 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
-
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
+
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import java.util.Collection;
 import java.util.List;
@@ -27,13 +27,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutorItemProvider
-	extends ReconfigurationControllerItemProvider
+public class ReconfigurationMessagePortItemProvider
+	extends ReconfigurationPortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -46,7 +46,7 @@ public class ExecutorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutorItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationMessagePortItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,7 +77,7 @@ public class ExecutorItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.EXECUTOR__SPECIFICATION_ENTRIES);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT__INTERFACE_ENTRIES);
 		}
 		return childrenFeatures;
 	}
@@ -96,14 +96,14 @@ public class ExecutorItemProvider
 	}
 
 	/**
-	 * This returns Executor.gif.
+	 * This returns ReconfigurationMessagePort.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Executor"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationMessagePort"));
 	}
 
 	/**
@@ -114,10 +114,10 @@ public class ExecutorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Executor)object).getName();
+		String label = ((ReconfigurationMessagePort)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Executor_type") :
-			getString("_UI_Executor_type") + " " + label;
+			getString("_UI_ReconfigurationMessagePort_type") :
+			getString("_UI_ReconfigurationMessagePort_type") + " " + label;
 	}
 
 	/**
@@ -131,8 +131,8 @@ public class ExecutorItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Executor.class)) {
-			case ReconfigurationPackage.EXECUTOR__SPECIFICATION_ENTRIES:
+		switch (notification.getFeatureID(ReconfigurationMessagePort.class)) {
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT__INTERFACE_ENTRIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -152,8 +152,8 @@ public class ExecutorItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.EXECUTOR__SPECIFICATION_ENTRIES,
-				 ReconfigurationFactory.eINSTANCE.createExecutorSpecificationEntry()));
+				(ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT__INTERFACE_ENTRIES,
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePortEntry()));
 	}
 
 }
