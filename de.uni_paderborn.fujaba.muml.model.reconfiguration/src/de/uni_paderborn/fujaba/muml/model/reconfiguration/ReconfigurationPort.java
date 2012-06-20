@@ -19,7 +19,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurationPort()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface ReconfigurationPort extends Port {

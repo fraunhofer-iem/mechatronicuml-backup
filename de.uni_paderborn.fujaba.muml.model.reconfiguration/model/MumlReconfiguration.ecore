@@ -29,8 +29,11 @@
         <details key="derivation" value="self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaredReconfigurationMessageTypes"
+        upperBound="-1" eType="#//ReconfigurationMessageType" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port">
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPort" abstract="true"
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfiguration port defines the external interface for accessing the reconfiguration capabilities of a reconfigurable structured component. In case of a reconfigurable structured component, they are delegated to one of the controllers of the component. In case of a reconfigurable atomic component, the reconfiguration port is directly implemented."/>
     </eAnnotations>
@@ -45,8 +48,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" eType="#//ReconfigurationControllerImplementation"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="#//ReconfigurationController"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Executor" eSuperTypes="#//ReconfigurationController"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="#//ReconfigurationController">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" upperBound="-1"
+        eType="#//ManagerSpecificationEntry" containment="true" eOpposite="#//ManagerSpecificationEntry/manager"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Executor" eSuperTypes="#//ReconfigurationController">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" upperBound="-1"
+        eType="#//ExecutorSpecificationEntry" containment="true" eOpposite="#//ExecutorSpecificationEntry/executor"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRule" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -57,6 +66,12 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnParameters" upperBound="-1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationCondition" abstract="true"
+      eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PartDataType" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/DataType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -89,5 +104,51 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePort" eSuperTypes="#//ReconfigurationPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceEntries" upperBound="-1"
+        eType="#//ReconfigurationMessagePortEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPort" eSuperTypes="#//ReconfigurationPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" eType="#//ExecutorSpecificationEntry"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="((((self.component.oclAsType(ReconfigurableStructuredComponent)).controllers -> select(m | m.oclIsKindOf(Executor))) -> any(true)).oclAsType(Executor)).specificationEntries -> select(externallyVisible)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutorSpecificationEntry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TimeToFailureLessOrEqualToTimeToSuccess"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="TimeToFailureLessOrEqualToTimeToSuccess" value="self.timeToFailure &lt;= self.timeToSuccess"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executor" lowerBound="1"
+        eType="#//Executor" eOpposite="#//Executor/specificationEntries"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" upperBound="-1"
+        eType="#//ReconfigurationRule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="externallyVisible" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeToFailure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeToSuccess" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ManagerSpecificationEntry" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="treat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propagate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="manager" lowerBound="1"
+        eType="#//Manager" eOpposite="#//Manager/specificationEntries"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationMessageType"
+        lowerBound="1" eType="#//ReconfigurationMessageType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//ReconfigurationCondition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessageType" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePortEntry" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationMessageType"
+        lowerBound="1" eType="#//ReconfigurationMessageType"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -61,12 +61,17 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT: return createReconfigurableStructuredComponent();
-			case ReconfigurationPackage.RECONFIGURATION_PORT: return createReconfigurationPort();
 			case ReconfigurationPackage.MANAGER: return createManager();
 			case ReconfigurationPackage.EXECUTOR: return createExecutor();
 			case ReconfigurationPackage.PART_DATA_TYPE: return createPartDataType();
 			case ReconfigurationPackage.PORT_DATA_TYPE: return createPortDataType();
 			case ReconfigurationPackage.STATECHART_IMPLEMENTATION: return createStatechartImplementation();
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT: return createReconfigurationMessagePort();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT: return createReconfigurationExecutionPort();
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: return createExecutorSpecificationEntry();
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY: return createManagerSpecificationEntry();
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE: return createReconfigurationMessageType();
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_ENTRY: return createReconfigurationMessagePortEntry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,16 +85,6 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public ReconfigurableStructuredComponent createReconfigurableStructuredComponent() {
 		ReconfigurableStructuredComponentImpl reconfigurableStructuredComponent = new ReconfigurableStructuredComponentImpl();
 		return reconfigurableStructuredComponent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReconfigurationPort createReconfigurationPort() {
-		ReconfigurationPortImpl reconfigurationPort = new ReconfigurationPortImpl();
-		return reconfigurationPort;
 	}
 
 	/**
@@ -140,6 +135,66 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public StatechartImplementation createStatechartImplementation() {
 		StatechartImplementationImpl statechartImplementation = new StatechartImplementationImpl();
 		return statechartImplementation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationMessagePort createReconfigurationMessagePort() {
+		ReconfigurationMessagePortImpl reconfigurationMessagePort = new ReconfigurationMessagePortImpl();
+		return reconfigurationMessagePort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationExecutionPort createReconfigurationExecutionPort() {
+		ReconfigurationExecutionPortImpl reconfigurationExecutionPort = new ReconfigurationExecutionPortImpl();
+		return reconfigurationExecutionPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExecutorSpecificationEntry createExecutorSpecificationEntry() {
+		ExecutorSpecificationEntryImpl executorSpecificationEntry = new ExecutorSpecificationEntryImpl();
+		return executorSpecificationEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ManagerSpecificationEntry createManagerSpecificationEntry() {
+		ManagerSpecificationEntryImpl managerSpecificationEntry = new ManagerSpecificationEntryImpl();
+		return managerSpecificationEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationMessageType createReconfigurationMessageType() {
+		ReconfigurationMessageTypeImpl reconfigurationMessageType = new ReconfigurationMessageTypeImpl();
+		return reconfigurationMessageType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationMessagePortEntry createReconfigurationMessagePortEntry() {
+		ReconfigurationMessagePortEntryImpl reconfigurationMessagePortEntry = new ReconfigurationMessagePortEntryImpl();
+		return reconfigurationMessagePortEntry;
 	}
 
 	/**

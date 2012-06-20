@@ -35,15 +35,6 @@ public interface ReconfigurationFactory extends EFactory {
 	ReconfigurableStructuredComponent createReconfigurableStructuredComponent();
 
 	/**
-	 * Returns a new object of class '<em>Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port</em>'.
-	 * @generated
-	 */
-	ReconfigurationPort createReconfigurationPort();
-
-	/**
 	 * Returns a new object of class '<em>Manager</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,6 +78,60 @@ public interface ReconfigurationFactory extends EFactory {
 	 * @generated
 	 */
 	StatechartImplementation createStatechartImplementation();
+
+	/**
+	 * Returns a new object of class '<em>Message Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Port</em>'.
+	 * @generated
+	 */
+	ReconfigurationMessagePort createReconfigurationMessagePort();
+
+	/**
+	 * Returns a new object of class '<em>Execution Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Execution Port</em>'.
+	 * @generated
+	 */
+	ReconfigurationExecutionPort createReconfigurationExecutionPort();
+
+	/**
+	 * Returns a new object of class '<em>Executor Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Executor Specification Entry</em>'.
+	 * @generated
+	 */
+	ExecutorSpecificationEntry createExecutorSpecificationEntry();
+
+	/**
+	 * Returns a new object of class '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Manager Specification Entry</em>'.
+	 * @generated
+	 */
+	ManagerSpecificationEntry createManagerSpecificationEntry();
+
+	/**
+	 * Returns a new object of class '<em>Message Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Type</em>'.
+	 * @generated
+	 */
+	ReconfigurationMessageType createReconfigurationMessageType();
+
+	/**
+	 * Returns a new object of class '<em>Message Port Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Port Entry</em>'.
+	 * @generated
+	 */
+	ReconfigurationMessagePortEntry createReconfigurationMessagePortEntry();
 
 	/**
 	 * Returns the package supported by this factory.

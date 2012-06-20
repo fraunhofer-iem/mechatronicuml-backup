@@ -6,29 +6,29 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl;
-
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.storydriven.core.impl.NamedElementImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Port</b></em>'.
+ * An implementation of the model object '<em><b>Message Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class ReconfigurationPortImpl extends PortImpl implements ReconfigurationPort {
+public class ReconfigurationMessageTypeImpl extends NamedElementImpl implements ReconfigurationMessageType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReconfigurationPortImpl() {
+	protected ReconfigurationMessageTypeImpl() {
 		super();
 	}
 
@@ -39,7 +39,7 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ReconfigurationPackage.Literals.RECONFIGURATION_PORT;
+		return ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_TYPE;
 	}
 
-} //ReconfigurationPortImpl
+} //ReconfigurationMessageTypeImpl
