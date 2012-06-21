@@ -72,7 +72,6 @@ public class ComponentInstanceConfigurationItemProvider
 			addNamePropertyDescriptor(object);
 			addComponentInstancesPropertyDescriptor(object);
 			addConnectorInstancesPropertyDescriptor(object);
-			addParentPortInstancesDerivedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,28 +134,6 @@ public class ComponentInstanceConfigurationItemProvider
 				 getString("_UI_ComponentInstanceConfiguration_connectorInstances_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstanceConfiguration_connectorInstances_feature", "_UI_ComponentInstanceConfiguration_type"),
 				 InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Port Instances Derived feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentPortInstancesDerivedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstanceConfiguration_parentPortInstancesDerived_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstanceConfiguration_parentPortInstancesDerived_feature", "_UI_ComponentInstanceConfiguration_type"),
-				 InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED,
 				 false,
 				 false,
 				 false,
@@ -234,7 +211,7 @@ public class ComponentInstanceConfigurationItemProvider
 
 		switch (notification.getFeatureID(ComponentInstanceConfiguration.class)) {
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED:
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__DIRECT_PARENT_PORT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:

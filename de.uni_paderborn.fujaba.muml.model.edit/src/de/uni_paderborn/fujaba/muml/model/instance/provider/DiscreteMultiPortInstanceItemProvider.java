@@ -155,6 +155,9 @@ public class DiscreteMultiPortInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DiscreteMultiPortInstance.class)) {
+			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__GMF_SUB_PORT_INSTANCES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
