@@ -72,6 +72,9 @@ query DiscretePort::createPortInstance() : PortInstance {
 query ContinuousPort::createPortInstance() : PortInstance {
 	return new ContinuousPortInstance(self);
 }
+query HybridPort::createPortInstance() : PortInstance {
+	return new HybridPortInstance(self);
+}
 
 
 // Constructors

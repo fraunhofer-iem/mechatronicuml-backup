@@ -26,25 +26,28 @@ public class DiscreteSinglePortInstanceEditHelperAdvice extends
 
 	@Override
 	protected ICommand getAfterConfigureCommand(ConfigureRequest request) {
-		final DiscreteSinglePortInstance singlePortInstance = (DiscreteSinglePortInstance) request
-				.getElementToConfigure();
-
-		DiscreteMultiPortInstance multiPortInstance = singlePortInstance
-				.getMultiPortInstance();
-
-		if (multiPortInstance != null) {
-			final ComponentInstance componentInstance = multiPortInstance
-					.getComponentInstance();
-			return new ConfigureElementCommand(request) {
-				@Override
-				protected CommandResult doExecuteWithResult(
-						IProgressMonitor monitor, IAdaptable info)
-						throws ExecutionException {
-					componentInstance.getPortInstances()
-							.add(singlePortInstance);
-					return CommandResult.newOKCommandResult();
-				}
-			};
+		if (request.getElementToConfigure() instanceof DiscreteSinglePortInstance) {
+	
+			final DiscreteSinglePortInstance singlePortInstance = (DiscreteSinglePortInstance) request
+					.getElementToConfigure();
+	
+			DiscreteMultiPortInstance multiPortInstance = singlePortInstance
+					.getMultiPortInstance();
+	
+			if (multiPortInstance != null) {
+				final ComponentInstance componentInstance = multiPortInstance
+						.getComponentInstance();
+				return new ConfigureElementCommand(request) {
+					@Override
+					protected CommandResult doExecuteWithResult(
+							IProgressMonitor monitor, IAdaptable info)
+							throws ExecutionException {
+						componentInstance.getPortInstances()
+								.add(singlePortInstance);
+						return CommandResult.newOKCommandResult();
+					}
+				};
+			}
 		}
 		return super.getAfterConfigureCommand(request);
 	}
@@ -52,25 +55,28 @@ public class DiscreteSinglePortInstanceEditHelperAdvice extends
 	@Override
 	protected ICommand getAfterDestroyElementCommand(
 			DestroyElementRequest request) {
-		final DiscreteSinglePortInstance singlePortInstance = (DiscreteSinglePortInstance) request
-				.getElementToDestroy();
+		if (request.getElementToDestroy() instanceof DiscreteSinglePortInstance) {
 
-		DiscreteMultiPortInstance multiPortInstance = singlePortInstance
-				.getMultiPortInstance();
+			final DiscreteSinglePortInstance singlePortInstance = (DiscreteSinglePortInstance) request
+					.getElementToDestroy();
 
-		if (multiPortInstance != null) {
-			final ComponentInstance componentInstance = multiPortInstance
-					.getComponentInstance();
-			return new DestroyElementCommand(request) {
-				@Override
-				protected CommandResult doExecuteWithResult(
-						IProgressMonitor monitor, IAdaptable info)
-						throws ExecutionException {
-					componentInstance.getPortInstances()
-							.remove(singlePortInstance);
-					return CommandResult.newOKCommandResult();
-				}
-			};
+			DiscreteMultiPortInstance multiPortInstance = singlePortInstance
+					.getMultiPortInstance();
+
+			if (multiPortInstance != null) {
+				final ComponentInstance componentInstance = multiPortInstance
+						.getComponentInstance();
+				return new DestroyElementCommand(request) {
+					@Override
+					protected CommandResult doExecuteWithResult(
+							IProgressMonitor monitor, IAdaptable info)
+							throws ExecutionException {
+						componentInstance.getPortInstances().remove(
+								singlePortInstance);
+						return CommandResult.newOKCommandResult();
+					}
+				};
+			}
 		}
 		return super.getAfterDestroyElementCommand(request);
 	}
