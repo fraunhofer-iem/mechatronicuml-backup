@@ -98,15 +98,6 @@ public interface CoreFactory extends EFactory {
 	ArrayDataType createArrayDataType();
 
 	/**
-	 * Returns a new object of class '<em>Inner Declaration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Inner Declaration</em>'.
-	 * @generated
-	 */
-	InnerDeclaration createInnerDeclaration();
-
-	/**
 	 * Returns a new object of class '<em>Parameter Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

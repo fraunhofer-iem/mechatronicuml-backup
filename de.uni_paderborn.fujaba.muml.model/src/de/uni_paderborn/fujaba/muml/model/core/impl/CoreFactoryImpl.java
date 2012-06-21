@@ -20,7 +20,6 @@ import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
@@ -80,7 +79,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.PARAMETER: return createParameter();
 			case CorePackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case CorePackage.ARRAY_DATA_TYPE: return createArrayDataType();
-			case CorePackage.INNER_DECLARATION: return createInnerDeclaration();
 			case CorePackage.PARAMETER_BINDING: return createParameterBinding();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -195,16 +193,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public ArrayDataType createArrayDataType() {
 		ArrayDataTypeImpl arrayDataType = new ArrayDataTypeImpl();
 		return arrayDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InnerDeclaration createInnerDeclaration() {
-		InnerDeclarationImpl innerDeclaration = new InnerDeclarationImpl();
-		return innerDeclaration;
 	}
 
 	/**

@@ -15,19 +15,17 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.Expression;
-
 import org.storydriven.storydiagrams.calls.Invocation;
+
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
-import de.uni_paderborn.fujaba.muml.model.core.CompositeDataType;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
-import de.uni_paderborn.fujaba.muml.model.core.InnerDeclaration;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
@@ -178,16 +176,6 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CorePackage.COMPOSITE_DATA_TYPE: {
-				CompositeDataType compositeDataType = (CompositeDataType)theEObject;
-				T result = caseCompositeDataType(compositeDataType);
-				if (result == null) result = caseDataType(compositeDataType);
-				if (result == null) result = caseNamedElement(compositeDataType);
-				if (result == null) result = caseCommentableElement(compositeDataType);
-				if (result == null) result = caseExtendableElement(compositeDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CorePackage.ARRAY_DATA_TYPE: {
 				ArrayDataType arrayDataType = (ArrayDataType)theEObject;
 				T result = caseArrayDataType(arrayDataType);
@@ -195,15 +183,6 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(arrayDataType);
 				if (result == null) result = caseCommentableElement(arrayDataType);
 				if (result == null) result = caseExtendableElement(arrayDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.INNER_DECLARATION: {
-				InnerDeclaration innerDeclaration = (InnerDeclaration)theEObject;
-				T result = caseInnerDeclaration(innerDeclaration);
-				if (result == null) result = caseNamedElement(innerDeclaration);
-				if (result == null) result = caseCommentableElement(innerDeclaration);
-				if (result == null) result = caseExtendableElement(innerDeclaration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -384,21 +363,6 @@ public class CoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Composite Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Composite Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCompositeDataType(CompositeDataType object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Array Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -410,21 +374,6 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseArrayDataType(ArrayDataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Inner Declaration</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Inner Declaration</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInnerDeclaration(InnerDeclaration object) {
 		return null;
 	}
 
