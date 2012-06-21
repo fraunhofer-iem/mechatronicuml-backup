@@ -53,7 +53,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-				.getDiscreteMultiPortInstance_SubPortInstances();
+				.getDiscreteMultiPortInstance_GmfSubPortInstances();
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID;
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 								.getVisualID(childView)) {
@@ -98,7 +98,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
-				.getDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment_7008SemanticChildren(viewObject);
+				.getDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment_7015SemanticChildren(viewObject);
 
 	}
 
@@ -115,7 +115,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 	}
 

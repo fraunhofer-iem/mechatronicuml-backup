@@ -12,7 +12,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPortInstance_2011(
+	public void init_HybridPortInstance_2017(
 			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -31,7 +31,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_2012(
+	public void init_DiscreteSinglePortInstance_2018(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -50,7 +50,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteMultiPortInstance_2013(
+	public void init_DiscreteMultiPortInstance_2019(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -69,7 +69,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPortInstance_2014(
+	public void init_ContinuousPortInstance_2020(
 			de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -137,7 +137,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_3021(
+	public void init_DiscreteSinglePortInstance_3026(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -156,7 +156,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPortInstance_3018(
+	public void init_HybridPortInstance_3027(
 			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -175,7 +175,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_3019(
+	public void init_DiscreteSinglePortInstance_3028(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -194,7 +194,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteMultiPortInstance_3020(
+	public void init_DiscreteMultiPortInstance_3029(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -213,7 +213,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPortInstance_3022(
+	public void init_ContinuousPortInstance_3030(
 			de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory

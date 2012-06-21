@@ -147,22 +147,22 @@
          
          <node
                domainElement="HybridPortInstance"
-               semanticHint="2011">
+               semanticHint="2017">
          </node>
          
          <node
                domainElement="DiscreteSinglePortInstance"
-               semanticHint="2012">
+               semanticHint="2018">
          </node>
          
          <node
                domainElement="DiscreteMultiPortInstance"
-               semanticHint="2013">
+               semanticHint="2019">
          </node>
          
          <node
                domainElement="ContinuousPortInstance"
-               semanticHint="2014">
+               semanticHint="2020">
          </node>
          
          <node
@@ -177,27 +177,27 @@
          
          <node
                domainElement="DiscreteSinglePortInstance"
-               semanticHint="3021">
+               semanticHint="3026">
          </node>
          
          <node
                domainElement="HybridPortInstance"
-               semanticHint="3018">
+               semanticHint="3027">
          </node>
          
          <node
                domainElement="DiscreteSinglePortInstance"
-               semanticHint="3019">
+               semanticHint="3028">
          </node>
          
          <node
                domainElement="DiscreteMultiPortInstance"
-               semanticHint="3020">
+               semanticHint="3029">
          </node>
          
          <node
                domainElement="ContinuousPortInstance"
-               semanticHint="3022">
+               semanticHint="3030">
          </node>
          
          <node
@@ -414,7 +414,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Componentinstanceconfiguration"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2011,2012,2013,2014,2016,2015,3021,3018,3019,3020,3022,3023,3024,3025"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2017,2018,2019,2020,2016,2015,3026,3027,3028,3029,3030,3023,3024,3025"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006"/>
       </viewProvider>
    </extension>
@@ -427,16 +427,16 @@
             <method name="getType()" value="Componentinstanceconfiguration"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2011,2012,2013,2014,2016,2015,3021,3018,3019,3020,3022,3023,3024,3025"/>
+            <method name="getType()" value="2017,2018,2019,2020,2016,2015,3026,3027,3028,3029,3030,3023,3024,3025"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4005,4006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5020,5021,5022,5023,5027,5026,5015,5013,5014,5016,5017,5028,5029"/>
+            <method name="getType()" value="5030,5031,5033,5034,5027,5026,5032,5035,5036,5037,5038,5028,5029"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7011,7008,7012,7013,7014"/>
+            <method name="getType()" value="7015,7016,7012,7013,7014"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -447,13 +447,13 @@
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart" id="ComponentInstanceConfiguration_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart" id="HybridPortInstance_2011"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart" id="DiscreteSinglePortInstance_2012"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart" id="DiscreteMultiPortInstance_2013"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart" id="ContinuousPortInstance_2014"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart" id="HybridPortInstance_2017"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart" id="DiscreteSinglePortInstance_2018"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart" id="DiscreteMultiPortInstance_2019"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart" id="ContinuousPortInstance_2020"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceEditPart" id="AtomicComponentInstance_2016"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart" id="StructuredComponentInstance_2015"/>
-         <context elements="ComponentInstanceConfiguration_1000,HybridPortInstance_2011,DiscreteSinglePortInstance_2012,DiscreteMultiPortInstance_2013,ContinuousPortInstance_2014,AtomicComponentInstance_2016,StructuredComponentInstance_2015"/>
+         <context elements="ComponentInstanceConfiguration_1000,HybridPortInstance_2017,DiscreteSinglePortInstance_2018,DiscreteMultiPortInstance_2019,ContinuousPortInstance_2020,AtomicComponentInstance_2016,StructuredComponentInstance_2015"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -485,42 +485,42 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2011"
-               name="%metatype.name.HybridPortInstance_2011"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2017"
+               name="%metatype.name.HybridPortInstance_2017"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HybridPortInstance"
                edithelper="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.helpers.HybridPortInstanceEditHelper">
-            <param name="semanticHint" value="2011"/>
+            <param name="semanticHint" value="2017"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2012"
-               name="%metatype.name.DiscreteSinglePortInstance_2012"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2018"
+               name="%metatype.name.DiscreteSinglePortInstance_2018"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DiscreteSinglePortInstance"
                edithelper="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.helpers.DiscreteSinglePortInstanceEditHelper">
-            <param name="semanticHint" value="2012"/>
+            <param name="semanticHint" value="2018"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_2013"
-               name="%metatype.name.DiscreteMultiPortInstance_2013"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_2019"
+               name="%metatype.name.DiscreteMultiPortInstance_2019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DiscreteMultiPortInstance"
                edithelper="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.helpers.DiscreteMultiPortInstanceEditHelper">
-            <param name="semanticHint" value="2013"/>
+            <param name="semanticHint" value="2019"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_2014"
-               name="%metatype.name.ContinuousPortInstance_2014"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_2020"
+               name="%metatype.name.ContinuousPortInstance_2020"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ContinuousPortInstance"
                edithelper="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.helpers.ContinuousPortInstanceEditHelper">
-            <param name="semanticHint" value="2014"/>
+            <param name="semanticHint" value="2020"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
@@ -545,47 +545,47 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3021"
-               name="%metatype.name.DiscreteSinglePortInstance_3021"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3026"
+               name="%metatype.name.DiscreteSinglePortInstance_3026"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2012"/>
-            <param name="semanticHint" value="3021"/>
+            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2018"/>
+            <param name="semanticHint" value="3026"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_3018"
-               name="%metatype.name.HybridPortInstance_3018"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_3027"
+               name="%metatype.name.HybridPortInstance_3027"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2011"/>
-            <param name="semanticHint" value="3018"/>
+            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2017"/>
+            <param name="semanticHint" value="3027"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3019"
-               name="%metatype.name.DiscreteSinglePortInstance_3019"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3028"
+               name="%metatype.name.DiscreteSinglePortInstance_3028"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2012"/>
-            <param name="semanticHint" value="3019"/>
+            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2018"/>
+            <param name="semanticHint" value="3028"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_3020"
-               name="%metatype.name.DiscreteMultiPortInstance_3020"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_3029"
+               name="%metatype.name.DiscreteMultiPortInstance_3029"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_2013"/>
-            <param name="semanticHint" value="3020"/>
+            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_2019"/>
+            <param name="semanticHint" value="3029"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_3022"
-               name="%metatype.name.ContinuousPortInstance_3022"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_3030"
+               name="%metatype.name.ContinuousPortInstance_3030"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_2014"/>
-            <param name="semanticHint" value="3022"/>
+            <specializes id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_2020"/>
+            <param name="semanticHint" value="3030"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.2">
@@ -648,17 +648,17 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstanceConfiguration_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2011"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2012"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_2013"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_2014"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2017"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2018"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_2019"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_2020"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AtomicComponentInstance_2016"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.StructuredComponentInstance_2015"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3021"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_3018"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3019"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_3020"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_3022"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3026"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_3027"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3028"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_3029"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_3030"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstanceConfiguration_3023"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AtomicComponentInstance_3024"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.StructuredComponentInstance_3025"/>

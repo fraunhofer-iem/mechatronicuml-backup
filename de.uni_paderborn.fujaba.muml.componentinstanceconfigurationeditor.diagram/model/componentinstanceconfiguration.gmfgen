@@ -34,13 +34,12 @@
     <domainDiagramElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration"/>
     <childNodes
-        visualID="3021"
-        editPartClassName="DiscreteSinglePortInstance3EditPart"
-        itemSemanticEditPolicyClassName="DiscreteSinglePortInstance3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscreteSinglePortInstanceViewFactory"
-        canonicalEditPolicyClassName="DiscreteSinglePortInstance3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="DiscreteSinglePortInstance3GraphicalNodeEditPolicy"
-        createCommandClassName="DiscreteSinglePortInstance3CreateCommand"
+        visualID="3026"
+        editPartClassName="DiscreteSinglePortInstance2EditPart"
+        itemSemanticEditPolicyClassName="DiscreteSinglePortInstance2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="DiscreteSinglePortInstance2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DiscreteSinglePortInstance2GraphicalNodeEditPolicy"
+        createCommandClassName="DiscreteSinglePortInstance2CreateCommand"
         containers="//@diagram/@compartments.0 //@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -60,9 +59,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteSinglePortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteMultiPortInstance/subPortInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteMultiPortInstance/gmfSubPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteMultiPortInstance/subPortInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteMultiPortInstance/gmfSubPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -75,10 +74,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5015"
-          editPartClassName="DiscreteSinglePortInstanceName3EditPart"
-          itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceName3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DiscreteSinglePortInstanceNameViewFactory">
+          visualID="5032"
+          editPartClassName="DiscreteSinglePortInstanceName2EditPart"
+          itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -94,10 +92,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3018"
+        visualID="3027"
         editPartClassName="HybridPortInstance2EditPart"
         itemSemanticEditPolicyClassName="HybridPortInstance2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="HybridPortInstanceViewFactory"
         canonicalEditPolicyClassName="HybridPortInstance2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HybridPortInstance2GraphicalNodeEditPolicy"
         createCommandClassName="HybridPortInstance2CreateCommand"
@@ -121,9 +118,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HybridPortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/directPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/directPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -136,10 +133,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5013"
+          visualID="5035"
           editPartClassName="HybridPortInstanceName2EditPart"
-          itemSemanticEditPolicyClassName="HybridPortInstanceName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="HybridPortInstanceNameViewFactory">
+          itemSemanticEditPolicyClassName="HybridPortInstanceName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -155,13 +151,12 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3019"
-        editPartClassName="DiscreteSinglePortInstance2EditPart"
-        itemSemanticEditPolicyClassName="DiscreteSinglePortInstance2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscreteSinglePortInstanceViewFactory"
-        canonicalEditPolicyClassName="DiscreteSinglePortInstance2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="DiscreteSinglePortInstance2GraphicalNodeEditPolicy"
-        createCommandClassName="DiscreteSinglePortInstance2CreateCommand"
+        visualID="3028"
+        editPartClassName="DiscreteSinglePortInstance3EditPart"
+        itemSemanticEditPolicyClassName="DiscreteSinglePortInstance3ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="DiscreteSinglePortInstance3CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DiscreteSinglePortInstance3GraphicalNodeEditPolicy"
+        createCommandClassName="DiscreteSinglePortInstance3CreateCommand"
         containers="//@diagram/@topLevelNodes.4 //@diagram/@topLevelNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7"
         preferredSideName="NORTH">
       <diagramRunTimeClass
@@ -182,9 +177,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteSinglePortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/directPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/directPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -197,10 +192,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5014"
-          editPartClassName="DiscreteSinglePortInstanceName2EditPart"
-          itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DiscreteSinglePortInstanceNameViewFactory">
+          visualID="5036"
+          editPartClassName="DiscreteSinglePortInstanceName3EditPart"
+          itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceName3ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -216,10 +210,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3020"
+        visualID="3029"
         editPartClassName="DiscreteMultiPortInstance2EditPart"
         itemSemanticEditPolicyClassName="DiscreteMultiPortInstance2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscreteMultiPortInstanceViewFactory"
         canonicalEditPolicyClassName="DiscreteMultiPortInstance2CanonicalEditPolicy"
         compartments="//@diagram/@compartments.1"
         graphicalNodeEditPolicyClassName="DiscreteMultiPortInstance2GraphicalNodeEditPolicy"
@@ -244,9 +237,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteMultiPortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/directPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/directPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -259,10 +252,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5016"
+          visualID="5037"
           editPartClassName="DiscreteMultiPortInstanceName2EditPart"
-          itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DiscreteMultiPortInstanceNameViewFactory">
+          itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -278,10 +270,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3022"
+        visualID="3030"
         editPartClassName="ContinuousPortInstance2EditPart"
         itemSemanticEditPolicyClassName="ContinuousPortInstance2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ContinuousPortInstanceViewFactory"
         canonicalEditPolicyClassName="ContinuousPortInstance2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ContinuousPortInstance2GraphicalNodeEditPolicy"
         createCommandClassName="ContinuousPortInstance2CreateCommand"
@@ -305,9 +296,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ContinuousPortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/directPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/directPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -320,10 +311,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5017"
+          visualID="5038"
           editPartClassName="ContinuousPortInstanceName2EditPart"
-          itemSemanticEditPolicyClassName="ContinuousPortInstanceName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ContinuousPortInstanceNameViewFactory">
+          itemSemanticEditPolicyClassName="ContinuousPortInstanceName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -502,10 +492,9 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2011"
+        visualID="2017"
         editPartClassName="HybridPortInstanceEditPart"
         itemSemanticEditPolicyClassName="HybridPortInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="HybridPortInstanceViewFactory"
         canonicalEditPolicyClassName="HybridPortInstanceCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HybridPortInstanceGraphicalNodeEditPolicy"
         createCommandClassName="HybridPortInstanceCreateCommand">
@@ -527,9 +516,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HybridPortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -542,10 +531,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5020"
+          visualID="5030"
           editPartClassName="HybridPortInstanceNameEditPart"
-          itemSemanticEditPolicyClassName="HybridPortInstanceNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="HybridPortInstanceNameViewFactory">
+          itemSemanticEditPolicyClassName="HybridPortInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -560,10 +548,9 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2012"
+        visualID="2018"
         editPartClassName="DiscreteSinglePortInstanceEditPart"
         itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscreteSinglePortInstanceViewFactory"
         canonicalEditPolicyClassName="DiscreteSinglePortInstanceCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DiscreteSinglePortInstanceGraphicalNodeEditPolicy"
         createCommandClassName="DiscreteSinglePortInstanceCreateCommand">
@@ -585,9 +572,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteSinglePortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -600,10 +587,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5021"
+          visualID="5031"
           editPartClassName="DiscreteSinglePortInstanceNameEditPart"
-          itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="DiscreteSinglePortInstanceNameViewFactory">
+          itemSemanticEditPolicyClassName="DiscreteSinglePortInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -618,10 +604,9 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2013"
+        visualID="2019"
         editPartClassName="DiscreteMultiPortInstanceEditPart"
         itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscreteMultiPortInstanceViewFactory"
         canonicalEditPolicyClassName="DiscreteMultiPortInstanceCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="DiscreteMultiPortInstanceGraphicalNodeEditPolicy"
@@ -644,9 +629,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteMultiPortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -659,10 +644,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5022"
+          visualID="5033"
           editPartClassName="DiscreteMultiPortInstanceNameEditPart"
-          itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="DiscreteMultiPortInstanceNameViewFactory">
+          itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -677,10 +661,9 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2014"
+        visualID="2020"
         editPartClassName="ContinuousPortInstanceEditPart"
         itemSemanticEditPolicyClassName="ContinuousPortInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="ContinuousPortInstanceViewFactory"
         canonicalEditPolicyClassName="ContinuousPortInstanceCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ContinuousPortInstanceGraphicalNodeEditPolicy"
         createCommandClassName="ContinuousPortInstanceCreateCommand">
@@ -702,9 +685,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ContinuousPortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -717,10 +700,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5023"
+          visualID="5034"
           editPartClassName="ContinuousPortInstanceNameEditPart"
-          itemSemanticEditPolicyClassName="ContinuousPortInstanceNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ContinuousPortInstanceNameViewFactory">
+          itemSemanticEditPolicyClassName="ContinuousPortInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -929,11 +911,10 @@
           sourceEnd="//@expressionProviders/@providers.0/@expressions.10"/>
     </links>
     <compartments
-        visualID="7011"
-        editPartClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart"
-        itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentViewFactory"
-        canonicalEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2CanonicalEditPolicy"
+        visualID="7015"
+        editPartClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart"
+        itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="DiscreteMultiPortInstanceCompartment"
         canCollapse="false"
@@ -947,11 +928,10 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7008"
-        editPartClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart"
-        itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentViewFactory"
-        canonicalEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy"
+        visualID="7016"
+        editPartClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart"
+        itemSemanticEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="DiscreteMultiPortInstanceCompartment"
         canCollapse="false"
@@ -1709,6 +1689,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.4/@labels.0/@modelFacet"
+        className="AtomicComponentInstanceLabelExpressionLabelParser5027"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/AtomicComponentInstance"/>
@@ -1716,6 +1697,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.0/@modelFacet"
+        className="AtomicComponentInstanceLabelExpressionLabelParser5028"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/AtomicComponentInstance"/>
@@ -1723,6 +1705,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.0/@modelFacet"
+        className="StructuredComponentInstanceLabelExpressionLabelParser5029"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/StructuredComponentInstance"/>
@@ -1730,6 +1713,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet"
+        className="StructuredComponentInstanceLabelExpressionLabelParser5026"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/StructuredComponentInstance"/>

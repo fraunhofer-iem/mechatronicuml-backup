@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentPart <em>Component Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getDirectPortInstances <em>Direct Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,5 +103,22 @@ public interface ComponentInstance extends NamedElement {
 	 * @generated
 	 */
 	void setComponentPart(ComponentPart value);
+
+	/**
+	 * Returns the value of the '<em><b>Direct Port Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Direct Port Instances</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Direct Port Instances</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_DirectPortInstances()
+	 * @model containment="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- Filter out those DiscreteSinglePortInstances that are referenced by a DiscreteMultiPortInstance.\nportInstances->select(portInstance | \n\tportInstance.oclIsKindOf(DiscreteSinglePortInstance) implies portInstance.oclAsType(DiscreteSinglePortInstance).multiPortInstance.oclIsUndefined()\n)'"
+	 * @generated
+	 */
+	EList<PortInstance> getDirectPortInstances();
 
 } // ComponentInstance

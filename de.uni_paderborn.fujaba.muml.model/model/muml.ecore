@@ -934,6 +934,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" eType="#//model/component/ComponentPart"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="directPortInstances"
+            upperBound="-1" eType="#//model/instance/PortInstance" derived="true"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="-- Filter out those DiscreteSinglePortInstances that are referenced by a DiscreteMultiPortInstance.&#xA;portInstances->select(portInstance | &#xA;&#x9;portInstance.oclIsKindOf(DiscreteSinglePortInstance) implies portInstance.oclAsType(DiscreteSinglePortInstance).multiPortInstance.oclIsUndefined()&#xA;)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" abstract="true"
           eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
@@ -1047,11 +1054,6 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class encapsules represents a configuration.&#xD;&#xA;&#xD;&#xA;It contains all component instances and connector instances that belong to a concrete configuration.&#xD;&#xA;&#xD;&#xA;\todosd{implement ocl derived for parent port isntances derived}"/>
         </eAnnotations>
-        <eOperations name="getParentPortInstances" upperBound="-1" eType="#//model/instance/PortInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="body" value="if(eContainer() instanceof ComponentInstance){&#xD;&#xA;&#x9;return ((ComponentInstance)eContainer()).getPortInstances();&#xD;&#xA;}&#xD;&#xA;return new org.eclipse.emf.common.util.BasicEList&lt;PortInstance>();&#xD;&#xA;"/>
-          </eAnnotations>
-        </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
             upperBound="-1" eType="#//model/instance/ComponentInstance" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1064,14 +1066,14 @@
             <details key="documentation" value="The set of connector instances of a component instance configuration."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parentPortInstancesDerived"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="directParentPortInstances"
             upperBound="-1" eType="#//model/instance/PortInstance" changeable="false"
             volatile="true" transient="true" unsettable="true" derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="getParentPortInstances()&#xD;&#xA;"/>
+            <details key="derivation" value="if (self.eContainer().oclIsKindOf(ComponentInstance)) then&#xA;&#x9;self.eContainer().oclAsType(ComponentInstance).directPortInstances&#xA;else&#xA;&#x9;OrderedSet {}&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The port instances of the component instance which is&#xD;&#xA;containing this component instance configuration are derived."/>
+            <details key="documentation" value="The direct port instances of the containing component instance."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1126,6 +1128,16 @@
             eType="#//model/instance/DiscreteSinglePortInstance" eOpposite="#//model/instance/DiscreteSinglePortInstance/multiPortInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="gmfSubPortInstances"
+            upperBound="-1" eType="#//model/instance/DiscreteSinglePortInstance" derived="true"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This reference just derives the values of &quot;subPortInstances&quot; and specifies a containment. This containment reference is needed by the GMF tooling."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.subPortInstances"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

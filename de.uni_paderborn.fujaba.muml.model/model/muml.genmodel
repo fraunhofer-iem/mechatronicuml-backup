@@ -239,6 +239,7 @@
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/portInstances"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/componentPart"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/directPortInstances"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/ConnectorInstance">
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
@@ -271,8 +272,7 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/ComponentInstanceConfiguration">
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/componentInstances"/>
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/connectorInstances"/>
-          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
-          <genOperations ecoreOperation="muml.ecore#//model/instance/ComponentInstanceConfiguration/getParentPortInstances"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/ContinuousPortInstance"/>
         <genClasses ecoreClass="muml.ecore#//model/instance/HybridPortInstance"/>
@@ -287,6 +287,7 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteMultiPortInstance">
           <genFeatures children="true" createChild="true" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/gmfSubPortInstances"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/PatternInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"

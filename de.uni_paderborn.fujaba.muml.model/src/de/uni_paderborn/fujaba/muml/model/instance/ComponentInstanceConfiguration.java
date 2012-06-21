@@ -29,7 +29,7 @@ import org.storydriven.core.ExtendableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getConnectorInstances <em>Connector Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getDirectParentPortInstances <em>Direct Parent Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,40 +69,30 @@ public interface ComponentInstanceConfiguration extends CommentableElement, Name
 	EList<ConnectorInstance> getConnectorInstances();
 
 	/**
-	 * Returns the value of the '<em><b>Parent Port Instances Derived</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Direct Parent Port Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The port instances of the component instance which is
-	 * containing this component instance configuration are derived.
+	 * The direct port instances of the containing component instance.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Parent Port Instances Derived</em>' containment reference list.
-	 * @see #isSetParentPortInstancesDerived()
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstanceConfiguration_ParentPortInstancesDerived()
+	 * @return the value of the '<em>Direct Parent Port Instances</em>' containment reference list.
+	 * @see #isSetDirectParentPortInstances()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstanceConfiguration_DirectParentPortInstances()
 	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='getParentPortInstances()\r\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.eContainer().oclIsKindOf(ComponentInstance)) then\n\tself.eContainer().oclAsType(ComponentInstance).directPortInstances\nelse\n\tOrderedSet {}\nendif'"
 	 * @generated
 	 */
-	EList<PortInstance> getParentPortInstancesDerived();
+	EList<PortInstance> getDirectParentPortInstances();
 
 	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}' containment reference list is set.
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getDirectParentPortInstances <em>Direct Parent Port Instances</em>}' containment reference list is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Parent Port Instances Derived</em>' containment reference list is set.
-	 * @see #getParentPortInstancesDerived()
+	 * @return whether the value of the '<em>Direct Parent Port Instances</em>' containment reference list is set.
+	 * @see #getDirectParentPortInstances()
 	 * @generated
 	 */
-	boolean isSetParentPortInstancesDerived();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(eContainer() instanceof ComponentInstance){\r\n\treturn ((ComponentInstance)eContainer()).getPortInstances();\r\n}\r\nreturn new org.eclipse.emf.common.util.BasicEList<PortInstance>();\r\n'"
-	 * @generated
-	 */
-	EList<PortInstance> getParentPortInstances();
+	boolean isSetDirectParentPortInstances();
 
 } // ComponentInstanceConfiguration

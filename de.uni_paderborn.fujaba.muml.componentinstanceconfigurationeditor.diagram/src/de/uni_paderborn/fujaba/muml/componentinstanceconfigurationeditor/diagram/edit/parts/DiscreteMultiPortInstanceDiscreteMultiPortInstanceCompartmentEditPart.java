@@ -20,7 +20,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPa
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7008;
+	public static final int VISUAL_ID = 7015;
 
 	/**
 	 * @generated

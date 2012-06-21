@@ -26,6 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances <em>Sub Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getGmfSubPortInstances <em>Gmf Sub Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,5 +56,21 @@ public interface DiscreteMultiPortInstance extends DiscretePortInstance {
 	 * @generated
 	 */
 	EList<DiscreteSinglePortInstance> getSubPortInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Gmf Sub Port Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This reference just derives the values of "subPortInstances" and specifies a containment. This containment reference is needed by the GMF tooling.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Gmf Sub Port Instances</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscreteMultiPortInstance_GmfSubPortInstances()
+	 * @model containment="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.subPortInstances'"
+	 * @generated
+	 */
+	EList<DiscreteSinglePortInstance> getGmfSubPortInstances();
 
 } // DiscreteMultiPortInstance
