@@ -53,8 +53,8 @@ query Port::basicCreatePortInstances() : Set(PortInstance) {
 query DiscretePort::createPortInstances() : Set(PortInstance) {
 	if (self.isMultiPort) then {
 		var multiPortInstance : DiscreteMultiPortInstance := new DiscreteMultiPortInstance(self);
-		return OrderedSet { multiPortInstance }
-		//return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subPortInstances[PortInstance])
+		//return OrderedSet { multiPortInstance }
+		return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subPortInstances[PortInstance])
 	} endif;
 	return self.basicCreatePortInstances()
 }
