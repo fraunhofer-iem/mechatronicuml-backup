@@ -11,12 +11,19 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram;
 
+import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.impl.ExtendableElementImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
@@ -27,12 +34,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.CallImpl#getCallee <em>Callee</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.CallImpl#getParameterBinding <em>Parameter Binding</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CallImpl extends EObjectImpl implements Call {
+public class CallImpl extends ExtendableElementImpl implements Call {
 	/**
 	 * The cached value of the '{@link #getCallee() <em>Callee</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -42,6 +50,16 @@ public class CallImpl extends EObjectImpl implements Call {
 	 * @ordered
 	 */
 	protected ComponentStoryDiagram callee;
+
+	/**
+	 * The cached value of the '{@link #getParameterBinding() <em>Parameter Binding</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameterBinding()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ParameterBinding> parameterBinding;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,12 +123,40 @@ public class CallImpl extends EObjectImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ParameterBinding> getParameterBinding() {
+		if (parameterBinding == null) {
+			parameterBinding = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, ComponentstorypatternPackage.CALL__PARAMETER_BINDING);
+		}
+		return parameterBinding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentstorypatternPackage.CALL__PARAMETER_BINDING:
+				return ((InternalEList<?>)getParameterBinding()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.CALL__CALLEE:
 				if (resolve) return getCallee();
 				return basicGetCallee();
+			case ComponentstorypatternPackage.CALL__PARAMETER_BINDING:
+				return getParameterBinding();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,11 +166,16 @@ public class CallImpl extends EObjectImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.CALL__CALLEE:
 				setCallee((ComponentStoryDiagram)newValue);
+				return;
+			case ComponentstorypatternPackage.CALL__PARAMETER_BINDING:
+				getParameterBinding().clear();
+				getParameterBinding().addAll((Collection<? extends ParameterBinding>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,6 +192,9 @@ public class CallImpl extends EObjectImpl implements Call {
 			case ComponentstorypatternPackage.CALL__CALLEE:
 				setCallee((ComponentStoryDiagram)null);
 				return;
+			case ComponentstorypatternPackage.CALL__PARAMETER_BINDING:
+				getParameterBinding().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -155,6 +209,8 @@ public class CallImpl extends EObjectImpl implements Call {
 		switch (featureID) {
 			case ComponentstorypatternPackage.CALL__CALLEE:
 				return callee != null;
+			case ComponentstorypatternPackage.CALL__PARAMETER_BINDING:
+				return parameterBinding != null && !parameterBinding.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

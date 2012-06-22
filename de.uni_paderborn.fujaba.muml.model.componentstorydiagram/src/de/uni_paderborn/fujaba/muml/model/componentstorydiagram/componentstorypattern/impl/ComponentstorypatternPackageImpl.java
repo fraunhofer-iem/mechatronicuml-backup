@@ -430,6 +430,15 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCall_ParameterBinding() {
+		return (EReference)callEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFadingFunction() {
 		return fadingFunctionEClass;
 	}
@@ -516,6 +525,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		callEClass = createEClass(CALL);
 		createEReference(callEClass, CALL__CALLEE);
+		createEReference(callEClass, CALL__PARAMETER_BINDING);
 
 		fadingFunctionEClass = createEClass(FADING_FUNCTION);
 		createEReference(fadingFunctionEClass, FADING_FUNCTION__FROM_PORT);
@@ -550,6 +560,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		PatternsPackage thePatternsPackage = (PatternsPackage)EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		ControlflowPackage theControlflowPackage = (ControlflowPackage)EPackage.Registry.INSTANCE.getEPackage(ControlflowPackage.eNS_URI);
+		de.uni_paderborn.fujaba.muml.model.core.CorePackage theCorePackage_1 = (de.uni_paderborn.fujaba.muml.model.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.model.core.CorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -566,6 +577,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		connectorVariableEClass.getESuperTypes().add(this.getComponentStoryPatternVariable());
 		assemblyVariableEClass.getESuperTypes().add(this.getConnectorVariable());
 		delegationVariableEClass.getESuperTypes().add(this.getConnectorVariable());
+		callEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
@@ -606,6 +618,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCall_Callee(), theControlflowPackage.getComponentStoryDiagram(), null, "callee", null, 1, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCall_ParameterBinding(), theCorePackage_1.getParameterBinding(), null, "parameterBinding", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fadingFunctionEClass, FadingFunction.class, "FadingFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFadingFunction_FromPort(), this.getPortVariable(), null, "fromPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

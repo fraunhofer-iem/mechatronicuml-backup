@@ -156,6 +156,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 			case ComponentstorypatternPackage.CALL: {
 				Call call = (Call)theEObject;
 				T result = caseCall(call);
+				if (result == null) result = caseExtendableElement(call);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
