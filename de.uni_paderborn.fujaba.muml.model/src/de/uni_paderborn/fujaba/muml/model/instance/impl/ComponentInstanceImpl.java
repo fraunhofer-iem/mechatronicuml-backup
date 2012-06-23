@@ -19,7 +19,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
@@ -86,10 +88,12 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected ComponentInstanceImpl() {
 		super();
+		DerivedAttributeAdapter derivedAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES);
+		derivedAdapter.addLocalDependency(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
 	}
 
 	/**
