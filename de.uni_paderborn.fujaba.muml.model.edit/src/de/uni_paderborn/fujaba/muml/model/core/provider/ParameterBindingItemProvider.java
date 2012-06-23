@@ -22,17 +22,20 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.LiteralExpression;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
-
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
+
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 
 
@@ -166,11 +169,33 @@ public class ParameterBindingItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ParameterBinding_type");
+		ParameterBinding parameterBinding = (ParameterBinding) object;
+		Parameter parameter = parameterBinding.getParameter();
+		Expression value = parameterBinding.getValue();
+
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(getString("_UI_ParameterBinding_type"));
+		buffer.append(' ');
+		
+		if (parameter != null && parameter.getName() != null) {
+			buffer.append(parameter.getName());
+		} else {
+			buffer.append("null");
+		}
+		
+		buffer.append(" := ");
+		
+		// TODO: Use XText-Parser to support other kinds of Expressions
+		if (value instanceof LiteralExpression) {
+			buffer.append(((LiteralExpression)value).getValue());
+		} else {
+			buffer.append("null");
+		}
+		return buffer.toString();
 	}
 
 	/**

@@ -78,10 +78,10 @@ public class MessageItemProvider
 	 * This adds a property descriptor for the Instance Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addInstanceOfPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
 			 getString("_UI_Message_instanceOf_feature"),

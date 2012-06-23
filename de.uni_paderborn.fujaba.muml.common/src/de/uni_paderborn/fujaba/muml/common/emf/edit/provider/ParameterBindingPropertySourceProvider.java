@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common.emf.edit.provider;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EDataType;
@@ -26,21 +27,24 @@ import de.uni_paderborn.fujaba.common.descriptor.AbstractItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
-public class MessageParameterBindingPropertySourceProvider implements
+public class ParameterBindingPropertySourceProvider implements
 		IPropertySourceProvider {
 
+	public static interface IParameterBindingElement {
+		Collection<Parameter> getParameters(EObject object);
+		EStructuralFeature getParameterBindingFeature();
+	}
+
 	private EditingDomain editingDomain;
-
 	private IPropertySource propertySource;
-
 	private IItemPropertySource itemProvider;
+	private IParameterBindingElement parameterBindingsElement;
 
-	public MessageParameterBindingPropertySourceProvider(
-			EditingDomain editingDomain) {
+	public ParameterBindingPropertySourceProvider(EditingDomain editingDomain,
+			IParameterBindingElement parameterBindingsElement) {
 		this.editingDomain = editingDomain;
+		this.parameterBindingsElement = parameterBindingsElement;
 	}
 
 	public IItemPropertySource getItemProvider() {
@@ -88,21 +92,20 @@ public class MessageParameterBindingPropertySourceProvider implements
 		@Override
 		public List<IItemPropertyDescriptor> getPropertyDescriptors(
 				Object object) {
+
 			if (itemPropertyDescriptors == null) {
 				itemPropertyDescriptors = new ArrayList<IItemPropertyDescriptor>();
+				Collection<Parameter> parameters = parameterBindingsElement
+						.getParameters((EObject) object);
 
-				Message message = (Message) object;
-				if (message.getInstanceOf() != null) {
-					int id = 0;
-					for (Parameter parameter : message.getInstanceOf()
-							.getParameters()) {
-						itemPropertyDescriptors
-								.add(new MessageParameterBindingPropertyDescriptor(
-										Integer.toString(id), message,
-										parameter));
-						id++;
-					}
+				int id = 0;
+				for (Parameter parameter : parameters) {
+					itemPropertyDescriptors
+							.add(new ParameterBindingPropertyDescriptor(Integer
+									.toString(id), (EObject) object, parameter));
+					id++;
 				}
+
 			}
 			return itemPropertyDescriptors;
 		}
@@ -134,23 +137,25 @@ public class MessageParameterBindingPropertySourceProvider implements
 
 	}
 
-	public class MessageParameterBindingPropertyDescriptor extends
+	public class ParameterBindingPropertyDescriptor extends
 			AbstractItemPropertyDescriptor {
 		private String id;
-
-		private Message message;
+		private EObject object;
 		private Parameter parameter;
 
-		public MessageParameterBindingPropertyDescriptor(String id,
-				Message message, Parameter parameter) {
+		public ParameterBindingPropertyDescriptor(String id,
+				EObject parameterBindingsElement, Parameter parameter) {
 			this.id = id;
-			this.message = message;
+			this.object = parameterBindingsElement;
 			this.parameter = parameter;
 		}
 
 		private ParameterBinding getParameterBinding(Parameter parameter) {
-			for (ParameterBinding parameterBinding : message
-					.getParameterBinding()) {
+			@SuppressWarnings("unchecked")
+			Collection<ParameterBinding> parameterBindings = (Collection<ParameterBinding>) object
+					.eGet(parameterBindingsElement.getParameterBindingFeature());
+
+			for (ParameterBinding parameterBinding : parameterBindings) {
 				if (parameterBinding.getParameter() == parameter) {
 					return parameterBinding;
 				}
@@ -173,28 +178,33 @@ public class MessageParameterBindingPropertySourceProvider implements
 
 		@Override
 		public void setPropertyValue(Object object, Object value) {
+			EStructuralFeature feature = parameterBindingsElement.getParameterBindingFeature();
 			ParameterBinding parameterBinding = getParameterBinding(parameter);
 			if (parameterBinding == null) {
 				parameterBinding = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 						.createParameterBinding();
 				parameterBinding.setParameter(parameter);
 
-				// Add ParameterBinding to Message within a write transaction
+				// Add ParameterBinding to parameterBindingsElement within a
+				// write transaction
+				@SuppressWarnings("unchecked")
+				Collection<ParameterBinding> parameterBindings = (Collection<ParameterBinding>) this.object
+						.eGet(feature);
 				List<ParameterBinding> newValue = new ArrayList<ParameterBinding>(
-						message.getParameterBinding());
+						parameterBindings);
 				newValue.add(parameterBinding);
 				setFeature(
-						RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING,
-						message, newValue);
+						feature,
+						this.object, newValue);
 			}
 
 			// Create Literal Expression for the value
-			LiteralExpression valueExpression = ExpressionsFactory.eINSTANCE.createLiteralExpression();
+			LiteralExpression valueExpression = ExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
 			valueExpression.setValue((String) value);
 
 			// Set within a write transaction
-			setFeature(
-					CorePackage.Literals.PARAMETER_BINDING__VALUE,
+			setFeature(CorePackage.Literals.PARAMETER_BINDING__VALUE,
 					parameterBinding, valueExpression);
 		}
 
@@ -246,6 +256,6 @@ public class MessageParameterBindingPropertySourceProvider implements
 								value));
 			}
 		}
-
 	}
+
 }

@@ -71,6 +71,7 @@ public class SynchronizationItemProvider
 
 			addSyncChannelPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
+			addParameterBindingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -115,6 +116,28 @@ public class SynchronizationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameter Binding feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParameterBindingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Synchronization_parameterBinding_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_parameterBinding_feature", "_UI_Synchronization_type"),
+				 RealtimestatechartPackage.Literals.SYNCHRONIZATION__PARAMETER_BINDING,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
