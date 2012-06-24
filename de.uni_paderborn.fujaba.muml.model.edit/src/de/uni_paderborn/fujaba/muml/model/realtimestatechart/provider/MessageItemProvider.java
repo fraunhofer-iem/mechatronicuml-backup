@@ -81,18 +81,19 @@ public class MessageItemProvider
 	 * @generated
 	 */
 	protected void addInstanceOfPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_Message_instanceOf_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_Message_instanceOf_feature", "_UI_Message_type"),
-			 RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF,
-			 true,
-			 false,
-			 true,
-			 null,
-			 null,
-			 null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Message_instanceOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Message_instanceOf_feature", "_UI_Message_type"),
+				 RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
