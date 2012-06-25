@@ -23999,6 +23999,8 @@
         dataValue="http://www.fujaba.de/muml/model/component/0.2.7" oldDataValue="http://www.fujaba.de/muml/model/component/0.2.3"/>
     <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#/"
         featureName="nsURI" dataValue="http://www.storydriven.org/core/0.2.7" oldDataValue="http://www.storydriven.org/core/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.7" oldDataValue="http://www.fujaba.de/modelinstance/0.2.6"/>
   </releases>
   <releases/>
 </history:History>
