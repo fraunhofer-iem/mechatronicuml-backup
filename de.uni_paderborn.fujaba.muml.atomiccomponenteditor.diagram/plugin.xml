@@ -122,7 +122,7 @@
          
          <node
                domainElement="AtomicComponent"
-               semanticHint="2004">
+               semanticHint="2005">
          </node>
          
          <node
@@ -339,7 +339,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Atomiccomponent"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,3005,3006,3007"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3005,3006,3007"/>
       </viewProvider>
    </extension>
 
@@ -351,13 +351,13 @@
             <method name="getType()" value="Atomiccomponent"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2004,3005,3006,3007"/>
+            <method name="getType()" value="2005,3005,3006,3007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5010,5006,5007,5008"/>
+            <method name="getType()" value="5011,5006,5007,5008"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -371,8 +371,8 @@
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart" id="ModelElementCategory_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart" id="AtomicComponent_2004"/>
-         <context elements="ModelElementCategory_1000,AtomicComponent_2004"/>
+         <object class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart" id="AtomicComponent_2005"/>
+         <context elements="ModelElementCategory_1000,AtomicComponent_2005"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -404,12 +404,12 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.2.3">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2004"
-               name="%metatype.name.AtomicComponent_2004"
+               id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2005"
+               name="%metatype.name.AtomicComponent_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AtomicComponent"
                edithelper="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.helpers.AtomicComponentEditHelper">
-            <param name="semanticHint" value="2004"/>
+            <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.2.3">
@@ -455,7 +455,7 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ModelElementCategory_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2004"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.DiscretePort_3006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ContinuousPort_3007"/>

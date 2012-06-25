@@ -25,7 +25,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2004SemanticChildren(view);
+			return getAtomicComponent_2005SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -59,7 +59,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor> getAtomicComponent_2004SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor> getAtomicComponent_2005SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -102,7 +102,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2004ContainedLinks(view);
+			return getAtomicComponent_2005ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return getHybridPort_3005ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
@@ -121,7 +121,7 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2004IncomingLinks(view);
+			return getAtomicComponent_2005IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return getHybridPort_3005IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
@@ -140,7 +140,7 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2004OutgoingLinks(view);
+			return getAtomicComponent_2005OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return getHybridPort_3005OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
@@ -162,7 +162,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2004ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2005ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -194,7 +194,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2004IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2005IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -226,7 +226,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2004OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2005OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

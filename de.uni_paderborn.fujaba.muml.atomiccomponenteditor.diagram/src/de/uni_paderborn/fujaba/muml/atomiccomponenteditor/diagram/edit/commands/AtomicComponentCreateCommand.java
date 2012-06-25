@@ -59,7 +59,7 @@ public class AtomicComponentCreateCommand extends EditElementCommand {
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.ElementInitializers
-				.getInstance().init_AtomicComponent_2004(newElement);
+				.getInstance().init_AtomicComponent_2005(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -58,7 +58,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.AtomicComponent1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.AtomicComponent1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.AtomicComponent_2004));
+						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.AtomicComponent_2005));
 		entry.setId("createAtomicComponent1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/AtomicComponent.gif")); //$NON-NLS-1$

@@ -51,7 +51,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType AtomicComponent_2004 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2004"); //$NON-NLS-1$
+	public static final IElementType AtomicComponent_2005 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -181,7 +181,7 @@ public class MumlElementTypes {
 					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					AtomicComponent_2004,
+					AtomicComponent_2005,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getAtomicComponent());
 
@@ -217,7 +217,7 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(AtomicComponent_2004);
+			KNOWN_ELEMENT_TYPES.add(AtomicComponent_2005);
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3005);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3006);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3007);
@@ -233,7 +233,7 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return AtomicComponent_2004;
+			return AtomicComponent_2005;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return HybridPort_3005;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:

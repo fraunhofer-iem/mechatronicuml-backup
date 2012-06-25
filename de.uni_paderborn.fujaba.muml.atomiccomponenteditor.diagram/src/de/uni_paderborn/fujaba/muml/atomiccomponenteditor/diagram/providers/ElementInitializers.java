@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_AtomicComponent_2004(
+	public void init_AtomicComponent_2005(
 			de.uni_paderborn.fujaba.muml.model.component.AtomicComponent instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
