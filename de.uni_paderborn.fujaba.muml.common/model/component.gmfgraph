@@ -93,7 +93,9 @@
                 verticalAlignment="BEGINNING"
                 horizontalAlignment="BEGINNING"/>
             <font
-                xsi:type="gmfgraph:BasicFont"/>
+                xsi:type="gmfgraph:BasicFont"
+                faceName=""
+                style="BOLD"/>
           </children>
           <children
               xsi:type="gmfgraph:FigureRef"
@@ -162,7 +164,8 @@
                 grabExcessVerticalSpace="true"
                 horizontalAlignment="FILL"/>
             <font
-                xsi:type="gmfgraph:BasicFont"/>
+                xsi:type="gmfgraph:BasicFont"
+                style="BOLD"/>
           </children>
         </children>
       </actualFigure>
