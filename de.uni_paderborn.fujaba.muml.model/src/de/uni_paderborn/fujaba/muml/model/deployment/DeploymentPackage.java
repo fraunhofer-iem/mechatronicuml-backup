@@ -44,7 +44,7 @@ public interface DeploymentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/deployment/0.2.2";
+	String eNS_URI = "http://www.fujaba.de/muml/model/deployment/0.2.7";
 
 	/**
 	 * The package namespace name.

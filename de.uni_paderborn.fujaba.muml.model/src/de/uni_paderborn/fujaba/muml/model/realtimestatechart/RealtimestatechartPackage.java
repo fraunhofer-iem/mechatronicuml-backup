@@ -44,7 +44,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.2.3";
+	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.2.7";
 
 	/**
 	 * The package namespace name.
