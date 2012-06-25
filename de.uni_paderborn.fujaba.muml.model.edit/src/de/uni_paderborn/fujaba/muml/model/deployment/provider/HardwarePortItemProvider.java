@@ -71,6 +71,7 @@ public class HardwarePortItemProvider
 			addOutgoingCommunicationLinkPropertyDescriptor(object);
 			addIncomingCommunicationLinkPropertyDescriptor(object);
 			addDeployedPortInstancePropertyDescriptor(object);
+			addKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -164,6 +165,28 @@ public class HardwarePortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Kind feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKindPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HardwarePort_kind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HardwarePort_kind_feature", "_UI_HardwarePort_type"),
+				 DeploymentPackage.Literals.HARDWARE_PORT__KIND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns HardwarePort.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -201,6 +224,7 @@ public class HardwarePortItemProvider
 
 		switch (notification.getFeatureID(HardwarePort.class)) {
 			case DeploymentPackage.HARDWARE_PORT__COMMENT:
+			case DeploymentPackage.HARDWARE_PORT__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
