@@ -6,16 +6,16 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 /**
  * @generated
  */
-public class MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy
+public class MessageInterfaceMessageTypesCompartmentItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy() {
+	public MessageInterfaceMessageTypesCompartmentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2005);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2006);
 	}
 
 	/**

@@ -47,7 +47,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageInterface1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageInterface1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2005));
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2006));
 		entry.setId("createMessageInterface1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom/icons/MessageInterface.gif")); //$NON-NLS-1$

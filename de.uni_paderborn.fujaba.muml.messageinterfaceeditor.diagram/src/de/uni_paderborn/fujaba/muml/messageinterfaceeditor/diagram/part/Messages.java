@@ -288,7 +288,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String MessageInterfaceMessageTypeCompartmentEditPart_title;
+	public static String MessageInterfaceMessageTypesCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -318,12 +318,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterface_2005_incominglinks;
+	public static String NavigatorGroupName_MessageInterface_2006_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterface_2005_outgoinglinks;
+	public static String NavigatorGroupName_MessageInterface_2006_outgoinglinks;
 
 	/**
 	 * @generated

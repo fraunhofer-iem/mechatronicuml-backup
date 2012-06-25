@@ -59,7 +59,7 @@ public class MessageInterfaceCreateCommand extends EditElementCommand {
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers
-				.getInstance().init_MessageInterface_2005(newElement);
+				.getInstance().init_MessageInterface_2006(newElement);
 
 		doConfigure(newElement, monitor, info);
 

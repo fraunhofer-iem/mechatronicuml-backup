@@ -552,6 +552,6 @@ public class StructuredComponentInstance2EditPart extends
 	 */
 	static final Font FFIGURECOMPONENTNAMEFIGURE_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.NORMAL);
+					.getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

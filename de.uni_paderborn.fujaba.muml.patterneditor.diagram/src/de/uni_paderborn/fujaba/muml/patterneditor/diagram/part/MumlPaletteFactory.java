@@ -46,10 +46,10 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.CoordinationPattern1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.CoordinationPattern1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2003));
+						.singletonList(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2004));
 		entry.setId("createCoordinationPattern1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2003));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

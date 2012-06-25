@@ -976,6 +976,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
+        className="ComponentPartLabelExpressionLabelParser5017"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ComponentPart"/>

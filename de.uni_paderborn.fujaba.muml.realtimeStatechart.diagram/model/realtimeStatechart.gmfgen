@@ -1043,8 +1043,7 @@
         title="RegionContentsCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.6"
-        listLayout="false">
+        node="//@diagram/@childNodes.6">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap

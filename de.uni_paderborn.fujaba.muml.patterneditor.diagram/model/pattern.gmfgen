@@ -172,7 +172,7 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2003"
+        visualID="2004"
         editPartClassName="CoordinationPatternEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
         canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy"
@@ -386,7 +386,7 @@
           targetEnd="//@expressionProviders/@providers.0/@expressions.15"/>
     </links>
     <compartments
-        visualID="7003"
+        visualID="7004"
         editPartClassName="CoordinationPatternCoordinationPatternContainerCompartmentEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy"
@@ -394,8 +394,7 @@
         title="CoordinationPatternContainerCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0"
-        listLayout="false">
+        node="//@diagram/@topLevelNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap

@@ -154,10 +154,9 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2005"
+        visualID="2006"
         editPartClassName="MessageInterfaceEditPart"
         itemSemanticEditPolicyClassName="MessageInterfaceItemSemanticEditPolicy"
-        notationViewFactoryClassName="MessageInterfaceViewFactory"
         canonicalEditPolicyClassName="MessageInterfaceCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="MessageInterfaceGraphicalNodeEditPolicy"
@@ -194,10 +193,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5010"
+          visualID="5012"
           editPartClassName="MessageInterfaceNameEditPart"
-          itemSemanticEditPolicyClassName="MessageInterfaceNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageInterfaceNameViewFactory">
+          itemSemanticEditPolicyClassName="MessageInterfaceNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -238,16 +236,16 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7005"
-        editPartClassName="MessageInterfaceMessageTypeCompartmentEditPart"
-        itemSemanticEditPolicyClassName="MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="MessageInterfaceMessageTypeCompartmentViewFactory"
-        canonicalEditPolicyClassName="MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy"
+        visualID="7007"
+        editPartClassName="MessageInterfaceMessageTypesCompartmentEditPart"
+        itemSemanticEditPolicyClassName="MessageInterfaceMessageTypesCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="MessageInterfaceMessageTypesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="MessageTypesCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap

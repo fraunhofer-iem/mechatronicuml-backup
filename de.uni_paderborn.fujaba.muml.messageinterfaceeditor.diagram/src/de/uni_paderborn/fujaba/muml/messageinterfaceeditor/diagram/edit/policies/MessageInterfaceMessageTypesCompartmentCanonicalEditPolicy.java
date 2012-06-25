@@ -24,14 +24,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
+public class MessageInterfaceMessageTypesCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
-	public MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy() {
+	public MessageInterfaceMessageTypesCompartmentCanonicalEditPolicy() {
 	}
 
-	public MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy(
+	public MessageInterfaceMessageTypesCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
@@ -98,7 +98,7 @@ public class MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramUpdater
-				.getMessageInterfaceMessageTypesCompartment_7005SemanticChildren(viewObject);
+				.getMessageInterfaceMessageTypesCompartment_7007SemanticChildren(viewObject);
 
 	}
 

@@ -15,7 +15,7 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentItemSeman
 	 */
 	public CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2003);
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2004);
 	}
 
 	/**

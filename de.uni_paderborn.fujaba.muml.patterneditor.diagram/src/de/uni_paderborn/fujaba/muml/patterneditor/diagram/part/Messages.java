@@ -288,11 +288,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPattern_2003_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
@@ -319,6 +314,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_CoordinationPatternRoles_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationPattern_2004_outgoinglinks;
 
 	/**
 	 * @generated

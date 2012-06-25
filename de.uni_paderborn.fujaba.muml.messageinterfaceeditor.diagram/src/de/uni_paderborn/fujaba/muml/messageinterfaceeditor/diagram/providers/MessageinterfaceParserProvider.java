@@ -23,20 +23,20 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser messageInterfaceName_5010Parser;
+	protected IParser messageInterfaceName_5012Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageInterfaceName_5010Parser() {
-		if (messageInterfaceName_5010Parser == null) {
+	protected IParser getMessageInterfaceName_5012Parser() {
+		if (messageInterfaceName_5012Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);
-			messageInterfaceName_5010Parser = parser;
+			messageInterfaceName_5012Parser = parser;
 		}
-		return messageInterfaceName_5010Parser;
+		return messageInterfaceName_5012Parser;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID:
-			return getMessageInterfaceName_5010Parser();
+			return getMessageInterfaceName_5012Parser();
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getMessageTypeName_5008Parser();
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:

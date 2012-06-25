@@ -29,8 +29,8 @@ public class MumlDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart.VISUAL_ID:
-			return getMessageInterfaceMessageTypesCompartment_7005SemanticChildren(view);
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypesCompartmentEditPart.VISUAL_ID:
+			return getMessageInterfaceMessageTypesCompartment_7007SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
 			return getMessageTypeParametersCompartment_7006SemanticChildren(view);
 		}
@@ -66,7 +66,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> getMessageInterfaceMessageTypesCompartment_7005SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> getMessageInterfaceMessageTypesCompartment_7007SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -135,7 +135,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return getMessageInterface_2005ContainedLinks(view);
+			return getMessageInterface_2006ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3005ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
@@ -152,7 +152,7 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return getMessageInterface_2005IncomingLinks(view);
+			return getMessageInterface_2006IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3005IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
@@ -169,7 +169,7 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return getMessageInterface_2005OutgoingLinks(view);
+			return getMessageInterface_2006OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3005OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
@@ -189,7 +189,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2005ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2006ContainedLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) view
 				.getElement();
@@ -217,7 +217,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2005IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2006IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) view
 				.getElement();
@@ -248,7 +248,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2005OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2006OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) view
 				.getElement();

@@ -51,7 +51,8 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageInterface_2005 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2005"); //$NON-NLS-1$
+	public static final IElementType MessageInterface_2006 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2006"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -180,7 +181,7 @@ public class MumlElementTypes {
 					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					MessageInterface_2005,
+					MessageInterface_2006,
 					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
 							.getMessageInterface());
 
@@ -216,7 +217,7 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(MessageInterface_2005);
+			KNOWN_ELEMENT_TYPES.add(MessageInterface_2006);
 			KNOWN_ELEMENT_TYPES.add(MessageType_3005);
 			KNOWN_ELEMENT_TYPES.add(Parameter_3006);
 			KNOWN_ELEMENT_TYPES.add(MessageInterfaceSuperType_4004);
@@ -232,7 +233,7 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return MessageInterface_2005;
+			return MessageInterface_2006;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3005;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:

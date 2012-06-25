@@ -98,7 +98,7 @@
          
          <child
                class="MessageInterface"
-               packageNsUri="http://www.fujaba.de/muml/model/msgiface/0.2.2">
+               packageNsUri="http://www.fujaba.de/muml/model/msgiface/0.2.7">
          </child>
          
       </category>
@@ -122,7 +122,7 @@
          
          <node
                domainElement="MessageInterface"
-               semanticHint="2005">
+               semanticHint="2006">
          </node>
          
          <node
@@ -334,7 +334,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Messageinterface"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3005,3006"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2006,3005,3006"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004"/>
       </viewProvider>
    </extension>
@@ -347,16 +347,16 @@
             <method name="getType()" value="Messageinterface"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2005,3005,3006"/>
+            <method name="getType()" value="2006,3005,3006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5010,5008,5011"/>
+            <method name="getType()" value="5012,5008,5011"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7005,7006"/>
+            <method name="getType()" value="7007,7006"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -367,8 +367,8 @@
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart" id="ModelElementCategory_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart" id="MessageInterface_2005"/>
-         <context elements="ModelElementCategory_1000,MessageInterface_2005"/>
+         <object class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart" id="MessageInterface_2006"/>
+         <context elements="ModelElementCategory_1000,MessageInterface_2006"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -398,17 +398,17 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.2">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.7">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2005"
-               name="%metatype.name.MessageInterface_2005"
+               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2006"
+               name="%metatype.name.MessageInterface_2006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MessageInterface"
                edithelper="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.helpers.MessageInterfaceEditHelper">
-            <param name="semanticHint" value="2005"/>
+            <param name="semanticHint" value="2006"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.2">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.7">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3005"
                name="%metatype.name.MessageType_3005"
@@ -418,7 +418,7 @@
             <param name="semanticHint" value="3005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.2.4">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.2.7">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3006"
                name="%metatype.name.Parameter_3006"
@@ -428,7 +428,7 @@
             <param name="semanticHint" value="3006"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.2">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.7">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4004"
                name="%metatype.name.MessageInterfaceSuperType_4004"
@@ -450,7 +450,7 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ModelElementCategory_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2005"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4004"/>

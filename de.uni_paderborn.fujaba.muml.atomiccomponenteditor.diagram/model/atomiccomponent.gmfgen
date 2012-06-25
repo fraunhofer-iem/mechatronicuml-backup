@@ -319,6 +319,7 @@
         visualID="2005"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicComponentViewFactory"
         canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
         graphicalNodeEditPolicyClassName="AtomicComponentGraphicalNodeEditPolicy"
@@ -357,7 +358,8 @@
       <labels
           visualID="5011"
           editPartClassName="AtomicComponentNameEditPart"
-          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="AtomicComponentNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

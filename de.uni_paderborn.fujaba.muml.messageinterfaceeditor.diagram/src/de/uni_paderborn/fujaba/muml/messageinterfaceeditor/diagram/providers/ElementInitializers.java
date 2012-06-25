@@ -12,7 +12,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_MessageInterface_2005(
+	public void init_MessageInterface_2006(
 			de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory

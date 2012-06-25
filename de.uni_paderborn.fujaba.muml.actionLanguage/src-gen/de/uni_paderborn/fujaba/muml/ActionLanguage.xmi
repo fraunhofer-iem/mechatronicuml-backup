@@ -11,10 +11,10 @@
       <ePackage href="http://www.storydriven.org/core/0.2.0#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="rtsc">
-      <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.2.3#/"/>
+      <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="core">
-      <ePackage href="http://www.fujaba.de/muml/model/core/0.2.4#/"/>
+      <ePackage href="http://www.fujaba.de/muml/model/core/0.2.7#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="expressions">
       <ePackage href="http://www.storydriven.org/core/0.2.0#//expressions"/>
@@ -145,7 +145,7 @@
         <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.4#//Attribute"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Attribute"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -174,7 +174,7 @@
         <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.4#//Attribute"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Attribute"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -328,7 +328,7 @@
           <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
             <terminal xsi:type="xtext:CrossReference">
               <type metamodel="/0/@metamodelDeclarations.4">
-                <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.4#//Attribute"/>
+                <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Attribute"/>
               </type>
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
             </terminal>

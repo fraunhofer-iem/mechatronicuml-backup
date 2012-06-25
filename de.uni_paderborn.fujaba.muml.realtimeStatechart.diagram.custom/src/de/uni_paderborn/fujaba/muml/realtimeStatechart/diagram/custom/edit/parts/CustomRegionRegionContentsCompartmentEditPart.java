@@ -4,17 +4,19 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart;
 
 public class CustomRegionRegionContentsCompartmentEditPart extends
 		RegionRegionContentsCompartmentEditPart {
+
+	public CustomRegionRegionContentsCompartmentEditPart(View view) {
+		super(view);
+	}
 
 	@Override
 	protected void handleNotificationEvent(Notification event) {
@@ -32,36 +34,12 @@ public class CustomRegionRegionContentsCompartmentEditPart extends
 
 		super.handleNotificationEvent(event);
 	}
-
-	public CustomRegionRegionContentsCompartmentEditPart(View view) {
-		super(view);
-	}
-
-	//
-	// @Override
-	// protected void createDefaultEditPolicies() {
-	// super.createDefaultEditPolicies();
-	// removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
-	// installEditPolicy(
-	// EditPolicyRoles.SEMANTIC_ROLE,
-	// new CustomRegionRegionContentsCompartmentItemSemanticEditPolicy());
-	// }
-
-	
-	// Begin deactivated; is generated now.
-	
+//
 //	@Override
 //	public IFigure createFigure() {
 //		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
 //				.createFigure();
-//		LayoutManager layoutManager = result.getContentPane()
-//				.getLayoutManager();
-//		if (layoutManager instanceof ConstrainedToolbarLayout) {
-//			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
-//			constrainedToolbarLayout.setStretchMajorAxis(true);
-//			constrainedToolbarLayout.setStretchMinorAxis(true);
-//		}
-//		
+//
 //		// Begin: Fix for Mechatronic-UML Bug #116
 //		result.setBorder(null);
 //		// End Fix
@@ -69,7 +47,5 @@ public class CustomRegionRegionContentsCompartmentEditPart extends
 //		return result;
 //
 //	}
-	
-	// End deactivated
 
 }
