@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -28,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentFactory;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
+import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
@@ -37,6 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
+import org.eclipse.emf.ecore.EAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,6 +75,13 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * @generated
 	 */
 	private EClass communicationLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum hardwarePortDirectionKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -283,6 +293,15 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getHardwarePort_Kind() {
+		return (EAttribute)hardwarePortEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCommunicationLink() {
 		return communicationLinkEClass;
 	}
@@ -312,6 +331,15 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 */
 	public EReference getCommunicationLink_Target() {
 		return (EReference)communicationLinkEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getHardwarePortDirectionKind() {
+		return hardwarePortDirectionKindEEnum;
 	}
 
 	/**
@@ -357,11 +385,15 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		createEReference(hardwarePortEClass, HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK);
 		createEReference(hardwarePortEClass, HARDWARE_PORT__INCOMING_COMMUNICATION_LINK);
 		createEReference(hardwarePortEClass, HARDWARE_PORT__DEPLOYED_PORT_INSTANCE);
+		createEAttribute(hardwarePortEClass, HARDWARE_PORT__KIND);
 
 		communicationLinkEClass = createEClass(COMMUNICATION_LINK);
 		createEReference(communicationLinkEClass, COMMUNICATION_LINK__DEPLOYMENT);
 		createEReference(communicationLinkEClass, COMMUNICATION_LINK__SOURCE);
 		createEReference(communicationLinkEClass, COMMUNICATION_LINK__TARGET);
+
+		// Create enums
+		hardwarePortDirectionKindEEnum = createEEnum(HARDWARE_PORT_DIRECTION_KIND);
 	}
 
 	/**
@@ -420,11 +452,18 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		initEReference(getHardwarePort_OutgoingCommunicationLink(), this.getCommunicationLink(), this.getCommunicationLink_Source(), "outgoingCommunicationLink", null, 0, 1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHardwarePort_IncomingCommunicationLink(), this.getCommunicationLink(), this.getCommunicationLink_Target(), "incomingCommunicationLink", null, 1, 1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHardwarePort_DeployedPortInstance(), theInstancePackage.getPortInstance(), null, "deployedPortInstance", null, 0, -1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHardwarePort_Kind(), this.getHardwarePortDirectionKind(), "kind", "", 0, 1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(communicationLinkEClass, CommunicationLink.class, "CommunicationLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCommunicationLink_Deployment(), this.getDeployment(), this.getDeployment_CommunicationLinks(), "deployment", null, 1, 1, CommunicationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationLink_Source(), this.getHardwarePort(), this.getHardwarePort_OutgoingCommunicationLink(), "source", null, 1, 1, CommunicationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationLink_Target(), this.getHardwarePort(), this.getHardwarePort_IncomingCommunicationLink(), "target", null, 1, 1, CommunicationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(hardwarePortDirectionKindEEnum, HardwarePortDirectionKind.class, "HardwarePortDirectionKind");
+		addEEnumLiteral(hardwarePortDirectionKindEEnum, HardwarePortDirectionKind.IN);
+		addEEnumLiteral(hardwarePortDirectionKindEEnum, HardwarePortDirectionKind.OUT);
+		addEEnumLiteral(hardwarePortDirectionKindEEnum, HardwarePortDirectionKind.IN_OUT);
 
 		// Create resource
 		createResource(eNS_URI);

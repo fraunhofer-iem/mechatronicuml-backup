@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
+import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
@@ -39,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getOutgoingCommunicationLink <em>Outgoing Communication Link</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getIncomingCommunicationLink <em>Incoming Communication Link</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getDeployedPortInstance <em>Deployed Port Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -94,6 +96,26 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * @ordered
 	 */
 	protected EList<PortInstance> deployedPortInstance;
+
+	/**
+	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final HardwarePortDirectionKind KIND_EDEFAULT = HardwarePortDirectionKind.IN;
+
+	/**
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected HardwarePortDirectionKind kind = KIND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -313,6 +335,27 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public HardwarePortDirectionKind getKind() {
+		return kind;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setKind(HardwarePortDirectionKind newKind) {
+		HardwarePortDirectionKind oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.HARDWARE_PORT__KIND, oldKind, kind));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -384,6 +427,8 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 				return basicGetIncomingCommunicationLink();
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				return getDeployedPortInstance();
+			case DeploymentPackage.HARDWARE_PORT__KIND:
+				return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -413,6 +458,9 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 				getDeployedPortInstance().clear();
 				getDeployedPortInstance().addAll((Collection<? extends PortInstance>)newValue);
 				return;
+			case DeploymentPackage.HARDWARE_PORT__KIND:
+				setKind((HardwarePortDirectionKind)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -440,6 +488,9 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				getDeployedPortInstance().clear();
 				return;
+			case DeploymentPackage.HARDWARE_PORT__KIND:
+				setKind(KIND_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -462,6 +513,8 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 				return incomingCommunicationLink != null;
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				return deployedPortInstance != null && !deployedPortInstance.isEmpty();
+			case DeploymentPackage.HARDWARE_PORT__KIND:
+				return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -510,6 +563,8 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
+		result.append(", kind: ");
+		result.append(kind);
 		result.append(')');
 		return result.toString();
 	}

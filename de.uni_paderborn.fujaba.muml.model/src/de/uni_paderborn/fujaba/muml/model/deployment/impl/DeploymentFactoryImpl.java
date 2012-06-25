@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
 import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
@@ -78,6 +79,36 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case DeploymentPackage.HARDWARE_PORT_DIRECTION_KIND:
+				return createHardwarePortDirectionKindFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case DeploymentPackage.HARDWARE_PORT_DIRECTION_KIND:
+				return convertHardwarePortDirectionKindToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Deployment createDeployment() {
 		DeploymentImpl deployment = new DeploymentImpl();
 		return deployment;
@@ -111,6 +142,26 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	public CommunicationLink createCommunicationLink() {
 		CommunicationLinkImpl communicationLink = new CommunicationLinkImpl();
 		return communicationLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HardwarePortDirectionKind createHardwarePortDirectionKindFromString(EDataType eDataType, String initialValue) {
+		HardwarePortDirectionKind result = HardwarePortDirectionKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertHardwarePortDirectionKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

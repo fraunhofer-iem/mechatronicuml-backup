@@ -472,6 +472,7 @@
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
           </genOperations>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
+          <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Event/kind"/>
@@ -512,6 +513,11 @@
       </nestedGenPackages>
       <nestedGenPackages prefix="Deployment" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/deployment">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//model/deployment/HardwarePortDirectionKind">
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/deployment/HardwarePortDirectionKind/OUT"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN_OUT"/>
+        </genEnums>
         <genClasses ecoreClass="muml.ecore#//model/deployment/Deployment">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/Deployment/communicationLinks"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/Deployment/hardwareNodes"/>
@@ -532,6 +538,7 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/deployment/HardwarePort/deployedPortInstance"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/deployment/HardwarePort/kind"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/deployment/CommunicationLink">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/CommunicationLink/deployment"/>

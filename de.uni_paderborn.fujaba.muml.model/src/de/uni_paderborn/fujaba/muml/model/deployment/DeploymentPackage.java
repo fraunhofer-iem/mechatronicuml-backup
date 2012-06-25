@@ -6,7 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
@@ -307,13 +309,22 @@ public interface DeploymentPackage extends EPackage {
 	int HARDWARE_PORT__DEPLOYED_PORT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Hardware Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int HARDWARE_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl <em>Communication Link</em>}' class.
@@ -378,6 +389,17 @@ public interface DeploymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_LINK_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind <em>Hardware Port Direction Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getHardwarePortDirectionKind()
+	 * @generated
+	 */
+	int HARDWARE_PORT_DIRECTION_KIND = 4;
 
 
 	/**
@@ -521,6 +543,17 @@ public interface DeploymentPackage extends EPackage {
 	EReference getHardwarePort_DeployedPortInstance();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getKind()
+	 * @see #getHardwarePort()
+	 * @generated
+	 */
+	EAttribute getHardwarePort_Kind();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink <em>Communication Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -562,6 +595,16 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCommunicationLink_Target();
+
+	/**
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind <em>Hardware Port Direction Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Hardware Port Direction Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind
+	 * @generated
+	 */
+	EEnum getHardwarePortDirectionKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -696,6 +739,14 @@ public interface DeploymentPackage extends EPackage {
 		EReference HARDWARE_PORT__DEPLOYED_PORT_INSTANCE = eINSTANCE.getHardwarePort_DeployedPortInstance();
 
 		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HARDWARE_PORT__KIND = eINSTANCE.getHardwarePort_Kind();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl <em>Communication Link</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -728,6 +779,16 @@ public interface DeploymentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMUNICATION_LINK__TARGET = eINSTANCE.getCommunicationLink_Target();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind <em>Hardware Port Direction Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind
+		 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getHardwarePortDirectionKind()
+		 * @generated
+		 */
+		EEnum HARDWARE_PORT_DIRECTION_KIND = eINSTANCE.getHardwarePortDirectionKind();
 
 	}
 

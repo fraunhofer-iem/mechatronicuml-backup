@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink <em>Outgoing Communication Link</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink <em>Incoming Communication Link</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getDeployedPortInstance <em>Deployed Port Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -137,5 +138,35 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	EList<PortInstance> getDeployedPortInstance();
+
+	/**
+	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Kind</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind
+	 * @see #setKind(HardwarePortDirectionKind)
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_Kind()
+	 * @model default=""
+	 * @generated
+	 */
+	HardwarePortDirectionKind getKind();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getKind <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind
+	 * @see #getKind()
+	 * @generated
+	 */
+	void setKind(HardwarePortDirectionKind value);
 
 } // HardwarePort

@@ -23908,5 +23908,81 @@
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
     <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/CommunicationLink"
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment" referenceName="eClassifiers"
+          element="muml.ecore#//model/deployment/HardwarePortDirectionKind">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind"
+            featureName="name" dataValue="HardwarePortDirectionKind"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePortDirectionKind"
+          referenceName="eLiterals" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN"
+            featureName="name" dataValue="IN"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN"
+            featureName="literal" dataValue="IN"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePortDirectionKind"
+          referenceName="eLiterals" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/OUT">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/OUT"
+            featureName="name" dataValue="OUT"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/OUT"
+            featureName="literal" dataValue="OUT"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/OUT"
+            featureName="value" dataValue="1" oldDataValue="0"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePortDirectionKind"
+          referenceName="eLiterals" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN_OUT">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN_OUT"
+            featureName="name" dataValue="IN_OUT"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN_OUT"
+            featureName="literal" dataValue="IN_OUT"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN_OUT"
+            featureName="value" dataValue="2" oldDataValue="0"/>
+      </changes>
+      <operation name="createEnumeration">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/deployment"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>HardwarePortDirectionKind</dataValue>
+        </parameters>
+        <parameters name="literals">
+          <dataValue>IN</dataValue>
+          <dataValue>OUT</dataValue>
+          <dataValue>IN_OUT</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/HardwarePort/kind">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/kind"
+            featureName="name" dataValue="kind"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/kind"
+            featureName="defaultValueLiteral" dataValue=""/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/kind"
+            featureName="eType" referenceValue="muml.ecore#//model/deployment/HardwarePortDirectionKind"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/deployment/HardwarePort"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>kind</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/deployment/HardwarePortDirectionKind"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue></dataValue>
+        </parameters>
+      </operation>
+    </changes>
   </releases>
 </history:History>
