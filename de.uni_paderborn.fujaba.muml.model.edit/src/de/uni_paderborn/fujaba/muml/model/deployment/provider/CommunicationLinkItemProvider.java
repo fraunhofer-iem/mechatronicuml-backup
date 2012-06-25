@@ -20,6 +20,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.ExtendableElementItemProvider;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
@@ -32,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
  * @generated
  */
 public class CommunicationLinkItemProvider
-	extends ItemProviderAdapter
+	extends ExtendableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -155,6 +159,16 @@ public class CommunicationLinkItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 	/**
