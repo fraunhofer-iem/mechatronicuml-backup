@@ -1,0 +1,7 @@
+# Tracing options for the de.uni_paderborn.fujaba.muml.deployment.diagram plug-in
+
+# Common issues
+de.uni_paderborn.fujaba.muml.deployment.diagram/debug=false
+
+# Visual IDs
+de.uni_paderborn.fujaba.muml.deployment.diagram/debug/visualID=false
