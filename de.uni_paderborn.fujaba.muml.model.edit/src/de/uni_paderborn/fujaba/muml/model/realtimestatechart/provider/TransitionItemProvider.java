@@ -335,7 +335,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 								(EObject) message,
 								RealtimestatechartPackage.Literals.REALTIME_STATECHART);
 				
-				BehavioralElement element = statechart.getBehavioralElement();
+				BehavioralElement element = statechart.getPortOrRoleStatechart().getBehavioralElement();
 				MessageInterface messageInterface = null;
 				if (element instanceof DiscretePort) {
 					messageInterface = ((DiscretePort) element).getReceiverMessageInterface();
@@ -429,7 +429,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 								(EObject) message,
 								RealtimestatechartPackage.Literals.REALTIME_STATECHART);
 				
-				BehavioralElement element = statechart.getBehavioralElement();
+				BehavioralElement element = statechart.getPortOrRoleStatechart().getBehavioralElement();
 				MessageInterface messageInterface = null;
 				if (element instanceof DiscretePort) {
 					messageInterface = ((DiscretePort) element).getSenderMessageInterface();
