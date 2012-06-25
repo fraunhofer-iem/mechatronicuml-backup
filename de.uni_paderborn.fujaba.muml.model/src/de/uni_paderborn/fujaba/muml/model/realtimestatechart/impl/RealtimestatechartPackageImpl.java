@@ -1605,7 +1605,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		op = addEOperation(realtimeStatechartEClass, ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRealtimeStatechart(), "statechart", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(realtimeStatechartEClass, this.getRealtimeStatechart(), "getHighestParentStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(realtimeStatechartEClass, this.getRealtimeStatechart(), "getHighestParentStatechart", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(realtimeStatechartEClass, this.getRealtimeStatechart(), "getPortOrRoleStatechart", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Kind(), this.getEventKind(), "kind", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1692,7 +1694,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueNameOfStates MinOneState NoCycles"
-		   });																															
+		   });																																
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 
@@ -1793,7 +1795,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniqueNameOfStates", "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)",
 			 "MinOneState", "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()",
 			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"
-		   });										
+		   });											
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 
 		   source, 

@@ -279,10 +279,22 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- begin-model-doc -->
 	 * Returns realtime statechart which represents the root of the hierarchy tree.
 	 * <!-- end-model-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='RealtimeStatechart rtsc = this;\r\nwhile (rtsc.isEmbedded()==true)\r\n{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} \r\nreturn rtsc;'"
 	 * @generated
 	 */
 	RealtimeStatechart getHighestParentStatechart();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns itself if a Port or a Role is referenced or the next ancestor that references a Port or a Role. If no Port or a Role is found, then itself is returned.
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='// check if this rtsc has a behavioral element\r\nRealtimeStatechart rtsc = this;\r\nif (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;\r\n\r\n// search for ancestor with behavioral element\r\nwhile (rtsc.isEmbedded()==true)\r\n{\r\nrtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();\r\nif (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;\r\n} \r\n\r\n// no rtsc found with behavioral element\r\nreturn this;'"
+	 * @generated
+	 */
+	RealtimeStatechart getPortOrRoleStatechart();
 
 } // RealtimeStatechart

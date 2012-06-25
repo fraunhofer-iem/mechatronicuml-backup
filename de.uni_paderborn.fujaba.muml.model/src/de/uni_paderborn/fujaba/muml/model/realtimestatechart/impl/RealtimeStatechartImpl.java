@@ -27,11 +27,13 @@ import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.common.algorithm.BreadthFirstSearchAlgorithm;
 import de.uni_paderborn.fujaba.common.algorithm.ISearchVisitor;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -580,6 +582,26 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		while (rtsc.isEmbedded()==true)
 		{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} 
 		return rtsc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RealtimeStatechart getPortOrRoleStatechart() {
+		// check if this rtsc has a behavioral element
+		RealtimeStatechart rtsc = this;
+		if (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;
+		
+		// search for ancestor with behavioral element
+		while (rtsc.isEmbedded()==true) {
+		rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();
+		if (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;
+		} 
+		
+		// no rtsc found with behavioral element
+		return this;
 	}
 
 	/**

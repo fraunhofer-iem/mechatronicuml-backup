@@ -1756,10 +1756,16 @@
         <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eParameters name="statechart" lowerBound="1" eType="#//model/realtimestatechart/RealtimeStatechart"/>
         </eOperations>
-        <eOperations name="getHighestParentStatechart" eType="#//model/realtimestatechart/RealtimeStatechart">
+        <eOperations name="getHighestParentStatechart" lowerBound="1" eType="#//model/realtimestatechart/RealtimeStatechart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
             <details key="body" value="RealtimeStatechart rtsc = this;&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} &#xD;&#xA;return rtsc;"/>
+          </eAnnotations>
+        </eOperations>
+        <eOperations name="getPortOrRoleStatechart" lowerBound="1" eType="#//model/realtimestatechart/RealtimeStatechart">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Returns itself if a Port or a Role is referenced or the next ancestor that references a Port or a Role. If no Port or a Role is found, then itself is returned."/>
+            <details key="body" value="// check if this rtsc has a behavioral element&#xD;&#xA;RealtimeStatechart rtsc = this;&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;&#xD;&#xA;// search for ancestor with behavioral element&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{&#xD;&#xA;rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;// no rtsc found with behavioral element&#xD;&#xA;return this;"/>
           </eAnnotations>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddingRegion" eType="#//model/realtimestatechart/Region"
