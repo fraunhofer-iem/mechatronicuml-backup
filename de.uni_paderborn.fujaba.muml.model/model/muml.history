@@ -23890,5 +23890,23 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
         featureName="value" dataValue="// check if this rtsc has a behavioral element&#xD;&#xA;RealtimeStatechart rtsc = this;&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;&#xD;&#xA;// search for ancestor with behavioral element&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{&#xD;&#xA;rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;// no rtsc found with behavioral element&#xD;&#xA;return this;"
         oldDataValue="// check if this rtsc has a behavioral element&#xD;&#xA;RealtimeStatechart rtsc = this;&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof &quot;Port&quot;) || (rtsc.getBehavioralElement() instanceof &quot;Role&quot;))) return rtsc;&#xD;&#xA;&#xD;&#xA;// search for ancestor with behavioral element&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{&#xD;&#xA;rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof &quot;Port&quot;) || (rtsc.getBehavioralElement() instanceof &quot;Role&quot;))) return rtsc;&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;// no rtsc found with behavioral element&#xD;&#xA;return this;"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/Deployment"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/Deployment"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/HardwareNode"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/HardwareNode"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/HardwarePort"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/HardwarePort"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/CommunicationLink"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Remove" element="muml.ecore#//model/deployment/CommunicationLink"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/CommunicationLink"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
   </releases>
 </history:History>

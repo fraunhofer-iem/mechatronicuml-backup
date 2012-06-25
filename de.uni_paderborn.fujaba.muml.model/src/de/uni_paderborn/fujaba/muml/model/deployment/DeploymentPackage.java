@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.deployment;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.storydriven.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,13 +71,49 @@ public interface DeploymentPackage extends EPackage {
 	int DEPLOYMENT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Communication Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT__COMMUNICATION_LINKS = 0;
+	int DEPLOYMENT__COMMUNICATION_LINKS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Hardware Nodes</b></em>' containment reference list.
@@ -85,7 +122,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT__HARDWARE_NODES = 1;
+	int DEPLOYMENT__HARDWARE_NODES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Component Instance Configuration</b></em>' reference.
@@ -94,7 +131,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT__COMPONENT_INSTANCE_CONFIGURATION = 2;
+	int DEPLOYMENT__COMPONENT_INSTANCE_CONFIGURATION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Deployment</em>' class.
@@ -103,7 +140,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_FEATURE_COUNT = 3;
+	int DEPLOYMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl <em>Hardware Node</em>}' class.
@@ -116,13 +153,49 @@ public interface DeploymentPackage extends EPackage {
 	int HARDWARE_NODE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_NODE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_NODE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_NODE__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_NODE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Deployment</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_NODE__DEPLOYMENT = 0;
+	int HARDWARE_NODE__DEPLOYMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Hardware Ports</b></em>' containment reference list.
@@ -131,7 +204,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_NODE__HARDWARE_PORTS = 1;
+	int HARDWARE_NODE__HARDWARE_PORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Deployed Instances</b></em>' reference list.
@@ -140,7 +213,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_NODE__DEPLOYED_INSTANCES = 2;
+	int HARDWARE_NODE__DEPLOYED_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Hardware Node</em>' class.
@@ -149,7 +222,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_NODE_FEATURE_COUNT = 3;
+	int HARDWARE_NODE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
@@ -162,13 +235,49 @@ public interface DeploymentPackage extends EPackage {
 	int HARDWARE_PORT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Hardware Node</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT__HARDWARE_NODE = 0;
+	int HARDWARE_PORT__HARDWARE_NODE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Communication Link</b></em>' reference.
@@ -177,7 +286,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK = 1;
+	int HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Communication Link</b></em>' reference.
@@ -186,7 +295,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT__INCOMING_COMMUNICATION_LINK = 2;
+	int HARDWARE_PORT__INCOMING_COMMUNICATION_LINK = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Deployed Port Instance</b></em>' reference list.
@@ -195,7 +304,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT__DEPLOYED_PORT_INSTANCE = 3;
+	int HARDWARE_PORT__DEPLOYED_PORT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Hardware Port</em>' class.
@@ -204,7 +313,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_FEATURE_COUNT = 4;
+	int HARDWARE_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl <em>Communication Link</em>}' class.
@@ -217,13 +326,31 @@ public interface DeploymentPackage extends EPackage {
 	int COMMUNICATION_LINK = 3;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_LINK__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_LINK__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
 	 * The feature id for the '<em><b>Deployment</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK__DEPLOYMENT = 0;
+	int COMMUNICATION_LINK__DEPLOYMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -232,7 +359,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK__SOURCE = 1;
+	int COMMUNICATION_LINK__SOURCE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -241,7 +368,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK__TARGET = 2;
+	int COMMUNICATION_LINK__TARGET = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Communication Link</em>' class.
@@ -250,7 +377,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK_FEATURE_COUNT = 3;
+	int COMMUNICATION_LINK_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 
 	/**

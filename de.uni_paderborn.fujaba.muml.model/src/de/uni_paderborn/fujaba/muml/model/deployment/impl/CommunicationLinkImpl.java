@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.storydriven.core.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
@@ -34,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
  *
  * @generated
  */
-public class CommunicationLinkImpl extends EObjectImpl implements CommunicationLink {
+public class CommunicationLinkImpl extends ExtendableElementImpl implements CommunicationLink {
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -11,6 +11,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
@@ -77,24 +80,34 @@ public class DeploymentSwitch<T> extends Switch<T> {
 			case DeploymentPackage.DEPLOYMENT: {
 				Deployment deployment = (Deployment)theEObject;
 				T result = caseDeployment(deployment);
+				if (result == null) result = caseNamedElement(deployment);
+				if (result == null) result = caseCommentableElement(deployment);
+				if (result == null) result = caseExtendableElement(deployment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DeploymentPackage.HARDWARE_NODE: {
 				HardwareNode hardwareNode = (HardwareNode)theEObject;
 				T result = caseHardwareNode(hardwareNode);
+				if (result == null) result = caseNamedElement(hardwareNode);
+				if (result == null) result = caseCommentableElement(hardwareNode);
+				if (result == null) result = caseExtendableElement(hardwareNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DeploymentPackage.HARDWARE_PORT: {
 				HardwarePort hardwarePort = (HardwarePort)theEObject;
 				T result = caseHardwarePort(hardwarePort);
+				if (result == null) result = caseNamedElement(hardwarePort);
+				if (result == null) result = caseCommentableElement(hardwarePort);
+				if (result == null) result = caseExtendableElement(hardwarePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DeploymentPackage.COMMUNICATION_LINK: {
 				CommunicationLink communicationLink = (CommunicationLink)theEObject;
 				T result = caseCommunicationLink(communicationLink);
+				if (result == null) result = caseExtendableElement(communicationLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -159,6 +172,51 @@ public class DeploymentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommunicationLink(CommunicationLink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendableElement(ExtendableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCommentableElement(CommentableElement object) {
 		return null;
 	}
 

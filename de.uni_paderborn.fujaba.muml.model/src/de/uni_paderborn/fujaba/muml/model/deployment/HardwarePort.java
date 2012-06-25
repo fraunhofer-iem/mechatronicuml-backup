@@ -7,6 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
@@ -35,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * @model
  * @generated
  */
-public interface HardwarePort extends EObject {
+public interface HardwarePort extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Hardware Node</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getHardwarePorts <em>Hardware Ports</em>}'.

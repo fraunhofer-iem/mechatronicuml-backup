@@ -20,6 +20,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.impl.NamedElementImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
@@ -33,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl#getDeployment <em>Deployment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl#getHardwarePorts <em>Hardware Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl#getDeployedInstances <em>Deployed Instances</em>}</li>
@@ -41,7 +45,27 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
  *
  * @generated
  */
-public class HardwareNodeImpl extends EObjectImpl implements HardwareNode {
+public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getHardwarePorts() <em>Hardware Ports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -79,6 +103,27 @@ public class HardwareNodeImpl extends EObjectImpl implements HardwareNode {
 	@Override
 	protected EClass eStaticClass() {
 		return DeploymentPackage.Literals.HARDWARE_NODE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.HARDWARE_NODE__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -203,6 +248,8 @@ public class HardwareNodeImpl extends EObjectImpl implements HardwareNode {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DeploymentPackage.HARDWARE_NODE__COMMENT:
+				return getComment();
 			case DeploymentPackage.HARDWARE_NODE__DEPLOYMENT:
 				return getDeployment();
 			case DeploymentPackage.HARDWARE_NODE__HARDWARE_PORTS:
@@ -222,6 +269,9 @@ public class HardwareNodeImpl extends EObjectImpl implements HardwareNode {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DeploymentPackage.HARDWARE_NODE__COMMENT:
+				setComment((String)newValue);
+				return;
 			case DeploymentPackage.HARDWARE_NODE__DEPLOYMENT:
 				setDeployment((Deployment)newValue);
 				return;
@@ -245,6 +295,9 @@ public class HardwareNodeImpl extends EObjectImpl implements HardwareNode {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DeploymentPackage.HARDWARE_NODE__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 			case DeploymentPackage.HARDWARE_NODE__DEPLOYMENT:
 				setDeployment((Deployment)null);
 				return;
@@ -266,6 +319,8 @@ public class HardwareNodeImpl extends EObjectImpl implements HardwareNode {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DeploymentPackage.HARDWARE_NODE__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case DeploymentPackage.HARDWARE_NODE__DEPLOYMENT:
 				return getDeployment() != null;
 			case DeploymentPackage.HARDWARE_NODE__HARDWARE_PORTS:
@@ -274,6 +329,54 @@ public class HardwareNodeImpl extends EObjectImpl implements HardwareNode {
 				return deployedInstances != null && !deployedInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+				case DeploymentPackage.HARDWARE_NODE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return DeploymentPackage.HARDWARE_NODE__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(')');
+		return result.toString();
 	}
 
 } //HardwareNodeImpl

@@ -388,6 +388,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 
 		// Create type parameters
@@ -395,6 +396,13 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		deploymentEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		deploymentEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		hardwareNodeEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		hardwareNodeEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		hardwarePortEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		hardwarePortEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		communicationLinkEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

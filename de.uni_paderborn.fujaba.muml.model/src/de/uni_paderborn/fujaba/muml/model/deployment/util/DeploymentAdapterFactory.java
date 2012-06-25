@@ -12,6 +12,9 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
@@ -91,6 +94,18 @@ public class DeploymentAdapterFactory extends AdapterFactoryImpl {
 				return createCommunicationLinkAdapter();
 			}
 			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -163,6 +178,48 @@ public class DeploymentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommunicationLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.ExtendableElement
+	 * @generated
+	 */
+	public Adapter createExtendableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.CommentableElement <em>Commentable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.CommentableElement
+	 * @generated
+	 */
+	public Adapter createCommentableElementAdapter() {
 		return null;
 	}
 

@@ -18,6 +18,9 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.impl.NamedElementImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
@@ -31,6 +34,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguratio
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentImpl#getCommunicationLinks <em>Communication Links</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentImpl#getHardwareNodes <em>Hardware Nodes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentImpl#getComponentInstanceConfiguration <em>Component Instance Configuration</em>}</li>
@@ -39,7 +43,27 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguratio
  *
  * @generated
  */
-public class DeploymentImpl extends EObjectImpl implements Deployment {
+public class DeploymentImpl extends NamedElementImpl implements Deployment {
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getCommunicationLinks() <em>Communication Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -87,6 +111,27 @@ public class DeploymentImpl extends EObjectImpl implements Deployment {
 	@Override
 	protected EClass eStaticClass() {
 		return DeploymentPackage.Literals.DEPLOYMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.DEPLOYMENT__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -192,6 +237,8 @@ public class DeploymentImpl extends EObjectImpl implements Deployment {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DeploymentPackage.DEPLOYMENT__COMMENT:
+				return getComment();
 			case DeploymentPackage.DEPLOYMENT__COMMUNICATION_LINKS:
 				return getCommunicationLinks();
 			case DeploymentPackage.DEPLOYMENT__HARDWARE_NODES:
@@ -212,6 +259,9 @@ public class DeploymentImpl extends EObjectImpl implements Deployment {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DeploymentPackage.DEPLOYMENT__COMMENT:
+				setComment((String)newValue);
+				return;
 			case DeploymentPackage.DEPLOYMENT__COMMUNICATION_LINKS:
 				getCommunicationLinks().clear();
 				getCommunicationLinks().addAll((Collection<? extends CommunicationLink>)newValue);
@@ -235,6 +285,9 @@ public class DeploymentImpl extends EObjectImpl implements Deployment {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DeploymentPackage.DEPLOYMENT__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 			case DeploymentPackage.DEPLOYMENT__COMMUNICATION_LINKS:
 				getCommunicationLinks().clear();
 				return;
@@ -256,6 +309,8 @@ public class DeploymentImpl extends EObjectImpl implements Deployment {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DeploymentPackage.DEPLOYMENT__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case DeploymentPackage.DEPLOYMENT__COMMUNICATION_LINKS:
 				return communicationLinks != null && !communicationLinks.isEmpty();
 			case DeploymentPackage.DEPLOYMENT__HARDWARE_NODES:
@@ -264,6 +319,54 @@ public class DeploymentImpl extends EObjectImpl implements Deployment {
 				return componentInstanceConfiguration != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+				case DeploymentPackage.DEPLOYMENT__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return DeploymentPackage.DEPLOYMENT__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DeploymentImpl

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
+import org.storydriven.core.ExtendableElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface CommunicationLink extends EObject {
+public interface CommunicationLink extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Deployment</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getCommunicationLinks <em>Communication Links</em>}'.

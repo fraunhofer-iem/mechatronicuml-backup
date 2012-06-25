@@ -7,6 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
@@ -33,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguratio
  * @model
  * @generated
  */
-public interface Deployment extends EObject {
+public interface Deployment extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Communication Links</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink}.

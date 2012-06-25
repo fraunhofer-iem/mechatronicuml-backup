@@ -7,6 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
@@ -34,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameConfiguration='self.deployedInstance.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration'"
  * @generated
  */
-public interface HardwareNode extends EObject {
+public interface HardwareNode extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Deployment</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getHardwareNodes <em>Hardware Nodes</em>}'.
