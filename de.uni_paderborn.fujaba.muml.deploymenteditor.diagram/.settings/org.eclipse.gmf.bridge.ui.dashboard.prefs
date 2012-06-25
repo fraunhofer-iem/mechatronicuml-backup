@@ -1,7 +1,0 @@
-eclipse.preferences.version=1
-gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.deploymenteditor.diagram/model/deployment.genmodel
-gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.muml.deploymenteditor.diagram/model/deployment.ecore
-gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.deploymenteditor.diagram/model/deployment.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.deploymenteditor.diagram/model/deployment.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.deploymenteditor.diagram/model/deployment.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.deploymenteditor.diagram/model/deployment.gmftool
