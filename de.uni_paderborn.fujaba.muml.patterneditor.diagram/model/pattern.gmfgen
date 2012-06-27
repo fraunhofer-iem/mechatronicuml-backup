@@ -175,6 +175,7 @@
         visualID="2004"
         editPartClassName="CoordinationPatternEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationPatternViewFactory"
         canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="CoordinationPatternGraphicalNodeEditPolicy"
@@ -389,12 +390,14 @@
         visualID="7004"
         editPartClassName="CoordinationPatternCoordinationPatternContainerCompartmentEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationPatternCoordinationPatternContainerCompartmentViewFactory"
         canonicalEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
         title="CoordinationPatternContainerCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
