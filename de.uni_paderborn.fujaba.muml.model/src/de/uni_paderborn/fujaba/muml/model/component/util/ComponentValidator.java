@@ -970,6 +970,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateAtomicComponent_ValidComponentType(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentValidPorts(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_ContinuousComponentValidPorts(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_AtomicComponentsNamesMustBeUnique(atomicComponent, diagnostics, context);
 		return result;
 	}
 
@@ -1091,6 +1092,35 @@ public class ComponentValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ContinuousComponentValidPorts",
 				 ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AtomicComponentsNamesMustBeUnique constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ATOMIC_COMPONENT__ATOMIC_COMPONENTS_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "AtomicComponent.allInstances().name->count(self.name) = 1";
+
+	/**
+	 * Validates the AtomicComponentsNamesMustBeUnique constraint of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAtomicComponent_AtomicComponentsNamesMustBeUnique(AtomicComponent atomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ATOMIC_COMPONENT,
+				 atomicComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AtomicComponentsNamesMustBeUnique",
+				 ATOMIC_COMPONENT__ATOMIC_COMPONENTS_NAMES_MUST_BE_UNIQUE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

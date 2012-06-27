@@ -167,6 +167,7 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCoordinationPattern_UniqueRoleNames(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCoordinationPattern_CoordinationPatternNamesMustBeUnique(coordinationPattern, diagnostics, context);
 		return result;
 	}
 
@@ -194,6 +195,35 @@ public class PatternValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniqueRoleNames",
 				 COORDINATION_PATTERN__UNIQUE_ROLE_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the CoordinationPatternNamesMustBeUnique constraint of '<em>Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COORDINATION_PATTERN__COORDINATION_PATTERN_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "CoordinationPattern.allInstances().name->count(self.name) = 1";
+
+	/**
+	 * Validates the CoordinationPatternNamesMustBeUnique constraint of '<em>Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCoordinationPattern_CoordinationPatternNamesMustBeUnique(CoordinationPattern coordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PatternPackage.Literals.COORDINATION_PATTERN,
+				 coordinationPattern,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "CoordinationPatternNamesMustBeUnique",
+				 COORDINATION_PATTERN__COORDINATION_PATTERN_NAMES_MUST_BE_UNIQUE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

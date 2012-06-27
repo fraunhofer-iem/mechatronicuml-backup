@@ -511,7 +511,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (coordinationPatternEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueRoleNames"
+			 "constraints", "UniqueRoleNames CoordinationPatternNamesMustBeUnique"
 		   });								
 		addAnnotation
 		  (roleEClass, 
@@ -539,7 +539,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (coordinationPatternEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueRoleNames", "self.roles->isUnique(name)"
+			 "UniqueRoleNames", "self.roles->isUnique(name)",
+			 "CoordinationPatternNamesMustBeUnique", "CoordinationPattern.allInstances().name->count(self.name) = 1"
 		   });				
 		addAnnotation
 		  (getCoordinationPattern_Pattern(), 
