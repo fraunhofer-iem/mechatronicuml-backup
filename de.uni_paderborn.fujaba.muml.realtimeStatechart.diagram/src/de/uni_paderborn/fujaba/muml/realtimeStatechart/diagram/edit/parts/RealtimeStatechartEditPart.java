@@ -338,7 +338,7 @@ public class RealtimeStatechartEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StatechartFigure extends RoundedRectangle {
+	public class StatechartFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -363,8 +363,6 @@ public class RealtimeStatechartEditPart extends AbstractBorderedShapeEditPart {
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
 			createContents();
 		}
 

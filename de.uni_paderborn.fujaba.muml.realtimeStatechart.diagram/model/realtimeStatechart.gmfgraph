@@ -8,7 +8,7 @@
     <descriptors
         name="StatechartFigure">
       <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
+          xsi:type="gmfgraph:Rectangle"
           name="StatechartFigure">
         <layout
             xsi:type="gmfgraph:GridLayout"
