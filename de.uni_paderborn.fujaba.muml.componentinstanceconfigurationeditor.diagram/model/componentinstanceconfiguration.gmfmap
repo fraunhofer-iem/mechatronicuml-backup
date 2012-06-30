@@ -188,7 +188,7 @@
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#ComponentName"/>
         <viewExpression
-            body="let compName : String = if self.componentType.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPart.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;self.name.concat(partName.concat(' : '.concat(compName)))"/>
+            body="let compName : String = if self.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPart.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(partName.concat(' : '.concat(compName)))"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -255,7 +255,7 @@
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#ComponentName"/>
         <viewExpression
-            body="let compName : String = if self.componentType.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPart.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;self.name.concat(partName.concat(' : '.concat(compName)))"/>
+            body="let compName : String = if self.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPart.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(partName.concat(' : '.concat(compName)))"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"

@@ -56,10 +56,10 @@ public class MumlOCLFactory {
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'instance\'", //$NON-NLS-1$
-					"let compName : String = if self.componentType.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\nself.name.concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
+					"let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
 					"\'instance\'", //$NON-NLS-1$
 					"\'configuration\'", //$NON-NLS-1$
-					"let compName : String = if self.componentType.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\nself.name.concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
+					"let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
 					"self.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->isEmpty()", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

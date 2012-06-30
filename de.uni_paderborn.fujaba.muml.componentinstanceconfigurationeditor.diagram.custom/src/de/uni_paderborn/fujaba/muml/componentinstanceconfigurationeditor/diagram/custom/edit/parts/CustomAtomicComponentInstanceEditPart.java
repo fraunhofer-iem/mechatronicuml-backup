@@ -8,7 +8,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CreateInstancesCommand;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
@@ -20,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * 
  */
 public class CustomAtomicComponentInstanceEditPart extends
-		StructuredComponentInstanceEditPart {
+		AtomicComponentInstanceEditPart {
 
 	public CustomAtomicComponentInstanceEditPart(View view) {
 		super(view);
@@ -56,7 +56,7 @@ public class CustomAtomicComponentInstanceEditPart extends
 		super.handleNotificationEvent(notification);
 	}
 
-	public class CustomComponentFigure extends StructuredComponentFigure {
+	public class CustomComponentFigure extends ComponentFigure {
 		public CustomComponentFigure() {
 			super();
 			this.getFigureComponentNameFigure().setTextUnderline(true);
