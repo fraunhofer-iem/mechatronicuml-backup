@@ -8,9 +8,12 @@ import java.util.List;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -43,12 +46,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
+public class StateExitPoint2EditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3027;
+	public static final int VISUAL_ID = 3030;
 
 	/**
 	 * @generated
@@ -63,7 +66,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public StateEntryPointEditPart(View view) {
+	public StateExitPoint2EditPart(View view) {
 		super(view);
 	}
 
@@ -76,7 +79,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateEntryPointItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateExitPoint2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -92,7 +95,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointName2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						// BEGIN FIX: Muml-Bug #58
@@ -225,14 +228,14 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new Ellipse();
+		return primaryShape = new ExitPointFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public Ellipse getPrimaryShape() {
-		return (Ellipse) primaryShape;
+	public ExitPointFigure getPrimaryShape() {
+		return (ExitPointFigure) primaryShape;
 	}
 
 	/**
@@ -240,7 +243,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 	 */
 	protected void addBorderItem(IFigure borderItemContainer,
 			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart) {
+		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointName2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
@@ -340,7 +343,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointName2EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -423,6 +426,58 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3026);
 		}
 		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public class ExitPointFigure extends Ellipse {
+
+		/**
+		 * @generated
+		 */
+		public ExitPointFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			ScalablePolygonShape polyline0 = new ScalablePolygonShape();
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(0)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(2), getMapMode()
+					.DPtoLP(2)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
+					.DPtoLP(1)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(2)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(2), getMapMode()
+					.DPtoLP(0)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
+					.DPtoLP(1)));
+			polyline0.setFill(true);
+
+			GridData constraintPolyline0 = new GridData();
+			constraintPolyline0.verticalAlignment = GridData.FILL;
+			constraintPolyline0.horizontalAlignment = GridData.FILL;
+			constraintPolyline0.horizontalIndent = 0;
+			constraintPolyline0.horizontalSpan = 1;
+			constraintPolyline0.verticalSpan = 1;
+			constraintPolyline0.grabExcessHorizontalSpace = true;
+			constraintPolyline0.grabExcessVerticalSpace = true;
+			this.add(polyline0, constraintPolyline0);
+
+		}
+
 	}
 
 }

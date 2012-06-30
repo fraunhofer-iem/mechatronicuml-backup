@@ -204,35 +204,39 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser realtimeStatechartName_5037Parser;
+	protected IParser stateEntryPointName_5047Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getRealtimeStatechartName_5037Parser() {
-		if (realtimeStatechartName_5037Parser == null) {
+	protected IParser getStateEntryPointName_5047Parser() {
+		if (stateEntryPointName_5047Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			realtimeStatechartName_5037Parser = parser;
+			stateEntryPointName_5047Parser = parser;
 		}
-		return realtimeStatechartName_5037Parser;
+		return stateEntryPointName_5047Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5038 realtimeStatechartLabel_5038Parser;
+	protected IParser stateExitPointName_5048Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getRealtimeStatechartLabel_5038Parser() {
-		if (realtimeStatechartLabel_5038Parser == null) {
-			realtimeStatechartLabel_5038Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5038();
+	protected IParser getStateExitPointName_5048Parser() {
+		if (stateExitPointName_5048Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			stateExitPointName_5048Parser = parser;
 		}
-		return realtimeStatechartLabel_5038Parser;
+		return stateExitPointName_5048Parser;
 	}
 
 	/**
@@ -368,18 +372,18 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getRegionPriority_5040Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
 			return getRegionLabel_5041Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartName2EditPart.VISUAL_ID:
-			return getRealtimeStatechartName_5037Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
-			return getRealtimeStatechartLabel_5038Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointNameEditPart.VISUAL_ID:
-			return getEntryPointName_5035Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointNameEditPart.VISUAL_ID:
-			return getExitPointName_5036Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointName2EditPart.VISUAL_ID:
+			return getStateEntryPointName_5047Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointName2EditPart.VISUAL_ID:
+			return getStateExitPointName_5048Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart.VISUAL_ID:
 			return getStateEntryPointName_5042Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointNameEditPart.VISUAL_ID:
 			return getStateExitPointName_5043Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointNameEditPart.VISUAL_ID:
+			return getEntryPointName_5035Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointNameEditPart.VISUAL_ID:
+			return getExitPointName_5036Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
 			return getTransitionLabel_6003Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:

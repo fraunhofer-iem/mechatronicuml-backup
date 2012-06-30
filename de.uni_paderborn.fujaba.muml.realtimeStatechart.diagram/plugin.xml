@@ -166,13 +166,13 @@
          </node>
          
          <node
-               domainElement="EntryPoint"
-               semanticHint="3025">
+               domainElement="StateEntryPoint"
+               semanticHint="3029">
          </node>
          
          <node
-               domainElement="ExitPoint"
-               semanticHint="3026">
+               domainElement="StateExitPoint"
+               semanticHint="3030">
          </node>
          
          <node
@@ -183,6 +183,16 @@
          <node
                domainElement="StateExitPoint"
                semanticHint="3028">
+         </node>
+         
+         <node
+               domainElement="EntryPoint"
+               semanticHint="3025">
+         </node>
+         
+         <node
+               domainElement="ExitPoint"
+               semanticHint="3026">
          </node>
          
       </editor>
@@ -384,7 +394,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Realtimestatechart"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2006,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2006,3017,3018,3019,3020,3021,3022,3023,3024,3029,3030,3027,3028,3025,3026"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002"/>
       </viewProvider>
    </extension>
@@ -397,13 +407,13 @@
             <method name="getType()" value="Realtimestatechart"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2006,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028"/>
+            <method name="getType()" value="2006,3017,3018,3019,3020,3021,3022,3023,3024,3029,3030,3027,3028,3025,3026"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5045,5046,5044,5030,5031,5032,5033,5034,5039,5040,5041,5037,5038,5035,5036,5042,5043"/>
+            <method name="getType()" value="5045,5046,5044,5030,5031,5032,5033,5034,5039,5040,5041,5047,5048,5042,5043,5035,5036"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7019,7020,7021,7022,7023,7024,7025"/>
@@ -538,6 +548,44 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7">
          <metamodelType
+               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3029"
+               name="%metatype.name.StateEntryPoint_3029"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StateEntryPoint"
+               edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.StateEntryPointEditHelper">
+            <param name="semanticHint" value="3029"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3030"
+               name="%metatype.name.StateExitPoint_3030"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StateExitPoint"
+               edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.StateExitPointEditHelper">
+            <param name="semanticHint" value="3030"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3027"
+               name="%metatype.name.StateEntryPoint_3027"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3029"/>
+            <param name="semanticHint" value="3027"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3028"
+               name="%metatype.name.StateExitPoint_3028"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3030"/>
+            <param name="semanticHint" value="3028"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7">
+         <metamodelType
                id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryPoint_3025"
                name="%metatype.name.EntryPoint_3025"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -554,26 +602,6 @@
                eclass="ExitPoint"
                edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.ExitPointEditHelper">
             <param name="semanticHint" value="3026"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3027"
-               name="%metatype.name.StateEntryPoint_3027"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StateEntryPoint"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.StateEntryPointEditHelper">
-            <param name="semanticHint" value="3027"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3028"
-               name="%metatype.name.StateExitPoint_3028"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StateExitPoint"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.StateExitPointEditHelper">
-            <param name="semanticHint" value="3028"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7">
@@ -608,10 +636,12 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.SynchronizationChannel_3022"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.Region_3023"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.RealtimeStatechart_3024"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryPoint_3025"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitPoint_3026"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3029"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3030"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateEntryPoint_3027"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.StateExitPoint_3028"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryPoint_3025"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitPoint_3026"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.Transition_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

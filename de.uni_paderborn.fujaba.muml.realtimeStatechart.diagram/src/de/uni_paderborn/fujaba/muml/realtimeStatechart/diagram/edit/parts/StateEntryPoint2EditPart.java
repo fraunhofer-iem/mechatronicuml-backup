@@ -43,12 +43,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
+public class StateEntryPoint2EditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3027;
+	public static final int VISUAL_ID = 3029;
 
 	/**
 	 * @generated
@@ -63,7 +63,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public StateEntryPointEditPart(View view) {
+	public StateEntryPoint2EditPart(View view) {
 		super(view);
 	}
 
@@ -76,7 +76,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateEntryPointItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateEntryPoint2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -92,7 +92,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointName2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						// BEGIN FIX: Muml-Bug #58
@@ -240,7 +240,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 	 */
 	protected void addBorderItem(IFigure borderItemContainer,
 			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart) {
+		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointName2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
@@ -340,7 +340,7 @@ public class StateEntryPointEditPart extends BorderedBorderItemEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointNameEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointName2EditPart.VISUAL_ID));
 	}
 
 	/**

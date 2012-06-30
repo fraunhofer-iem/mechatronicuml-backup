@@ -489,7 +489,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.7"/>
+            parser="//@labelParsers/@implementations.6"/>
       </labels>
     </childNodes>
     <childNodes
@@ -510,8 +510,8 @@
           metamodelType="//@diagram/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="StatechartFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StatechartFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartVariablesLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStatechartContentsCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StatechartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure statechartTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;statechartTitleAreaFigure0.setFill(false);&#xA;statechartTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintStatechartTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStatechartTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStatechartTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintStatechartTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.verticalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintStatechartTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(statechartTitleAreaFigure0, constraintStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStatechartTitleAreaFigure0.numColumns = 2;&#xA;&#x9;layoutStatechartTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;statechartTitleAreaFigure0.setLayoutManager(layoutStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureStatechartNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStatechartNameLabel.setText(&quot;&quot;);&#xA;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);&#xA;&#xA;&#xA;&#xA;fFigureStatechartVariablesLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStatechartVariablesLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartVariablesLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartVariablesLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStatechartVariablesLabel.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureStatechartVariablesLabel.horizontalIndent = 0;&#xA;constraintFFigureStatechartVariablesLabel.horizontalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.verticalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel, constraintFFigureStatechartVariablesLabel);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStatechartContentsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStatechartContentsCompartment.setFill(false);&#xA;fFigureStatechartContentsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartContentsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartContentsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalIndent = 0;&#xA;constraintFFigureStatechartContentsCompartment.horizontalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.verticalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartNameLabel() {&#xA;&#x9;&#x9;return fFigureStatechartNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartVariablesLabel() {&#xA;&#x9;&#x9;return fFigureStatechartVariablesLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStatechartContentsCompartment() {&#xA;&#x9;&#x9;return fFigureStatechartContentsCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          className="InnerStatechartFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InnerStatechartFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStatechartContentsCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InnerStatechartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureStatechartContentsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStatechartContentsCompartment.setFill(false);&#xA;fFigureStatechartContentsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartContentsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartContentsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalIndent = 0;&#xA;constraintFFigureStatechartContentsCompartment.horizontalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.verticalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStatechartContentsCompartment() {&#xA;&#x9;&#x9;return fFigureStatechartContentsCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
@@ -520,57 +520,23 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region/statechart"/>
       </modelFacet>
-      <labels
-          visualID="5037"
-          editPartClassName="RealtimeStatechartName2EditPart"
-          itemSemanticEditPolicyClassName="RealtimeStatechartName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="RealtimeStatechartNameViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureStatechartNameLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.5">
-          <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-        </modelFacet>
-      </labels>
-      <labels
-          visualID="5038"
-          editPartClassName="WrappingLabel8EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
-          notationViewFactoryClassName="RealtimeStatechartLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureStatechartVariablesLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.6"/>
-      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3025"
-        editPartClassName="EntryPointEditPart"
-        itemSemanticEditPolicyClassName="EntryPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntryPointViewFactory"
-        canonicalEditPolicyClassName="EntryPointCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="EntryPointGraphicalNodeEditPolicy"
-        createCommandClassName="EntryPointCreateCommand"
-        containers="//@diagram/@childNodes.7 //@diagram/@topLevelNodes.0"
+        visualID="3029"
+        editPartClassName="StateEntryPoint2EditPart"
+        itemSemanticEditPolicyClassName="StateEntryPoint2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateEntryPointViewFactory"
+        canonicalEditPolicyClassName="StateEntryPoint2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StateEntryPoint2GraphicalNodeEditPolicy"
+        createCommandClassName="StateEntryPoint2CreateCommand"
+        containers="//@diagram/@childNodes.7"
         preferredSideName="WEST">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="EntryPointEditHelper"/>
+          editHelperClassName="StateEntryPointEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Ellipse">
@@ -581,7 +547,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/EntryPoint"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/StateEntryPoint"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
         <childMetaFeature
@@ -598,10 +564,10 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5035"
-          editPartClassName="EntryPointNameEditPart"
-          itemSemanticEditPolicyClassName="EntryPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="EntryPointNameViewFactory">
+          visualID="5047"
+          editPartClassName="StateEntryPointName2EditPart"
+          itemSemanticEditPolicyClassName="StateEntryPointName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="StateEntryPointNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -618,20 +584,20 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3026"
-        editPartClassName="ExitPointEditPart"
-        itemSemanticEditPolicyClassName="ExitPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExitPointViewFactory"
-        canonicalEditPolicyClassName="ExitPointCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ExitPointGraphicalNodeEditPolicy"
-        createCommandClassName="ExitPointCreateCommand"
-        containers="//@diagram/@childNodes.7 //@diagram/@topLevelNodes.0"
+        visualID="3030"
+        editPartClassName="StateExitPoint2EditPart"
+        itemSemanticEditPolicyClassName="StateExitPoint2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateExitPointViewFactory"
+        canonicalEditPolicyClassName="StateExitPoint2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StateExitPoint2GraphicalNodeEditPolicy"
+        createCommandClassName="StateExitPoint2CreateCommand"
+        containers="//@diagram/@childNodes.7"
         preferredSideName="EAST">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ExitPointEditHelper"/>
+          editHelperClassName="StateExitPointEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ExitPointFigure"
@@ -643,7 +609,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ExitPoint"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/StateExitPoint"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
         <childMetaFeature
@@ -660,10 +626,10 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5036"
-          editPartClassName="ExitPointNameEditPart"
-          itemSemanticEditPolicyClassName="ExitPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ExitPointNameViewFactory">
+          visualID="5048"
+          editPartClassName="StateExitPointName2EditPart"
+          itemSemanticEditPolicyClassName="StateExitPointName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="StateExitPointNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -692,8 +658,8 @@
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="StateEntryPointEditHelper"/>
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.8/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Ellipse">
@@ -713,7 +679,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.15">
+              value="//@expressionProviders/@providers.0/@expressions.11">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -753,8 +719,8 @@
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="StateExitPointEditHelper"/>
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.9/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ExitPointFigure"
@@ -775,7 +741,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.16">
+              value="//@expressionProviders/@providers.0/@expressions.12">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -801,13 +767,136 @@
         </modelFacet>
       </labels>
     </childNodes>
+    <childNodes
+        xsi:type="gmfgen:GenChildSideAffixedNode"
+        visualID="3025"
+        editPartClassName="EntryPointEditPart"
+        itemSemanticEditPolicyClassName="EntryPointItemSemanticEditPolicy"
+        notationViewFactoryClassName="EntryPointViewFactory"
+        canonicalEditPolicyClassName="EntryPointCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EntryPointGraphicalNodeEditPolicy"
+        createCommandClassName="EntryPointCreateCommand"
+        containers="//@diagram/@topLevelNodes.0"
+        preferredSideName="WEST">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="EntryPointEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.Ellipse">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="25"
+            height="25"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/EntryPoint"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.14">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5035"
+          editPartClassName="EntryPointNameEditPart"
+          itemSemanticEditPolicyClassName="EntryPointNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="EntryPointNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="EntryExitPointExternalLabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EntryExitPointExternalLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EntryExitPointExternalLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.5">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
+        xsi:type="gmfgen:GenChildSideAffixedNode"
+        visualID="3026"
+        editPartClassName="ExitPointEditPart"
+        itemSemanticEditPolicyClassName="ExitPointItemSemanticEditPolicy"
+        notationViewFactoryClassName="ExitPointViewFactory"
+        canonicalEditPolicyClassName="ExitPointCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ExitPointGraphicalNodeEditPolicy"
+        createCommandClassName="ExitPointCreateCommand"
+        containers="//@diagram/@topLevelNodes.0"
+        preferredSideName="EAST">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ExitPointEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ExitPointFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ExitPointFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ExitPointFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape polyline0 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;polyline0.setFill(true);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintPolyline0 = new org.eclipse.draw2d.GridData();&#xA;constraintPolyline0.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintPolyline0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintPolyline0.horizontalIndent = 0;&#xA;constraintPolyline0.horizontalSpan = 1;&#xA;constraintPolyline0.verticalSpan = 1;&#xA;constraintPolyline0.grabExcessHorizontalSpace = true;&#xA;constraintPolyline0.grabExcessVerticalSpace = true;&#xA;this.add(polyline0, constraintPolyline0);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="25"
+            height="25"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ExitPoint"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart/vertices"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.15">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5036"
+          editPartClassName="ExitPointNameEditPart"
+          itemSemanticEditPolicyClassName="ExitPointNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExitPointNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="EntryExitPointExternalLabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EntryExitPointExternalLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EntryExitPointExternalLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.5">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
     <topLevelNodes
         visualID="2006"
         editPartClassName="RealtimeStatechartEditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartItemSemanticEditPolicy"
         notationViewFactoryClassName="RealtimeStatechartViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.9"
+        childNodes="//@diagram/@childNodes.12 //@diagram/@childNodes.13"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="RealtimeStatechartGraphicalNodeEditPolicy"
         createCommandClassName="RealtimeStatechartCreateCommand">
@@ -856,7 +945,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.8"/>
+            parser="//@labelParsers/@implementations.7"/>
       </labels>
     </topLevelNodes>
     <links
@@ -915,7 +1004,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.9"/>
+            parser="//@labelParsers/@implementations.8"/>
       </labels>
       <labels
           visualID="6004"
@@ -937,7 +1026,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.10"/>
+            parser="//@labelParsers/@implementations.9"/>
       </labels>
       <creationConstraints
           sourceEnd="//@expressionProviders/@providers.0/@expressions.20"/>
@@ -1092,13 +1181,13 @@
             title="Entry Point"
             description="Create Entry Point"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_entry_point.gif"
-            genNodes="//@diagram/@childNodes.8"/>
+            genNodes="//@diagram/@childNodes.12"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exit Point"
             description="Create Exit Point"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_exit_point.gif"
-            genNodes="//@diagram/@childNodes.9"/>
+            genNodes="//@diagram/@childNodes.13"/>
       </groups>
       <groups
           title="Realtime State"
@@ -1133,13 +1222,13 @@
             title="State Entry Point"
             description="Create State Entry Point"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_entry_point.gif"
-            genNodes="//@diagram/@childNodes.10"/>
+            genNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.10"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State Exit Point"
             description="Create State Exit Point"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_exit_point.gif"
-            genNodes="//@diagram/@childNodes.11"/>
+            genNodes="//@diagram/@childNodes.9 //@diagram/@childNodes.11"/>
       </groups>
     </palette>
     <preferencePages
@@ -1227,10 +1316,10 @@
         child="//@diagram/@childNodes.0"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.8"/>
+        child="//@diagram/@childNodes.12"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.9"/>
+        child="//@diagram/@childNodes.13"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
@@ -1301,6 +1390,30 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.12"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.12"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.13"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.13"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
@@ -1359,6 +1472,30 @@
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.12"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.12"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.13"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.13"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -1408,17 +1545,17 @@
       <expressions
           body="'statechart'"/>
       <expressions
+          body="'stateentrypoint'"/>
+      <expressions
+          body="'stateexitpoint'"/>
+      <expressions
+          body="(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.attributes->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.attributes->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.type.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.type.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)"/>
+      <expressions
           body="'entrypoint'"/>
       <expressions
           body="'exitpoint'"/>
       <expressions
           body="(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if self.attributes->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;self.attributes->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.type.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.type.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if self.operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;self.operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if self.clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;self.clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)"/>
-      <expressions
-          body="(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.attributes->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.attributes->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.type.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.type.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if self.statechart.oclIsUndefined() or self.statechart.clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;self.statechart.clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)"/>
-      <expressions
-          body="'stateentrypoint'"/>
-      <expressions
-          body="'stateexitpoint'"/>
       <expressions
           body="self.source.getUniqueTransitionPriority(0)"/>
       <expressions
@@ -1474,20 +1611,12 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.7/@labels.1/@modelFacet"
-        className="RealtimeStatechartLabelExpressionLabelParser5038"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
-    </implementations>
+        uses="//@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
         className="RegionLabelExpressionLabelParser5041"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region"/>
     </implementations>
@@ -1495,7 +1624,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
         className="RealtimeStatechartLabelExpressionLabelParser5046"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/RealtimeStatechart"/>
     </implementations>

@@ -263,10 +263,36 @@
               <diagramNode
                   href="realtimeStatechart.gmfgraph#Region"/>
               <children
-                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@compartments.0"
-                  referencedChild="//@nodes.0/@ownedChild">
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/statechart"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+                  <diagramNode
+                      href="realtimeStatechart.gmfgraph#InnerStatechart"/>
+                  <children
+                      compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
+                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
+                  </children>
+                  <children
+                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.6/@ownedChild">
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
+                  </children>
+                  <children
+                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.7/@ownedChild">
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
+                  </children>
+                  <compartments
+                      children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
+                    <compartment
+                        href="realtimeStatechart.gmfgraph#StatechartContentsCompartment"/>
+                  </compartments>
+                </ownedChild>
               </children>
               <compartments
                   children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0">

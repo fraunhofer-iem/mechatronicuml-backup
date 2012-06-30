@@ -443,6 +443,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_StateExitPoint_3030_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateExitPoint_3030_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_StateEntryPoint_3027_incominglinks;
 
 	/**
@@ -454,6 +464,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_RealtimeStatechart_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateEntryPoint_3029_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateEntryPoint_3029_outgoinglinks;
 
 	/**
 	 * @generated
