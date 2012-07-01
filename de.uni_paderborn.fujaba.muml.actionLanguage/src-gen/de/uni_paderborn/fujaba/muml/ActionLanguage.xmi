@@ -8,7 +8,7 @@
       <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="modeling">
-      <ePackage href="http://www.storydriven.org/core/0.2.0#/"/>
+      <ePackage href="http://www.storydriven.org/core/0.2.7#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="rtsc">
       <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7#/"/>
@@ -17,7 +17,7 @@
       <ePackage href="http://www.fujaba.de/muml/model/core/0.2.7#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="expressions">
-      <ePackage href="http://www.storydriven.org/core/0.2.0#//expressions"/>
+      <ePackage href="http://www.storydriven.org/core/0.2.7#//expressions"/>
     </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="Block">
       <type metamodel="/0/@metamodelDeclarations.0">
@@ -127,7 +127,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ExpressionStartRule">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.0#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.6"/>
@@ -196,13 +196,13 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Expression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.0#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ArithmeticExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.0#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
@@ -223,7 +223,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ComparisonExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.0#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
@@ -246,7 +246,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="BinaryLogicExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.0#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Alternatives">
@@ -275,7 +275,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="UnaryExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.0#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
@@ -293,7 +293,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LiteralExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.0#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Group">
@@ -315,7 +315,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="AttributeExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.0#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
