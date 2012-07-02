@@ -20325,22 +20325,22 @@
             featureName="value" dataValue="A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities"
-          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode"
+          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode"
             featureName="name" dataValue="StartNode"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode"
+        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The start node of an activity defines the starting point for the execution of the activity."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities"
@@ -20388,99 +20388,99 @@
             featureName="value" dataValue="The expression which defines the behavior of this StatementNode."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities"
-          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode"
+          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"
             featureName="name" dataValue="StopNode"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode"
+        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode"
-          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly"
+          referenceName="eStructuralFeatures" element="#//@releases.9/@changes.21/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.21/@changes.0/@element"
             featureName="name" dataValue="flowStopOnly"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.21/@changes.0/@element"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.21/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.21/@changes.0/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="eAnnotations" element="#//@releases.9/@changes.21/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.21/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          referenceName="details" element="#//@releases.9/@changes.21/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.21/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.21/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="true if subactivity is stopped, but not the whole control flow"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode"
-          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue"
+          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue"
             featureName="name" dataValue="returnValue"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue"
             featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode"
-          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues"
+          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues"
             featureName="name" dataValue="returnValues"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues"
             featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/returnValues/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Defines the return values of the activity. These return values will be assigned to the out-parameters."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities"
@@ -21706,28 +21706,28 @@
             featureName="eOpposite" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/outgoingLink"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable"
-          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"
+          referenceName="eStructuralFeatures" element="#//@releases.9/@changes.13/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.13/@changes.0/@element"
             featureName="name" dataValue="bindingState"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.13/@changes.0/@element"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.13/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.13/@changes.0/@element"
             featureName="defaultValueLiteral" dataValue="UNBOUND"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.13/@changes.0/@element"
             featureName="eType" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingState"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.13/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.9/@changes.13/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.13/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.13/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.9/@changes.13/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.13/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.13/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The binding state defines whether the link is already bound or whether a match has to be obtained for it."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable"
@@ -22319,22 +22319,22 @@
             featureName="eOpposite" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignment"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"
-          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable"
+          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable"
             featureName="name" dataValue="ObjectSetVariable"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable"
+        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable"
+          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Represents a set of objects of the same type that are represented by a single node.&#xD;&#xA;The context for contained Constraints and AttributeAssignments is every single object in the set. E.g., if the constraint is &quot;name = 'abc'&quot;, only objects with that name are matched and added to the set. The use of the binding operator &quot;CREATE&quot; is not defined for ObjectSetVariables, i.e., the sets can only be matched and deleted."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"
@@ -22516,41 +22516,41 @@
             featureName="value" dataValue="If a link is typed over a qualified reference, a qualifier determines the key under which the object reachable via the link is stored. Because the qualifier can be set by an expression, it can either be a simple string or something more complex, e.g., a call like &quot;object.getName()&quot;."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"
-          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation"
+          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink"
             featureName="name" dataValue="ContainmentRelation"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation"
+        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink"
+          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Specifies the containment of an object in a set (represented by a ContainerVariable). Will be displayed by a line having a circle with a plus inside at the end of the container (the source end of the link). A create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"
-          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.15/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.15/@element"
             featureName="name" dataValue="ContainerVariable"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable"
+        <changes xsi:type="history:Add" element="#//@releases.9/@changes.15/@element"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.15/@element"
+          referenceName="eAnnotations" element="#//@releases.9/@changes.15/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.15/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.15/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.9/@changes.15/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.15/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.15/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Represents a single container, e.g. a Set or List. ContainmentRelations can be used to add or remove objects to or from this container.&#xD;&#xA;Every Constraint or AttributeAssignment can use the variable as a container (e.g., &quot;set->size() > 5&quot;)."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"
@@ -22977,45 +22977,45 @@
             featureName="value" dataValue="Specifies the object variable that holds the reference to be represented by this expression."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions"
-          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression"
+          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression"
             featureName="name" dataValue="ObjectSetSizeExpression"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression"
+        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Represents the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable mySet, then this expression would represent something like mySet.size(). The expression can be used to constrain the pattern application, e.g., to only a apply the pattern when at least two objects can be matched for the set."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression"
-          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set"
+          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set"
             featureName="name" dataValue="set"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set"
-            featureName="eType" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set"
+            featureName="eType" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set"
-          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Specifies the object set variable whose number of set elements is to be represented by this expression."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions"
@@ -24030,5 +24030,232 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/CoordinationPattern/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="UniqueRoleNames CoordinationPatternNamesMustBeUnique"
         oldDataValue="UniqueRoleNames"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//NamedElement/name"
+        featureName="defaultValueLiteral" dataValue=""/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EAttribute" name="bindingState" ordered="false" lowerBound="1"
+            eType="ecore:EEnum ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingState"
+            defaultValueLiteral="UNBOUND">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The binding state defines whether the link is already bound or whether a match has to be obtained for it."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.9/@changes.13/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"
+          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/MaybeLink">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/MaybeLink"
+            featureName="name" dataValue="MaybeLink"/>
+        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/MaybeLink"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>MaybeLink</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Delete" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"
+        referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="ContainerVariable" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents a single container, e.g. a Set or List. ContainmentRelations can be used to add or remove objects to or from this container.&#xD;&#xA;Every Constraint or AttributeAssignment can use the variable as a container (e.g., &quot;set->size() > 5&quot;)."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable"
+          featureName="name" dataValue="CollectionVariable" oldDataValue="ObjectSetVariable"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>CollectionVariable</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>CollectionSizeExpression</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode"
+          featureName="name" dataValue="InitialNode" oldDataValue="StartNode"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>InitialNode</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"
+          featureName="name" dataValue="ActivityFinalNode" oldDataValue="StopNode"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>ActivityFinalNode</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities"
+          referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/FlowFinalNode">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/FlowFinalNode"
+            featureName="name" dataValue="FlowFinalNode"/>
+        <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/FlowFinalNode"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>FlowFinalNode</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EAttribute" name="flowStopOnly" ordered="false" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="true if subactivity is stopped, but not the whole control flow"/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.9/@changes.21/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"
+          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/success">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/success"
+            featureName="name" dataValue="success"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/success"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/success"
+            featureName="defaultValueLiteral" dataValue="true"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/success"
+            featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>success</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue>true</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable"
+          referenceName="eStructuralFeatures" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/maybeEmpty">
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/maybeEmpty"
+            featureName="name" dataValue="maybeEmpty"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/maybeEmpty"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/maybeEmpty"
+            featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>maybeEmpty</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue xsi:nil="true"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/CollectionVariable/maybeEmpty"
+        featureName="ordered" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode/success"
+        featureName="ordered" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink"
+          featureName="name" dataValue="InclusionLink" oldDataValue="ContainmentRelation"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/InclusionLink"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>InclusionLink</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#/"
+        featureName="nsURI" dataValue="http://www.storydriven.org/storydiagrams/0.2.1"
+        oldDataValue="http://www.storydriven.org/storydiagrams/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities"
+        featureName="nsURI" dataValue="http://www.storydriven.org/storydiagrams/activities/0.2.1"
+        oldDataValue="http://www.storydriven.org/storydiagrams/activities/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns"
+        featureName="nsURI" dataValue="http://www.storydriven.org/storydiagrams/patterns/0.2.1"
+        oldDataValue="http://www.storydriven.org/storydiagrams/patterns/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions"
+        featureName="nsURI" dataValue="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1"
+        oldDataValue="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0"/>
   </releases>
 </history:History>
