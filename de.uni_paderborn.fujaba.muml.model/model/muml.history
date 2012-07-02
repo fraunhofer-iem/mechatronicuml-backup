@@ -24257,5 +24257,11 @@
     <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions"
         featureName="nsURI" dataValue="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1"
         oldDataValue="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/triggerMessageEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent) in&#xD;&#xA;if eventSet ->size() = 0 then null else eventSet -> first() endif"
+        oldDataValue="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/raiseMessageEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent) in&#xD;&#xA;if eventSet ->size() = 0 then null else eventSet -> first() endif"
+        oldDataValue="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
   </releases>
 </history:History>

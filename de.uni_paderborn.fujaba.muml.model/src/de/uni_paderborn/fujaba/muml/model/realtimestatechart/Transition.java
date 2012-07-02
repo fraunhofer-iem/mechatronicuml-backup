@@ -177,7 +177,7 @@ public interface Transition extends ExtendableElement, Prioritizable {
 	 * @return the value of the '<em>Trigger Message Event</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_TriggerMessageEvent()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent) in\r\nif eventSet ->size() = 0 then null else eventSet -> first() endif'"
 	 * @generated
 	 */
 	AsynchronousMessageEvent getTriggerMessageEvent();
@@ -193,7 +193,7 @@ public interface Transition extends ExtendableElement, Prioritizable {
 	 * @return the value of the '<em>Raise Message Event</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_RaiseMessageEvent()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent) in\r\nif eventSet ->size() = 0 then null else eventSet -> first() endif'"
 	 * @generated
 	 */
 	AsynchronousMessageEvent getRaiseMessageEvent();
