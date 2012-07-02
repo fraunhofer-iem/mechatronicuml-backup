@@ -408,6 +408,19 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureInOutContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureInContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureOutContainer;
+
+		/**
+		 * @generated
+		 */
 		public HardwarePortFigure() {
 			this.setLayoutManager(new StackLayout());
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(20),
@@ -428,14 +441,14 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure inContainer0 = new RectangleFigure();
-			inContainer0.setOutline(false);
-			inContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(2),
-					getMapMode().DPtoLP(7), getMapMode().DPtoLP(0),
+			fFigureInContainer = new RectangleFigure();
+			fFigureInContainer.setOutline(false);
+			fFigureInContainer.setBorder(new MarginBorder(getMapMode()
+					.DPtoLP(2), getMapMode().DPtoLP(7), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
 
-			this.add(inContainer0);
-			inContainer0.setLayoutManager(new StackLayout());
+			this.add(fFigureInContainer);
+			fFigureInContainer.setLayoutManager(new StackLayout());
 
 			WrappingLabel inLabel1 = new WrappingLabel();
 			inLabel1.setText("i");
@@ -443,16 +456,16 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 
 			inLabel1.setFont(INLABEL1_FONT);
 
-			inContainer0.add(inLabel1);
+			fFigureInContainer.add(inLabel1);
 
-			RectangleFigure outContainer0 = new RectangleFigure();
-			outContainer0.setOutline(false);
-			outContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(2),
-					getMapMode().DPtoLP(6), getMapMode().DPtoLP(0),
+			fFigureOutContainer = new RectangleFigure();
+			fFigureOutContainer.setOutline(false);
+			fFigureOutContainer.setBorder(new MarginBorder(getMapMode().DPtoLP(
+					2), getMapMode().DPtoLP(6), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
 
-			this.add(outContainer0);
-			outContainer0.setLayoutManager(new StackLayout());
+			this.add(fFigureOutContainer);
+			fFigureOutContainer.setLayoutManager(new StackLayout());
 
 			WrappingLabel outLabel1 = new WrappingLabel();
 			outLabel1.setText("o");
@@ -460,8 +473,46 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 
 			outLabel1.setFont(OUTLABEL1_FONT);
 
-			outContainer0.add(outLabel1);
+			fFigureOutContainer.add(outLabel1);
 
+			fFigureInOutContainer = new RectangleFigure();
+			fFigureInOutContainer.setOutline(false);
+			fFigureInOutContainer.setBorder(new MarginBorder(getMapMode()
+					.DPtoLP(2), getMapMode().DPtoLP(4), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0)));
+
+			this.add(fFigureInOutContainer);
+			fFigureInOutContainer.setLayoutManager(new StackLayout());
+
+			WrappingLabel inOutLabel1 = new WrappingLabel();
+			inOutLabel1.setText("i/o");
+			inOutLabel1.setForegroundColor(INOUTLABEL1_FORE);
+
+			inOutLabel1.setFont(INOUTLABEL1_FONT);
+
+			fFigureInOutContainer.add(inOutLabel1);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInOutContainer() {
+			return fFigureInOutContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInContainer() {
+			return fFigureInContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureOutContainer() {
+			return fFigureOutContainer;
 		}
 
 	}
@@ -487,6 +538,18 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	static final Font OUTLABEL1_FONT = new Font(Display.getCurrent(), Display
+			.getDefault().getSystemFont().getFontData()[0].getName(), 7,
+			SWT.NORMAL);
+
+	/**
+	 * @generated
+	 */
+	static final Color INOUTLABEL1_FORE = new Color(null, 0, 0, 0);
+
+	/**
+	 * @generated
+	 */
+	static final Font INOUTLABEL1_FONT = new Font(Display.getCurrent(), Display
 			.getDefault().getSystemFont().getFontData()[0].getName(), 7,
 			SWT.NORMAL);
 

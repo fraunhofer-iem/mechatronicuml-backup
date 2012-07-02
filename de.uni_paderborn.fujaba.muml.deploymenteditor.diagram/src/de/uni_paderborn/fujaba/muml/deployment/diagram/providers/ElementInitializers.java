@@ -12,6 +12,44 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_HardwareNode_2001(
+			de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							0,
+							de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+									.getHardwareNode(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_HardwarePort_3001(
+			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							1,
+							de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+									.getHardwarePort(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getElementInitializers();

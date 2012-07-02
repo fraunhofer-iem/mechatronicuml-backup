@@ -487,7 +487,37 @@
                 height="7"/>
           </children>
         </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="InOutContainer"
+            outline="false">
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+          <border
+              xsi:type="gmfgraph:MarginBorder">
+            <insets
+                top="2"
+                left="4"/>
+          </border>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="InOutLabel"
+              text="i/o">
+            <foregroundColor
+                xsi:type="gmfgraph:RGBColor"/>
+            <font
+                xsi:type="gmfgraph:BasicFont"
+                faceName=""
+                height="7"/>
+          </children>
+        </children>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="CommunicationLinkFigure">

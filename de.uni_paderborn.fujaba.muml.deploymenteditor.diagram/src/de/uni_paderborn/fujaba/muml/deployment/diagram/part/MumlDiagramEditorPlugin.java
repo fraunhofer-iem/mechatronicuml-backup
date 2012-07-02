@@ -77,6 +77,11 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory oclFactory;
+
+	/**
+	 * @generated
+	 */
 	public MumlDiagramEditorPlugin() {
 	}
 
@@ -99,6 +104,7 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory = null;
 		linkConstraints = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -282,6 +288,21 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	public void setElementInitializers(
 			de.uni_paderborn.fujaba.muml.deployment.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory getMumlOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setMumlOCLFactory(
+			de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**

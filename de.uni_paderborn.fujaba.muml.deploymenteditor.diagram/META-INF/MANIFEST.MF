@@ -7,8 +7,8 @@ Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts, 
- de.uni_paderborn.fujaba.muml.deployment.diagram.edit.policies, 
+Export-Package: de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.deployment.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands,
  de.uni_paderborn.fujaba.muml.deployment.diagram.part,
  de.uni_paderborn.fujaba.muml.deployment.diagram.providers,
@@ -52,6 +52,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.muml.common,
- de.fujaba.newwizard
+ de.fujaba.newwizard,
+ org.eclipse.ocl.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

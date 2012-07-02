@@ -33,6 +33,7 @@
         visualID="3001"
         editPartClassName="HardwarePortEditPart"
         itemSemanticEditPolicyClassName="HardwarePortItemSemanticEditPolicy"
+        notationViewFactoryClassName="HardwarePortViewFactory"
         canonicalEditPolicyClassName="HardwarePortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HardwarePortGraphicalNodeEditPolicy"
         createCommandClassName="HardwarePortCreateCommand"
@@ -46,7 +47,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="HardwarePortFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HardwarePortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HardwarePortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setSize(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure inContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;inContainer0.setOutline(false);&#xA;inContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(inContainer0);&#xA;inContainer0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel inLabel1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;inLabel1.setText(&quot;i&quot;);&#xA;&#x9;inLabel1.setForegroundColor(INLABEL1_FORE&#xA;);&#xA;&#xA;inLabel1.setFont(INLABEL1_FONT);&#xA;&#xA;&#xA;&#xA;inContainer0.add(inLabel1);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure outContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;outContainer0.setOutline(false);&#xA;outContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(outContainer0);&#xA;outContainer0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel outLabel1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;outLabel1.setText(&quot;o&quot;);&#xA;&#x9;outLabel1.setForegroundColor(OUTLABEL1_FORE&#xA;);&#xA;&#xA;outLabel1.setFont(OUTLABEL1_FONT);&#xA;&#xA;&#xA;&#xA;outContainer0.add(outLabel1);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color INLABEL1_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font INLABEL1_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color OUTLABEL1_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font OUTLABEL1_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HardwarePortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInOutContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureOutContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HardwarePortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setSize(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureInContainer.setOutline(false);&#xA;fFigureInContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(fFigureInContainer);&#xA;fFigureInContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel inLabel1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;inLabel1.setText(&quot;i&quot;);&#xA;&#x9;inLabel1.setForegroundColor(INLABEL1_FORE&#xA;);&#xA;&#xA;inLabel1.setFont(INLABEL1_FONT);&#xA;&#xA;&#xA;&#xA;fFigureInContainer.add(inLabel1);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureOutContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureOutContainer.setOutline(false);&#xA;fFigureOutContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(fFigureOutContainer);&#xA;fFigureOutContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel outLabel1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;outLabel1.setText(&quot;o&quot;);&#xA;&#x9;outLabel1.setForegroundColor(OUTLABEL1_FORE&#xA;);&#xA;&#xA;outLabel1.setFont(OUTLABEL1_FONT);&#xA;&#xA;&#xA;&#xA;fFigureOutContainer.add(outLabel1);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureInOutContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureInOutContainer.setOutline(false);&#xA;fFigureInOutContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(fFigureInOutContainer);&#xA;fFigureInOutContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel inOutLabel1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;inOutLabel1.setText(&quot;i/o&quot;);&#xA;&#x9;inOutLabel1.setForegroundColor(INOUTLABEL1_FORE&#xA;);&#xA;&#xA;inOutLabel1.setFont(INOUTLABEL1_FONT);&#xA;&#xA;&#xA;&#xA;fFigureInOutContainer.add(inOutLabel1);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInOutContainer() {&#xA;&#x9;&#x9;return fFigureInOutContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInContainer() {&#xA;&#x9;&#x9;return fFigureInContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureOutContainer() {&#xA;&#x9;&#x9;return fFigureOutContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color INLABEL1_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font INLABEL1_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color OUTLABEL1_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font OUTLABEL1_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color INOUTLABEL1_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font INOUTLABEL1_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="20"
@@ -59,12 +60,22 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/HardwareNode/hardwarePorts"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/HardwareNode/hardwarePorts"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.1">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5002"
           editPartClassName="HardwarePortNameEditPart"
-          itemSemanticEditPolicyClassName="HardwarePortNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="HardwarePortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="HardwarePortNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -105,11 +116,21 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/Deployment/hardwareNodes"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/Deployment/hardwareNodes"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.0">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5001"
           editPartClassName="HardwareNodeNameEditPart"
-          itemSemanticEditPolicyClassName="HardwareNodeNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="HardwareNodeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="HardwareNodeNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -276,6 +297,15 @@
   </propertySheet>
   <domainGenModel
       href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#/"/>
+  <expressionProviders>
+    <providers
+        xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          body="'hardwareNode'"/>
+      <expressions
+          body="'hardwarePort'"/>
+    </providers>
+  </expressionProviders>
   <labelParsers
       extensibleViaService="true">
     <implementations

@@ -56,6 +56,9 @@ public class HardwarePortCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode owner = (de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode) getElementToEdit();
 		owner.getHardwarePorts().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.deployment.diagram.providers.ElementInitializers
+				.getInstance().init_HardwarePort_3001(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

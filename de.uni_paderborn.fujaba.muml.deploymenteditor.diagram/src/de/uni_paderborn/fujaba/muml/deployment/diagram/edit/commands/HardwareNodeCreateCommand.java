@@ -56,6 +56,9 @@ public class HardwareNodeCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.deployment.Deployment owner = (de.uni_paderborn.fujaba.muml.model.deployment.Deployment) getElementToEdit();
 		owner.getHardwareNodes().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.deployment.diagram.providers.ElementInitializers
+				.getInstance().init_HardwareNode_2001(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

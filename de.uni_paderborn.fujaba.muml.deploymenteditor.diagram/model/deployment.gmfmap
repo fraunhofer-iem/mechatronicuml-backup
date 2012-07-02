@@ -11,6 +11,17 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwareNode"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          <value
+              body="'hardwareNode'"/>
+        </initializers>
+      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -31,6 +42,17 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/HardwarePort"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              <value
+                  body="'hardwarePort'"/>
+            </initializers>
+          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
