@@ -1250,7 +1250,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "AtLeastOneMessageInterface", "self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))",
-			 "DiscretePortRequiresBehavior", "-- this also holds for a hybrid port\n(not self.component.oclIsUndefined() and not self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies not self.behavior.oclIsUndefined()",
+			 "DiscretePortRequiresBehavior", "-- this also holds for a hybrid port, ports of structured components do not require a behavior\r\n(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()",
 			 "DiscretePortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()",
 			 "DiscretePortRequiresRole", "self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()",
 			 "DiscretePortAndRoleSameMessageInterface", "not self.refines.oclIsUndefined() implies\n\t(self.senderMessageInterface = self.refines.senderMessageInterface\n\t and\n\t self.receiverMessageInterface = self.refines.receiverMessageInterface\n\t)",

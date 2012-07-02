@@ -149,7 +149,7 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="AtLeastOneMessageInterface" value="self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))"/>
-          <details key="DiscretePortRequiresBehavior" value="-- this also holds for a hybrid port&#xA;(not self.component.oclIsUndefined() and not self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
+          <details key="DiscretePortRequiresBehavior" value="-- this also holds for a hybrid port, ports of structured components do not require a behavior&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
           <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
           <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()"/>
           <details key="DiscretePortAndRoleSameMessageInterface" value="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageInterface = self.refines.senderMessageInterface&#xA;&#x9; and&#xA;&#x9; self.receiverMessageInterface = self.refines.receiverMessageInterface&#xA;&#x9;)"/>
