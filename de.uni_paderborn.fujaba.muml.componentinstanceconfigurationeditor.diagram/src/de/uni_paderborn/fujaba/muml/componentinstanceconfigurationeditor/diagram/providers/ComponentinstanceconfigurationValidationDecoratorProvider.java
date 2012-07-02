@@ -135,7 +135,11 @@ public class ComponentinstanceconfigurationValidationDecoratorProvider extends
 											.hasNext();) {
 										IDecorator decorator = (IDecorator) it
 												.next();
-										decorator.refresh();
+										// BEGIN Changed
+										if (decorator != null) {
+											decorator.refresh();
+										}
+										// END Changed
 									}
 								}
 							});
