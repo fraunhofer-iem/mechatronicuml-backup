@@ -68,7 +68,8 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	void setHardwareNode(HardwareNode value);
 
 	/**
-	 * Returns the value of the '<em><b>Outgoing Communication Link</b></em>' reference.
+	 * Returns the value of the '<em><b>Outgoing Communication Link</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,27 +77,17 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outgoing Communication Link</em>' reference.
-	 * @see #setOutgoingCommunicationLink(CommunicationLink)
+	 * @return the value of the '<em>Outgoing Communication Link</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_OutgoingCommunicationLink()
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getSource
 	 * @model opposite="source"
 	 * @generated
 	 */
-	CommunicationLink getOutgoingCommunicationLink();
+	EList<CommunicationLink> getOutgoingCommunicationLink();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink <em>Outgoing Communication Link</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Outgoing Communication Link</em>' reference.
-	 * @see #getOutgoingCommunicationLink()
-	 * @generated
-	 */
-	void setOutgoingCommunicationLink(CommunicationLink value);
-
-	/**
-	 * Returns the value of the '<em><b>Incoming Communication Link</b></em>' reference.
+	 * Returns the value of the '<em><b>Incoming Communication Link</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -104,24 +95,13 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming Communication Link</em>' reference.
-	 * @see #setIncomingCommunicationLink(CommunicationLink)
+	 * @return the value of the '<em>Incoming Communication Link</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_IncomingCommunicationLink()
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getTarget
-	 * @model opposite="target" required="true"
+	 * @model opposite="target"
 	 * @generated
 	 */
-	CommunicationLink getIncomingCommunicationLink();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink <em>Incoming Communication Link</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Incoming Communication Link</em>' reference.
-	 * @see #getIncomingCommunicationLink()
-	 * @generated
-	 */
-	void setIncomingCommunicationLink(CommunicationLink value);
+	EList<CommunicationLink> getIncomingCommunicationLink();
 
 	/**
 	 * Returns the value of the '<em><b>Deployed Port Instance</b></em>' reference list.

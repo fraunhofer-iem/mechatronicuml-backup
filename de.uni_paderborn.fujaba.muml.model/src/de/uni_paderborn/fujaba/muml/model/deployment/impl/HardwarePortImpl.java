@@ -16,8 +16,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
@@ -68,24 +70,24 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOutgoingCommunicationLink() <em>Outgoing Communication Link</em>}' reference.
+	 * The cached value of the '{@link #getOutgoingCommunicationLink() <em>Outgoing Communication Link</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOutgoingCommunicationLink()
 	 * @generated
 	 * @ordered
 	 */
-	protected CommunicationLink outgoingCommunicationLink;
+	protected EList<CommunicationLink> outgoingCommunicationLink;
 
 	/**
-	 * The cached value of the '{@link #getIncomingCommunicationLink() <em>Incoming Communication Link</em>}' reference.
+	 * The cached value of the '{@link #getIncomingCommunicationLink() <em>Incoming Communication Link</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIncomingCommunicationLink()
 	 * @generated
 	 * @ordered
 	 */
-	protected CommunicationLink incomingCommunicationLink;
+	protected EList<CommunicationLink> incomingCommunicationLink;
 
 	/**
 	 * The cached value of the '{@link #getDeployedPortInstance() <em>Deployed Port Instance</em>}' reference list.
@@ -203,14 +205,9 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationLink getOutgoingCommunicationLink() {
-		if (outgoingCommunicationLink != null && outgoingCommunicationLink.eIsProxy()) {
-			InternalEObject oldOutgoingCommunicationLink = (InternalEObject)outgoingCommunicationLink;
-			outgoingCommunicationLink = (CommunicationLink)eResolveProxy(oldOutgoingCommunicationLink);
-			if (outgoingCommunicationLink != oldOutgoingCommunicationLink) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK, oldOutgoingCommunicationLink, outgoingCommunicationLink));
-			}
+	public EList<CommunicationLink> getOutgoingCommunicationLink() {
+		if (outgoingCommunicationLink == null) {
+			outgoingCommunicationLink = new EObjectWithInverseResolvingEList<CommunicationLink>(CommunicationLink.class, this, DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK, DeploymentPackage.COMMUNICATION_LINK__SOURCE);
 		}
 		return outgoingCommunicationLink;
 	}
@@ -220,102 +217,11 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationLink basicGetOutgoingCommunicationLink() {
-		return outgoingCommunicationLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOutgoingCommunicationLink(CommunicationLink newOutgoingCommunicationLink, NotificationChain msgs) {
-		CommunicationLink oldOutgoingCommunicationLink = outgoingCommunicationLink;
-		outgoingCommunicationLink = newOutgoingCommunicationLink;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK, oldOutgoingCommunicationLink, newOutgoingCommunicationLink);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOutgoingCommunicationLink(CommunicationLink newOutgoingCommunicationLink) {
-		if (newOutgoingCommunicationLink != outgoingCommunicationLink) {
-			NotificationChain msgs = null;
-			if (outgoingCommunicationLink != null)
-				msgs = ((InternalEObject)outgoingCommunicationLink).eInverseRemove(this, DeploymentPackage.COMMUNICATION_LINK__SOURCE, CommunicationLink.class, msgs);
-			if (newOutgoingCommunicationLink != null)
-				msgs = ((InternalEObject)newOutgoingCommunicationLink).eInverseAdd(this, DeploymentPackage.COMMUNICATION_LINK__SOURCE, CommunicationLink.class, msgs);
-			msgs = basicSetOutgoingCommunicationLink(newOutgoingCommunicationLink, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK, newOutgoingCommunicationLink, newOutgoingCommunicationLink));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommunicationLink getIncomingCommunicationLink() {
-		if (incomingCommunicationLink != null && incomingCommunicationLink.eIsProxy()) {
-			InternalEObject oldIncomingCommunicationLink = (InternalEObject)incomingCommunicationLink;
-			incomingCommunicationLink = (CommunicationLink)eResolveProxy(oldIncomingCommunicationLink);
-			if (incomingCommunicationLink != oldIncomingCommunicationLink) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK, oldIncomingCommunicationLink, incomingCommunicationLink));
-			}
+	public EList<CommunicationLink> getIncomingCommunicationLink() {
+		if (incomingCommunicationLink == null) {
+			incomingCommunicationLink = new EObjectWithInverseResolvingEList<CommunicationLink>(CommunicationLink.class, this, DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK, DeploymentPackage.COMMUNICATION_LINK__TARGET);
 		}
 		return incomingCommunicationLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommunicationLink basicGetIncomingCommunicationLink() {
-		return incomingCommunicationLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetIncomingCommunicationLink(CommunicationLink newIncomingCommunicationLink, NotificationChain msgs) {
-		CommunicationLink oldIncomingCommunicationLink = incomingCommunicationLink;
-		incomingCommunicationLink = newIncomingCommunicationLink;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK, oldIncomingCommunicationLink, newIncomingCommunicationLink);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIncomingCommunicationLink(CommunicationLink newIncomingCommunicationLink) {
-		if (newIncomingCommunicationLink != incomingCommunicationLink) {
-			NotificationChain msgs = null;
-			if (incomingCommunicationLink != null)
-				msgs = ((InternalEObject)incomingCommunicationLink).eInverseRemove(this, DeploymentPackage.COMMUNICATION_LINK__TARGET, CommunicationLink.class, msgs);
-			if (newIncomingCommunicationLink != null)
-				msgs = ((InternalEObject)newIncomingCommunicationLink).eInverseAdd(this, DeploymentPackage.COMMUNICATION_LINK__TARGET, CommunicationLink.class, msgs);
-			msgs = basicSetIncomingCommunicationLink(newIncomingCommunicationLink, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK, newIncomingCommunicationLink, newIncomingCommunicationLink));
 	}
 
 	/**
@@ -356,6 +262,7 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -364,13 +271,9 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetHardwareNode((HardwareNode)otherEnd, msgs);
 			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				if (outgoingCommunicationLink != null)
-					msgs = ((InternalEObject)outgoingCommunicationLink).eInverseRemove(this, DeploymentPackage.COMMUNICATION_LINK__SOURCE, CommunicationLink.class, msgs);
-				return basicSetOutgoingCommunicationLink((CommunicationLink)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingCommunicationLink()).basicAdd(otherEnd, msgs);
 			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				if (incomingCommunicationLink != null)
-					msgs = ((InternalEObject)incomingCommunicationLink).eInverseRemove(this, DeploymentPackage.COMMUNICATION_LINK__TARGET, CommunicationLink.class, msgs);
-				return basicSetIncomingCommunicationLink((CommunicationLink)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingCommunicationLink()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -386,9 +289,9 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				return basicSetHardwareNode(null, msgs);
 			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				return basicSetOutgoingCommunicationLink(null, msgs);
+				return ((InternalEList<?>)getOutgoingCommunicationLink()).basicRemove(otherEnd, msgs);
 			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				return basicSetIncomingCommunicationLink(null, msgs);
+				return ((InternalEList<?>)getIncomingCommunicationLink()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -420,11 +323,9 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				return getHardwareNode();
 			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				if (resolve) return getOutgoingCommunicationLink();
-				return basicGetOutgoingCommunicationLink();
+				return getOutgoingCommunicationLink();
 			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				if (resolve) return getIncomingCommunicationLink();
-				return basicGetIncomingCommunicationLink();
+				return getIncomingCommunicationLink();
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				return getDeployedPortInstance();
 			case DeploymentPackage.HARDWARE_PORT__KIND:
@@ -449,10 +350,12 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 				setHardwareNode((HardwareNode)newValue);
 				return;
 			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				setOutgoingCommunicationLink((CommunicationLink)newValue);
+				getOutgoingCommunicationLink().clear();
+				getOutgoingCommunicationLink().addAll((Collection<? extends CommunicationLink>)newValue);
 				return;
 			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				setIncomingCommunicationLink((CommunicationLink)newValue);
+				getIncomingCommunicationLink().clear();
+				getIncomingCommunicationLink().addAll((Collection<? extends CommunicationLink>)newValue);
 				return;
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				getDeployedPortInstance().clear();
@@ -480,10 +383,10 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 				setHardwareNode((HardwareNode)null);
 				return;
 			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				setOutgoingCommunicationLink((CommunicationLink)null);
+				getOutgoingCommunicationLink().clear();
 				return;
 			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				setIncomingCommunicationLink((CommunicationLink)null);
+				getIncomingCommunicationLink().clear();
 				return;
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				getDeployedPortInstance().clear();
@@ -508,9 +411,9 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				return getHardwareNode() != null;
 			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				return outgoingCommunicationLink != null;
+				return outgoingCommunicationLink != null && !outgoingCommunicationLink.isEmpty();
 			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				return incomingCommunicationLink != null;
+				return incomingCommunicationLink != null && !incomingCommunicationLink.isEmpty();
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				return deployedPortInstance != null && !deployedPortInstance.isEmpty();
 			case DeploymentPackage.HARDWARE_PORT__KIND:

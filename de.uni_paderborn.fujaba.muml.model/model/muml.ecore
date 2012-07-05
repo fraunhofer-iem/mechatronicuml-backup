@@ -2084,9 +2084,9 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="hardwareNode" lowerBound="1"
             eType="#//model/deployment/HardwareNode" eOpposite="#//model/deployment/HardwareNode/hardwarePorts"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingCommunicationLink"
-            eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/source"/>
+            upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/source"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingCommunicationLink"
-            lowerBound="1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/target"/>
+            upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/target"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployedPortInstance"
             upperBound="-1" eType="#//model/instance/PortInstance"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/deployment/HardwarePortDirectionKind"

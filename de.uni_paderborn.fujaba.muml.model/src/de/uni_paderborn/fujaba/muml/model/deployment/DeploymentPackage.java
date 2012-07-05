@@ -282,7 +282,7 @@ public interface DeploymentPackage extends EPackage {
 	int HARDWARE_PORT__HARDWARE_NODE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Communication Link</b></em>' reference.
+	 * The feature id for the '<em><b>Outgoing Communication Link</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -291,7 +291,7 @@ public interface DeploymentPackage extends EPackage {
 	int HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Communication Link</b></em>' reference.
+	 * The feature id for the '<em><b>Incoming Communication Link</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -510,10 +510,10 @@ public interface DeploymentPackage extends EPackage {
 	EReference getHardwarePort_HardwareNode();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink <em>Outgoing Communication Link</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink <em>Outgoing Communication Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Outgoing Communication Link</em>'.
+	 * @return the meta object for the reference list '<em>Outgoing Communication Link</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink()
 	 * @see #getHardwarePort()
 	 * @generated
@@ -521,10 +521,10 @@ public interface DeploymentPackage extends EPackage {
 	EReference getHardwarePort_OutgoingCommunicationLink();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink <em>Incoming Communication Link</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink <em>Incoming Communication Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Incoming Communication Link</em>'.
+	 * @return the meta object for the reference list '<em>Incoming Communication Link</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink()
 	 * @see #getHardwarePort()
 	 * @generated
@@ -715,7 +715,7 @@ public interface DeploymentPackage extends EPackage {
 		EReference HARDWARE_PORT__HARDWARE_NODE = eINSTANCE.getHardwarePort_HardwareNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Outgoing Communication Link</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Outgoing Communication Link</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -723,7 +723,7 @@ public interface DeploymentPackage extends EPackage {
 		EReference HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK = eINSTANCE.getHardwarePort_OutgoingCommunicationLink();
 
 		/**
-		 * The meta object literal for the '<em><b>Incoming Communication Link</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Incoming Communication Link</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
