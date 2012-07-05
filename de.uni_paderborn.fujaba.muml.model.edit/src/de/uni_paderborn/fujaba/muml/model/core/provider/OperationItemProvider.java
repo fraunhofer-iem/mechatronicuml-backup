@@ -333,7 +333,7 @@ public class OperationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

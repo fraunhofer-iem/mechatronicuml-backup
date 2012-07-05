@@ -889,7 +889,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

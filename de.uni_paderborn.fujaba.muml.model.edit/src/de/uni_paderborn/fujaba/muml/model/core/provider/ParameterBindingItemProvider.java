@@ -301,7 +301,7 @@ public class ParameterBindingItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

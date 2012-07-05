@@ -256,7 +256,7 @@ public class ActionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
