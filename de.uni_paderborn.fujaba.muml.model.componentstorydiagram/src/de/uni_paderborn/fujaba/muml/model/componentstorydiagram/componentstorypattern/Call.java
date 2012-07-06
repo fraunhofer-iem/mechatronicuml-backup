@@ -6,13 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern;
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram;
-
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
-import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 
 /**
  * <!-- begin-user-doc -->

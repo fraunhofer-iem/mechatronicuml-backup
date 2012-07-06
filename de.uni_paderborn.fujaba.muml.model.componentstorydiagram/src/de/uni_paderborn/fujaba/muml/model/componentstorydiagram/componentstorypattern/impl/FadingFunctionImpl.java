@@ -6,21 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.impl.NamedElementImpl;
+
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
-
-import org.storydriven.core.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

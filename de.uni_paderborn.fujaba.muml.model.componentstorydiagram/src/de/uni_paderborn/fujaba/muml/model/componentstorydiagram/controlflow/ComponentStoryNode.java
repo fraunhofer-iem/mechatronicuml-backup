@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow;
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
-
 import org.storydriven.storydiagrams.activities.ActivityNode;
+
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 
 /**
  * <!-- begin-user-doc -->

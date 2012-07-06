@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern;
 
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-
 import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.muml.model.component.Port;
 
 /**
  * <!-- begin-user-doc -->

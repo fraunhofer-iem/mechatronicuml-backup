@@ -6,6 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
+
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call;
@@ -14,26 +22,14 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
-
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.impl.ControlflowPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.core.CorePackage;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
  * <!-- begin-user-doc -->

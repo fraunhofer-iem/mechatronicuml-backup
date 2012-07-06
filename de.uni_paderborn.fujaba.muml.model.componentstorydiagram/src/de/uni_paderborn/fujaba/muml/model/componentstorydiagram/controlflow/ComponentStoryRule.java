@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow;
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-
 import org.storydriven.storydiagrams.activities.Activity;
+
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
 
 /**
  * <!-- begin-user-doc -->

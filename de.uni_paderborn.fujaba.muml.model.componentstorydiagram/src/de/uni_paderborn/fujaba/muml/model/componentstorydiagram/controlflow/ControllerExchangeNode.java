@@ -6,14 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow;
 
+import org.eclipse.emf.common.util.EList;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.storydiagrams.activities.ActivityNode;
 
 /**
  * <!-- begin-user-doc -->

@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstoryp
 
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

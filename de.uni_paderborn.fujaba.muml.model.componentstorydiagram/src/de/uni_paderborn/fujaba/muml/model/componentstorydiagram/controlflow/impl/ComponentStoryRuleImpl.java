@@ -6,20 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.impl;
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
-
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.storydiagrams.activities.Activity;
+
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,23 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.util;
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.*;
-
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
-
-import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
-import org.storydriven.storydiagrams.calls.Callable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
 
 /**
  * <!-- begin-user-doc -->

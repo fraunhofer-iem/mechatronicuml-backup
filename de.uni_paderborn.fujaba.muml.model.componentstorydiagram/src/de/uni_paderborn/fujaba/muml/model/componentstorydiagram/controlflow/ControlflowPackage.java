@@ -6,14 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow;
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 
 /**
  * <!-- begin-user-doc -->
