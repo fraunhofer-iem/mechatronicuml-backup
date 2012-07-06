@@ -76,26 +76,26 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentStoryDiagramItemProvider componentStoryDiagramItemProvider;
+	protected ComponentStoryRuleItemProvider componentStoryRuleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createComponentStoryDiagramAdapter() {
-		if (componentStoryDiagramItemProvider == null) {
-			componentStoryDiagramItemProvider = new ComponentStoryDiagramItemProvider(this);
+	public Adapter createComponentStoryRuleAdapter() {
+		if (componentStoryRuleItemProvider == null) {
+			componentStoryRuleItemProvider = new ComponentStoryRuleItemProvider(this);
 		}
 
-		return componentStoryDiagramItemProvider;
+		return componentStoryRuleItemProvider;
 	}
 
 	/**
@@ -119,29 +119,6 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 		}
 
 		return componentStoryNodeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStopNode} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComponentStopNodeItemProvider componentStopNodeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStopNode}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createComponentStopNodeAdapter() {
-		if (componentStopNodeItemProvider == null) {
-			componentStopNodeItemProvider = new ComponentStopNodeItemProvider(this);
-		}
-
-		return componentStopNodeItemProvider;
 	}
 
 	/**
@@ -266,9 +243,8 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	 * @generated
 	 */
 	public void dispose() {
-		if (componentStoryDiagramItemProvider != null) componentStoryDiagramItemProvider.dispose();
+		if (componentStoryRuleItemProvider != null) componentStoryRuleItemProvider.dispose();
 		if (componentStoryNodeItemProvider != null) componentStoryNodeItemProvider.dispose();
-		if (componentStopNodeItemProvider != null) componentStopNodeItemProvider.dispose();
 		if (controllerExchangeNodeItemProvider != null) controllerExchangeNodeItemProvider.dispose();
 	}
 
