@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstoryp
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram;
 
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
@@ -49,7 +50,7 @@ public class CallImpl extends ExtendableElementImpl implements Call {
 	 * @generated
 	 * @ordered
 	 */
-	protected ComponentStoryDiagram callee;
+	protected ComponentStoryRule callee;
 
 	/**
 	 * The cached value of the '{@link #getParameterBinding() <em>Parameter Binding</em>}' containment reference list.
@@ -85,10 +86,10 @@ public class CallImpl extends ExtendableElementImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryDiagram getCallee() {
+	public ComponentStoryRule getCallee() {
 		if (callee != null && callee.eIsProxy()) {
 			InternalEObject oldCallee = (InternalEObject)callee;
-			callee = (ComponentStoryDiagram)eResolveProxy(oldCallee);
+			callee = (ComponentStoryRule)eResolveProxy(oldCallee);
 			if (callee != oldCallee) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.CALL__CALLEE, oldCallee, callee));
@@ -102,7 +103,7 @@ public class CallImpl extends ExtendableElementImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryDiagram basicGetCallee() {
+	public ComponentStoryRule basicGetCallee() {
 		return callee;
 	}
 
@@ -111,8 +112,8 @@ public class CallImpl extends ExtendableElementImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCallee(ComponentStoryDiagram newCallee) {
-		ComponentStoryDiagram oldCallee = callee;
+	public void setCallee(ComponentStoryRule newCallee) {
+		ComponentStoryRule oldCallee = callee;
 		callee = newCallee;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.CALL__CALLEE, oldCallee, callee));
@@ -171,7 +172,7 @@ public class CallImpl extends ExtendableElementImpl implements Call {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.CALL__CALLEE:
-				setCallee((ComponentStoryDiagram)newValue);
+				setCallee((ComponentStoryRule)newValue);
 				return;
 			case ComponentstorypatternPackage.CALL__PARAMETER_BINDING:
 				getParameterBinding().clear();
@@ -190,7 +191,7 @@ public class CallImpl extends ExtendableElementImpl implements Call {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.CALL__CALLEE:
-				setCallee((ComponentStoryDiagram)null);
+				setCallee((ComponentStoryRule)null);
 				return;
 			case ComponentstorypatternPackage.CALL__PARAMETER_BINDING:
 				getParameterBinding().clear();

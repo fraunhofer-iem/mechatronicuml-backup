@@ -15,6 +15,10 @@ import org.storydriven.storydiagrams.activities.ActivityNode;
  * A representation of the model object '<em><b>Component Story Node</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A component story nodes contains a component story pattern. In a component story rule, only component story pattern but no normal story pattern may be used.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

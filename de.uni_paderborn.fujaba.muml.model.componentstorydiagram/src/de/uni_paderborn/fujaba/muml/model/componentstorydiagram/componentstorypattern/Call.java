@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern;
 
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram;
 
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
@@ -40,12 +41,12 @@ public interface Call extends ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Callee</em>' reference.
-	 * @see #setCallee(ComponentStoryDiagram)
+	 * @see #setCallee(ComponentStoryRule)
 	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getCall_Callee()
 	 * @model required="true"
 	 * @generated
 	 */
-	ComponentStoryDiagram getCallee();
+	ComponentStoryRule getCallee();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call#getCallee <em>Callee</em>}' reference.
@@ -55,7 +56,7 @@ public interface Call extends ExtendableElement {
 	 * @see #getCallee()
 	 * @generated
 	 */
-	void setCallee(ComponentStoryDiagram value);
+	void setCallee(ComponentStoryRule value);
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Binding</b></em>' containment reference list.

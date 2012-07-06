@@ -83,16 +83,12 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 	protected ControlflowSwitch<Adapter> modelSwitch =
 		new ControlflowSwitch<Adapter>() {
 			@Override
-			public Adapter caseComponentStoryDiagram(ComponentStoryDiagram object) {
-				return createComponentStoryDiagramAdapter();
+			public Adapter caseComponentStoryRule(ComponentStoryRule object) {
+				return createComponentStoryRuleAdapter();
 			}
 			@Override
 			public Adapter caseComponentStoryNode(ComponentStoryNode object) {
 				return createComponentStoryNodeAdapter();
-			}
-			@Override
-			public Adapter caseComponentStopNode(ComponentStopNode object) {
-				return createComponentStopNodeAdapter();
 			}
 			@Override
 			public Adapter caseControllerExchangeNode(ControllerExchangeNode object) {
@@ -103,20 +99,12 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 				return createExtendableElementAdapter();
 			}
 			@Override
-			public Adapter caseCommentableElement(CommentableElement object) {
-				return createCommentableElementAdapter();
-			}
-			@Override
-			public Adapter caseCallable(Callable object) {
-				return createCallableAdapter();
-			}
-			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseActivity(Activity object) {
-				return createActivityAdapter();
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
 			}
 			@Override
 			public Adapter caseReconfigurationRule(ReconfigurationRule object) {
@@ -147,16 +135,16 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram <em>Component Story Diagram</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule <em>Component Story Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule
 	 * @generated
 	 */
-	public Adapter createComponentStoryDiagramAdapter() {
+	public Adapter createComponentStoryRuleAdapter() {
 		return null;
 	}
 
@@ -171,20 +159,6 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentStoryNodeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStopNode <em>Component Stop Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStopNode
-	 * @generated
-	 */
-	public Adapter createComponentStopNodeAdapter() {
 		return null;
 	}
 
@@ -231,20 +205,6 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.calls.Callable <em>Callable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.calls.Callable
-	 * @generated
-	 */
-	public Adapter createCallableAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.core.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -255,20 +215,6 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.Activity <em>Activity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.activities.Activity
-	 * @generated
-	 */
-	public Adapter createActivityAdapter() {
 		return null;
 	}
 

@@ -26,13 +26,13 @@ public interface ControlflowFactory extends EFactory {
 	ControlflowFactory eINSTANCE = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.impl.ControlflowFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Component Story Diagram</em>'.
+	 * Returns a new object of class '<em>Component Story Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Story Diagram</em>'.
+	 * @return a new object of class '<em>Component Story Rule</em>'.
 	 * @generated
 	 */
-	ComponentStoryDiagram createComponentStoryDiagram();
+	ComponentStoryRule createComponentStoryRule();
 
 	/**
 	 * Returns a new object of class '<em>Component Story Node</em>'.
@@ -42,15 +42,6 @@ public interface ControlflowFactory extends EFactory {
 	 * @generated
 	 */
 	ComponentStoryNode createComponentStoryNode();
-
-	/**
-	 * Returns a new object of class '<em>Component Stop Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Stop Node</em>'.
-	 * @generated
-	 */
-	ComponentStopNode createComponentStopNode();
 
 	/**
 	 * Returns a new object of class '<em>Controller Exchange Node</em>'.

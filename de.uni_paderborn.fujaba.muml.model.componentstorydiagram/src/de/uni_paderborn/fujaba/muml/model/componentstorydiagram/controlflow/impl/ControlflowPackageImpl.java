@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStopNode;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryDiagram;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 
@@ -43,7 +44,7 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentStoryDiagramEClass = null;
+	private EClass componentStoryRuleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -51,13 +52,6 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 * @generated
 	 */
 	private EClass componentStoryNodeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass componentStopNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,8 +141,17 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponentStoryDiagram() {
-		return componentStoryDiagramEClass;
+	public EClass getComponentStoryRule() {
+		return componentStoryRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentStoryRule_Activity() {
+		return (EReference)componentStoryRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -167,15 +170,6 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 */
 	public EReference getComponentStoryNode_ComponentStoryPattern() {
 		return (EReference)componentStoryNodeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getComponentStopNode() {
-		return componentStopNodeEClass;
 	}
 
 	/**
@@ -260,12 +254,11 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		isCreated = true;
 
 		// Create classes and their features
-		componentStoryDiagramEClass = createEClass(COMPONENT_STORY_DIAGRAM);
+		componentStoryRuleEClass = createEClass(COMPONENT_STORY_RULE);
+		createEReference(componentStoryRuleEClass, COMPONENT_STORY_RULE__ACTIVITY);
 
 		componentStoryNodeEClass = createEClass(COMPONENT_STORY_NODE);
 		createEReference(componentStoryNodeEClass, COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN);
-
-		componentStopNodeEClass = createEClass(COMPONENT_STOP_NODE);
 
 		controllerExchangeNodeEClass = createEClass(CONTROLLER_EXCHANGE_NODE);
 		createEReference(controllerExchangeNodeEClass, CONTROLLER_EXCHANGE_NODE__DEADLINE);
@@ -301,8 +294,8 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
+		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 		ComponentstorypatternPackage theComponentstorypatternPackage = (ComponentstorypatternPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 
@@ -311,19 +304,16 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		componentStoryDiagramEClass.getESuperTypes().add(theActivitiesPackage.getActivity());
-		componentStoryDiagramEClass.getESuperTypes().add(theReconfigurationPackage.getReconfigurationRule());
+		componentStoryRuleEClass.getESuperTypes().add(theReconfigurationPackage.getReconfigurationRule());
 		componentStoryNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
-		componentStopNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
 		controllerExchangeNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(componentStoryDiagramEClass, ComponentStoryDiagram.class, "ComponentStoryDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(componentStoryRuleEClass, ComponentStoryRule.class, "ComponentStoryRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentStoryRule_Activity(), theActivitiesPackage.getActivity(), null, "activity", null, 1, 1, ComponentStoryRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentStoryNodeEClass, ComponentStoryNode.class, "ComponentStoryNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentStoryNode_ComponentStoryPattern(), theComponentstorypatternPackage.getComponentStoryPattern(), null, "componentStoryPattern", null, 1, 1, ComponentStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(componentStopNodeEClass, ComponentStopNode.class, "ComponentStopNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(controllerExchangeNodeEClass, ControllerExchangeNode.class, "ControllerExchangeNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControllerExchangeNode_Deadline(), theRealtimestatechartPackage.getRelativeDeadline(), null, "deadline", null, 1, 1, ControllerExchangeNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

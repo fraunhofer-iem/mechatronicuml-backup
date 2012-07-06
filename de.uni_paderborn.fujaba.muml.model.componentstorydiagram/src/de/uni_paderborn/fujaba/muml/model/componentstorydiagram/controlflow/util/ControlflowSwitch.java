@@ -81,15 +81,13 @@ public class ControlflowSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ControlflowPackage.COMPONENT_STORY_DIAGRAM: {
-				ComponentStoryDiagram componentStoryDiagram = (ComponentStoryDiagram)theEObject;
-				T result = caseComponentStoryDiagram(componentStoryDiagram);
-				if (result == null) result = caseActivity(componentStoryDiagram);
-				if (result == null) result = caseReconfigurationRule(componentStoryDiagram);
-				if (result == null) result = caseCallable(componentStoryDiagram);
-				if (result == null) result = caseNamedElement(componentStoryDiagram);
-				if (result == null) result = caseCommentableElement(componentStoryDiagram);
-				if (result == null) result = caseExtendableElement(componentStoryDiagram);
+			case ControlflowPackage.COMPONENT_STORY_RULE: {
+				ComponentStoryRule componentStoryRule = (ComponentStoryRule)theEObject;
+				T result = caseComponentStoryRule(componentStoryRule);
+				if (result == null) result = caseReconfigurationRule(componentStoryRule);
+				if (result == null) result = caseNamedElement(componentStoryRule);
+				if (result == null) result = caseCommentableElement(componentStoryRule);
+				if (result == null) result = caseExtendableElement(componentStoryRule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -100,16 +98,6 @@ public class ControlflowSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(componentStoryNode);
 				if (result == null) result = caseCommentableElement(componentStoryNode);
 				if (result == null) result = caseExtendableElement(componentStoryNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ControlflowPackage.COMPONENT_STOP_NODE: {
-				ComponentStopNode componentStopNode = (ComponentStopNode)theEObject;
-				T result = caseComponentStopNode(componentStopNode);
-				if (result == null) result = caseActivityNode(componentStopNode);
-				if (result == null) result = caseNamedElement(componentStopNode);
-				if (result == null) result = caseCommentableElement(componentStopNode);
-				if (result == null) result = caseExtendableElement(componentStopNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -128,17 +116,17 @@ public class ControlflowSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component Story Diagram</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Component Story Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component Story Diagram</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Component Story Rule</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponentStoryDiagram(ComponentStoryDiagram object) {
+	public T caseComponentStoryRule(ComponentStoryRule object) {
 		return null;
 	}
 
@@ -154,21 +142,6 @@ public class ControlflowSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentStoryNode(ComponentStoryNode object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component Stop Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component Stop Node</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComponentStopNode(ComponentStopNode object) {
 		return null;
 	}
 
@@ -218,21 +191,6 @@ public class ControlflowSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Callable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Callable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCallable(Callable object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -244,21 +202,6 @@ public class ControlflowSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActivity(Activity object) {
 		return null;
 	}
 

@@ -61,9 +61,8 @@ public class ControlflowFactoryImpl extends EFactoryImpl implements ControlflowF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ControlflowPackage.COMPONENT_STORY_DIAGRAM: return createComponentStoryDiagram();
+			case ControlflowPackage.COMPONENT_STORY_RULE: return createComponentStoryRule();
 			case ControlflowPackage.COMPONENT_STORY_NODE: return createComponentStoryNode();
-			case ControlflowPackage.COMPONENT_STOP_NODE: return createComponentStopNode();
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE: return createControllerExchangeNode();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -105,9 +104,9 @@ public class ControlflowFactoryImpl extends EFactoryImpl implements ControlflowF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryDiagram createComponentStoryDiagram() {
-		ComponentStoryDiagramImpl componentStoryDiagram = new ComponentStoryDiagramImpl();
-		return componentStoryDiagram;
+	public ComponentStoryRule createComponentStoryRule() {
+		ComponentStoryRuleImpl componentStoryRule = new ComponentStoryRuleImpl();
+		return componentStoryRule;
 	}
 
 	/**
@@ -118,16 +117,6 @@ public class ControlflowFactoryImpl extends EFactoryImpl implements ControlflowF
 	public ComponentStoryNode createComponentStoryNode() {
 		ComponentStoryNodeImpl componentStoryNode = new ComponentStoryNodeImpl();
 		return componentStoryNode;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComponentStopNode createComponentStopNode() {
-		ComponentStopNodeImpl componentStopNode = new ComponentStopNodeImpl();
-		return componentStopNode;
 	}
 
 	/**

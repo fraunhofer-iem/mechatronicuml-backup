@@ -5,12 +5,21 @@
     nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.3.0" nsPrefix="componentstorydiagram">
   <eSubpackages name="controlflow" nsURI="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.0"
       nsPrefix="controlflow">
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryDiagram" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity ../../de.uni_paderborn.fujaba.muml.model.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryRule" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a component story rule which is used to specifiy reconfiguration of a MechatronicUML component. The actual reconfiguration operation is encapsulated in the contained Activity in order to reuse the existing meta-model for story diagrams. The ComponentStoryRule contains an activity rather than inheriting from an activity to distinguish between the parameter sets."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+          eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"
+          containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryNode" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A component story nodes contains a component story pattern. In a component story rule, only component story pattern but no normal story pattern may be used."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentStoryPattern"
           lowerBound="1" eType="#//componentstorypattern/ComponentStoryPattern"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentStopNode" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="ControllerExchangeNode" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Controller Exchange Activity Nodes are used to exchange controllers modeled by continuous components. The controller exchange node either applies a fading function or a flat switching to the out-ports of the continuous component. "/>
@@ -95,7 +104,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="callee" lowerBound="1"
-          eType="#//controlflow/ComponentStoryDiagram"/>
+          eType="#//controlflow/ComponentStoryRule"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
           containment="true"/>
