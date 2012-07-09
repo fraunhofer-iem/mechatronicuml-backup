@@ -561,7 +561,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (getRole_RoleConnector(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if self.incomingConnector -> notEmpty() then\r\n\tself.incomingConnector\r\nelse\r\n\tself.outgoingConnector\r\nEndif"
+			 "derivation", "if self.incomingConnector -> notEmpty() then\r\n\tself.incomingConnector\r\nelse\r\n\tself.outgoingConnector\r\nendif"
 		   });
 	}
 

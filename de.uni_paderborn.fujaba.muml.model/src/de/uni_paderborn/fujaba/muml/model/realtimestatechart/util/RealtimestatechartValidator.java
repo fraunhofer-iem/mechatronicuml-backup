@@ -521,7 +521,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__INVALID_CLOCK_CONSTRAINT_OPERATOR__EEXPRESSION = "self.invariants->forAll(invariant | Set{core::expressions::ComparingOperator::LESS, core::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))";
+	protected static final String STATE__INVALID_CLOCK_CONSTRAINT_OPERATOR__EEXPRESSION = "self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))";
 
 	/**
 	 * Validates the InvalidClockConstraintOperator constraint of '<em>State</em>'.
@@ -754,7 +754,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		"\t\tendif\r\n" +
 		"\tendif\r\n" +
 		") in\r\n" +
-		"not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf)";
+		"(not triggerMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf))";
 
 	/**
 	 * Validates the ValidTriggerMessageEvents constraint of '<em>Transition</em>'.
@@ -795,7 +795,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		"\t\tendif\n" +
 		"\tendif\n" +
 		") in\n" +
-		"not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf)";
+		"(not raiseMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf))";
 
 	/**
 	 * Validates the ValidRaiseMessageEvents constraint of '<em>Transition</em>'.
