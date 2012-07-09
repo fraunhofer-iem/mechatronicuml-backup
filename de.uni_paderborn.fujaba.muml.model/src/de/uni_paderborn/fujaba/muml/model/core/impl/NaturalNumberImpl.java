@@ -104,11 +104,18 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	 * @generated NOT
 	 */
 	public void setValue(long newValue) {
+		// Forbid negative values
+		if (newValue < 0) {
+			newValue = 0;
+		}
+		
+		// Generated code sets the feature as usual
 		long oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.NATURAL_NUMBER__VALUE, oldValue, value));
 
+		// Set infinity to false
 		setInfinity(false);
 	}
 
