@@ -20,8 +20,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.LiteralExpression;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
+import org.storydriven.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.common.descriptor.AbstractItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -199,8 +199,8 @@ public class ParameterBindingPropertySourceProvider implements
 			}
 
 			// Create Literal Expression for the value
-			LiteralExpression valueExpression = ExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+			LiteralExpression valueExpression = CommonExpressionsFactory.eINSTANCE
+					.createStringLiteralExpression();
 			valueExpression.setValue((String) value);
 
 			// Set within a write transaction
