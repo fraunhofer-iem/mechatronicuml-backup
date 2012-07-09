@@ -27,7 +27,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.core.expressions.ComparingOperator;
+import org.storydriven.core.expressions.common.ComparingOperator;
+import org.storydriven.core.expressions.common.ComparingOperator;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
@@ -162,8 +163,8 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 					public Collection<?> getChoiceOfValues(Object object) {
 						if (object instanceof EObject && ((EObject) object).eContainer() instanceof State) {
 							List<Enumerator> enumerators = new ArrayList<Enumerator>();
-							enumerators.add(org.storydriven.core.expressions.ComparingOperator.LESS);
-							enumerators.add(org.storydriven.core.expressions.ComparingOperator.LESS_OR_EQUAL);
+							enumerators.add(org.storydriven.core.expressions.common.ComparingOperator.LESS);
+							enumerators.add(org.storydriven.core.expressions.common.ComparingOperator.LESS_OR_EQUAL);
 							return enumerators;
 						}
 						return super.getChoiceOfValues(object);

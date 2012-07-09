@@ -302,31 +302,13 @@ public interface CorePackage extends EPackage {
 	int ACTIVITY_CALL_EXPRESSION__CALLEE = CallsPackage.INVOCATION__CALLEE;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_CALL_EXPRESSION__TYPE = CallsPackage.INVOCATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE = CallsPackage.INVOCATION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION__ACTIVITY = CallsPackage.INVOCATION_FEATURE_COUNT + 2;
+	int ACTIVITY_CALL_EXPRESSION__ACTIVITY = CallsPackage.INVOCATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Activity Call Expression</em>' class.
@@ -335,7 +317,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION_FEATURE_COUNT = CallsPackage.INVOCATION_FEATURE_COUNT + 3;
+	int ACTIVITY_CALL_EXPRESSION_FEATURE_COUNT = CallsPackage.INVOCATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AttributeImpl <em>Attribute</em>}' class.

@@ -24,7 +24,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.LiteralExpression;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
+import org.storydriven.core.expressions.common.LiteralExpression;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
@@ -251,27 +252,42 @@ public class ParameterBindingItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

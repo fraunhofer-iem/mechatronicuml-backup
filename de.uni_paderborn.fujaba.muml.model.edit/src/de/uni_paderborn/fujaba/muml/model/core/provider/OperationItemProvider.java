@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.provider.NamedElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
@@ -283,27 +284,42 @@ public class OperationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
