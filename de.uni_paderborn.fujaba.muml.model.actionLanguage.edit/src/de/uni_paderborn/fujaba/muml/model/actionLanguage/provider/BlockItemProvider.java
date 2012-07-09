@@ -21,9 +21,16 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
+import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
@@ -44,6 +51,7 @@ public class BlockItemProvider
 		ITreeItemContentProvider,
 		IItemLabelProvider,
 		IItemPropertySource {
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -156,6 +164,16 @@ public class BlockItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
 
@@ -237,27 +255,77 @@ public class BlockItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**

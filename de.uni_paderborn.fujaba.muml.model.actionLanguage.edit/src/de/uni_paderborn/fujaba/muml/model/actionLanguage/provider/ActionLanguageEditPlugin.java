@@ -11,6 +11,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.storydriven.core.provider.CoreEditPlugin;
 
+import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
 /**
@@ -48,6 +49,7 @@ public final class ActionLanguageEditPlugin extends EMFPlugin {
 		     EcoreEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
+		     StorydiagramsEditPlugin.INSTANCE,
 		   });
 	}
 

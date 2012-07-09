@@ -21,9 +21,16 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
+import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
@@ -164,6 +171,16 @@ public class IfStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
 
@@ -245,27 +262,77 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -355,27 +422,77 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -93,24 +93,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int TEXTUAL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,24 +166,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int LITERAL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -264,24 +228,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNARY_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -348,24 +294,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int BINARY_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -428,24 +356,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPARISON_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION__TYPE = BINARY_EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION__GENERIC_TYPE = BINARY_EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -521,24 +431,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int ARITHMETIC_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__TYPE = BINARY_EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__GENERIC_TYPE = BINARY_EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -610,24 +502,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int BINARY_LOGIC_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION__TYPE = BINARY_EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION__GENERIC_TYPE = BINARY_EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -703,24 +577,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int BLOCK__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -774,24 +630,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOOP__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -858,24 +696,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int WHILE_LOOP__EXTENSION = LOOP__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE_LOOP__TYPE = LOOP__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE_LOOP__GENERIC_TYPE = LOOP__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -940,24 +760,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int DO_WHILE_LOOP__EXTENSION = LOOP__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_WHILE_LOOP__TYPE = LOOP__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_WHILE_LOOP__GENERIC_TYPE = LOOP__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1020,24 +822,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSIGNMENT__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSIGNMENT__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSIGNMENT__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1122,24 +906,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int FOR_LOOP__EXTENSION = LOOP__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOR_LOOP__TYPE = LOOP__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOR_LOOP__GENERIC_TYPE = LOOP__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1220,24 +986,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int IF_STATEMENT__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF_STATEMENT__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF_STATEMENT__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1331,24 +1079,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int ATTRIBUTE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1402,24 +1132,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATION_CALL__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_CALL__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_CALL__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

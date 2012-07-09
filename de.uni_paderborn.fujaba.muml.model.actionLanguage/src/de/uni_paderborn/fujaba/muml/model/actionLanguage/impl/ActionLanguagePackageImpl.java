@@ -14,6 +14,11 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.expressions.ExpressionsPackage;
 
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.calls.CallsPackage;
+import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.templates.TemplatesPackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
