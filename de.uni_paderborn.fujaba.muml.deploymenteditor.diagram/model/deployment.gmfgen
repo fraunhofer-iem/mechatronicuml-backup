@@ -15,6 +15,7 @@
       itemSemanticEditPolicyClassName="DeploymentItemSemanticEditPolicy"
       canonicalEditPolicyClassName="DeploymentCanonicalEditPolicy"
       iconProviderPriority="Low"
+      creationWizardCategoryID="de.fujaba/de.fujaba.diagrams"
       validationProviderPriority="Low"
       validationEnabled="true"
       validationDecorators="true">

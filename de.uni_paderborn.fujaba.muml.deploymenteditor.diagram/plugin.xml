@@ -48,7 +48,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/DeploymentDiagramFile.gif"
-  	     category="org.eclipse.ui.Examples"
+  	     category="de.fujaba/de.fujaba.diagrams"
   	     class="de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
