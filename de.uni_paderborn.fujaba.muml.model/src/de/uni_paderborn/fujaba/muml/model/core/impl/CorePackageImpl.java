@@ -512,8 +512,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getArrayDataType_Cardinality() {
-		return (EAttribute)arrayDataTypeEClass.getEStructuralFeatures().get(0);
+	public EReference getArrayDataType_Cardinality() {
+		return (EReference)arrayDataTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -522,7 +522,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	public EReference getArrayDataType_Type() {
-		return (EReference)arrayDataTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference)arrayDataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -628,8 +628,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEAttribute(primitiveDataTypeEClass, PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE);
 
 		arrayDataTypeEClass = createEClass(ARRAY_DATA_TYPE);
-		createEAttribute(arrayDataTypeEClass, ARRAY_DATA_TYPE__CARDINALITY);
 		createEReference(arrayDataTypeEClass, ARRAY_DATA_TYPE__TYPE);
+		createEReference(arrayDataTypeEClass, ARRAY_DATA_TYPE__CARDINALITY);
 
 		parameterBindingEClass = createEClass(PARAMETER_BINDING);
 		createEReference(parameterBindingEClass, PARAMETER_BINDING__PARAMETER);
@@ -668,7 +668,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -739,8 +738,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getPrimitiveDataType_PrimitiveType(), this.getPrimitiveTypes(), "primitiveType", "PrimitiveTypes.VOID", 1, 1, PrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArrayDataType_Cardinality(), theEcorePackage.getEInt(), "cardinality", "1", 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArrayDataType_Type(), this.getDataType(), null, "type", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArrayDataType_Cardinality(), this.getNaturalNumber(), null, "cardinality", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterBindingEClass, ParameterBinding.class, "ParameterBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterBinding_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -794,7 +793,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });																										
+		   });																									
 	}
 
 	/**
@@ -816,7 +815,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
-		   });																									
+		   });																								
 	}
 
 } //CorePackageImpl

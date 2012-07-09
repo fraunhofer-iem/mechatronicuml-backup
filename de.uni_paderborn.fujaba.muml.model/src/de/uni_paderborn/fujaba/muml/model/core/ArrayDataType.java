@@ -20,8 +20,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,30 +31,26 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ArrayDataType extends DataType {
 	/**
-	 * Returns the value of the '<em><b>Cardinality</b></em>' attribute.
-	 * The default value is <code>"1"</code>.
+	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This property specifies the maximum number of composite elements.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Cardinality</em>' attribute.
-	 * @see #setCardinality(int)
+	 * @return the value of the '<em>Cardinality</em>' containment reference.
+	 * @see #setCardinality(NaturalNumber)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getArrayDataType_Cardinality()
-	 * @model default="1" required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	int getCardinality();
+	NaturalNumber getCardinality();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cardinality</em>' attribute.
+	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
 	 * @see #getCardinality()
 	 * @generated
 	 */
-	void setCardinality(int value);
+	void setCardinality(NaturalNumber value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.

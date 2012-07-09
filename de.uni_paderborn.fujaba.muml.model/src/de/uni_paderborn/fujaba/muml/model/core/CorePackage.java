@@ -695,22 +695,22 @@ public interface CorePackage extends EPackage {
 	int ARRAY_DATA_TYPE__COMMENT = DATA_TYPE__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRAY_DATA_TYPE__CARDINALITY = DATA_TYPE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE__TYPE = DATA_TYPE_FEATURE_COUNT + 1;
+	int ARRAY_DATA_TYPE__TYPE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE__CARDINALITY = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Array Data Type</em>' class.
@@ -1083,15 +1083,15 @@ public interface CorePackage extends EPackage {
 	EClass getArrayDataType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cardinality</em>'.
+	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getCardinality()
 	 * @see #getArrayDataType()
 	 * @generated
 	 */
-	EAttribute getArrayDataType_Cardinality();
+	EReference getArrayDataType_Cardinality();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType#getType <em>Type</em>}'.
@@ -1417,12 +1417,12 @@ public interface CorePackage extends EPackage {
 		EClass ARRAY_DATA_TYPE = eINSTANCE.getArrayDataType();
 
 		/**
-		 * The meta object literal for the '<em><b>Cardinality</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARRAY_DATA_TYPE__CARDINALITY = eINSTANCE.getArrayDataType_Cardinality();
+		EReference ARRAY_DATA_TYPE__CARDINALITY = eINSTANCE.getArrayDataType_Cardinality();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
