@@ -180,6 +180,9 @@
         <targetMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/CommunicationLink/target"/>
       </modelFacet>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.2"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.3"/>
     </links>
     <palette>
       <groups
@@ -304,6 +307,12 @@
           body="'hardwareNode'"/>
       <expressions
           body="'hardwarePort'"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.kind = HardwarePortDirectionKind::OUT or self.kind = HardwarePortDirectionKind::IN_OUT"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="(self.hardwareNode &lt;> oppositeEnd.hardwareNode) and (if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif)"/>
     </providers>
   </expressionProviders>
   <labelParsers

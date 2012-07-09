@@ -1,7 +1,10 @@
 package de.uni_paderborn.fujaba.muml.deployment.diagram.edit.policies;
 
+import java.util.Collections;
 import java.util.Iterator;
 
+import java.util.Map;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -341,7 +344,52 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink linkInstance,
 				de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort source,
 				de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort target) {
-			return true;
+			try {
+				if (source == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> env = Collections
+							.<String, EClassifier> singletonMap(
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE.getHardwarePort()); //$NON-NLS-1$
+					Object sourceVal = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
+							.getExpression(
+									2,
+									de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+											.getHardwarePort(), env).evaluate(
+									source,
+									Collections.singletonMap(
+											"oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				if (target == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> env = Collections
+							.<String, EClassifier> singletonMap(
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE.getHardwarePort()); //$NON-NLS-1$
+					Object targetVal = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
+							.getExpression(
+									3,
+									de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+											.getHardwarePort(), env).evaluate(
+									target,
+									Collections.singletonMap(
+											"oppositeEnd", source)); //$NON-NLS-1$
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				return true;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return false;
+			}
 		}
 	}
 

@@ -87,6 +87,12 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/target"/>
+    <creationConstraints>
+      <sourceEnd
+          body="self.kind = HardwarePortDirectionKind::OUT or self.kind = HardwarePortDirectionKind::IN_OUT"/>
+      <targetEnd
+          body="(self.hardwareNode &lt;> oppositeEnd.hardwareNode) and (if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif)"/>
+    </creationConstraints>
   </links>
   <diagram>
     <diagramCanvas

@@ -7,7 +7,9 @@
 package de.uni_paderborn.fujaba.muml.model.deployment.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -22,17 +24,19 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
+
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentFactory;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode} object.
@@ -101,11 +105,11 @@ public class HardwareNodeItemProvider
 	 * This adds a property descriptor for the Deployed Instances feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addDeployedInstancesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			( new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_HardwareNode_deployedInstances_feature"),
@@ -116,7 +120,22 @@ public class HardwareNodeItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+
+					@Override
+					public Collection<?> getChoiceOfValues(Object object) {
+						HardwareNode hardwareNode = (HardwareNode) object;
+						Deployment deployment = hardwareNode.getDeployment();
+						if (deployment != null) {
+							ComponentInstanceConfiguration configuration = deployment.getComponentInstanceConfiguration();
+							if (configuration != null) {
+								return configuration.getComponentInstances();
+							}
+						}
+						return Collections.emptyList();
+					}
+				
+			});
 	}
 
 	/**

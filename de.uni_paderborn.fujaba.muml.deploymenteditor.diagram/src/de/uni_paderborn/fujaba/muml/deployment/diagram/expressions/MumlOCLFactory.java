@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlAbstractExpression[2];
+		this.expressions = new de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlAbstractExpression[4];
 	}
 
 	/**
@@ -49,8 +49,11 @@ public class MumlOCLFactory {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] { "\'hardwareNode\'", //$NON-NLS-1$
+			final String[] exprBodies = new String[] {
+					"\'hardwareNode\'", //$NON-NLS-1$
 					"\'hardwarePort\'", //$NON-NLS-1$
+					"self.kind = HardwarePortDirectionKind::OUT or self.kind = HardwarePortDirectionKind::IN_OUT", //$NON-NLS-1$
+					"(self.hardwareNode <> oppositeEnd.hardwareNode) and (if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif)", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

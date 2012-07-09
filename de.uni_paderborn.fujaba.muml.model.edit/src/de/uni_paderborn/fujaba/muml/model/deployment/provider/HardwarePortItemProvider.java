@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.deployment.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -30,7 +31,10 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort} object.
@@ -146,12 +150,11 @@ public class HardwarePortItemProvider
 	 * This adds a property descriptor for the Deployed Port Instance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addDeployedPortInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			( new ItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_HardwarePort_deployedPortInstance_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_HardwarePort_deployedPortInstance_feature", "_UI_HardwarePort_type"),
@@ -161,7 +164,28 @@ public class HardwarePortItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null){
+
+					@Override
+					public Collection<?> getChoiceOfValues(Object object) {
+						Collection<PortInstance> portInstances = new ArrayList<PortInstance>();
+						HardwarePort hardwarePort = (HardwarePort) object;
+						HardwareNode hardwareNode = hardwarePort.getHardwareNode();
+						if (hardwareNode!=null){
+							Collection<ComponentInstance> deployedInstances = new ArrayList<ComponentInstance>();
+							deployedInstances = hardwareNode.getDeployedInstances();
+							if (!deployedInstances.isEmpty()){
+								for (ComponentInstance i : deployedInstances){
+									portInstances.addAll(i.getPortInstances());
+								}
+							}
+						}
+						return portInstances;
+					}
+				
+				
+
+			});
 	}
 
 	/**
