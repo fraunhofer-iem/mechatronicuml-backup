@@ -1161,7 +1161,7 @@
     </compartments>
     <palette>
       <groups
-          title="Realtime Statechart"
+          title="Real-Time Statechart"
           description="Can be casted on statechart"
           collapse="true">
         <entries
@@ -1190,7 +1190,7 @@
             genNodes="//@diagram/@childNodes.13"/>
       </groups>
       <groups
-          title="Realtime State"
+          title="Real-Time State"
           description="Can be casted on state"
           collapse="true">
         <entries

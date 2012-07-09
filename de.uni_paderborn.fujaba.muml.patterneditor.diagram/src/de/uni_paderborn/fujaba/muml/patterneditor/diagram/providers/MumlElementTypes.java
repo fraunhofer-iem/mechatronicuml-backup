@@ -52,22 +52,18 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType CoordinationPattern_2004 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_2004"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType CoordinationPattern_3003 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_3003"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType Role_3004 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_3004"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType CoordinationPatternRoles_4003 = getElementType("de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPatternRoles_4003"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */

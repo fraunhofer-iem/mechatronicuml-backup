@@ -120,25 +120,10 @@
                className="ModelElementCategory">
          </diagramElement>
          
-         <node
+         <topLevelNode
                domainElement="AtomicComponent"
                semanticHint="2005">
-         </node>
-         
-         <node
-               domainElement="HybridPort"
-               semanticHint="3005">
-         </node>
-         
-         <node
-               domainElement="DiscretePort"
-               semanticHint="3006">
-         </node>
-         
-         <node
-               domainElement="ContinuousPort"
-               semanticHint="3007">
-         </node>
+         </topLevelNode>
          
       </editor>
    </extension>

@@ -243,22 +243,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechart1Group_title;
+	public static String RealTimeStatechart1Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechart1Group_desc;
+	public static String RealTimeStatechart1Group_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeState2Group_title;
+	public static String RealTimeState2Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeState2Group_desc;
+	public static String RealTimeState2Group_desc;
 
 	/**
 	 * @generated

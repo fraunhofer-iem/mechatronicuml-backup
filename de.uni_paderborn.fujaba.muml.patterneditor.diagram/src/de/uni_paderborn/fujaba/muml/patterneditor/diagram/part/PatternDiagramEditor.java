@@ -87,7 +87,6 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	/**
 	 * @generated
 	 */
-	@Override
 	protected PreferencesHint getPreferencesHint() {
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
@@ -170,16 +169,6 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public void doSave(IProgressMonitor progressMonitor) {
-		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
-				.getDiagramView());
-		super.doSave(progressMonitor);
 	}
 
 	/**
@@ -315,6 +304,16 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0), getActionRegistry()
 				.getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
 		// End added
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void doSave(IProgressMonitor progressMonitor) {
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+				.getDiagramView());
+		super.doSave(progressMonitor);
 	}
 
 }

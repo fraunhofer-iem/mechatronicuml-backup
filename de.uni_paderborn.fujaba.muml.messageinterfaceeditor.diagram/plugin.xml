@@ -120,20 +120,10 @@
                className="ModelElementCategory">
          </diagramElement>
          
-         <node
+         <topLevelNode
                domainElement="MessageInterface"
                semanticHint="2006">
-         </node>
-         
-         <node
-               domainElement="MessageType"
-               semanticHint="3005">
-         </node>
-         
-         <node
-               domainElement="Parameter"
-               semanticHint="3006">
-         </node>
+         </topLevelNode>
          
       </editor>
    </extension>

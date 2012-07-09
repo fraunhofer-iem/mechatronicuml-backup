@@ -119,11 +119,11 @@
                packageNsURI="«diagram.domainDiagramElement.genPackage.ecorePackage.nsURI»"
                className="«diagram.domainDiagramElement.ecoreClass.name»">
          </diagramElement>
-         «FOREACH diagram.getAllNodes() AS container»
-         <node
+         «FOREACH diagram.topLevelNodes AS container»
+         <topLevelNode
                domainElement="«container.modelFacet.metaClass.ecoreClass.name»"
                semanticHint="«container.visualID»">
-         </node>
+         </topLevelNode>
          «ENDFOREACH»
       </editor>
    </extension>

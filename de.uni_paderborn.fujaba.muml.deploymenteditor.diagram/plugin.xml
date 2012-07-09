@@ -120,15 +120,10 @@
                className="Deployment">
          </diagramElement>
          
-         <node
+         <topLevelNode
                domainElement="HardwareNode"
                semanticHint="2001">
-         </node>
-         
-         <node
-               domainElement="HardwarePort"
-               semanticHint="3001">
-         </node>
+         </topLevelNode>
          
       </editor>
    </extension>

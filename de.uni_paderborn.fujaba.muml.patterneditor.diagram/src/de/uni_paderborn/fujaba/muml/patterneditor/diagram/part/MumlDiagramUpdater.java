@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.storydriven.core.ExtendableElement;
+
 import de.fujaba.modelinstance.ModelElementCategory;
 
 /**

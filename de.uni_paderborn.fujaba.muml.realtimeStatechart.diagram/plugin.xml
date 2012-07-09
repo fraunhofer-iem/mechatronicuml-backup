@@ -120,80 +120,10 @@
                className="RealtimeStatechart">
          </diagramElement>
          
-         <node
+         <topLevelNode
                domainElement="RealtimeStatechart"
                semanticHint="2006">
-         </node>
-         
-         <node
-               domainElement="State"
-               semanticHint="3017">
-         </node>
-         
-         <node
-               domainElement="EntryEvent"
-               semanticHint="3018">
-         </node>
-         
-         <node
-               domainElement="DoEvent"
-               semanticHint="3019">
-         </node>
-         
-         <node
-               domainElement="ExitEvent"
-               semanticHint="3020">
-         </node>
-         
-         <node
-               domainElement="ClockConstraint"
-               semanticHint="3021">
-         </node>
-         
-         <node
-               domainElement="SynchronizationChannel"
-               semanticHint="3022">
-         </node>
-         
-         <node
-               domainElement="Region"
-               semanticHint="3023">
-         </node>
-         
-         <node
-               domainElement="RealtimeStatechart"
-               semanticHint="3024">
-         </node>
-         
-         <node
-               domainElement="StateEntryPoint"
-               semanticHint="3029">
-         </node>
-         
-         <node
-               domainElement="StateExitPoint"
-               semanticHint="3030">
-         </node>
-         
-         <node
-               domainElement="StateEntryPoint"
-               semanticHint="3027">
-         </node>
-         
-         <node
-               domainElement="StateExitPoint"
-               semanticHint="3028">
-         </node>
-         
-         <node
-               domainElement="EntryPoint"
-               semanticHint="3025">
-         </node>
-         
-         <node
-               domainElement="ExitPoint"
-               semanticHint="3026">
-         </node>
+         </topLevelNode>
          
       </editor>
    </extension>

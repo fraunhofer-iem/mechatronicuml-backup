@@ -28,8 +28,8 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
+
 	/**
 	 * @generated
 	 */
@@ -87,6 +87,7 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentCanonical
 	/**
 	 * @generated
 	 */
+
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
@@ -222,5 +223,4 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentCanonical
 
 		makeViewsImmutable(createdViews);
 	}
-
 }

@@ -145,75 +145,35 @@
                className="ComponentInstanceConfiguration">
          </diagramElement>
          
-         <node
+         <topLevelNode
                domainElement="HybridPortInstance"
                semanticHint="2017">
-         </node>
+         </topLevelNode>
          
-         <node
+         <topLevelNode
                domainElement="DiscreteSinglePortInstance"
                semanticHint="2018">
-         </node>
+         </topLevelNode>
          
-         <node
+         <topLevelNode
                domainElement="DiscreteMultiPortInstance"
                semanticHint="2019">
-         </node>
+         </topLevelNode>
          
-         <node
+         <topLevelNode
                domainElement="ContinuousPortInstance"
                semanticHint="2020">
-         </node>
+         </topLevelNode>
          
-         <node
+         <topLevelNode
                domainElement="AtomicComponentInstance"
                semanticHint="2016">
-         </node>
+         </topLevelNode>
          
-         <node
+         <topLevelNode
                domainElement="StructuredComponentInstance"
                semanticHint="2015">
-         </node>
-         
-         <node
-               domainElement="DiscreteSinglePortInstance"
-               semanticHint="3026">
-         </node>
-         
-         <node
-               domainElement="HybridPortInstance"
-               semanticHint="3027">
-         </node>
-         
-         <node
-               domainElement="DiscreteSinglePortInstance"
-               semanticHint="3028">
-         </node>
-         
-         <node
-               domainElement="DiscreteMultiPortInstance"
-               semanticHint="3029">
-         </node>
-         
-         <node
-               domainElement="ContinuousPortInstance"
-               semanticHint="3030">
-         </node>
-         
-         <node
-               domainElement="ComponentInstanceConfiguration"
-               semanticHint="3023">
-         </node>
-         
-         <node
-               domainElement="AtomicComponentInstance"
-               semanticHint="3024">
-         </node>
-         
-         <node
-               domainElement="StructuredComponentInstance"
-               semanticHint="3025">
-         </node>
+         </topLevelNode>
          
       </editor>
    </extension>

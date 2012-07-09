@@ -7,7 +7,7 @@
       title="StatechartPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="Realtime Statechart"
+        title="Real-Time Statechart"
         description="Can be casted on statechart"
         collapsible="true">
       <tools
@@ -49,7 +49,7 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="Realtime State"
+        title="Real-Time State"
         description="Can be casted on state"
         collapsible="true">
       <tools

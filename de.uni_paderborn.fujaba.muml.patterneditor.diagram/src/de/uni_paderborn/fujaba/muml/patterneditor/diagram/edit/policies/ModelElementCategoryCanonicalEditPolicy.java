@@ -82,6 +82,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
+
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:

@@ -288,7 +288,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ModelElementCategory_1000_links;
+	public static String NavigatorGroupName_CoordinationPatternRoles_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationPatternRoles_4003_source;
 
 	/**
 	 * @generated
@@ -308,12 +313,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPatternRoles_4003_target;
+	public static String NavigatorGroupName_Role_3004_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPatternRoles_4003_source;
+	public static String NavigatorGroupName_Role_3004_outgoinglinks;
 
 	/**
 	 * @generated
@@ -323,12 +328,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_3004_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_3004_outgoinglinks;
+	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
 	 * @generated

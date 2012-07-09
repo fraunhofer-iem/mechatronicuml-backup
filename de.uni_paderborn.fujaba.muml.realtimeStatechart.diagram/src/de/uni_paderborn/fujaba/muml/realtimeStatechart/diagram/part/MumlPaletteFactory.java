@@ -22,20 +22,20 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
-		paletteRoot.add(createRealtimeStatechart1Group());
-		paletteRoot.add(createRealtimeState2Group());
+		paletteRoot.add(createRealTimeStatechart1Group());
+		paletteRoot.add(createRealTimeState2Group());
 	}
 
 	/**
-	 * Creates "Realtime Statechart" palette tool group
+	 * Creates "Real-Time Statechart" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createRealtimeStatechart1Group() {
+	private PaletteContainer createRealTimeStatechart1Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart1Group_title);
-		paletteContainer.setId("createRealtimeStatechart1Group"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealTimeStatechart1Group_title);
+		paletteContainer.setId("createRealTimeStatechart1Group"); //$NON-NLS-1$
 		paletteContainer
-				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart1Group_desc);
+				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealTimeStatechart1Group_desc);
 		paletteContainer.add(createState1CreationTool());
 		paletteContainer.add(createTransition2CreationTool());
 		paletteContainer.add(createEntryPoint3CreationTool());
@@ -44,15 +44,15 @@ public class MumlPaletteFactory {
 	}
 
 	/**
-	 * Creates "Realtime State" palette tool group
+	 * Creates "Real-Time State" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createRealtimeState2Group() {
+	private PaletteContainer createRealTimeState2Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState2Group_title);
-		paletteContainer.setId("createRealtimeState2Group"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealTimeState2Group_title);
+		paletteContainer.setId("createRealTimeState2Group"); //$NON-NLS-1$
 		paletteContainer
-				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState2Group_desc);
+				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealTimeState2Group_desc);
 		paletteContainer.add(createEntryAction1CreationTool());
 		paletteContainer.add(createDoAction2CreationTool());
 		paletteContainer.add(createExitAction3CreationTool());

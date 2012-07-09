@@ -162,4 +162,5 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		}
 		return null;
 	}
+
 }
