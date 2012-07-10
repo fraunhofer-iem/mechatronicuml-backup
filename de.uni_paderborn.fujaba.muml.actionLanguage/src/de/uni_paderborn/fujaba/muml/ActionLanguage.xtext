@@ -73,15 +73,24 @@ UnaryExpression returns expressions::Expression:
 	unaryOperator=UnaryOperator unaryExpression=AttributeExpression
 	;	
 	
+
+
+	
+AttributeExpression returns expressions::Expression:
+	 OperationCall  |
+	{actionLanguage::AttributeExpression}  attribute=[core::Attribute]
+	;	
+	
+OperationCall returns expressions::Expression:
+	LiteralExpression |
+	{actionLanguage::OperationCall} operation=[core::Operation]'('')'
+	;				
+
 LiteralExpression returns expressions::Expression:
 	'(' Expression ')' |
 	{actionLanguage::LiteralExpression} value=IdentifierOrValue 
 	;	
 	
-AttributeExpression returns expressions::Expression:
-	 LiteralExpression  |
-	{actionLanguage::AttributeExpression}  attribute=[core::Attribute]
-	;			
 	
 IdentifierOrValue returns ecore::EString:
 NUMBER|BOOLEAN|INT
