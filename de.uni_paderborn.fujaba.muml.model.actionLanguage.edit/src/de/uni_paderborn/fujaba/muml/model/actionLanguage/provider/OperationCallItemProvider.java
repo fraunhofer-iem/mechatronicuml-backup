@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -23,10 +24,15 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
+import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
@@ -106,6 +112,7 @@ public class OperationCallItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING);
+			childrenFeatures.add(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING);
 		}
 		return childrenFeatures;
 	}
@@ -161,6 +168,7 @@ public class OperationCallItemProvider
 
 		switch (notification.getFeatureID(OperationCall.class)) {
 			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
+			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -192,6 +200,161 @@ public class OperationCallItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING,
 				 CoreFactory.eINSTANCE.createParameterBinding()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createComparisonExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createArithmeticExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createBinaryLogicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createBlock()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createAssignment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createAttributeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CoreFactory.eINSTANCE.createActivityCallExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**
