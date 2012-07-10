@@ -808,6 +808,12 @@ rule__IdentifierOrValue__Alternatives
 { after(grammarAccess.getIdentifierOrValueAccess().getBOOLEANTerminalRuleCall_1()); }
 )
 
+    |(
+{ before(grammarAccess.getIdentifierOrValueAccess().getINTTerminalRuleCall_2()); }
+	RULE_INT
+{ after(grammarAccess.getIdentifierOrValueAccess().getINTTerminalRuleCall_2()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -819,17 +825,17 @@ rule__AssignOperator__Alternatives
     }
 :
 (
-{ before(grammarAccess.getAssignOperatorAccess().getEQUALEnumLiteralDeclaration_0()); }
-(	'=' 
+{ before(grammarAccess.getAssignOperatorAccess().getUNSETEnumLiteralDeclaration_0()); }
+(	'UNSET' 
 )
-{ after(grammarAccess.getAssignOperatorAccess().getEQUALEnumLiteralDeclaration_0()); }
+{ after(grammarAccess.getAssignOperatorAccess().getUNSETEnumLiteralDeclaration_0()); }
 )
 
     |(
-{ before(grammarAccess.getAssignOperatorAccess().getASSIGN2EnumLiteralDeclaration_1()); }
+{ before(grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_1()); }
 (	':=' 
 )
-{ after(grammarAccess.getAssignOperatorAccess().getASSIGN2EnumLiteralDeclaration_1()); }
+{ after(grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_1()); }
 )
 
     |(
@@ -871,17 +877,24 @@ rule__IncrementDecrementOperator__Alternatives
     }
 :
 (
-{ before(grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0()); }
-(	'++' 
+{ before(grammarAccess.getIncrementDecrementOperatorAccess().getUNSETEnumLiteralDeclaration_0()); }
+(	'UNSET' 
 )
-{ after(grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0()); }
+{ after(grammarAccess.getIncrementDecrementOperatorAccess().getUNSETEnumLiteralDeclaration_0()); }
 )
 
     |(
-{ before(grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1()); }
+{ before(grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_1()); }
+(	'++' 
+)
+{ after(grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_1()); }
+)
+
+    |(
+{ before(grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_2()); }
 (	'--' 
 )
-{ after(grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1()); }
+{ after(grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_2()); }
 )
 
 ;
@@ -986,13 +999,6 @@ rule__ArithmeticOperator__Alternatives
 (	'%' 
 )
 { after(grammarAccess.getArithmeticOperatorAccess().getMODULOEnumLiteralDeclaration_4()); }
-)
-
-    |(
-{ before(grammarAccess.getArithmeticOperatorAccess().getEXPEnumLiteralDeclaration_5()); }
-(	'^' 
-)
-{ after(grammarAccess.getArithmeticOperatorAccess().getEXPEnumLiteralDeclaration_5()); }
 )
 
 ;
@@ -1797,11 +1803,11 @@ rule__DoWhileLoop__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getDoWhileLoopAccess().getRightParenthesisKeyword_5()); }
+{ before(grammarAccess.getDoWhileLoopAccess().getRightParenthesisSemicolonKeyword_5()); }
 
-	')' 
+	');' 
 
-{ after(grammarAccess.getDoWhileLoopAccess().getRightParenthesisKeyword_5()); }
+{ after(grammarAccess.getDoWhileLoopAccess().getRightParenthesisSemicolonKeyword_5()); }
 )
 
 ;
@@ -3880,7 +3886,7 @@ finally {
 }
 
 
-RULE_NUMBER : ('0'..'9')* ('.' ('0'..'9')+)?;
+RULE_NUMBER : RULE_INT '.' RULE_INT;
 
 RULE_BOOLEAN : ('true'|'false');
 
