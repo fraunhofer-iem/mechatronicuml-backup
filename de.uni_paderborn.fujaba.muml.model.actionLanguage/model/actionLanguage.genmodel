@@ -8,31 +8,6 @@
   <foreignModel>actionLanguage.ecore</foreignModel>
   <genPackages prefix="ActionLanguage" basePackage="de.uni_paderborn.fujaba.muml.model"
       disposableProviderFactory="true" ecorePackage="actionLanguage.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//LogicOperator">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//LogicOperator/AND"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//LogicOperator/OR"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//LogicOperator/XOR"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//LogicOperator/IMPLY"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//LogicOperator/EQUIVALENT"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//LogicOperator/AND_AND"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//LogicOperator/OR_OR"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//ComparingOperator">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparingOperator/LESS"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparingOperator/LESS_OR_EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparingOperator/EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparingOperator/GREATER_OR_EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparingOperator/GREATER"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparingOperator/UNEQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparingOperator/REGULAR_EXPRESSION"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//ArithmeticOperator">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/PLUS"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/MINUS"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/TIMES"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/DIVIDE"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/MODULO"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//AssignOperator">
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/UNSET"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/ASSIGN"/>
@@ -46,43 +21,9 @@
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/INCREMENT"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/DECREMENT"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//ComparisonOperator">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparisonOperator/LESS"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparisonOperator/LESS_OR_EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparisonOperator/EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparisonOperator/GREATER_OR_EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparisonOperator/GREATER"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ComparisonOperator/UNEQUAL"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//UnaryOperator">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//UnaryOperator/NOT"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//UnaryOperator/MINUS"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//UnaryOperator/PLUS"/>
-    </genEnums>
-    <genClasses ecoreClass="actionLanguage.ecore#//TextualExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//TextualExpression/expressionText"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//TextualExpression/language"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//TextualExpression/languageVersion"/>
-    </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//LiteralExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//LiteralExpression/value"/>
-    </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//UnaryExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//UnaryExpression/unaryExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//UnaryExpression/enclosedExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//UnaryExpression/unaryOperator"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="actionLanguage.ecore#//BinaryExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//BinaryExpression/leftExpression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//BinaryExpression/rightExpression"/>
-    </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//ComparisonExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//ComparisonExpression/operator"/>
-    </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//ArithmeticExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//ArithmeticExpression/operator"/>
-    </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//BinaryLogicExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//BinaryLogicExpression/operator"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//Block">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Block/expressions"/>

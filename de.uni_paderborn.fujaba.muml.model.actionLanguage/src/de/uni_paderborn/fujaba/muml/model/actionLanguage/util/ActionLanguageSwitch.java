@@ -6,30 +6,22 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.util;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
@@ -91,69 +83,12 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ActionLanguagePackage.TEXTUAL_EXPRESSION: {
-				TextualExpression textualExpression = (TextualExpression)theEObject;
-				T result = caseTextualExpression(textualExpression);
-				if (result == null) result = caseExpression(textualExpression);
-				if (result == null) result = caseCommentableElement(textualExpression);
-				if (result == null) result = caseExtendableElement(textualExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActionLanguagePackage.LITERAL_EXPRESSION: {
-				LiteralExpression literalExpression = (LiteralExpression)theEObject;
-				T result = caseLiteralExpression(literalExpression);
-				if (result == null) result = caseExpression(literalExpression);
-				if (result == null) result = caseCommentableElement(literalExpression);
-				if (result == null) result = caseExtendableElement(literalExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ActionLanguagePackage.UNARY_EXPRESSION: {
 				UnaryExpression unaryExpression = (UnaryExpression)theEObject;
 				T result = caseUnaryExpression(unaryExpression);
 				if (result == null) result = caseExpression(unaryExpression);
 				if (result == null) result = caseCommentableElement(unaryExpression);
 				if (result == null) result = caseExtendableElement(unaryExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActionLanguagePackage.BINARY_EXPRESSION: {
-				BinaryExpression binaryExpression = (BinaryExpression)theEObject;
-				T result = caseBinaryExpression(binaryExpression);
-				if (result == null) result = caseExpression(binaryExpression);
-				if (result == null) result = caseCommentableElement(binaryExpression);
-				if (result == null) result = caseExtendableElement(binaryExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActionLanguagePackage.COMPARISON_EXPRESSION: {
-				ComparisonExpression comparisonExpression = (ComparisonExpression)theEObject;
-				T result = caseComparisonExpression(comparisonExpression);
-				if (result == null) result = caseBinaryExpression(comparisonExpression);
-				if (result == null) result = caseExpression(comparisonExpression);
-				if (result == null) result = caseCommentableElement(comparisonExpression);
-				if (result == null) result = caseExtendableElement(comparisonExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActionLanguagePackage.ARITHMETIC_EXPRESSION: {
-				ArithmeticExpression arithmeticExpression = (ArithmeticExpression)theEObject;
-				T result = caseArithmeticExpression(arithmeticExpression);
-				if (result == null) result = caseBinaryExpression(arithmeticExpression);
-				if (result == null) result = caseExpression(arithmeticExpression);
-				if (result == null) result = caseCommentableElement(arithmeticExpression);
-				if (result == null) result = caseExtendableElement(arithmeticExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActionLanguagePackage.BINARY_LOGIC_EXPRESSION: {
-				BinaryLogicExpression binaryLogicExpression = (BinaryLogicExpression)theEObject;
-				T result = caseBinaryLogicExpression(binaryLogicExpression);
-				if (result == null) result = caseBinaryExpression(binaryLogicExpression);
-				if (result == null) result = caseExpression(binaryLogicExpression);
-				if (result == null) result = caseCommentableElement(binaryLogicExpression);
-				if (result == null) result = caseExtendableElement(binaryLogicExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,36 +181,6 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Textual Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Textual Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTextualExpression(TextualExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Literal Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLiteralExpression(LiteralExpression object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -287,66 +192,6 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnaryExpression(UnaryExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBinaryExpression(BinaryExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Comparison Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Comparison Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComparisonExpression(ComparisonExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Arithmetic Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Arithmetic Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArithmeticExpression(ArithmeticExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Binary Logic Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Binary Logic Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBinaryLogicExpression(BinaryLogicExpression object) {
 		return null;
 	}
 

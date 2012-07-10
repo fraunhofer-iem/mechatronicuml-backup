@@ -65,134 +65,6 @@ public interface ActionLanguagePackage extends EPackage {
 	ActionLanguagePackage eINSTANCE = de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TextualExpressionImpl <em>Textual Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TextualExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getTextualExpression()
-	 * @generated
-	 */
-	int TEXTUAL_EXPRESSION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Expression Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__EXPRESSION_TEXT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__LANGUAGE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Language Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__LANGUAGE_VERSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Textual Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LiteralExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLiteralExpression()
-	 * @generated
-	 */
-	int LITERAL_EXPRESSION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_EXPRESSION__VALUE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Literal Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -200,7 +72,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int UNARY_EXPRESSION = 2;
+	int UNARY_EXPRESSION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -230,13 +102,13 @@ public interface ActionLanguagePackage extends EPackage {
 	int UNARY_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Unary Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Enclosed Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_EXPRESSION__UNARY_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+	int UNARY_EXPRESSION__ENCLOSED_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Unary Operator</b></em>' attribute.
@@ -257,289 +129,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int UNARY_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BinaryExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getBinaryExpression()
-	 * @generated
-	 */
-	int BINARY_EXPRESSION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION__LEFT_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION__RIGHT_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Binary Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ComparisonExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getComparisonExpression()
-	 * @generated
-	 */
-	int COMPARISON_EXPRESSION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION__ANNOTATION = BINARY_EXPRESSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION__COMMENT = BINARY_EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION__LEFT_EXPRESSION = BINARY_EXPRESSION__LEFT_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION__RIGHT_EXPRESSION = BINARY_EXPRESSION__RIGHT_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION__OPERATOR = BINARY_EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Comparison Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARISON_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ArithmeticExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getArithmeticExpression()
-	 * @generated
-	 */
-	int ARITHMETIC_EXPRESSION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__ANNOTATION = BINARY_EXPRESSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__COMMENT = BINARY_EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__LEFT_EXPRESSION = BINARY_EXPRESSION__LEFT_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__RIGHT_EXPRESSION = BINARY_EXPRESSION__RIGHT_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__OPERATOR = BINARY_EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Arithmetic Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BinaryLogicExpressionImpl <em>Binary Logic Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BinaryLogicExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getBinaryLogicExpression()
-	 * @generated
-	 */
-	int BINARY_LOGIC_EXPRESSION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION__ANNOTATION = BINARY_EXPRESSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION__COMMENT = BINARY_EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION__LEFT_EXPRESSION = BINARY_EXPRESSION__LEFT_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION__RIGHT_EXPRESSION = BINARY_EXPRESSION__RIGHT_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION__OPERATOR = BINARY_EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Binary Logic Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BlockImpl <em>Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -547,7 +136,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getBlock()
 	 * @generated
 	 */
-	int BLOCK = 7;
+	int BLOCK = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -602,7 +191,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLoop()
 	 * @generated
 	 */
-	int LOOP = 8;
+	int LOOP = 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -666,7 +255,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getWhileLoop()
 	 * @generated
 	 */
-	int WHILE_LOOP = 9;
+	int WHILE_LOOP = 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -730,7 +319,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getDoWhileLoop()
 	 * @generated
 	 */
-	int DO_WHILE_LOOP = 10;
+	int DO_WHILE_LOOP = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -794,7 +383,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAssignment()
 	 * @generated
 	 */
-	int ASSIGNMENT = 11;
+	int ASSIGNMENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -876,7 +465,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getForLoop()
 	 * @generated
 	 */
-	int FOR_LOOP = 12;
+	int FOR_LOOP = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -958,7 +547,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getIfStatement()
 	 * @generated
 	 */
-	int IF_STATEMENT = 13;
+	int IF_STATEMENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1049,7 +638,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAttributeExpression()
 	 * @generated
 	 */
-	int ATTRIBUTE_EXPRESSION = 14;
+	int ATTRIBUTE_EXPRESSION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1104,7 +693,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getOperationCall()
 	 * @generated
 	 */
-	int OPERATION_CALL = 15;
+	int OPERATION_CALL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1170,36 +759,6 @@ public interface ActionLanguagePackage extends EPackage {
 	int OPERATION_CALL_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLogicOperator()
-	 * @generated
-	 */
-	int LOGIC_OPERATOR = 16;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator <em>Comparing Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getComparingOperator()
-	 * @generated
-	 */
-	int COMPARING_OPERATOR = 17;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getArithmeticOperator()
-	 * @generated
-	 */
-	int ARITHMETIC_OPERATOR = 18;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1207,7 +766,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 19;
+	int ASSIGN_OPERATOR = 10;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -1217,92 +776,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 20;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator <em>Comparison Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getComparisonOperator()
-	 * @generated
-	 */
-	int COMPARISON_OPERATOR = 21;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator <em>Unary Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getUnaryOperator()
-	 * @generated
-	 */
-	int UNARY_OPERATOR = 22;
-
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression <em>Textual Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Textual Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression
-	 * @generated
-	 */
-	EClass getTextualExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression#getExpressionText <em>Expression Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expression Text</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression#getExpressionText()
-	 * @see #getTextualExpression()
-	 * @generated
-	 */
-	EAttribute getTextualExpression_ExpressionText();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression#getLanguage <em>Language</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Language</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression#getLanguage()
-	 * @see #getTextualExpression()
-	 * @generated
-	 */
-	EAttribute getTextualExpression_Language();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression#getLanguageVersion <em>Language Version</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Language Version</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression#getLanguageVersion()
-	 * @see #getTextualExpression()
-	 * @generated
-	 */
-	EAttribute getTextualExpression_LanguageVersion();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression <em>Literal Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Literal Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression
-	 * @generated
-	 */
-	EClass getLiteralExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression#getValue()
-	 * @see #getLiteralExpression()
-	 * @generated
-	 */
-	EAttribute getLiteralExpression_Value();
+	int INCREMENT_DECREMENT_OPERATOR = 11;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression <em>Unary Expression</em>}'.
@@ -1315,15 +789,15 @@ public interface ActionLanguagePackage extends EPackage {
 	EClass getUnaryExpression();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getUnaryExpression <em>Unary Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getEnclosedExpression <em>Enclosed Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Unary Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getUnaryExpression()
+	 * @return the meta object for the containment reference '<em>Enclosed Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getEnclosedExpression()
 	 * @see #getUnaryExpression()
 	 * @generated
 	 */
-	EReference getUnaryExpression_UnaryExpression();
+	EReference getUnaryExpression_EnclosedExpression();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getUnaryOperator <em>Unary Operator</em>}'.
@@ -1335,101 +809,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUnaryExpression_UnaryOperator();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression <em>Binary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Binary Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression
-	 * @generated
-	 */
-	EClass getBinaryExpression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression#getLeftExpression <em>Left Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Left Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression#getLeftExpression()
-	 * @see #getBinaryExpression()
-	 * @generated
-	 */
-	EReference getBinaryExpression_LeftExpression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression#getRightExpression <em>Right Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Right Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression#getRightExpression()
-	 * @see #getBinaryExpression()
-	 * @generated
-	 */
-	EReference getBinaryExpression_RightExpression();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression <em>Comparison Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Comparison Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression
-	 * @generated
-	 */
-	EClass getComparisonExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression#getOperator()
-	 * @see #getComparisonExpression()
-	 * @generated
-	 */
-	EAttribute getComparisonExpression_Operator();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression <em>Arithmetic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Arithmetic Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression
-	 * @generated
-	 */
-	EClass getArithmeticExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression#getOperator()
-	 * @see #getArithmeticExpression()
-	 * @generated
-	 */
-	EAttribute getArithmeticExpression_Operator();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression <em>Binary Logic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Binary Logic Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression
-	 * @generated
-	 */
-	EClass getBinaryLogicExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression#getOperator()
-	 * @see #getBinaryLogicExpression()
-	 * @generated
-	 */
-	EAttribute getBinaryLogicExpression_Operator();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Block <em>Block</em>}'.
@@ -1720,36 +1099,6 @@ public interface ActionLanguagePackage extends EPackage {
 	EReference getOperationCall_ParameterValuesForBinding();
 
 	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Logic Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator
-	 * @generated
-	 */
-	EEnum getLogicOperator();
-
-	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator <em>Comparing Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Comparing Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator
-	 * @generated
-	 */
-	EEnum getComparingOperator();
-
-	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator <em>Arithmetic Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Arithmetic Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator
-	 * @generated
-	 */
-	EEnum getArithmeticOperator();
-
-	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1768,26 +1117,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getIncrementDecrementOperator();
-
-	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator <em>Comparison Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Comparison Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator
-	 * @generated
-	 */
-	EEnum getComparisonOperator();
-
-	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator <em>Unary Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Unary Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator
-	 * @generated
-	 */
-	EEnum getUnaryOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1812,58 +1141,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TextualExpressionImpl <em>Textual Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TextualExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getTextualExpression()
-		 * @generated
-		 */
-		EClass TEXTUAL_EXPRESSION = eINSTANCE.getTextualExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Expression Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEXTUAL_EXPRESSION__EXPRESSION_TEXT = eINSTANCE.getTextualExpression_ExpressionText();
-
-		/**
-		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEXTUAL_EXPRESSION__LANGUAGE = eINSTANCE.getTextualExpression_Language();
-
-		/**
-		 * The meta object literal for the '<em><b>Language Version</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEXTUAL_EXPRESSION__LANGUAGE_VERSION = eINSTANCE.getTextualExpression_LanguageVersion();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LiteralExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLiteralExpression()
-		 * @generated
-		 */
-		EClass LITERAL_EXPRESSION = eINSTANCE.getLiteralExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE.getLiteralExpression_Value();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1874,12 +1151,12 @@ public interface ActionLanguagePackage extends EPackage {
 		EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Unary Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Enclosed Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_EXPRESSION__UNARY_EXPRESSION = eINSTANCE.getUnaryExpression_UnaryExpression();
+		EReference UNARY_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE.getUnaryExpression_EnclosedExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Unary Operator</b></em>' attribute feature.
@@ -1888,86 +1165,6 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNARY_EXPRESSION__UNARY_OPERATOR = eINSTANCE.getUnaryExpression_UnaryOperator();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BinaryExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getBinaryExpression()
-		 * @generated
-		 */
-		EClass BINARY_EXPRESSION = eINSTANCE.getBinaryExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Left Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE.getBinaryExpression_LeftExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Right Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE.getBinaryExpression_RightExpression();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ComparisonExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getComparisonExpression()
-		 * @generated
-		 */
-		EClass COMPARISON_EXPRESSION = eINSTANCE.getComparisonExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE.getComparisonExpression_Operator();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ArithmeticExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getArithmeticExpression()
-		 * @generated
-		 */
-		EClass ARITHMETIC_EXPRESSION = eINSTANCE.getArithmeticExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE.getArithmeticExpression_Operator();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BinaryLogicExpressionImpl <em>Binary Logic Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BinaryLogicExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getBinaryLogicExpression()
-		 * @generated
-		 */
-		EClass BINARY_LOGIC_EXPRESSION = eINSTANCE.getBinaryLogicExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BINARY_LOGIC_EXPRESSION__OPERATOR = eINSTANCE.getBinaryLogicExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BlockImpl <em>Block</em>}' class.
@@ -2204,36 +1401,6 @@ public interface ActionLanguagePackage extends EPackage {
 		EReference OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING = eINSTANCE.getOperationCall_ParameterValuesForBinding();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLogicOperator()
-		 * @generated
-		 */
-		EEnum LOGIC_OPERATOR = eINSTANCE.getLogicOperator();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator <em>Comparing Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getComparingOperator()
-		 * @generated
-		 */
-		EEnum COMPARING_OPERATOR = eINSTANCE.getComparingOperator();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getArithmeticOperator()
-		 * @generated
-		 */
-		EEnum ARITHMETIC_OPERATOR = eINSTANCE.getArithmeticOperator();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2252,26 +1419,6 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum INCREMENT_DECREMENT_OPERATOR = eINSTANCE.getIncrementDecrementOperator();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator <em>Comparison Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getComparisonOperator()
-		 * @generated
-		 */
-		EEnum COMPARISON_OPERATOR = eINSTANCE.getComparisonOperator();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator <em>Unary Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getUnaryOperator()
-		 * @generated
-		 */
-		EEnum UNARY_OPERATOR = eINSTANCE.getUnaryOperator();
 
 	}
 

@@ -6,31 +6,23 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.util;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
@@ -92,32 +84,8 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	protected ActionLanguageSwitch<Adapter> modelSwitch =
 		new ActionLanguageSwitch<Adapter>() {
 			@Override
-			public Adapter caseTextualExpression(TextualExpression object) {
-				return createTextualExpressionAdapter();
-			}
-			@Override
-			public Adapter caseLiteralExpression(LiteralExpression object) {
-				return createLiteralExpressionAdapter();
-			}
-			@Override
 			public Adapter caseUnaryExpression(UnaryExpression object) {
 				return createUnaryExpressionAdapter();
-			}
-			@Override
-			public Adapter caseBinaryExpression(BinaryExpression object) {
-				return createBinaryExpressionAdapter();
-			}
-			@Override
-			public Adapter caseComparisonExpression(ComparisonExpression object) {
-				return createComparisonExpressionAdapter();
-			}
-			@Override
-			public Adapter caseArithmeticExpression(ArithmeticExpression object) {
-				return createArithmeticExpressionAdapter();
-			}
-			@Override
-			public Adapter caseBinaryLogicExpression(BinaryLogicExpression object) {
-				return createBinaryLogicExpressionAdapter();
 			}
 			@Override
 			public Adapter caseBlock(Block object) {
@@ -188,34 +156,6 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression <em>Textual Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression
-	 * @generated
-	 */
-	public Adapter createTextualExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression <em>Literal Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression
-	 * @generated
-	 */
-	public Adapter createLiteralExpressionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression <em>Unary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -226,62 +166,6 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnaryExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression <em>Binary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression
-	 * @generated
-	 */
-	public Adapter createBinaryExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression <em>Comparison Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression
-	 * @generated
-	 */
-	public Adapter createComparisonExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression <em>Arithmetic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression
-	 * @generated
-	 */
-	public Adapter createArithmeticExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression <em>Binary Logic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression
-	 * @generated
-	 */
-	public Adapter createBinaryLogicExpressionAdapter() {
 		return null;
 	}
 

@@ -13,36 +13,21 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.calls.CallsPackage;
-import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
-import org.storydriven.storydiagrams.templates.TemplatesPackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparingOperator;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
@@ -66,49 +51,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass textualExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass literalExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass unaryExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass binaryExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass comparisonExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass arithmeticExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass binaryLogicExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,27 +121,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum logicOperatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum comparingOperatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum arithmeticOperatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum assignOperatorEEnum = null;
 
 	/**
@@ -207,20 +129,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	private EEnum incrementDecrementOperatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum comparisonOperatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum unaryOperatorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -299,66 +207,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	@Override
-	public EClass getTextualExpression() {
-		return textualExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTextualExpression_ExpressionText() {
-		return (EAttribute)textualExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTextualExpression_Language() {
-		return (EAttribute)textualExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTextualExpression_LanguageVersion() {
-		return (EAttribute)textualExpressionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getLiteralExpression() {
-		return literalExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getLiteralExpression_Value() {
-		return (EAttribute)literalExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getUnaryExpression() {
 		return unaryExpressionEClass;
 	}
@@ -368,8 +216,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getUnaryExpression_UnaryExpression() {
+	public EReference getUnaryExpression_EnclosedExpression() {
 		return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -381,96 +228,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	@Override
 	public EAttribute getUnaryExpression_UnaryOperator() {
 		return (EAttribute)unaryExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getBinaryExpression() {
-		return binaryExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBinaryExpression_LeftExpression() {
-		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBinaryExpression_RightExpression() {
-		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getComparisonExpression() {
-		return comparisonExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComparisonExpression_Operator() {
-		return (EAttribute)comparisonExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getArithmeticExpression() {
-		return arithmeticExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getArithmeticExpression_Operator() {
-		return (EAttribute)arithmeticExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getBinaryLogicExpression() {
-		return binaryLogicExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBinaryLogicExpression_Operator() {
-		return (EAttribute)binaryLogicExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -748,36 +505,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	@Override
-	public EEnum getLogicOperator() {
-		return logicOperatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getComparingOperator() {
-		return comparingOperatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getArithmeticOperator() {
-		return arithmeticOperatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -790,26 +517,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	@Override
 	public EEnum getIncrementDecrementOperator() {
 		return incrementDecrementOperatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getComparisonOperator() {
-		return comparisonOperatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getUnaryOperator() {
-		return unaryOperatorEEnum;
 	}
 
 	/**
@@ -841,30 +548,9 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		isCreated = true;
 
 		// Create classes and their features
-		textualExpressionEClass = createEClass(TEXTUAL_EXPRESSION);
-		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__EXPRESSION_TEXT);
-		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__LANGUAGE);
-		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__LANGUAGE_VERSION);
-
-		literalExpressionEClass = createEClass(LITERAL_EXPRESSION);
-		createEAttribute(literalExpressionEClass, LITERAL_EXPRESSION__VALUE);
-
 		unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
-		createEReference(unaryExpressionEClass, UNARY_EXPRESSION__UNARY_EXPRESSION);
+		createEReference(unaryExpressionEClass, UNARY_EXPRESSION__ENCLOSED_EXPRESSION);
 		createEAttribute(unaryExpressionEClass, UNARY_EXPRESSION__UNARY_OPERATOR);
-
-		binaryExpressionEClass = createEClass(BINARY_EXPRESSION);
-		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__LEFT_EXPRESSION);
-		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__RIGHT_EXPRESSION);
-
-		comparisonExpressionEClass = createEClass(COMPARISON_EXPRESSION);
-		createEAttribute(comparisonExpressionEClass, COMPARISON_EXPRESSION__OPERATOR);
-
-		arithmeticExpressionEClass = createEClass(ARITHMETIC_EXPRESSION);
-		createEAttribute(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__OPERATOR);
-
-		binaryLogicExpressionEClass = createEClass(BINARY_LOGIC_EXPRESSION);
-		createEAttribute(binaryLogicExpressionEClass, BINARY_LOGIC_EXPRESSION__OPERATOR);
 
 		blockEClass = createEClass(BLOCK);
 		createEReference(blockEClass, BLOCK__EXPRESSIONS);
@@ -903,13 +589,8 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEReference(operationCallEClass, OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING);
 
 		// Create enums
-		logicOperatorEEnum = createEEnum(LOGIC_OPERATOR);
-		comparingOperatorEEnum = createEEnum(COMPARING_OPERATOR);
-		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
-		comparisonOperatorEEnum = createEEnum(COMPARISON_OPERATOR);
-		unaryOperatorEEnum = createEEnum(UNARY_OPERATOR);
 	}
 
 	/**
@@ -937,6 +618,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		CommonExpressionsPackage theCommonExpressionsPackage = (CommonExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
@@ -944,13 +626,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		textualExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		literalExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		unaryExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		binaryExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		comparisonExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
-		arithmeticExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
-		binaryLogicExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
 		blockEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		loopEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		whileLoopEClass.getESuperTypes().add(this.getLoop());
@@ -962,30 +638,9 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		operationCallEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(textualExpressionEClass, TextualExpression.class, "TextualExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTextualExpression_ExpressionText(), ecorePackage.getEString(), "expressionText", null, 1, 1, TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTextualExpression_Language(), ecorePackage.getEString(), "language", null, 1, 1, TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTextualExpression_LanguageVersion(), ecorePackage.getEString(), "languageVersion", null, 0, 1, TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(literalExpressionEClass, LiteralExpression.class, "LiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLiteralExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnaryExpression_UnaryExpression(), theExpressionsPackage.getExpression(), null, "unaryExpression", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getUnaryExpression_UnaryOperator(), this.getUnaryOperator(), "unaryOperator", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(binaryExpressionEClass, BinaryExpression.class, "BinaryExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBinaryExpression_LeftExpression(), theExpressionsPackage.getExpression(), null, "leftExpression", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBinaryExpression_RightExpression(), theExpressionsPackage.getExpression(), null, "rightExpression", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(comparisonExpressionEClass, ComparisonExpression.class, "ComparisonExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComparisonExpression_Operator(), this.getComparingOperator(), "operator", null, 1, 1, ComparisonExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(arithmeticExpressionEClass, ArithmeticExpression.class, "ArithmeticExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArithmeticExpression_Operator(), this.getArithmeticOperator(), "operator", null, 1, 1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(binaryLogicExpressionEClass, BinaryLogicExpression.class, "BinaryLogicExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBinaryLogicExpression_Operator(), this.getLogicOperator(), "operator", null, 1, 1, BinaryLogicExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUnaryExpression_EnclosedExpression(), theExpressionsPackage.getExpression(), null, "enclosedExpression", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUnaryExpression_UnaryOperator(), theCommonExpressionsPackage.getUnaryOperator(), "unaryOperator", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_Expressions(), theExpressionsPackage.getExpression(), null, "expressions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1024,31 +679,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getOperationCall_ParameterValuesForBinding(), theExpressionsPackage.getExpression(), null, "parameterValuesForBinding", null, 0, -1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(logicOperatorEEnum, LogicOperator.class, "LogicOperator");
-		addEEnumLiteral(logicOperatorEEnum, LogicOperator.AND);
-		addEEnumLiteral(logicOperatorEEnum, LogicOperator.OR);
-		addEEnumLiteral(logicOperatorEEnum, LogicOperator.XOR);
-		addEEnumLiteral(logicOperatorEEnum, LogicOperator.IMPLY);
-		addEEnumLiteral(logicOperatorEEnum, LogicOperator.EQUIVALENT);
-		addEEnumLiteral(logicOperatorEEnum, LogicOperator.AND_AND);
-		addEEnumLiteral(logicOperatorEEnum, LogicOperator.OR_OR);
-
-		initEEnum(comparingOperatorEEnum, ComparingOperator.class, "ComparingOperator");
-		addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.LESS);
-		addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.LESS_OR_EQUAL);
-		addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.EQUAL);
-		addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.GREATER_OR_EQUAL);
-		addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.GREATER);
-		addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.UNEQUAL);
-		addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.REGULAR_EXPRESSION);
-
-		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MINUS);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.TIMES);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.DIVIDE);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MODULO);
-
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.UNSET);
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.ASSIGN);
@@ -1061,19 +691,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.UNSET);
 		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.INCREMENT);
 		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.DECREMENT);
-
-		initEEnum(comparisonOperatorEEnum, ComparisonOperator.class, "ComparisonOperator");
-		addEEnumLiteral(comparisonOperatorEEnum, ComparisonOperator.LESS);
-		addEEnumLiteral(comparisonOperatorEEnum, ComparisonOperator.LESS_OR_EQUAL);
-		addEEnumLiteral(comparisonOperatorEEnum, ComparisonOperator.EQUAL);
-		addEEnumLiteral(comparisonOperatorEEnum, ComparisonOperator.GREATER_OR_EQUAL);
-		addEEnumLiteral(comparisonOperatorEEnum, ComparisonOperator.GREATER);
-		addEEnumLiteral(comparisonOperatorEEnum, ComparisonOperator.UNEQUAL);
-
-		initEEnum(unaryOperatorEEnum, UnaryOperator.class, "UnaryOperator");
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.NOT);
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.MINUS);
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.PLUS);
 
 		// Create resource
 		createResource(eNS_URI);

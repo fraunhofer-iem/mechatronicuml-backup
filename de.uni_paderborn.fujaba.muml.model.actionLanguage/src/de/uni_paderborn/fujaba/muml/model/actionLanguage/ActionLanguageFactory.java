@@ -26,24 +26,6 @@ public interface ActionLanguageFactory extends EFactory {
 	ActionLanguageFactory eINSTANCE = de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguageFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Textual Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Textual Expression</em>'.
-	 * @generated
-	 */
-	TextualExpression createTextualExpression();
-
-	/**
-	 * Returns a new object of class '<em>Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Literal Expression</em>'.
-	 * @generated
-	 */
-	LiteralExpression createLiteralExpression();
-
-	/**
 	 * Returns a new object of class '<em>Unary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,33 +33,6 @@ public interface ActionLanguageFactory extends EFactory {
 	 * @generated
 	 */
 	UnaryExpression createUnaryExpression();
-
-	/**
-	 * Returns a new object of class '<em>Comparison Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Comparison Expression</em>'.
-	 * @generated
-	 */
-	ComparisonExpression createComparisonExpression();
-
-	/**
-	 * Returns a new object of class '<em>Arithmetic Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Arithmetic Expression</em>'.
-	 * @generated
-	 */
-	ArithmeticExpression createArithmeticExpression();
-
-	/**
-	 * Returns a new object of class '<em>Binary Logic Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Binary Logic Expression</em>'.
-	 * @generated
-	 */
-	BinaryLogicExpression createBinaryLogicExpression();
 
 	/**
 	 * Returns a new object of class '<em>Block</em>'.
