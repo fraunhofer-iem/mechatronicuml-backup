@@ -8999,45 +8999,45 @@
             featureName="value" dataValue="Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression"
+          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"
             featureName="name" dataValue="BinaryLogicExpression"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression"
+        <changes xsi:type="history:Add" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/common/BinaryExpression"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression"
-          referenceName="eAnnotations" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"
+          referenceName="eAnnotations" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Represents binary, logic expressions like a AND b and a OR b."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression"
-          referenceName="eStructuralFeatures" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator"
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"
+          referenceName="eStructuralFeatures" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator"
             featureName="name" dataValue="operator"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator"
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator"
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator"
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator"
             featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicOperator"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator"
-          referenceName="eAnnotations" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator"
+          referenceName="eAnnotations" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Specifies the expression's logic operator, e.g. AND, OR, or XOR."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/Expression"
@@ -24284,11 +24284,11 @@
     <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common"
         featureName="name" dataValue="common"/>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression"
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"
           featureName="name" dataValue="LogicExpression" oldDataValue="BinaryLogicExpression"/>
       <operation name="rename">
         <parameters name="element">
-          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression"/>
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"/>
         </parameters>
         <parameters name="name">
           <dataValue>LogicExpression</dataValue>
@@ -24297,10 +24297,10 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/BooleanLiteralExpression">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/BooleanLiteralExpression"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.84/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.84/@element"
             featureName="name" dataValue="BooleanLiteralExpression"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.core/model/core.ecore#//expressions/common/BooleanLiteralExpression"
+        <changes xsi:type="history:Add" element="#//@releases.9/@changes.84/@element"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
       </changes>
       <operation name="newClass">
@@ -24320,10 +24320,10 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/IntegerLiteralExpression">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/IntegerLiteralExpression"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.85/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.85/@element"
             featureName="name" dataValue="IntegerLiteralExpression"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.core/model/core.ecore#//expressions/common/IntegerLiteralExpression"
+        <changes xsi:type="history:Add" element="#//@releases.9/@changes.85/@element"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
       </changes>
       <operation name="newClass">
@@ -24343,10 +24343,10 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/DoubleLiteralExpression">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/DoubleLiteralExpression"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.86/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.86/@element"
             featureName="name" dataValue="DoubleLiteralExpression"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.core/model/core.ecore#//expressions/common/DoubleLiteralExpression"
+        <changes xsi:type="history:Add" element="#//@releases.9/@changes.86/@element"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
       </changes>
       <operation name="newClass">
@@ -24366,10 +24366,10 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/StringLiteralExpression">
-        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/StringLiteralExpression"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.87/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.87/@element"
             featureName="name" dataValue="StringLiteralExpression"/>
-        <changes xsi:type="history:Add" element="../../org.storydriven.core/model/core.ecore#//expressions/common/StringLiteralExpression"
+        <changes xsi:type="history:Add" element="#//@releases.9/@changes.87/@element"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
       </changes>
       <operation name="newClass">
@@ -24522,11 +24522,11 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Move" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression"
+          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"
           source="../../org.storydriven.core/model/core.ecore#//expressions"/>
       <operation name="moveClassifier">
         <parameters name="classifier">
-          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicExpression"/>
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"/>
         </parameters>
         <parameters name="targetPackage">
           <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common"/>
@@ -24535,11 +24535,11 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Move" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/BooleanLiteralExpression"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.84/@element"
           source="../../org.storydriven.core/model/core.ecore#//expressions"/>
       <operation name="moveClassifier">
         <parameters name="classifier">
-          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/BooleanLiteralExpression"/>
+          <referenceValue element="#//@releases.9/@changes.84/@element"/>
         </parameters>
         <parameters name="targetPackage">
           <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common"/>
@@ -24548,11 +24548,11 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Move" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/IntegerLiteralExpression"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.85/@element"
           source="../../org.storydriven.core/model/core.ecore#//expressions"/>
       <operation name="moveClassifier">
         <parameters name="classifier">
-          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/IntegerLiteralExpression"/>
+          <referenceValue element="#//@releases.9/@changes.85/@element"/>
         </parameters>
         <parameters name="targetPackage">
           <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common"/>
@@ -24561,11 +24561,11 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Move" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/DoubleLiteralExpression"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.86/@element"
           source="../../org.storydriven.core/model/core.ecore#//expressions"/>
       <operation name="moveClassifier">
         <parameters name="classifier">
-          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/DoubleLiteralExpression"/>
+          <referenceValue element="#//@releases.9/@changes.86/@element"/>
         </parameters>
         <parameters name="targetPackage">
           <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common"/>
@@ -24574,11 +24574,11 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Move" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
-          referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//expressions/common/StringLiteralExpression"
+          referenceName="eClassifiers" element="#//@releases.9/@changes.87/@element"
           source="../../org.storydriven.core/model/core.ecore#//expressions"/>
       <operation name="moveClassifier">
         <parameters name="classifier">
-          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/StringLiteralExpression"/>
+          <referenceValue element="#//@releases.9/@changes.87/@element"/>
         </parameters>
         <parameters name="targetPackage">
           <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common"/>
@@ -24797,5 +24797,68 @@
         featureName="eType" referenceValue="muml.ecore#//model/core/NaturalNumber"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/core/ArrayDataType/cardinality"
         featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression"
+          referenceName="eStructuralFeatures" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator"
+            featureName="name" dataValue="operator"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator"
+            featureName="defaultValueLiteral" dataValue=""/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator"
+            featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>operator</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue></dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"
+          featureName="name" dataValue="LogicalExpression" oldDataValue="LogicExpression"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/LogicalExpression"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>LogicalExpression</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"
+        featureName="abstract" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Delete" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
+        referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="BooleanLiteralExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
+        referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="IntegerLiteralExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
+        referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="DoubleLiteralExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="../../org.storydriven.core/model/core.ecore#//expressions/common"
+        referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="StringLiteralExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+    </changes>
   </releases>
 </history:History>
