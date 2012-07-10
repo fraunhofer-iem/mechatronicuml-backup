@@ -182,32 +182,7 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ActionLanguageFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ActionLanguageFactory.eINSTANCE.createComparisonExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ActionLanguageFactory.eINSTANCE.createArithmeticExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ActionLanguageFactory.eINSTANCE.createBinaryLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -342,32 +317,7 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionLanguageFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionLanguageFactory.eINSTANCE.createComparisonExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionLanguageFactory.eINSTANCE.createArithmeticExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionLanguageFactory.eINSTANCE.createBinaryLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

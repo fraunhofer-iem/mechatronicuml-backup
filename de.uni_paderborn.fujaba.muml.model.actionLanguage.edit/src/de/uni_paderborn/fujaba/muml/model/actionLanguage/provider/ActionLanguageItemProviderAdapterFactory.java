@@ -75,52 +75,6 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TextualExpressionItemProvider textualExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TextualExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTextualExpressionAdapter() {
-		if (textualExpressionItemProvider == null) {
-			textualExpressionItemProvider = new TextualExpressionItemProvider(this);
-		}
-
-		return textualExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LiteralExpressionItemProvider literalExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLiteralExpressionAdapter() {
-		if (literalExpressionItemProvider == null) {
-			literalExpressionItemProvider = new LiteralExpressionItemProvider(this);
-		}
-
-		return literalExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,75 +95,6 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		}
 
 		return unaryExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComparisonExpressionItemProvider comparisonExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ComparisonExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createComparisonExpressionAdapter() {
-		if (comparisonExpressionItemProvider == null) {
-			comparisonExpressionItemProvider = new ComparisonExpressionItemProvider(this);
-		}
-
-		return comparisonExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ArithmeticExpressionItemProvider arithmeticExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ArithmeticExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createArithmeticExpressionAdapter() {
-		if (arithmeticExpressionItemProvider == null) {
-			arithmeticExpressionItemProvider = new ArithmeticExpressionItemProvider(this);
-		}
-
-		return arithmeticExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BinaryLogicExpressionItemProvider binaryLogicExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.BinaryLogicExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBinaryLogicExpressionAdapter() {
-		if (binaryLogicExpressionItemProvider == null) {
-			binaryLogicExpressionItemProvider = new BinaryLogicExpressionItemProvider(this);
-		}
-
-		return binaryLogicExpressionItemProvider;
 	}
 
 	/**
@@ -495,12 +380,7 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	 * @generated
 	 */
 	public void dispose() {
-		if (textualExpressionItemProvider != null) textualExpressionItemProvider.dispose();
-		if (literalExpressionItemProvider != null) literalExpressionItemProvider.dispose();
 		if (unaryExpressionItemProvider != null) unaryExpressionItemProvider.dispose();
-		if (comparisonExpressionItemProvider != null) comparisonExpressionItemProvider.dispose();
-		if (arithmeticExpressionItemProvider != null) arithmeticExpressionItemProvider.dispose();
-		if (binaryLogicExpressionItemProvider != null) binaryLogicExpressionItemProvider.dispose();
 		if (blockItemProvider != null) blockItemProvider.dispose();
 		if (whileLoopItemProvider != null) whileLoopItemProvider.dispose();
 		if (doWhileLoopItemProvider != null) doWhileLoopItemProvider.dispose();

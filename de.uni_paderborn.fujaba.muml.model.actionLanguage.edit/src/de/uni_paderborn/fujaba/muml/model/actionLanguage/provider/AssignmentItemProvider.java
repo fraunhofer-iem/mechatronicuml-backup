@@ -249,32 +249,7 @@ public class AssignmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createComparisonExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createArithmeticExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createBinaryLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

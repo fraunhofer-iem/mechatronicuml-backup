@@ -204,32 +204,7 @@ public class OperationCallItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
-				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
-				 ActionLanguageFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
 				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
-				 ActionLanguageFactory.eINSTANCE.createComparisonExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
-				 ActionLanguageFactory.eINSTANCE.createArithmeticExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING,
-				 ActionLanguageFactory.eINSTANCE.createBinaryLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

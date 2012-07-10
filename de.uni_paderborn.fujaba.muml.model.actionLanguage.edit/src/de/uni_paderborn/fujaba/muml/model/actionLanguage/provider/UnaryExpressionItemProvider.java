@@ -113,7 +113,7 @@ public class UnaryExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION);
+			childrenFeatures.add(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -171,7 +171,7 @@ public class UnaryExpressionItemProvider
 			case ActionLanguagePackage.UNARY_EXPRESSION__UNARY_OPERATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ActionLanguagePackage.UNARY_EXPRESSION__UNARY_EXPRESSION:
+			case ActionLanguagePackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -201,157 +201,132 @@ public class UnaryExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createComparisonExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createArithmeticExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createBinaryLogicExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createAttributeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__UNARY_EXPRESSION,
+				(ActionLanguagePackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
 				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 

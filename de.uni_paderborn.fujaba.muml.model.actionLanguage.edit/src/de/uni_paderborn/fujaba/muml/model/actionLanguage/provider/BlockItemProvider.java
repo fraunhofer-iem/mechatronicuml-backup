@@ -175,32 +175,7 @@ public class BlockItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createTextualExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createComparisonExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createArithmeticExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createBinaryLogicExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
