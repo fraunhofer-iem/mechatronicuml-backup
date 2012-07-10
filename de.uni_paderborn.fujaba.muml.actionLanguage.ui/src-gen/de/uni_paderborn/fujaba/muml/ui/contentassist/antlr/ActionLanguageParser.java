@@ -42,8 +42,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAlternatives_1(), "rule__ForLoopCountingExpression__Alternatives_1");
 					put(grammarAccess.getBinaryLogicExpressionAccess().getAlternatives_0(), "rule__BinaryLogicExpression__Alternatives_0");
 					put(grammarAccess.getBinaryLogicExpressionAccess().getRightExpressionAlternatives_1_1_0(), "rule__BinaryLogicExpression__RightExpressionAlternatives_1_1_0");
-					put(grammarAccess.getLiteralExpressionAccess().getAlternatives(), "rule__LiteralExpression__Alternatives");
 					put(grammarAccess.getAttributeExpressionAccess().getAlternatives(), "rule__AttributeExpression__Alternatives");
+					put(grammarAccess.getOperationCallAccess().getAlternatives(), "rule__OperationCall__Alternatives");
+					put(grammarAccess.getLiteralExpressionAccess().getAlternatives(), "rule__LiteralExpression__Alternatives");
 					put(grammarAccess.getIdentifierOrValueAccess().getAlternatives(), "rule__IdentifierOrValue__Alternatives");
 					put(grammarAccess.getAssignOperatorAccess().getAlternatives(), "rule__AssignOperator__Alternatives");
 					put(grammarAccess.getIncrementDecrementOperatorAccess().getAlternatives(), "rule__IncrementDecrementOperator__Alternatives");
@@ -71,9 +72,10 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBinaryLogicExpressionAccess().getGroup_1(), "rule__BinaryLogicExpression__Group_1__0");
 					put(grammarAccess.getBinaryLogicExpressionAccess().getGroup_1_0(), "rule__BinaryLogicExpression__Group_1_0__0");
 					put(grammarAccess.getUnaryExpressionAccess().getGroup(), "rule__UnaryExpression__Group__0");
+					put(grammarAccess.getAttributeExpressionAccess().getGroup_1(), "rule__AttributeExpression__Group_1__0");
+					put(grammarAccess.getOperationCallAccess().getGroup_1(), "rule__OperationCall__Group_1__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup_0(), "rule__LiteralExpression__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup_1(), "rule__LiteralExpression__Group_1__0");
-					put(grammarAccess.getAttributeExpressionAccess().getGroup_1(), "rule__AttributeExpression__Group_1__0");
 					put(grammarAccess.getBlockAccess().getExpressionsAssignment_2(), "rule__Block__ExpressionsAssignment_2");
 					put(grammarAccess.getForLoopAccess().getInitalizeExpressionAssignment_2(), "rule__ForLoop__InitalizeExpressionAssignment_2");
 					put(grammarAccess.getForLoopAccess().getLoopTestAssignment_3(), "rule__ForLoop__LoopTestAssignment_3");
@@ -104,8 +106,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBinaryLogicExpressionAccess().getRightExpressionAssignment_1_1(), "rule__BinaryLogicExpression__RightExpressionAssignment_1_1");
 					put(grammarAccess.getUnaryExpressionAccess().getUnaryOperatorAssignment_1(), "rule__UnaryExpression__UnaryOperatorAssignment_1");
 					put(grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAssignment_2(), "rule__UnaryExpression__UnaryExpressionAssignment_2");
-					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1_1(), "rule__LiteralExpression__ValueAssignment_1_1");
 					put(grammarAccess.getAttributeExpressionAccess().getAttributeAssignment_1_1(), "rule__AttributeExpression__AttributeAssignment_1_1");
+					put(grammarAccess.getOperationCallAccess().getOperationAssignment_1_1(), "rule__OperationCall__OperationAssignment_1_1");
+					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1_1(), "rule__LiteralExpression__ValueAssignment_1_1");
 				}
 			};
 		}
