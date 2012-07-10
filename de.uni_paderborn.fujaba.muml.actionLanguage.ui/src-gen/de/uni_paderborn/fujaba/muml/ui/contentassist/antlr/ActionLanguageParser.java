@@ -40,8 +40,8 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExpressionStartRuleAccess().getAlternatives(), "rule__ExpressionStartRule__Alternatives");
 					put(grammarAccess.getAssignmentAccess().getAlternatives_1(), "rule__Assignment__Alternatives_1");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAlternatives_1(), "rule__ForLoopCountingExpression__Alternatives_1");
-					put(grammarAccess.getBinaryLogicExpressionAccess().getAlternatives_0(), "rule__BinaryLogicExpression__Alternatives_0");
-					put(grammarAccess.getBinaryLogicExpressionAccess().getRightExpressionAlternatives_1_1_0(), "rule__BinaryLogicExpression__RightExpressionAlternatives_1_1_0");
+					put(grammarAccess.getLogicalExpressionAccess().getAlternatives_0(), "rule__LogicalExpression__Alternatives_0");
+					put(grammarAccess.getLogicalExpressionAccess().getRightExpressionAlternatives_1_1_0(), "rule__LogicalExpression__RightExpressionAlternatives_1_1_0");
 					put(grammarAccess.getAttributeExpressionAccess().getAlternatives(), "rule__AttributeExpression__Alternatives");
 					put(grammarAccess.getOperationCallAccess().getAlternatives(), "rule__OperationCall__Alternatives");
 					put(grammarAccess.getLiteralExpressionAccess().getAlternatives(), "rule__LiteralExpression__Alternatives");
@@ -68,9 +68,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComparisonExpressionAccess().getGroup(), "rule__ComparisonExpression__Group__0");
 					put(grammarAccess.getComparisonExpressionAccess().getGroup_1(), "rule__ComparisonExpression__Group_1__0");
 					put(grammarAccess.getComparisonExpressionAccess().getGroup_1_0(), "rule__ComparisonExpression__Group_1_0__0");
-					put(grammarAccess.getBinaryLogicExpressionAccess().getGroup(), "rule__BinaryLogicExpression__Group__0");
-					put(grammarAccess.getBinaryLogicExpressionAccess().getGroup_1(), "rule__BinaryLogicExpression__Group_1__0");
-					put(grammarAccess.getBinaryLogicExpressionAccess().getGroup_1_0(), "rule__BinaryLogicExpression__Group_1_0__0");
+					put(grammarAccess.getLogicalExpressionAccess().getGroup(), "rule__LogicalExpression__Group__0");
+					put(grammarAccess.getLogicalExpressionAccess().getGroup_1(), "rule__LogicalExpression__Group_1__0");
+					put(grammarAccess.getLogicalExpressionAccess().getGroup_1_0(), "rule__LogicalExpression__Group_1_0__0");
 					put(grammarAccess.getUnaryExpressionAccess().getGroup(), "rule__UnaryExpression__Group__0");
 					put(grammarAccess.getAttributeExpressionAccess().getGroup_1(), "rule__AttributeExpression__Group_1__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_1(), "rule__OperationCall__Group_1__0");
@@ -103,10 +103,10 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArithmeticExpressionAccess().getRightExpressionAssignment_1_2(), "rule__ArithmeticExpression__RightExpressionAssignment_1_2");
 					put(grammarAccess.getComparisonExpressionAccess().getOperatorAssignment_1_0_1(), "rule__ComparisonExpression__OperatorAssignment_1_0_1");
 					put(grammarAccess.getComparisonExpressionAccess().getRightExpressionAssignment_1_1(), "rule__ComparisonExpression__RightExpressionAssignment_1_1");
-					put(grammarAccess.getBinaryLogicExpressionAccess().getOperatorAssignment_1_0_1(), "rule__BinaryLogicExpression__OperatorAssignment_1_0_1");
-					put(grammarAccess.getBinaryLogicExpressionAccess().getRightExpressionAssignment_1_1(), "rule__BinaryLogicExpression__RightExpressionAssignment_1_1");
+					put(grammarAccess.getLogicalExpressionAccess().getOperatorAssignment_1_0_1(), "rule__LogicalExpression__OperatorAssignment_1_0_1");
+					put(grammarAccess.getLogicalExpressionAccess().getRightExpressionAssignment_1_1(), "rule__LogicalExpression__RightExpressionAssignment_1_1");
 					put(grammarAccess.getUnaryExpressionAccess().getUnaryOperatorAssignment_1(), "rule__UnaryExpression__UnaryOperatorAssignment_1");
-					put(grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAssignment_2(), "rule__UnaryExpression__UnaryExpressionAssignment_2");
+					put(grammarAccess.getUnaryExpressionAccess().getEnclosedExpressionAssignment_2(), "rule__UnaryExpression__EnclosedExpressionAssignment_2");
 					put(grammarAccess.getAttributeExpressionAccess().getAttributeAssignment_1_1(), "rule__AttributeExpression__AttributeAssignment_1_1");
 					put(grammarAccess.getOperationCallAccess().getOperationAssignment_1_1(), "rule__OperationCall__OperationAssignment_1_1");
 					put(grammarAccess.getOperationCallAccess().getParameterValuesForBindingAssignment_1_3(), "rule__OperationCall__ParameterValuesForBindingAssignment_1_3");
