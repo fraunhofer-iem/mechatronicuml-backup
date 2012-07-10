@@ -723,11 +723,11 @@ protected class WhileLoop_BlockAssignment_4 extends AssignmentToken  {
 /************ begin Rule DoWhileLoop ****************
  *
  * DoWhileLoop returns actionLanguage::DoWhileLoop:
- * 	"do" block=Block "while" "(" loopTest=Expression ")";
+ * 	"do" block=Block "while" "(" loopTest=Expression ");";
  *
  **/
 
-// "do" block=Block "while" "(" loopTest=Expression ")"
+// "do" block=Block "while" "(" loopTest=Expression ");"
 protected class DoWhileLoop_Group extends GroupToken {
 	
 	public DoWhileLoop_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -742,7 +742,7 @@ protected class DoWhileLoop_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new DoWhileLoop_RightParenthesisKeyword_5(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new DoWhileLoop_RightParenthesisSemicolonKeyword_5(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -913,16 +913,16 @@ protected class DoWhileLoop_LoopTestAssignment_4 extends AssignmentToken  {
 	}	
 }
 
-// ")"
-protected class DoWhileLoop_RightParenthesisKeyword_5 extends KeywordToken  {
+// ");"
+protected class DoWhileLoop_RightParenthesisSemicolonKeyword_5 extends KeywordToken  {
 	
-	public DoWhileLoop_RightParenthesisKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public DoWhileLoop_RightParenthesisSemicolonKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getDoWhileLoopAccess().getRightParenthesisKeyword_5();
+		return grammarAccess.getDoWhileLoopAccess().getRightParenthesisSemicolonKeyword_5();
 	}
 
     @Override

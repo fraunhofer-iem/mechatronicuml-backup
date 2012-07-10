@@ -161,13 +161,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cLoopTestAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cLoopTestExpressionParserRuleCall_4_0 = (RuleCall)cLoopTestAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cRightParenthesisSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//DoWhileLoop returns actionLanguage::DoWhileLoop:
-		//	"do" block=Block "while" "(" loopTest=Expression ")";
+		//	"do" block=Block "while" "(" loopTest=Expression ");";
 		public ParserRule getRule() { return rule; }
 
-		//"do" block=Block "while" "(" loopTest=Expression ")"
+		//"do" block=Block "while" "(" loopTest=Expression ");"
 		public Group getGroup() { return cGroup; }
 
 		//"do"
@@ -191,8 +191,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getLoopTestExpressionParserRuleCall_4_0() { return cLoopTestExpressionParserRuleCall_4_0; }
 
-		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		//");"
+		public Keyword getRightParenthesisSemicolonKeyword_5() { return cRightParenthesisSemicolonKeyword_5; }
 	}
 
 	public class IfStatementElements extends AbstractParserRuleElementFinder {
@@ -719,12 +719,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//IdentifierOrValue returns ecore::EString:
-		//	NUMBER | BOOLEAN;
+		//	NUMBER | BOOLEAN | INT;
 		public ParserRule getRule() { return rule; }
 
-		//NUMBER | BOOLEAN
+		//NUMBER | BOOLEAN | INT
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NUMBER
@@ -732,16 +733,19 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//BOOLEAN
 		public RuleCall getBOOLEANTerminalRuleCall_1() { return cBOOLEANTerminalRuleCall_1; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
 	
 	
 	public class AssignOperatorElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AssignOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cEQUALEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cEQUALEqualsSignKeyword_0_0 = (Keyword)cEQUALEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cASSIGN2EnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cASSIGN2ColonEqualsSignKeyword_1_0 = (Keyword)cASSIGN2EnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cUNSETEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cUNSETUNSETKeyword_0_0 = (Keyword)cUNSETEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cASSIGNEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cASSIGNColonEqualsSignKeyword_1_0 = (Keyword)cASSIGNEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cPLUS_EQUALEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cPLUS_EQUALPlusSignEqualsSignKeyword_2_0 = (Keyword)cPLUS_EQUALEnumLiteralDeclaration_2.eContents().get(0);
 		private final EnumLiteralDeclaration cEQUAL_PLUSEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
@@ -752,23 +756,23 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEQUAL_MINUSEqualsSignHyphenMinusKeyword_5_0 = (Keyword)cEQUAL_MINUSEnumLiteralDeclaration_5.eContents().get(0);
 		
 		//enum AssignOperator returns actionLanguage::AssignOperator:
-		//	EQUAL="=" | ASSIGN2=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-";
+		//	UNSET | ASSIGN=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-";
 		public EnumRule getRule() { return rule; }
 
-		//EQUAL="=" | ASSIGN2=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-"
+		//UNSET | ASSIGN=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//EQUAL="="
-		public EnumLiteralDeclaration getEQUALEnumLiteralDeclaration_0() { return cEQUALEnumLiteralDeclaration_0; }
+		//UNSET
+		public EnumLiteralDeclaration getUNSETEnumLiteralDeclaration_0() { return cUNSETEnumLiteralDeclaration_0; }
 
-		//"="
-		public Keyword getEQUALEqualsSignKeyword_0_0() { return cEQUALEqualsSignKeyword_0_0; }
+		//"UNSET"
+		public Keyword getUNSETUNSETKeyword_0_0() { return cUNSETUNSETKeyword_0_0; }
 
-		//ASSIGN2=":="
-		public EnumLiteralDeclaration getASSIGN2EnumLiteralDeclaration_1() { return cASSIGN2EnumLiteralDeclaration_1; }
+		//ASSIGN=":="
+		public EnumLiteralDeclaration getASSIGNEnumLiteralDeclaration_1() { return cASSIGNEnumLiteralDeclaration_1; }
 
 		//":="
-		public Keyword getASSIGN2ColonEqualsSignKeyword_1_0() { return cASSIGN2ColonEqualsSignKeyword_1_0; }
+		public Keyword getASSIGNColonEqualsSignKeyword_1_0() { return cASSIGNColonEqualsSignKeyword_1_0; }
 
 		//PLUS_EQUAL="+="
 		public EnumLiteralDeclaration getPLUS_EQUALEnumLiteralDeclaration_2() { return cPLUS_EQUALEnumLiteralDeclaration_2; }
@@ -798,29 +802,37 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class IncrementDecrementOperatorElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "IncrementDecrementOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cINCREMENTPlusSignPlusSignKeyword_0_0 = (Keyword)cINCREMENTEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cDECREMENTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cDECREMENTHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cUNSETEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cUNSETUNSETKeyword_0_0 = (Keyword)cUNSETEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cINCREMENTPlusSignPlusSignKeyword_1_0 = (Keyword)cINCREMENTEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cDECREMENTEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cDECREMENTHyphenMinusHyphenMinusKeyword_2_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperator:
-		//	INCREMENT="++" | DECREMENT="--";
+		//	UNSET | INCREMENT="++" | DECREMENT="--";
 		public EnumRule getRule() { return rule; }
 
-		//INCREMENT="++" | DECREMENT="--"
+		//UNSET | INCREMENT="++" | DECREMENT="--"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//UNSET
+		public EnumLiteralDeclaration getUNSETEnumLiteralDeclaration_0() { return cUNSETEnumLiteralDeclaration_0; }
+
+		//"UNSET"
+		public Keyword getUNSETUNSETKeyword_0_0() { return cUNSETUNSETKeyword_0_0; }
+
 		//INCREMENT="++"
-		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration_0() { return cINCREMENTEnumLiteralDeclaration_0; }
+		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration_1() { return cINCREMENTEnumLiteralDeclaration_1; }
 
 		//"++"
-		public Keyword getINCREMENTPlusSignPlusSignKeyword_0_0() { return cINCREMENTPlusSignPlusSignKeyword_0_0; }
+		public Keyword getINCREMENTPlusSignPlusSignKeyword_1_0() { return cINCREMENTPlusSignPlusSignKeyword_1_0; }
 
 		//DECREMENT="--"
-		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration_1() { return cDECREMENTEnumLiteralDeclaration_1; }
+		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration_2() { return cDECREMENTEnumLiteralDeclaration_2; }
 
 		//"--"
-		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_1_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_1_0; }
+		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_2_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_2_0; }
 	}
 
 	public class LogicOperatorElements extends AbstractEnumRuleElementFinder {
@@ -904,14 +916,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDIVIDESolidusKeyword_3_0 = (Keyword)cDIVIDEEnumLiteralDeclaration_3.eContents().get(0);
 		private final EnumLiteralDeclaration cMODULOEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
 		private final Keyword cMODULOPercentSignKeyword_4_0 = (Keyword)cMODULOEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cEXPEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cEXPCircumflexAccentKeyword_5_0 = (Keyword)cEXPEnumLiteralDeclaration_5.eContents().get(0);
 		
 		//enum ArithmeticOperator returns actionLanguage::ArithmeticOperator:
-		//	PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%" | EXP="^";
+		//	PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%";
 		public EnumRule getRule() { return rule; }
 
-		//PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%" | EXP="^"
+		//PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PLUS="+"
@@ -943,12 +953,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"%"
 		public Keyword getMODULOPercentSignKeyword_4_0() { return cMODULOPercentSignKeyword_4_0; }
-
-		//EXP="^"
-		public EnumLiteralDeclaration getEXPEnumLiteralDeclaration_5() { return cEXPEnumLiteralDeclaration_5; }
-
-		//"^"
-		public Keyword getEXPCircumflexAccentKeyword_5_0() { return cEXPCircumflexAccentKeyword_5_0; }
 	}
 
 	public class ComparingOperatorElements extends AbstractEnumRuleElementFinder {
@@ -1125,7 +1129,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DoWhileLoop returns actionLanguage::DoWhileLoop:
-	//	"do" block=Block "while" "(" loopTest=Expression ")";
+	//	"do" block=Block "while" "(" loopTest=Expression ");";
 	public DoWhileLoopElements getDoWhileLoopAccess() {
 		return (pDoWhileLoop != null) ? pDoWhileLoop : (pDoWhileLoop = new DoWhileLoopElements());
 	}
@@ -1251,7 +1255,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IdentifierOrValue returns ecore::EString:
-	//	NUMBER | BOOLEAN;
+	//	NUMBER | BOOLEAN | INT;
 	public IdentifierOrValueElements getIdentifierOrValueAccess() {
 		return (pIdentifierOrValue != null) ? pIdentifierOrValue : (pIdentifierOrValue = new IdentifierOrValueElements());
 	}
@@ -1261,7 +1265,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum AssignOperator returns actionLanguage::AssignOperator:
-	//	EQUAL="=" | ASSIGN2=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-";
+	//	UNSET | ASSIGN=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-";
 	public AssignOperatorElements getAssignOperatorAccess() {
 		return (unknownRuleAssignOperator != null) ? unknownRuleAssignOperator : (unknownRuleAssignOperator = new AssignOperatorElements());
 	}
@@ -1271,7 +1275,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperator:
-	//	INCREMENT="++" | DECREMENT="--";
+	//	UNSET | INCREMENT="++" | DECREMENT="--";
 	public IncrementDecrementOperatorElements getIncrementDecrementOperatorAccess() {
 		return (unknownRuleIncrementDecrementOperator != null) ? unknownRuleIncrementDecrementOperator : (unknownRuleIncrementDecrementOperator = new IncrementDecrementOperatorElements());
 	}
@@ -1291,7 +1295,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ArithmeticOperator returns actionLanguage::ArithmeticOperator:
-	//	PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%" | EXP="^";
+	//	PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%";
 	public ArithmeticOperatorElements getArithmeticOperatorAccess() {
 		return (unknownRuleArithmeticOperator != null) ? unknownRuleArithmeticOperator : (unknownRuleArithmeticOperator = new ArithmeticOperatorElements());
 	}
@@ -1321,7 +1325,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal NUMBER returns ecore::EBigDecimal:
-	//	"0".."9"* ("." "0".."9"+)?;
+	//	INT "." INT;
 	public TerminalRule getNUMBERRule() {
 		return (tNUMBER != null) ? tNUMBER : (tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER"));
 	} 

@@ -89,7 +89,7 @@
         <elements xsi:type="xtext:Assignment" feature="loopTest" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
         </elements>
-        <elements xsi:type="xtext:Keyword" value=")"/>
+        <elements xsi:type="xtext:Keyword" value=");"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="IfStatement">
@@ -343,6 +343,7 @@
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="AssignOperator">
@@ -351,11 +352,11 @@
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/EQUAL"/>
-          <literal value="="/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/UNSET"/>
+          <literal value="UNSET"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/ASSIGN2"/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/ASSIGN"/>
           <literal value=":="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
@@ -381,6 +382,10 @@
         <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IncrementDecrementOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IncrementDecrementOperator/UNSET"/>
+          <literal value="UNSET"/>
+        </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
           <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IncrementDecrementOperator/INCREMENT"/>
           <literal value="++"/>
@@ -451,10 +456,6 @@
           <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticOperator/MODULO"/>
           <literal value="%"/>
         </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticOperator/EXP"/>
-          <literal value="^"/>
-        </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="ComparingOperator">
@@ -512,17 +513,9 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:CharacterRange" cardinality="*">
-          <left value="0"/>
-          <right value="9"/>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="."/>
-          <elements xsi:type="xtext:CharacterRange" cardinality="+">
-            <left value="0"/>
-            <right value="9"/>
-          </elements>
-        </elements>
+        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:TerminalRule" name="BOOLEAN">

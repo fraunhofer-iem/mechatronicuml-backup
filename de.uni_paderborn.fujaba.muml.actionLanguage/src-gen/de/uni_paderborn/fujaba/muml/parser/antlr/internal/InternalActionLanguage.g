@@ -357,9 +357,9 @@ ruleDoWhileLoop returns [EObject current=null]
 	    }
 
 )
-)	otherlv_5=')' 
+)	otherlv_5=');' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getDoWhileLoopAccess().getRightParenthesisKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getDoWhileLoopAccess().getRightParenthesisSemicolonKeyword_5());
     }
 )
 ;
@@ -1238,6 +1238,14 @@ ruleIdentifierOrValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeR
     { 
     newLeafNode(this_BOOLEAN_1, grammarAccess.getIdentifierOrValueAccess().getBOOLEANTerminalRuleCall_1()); 
     }
+
+    |    this_INT_2=RULE_INT    {
+		$current.merge(this_INT_2);
+    }
+
+    { 
+    newLeafNode(this_INT_2, grammarAccess.getIdentifierOrValueAccess().getINTTerminalRuleCall_2()); 
+    }
 )
     ;
 
@@ -1249,16 +1257,16 @@ ruleIdentifierOrValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeR
 ruleAssignOperator returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='=' 
+((	enumLiteral_0='UNSET' 
 	{
-        $current = grammarAccess.getAssignOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getAssignOperatorAccess().getEQUALEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getAssignOperatorAccess().getUNSETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getAssignOperatorAccess().getUNSETEnumLiteralDeclaration_0()); 
     }
 )
     |(	enumLiteral_1=':=' 
 	{
-        $current = grammarAccess.getAssignOperatorAccess().getASSIGN2EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getAssignOperatorAccess().getASSIGN2EnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_1()); 
     }
 )
     |(	enumLiteral_2='+=' 
@@ -1292,16 +1300,22 @@ ruleAssignOperator returns [Enumerator current=null]
 ruleIncrementDecrementOperator returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='++' 
+((	enumLiteral_0='UNSET' 
 	{
-        $current = grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getIncrementDecrementOperatorAccess().getUNSETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getIncrementDecrementOperatorAccess().getUNSETEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='--' 
+    |(	enumLiteral_1='++' 
 	{
-        $current = grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='--' 
+	{
+        $current = grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_2()); 
     }
 ));
 
@@ -1389,12 +1403,6 @@ ruleArithmeticOperator returns [Enumerator current=null]
         $current = grammarAccess.getArithmeticOperatorAccess().getMODULOEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_4, grammarAccess.getArithmeticOperatorAccess().getMODULOEnumLiteralDeclaration_4()); 
     }
-)
-    |(	enumLiteral_5='^' 
-	{
-        $current = grammarAccess.getArithmeticOperatorAccess().getEXPEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_5, grammarAccess.getArithmeticOperatorAccess().getEXPEnumLiteralDeclaration_5()); 
-    }
 ));
 
 
@@ -1467,7 +1475,7 @@ ruleUnaryOperator returns [Enumerator current=null]
 
 
 
-RULE_NUMBER : ('0'..'9')* ('.' ('0'..'9')+)?;
+RULE_NUMBER : RULE_INT '.' RULE_INT;
 
 RULE_BOOLEAN : ('true'|'false');
 
