@@ -83,7 +83,7 @@ AttributeExpression returns expressions::Expression:
 	
 OperationCall returns expressions::Expression:
 	LiteralExpression |
-	{actionLanguage::OperationCall} operation=[core::Operation]'('')'
+	{actionLanguage::OperationCall} operation=[core::Operation]'('parameterValuesForBinding+=Expression(','parameterValuesForBinding+=Expression)+')'
 	;				
 
 LiteralExpression returns expressions::Expression:

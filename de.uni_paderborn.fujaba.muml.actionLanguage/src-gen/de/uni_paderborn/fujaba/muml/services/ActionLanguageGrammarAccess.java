@@ -680,19 +680,28 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cOperationOperationCrossReference_1_1_0 = (CrossReference)cOperationAssignment_1_1.eContents().get(0);
 		private final RuleCall cOperationOperationIDTerminalRuleCall_1_1_0_1 = (RuleCall)cOperationOperationCrossReference_1_1_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Assignment cParameterValuesForBindingAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cParameterValuesForBindingExpressionParserRuleCall_1_3_0 = (RuleCall)cParameterValuesForBindingAssignment_1_3.eContents().get(0);
+		private final Group cGroup_1_4 = (Group)cGroup_1.eContents().get(4);
+		private final Keyword cCommaKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
+		private final Assignment cParameterValuesForBindingAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
+		private final RuleCall cParameterValuesForBindingExpressionParserRuleCall_1_4_1_0 = (RuleCall)cParameterValuesForBindingAssignment_1_4_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
 		
 		//OperationCall returns expressions::Expression:
-		//	LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "(" ")";
+		//	LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "("
+		//	parameterValuesForBinding+=Expression ("," parameterValuesForBinding+=Expression)+ ")";
 		public ParserRule getRule() { return rule; }
 
-		//LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "(" ")"
+		//LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "("
+		//parameterValuesForBinding+=Expression ("," parameterValuesForBinding+=Expression)+ ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//LiteralExpression
 		public RuleCall getLiteralExpressionParserRuleCall_0() { return cLiteralExpressionParserRuleCall_0; }
 
-		//{actionLanguage::OperationCall} operation=[core::Operation] "(" ")"
+		//{actionLanguage::OperationCall} operation=[core::Operation] "(" parameterValuesForBinding+=Expression (","
+		//parameterValuesForBinding+=Expression)+ ")"
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{actionLanguage::OperationCall}
@@ -710,8 +719,26 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1_2() { return cLeftParenthesisKeyword_1_2; }
 
+		//parameterValuesForBinding+=Expression
+		public Assignment getParameterValuesForBindingAssignment_1_3() { return cParameterValuesForBindingAssignment_1_3; }
+
+		//Expression
+		public RuleCall getParameterValuesForBindingExpressionParserRuleCall_1_3_0() { return cParameterValuesForBindingExpressionParserRuleCall_1_3_0; }
+
+		//("," parameterValuesForBinding+=Expression)+
+		public Group getGroup_1_4() { return cGroup_1_4; }
+
+		//","
+		public Keyword getCommaKeyword_1_4_0() { return cCommaKeyword_1_4_0; }
+
+		//parameterValuesForBinding+=Expression
+		public Assignment getParameterValuesForBindingAssignment_1_4_1() { return cParameterValuesForBindingAssignment_1_4_1; }
+
+		//Expression
+		public RuleCall getParameterValuesForBindingExpressionParserRuleCall_1_4_1_0() { return cParameterValuesForBindingExpressionParserRuleCall_1_4_1_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
+		public Keyword getRightParenthesisKeyword_1_5() { return cRightParenthesisKeyword_1_5; }
 	}
 
 	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
@@ -1290,7 +1317,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OperationCall returns expressions::Expression:
-	//	LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "(" ")";
+	//	LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "("
+	//	parameterValuesForBinding+=Expression ("," parameterValuesForBinding+=Expression)+ ")";
 	public OperationCallElements getOperationCallAccess() {
 		return (pOperationCall != null) ? pOperationCall : (pOperationCall = new OperationCallElements());
 	}

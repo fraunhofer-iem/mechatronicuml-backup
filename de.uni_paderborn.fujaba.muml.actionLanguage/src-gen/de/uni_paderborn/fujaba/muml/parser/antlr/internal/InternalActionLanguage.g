@@ -1193,9 +1193,49 @@ ruleOperationCall returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getOperationCallAccess().getLeftParenthesisKeyword_1_2());
     }
-	otherlv_4=')' 
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterValuesForBindingExpressionParserRuleCall_1_3_0()); 
+	    }
+		lv_parameterValuesForBinding_4_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getOperationCallRule());
+	        }
+       		add(
+       			$current, 
+       			"parameterValuesForBinding",
+        		lv_parameterValuesForBinding_4_0, 
+        		"Expression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_3());
+    	newLeafNode(otherlv_5, grammarAccess.getOperationCallAccess().getCommaKeyword_1_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterValuesForBindingExpressionParserRuleCall_1_4_1_0()); 
+	    }
+		lv_parameterValuesForBinding_6_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getOperationCallRule());
+	        }
+       		add(
+       			$current, 
+       			"parameterValuesForBinding",
+        		lv_parameterValuesForBinding_6_0, 
+        		"Expression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))+	otherlv_7=')' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_5());
     }
 ))
 ;
