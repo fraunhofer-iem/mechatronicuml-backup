@@ -22,6 +22,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getOperation <em>Operation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getParameterBinding <em>Parameter Binding</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getParameterValuesForBinding <em>Parameter Values For Binding</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,5 +72,21 @@ public interface OperationCall extends Expression {
 	 * @generated
 	 */
 	EList<ParameterBinding> getParameterBinding();
+
+	/**
+	 * Returns the value of the '<em><b>Parameter Values For Binding</b></em>' containment reference list.
+	 * The list contents are of type {@link org.storydriven.core.expressions.Expression}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameter Values For Binding</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameter Values For Binding</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getOperationCall_ParameterValuesForBinding()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Expression> getParameterValuesForBinding();
 
 } // OperationCall

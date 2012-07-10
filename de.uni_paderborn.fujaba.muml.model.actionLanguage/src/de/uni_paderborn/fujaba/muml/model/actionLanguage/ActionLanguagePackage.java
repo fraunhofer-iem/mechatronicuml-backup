@@ -1152,13 +1152,22 @@ public interface ActionLanguagePackage extends EPackage {
 	int OPERATION_CALL__PARAMETER_BINDING = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Parameter Values For Binding</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Operation Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_CALL_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int OPERATION_CALL_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}' enum.
@@ -1700,6 +1709,17 @@ public interface ActionLanguagePackage extends EPackage {
 	EReference getOperationCall_ParameterBinding();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getParameterValuesForBinding <em>Parameter Values For Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter Values For Binding</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall#getParameterValuesForBinding()
+	 * @see #getOperationCall()
+	 * @generated
+	 */
+	EReference getOperationCall_ParameterValuesForBinding();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2174,6 +2194,14 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPERATION_CALL__PARAMETER_BINDING = eINSTANCE.getOperationCall_ParameterBinding();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter Values For Binding</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING = eINSTANCE.getOperationCall_ParameterValuesForBinding();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LogicOperator <em>Logic Operator</em>}' enum.
