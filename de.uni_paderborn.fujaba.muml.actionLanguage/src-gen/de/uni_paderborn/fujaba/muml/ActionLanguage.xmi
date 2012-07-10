@@ -19,6 +19,9 @@
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="expressions">
       <ePackage href="http://www.storydriven.org/core/0.2.7#//expressions"/>
     </metamodelDeclarations>
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="commonExpressions">
+      <ePackage href="http://www.storydriven.org/core/0.2.7#//expressions/common"/>
+    </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="Block">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//Block"/>
@@ -208,8 +211,8 @@
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
-            <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticExpression"/>
+            <type metamodel="/0/@metamodelDeclarations.6">
+              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/common/ArithmeticExpression"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -230,8 +233,8 @@
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
-              <type metamodel="/0/@metamodelDeclarations.0">
-                <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ComparisonExpression"/>
+              <type metamodel="/0/@metamodelDeclarations.6">
+                <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/common/ComparisonExpression"/>
               </type>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -244,7 +247,7 @@
         </elements>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="BinaryLogicExpression">
+    <rules xsi:type="xtext:ParserRule" name="LogicalExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
         <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
@@ -256,8 +259,8 @@
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
-              <type metamodel="/0/@metamodelDeclarations.0">
-                <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//BinaryLogicExpression"/>
+              <type metamodel="/0/@metamodelDeclarations.6">
+                <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/common/LogicExpression"/>
               </type>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -286,7 +289,7 @@
         <elements xsi:type="xtext:Assignment" feature="unaryOperator" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
         </elements>
-        <elements xsi:type="xtext:Assignment" feature="unaryExpression" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="enclosedExpression" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
         </elements>
       </alternatives>
@@ -360,8 +363,8 @@
         </elements>
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Action">
-            <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LiteralExpression"/>
+            <type metamodel="/0/@metamodelDeclarations.6">
+              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/common/LiteralExpression"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="value" operator="=">
@@ -385,10 +388,6 @@
         <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/UNSET"/>
-          <literal value="UNSET"/>
-        </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
           <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/ASSIGN"/>
           <literal value=":="/>
@@ -417,10 +416,6 @@
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IncrementDecrementOperator/UNSET"/>
-          <literal value="UNSET"/>
-        </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
           <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IncrementDecrementOperator/INCREMENT"/>
           <literal value="++"/>
         </elements>
@@ -431,113 +426,105 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="LogicOperator">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LogicOperator"/>
+      <type metamodel="/0/@metamodelDeclarations.6">
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.7#//expressions/common/LogicOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LogicOperator/AND"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/LogicOperator/AND"/>
           <literal value="&amp;"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LogicOperator/AND_AND"/>
-          <literal value="&amp;&amp;"/>
-        </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LogicOperator/OR"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/LogicOperator/OR"/>
           <literal value="|"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LogicOperator/OR_OR"/>
-          <literal value="||"/>
-        </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LogicOperator/XOR"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/LogicOperator/XOR"/>
           <literal value="xor"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LogicOperator/IMPLY"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/LogicOperator/IMPLY"/>
           <literal value="=>"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//LogicOperator/EQUIVALENT"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/LogicOperator/EQUIVALENT"/>
           <literal value="&lt;=>"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="ArithmeticOperator">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticOperator"/>
+      <type metamodel="/0/@metamodelDeclarations.6">
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.7#//expressions/common/ArithmeticOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticOperator/PLUS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ArithmeticOperator/PLUS"/>
           <literal value="+"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticOperator/MINUS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ArithmeticOperator/MINUS"/>
           <literal value="-"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticOperator/TIMES"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ArithmeticOperator/TIMES"/>
           <literal value="*"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticOperator/DIVIDE"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ArithmeticOperator/DIVIDE"/>
           <literal value="/"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ArithmeticOperator/MODULO"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ArithmeticOperator/MODULO"/>
           <literal value="%"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="ComparingOperator">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ComparingOperator"/>
+      <type metamodel="/0/@metamodelDeclarations.6">
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.7#//expressions/common/ComparingOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ComparingOperator/LESS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ComparingOperator/LESS"/>
           <literal value="&lt;"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ComparingOperator/LESS_OR_EQUAL"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ComparingOperator/LESS_OR_EQUAL"/>
           <literal value="&lt;="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ComparingOperator/EQUAL"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ComparingOperator/EQUAL"/>
           <literal value="=="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ComparingOperator/GREATER_OR_EQUAL"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ComparingOperator/GREATER_OR_EQUAL"/>
           <literal value=">="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ComparingOperator/GREATER"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ComparingOperator/GREATER"/>
           <literal value=">"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ComparingOperator/UNEQUAL"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/ComparingOperator/UNEQUAL"/>
           <literal value="&lt;>"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="UnaryOperator">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//UnaryOperator"/>
+      <type metamodel="/0/@metamodelDeclarations.6">
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.7#//expressions/common/UnaryOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//UnaryOperator/NOT"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/UnaryOperator/NOT"/>
           <literal value="not"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//UnaryOperator/MINUS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/UnaryOperator/MINUS"/>
           <literal value="-"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//UnaryOperator/PLUS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.2.7#//expressions/common/UnaryOperator/PLUS"/>
           <literal value="+"/>
         </elements>
       </alternatives>

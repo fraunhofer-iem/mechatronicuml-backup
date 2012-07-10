@@ -877,11 +877,11 @@ ruleComparisonExpression returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getBinaryLogicExpressionParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getLogicalExpressionParserRuleCall_0()); 
     }
-    this_BinaryLogicExpression_0=ruleBinaryLogicExpression
+    this_LogicalExpression_0=ruleLogicalExpression
     { 
-        $current = $this_BinaryLogicExpression_0.current; 
+        $current = $this_LogicalExpression_0.current; 
         afterParserOrEnumRuleCall();
     }
 (((
@@ -911,9 +911,9 @@ ruleComparisonExpression returns [EObject current=null]
 ))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getRightExpressionBinaryLogicExpressionParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getRightExpressionLogicalExpressionParserRuleCall_1_1_0()); 
 	    }
-		lv_rightExpression_3_0=ruleBinaryLogicExpression		{
+		lv_rightExpression_3_0=ruleLogicalExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getComparisonExpressionRule());
 	        }
@@ -921,7 +921,7 @@ ruleComparisonExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_3_0, 
-        		"BinaryLogicExpression");
+        		"LogicalExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -933,23 +933,23 @@ ruleComparisonExpression returns [EObject current=null]
 
 
 
-// Entry rule entryRuleBinaryLogicExpression
-entryRuleBinaryLogicExpression returns [EObject current=null] 
+// Entry rule entryRuleLogicalExpression
+entryRuleLogicalExpression returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getBinaryLogicExpressionRule()); }
-	 iv_ruleBinaryLogicExpression=ruleBinaryLogicExpression 
-	 { $current=$iv_ruleBinaryLogicExpression.current; } 
+	{ newCompositeNode(grammarAccess.getLogicalExpressionRule()); }
+	 iv_ruleLogicalExpression=ruleLogicalExpression 
+	 { $current=$iv_ruleLogicalExpression.current; } 
 	 EOF 
 ;
 
-// Rule BinaryLogicExpression
-ruleBinaryLogicExpression returns [EObject current=null] 
+// Rule LogicalExpression
+ruleLogicalExpression returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
     { 
-        newCompositeNode(grammarAccess.getBinaryLogicExpressionAccess().getUnaryExpressionParserRuleCall_0_0()); 
+        newCompositeNode(grammarAccess.getLogicalExpressionAccess().getUnaryExpressionParserRuleCall_0_0()); 
     }
     this_UnaryExpression_0=ruleUnaryExpression
     { 
@@ -959,7 +959,7 @@ ruleBinaryLogicExpression returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getBinaryLogicExpressionAccess().getAttributeExpressionParserRuleCall_0_1()); 
+        newCompositeNode(grammarAccess.getLogicalExpressionAccess().getAttributeExpressionParserRuleCall_0_1()); 
     }
     this_AttributeExpression_1=ruleAttributeExpression
     { 
@@ -969,17 +969,17 @@ ruleBinaryLogicExpression returns [EObject current=null]
 )(((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getBinaryLogicExpressionAccess().getBinaryLogicExpressionLeftExpressionAction_1_0_0(),
+            grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0(),
             $current);
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBinaryLogicExpressionAccess().getOperatorLogicOperatorEnumRuleCall_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getLogicalExpressionAccess().getOperatorLogicOperatorEnumRuleCall_1_0_1_0()); 
 	    }
 		lv_operator_3_0=ruleLogicOperator		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBinaryLogicExpressionRule());
+	            $current = createModelElementForParent(grammarAccess.getLogicalExpressionRule());
 	        }
        		set(
        			$current, 
@@ -994,11 +994,11 @@ ruleBinaryLogicExpression returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBinaryLogicExpressionAccess().getRightExpressionUnaryExpressionParserRuleCall_1_1_0_0()); 
+	        newCompositeNode(grammarAccess.getLogicalExpressionAccess().getRightExpressionUnaryExpressionParserRuleCall_1_1_0_0()); 
 	    }
 		lv_rightExpression_4_1=ruleUnaryExpression		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBinaryLogicExpressionRule());
+	            $current = createModelElementForParent(grammarAccess.getLogicalExpressionRule());
 	        }
        		set(
        			$current, 
@@ -1009,11 +1009,11 @@ ruleBinaryLogicExpression returns [EObject current=null]
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getBinaryLogicExpressionAccess().getRightExpressionAttributeExpressionParserRuleCall_1_1_0_1()); 
+	        newCompositeNode(grammarAccess.getLogicalExpressionAccess().getRightExpressionAttributeExpressionParserRuleCall_1_1_0_1()); 
 	    }
 		lv_rightExpression_4_2=ruleAttributeExpression		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBinaryLogicExpressionRule());
+	            $current = createModelElementForParent(grammarAccess.getLogicalExpressionRule());
 	        }
        		set(
        			$current, 
@@ -1074,16 +1074,16 @@ ruleUnaryExpression returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAttributeExpressionParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getEnclosedExpressionAttributeExpressionParserRuleCall_2_0()); 
 	    }
-		lv_unaryExpression_2_0=ruleAttributeExpression		{
+		lv_enclosedExpression_2_0=ruleAttributeExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getUnaryExpressionRule());
 	        }
        		set(
        			$current, 
-       			"unaryExpression",
-        		lv_unaryExpression_2_0, 
+       			"enclosedExpression",
+        		lv_enclosedExpression_2_0, 
         		"AttributeExpression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1355,40 +1355,34 @@ ruleIdentifierOrValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeR
 ruleAssignOperator returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='UNSET' 
+((	enumLiteral_0=':=' 
 	{
-        $current = grammarAccess.getAssignOperatorAccess().getUNSETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getAssignOperatorAccess().getUNSETEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1=':=' 
+    |(	enumLiteral_1='+=' 
 	{
-        $current = grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='+=' 
+    |(	enumLiteral_2='=+' 
 	{
-        $current = grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_2()); 
+        $current = grammarAccess.getAssignOperatorAccess().getEQUAL_PLUSEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getAssignOperatorAccess().getEQUAL_PLUSEnumLiteralDeclaration_2()); 
     }
 )
-    |(	enumLiteral_3='=+' 
+    |(	enumLiteral_3='-=' 
 	{
-        $current = grammarAccess.getAssignOperatorAccess().getEQUAL_PLUSEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_3, grammarAccess.getAssignOperatorAccess().getEQUAL_PLUSEnumLiteralDeclaration_3()); 
+        $current = grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_3()); 
     }
 )
-    |(	enumLiteral_4='-=' 
+    |(	enumLiteral_4='=-' 
 	{
-        $current = grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_4, grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_4()); 
-    }
-)
-    |(	enumLiteral_5='=-' 
-	{
-        $current = grammarAccess.getAssignOperatorAccess().getEQUAL_MINUSEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_5, grammarAccess.getAssignOperatorAccess().getEQUAL_MINUSEnumLiteralDeclaration_5()); 
+        $current = grammarAccess.getAssignOperatorAccess().getEQUAL_MINUSEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getAssignOperatorAccess().getEQUAL_MINUSEnumLiteralDeclaration_4()); 
     }
 ));
 
@@ -1398,22 +1392,16 @@ ruleAssignOperator returns [Enumerator current=null]
 ruleIncrementDecrementOperator returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='UNSET' 
+((	enumLiteral_0='++' 
 	{
-        $current = grammarAccess.getIncrementDecrementOperatorAccess().getUNSETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getIncrementDecrementOperatorAccess().getUNSETEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='++' 
+    |(	enumLiteral_1='--' 
 	{
-        $current = grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_1()); 
-    }
-)
-    |(	enumLiteral_2='--' 
-	{
-        $current = grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_2()); 
+        $current = grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1()); 
     }
 ));
 
@@ -1429,40 +1417,28 @@ ruleLogicOperator returns [Enumerator current=null]
         newLeafNode(enumLiteral_0, grammarAccess.getLogicOperatorAccess().getANDEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='&&' 
+    |(	enumLiteral_1='|' 
 	{
-        $current = grammarAccess.getLogicOperatorAccess().getAND_ANDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getLogicOperatorAccess().getAND_ANDEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getLogicOperatorAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getLogicOperatorAccess().getOREnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='|' 
+    |(	enumLiteral_2='xor' 
 	{
-        $current = grammarAccess.getLogicOperatorAccess().getOREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getLogicOperatorAccess().getOREnumLiteralDeclaration_2()); 
+        $current = grammarAccess.getLogicOperatorAccess().getXOREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getLogicOperatorAccess().getXOREnumLiteralDeclaration_2()); 
     }
 )
-    |(	enumLiteral_3='||' 
+    |(	enumLiteral_3='=>' 
 	{
-        $current = grammarAccess.getLogicOperatorAccess().getOR_OREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_3, grammarAccess.getLogicOperatorAccess().getOR_OREnumLiteralDeclaration_3()); 
+        $current = grammarAccess.getLogicOperatorAccess().getIMPLYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getLogicOperatorAccess().getIMPLYEnumLiteralDeclaration_3()); 
     }
 )
-    |(	enumLiteral_4='xor' 
+    |(	enumLiteral_4='<=>' 
 	{
-        $current = grammarAccess.getLogicOperatorAccess().getXOREnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_4, grammarAccess.getLogicOperatorAccess().getXOREnumLiteralDeclaration_4()); 
-    }
-)
-    |(	enumLiteral_5='=>' 
-	{
-        $current = grammarAccess.getLogicOperatorAccess().getIMPLYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_5, grammarAccess.getLogicOperatorAccess().getIMPLYEnumLiteralDeclaration_5()); 
-    }
-)
-    |(	enumLiteral_6='<=>' 
-	{
-        $current = grammarAccess.getLogicOperatorAccess().getEQUIVALENTEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_6, grammarAccess.getLogicOperatorAccess().getEQUIVALENTEnumLiteralDeclaration_6()); 
+        $current = grammarAccess.getLogicOperatorAccess().getEQUIVALENTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getLogicOperatorAccess().getEQUIVALENTEnumLiteralDeclaration_4()); 
     }
 ));
 

@@ -13,6 +13,8 @@ import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#/
 
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" as expressions
 
+import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/common" as commonExpressions
+
 
 Block returns actionLanguage::Block:
 	{actionLanguage::Block}
@@ -56,21 +58,21 @@ Expression returns expressions::Expression:
 	
 
 ArithmeticExpression returns expressions::Expression:
-ComparisonExpression (({actionLanguage::ArithmeticExpression.leftExpression=current} ) operator=ArithmeticOperator rightExpression=ComparisonExpression)*;
+ComparisonExpression (({commonExpressions::ArithmeticExpression.leftExpression=current} ) operator=ArithmeticOperator rightExpression=ComparisonExpression)*;
 	
 
 ComparisonExpression returns expressions::Expression:
-BinaryLogicExpression 
-(({actionLanguage::ComparisonExpression.leftExpression=current} operator=ComparingOperator ) rightExpression=BinaryLogicExpression)*;
+LogicalExpression 
+(({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator ) rightExpression=LogicalExpression)*;
 
-BinaryLogicExpression returns expressions::Expression:
+LogicalExpression returns expressions::Expression:
 (UnaryExpression| AttributeExpression )
-(({actionLanguage::BinaryLogicExpression.leftExpression=current} operator=LogicOperator ) rightExpression=(UnaryExpression| AttributeExpression))*
+(({commonExpressions::LogicExpression.leftExpression=current} operator=LogicOperator ) rightExpression=(UnaryExpression| AttributeExpression))*
 ;
 
 UnaryExpression returns expressions::Expression:
 {actionLanguage::UnaryExpression}
-	unaryOperator=UnaryOperator unaryExpression=AttributeExpression
+	unaryOperator=UnaryOperator enclosedExpression=AttributeExpression
 	;	
 	
 
@@ -88,7 +90,7 @@ OperationCall returns expressions::Expression:
 
 LiteralExpression returns expressions::Expression:
 	'(' Expression ')' |
-	{actionLanguage::LiteralExpression} value=IdentifierOrValue 
+	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
 	;	
 	
 	
@@ -96,25 +98,25 @@ IdentifierOrValue returns ecore::EString:
 NUMBER|BOOLEAN|INT
 ;	
 	
-enum AssignOperator returns actionLanguage::AssignOperator:  UNSET='UNSET' | ASSIGN=':=' | PLUS_EQUAL='+='| EQUAL_PLUS='=+' | MINUS_EQUAL='-='| EQUAL_MINUS='=-' ;	
+enum AssignOperator returns actionLanguage::AssignOperator:   ASSIGN=':=' | PLUS_EQUAL='+='| EQUAL_PLUS='=+' | MINUS_EQUAL='-='| EQUAL_MINUS='=-' ;	
 
 enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperator:
-UNSET='UNSET' | INCREMENT='++'|DECREMENT='--';
+ INCREMENT='++'|DECREMENT='--';
 
-enum LogicOperator returns actionLanguage::LogicOperator: 
-AND='&' | AND_AND='&&' | OR='|' | OR_OR='||' | XOR='xor' | IMPLY='=>' | EQUIVALENT='<=>' 
+enum LogicOperator returns commonExpressions::LogicOperator: 
+AND='&' | OR='|' | XOR='xor' | IMPLY='=>' | EQUIVALENT='<=>' 
 ;
 
 
-enum ArithmeticOperator returns actionLanguage::ArithmeticOperator: PLUS='+' | MINUS='-'
+enum ArithmeticOperator returns commonExpressions::ArithmeticOperator: PLUS='+' | MINUS='-'
 |TIMES='*' | DIVIDE='/' | MODULO='%' ;
 
-enum ComparingOperator returns actionLanguage::ComparingOperator:  
+enum ComparingOperator returns commonExpressions::ComparingOperator:  
 LESS='<' | LESS_OR_EQUAL='<=' | EQUAL='==' | GREATER_OR_EQUAL='>=' | GREATER='>' | UNEQUAL='<>' 
 ;
 
 
-enum UnaryOperator returns actionLanguage::UnaryOperator: NOT='not' | MINUS='-' | PLUS='+';
+enum UnaryOperator returns commonExpressions::UnaryOperator: NOT='not' | MINUS='-' | PLUS='+';
 
 terminal NUMBER returns ecore::EBigDecimal:
 	INT'.' INT;
