@@ -299,27 +299,12 @@ public class OperationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -222,27 +222,12 @@ public class ActionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

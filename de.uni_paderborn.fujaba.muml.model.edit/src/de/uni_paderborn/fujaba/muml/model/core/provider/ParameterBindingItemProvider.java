@@ -267,27 +267,12 @@ public class ParameterBindingItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PARAMETER_BINDING__VALUE,
-				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

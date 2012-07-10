@@ -855,27 +855,12 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
