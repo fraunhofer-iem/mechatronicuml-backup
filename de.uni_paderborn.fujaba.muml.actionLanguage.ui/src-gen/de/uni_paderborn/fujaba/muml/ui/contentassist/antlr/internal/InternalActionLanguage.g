@@ -3379,6 +3379,7 @@ rule__OperationCall__Group_1__3
     }
 :
 	rule__OperationCall__Group_1__3__Impl
+	rule__OperationCall__Group_1__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -3390,11 +3391,75 @@ rule__OperationCall__Group_1__3__Impl
     }
 :
 (
-{ before(grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_3()); }
+{ before(grammarAccess.getOperationCallAccess().getParameterValuesForBindingAssignment_1_3()); }
+(rule__OperationCall__ParameterValuesForBindingAssignment_1_3)
+{ after(grammarAccess.getOperationCallAccess().getParameterValuesForBindingAssignment_1_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__OperationCall__Group_1__4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__OperationCall__Group_1__4__Impl
+	rule__OperationCall__Group_1__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__OperationCall__Group_1__4__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+(
+{ before(grammarAccess.getOperationCallAccess().getGroup_1_4()); }
+(rule__OperationCall__Group_1_4__0)
+{ after(grammarAccess.getOperationCallAccess().getGroup_1_4()); }
+)
+(
+{ before(grammarAccess.getOperationCallAccess().getGroup_1_4()); }
+(rule__OperationCall__Group_1_4__0)*
+{ after(grammarAccess.getOperationCallAccess().getGroup_1_4()); }
+)
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__OperationCall__Group_1__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__OperationCall__Group_1__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__OperationCall__Group_1__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_5()); }
 
 	')' 
 
-{ after(grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_3()); }
+{ after(grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_5()); }
 )
 
 ;
@@ -3405,6 +3470,73 @@ finally {
 
 
 
+
+
+
+
+
+
+
+
+
+
+rule__OperationCall__Group_1_4__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__OperationCall__Group_1_4__0__Impl
+	rule__OperationCall__Group_1_4__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__OperationCall__Group_1_4__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getOperationCallAccess().getCommaKeyword_1_4_0()); }
+
+	',' 
+
+{ after(grammarAccess.getOperationCallAccess().getCommaKeyword_1_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__OperationCall__Group_1_4__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__OperationCall__Group_1_4__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__OperationCall__Group_1_4__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getOperationCallAccess().getParameterValuesForBindingAssignment_1_4_1()); }
+(rule__OperationCall__ParameterValuesForBindingAssignment_1_4_1)
+{ after(grammarAccess.getOperationCallAccess().getParameterValuesForBindingAssignment_1_4_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -4061,6 +4193,36 @@ rule__OperationCall__OperationAssignment_1_1
 	RULE_ID{ after(grammarAccess.getOperationCallAccess().getOperationOperationIDTerminalRuleCall_1_1_0_1()); }
 )
 { after(grammarAccess.getOperationCallAccess().getOperationOperationCrossReference_1_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__OperationCall__ParameterValuesForBindingAssignment_1_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getOperationCallAccess().getParameterValuesForBindingExpressionParserRuleCall_1_3_0()); }
+	ruleExpression{ after(grammarAccess.getOperationCallAccess().getParameterValuesForBindingExpressionParserRuleCall_1_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__OperationCall__ParameterValuesForBindingAssignment_1_4_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getOperationCallAccess().getParameterValuesForBindingExpressionParserRuleCall_1_4_1_0()); }
+	ruleExpression{ after(grammarAccess.getOperationCallAccess().getParameterValuesForBindingExpressionParserRuleCall_1_4_1_0()); }
 )
 
 ;
