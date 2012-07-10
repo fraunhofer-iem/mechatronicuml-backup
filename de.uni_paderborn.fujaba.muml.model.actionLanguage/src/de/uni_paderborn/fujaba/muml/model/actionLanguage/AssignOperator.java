@@ -23,26 +23,22 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum AssignOperator implements Enumerator {
 	/**
-	 * The '<em><b>EQUAL</b></em>' literal object.
+	 * The '<em><b>UNSET</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EQUAL_VALUE
+	 * @see #UNSET_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EQUAL(0, "EQUAL", "="),
-
-	/**
-	 * The '<em><b>ASSIGN2</b></em>' literal object.
+	UNSET(0, "UNSET", "UNSET"), /**
+	 * The '<em><b>ASSIGN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ASSIGN2_VALUE
+	 * @see #ASSIGN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ASSIGN2(1, "ASSIGN2", ":="),
-
-	/**
+	ASSIGN(1, "ASSIGN", ":="), /**
 	 * The '<em><b>PLUS EQUAL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,34 +79,34 @@ public enum AssignOperator implements Enumerator {
 	EQUAL_MINUS(5, "EQUAL_MINUS", "=-");
 
 	/**
-	 * The '<em><b>EQUAL</b></em>' literal value.
+	 * The '<em><b>UNSET</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>EQUAL</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>UNSET</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #EQUAL
-	 * @model literal="="
+	 * @see #UNSET
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EQUAL_VALUE = 0;
+	public static final int UNSET_VALUE = 0;
 
 	/**
-	 * The '<em><b>ASSIGN2</b></em>' literal value.
+	 * The '<em><b>ASSIGN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>ASSIGN2</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>ASSIGN</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #ASSIGN2
+	 * @see #ASSIGN
 	 * @model literal=":="
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ASSIGN2_VALUE = 1;
+	public static final int ASSIGN_VALUE = 1;
 
 	/**
 	 * The '<em><b>PLUS EQUAL</b></em>' literal value.
@@ -180,8 +176,8 @@ public enum AssignOperator implements Enumerator {
 	 */
 	private static final AssignOperator[] VALUES_ARRAY =
 		new AssignOperator[] {
-			EQUAL,
-			ASSIGN2,
+			UNSET,
+			ASSIGN,
 			PLUS_EQUAL,
 			EQUAL_PLUS,
 			MINUS_EQUAL,
@@ -236,8 +232,8 @@ public enum AssignOperator implements Enumerator {
 	 */
 	public static AssignOperator get(int value) {
 		switch (value) {
-			case EQUAL_VALUE: return EQUAL;
-			case ASSIGN2_VALUE: return ASSIGN2;
+			case UNSET_VALUE: return UNSET;
+			case ASSIGN_VALUE: return ASSIGN;
 			case PLUS_EQUAL_VALUE: return PLUS_EQUAL;
 			case EQUAL_PLUS_VALUE: return EQUAL_PLUS;
 			case MINUS_EQUAL_VALUE: return MINUS_EQUAL;

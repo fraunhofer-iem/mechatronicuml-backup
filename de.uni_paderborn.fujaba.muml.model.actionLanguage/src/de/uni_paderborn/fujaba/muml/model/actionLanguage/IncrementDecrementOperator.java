@@ -23,6 +23,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum IncrementDecrementOperator implements Enumerator {
 	/**
+	 * The '<em><b>UNSET</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSET_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNSET(0, "UNSET", "UNSET"), /**
 	 * The '<em><b>INCREMENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -30,7 +38,7 @@ public enum IncrementDecrementOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INCREMENT(0, "INCREMENT", "++"),
+	INCREMENT(2, "INCREMENT", "++"),
 
 	/**
 	 * The '<em><b>DECREMENT</b></em>' literal object.
@@ -41,6 +49,21 @@ public enum IncrementDecrementOperator implements Enumerator {
 	 * @ordered
 	 */
 	DECREMENT(1, "DECREMENT", "--");
+
+	/**
+	 * The '<em><b>UNSET</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>UNSET</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UNSET
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNSET_VALUE = 0;
 
 	/**
 	 * The '<em><b>INCREMENT</b></em>' literal value.
@@ -55,7 +78,7 @@ public enum IncrementDecrementOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INCREMENT_VALUE = 0;
+	public static final int INCREMENT_VALUE = 2;
 
 	/**
 	 * The '<em><b>DECREMENT</b></em>' literal value.
@@ -80,6 +103,7 @@ public enum IncrementDecrementOperator implements Enumerator {
 	 */
 	private static final IncrementDecrementOperator[] VALUES_ARRAY =
 		new IncrementDecrementOperator[] {
+			UNSET,
 			INCREMENT,
 			DECREMENT,
 		};
@@ -132,6 +156,7 @@ public enum IncrementDecrementOperator implements Enumerator {
 	 */
 	public static IncrementDecrementOperator get(int value) {
 		switch (value) {
+			case UNSET_VALUE: return UNSET;
 			case INCREMENT_VALUE: return INCREMENT;
 			case DECREMENT_VALUE: return DECREMENT;
 		}

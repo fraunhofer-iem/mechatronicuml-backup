@@ -22,7 +22,6 @@ import org.storydriven.core.expressions.Expression;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression#getValue <em>Value</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression#getValueType <em>Value Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,27 +54,5 @@ public interface LiteralExpression extends Expression {
 	 * @generated
 	 */
 	void setValue(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Value Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value Type</em>' reference.
-	 * @see #setValueType(EDataType)
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getLiteralExpression_ValueType()
-	 * @model
-	 * @generated
-	 */
-	EDataType getValueType();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression#getValueType <em>Value Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value Type</em>' reference.
-	 * @see #getValueType()
-	 * @generated
-	 */
-	void setValueType(EDataType value);
 
 } // LiteralExpression

@@ -359,16 +359,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	@Override
-	public EReference getLiteralExpression_ValueType() {
-		return (EReference)literalExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getUnaryExpression() {
 		return unaryExpressionEClass;
 	}
@@ -849,7 +839,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		literalExpressionEClass = createEClass(LITERAL_EXPRESSION);
 		createEAttribute(literalExpressionEClass, LITERAL_EXPRESSION__VALUE);
-		createEReference(literalExpressionEClass, LITERAL_EXPRESSION__VALUE_TYPE);
 
 		unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
 		createEReference(unaryExpressionEClass, UNARY_EXPRESSION__UNARY_EXPRESSION);
@@ -970,7 +959,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		initEClass(literalExpressionEClass, LiteralExpression.class, "LiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLiteralExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLiteralExpression_ValueType(), ecorePackage.getEDataType(), null, "valueType", null, 0, 1, LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnaryExpression_UnaryExpression(), theExpressionsPackage.getExpression(), null, "unaryExpression", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1049,17 +1037,17 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.TIMES);
 		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.DIVIDE);
 		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MODULO);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.EXP);
 
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");
-		addEEnumLiteral(assignOperatorEEnum, AssignOperator.EQUAL);
-		addEEnumLiteral(assignOperatorEEnum, AssignOperator.ASSIGN2);
+		addEEnumLiteral(assignOperatorEEnum, AssignOperator.UNSET);
+		addEEnumLiteral(assignOperatorEEnum, AssignOperator.ASSIGN);
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.PLUS_EQUAL);
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.EQUAL_PLUS);
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.MINUS_EQUAL);
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.EQUAL_MINUS);
 
 		initEEnum(incrementDecrementOperatorEEnum, IncrementDecrementOperator.class, "IncrementDecrementOperator");
+		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.UNSET);
 		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.INCREMENT);
 		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.DECREMENT);
 
@@ -1075,30 +1063,9 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.NOT);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.MINUS);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.PLUS);
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.RETURN);
 
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																									
-		addAnnotation
-		  (assignmentEClass, 
-		   source, 
-		   new String[] {
-			 "OneOperatorisSet", "self.deacreaseIncreaseOperator.oclIsUndefined() xor self.assignOperator.oclIsUndefined()"
-		   });
 	}
 
 } //ActionLanguagePackageImpl

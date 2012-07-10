@@ -184,22 +184,13 @@ public interface ActionLanguagePackage extends EPackage {
 	int LITERAL_EXPRESSION__VALUE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Value Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_EXPRESSION__VALUE_TYPE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Literal Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LITERAL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int LITERAL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
@@ -1305,17 +1296,6 @@ public interface ActionLanguagePackage extends EPackage {
 	EAttribute getLiteralExpression_Value();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression#getValueType <em>Value Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LiteralExpression#getValueType()
-	 * @see #getLiteralExpression()
-	 * @generated
-	 */
-	EReference getLiteralExpression_ValueType();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression <em>Unary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1862,14 +1842,6 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE.getLiteralExpression_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Value Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LITERAL_EXPRESSION__VALUE_TYPE = eINSTANCE.getLiteralExpression_ValueType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.

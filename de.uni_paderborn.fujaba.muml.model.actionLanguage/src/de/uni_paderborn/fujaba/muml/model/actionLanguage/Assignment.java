@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Attribute;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneOperatorisSet='self.deacreaseIncreaseOperator.oclIsUndefined() xor self.assignOperator.oclIsUndefined()'"
+ * @model
  * @generated
  */
 public interface Assignment extends Expression {

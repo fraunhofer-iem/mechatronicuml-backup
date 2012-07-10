@@ -43,11 +43,6 @@
     <eLiterals name="TIMES" value="2"/>
     <eLiterals name="DIVIDE" value="3"/>
     <eLiterals name="MODULO" value="4"/>
-    <eLiterals name="EXP" value="5">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="For formulas like a^b."/>
-      </eAnnotations>
-    </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextualExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -82,7 +77,6 @@
         <details key="documentation" value="String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -163,15 +157,16 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AssignOperator">
-    <eLiterals name="EQUAL" literal="="/>
-    <eLiterals name="ASSIGN2" value="1" literal=":="/>
+    <eLiterals name="UNSET" literal="UNSET"/>
+    <eLiterals name="ASSIGN" value="1" literal=":="/>
     <eLiterals name="PLUS_EQUAL" value="2" literal="+="/>
     <eLiterals name="EQUAL_PLUS" value="3" literal="=+"/>
     <eLiterals name="MINUS_EQUAL" value="4" literal="-="/>
     <eLiterals name="EQUAL_MINUS" value="5" literal="=-"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IncrementDecrementOperator">
-    <eLiterals name="INCREMENT" literal="++"/>
+    <eLiterals name="UNSET" literal="UNSET"/>
+    <eLiterals name="INCREMENT" value="2" literal="++"/>
     <eLiterals name="DECREMENT" value="1" literal="--"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ComparisonOperator">
@@ -186,7 +181,6 @@
     <eLiterals name="NOT" literal="not"/>
     <eLiterals name="MINUS" value="1" literal="-"/>
     <eLiterals name="PLUS" value="2" literal="+"/>
-    <eLiterals name="RETURN" value="3" literal="return"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
@@ -202,9 +196,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="WhileLoop" eSuperTypes="#//Loop"/>
   <eClassifiers xsi:type="ecore:EClass" name="DoWhileLoop" eSuperTypes="#//Loop"/>
   <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="OneOperatorisSet" value="self.deacreaseIncreaseOperator.oclIsUndefined() xor self.assignOperator.oclIsUndefined()"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignOperator" eType="#//AssignOperator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
         containment="true"/>

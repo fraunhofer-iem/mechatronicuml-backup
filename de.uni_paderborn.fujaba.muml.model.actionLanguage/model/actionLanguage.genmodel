@@ -32,17 +32,17 @@
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/TIMES"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/DIVIDE"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/MODULO"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//ArithmeticOperator/EXP"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//AssignOperator">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/ASSIGN2"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/ASSIGN"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/PLUS_EQUAL"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/EQUAL_PLUS"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/MINUS_EQUAL"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/EQUAL_MINUS"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//IncrementDecrementOperator">
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/UNSET"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/INCREMENT"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/DECREMENT"/>
     </genEnums>
@@ -58,7 +58,6 @@
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//UnaryOperator/NOT"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//UnaryOperator/MINUS"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//UnaryOperator/PLUS"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//UnaryOperator/RETURN"/>
     </genEnums>
     <genClasses ecoreClass="actionLanguage.ecore#//TextualExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//TextualExpression/expressionText"/>
@@ -67,7 +66,6 @@
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//LiteralExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//LiteralExpression/value"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//LiteralExpression/valueType"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//UnaryExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//UnaryExpression/unaryExpression"/>

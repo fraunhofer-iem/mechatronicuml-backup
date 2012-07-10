@@ -46,7 +46,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AssignOperator ASSIGN_OPERATOR_EDEFAULT = AssignOperator.EQUAL;
+	protected static final AssignOperator ASSIGN_OPERATOR_EDEFAULT = AssignOperator.UNSET;
 
 	/**
 	 * The cached value of the '{@link #getAssignOperator() <em>Assign Operator</em>}' attribute.
@@ -76,7 +76,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final IncrementDecrementOperator INCREMENT_DECREMENT_OPERATOR_EDEFAULT = IncrementDecrementOperator.INCREMENT;
+	protected static final IncrementDecrementOperator INCREMENT_DECREMENT_OPERATOR_EDEFAULT = IncrementDecrementOperator.UNSET;
 
 	/**
 	 * The cached value of the '{@link #getIncrementDecrementOperator() <em>Increment Decrement Operator</em>}' attribute.

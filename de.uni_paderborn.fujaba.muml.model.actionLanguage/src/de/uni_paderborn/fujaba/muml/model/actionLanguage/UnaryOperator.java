@@ -50,17 +50,7 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PLUS(2, "PLUS", "+"),
-
-	/**
-	 * The '<em><b>RETURN</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RETURN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	RETURN(3, "RETURN", "return");
+	PLUS(2, "PLUS", "+");
 
 	/**
 	 * The '<em><b>NOT</b></em>' literal value.
@@ -108,21 +98,6 @@ public enum UnaryOperator implements Enumerator {
 	public static final int PLUS_VALUE = 2;
 
 	/**
-	 * The '<em><b>RETURN</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>RETURN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #RETURN
-	 * @model literal="return"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int RETURN_VALUE = 3;
-
-	/**
 	 * An array of all the '<em><b>Unary Operator</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,7 +108,6 @@ public enum UnaryOperator implements Enumerator {
 			NOT,
 			MINUS,
 			PLUS,
-			RETURN,
 		};
 
 	/**
@@ -187,7 +161,6 @@ public enum UnaryOperator implements Enumerator {
 			case NOT_VALUE: return NOT;
 			case MINUS_VALUE: return MINUS;
 			case PLUS_VALUE: return PLUS;
-			case RETURN_VALUE: return RETURN;
 		}
 		return null;
 	}
