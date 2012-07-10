@@ -66,7 +66,6 @@ public class LiteralExpressionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addValuePropertyDescriptor(object);
-			addValueTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,28 +88,6 @@ public class LiteralExpressionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Value Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValueTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LiteralExpression_valueType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LiteralExpression_valueType_feature", "_UI_LiteralExpression_type"),
-				 ActionLanguagePackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
