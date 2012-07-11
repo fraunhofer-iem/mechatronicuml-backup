@@ -105,7 +105,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComparisonExpressionAccess().getRightExpressionAssignment_1_1(), "rule__ComparisonExpression__RightExpressionAssignment_1_1");
 					put(grammarAccess.getLogicalExpressionAccess().getOperatorAssignment_1_0_1(), "rule__LogicalExpression__OperatorAssignment_1_0_1");
 					put(grammarAccess.getLogicalExpressionAccess().getRightExpressionAssignment_1_1(), "rule__LogicalExpression__RightExpressionAssignment_1_1");
-					put(grammarAccess.getUnaryExpressionAccess().getUnaryOperatorAssignment_1(), "rule__UnaryExpression__UnaryOperatorAssignment_1");
+					put(grammarAccess.getUnaryExpressionAccess().getOperatorAssignment_1(), "rule__UnaryExpression__OperatorAssignment_1");
 					put(grammarAccess.getUnaryExpressionAccess().getEnclosedExpressionAssignment_2(), "rule__UnaryExpression__EnclosedExpressionAssignment_2");
 					put(grammarAccess.getAttributeExpressionAccess().getAttributeAssignment_1_1(), "rule__AttributeExpression__AttributeAssignment_1_1");
 					put(grammarAccess.getOperationCallAccess().getOperationAssignment_1_1(), "rule__OperationCall__OperationAssignment_1_1");
