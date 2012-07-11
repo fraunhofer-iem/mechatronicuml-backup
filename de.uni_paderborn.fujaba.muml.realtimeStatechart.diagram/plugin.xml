@@ -358,7 +358,21 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart" id="RealtimeStatechart_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart" id="RealtimeStatechart_2006"/>
-         <context elements="RealtimeStatechart_1000,RealtimeStatechart_2006"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_3017"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart" id="EntryEvent_3018"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart" id="DoEvent_3019"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart" id="ExitEvent_3020"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart" id="ClockConstraint_3021"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart" id="SynchronizationChannel_3022"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart" id="Region_3023"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechart2EditPart" id="RealtimeStatechart_3024"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPoint2EditPart" id="StateEntryPoint_3029"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPoint2EditPart" id="StateExitPoint_3030"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart" id="StateEntryPoint_3027"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart" id="StateExitPoint_3028"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart" id="EntryPoint_3025"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart" id="ExitPoint_3026"/>
+         <context elements="RealtimeStatechart_1000,RealtimeStatechart_2006,State_3017,EntryEvent_3018,DoEvent_3019,ExitEvent_3020,ClockConstraint_3021,SynchronizationChannel_3022,Region_3023,RealtimeStatechart_3024,StateEntryPoint_3029,StateExitPoint_3030,StateEntryPoint_3027,StateExitPoint_3028,EntryPoint_3025,ExitPoint_3026"/>
       </modelingAssistantProvider>
    </extension>
 
