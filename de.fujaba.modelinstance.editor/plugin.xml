@@ -30,7 +30,7 @@
             id="de.fujaba.modelinstance.presentation.ModelinstanceEditorID"
             name="%_UI_ModelinstanceEditor_label"
             icon="icons/full/obj16/ModelinstanceModelFile.gif"
-            extensions="modelinstance"
+            extensions="fujaba"
             class="de.fujaba.modelinstance.presentation.ModelinstanceEditor"
             contributorClass="de.fujaba.modelinstance.presentation.ModelinstanceActionBarContributor">
       </editor>
