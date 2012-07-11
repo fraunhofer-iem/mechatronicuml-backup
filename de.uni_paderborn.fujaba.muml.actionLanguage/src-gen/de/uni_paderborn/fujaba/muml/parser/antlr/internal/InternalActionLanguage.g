@@ -969,7 +969,7 @@ ruleLogicalExpression returns [EObject current=null]
 )(((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0(),
+            grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0(),
             $current);
     }
 )(
@@ -1056,16 +1056,16 @@ ruleUnaryExpression returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getUnaryOperatorUnaryOperatorEnumRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getOperatorUnaryOperatorEnumRuleCall_1_0()); 
 	    }
-		lv_unaryOperator_1_0=ruleUnaryOperator		{
+		lv_operator_1_0=ruleUnaryOperator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getUnaryExpressionRule());
 	        }
        		set(
        			$current, 
-       			"unaryOperator",
-        		lv_unaryOperator_1_0, 
+       			"operator",
+        		lv_operator_1_0, 
         		"UnaryOperator");
 	        afterParserOrEnumRuleCall();
 	    }

@@ -2363,7 +2363,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0(),
+            	                grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0(),
             	                current);
             	        
 
@@ -2551,11 +2551,11 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnaryExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1046:1: ruleUnaryExpression returns [EObject current=null] : ( () ( (lv_unaryOperator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1046:1: ruleUnaryExpression returns [EObject current=null] : ( () ( (lv_operator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) ) ) ;
     public final EObject ruleUnaryExpression() throws RecognitionException {
         EObject current = null;
 
-        Enumerator lv_unaryOperator_1_0 = null;
+        Enumerator lv_operator_1_0 = null;
 
         EObject lv_enclosedExpression_2_0 = null;
 
@@ -2563,11 +2563,11 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1049:28: ( ( () ( (lv_unaryOperator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:1: ( () ( (lv_unaryOperator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1049:28: ( ( () ( (lv_operator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:1: ( () ( (lv_operator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:1: ( () ( (lv_unaryOperator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:2: () ( (lv_unaryOperator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:1: ( () ( (lv_operator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:2: () ( (lv_operator_1_0= ruleUnaryOperator ) ) ( (lv_enclosedExpression_2_0= ruleAttributeExpression ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:2: ()
             // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1051:5: 
@@ -2580,17 +2580,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1056:2: ( (lv_unaryOperator_1_0= ruleUnaryOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1057:1: (lv_unaryOperator_1_0= ruleUnaryOperator )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1056:2: ( (lv_operator_1_0= ruleUnaryOperator ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1057:1: (lv_operator_1_0= ruleUnaryOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1057:1: (lv_unaryOperator_1_0= ruleUnaryOperator )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1058:3: lv_unaryOperator_1_0= ruleUnaryOperator
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1057:1: (lv_operator_1_0= ruleUnaryOperator )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1058:3: lv_operator_1_0= ruleUnaryOperator
             {
              
-            	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getUnaryOperatorUnaryOperatorEnumRuleCall_1_0()); 
+            	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getOperatorUnaryOperatorEnumRuleCall_1_0()); 
             	    
             pushFollow(FollowSets000.FOLLOW_ruleUnaryOperator_in_ruleUnaryExpression2170);
-            lv_unaryOperator_1_0=ruleUnaryOperator();
+            lv_operator_1_0=ruleUnaryOperator();
 
             state._fsp--;
 
@@ -2600,8 +2600,8 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	        }
                    		set(
                    			current, 
-                   			"unaryOperator",
-                    		lv_unaryOperator_1_0, 
+                   			"operator",
+                    		lv_operator_1_0, 
                     		"UnaryOperator");
             	        afterParserOrEnumRuleCall();
             	    

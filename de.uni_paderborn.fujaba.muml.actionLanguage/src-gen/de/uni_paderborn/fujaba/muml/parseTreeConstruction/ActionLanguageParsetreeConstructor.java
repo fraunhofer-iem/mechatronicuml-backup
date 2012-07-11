@@ -2176,7 +2176,7 @@ protected class Expression_ArithmeticExpressionParserRuleCall extends RuleCallTo
 		   getEObject().eClass() != grammarAccess.getAttributeExpressionAccess().getAttributeExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getComparisonExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOperationCallAccess().getOperationCallAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;
@@ -2231,7 +2231,7 @@ protected class ArithmeticExpression_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getAttributeExpressionAccess().getAttributeExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getComparisonExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOperationCallAccess().getOperationCallAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;
@@ -2455,7 +2455,7 @@ protected class ComparisonExpression_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getAttributeExpressionAccess().getAttributeExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getComparisonExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOperationCallAccess().getOperationCallAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;
@@ -2669,12 +2669,12 @@ protected class ComparisonExpression_RightExpressionAssignment_1_1 extends Assig
 /************ begin Rule LogicalExpression ****************
  *
  * LogicalExpression returns expressions::Expression:
- * 	(UnaryExpression | AttributeExpression) (({commonExpressions::LogicExpression.leftExpression=current}
+ * 	(UnaryExpression | AttributeExpression) (({commonExpressions::LogicalExpression.leftExpression=current}
  * 	operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*;
  *
  **/
 
-// (UnaryExpression | AttributeExpression) (({commonExpressions::LogicExpression.leftExpression=current}
+// (UnaryExpression | AttributeExpression) (({commonExpressions::LogicalExpression.leftExpression=current}
 // operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*
 protected class LogicalExpression_Group extends GroupToken {
 	
@@ -2702,7 +2702,7 @@ protected class LogicalExpression_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getAttributeExpressionAccess().getAttributeExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getComparisonExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOperationCallAccess().getOperationCallAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;
@@ -2805,8 +2805,8 @@ protected class LogicalExpression_AttributeExpressionParserRuleCall_0_1 extends 
 }
 
 
-// (({commonExpressions::LogicExpression.leftExpression=current} operator=LogicOperator) rightExpression=(UnaryExpression |
-// AttributeExpression))*
+// (({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator) rightExpression=(UnaryExpression
+// | AttributeExpression))*
 protected class LogicalExpression_Group_1 extends GroupToken {
 	
 	public LogicalExpression_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2828,14 +2828,14 @@ protected class LogicalExpression_Group_1 extends GroupToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
 
 }
 
-// {commonExpressions::LogicExpression.leftExpression=current} operator=LogicOperator
+// {commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator
 protected class LogicalExpression_Group_1_0 extends GroupToken {
 	
 	public LogicalExpression_Group_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2857,16 +2857,16 @@ protected class LogicalExpression_Group_1_0 extends GroupToken {
 
 }
 
-// {commonExpressions::LogicExpression.leftExpression=current}
-protected class LogicalExpression_LogicExpressionLeftExpressionAction_1_0_0 extends ActionToken  {
+// {commonExpressions::LogicalExpression.leftExpression=current}
+protected class LogicalExpression_LogicalExpressionLeftExpressionAction_1_0_0 extends ActionToken  {
 
-	public LogicalExpression_LogicExpressionLeftExpressionAction_1_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public LogicalExpression_LogicalExpressionLeftExpressionAction_1_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Action getGrammarElement() {
-		return grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0();
+		return grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0();
 	}
 
     @Override
@@ -2902,7 +2902,7 @@ protected class LogicalExpression_OperatorAssignment_1_0_1 extends AssignmentTok
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new LogicalExpression_LogicExpressionLeftExpressionAction_1_0_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new LogicalExpression_LogicalExpressionLeftExpressionAction_1_0_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2986,11 +2986,11 @@ protected class LogicalExpression_RightExpressionAssignment_1_1 extends Assignme
 /************ begin Rule UnaryExpression ****************
  *
  * UnaryExpression returns expressions::Expression:
- * 	{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator enclosedExpression=AttributeExpression;
+ * 	{commonExpressions::UnaryExpression} operator=UnaryOperator enclosedExpression=AttributeExpression;
  *
  **/
 
-// {actionLanguage::UnaryExpression} unaryOperator=UnaryOperator enclosedExpression=AttributeExpression
+// {commonExpressions::UnaryExpression} operator=UnaryOperator enclosedExpression=AttributeExpression
 protected class UnaryExpression_Group extends GroupToken {
 	
 	public UnaryExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3019,7 +3019,7 @@ protected class UnaryExpression_Group extends GroupToken {
 
 }
 
-// {actionLanguage::UnaryExpression}
+// {commonExpressions::UnaryExpression}
 protected class UnaryExpression_UnaryExpressionAction_0 extends ActionToken  {
 
 	public UnaryExpression_UnaryExpressionAction_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3045,16 +3045,16 @@ protected class UnaryExpression_UnaryExpressionAction_0 extends ActionToken  {
 	}
 }
 
-// unaryOperator=UnaryOperator
-protected class UnaryExpression_UnaryOperatorAssignment_1 extends AssignmentToken  {
+// operator=UnaryOperator
+protected class UnaryExpression_OperatorAssignment_1 extends AssignmentToken  {
 	
-	public UnaryExpression_UnaryOperatorAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public UnaryExpression_OperatorAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getUnaryExpressionAccess().getUnaryOperatorAssignment_1();
+		return grammarAccess.getUnaryExpressionAccess().getOperatorAssignment_1();
 	}
 
     @Override
@@ -3067,11 +3067,11 @@ protected class UnaryExpression_UnaryOperatorAssignment_1 extends AssignmentToke
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("unaryOperator",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("unaryOperator");
-		if(enumLitSerializer.isValid(obj.getEObject(), grammarAccess.getUnaryExpressionAccess().getUnaryOperatorUnaryOperatorEnumRuleCall_1_0(), value, null)) { 
+		if((value = eObjectConsumer.getConsumable("operator",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("operator");
+		if(enumLitSerializer.isValid(obj.getEObject(), grammarAccess.getUnaryExpressionAccess().getOperatorUnaryOperatorEnumRuleCall_1_0(), value, null)) { 
 			type = AssignmentType.ENUM_RULE_CALL;
-			element = grammarAccess.getUnaryExpressionAccess().getUnaryOperatorUnaryOperatorEnumRuleCall_1_0();
+			element = grammarAccess.getUnaryExpressionAccess().getOperatorUnaryOperatorEnumRuleCall_1_0();
 			return obj;
 		}
 		return null;
@@ -3119,7 +3119,7 @@ protected class UnaryExpression_EnclosedExpressionAssignment_2 extends Assignmen
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new UnaryExpression_UnaryOperatorAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new UnaryExpression_OperatorAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -3163,7 +3163,7 @@ protected class AttributeExpression_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getAttributeExpressionAccess().getAttributeExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getComparisonExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOperationCallAccess().getOperationCallAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;
@@ -3339,7 +3339,7 @@ protected class OperationCall_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getAttributeExpressionAccess().getAttributeExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getComparisonExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOperationCallAccess().getOperationCallAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;
@@ -3696,7 +3696,7 @@ protected class LiteralExpression_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getAttributeExpressionAccess().getAttributeExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getComparisonExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOperationCallAccess().getOperationCallAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;

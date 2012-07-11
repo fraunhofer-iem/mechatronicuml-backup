@@ -67,12 +67,12 @@ LogicalExpression
 
 LogicalExpression returns expressions::Expression:
 (UnaryExpression| AttributeExpression )
-(({commonExpressions::LogicExpression.leftExpression=current} operator=LogicOperator ) rightExpression=(UnaryExpression| AttributeExpression))*
+(({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator ) rightExpression=(UnaryExpression| AttributeExpression))*
 ;
 
 UnaryExpression returns expressions::Expression:
-{actionLanguage::UnaryExpression}
-	unaryOperator=UnaryOperator enclosedExpression=AttributeExpression
+{commonExpressions::UnaryExpression}
+	operator=UnaryOperator enclosedExpression=AttributeExpression
 	;	
 	
 

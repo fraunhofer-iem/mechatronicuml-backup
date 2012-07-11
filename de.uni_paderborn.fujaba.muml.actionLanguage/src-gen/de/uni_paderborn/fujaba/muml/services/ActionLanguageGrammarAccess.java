@@ -547,7 +547,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAttributeExpressionParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cLogicExpressionLeftExpressionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
+		private final Action cLogicalExpressionLeftExpressionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
 		private final Assignment cOperatorAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
 		private final RuleCall cOperatorLogicOperatorEnumRuleCall_1_0_1_0 = (RuleCall)cOperatorAssignment_1_0_1.eContents().get(0);
 		private final Assignment cRightExpressionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -556,11 +556,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightExpressionAttributeExpressionParserRuleCall_1_1_0_1 = (RuleCall)cRightExpressionAlternatives_1_1_0.eContents().get(1);
 		
 		//LogicalExpression returns expressions::Expression:
-		//	(UnaryExpression | AttributeExpression) (({commonExpressions::LogicExpression.leftExpression=current}
+		//	(UnaryExpression | AttributeExpression) (({commonExpressions::LogicalExpression.leftExpression=current}
 		//	operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*;
 		public ParserRule getRule() { return rule; }
 
-		//(UnaryExpression | AttributeExpression) (({commonExpressions::LogicExpression.leftExpression=current}
+		//(UnaryExpression | AttributeExpression) (({commonExpressions::LogicalExpression.leftExpression=current}
 		//operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*
 		public Group getGroup() { return cGroup; }
 
@@ -573,15 +573,15 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//AttributeExpression
 		public RuleCall getAttributeExpressionParserRuleCall_0_1() { return cAttributeExpressionParserRuleCall_0_1; }
 
-		//(({commonExpressions::LogicExpression.leftExpression=current} operator=LogicOperator) rightExpression=(UnaryExpression |
-		//AttributeExpression))*
+		//(({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator) rightExpression=(UnaryExpression
+		//| AttributeExpression))*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{commonExpressions::LogicExpression.leftExpression=current} operator=LogicOperator
+		//{commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
-		//{commonExpressions::LogicExpression.leftExpression=current}
-		public Action getLogicExpressionLeftExpressionAction_1_0_0() { return cLogicExpressionLeftExpressionAction_1_0_0; }
+		//{commonExpressions::LogicalExpression.leftExpression=current}
+		public Action getLogicalExpressionLeftExpressionAction_1_0_0() { return cLogicalExpressionLeftExpressionAction_1_0_0; }
 
 		//operator=LogicOperator
 		public Assignment getOperatorAssignment_1_0_1() { return cOperatorAssignment_1_0_1; }
@@ -606,26 +606,26 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cUnaryExpressionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cUnaryOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cUnaryOperatorUnaryOperatorEnumRuleCall_1_0 = (RuleCall)cUnaryOperatorAssignment_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cOperatorUnaryOperatorEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
 		private final Assignment cEnclosedExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cEnclosedExpressionAttributeExpressionParserRuleCall_2_0 = (RuleCall)cEnclosedExpressionAssignment_2.eContents().get(0);
 		
 		//UnaryExpression returns expressions::Expression:
-		//	{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator enclosedExpression=AttributeExpression;
+		//	{commonExpressions::UnaryExpression} operator=UnaryOperator enclosedExpression=AttributeExpression;
 		public ParserRule getRule() { return rule; }
 
-		//{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator enclosedExpression=AttributeExpression
+		//{commonExpressions::UnaryExpression} operator=UnaryOperator enclosedExpression=AttributeExpression
 		public Group getGroup() { return cGroup; }
 
-		//{actionLanguage::UnaryExpression}
+		//{commonExpressions::UnaryExpression}
 		public Action getUnaryExpressionAction_0() { return cUnaryExpressionAction_0; }
 
-		//unaryOperator=UnaryOperator
-		public Assignment getUnaryOperatorAssignment_1() { return cUnaryOperatorAssignment_1; }
+		//operator=UnaryOperator
+		public Assignment getOperatorAssignment_1() { return cOperatorAssignment_1; }
 
 		//UnaryOperator
-		public RuleCall getUnaryOperatorUnaryOperatorEnumRuleCall_1_0() { return cUnaryOperatorUnaryOperatorEnumRuleCall_1_0; }
+		public RuleCall getOperatorUnaryOperatorEnumRuleCall_1_0() { return cOperatorUnaryOperatorEnumRuleCall_1_0; }
 
 		//enclosedExpression=AttributeExpression
 		public Assignment getEnclosedExpressionAssignment_2() { return cEnclosedExpressionAssignment_2; }
@@ -1254,7 +1254,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LogicalExpression returns expressions::Expression:
-	//	(UnaryExpression | AttributeExpression) (({commonExpressions::LogicExpression.leftExpression=current}
+	//	(UnaryExpression | AttributeExpression) (({commonExpressions::LogicalExpression.leftExpression=current}
 	//	operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*;
 	public LogicalExpressionElements getLogicalExpressionAccess() {
 		return (pLogicalExpression != null) ? pLogicalExpression : (pLogicalExpression = new LogicalExpressionElements());
@@ -1265,7 +1265,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UnaryExpression returns expressions::Expression:
-	//	{actionLanguage::UnaryExpression} unaryOperator=UnaryOperator enclosedExpression=AttributeExpression;
+	//	{commonExpressions::UnaryExpression} operator=UnaryOperator enclosedExpression=AttributeExpression;
 	public UnaryExpressionElements getUnaryExpressionAccess() {
 		return (pUnaryExpression != null) ? pUnaryExpression : (pUnaryExpression = new UnaryExpressionElements());
 	}
