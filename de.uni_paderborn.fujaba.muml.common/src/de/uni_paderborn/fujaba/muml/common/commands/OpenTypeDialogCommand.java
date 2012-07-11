@@ -1,28 +1,34 @@
 package de.uni_paderborn.fujaba.muml.common.commands;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
@@ -80,6 +86,20 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 				element = (org.eclipse.emf.ecore.EObject) adapter
 						.getAdapter(org.eclipse.emf.ecore.EObject.class);
 			}
+			if (object instanceof IFile) {
+				IFile file = (IFile) object;
+				ResourceSet rset = new ResourceSetImpl();
+				URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+				Resource resource = rset.getResource(uri, true);
+				if (!resource.getContents().isEmpty()) {
+					element = resource.getContents().get(0);
+				}
+			}
+			
+			if (element instanceof Diagram) {
+				Diagram diagram = (Diagram) element;
+				element = diagram.getElement();
+			}
 		}
 		
 		// Get rootContainer of selected element.
@@ -110,10 +130,23 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 		if (typeCategory != null) {
 			AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) TransactionUtil
 					.getEditingDomain(typeCategory);
-
+			ResourceSet rset = typeCategory.eResource().getResourceSet();
+			if (editingDomain == null) {
+				editingDomain = (AdapterFactoryEditingDomain) TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rset);
+			}
+			
 			openTypeDialog(typeCategory, editingDomain);
+
+			for (Resource resource : rset.getResources()) {
+				try {
+					resource.save(Collections.emptyMap());
+				} catch (IOException e) {
+					// TODO: Error Message in Error Log
+					e.printStackTrace();
+				}
+			}
 		} else {
-			// TODO: Error message
+			// TODO: Error message in Error Log
 		}
 
 		return null;
