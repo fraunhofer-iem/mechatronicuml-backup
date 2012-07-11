@@ -21,10 +21,6 @@
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/INCREMENT"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/DECREMENT"/>
     </genEnums>
-    <genClasses ecoreClass="actionLanguage.ecore#//UnaryExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//UnaryExpression/enclosedExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//UnaryExpression/unaryOperator"/>
-    </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//Block">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Block/expressions"/>
     </genClasses>

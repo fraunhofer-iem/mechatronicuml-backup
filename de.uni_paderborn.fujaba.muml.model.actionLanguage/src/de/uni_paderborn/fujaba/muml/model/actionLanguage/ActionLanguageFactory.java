@@ -26,15 +26,6 @@ public interface ActionLanguageFactory extends EFactory {
 	ActionLanguageFactory eINSTANCE = de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguageFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Unary Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unary Expression</em>'.
-	 * @generated
-	 */
-	UnaryExpression createUnaryExpression();
-
-	/**
 	 * Returns a new object of class '<em>Block</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

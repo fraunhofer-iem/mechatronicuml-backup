@@ -65,70 +65,6 @@ public interface ActionLanguagePackage extends EPackage {
 	ActionLanguagePackage eINSTANCE = de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.UnaryExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getUnaryExpression()
-	 * @generated
-	 */
-	int UNARY_EXPRESSION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Enclosed Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION__ENCLOSED_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Unary Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION__UNARY_OPERATOR = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Unary Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BlockImpl <em>Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -136,7 +72,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getBlock()
 	 * @generated
 	 */
-	int BLOCK = 1;
+	int BLOCK = 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -191,7 +127,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLoop()
 	 * @generated
 	 */
-	int LOOP = 2;
+	int LOOP = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -255,7 +191,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getWhileLoop()
 	 * @generated
 	 */
-	int WHILE_LOOP = 3;
+	int WHILE_LOOP = 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -319,7 +255,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getDoWhileLoop()
 	 * @generated
 	 */
-	int DO_WHILE_LOOP = 4;
+	int DO_WHILE_LOOP = 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -383,7 +319,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAssignment()
 	 * @generated
 	 */
-	int ASSIGNMENT = 5;
+	int ASSIGNMENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -465,7 +401,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getForLoop()
 	 * @generated
 	 */
-	int FOR_LOOP = 6;
+	int FOR_LOOP = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -547,7 +483,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getIfStatement()
 	 * @generated
 	 */
-	int IF_STATEMENT = 7;
+	int IF_STATEMENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -638,7 +574,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAttributeExpression()
 	 * @generated
 	 */
-	int ATTRIBUTE_EXPRESSION = 8;
+	int ATTRIBUTE_EXPRESSION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -693,7 +629,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getOperationCall()
 	 * @generated
 	 */
-	int OPERATION_CALL = 9;
+	int OPERATION_CALL = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -766,7 +702,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 10;
+	int ASSIGN_OPERATOR = 9;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -776,39 +712,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 11;
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression <em>Unary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unary Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression
-	 * @generated
-	 */
-	EClass getUnaryExpression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getEnclosedExpression <em>Enclosed Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Enclosed Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getEnclosedExpression()
-	 * @see #getUnaryExpression()
-	 * @generated
-	 */
-	EReference getUnaryExpression_EnclosedExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getUnaryOperator <em>Unary Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Unary Operator</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression#getUnaryOperator()
-	 * @see #getUnaryExpression()
-	 * @generated
-	 */
-	EAttribute getUnaryExpression_UnaryOperator();
+	int INCREMENT_DECREMENT_OPERATOR = 10;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Block <em>Block</em>}'.
@@ -1140,32 +1044,6 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.UnaryExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getUnaryExpression()
-		 * @generated
-		 */
-		EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Enclosed Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNARY_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE.getUnaryExpression_EnclosedExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Unary Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNARY_EXPRESSION__UNARY_OPERATOR = eINSTANCE.getUnaryExpression_UnaryOperator();
-
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.BlockImpl <em>Block</em>}' class.
 		 * <!-- begin-user-doc -->

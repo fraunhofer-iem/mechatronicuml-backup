@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.expressions.ExpressionsPackage;
-import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
@@ -27,7 +26,6 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
@@ -46,13 +44,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
  * @generated
  */
 public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLanguagePackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unaryExpressionEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,35 +190,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ActionLanguagePackage.eNS_URI, theActionLanguagePackage);
 		return theActionLanguagePackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getUnaryExpression() {
-		return unaryExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnaryExpression_EnclosedExpression() {
-		return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getUnaryExpression_UnaryOperator() {
-		return (EAttribute)unaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -548,10 +510,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		isCreated = true;
 
 		// Create classes and their features
-		unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
-		createEReference(unaryExpressionEClass, UNARY_EXPRESSION__ENCLOSED_EXPRESSION);
-		createEAttribute(unaryExpressionEClass, UNARY_EXPRESSION__UNARY_OPERATOR);
-
 		blockEClass = createEClass(BLOCK);
 		createEReference(blockEClass, BLOCK__EXPRESSIONS);
 
@@ -618,7 +576,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
-		CommonExpressionsPackage theCommonExpressionsPackage = (CommonExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
@@ -626,7 +583,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		unaryExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		blockEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		loopEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		whileLoopEClass.getESuperTypes().add(this.getLoop());
@@ -638,10 +594,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		operationCallEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnaryExpression_EnclosedExpression(), theExpressionsPackage.getExpression(), null, "enclosedExpression", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getUnaryExpression_UnaryOperator(), theCommonExpressionsPackage.getUnaryOperator(), "unaryOperator", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_Expressions(), theExpressionsPackage.getExpression(), null, "expressions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

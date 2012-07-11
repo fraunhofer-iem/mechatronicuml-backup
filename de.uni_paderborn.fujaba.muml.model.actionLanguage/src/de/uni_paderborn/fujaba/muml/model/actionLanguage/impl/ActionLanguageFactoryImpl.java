@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -24,7 +25,6 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
 /**
@@ -71,7 +71,6 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ActionLanguagePackage.UNARY_EXPRESSION: return createUnaryExpression();
 			case ActionLanguagePackage.BLOCK: return createBlock();
 			case ActionLanguagePackage.WHILE_LOOP: return createWhileLoop();
 			case ActionLanguagePackage.DO_WHILE_LOOP: return createDoWhileLoop();
@@ -117,16 +116,6 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnaryExpression createUnaryExpression() {
-		UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
-		return unaryExpression;
 	}
 
 	/**

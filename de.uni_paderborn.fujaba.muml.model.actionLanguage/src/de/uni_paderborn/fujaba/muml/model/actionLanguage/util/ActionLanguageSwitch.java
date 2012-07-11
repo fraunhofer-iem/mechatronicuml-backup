@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.util;
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -22,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
 
@@ -83,15 +83,6 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ActionLanguagePackage.UNARY_EXPRESSION: {
-				UnaryExpression unaryExpression = (UnaryExpression)theEObject;
-				T result = caseUnaryExpression(unaryExpression);
-				if (result == null) result = caseExpression(unaryExpression);
-				if (result == null) result = caseCommentableElement(unaryExpression);
-				if (result == null) result = caseExtendableElement(unaryExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ActionLanguagePackage.BLOCK: {
 				Block block = (Block)theEObject;
 				T result = caseBlock(block);
@@ -178,21 +169,6 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUnaryExpression(UnaryExpression object) {
-		return null;
 	}
 
 	/**

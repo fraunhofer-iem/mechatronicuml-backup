@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.util;
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -23,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
 
@@ -83,10 +83,6 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ActionLanguageSwitch<Adapter> modelSwitch =
 		new ActionLanguageSwitch<Adapter>() {
-			@Override
-			public Adapter caseUnaryExpression(UnaryExpression object) {
-				return createUnaryExpressionAdapter();
-			}
 			@Override
 			public Adapter caseBlock(Block object) {
 				return createBlockAdapter();
@@ -154,20 +150,6 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression <em>Unary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression
-	 * @generated
-	 */
-	public Adapter createUnaryExpressionAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Block <em>Block</em>}'.
