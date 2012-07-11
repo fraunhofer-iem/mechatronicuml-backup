@@ -75,29 +75,6 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnaryExpressionItemProvider unaryExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.UnaryExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnaryExpressionAdapter() {
-		if (unaryExpressionItemProvider == null) {
-			unaryExpressionItemProvider = new UnaryExpressionItemProvider(this);
-		}
-
-		return unaryExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Block} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -380,7 +357,6 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	 * @generated
 	 */
 	public void dispose() {
-		if (unaryExpressionItemProvider != null) unaryExpressionItemProvider.dispose();
 		if (blockItemProvider != null) blockItemProvider.dispose();
 		if (whileLoopItemProvider != null) whileLoopItemProvider.dispose();
 		if (doWhileLoopItemProvider != null) doWhileLoopItemProvider.dispose();

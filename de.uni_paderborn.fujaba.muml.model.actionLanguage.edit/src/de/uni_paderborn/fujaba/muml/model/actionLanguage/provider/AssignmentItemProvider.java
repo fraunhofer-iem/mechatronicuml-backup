@@ -27,12 +27,12 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
-
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
+
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
@@ -249,11 +249,6 @@ public class AssignmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
@@ -319,27 +314,12 @@ public class AssignmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_EXPRESSION,
-				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

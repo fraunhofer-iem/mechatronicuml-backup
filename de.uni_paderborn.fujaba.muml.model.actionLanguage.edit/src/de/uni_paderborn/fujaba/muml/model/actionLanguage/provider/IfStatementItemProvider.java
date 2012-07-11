@@ -25,12 +25,12 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
-
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
+
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
@@ -182,11 +182,6 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 ActionLanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
@@ -252,27 +247,12 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -317,11 +297,6 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionLanguageFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionLanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
@@ -387,27 +362,12 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -468,8 +428,8 @@ public class IfStatementItemProvider
 
 		boolean qualify =
 			childFeature == ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION ||
-			childFeature == ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS ||
 			childFeature == ActionLanguagePackage.Literals.IF_STATEMENT__IF_BLOCK ||
+			childFeature == ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS ||
 			childFeature == ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS ||
 			childFeature == ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK;
 
