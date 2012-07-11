@@ -200,7 +200,7 @@ public class ParameterBindingPropertySourceProvider implements
 
 			// Create Literal Expression for the value
 			LiteralExpression valueExpression = CommonExpressionsFactory.eINSTANCE
-					.createStringLiteralExpression();
+					.createLiteralExpression();
 			valueExpression.setValue((String) value);
 
 			// Set within a write transaction
