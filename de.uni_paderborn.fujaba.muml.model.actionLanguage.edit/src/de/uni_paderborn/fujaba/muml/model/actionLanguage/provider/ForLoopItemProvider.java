@@ -174,6 +174,8 @@ public class ForLoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
+			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST ||
 			childFeature == ActionLanguagePackage.Literals.FOR_LOOP__INITALIZE_EXPRESSION ||
 			childFeature == ActionLanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION;
 

@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -108,6 +109,29 @@ public class DoWhileLoopItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
+			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }
