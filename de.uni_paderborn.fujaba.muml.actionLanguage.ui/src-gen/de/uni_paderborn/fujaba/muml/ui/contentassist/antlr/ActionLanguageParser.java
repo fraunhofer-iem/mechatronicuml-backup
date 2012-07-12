@@ -74,7 +74,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryExpressionAccess().getGroup(), "rule__UnaryExpression__Group__0");
 					put(grammarAccess.getAttributeExpressionAccess().getGroup_1(), "rule__AttributeExpression__Group_1__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_1(), "rule__OperationCall__Group_1__0");
-					put(grammarAccess.getOperationCallAccess().getGroup_1_4(), "rule__OperationCall__Group_1_4__0");
+					put(grammarAccess.getOperationCallAccess().getGroup_1_1(), "rule__OperationCall__Group_1_1__0");
+					put(grammarAccess.getOperationCallAccess().getGroup_1_1_3(), "rule__OperationCall__Group_1_1_3__0");
+					put(grammarAccess.getParamaterBindingAccess().getGroup(), "rule__ParamaterBinding__Group__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup_0(), "rule__LiteralExpression__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup_1(), "rule__LiteralExpression__Group_1__0");
 					put(grammarAccess.getBlockAccess().getExpressionsAssignment_2(), "rule__Block__ExpressionsAssignment_2");
@@ -108,9 +110,11 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryExpressionAccess().getOperatorAssignment_1(), "rule__UnaryExpression__OperatorAssignment_1");
 					put(grammarAccess.getUnaryExpressionAccess().getEnclosedExpressionAssignment_2(), "rule__UnaryExpression__EnclosedExpressionAssignment_2");
 					put(grammarAccess.getAttributeExpressionAccess().getAttributeAssignment_1_1(), "rule__AttributeExpression__AttributeAssignment_1_1");
-					put(grammarAccess.getOperationCallAccess().getOperationAssignment_1_1(), "rule__OperationCall__OperationAssignment_1_1");
-					put(grammarAccess.getOperationCallAccess().getParameterValuesForBindingAssignment_1_3(), "rule__OperationCall__ParameterValuesForBindingAssignment_1_3");
-					put(grammarAccess.getOperationCallAccess().getParameterValuesForBindingAssignment_1_4_1(), "rule__OperationCall__ParameterValuesForBindingAssignment_1_4_1");
+					put(grammarAccess.getOperationCallAccess().getOperationAssignment_1_1_0(), "rule__OperationCall__OperationAssignment_1_1_0");
+					put(grammarAccess.getOperationCallAccess().getParameterBindingAssignment_1_1_2(), "rule__OperationCall__ParameterBindingAssignment_1_1_2");
+					put(grammarAccess.getOperationCallAccess().getParameterBindingAssignment_1_1_3_1(), "rule__OperationCall__ParameterBindingAssignment_1_1_3_1");
+					put(grammarAccess.getParamaterBindingAccess().getParameterAssignment_1(), "rule__ParamaterBinding__ParameterAssignment_1");
+					put(grammarAccess.getParamaterBindingAccess().getValueAssignment_3(), "rule__ParamaterBinding__ValueAssignment_3");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1_1(), "rule__LiteralExpression__ValueAssignment_1_1");
 				}
 			};
