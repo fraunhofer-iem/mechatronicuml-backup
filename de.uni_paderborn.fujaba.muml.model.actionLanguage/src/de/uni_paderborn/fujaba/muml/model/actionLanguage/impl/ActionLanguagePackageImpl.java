@@ -457,15 +457,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperationCall_ParameterValuesForBinding() {
-		return (EReference)operationCallEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
@@ -544,7 +535,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		operationCallEClass = createEClass(OPERATION_CALL);
 		createEReference(operationCallEClass, OPERATION_CALL__OPERATION);
 		createEReference(operationCallEClass, OPERATION_CALL__PARAMETER_BINDING);
-		createEReference(operationCallEClass, OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING);
 
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
@@ -628,7 +618,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEClass(operationCallEClass, OperationCall.class, "OperationCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationCall_Operation(), theCorePackage.getOperation(), null, "operation", null, 1, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperationCall_ParameterBinding(), theCorePackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationCall_ParameterValuesForBinding(), theExpressionsPackage.getExpression(), null, "parameterValuesForBinding", null, 0, -1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");

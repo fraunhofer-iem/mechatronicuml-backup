@@ -33,7 +33,6 @@ import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl#getParameterBinding <em>Parameter Binding</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl#getParameterValuesForBinding <em>Parameter Values For Binding</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,16 +58,6 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	 * @ordered
 	 */
 	protected EList<ParameterBinding> parameterBinding;
-
-	/**
-	 * The cached value of the '{@link #getParameterValuesForBinding() <em>Parameter Values For Binding</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameterValuesForBinding()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Expression> parameterValuesForBinding;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -144,25 +133,11 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Expression> getParameterValuesForBinding() {
-		if (parameterValuesForBinding == null) {
-			parameterValuesForBinding = new EObjectContainmentEList<Expression>(Expression.class, this, ActionLanguagePackage.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING);
-		}
-		return parameterValuesForBinding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				return ((InternalEList<?>)getParameterBinding()).basicRemove(otherEnd, msgs);
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING:
-				return ((InternalEList<?>)getParameterValuesForBinding()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -180,8 +155,6 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 				return basicGetOperation();
 			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				return getParameterBinding();
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING:
-				return getParameterValuesForBinding();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,10 +175,6 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 				getParameterBinding().clear();
 				getParameterBinding().addAll((Collection<? extends ParameterBinding>)newValue);
 				return;
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING:
-				getParameterValuesForBinding().clear();
-				getParameterValuesForBinding().addAll((Collection<? extends Expression>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -224,9 +193,6 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				getParameterBinding().clear();
 				return;
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING:
-				getParameterValuesForBinding().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -243,8 +209,6 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 				return operation != null;
 			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				return parameterBinding != null && !parameterBinding.isEmpty();
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_VALUES_FOR_BINDING:
-				return parameterValuesForBinding != null && !parameterValuesForBinding.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

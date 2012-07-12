@@ -53,7 +53,6 @@
     <genClasses ecoreClass="actionLanguage.ecore#//OperationCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/operation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/parameterBinding"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/parameterValuesForBinding"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
