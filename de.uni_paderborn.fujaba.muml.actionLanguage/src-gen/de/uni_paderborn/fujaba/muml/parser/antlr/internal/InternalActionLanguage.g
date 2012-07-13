@@ -66,16 +66,23 @@ import de.uni_paderborn.fujaba.muml.services.ActionLanguageGrammarAccess;
 
 // Entry rule entryRuleBlock
 entryRuleBlock returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
+	}
 	:
 	{ newCompositeNode(grammarAccess.getBlockRule()); }
 	 iv_ruleBlock=ruleBlock 
 	 { $current=$iv_ruleBlock.current; } 
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule Block
 ruleBlock returns [EObject current=null] 
     @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -112,6 +119,9 @@ ruleBlock returns [EObject current=null]
     }
 )
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 
 
@@ -1176,7 +1186,7 @@ ruleOperationCall returns [EObject current=null]
             grammarAccess.getOperationCallAccess().getOperationCallAction_1_0(),
             $current);
     }
-)(
+)((
 (
 		{
 			if ($current==null) {
@@ -1185,58 +1195,120 @@ ruleOperationCall returns [EObject current=null]
         }
 	otherlv_2=RULE_ID
 	{
-		newLeafNode(otherlv_2, grammarAccess.getOperationCallAccess().getOperationOperationCrossReference_1_1_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getOperationCallAccess().getOperationOperationCrossReference_1_1_0_0()); 
 	}
 
 )
 )	otherlv_3='(' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getOperationCallAccess().getLeftParenthesisKeyword_1_2());
+    	newLeafNode(otherlv_3, grammarAccess.getOperationCallAccess().getLeftParenthesisKeyword_1_1_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterValuesForBindingExpressionParserRuleCall_1_3_0()); 
+	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterBindingParamaterBindingParserRuleCall_1_1_2_0()); 
 	    }
-		lv_parameterValuesForBinding_4_0=ruleExpression		{
+		lv_parameterBinding_4_0=ruleParamaterBinding		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getOperationCallRule());
 	        }
        		add(
        			$current, 
-       			"parameterValuesForBinding",
-        		lv_parameterValuesForBinding_4_0, 
-        		"Expression");
+       			"parameterBinding",
+        		lv_parameterBinding_4_0, 
+        		"ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_5=',' 
+)?(	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getOperationCallAccess().getCommaKeyword_1_4_0());
+    	newLeafNode(otherlv_5, grammarAccess.getOperationCallAccess().getCommaKeyword_1_1_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterValuesForBindingExpressionParserRuleCall_1_4_1_0()); 
+	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterBindingParamaterBindingParserRuleCall_1_1_3_1_0()); 
 	    }
-		lv_parameterValuesForBinding_6_0=ruleExpression		{
+		lv_parameterBinding_6_0=ruleParamaterBinding		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getOperationCallRule());
 	        }
        		add(
        			$current, 
-       			"parameterValuesForBinding",
-        		lv_parameterValuesForBinding_6_0, 
+       			"parameterBinding",
+        		lv_parameterBinding_6_0, 
+        		"ParamaterBinding");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_7=')' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_1_4());
+    }
+)))
+;
+
+
+
+
+
+// Entry rule entryRuleParamaterBinding
+entryRuleParamaterBinding returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getParamaterBindingRule()); }
+	 iv_ruleParamaterBinding=ruleParamaterBinding 
+	 { $current=$iv_ruleParamaterBinding.current; } 
+	 EOF 
+;
+
+// Rule ParamaterBinding
+ruleParamaterBinding returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getParamaterBindingAccess().getParameterBindingAction_0(),
+            $current);
+    }
+)(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParamaterBindingRule());
+	        }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getParamaterBindingAccess().getParameterParameterCrossReference_1_0()); 
+	}
+
+)
+)	otherlv_2=':=' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getParamaterBindingAccess().getColonEqualsSignKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0()); 
+	    }
+		lv_value_3_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getParamaterBindingRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
         		"Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))+	otherlv_7=')' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_5());
-    }
 ))
 ;
 

@@ -22,7 +22,7 @@
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="commonExpressions">
       <ePackage href="http://www.storydriven.org/core/0.2.7#//expressions/common"/>
     </metamodelDeclarations>
-    <rules xsi:type="xtext:ParserRule" name="Block">
+    <rules xsi:type="xtext:ParserRule" name="Block" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /1/@rules.3 /1/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//Block"/>
       </type>
@@ -156,14 +156,14 @@
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Assignment" feature="assignOperator" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="assignExpression" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="incrementDecrementOperator" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
@@ -184,11 +184,11 @@
         </elements>
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Assignment" feature="incrementDecrementOperator" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
           </elements>
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Assignment" feature="assignOperator" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="assignExpression" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
@@ -216,7 +216,7 @@
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="rightExpression" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
@@ -238,7 +238,7 @@
               </type>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="rightExpression" operator="=">
@@ -264,7 +264,7 @@
               </type>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="rightExpression" operator="=">
@@ -287,7 +287,7 @@
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="enclosedExpression" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
@@ -322,32 +322,58 @@
         <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.7#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Action">
             <type metamodel="/0/@metamodelDeclarations.0">
               <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//OperationCall"/>
             </type>
           </elements>
-          <elements xsi:type="xtext:Assignment" feature="operation" operator="=">
-            <terminal xsi:type="xtext:CrossReference">
-              <type metamodel="/0/@metamodelDeclarations.4">
-                <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Operation"/>
-              </type>
-              <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-            </terminal>
-          </elements>
-          <elements xsi:type="xtext:Keyword" value="("/>
-          <elements xsi:type="xtext:Assignment" feature="parameterValuesForBinding" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
-          </elements>
-          <elements xsi:type="xtext:Group" cardinality="+">
-            <elements xsi:type="xtext:Keyword" value=","/>
-            <elements xsi:type="xtext:Assignment" feature="parameterValuesForBinding" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Assignment" feature="operation" operator="=">
+              <terminal xsi:type="xtext:CrossReference">
+                <type metamodel="/0/@metamodelDeclarations.4">
+                  <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Operation"/>
+                </type>
+                <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+              </terminal>
             </elements>
+            <elements xsi:type="xtext:Keyword" value="("/>
+            <elements xsi:type="xtext:Assignment" cardinality="?" feature="parameterBinding" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+            </elements>
+            <elements xsi:type="xtext:Group" cardinality="*">
+              <elements xsi:type="xtext:Keyword" value=","/>
+              <elements xsi:type="xtext:Assignment" feature="parameterBinding" operator="+=">
+                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+              </elements>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value=")"/>
           </elements>
-          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="ParamaterBinding">
+      <type metamodel="/0/@metamodelDeclarations.4">
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//ParameterBinding"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.4">
+            <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//ParameterBinding"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="parameter" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="/0/@metamodelDeclarations.4">
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Parameter"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":="/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
         </elements>
       </alternatives>
     </rules>
@@ -368,7 +394,7 @@
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
           </elements>
         </elements>
       </alternatives>
@@ -378,8 +404,8 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
         <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
       </alternatives>
     </rules>

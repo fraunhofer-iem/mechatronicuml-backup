@@ -16,7 +16,7 @@ import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" 
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/common" as commonExpressions
 
 
-Block returns actionLanguage::Block:
+Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
 	{actionLanguage::Block}
 	'{'(expressions+=ExpressionStartRule*)'}';
 
@@ -85,8 +85,12 @@ AttributeExpression returns expressions::Expression:
 	
 OperationCall returns expressions::Expression:
 	LiteralExpression |
-	{actionLanguage::OperationCall} operation=[core::Operation]'('parameterValuesForBinding+=Expression(','parameterValuesForBinding+=Expression)+')'
+	{actionLanguage::OperationCall} (operation=[core::Operation]'('parameterBinding+=ParamaterBinding?(',' parameterBinding+=ParamaterBinding)*')')
 	;				
+	
+ParamaterBinding returns core::ParameterBinding:
+ {core::ParameterBinding}parameter=[core::Parameter]':='value=Expression 
+ ;	
 
 LiteralExpression returns expressions::Expression:
 	'(' Expression ')' |
