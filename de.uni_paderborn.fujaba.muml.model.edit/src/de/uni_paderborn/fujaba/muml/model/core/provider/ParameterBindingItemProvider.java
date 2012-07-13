@@ -13,6 +13,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -33,11 +34,15 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 
+import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 
 /**
@@ -193,6 +198,17 @@ public class ParameterBindingItemProvider
 		// TODO: Use XText-Parser to support other kinds of Expressions
 		if (value instanceof LiteralExpression) {
 			buffer.append(((LiteralExpression)value).getValue());
+		} else if (value instanceof Expression) {
+			EObject container = parameterBinding.eContainer().eContainer().eContainer();
+			if (container instanceof Transition) {
+				List<Attribute> attributeList = ((Transition) container).getStatechart().getAllAvailableAttributes();
+				buffer.append(LanguageResource.serializeEObject(value, attributeList));
+			} else if (container instanceof RealtimeStatechart) { 
+				buffer.append(LanguageResource.serializeEObject(value, ((RealtimeStatechart) container).getAllAvailableAttributes()));
+			} else {
+				// should not happen
+				buffer.append("null");
+			}
 		} else {
 			buffer.append("null");
 		}

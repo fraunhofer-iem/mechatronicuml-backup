@@ -18,7 +18,8 @@ import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/c
 
 Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
 	{actionLanguage::Block}
-	'{'(expressions+=ExpressionStartRule*)'}';
+	'{'(expressions+=ExpressionStartRule*)'}' | expressions+=ArithmeticExpression
+;
 
 ForLoop returns actionLanguage::ForLoop:
  'for' '(' initalizeExpression=Assignment  loopTest=Expression';'  countingExpression=ForLoopCountingExpression ')' 

@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
@@ -24,10 +26,46 @@ import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 public class LanguageResource {
 	private static Injector injector = null;
-	private static String loadError = "";
+	
+	protected static class LoadResult implements ILoadResult {
+		
+		private EObject object;
+		private List<Diagnostic> errorList;
+		
+		public void setEObject(EObject object) {
+			this.object = object;
+		}
+		
+		public void setErrorList(List<Diagnostic> errorList) {
+			this.errorList = errorList;
+		}
+
+		@Override
+		public EObject getEObject() {
+			return object;
+		}
+
+		@Override
+		public boolean hasError() {
+			return !getErrorList().isEmpty();
+		}
+
+		@Override
+		public String getError() {
+			return hasError() ? getErrorList().toString() : "";
+		}
+		
+		protected List<Diagnostic> getErrorList() {
+			if (errorList == null) {
+				return Collections.emptyList();
+			}
+			return errorList;
+		}
+		
+	}
 	
 	public static void setInjector(Injector inj) {
-		System.out.println("set injector");
+		//System.out.println("set injector");
 		injector = inj;
 	}
 	
@@ -44,35 +82,24 @@ public class LanguageResource {
 		return resource;
 	}
 	
-	public static String getloadErrorMessage() {
-		return loadError;
-	}
-	
-	private static void setError(Resource resource) {
-		// that's not the smartest solution
-		loadError = "";
-		if (!resource.getErrors().isEmpty()) {
-			loadError = resource.getErrors().toString();
-		}
-	}
-	public static EObject loadFromString(String text, List<Attribute> attributeList) {
+	public static ILoadResult loadFromString(String text, List<Attribute> attributeList) {
 		Resource resource = getXtextResource(attributeList);
-		EObject expression = null;
+		LoadResult result = new LoadResult();
 		try {
 			Map<String, Boolean> options = new HashMap<String, Boolean>();
 			options.put(XtextResource.OPTION_RESOLVE_ALL, true);
 			resource.load(new StringInputStream(text), options);
 			//System.out.println(resource.getWarnings());
 			//System.out.println(resource.getErrors());
-			setError(resource);
-			if (resource.getErrors().isEmpty()) {
-				expression = resource.getContents().get(0);
+			result.setErrorList(resource.getErrors());
+			if (!result.hasError()) {
+				result.setEObject(resource.getContents().get(0));
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return expression;
+		return result;
 	}
 	
 	public static String serializeEObject(EObject object, List<Attribute> attributeList) {

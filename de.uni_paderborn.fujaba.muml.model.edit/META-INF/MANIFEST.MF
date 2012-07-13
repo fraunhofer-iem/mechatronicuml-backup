@@ -21,5 +21,6 @@ Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.2.0",
  de.uni_paderborn.fujaba.muml.model;bundle-version="0.2.0";visibility:=reexport,
  de.fujaba.modelinstance.edit;bundle-version="0.2.0";visibility:=reexport,
  org.storydriven.storydiagrams.edit,
- org.storydriven.core.edit;visibility:=reexport
+ org.storydriven.core.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="0.2.0"
 Bundle-ActivationPolicy: lazy

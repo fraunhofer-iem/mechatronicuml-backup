@@ -21,8 +21,13 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.ui.provider.PropertyDescriptor;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.action.StatusLineManager;
+import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ICellEditorListener;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
@@ -273,7 +278,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				@Override
 				public Object parse(String text) {
 					return LanguageResource.loadFromString(text,
-							getAllAvailableAttributes());
+							getAllAvailableAttributes()).getEObject();
 				}
 			};
 			textDialog = new SimpleTextualDialogExtension(dialog,
@@ -367,6 +372,16 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 			propertySheetDialogExtension = new PropertySheetDialogExtension(
 					provider, dialog) {
+				
+				@Override
+				public void createMainArea(Composite parent) {
+					super.createMainArea(parent);
+					StatusLineManager statusLineManager = new StatusLineManager();
+					statusLineManager.createControl(parent);
+					statusLineManager.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+					// the MenuManager and ToolBarManager are just "dummies"
+					page.makeContributions(new MenuManager(), new ToolBarManager(), statusLineManager);
+				}
 
 				@Override
 				public void okPressed() {

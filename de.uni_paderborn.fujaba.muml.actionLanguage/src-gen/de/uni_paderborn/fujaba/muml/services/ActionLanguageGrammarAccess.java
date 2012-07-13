@@ -19,34 +19,46 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class BlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Block");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cBlockAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cExpressionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExpressionsExpressionStartRuleParserRuleCall_2_0 = (RuleCall)cExpressionsAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cBlockAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cExpressionsAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cExpressionsExpressionStartRuleParserRuleCall_0_2_0 = (RuleCall)cExpressionsAssignment_0_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cExpressionsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cExpressionsArithmeticExpressionParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
 		
 		//Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-		//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}";
+		//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=ArithmeticExpression;
 		public ParserRule getRule() { return rule; }
 
+		//{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=ArithmeticExpression
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}"
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_0() { return cGroup_0; }
 
 		//{actionLanguage::Block}
-		public Action getBlockAction_0() { return cBlockAction_0; }
+		public Action getBlockAction_0_0() { return cBlockAction_0_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_0_1() { return cLeftCurlyBracketKeyword_0_1; }
 
 		//expressions+=ExpressionStartRule*
-		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
+		public Assignment getExpressionsAssignment_0_2() { return cExpressionsAssignment_0_2; }
 
 		//ExpressionStartRule
-		public RuleCall getExpressionsExpressionStartRuleParserRuleCall_2_0() { return cExpressionsExpressionStartRuleParserRuleCall_2_0; }
+		public RuleCall getExpressionsExpressionStartRuleParserRuleCall_0_2_0() { return cExpressionsExpressionStartRuleParserRuleCall_0_2_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_0_3() { return cRightCurlyBracketKeyword_0_3; }
+
+		//expressions+=ArithmeticExpression
+		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
+
+		//ArithmeticExpression
+		public RuleCall getExpressionsArithmeticExpressionParserRuleCall_1_0() { return cExpressionsArithmeticExpressionParserRuleCall_1_0; }
 	}
 
 	public class ForLoopElements extends AbstractParserRuleElementFinder {
@@ -1183,7 +1195,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-	//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}";
+	//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=ArithmeticExpression;
 	public BlockElements getBlockAccess() {
 		return (pBlock != null) ? pBlock : (pBlock = new BlockElements());
 	}

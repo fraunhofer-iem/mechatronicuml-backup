@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.storydriven.core.expressions.Expression;
 
+import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
@@ -74,14 +75,13 @@ public abstract class ModelStorage<T> implements IModelStorage {
 	}
 
 	protected Expression parseExpression(String text) throws CoreException {
-		Expression expression = (Expression) LanguageResource.loadFromString(text, getAttributeList());
-		String error = LanguageResource.getloadErrorMessage();
-		if (!error.equals("")) {
+		ILoadResult loadResult = LanguageResource.loadFromString(text, getAttributeList());
+		if (loadResult.hasError()) {
 			String pluginId = "FIXME"; //ActionLanguageActivator.getInstance().getBundle().getSymbolicName();
-			IStatus status = new Status(IStatus.ERROR, pluginId, IStatus.ERROR, error, null);
+			IStatus status = new Status(IStatus.ERROR, pluginId, IStatus.ERROR, loadResult.getError(), null);
 			throw new CoreException(status);
 		}
-		return expression;
+		return (Expression) loadResult.getEObject();
 	}
 	
 	protected String serializeExpression(EObject object) {
