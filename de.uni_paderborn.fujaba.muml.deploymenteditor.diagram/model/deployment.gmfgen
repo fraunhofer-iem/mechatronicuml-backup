@@ -313,7 +313,7 @@
           body="self.kind = HardwarePortDirectionKind::OUT or self.kind = HardwarePortDirectionKind::IN_OUT"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="(self.hardwareNode &lt;> oppositeEnd.hardwareNode) and (if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif)"/>
+          body="if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif"/>
     </providers>
   </expressionProviders>
   <labelParsers

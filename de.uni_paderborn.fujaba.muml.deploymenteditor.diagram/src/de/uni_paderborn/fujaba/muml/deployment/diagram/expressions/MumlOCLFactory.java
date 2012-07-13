@@ -53,7 +53,7 @@ public class MumlOCLFactory {
 					"\'hardwareNode\'", //$NON-NLS-1$
 					"\'hardwarePort\'", //$NON-NLS-1$
 					"self.kind = HardwarePortDirectionKind::OUT or self.kind = HardwarePortDirectionKind::IN_OUT", //$NON-NLS-1$
-					"(self.hardwareNode <> oppositeEnd.hardwareNode) and (if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif)", //$NON-NLS-1$
+					"if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],
