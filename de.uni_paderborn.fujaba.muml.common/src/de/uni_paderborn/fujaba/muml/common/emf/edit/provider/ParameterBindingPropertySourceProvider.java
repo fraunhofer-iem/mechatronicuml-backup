@@ -27,12 +27,9 @@ import org.storydriven.core.expressions.common.LiteralExpression;
 import de.uni_paderborn.fujaba.common.descriptor.AbstractItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class ParameterBindingPropertySourceProvider implements
 		IPropertySourceProvider {
@@ -51,18 +48,6 @@ public class ParameterBindingPropertySourceProvider implements
 			public ValueWrapper(EObject object) {
 				container = object;
 			}
-			
-			public static List<Attribute> getAttributeList(EObject object) {
-				EObject container = object.eContainer().eContainer();
-				if (container instanceof Transition) {
-					return ((Transition) container).getStatechart().getAllAvailableAttributes();	
-				} else if (container instanceof RealtimeStatechart) {
-					return ((RealtimeStatechart) container).getAllAvailableAttributes();
-				}
-				// we need to support actions containers, too (later)
-				throw new IllegalArgumentException(
-						"expected Transition instead of: " + container);
-			}
 
 			@Override
 			public String isValid(Object value) {
@@ -77,21 +62,14 @@ public class ParameterBindingPropertySourceProvider implements
 				if (text == null) {
 					return null;
 				}
-				ILoadResult loadResult = LanguageResource.loadFromString(text, getAttributeList(container));
+				//ILoadResult loadResult = LanguageResource.loadFromString(text, getAttributeList(container));
+				ILoadResult loadResult = LanguageResource.loadFromString(text, container);
 				return loadResult;
 			}
 			
 			public EObject toValue(String text) {
 				ILoadResult loadResult = loadFromString(text);
 				return loadResult == null ? null : loadResult.getEObject();
-			}
-			
-			public String toString(EObject object) {
-				if (object == null) {
-					return "";
-				}
-				String text = LanguageResource.serializeEObject((EObject) object, getAttributeList(object));
-				return text == null ? "" : text;
 			}
 
 		}
@@ -112,9 +90,6 @@ public class ParameterBindingPropertySourceProvider implements
 
 	    @Override
 	    public void doSetValue(Object value) {
-	    	if (value instanceof EObject) {
-	    		value = valueWrapper.toString((EObject) value);
-	    	}
 	    	super.doSetValue(value == null ? "" : value);
 	    }
 	}
@@ -261,7 +236,7 @@ public class ParameterBindingPropertySourceProvider implements
 					return literalExpression.getValue();
 				} else if (binding.getValue() instanceof Expression) {
 					return LanguageResource.serializeEObject(binding.getValue(),
-							ParameterBindingCellEditor.ValueWrapper.getAttributeList((EObject) object));
+							(EObject) object);
 				}
 			}
 			return null;

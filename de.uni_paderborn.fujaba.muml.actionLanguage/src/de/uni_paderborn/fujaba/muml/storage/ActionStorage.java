@@ -11,11 +11,9 @@ import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
@@ -26,16 +24,12 @@ public class ActionStorage extends ModelStorage<Action> {
 	public ActionStorage(EObject model) {
 		super(model);
 		Action action = null;
-		List<Attribute> attributeList = null;
 		if (model instanceof DoEvent) {
 			action = ((DoEvent) model).getAction();
-			attributeList = ((RealtimeStatechart) model.eContainer().eContainer()).getAllAvailableAttributes();
 		} else if (model instanceof EntryOrExitEvent) {
 			action = ((EntryOrExitEvent) model).getAction();
-			attributeList = ((RealtimeStatechart) model.eContainer().eContainer()).getAllAvailableAttributes();
 		} else if (model instanceof Transition) {
 			action = ((Transition) model).getAction();
-			attributeList = ((Transition) model).getStatechart().getAllAvailableAttributes();
 		} else {
 			// shouldn't happen because this is used in an object contribution
 			throw new IllegalArgumentException("model has invalid type");
@@ -44,7 +38,7 @@ public class ActionStorage extends ModelStorage<Action> {
 			action = addAction(model);
 		}
 		setModel(action);
-		setAttributeList(attributeList);
+		//setAttributeList(attributeList);
 	}
 
 	private Action addAction(EObject model) {
@@ -63,7 +57,7 @@ public class ActionStorage extends ModelStorage<Action> {
 			}
 		}
 		if (currentExpression != null) {
-			text = LanguageResource.serializeEObject(currentExpression, getAttributeList());
+			text = LanguageResource.serializeEObject(currentExpression, getContainer());
 		}
 		return new ByteArrayInputStream(text.getBytes());
 	}

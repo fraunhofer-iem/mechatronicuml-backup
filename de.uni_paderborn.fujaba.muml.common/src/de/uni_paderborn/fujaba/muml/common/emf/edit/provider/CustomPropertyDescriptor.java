@@ -268,7 +268,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			if (!oldValues.isEmpty()) {
 				EObject eobject = (EObject) oldValues.iterator().next();
 				initialString = LanguageResource.serializeEObject(eobject,
-						getAllAvailableAttributes());
+						dialog.getContainerObject());
 				if (initialString == null) {
 					initialString = "// warning: existing expressions will be replaced!";
 				}
@@ -278,7 +278,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				@Override
 				public Object parse(String text) {
 					return LanguageResource.loadFromString(text,
-							getAllAvailableAttributes()).getEObject();
+							dialog.getContainerObject()).getEObject();
 				}
 			};
 			textDialog = new SimpleTextualDialogExtension(dialog,

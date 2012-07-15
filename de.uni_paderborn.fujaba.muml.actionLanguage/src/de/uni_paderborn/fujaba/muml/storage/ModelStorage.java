@@ -2,7 +2,6 @@ package de.uni_paderborn.fujaba.muml.storage;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -18,12 +17,10 @@ import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 public abstract class ModelStorage<T> implements IModelStorage {
 	private EObject container;
 	private T model;
-	private List<Attribute> attributeList;
 	
 	public ModelStorage(EObject container) {
 		this.container = container;
@@ -44,11 +41,6 @@ public abstract class ModelStorage<T> implements IModelStorage {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public List<Attribute> getAttributeList() {
-		return attributeList;
-	}
 	
 	@Override
 	public EObject getContainer() {
@@ -62,10 +54,6 @@ public abstract class ModelStorage<T> implements IModelStorage {
 		return false;
 	}
 
-	protected void setAttributeList(List<Attribute> attributeList) {
-		this.attributeList = attributeList;
-	}
-
 	protected T getModel() {
 		return model;
 	}
@@ -75,7 +63,7 @@ public abstract class ModelStorage<T> implements IModelStorage {
 	}
 
 	protected Expression parseExpression(String text) throws CoreException {
-		ILoadResult loadResult = LanguageResource.loadFromString(text, getAttributeList());
+		ILoadResult loadResult = LanguageResource.loadFromString(text, getContainer());
 		if (loadResult.hasError()) {
 			String pluginId = "FIXME"; //ActionLanguageActivator.getInstance().getBundle().getSymbolicName();
 			IStatus status = new Status(IStatus.ERROR, pluginId, IStatus.ERROR, loadResult.getError(), null);
@@ -85,7 +73,7 @@ public abstract class ModelStorage<T> implements IModelStorage {
 	}
 	
 	protected String serializeExpression(EObject object) {
-		String text = LanguageResource.serializeEObject(object, getAttributeList());
+		String text = LanguageResource.serializeEObject(object, getContainer());
 		return text;
 	}
 	

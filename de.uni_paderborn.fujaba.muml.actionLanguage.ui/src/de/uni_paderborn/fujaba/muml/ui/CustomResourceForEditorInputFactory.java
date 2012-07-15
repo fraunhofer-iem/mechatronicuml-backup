@@ -1,25 +1,26 @@
 package de.uni_paderborn.fujaba.muml.ui;
 
-import java.util.List;
-
 import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.ui.editor.model.JavaClassPathResourceForIEditorInputFactory;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 public class CustomResourceForEditorInputFactory extends JavaClassPathResourceForIEditorInputFactory {
-	private static List<Attribute> attributeList;
+	private static EObject container;
 	
-	public static void setAttributeList(List<Attribute> attrList) {
-		attributeList = attrList;
+	public static void setContainer(EObject object) {
+		container = object;
 	}
 	
 	@Override
 	protected Resource createResource(IStorage storage) throws CoreException {
+		if (container == null) {
+			throw new IllegalStateException("container must not be null");
+		}
 		//System.out.println(storage);
-		return LanguageResource.getXtextResource(attributeList);
+		return LanguageResource.getXtextResource(container);
 	}
 }

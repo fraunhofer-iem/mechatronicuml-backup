@@ -20,7 +20,6 @@ public class GuardStorage extends ModelStorage<Transition> {
 		}
 		Transition transition = (Transition) model;
 		setModel(transition);
-		setAttributeList(transition.getStatechart().getAllAvailableAttributes());
 	}
 
 	@Override
@@ -44,10 +43,10 @@ public class GuardStorage extends ModelStorage<Transition> {
 		if (expression instanceof TextualExpression) {
 			// just a dummy call to initialize the scope
 			// will be removed once the textualexpression is removed
-			LanguageResource.loadFromString("{}", getAttributeList());
+			LanguageResource.loadFromString("{}", getContainer());
 			text = ((TextualExpression) expression).getExpressionText();
 		} else if (expression != null) {
-			text = LanguageResource.serializeEObject(expression, getAttributeList());
+			text = LanguageResource.serializeEObject(expression, getContainer());
 		}
 		return new ByteArrayInputStream(text.getBytes());
 	}

@@ -5,12 +5,22 @@ package de.uni_paderborn.fujaba.muml.scoping;
 
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
+import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 /**
  * This class contains custom scoping description.
@@ -21,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Attribute;
  */
 public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 	private List<Attribute> attributeList = null;
+	private List<Operation> operationList = null;
 	
 	public ActionLanguageScopeProvider() {
 		super();
@@ -38,8 +49,86 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		return Scopes.scopeFor(attributeList);
 	}
 	
-	public void setAttributeList(List<Attribute> attributeList) {
+	IScope scope_Operation(Object object, EReference ref) {
+		if (operationList == null) {
+			return IScope.NULLSCOPE;
+		}
+		return Scopes.scopeFor(operationList);
+	}
+	
+	IScope scope_Parameter(Object object, EReference ref) {
+		if (!(object instanceof ParameterBinding)
+				|| !(((ParameterBinding) object).eContainer() instanceof OperationCall)) {
+			return IScope.NULLSCOPE;
+		}
+		OperationCall operationCall = (OperationCall) ((EObject) object).eContainer();
+		List<Parameter> parameterList = getScopeForOperationCall(operationCall);
+		return Scopes.scopeFor(parameterList);
+	}
+	
+	/*public void setAttributeList(List<Attribute> attributeList) {
 		this.attributeList = attributeList;
+	}*/
+	
+	public void setScopeForEObject(EObject object) {
+		if (object instanceof StateEvent) {
+			setScopeForEObject((StateEvent) object);
+		} else if (object instanceof Transition) {
+			setScopeForEObject((Transition) object);
+		} else if (object instanceof Message) {
+			setScopeForEObject((Message) object);
+		} else if (object instanceof Synchronization) {
+			setScopeForEObject((Synchronization) object);
+		} else if (object instanceof ParameterBinding) {
+			setScopeForEObject((ParameterBinding) object);
+		} else if (object instanceof RealtimeStatechart) {
+			setScopeForRTSC((RealtimeStatechart) object);
+		} else {
+			throw new IllegalArgumentException("scope requested for unsupported object" + object);
+		}
+	}
+	
+	public void setScopeForEObject(StateEvent event) {
+		// expected: doevent, entry- and exitevent
+		setScopeForRTSC(event.eContainer().eContainer());
+	}
+	
+	public void setScopeForEObject(Transition transition) {
+		setScopeForRTSC(transition.getStatechart());
+	}
+	
+	public void setScopeForEObject(Message message) {
+		// expected: a raise or trigger message
+		// this should be a transition
+		setScopeForEObject(message.eContainer().eContainer());
+	}
+	
+	public void setScopeForEObject(Synchronization synchronization) {
+		// expected: synchronization for a transition
+		// this should be a transition
+		setScopeForEObject(synchronization.eContainer());
+	}
+	
+	public void setScopeForEObject(ParameterBinding parameterBinding) {
+		// either a transition or rtsc
+		setScopeForEObject(parameterBinding.eContainer().eContainer().eContainer());
+	}
+	
+	private void setScopeForRTSC(EObject object) {
+		if (!(object instanceof RealtimeStatechart)) {
+			throw new IllegalArgumentException("object is no rtsc: " + object);
+		}
+		RealtimeStatechart rtsc = (RealtimeStatechart) object;
+		attributeList = rtsc.getAllAvailableAttributes();
+		operationList = rtsc.getAllAvailableOperations();
+	}
+	
+	private List<Parameter> getScopeForOperationCall(OperationCall operationCall) {
+		if (operationCall.getOperation() == null) {
+			// should not happen
+			return null;
+		}
+		return operationCall.getOperation().getParameters();
 	}
 
 }

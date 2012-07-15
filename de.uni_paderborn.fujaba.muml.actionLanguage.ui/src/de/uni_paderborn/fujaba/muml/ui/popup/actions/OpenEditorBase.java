@@ -35,7 +35,7 @@ public abstract class OpenEditorBase implements IObjectActionDelegate {
 				throw new IllegalStateException("model is null (setActivePart failed)");
 			}
 			IModelStorage modelStorage = getStorage();
-			CustomResourceForEditorInputFactory.setAttributeList(modelStorage.getAttributeList());
+			CustomResourceForEditorInputFactory.setContainer(modelStorage.getContainer());
 			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 			IEditorDescriptor descr = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor("foo.action");
 			if (checkOpenEditors(page, modelStorage)) {

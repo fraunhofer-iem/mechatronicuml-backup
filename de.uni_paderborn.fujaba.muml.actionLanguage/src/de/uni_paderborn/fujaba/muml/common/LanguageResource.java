@@ -22,7 +22,6 @@ import com.google.inject.name.Names;
 import de.uni_paderborn.fujaba.muml.ActionLanguageStandaloneSetup;
 import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 
 public class LanguageResource {
 	private static Injector injector = null;
@@ -69,7 +68,7 @@ public class LanguageResource {
 		injector = inj;
 	}
 	
-	public static Resource getXtextResource(List<Attribute> attributeList) {
+	public static Resource getXtextResource(EObject object) {
 		if (injector == null) {
 			//throw new IllegalStateException("injector is null - call setInjector first");
 			// this is a relict for the initial action "editor" - will be removed
@@ -78,12 +77,12 @@ public class LanguageResource {
 		XtextResourceSet resSet = injector.getInstance(XtextResourceSet.class);
 		String ext = injector.getInstance(Key.get(String.class, Names.named(Constants.FILE_EXTENSIONS)));
 		Resource resource = resSet.createResource(URI.createURI("dummy." + ext));
-		ActionLanguageScopeProviderFactory.setAttributeList(attributeList);
+		ActionLanguageScopeProviderFactory.setScopeForEObject(object);
 		return resource;
 	}
 	
-	public static ILoadResult loadFromString(String text, List<Attribute> attributeList) {
-		Resource resource = getXtextResource(attributeList);
+	public static ILoadResult loadFromString(String text, EObject object) {
+		Resource resource = getXtextResource(object);
 		LoadResult result = new LoadResult();
 		try {
 			Map<String, Boolean> options = new HashMap<String, Boolean>();
@@ -101,13 +100,12 @@ public class LanguageResource {
 		}
 		return result;
 	}
-	
-	public static String serializeEObject(EObject object, List<Attribute> attributeList) {
+
+	public static String serializeEObject(EObject object, EObject container) {
 		if (!(object instanceof Block)) {
 			return null;
 		}
-		XtextResource resource = (XtextResource) getXtextResource(attributeList);
+		XtextResource resource = (XtextResource) getXtextResource(container);
 		return resource.getSerializer().serialize(object);
 	}
-
 }

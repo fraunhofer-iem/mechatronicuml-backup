@@ -42,8 +42,7 @@ public class CustomTransitionLabelExpressionLabelParser6003 extends TransitionLa
 	private String getGuardExpression(Transition transition) {
 		Expression guard = transition.getGuard();
 		if (guard != null) {
-			String text = LanguageResource.serializeEObject(guard,
-				transition.getStatechart().getAllAvailableAttributes());
+			String text = LanguageResource.serializeEObject(guard, transition);
 			if (text == null) {
 				// Xtext was not able to create a string for this kind of Model
 				// Element.
@@ -67,7 +66,7 @@ public class CustomTransitionLabelExpressionLabelParser6003 extends TransitionLa
 	}
 	
 	private String getParameterBindingExpression(Transition transition, ParameterBinding parameterBinding) {
-		String value = LanguageResource.serializeEObject(parameterBinding.getValue(), transition.getStatechart().getAllAvailableAttributes());
+		String value = LanguageResource.serializeEObject(parameterBinding.getValue(), transition);
 		if (value == null && (parameterBinding.getValue() instanceof LiteralExpression)) {
 			// just keep the LiteralExpression
 			return ((LiteralExpression) parameterBinding.getValue()).getValue();
