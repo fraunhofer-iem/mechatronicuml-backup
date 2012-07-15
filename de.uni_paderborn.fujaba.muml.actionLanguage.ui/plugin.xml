@@ -214,11 +214,16 @@
    <extension
          point="org.eclipse.ui.views">
       <view
+            category="de.uni_paderborn.fujaba.muml.actionLanguage.ui.Fujaba"
             class="de.uni_paderborn.fujaba.muml.ui.view.EmbeddedXtextEditorView"
             id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.view1"
-            name="Embedded Xtext Editor"
+            name="Fujaba Action Editor"
             restorable="true">
       </view>
+      <category
+            id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.Fujaba"
+            name="Fujaba">
+      </category>
    </extension>
 
 </plugin>
