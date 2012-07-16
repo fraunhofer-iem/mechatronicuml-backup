@@ -582,6 +582,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			this.add(fFigureInitialStateArc);
 
 			fFigureInitialStateArrow = new PolylineShape();
+
 			fFigureInitialStateArrow.addPoint(new Point(
 					getMapMode().DPtoLP(26), getMapMode().DPtoLP(8)));
 			fFigureInitialStateArrow.addPoint(new Point(
@@ -592,6 +593,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			this.add(fFigureInitialStateArrow);
 
 			RectangleFigure initialStateFigureContainer0 = new RectangleFigure();
+
 			initialStateFigureContainer0.setFill(false);
 			initialStateFigureContainer0.setOutline(false);
 
@@ -599,6 +601,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			initialStateFigureContainer0.setLayoutManager(new XYLayout());
 
 			fFigureInitialStateEllipse = new Ellipse();
+
 			fFigureInitialStateEllipse.setBackgroundColor(ColorConstants.gray);
 
 			initialStateFigureContainer0.add(
@@ -608,6 +611,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 							.DPtoLP(10)));
 
 			fFigureStateContainer = new RectangleFigure();
+
 			fFigureStateContainer.setFill(false);
 			fFigureStateContainer.setOutline(false);
 			fFigureStateContainer.setBorder(new MarginBorder(getMapMode()
@@ -618,12 +622,14 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			fFigureStateContainer.setLayoutManager(new StackLayout());
 
 			fFigureFinalStateOutline = new RoundedRectangle();
+
 			fFigureFinalStateOutline.setCornerDimensions(new Dimension(
 					getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 
 			fFigureStateContainer.add(fFigureFinalStateOutline);
 
 			fFigureInnerContainer = new RectangleFigure();
+
 			fFigureInnerContainer.setFill(false);
 			fFigureInnerContainer.setOutline(false);
 			fFigureInnerContainer.setBorder(new MarginBorder(getMapMode()
@@ -634,6 +640,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			fFigureInnerContainer.setLayoutManager(new StackLayout());
 
 			RoundedRectangle stateFigure2 = new RoundedRectangle();
+
 			stateFigure2.setCornerDimensions(new Dimension(getMapMode().DPtoLP(
 					12), getMapMode().DPtoLP(12)));
 
@@ -645,6 +652,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			stateFigure2.setLayoutManager(layoutStateFigure2);
 
 			fFigureStateNameLabel = new WrappingLabel();
+
 			fFigureStateNameLabel.setText("");
 
 			fFigureStateNameLabel.setFont(FFIGURESTATENAMELABEL_FONT);
@@ -661,6 +669,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigureStateNameLabel);
 
 			fFigureInvariantCompartment = new RectangleFigure();
+
 			fFigureInvariantCompartment.setOutline(false);
 
 			GridData constraintFFigureInvariantCompartment = new GridData();
@@ -675,6 +684,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigureInvariantCompartment);
 
 			fFigureChannelCompartment = new RectangleFigure();
+
 			fFigureChannelCompartment.setOutline(false);
 
 			GridData constraintFFigureChannelCompartment = new GridData();
@@ -689,6 +699,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigureChannelCompartment);
 
 			fFigureActionCompartment = new RectangleFigure();
+
 			fFigureActionCompartment.setOutline(false);
 
 			GridData constraintFFigureActionCompartment = new GridData();
@@ -703,6 +714,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigureActionCompartment);
 
 			fFigureRegionsCompartment = new RectangleFigure();
+
 			fFigureRegionsCompartment.setOutline(false);
 
 			GridData constraintFFigureRegionsCompartment = new GridData();
