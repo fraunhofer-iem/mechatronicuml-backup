@@ -395,10 +395,10 @@
           <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
+          <details key="constraints" value="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="NoSelfAssembliesForSinglePorts" value="self.fromPort.cardinality.upperBound.value &lt;= 1&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
+          <details key="NoSelfAssembliesForSinglePortsOfSingleParts" value="(self.fromPort.cardinality.upperBound.value &lt;= 1 and self.from.cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
           <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"/>
           <details key="AssemblyBetweenDiscretePortsRequiresCoordinationPattern" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination pattern&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
           <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"

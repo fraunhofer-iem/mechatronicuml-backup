@@ -1150,7 +1150,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assembly, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssembly_NoSelfAssembliesForSinglePorts(assembly, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssembly_NoSelfAssembliesForSinglePortsOfSingleParts(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_ValidContinuousPortDirections(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsRequiresCoordinationPattern(assembly, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssembly_AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern(assembly, diagnostics, context);
@@ -1167,22 +1167,22 @@ public class ComponentValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the NoSelfAssembliesForSinglePorts constraint of '<em>Assembly</em>'.
+	 * The cached validation expression for the NoSelfAssembliesForSinglePortsOfSingleParts constraint of '<em>Assembly</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY__NO_SELF_ASSEMBLIES_FOR_SINGLE_PORTS__EEXPRESSION = "self.fromPort.cardinality.upperBound.value <= 1\r\n" +
+	protected static final String ASSEMBLY__NO_SELF_ASSEMBLIES_FOR_SINGLE_PORTS_OF_SINGLE_PARTS__EEXPRESSION = "(self.fromPort.cardinality.upperBound.value <= 1 and self.from.cardinality.upperBound.value <= 1)\r\n" +
 		"implies\r\n" +
 		"self.fromPort <> self.toPort";
 
 	/**
-	 * Validates the NoSelfAssembliesForSinglePorts constraint of '<em>Assembly</em>'.
+	 * Validates the NoSelfAssembliesForSinglePortsOfSingleParts constraint of '<em>Assembly</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssembly_NoSelfAssembliesForSinglePorts(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAssembly_NoSelfAssembliesForSinglePortsOfSingleParts(Assembly assembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.ASSEMBLY,
@@ -1190,8 +1190,8 @@ public class ComponentValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "NoSelfAssembliesForSinglePorts",
-				 ASSEMBLY__NO_SELF_ASSEMBLIES_FOR_SINGLE_PORTS__EEXPRESSION,
+				 "NoSelfAssembliesForSinglePortsOfSingleParts",
+				 ASSEMBLY__NO_SELF_ASSEMBLIES_FOR_SINGLE_PORTS_OF_SINGLE_PARTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -24860,5 +24860,14 @@
         referenceName="eClassifiers">
       <element xsi:type="ecore:EClass" name="StringLiteralExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
     </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="(self.fromPort.cardinality.upperBound.value &lt;= 1 and self.from.cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"
+        oldDataValue="self.fromPort.cardinality.upperBound.value &lt;= 1&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts"
+        oldDataValue="NoSelfAssembliesForSinglePorts"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
+        oldDataValue="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
   </releases>
 </history:History>
