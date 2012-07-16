@@ -74,7 +74,7 @@
         		sect1		toc,title
         		sect2		toc,title
         		sect3		toc,title" />
-        	<param name="ignore.image.scaling" expression="1" />
+        	<param name="ignore.image.scaling" expression="0" />
         </xslt>
     	
         <replace file="${current-loc}/toc.xml" token="${current-loc}/" value=""/>

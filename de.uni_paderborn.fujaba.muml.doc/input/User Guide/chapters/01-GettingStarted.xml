@@ -45,17 +45,17 @@
 						<title>JRE 6 must be checked.</title>
 						<mediaobject>
       						<imageobject>
- 	     						<imagedata fileref="User Guide/images/window_preferences.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/window_preferences.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 						<mediaobject>
       						<imageobject>
- 	     						<imagedata fileref="User Guide/images/space.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/space.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 						<mediaobject>
 							<imageobject>
- 	     						<imagedata fileref="User Guide/images/jre6check.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/jre6check.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 					</figure>
@@ -73,7 +73,7 @@
 									<title>Install New Software...</title>
 									<mediaobject>
       									<imageobject>
- 	     									<imagedata fileref="User Guide/images/installnewsoftware.png" width="100%"/>
+ 	     									<imagedata fileref="User Guide/images/installnewsoftware.png" scale="100"/>
       									</imageobject>
 									</mediaobject>
 								</figure> 
@@ -87,7 +87,7 @@
 									<title>Select Indigo.</title>
 									<mediaobject>
       									<imageobject>
- 	     									<imagedata fileref="User Guide/images/selectindigo.png" width="100%"/>
+ 	     									<imagedata fileref="User Guide/images/selectindigo.png" scale="100"/>
       									</imageobject>
 									</mediaobject>
 								</figure> 
@@ -102,12 +102,12 @@
 									<title>Choose the Subversive SVN Team Provider.</title>
 									<mediaobject>
       									<imageobject>
- 	     									<imagedata fileref="User Guide/images/collaboration.png" width="100%"/>
+ 	     									<imagedata fileref="User Guide/images/collaboration.png" scale="100"/>
       									</imageobject>
 									</mediaobject>
 									<mediaobject>
       									<imageobject>
- 	     									<imagedata fileref="User Guide/images/subversive.png" width="100%"/>
+ 	     									<imagedata fileref="User Guide/images/subversive.png" scale="100"/>
       									</imageobject>
 									</mediaobject>
 								</figure> 
@@ -131,7 +131,7 @@
 						<title>Choose a SVN adapter.</title>
 						<mediaobject>
       						<imageobject>
- 	     						<imagedata fileref="User Guide/images/svnadaptersmall.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/svnadaptersmall.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 					</figure> 
@@ -147,7 +147,7 @@
 							<para>
 								click on the button
 								<imageobject>
- 	     							<imagedata fileref="User Guide/images/ModelingComponents.png" width="100%"/>
+ 	     							<imagedata fileref="User Guide/images/ModelingComponents.png" scale="100"/>
       							</imageobject>
       							"Installing modeling components"
 							</para>
@@ -176,17 +176,17 @@
 									<title>Choose these components.</title>
 									<mediaobject>
       									<imageobject>
- 	     									<imagedata fileref="User Guide/images/modelingcomponents1.png" width="100%"/>
+ 	     									<imagedata fileref="User Guide/images/modelingcomponents1.png" scale="100"/>
       									</imageobject>
 									</mediaobject>
 									<mediaobject>
       									<imageobject>
- 	     									<imagedata fileref="User Guide/images/space.png" width="100%"/>
+ 	     									<imagedata fileref="User Guide/images/space.png" scale="100"/>
       									</imageobject>
 									</mediaobject>
 									<mediaobject>
       									<imageobject>
- 	     									<imagedata fileref="User Guide/images/modelingcomponents2.png" width="100%"/>
+ 	     									<imagedata fileref="User Guide/images/modelingcomponents2.png" scale="100"/>
       									</imageobject>
 									</mediaobject>
 								</figure> 
@@ -271,7 +271,7 @@
 						<title>That's how you check out.</title>
 						<mediaobject>
 		      				<imageobject>
- 	     						<imagedata fileref="User Guide/images/checkout.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/checkout.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 					</figure> 
@@ -309,7 +309,7 @@
 						<title>That's how you close unrelated projects.</title>
 						<mediaobject>
       						<imageobject>
- 	     						<imagedata fileref="User Guide/images/closeunrelated.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/closeunrelated.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 					</figure>
@@ -320,7 +320,7 @@
 						<title>That's how you close unrelated projects.</title>
 						<mediaobject>
       						<imageobject>
- 	     						<imagedata fileref="User Guide/images/neededSVN.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/neededSVN.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 					</figure>
@@ -345,7 +345,7 @@
 						<title>Select Run As -> Run Configuration...</title>
 						<mediaobject>
       						<imageobject>
- 	     						<imagedata fileref="User Guide/images/MaxPerm1.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/MaxPerm1.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 					</figure>
@@ -356,7 +356,7 @@
 						<title>Add these arguments.</title>
 						<mediaobject>
       						<imageobject>
- 	     						<imagedata fileref="User Guide/images/MaxPerm2.png" width="100%"/>
+ 	     						<imagedata fileref="User Guide/images/MaxPerm2.png" scale="100"/>
       						</imageobject>
 						</mediaobject>
 					</figure>
@@ -388,7 +388,7 @@
       			<listitem><para>
       				Press the "Run"-button (green circle with white triangle)
       				<imageobject>
- 	     				<imagedata fileref="User Guide/images/Run.png" width="100%"/>
+ 	     				<imagedata fileref="User Guide/images/Run.png" scale="100"/>
       				</imageobject>
       			</para></listitem>
       			<listitem><para>
