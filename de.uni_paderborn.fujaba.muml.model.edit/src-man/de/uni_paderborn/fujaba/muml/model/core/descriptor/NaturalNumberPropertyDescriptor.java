@@ -4,6 +4,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
@@ -54,10 +58,22 @@ public class NaturalNumberPropertyDescriptor extends
 
 	@Override
 	public void doSetValue(Object object, Object newValue) {
-		NaturalNumber naturalNumber = CoreFactory.eINSTANCE.createNaturalNumber();
-		naturalNumber.setValue((String) newValue);
+		NaturalNumber naturalNumber = CoreFactory.eINSTANCE
+				.createNaturalNumber();
+		try {
+			if (newValue.equals("-1")) {
+				naturalNumber.setInfinity(true);
+			} else {
+				naturalNumber.setValue((String) newValue);
+			}
+		} catch (NumberFormatException nfe) {
+			Shell shell = PlatformUI.getWorkbench().
+	                getActiveWorkbenchWindow().getShell();
+			MessageBox messageBox = new MessageBox(shell, SWT.ICON_INFORMATION);
+			messageBox.setText("Change NaturalNumber");
+			messageBox.setMessage(nfe.getLocalizedMessage());
+			messageBox.open();
+		}
 		super.doSetValue(object, naturalNumber);
 	}
-
-
 }

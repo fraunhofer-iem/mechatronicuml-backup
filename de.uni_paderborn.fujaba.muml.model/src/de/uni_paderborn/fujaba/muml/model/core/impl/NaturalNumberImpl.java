@@ -92,9 +92,12 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public long getValue() {
+		if (isInfinity()) {
+			return Long.MAX_VALUE;
+		}
 		return value;
 	}
 
@@ -103,10 +106,10 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setValue(long newValue) {
+	public void setValue(long newValue) throws NumberFormatException {
 		// Forbid negative values
 		if (newValue < 0) {
-			newValue = 0;
+			throw new NumberFormatException("NaturalNumber must not be negative.");
 		}
 		
 		// Generated code sets the feature as usual
@@ -145,16 +148,24 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setValue(String value) {
-		if (value != null && !value.equals("*")) {
-			try {
-				setValue(Long.parseLong(value));
-				return;
-			} catch (NumberFormatException e) {
-				// fall through
-			}
+	public void setValue(String value) throws NumberFormatException {
+		if (value == null || value.equals("*")) {
+			setInfinity(true);
+			return;
 		}
-		setInfinity(true);
+
+		// Convert to long, if string cannot be parsed, set infinity.
+		long longValue;
+		try {
+			longValue = Long.parseLong(value);
+		} catch (NumberFormatException e) {
+			setInfinity(true);
+			return;
+		}
+
+		// Call setValue(long) outsite of catch block, so that the NumberFormatException
+		// indicating negative numbers is not catched.
+		setValue(longValue);		
 	}
 
 	/**
