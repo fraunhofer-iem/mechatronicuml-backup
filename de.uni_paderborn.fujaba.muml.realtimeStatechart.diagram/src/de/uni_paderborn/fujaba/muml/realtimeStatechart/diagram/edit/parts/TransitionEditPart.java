@@ -148,13 +148,11 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		private void createContents() {
 
 			fFigureTransitionLabelFigure = new WrappingLabel();
-
 			fFigureTransitionLabelFigure.setText("");
 
 			this.add(fFigureTransitionLabelFigure);
 
 			fFigureTransitionDeadlineLabelFigure = new WrappingLabel();
-
 			fFigureTransitionDeadlineLabelFigure.setText("");
 
 			this.add(fFigureTransitionDeadlineLabelFigure);
@@ -166,6 +164,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		 */
 		private RotatableDecoration createSourceDecoration() {
 			de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration df = new de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration();
+
 			df.setLocation(new Point(getMapMode().DPtoLP(0), getMapMode()
 					.DPtoLP(0)));
 			df.setSize(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16));

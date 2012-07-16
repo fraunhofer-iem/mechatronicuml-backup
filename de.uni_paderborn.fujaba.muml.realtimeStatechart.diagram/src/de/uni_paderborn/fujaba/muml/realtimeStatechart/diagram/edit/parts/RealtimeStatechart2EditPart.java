@@ -339,7 +339,6 @@ public class RealtimeStatechart2EditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			fFigureStatechartContentsCompartment = new RectangleFigure();
-
 			fFigureStatechartContentsCompartment.setFill(false);
 			fFigureStatechartContentsCompartment.setOutline(false);
 

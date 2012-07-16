@@ -361,9 +361,9 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
+			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
 			RectangleFigure regionTitleAreaFigure0 = new RectangleFigure();
-
 			regionTitleAreaFigure0.setFill(false);
 			regionTitleAreaFigure0.setOutline(false);
 
@@ -383,8 +383,9 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			regionTitleAreaFigure0
 					.setLayoutManager(layoutRegionTitleAreaFigure0);
 
-			RectangleFigure statechartTitleAreaFigure1 = new RectangleFigure();
+			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
+			RectangleFigure statechartTitleAreaFigure1 = new RectangleFigure();
 			statechartTitleAreaFigure1.setFill(false);
 			statechartTitleAreaFigure1.setOutline(false);
 
@@ -406,13 +407,11 @@ public class RegionEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutStatechartTitleAreaFigure1);
 
 			fFigureStatechartNameLabel = new WrappingLabel();
-
 			fFigureStatechartNameLabel.setText("");
 
 			statechartTitleAreaFigure1.add(fFigureStatechartNameLabel);
 
 			fFigureStatechartVariablesLabel = new WrappingLabel();
-
 			fFigureStatechartVariablesLabel.setText("");
 
 			GridData constraintFFigureStatechartVariablesLabel = new GridData();
@@ -426,17 +425,12 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			statechartTitleAreaFigure1.add(fFigureStatechartVariablesLabel,
 					constraintFFigureStatechartVariablesLabel);
 
-			// Process FigureRef details
-
-			regionTitleAreaFigure0.add(statechartTitleAreaFigure1);
-
 			Ellipse regionPriority1 = new Ellipse();
 
 			regionTitleAreaFigure0.add(regionPriority1);
 			regionPriority1.setLayoutManager(new StackLayout());
 
 			fFigureRegionPriorityLabel = new WrappingLabel();
-
 			fFigureRegionPriorityLabel.setText("");
 
 			fFigureRegionPriorityLabel.setFont(FFIGUREREGIONPRIORITYLABEL_FONT);
@@ -447,12 +441,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 
 			regionPriority1.add(fFigureRegionPriorityLabel);
 
-			// Process FigureRef details
-
-			this.add(regionTitleAreaFigure0);
-
 			fFigureRegionContentsCompartment = new RectangleFigure();
-
 			fFigureRegionContentsCompartment.setFill(false);
 			fFigureRegionContentsCompartment.setOutline(false);
 
@@ -474,7 +463,9 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 */
 		private Border createBorder0() {
 			OneLineBorder result = new OneLineBorder();
+
 			result.setPosition(PositionConstants.BOTTOM);
+
 			result.setStyle(SWT.LINE_DASH);
 
 			return result;

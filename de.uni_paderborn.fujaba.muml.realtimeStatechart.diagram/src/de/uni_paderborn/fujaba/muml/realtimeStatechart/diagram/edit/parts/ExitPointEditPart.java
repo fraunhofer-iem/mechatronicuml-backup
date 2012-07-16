@@ -452,7 +452,6 @@ public class ExitPointEditPart extends BorderedBorderItemEditPart {
 		private void createContents() {
 
 			ScalablePolygonShape polyline0 = new ScalablePolygonShape();
-
 			polyline0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
 					.DPtoLP(0)));
 			polyline0.addPoint(new Point(getMapMode().DPtoLP(2), getMapMode()

@@ -284,7 +284,6 @@ public class SynchronizationChannelEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureStateEventLabel = new WrappingLabel();
-
 			fFigureStateEventLabel.setText("");
 
 			fFigureStateEventLabel.setFont(FFIGURESTATEEVENTLABEL_FONT);

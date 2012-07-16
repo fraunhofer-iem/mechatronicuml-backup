@@ -369,9 +369,9 @@ public class RealtimeStatechartEditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
+			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
 			RectangleFigure statechartTitleAreaFigure0 = new RectangleFigure();
-
 			statechartTitleAreaFigure0.setFill(false);
 			statechartTitleAreaFigure0.setOutline(false);
 
@@ -393,13 +393,11 @@ public class RealtimeStatechartEditPart extends AbstractBorderedShapeEditPart {
 					.setLayoutManager(layoutStatechartTitleAreaFigure0);
 
 			fFigureStatechartNameLabel = new WrappingLabel();
-
 			fFigureStatechartNameLabel.setText("");
 
 			statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);
 
 			fFigureStatechartVariablesLabel = new WrappingLabel();
-
 			fFigureStatechartVariablesLabel.setText("");
 
 			GridData constraintFFigureStatechartVariablesLabel = new GridData();
@@ -413,12 +411,7 @@ public class RealtimeStatechartEditPart extends AbstractBorderedShapeEditPart {
 			statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel,
 					constraintFFigureStatechartVariablesLabel);
 
-			// Process FigureRef details
-
-			this.add(statechartTitleAreaFigure0);
-
 			fFigureStatechartContentsCompartment = new RectangleFigure();
-
 			fFigureStatechartContentsCompartment.setFill(false);
 			fFigureStatechartContentsCompartment.setOutline(false);
 
