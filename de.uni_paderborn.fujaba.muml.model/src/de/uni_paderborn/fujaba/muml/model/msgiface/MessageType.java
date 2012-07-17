@@ -75,6 +75,9 @@ public interface MessageType extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageType_Parameters()
 	 * @model containment="true"

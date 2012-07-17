@@ -825,6 +825,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getHybridPort_SamplingInterval() {
+		return (EReference)hybridPortEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPatternOccurrence() {
 		return patternOccurrenceEClass;
 	}
@@ -960,6 +969,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		hybridPortEClass = createEClass(HYBRID_PORT);
 		createEAttribute(hybridPortEClass, HYBRID_PORT__IS_HYBRID_IN_PORT);
 		createEAttribute(hybridPortEClass, HYBRID_PORT__IS_HYBRID_OUT_PORT);
+		createEReference(hybridPortEClass, HYBRID_PORT__SAMPLING_INTERVAL);
 
 		patternOccurrenceEClass = createEClass(PATTERN_OCCURRENCE);
 		createEReference(patternOccurrenceEClass, PATTERN_OCCURRENCE__PATTERN);
@@ -1103,6 +1113,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(hybridPortEClass, HybridPort.class, "HybridPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHybridPort_IsHybridInPort(), ecorePackage.getEBoolean(), "isHybridInPort", "false", 0, 1, HybridPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHybridPort_IsHybridOutPort(), ecorePackage.getEBoolean(), "isHybridOutPort", "false", 0, 1, HybridPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getHybridPort_SamplingInterval(), theCorePackage.getNaturalNumber(), null, "samplingInterval", null, 1, 1, HybridPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(patternOccurrenceEClass, PatternOccurrence.class, "PatternOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPatternOccurrence_Pattern(), thePatternPackage.getCoordinationPattern(), null, "pattern", null, 1, 1, PatternOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1191,7 +1202,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
-		   });																		
+		   });																			
 		addAnnotation
 		  (structuredComponentEClass, 
 		   source, 
@@ -1379,14 +1390,14 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getHybridPort_IsHybridInPort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- XXX: is this the definition of an IN port?\nself.isContinuousInPort"
+			 "derivation", "-- derive from superclass ContinuousPort\r\nself.isContinuousInPort"
 		   });			
 		addAnnotation
 		  (getHybridPort_IsHybridOutPort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- XXX: is this the definition of an OUT port?\nself.isContinuousOutPort"
-		   });							
+			 "derivation", "-- derive from superclass ContinuousPort\r\nself.isContinuousOutPort"
+		   });								
 		addAnnotation
 		  (structuredComponentEClass, 
 		   source, 

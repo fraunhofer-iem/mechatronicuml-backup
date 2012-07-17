@@ -341,7 +341,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueParameterNames"
-		   });	
+		   });		
 	}
 
 	/**
@@ -372,7 +372,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		   source, 
 		   new String[] {
 			 "UniqueParameterNames", "self.parameters->isUnique(name)"
-		   });		
+		   });			
 	}
 
 } //MsgifacePackageImpl

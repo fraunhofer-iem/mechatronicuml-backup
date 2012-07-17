@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * Defines all primitive types that may be used for attributes, parameters, and operations.
+ * Defines all primitive types that may be used in MechatronicUML.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getPrimitiveTypes()
  * @model

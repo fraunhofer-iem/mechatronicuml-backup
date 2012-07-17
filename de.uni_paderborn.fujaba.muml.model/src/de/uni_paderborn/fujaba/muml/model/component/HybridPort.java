@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +21,6 @@ package de.uni_paderborn.fujaba.muml.model.component;
  * hybrid port discretizes the signal value in given time intervals and provides the
  * value as variable to its Real-Time Statechart. The hybrid port does not define message
  * interfaces.
- * \todosd{Add attributes and references in future releases.}
  * <!-- end-model-doc -->
  *
  * <p>
@@ -27,6 +28,7 @@ package de.uni_paderborn.fujaba.muml.model.component;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#isIsHybridInPort <em>Is Hybrid In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#isIsHybridOutPort <em>Is Hybrid Out Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#getSamplingInterval <em>Sampling Interval</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,7 +49,7 @@ public interface HybridPort extends DiscretePort, ContinuousPort {
 	 * @return the value of the '<em>Is Hybrid In Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getHybridPort_IsHybridInPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- XXX: is this the definition of an IN port?\nself.isContinuousInPort'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- derive from superclass ContinuousPort\r\nself.isContinuousInPort'"
 	 * @generated
 	 */
 	boolean isIsHybridInPort();
@@ -63,8 +65,33 @@ public interface HybridPort extends DiscretePort, ContinuousPort {
 	 * @return the value of the '<em>Is Hybrid Out Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getHybridPort_IsHybridOutPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- XXX: is this the definition of an OUT port?\nself.isContinuousOutPort'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- derive from superclass ContinuousPort\r\nself.isContinuousOutPort'"
 	 * @generated
 	 */
 	boolean isIsHybridOutPort();
+
+	/**
+	 * Returns the value of the '<em><b>Sampling Interval</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Sampling Interval</em>' containment reference.
+	 * @see #setSamplingInterval(NaturalNumber)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getHybridPort_SamplingInterval()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	NaturalNumber getSamplingInterval();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#getSamplingInterval <em>Sampling Interval</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sampling Interval</em>' containment reference.
+	 * @see #getSamplingInterval()
+	 * @generated
+	 */
+	void setSamplingInterval(NaturalNumber value);
 } // HybridPort

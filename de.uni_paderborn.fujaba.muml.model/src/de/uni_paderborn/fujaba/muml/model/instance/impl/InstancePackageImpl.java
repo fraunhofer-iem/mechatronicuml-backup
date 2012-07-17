@@ -846,7 +846,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "constraints", "OneDelegationInstancePerPortInstance"
-		   });																					
+		   });																							
 	}
 
 	/**
@@ -910,7 +910,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "self.subPortInstances"
-		   });	
+		   });			
 	}
 
 } //InstancePackageImpl

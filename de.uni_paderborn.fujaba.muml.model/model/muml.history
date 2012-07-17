@@ -24869,5 +24869,230 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
         oldDataValue="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousInPort"
+        oldDataValue="-- XXX: is this the definition of an IN port?&#xA;self.isContinuousInPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousOutPort"
+        oldDataValue="-- XXX: is this the definition of an OUT port?&#xA;self.isContinuousOutPort"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/HybridPort/samplingInterval">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval"
+            featureName="name" dataValue="samplingInterval"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval"
+            featureName="eType" referenceValue="muml.ecore#//model/core/NaturalNumber"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/component/HybridPort"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>samplingInterval</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/NaturalNumber"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/samplingInterval"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/HybridPort/samplingInterval/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/samplingInterval/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/HybridPort/samplingInterval/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. "/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/component/HybridPort/samplingInterval"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. </dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces."
+        oldDataValue="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/Parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This is a general representation of a Parameter which is by all model elements&#xD;&#xA;that receive parameters. Examples include operations, message types, and synchronization channels.&#xD;&#xA;A parameter defines a data type."
+        oldDataValue="A parameter is used to specify parameters of an operation. A parameter defines a type."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Defines all primitive types that may be used in MechatronicUML."
+        oldDataValue="Defines all primitive types that may be used for attributes, parameters, and operations."/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ParameterBinding"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/ParameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ParameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/ParameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="A parameter binding associates a parameter with a concrete value which is bound to this parameter by an invocation. As an example, an operation defines a set of parameters. A call of this operation needs to provide concrete values for the parameters which are defined by a parameter binding. The value is represented by an expression."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/ParameterBinding"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>A parameter binding associates a parameter with a concrete value which is bound to this parameter by an invocation. As an example, an operation defines a set of parameters. A call of this operation needs to provide concrete values for the parameters which are defined by a parameter binding. The value is represented by an expression.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ParameterBinding/parameter"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/ParameterBinding/parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ParameterBinding/parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/ParameterBinding/parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/parameter/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The parameter to which the value needs to be associated."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/ParameterBinding/parameter"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The parameter to which the value needs to be associated.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ParameterBinding/value"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/ParameterBinding/value/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/value/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ParameterBinding/value/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/ParameterBinding/value/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/value/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ParameterBinding/value/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The value which is associated with the parameter. The value is defined by an expression."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/ParameterBinding/value"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The value which is associated with the parameter. The value is defined by an expression.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveDataType/primitiveType"
+          referenceName="eAnnotations" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/core/PrimitiveDataType/primitiveType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/core/PrimitiveDataType/primitiveType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/core/PrimitiveDataType/primitiveType"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/AtomicComponentInstance"
+          referenceName="eAnnotations" element="muml.ecore#//model/instance/AtomicComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AtomicComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/AtomicComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/instance/AtomicComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AtomicComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AtomicComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="An atomic component instance is a component instance which has been derived from an atomic component. An atomic component instance has no embedded component instance configuration and executes the behavior specification which has been defined by its type."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/instance/AtomicComponentInstance"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>An atomic component instance is a component instance which has been derived from an atomic component. An atomic component instance has no embedded component instance configuration and executes the behavior specification which has been defined by its type.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/StructuredComponentInstance"
+          referenceName="eAnnotations" element="muml.ecore#//model/instance/StructuredComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/StructuredComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/StructuredComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/instance/StructuredComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/StructuredComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/StructuredComponentInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="A structured component instance is a component instance that has been derived from a structured component type. A structured component instance specifies an embedded component instance configuration defining its inner structure. "/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/instance/StructuredComponentInstance"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>A structured component instance is a component instance that has been derived from a structured component type. A structured component instance specifies an embedded component instance configuration defining its inner structure. </dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageType/parameters"
+          referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageType/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageType/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/msgiface/MessageType/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/msgiface/MessageType/parameters"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
   </releases>
 </history:History>

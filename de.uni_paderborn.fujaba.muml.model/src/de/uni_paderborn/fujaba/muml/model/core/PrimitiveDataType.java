@@ -38,6 +38,9 @@ public interface PrimitiveDataType extends DataType {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Primitive Type</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes
 	 * @see #setPrimitiveType(PrimitiveTypes)

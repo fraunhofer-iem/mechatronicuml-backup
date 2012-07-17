@@ -15,7 +15,9 @@ import org.storydriven.core.NamedElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A parameter is used to specify parameters of an operation. A parameter defines a type.
+ * This is a general representation of a Parameter which is by all model elements
+ * that receive parameters. Examples include operations, message types, and synchronization channels.
+ * A parameter defines a data type.
  * <!-- end-model-doc -->
  *
  * <p>

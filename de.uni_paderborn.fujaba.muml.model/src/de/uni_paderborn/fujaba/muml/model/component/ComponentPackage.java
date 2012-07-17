@@ -1880,13 +1880,22 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__IS_HYBRID_OUT_PORT = DISCRETE_PORT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Sampling Interval</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__SAMPLING_INTERVAL = DISCRETE_PORT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Hybrid Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_FEATURE_COUNT = DISCRETE_PORT_FEATURE_COUNT + 6;
+	int HYBRID_PORT_FEATURE_COUNT = DISCRETE_PORT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl <em>Pattern Occurrence</em>}' class.
@@ -2622,6 +2631,17 @@ public interface ComponentPackage extends EPackage {
 	EAttribute getHybridPort_IsHybridOutPort();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#getSamplingInterval <em>Sampling Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Sampling Interval</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.HybridPort#getSamplingInterval()
+	 * @see #getHybridPort()
+	 * @generated
+	 */
+	EReference getHybridPort_SamplingInterval();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence <em>Pattern Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3208,6 +3228,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HYBRID_PORT__IS_HYBRID_OUT_PORT = eINSTANCE.getHybridPort_IsHybridOutPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Sampling Interval</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HYBRID_PORT__SAMPLING_INTERVAL = eINSTANCE.getHybridPort_SamplingInterval();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl <em>Pattern Occurrence</em>}' class.

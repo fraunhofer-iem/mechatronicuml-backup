@@ -12,6 +12,10 @@ package de.uni_paderborn.fujaba.muml.model.instance;
  * A representation of the model object '<em><b>Structured Component Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A structured component instance is a component instance that has been derived from a structured component type. A structured component instance specifies an embedded component instance configuration defining its inner structure. 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

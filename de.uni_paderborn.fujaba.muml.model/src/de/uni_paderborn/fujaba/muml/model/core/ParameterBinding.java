@@ -14,6 +14,10 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>Parameter Binding</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A parameter binding associates a parameter with a concrete value which is bound to this parameter by an invocation. As an example, an operation defines a set of parameters. A call of this operation needs to provide concrete values for the parameters which are defined by a parameter binding. The value is represented by an expression.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,6 +39,9 @@ public interface ParameterBinding extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The parameter to which the value needs to be associated.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(Parameter)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getParameterBinding_Parameter()
@@ -61,6 +68,9 @@ public interface ParameterBinding extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The value which is associated with the parameter. The value is defined by an expression.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getParameterBinding_Value()
