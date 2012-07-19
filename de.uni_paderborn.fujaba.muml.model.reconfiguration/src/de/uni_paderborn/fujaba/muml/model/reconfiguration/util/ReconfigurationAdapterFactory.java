@@ -7,9 +7,11 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.util;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,8 +94,8 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createReconfigurationPortAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationController(ReconfigurationController object) {
-				return createReconfigurationControllerAdapter();
+			public Adapter caseController(Controller object) {
+				return createControllerAdapter();
 			}
 			@Override
 			public Adapter caseManager(Manager object) {
@@ -123,14 +126,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createReconfigurableComponentAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationControllerImplementation(ReconfigurationControllerImplementation object) {
-				return createReconfigurationControllerImplementationAdapter();
-			}
-			@Override
-			public Adapter caseStatechartImplementation(StatechartImplementation object) {
-				return createStatechartImplementationAdapter();
-			}
-			@Override
 			public Adapter caseReconfigurationMessagePort(ReconfigurationMessagePort object) {
 				return createReconfigurationMessagePortAdapter();
 			}
@@ -147,12 +142,24 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createManagerSpecificationEntryAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationMessageType(ReconfigurationMessageType object) {
-				return createReconfigurationMessageTypeAdapter();
+			public Adapter caseReconfigurationController(ReconfigurationController object) {
+				return createReconfigurationControllerAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationMessagePortEntry(ReconfigurationMessagePortEntry object) {
-				return createReconfigurationMessagePortEntryAdapter();
+			public Adapter caseRuleBasedReconfigurationController(RuleBasedReconfigurationController object) {
+				return createRuleBasedReconfigurationControllerAdapter();
+			}
+			@Override
+			public Adapter caseExternalReconfigurationExecutionPort(ExternalReconfigurationExecutionPort object) {
+				return createExternalReconfigurationExecutionPortAdapter();
+			}
+			@Override
+			public Adapter caseInternalReconfigurationExecutionPort(InternalReconfigurationExecutionPort object) {
+				return createInternalReconfigurationExecutionPortAdapter();
+			}
+			@Override
+			public Adapter caseReconfigurationRuleCallExpression(ReconfigurationRuleCallExpression object) {
+				return createReconfigurationRuleCallExpressionAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -183,8 +190,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createPortAdapter();
 			}
 			@Override
+			public Adapter caseBehavioralElement(BehavioralElement object) {
+				return createBehavioralElementAdapter();
+			}
+			@Override
+			public Adapter caseDiscretePort(DiscretePort object) {
+				return createDiscretePortAdapter();
+			}
+			@Override
 			public Adapter caseDataType(DataType object) {
 				return createDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -235,6 +254,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller <em>Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller
+	 * @generated
+	 */
+	public Adapter createControllerAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -245,6 +278,62 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReconfigurationControllerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController <em>Rule Based Reconfiguration Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController
+	 * @generated
+	 */
+	public Adapter createRuleBasedReconfigurationControllerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort <em>External Reconfiguration Execution Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort
+	 * @generated
+	 */
+	public Adapter createExternalReconfigurationExecutionPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort <em>Internal Reconfiguration Execution Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort
+	 * @generated
+	 */
+	public Adapter createInternalReconfigurationExecutionPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression <em>Rule Call Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression
+	 * @generated
+	 */
+	public Adapter createReconfigurationRuleCallExpressionAdapter() {
 		return null;
 	}
 
@@ -347,34 +436,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation <em>Controller Implementation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation
-	 * @generated
-	 */
-	public Adapter createReconfigurationControllerImplementationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation <em>Statechart Implementation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation
-	 * @generated
-	 */
-	public Adapter createStatechartImplementationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort <em>Message Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -427,34 +488,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createManagerSpecificationEntryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType <em>Message Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType
-	 * @generated
-	 */
-	public Adapter createReconfigurationMessageTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePortEntry <em>Message Port Entry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePortEntry
-	 * @generated
-	 */
-	public Adapter createReconfigurationMessagePortEntryAdapter() {
 		return null;
 	}
 
@@ -557,6 +590,34 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement <em>Behavioral Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement
+	 * @generated
+	 */
+	public Adapter createBehavioralElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort <em>Discrete Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort
+	 * @generated
+	 */
+	public Adapter createDiscretePortAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -567,6 +628,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.expressions.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
 		return null;
 	}
 

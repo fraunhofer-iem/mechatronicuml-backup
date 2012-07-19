@@ -71,15 +71,6 @@ public interface ReconfigurationFactory extends EFactory {
 	PortDataType createPortDataType();
 
 	/**
-	 * Returns a new object of class '<em>Statechart Implementation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Statechart Implementation</em>'.
-	 * @generated
-	 */
-	StatechartImplementation createStatechartImplementation();
-
-	/**
 	 * Returns a new object of class '<em>Message Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,15 +78,6 @@ public interface ReconfigurationFactory extends EFactory {
 	 * @generated
 	 */
 	ReconfigurationMessagePort createReconfigurationMessagePort();
-
-	/**
-	 * Returns a new object of class '<em>Execution Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Execution Port</em>'.
-	 * @generated
-	 */
-	ReconfigurationExecutionPort createReconfigurationExecutionPort();
 
 	/**
 	 * Returns a new object of class '<em>Executor Specification Entry</em>'.
@@ -116,22 +98,40 @@ public interface ReconfigurationFactory extends EFactory {
 	ManagerSpecificationEntry createManagerSpecificationEntry();
 
 	/**
-	 * Returns a new object of class '<em>Message Type</em>'.
+	 * Returns a new object of class '<em>Rule Based Reconfiguration Controller</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Message Type</em>'.
+	 * @return a new object of class '<em>Rule Based Reconfiguration Controller</em>'.
 	 * @generated
 	 */
-	ReconfigurationMessageType createReconfigurationMessageType();
+	RuleBasedReconfigurationController createRuleBasedReconfigurationController();
 
 	/**
-	 * Returns a new object of class '<em>Message Port Entry</em>'.
+	 * Returns a new object of class '<em>External Reconfiguration Execution Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Message Port Entry</em>'.
+	 * @return a new object of class '<em>External Reconfiguration Execution Port</em>'.
 	 * @generated
 	 */
-	ReconfigurationMessagePortEntry createReconfigurationMessagePortEntry();
+	ExternalReconfigurationExecutionPort createExternalReconfigurationExecutionPort();
+
+	/**
+	 * Returns a new object of class '<em>Internal Reconfiguration Execution Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Internal Reconfiguration Execution Port</em>'.
+	 * @generated
+	 */
+	InternalReconfigurationExecutionPort createInternalReconfigurationExecutionPort();
+
+	/**
+	 * Returns a new object of class '<em>Rule Call Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rule Call Expression</em>'.
+	 * @generated
+	 */
+	ReconfigurationRuleCallExpression createReconfigurationRuleCallExpression();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
 
 /**

@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,5 +22,5 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
  * @model abstract="true"
  * @generated
  */
-public interface ReconfigurationPort extends Port {
+public interface ReconfigurationPort extends DiscretePort {
 } // ReconfigurationPort

@@ -6,28 +6,22 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl;
-
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurableStructuredComponentImpl#getControllers <em>Controllers</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurableStructuredComponentImpl#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurableStructuredComponentImpl#getExecutor <em>Executor</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurableStructuredComponentImpl#getDeclaredReconfigurationMessageTypes <em>Declared Reconfiguration Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,7 +47,7 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ReconfigurationController> controllers;
+	protected EList<Controller> controllers;
 
 	/**
 	 * The cached setting delegate for the '{@link #getManager() <em>Manager</em>}' reference.
@@ -74,16 +67,6 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate EXECUTOR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR).getSettingDelegate();
-
-	/**
-	 * The cached value of the '{@link #getDeclaredReconfigurationMessageTypes() <em>Declared Reconfiguration Message Types</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeclaredReconfigurationMessageTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ReconfigurationMessageType> declaredReconfigurationMessageTypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,9 +92,9 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ReconfigurationController> getControllers() {
+	public EList<Controller> getControllers() {
 		if (controllers == null) {
-			controllers = new EObjectContainmentWithInverseEList<ReconfigurationController>(ReconfigurationController.class, this, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS, ReconfigurationPackage.RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT);
+			controllers = new EObjectContainmentWithInverseEList<Controller>(Controller.class, this, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS, ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT);
 		}
 		return controllers;
 	}
@@ -157,18 +140,6 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ReconfigurationMessageType> getDeclaredReconfigurationMessageTypes() {
-		if (declaredReconfigurationMessageTypes == null) {
-			declaredReconfigurationMessageTypes = new EObjectContainmentEList<ReconfigurationMessageType>(ReconfigurationMessageType.class, this, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES);
-		}
-		return declaredReconfigurationMessageTypes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -189,8 +160,6 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
 				return ((InternalEList<?>)getControllers()).basicRemove(otherEnd, msgs);
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES:
-				return ((InternalEList<?>)getDeclaredReconfigurationMessageTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -211,8 +180,6 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR:
 				if (resolve) return getExecutor();
 				return basicGetExecutor();
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES:
-				return getDeclaredReconfigurationMessageTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,11 +195,7 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
 				getControllers().clear();
-				getControllers().addAll((Collection<? extends ReconfigurationController>)newValue);
-				return;
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES:
-				getDeclaredReconfigurationMessageTypes().clear();
-				getDeclaredReconfigurationMessageTypes().addAll((Collection<? extends ReconfigurationMessageType>)newValue);
+				getControllers().addAll((Collection<? extends Controller>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,9 +211,6 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
 				getControllers().clear();
-				return;
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES:
-				getDeclaredReconfigurationMessageTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -270,8 +230,6 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 				return MANAGER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR:
 				return EXECUTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES:
-				return declaredReconfigurationMessageTypes != null && !declaredReconfigurationMessageTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

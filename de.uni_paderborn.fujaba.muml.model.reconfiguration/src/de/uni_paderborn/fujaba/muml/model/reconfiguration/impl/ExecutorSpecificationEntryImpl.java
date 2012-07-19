@@ -6,26 +6,18 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.core.impl.ExtendableElementImpl;
+
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,16 +36,16 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class ExecutorSpecificationEntryImpl extends EObjectImpl implements ExecutorSpecificationEntry {
+public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implements ExecutorSpecificationEntry {
 	/**
-	 * The cached value of the '{@link #getReconfigurationRule() <em>Reconfiguration Rule</em>}' reference list.
+	 * The cached value of the '{@link #getReconfigurationRule() <em>Reconfiguration Rule</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReconfigurationRule()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ReconfigurationRule> reconfigurationRule;
+	protected ReconfigurationRule reconfigurationRule;
 
 	/**
 	 * The default value of the '{@link #isExternallyVisible() <em>Externally Visible</em>}' attribute.
@@ -180,11 +172,37 @@ public class ExecutorSpecificationEntryImpl extends EObjectImpl implements Execu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ReconfigurationRule> getReconfigurationRule() {
-		if (reconfigurationRule == null) {
-			reconfigurationRule = new EObjectResolvingEList<ReconfigurationRule>(ReconfigurationRule.class, this, ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE);
+	public ReconfigurationRule getReconfigurationRule() {
+		if (reconfigurationRule != null && reconfigurationRule.eIsProxy()) {
+			InternalEObject oldReconfigurationRule = (InternalEObject)reconfigurationRule;
+			reconfigurationRule = (ReconfigurationRule)eResolveProxy(oldReconfigurationRule);
+			if (reconfigurationRule != oldReconfigurationRule) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, oldReconfigurationRule, reconfigurationRule));
+			}
 		}
 		return reconfigurationRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationRule basicGetReconfigurationRule() {
+		return reconfigurationRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReconfigurationRule(ReconfigurationRule newReconfigurationRule) {
+		ReconfigurationRule oldReconfigurationRule = reconfigurationRule;
+		reconfigurationRule = newReconfigurationRule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, oldReconfigurationRule, reconfigurationRule));
 	}
 
 	/**
@@ -305,7 +323,8 @@ public class ExecutorSpecificationEntryImpl extends EObjectImpl implements Execu
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR:
 				return getExecutor();
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
-				return getReconfigurationRule();
+				if (resolve) return getReconfigurationRule();
+				return basicGetReconfigurationRule();
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
 				return isExternallyVisible();
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE:
@@ -329,8 +348,7 @@ public class ExecutorSpecificationEntryImpl extends EObjectImpl implements Execu
 				setExecutor((Executor)newValue);
 				return;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
-				getReconfigurationRule().clear();
-				getReconfigurationRule().addAll((Collection<? extends ReconfigurationRule>)newValue);
+				setReconfigurationRule((ReconfigurationRule)newValue);
 				return;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
 				setExternallyVisible((Boolean)newValue);
@@ -357,7 +375,7 @@ public class ExecutorSpecificationEntryImpl extends EObjectImpl implements Execu
 				setExecutor((Executor)null);
 				return;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
-				getReconfigurationRule().clear();
+				setReconfigurationRule((ReconfigurationRule)null);
 				return;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
 				setExternallyVisible(EXTERNALLY_VISIBLE_EDEFAULT);
@@ -383,7 +401,7 @@ public class ExecutorSpecificationEntryImpl extends EObjectImpl implements Execu
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR:
 				return getExecutor() != null;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
-				return reconfigurationRule != null && !reconfigurationRule.isEmpty();
+				return reconfigurationRule != null;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
 				return externallyVisible != EXTERNALLY_VISIBLE_EDEFAULT;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE:

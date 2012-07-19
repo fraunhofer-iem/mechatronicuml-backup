@@ -6,14 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.ExpressionsPackage;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -213,22 +213,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR = ComponentPackage.STRUCTURED_COMPONENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Declared Reconfiguration Message Types</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES = ComponentPackage.STRUCTURED_COMPONENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Reconfigurable Structured Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_FEATURE_COUNT = ComponentPackage.STRUCTURED_COMPONENT_FEATURE_COUNT + 4;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_FEATURE_COUNT = ComponentPackage.STRUCTURED_COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPortImpl <em>Port</em>}' class.
@@ -247,7 +238,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__ANNOTATION = ComponentPackage.PORT__ANNOTATION;
+	int RECONFIGURATION_PORT__ANNOTATION = ComponentPackage.DISCRETE_PORT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -256,7 +247,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__EXTENSION = ComponentPackage.PORT__EXTENSION;
+	int RECONFIGURATION_PORT__EXTENSION = ComponentPackage.DISCRETE_PORT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -265,7 +256,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__NAME = ComponentPackage.PORT__NAME;
+	int RECONFIGURATION_PORT__NAME = ComponentPackage.DISCRETE_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -274,7 +265,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__COMMENT = ComponentPackage.PORT__COMMENT;
+	int RECONFIGURATION_PORT__COMMENT = ComponentPackage.DISCRETE_PORT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -283,7 +274,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__CONSTRAINT = ComponentPackage.PORT__CONSTRAINT;
+	int RECONFIGURATION_PORT__CONSTRAINT = ComponentPackage.DISCRETE_PORT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -292,7 +283,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__CARDINALITY = ComponentPackage.PORT__CARDINALITY;
+	int RECONFIGURATION_PORT__CARDINALITY = ComponentPackage.DISCRETE_PORT__CARDINALITY;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -301,7 +292,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__INCOMING_CONNECTORS = ComponentPackage.PORT__INCOMING_CONNECTORS;
+	int RECONFIGURATION_PORT__INCOMING_CONNECTORS = ComponentPackage.DISCRETE_PORT__INCOMING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -310,7 +301,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__OUTGOING_CONNECTORS = ComponentPackage.PORT__OUTGOING_CONNECTORS;
+	int RECONFIGURATION_PORT__OUTGOING_CONNECTORS = ComponentPackage.DISCRETE_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -319,7 +310,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__COMPONENT = ComponentPackage.PORT__COMPONENT;
+	int RECONFIGURATION_PORT__COMPONENT = ComponentPackage.DISCRETE_PORT__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -328,7 +319,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__CONNECTORS = ComponentPackage.PORT__CONNECTORS;
+	int RECONFIGURATION_PORT__CONNECTORS = ComponentPackage.DISCRETE_PORT__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
@@ -337,7 +328,88 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__IS_MULTI_PORT = ComponentPackage.PORT__IS_MULTI_PORT;
+	int RECONFIGURATION_PORT__IS_MULTI_PORT = ComponentPackage.DISCRETE_PORT__IS_MULTI_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__BEHAVIOR = ComponentPackage.DISCRETE_PORT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__REFINES = ComponentPackage.DISCRETE_PORT__REFINES;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__SENDER_MESSAGE_INTERFACE = ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_INTERFACE = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR = ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__IS_DISCRETE_IN_PORT = ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__IS_DISCRETE_OUT_PORT = ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT = ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -346,7 +418,80 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_FEATURE_COUNT = ComponentPackage.PORT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_PORT_FEATURE_COUNT = ComponentPackage.DISCRETE_PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ControllerImpl <em>Controller</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ControllerImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getController()
+	 * @generated
+	 */
+	int CONTROLLER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__ANNOTATION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__EXTENSION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__NAME = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__COMMENT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Structured Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__STRUCTURED_COMPONENT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Controller</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImpl <em>Controller</em>}' class.
@@ -356,70 +501,37 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationController()
 	 * @generated
 	 */
-	int RECONFIGURATION_CONTROLLER = 2;
+	int RECONFIGURATION_CONTROLLER = 14;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.RuleBasedReconfigurationControllerImpl <em>Rule Based Reconfiguration Controller</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.RuleBasedReconfigurationControllerImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getRuleBasedReconfigurationController()
 	 * @generated
-	 * @ordered
 	 */
-	int RECONFIGURATION_CONTROLLER__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RULE_BASED_RECONFIGURATION_CONTROLLER = 15;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl <em>External Reconfiguration Execution Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getExternalReconfigurationExecutionPort()
 	 * @generated
-	 * @ordered
 	 */
-	int RECONFIGURATION_CONTROLLER__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT = 16;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.InternalReconfigurationExecutionPortImpl <em>Internal Reconfiguration Execution Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.InternalReconfigurationExecutionPortImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getInternalReconfigurationExecutionPort()
 	 * @generated
-	 * @ordered
 	 */
-	int RECONFIGURATION_CONTROLLER__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Structured Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Implementations</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Controller</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT = 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.
@@ -438,7 +550,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__ANNOTATION = RECONFIGURATION_CONTROLLER__ANNOTATION;
+	int MANAGER__ANNOTATION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -447,16 +559,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__EXTENSION = RECONFIGURATION_CONTROLLER__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER__NAME = RECONFIGURATION_CONTROLLER__NAME;
+	int MANAGER__EXTENSION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -465,25 +568,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__COMMENT = RECONFIGURATION_CONTROLLER__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Structured Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER__STRUCTURED_COMPONENT = RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Implementations</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER__IMPLEMENTATIONS = RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS;
+	int MANAGER__COMMENT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' containment reference list.
@@ -492,7 +577,16 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__SPECIFICATION_ENTRIES = RECONFIGURATION_CONTROLLER_FEATURE_COUNT + 0;
+	int MANAGER__SPECIFICATION_ENTRIES = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Reconfiguration Controller</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER__RECONFIGURATION_CONTROLLER = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -501,7 +595,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_FEATURE_COUNT = RECONFIGURATION_CONTROLLER_FEATURE_COUNT + 1;
+	int MANAGER_FEATURE_COUNT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExecutorImpl <em>Executor</em>}' class.
@@ -520,7 +614,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__ANNOTATION = RECONFIGURATION_CONTROLLER__ANNOTATION;
+	int EXECUTOR__ANNOTATION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -529,16 +623,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__EXTENSION = RECONFIGURATION_CONTROLLER__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR__NAME = RECONFIGURATION_CONTROLLER__NAME;
+	int EXECUTOR__EXTENSION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -547,25 +632,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__COMMENT = RECONFIGURATION_CONTROLLER__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Structured Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR__STRUCTURED_COMPONENT = RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Implementations</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR__IMPLEMENTATIONS = RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS;
+	int EXECUTOR__COMMENT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' containment reference list.
@@ -574,7 +641,16 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__SPECIFICATION_ENTRIES = RECONFIGURATION_CONTROLLER_FEATURE_COUNT + 0;
+	int EXECUTOR__SPECIFICATION_ENTRIES = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Reconfiguration Controller</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTOR__RECONFIGURATION_CONTROLLER = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Executor</em>' class.
@@ -583,7 +659,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_FEATURE_COUNT = RECONFIGURATION_CONTROLLER_FEATURE_COUNT + 1;
+	int EXECUTOR_FEATURE_COUNT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 
 	/**
@@ -603,7 +679,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RECONFIGURATION_RULE__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -612,7 +688,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RECONFIGURATION_RULE__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -621,7 +697,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int RECONFIGURATION_RULE__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -630,7 +706,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_RULE__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -639,7 +715,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_RULE__PARAMETERS = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Return Parameters</b></em>' reference list.
@@ -648,7 +724,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__RETURN_PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RECONFIGURATION_RULE__RETURN_PARAMETERS = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -657,7 +733,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int RECONFIGURATION_RULE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 
 	/**
@@ -677,7 +753,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RECONFIGURATION_CONDITION__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -686,7 +762,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RECONFIGURATION_CONDITION__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -695,7 +771,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int RECONFIGURATION_CONDITION__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -704,7 +780,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_CONDITION__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -713,7 +789,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_CONDITION__PARAMETERS = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
@@ -722,7 +798,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RECONFIGURATION_CONDITION_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
@@ -741,7 +817,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_DATA_TYPE__ANNOTATION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__ANNOTATION;
+	int PART_DATA_TYPE__ANNOTATION = CorePackage.DATA_TYPE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -750,7 +826,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_DATA_TYPE__EXTENSION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__EXTENSION;
+	int PART_DATA_TYPE__EXTENSION = CorePackage.DATA_TYPE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -759,7 +835,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_DATA_TYPE__NAME = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__NAME;
+	int PART_DATA_TYPE__NAME = CorePackage.DATA_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -768,7 +844,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_DATA_TYPE__COMMENT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__COMMENT;
+	int PART_DATA_TYPE__COMMENT = CorePackage.DATA_TYPE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Component Part</b></em>' reference.
@@ -777,7 +853,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_DATA_TYPE__COMPONENT_PART = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE_FEATURE_COUNT + 0;
+	int PART_DATA_TYPE__COMPONENT_PART = CorePackage.DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Part Data Type</em>' class.
@@ -786,7 +862,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_DATA_TYPE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE_FEATURE_COUNT + 1;
+	int PART_DATA_TYPE_FEATURE_COUNT = CorePackage.DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl <em>Port Data Type</em>}' class.
@@ -805,7 +881,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_DATA_TYPE__ANNOTATION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__ANNOTATION;
+	int PORT_DATA_TYPE__ANNOTATION = CorePackage.DATA_TYPE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -814,7 +890,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_DATA_TYPE__EXTENSION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__EXTENSION;
+	int PORT_DATA_TYPE__EXTENSION = CorePackage.DATA_TYPE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -823,7 +899,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_DATA_TYPE__NAME = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__NAME;
+	int PORT_DATA_TYPE__NAME = CorePackage.DATA_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -832,7 +908,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_DATA_TYPE__COMMENT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__COMMENT;
+	int PORT_DATA_TYPE__COMMENT = CorePackage.DATA_TYPE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference.
@@ -841,7 +917,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_DATA_TYPE__PORT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE_FEATURE_COUNT + 0;
+	int PORT_DATA_TYPE__PORT = CorePackage.DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Port Data Type</em>' class.
@@ -850,7 +926,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_DATA_TYPE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE_FEATURE_COUNT + 1;
+	int PORT_DATA_TYPE_FEATURE_COUNT = CorePackage.DATA_TYPE_FEATURE_COUNT + 1;
 
 
 	/**
@@ -873,126 +949,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_COMPONENT_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImplementationImpl <em>Controller Implementation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImplementationImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationControllerImplementation()
-	 * @generated
-	 */
-	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION = 10;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Controller Implementation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER_IMPLEMENTATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.StatechartImplementationImpl <em>Statechart Implementation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.StatechartImplementationImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getStatechartImplementation()
-	 * @generated
-	 */
-	int STATECHART_IMPLEMENTATION = 11;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATECHART_IMPLEMENTATION__ANNOTATION = RECONFIGURATION_CONTROLLER_IMPLEMENTATION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATECHART_IMPLEMENTATION__EXTENSION = RECONFIGURATION_CONTROLLER_IMPLEMENTATION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATECHART_IMPLEMENTATION__NAME = RECONFIGURATION_CONTROLLER_IMPLEMENTATION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATECHART_IMPLEMENTATION__COMMENT = RECONFIGURATION_CONTROLLER_IMPLEMENTATION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Implementation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATECHART_IMPLEMENTATION__IMPLEMENTATION = RECONFIGURATION_CONTROLLER_IMPLEMENTATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Statechart Implementation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATECHART_IMPLEMENTATION_FEATURE_COUNT = RECONFIGURATION_CONTROLLER_IMPLEMENTATION_FEATURE_COUNT + 1;
-
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessagePortImpl <em>Message Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1000,7 +956,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessagePort()
 	 * @generated
 	 */
-	int RECONFIGURATION_MESSAGE_PORT = 12;
+	int RECONFIGURATION_MESSAGE_PORT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1102,13 +1058,85 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__IS_MULTI_PORT = RECONFIGURATION_PORT__IS_MULTI_PORT;
 
 	/**
-	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__INTERFACE_ENTRIES = RECONFIGURATION_PORT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_MESSAGE_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__SENDER_MESSAGE_INTERFACE = RECONFIGURATION_PORT__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__RECEIVER_MESSAGE_INTERFACE = RECONFIGURATION_PORT__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Message Port</em>' class.
@@ -1117,7 +1145,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT_FEATURE_COUNT = RECONFIGURATION_PORT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_MESSAGE_PORT_FEATURE_COUNT = RECONFIGURATION_PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationExecutionPortImpl <em>Execution Port</em>}' class.
@@ -1127,7 +1155,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationExecutionPort()
 	 * @generated
 	 */
-	int RECONFIGURATION_EXECUTION_PORT = 13;
+	int RECONFIGURATION_EXECUTION_PORT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1229,13 +1257,85 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT = RECONFIGURATION_PORT__IS_MULTI_PORT;
 
 	/**
-	 * The feature id for the '<em><b>Specification Entries</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES = RECONFIGURATION_PORT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE = RECONFIGURATION_PORT__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE = RECONFIGURATION_PORT__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Execution Port</em>' class.
@@ -1244,7 +1344,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT = RECONFIGURATION_PORT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT = RECONFIGURATION_PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExecutorSpecificationEntryImpl <em>Executor Specification Entry</em>}' class.
@@ -1254,7 +1354,25 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getExecutorSpecificationEntry()
 	 * @generated
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY = 14;
+	int EXECUTOR_SPECIFICATION_ENTRY = 12;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTOR_SPECIFICATION_ENTRY__ANNOTATION = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTOR_SPECIFICATION_ENTRY__EXTENSION = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Executor</b></em>' container reference.
@@ -1263,16 +1381,16 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR = 0;
+	int EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' reference list.
+	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = 1;
+	int EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Externally Visible</b></em>' attribute.
@@ -1281,7 +1399,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE = 2;
+	int EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Time To Failure</b></em>' attribute.
@@ -1290,7 +1408,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE = 3;
+	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Time To Success</b></em>' attribute.
@@ -1299,7 +1417,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS = 4;
+	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Executor Specification Entry</em>' class.
@@ -1308,7 +1426,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = 5;
+	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerSpecificationEntryImpl <em>Manager Specification Entry</em>}' class.
@@ -1318,7 +1436,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getManagerSpecificationEntry()
 	 * @generated
 	 */
-	int MANAGER_SPECIFICATION_ENTRY = 15;
+	int MANAGER_SPECIFICATION_ENTRY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1327,7 +1445,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int MANAGER_SPECIFICATION_ENTRY__ANNOTATION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1336,7 +1454,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int MANAGER_SPECIFICATION_ENTRY__EXTENSION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1345,7 +1463,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int MANAGER_SPECIFICATION_ENTRY__COMMENT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Treat</b></em>' attribute.
@@ -1354,7 +1472,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__TREAT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int MANAGER_SPECIFICATION_ENTRY__TREAT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Propagate</b></em>' attribute.
@@ -1363,7 +1481,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__PROPAGATE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int MANAGER_SPECIFICATION_ENTRY__PROPAGATE = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Manager</b></em>' container reference.
@@ -1372,16 +1490,16 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__MANAGER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int MANAGER_SPECIFICATION_ENTRY__MANAGER = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Reconfiguration Message Type</b></em>' reference.
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' reference.
@@ -1390,7 +1508,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__GUARD = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int MANAGER_SPECIFICATION_ENTRY__GUARD = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Manager Specification Entry</em>' class.
@@ -1399,18 +1517,16 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
-
+	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessageTypeImpl <em>Message Type</em>}' class.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessageTypeImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessageType()
 	 * @generated
+	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_TYPE = 16;
+	int RECONFIGURATION_CONTROLLER__BEHAVIOR = CONTROLLER__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1419,7 +1535,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_TYPE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RECONFIGURATION_CONTROLLER__ANNOTATION = CONTROLLER__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1428,7 +1544,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_TYPE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RECONFIGURATION_CONTROLLER__EXTENSION = CONTROLLER__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1437,44 +1553,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_TYPE__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Message Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_TYPE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessagePortEntryImpl <em>Message Port Entry</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessagePortEntryImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessagePortEntry()
-	 * @generated
-	 */
-	int RECONFIGURATION_MESSAGE_PORT_ENTRY = 17;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT_ENTRY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT_ENTRY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int RECONFIGURATION_CONTROLLER__NAME = CONTROLLER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1483,25 +1562,558 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT_ENTRY__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int RECONFIGURATION_CONTROLLER__COMMENT = CONTROLLER__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Reconfiguration Message Type</b></em>' reference.
+	 * The feature id for the '<em><b>Structured Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT_ENTRY__RECONFIGURATION_MESSAGE_TYPE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT = CONTROLLER__STRUCTURED_COMPONENT;
 
 	/**
-	 * The number of structural features of the '<em>Message Port Entry</em>' class.
+	 * The number of structural features of the '<em>Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT_ENTRY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_CONTROLLER_FEATURE_COUNT = CONTROLLER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__BEHAVIOR = RECONFIGURATION_CONTROLLER__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__ANNOTATION = RECONFIGURATION_CONTROLLER__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__EXTENSION = RECONFIGURATION_CONTROLLER__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__NAME = RECONFIGURATION_CONTROLLER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__COMMENT = RECONFIGURATION_CONTROLLER__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Structured Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT = RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Executor</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__EXECUTOR = RECONFIGURATION_CONTROLLER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Manager</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__MANAGER = RECONFIGURATION_CONTROLLER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rule Based Reconfiguration Controller</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER_FEATURE_COUNT = RECONFIGURATION_CONTROLLER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__ANNOTATION = RECONFIGURATION_EXECUTION_PORT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__EXTENSION = RECONFIGURATION_EXECUTION_PORT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__NAME = RECONFIGURATION_EXECUTION_PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__COMMENT = RECONFIGURATION_EXECUTION_PORT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CONSTRAINT = RECONFIGURATION_EXECUTION_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_EXECUTION_PORT__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_EXECUTION_PORT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_EXECUTION_PORT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE = RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Specification Entries</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES = RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>External Reconfiguration Execution Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT = RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__ANNOTATION = RECONFIGURATION_EXECUTION_PORT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__EXTENSION = RECONFIGURATION_EXECUTION_PORT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__NAME = RECONFIGURATION_EXECUTION_PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__COMMENT = RECONFIGURATION_EXECUTION_PORT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CONSTRAINT = RECONFIGURATION_EXECUTION_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_EXECUTION_PORT__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_EXECUTION_PORT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_EXECUTION_PORT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE = RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT;
+
+	/**
+	 * The number of structural features of the '<em>Internal Reconfiguration Execution Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT = RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl <em>Rule Call Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationRuleCallExpression()
+	 * @generated
+	 */
+	int RECONFIGURATION_RULE_CALL_EXPRESSION = 18;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_RULE_CALL_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_RULE_CALL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_RULE_CALL_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parameter Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rule Call Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_RULE_CALL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 
 	/**
@@ -1548,17 +2160,6 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getReconfigurableStructuredComponent_Executor();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent#getDeclaredReconfigurationMessageTypes <em>Declared Reconfiguration Message Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Declared Reconfiguration Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent#getDeclaredReconfigurationMessageTypes()
-	 * @see #getReconfigurableStructuredComponent()
-	 * @generated
-	 */
-	EReference getReconfigurableStructuredComponent_DeclaredReconfigurationMessageTypes();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1567,6 +2168,27 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getReconfigurationPort();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller <em>Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Controller</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller
+	 * @generated
+	 */
+	EClass getController();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller#getStructuredComponent <em>Structured Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Structured Component</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller#getStructuredComponent()
+	 * @see #getController()
+	 * @generated
+	 */
+	EReference getController_StructuredComponent();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController <em>Controller</em>}'.
@@ -1579,26 +2201,99 @@ public interface ReconfigurationPackage extends EPackage {
 	EClass getReconfigurationController();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getStructuredComponent <em>Structured Component</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController <em>Rule Based Reconfiguration Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Structured Component</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getStructuredComponent()
-	 * @see #getReconfigurationController()
+	 * @return the meta object for class '<em>Rule Based Reconfiguration Controller</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController
 	 * @generated
 	 */
-	EReference getReconfigurationController_StructuredComponent();
+	EClass getRuleBasedReconfigurationController();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getImplementations <em>Implementations</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController#getExecutor <em>Executor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Implementations</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getImplementations()
-	 * @see #getReconfigurationController()
+	 * @return the meta object for the containment reference '<em>Executor</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController#getExecutor()
+	 * @see #getRuleBasedReconfigurationController()
 	 * @generated
 	 */
-	EReference getReconfigurationController_Implementations();
+	EReference getRuleBasedReconfigurationController_Executor();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController#getManager <em>Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Manager</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController#getManager()
+	 * @see #getRuleBasedReconfigurationController()
+	 * @generated
+	 */
+	EReference getRuleBasedReconfigurationController_Manager();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort <em>External Reconfiguration Execution Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>External Reconfiguration Execution Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort
+	 * @generated
+	 */
+	EClass getExternalReconfigurationExecutionPort();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort#getSpecificationEntries <em>Specification Entries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Specification Entries</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort#getSpecificationEntries()
+	 * @see #getExternalReconfigurationExecutionPort()
+	 * @generated
+	 */
+	EReference getExternalReconfigurationExecutionPort_SpecificationEntries();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort <em>Internal Reconfiguration Execution Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Internal Reconfiguration Execution Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort
+	 * @generated
+	 */
+	EClass getInternalReconfigurationExecutionPort();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression <em>Rule Call Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rule Call Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression
+	 * @generated
+	 */
+	EClass getReconfigurationRuleCallExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reconfiguration Rule</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression#getReconfigurationRule()
+	 * @see #getReconfigurationRuleCallExpression()
+	 * @generated
+	 */
+	EReference getReconfigurationRuleCallExpression_ReconfigurationRule();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression#getParameterBindings <em>Parameter Bindings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter Bindings</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression#getParameterBindings()
+	 * @see #getReconfigurationRuleCallExpression()
+	 * @generated
+	 */
+	EReference getReconfigurationRuleCallExpression_ParameterBindings();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager <em>Manager</em>}'.
@@ -1622,6 +2317,17 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getManager_SpecificationEntries();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager#getReconfigurationController <em>Reconfiguration Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Reconfiguration Controller</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager#getReconfigurationController()
+	 * @see #getManager()
+	 * @generated
+	 */
+	EReference getManager_ReconfigurationController();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor <em>Executor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1641,6 +2347,17 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExecutor_SpecificationEntries();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor#getReconfigurationController <em>Reconfiguration Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Reconfiguration Controller</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor#getReconfigurationController()
+	 * @see #getExecutor()
+	 * @generated
+	 */
+	EReference getExecutor_ReconfigurationController();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule <em>Rule</em>}'.
@@ -1748,37 +2465,6 @@ public interface ReconfigurationPackage extends EPackage {
 	EClass getReconfigurableComponent();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation <em>Controller Implementation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Controller Implementation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationControllerImplementation
-	 * @generated
-	 */
-	EClass getReconfigurationControllerImplementation();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation <em>Statechart Implementation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Statechart Implementation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation
-	 * @generated
-	 */
-	EClass getStatechartImplementation();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation#getImplementation <em>Implementation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Implementation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation#getImplementation()
-	 * @see #getStatechartImplementation()
-	 * @generated
-	 */
-	EReference getStatechartImplementation_Implementation();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort <em>Message Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1789,17 +2475,6 @@ public interface ReconfigurationPackage extends EPackage {
 	EClass getReconfigurationMessagePort();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort#getInterfaceEntries <em>Interface Entries</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Interface Entries</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort#getInterfaceEntries()
-	 * @see #getReconfigurationMessagePort()
-	 * @generated
-	 */
-	EReference getReconfigurationMessagePort_InterfaceEntries();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationExecutionPort <em>Execution Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1808,17 +2483,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getReconfigurationExecutionPort();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationExecutionPort#getSpecificationEntries <em>Specification Entries</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Specification Entries</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationExecutionPort#getSpecificationEntries()
-	 * @see #getReconfigurationExecutionPort()
-	 * @generated
-	 */
-	EReference getReconfigurationExecutionPort_SpecificationEntries();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry <em>Executor Specification Entry</em>}'.
@@ -1842,10 +2506,10 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getExecutorSpecificationEntry_Executor();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Reconfiguration Rule</em>'.
+	 * @return the meta object for the reference '<em>Reconfiguration Rule</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry#getReconfigurationRule()
 	 * @see #getExecutorSpecificationEntry()
 	 * @generated
@@ -1929,15 +2593,15 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getManagerSpecificationEntry_Manager();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getMessageType <em>Message Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Reconfiguration Message Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getReconfigurationMessageType()
+	 * @return the meta object for the reference '<em>Message Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getMessageType()
 	 * @see #getManagerSpecificationEntry()
 	 * @generated
 	 */
-	EReference getManagerSpecificationEntry_ReconfigurationMessageType();
+	EReference getManagerSpecificationEntry_MessageType();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getGuard <em>Guard</em>}'.
@@ -1949,37 +2613,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getManagerSpecificationEntry_Guard();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType <em>Message Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Message Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType
-	 * @generated
-	 */
-	EClass getReconfigurationMessageType();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePortEntry <em>Message Port Entry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Message Port Entry</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePortEntry
-	 * @generated
-	 */
-	EClass getReconfigurationMessagePortEntry();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePortEntry#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Reconfiguration Message Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePortEntry#getReconfigurationMessageType()
-	 * @see #getReconfigurationMessagePortEntry()
-	 * @generated
-	 */
-	EReference getReconfigurationMessagePortEntry_ReconfigurationMessageType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2038,14 +2671,6 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR = eINSTANCE.getReconfigurableStructuredComponent_Executor();
 
 		/**
-		 * The meta object literal for the '<em><b>Declared Reconfiguration Message Types</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECONFIGURABLE_STRUCTURED_COMPONENT__DECLARED_RECONFIGURATION_MESSAGE_TYPES = eINSTANCE.getReconfigurableStructuredComponent_DeclaredReconfigurationMessageTypes();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPortImpl <em>Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2054,6 +2679,24 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RECONFIGURATION_PORT = eINSTANCE.getReconfigurationPort();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ControllerImpl <em>Controller</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ControllerImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getController()
+		 * @generated
+		 */
+		EClass CONTROLLER = eINSTANCE.getController();
+
+		/**
+		 * The meta object literal for the '<em><b>Structured Component</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLER__STRUCTURED_COMPONENT = eINSTANCE.getController_StructuredComponent();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImpl <em>Controller</em>}' class.
@@ -2066,20 +2709,84 @@ public interface ReconfigurationPackage extends EPackage {
 		EClass RECONFIGURATION_CONTROLLER = eINSTANCE.getReconfigurationController();
 
 		/**
-		 * The meta object literal for the '<em><b>Structured Component</b></em>' container reference feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.RuleBasedReconfigurationControllerImpl <em>Rule Based Reconfiguration Controller</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.RuleBasedReconfigurationControllerImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getRuleBasedReconfigurationController()
 		 * @generated
 		 */
-		EReference RECONFIGURATION_CONTROLLER__STRUCTURED_COMPONENT = eINSTANCE.getReconfigurationController_StructuredComponent();
+		EClass RULE_BASED_RECONFIGURATION_CONTROLLER = eINSTANCE.getRuleBasedReconfigurationController();
 
 		/**
-		 * The meta object literal for the '<em><b>Implementations</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Executor</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RECONFIGURATION_CONTROLLER__IMPLEMENTATIONS = eINSTANCE.getReconfigurationController_Implementations();
+		EReference RULE_BASED_RECONFIGURATION_CONTROLLER__EXECUTOR = eINSTANCE.getRuleBasedReconfigurationController_Executor();
+
+		/**
+		 * The meta object literal for the '<em><b>Manager</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RULE_BASED_RECONFIGURATION_CONTROLLER__MANAGER = eINSTANCE.getRuleBasedReconfigurationController_Manager();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl <em>External Reconfiguration Execution Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getExternalReconfigurationExecutionPort()
+		 * @generated
+		 */
+		EClass EXTERNAL_RECONFIGURATION_EXECUTION_PORT = eINSTANCE.getExternalReconfigurationExecutionPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Specification Entries</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES = eINSTANCE.getExternalReconfigurationExecutionPort_SpecificationEntries();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.InternalReconfigurationExecutionPortImpl <em>Internal Reconfiguration Execution Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.InternalReconfigurationExecutionPortImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getInternalReconfigurationExecutionPort()
+		 * @generated
+		 */
+		EClass INTERNAL_RECONFIGURATION_EXECUTION_PORT = eINSTANCE.getInternalReconfigurationExecutionPort();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl <em>Rule Call Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationRuleCallExpression()
+		 * @generated
+		 */
+		EClass RECONFIGURATION_RULE_CALL_EXPRESSION = eINSTANCE.getReconfigurationRuleCallExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconfiguration Rule</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE = eINSTANCE.getReconfigurationRuleCallExpression_ReconfigurationRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter Bindings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS = eINSTANCE.getReconfigurationRuleCallExpression_ParameterBindings();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.
@@ -2100,6 +2807,14 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference MANAGER__SPECIFICATION_ENTRIES = eINSTANCE.getManager_SpecificationEntries();
 
 		/**
+		 * The meta object literal for the '<em><b>Reconfiguration Controller</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANAGER__RECONFIGURATION_CONTROLLER = eINSTANCE.getManager_ReconfigurationController();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExecutorImpl <em>Executor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2116,6 +2831,14 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXECUTOR__SPECIFICATION_ENTRIES = eINSTANCE.getExecutor_SpecificationEntries();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconfiguration Controller</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTOR__RECONFIGURATION_CONTROLLER = eINSTANCE.getExecutor_ReconfigurationController();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl <em>Rule</em>}' class.
@@ -2208,34 +2931,6 @@ public interface ReconfigurationPackage extends EPackage {
 		EClass RECONFIGURABLE_COMPONENT = eINSTANCE.getReconfigurableComponent();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImplementationImpl <em>Controller Implementation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImplementationImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationControllerImplementation()
-		 * @generated
-		 */
-		EClass RECONFIGURATION_CONTROLLER_IMPLEMENTATION = eINSTANCE.getReconfigurationControllerImplementation();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.StatechartImplementationImpl <em>Statechart Implementation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.StatechartImplementationImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getStatechartImplementation()
-		 * @generated
-		 */
-		EClass STATECHART_IMPLEMENTATION = eINSTANCE.getStatechartImplementation();
-
-		/**
-		 * The meta object literal for the '<em><b>Implementation</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATECHART_IMPLEMENTATION__IMPLEMENTATION = eINSTANCE.getStatechartImplementation_Implementation();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessagePortImpl <em>Message Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2246,14 +2941,6 @@ public interface ReconfigurationPackage extends EPackage {
 		EClass RECONFIGURATION_MESSAGE_PORT = eINSTANCE.getReconfigurationMessagePort();
 
 		/**
-		 * The meta object literal for the '<em><b>Interface Entries</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECONFIGURATION_MESSAGE_PORT__INTERFACE_ENTRIES = eINSTANCE.getReconfigurationMessagePort_InterfaceEntries();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationExecutionPortImpl <em>Execution Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2262,14 +2949,6 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RECONFIGURATION_EXECUTION_PORT = eINSTANCE.getReconfigurationExecutionPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Specification Entries</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES = eINSTANCE.getReconfigurationExecutionPort_SpecificationEntries();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExecutorSpecificationEntryImpl <em>Executor Specification Entry</em>}' class.
@@ -2290,7 +2969,7 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR = eINSTANCE.getExecutorSpecificationEntry_Executor();
 
 		/**
-		 * The meta object literal for the '<em><b>Reconfiguration Rule</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Reconfiguration Rule</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2356,12 +3035,12 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference MANAGER_SPECIFICATION_ENTRY__MANAGER = eINSTANCE.getManagerSpecificationEntry_Manager();
 
 		/**
-		 * The meta object literal for the '<em><b>Reconfiguration Message Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Message Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE = eINSTANCE.getManagerSpecificationEntry_ReconfigurationMessageType();
+		EReference MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE = eINSTANCE.getManagerSpecificationEntry_MessageType();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard</b></em>' reference feature.
@@ -2370,34 +3049,6 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MANAGER_SPECIFICATION_ENTRY__GUARD = eINSTANCE.getManagerSpecificationEntry_Guard();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessageTypeImpl <em>Message Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessageTypeImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessageType()
-		 * @generated
-		 */
-		EClass RECONFIGURATION_MESSAGE_TYPE = eINSTANCE.getReconfigurationMessageType();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessagePortEntryImpl <em>Message Port Entry</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationMessagePortEntryImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessagePortEntry()
-		 * @generated
-		 */
-		EClass RECONFIGURATION_MESSAGE_PORT_ENTRY = eINSTANCE.getReconfigurationMessagePortEntry();
-
-		/**
-		 * The meta object literal for the '<em><b>Reconfiguration Message Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECONFIGURATION_MESSAGE_PORT_ENTRY__RECONFIGURATION_MESSAGE_TYPE = eINSTANCE.getReconfigurationMessagePortEntry_ReconfigurationMessageType();
 
 	}
 

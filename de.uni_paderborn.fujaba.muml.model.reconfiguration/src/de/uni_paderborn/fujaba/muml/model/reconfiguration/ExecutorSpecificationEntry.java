@@ -6,9 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL TimeToFailureLessOrEqualToTimeToSuccess='self.timeToFailure <= self.timeToSuccess'"
  * @generated
  */
-public interface ExecutorSpecificationEntry extends EObject {
+public interface ExecutorSpecificationEntry extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Executor</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor#getSpecificationEntries <em>Specification Entries</em>}'.
@@ -61,20 +59,30 @@ public interface ExecutorSpecificationEntry extends EObject {
 	void setExecutor(Executor value);
 
 	/**
-	 * Returns the value of the '<em><b>Reconfiguration Rule</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule}.
+	 * Returns the value of the '<em><b>Reconfiguration Rule</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Reconfiguration Rule</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reconfiguration Rule</em>' reference list.
+	 * @return the value of the '<em>Reconfiguration Rule</em>' reference.
+	 * @see #setReconfigurationRule(ReconfigurationRule)
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_ReconfigurationRule()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<ReconfigurationRule> getReconfigurationRule();
+	ReconfigurationRule getReconfigurationRule();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconfiguration Rule</em>' reference.
+	 * @see #getReconfigurationRule()
+	 * @generated
+	 */
+	void setReconfigurationRule(ReconfigurationRule value);
 
 	/**
 	 * Returns the value of the '<em><b>Externally Visible</b></em>' attribute.

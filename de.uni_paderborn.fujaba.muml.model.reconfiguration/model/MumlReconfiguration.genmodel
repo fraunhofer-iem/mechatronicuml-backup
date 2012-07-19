@@ -12,18 +12,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/controllers"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/manager"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/executor"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/declaredReconfigurationMessageTypes"/>
     </genClasses>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationPort"/>
-    <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationController">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationController/structuredComponent"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationController/implementations"/>
+    <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//Controller">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Controller/structuredComponent"/>
     </genClasses>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//Manager">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Manager/specificationEntries"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Manager/reconfigurationController"/>
     </genClasses>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//Executor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Executor/specificationEntries"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Executor/reconfigurationController"/>
     </genClasses>
     <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRule/parameters"/>
@@ -39,16 +39,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//PortDataType/port"/>
     </genClasses>
     <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurableComponent"/>
-    <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationControllerImplementation"/>
-    <genClasses ecoreClass="MumlReconfiguration.ecore#//StatechartImplementation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//StatechartImplementation/implementation"/>
-    </genClasses>
-    <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationMessagePort">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationMessagePort/interfaceEntries"/>
-    </genClasses>
-    <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationExecutionPort">
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionPort/specificationEntries"/>
-    </genClasses>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationMessagePort"/>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationExecutionPort"/>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//ExecutorSpecificationEntry">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ExecutorSpecificationEntry/executor"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ExecutorSpecificationEntry/reconfigurationRule"/>
@@ -60,12 +52,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MumlReconfiguration.ecore#//ManagerSpecificationEntry/treat"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MumlReconfiguration.ecore#//ManagerSpecificationEntry/propagate"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ManagerSpecificationEntry/manager"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ManagerSpecificationEntry/reconfigurationMessageType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ManagerSpecificationEntry/messageType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ManagerSpecificationEntry/guard"/>
     </genClasses>
-    <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationMessageType"/>
-    <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationMessagePortEntry">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationMessagePortEntry/reconfigurationMessageType"/>
+    <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationController"/>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//RuleBasedReconfigurationController">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//RuleBasedReconfigurationController/executor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//RuleBasedReconfigurationController/manager"/>
+    </genClasses>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//ExternalReconfigurationExecutionPort">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ExternalReconfigurationExecutionPort/specificationEntries"/>
+    </genClasses>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//InternalReconfigurationExecutionPort"/>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationRuleCallExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRuleCallExpression/reconfigurationRule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRuleCallExpression/parameterBindings"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

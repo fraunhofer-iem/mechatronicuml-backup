@@ -7,9 +7,11 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.util;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,7 +100,9 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 			case ReconfigurationPackage.RECONFIGURATION_PORT: {
 				ReconfigurationPort reconfigurationPort = (ReconfigurationPort)theEObject;
 				T result = caseReconfigurationPort(reconfigurationPort);
+				if (result == null) result = caseDiscretePort(reconfigurationPort);
 				if (result == null) result = casePort(reconfigurationPort);
+				if (result == null) result = caseBehavioralElement(reconfigurationPort);
 				if (result == null) result = caseNamedElement(reconfigurationPort);
 				if (result == null) result = caseCommentableElement(reconfigurationPort);
 				if (result == null) result = caseConstrainableElement(reconfigurationPort);
@@ -105,20 +110,19 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER: {
-				ReconfigurationController reconfigurationController = (ReconfigurationController)theEObject;
-				T result = caseReconfigurationController(reconfigurationController);
-				if (result == null) result = caseNamedElement(reconfigurationController);
-				if (result == null) result = caseCommentableElement(reconfigurationController);
-				if (result == null) result = caseExtendableElement(reconfigurationController);
+			case ReconfigurationPackage.CONTROLLER: {
+				Controller controller = (Controller)theEObject;
+				T result = caseController(controller);
+				if (result == null) result = caseBehavioralElement(controller);
+				if (result == null) result = caseNamedElement(controller);
+				if (result == null) result = caseCommentableElement(controller);
+				if (result == null) result = caseExtendableElement(controller);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ReconfigurationPackage.MANAGER: {
 				Manager manager = (Manager)theEObject;
 				T result = caseManager(manager);
-				if (result == null) result = caseReconfigurationController(manager);
-				if (result == null) result = caseNamedElement(manager);
 				if (result == null) result = caseCommentableElement(manager);
 				if (result == null) result = caseExtendableElement(manager);
 				if (result == null) result = defaultCase(theEObject);
@@ -127,8 +131,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 			case ReconfigurationPackage.EXECUTOR: {
 				Executor executor = (Executor)theEObject;
 				T result = caseExecutor(executor);
-				if (result == null) result = caseReconfigurationController(executor);
-				if (result == null) result = caseNamedElement(executor);
 				if (result == null) result = caseCommentableElement(executor);
 				if (result == null) result = caseExtendableElement(executor);
 				if (result == null) result = defaultCase(theEObject);
@@ -178,30 +180,13 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER_IMPLEMENTATION: {
-				ReconfigurationControllerImplementation reconfigurationControllerImplementation = (ReconfigurationControllerImplementation)theEObject;
-				T result = caseReconfigurationControllerImplementation(reconfigurationControllerImplementation);
-				if (result == null) result = caseNamedElement(reconfigurationControllerImplementation);
-				if (result == null) result = caseCommentableElement(reconfigurationControllerImplementation);
-				if (result == null) result = caseExtendableElement(reconfigurationControllerImplementation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ReconfigurationPackage.STATECHART_IMPLEMENTATION: {
-				StatechartImplementation statechartImplementation = (StatechartImplementation)theEObject;
-				T result = caseStatechartImplementation(statechartImplementation);
-				if (result == null) result = caseReconfigurationControllerImplementation(statechartImplementation);
-				if (result == null) result = caseNamedElement(statechartImplementation);
-				if (result == null) result = caseCommentableElement(statechartImplementation);
-				if (result == null) result = caseExtendableElement(statechartImplementation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT: {
 				ReconfigurationMessagePort reconfigurationMessagePort = (ReconfigurationMessagePort)theEObject;
 				T result = caseReconfigurationMessagePort(reconfigurationMessagePort);
 				if (result == null) result = caseReconfigurationPort(reconfigurationMessagePort);
+				if (result == null) result = caseDiscretePort(reconfigurationMessagePort);
 				if (result == null) result = casePort(reconfigurationMessagePort);
+				if (result == null) result = caseBehavioralElement(reconfigurationMessagePort);
 				if (result == null) result = caseNamedElement(reconfigurationMessagePort);
 				if (result == null) result = caseCommentableElement(reconfigurationMessagePort);
 				if (result == null) result = caseConstrainableElement(reconfigurationMessagePort);
@@ -213,7 +198,9 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				ReconfigurationExecutionPort reconfigurationExecutionPort = (ReconfigurationExecutionPort)theEObject;
 				T result = caseReconfigurationExecutionPort(reconfigurationExecutionPort);
 				if (result == null) result = caseReconfigurationPort(reconfigurationExecutionPort);
+				if (result == null) result = caseDiscretePort(reconfigurationExecutionPort);
 				if (result == null) result = casePort(reconfigurationExecutionPort);
+				if (result == null) result = caseBehavioralElement(reconfigurationExecutionPort);
 				if (result == null) result = caseNamedElement(reconfigurationExecutionPort);
 				if (result == null) result = caseCommentableElement(reconfigurationExecutionPort);
 				if (result == null) result = caseConstrainableElement(reconfigurationExecutionPort);
@@ -224,6 +211,7 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: {
 				ExecutorSpecificationEntry executorSpecificationEntry = (ExecutorSpecificationEntry)theEObject;
 				T result = caseExecutorSpecificationEntry(executorSpecificationEntry);
+				if (result == null) result = caseExtendableElement(executorSpecificationEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -235,19 +223,65 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE: {
-				ReconfigurationMessageType reconfigurationMessageType = (ReconfigurationMessageType)theEObject;
-				T result = caseReconfigurationMessageType(reconfigurationMessageType);
-				if (result == null) result = caseNamedElement(reconfigurationMessageType);
-				if (result == null) result = caseExtendableElement(reconfigurationMessageType);
+			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER: {
+				ReconfigurationController reconfigurationController = (ReconfigurationController)theEObject;
+				T result = caseReconfigurationController(reconfigurationController);
+				if (result == null) result = caseController(reconfigurationController);
+				if (result == null) result = caseBehavioralElement(reconfigurationController);
+				if (result == null) result = caseNamedElement(reconfigurationController);
+				if (result == null) result = caseCommentableElement(reconfigurationController);
+				if (result == null) result = caseExtendableElement(reconfigurationController);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_ENTRY: {
-				ReconfigurationMessagePortEntry reconfigurationMessagePortEntry = (ReconfigurationMessagePortEntry)theEObject;
-				T result = caseReconfigurationMessagePortEntry(reconfigurationMessagePortEntry);
-				if (result == null) result = caseCommentableElement(reconfigurationMessagePortEntry);
-				if (result == null) result = caseExtendableElement(reconfigurationMessagePortEntry);
+			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER: {
+				RuleBasedReconfigurationController ruleBasedReconfigurationController = (RuleBasedReconfigurationController)theEObject;
+				T result = caseRuleBasedReconfigurationController(ruleBasedReconfigurationController);
+				if (result == null) result = caseReconfigurationController(ruleBasedReconfigurationController);
+				if (result == null) result = caseController(ruleBasedReconfigurationController);
+				if (result == null) result = caseBehavioralElement(ruleBasedReconfigurationController);
+				if (result == null) result = caseNamedElement(ruleBasedReconfigurationController);
+				if (result == null) result = caseCommentableElement(ruleBasedReconfigurationController);
+				if (result == null) result = caseExtendableElement(ruleBasedReconfigurationController);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.EXTERNAL_RECONFIGURATION_EXECUTION_PORT: {
+				ExternalReconfigurationExecutionPort externalReconfigurationExecutionPort = (ExternalReconfigurationExecutionPort)theEObject;
+				T result = caseExternalReconfigurationExecutionPort(externalReconfigurationExecutionPort);
+				if (result == null) result = caseReconfigurationExecutionPort(externalReconfigurationExecutionPort);
+				if (result == null) result = caseReconfigurationPort(externalReconfigurationExecutionPort);
+				if (result == null) result = caseDiscretePort(externalReconfigurationExecutionPort);
+				if (result == null) result = casePort(externalReconfigurationExecutionPort);
+				if (result == null) result = caseBehavioralElement(externalReconfigurationExecutionPort);
+				if (result == null) result = caseNamedElement(externalReconfigurationExecutionPort);
+				if (result == null) result = caseCommentableElement(externalReconfigurationExecutionPort);
+				if (result == null) result = caseConstrainableElement(externalReconfigurationExecutionPort);
+				if (result == null) result = caseExtendableElement(externalReconfigurationExecutionPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_EXECUTION_PORT: {
+				InternalReconfigurationExecutionPort internalReconfigurationExecutionPort = (InternalReconfigurationExecutionPort)theEObject;
+				T result = caseInternalReconfigurationExecutionPort(internalReconfigurationExecutionPort);
+				if (result == null) result = caseReconfigurationExecutionPort(internalReconfigurationExecutionPort);
+				if (result == null) result = caseReconfigurationPort(internalReconfigurationExecutionPort);
+				if (result == null) result = caseDiscretePort(internalReconfigurationExecutionPort);
+				if (result == null) result = casePort(internalReconfigurationExecutionPort);
+				if (result == null) result = caseBehavioralElement(internalReconfigurationExecutionPort);
+				if (result == null) result = caseNamedElement(internalReconfigurationExecutionPort);
+				if (result == null) result = caseCommentableElement(internalReconfigurationExecutionPort);
+				if (result == null) result = caseConstrainableElement(internalReconfigurationExecutionPort);
+				if (result == null) result = caseExtendableElement(internalReconfigurationExecutionPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION: {
+				ReconfigurationRuleCallExpression reconfigurationRuleCallExpression = (ReconfigurationRuleCallExpression)theEObject;
+				T result = caseReconfigurationRuleCallExpression(reconfigurationRuleCallExpression);
+				if (result == null) result = caseExpression(reconfigurationRuleCallExpression);
+				if (result == null) result = caseCommentableElement(reconfigurationRuleCallExpression);
+				if (result == null) result = caseExtendableElement(reconfigurationRuleCallExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -296,7 +330,82 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
+	public T caseController(Controller object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Controller</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Controller</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
 	public T caseReconfigurationController(ReconfigurationController object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rule Based Reconfiguration Controller</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rule Based Reconfiguration Controller</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuleBasedReconfigurationController(RuleBasedReconfigurationController object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>External Reconfiguration Execution Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>External Reconfiguration Execution Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExternalReconfigurationExecutionPort(ExternalReconfigurationExecutionPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Internal Reconfiguration Execution Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Internal Reconfiguration Execution Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInternalReconfigurationExecutionPort(InternalReconfigurationExecutionPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rule Call Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rule Call Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationRuleCallExpression(ReconfigurationRuleCallExpression object) {
 		return null;
 	}
 
@@ -406,36 +515,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Controller Implementation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Controller Implementation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReconfigurationControllerImplementation(ReconfigurationControllerImplementation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Statechart Implementation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Statechart Implementation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStatechartImplementation(StatechartImplementation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Message Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -492,36 +571,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseManagerSpecificationEntry(ManagerSpecificationEntry object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReconfigurationMessageType(ReconfigurationMessageType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message Port Entry</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message Port Entry</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReconfigurationMessagePortEntry(ReconfigurationMessagePortEntry object) {
 		return null;
 	}
 
@@ -631,6 +680,36 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehavioralElement(BehavioralElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscretePort(DiscretePort object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -642,6 +721,21 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataType(DataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object) {
 		return null;
 	}
 

@@ -6,12 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 
 /**
  * <!-- begin-user-doc -->

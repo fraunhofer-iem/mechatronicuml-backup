@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
-
 import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent#getControllers <em>Controllers</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent#getExecutor <em>Executor</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent#getDeclaredReconfigurationMessageTypes <em>Declared Reconfiguration Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,8 +35,8 @@ import org.eclipse.emf.common.util.EList;
 public interface ReconfigurableStructuredComponent extends StructuredComponent, ReconfigurableComponent {
 	/**
 	 * Returns the value of the '<em><b>Controllers</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getStructuredComponent <em>Structured Component</em>}'.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller#getStructuredComponent <em>Structured Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Controllers</em>' containment reference list isn't clear,
@@ -46,11 +45,11 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Controllers</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Controllers()
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController#getStructuredComponent
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller#getStructuredComponent
 	 * @model opposite="structuredComponent" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<ReconfigurationController> getControllers();
+	EList<Controller> getControllers();
 
 	/**
 	 * Returns the value of the '<em><b>Manager</b></em>' reference.
@@ -83,21 +82,5 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * @generated
 	 */
 	Executor getExecutor();
-
-	/**
-	 * Returns the value of the '<em><b>Declared Reconfiguration Message Types</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Declared Reconfiguration Message Types</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Declared Reconfiguration Message Types</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_DeclaredReconfigurationMessageTypes()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ReconfigurationMessageType> getDeclaredReconfigurationMessageTypes();
 
 } // ReconfigurableStructuredComponent

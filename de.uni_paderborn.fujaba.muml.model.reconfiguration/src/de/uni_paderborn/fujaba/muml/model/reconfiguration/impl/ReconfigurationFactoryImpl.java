@@ -7,14 +7,25 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,13 +76,13 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.EXECUTOR: return createExecutor();
 			case ReconfigurationPackage.PART_DATA_TYPE: return createPartDataType();
 			case ReconfigurationPackage.PORT_DATA_TYPE: return createPortDataType();
-			case ReconfigurationPackage.STATECHART_IMPLEMENTATION: return createStatechartImplementation();
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT: return createReconfigurationMessagePort();
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT: return createReconfigurationExecutionPort();
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: return createExecutorSpecificationEntry();
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY: return createManagerSpecificationEntry();
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE: return createReconfigurationMessageType();
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_ENTRY: return createReconfigurationMessagePortEntry();
+			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER: return createRuleBasedReconfigurationController();
+			case ReconfigurationPackage.EXTERNAL_RECONFIGURATION_EXECUTION_PORT: return createExternalReconfigurationExecutionPort();
+			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_EXECUTION_PORT: return createInternalReconfigurationExecutionPort();
+			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION: return createReconfigurationRuleCallExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -132,29 +143,9 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StatechartImplementation createStatechartImplementation() {
-		StatechartImplementationImpl statechartImplementation = new StatechartImplementationImpl();
-		return statechartImplementation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ReconfigurationMessagePort createReconfigurationMessagePort() {
 		ReconfigurationMessagePortImpl reconfigurationMessagePort = new ReconfigurationMessagePortImpl();
 		return reconfigurationMessagePort;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReconfigurationExecutionPort createReconfigurationExecutionPort() {
-		ReconfigurationExecutionPortImpl reconfigurationExecutionPort = new ReconfigurationExecutionPortImpl();
-		return reconfigurationExecutionPort;
 	}
 
 	/**
@@ -182,9 +173,9 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationMessageType createReconfigurationMessageType() {
-		ReconfigurationMessageTypeImpl reconfigurationMessageType = new ReconfigurationMessageTypeImpl();
-		return reconfigurationMessageType;
+	public RuleBasedReconfigurationController createRuleBasedReconfigurationController() {
+		RuleBasedReconfigurationControllerImpl ruleBasedReconfigurationController = new RuleBasedReconfigurationControllerImpl();
+		return ruleBasedReconfigurationController;
 	}
 
 	/**
@@ -192,9 +183,29 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationMessagePortEntry createReconfigurationMessagePortEntry() {
-		ReconfigurationMessagePortEntryImpl reconfigurationMessagePortEntry = new ReconfigurationMessagePortEntryImpl();
-		return reconfigurationMessagePortEntry;
+	public ExternalReconfigurationExecutionPort createExternalReconfigurationExecutionPort() {
+		ExternalReconfigurationExecutionPortImpl externalReconfigurationExecutionPort = new ExternalReconfigurationExecutionPortImpl();
+		return externalReconfigurationExecutionPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InternalReconfigurationExecutionPort createInternalReconfigurationExecutionPort() {
+		InternalReconfigurationExecutionPortImpl internalReconfigurationExecutionPort = new InternalReconfigurationExecutionPortImpl();
+		return internalReconfigurationExecutionPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationRuleCallExpression createReconfigurationRuleCallExpression() {
+		ReconfigurationRuleCallExpressionImpl reconfigurationRuleCallExpression = new ReconfigurationRuleCallExpressionImpl();
+		return reconfigurationRuleCallExpression;
 	}
 
 	/**

@@ -6,23 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.core.impl.CommentableElementImpl;
+
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.storydriven.core.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +30,7 @@ import org.storydriven.core.impl.CommentableElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerSpecificationEntryImpl#isTreat <em>Treat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerSpecificationEntryImpl#isPropagate <em>Propagate</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerSpecificationEntryImpl#getManager <em>Manager</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerSpecificationEntryImpl#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerSpecificationEntryImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerSpecificationEntryImpl#getGuard <em>Guard</em>}</li>
  * </ul>
  * </p>
@@ -83,14 +79,14 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	protected boolean propagate = PROPAGATE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getReconfigurationMessageType() <em>Reconfiguration Message Type</em>}' reference.
+	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReconfigurationMessageType()
+	 * @see #getMessageType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ReconfigurationMessageType reconfigurationMessageType;
+	protected MessageType messageType;
 
 	/**
 	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' reference.
@@ -209,16 +205,16 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationMessageType getReconfigurationMessageType() {
-		if (reconfigurationMessageType != null && reconfigurationMessageType.eIsProxy()) {
-			InternalEObject oldReconfigurationMessageType = (InternalEObject)reconfigurationMessageType;
-			reconfigurationMessageType = (ReconfigurationMessageType)eResolveProxy(oldReconfigurationMessageType);
-			if (reconfigurationMessageType != oldReconfigurationMessageType) {
+	public MessageType getMessageType() {
+		if (messageType != null && messageType.eIsProxy()) {
+			InternalEObject oldMessageType = (InternalEObject)messageType;
+			messageType = (MessageType)eResolveProxy(oldMessageType);
+			if (messageType != oldMessageType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE, oldReconfigurationMessageType, reconfigurationMessageType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE, oldMessageType, messageType));
 			}
 		}
-		return reconfigurationMessageType;
+		return messageType;
 	}
 
 	/**
@@ -226,8 +222,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationMessageType basicGetReconfigurationMessageType() {
-		return reconfigurationMessageType;
+	public MessageType basicGetMessageType() {
+		return messageType;
 	}
 
 	/**
@@ -235,11 +231,11 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReconfigurationMessageType(ReconfigurationMessageType newReconfigurationMessageType) {
-		ReconfigurationMessageType oldReconfigurationMessageType = reconfigurationMessageType;
-		reconfigurationMessageType = newReconfigurationMessageType;
+	public void setMessageType(MessageType newMessageType) {
+		MessageType oldMessageType = messageType;
+		messageType = newMessageType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE, oldReconfigurationMessageType, reconfigurationMessageType));
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE, oldMessageType, messageType));
 	}
 
 	/**
@@ -338,9 +334,9 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 				return isPropagate();
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MANAGER:
 				return getManager();
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE:
-				if (resolve) return getReconfigurationMessageType();
-				return basicGetReconfigurationMessageType();
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE:
+				if (resolve) return getMessageType();
+				return basicGetMessageType();
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
 				if (resolve) return getGuard();
 				return basicGetGuard();
@@ -365,8 +361,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MANAGER:
 				setManager((Manager)newValue);
 				return;
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE:
-				setReconfigurationMessageType((ReconfigurationMessageType)newValue);
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE:
+				setMessageType((MessageType)newValue);
 				return;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
 				setGuard((ReconfigurationCondition)newValue);
@@ -392,8 +388,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MANAGER:
 				setManager((Manager)null);
 				return;
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE:
-				setReconfigurationMessageType((ReconfigurationMessageType)null);
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE:
+				setMessageType((MessageType)null);
 				return;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
 				setGuard((ReconfigurationCondition)null);
@@ -416,8 +412,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 				return propagate != PROPAGATE_EDEFAULT;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MANAGER:
 				return getManager() != null;
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE:
-				return reconfigurationMessageType != null;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE:
+				return messageType != null;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
 				return guard != null;
 		}

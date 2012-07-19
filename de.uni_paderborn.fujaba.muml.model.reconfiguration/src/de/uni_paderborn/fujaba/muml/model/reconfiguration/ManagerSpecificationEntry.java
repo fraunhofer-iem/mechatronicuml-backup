@@ -8,6 +8,8 @@ package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
 import org.storydriven.core.CommentableElement;
 
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Manager Specification Entry</b></em>'.
@@ -19,7 +21,7 @@ import org.storydriven.core.CommentableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#isTreat <em>Treat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#isPropagate <em>Propagate</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getManager <em>Manager</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getGuard <em>Guard</em>}</li>
  * </ul>
  * </p>
@@ -112,30 +114,30 @@ public interface ManagerSpecificationEntry extends CommentableElement {
 	void setManager(Manager value);
 
 	/**
-	 * Returns the value of the '<em><b>Reconfiguration Message Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reconfiguration Message Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>Message Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reconfiguration Message Type</em>' reference.
-	 * @see #setReconfigurationMessageType(ReconfigurationMessageType)
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry_ReconfigurationMessageType()
+	 * @return the value of the '<em>Message Type</em>' reference.
+	 * @see #setMessageType(MessageType)
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry_MessageType()
 	 * @model required="true"
 	 * @generated
 	 */
-	ReconfigurationMessageType getReconfigurationMessageType();
+	MessageType getMessageType();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry#getMessageType <em>Message Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reconfiguration Message Type</em>' reference.
-	 * @see #getReconfigurationMessageType()
+	 * @param value the new value of the '<em>Message Type</em>' reference.
+	 * @see #getMessageType()
 	 * @generated
 	 */
-	void setReconfigurationMessageType(ReconfigurationMessageType value);
+	void setMessageType(MessageType value);
 
 	/**
 	 * Returns the value of the '<em><b>Guard</b></em>' reference.

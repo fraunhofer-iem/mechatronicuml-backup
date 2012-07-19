@@ -6,12 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl;
+import org.eclipse.emf.ecore.EClass;
 
+import de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class ReconfigurationPortImpl extends PortImpl implements ReconfigurationPort {
+public abstract class ReconfigurationPortImpl extends DiscretePortImpl implements ReconfigurationPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

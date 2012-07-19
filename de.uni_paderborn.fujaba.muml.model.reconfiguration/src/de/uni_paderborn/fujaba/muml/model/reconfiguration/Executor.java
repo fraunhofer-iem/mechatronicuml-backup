@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
 
 
 /**
@@ -18,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor#getSpecificationEntries <em>Specification Entries</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor#getReconfigurationController <em>Reconfiguration Controller</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Executor extends ReconfigurationController {
+public interface Executor extends CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Specification Entries</b></em>' containment reference list.
@@ -40,8 +42,36 @@ public interface Executor extends ReconfigurationController {
 	 * @return the value of the '<em>Specification Entries</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getExecutor_SpecificationEntries()
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry#getExecutor
-	 * @model opposite="executor" containment="true"
+	 * @model opposite="executor" containment="true" required="true"
 	 * @generated
 	 */
 	EList<ExecutorSpecificationEntry> getSpecificationEntries();
+
+	/**
+	 * Returns the value of the '<em><b>Reconfiguration Controller</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController#getExecutor <em>Executor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reconfiguration Controller</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconfiguration Controller</em>' container reference.
+	 * @see #setReconfigurationController(RuleBasedReconfigurationController)
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getExecutor_ReconfigurationController()
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController#getExecutor
+	 * @model opposite="executor" required="true" transient="false"
+	 * @generated
+	 */
+	RuleBasedReconfigurationController getReconfigurationController();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor#getReconfigurationController <em>Reconfiguration Controller</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconfiguration Controller</em>' container reference.
+	 * @see #getReconfigurationController()
+	 * @generated
+	 */
+	void setReconfigurationController(RuleBasedReconfigurationController value);
 } // Executor
