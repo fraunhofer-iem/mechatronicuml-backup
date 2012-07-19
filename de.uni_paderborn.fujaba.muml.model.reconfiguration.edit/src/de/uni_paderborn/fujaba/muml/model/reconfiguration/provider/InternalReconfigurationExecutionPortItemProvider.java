@@ -7,15 +7,13 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,22 +22,14 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import org.storydriven.core.CorePackage;
-
-import org.storydriven.core.provider.NamedElementItemProvider;
-
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-
-import org.storydriven.storydiagrams.calls.CallsFactory;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessageType} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurationMessageTypeItemProvider
-	extends NamedElementItemProvider
+public class InternalReconfigurationExecutionPortItemProvider
+	extends ReconfigurationExecutionPortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -52,7 +42,7 @@ public class ReconfigurationMessageTypeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationMessageTypeItemProvider(AdapterFactory adapterFactory) {
+	public InternalReconfigurationExecutionPortItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -72,14 +62,14 @@ public class ReconfigurationMessageTypeItemProvider
 	}
 
 	/**
-	 * This returns ReconfigurationMessageType.gif.
+	 * This returns InternalReconfigurationExecutionPort.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationMessageType"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/InternalReconfigurationExecutionPort"));
 	}
 
 	/**
@@ -90,10 +80,10 @@ public class ReconfigurationMessageTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurationMessageType)object).getName();
+		String label = ((InternalReconfigurationExecutionPort)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurationMessageType_type") :
-			getString("_UI_ReconfigurationMessageType_type") + " " + label;
+			getString("_UI_InternalReconfigurationExecutionPort_type") :
+			getString("_UI_InternalReconfigurationExecutionPort_type") + " " + label;
 	}
 
 	/**
@@ -119,27 +109,6 @@ public class ReconfigurationMessageTypeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlReconfigurationEditPlugin.INSTANCE;
 	}
 
 }

@@ -7,8 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,13 +25,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.StatechartImplementation} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StatechartImplementationItemProvider
-	extends ReconfigurationControllerImplementationItemProvider
+public class ExternalReconfigurationExecutionPortItemProvider
+	extends ReconfigurationExecutionPortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +44,7 @@ public class StatechartImplementationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StatechartImplementationItemProvider(AdapterFactory adapterFactory) {
+	public ExternalReconfigurationExecutionPortItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,42 +59,42 @@ public class StatechartImplementationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addImplementationPropertyDescriptor(object);
+			addSpecificationEntriesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Implementation feature.
+	 * This adds a property descriptor for the Specification Entries feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImplementationPropertyDescriptor(Object object) {
+	protected void addSpecificationEntriesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_StatechartImplementation_implementation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StatechartImplementation_implementation_feature", "_UI_StatechartImplementation_type"),
-				 ReconfigurationPackage.Literals.STATECHART_IMPLEMENTATION__IMPLEMENTATION,
-				 true,
+				 getString("_UI_ExternalReconfigurationExecutionPort_specificationEntries_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalReconfigurationExecutionPort_specificationEntries_feature", "_UI_ExternalReconfigurationExecutionPort_type"),
+				 ReconfigurationPackage.Literals.EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES,
 				 false,
-				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This returns StatechartImplementation.gif.
+	 * This returns ExternalReconfigurationExecutionPort.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StatechartImplementation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExternalReconfigurationExecutionPort"));
 	}
 
 	/**
@@ -105,10 +105,10 @@ public class StatechartImplementationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StatechartImplementation)object).getName();
+		String label = ((ExternalReconfigurationExecutionPort)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_StatechartImplementation_type") :
-			getString("_UI_StatechartImplementation_type") + " " + label;
+			getString("_UI_ExternalReconfigurationExecutionPort_type") :
+			getString("_UI_ExternalReconfigurationExecutionPort_type") + " " + label;
 	}
 
 	/**

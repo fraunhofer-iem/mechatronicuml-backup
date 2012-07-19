@@ -59,31 +59,8 @@ public class ReconfigurationExecutionPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSpecificationEntriesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Specification Entries feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSpecificationEntriesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ReconfigurationExecutionPort_specificationEntries_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationExecutionPort_specificationEntries_feature", "_UI_ReconfigurationExecutionPort_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

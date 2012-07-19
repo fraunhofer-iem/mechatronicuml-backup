@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.component.provider.DiscretePortItemProvider;
 import de.uni_paderborn.fujaba.muml.model.component.provider.PortItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
@@ -33,7 +34,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class ReconfigurationPortItemProvider
-	extends PortItemProvider
+	extends DiscretePortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

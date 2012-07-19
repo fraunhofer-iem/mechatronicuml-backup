@@ -7,8 +7,10 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
 
 import java.util.Collection;
 import java.util.List;
@@ -18,6 +20,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,22 +29,24 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.ExtendableElementItemProvider;
+
+import org.storydriven.core.expressions.provider.ExpressionItemProvider;
+
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutorSpecificationEntryItemProvider
-	extends ExtendableElementItemProvider
+public class ReconfigurationRuleCallExpressionItemProvider
+	extends ExpressionItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -53,7 +59,7 @@ public class ExecutorSpecificationEntryItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutorSpecificationEntryItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationRuleCallExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -69,9 +75,6 @@ public class ExecutorSpecificationEntryItemProvider
 			super.getPropertyDescriptors(object);
 
 			addReconfigurationRulePropertyDescriptor(object);
-			addExternallyVisiblePropertyDescriptor(object);
-			addTimeToFailurePropertyDescriptor(object);
-			addTimeToSuccessPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,9 +90,9 @@ public class ExecutorSpecificationEntryItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ExecutorSpecificationEntry_reconfigurationRule_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutorSpecificationEntry_reconfigurationRule_feature", "_UI_ExecutorSpecificationEntry_type"),
-				 ReconfigurationPackage.Literals.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE,
+				 getString("_UI_ReconfigurationRuleCallExpression_reconfigurationRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRuleCallExpression_reconfigurationRule_feature", "_UI_ReconfigurationRuleCallExpression_type"),
+				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE,
 				 true,
 				 false,
 				 true,
@@ -99,80 +102,44 @@ public class ExecutorSpecificationEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Externally Visible feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExternallyVisiblePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExecutorSpecificationEntry_externallyVisible_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutorSpecificationEntry_externallyVisible_feature", "_UI_ExecutorSpecificationEntry_type"),
-				 ReconfigurationPackage.Literals.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Time To Failure feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTimeToFailurePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExecutorSpecificationEntry_timeToFailure_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutorSpecificationEntry_timeToFailure_feature", "_UI_ExecutorSpecificationEntry_type"),
-				 ReconfigurationPackage.Literals.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This adds a property descriptor for the Time To Success feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTimeToSuccessPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExecutorSpecificationEntry_timeToSuccess_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutorSpecificationEntry_timeToSuccess_feature", "_UI_ExecutorSpecificationEntry_type"),
-				 ReconfigurationPackage.Literals.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns ExecutorSpecificationEntry.gif.
+	 * This returns ReconfigurationRuleCallExpression.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExecutorSpecificationEntry"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationRuleCallExpression"));
 	}
 
 	/**
@@ -183,8 +150,10 @@ public class ExecutorSpecificationEntryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		ExecutorSpecificationEntry executorSpecificationEntry = (ExecutorSpecificationEntry)object;
-		return getString("_UI_ExecutorSpecificationEntry_type") + " " + executorSpecificationEntry.isExternallyVisible();
+		String label = ((ReconfigurationRuleCallExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ReconfigurationRuleCallExpression_type") :
+			getString("_UI_ReconfigurationRuleCallExpression_type") + " " + label;
 	}
 
 	/**
@@ -198,11 +167,9 @@ public class ExecutorSpecificationEntryItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ExecutorSpecificationEntry.class)) {
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE:
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+		switch (notification.getFeatureID(ReconfigurationRuleCallExpression.class)) {
+			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -228,6 +195,11 @@ public class ExecutorSpecificationEntryItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS,
+				 CoreFactory.eINSTANCE.createParameterBinding()));
 	}
 
 	/**

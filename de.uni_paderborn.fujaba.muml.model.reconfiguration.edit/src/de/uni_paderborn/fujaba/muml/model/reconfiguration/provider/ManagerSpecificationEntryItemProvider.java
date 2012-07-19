@@ -73,7 +73,7 @@ public class ManagerSpecificationEntryItemProvider
 
 			addTreatPropertyDescriptor(object);
 			addPropagatePropertyDescriptor(object);
-			addReconfigurationMessageTypePropertyDescriptor(object);
+			addMessageTypePropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -124,19 +124,19 @@ public class ManagerSpecificationEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Reconfiguration Message Type feature.
+	 * This adds a property descriptor for the Message Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReconfigurationMessageTypePropertyDescriptor(Object object) {
+	protected void addMessageTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ManagerSpecificationEntry_reconfigurationMessageType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ManagerSpecificationEntry_reconfigurationMessageType_feature", "_UI_ManagerSpecificationEntry_type"),
-				 ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_MESSAGE_TYPE,
+				 getString("_UI_ManagerSpecificationEntry_messageType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ManagerSpecificationEntry_messageType_feature", "_UI_ManagerSpecificationEntry_type"),
+				 ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE,
 				 true,
 				 false,
 				 true,
