@@ -16,6 +16,10 @@ import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
  * A representation of the model object '<em><b>Pattern Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An instance of a pattern occurence. It specifies the behavior of discrete (single/multi) port instances that are connected with each other.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -38,6 +42,11 @@ public interface PatternInstance extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The port instance that uses this pattern instance.
+	 * 
+	 * \todosd{I suggest to change this reference so that it references a DiscretePortInstance.}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPatternInstance_PortInstances()
 	 * @model required="true"
@@ -53,6 +62,9 @@ public interface PatternInstance extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The PatternOccurence of that instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Pattern Occurrence</em>' reference.
 	 * @see #setPatternOccurrence(PatternOccurrence)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPatternInstance_PatternOccurrence()

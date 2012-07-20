@@ -113,6 +113,9 @@ public interface ComponentInstance extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todosd{What is the purpose of this reference? Is this a fitting name?}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Direct Port Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_DirectPortInstances()
 	 * @model containment="true" derived="true"

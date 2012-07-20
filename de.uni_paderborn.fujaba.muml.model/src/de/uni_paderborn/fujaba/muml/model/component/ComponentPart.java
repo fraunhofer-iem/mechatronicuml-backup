@@ -188,8 +188,8 @@ public interface ComponentPart extends CommentableElement, NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This derived attribute indicates if the part is a multi part (it is only used to
-	 * simplify OCL constraints).
+	 * This derived attribute indicates if the part is a multi part.
+	 * It is only used to simplify OCL constraints.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Multi Part</em>' attribute.
 	 * @see #isSetIsMultiPart()

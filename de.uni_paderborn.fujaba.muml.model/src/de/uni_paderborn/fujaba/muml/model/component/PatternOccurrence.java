@@ -16,6 +16,10 @@ import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
  * A representation of the model object '<em><b>Pattern Occurrence</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A coordination protocol (pattern) can occur within a structured component. It defines the communication behavior of an assembly connection that connects discrete ports with each other.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -37,6 +41,9 @@ public interface PatternOccurrence extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The coordination protocol (pattern) of this PatternOccurence.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Pattern</em>' reference.
 	 * @see #setPattern(CoordinationPattern)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPatternOccurrence_Pattern()
@@ -64,6 +71,11 @@ public interface PatternOccurrence extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ports that take part in this protocol.
+	 * 
+	 * \todosd{I suggest to change this reference so that it references a DiscretePort.}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ports</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPatternOccurrence_Ports()
 	 * @model required="true"

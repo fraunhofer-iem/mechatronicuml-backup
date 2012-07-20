@@ -93,6 +93,8 @@ public interface Assembly extends BehavioralConnector {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The coordination pattern that defines the protocol of this assembly.
+	 * 
+	 * \todosd{Why does it reference the CoordinationPattern and not the PatternOccurence?}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Pattern</em>' reference.
 	 * @see #setCoordinationPattern(CoordinationPattern)

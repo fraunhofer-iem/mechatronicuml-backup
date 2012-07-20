@@ -314,7 +314,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageInterface(discretePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_SingleRoleRequiresSinglePort(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortMustRefineMultiRole(discretePort, diagnostics, context);
 		return result;
 	}
 
@@ -471,24 +471,24 @@ public class ComponentValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the SingleRoleRequiresSinglePort constraint of '<em>Discrete Port</em>'.
+	 * The cached validation expression for the MultiPortMustRefineMultiRole constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__SINGLE_ROLE_REQUIRES_SINGLE_PORT__EEXPRESSION = "if not self.refines.oclIsUndefined() and not self.refines.cardinality.oclIsUndefined() and not self.refines.cardinality.upperBound.oclIsUndefined() then\n" +
-		"\t(self.refines.cardinality.upperBound.value = 1) implies not self.isMultiPort\n" +
-		"else\n" +
-		"\ttrue\n" +
+	protected static final String DISCRETE_PORT__MULTI_PORT_MUST_REFINE_MULTI_ROLE__EEXPRESSION = "if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n" +
+		"       self.isMultiPort implies self.refines.isMultiRole\r\n" +
+		"else\r\n" +
+		"\ttrue\r\n" +
 		"endif";
 
 	/**
-	 * Validates the SingleRoleRequiresSinglePort constraint of '<em>Discrete Port</em>'.
+	 * Validates the MultiPortMustRefineMultiRole constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiscretePort_SingleRoleRequiresSinglePort(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDiscretePort_MultiPortMustRefineMultiRole(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.DISCRETE_PORT,
@@ -496,8 +496,8 @@ public class ComponentValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "SingleRoleRequiresSinglePort",
-				 DISCRETE_PORT__SINGLE_ROLE_REQUIRES_SINGLE_PORT__EEXPRESSION,
+				 "MultiPortMustRefineMultiRole",
+				 DISCRETE_PORT__MULTI_PORT_MUST_REFINE_MULTI_ROLE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2056,7 +2056,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageInterface(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_SingleRoleRequiresSinglePort(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortMustRefineMultiRole(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuousPort_LowerBoundMustBeZeroOrOne(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuousPort_UpperBoundMustBeOne(hybridPort, diagnostics, context);
 		return result;

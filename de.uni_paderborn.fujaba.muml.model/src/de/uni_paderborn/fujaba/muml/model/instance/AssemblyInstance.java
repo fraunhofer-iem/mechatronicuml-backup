@@ -15,6 +15,8 @@ import de.uni_paderborn.fujaba.muml.model.component.Assembly;
  *
  * <!-- begin-model-doc -->
  * This class represents an assembly connector at instance level.
+ * 
+ * \todosd{Why does the AssemblyInstance has a lower and upper bound for the propagation delay and the Assembly not?}
  * <!-- end-model-doc -->
  *
  * <p>
@@ -59,6 +61,9 @@ public interface AssemblyInstance extends ConnectorInstance {
 	 * The lower bound of the propagation delay of this assembly instance. 
 	 * The propagation delay defines how long a message needs from its sender to
 	 * its receiver port instance.
+	 * 
+	 * \todosd{I suggest to change the type from EInt to NaturalNumber.}
+	 * \todosd{Is propagation delay the correct term? MUML-Spec 0.2 on page 15 also name it like this, but message delay would also be a good name.}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Propagation Delay Lower Bound</em>' attribute.
 	 * @see #setPropagationDelayLowerBound(int)
@@ -91,6 +96,8 @@ public interface AssemblyInstance extends ConnectorInstance {
 	 * The upper bound of the propagation delay of this assembly instance. 
 	 * The propagation delay defines how long a message needs from its sender to
 	 * its receiver port instance.
+	 * 
+	 * \todosd{I suggest to change the type from EInt to NaturalNumber.}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Propagation Delay Upper Bound</em>' attribute.
 	 * @see #setPropagationDelayUpperBound(int)

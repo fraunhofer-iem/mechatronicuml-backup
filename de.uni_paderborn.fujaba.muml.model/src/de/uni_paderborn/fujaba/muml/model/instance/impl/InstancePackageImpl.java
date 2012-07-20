@@ -840,13 +840,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																							
+		   });																								
 		addAnnotation
 		  (delegationInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "OneDelegationInstancePerPortInstance"
-		   });																							
+		   });																										
 	}
 
 	/**
@@ -862,7 +862,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "-- Filter out those DiscreteSinglePortInstances that are referenced by a DiscreteMultiPortInstance.\nportInstances->select(portInstance | \n\tportInstance.oclIsKindOf(DiscreteSinglePortInstance) implies portInstance.oclAsType(DiscreteSinglePortInstance).multiPortInstance.oclIsUndefined()\n)"
-		   });											
+		   });												
 		addAnnotation
 		  (getPortInstance_ConnectorInstances(), 
 		   source, 
@@ -910,7 +910,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "self.subPortInstances"
-		   });			
+		   });						
 	}
 
 } //InstancePackageImpl

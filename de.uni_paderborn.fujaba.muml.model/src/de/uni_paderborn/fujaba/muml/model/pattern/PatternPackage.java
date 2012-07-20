@@ -363,13 +363,22 @@ public interface PatternPackage extends EPackage {
 	int ROLE__ROLE_CONNECTOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Is Multi Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__IS_MULTI_ROLE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int ROLE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
 
 
 	/**
@@ -500,6 +509,17 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_RoleConnector();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isIsMultiRole <em>Is Multi Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Multi Role</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#isIsMultiRole()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EAttribute getRole_IsMultiRole();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}'.
@@ -723,6 +743,14 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__ROLE_CONNECTOR = eINSTANCE.getRole_RoleConnector();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Multi Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROLE__IS_MULTI_ROLE = eINSTANCE.getRole_IsMultiRole();
 
 		/**
 		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' container reference feature.

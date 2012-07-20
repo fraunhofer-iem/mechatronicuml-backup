@@ -56,6 +56,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#isIsMultiRole <em>Is Multi Role</em>}</li>
  * </ul>
  * </p>
  *
@@ -191,6 +192,16 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ROLE_CONNECTOR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PatternPackage.Literals.ROLE__ROLE_CONNECTOR).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsMultiRole() <em>Is Multi Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMultiRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_MULTI_ROLE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PatternPackage.Literals.ROLE__IS_MULTI_ROLE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -359,6 +370,15 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 */
 	public RoleConnector basicGetRoleConnector() {
 		return (RoleConnector)ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsMultiRole() {
+		return (Boolean)IS_MULTI_ROLE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -805,6 +825,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				if (resolve) return getRoleConnector();
 				return basicGetRoleConnector();
+			case PatternPackage.ROLE__IS_MULTI_ROLE:
+				return isIsMultiRole();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -942,6 +964,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return outgoingRoleConnector != null;
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				return ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case PatternPackage.ROLE__IS_MULTI_ROLE:
+				return IS_MULTI_ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

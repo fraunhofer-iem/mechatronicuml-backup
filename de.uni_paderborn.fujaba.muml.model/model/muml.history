@@ -25094,5 +25094,123 @@
         </parameters>
       </operation>
     </changes>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.112/@element"
+        featureName="name" dataValue="isMultiRole2" oldDataValue="isMultiRole"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/Role/isMultiRole">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+            featureName="name" dataValue="isMultiRole"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+            featureName="defaultValueLiteral" dataValue=""/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+            featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/Role"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>isMultiRole</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue></dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
+      <operation name="makeFeatureVolatile">
+        <parameters name="feature">
+          <referenceValue element="muml.ecore#//model/pattern/Role/isMultiRole"/>
+        </parameters>
+        <parameters name="trans">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="derived">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="changeable">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/isMultiRole"
+        referenceName="eAnnotations" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="This derived attribute indicates if the role is a multi role."/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/isMultiRole"
+        referenceName="eAnnotations" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="if not (self.cardinality.oclIsUndefined()) then&#xD;&#xA;&#x9;(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/pattern/Role" referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="isMultiRole2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+          volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the role is a multi role."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if not (self.cardinality.oclIsUndefined()) then&#xD;&#xA;&#x9;(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+        featureName="lowerBound" dataValue="0" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/isMultiRole"
+          featureName="lowerBound" dataValue="0" oldDataValue="1"/>
+      <operation name="generalizeAttribute">
+        <parameters name="attribute">
+          <referenceValue element="muml.ecore#//model/pattern/Role/isMultiRole"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        featureName="unsettable" dataValue="false" oldDataValue="true"/>
   </releases>
 </history:History>

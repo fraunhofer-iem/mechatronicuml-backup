@@ -247,6 +247,7 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateRole_MultiPortRequiresDefinedOrder(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleHasConnector(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_RoleRequiresInterface(role, diagnostics, context);
 		return result;
 	}
 
@@ -332,6 +333,35 @@ public class PatternValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "RoleRequiresBehavior",
 				 ROLE__ROLE_REQUIRES_BEHAVIOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the RoleRequiresInterface constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ROLE__ROLE_REQUIRES_INTERFACE__EEXPRESSION = "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())";
+
+	/**
+	 * Validates the RoleRequiresInterface constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRole_RoleRequiresInterface(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PatternPackage.Literals.ROLE,
+				 role,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RoleRequiresInterface",
+				 ROLE__ROLE_REQUIRES_INTERFACE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -84,7 +84,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultiPort" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-            changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+            volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This derived attribute indicates if the port is a multi port."/>
@@ -395,10 +395,10 @@
           <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
+          <details key="constraints" value="NoSelfAssembliesForSinglePorts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="NoSelfAssembliesForSinglePortsOfSingleParts" value="(self.fromPort.cardinality.upperBound.value &lt;= 1 and self.from.cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
+          <details key="NoSelfAssembliesForSinglePorts" value="self.fromPort.cardinality.upperBound.value &lt;= 1&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
           <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"/>
           <details key="AssemblyBetweenDiscretePortsRequiresCoordinationPattern" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination pattern&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
           <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"
@@ -490,7 +490,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/DiscretePort #//model/component/ContinuousPort">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces."/>
+          <details key="documentation" value="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHybridInPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
@@ -499,7 +499,7 @@
             <details key="documentation" value="This derived attribute indicates if the hybrid port is an IN port"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousInPort"/>
+            <details key="derivation" value="-- XXX: is this the definition of an IN port?&#xA;self.isContinuousInPort"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHybridOutPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -509,13 +509,7 @@
             <details key="documentation" value="This derived attribute indicates if the hybrid port is an OUT port"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousOutPort"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="samplingInterval" lowerBound="1"
-            eType="#//model/core/NaturalNumber" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. "/>
+            <details key="derivation" value="-- XXX: is this the definition of an OUT port?&#xA;self.isContinuousOutPort"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -832,7 +826,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This is a general representation of a Parameter which is by all model elements&#xD;&#xA;that receive parameters. Examples include operations, message types, and synchronization channels.&#xD;&#xA;A parameter defines a data type."/>
+          <details key="documentation" value="A parameter is used to specify parameters of an operation. A parameter defines a type."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
             eType="#//model/core/DataType">
@@ -843,7 +837,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveTypes">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Defines all primitive types that may be used in MechatronicUML."/>
+          <details key="documentation" value="Defines all primitive types that may be used for attributes, parameters, and operations."/>
         </eAnnotations>
         <eLiterals name="VOID"/>
         <eLiterals name="BOOLEAN" value="1"/>
@@ -864,11 +858,7 @@
           <details key="documentation" value="This data type represents a primitive data type and refers to the PrimitiveDataType enumeration for specifying the concrete primitive type."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitiveType" lowerBound="1"
-            eType="#//model/core/PrimitiveTypes" defaultValueLiteral="PrimitiveTypes.VOID">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+            eType="#//model/core/PrimitiveTypes" defaultValueLiteral="PrimitiveTypes.VOID"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ArrayDataType" eSuperTypes="#//model/core/DataType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -884,22 +874,11 @@
             eType="#//model/core/NaturalNumber" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A parameter binding associates a parameter with a concrete value which is bound to this parameter by an invocation. As an example, an operation defines a set of parameters. A call of this operation needs to provide concrete values for the parameters which are defined by a parameter binding. The value is represented by an expression."/>
-        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-            eType="#//model/core/Parameter">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The parameter to which the value needs to be associated."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+            eType="#//model/core/Parameter"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
             eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-            containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The value which is associated with the parameter. The value is defined by an expression."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+            containment="true"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.2.7"
@@ -1158,9 +1137,6 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="StructuredComponentInstance" eSuperTypes="#//model/instance/ComponentInstance">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A structured component instance is a component instance that has been derived from a structured component type. A structured component instance specifies an embedded component instance configuration defining its inner structure. "/>
-        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedCIC" lowerBound="1"
             eType="#//model/instance/ComponentInstanceConfiguration" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1168,11 +1144,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AtomicComponentInstance" eSuperTypes="#//model/instance/ComponentInstance">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="An atomic component instance is a component instance which has been derived from an atomic component. An atomic component instance has no embedded component instance configuration and executes the behavior specification which has been defined by its type."/>
-        </eAnnotations>
-      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AtomicComponentInstance" eSuperTypes="#//model/instance/ComponentInstance"/>
     </eSubpackages>
     <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.2.3"
         nsPrefix="pattern">
@@ -1325,7 +1297,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultiRole" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-            changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+            volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This derived attribute indicates if the role is a multi role."/>
@@ -2099,11 +2071,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-            eType="#//model/core/Parameter" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+            eType="#//model/core/Parameter" containment="true"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.2.7"

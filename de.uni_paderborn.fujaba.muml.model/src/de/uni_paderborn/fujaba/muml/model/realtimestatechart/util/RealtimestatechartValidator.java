@@ -744,11 +744,11 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 */
 	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\r\n" +
 		"(\r\n" +
-		"\tif statechart.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then\r\n" +
-		"\t\tstatechart.getHighestParentStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\r\n" +
+		"\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then\r\n" +
+		"\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\r\n" +
 		"\telse\r\n" +
-		"\t\tif statechart.getHighestParentStatechart().behavioralElement.oclIsKindOf(pattern::Role) then\r\n" +
-		"\t\t\tstatechart.getHighestParentStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\r\n" +
+		"\t\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then\r\n" +
+		"\t\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\r\n" +
 		"\t\telse\r\n" +
 		"\t\t\tnull\r\n" +
 		"\t\tendif\r\n" +
@@ -783,18 +783,18 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\n" +
-		"(\n" +
-		"\tif statechart.behavioralElement.oclIsKindOf(component::DiscretePort) then\n" +
-		"\t\tstatechart.behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface\n" +
-		"\telse\n" +
-		"\t\tif statechart.behavioralElement.oclIsKindOf(pattern::Role) then\n" +
-		"\t\t\tstatechart.behavioralElement.oclAsType(pattern::Role).senderMessageInterface\n" +
-		"\t\telse\n" +
-		"\t\t\tnull\n" +
-		"\t\tendif\n" +
-		"\tendif\n" +
-		") in\n" +
+	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\r\n" +
+		"(\r\n" +
+		"\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then\r\n" +
+		"\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface\r\n" +
+		"\telse\r\n" +
+		"\t\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then\r\n" +
+		"\t\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).senderMessageInterface\r\n" +
+		"\t\telse\r\n" +
+		"\t\t\tnull\r\n" +
+		"\t\tendif\r\n" +
+		"\tendif\r\n" +
+		") in\r\n" +
 		"(not raiseMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf))";
 
 	/**

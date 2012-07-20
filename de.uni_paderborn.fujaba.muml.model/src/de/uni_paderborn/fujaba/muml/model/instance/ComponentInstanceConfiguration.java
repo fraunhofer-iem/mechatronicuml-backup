@@ -21,7 +21,7 @@ import org.storydriven.core.ExtendableElement;
  * 
  * It contains all component instances and connector instances that belong to a concrete configuration.
  * 
- * \todosd{implement ocl derived for parent port isntances derived}
+ * \todosd{implement ocl derived for parent port instances derived}
  * <!-- end-model-doc -->
  *
  * <p>
