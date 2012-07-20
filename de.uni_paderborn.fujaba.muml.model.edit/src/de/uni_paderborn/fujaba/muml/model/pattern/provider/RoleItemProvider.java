@@ -83,6 +83,7 @@ public class RoleItemProvider
 			addOrderedPropertyDescriptor(object);
 			addOutgoingRoleConnectorPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
+			addIsMultiRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -176,6 +177,28 @@ public class RoleItemProvider
 	}
 
 	
+
+	/**
+	 * This adds a property descriptor for the Is Multi Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsMultiRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_isMultiRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_isMultiRole_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__IS_MULTI_ROLE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
 	/**
 	 * This adds a property descriptor for the Sender Message Interface feature.
@@ -428,6 +451,7 @@ public class RoleItemProvider
 			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
 			case PatternPackage.ROLE__ORDERED:
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
+			case PatternPackage.ROLE__IS_MULTI_ROLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PatternPackage.ROLE__CONSTRAINT:
