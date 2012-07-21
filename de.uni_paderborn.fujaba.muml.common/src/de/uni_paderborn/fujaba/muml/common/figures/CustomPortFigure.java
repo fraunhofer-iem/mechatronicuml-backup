@@ -41,6 +41,8 @@ public class CustomPortFigure extends RectangleFigure {
 	}
 
 	private boolean multiPort;
+	
+	private boolean mandatoryPort;
 
 	/**
 	 * @generated
@@ -120,22 +122,6 @@ public class CustomPortFigure extends RectangleFigure {
 		getFigureOutPolygon().setVisible(portType == PortType.OUT_PORT);
 		getFigureInOutPolygon().setVisible(portType == PortType.INOUT_PORT);
 
-		// Set Outline
-		boolean outline = portKind == PortKind.CONTINUOUS
-				|| portKind == PortKind.HYBRID;
-		getFigureInPolygon().setOutline(outline);
-		getFigureOutPolygon().setOutline(outline);
-		getFigureInOutPolygon().setOutline(outline);
-
-		// Set Background Color
-		Color backgroundColor = null;
-		if (portKind == PortKind.DISCRETE) {
-			backgroundColor = ColorConstants.black;
-		}
-		getFigureInPolygon().setBackgroundColor(backgroundColor);
-		getFigureOutPolygon().setBackgroundColor(backgroundColor);
-		getFigureInOutPolygon().setBackgroundColor(backgroundColor);
-
 		// Show Rectangle for Port only if it is no continuous port.
 		getFigureShadowRectangle().setVisible(portKind != PortKind.CONTINUOUS);
 		getFigureOutlineRectangle().setOutline(portKind != PortKind.CONTINUOUS);
@@ -197,15 +183,15 @@ public class CustomPortFigure extends RectangleFigure {
 	/**
 	 * Sets, if this Port should be visualized as a multi port.
 	 * 
-	 * @param isMulti
+	 * @param multi
 	 *            true, if this Port is a multi port.
 	 */
-	public void setMulti(boolean isMulti) {
-		this.multiPort = isMulti;
+	public void setMulti(boolean multi) {
+		this.multiPort = multi;
 
 		// Calculate new Margin for top and right.
 		int marginTopRight = 0;
-		if (isMulti) {
+		if (multi) {
 			marginTopRight = 3;
 		}
 
@@ -220,6 +206,24 @@ public class CustomPortFigure extends RectangleFigure {
 			innerRectContainer.setBorder(new MarginBorder(marginTopRight, 0, 0, marginTopRight));
 			innerRectContainer.setPreferredSize(preferredSize);
 		}
+	}
+	
+	public void setMandatory(boolean mandatory) {
+		this.mandatoryPort = mandatory;
+		Color backgroundColor = ColorConstants.black;
+		if (!mandatory) {
+			backgroundColor = ColorConstants.white;
+		}
+		
+		getFigureInPolygon().setOutline(true);
+		getFigureInPolygon().setForegroundColor(ColorConstants.black);
+		getFigureInPolygon().setBackgroundColor(backgroundColor);
+		getFigureOutPolygon().setOutline(true);
+		getFigureOutPolygon().setForegroundColor(ColorConstants.black);
+		getFigureOutPolygon().setBackgroundColor(backgroundColor);
+		getFigureInOutPolygon().setOutline(true);
+		getFigureInOutPolygon().setForegroundColor(ColorConstants.black);
+		getFigureInOutPolygon().setBackgroundColor(backgroundColor);
 	}
 
 	/**

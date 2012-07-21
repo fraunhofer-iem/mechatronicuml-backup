@@ -83,7 +83,20 @@ public abstract class AbstractPortTypeBehavior extends AbstractPortBehavior {
 		}
 		return isMulti;
 	}
-
+	
+	@Override
+	public boolean isMandatory() {
+		boolean mandatory = false;
+		if (port != null && port.getCardinality() != null) {
+			NaturalNumber lowerBound = port.getCardinality().getLowerBound();
+			if (lowerBound != null
+					&& (lowerBound.isInfinity() || lowerBound.getValue() > 0)) {
+				mandatory = true;
+			}
+		}
+		return mandatory;
+	}
+	
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == ComponentPackage.Literals.PORT__CARDINALITY) {

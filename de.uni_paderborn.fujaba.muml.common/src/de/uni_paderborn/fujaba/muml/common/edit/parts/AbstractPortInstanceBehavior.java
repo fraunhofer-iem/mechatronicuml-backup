@@ -71,5 +71,10 @@ public abstract class AbstractPortInstanceBehavior extends AbstractPortBehavior 
 	public boolean isMulti() {
 		return false;
 	}
+	
+	@Override
+	public boolean isMandatory() {
+		return true;
+	}
 
 }

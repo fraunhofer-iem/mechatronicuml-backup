@@ -67,6 +67,8 @@ public abstract class AbstractPortBehavior {
 	public abstract CustomPortFigure.PortType getPortType();
 
 	public abstract boolean isMulti();
+	
+	public abstract boolean isMandatory();
 
 	/**
 	 * Updates the PortFigure to visualize a multi-port, if necessary.
@@ -74,6 +76,7 @@ public abstract class AbstractPortBehavior {
 	public void updateCardinality() {
 		if (figure != null) {
 			figure.setMulti(isMulti());
+			figure.setMandatory(isMandatory());
 		}
 	}
 

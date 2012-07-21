@@ -123,4 +123,9 @@ public class RoleBehavior extends AbstractPortBehavior {
 		}
 	}
 
+	@Override
+	public boolean isMandatory() {
+		return true;
+	}
+
 }
