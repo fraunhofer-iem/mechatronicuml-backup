@@ -27,7 +27,7 @@
       <import plugin="org.eclipse.xtext" version="2.0.1" match="compatible"/>
       <import plugin="org.eclipse.xtext.util"/>
       <import plugin="org.antlr.runtime"/>
-      <import plugin="org.eclipse.emf.edit" version="2.7.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit" version="2.7.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.core" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.ui"/>
@@ -84,6 +84,8 @@
       <import plugin="org.eclipse.emf.edapt.declaration" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edapt.history"/>
+      <import plugin="org.eclipse.swt" version="3.7.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.patterneditor.diagram" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.7.0" match="greaterOrEqual"/>
@@ -104,23 +106,23 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
       <import plugin="org.fujaba.commons" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.diagram" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.interpreter" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.interpreter.eclipse" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.common.core" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.common.ui" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.core" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface" version="3.6.1" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.6.1" match="greaterOrEqual"/>
       <import plugin="de.mdelab.sdm.interpreter.core" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.mdelab.sdm.interpreter.core.eclipse" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="com.google.inject" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.forms" version="3.5.2" match="compatible"/>
@@ -135,14 +137,13 @@
       <import plugin="org.eclipse.ui.console" version="3.5.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore.edit" version="2.6.0" match="compatible"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="compatible"/>
+      <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.ui" version="2.0.0" match="compatible"/>
       <import plugin="org.storydriven.core.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edapt.history" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext" version="1.0.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
    </requires>
 
    <plugin
@@ -427,13 +428,6 @@
 
    <plugin
          id="org.storydriven.storydiagrams.interpreter.eclipse"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.storydiagrams.interpreter.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
