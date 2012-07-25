@@ -48,6 +48,9 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Hardware nodes are hardware elements on which port instances could be deployed if they are not a sensor or an actor.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hardware Node</em>' container reference.
 	 * @see #setHardwareNode(HardwareNode)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_HardwareNode()

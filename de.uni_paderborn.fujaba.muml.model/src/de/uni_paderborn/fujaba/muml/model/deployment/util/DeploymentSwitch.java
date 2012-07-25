@@ -111,6 +111,15 @@ public class DeploymentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE: {
+				QualityOfLinkService qualityOfLinkService = (QualityOfLinkService)theEObject;
+				T result = caseQualityOfLinkService(qualityOfLinkService);
+				if (result == null) result = caseCommentableElement(qualityOfLinkService);
+				if (result == null) result = caseNamedElement(qualityOfLinkService);
+				if (result == null) result = caseExtendableElement(qualityOfLinkService);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -172,6 +181,21 @@ public class DeploymentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommunicationLink(CommunicationLink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Quality Of Link Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Quality Of Link Service</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQualityOfLinkService(QualityOfLinkService object) {
 		return null;
 	}
 

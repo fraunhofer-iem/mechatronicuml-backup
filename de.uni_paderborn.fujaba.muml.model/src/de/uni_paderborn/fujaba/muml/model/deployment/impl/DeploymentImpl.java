@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
+import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 
 /**
@@ -38,6 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguratio
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentImpl#getCommunicationLinks <em>Communication Links</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentImpl#getHardwareNodes <em>Hardware Nodes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentImpl#getComponentInstanceConfiguration <em>Component Instance Configuration</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentImpl#getQualityOfLinkServices <em>Quality Of Link Services</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,6 +95,16 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 	 * @ordered
 	 */
 	protected ComponentInstanceConfiguration componentInstanceConfiguration;
+
+	/**
+	 * The cached value of the '{@link #getQualityOfLinkServices() <em>Quality Of Link Services</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQualityOfLinkServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected QualityOfLinkService qualityOfLinkServices;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,6 +213,49 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public QualityOfLinkService getQualityOfLinkServices() {
+		return qualityOfLinkServices;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetQualityOfLinkServices(QualityOfLinkService newQualityOfLinkServices, NotificationChain msgs) {
+		QualityOfLinkService oldQualityOfLinkServices = qualityOfLinkServices;
+		qualityOfLinkServices = newQualityOfLinkServices;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, oldQualityOfLinkServices, newQualityOfLinkServices);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setQualityOfLinkServices(QualityOfLinkService newQualityOfLinkServices) {
+		if (newQualityOfLinkServices != qualityOfLinkServices) {
+			NotificationChain msgs = null;
+			if (qualityOfLinkServices != null)
+				msgs = ((InternalEObject)qualityOfLinkServices).eInverseRemove(this, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT, QualityOfLinkService.class, msgs);
+			if (newQualityOfLinkServices != null)
+				msgs = ((InternalEObject)newQualityOfLinkServices).eInverseAdd(this, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT, QualityOfLinkService.class, msgs);
+			msgs = basicSetQualityOfLinkServices(newQualityOfLinkServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, newQualityOfLinkServices, newQualityOfLinkServices));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -209,6 +264,10 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCommunicationLinks()).basicAdd(otherEnd, msgs);
 			case DeploymentPackage.DEPLOYMENT__HARDWARE_NODES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHardwareNodes()).basicAdd(otherEnd, msgs);
+			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
+				if (qualityOfLinkServices != null)
+					msgs = ((InternalEObject)qualityOfLinkServices).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, null, msgs);
+				return basicSetQualityOfLinkServices((QualityOfLinkService)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -225,6 +284,8 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 				return ((InternalEList<?>)getCommunicationLinks()).basicRemove(otherEnd, msgs);
 			case DeploymentPackage.DEPLOYMENT__HARDWARE_NODES:
 				return ((InternalEList<?>)getHardwareNodes()).basicRemove(otherEnd, msgs);
+			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
+				return basicSetQualityOfLinkServices(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -246,6 +307,8 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 			case DeploymentPackage.DEPLOYMENT__COMPONENT_INSTANCE_CONFIGURATION:
 				if (resolve) return getComponentInstanceConfiguration();
 				return basicGetComponentInstanceConfiguration();
+			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
+				return getQualityOfLinkServices();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -273,6 +336,9 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 			case DeploymentPackage.DEPLOYMENT__COMPONENT_INSTANCE_CONFIGURATION:
 				setComponentInstanceConfiguration((ComponentInstanceConfiguration)newValue);
 				return;
+			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
+				setQualityOfLinkServices((QualityOfLinkService)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -297,6 +363,9 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 			case DeploymentPackage.DEPLOYMENT__COMPONENT_INSTANCE_CONFIGURATION:
 				setComponentInstanceConfiguration((ComponentInstanceConfiguration)null);
 				return;
+			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
+				setQualityOfLinkServices((QualityOfLinkService)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -317,6 +386,8 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 				return hardwareNodes != null && !hardwareNodes.isEmpty();
 			case DeploymentPackage.DEPLOYMENT__COMPONENT_INSTANCE_CONFIGURATION:
 				return componentInstanceConfiguration != null;
+			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
+				return qualityOfLinkServices != null;
 		}
 		return super.eIsSet(featureID);
 	}

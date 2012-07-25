@@ -20,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
  *
  * <!-- begin-model-doc -->
  * A run-time computational resource which generally has at least memory and processing capabilities. 
- * Component instances may reside on nodes.
+ * Component instances may reside on hardware nodes if they are not a sensor or an actor.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -29,11 +29,13 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getDeployment <em>Deployment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getHardwarePorts <em>Hardware Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getDeployedInstances <em>Deployed Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getHardwareNodeKind <em>Hardware Node Kind</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwareNode()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameConfiguration='self.deployedInstance.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoDeploymentOnActorOrSensor='(self.hardwareNodeKind <> deployment::HardwareNodeKind::COMPUTATIONAL_RESOURCE) implies self.deployedInstances->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoDeploymentOnActorOrSensor'"
  * @generated
  */
 public interface HardwareNode extends NamedElement, CommentableElement {
@@ -98,5 +100,34 @@ public interface HardwareNode extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	EList<ComponentInstance> getDeployedInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Hardware Node Kind</b></em>' attribute.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hardware Node Kind</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hardware Node Kind</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind
+	 * @see #setHardwareNodeKind(HardwareNodeKind)
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwareNode_HardwareNodeKind()
+	 * @model
+	 * @generated
+	 */
+	HardwareNodeKind getHardwareNodeKind();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getHardwareNodeKind <em>Hardware Node Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hardware Node Kind</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind
+	 * @see #getHardwareNodeKind()
+	 * @generated
+	 */
+	void setHardwareNodeKind(HardwareNodeKind value);
 
 } // HardwareNode

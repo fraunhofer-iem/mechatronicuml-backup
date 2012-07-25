@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguratio
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getCommunicationLinks <em>Communication Links</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getHardwareNodes <em>Hardware Nodes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getComponentInstanceConfiguration <em>Component Instance Configuration</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getQualityOfLinkServices <em>Quality Of Link Services</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,5 +98,33 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	void setComponentInstanceConfiguration(ComponentInstanceConfiguration value);
+
+	/**
+	 * Returns the value of the '<em><b>Quality Of Link Services</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment <em>Deplyoment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quality Of Link Services</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quality Of Link Services</em>' containment reference.
+	 * @see #setQualityOfLinkServices(QualityOfLinkService)
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getDeployment_QualityOfLinkServices()
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment
+	 * @model opposite="deplyoment" containment="true"
+	 * @generated
+	 */
+	QualityOfLinkService getQualityOfLinkServices();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getQualityOfLinkServices <em>Quality Of Link Services</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Quality Of Link Services</em>' containment reference.
+	 * @see #getQualityOfLinkServices()
+	 * @generated
+	 */
+	void setQualityOfLinkServices(QualityOfLinkService value);
 
 } // Deployment

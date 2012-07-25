@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
 import org.eclipse.emf.ecore.EObject;
 
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A target used for the deployment of connectors between component instances.
+ * A communication link between hardware nodes and a target used for the deployment of connectors between component instances.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -24,11 +26,13 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getDeployment <em>Deployment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getQualityOfService <em>Quality Of Service</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getDeployedAssemblyInstances <em>Deployed Assembly Instances</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameConfiguration='self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration'"
  * @generated
  */
 public interface CommunicationLink extends ExtendableElement {
@@ -115,5 +119,46 @@ public interface CommunicationLink extends ExtendableElement {
 	 * @generated
 	 */
 	void setTarget(HardwarePort value);
+
+	/**
+	 * Returns the value of the '<em><b>Quality Of Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quality Of Service</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quality Of Service</em>' reference.
+	 * @see #setQualityOfService(QualityOfLinkService)
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_QualityOfService()
+	 * @model
+	 * @generated
+	 */
+	QualityOfLinkService getQualityOfService();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getQualityOfService <em>Quality Of Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Quality Of Service</em>' reference.
+	 * @see #getQualityOfService()
+	 * @generated
+	 */
+	void setQualityOfService(QualityOfLinkService value);
+
+	/**
+	 * Returns the value of the '<em><b>Deployed Assembly Instances</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Used for the deployment of connectors between component instances.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Deployed Assembly Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_DeployedAssemblyInstances()
+	 * @model
+	 * @generated
+	 */
+	EList<AssemblyInstance> getDeployedAssemblyInstances();
 
 } // CommunicationLink

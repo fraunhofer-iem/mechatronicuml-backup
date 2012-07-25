@@ -69,6 +69,7 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 			case DeploymentPackage.HARDWARE_NODE: return createHardwareNode();
 			case DeploymentPackage.HARDWARE_PORT: return createHardwarePort();
 			case DeploymentPackage.COMMUNICATION_LINK: return createCommunicationLink();
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE: return createQualityOfLinkService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -82,6 +83,8 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case DeploymentPackage.HARDWARE_NODE_KIND:
+				return createHardwareNodeKindFromString(eDataType, initialValue);
 			case DeploymentPackage.HARDWARE_PORT_DIRECTION_KIND:
 				return createHardwarePortDirectionKindFromString(eDataType, initialValue);
 			default:
@@ -97,6 +100,8 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case DeploymentPackage.HARDWARE_NODE_KIND:
+				return convertHardwareNodeKindToString(eDataType, instanceValue);
 			case DeploymentPackage.HARDWARE_PORT_DIRECTION_KIND:
 				return convertHardwarePortDirectionKindToString(eDataType, instanceValue);
 			default:
@@ -142,6 +147,36 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	public CommunicationLink createCommunicationLink() {
 		CommunicationLinkImpl communicationLink = new CommunicationLinkImpl();
 		return communicationLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualityOfLinkService createQualityOfLinkService() {
+		QualityOfLinkServiceImpl qualityOfLinkService = new QualityOfLinkServiceImpl();
+		return qualityOfLinkService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HardwareNodeKind createHardwareNodeKindFromString(EDataType eDataType, String initialValue) {
+		HardwareNodeKind result = HardwareNodeKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertHardwareNodeKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

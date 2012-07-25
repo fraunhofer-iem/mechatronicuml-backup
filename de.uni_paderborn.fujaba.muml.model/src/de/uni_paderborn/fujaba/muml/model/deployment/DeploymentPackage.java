@@ -136,13 +136,22 @@ public interface DeploymentPackage extends EPackage {
 	int DEPLOYMENT__COMPONENT_INSTANCE_CONFIGURATION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Quality Of Link Services</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT__QUALITY_OF_LINK_SERVICES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Deployment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int DEPLOYMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl <em>Hardware Node</em>}' class.
@@ -218,13 +227,22 @@ public interface DeploymentPackage extends EPackage {
 	int HARDWARE_NODE__DEPLOYED_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Hardware Node Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_NODE__HARDWARE_NODE_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Hardware Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_NODE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int HARDWARE_NODE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
@@ -382,14 +400,124 @@ public interface DeploymentPackage extends EPackage {
 	int COMMUNICATION_LINK__TARGET = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Quality Of Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_LINK__QUALITY_OF_SERVICE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Deployed Assembly Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Communication Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int COMMUNICATION_LINK_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl <em>Quality Of Link Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getQualityOfLinkService()
+	 * @generated
+	 */
+	int QUALITY_OF_LINK_SERVICE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_LINK_SERVICE__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_LINK_SERVICE__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_LINK_SERVICE__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_LINK_SERVICE__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Packet Delay Variation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Latency</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_LINK_SERVICE__LATENCY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Deplyoment</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_LINK_SERVICE__DEPLYOMENT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Quality Of Link Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_LINK_SERVICE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind <em>Hardware Node Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getHardwareNodeKind()
+	 * @generated
+	 */
+	int HARDWARE_NODE_KIND = 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind <em>Hardware Port Direction Kind</em>}' enum.
@@ -399,7 +527,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getHardwarePortDirectionKind()
 	 * @generated
 	 */
-	int HARDWARE_PORT_DIRECTION_KIND = 4;
+	int HARDWARE_PORT_DIRECTION_KIND = 6;
 
 
 	/**
@@ -446,6 +574,17 @@ public interface DeploymentPackage extends EPackage {
 	EReference getDeployment_ComponentInstanceConfiguration();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getQualityOfLinkServices <em>Quality Of Link Services</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Quality Of Link Services</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getQualityOfLinkServices()
+	 * @see #getDeployment()
+	 * @generated
+	 */
+	EReference getDeployment_QualityOfLinkServices();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode <em>Hardware Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -487,6 +626,17 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHardwareNode_DeployedInstances();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getHardwareNodeKind <em>Hardware Node Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hardware Node Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getHardwareNodeKind()
+	 * @see #getHardwareNode()
+	 * @generated
+	 */
+	EAttribute getHardwareNode_HardwareNodeKind();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort <em>Hardware Port</em>}'.
@@ -597,6 +747,81 @@ public interface DeploymentPackage extends EPackage {
 	EReference getCommunicationLink_Target();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getQualityOfService <em>Quality Of Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Quality Of Service</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getQualityOfService()
+	 * @see #getCommunicationLink()
+	 * @generated
+	 */
+	EReference getCommunicationLink_QualityOfService();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getDeployedAssemblyInstances <em>Deployed Assembly Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Deployed Assembly Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getDeployedAssemblyInstances()
+	 * @see #getCommunicationLink()
+	 * @generated
+	 */
+	EReference getCommunicationLink_DeployedAssemblyInstances();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService <em>Quality Of Link Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Quality Of Link Service</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService
+	 * @generated
+	 */
+	EClass getQualityOfLinkService();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getPacketDelayVariation <em>Packet Delay Variation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Packet Delay Variation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getPacketDelayVariation()
+	 * @see #getQualityOfLinkService()
+	 * @generated
+	 */
+	EReference getQualityOfLinkService_PacketDelayVariation();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getLatency <em>Latency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Latency</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getLatency()
+	 * @see #getQualityOfLinkService()
+	 * @generated
+	 */
+	EReference getQualityOfLinkService_Latency();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment <em>Deplyoment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Deplyoment</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment()
+	 * @see #getQualityOfLinkService()
+	 * @generated
+	 */
+	EReference getQualityOfLinkService_Deplyoment();
+
+	/**
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind <em>Hardware Node Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Hardware Node Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind
+	 * @generated
+	 */
+	EEnum getHardwareNodeKind();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind <em>Hardware Port Direction Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,6 +888,14 @@ public interface DeploymentPackage extends EPackage {
 		EReference DEPLOYMENT__COMPONENT_INSTANCE_CONFIGURATION = eINSTANCE.getDeployment_ComponentInstanceConfiguration();
 
 		/**
+		 * The meta object literal for the '<em><b>Quality Of Link Services</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT__QUALITY_OF_LINK_SERVICES = eINSTANCE.getDeployment_QualityOfLinkServices();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl <em>Hardware Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -695,6 +928,14 @@ public interface DeploymentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HARDWARE_NODE__DEPLOYED_INSTANCES = eINSTANCE.getHardwareNode_DeployedInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Hardware Node Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HARDWARE_NODE__HARDWARE_NODE_KIND = eINSTANCE.getHardwareNode_HardwareNodeKind();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
@@ -779,6 +1020,66 @@ public interface DeploymentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMUNICATION_LINK__TARGET = eINSTANCE.getCommunicationLink_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Quality Of Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMUNICATION_LINK__QUALITY_OF_SERVICE = eINSTANCE.getCommunicationLink_QualityOfService();
+
+		/**
+		 * The meta object literal for the '<em><b>Deployed Assembly Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES = eINSTANCE.getCommunicationLink_DeployedAssemblyInstances();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl <em>Quality Of Link Service</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getQualityOfLinkService()
+		 * @generated
+		 */
+		EClass QUALITY_OF_LINK_SERVICE = eINSTANCE.getQualityOfLinkService();
+
+		/**
+		 * The meta object literal for the '<em><b>Packet Delay Variation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION = eINSTANCE.getQualityOfLinkService_PacketDelayVariation();
+
+		/**
+		 * The meta object literal for the '<em><b>Latency</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUALITY_OF_LINK_SERVICE__LATENCY = eINSTANCE.getQualityOfLinkService_Latency();
+
+		/**
+		 * The meta object literal for the '<em><b>Deplyoment</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUALITY_OF_LINK_SERVICE__DEPLYOMENT = eINSTANCE.getQualityOfLinkService_Deplyoment();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind <em>Hardware Node Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind
+		 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getHardwareNodeKind()
+		 * @generated
+		 */
+		EEnum HARDWARE_NODE_KIND = eINSTANCE.getHardwareNodeKind();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind <em>Hardware Port Direction Kind</em>}' enum.

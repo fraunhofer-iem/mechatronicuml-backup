@@ -8,9 +8,11 @@ package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -19,6 +21,9 @@ import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
+import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +35,8 @@ import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getDeployment <em>Deployment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getQualityOfService <em>Quality Of Service</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getDeployedAssemblyInstances <em>Deployed Assembly Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +62,26 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 * @ordered
 	 */
 	protected HardwarePort target;
+
+	/**
+	 * The cached value of the '{@link #getQualityOfService() <em>Quality Of Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQualityOfService()
+	 * @generated
+	 * @ordered
+	 */
+	protected QualityOfLinkService qualityOfService;
+
+	/**
+	 * The cached value of the '{@link #getDeployedAssemblyInstances() <em>Deployed Assembly Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeployedAssemblyInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AssemblyInstance> deployedAssemblyInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,6 +268,56 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public QualityOfLinkService getQualityOfService() {
+		if (qualityOfService != null && qualityOfService.eIsProxy()) {
+			InternalEObject oldQualityOfService = (InternalEObject)qualityOfService;
+			qualityOfService = (QualityOfLinkService)eResolveProxy(oldQualityOfService);
+			if (qualityOfService != oldQualityOfService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE, oldQualityOfService, qualityOfService));
+			}
+		}
+		return qualityOfService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualityOfLinkService basicGetQualityOfService() {
+		return qualityOfService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setQualityOfService(QualityOfLinkService newQualityOfService) {
+		QualityOfLinkService oldQualityOfService = qualityOfService;
+		qualityOfService = newQualityOfService;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE, oldQualityOfService, qualityOfService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AssemblyInstance> getDeployedAssemblyInstances() {
+		if (deployedAssemblyInstances == null) {
+			deployedAssemblyInstances = new EObjectResolvingEList<AssemblyInstance>(AssemblyInstance.class, this, DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES);
+		}
+		return deployedAssemblyInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -308,6 +385,11 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
+			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
+				if (resolve) return getQualityOfService();
+				return basicGetQualityOfService();
+			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES:
+				return getDeployedAssemblyInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,6 +399,7 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -328,6 +411,13 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 				return;
 			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
 				setTarget((HardwarePort)newValue);
+				return;
+			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
+				setQualityOfService((QualityOfLinkService)newValue);
+				return;
+			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES:
+				getDeployedAssemblyInstances().clear();
+				getDeployedAssemblyInstances().addAll((Collection<? extends AssemblyInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -350,6 +440,12 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
 				setTarget((HardwarePort)null);
 				return;
+			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
+				setQualityOfService((QualityOfLinkService)null);
+				return;
+			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES:
+				getDeployedAssemblyInstances().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -368,6 +464,10 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 				return source != null;
 			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
 				return target != null;
+			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
+				return qualityOfService != null;
+			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES:
+				return deployedAssemblyInstances != null && !deployedAssemblyInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

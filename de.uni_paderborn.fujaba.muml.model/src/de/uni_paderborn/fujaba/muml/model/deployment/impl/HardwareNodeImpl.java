@@ -26,6 +26,7 @@ import org.storydriven.core.impl.NamedElementImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
+import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 
@@ -40,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl#getDeployment <em>Deployment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl#getHardwarePorts <em>Hardware Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl#getDeployedInstances <em>Deployed Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwareNodeImpl#getHardwareNodeKind <em>Hardware Node Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,6 +87,26 @@ public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
 	 * @ordered
 	 */
 	protected EList<ComponentInstance> deployedInstances;
+
+	/**
+	 * The default value of the '{@link #getHardwareNodeKind() <em>Hardware Node Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHardwareNodeKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final HardwareNodeKind HARDWARE_NODE_KIND_EDEFAULT = HardwareNodeKind.COMPUTATIONAL_RESOURCE;
+
+	/**
+	 * The cached value of the '{@link #getHardwareNodeKind() <em>Hardware Node Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHardwareNodeKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected HardwareNodeKind hardwareNodeKind = HARDWARE_NODE_KIND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,6 +218,27 @@ public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public HardwareNodeKind getHardwareNodeKind() {
+		return hardwareNodeKind;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHardwareNodeKind(HardwareNodeKind newHardwareNodeKind) {
+		HardwareNodeKind oldHardwareNodeKind = hardwareNodeKind;
+		hardwareNodeKind = newHardwareNodeKind == null ? HARDWARE_NODE_KIND_EDEFAULT : newHardwareNodeKind;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.HARDWARE_NODE__HARDWARE_NODE_KIND, oldHardwareNodeKind, hardwareNodeKind));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -256,6 +299,8 @@ public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
 				return getHardwarePorts();
 			case DeploymentPackage.HARDWARE_NODE__DEPLOYED_INSTANCES:
 				return getDeployedInstances();
+			case DeploymentPackage.HARDWARE_NODE__HARDWARE_NODE_KIND:
+				return getHardwareNodeKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -283,6 +328,9 @@ public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
 				getDeployedInstances().clear();
 				getDeployedInstances().addAll((Collection<? extends ComponentInstance>)newValue);
 				return;
+			case DeploymentPackage.HARDWARE_NODE__HARDWARE_NODE_KIND:
+				setHardwareNodeKind((HardwareNodeKind)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -307,6 +355,9 @@ public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
 			case DeploymentPackage.HARDWARE_NODE__DEPLOYED_INSTANCES:
 				getDeployedInstances().clear();
 				return;
+			case DeploymentPackage.HARDWARE_NODE__HARDWARE_NODE_KIND:
+				setHardwareNodeKind(HARDWARE_NODE_KIND_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -327,6 +378,8 @@ public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
 				return hardwarePorts != null && !hardwarePorts.isEmpty();
 			case DeploymentPackage.HARDWARE_NODE__DEPLOYED_INSTANCES:
 				return deployedInstances != null && !deployedInstances.isEmpty();
+			case DeploymentPackage.HARDWARE_NODE__HARDWARE_NODE_KIND:
+				return hardwareNodeKind != HARDWARE_NODE_KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -375,6 +428,8 @@ public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
+		result.append(", hardwareNodeKind: ");
+		result.append(hardwareNodeKind);
 		result.append(')');
 		return result.toString();
 	}

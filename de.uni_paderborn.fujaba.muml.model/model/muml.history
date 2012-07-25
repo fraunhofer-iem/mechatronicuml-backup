@@ -1548,10 +1548,10 @@
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          referenceName="details" element="#//@releases.9/@changes.220/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.220/@element"
             featureName="key" dataValue="SameConfiguration"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.220/@element"
             featureName="value" dataValue="self.deployedInstance.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode"
@@ -25212,5 +25212,286 @@
         featureName="changeable" dataValue="false" oldDataValue="true"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
         featureName="unsettable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
+        referenceName="eStructuralFeatures" element="#//@releases.9/@changes.126/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.126/@element"
+        featureName="name" dataValue="Jitter"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.126/@element"
+        featureName="name" dataValue="Latency" oldDataValue="Jitter"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment" referenceName="eClassifiers"
+        element="muml.ecore#//model/deployment/QualityOfLinkService"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService"
+        featureName="name" dataValue="QualityOfService"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService"
+        featureName="name" dataValue="QualityOfLinkService" oldDataValue="QualityOfService"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures" element="#//@releases.9/@changes.153/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.153/@element"
+        featureName="name" dataValue="Latency"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/CommunicationLink"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="Latency"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures" element="#//@releases.9/@changes.158/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.158/@element"
+        featureName="name" dataValue="Throughput"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures" element="#//@releases.9/@changes.157/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.157/@element"
+        featureName="name" dataValue="ErrorRate"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures" element="#//@releases.9/@changes.152/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.152/@element"
+        featureName="name" dataValue="Jitter"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.152/@element"
+        featureName="name" dataValue="PacketDelayVariation" oldDataValue="Jitter"/>
+    <changes xsi:type="history:Create" target="#//@releases.9/@changes.152/@element"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="documentation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Difference in end-to-end one-way delay between selected packages without lost packages."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService"
+        featureName="name" dataValue="QoS"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService"
+        featureName="eType" referenceValue="muml.ecore#//model/deployment/QualityOfLinkService"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/QualityOfLinkService"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/QualityOfLinkService"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.152/@element"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.152/@element"
+        featureName="name" dataValue="PacketDelayVariation1" oldDataValue="PacketDelayVariation"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation"
+        featureName="name" dataValue="PacketDelayVariation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation"
+        featureName="eType" referenceValue="muml.ecore#//model/core/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        source="#//@releases.9/@changes.152/@element"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="PacketDelayVariation1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="Latency"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/QualityOfLinkService/latency"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/latency"
+        featureName="eType" referenceValue="muml.ecore#//model/core/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/latency"
+        featureName="name" dataValue="Latency"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="ErrorRate"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="Throughput"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService"
+        featureName="name" dataValue="qualityOfService" oldDataValue="QoS"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation"
+        featureName="name" dataValue="packetDelayVariation" oldDataValue="PacketDelayVariation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/latency"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/latency"
+        featureName="name" dataValue="latency" oldDataValue="Latency"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/latency"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/QualityOfLinkService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/QualityOfLinkService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Difference in end-to-end one-way delay between selected packages without lost packages."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The time from the source port sending a message to the destination port receiving it."
+        oldDataValue="Difference in end-to-end one-way delay between selected packages without lost packages."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Difference in end-to-end one-way delay between selected messages without lost messages."
+        oldDataValue="Difference in end-to-end one-way delay between selected packages without lost packages."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances"
+        featureName="name" dataValue="deployedAssemblyInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances"
+        featureName="eType" referenceValue="muml.ecore#//model/instance/AssemblyInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="A target used for the deployment of connectors between component instances."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Used for the deployment of connectors between component instances."
+        oldDataValue="A target used for the deployment of connectors between component instances."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A communication link between hardware nodes and a target used for the deployment of connectors between component instances."
+        oldDataValue="A target used for the deployment of connectors between component instances."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"
+        featureName="name" dataValue="qualityOfLinkServices"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"
+        featureName="eType" referenceValue="muml.ecore#//model/deployment/QualityOfLinkService"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService"
+        featureName="containment" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"
+        featureName="name" dataValue="deplyoment"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"
+        featureName="eType" referenceValue="muml.ecore#//model/deployment/Deployment"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/hardwareNode"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Hardware ports  are used to communicate&#xD;&#xA;with other hardware nodes and with component instances."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Hardware nodes are hardware elements on which port instances could be deployed if they are not a sensor or an actor."
+        oldDataValue="Hardware ports  are used to communicate&#xD;&#xA;with other hardware nodes and with component instances."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on hardware nodes if they are not a sensor or an actor."
+        oldDataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on nodes."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind"
+        featureName="name" dataValue="hardwareNodeKind"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment" referenceName="eClassifiers"
+        element="muml.ecore#//model/deployment/HardwareNodeKind"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind"
+        featureName="name" dataValue="HardwareNodeKind"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNodeKind"
+        referenceName="eLiterals" element="muml.ecore#//model/deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNodeKind"
+        referenceName="eLiterals" element="muml.ecore#//model/deployment/HardwareNodeKind/SENSOR"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNodeKind"
+        referenceName="eLiterals" element="muml.ecore#//model/deployment/HardwareNodeKind/ACTOR"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"
+        featureName="name" dataValue="computationalResource"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/SENSOR"
+        featureName="name" dataValue="sensor"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/ACTOR"
+        featureName="name" dataValue="actor"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/ACTOR"
+        featureName="value" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/SENSOR"
+        featureName="value" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/SENSOR"
+        featureName="value" dataValue="2" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind"
+        featureName="eType" referenceValue="muml.ecore#//model/deployment/HardwareNodeKind"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="NoDeploymentOnActorOrSensor"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="(self.hardwareNodeKind &lt;> 0) implies self.deployedInstances.oclIsUndefined()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="key" dataValue="constraints"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="SameConfiguration"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="SameConfiguration NoDeploymentOnActorOrSensor"
+        oldDataValue="SameConfiguration"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.220/@element"
+        featureName="value" dataValue="self.deployedInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"
+        oldDataValue="self.deployedInstance.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.hardwareNodeKind &lt;> 0 implies self.deployedInstances->isEmpty()"
+        oldDataValue="(self.hardwareNodeKind &lt;> 0) implies self.deployedInstances.oclIsUndefined()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::computationalResource) implies self.deployedInstances->isEmpty()"
+        oldDataValue="self.hardwareNodeKind &lt;> 0 implies self.deployedInstances->isEmpty()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="SameConfiguration"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self.deployedInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.9/@changes.218/@element">
+      <changes xsi:type="history:Set" element="#//@releases.9/@changes.218/@element"
+          featureName="key" dataValue="NoDeploymentOnActorOrSensor"/>
+      <changes xsi:type="history:Set" element="#//@releases.9/@changes.218/@element"
+          featureName="value" dataValue="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::computationalResource) implies self.deployedInstances->isEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="NoDeploymentOnActorOrSensor"
+          value="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::computationalResource) implies self.deployedInstances->isEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"
+        oldDataValue="self.deployedInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="SameConfiguration" value="self.deployedInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="NoDeploymentOnActorOrSensor" oldDataValue="SameConfiguration NoDeploymentOnActorOrSensor"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/SENSOR"
+        featureName="name" dataValue="SENSOR" oldDataValue="sensor"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/ACTOR"
+        featureName="name" dataValue="ACTOR" oldDataValue="actor"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"
+        featureName="name" dataValue="COMPUTATIONAL_RESOURCE" oldDataValue="computationalResource"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::COMPUTATIONAL_RESOURCE) implies self.deployedInstances->isEmpty()"
+        oldDataValue="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::computationalResource) implies self.deployedInstances->isEmpty()"/>
   </releases>
 </history:History>

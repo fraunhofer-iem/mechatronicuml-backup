@@ -2125,13 +2125,18 @@
             eOpposite="#//model/deployment/HardwareNode/deployment"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceConfiguration"
             eType="#//model/instance/ComponentInstanceConfiguration"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfLinkServices"
+            eType="#//model/deployment/QualityOfLinkService" containment="true" eOpposite="#//model/deployment/QualityOfLinkService/deplyoment"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HardwareNode" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="SameConfiguration" value="self.deployedInstance.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
+          <details key="NoDeploymentOnActorOrSensor" value="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::COMPUTATIONAL_RESOURCE) implies self.deployedInstances->isEmpty()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on nodes."/>
+          <details key="documentation" value="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on hardware nodes if they are not a sensor or an actor."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="NoDeploymentOnActorOrSensor"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" lowerBound="1"
             eType="#//model/deployment/Deployment" eOpposite="#//model/deployment/Deployment/hardwareNodes"/>
@@ -2139,13 +2144,23 @@
             eType="#//model/deployment/HardwarePort" containment="true" eOpposite="#//model/deployment/HardwarePort/hardwareNode"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployedInstances"
             upperBound="-1" eType="#//model/instance/ComponentInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="hardwareNodeKind" eType="#//model/deployment/HardwareNodeKind"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="HardwareNodeKind">
+        <eLiterals name="COMPUTATIONAL_RESOURCE"/>
+        <eLiterals name="SENSOR" value="2"/>
+        <eLiterals name="ACTOR" value="1"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HardwarePort" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Hardware ports  are used to communicate&#xD;&#xA;with other hardware nodes and with component instances."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="hardwareNode" lowerBound="1"
-            eType="#//model/deployment/HardwareNode" eOpposite="#//model/deployment/HardwareNode/hardwarePorts"/>
+            eType="#//model/deployment/HardwareNode" eOpposite="#//model/deployment/HardwareNode/hardwarePorts">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Hardware nodes are hardware elements on which port instances could be deployed if they are not a sensor or an actor."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingCommunicationLink"
             upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/source"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingCommunicationLink"
@@ -2157,7 +2172,10 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CommunicationLink" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A target used for the deployment of connectors between component instances."/>
+          <details key="documentation" value="A communication link between hardware nodes and a target used for the deployment of connectors between component instances."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="SameConfiguration" value="self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" lowerBound="1"
             eType="#//model/deployment/Deployment" eOpposite="#//model/deployment/Deployment/communicationLinks"/>
@@ -2165,11 +2183,34 @@
             eType="#//model/deployment/HardwarePort" eOpposite="#//model/deployment/HardwarePort/outgoingCommunicationLink"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
             eType="#//model/deployment/HardwarePort" eOpposite="#//model/deployment/HardwarePort/incomingCommunicationLink"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfService" eType="#//model/deployment/QualityOfLinkService"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deployedAssemblyInstances"
+            upperBound="-1" eType="#//model/instance/AssemblyInstance">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Used for the deployment of connectors between component instances."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="HardwarePortDirectionKind">
         <eLiterals name="IN"/>
         <eLiterals name="OUT" value="1"/>
         <eLiterals name="IN_OUT" value="2"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="QualityOfLinkService" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="packetDelayVariation"
+            eType="#//model/core/NaturalNumber" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Difference in end-to-end one-way delay between selected messages without lost messages."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="latency" eType="#//model/core/NaturalNumber"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The time from the source port sending a message to the destination port receiving it."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deplyoment" eType="#//model/deployment/Deployment"
+            eOpposite="#//model/deployment/Deployment/qualityOfLinkServices"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
