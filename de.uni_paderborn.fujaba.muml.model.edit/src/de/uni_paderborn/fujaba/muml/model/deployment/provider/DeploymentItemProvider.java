@@ -133,6 +133,7 @@ public class DeploymentItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DeploymentPackage.Literals.DEPLOYMENT__COMMUNICATION_LINKS);
 			childrenFeatures.add(DeploymentPackage.Literals.DEPLOYMENT__HARDWARE_NODES);
+			childrenFeatures.add(DeploymentPackage.Literals.DEPLOYMENT__QUALITY_OF_LINK_SERVICES);
 		}
 		return childrenFeatures;
 	}
@@ -192,6 +193,7 @@ public class DeploymentItemProvider
 				return;
 			case DeploymentPackage.DEPLOYMENT__COMMUNICATION_LINKS:
 			case DeploymentPackage.DEPLOYMENT__HARDWARE_NODES:
+			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -228,6 +230,11 @@ public class DeploymentItemProvider
 			(createChildParameter
 				(DeploymentPackage.Literals.DEPLOYMENT__HARDWARE_NODES,
 				 DeploymentFactory.eINSTANCE.createHardwareNode()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DeploymentPackage.Literals.DEPLOYMENT__QUALITY_OF_LINK_SERVICES,
+				 DeploymentFactory.eINSTANCE.createQualityOfLinkService()));
 	}
 
 	/**

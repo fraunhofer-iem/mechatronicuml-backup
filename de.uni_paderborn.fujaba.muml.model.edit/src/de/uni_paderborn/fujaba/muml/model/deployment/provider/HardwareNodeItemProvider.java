@@ -75,6 +75,7 @@ public class HardwareNodeItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addDeployedInstancesPropertyDescriptor(object);
+			addHardwareNodeKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -136,6 +137,28 @@ public class HardwareNodeItemProvider
 					}
 				
 			});
+	}
+
+	/**
+	 * This adds a property descriptor for the Hardware Node Kind feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHardwareNodeKindPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HardwareNode_hardwareNodeKind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HardwareNode_hardwareNodeKind_feature", "_UI_HardwareNode_type"),
+				 DeploymentPackage.Literals.HARDWARE_NODE__HARDWARE_NODE_KIND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -206,6 +229,7 @@ public class HardwareNodeItemProvider
 
 		switch (notification.getFeatureID(HardwareNode.class)) {
 			case DeploymentPackage.HARDWARE_NODE__COMMENT:
+			case DeploymentPackage.HARDWARE_NODE__HARDWARE_NODE_KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DeploymentPackage.HARDWARE_NODE__HARDWARE_PORTS:

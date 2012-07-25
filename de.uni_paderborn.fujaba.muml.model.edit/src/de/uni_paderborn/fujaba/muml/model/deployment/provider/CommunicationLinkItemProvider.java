@@ -66,6 +66,8 @@ public class CommunicationLinkItemProvider
 
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
+			addQualityOfServicePropertyDescriptor(object);
+			addDeployedAssemblyInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -106,6 +108,50 @@ public class CommunicationLinkItemProvider
 				 getString("_UI_CommunicationLink_target_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationLink_target_feature", "_UI_CommunicationLink_type"),
 				 DeploymentPackage.Literals.COMMUNICATION_LINK__TARGET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Quality Of Service feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addQualityOfServicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationLink_qualityOfService_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationLink_qualityOfService_feature", "_UI_CommunicationLink_type"),
+				 DeploymentPackage.Literals.COMMUNICATION_LINK__QUALITY_OF_SERVICE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Deployed Assembly Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeployedAssemblyInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationLink_deployedAssemblyInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationLink_deployedAssemblyInstances_feature", "_UI_CommunicationLink_type"),
+				 DeploymentPackage.Literals.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES,
 				 true,
 				 false,
 				 true,

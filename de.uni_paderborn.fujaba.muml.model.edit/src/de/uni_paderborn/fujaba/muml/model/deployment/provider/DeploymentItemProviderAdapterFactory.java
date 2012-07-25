@@ -167,6 +167,29 @@ public class DeploymentItemProviderAdapterFactory extends DeploymentAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QualityOfLinkServiceItemProvider qualityOfLinkServiceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQualityOfLinkServiceAdapter() {
+		if (qualityOfLinkServiceItemProvider == null) {
+			qualityOfLinkServiceItemProvider = new QualityOfLinkServiceItemProvider(this);
+		}
+
+		return qualityOfLinkServiceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,6 +292,7 @@ public class DeploymentItemProviderAdapterFactory extends DeploymentAdapterFacto
 		if (hardwareNodeItemProvider != null) hardwareNodeItemProvider.dispose();
 		if (hardwarePortItemProvider != null) hardwarePortItemProvider.dispose();
 		if (communicationLinkItemProvider != null) communicationLinkItemProvider.dispose();
+		if (qualityOfLinkServiceItemProvider != null) qualityOfLinkServiceItemProvider.dispose();
 	}
 
 }
