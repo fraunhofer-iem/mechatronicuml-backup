@@ -25493,5 +25493,272 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::COMPUTATIONAL_RESOURCE) implies self.deployedInstances->isEmpty()"
         oldDataValue="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::computationalResource) implies self.deployedInstances->isEmpty()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNodeKind"
+        referenceName="eLiterals" element="muml.ecore#//model/deployment/HardwareNodeKind/COMMUNICATION"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/COMMUNICATION"
+        featureName="name" dataValue="COMMUNICATION"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/COMMUNICATION"
+        featureName="value" dataValue="3" oldDataValue="0"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on hardware nodes if they are not a sensor or an actor."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="" oldDataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on hardware nodes if they are not a sensor or an actor."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="\todoup{}" oldDataValue=""/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/deployedInstances"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/hardwarePorts"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/deployment"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNodeKind"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/deployedPortInstance"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/kind"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/deployment"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/source"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/target"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/qualityOfService"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePortDirectionKind"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/communicationLinks"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/hardwareNodes"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="\todoup{}"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Reference to the " oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Deployment which contains the HardwareNode."
+        oldDataValue="Reference to the "/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A HardwareNode contains HardwarePorts to communicate with other HardwarePorts via a CommunicationLink."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="ComponentInstances which are deployed to the HardwareNode."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A Deployment contains CommunicationLinks which are used to connect HardwarePorts."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A Deployment contains HardwareNodes which represents hardware resources like computational, communication, sensor, or actor."
+        oldDataValue="\todoup{}"/>
   </releases>
 </history:History>

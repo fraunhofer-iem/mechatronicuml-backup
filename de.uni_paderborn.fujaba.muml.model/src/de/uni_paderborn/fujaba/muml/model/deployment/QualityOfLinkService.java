@@ -16,6 +16,10 @@ import org.storydriven.core.NamedElement;
  * A representation of the model object '<em><b>Quality Of Link Service</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * \todoup{}
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -89,6 +93,9 @@ public interface QualityOfLinkService extends CommentableElement, NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deplyoment</em>' container reference.
 	 * @see #setDeplyoment(Deployment)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getQualityOfLinkService_Deplyoment()

@@ -47,6 +47,9 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A Deployment contains CommunicationLinks which are used to connect HardwarePorts.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Communication Links</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getDeployment_CommunicationLinks()
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getDeployment
@@ -65,6 +68,9 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A Deployment contains HardwareNodes which represents hardware resources like computational, communication, sensor, or actor.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hardware Nodes</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getDeployment_HardwareNodes()
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode#getDeployment
@@ -81,6 +87,9 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Instance Configuration</em>' reference.
 	 * @see #setComponentInstanceConfiguration(ComponentInstanceConfiguration)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getDeployment_ComponentInstanceConfiguration()
@@ -108,6 +117,9 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quality Of Link Services</em>' containment reference.
 	 * @see #setQualityOfLinkServices(QualityOfLinkService)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getDeployment_QualityOfLinkServices()

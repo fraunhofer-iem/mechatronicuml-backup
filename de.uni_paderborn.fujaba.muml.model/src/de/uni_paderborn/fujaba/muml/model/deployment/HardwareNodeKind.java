@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Hardware Node Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * \todoup{}
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwareNodeKind()
  * @model
  * @generated
@@ -50,7 +53,15 @@ public enum HardwareNodeKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTOR(1, "ACTOR", "ACTOR");
+	ACTOR(1, "ACTOR", "ACTOR"), /**
+	 * The '<em><b>COMMUNICATION</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #COMMUNICATION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	COMMUNICATION(3, "COMMUNICATION", "COMMUNICATION");
 
 	/**
 	 * The '<em><b>COMPUTATIONAL RESOURCE</b></em>' literal value.
@@ -98,6 +109,21 @@ public enum HardwareNodeKind implements Enumerator {
 	public static final int ACTOR_VALUE = 1;
 
 	/**
+	 * The '<em><b>COMMUNICATION</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>COMMUNICATION</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #COMMUNICATION
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int COMMUNICATION_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Hardware Node Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,6 +134,7 @@ public enum HardwareNodeKind implements Enumerator {
 			COMPUTATIONAL_RESOURCE,
 			SENSOR,
 			ACTOR,
+			COMMUNICATION,
 		};
 
 	/**
@@ -161,6 +188,7 @@ public enum HardwareNodeKind implements Enumerator {
 			case COMPUTATIONAL_RESOURCE_VALUE: return COMPUTATIONAL_RESOURCE;
 			case SENSOR_VALUE: return SENSOR;
 			case ACTOR_VALUE: return ACTOR;
+			case COMMUNICATION_VALUE: return COMMUNICATION;
 		}
 		return null;
 	}

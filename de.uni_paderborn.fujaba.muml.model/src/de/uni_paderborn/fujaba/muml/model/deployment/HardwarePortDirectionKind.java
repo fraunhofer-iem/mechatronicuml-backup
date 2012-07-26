@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Hardware Port Direction Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * \todoup{}
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePortDirectionKind()
  * @model
  * @generated

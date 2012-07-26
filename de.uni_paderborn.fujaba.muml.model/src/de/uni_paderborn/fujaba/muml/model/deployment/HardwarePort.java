@@ -80,6 +80,9 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Outgoing Communication Link</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_OutgoingCommunicationLink()
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getSource
@@ -98,6 +101,9 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Incoming Communication Link</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_IncomingCommunicationLink()
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getTarget
@@ -115,6 +121,9 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deployed Port Instance</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_DeployedPortInstance()
 	 * @model
@@ -132,6 +141,9 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind
 	 * @see #setKind(HardwarePortDirectionKind)

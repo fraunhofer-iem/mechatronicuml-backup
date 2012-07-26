@@ -594,6 +594,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		addEEnumLiteral(hardwareNodeKindEEnum, HardwareNodeKind.COMPUTATIONAL_RESOURCE);
 		addEEnumLiteral(hardwareNodeKindEEnum, HardwareNodeKind.SENSOR);
 		addEEnumLiteral(hardwareNodeKindEEnum, HardwareNodeKind.ACTOR);
+		addEEnumLiteral(hardwareNodeKindEEnum, HardwareNodeKind.COMMUNICATION);
 
 		initEEnum(hardwarePortDirectionKindEEnum, HardwarePortDirectionKind.class, "HardwarePortDirectionKind");
 		addEEnumLiteral(hardwarePortDirectionKindEEnum, HardwarePortDirectionKind.IN);
@@ -625,13 +626,13 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });									
 		addAnnotation
 		  (hardwareNodeEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "NoDeploymentOnActorOrSensor"
-		   });							
+		   });																							
 	}
 
 	/**
@@ -641,19 +642,19 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";								
 		addAnnotation
 		  (hardwareNodeEClass, 
 		   source, 
 		   new String[] {
 			 "NoDeploymentOnActorOrSensor", "(self.hardwareNodeKind <> deployment::HardwareNodeKind::COMPUTATIONAL_RESOURCE) implies self.deployedInstances->isEmpty()"
-		   });							
+		   });																
 		addAnnotation
 		  (communicationLinkEClass, 
 		   source, 
 		   new String[] {
 			 "SameConfiguration", "self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"
-		   });			
+		   });										
 	}
 
 } //DeploymentPackageImpl

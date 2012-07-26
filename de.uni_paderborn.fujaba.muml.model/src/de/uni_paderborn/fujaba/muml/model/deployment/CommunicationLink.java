@@ -45,6 +45,9 @@ public interface CommunicationLink extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deployment</em>' container reference.
 	 * @see #setDeployment(Deployment)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_Deployment()
@@ -73,6 +76,9 @@ public interface CommunicationLink extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(HardwarePort)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_Source()
@@ -101,6 +107,9 @@ public interface CommunicationLink extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(HardwarePort)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_Target()
@@ -128,6 +137,9 @@ public interface CommunicationLink extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quality Of Service</em>' reference.
 	 * @see #setQualityOfService(QualityOfLinkService)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_QualityOfService()

@@ -48,6 +48,9 @@ public interface HardwareNode extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Deployment which contains the HardwareNode.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deployment</em>' container reference.
 	 * @see #setDeployment(Deployment)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwareNode_Deployment()
@@ -77,6 +80,9 @@ public interface HardwareNode extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A HardwareNode contains HardwarePorts to communicate with other HardwarePorts via a CommunicationLink.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hardware Ports</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwareNode_HardwarePorts()
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getHardwareNode
@@ -94,6 +100,9 @@ public interface HardwareNode extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * ComponentInstances which are deployed to the HardwareNode.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deployed Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwareNode_DeployedInstances()
 	 * @model
@@ -110,6 +119,9 @@ public interface HardwareNode extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todoup{}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hardware Node Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind
 	 * @see #setHardwareNodeKind(HardwareNodeKind)

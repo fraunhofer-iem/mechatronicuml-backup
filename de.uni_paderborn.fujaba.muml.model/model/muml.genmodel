@@ -519,6 +519,7 @@
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"/>
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/deployment/HardwareNodeKind/SENSOR"/>
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/deployment/HardwareNodeKind/ACTOR"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/deployment/HardwareNodeKind/COMMUNICATION"/>
         </genEnums>
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//model/deployment/HardwarePortDirectionKind">
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/deployment/HardwarePortDirectionKind/IN"/>
