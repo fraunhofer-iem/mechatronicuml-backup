@@ -17,7 +17,7 @@ import org.storydriven.core.NamedElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * \todoup{}
+ * Quality of Service of a communication link. 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -94,7 +94,7 @@ public interface QualityOfLinkService extends CommentableElement, NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * The deployment to which the service belongs.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deplyoment</em>' container reference.
 	 * @see #setDeplyoment(Deployment)

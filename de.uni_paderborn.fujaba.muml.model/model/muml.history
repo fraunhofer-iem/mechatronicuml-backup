@@ -25760,5 +25760,52 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="A Deployment contains HardwareNodes which represents hardware resources like computational, communication, sensor, or actor."
         oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The componentInstanceConfiguration which contains the component instances which should be deployed to hardware nodes."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Quality of Services " oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Reference to all contained quality of services."
+        oldDataValue="Quality of Services "/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A HardwareNode is kind ofa  computational resource, a sensor, an actor, or a communication device like a router."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Different kinds of HardwareNodes. " oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="CommunicationLinks which are connected to the HardwarePort."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="CommunicationLinks which has the HardwarePort as source."
+        oldDataValue="CommunicationLinks which are connected to the HardwarePort."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="CommunicationLinks which has the HardwarePort as sink."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="PortInstances which are deployed to the HardwarePort."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A HardwarePort is of kind in, out, or in/out. &#xD;&#xA;Depending on its kind it can receive, send, or receive and send messages. "
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The deployment to which the link belongs to."
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Source HardwarePort of the link." oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Target HardwarePort of the link." oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The quality of service which the link fullfills. "
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A HardwarePort is of kind in, out, or in/out. &#xD;&#xA;Depending on its kind it can receive, send, or receive and send messages. "
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Quality of Service of a communication link. "
+        oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The deployment to which the service belongs."
+        oldDataValue="\todoup{}"/>
   </releases>
 </history:History>

@@ -88,7 +88,7 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * The componentInstanceConfiguration which contains the component instances which should be deployed to hardware nodes.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Instance Configuration</em>' reference.
 	 * @see #setComponentInstanceConfiguration(ComponentInstanceConfiguration)
@@ -118,7 +118,7 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * Reference to all contained quality of services.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quality Of Link Services</em>' containment reference.
 	 * @see #setQualityOfLinkServices(QualityOfLinkService)

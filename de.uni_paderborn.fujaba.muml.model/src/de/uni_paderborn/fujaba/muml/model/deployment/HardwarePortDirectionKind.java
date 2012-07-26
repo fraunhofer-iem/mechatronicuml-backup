@@ -18,7 +18,8 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * \todoup{}
+ * A HardwarePort is of kind in, out, or in/out. 
+ * Depending on its kind it can receive, send, or receive and send messages. 
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePortDirectionKind()
  * @model

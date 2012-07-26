@@ -81,7 +81,7 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * CommunicationLinks which has the HardwarePort as source.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Outgoing Communication Link</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_OutgoingCommunicationLink()
@@ -102,7 +102,7 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * CommunicationLinks which has the HardwarePort as sink.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Incoming Communication Link</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_IncomingCommunicationLink()
@@ -122,7 +122,7 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * PortInstances which are deployed to the HardwarePort.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deployed Port Instance</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_DeployedPortInstance()
@@ -142,7 +142,8 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * A HardwarePort is of kind in, out, or in/out. 
+	 * Depending on its kind it can receive, send, or receive and send messages. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind

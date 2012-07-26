@@ -46,7 +46,7 @@ public interface CommunicationLink extends ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * The deployment to which the link belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deployment</em>' container reference.
 	 * @see #setDeployment(Deployment)
@@ -77,7 +77,7 @@ public interface CommunicationLink extends ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * Source HardwarePort of the link.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(HardwarePort)
@@ -108,7 +108,7 @@ public interface CommunicationLink extends ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * Target HardwarePort of the link.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(HardwarePort)
@@ -138,7 +138,7 @@ public interface CommunicationLink extends ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todoup{}
+	 * The quality of service which the link fullfills. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quality Of Service</em>' reference.
 	 * @see #setQualityOfService(QualityOfLinkService)

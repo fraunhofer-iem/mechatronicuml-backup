@@ -2134,13 +2134,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceConfiguration"
             eType="#//model/instance/ComponentInstanceConfiguration">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="The componentInstanceConfiguration which contains the component instances which should be deployed to hardware nodes."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfLinkServices"
             eType="#//model/deployment/QualityOfLinkService" containment="true" eOpposite="#//model/deployment/QualityOfLinkService/deplyoment">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="Reference to all contained quality of services."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -2174,13 +2174,13 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="hardwareNodeKind" eType="#//model/deployment/HardwareNodeKind">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="A HardwareNode is kind ofa  computational resource, a sensor, an actor, or a communication device like a router."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="HardwareNodeKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todoup{}"/>
+          <details key="documentation" value="Different kinds of HardwareNodes. "/>
         </eAnnotations>
         <eLiterals name="COMPUTATIONAL_RESOURCE"/>
         <eLiterals name="SENSOR" value="2"/>
@@ -2200,25 +2200,25 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingCommunicationLink"
             upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/source">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="CommunicationLinks which has the HardwarePort as source."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingCommunicationLink"
             upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/target">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="CommunicationLinks which has the HardwarePort as sink."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployedPortInstance"
             upperBound="-1" eType="#//model/instance/PortInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="PortInstances which are deployed to the HardwarePort."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/deployment/HardwarePortDirectionKind"
             defaultValueLiteral="">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="A HardwarePort is of kind in, out, or in/out. &#xD;&#xA;Depending on its kind it can receive, send, or receive and send messages. "/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -2232,24 +2232,24 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" lowerBound="1"
             eType="#//model/deployment/Deployment" eOpposite="#//model/deployment/Deployment/communicationLinks">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="The deployment to which the link belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
             eType="#//model/deployment/HardwarePort" eOpposite="#//model/deployment/HardwarePort/outgoingCommunicationLink">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="Source HardwarePort of the link."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
             eType="#//model/deployment/HardwarePort" eOpposite="#//model/deployment/HardwarePort/incomingCommunicationLink">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="Target HardwarePort of the link."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfService" eType="#//model/deployment/QualityOfLinkService">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="The quality of service which the link fullfills. "/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployedAssemblyInstances"
@@ -2261,7 +2261,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="HardwarePortDirectionKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todoup{}"/>
+          <details key="documentation" value="A HardwarePort is of kind in, out, or in/out. &#xD;&#xA;Depending on its kind it can receive, send, or receive and send messages. "/>
         </eAnnotations>
         <eLiterals name="IN"/>
         <eLiterals name="OUT" value="1"/>
@@ -2269,7 +2269,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="QualityOfLinkService" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todoup{}"/>
+          <details key="documentation" value="Quality of Service of a communication link. "/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="packetDelayVariation"
             eType="#//model/core/NaturalNumber" containment="true">
@@ -2286,7 +2286,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="deplyoment" eType="#//model/deployment/Deployment"
             eOpposite="#//model/deployment/Deployment/qualityOfLinkServices">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todoup{}"/>
+            <details key="documentation" value="The deployment to which the service belongs."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

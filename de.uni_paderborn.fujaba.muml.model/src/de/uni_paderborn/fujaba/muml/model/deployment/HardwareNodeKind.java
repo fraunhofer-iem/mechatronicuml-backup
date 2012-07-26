@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * \todoup{}
+ * Different kinds of HardwareNodes. 
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwareNodeKind()
  * @model
