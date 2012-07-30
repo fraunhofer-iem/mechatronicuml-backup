@@ -4,7 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionLanguage"
     nsURI="http://www.fujaba.de/muml/actionlanguage/0.2.0" nsPrefix="actionLanguage">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="The base package for all expressions which can be used for modeling actions, guards, invariants... . "/>
+    <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and attribute and operation call expressions. "/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EEnum" name="AssignOperator">
     <eLiterals name="UNSET" literal="UNSET"/>
@@ -20,57 +20,158 @@
     <eLiterals name="DECREMENT" value="1" literal="--"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A block is used to group expressions. "/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
         eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="List of expressions may be attached as a body of a loop or represent a path of a conditional statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Loop" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A loop statement executed a block until the Boolean value of loop test expression is false."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//Block"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Body block of the loop."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="loopTest" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the loop test expression evaluates to true the block is executed. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WhileLoop" eSuperTypes="#//Loop"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DoWhileLoop" eSuperTypes="#//Loop"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WhileLoop" eSuperTypes="#//Loop">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The while statement first evaluates the loop test expression and afterwards if the expression evaluates to true it executes the block. "/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DoWhileLoop" eSuperTypes="#//Loop">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The do while statement first executes the block and afterwards it evaluates the loop test expression. If the expression evaluates to true it executes the block again. "/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignOperator" eType="#//AssignOperator"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An assignment is used to assign a value to an attribute. "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignOperator" eType="#//AssignOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An assignment is used to assign a value to an attribute. A simple assignment is one made using the \emph{&lt;ASSIGN>} Operator \emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rhs_assignExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The right-hand-side expression evaluates to a value which is assigned to the left-hand-side attribute."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="incrementDecrementOperator"
-        eType="#//IncrementDecrementOperator"/>
+        eType="#//IncrementDecrementOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Abbreviated form of x := x+1; or x :=x-1."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lhs_attributeExpression"
-        eType="#//AttributeExpression" containment="true"/>
+        eType="#//AttributeExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" The left-hand-side of an assignment must be a single attribute and must not be another expression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForLoop" eSuperTypes="#//Loop">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The for loop statement firstly initialize a loop variable by the initialize expression and assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initalizeExpression" eType="#//Assignment"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Initialize a loop variable by the initialize expression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="countingExpression" eType="#//Assignment"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An if statement is used if the referenced block should be executed only when the condition expression evaluates to true.&#xD;&#xA;An if statement always have one if-condition and one corresponding if-block, any number of else-if-conditions and corresponding else-if-blocks and at most one else-block. &#xD;&#xA; "/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ifCondition" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If condition of the if statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ifBlock" eType="#//Block"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Block which is executed if the if condition evaluates to true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseIfConditions" upperBound="-1"
         eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="ElseIf condition of the if statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseIfBlocks" upperBound="-1"
-        eType="#//Block" containment="true"/>
+        eType="#//Block" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Block which is executed if the corresponding elseif condition evaluates to true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="#//Block"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Block which is executed if no if or elseif condition evaluates to true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="To perform an action on a value of an attribute of a \rtsc we use the attribute expression which has a reference to an attribute of the \rtsc and optional indicies if a concrete array element should be referenced."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Attribute of an attribute expression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="indices" upperBound="-1"
         eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indices which refer to an concrete index of an array."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationCall" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Operation calls are used to call an operation with concrete parameter bindings. "/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Operation"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Operation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Operation which belongs to an operation call."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Parameter bindings which belongs to an operation call."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

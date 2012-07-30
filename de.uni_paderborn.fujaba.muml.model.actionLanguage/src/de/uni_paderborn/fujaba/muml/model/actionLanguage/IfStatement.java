@@ -14,6 +14,12 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>If Statement</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An if statement is used if the referenced block should be executed only when the condition expression evaluates to true.
+ * An if statement always have one if-condition and one corresponding if-block, any number of else-if-conditions and corresponding else-if-blocks and at most one else-block. 
+ *  
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -38,6 +44,9 @@ public interface IfStatement extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If condition of the if statement.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>If Condition</em>' containment reference.
 	 * @see #setIfCondition(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getIfStatement_IfCondition()
@@ -64,6 +73,9 @@ public interface IfStatement extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Block which is executed if the if condition evaluates to true.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>If Block</em>' containment reference.
 	 * @see #setIfBlock(Block)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getIfStatement_IfBlock()
@@ -91,6 +103,9 @@ public interface IfStatement extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * ElseIf condition of the if statement.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Else If Conditions</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getIfStatement_ElseIfConditions()
 	 * @model containment="true"
@@ -107,6 +122,9 @@ public interface IfStatement extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Block which is executed if the corresponding elseif condition evaluates to true.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Else If Blocks</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getIfStatement_ElseIfBlocks()
 	 * @model containment="true"
@@ -122,6 +140,9 @@ public interface IfStatement extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Block which is executed if no if or elseif condition evaluates to true.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Else Block</em>' containment reference.
 	 * @see #setElseBlock(Block)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getIfStatement_ElseBlock()

@@ -17,6 +17,10 @@ import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
  * A representation of the model object '<em><b>Operation Call</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Operation calls are used to call an operation with concrete parameter bindings. 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -38,6 +42,9 @@ public interface OperationCall extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Operation which belongs to an operation call.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operation</em>' reference.
 	 * @see #setOperation(Operation)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getOperationCall_Operation()
@@ -65,6 +72,9 @@ public interface OperationCall extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Parameter bindings which belongs to an operation call.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter Binding</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getOperationCall_ParameterBinding()
 	 * @model containment="true"

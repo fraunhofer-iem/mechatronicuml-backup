@@ -13,6 +13,10 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>Loop</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A loop statement executed a block until the Boolean value of loop test expression is false.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -34,6 +38,9 @@ public interface Loop extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Body block of the loop.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Block</em>' containment reference.
 	 * @see #setBlock(Block)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getLoop_Block()
@@ -60,6 +67,9 @@ public interface Loop extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the loop test expression evaluates to true the block is executed. 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Loop Test</em>' containment reference.
 	 * @see #setLoopTest(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getLoop_LoopTest()

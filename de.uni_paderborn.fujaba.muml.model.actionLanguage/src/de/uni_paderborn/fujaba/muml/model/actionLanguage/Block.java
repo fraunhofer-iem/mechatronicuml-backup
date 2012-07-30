@@ -14,6 +14,10 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>Block</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A block is used to group expressions. 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,6 +39,9 @@ public interface Block extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * List of expressions may be attached as a body of a loop or represent a path of a conditional statement.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Expressions</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getBlock_Expressions()
 	 * @model containment="true"

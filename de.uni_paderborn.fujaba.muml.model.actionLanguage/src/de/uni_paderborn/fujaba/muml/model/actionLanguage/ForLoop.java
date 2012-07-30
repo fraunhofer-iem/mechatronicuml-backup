@@ -12,6 +12,10 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
  * A representation of the model object '<em><b>For Loop</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The for loop statement firstly initialize a loop variable by the initialize expression and assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -33,6 +37,9 @@ public interface ForLoop extends Loop {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Initialize a loop variable by the initialize expression.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Initalize Expression</em>' containment reference.
 	 * @see #setInitalizeExpression(Assignment)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getForLoop_InitalizeExpression()
@@ -59,6 +66,9 @@ public interface ForLoop extends Loop {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Counting Expression</em>' containment reference.
 	 * @see #setCountingExpression(Assignment)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getForLoop_CountingExpression()

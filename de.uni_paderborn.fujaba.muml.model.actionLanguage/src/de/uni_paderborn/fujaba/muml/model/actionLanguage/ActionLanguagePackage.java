@@ -25,7 +25,8 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * The base package for all expressions which can be used for modeling actions, guards, invariants... . 
+ * The base package for the muml action language. It is an extension to the core.ecore expression package.
+ * The action language contains block definition, control structures like conditional statements and loops, assignments, and attribute and operation call expressions. 
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory
  * @model kind="package"
