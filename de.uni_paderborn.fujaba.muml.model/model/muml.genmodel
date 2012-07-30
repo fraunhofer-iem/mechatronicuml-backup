@@ -110,7 +110,7 @@
         <genClasses ecoreClass="muml.ecore#//model/component/HybridPort">
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/HybridPort/isHybridInPort"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/HybridPort/isHybridOutPort"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/HybridPort/samplingInterval"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/HybridPort/samplingInterval"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/PatternOccurrence">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"

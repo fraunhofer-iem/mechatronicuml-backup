@@ -26,6 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HybridPort} object.
@@ -68,6 +69,7 @@ public class HybridPortItemProvider
 			addTypePropertyDescriptor(object);
 			addIsHybridInPortPropertyDescriptor(object);
 			addIsHybridOutPortPropertyDescriptor(object);
+			addSamplingIntervalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -200,6 +202,27 @@ public class HybridPortItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sampling Interval feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addSamplingIntervalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HybridPort_samplingInterval_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HybridPort_samplingInterval_feature", "_UI_HybridPort_type"),
+				 ComponentPackage.Literals.HYBRID_PORT__SAMPLING_INTERVAL,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
