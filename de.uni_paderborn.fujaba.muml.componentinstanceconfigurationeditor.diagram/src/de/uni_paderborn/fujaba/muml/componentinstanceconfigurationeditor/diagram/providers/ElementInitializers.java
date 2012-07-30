@@ -12,7 +12,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPortInstance_2017(
+	public void init_HybridPortInstance_2021(
 			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -31,12 +31,12 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_2018(
+	public void init_DiscreteSinglePortInstance_2022(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							1,
+							2,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getDiscreteSinglePortInstance(), null)
 					.evaluate(instance);
@@ -50,12 +50,12 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteMultiPortInstance_2019(
+	public void init_DiscreteMultiPortInstance_2023(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							2,
+							3,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getDiscreteMultiPortInstance(), null)
 					.evaluate(instance);
@@ -69,12 +69,12 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPortInstance_2020(
+	public void init_ContinuousPortInstance_2024(
 			de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							4,
+							6,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getContinuousPortInstance(), null)
 					.evaluate(instance);
@@ -93,7 +93,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							5,
+							7,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getAtomicComponentInstance(), null)
 					.evaluate(instance);
@@ -112,7 +112,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							7,
+							9,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getStructuredComponentInstance(), null)
 					.evaluate(instance);
@@ -122,7 +122,7 @@ public class ElementInitializers {
 			instance.setEmbeddedCIC(newInstance_1_0);
 			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							8,
+							10,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getComponentInstanceConfiguration(), null)
 					.evaluate(newInstance_1_0);
@@ -142,11 +142,18 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							3,
+							4,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getDiscreteSinglePortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
+			Object value_1 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							5,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getDiscreteSinglePortInstance(), null)
+					.evaluate(instance);
+			instance.setComponentInstance((de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance) value_1);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -156,7 +163,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPortInstance_3027(
+	public void init_HybridPortInstance_3031(
 			de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
@@ -175,12 +182,12 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteSinglePortInstance_3028(
+	public void init_DiscreteSinglePortInstance_3032(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							1,
+							2,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getDiscreteSinglePortInstance(), null)
 					.evaluate(instance);
@@ -194,12 +201,12 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscreteMultiPortInstance_3029(
+	public void init_DiscreteMultiPortInstance_3033(
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							2,
+							3,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getDiscreteMultiPortInstance(), null)
 					.evaluate(instance);
@@ -213,12 +220,12 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPortInstance_3030(
+	public void init_ContinuousPortInstance_3034(
 			de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							4,
+							6,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getContinuousPortInstance(), null)
 					.evaluate(instance);
@@ -237,7 +244,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							5,
+							7,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getAtomicComponentInstance(), null)
 					.evaluate(instance);
@@ -256,7 +263,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							7,
+							9,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getStructuredComponentInstance(), null)
 					.evaluate(instance);
@@ -266,7 +273,7 @@ public class ElementInitializers {
 			instance.setEmbeddedCIC(newInstance_1_0);
 			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							8,
+							10,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 									.getComponentInstanceConfiguration(), null)
 					.evaluate(newInstance_1_0);

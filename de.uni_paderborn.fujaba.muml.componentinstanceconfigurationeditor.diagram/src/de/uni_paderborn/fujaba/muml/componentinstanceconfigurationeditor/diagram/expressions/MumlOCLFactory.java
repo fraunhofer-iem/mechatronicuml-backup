@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[11];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[13];
 	}
 
 	/**
@@ -51,9 +51,11 @@ public class MumlOCLFactory {
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
 					"\'portinstance\'", //$NON-NLS-1$
+					"self.multiPortInstance.oclIsUndefined()", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
+					"self.multiPortInstance.componentInstance", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'instance\'", //$NON-NLS-1$
 					"let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$

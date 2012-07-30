@@ -55,10 +55,10 @@ public class DiscreteSinglePortInstance3CreateCommand extends
 				.createDiscreteSinglePortInstance();
 
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance) getElementToEdit();
-		owner.getDirectPortInstances().add(newElement);
+		owner.getPortInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
-				.getInstance().init_DiscreteSinglePortInstance_3028(newElement);
+				.getInstance().init_DiscreteSinglePortInstance_3032(newElement);
 
 		doConfigure(newElement, monitor, info);
 

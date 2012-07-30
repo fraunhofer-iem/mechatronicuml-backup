@@ -20,7 +20,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditP
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7016;
+	public static final int VISUAL_ID = 7018;
 
 	/**
 	 * @generated
@@ -105,7 +105,6 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditP
 		setVisibility(hasChildren);
 	}
 
-	// This is also part of the fix mentioned above.
 	/**
 	 * @generated
 	 */

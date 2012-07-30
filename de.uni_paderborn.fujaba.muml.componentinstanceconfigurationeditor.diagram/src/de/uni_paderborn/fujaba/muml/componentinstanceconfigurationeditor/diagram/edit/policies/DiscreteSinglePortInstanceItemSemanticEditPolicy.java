@@ -25,7 +25,7 @@ public class DiscreteSinglePortInstanceItemSemanticEditPolicy
 	 */
 	public DiscreteSinglePortInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2018);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2022);
 	}
 
 	/**

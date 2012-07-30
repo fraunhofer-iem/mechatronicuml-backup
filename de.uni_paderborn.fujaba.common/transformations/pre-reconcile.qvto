@@ -1,0 +1,6 @@
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+transformation preRec(inout gmfgenModel : GMFGEN);
+
+main() {
+}

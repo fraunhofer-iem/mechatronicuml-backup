@@ -358,12 +358,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_2018_incominglinks;
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3032_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_2018_outgoinglinks;
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_3032_outgoinglinks;
 
 	/**
 	 * @generated
@@ -378,72 +378,62 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3028_incominglinks;
+	public static String NavigatorGroupName_HybridPortInstance_3031_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteSinglePortInstance_3028_outgoinglinks;
+	public static String NavigatorGroupName_HybridPortInstance_3031_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_2019_incominglinks;
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_3033_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_2019_outgoinglinks;
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_3033_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_3029_incominglinks;
+	public static String NavigatorGroupName_ContinuousPortInstance_2024_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_3029_outgoinglinks;
+	public static String NavigatorGroupName_ContinuousPortInstance_2024_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HybridPortInstance_3027_incominglinks;
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_2023_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HybridPortInstance_3027_outgoinglinks;
+	public static String NavigatorGroupName_DiscreteMultiPortInstance_2023_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_3030_incominglinks;
+	public static String NavigatorGroupName_HybridPortInstance_2021_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_3030_outgoinglinks;
+	public static String NavigatorGroupName_HybridPortInstance_2021_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_2020_incominglinks;
+	public static String NavigatorGroupName_ContinuousPortInstance_3034_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ContinuousPortInstance_2020_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_2017_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HybridPortInstance_2017_outgoinglinks;
+	public static String NavigatorGroupName_ContinuousPortInstance_3034_outgoinglinks;
 
 	/**
 	 * @generated
@@ -454,6 +444,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DiscreteSinglePortInstance_3026_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_2022_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteSinglePortInstance_2022_outgoinglinks;
 
 	/**
 	 * @generated

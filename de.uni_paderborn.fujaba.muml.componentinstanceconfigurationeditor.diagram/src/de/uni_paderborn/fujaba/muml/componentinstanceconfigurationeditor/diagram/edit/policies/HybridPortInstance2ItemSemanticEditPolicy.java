@@ -25,7 +25,7 @@ public class HybridPortInstance2ItemSemanticEditPolicy
 	 */
 	public HybridPortInstance2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HybridPortInstance_3027);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HybridPortInstance_3031);
 	}
 
 	/**

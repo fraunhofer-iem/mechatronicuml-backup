@@ -27,7 +27,7 @@ public class DiscreteMultiPortInstance2ItemSemanticEditPolicy
 	 */
 	public DiscreteMultiPortInstance2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3029);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3033);
 	}
 
 	/**

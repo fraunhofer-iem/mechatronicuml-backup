@@ -238,16 +238,16 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		}
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
-			return createHybridPortInstance_2017(domainElement, containerView,
+			return createHybridPortInstance_2021(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
-			return createDiscreteSinglePortInstance_2018(domainElement,
+			return createDiscreteSinglePortInstance_2022(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID:
-			return createDiscreteMultiPortInstance_2019(domainElement,
+			return createDiscreteMultiPortInstance_2023(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
-			return createContinuousPortInstance_2020(domainElement,
+			return createContinuousPortInstance_2024(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID:
 			return createAtomicComponentInstance_2016(domainElement,
@@ -259,16 +259,16 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			return createDiscreteSinglePortInstance_3026(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
-			return createHybridPortInstance_3027(domainElement, containerView,
+			return createHybridPortInstance_3031(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID:
-			return createDiscreteSinglePortInstance_3028(domainElement,
+			return createDiscreteSinglePortInstance_3032(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
-			return createDiscreteMultiPortInstance_3029(domainElement,
+			return createDiscreteMultiPortInstance_3033(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
-			return createContinuousPortInstance_3030(domainElement,
+			return createContinuousPortInstance_3034(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
 			return createComponentInstanceConfiguration_3023(domainElement,
@@ -310,7 +310,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createHybridPortInstance_2017(EObject domainElement,
+	public Node createHybridPortInstance_2021(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -351,22 +351,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5030 = createLabel(
+		Node label5039 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID));
-		label5030.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5039.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5030 = (Location) label5030.getLayoutConstraint();
-		location5030.setX(0);
-		location5030.setY(5);
+		Location location5039 = (Location) label5039.getLayoutConstraint();
+		location5039.setX(0);
+		location5039.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createDiscreteSinglePortInstance_2018(EObject domainElement,
+	public Node createDiscreteSinglePortInstance_2022(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -407,22 +407,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5031 = createLabel(
+		Node label5040 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID));
-		label5031.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5040.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5031 = (Location) label5031.getLayoutConstraint();
-		location5031.setX(0);
-		location5031.setY(5);
+		Location location5040 = (Location) label5040.getLayoutConstraint();
+		location5040.setX(0);
+		location5040.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createDiscreteMultiPortInstance_2019(EObject domainElement,
+	public Node createDiscreteMultiPortInstance_2023(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -463,15 +463,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5033 = createLabel(
+		Node label5041 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceNameEditPart.VISUAL_ID));
-		label5033.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5041.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5033 = (Location) label5033.getLayoutConstraint();
-		location5033.setX(0);
-		location5033.setY(5);
+		Location location5041 = (Location) label5041.getLayoutConstraint();
+		location5041.setX(0);
+		location5041.setY(5);
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
@@ -483,7 +483,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createContinuousPortInstance_2020(EObject domainElement,
+	public Node createContinuousPortInstance_2024(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -524,15 +524,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5034 = createLabel(
+		Node label5042 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceNameEditPart.VISUAL_ID));
-		label5034.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5042.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5034 = (Location) label5034.getLayoutConstraint();
-		location5034.setX(0);
-		location5034.setY(5);
+		Location location5042 = (Location) label5042.getLayoutConstraint();
+		location5042.setX(0);
+		location5042.setY(5);
 		return node;
 	}
 
@@ -701,7 +701,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createHybridPortInstance_3027(EObject domainElement,
+	public Node createHybridPortInstance_3031(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -741,22 +741,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5035 = createLabel(
+		Node label5043 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceName2EditPart.VISUAL_ID));
-		label5035.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5043.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5035 = (Location) label5035.getLayoutConstraint();
-		location5035.setX(0);
-		location5035.setY(5);
+		Location location5043 = (Location) label5043.getLayoutConstraint();
+		location5043.setX(0);
+		location5043.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createDiscreteSinglePortInstance_3028(EObject domainElement,
+	public Node createDiscreteSinglePortInstance_3032(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -796,22 +796,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5036 = createLabel(
+		Node label5044 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart.VISUAL_ID));
-		label5036.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5044.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5036 = (Location) label5036.getLayoutConstraint();
-		location5036.setX(0);
-		location5036.setY(5);
+		Location location5044 = (Location) label5044.getLayoutConstraint();
+		location5044.setX(0);
+		location5044.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createDiscreteMultiPortInstance_3029(EObject domainElement,
+	public Node createDiscreteMultiPortInstance_3033(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -851,15 +851,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5037 = createLabel(
+		Node label5045 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID));
-		label5037.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5045.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5037 = (Location) label5037.getLayoutConstraint();
-		location5037.setX(0);
-		location5037.setY(5);
+		Location location5045 = (Location) label5045.getLayoutConstraint();
+		location5045.setX(0);
+		location5045.setY(5);
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
@@ -871,7 +871,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createContinuousPortInstance_3030(EObject domainElement,
+	public Node createContinuousPortInstance_3034(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -911,15 +911,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5038 = createLabel(
+		Node label5046 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceName2EditPart.VISUAL_ID));
-		label5038.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5046.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5038 = (Location) label5038.getLayoutConstraint();
-		location5038.setX(0);
-		location5038.setY(5);
+		Location location5046 = (Location) label5046.getLayoutConstraint();
+		location5046.setX(0);
+		location5046.setY(5);
 		return node;
 	}
 

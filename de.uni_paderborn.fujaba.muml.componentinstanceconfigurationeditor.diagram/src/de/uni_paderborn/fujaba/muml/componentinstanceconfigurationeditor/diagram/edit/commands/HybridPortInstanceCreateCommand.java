@@ -51,10 +51,10 @@ public class HybridPortInstanceCreateCommand extends EditElementCommand {
 				.createHybridPortInstance();
 
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getElementToEdit();
-		owner.getDirectParentPortInstances().add(newElement);
+		owner.getParentPortInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
-				.getInstance().init_HybridPortInstance_2017(newElement);
+				.getInstance().init_HybridPortInstance_2021(newElement);
 
 		doConfigure(newElement, monitor, info);
 

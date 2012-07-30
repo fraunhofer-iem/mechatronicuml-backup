@@ -25,7 +25,7 @@ public class ContinuousPortInstance2ItemSemanticEditPolicy
 	 */
 	public ContinuousPortInstance2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ContinuousPortInstance_3030);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ContinuousPortInstance_3034);
 	}
 
 	/**

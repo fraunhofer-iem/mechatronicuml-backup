@@ -34,18 +34,18 @@ public class CustomRegionRegionContentsCompartmentEditPart extends
 
 		super.handleNotificationEvent(event);
 	}
-//
-//	@Override
-//	public IFigure createFigure() {
-//		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-//				.createFigure();
-//
-//		// Begin: Fix for Mechatronic-UML Bug #116
-//		result.setBorder(null);
-//		// End Fix
-//		
-//		return result;
-//
-//	}
+
+	@Override
+	public IFigure createFigure() {
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
+				.createFigure();
+
+		// Begin: Fix for Mechatronic-UML Bug #116
+		result.setBorder(null);
+		// End Fix
+		
+		return result;
+
+	}
 
 }

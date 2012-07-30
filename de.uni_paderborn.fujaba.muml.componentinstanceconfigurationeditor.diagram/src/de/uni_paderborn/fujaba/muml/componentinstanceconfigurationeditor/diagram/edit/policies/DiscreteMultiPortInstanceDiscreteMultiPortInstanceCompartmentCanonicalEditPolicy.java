@@ -98,7 +98,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdater
-				.getDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment_7015SemanticChildren(viewObject);
+				.getDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment_7017SemanticChildren(viewObject);
 
 	}
 

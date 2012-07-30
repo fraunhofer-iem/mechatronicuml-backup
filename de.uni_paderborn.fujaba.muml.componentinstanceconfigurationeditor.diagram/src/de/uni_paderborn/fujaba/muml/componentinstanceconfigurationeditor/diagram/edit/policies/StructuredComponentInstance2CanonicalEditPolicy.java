@@ -53,7 +53,7 @@ public class StructuredComponentInstance2CanonicalEditPolicy extends
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-				.getComponentInstance_DirectPortInstances();
+				.getComponentInstance_PortInstances();
 	}
 
 	/**

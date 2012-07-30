@@ -7,6 +7,7 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart;
@@ -15,6 +16,8 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.MumlEditPartFactory;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry;
 
@@ -41,6 +44,9 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			
 			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID:
 				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart(view);
+				
+			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID:
+				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart(view);
 			
 			case DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 				return new CustomDiscreteSinglePortInstanceEditPart(view);
@@ -68,7 +74,12 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 
 			case AtomicComponentInstanceEditPart.VISUAL_ID:
 				return new CustomAtomicComponentInstanceEditPart(view);
-		
+				
+			case StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart.VISUAL_ID:
+				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartmentEditPart(view);
+
+			case StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
+				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartment2EditPart(view);
 //			case ComponentInstanceComponentInstanceCompartmentEditPart.VISUAL_ID:
 //				return new CustomComponentInstanceComponentInstanceCompartmentEditPart(
 //						view);
