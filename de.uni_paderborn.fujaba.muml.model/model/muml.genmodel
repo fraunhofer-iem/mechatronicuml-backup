@@ -231,7 +231,6 @@
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/portInstances"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/componentPart"/>
-          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/directPortInstances"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/ConnectorInstance">
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
@@ -264,7 +263,7 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/ComponentInstanceConfiguration">
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/componentInstances"/>
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/connectorInstances"/>
-          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"/>
+          <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/ContinuousPortInstance"/>
         <genClasses ecoreClass="muml.ecore#//model/instance/HybridPortInstance"/>

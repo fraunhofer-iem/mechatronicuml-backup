@@ -47,7 +47,7 @@ public interface DiscreteMultiPortInstance extends DiscretePortInstance {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * These are all sub-port instances of the multi-port. The sub-port instances are
-	 * represented by DiscreteSinglePortsInstances.
+	 * represented by DiscreteSinglePortsInstances. \todosd{Why is this not a containment reference?}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sub Port Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscreteMultiPortInstance_SubPortInstances()

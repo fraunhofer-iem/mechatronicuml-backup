@@ -38,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getConnectorInstances <em>Connector Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getDirectParentPortInstances <em>Direct Parent Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getParentPortInstances <em>Parent Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,14 +86,14 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	protected EList<ConnectorInstance> connectorInstances;
 
 	/**
-	 * The cached setting delegate for the '{@link #getDirectParentPortInstances() <em>Direct Parent Port Instances</em>}' containment reference list.
+	 * The cached setting delegate for the '{@link #getParentPortInstances() <em>Parent Port Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDirectParentPortInstances()
+	 * @see #getParentPortInstances()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate DIRECT_PARENT_PORT_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__DIRECT_PARENT_PORT_INSTANCES).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate PARENT_PORT_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,8 +165,8 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<PortInstance> getDirectParentPortInstances() {
-		return (EList<PortInstance>)DIRECT_PARENT_PORT_INSTANCES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<PortInstance> getParentPortInstances() {
+		return (EList<PortInstance>)PARENT_PORT_INSTANCES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -174,8 +174,8 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetDirectParentPortInstances() {
-		return DIRECT_PARENT_PORT_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	public boolean isSetParentPortInstances() {
+		return PARENT_PORT_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -190,8 +190,8 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 				return ((InternalEList<?>)getComponentInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
 				return ((InternalEList<?>)getConnectorInstances()).basicRemove(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__DIRECT_PARENT_PORT_INSTANCES:
-				return ((InternalEList<?>)getDirectParentPortInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
+				return ((InternalEList<?>)getParentPortInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -210,8 +210,8 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 				return getComponentInstances();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
 				return getConnectorInstances();
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__DIRECT_PARENT_PORT_INSTANCES:
-				return getDirectParentPortInstances();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
+				return getParentPortInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -275,8 +275,8 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 				return componentInstances != null && !componentInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
 				return connectorInstances != null && !connectorInstances.isEmpty();
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__DIRECT_PARENT_PORT_INSTANCES:
-				return isSetDirectParentPortInstances();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
+				return isSetParentPortInstances();
 		}
 		return super.eIsSet(featureID);
 	}

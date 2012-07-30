@@ -38,7 +38,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentPart <em>Component Part</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getDirectPortInstances <em>Direct Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,24 +75,14 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 	protected ComponentPart componentPart;
 
 	/**
-	 * The cached setting delegate for the '{@link #getDirectPortInstances() <em>Direct Port Instances</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDirectPortInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate DIRECT_PORT_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES).getSettingDelegate();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	protected ComponentInstanceImpl() {
 		super();
-		DerivedAttributeAdapter derivedAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES);
-		derivedAdapter.addLocalDependency(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
+//		DerivedAttributeAdapter derivedAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES);
+//		derivedAdapter.addLocalDependency(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
 	}
 
 	/**
@@ -194,16 +183,6 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART, oldComponentPart, componentPart));
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public EList<PortInstance> getDirectPortInstances() {
-		// Make sure, adding and removing elements works.
-		return getPortInstances();
-		// return (EList<PortInstance>)DIRECT_PORT_INSTANCES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,8 +209,6 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES:
-				return ((InternalEList<?>)getDirectPortInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -252,8 +229,6 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				if (resolve) return getComponentPart();
 				return basicGetComponentPart();
-			case InstancePackage.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES:
-				return getDirectPortInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,10 +252,6 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				setComponentPart((ComponentPart)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES:
-				getDirectPortInstances().clear();
-				getDirectPortInstances().addAll((Collection<? extends PortInstance>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -302,9 +273,6 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				setComponentPart((ComponentPart)null);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES:
-				getDirectPortInstances().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -323,8 +291,6 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 				return portInstances != null && !portInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				return componentPart != null;
-			case InstancePackage.COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES:
-				return DIRECT_PORT_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

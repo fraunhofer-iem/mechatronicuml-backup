@@ -5568,48 +5568,48 @@
             featureName="value" dataValue="The set of component instances of a component instance configuration."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="name" dataValue="parentPortInstancesDerived"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="unsettable" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
             featureName="eType" referenceValue="muml.ecore#//model/instance/PortInstance"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
+          referenceName="eAnnotations" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="getParentPortInstances()&#xD;&#xA;"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
+          referenceName="eAnnotations" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The port instances of the component instance which is&#xD;&#xA;containing this component instance configuration are derived."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance" referenceName="eClassifiers"
@@ -23690,26 +23690,26 @@
         featureName="value" dataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
         oldDataValue="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstance"
-        referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances"
+        referenceName="eStructuralFeatures" element="#//@releases.9/@changes.294/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.294/@element"
         featureName="name" dataValue="directPortInstances"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances"
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.294/@element"
         featureName="eType" referenceValue="muml.ecore#//model/instance/PortInstance"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances"
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.294/@element"
         featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances"
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.294/@element"
         featureName="derived" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances"
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.294/@element"
         featureName="containment" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstance/directPortInstances"
-        referenceName="eAnnotations" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/instance/ComponentInstance/directPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Create" target="#//@releases.9/@changes.294/@element"
+        referenceName="eAnnotations" element="#//@releases.9/@changes.294/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Create" target="#//@releases.9/@changes.294/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.9/@changes.294/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.294/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
         featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.294/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="key" dataValue="derivation"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/directPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.294/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="-- Filter out those DiscreteSinglePortInstances that are referenced by a DiscreteMultiPortInstance.&#xA;portInstances->select(portInstance | &#xA;&#x9;portInstance.oclIsKindOf(DiscreteSinglePortInstance) implies portInstance.oclAsType(DiscreteSinglePortInstance).multiPortInstance.oclIsUndefined()&#xA;)"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscreteMultiPortInstance"
         referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/gmfSubPortInstances">
@@ -23760,12 +23760,12 @@
         </eAnnotations>
       </element>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
         featureName="name" dataValue="directParentPortInstances" oldDataValue="parentPortInstancesDerived"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The direct port instances of the containing component instance."
         oldDataValue="The port instances of the component instance which is&#xD;&#xA;containing this component instance configuration are derived."/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/directParentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if (self.eContainer().oclIsKindOf(ComponentInstance)) then&#xA;&#x9;self.eContainer().oclAsType(ComponentInstance).directPortInstances&#xA;else&#xA;&#x9;OrderedSet {}&#xA;endif"
         oldDataValue="getParentPortInstances()&#xD;&#xA;"/>
     <changes xsi:type="history:OperationChange">
@@ -25807,5 +25807,32 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The deployment to which the service belongs."
         oldDataValue="\todoup{}"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/ComponentInstance"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="directPortInstances" upperBound="-1"
+          eType="ecore:EClass muml.ecore#//model/instance/PortInstance" derived="true"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="-- Filter out those DiscreteSinglePortInstances that are referenced by a DiscreteMultiPortInstance.&#xA;portInstances->select(portInstance | &#xA;&#x9;portInstance.oclIsKindOf(DiscreteSinglePortInstance) implies portInstance.oclAsType(DiscreteSinglePortInstance).multiPortInstance.oclIsUndefined()&#xA;)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="\todosd{What is the purpose of this reference? Is this a fitting name?}"/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances"
+        featureName="name" dataValue="parentPortInstances" oldDataValue="directParentPortInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if (self.eContainer().oclIsKindOf(ComponentInstance)) then&#xA;&#x9;self.eContainer().oclAsType(ComponentInstance).portInstances&#xA;else&#xA;&#x9;OrderedSet {}&#xA;endif"
+        oldDataValue="if (self.eContainer().oclIsKindOf(ComponentInstance)) then&#xA;&#x9;self.eContainer().oclAsType(ComponentInstance).directPortInstances&#xA;else&#xA;&#x9;OrderedSet {}&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The port instances of the containing component instance."
+        oldDataValue="The direct port instances of the containing component instance."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/ComponentInstance/portInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The port instances that belong to this component instance. \todosd{Why are also DiscreteSinglePortInstances of DiscreteMultiPortInstances contained here and not in the DiscreteMultiPortInstance?}"
+        oldDataValue="The port instances that belong to this component instance."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances. \todosd{Why is this not a containment reference?}"
+        oldDataValue="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances."/>
   </releases>
 </history:History>

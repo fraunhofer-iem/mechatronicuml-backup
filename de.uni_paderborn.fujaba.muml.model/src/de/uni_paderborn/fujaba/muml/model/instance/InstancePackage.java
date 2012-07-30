@@ -131,22 +131,13 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE__COMPONENT_PART = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Direct Port Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
@@ -541,13 +532,13 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Direct Parent Port Instances</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Parent Port Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__DIRECT_PARENT_PORT_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance Configuration</em>' class.
@@ -1287,15 +1278,6 @@ public interface InstancePackage extends EPackage {
 	int STRUCTURED_COMPONENT_INSTANCE__COMPONENT_PART = COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
-	 * The feature id for the '<em><b>Direct Port Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES = COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES;
-
-	/**
 	 * The feature id for the '<em><b>Embedded CIC</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1378,15 +1360,6 @@ public interface InstancePackage extends EPackage {
 	int ATOMIC_COMPONENT_INSTANCE__COMPONENT_PART = COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
-	 * The feature id for the '<em><b>Direct Port Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES = COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES;
-
-	/**
 	 * The number of structural features of the '<em>Atomic Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1437,17 +1410,6 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInstance_ComponentPart();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getDirectPortInstances <em>Direct Port Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Direct Port Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getDirectPortInstances()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EReference getComponentInstance_DirectPortInstances();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance <em>Connector Instance</em>}'.
@@ -1654,15 +1616,15 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstanceConfiguration_ConnectorInstances();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getDirectParentPortInstances <em>Direct Parent Port Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstances <em>Parent Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Direct Parent Port Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getDirectParentPortInstances()
+	 * @return the meta object for the containment reference list '<em>Parent Port Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstances()
 	 * @see #getComponentInstanceConfiguration()
 	 * @generated
 	 */
-	EReference getComponentInstanceConfiguration_DirectParentPortInstances();
+	EReference getComponentInstanceConfiguration_ParentPortInstances();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance <em>Continuous Port Instance</em>}'.
@@ -1889,14 +1851,6 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE__COMPONENT_PART = eINSTANCE.getComponentInstance_ComponentPart();
 
 		/**
-		 * The meta object literal for the '<em><b>Direct Port Instances</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_INSTANCE__DIRECT_PORT_INSTANCES = eINSTANCE.getComponentInstance_DirectPortInstances();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2059,12 +2013,12 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ConnectorInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Direct Parent Port Instances</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Parent Port Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE_CONFIGURATION__DIRECT_PARENT_PORT_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_DirectParentPortInstances();
+		EReference COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ParentPortInstances();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.
