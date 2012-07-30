@@ -96,6 +96,9 @@ public interface Synchronization extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * ParameterBindings that belong to a synchronization.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter Binding</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_ParameterBinding()
 	 * @model containment="true"

@@ -1792,7 +1792,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
-            eType="#//model/core/ParameterBinding" containment="true"/>
+            eType="#//model/core/ParameterBinding" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="ParameterBindings that belong to a synchronization."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Prioritizable" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
