@@ -9,6 +9,8 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Attribute;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getIndices <em>Indices</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,5 +55,21 @@ public interface AttributeExpression extends Expression {
 	 * @generated
 	 */
 	void setAttribute(Attribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Indices</b></em>' containment reference list.
+	 * The list contents are of type {@link org.storydriven.core.expressions.Expression}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Indices</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Indices</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAttributeExpression_Indices()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Expression> getIndices();
 
 } // AttributeExpression

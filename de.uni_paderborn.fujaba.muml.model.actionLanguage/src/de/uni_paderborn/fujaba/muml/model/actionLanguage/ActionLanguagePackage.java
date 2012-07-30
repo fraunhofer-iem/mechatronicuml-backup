@@ -358,13 +358,13 @@ public interface ActionLanguagePackage extends EPackage {
 	int ASSIGNMENT__ASSIGN_OPERATOR = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Assign Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Rhs assign Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT__ASSIGN_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int ASSIGNMENT__RHS_ASSIGN_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Increment Decrement Operator</b></em>' attribute.
@@ -376,13 +376,13 @@ public interface ActionLanguagePackage extends EPackage {
 	int ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * The feature id for the '<em><b>Lhs attribute Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT__ATTRIBUTE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
+	int ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Assignment</em>' class.
@@ -613,13 +613,22 @@ public interface ActionLanguagePackage extends EPackage {
 	int ATTRIBUTE_EXPRESSION__ATTRIBUTE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Indices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_EXPRESSION__INDICES = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Attribute Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int ATTRIBUTE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.
@@ -800,15 +809,15 @@ public interface ActionLanguagePackage extends EPackage {
 	EAttribute getAssignment_AssignOperator();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAssignExpression <em>Assign Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getRhs_assignExpression <em>Rhs assign Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Assign Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAssignExpression()
+	 * @return the meta object for the containment reference '<em>Rhs assign Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getRhs_assignExpression()
 	 * @see #getAssignment()
 	 * @generated
 	 */
-	EReference getAssignment_AssignExpression();
+	EReference getAssignment_Rhs_assignExpression();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getIncrementDecrementOperator <em>Increment Decrement Operator</em>}'.
@@ -822,15 +831,15 @@ public interface ActionLanguagePackage extends EPackage {
 	EAttribute getAssignment_IncrementDecrementOperator();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_attributeExpression <em>Lhs attribute Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAttribute()
+	 * @return the meta object for the containment reference '<em>Lhs attribute Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_attributeExpression()
 	 * @see #getAssignment()
 	 * @generated
 	 */
-	EReference getAssignment_Attribute();
+	EReference getAssignment_Lhs_attributeExpression();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop <em>For Loop</em>}'.
@@ -949,6 +958,17 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttributeExpression_Attribute();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getIndices <em>Indices</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Indices</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getIndices()
+	 * @see #getAttributeExpression()
+	 * @generated
+	 */
+	EReference getAttributeExpression_Indices();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall <em>Operation Call</em>}'.
@@ -1107,12 +1127,12 @@ public interface ActionLanguagePackage extends EPackage {
 		EAttribute ASSIGNMENT__ASSIGN_OPERATOR = eINSTANCE.getAssignment_AssignOperator();
 
 		/**
-		 * The meta object literal for the '<em><b>Assign Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Rhs assign Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSIGNMENT__ASSIGN_EXPRESSION = eINSTANCE.getAssignment_AssignExpression();
+		EReference ASSIGNMENT__RHS_ASSIGN_EXPRESSION = eINSTANCE.getAssignment_Rhs_assignExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Increment Decrement Operator</b></em>' attribute feature.
@@ -1123,12 +1143,12 @@ public interface ActionLanguagePackage extends EPackage {
 		EAttribute ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR = eINSTANCE.getAssignment_IncrementDecrementOperator();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Lhs attribute Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSIGNMENT__ATTRIBUTE = eINSTANCE.getAssignment_Attribute();
+		EReference ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION = eINSTANCE.getAssignment_Lhs_attributeExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ForLoopImpl <em>For Loop</em>}' class.
@@ -1223,6 +1243,14 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ATTRIBUTE_EXPRESSION__ATTRIBUTE = eINSTANCE.getAttributeExpression_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Indices</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE_EXPRESSION__INDICES = eINSTANCE.getAttributeExpression_Indices();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.

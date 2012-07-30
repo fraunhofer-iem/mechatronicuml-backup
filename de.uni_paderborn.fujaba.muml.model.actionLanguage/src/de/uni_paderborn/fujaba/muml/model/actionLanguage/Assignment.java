@@ -19,9 +19,9 @@ import de.uni_paderborn.fujaba.muml.model.core.Attribute;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAssignOperator <em>Assign Operator</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAssignExpression <em>Assign Expression</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getRhs_assignExpression <em>Rhs assign Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getIncrementDecrementOperator <em>Increment Decrement Operator</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_attributeExpression <em>Lhs attribute Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,30 +60,30 @@ public interface Assignment extends Expression {
 	void setAssignOperator(AssignOperator value);
 
 	/**
-	 * Returns the value of the '<em><b>Assign Expression</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Rhs assign Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Assign Expression</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Rhs assign Expression</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assign Expression</em>' containment reference.
-	 * @see #setAssignExpression(Expression)
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_AssignExpression()
+	 * @return the value of the '<em>Rhs assign Expression</em>' containment reference.
+	 * @see #setRhs_assignExpression(Expression)
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_Rhs_assignExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Expression getAssignExpression();
+	Expression getRhs_assignExpression();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAssignExpression <em>Assign Expression</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getRhs_assignExpression <em>Rhs assign Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Assign Expression</em>' containment reference.
-	 * @see #getAssignExpression()
+	 * @param value the new value of the '<em>Rhs assign Expression</em>' containment reference.
+	 * @see #getRhs_assignExpression()
 	 * @generated
 	 */
-	void setAssignExpression(Expression value);
+	void setRhs_assignExpression(Expression value);
 
 	/**
 	 * Returns the value of the '<em><b>Increment Decrement Operator</b></em>' attribute.
@@ -115,29 +115,29 @@ public interface Assignment extends Expression {
 	void setIncrementDecrementOperator(IncrementDecrementOperator value);
 
 	/**
-	 * Returns the value of the '<em><b>Attribute</b></em>' reference.
+	 * Returns the value of the '<em><b>Lhs attribute Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attribute</em>' reference isn't clear,
+	 * If the meaning of the '<em>Lhs attribute Expression</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute</em>' reference.
-	 * @see #setAttribute(Attribute)
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_Attribute()
-	 * @model
+	 * @return the value of the '<em>Lhs attribute Expression</em>' containment reference.
+	 * @see #setLhs_attributeExpression(AttributeExpression)
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_Lhs_attributeExpression()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Attribute getAttribute();
+	AttributeExpression getLhs_attributeExpression();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAttribute <em>Attribute</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_attributeExpression <em>Lhs attribute Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attribute</em>' reference.
-	 * @see #getAttribute()
+	 * @param value the new value of the '<em>Lhs attribute Expression</em>' containment reference.
+	 * @see #getLhs_attributeExpression()
 	 * @generated
 	 */
-	void setAttribute(Attribute value);
+	void setLhs_attributeExpression(AttributeExpression value);
 
 } // Assignment

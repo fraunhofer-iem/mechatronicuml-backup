@@ -287,8 +287,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getAssignment_AssignExpression() {
+	public EReference getAssignment_Rhs_assignExpression() {
 		return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -307,8 +306,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getAssignment_Attribute() {
+	public EReference getAssignment_Lhs_attributeExpression() {
 		return (EReference)assignmentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -427,6 +425,15 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAttributeExpression_Indices() {
+		return (EReference)attributeExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EClass getOperationCall() {
 		return operationCallEClass;
@@ -514,9 +521,9 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		assignmentEClass = createEClass(ASSIGNMENT);
 		createEAttribute(assignmentEClass, ASSIGNMENT__ASSIGN_OPERATOR);
-		createEReference(assignmentEClass, ASSIGNMENT__ASSIGN_EXPRESSION);
+		createEReference(assignmentEClass, ASSIGNMENT__RHS_ASSIGN_EXPRESSION);
 		createEAttribute(assignmentEClass, ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR);
-		createEReference(assignmentEClass, ASSIGNMENT__ATTRIBUTE);
+		createEReference(assignmentEClass, ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION);
 
 		forLoopEClass = createEClass(FOR_LOOP);
 		createEReference(forLoopEClass, FOR_LOOP__INITALIZE_EXPRESSION);
@@ -531,6 +538,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		attributeExpressionEClass = createEClass(ATTRIBUTE_EXPRESSION);
 		createEReference(attributeExpressionEClass, ATTRIBUTE_EXPRESSION__ATTRIBUTE);
+		createEReference(attributeExpressionEClass, ATTRIBUTE_EXPRESSION__INDICES);
 
 		operationCallEClass = createEClass(OPERATION_CALL);
 		createEReference(operationCallEClass, OPERATION_CALL__OPERATION);
@@ -597,9 +605,9 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAssignment_AssignOperator(), this.getAssignOperator(), "assignOperator", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAssignment_AssignExpression(), theExpressionsPackage.getExpression(), null, "assignExpression", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssignment_Rhs_assignExpression(), theExpressionsPackage.getExpression(), null, "rhs_assignExpression", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssignment_IncrementDecrementOperator(), this.getIncrementDecrementOperator(), "incrementDecrementOperator", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAssignment_Attribute(), theCorePackage.getAttribute(), null, "attribute", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssignment_Lhs_attributeExpression(), this.getAttributeExpression(), null, "lhs_attributeExpression", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForLoop_InitalizeExpression(), this.getAssignment(), null, "initalizeExpression", null, 0, 1, ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -614,6 +622,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		initEClass(attributeExpressionEClass, AttributeExpression.class, "AttributeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttributeExpression_Attribute(), theCorePackage.getAttribute(), null, "attribute", null, 0, 1, AttributeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttributeExpression_Indices(), theExpressionsPackage.getExpression(), null, "indices", null, 0, -1, AttributeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationCallEClass, OperationCall.class, "OperationCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationCall_Operation(), theCorePackage.getOperation(), null, "operation", null, 1, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

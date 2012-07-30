@@ -34,11 +34,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="DoWhileLoop" eSuperTypes="#//Loop"/>
   <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignOperator" eType="#//AssignOperator"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assignExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs_assignExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="incrementDecrementOperator"
         eType="#//IncrementDecrementOperator"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs_attributeExpression"
+        eType="#//AttributeExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForLoop" eSuperTypes="#//Loop">
     <eStructuralFeatures xsi:type="ecore:EReference" name="initalizeExpression" eType="#//Assignment"
@@ -61,6 +62,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="indices" upperBound="-1"
+        eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationCall" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
