@@ -326,6 +326,9 @@ public interface Transition extends ExtendableElement, Prioritizable {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * All events which belong to this transition.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Events</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Events()
 	 * @model containment="true"

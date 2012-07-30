@@ -196,7 +196,7 @@ public interface State extends Vertex {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A state references its entry and exit points. They can only exist, if a state embeds one or more statecharts.
+	 * A state references its entry points. They can only exist, if a state embeds one or more statecharts.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>State Entry Points</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_StateEntryPoints()
@@ -243,6 +243,9 @@ public interface State extends Vertex {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A state references its exit points. They can only exist, if a state embeds one or more statecharts.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>State Exit Points</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_StateExitPoints()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getState

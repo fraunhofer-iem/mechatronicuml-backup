@@ -72,6 +72,9 @@ public interface SynchronizationChannel extends NamedElement, CommentableElement
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Parameters of a SynchronizationChannel.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_Parameters()
 	 * @model containment="true"

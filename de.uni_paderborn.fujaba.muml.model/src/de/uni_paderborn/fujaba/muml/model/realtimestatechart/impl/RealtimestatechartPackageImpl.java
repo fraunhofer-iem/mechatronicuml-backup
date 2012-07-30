@@ -1678,19 +1678,19 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "OneInvariantPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"
-		   });																										
+		   });																											
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateExitPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"
-		   });																													
+		   });																														
 		addAnnotation
 		  (doEventEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ValidLowerUpperPeriod"
-		   });																	
+		   });																		
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
@@ -1714,13 +1714,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"
-		   });				
+		   });						
 		addAnnotation
 		  (stateExitPointEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "OneOutgoingTransition"
-		   });		
+		   });				
 	}
 
 	/**
@@ -1757,7 +1757,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "regions -> isEmpty()"
-		   });											
+		   });												
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
@@ -1783,13 +1783,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent) in\r\nif eventSet ->size() = 0 then null else eventSet -> first() endif"
-		   });																	
+		   });																		
 		addAnnotation
 		  (doEventEClass, 
 		   source, 
 		   new String[] {
 			 "ValidLowerUpperPeriod", "self.periodLower >= 1 and self.periodLower <= self.periodUpper"
-		   });																	
+		   });																		
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
@@ -1849,13 +1849,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->size()>0",
 			 "AtLeastOneOutgoingTransition", "self.outgoingTransitions->size() > 0"
-		   });				
+		   });						
 		addAnnotation
 		  (stateExitPointEClass, 
 		   source, 
 		   new String[] {
 			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
-		   });
+		   });		
 	}
 
 } //RealtimestatechartPackageImpl

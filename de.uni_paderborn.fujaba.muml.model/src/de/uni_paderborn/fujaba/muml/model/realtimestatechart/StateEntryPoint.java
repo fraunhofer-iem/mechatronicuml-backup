@@ -41,6 +41,9 @@ public interface StateEntryPoint extends Vertex {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Referenced EntyPoints of embedded statecharts. 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Entry Point</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateEntryPoint_EntryPoint()
 	 * @model required="true"
@@ -57,6 +60,9 @@ public interface StateEntryPoint extends Vertex {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The StateEntryPoint is assigned to a state.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>State</em>' container reference.
 	 * @see #setState(State)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateEntryPoint_State()
