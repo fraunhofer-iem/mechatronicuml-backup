@@ -622,15 +622,20 @@ ruleAssignment returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAssignmentRule());
+		{ 
+	        newCompositeNode(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0()); 
+	    }
+		lv_lhs_attributeExpression_0_0=ruleAttributeLeafExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssignmentRule());
 	        }
-        }
-	otherlv_0=RULE_ID
-	{
-		newLeafNode(otherlv_0, grammarAccess.getAssignmentAccess().getAttributeAttributeCrossReference_0_0()); 
-	}
+       		set(
+       			$current, 
+       			"lhs_attributeExpression",
+        		lv_lhs_attributeExpression_0_0, 
+        		"AttributeLeafExpression");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 )(((
@@ -654,16 +659,16 @@ ruleAssignment returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAssignmentAccess().getAssignExpressionExpressionParserRuleCall_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getAssignmentAccess().getRhs_assignExpressionExpressionParserRuleCall_1_0_1_0()); 
 	    }
-		lv_assignExpression_2_0=ruleExpression		{
+		lv_rhs_assignExpression_2_0=ruleExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAssignmentRule());
 	        }
        		set(
        			$current, 
-       			"assignExpression",
-        		lv_assignExpression_2_0, 
+       			"rhs_assignExpression",
+        		lv_rhs_assignExpression_2_0, 
         		"Expression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -715,15 +720,20 @@ ruleForLoopCountingExpression returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getForLoopCountingExpressionRule());
+		{ 
+	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0()); 
+	    }
+		lv_lhs_attributeExpression_0_0=ruleAttributeLeafExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getForLoopCountingExpressionRule());
 	        }
-        }
-	otherlv_0=RULE_ID
-	{
-		newLeafNode(otherlv_0, grammarAccess.getForLoopCountingExpressionAccess().getAttributeAttributeCrossReference_0_0()); 
-	}
+       		set(
+       			$current, 
+       			"lhs_attributeExpression",
+        		lv_lhs_attributeExpression_0_0, 
+        		"AttributeLeafExpression");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 )((
@@ -766,16 +776,16 @@ ruleForLoopCountingExpression returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getAssignExpressionExpressionParserRuleCall_1_1_1_0()); 
+	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getRhs_assignExpressionExpressionParserRuleCall_1_1_1_0()); 
 	    }
-		lv_assignExpression_3_0=ruleExpression		{
+		lv_rhs_assignExpression_3_0=ruleExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForLoopCountingExpressionRule());
 	        }
        		set(
        			$current, 
-       			"assignExpression",
-        		lv_assignExpression_3_0, 
+       			"rhs_assignExpression",
+        		lv_rhs_assignExpression_3_0, 
         		"Expression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1168,7 +1178,99 @@ ruleAttributeExpression returns [EObject current=null]
 	}
 
 )
-)))
+)(	otherlv_3='[' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getAttributeExpressionAccess().getLeftSquareBracketKeyword_1_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAttributeExpressionAccess().getIndicesExpressionParserRuleCall_1_2_1_0()); 
+	    }
+		lv_indices_4_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAttributeExpressionRule());
+	        }
+       		add(
+       			$current, 
+       			"indices",
+        		lv_indices_4_0, 
+        		"Expression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_5=']' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getAttributeExpressionAccess().getRightSquareBracketKeyword_1_2_2());
+    }
+)*))
+;
+
+
+
+
+
+// Entry rule entryRuleAttributeLeafExpression
+entryRuleAttributeLeafExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAttributeLeafExpressionRule()); }
+	 iv_ruleAttributeLeafExpression=ruleAttributeLeafExpression 
+	 { $current=$iv_ruleAttributeLeafExpression.current; } 
+	 EOF 
+;
+
+// Rule AttributeLeafExpression
+ruleAttributeLeafExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getAttributeLeafExpressionAccess().getAttributeExpressionAction_0(),
+            $current);
+    }
+)(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAttributeLeafExpressionRule());
+	        }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getAttributeLeafExpressionAccess().getAttributeAttributeCrossReference_1_0()); 
+	}
+
+)
+)(	otherlv_2='[' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getAttributeLeafExpressionAccess().getLeftSquareBracketKeyword_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAttributeLeafExpressionAccess().getIndicesExpressionParserRuleCall_2_1_0()); 
+	    }
+		lv_indices_3_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAttributeLeafExpressionRule());
+	        }
+       		add(
+       			$current, 
+       			"indices",
+        		lv_indices_3_0, 
+        		"Expression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4=']' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getAttributeLeafExpressionAccess().getRightSquareBracketKeyword_2_2());
+    }
+)*)
 ;
 
 

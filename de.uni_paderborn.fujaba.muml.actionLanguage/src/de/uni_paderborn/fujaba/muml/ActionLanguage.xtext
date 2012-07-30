@@ -47,12 +47,12 @@ ExpressionStartRule returns expressions::Expression:
 	;	
 	
   Assignment returns actionLanguage::Assignment:
-	(attribute=[core::Attribute]
-	((assignOperator=AssignOperator assignExpression=Expression) | incrementDecrementOperator=IncrementDecrementOperator) ';');
+	(lhs_attributeExpression=AttributeLeafExpression
+	((assignOperator=AssignOperator rhs_assignExpression=Expression) | incrementDecrementOperator=IncrementDecrementOperator) ';');
 
     ForLoopCountingExpression returns actionLanguage::Assignment:
-	(attribute=[core::Attribute]
-	 (incrementDecrementOperator=IncrementDecrementOperator |(assignOperator=AssignOperator assignExpression=Expression)) );	
+	(lhs_attributeExpression=AttributeLeafExpression
+	 (incrementDecrementOperator=IncrementDecrementOperator |(assignOperator=AssignOperator rhs_assignExpression=Expression)) );	
 
 Expression returns expressions::Expression:
 	ArithmeticExpression;		
@@ -81,7 +81,11 @@ UnaryExpression returns expressions::Expression:
 	
 AttributeExpression returns expressions::Expression:
 	 OperationCall  |
-	{actionLanguage::AttributeExpression}  attribute=[core::Attribute]
+	{actionLanguage::AttributeExpression}  attribute=[core::Attribute]('['indices+=Expression']')*
+	;	
+	
+AttributeLeafExpression returns actionLanguage::AttributeExpression:
+	{actionLanguage::AttributeExpression}  attribute=[core::Attribute]('['indices+=Expression']')*
 	;	
 	
 OperationCall returns expressions::Expression:

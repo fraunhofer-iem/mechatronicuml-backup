@@ -332,41 +332,37 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class AssignmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Assignment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAttributeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cAttributeAttributeCrossReference_0_0 = (CrossReference)cAttributeAssignment_0.eContents().get(0);
-		private final RuleCall cAttributeAttributeIDTerminalRuleCall_0_0_1 = (RuleCall)cAttributeAttributeCrossReference_0_0.eContents().get(1);
+		private final Assignment cLhs_attributeExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0 = (RuleCall)cLhs_attributeExpressionAssignment_0.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
 		private final Assignment cAssignOperatorAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
 		private final RuleCall cAssignOperatorAssignOperatorEnumRuleCall_1_0_0_0 = (RuleCall)cAssignOperatorAssignment_1_0_0.eContents().get(0);
-		private final Assignment cAssignExpressionAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cAssignExpressionExpressionParserRuleCall_1_0_1_0 = (RuleCall)cAssignExpressionAssignment_1_0_1.eContents().get(0);
+		private final Assignment cRhs_assignExpressionAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_1_0_1_0 = (RuleCall)cRhs_assignExpressionAssignment_1_0_1.eContents().get(0);
 		private final Assignment cIncrementDecrementOperatorAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0 = (RuleCall)cIncrementDecrementOperatorAssignment_1_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Assignment returns actionLanguage::Assignment:
-		//	attribute=[core::Attribute] (assignOperator=AssignOperator assignExpression=Expression |
+		//	lhs_attributeExpression=AttributeLeafExpression (assignOperator=AssignOperator rhs_assignExpression=Expression |
 		//	incrementDecrementOperator=IncrementDecrementOperator) ";";
 		public ParserRule getRule() { return rule; }
 
-		//attribute=[core::Attribute] (assignOperator=AssignOperator assignExpression=Expression |
+		//lhs_attributeExpression=AttributeLeafExpression (assignOperator=AssignOperator rhs_assignExpression=Expression |
 		//incrementDecrementOperator=IncrementDecrementOperator) ";"
 		public Group getGroup() { return cGroup; }
 
-		//attribute=[core::Attribute]
-		public Assignment getAttributeAssignment_0() { return cAttributeAssignment_0; }
+		//lhs_attributeExpression=AttributeLeafExpression
+		public Assignment getLhs_attributeExpressionAssignment_0() { return cLhs_attributeExpressionAssignment_0; }
 
-		//[core::Attribute]
-		public CrossReference getAttributeAttributeCrossReference_0_0() { return cAttributeAttributeCrossReference_0_0; }
+		//AttributeLeafExpression
+		public RuleCall getLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0() { return cLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0; }
 
-		//ID
-		public RuleCall getAttributeAttributeIDTerminalRuleCall_0_0_1() { return cAttributeAttributeIDTerminalRuleCall_0_0_1; }
-
-		//assignOperator=AssignOperator assignExpression=Expression | incrementDecrementOperator=IncrementDecrementOperator
+		//assignOperator=AssignOperator rhs_assignExpression=Expression | incrementDecrementOperator=IncrementDecrementOperator
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//assignOperator=AssignOperator assignExpression=Expression
+		//assignOperator=AssignOperator rhs_assignExpression=Expression
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//assignOperator=AssignOperator
@@ -375,11 +371,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//AssignOperator
 		public RuleCall getAssignOperatorAssignOperatorEnumRuleCall_1_0_0_0() { return cAssignOperatorAssignOperatorEnumRuleCall_1_0_0_0; }
 
-		//assignExpression=Expression
-		public Assignment getAssignExpressionAssignment_1_0_1() { return cAssignExpressionAssignment_1_0_1; }
+		//rhs_assignExpression=Expression
+		public Assignment getRhs_assignExpressionAssignment_1_0_1() { return cRhs_assignExpressionAssignment_1_0_1; }
 
 		//Expression
-		public RuleCall getAssignExpressionExpressionParserRuleCall_1_0_1_0() { return cAssignExpressionExpressionParserRuleCall_1_0_1_0; }
+		public RuleCall getRhs_assignExpressionExpressionParserRuleCall_1_0_1_0() { return cRhs_assignExpressionExpressionParserRuleCall_1_0_1_0; }
 
 		//incrementDecrementOperator=IncrementDecrementOperator
 		public Assignment getIncrementDecrementOperatorAssignment_1_1() { return cIncrementDecrementOperatorAssignment_1_1; }
@@ -394,37 +390,33 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class ForLoopCountingExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForLoopCountingExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAttributeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cAttributeAttributeCrossReference_0_0 = (CrossReference)cAttributeAssignment_0.eContents().get(0);
-		private final RuleCall cAttributeAttributeIDTerminalRuleCall_0_0_1 = (RuleCall)cAttributeAttributeCrossReference_0_0.eContents().get(1);
+		private final Assignment cLhs_attributeExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0 = (RuleCall)cLhs_attributeExpressionAssignment_0.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cIncrementDecrementOperatorAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0 = (RuleCall)cIncrementDecrementOperatorAssignment_1_0.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
 		private final Assignment cAssignOperatorAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
 		private final RuleCall cAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0 = (RuleCall)cAssignOperatorAssignment_1_1_0.eContents().get(0);
-		private final Assignment cAssignExpressionAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cAssignExpressionExpressionParserRuleCall_1_1_1_0 = (RuleCall)cAssignExpressionAssignment_1_1_1.eContents().get(0);
+		private final Assignment cRhs_assignExpressionAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_1_1_1_0 = (RuleCall)cRhs_assignExpressionAssignment_1_1_1.eContents().get(0);
 		
 		//ForLoopCountingExpression returns actionLanguage::Assignment:
-		//	attribute=[core::Attribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
-		//	assignExpression=Expression);
+		//	lhs_attributeExpression=AttributeLeafExpression (incrementDecrementOperator=IncrementDecrementOperator |
+		//	assignOperator=AssignOperator rhs_assignExpression=Expression);
 		public ParserRule getRule() { return rule; }
 
-		//attribute=[core::Attribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
-		//assignExpression=Expression)
+		//lhs_attributeExpression=AttributeLeafExpression (incrementDecrementOperator=IncrementDecrementOperator |
+		//assignOperator=AssignOperator rhs_assignExpression=Expression)
 		public Group getGroup() { return cGroup; }
 
-		//attribute=[core::Attribute]
-		public Assignment getAttributeAssignment_0() { return cAttributeAssignment_0; }
+		//lhs_attributeExpression=AttributeLeafExpression
+		public Assignment getLhs_attributeExpressionAssignment_0() { return cLhs_attributeExpressionAssignment_0; }
 
-		//[core::Attribute]
-		public CrossReference getAttributeAttributeCrossReference_0_0() { return cAttributeAttributeCrossReference_0_0; }
+		//AttributeLeafExpression
+		public RuleCall getLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0() { return cLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0; }
 
-		//ID
-		public RuleCall getAttributeAttributeIDTerminalRuleCall_0_0_1() { return cAttributeAttributeIDTerminalRuleCall_0_0_1; }
-
-		//incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator assignExpression=Expression
+		//incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator rhs_assignExpression=Expression
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//incrementDecrementOperator=IncrementDecrementOperator
@@ -433,7 +425,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//IncrementDecrementOperator
 		public RuleCall getIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0() { return cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0; }
 
-		//assignOperator=AssignOperator assignExpression=Expression
+		//assignOperator=AssignOperator rhs_assignExpression=Expression
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//assignOperator=AssignOperator
@@ -442,11 +434,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//AssignOperator
 		public RuleCall getAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0() { return cAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0; }
 
-		//assignExpression=Expression
-		public Assignment getAssignExpressionAssignment_1_1_1() { return cAssignExpressionAssignment_1_1_1; }
+		//rhs_assignExpression=Expression
+		public Assignment getRhs_assignExpressionAssignment_1_1_1() { return cRhs_assignExpressionAssignment_1_1_1; }
 
 		//Expression
-		public RuleCall getAssignExpressionExpressionParserRuleCall_1_1_1_0() { return cAssignExpressionExpressionParserRuleCall_1_1_1_0; }
+		public RuleCall getRhs_assignExpressionExpressionParserRuleCall_1_1_1_0() { return cRhs_assignExpressionExpressionParserRuleCall_1_1_1_0; }
 	}
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
@@ -655,18 +647,23 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAttributeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final CrossReference cAttributeAttributeCrossReference_1_1_0 = (CrossReference)cAttributeAssignment_1_1.eContents().get(0);
 		private final RuleCall cAttributeAttributeIDTerminalRuleCall_1_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_1_0.eContents().get(1);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Keyword cLeftSquareBracketKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Assignment cIndicesAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final RuleCall cIndicesExpressionParserRuleCall_1_2_1_0 = (RuleCall)cIndicesAssignment_1_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_2_2 = (Keyword)cGroup_1_2.eContents().get(2);
 		
 		//AttributeExpression returns expressions::Expression:
-		//	OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute];
+		//	OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*;
 		public ParserRule getRule() { return rule; }
 
-		//OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute]
+		//OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//OperationCall
 		public RuleCall getOperationCallParserRuleCall_0() { return cOperationCallParserRuleCall_0; }
 
-		//{actionLanguage::AttributeExpression} attribute=[core::Attribute]
+		//{actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{actionLanguage::AttributeExpression}
@@ -680,6 +677,69 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getAttributeAttributeIDTerminalRuleCall_1_1_0_1() { return cAttributeAttributeIDTerminalRuleCall_1_1_0_1; }
+
+		//("[" indices+=Expression "]")*
+		public Group getGroup_1_2() { return cGroup_1_2; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_1_2_0() { return cLeftSquareBracketKeyword_1_2_0; }
+
+		//indices+=Expression
+		public Assignment getIndicesAssignment_1_2_1() { return cIndicesAssignment_1_2_1; }
+
+		//Expression
+		public RuleCall getIndicesExpressionParserRuleCall_1_2_1_0() { return cIndicesExpressionParserRuleCall_1_2_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_1_2_2() { return cRightSquareBracketKeyword_1_2_2; }
+	}
+
+	public class AttributeLeafExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeLeafExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cAttributeExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cAttributeAttributeCrossReference_1_0 = (CrossReference)cAttributeAssignment_1.eContents().get(0);
+		private final RuleCall cAttributeAttributeIDTerminalRuleCall_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_0.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftSquareBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cIndicesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cIndicesExpressionParserRuleCall_2_1_0 = (RuleCall)cIndicesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		
+		//AttributeLeafExpression returns actionLanguage::AttributeExpression:
+		//	{actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*;
+		public ParserRule getRule() { return rule; }
+
+		//{actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*
+		public Group getGroup() { return cGroup; }
+
+		//{actionLanguage::AttributeExpression}
+		public Action getAttributeExpressionAction_0() { return cAttributeExpressionAction_0; }
+
+		//attribute=[core::Attribute]
+		public Assignment getAttributeAssignment_1() { return cAttributeAssignment_1; }
+
+		//[core::Attribute]
+		public CrossReference getAttributeAttributeCrossReference_1_0() { return cAttributeAttributeCrossReference_1_0; }
+
+		//ID
+		public RuleCall getAttributeAttributeIDTerminalRuleCall_1_0_1() { return cAttributeAttributeIDTerminalRuleCall_1_0_1; }
+
+		//("[" indices+=Expression "]")*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_2_0() { return cLeftSquareBracketKeyword_2_0; }
+
+		//indices+=Expression
+		public Assignment getIndicesAssignment_2_1() { return cIndicesAssignment_2_1; }
+
+		//Expression
+		public RuleCall getIndicesExpressionParserRuleCall_2_1_0() { return cIndicesExpressionParserRuleCall_2_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_2_2() { return cRightSquareBracketKeyword_2_2; }
 	}
 
 	public class OperationCallElements extends AbstractParserRuleElementFinder {
@@ -1160,6 +1220,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private LogicalExpressionElements pLogicalExpression;
 	private UnaryExpressionElements pUnaryExpression;
 	private AttributeExpressionElements pAttributeExpression;
+	private AttributeLeafExpressionElements pAttributeLeafExpression;
 	private OperationCallElements pOperationCall;
 	private ParamaterBindingElements pParamaterBinding;
 	private LiteralExpressionElements pLiteralExpression;
@@ -1257,7 +1318,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Assignment returns actionLanguage::Assignment:
-	//	attribute=[core::Attribute] (assignOperator=AssignOperator assignExpression=Expression |
+	//	lhs_attributeExpression=AttributeLeafExpression (assignOperator=AssignOperator rhs_assignExpression=Expression |
 	//	incrementDecrementOperator=IncrementDecrementOperator) ";";
 	public AssignmentElements getAssignmentAccess() {
 		return (pAssignment != null) ? pAssignment : (pAssignment = new AssignmentElements());
@@ -1268,8 +1329,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ForLoopCountingExpression returns actionLanguage::Assignment:
-	//	attribute=[core::Attribute] (incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator
-	//	assignExpression=Expression);
+	//	lhs_attributeExpression=AttributeLeafExpression (incrementDecrementOperator=IncrementDecrementOperator |
+	//	assignOperator=AssignOperator rhs_assignExpression=Expression);
 	public ForLoopCountingExpressionElements getForLoopCountingExpressionAccess() {
 		return (pForLoopCountingExpression != null) ? pForLoopCountingExpression : (pForLoopCountingExpression = new ForLoopCountingExpressionElements());
 	}
@@ -1332,13 +1393,23 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AttributeExpression returns expressions::Expression:
-	//	OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute];
+	//	OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*;
 	public AttributeExpressionElements getAttributeExpressionAccess() {
 		return (pAttributeExpression != null) ? pAttributeExpression : (pAttributeExpression = new AttributeExpressionElements());
 	}
 	
 	public ParserRule getAttributeExpressionRule() {
 		return getAttributeExpressionAccess().getRule();
+	}
+
+	//AttributeLeafExpression returns actionLanguage::AttributeExpression:
+	//	{actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*;
+	public AttributeLeafExpressionElements getAttributeLeafExpressionAccess() {
+		return (pAttributeLeafExpression != null) ? pAttributeLeafExpression : (pAttributeLeafExpression = new AttributeLeafExpressionElements());
+	}
+	
+	public ParserRule getAttributeLeafExpressionRule() {
+		return getAttributeLeafExpressionAccess().getRule();
 	}
 
 	//OperationCall returns expressions::Expression:
