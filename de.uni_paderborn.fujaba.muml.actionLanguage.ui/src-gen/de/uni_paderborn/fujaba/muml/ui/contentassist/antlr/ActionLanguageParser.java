@@ -74,6 +74,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLogicalExpressionAccess().getGroup_1_0(), "rule__LogicalExpression__Group_1_0__0");
 					put(grammarAccess.getUnaryExpressionAccess().getGroup(), "rule__UnaryExpression__Group__0");
 					put(grammarAccess.getAttributeExpressionAccess().getGroup_1(), "rule__AttributeExpression__Group_1__0");
+					put(grammarAccess.getAttributeExpressionAccess().getGroup_1_2(), "rule__AttributeExpression__Group_1_2__0");
+					put(grammarAccess.getAttributeLeafExpressionAccess().getGroup(), "rule__AttributeLeafExpression__Group__0");
+					put(grammarAccess.getAttributeLeafExpressionAccess().getGroup_2(), "rule__AttributeLeafExpression__Group_2__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_1(), "rule__OperationCall__Group_1__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_1_1(), "rule__OperationCall__Group_1_1__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_1_1_3(), "rule__OperationCall__Group_1_1_3__0");
@@ -95,14 +98,14 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfStatementAccess().getElseIfConditionsAssignment_5_2(), "rule__IfStatement__ElseIfConditionsAssignment_5_2");
 					put(grammarAccess.getIfStatementAccess().getElseIfBlocksAssignment_5_4(), "rule__IfStatement__ElseIfBlocksAssignment_5_4");
 					put(grammarAccess.getIfStatementAccess().getElseBlockAssignment_6_1(), "rule__IfStatement__ElseBlockAssignment_6_1");
-					put(grammarAccess.getAssignmentAccess().getAttributeAssignment_0(), "rule__Assignment__AttributeAssignment_0");
+					put(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAssignment_0(), "rule__Assignment__Lhs_attributeExpressionAssignment_0");
 					put(grammarAccess.getAssignmentAccess().getAssignOperatorAssignment_1_0_0(), "rule__Assignment__AssignOperatorAssignment_1_0_0");
-					put(grammarAccess.getAssignmentAccess().getAssignExpressionAssignment_1_0_1(), "rule__Assignment__AssignExpressionAssignment_1_0_1");
+					put(grammarAccess.getAssignmentAccess().getRhs_assignExpressionAssignment_1_0_1(), "rule__Assignment__Rhs_assignExpressionAssignment_1_0_1");
 					put(grammarAccess.getAssignmentAccess().getIncrementDecrementOperatorAssignment_1_1(), "rule__Assignment__IncrementDecrementOperatorAssignment_1_1");
-					put(grammarAccess.getForLoopCountingExpressionAccess().getAttributeAssignment_0(), "rule__ForLoopCountingExpression__AttributeAssignment_0");
+					put(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionAssignment_0(), "rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getIncrementDecrementOperatorAssignment_1_0(), "rule__ForLoopCountingExpression__IncrementDecrementOperatorAssignment_1_0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAssignOperatorAssignment_1_1_0(), "rule__ForLoopCountingExpression__AssignOperatorAssignment_1_1_0");
-					put(grammarAccess.getForLoopCountingExpressionAccess().getAssignExpressionAssignment_1_1_1(), "rule__ForLoopCountingExpression__AssignExpressionAssignment_1_1_1");
+					put(grammarAccess.getForLoopCountingExpressionAccess().getRhs_assignExpressionAssignment_1_1_1(), "rule__ForLoopCountingExpression__Rhs_assignExpressionAssignment_1_1_1");
 					put(grammarAccess.getArithmeticExpressionAccess().getOperatorAssignment_1_1(), "rule__ArithmeticExpression__OperatorAssignment_1_1");
 					put(grammarAccess.getArithmeticExpressionAccess().getRightExpressionAssignment_1_2(), "rule__ArithmeticExpression__RightExpressionAssignment_1_2");
 					put(grammarAccess.getComparisonExpressionAccess().getOperatorAssignment_1_0_1(), "rule__ComparisonExpression__OperatorAssignment_1_0_1");
@@ -112,6 +115,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryExpressionAccess().getOperatorAssignment_1(), "rule__UnaryExpression__OperatorAssignment_1");
 					put(grammarAccess.getUnaryExpressionAccess().getEnclosedExpressionAssignment_2(), "rule__UnaryExpression__EnclosedExpressionAssignment_2");
 					put(grammarAccess.getAttributeExpressionAccess().getAttributeAssignment_1_1(), "rule__AttributeExpression__AttributeAssignment_1_1");
+					put(grammarAccess.getAttributeExpressionAccess().getIndicesAssignment_1_2_1(), "rule__AttributeExpression__IndicesAssignment_1_2_1");
+					put(grammarAccess.getAttributeLeafExpressionAccess().getAttributeAssignment_1(), "rule__AttributeLeafExpression__AttributeAssignment_1");
+					put(grammarAccess.getAttributeLeafExpressionAccess().getIndicesAssignment_2_1(), "rule__AttributeLeafExpression__IndicesAssignment_2_1");
 					put(grammarAccess.getOperationCallAccess().getOperationAssignment_1_1_0(), "rule__OperationCall__OperationAssignment_1_1_0");
 					put(grammarAccess.getOperationCallAccess().getParameterBindingAssignment_1_1_2(), "rule__OperationCall__ParameterBindingAssignment_1_1_2");
 					put(grammarAccess.getOperationCallAccess().getParameterBindingAssignment_1_1_3_1(), "rule__OperationCall__ParameterBindingAssignment_1_1_3_1");
