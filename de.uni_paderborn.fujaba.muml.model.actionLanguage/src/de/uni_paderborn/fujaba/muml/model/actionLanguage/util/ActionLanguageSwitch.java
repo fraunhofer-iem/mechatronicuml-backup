@@ -167,6 +167,15 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ActionLanguagePackage.RETURN_STATEMENT: {
+				ReturnStatement returnStatement = (ReturnStatement)theEObject;
+				T result = caseReturnStatement(returnStatement);
+				if (result == null) result = caseExpression(returnStatement);
+				if (result == null) result = caseCommentableElement(returnStatement);
+				if (result == null) result = caseExtendableElement(returnStatement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -303,6 +312,21 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOperationCall(OperationCall object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReturnStatement(ReturnStatement object) {
 		return null;
 	}
 

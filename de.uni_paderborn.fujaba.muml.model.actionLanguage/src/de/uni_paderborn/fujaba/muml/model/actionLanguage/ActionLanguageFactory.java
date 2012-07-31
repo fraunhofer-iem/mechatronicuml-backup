@@ -98,6 +98,15 @@ public interface ActionLanguageFactory extends EFactory {
 	OperationCall createOperationCall();
 
 	/**
+	 * Returns a new object of class '<em>Return Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Return Statement</em>'.
+	 * @generated
+	 */
+	ReturnStatement createReturnStatement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
