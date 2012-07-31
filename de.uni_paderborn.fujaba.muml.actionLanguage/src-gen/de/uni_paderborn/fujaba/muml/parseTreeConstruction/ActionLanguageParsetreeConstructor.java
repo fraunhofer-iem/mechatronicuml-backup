@@ -3924,12 +3924,12 @@ protected class AttributeLeafExpression_RightSquareBracketKeyword_2_2 extends Ke
  *
  * OperationCall returns expressions::Expression:
  * 	LiteralExpression | {actionLanguage::OperationCall} (operation=[core::Operation] "("
- * 	parameterBinding+=ParamaterBinding? ("," parameterBinding+=ParamaterBinding)* ")");
+ * 	parameterBinding+=ParamaterBinding? ("," parameterBinding+=ParamaterBinding)* ");");
  *
  **/
 
 // LiteralExpression | {actionLanguage::OperationCall} (operation=[core::Operation] "(" parameterBinding+=ParamaterBinding?
-// ("," parameterBinding+=ParamaterBinding)* ")")
+// ("," parameterBinding+=ParamaterBinding)* ");")
 protected class OperationCall_Alternatives extends AlternativesToken {
 
 	public OperationCall_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4000,7 +4000,7 @@ protected class OperationCall_LiteralExpressionParserRuleCall_0 extends RuleCall
 }
 
 // {actionLanguage::OperationCall} (operation=[core::Operation] "(" parameterBinding+=ParamaterBinding? (","
-// parameterBinding+=ParamaterBinding)* ")")
+// parameterBinding+=ParamaterBinding)* ");")
 protected class OperationCall_Group_1 extends GroupToken {
 	
 	public OperationCall_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4055,7 +4055,7 @@ protected class OperationCall_OperationCallAction_1_0 extends ActionToken  {
 	}
 }
 
-// operation=[core::Operation] "(" parameterBinding+=ParamaterBinding? ("," parameterBinding+=ParamaterBinding)* ")"
+// operation=[core::Operation] "(" parameterBinding+=ParamaterBinding? ("," parameterBinding+=ParamaterBinding)* ");"
 protected class OperationCall_Group_1_1 extends GroupToken {
 	
 	public OperationCall_Group_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4070,7 +4070,7 @@ protected class OperationCall_Group_1_1 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new OperationCall_RightParenthesisKeyword_1_1_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new OperationCall_RightParenthesisSemicolonKeyword_1_1_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4275,16 +4275,16 @@ protected class OperationCall_ParameterBindingAssignment_1_1_3_1 extends Assignm
 }
 
 
-// ")"
-protected class OperationCall_RightParenthesisKeyword_1_1_4 extends KeywordToken  {
+// ");"
+protected class OperationCall_RightParenthesisSemicolonKeyword_1_1_4 extends KeywordToken  {
 	
-	public OperationCall_RightParenthesisKeyword_1_1_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public OperationCall_RightParenthesisSemicolonKeyword_1_1_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_1_4();
+		return grammarAccess.getOperationCallAccess().getRightParenthesisSemicolonKeyword_1_1_4();
 	}
 
     @Override
@@ -4308,11 +4308,11 @@ protected class OperationCall_RightParenthesisKeyword_1_1_4 extends KeywordToken
 /************ begin Rule ParamaterBinding ****************
  *
  * ParamaterBinding returns core::ParameterBinding:
- * 	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
+ * 	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=ArithmeticExpression;
  *
  **/
 
-// {core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression
+// {core::ParameterBinding} parameter=[core::Parameter] ":=" value=ArithmeticExpression
 protected class ParamaterBinding_Group extends GroupToken {
 	
 	public ParamaterBinding_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4426,7 +4426,7 @@ protected class ParamaterBinding_ColonEqualsSignKeyword_2 extends KeywordToken  
 
 }
 
-// value=Expression
+// value=ArithmeticExpression
 protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 	
 	public ParamaterBinding_ValueAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4441,7 +4441,7 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Expression_ArithmeticExpressionParserRuleCall(this, this, 0, inst);
+			case 0: return new ArithmeticExpression_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4452,9 +4452,9 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("value");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getExpressionRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getArithmeticExpressionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0(); 
+				element = grammarAccess.getParamaterBindingAccess().getValueArithmeticExpressionParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}

@@ -1427,9 +1427,9 @@ ruleOperationCall returns [EObject current=null]
 	    }
 
 )
-))*	otherlv_7=')' 
+))*	otherlv_7=');' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_1_4());
+    	newLeafNode(otherlv_7, grammarAccess.getOperationCallAccess().getRightParenthesisSemicolonKeyword_1_1_4());
     }
 )))
 ;
@@ -1478,9 +1478,9 @@ ruleParamaterBinding returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getParamaterBindingAccess().getValueArithmeticExpressionParserRuleCall_3_0()); 
 	    }
-		lv_value_3_0=ruleExpression		{
+		lv_value_3_0=ruleArithmeticExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getParamaterBindingRule());
 	        }
@@ -1488,7 +1488,7 @@ ruleParamaterBinding returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_3_0, 
-        		"Expression");
+        		"ArithmeticExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 

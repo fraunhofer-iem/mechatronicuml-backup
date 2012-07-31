@@ -99,7 +99,7 @@ OperationCall returns expressions::Expression:
 	;				
 	
 ParamaterBinding returns core::ParameterBinding:
- {core::ParameterBinding}parameter=[core::Parameter]':='value=Expression 
+ {core::ParameterBinding}parameter=[core::Parameter]':='value=ArithmeticExpression
  ;	
 
 LiteralExpression returns expressions::Expression:
