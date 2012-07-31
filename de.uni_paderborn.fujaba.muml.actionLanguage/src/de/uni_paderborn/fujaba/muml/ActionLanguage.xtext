@@ -95,7 +95,7 @@ AttributeLeafExpression returns actionLanguage::AttributeExpression:
 	
 OperationCall returns expressions::Expression:
 	LiteralExpression |
-	{actionLanguage::OperationCall} (operation=[core::Operation]'('parameterBinding+=ParamaterBinding?(',' parameterBinding+=ParamaterBinding)*')')
+	{actionLanguage::OperationCall} (operation=[core::Operation]'('parameterBinding+=ParamaterBinding?(',' parameterBinding+=ParamaterBinding)*');')
 	;				
 	
 ParamaterBinding returns core::ParameterBinding:
