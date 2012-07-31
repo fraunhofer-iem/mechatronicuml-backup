@@ -536,6 +536,59 @@ ruleIfStatement returns [EObject current=null]
 
 
 
+// Entry rule entryRuleReturnStatement
+entryRuleReturnStatement returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getReturnStatementRule()); }
+	 iv_ruleReturnStatement=ruleReturnStatement 
+	 { $current=$iv_ruleReturnStatement.current; } 
+	 EOF 
+;
+
+// Rule ReturnStatement
+ruleReturnStatement returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getReturnStatementAccess().getReturnStatementAction_0(),
+            $current);
+    }
+)	otherlv_1='return' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getReturnStatementAccess().getReturnKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getReturnStatementAccess().getExpressionArithmeticExpressionParserRuleCall_2_0()); 
+	    }
+		lv_expression_2_0=ruleArithmeticExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getReturnStatementRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_2_0, 
+        		"ArithmeticExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getReturnStatementAccess().getSemicolonKeyword_3());
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRuleExpressionStartRule
 entryRuleExpressionStartRule returns [EObject current=null] 
 	:
@@ -597,6 +650,16 @@ ruleExpressionStartRule returns [EObject current=null]
     this_IfStatement_4=ruleIfStatement
     { 
         $current = $this_IfStatement_4.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getReturnStatementParserRuleCall_5()); 
+    }
+    this_ReturnStatement_5=ruleReturnStatement
+    { 
+        $current = $this_ReturnStatement_5.current; 
         afterParserOrEnumRuleCall();
     }
 )

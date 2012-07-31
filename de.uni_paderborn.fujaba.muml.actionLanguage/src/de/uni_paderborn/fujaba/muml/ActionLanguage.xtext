@@ -39,11 +39,16 @@ IfStatement returns actionLanguage::IfStatement:
 ('else' elseBlock=Block)?
 ;
 
+ReturnStatement returns actionLanguage::ReturnStatement:
+{actionLanguage::ReturnStatement}
+'return' expression=ArithmeticExpression';'
+;
+
 	
 ExpressionStartRule returns expressions::Expression:
 	Assignment |  ForLoop | 
 	WhileLoop | DoWhileLoop | 
-	IfStatement 
+	IfStatement | ReturnStatement
 	;	
 	
   Assignment returns actionLanguage::Assignment:

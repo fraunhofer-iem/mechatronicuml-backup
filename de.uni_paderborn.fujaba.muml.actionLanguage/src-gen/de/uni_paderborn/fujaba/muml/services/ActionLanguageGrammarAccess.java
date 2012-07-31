@@ -297,6 +297,38 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getElseBlockBlockParserRuleCall_6_1_0() { return cElseBlockBlockParserRuleCall_6_1_0; }
 	}
 
+	public class ReturnStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReturnStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cReturnStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cReturnKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionArithmeticExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//ReturnStatement returns actionLanguage::ReturnStatement:
+		//	{actionLanguage::ReturnStatement} "return" expression=ArithmeticExpression ";";
+		public ParserRule getRule() { return rule; }
+
+		//{actionLanguage::ReturnStatement} "return" expression=ArithmeticExpression ";"
+		public Group getGroup() { return cGroup; }
+
+		//{actionLanguage::ReturnStatement}
+		public Action getReturnStatementAction_0() { return cReturnStatementAction_0; }
+
+		//"return"
+		public Keyword getReturnKeyword_1() { return cReturnKeyword_1; }
+
+		//expression=ArithmeticExpression
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+
+		//ArithmeticExpression
+		public RuleCall getExpressionArithmeticExpressionParserRuleCall_2_0() { return cExpressionArithmeticExpressionParserRuleCall_2_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
+
 	public class ExpressionStartRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExpressionStartRule");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -305,12 +337,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cWhileLoopParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cDoWhileLoopParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cIfStatementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cReturnStatementParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//ExpressionStartRule returns expressions::Expression:
-		//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement;
+		//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement;
 		public ParserRule getRule() { return rule; }
 
-		//Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement
+		//Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Assignment
@@ -327,6 +360,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//IfStatement
 		public RuleCall getIfStatementParserRuleCall_4() { return cIfStatementParserRuleCall_4; }
+
+		//ReturnStatement
+		public RuleCall getReturnStatementParserRuleCall_5() { return cReturnStatementParserRuleCall_5; }
 	}
 
 	public class AssignmentElements extends AbstractParserRuleElementFinder {
@@ -1211,6 +1247,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private WhileLoopElements pWhileLoop;
 	private DoWhileLoopElements pDoWhileLoop;
 	private IfStatementElements pIfStatement;
+	private ReturnStatementElements pReturnStatement;
 	private ExpressionStartRuleElements pExpressionStartRule;
 	private AssignmentElements pAssignment;
 	private ForLoopCountingExpressionElements pForLoopCountingExpression;
@@ -1307,8 +1344,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getIfStatementAccess().getRule();
 	}
 
+	//ReturnStatement returns actionLanguage::ReturnStatement:
+	//	{actionLanguage::ReturnStatement} "return" expression=ArithmeticExpression ";";
+	public ReturnStatementElements getReturnStatementAccess() {
+		return (pReturnStatement != null) ? pReturnStatement : (pReturnStatement = new ReturnStatementElements());
+	}
+	
+	public ParserRule getReturnStatementRule() {
+		return getReturnStatementAccess().getRule();
+	}
+
 	//ExpressionStartRule returns expressions::Expression:
-	//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement;
+	//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement;
 	public ExpressionStartRuleElements getExpressionStartRuleAccess() {
 		return (pExpressionStartRule != null) ? pExpressionStartRule : (pExpressionStartRule = new ExpressionStartRuleElements());
 	}
