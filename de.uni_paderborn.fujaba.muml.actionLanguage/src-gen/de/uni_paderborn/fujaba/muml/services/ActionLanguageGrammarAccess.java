@@ -303,14 +303,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cReturnStatementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cReturnKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExpressionArithmeticExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ReturnStatement returns actionLanguage::ReturnStatement:
-		//	{actionLanguage::ReturnStatement} "return" expression=ArithmeticExpression ";";
+		//	{actionLanguage::ReturnStatement} "return" expression=Expression ";";
 		public ParserRule getRule() { return rule; }
 
-		//{actionLanguage::ReturnStatement} "return" expression=ArithmeticExpression ";"
+		//{actionLanguage::ReturnStatement} "return" expression=Expression ";"
 		public Group getGroup() { return cGroup; }
 
 		//{actionLanguage::ReturnStatement}
@@ -319,11 +319,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//"return"
 		public Keyword getReturnKeyword_1() { return cReturnKeyword_1; }
 
-		//expression=ArithmeticExpression
+		//expression=Expression
 		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
 
-		//ArithmeticExpression
-		public RuleCall getExpressionArithmeticExpressionParserRuleCall_2_0() { return cExpressionArithmeticExpressionParserRuleCall_2_0; }
+		//Expression
+		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
@@ -678,56 +678,20 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cOperationCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cAttributeExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cAttributeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cAttributeAttributeCrossReference_1_1_0 = (CrossReference)cAttributeAssignment_1_1.eContents().get(0);
-		private final RuleCall cAttributeAttributeIDTerminalRuleCall_1_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_1_0.eContents().get(1);
-		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
-		private final Assignment cIndicesAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
-		private final RuleCall cIndicesExpressionParserRuleCall_1_2_1_0 = (RuleCall)cIndicesAssignment_1_2_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_1_2_2 = (Keyword)cGroup_1_2.eContents().get(2);
+		private final RuleCall cAttributeLeafExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AttributeExpression returns expressions::Expression:
-		//	OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*;
+		//	OperationCall | AttributeLeafExpression;
 		public ParserRule getRule() { return rule; }
 
-		//OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*
+		//OperationCall | AttributeLeafExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//OperationCall
 		public RuleCall getOperationCallParserRuleCall_0() { return cOperationCallParserRuleCall_0; }
 
-		//{actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//{actionLanguage::AttributeExpression}
-		public Action getAttributeExpressionAction_1_0() { return cAttributeExpressionAction_1_0; }
-
-		//attribute=[core::Attribute]
-		public Assignment getAttributeAssignment_1_1() { return cAttributeAssignment_1_1; }
-
-		//[core::Attribute]
-		public CrossReference getAttributeAttributeCrossReference_1_1_0() { return cAttributeAttributeCrossReference_1_1_0; }
-
-		//ID
-		public RuleCall getAttributeAttributeIDTerminalRuleCall_1_1_0_1() { return cAttributeAttributeIDTerminalRuleCall_1_1_0_1; }
-
-		//("[" indices+=Expression "]")*
-		public Group getGroup_1_2() { return cGroup_1_2; }
-
-		//"["
-		public Keyword getLeftSquareBracketKeyword_1_2_0() { return cLeftSquareBracketKeyword_1_2_0; }
-
-		//indices+=Expression
-		public Assignment getIndicesAssignment_1_2_1() { return cIndicesAssignment_1_2_1; }
-
-		//Expression
-		public RuleCall getIndicesExpressionParserRuleCall_1_2_1_0() { return cIndicesExpressionParserRuleCall_1_2_1_0; }
-
-		//"]"
-		public Keyword getRightSquareBracketKeyword_1_2_2() { return cRightSquareBracketKeyword_1_2_2; }
+		//AttributeLeafExpression
+		public RuleCall getAttributeLeafExpressionParserRuleCall_1() { return cAttributeLeafExpressionParserRuleCall_1; }
 	}
 
 	public class AttributeLeafExpressionElements extends AbstractParserRuleElementFinder {
@@ -784,73 +748,73 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteralExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cOperationCallAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
-		private final Assignment cOperationAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
-		private final CrossReference cOperationOperationCrossReference_1_1_0_0 = (CrossReference)cOperationAssignment_1_1_0.eContents().get(0);
-		private final RuleCall cOperationOperationIDTerminalRuleCall_1_1_0_0_1 = (RuleCall)cOperationOperationCrossReference_1_1_0_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
-		private final Assignment cParameterBindingAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
-		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_1_1_2_0 = (RuleCall)cParameterBindingAssignment_1_1_2.eContents().get(0);
-		private final Group cGroup_1_1_3 = (Group)cGroup_1_1.eContents().get(3);
-		private final Keyword cCommaKeyword_1_1_3_0 = (Keyword)cGroup_1_1_3.eContents().get(0);
-		private final Assignment cParameterBindingAssignment_1_1_3_1 = (Assignment)cGroup_1_1_3.eContents().get(1);
-		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_1_1_3_1_0 = (RuleCall)cParameterBindingAssignment_1_1_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisSemicolonKeyword_1_1_4 = (Keyword)cGroup_1_1.eContents().get(4);
+		private final Assignment cOperationAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cOperationOperationCrossReference_1_1_0 = (CrossReference)cOperationAssignment_1_1.eContents().get(0);
+		private final RuleCall cOperationOperationIDTerminalRuleCall_1_1_0_1 = (RuleCall)cOperationOperationCrossReference_1_1_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
+		private final Assignment cParameterBindingAssignment_1_3_0 = (Assignment)cGroup_1_3.eContents().get(0);
+		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_1_3_0_0 = (RuleCall)cParameterBindingAssignment_1_3_0.eContents().get(0);
+		private final Group cGroup_1_3_1 = (Group)cGroup_1_3.eContents().get(1);
+		private final Keyword cCommaKeyword_1_3_1_0 = (Keyword)cGroup_1_3_1.eContents().get(0);
+		private final Assignment cParameterBindingAssignment_1_3_1_1 = (Assignment)cGroup_1_3_1.eContents().get(1);
+		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_1_3_1_1_0 = (RuleCall)cParameterBindingAssignment_1_3_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//OperationCall returns expressions::Expression:
-		//	LiteralExpression | {actionLanguage::OperationCall} (operation=[core::Operation] "("
-		//	parameterBinding+=ParamaterBinding? ("," parameterBinding+=ParamaterBinding)* ");");
+		//	LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "("
+		//	(parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
 		public ParserRule getRule() { return rule; }
 
-		//LiteralExpression | {actionLanguage::OperationCall} (operation=[core::Operation] "(" parameterBinding+=ParamaterBinding?
-		//("," parameterBinding+=ParamaterBinding)* ");")
+		//LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding
+		//("," parameterBinding+=ParamaterBinding)*)? ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//LiteralExpression
 		public RuleCall getLiteralExpressionParserRuleCall_0() { return cLiteralExpressionParserRuleCall_0; }
 
-		//{actionLanguage::OperationCall} (operation=[core::Operation] "(" parameterBinding+=ParamaterBinding? (","
-		//parameterBinding+=ParamaterBinding)* ");")
+		//{actionLanguage::OperationCall} operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding (","
+		//parameterBinding+=ParamaterBinding)*)? ")"
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{actionLanguage::OperationCall}
 		public Action getOperationCallAction_1_0() { return cOperationCallAction_1_0; }
 
-		//operation=[core::Operation] "(" parameterBinding+=ParamaterBinding? ("," parameterBinding+=ParamaterBinding)* ");"
-		public Group getGroup_1_1() { return cGroup_1_1; }
-
 		//operation=[core::Operation]
-		public Assignment getOperationAssignment_1_1_0() { return cOperationAssignment_1_1_0; }
+		public Assignment getOperationAssignment_1_1() { return cOperationAssignment_1_1; }
 
 		//[core::Operation]
-		public CrossReference getOperationOperationCrossReference_1_1_0_0() { return cOperationOperationCrossReference_1_1_0_0; }
+		public CrossReference getOperationOperationCrossReference_1_1_0() { return cOperationOperationCrossReference_1_1_0; }
 
 		//ID
-		public RuleCall getOperationOperationIDTerminalRuleCall_1_1_0_0_1() { return cOperationOperationIDTerminalRuleCall_1_1_0_0_1; }
+		public RuleCall getOperationOperationIDTerminalRuleCall_1_1_0_1() { return cOperationOperationIDTerminalRuleCall_1_1_0_1; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_1_1() { return cLeftParenthesisKeyword_1_1_1; }
+		public Keyword getLeftParenthesisKeyword_1_2() { return cLeftParenthesisKeyword_1_2; }
 
-		//parameterBinding+=ParamaterBinding?
-		public Assignment getParameterBindingAssignment_1_1_2() { return cParameterBindingAssignment_1_1_2; }
-
-		//ParamaterBinding
-		public RuleCall getParameterBindingParamaterBindingParserRuleCall_1_1_2_0() { return cParameterBindingParamaterBindingParserRuleCall_1_1_2_0; }
-
-		//("," parameterBinding+=ParamaterBinding)*
-		public Group getGroup_1_1_3() { return cGroup_1_1_3; }
-
-		//","
-		public Keyword getCommaKeyword_1_1_3_0() { return cCommaKeyword_1_1_3_0; }
+		//(parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
+		public Group getGroup_1_3() { return cGroup_1_3; }
 
 		//parameterBinding+=ParamaterBinding
-		public Assignment getParameterBindingAssignment_1_1_3_1() { return cParameterBindingAssignment_1_1_3_1; }
+		public Assignment getParameterBindingAssignment_1_3_0() { return cParameterBindingAssignment_1_3_0; }
 
 		//ParamaterBinding
-		public RuleCall getParameterBindingParamaterBindingParserRuleCall_1_1_3_1_0() { return cParameterBindingParamaterBindingParserRuleCall_1_1_3_1_0; }
+		public RuleCall getParameterBindingParamaterBindingParserRuleCall_1_3_0_0() { return cParameterBindingParamaterBindingParserRuleCall_1_3_0_0; }
 
-		//");"
-		public Keyword getRightParenthesisSemicolonKeyword_1_1_4() { return cRightParenthesisSemicolonKeyword_1_1_4; }
+		//("," parameterBinding+=ParamaterBinding)*
+		public Group getGroup_1_3_1() { return cGroup_1_3_1; }
+
+		//","
+		public Keyword getCommaKeyword_1_3_1_0() { return cCommaKeyword_1_3_1_0; }
+
+		//parameterBinding+=ParamaterBinding
+		public Assignment getParameterBindingAssignment_1_3_1_1() { return cParameterBindingAssignment_1_3_1_1; }
+
+		//ParamaterBinding
+		public RuleCall getParameterBindingParamaterBindingParserRuleCall_1_3_1_1_0() { return cParameterBindingParamaterBindingParserRuleCall_1_3_1_1_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_1_4() { return cRightParenthesisKeyword_1_4; }
 	}
 
 	public class ParamaterBindingElements extends AbstractParserRuleElementFinder {
@@ -862,13 +826,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterParameterIDTerminalRuleCall_1_0_1 = (RuleCall)cParameterParameterCrossReference_1_0.eContents().get(1);
 		private final Keyword cColonEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueArithmeticExpressionParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final RuleCall cValueExpressionParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//ParamaterBinding returns core::ParameterBinding:
-		//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=ArithmeticExpression;
+		//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
 		public ParserRule getRule() { return rule; }
 
-		//{core::ParameterBinding} parameter=[core::Parameter] ":=" value=ArithmeticExpression
+		//{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression
 		public Group getGroup() { return cGroup; }
 
 		//{core::ParameterBinding}
@@ -886,11 +850,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//":="
 		public Keyword getColonEqualsSignKeyword_2() { return cColonEqualsSignKeyword_2; }
 
-		//value=ArithmeticExpression
+		//value=Expression
 		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 
-		//ArithmeticExpression
-		public RuleCall getValueArithmeticExpressionParserRuleCall_3_0() { return cValueArithmeticExpressionParserRuleCall_3_0; }
+		//Expression
+		public RuleCall getValueExpressionParserRuleCall_3_0() { return cValueExpressionParserRuleCall_3_0; }
 	}
 
 	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
@@ -1345,7 +1309,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReturnStatement returns actionLanguage::ReturnStatement:
-	//	{actionLanguage::ReturnStatement} "return" expression=ArithmeticExpression ";";
+	//	{actionLanguage::ReturnStatement} "return" expression=Expression ";";
 	public ReturnStatementElements getReturnStatementAccess() {
 		return (pReturnStatement != null) ? pReturnStatement : (pReturnStatement = new ReturnStatementElements());
 	}
@@ -1440,7 +1404,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AttributeExpression returns expressions::Expression:
-	//	OperationCall | {actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*;
+	//	OperationCall | AttributeLeafExpression;
 	public AttributeExpressionElements getAttributeExpressionAccess() {
 		return (pAttributeExpression != null) ? pAttributeExpression : (pAttributeExpression = new AttributeExpressionElements());
 	}
@@ -1460,8 +1424,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OperationCall returns expressions::Expression:
-	//	LiteralExpression | {actionLanguage::OperationCall} (operation=[core::Operation] "("
-	//	parameterBinding+=ParamaterBinding? ("," parameterBinding+=ParamaterBinding)* ");");
+	//	LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "("
+	//	(parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
 	public OperationCallElements getOperationCallAccess() {
 		return (pOperationCall != null) ? pOperationCall : (pOperationCall = new OperationCallElements());
 	}
@@ -1471,7 +1435,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ParamaterBinding returns core::ParameterBinding:
-	//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=ArithmeticExpression;
+	//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
 	public ParamaterBindingElements getParamaterBindingAccess() {
 		return (pParamaterBinding != null) ? pParamaterBinding : (pParamaterBinding = new ParamaterBindingElements());
 	}

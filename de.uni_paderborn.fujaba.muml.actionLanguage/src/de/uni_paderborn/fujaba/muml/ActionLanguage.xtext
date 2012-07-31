@@ -41,7 +41,7 @@ IfStatement returns actionLanguage::IfStatement:
 
 ReturnStatement returns actionLanguage::ReturnStatement:
 {actionLanguage::ReturnStatement}
-'return' expression=ArithmeticExpression';'
+'return' expression=Expression';'
 ;
 
 	
@@ -85,8 +85,8 @@ UnaryExpression returns expressions::Expression:
 
 	
 AttributeExpression returns expressions::Expression:
-	 OperationCall  |
-	{actionLanguage::AttributeExpression}  attribute=[core::Attribute]('['indices+=Expression']')*
+	 OperationCall|
+	AttributeLeafExpression
 	;	
 	
 AttributeLeafExpression returns actionLanguage::AttributeExpression:
@@ -95,11 +95,11 @@ AttributeLeafExpression returns actionLanguage::AttributeExpression:
 	
 OperationCall returns expressions::Expression:
 	LiteralExpression |
-	{actionLanguage::OperationCall} (operation=[core::Operation]'('parameterBinding+=ParamaterBinding?(',' parameterBinding+=ParamaterBinding)*');')
+	{actionLanguage::OperationCall} operation=[core::Operation]'('(parameterBinding+=ParamaterBinding(',' parameterBinding+=ParamaterBinding)*)?')'
 	;				
 	
 ParamaterBinding returns core::ParameterBinding:
- {core::ParameterBinding}parameter=[core::Parameter]':='value=ArithmeticExpression
+ {core::ParameterBinding}parameter=[core::Parameter]':='value=Expression
  ;	
 
 LiteralExpression returns expressions::Expression:
