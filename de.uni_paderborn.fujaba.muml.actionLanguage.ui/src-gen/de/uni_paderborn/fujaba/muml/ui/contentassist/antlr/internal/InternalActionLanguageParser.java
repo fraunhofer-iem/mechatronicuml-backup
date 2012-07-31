@@ -10965,21 +10965,21 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__OperationCall__Group_1_1__4__Impl"
-    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4015:1: rule__OperationCall__Group_1_1__4__Impl : ( ')' ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4015:1: rule__OperationCall__Group_1_1__4__Impl : ( ');' ) ;
     public final void rule__OperationCall__Group_1_1__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4019:1: ( ( ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4020:1: ( ')' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4019:1: ( ( ');' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4020:1: ( ');' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4020:1: ( ')' )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4021:1: ')'
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4020:1: ( ');' )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4021:1: ');'
             {
-             before(grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_1_4()); 
-            match(input,42,FollowSets000.FOLLOW_42_in_rule__OperationCall__Group_1_1__4__Impl8184); 
-             after(grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_1_1_4()); 
+             before(grammarAccess.getOperationCallAccess().getRightParenthesisSemicolonKeyword_1_1_4()); 
+            match(input,45,FollowSets000.FOLLOW_45_in_rule__OperationCall__Group_1_1__4__Impl8184); 
+             after(grammarAccess.getOperationCallAccess().getRightParenthesisSemicolonKeyword_1_1_4()); 
 
             }
 
@@ -13513,25 +13513,25 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ParamaterBinding__ValueAssignment_3"
-    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5011:1: rule__ParamaterBinding__ValueAssignment_3 : ( ruleExpression ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5011:1: rule__ParamaterBinding__ValueAssignment_3 : ( ruleArithmeticExpression ) ;
     public final void rule__ParamaterBinding__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5015:1: ( ( ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5016:1: ( ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5015:1: ( ( ruleArithmeticExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5016:1: ( ruleArithmeticExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5016:1: ( ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5017:1: ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5016:1: ( ruleArithmeticExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5017:1: ruleArithmeticExpression
             {
-             before(grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_rule__ParamaterBinding__ValueAssignment_310183);
-            ruleExpression();
+             before(grammarAccess.getParamaterBindingAccess().getValueArithmeticExpressionParserRuleCall_3_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_rule__ParamaterBinding__ValueAssignment_310183);
+            ruleArithmeticExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0()); 
+             after(grammarAccess.getParamaterBindingAccess().getValueArithmeticExpressionParserRuleCall_3_0()); 
 
             }
 
@@ -13937,17 +13937,17 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__0__Impl_in_rule__OperationCall__Group_1_1__07912 = new BitSet(new long[]{0x0000010000000000L});
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__1_in_rule__OperationCall__Group_1_1__07915 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__OperationCall__OperationAssignment_1_1_0_in_rule__OperationCall__Group_1_1__0__Impl7942 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__1__Impl_in_rule__OperationCall__Group_1_1__17972 = new BitSet(new long[]{0x0010040000000080L});
+        public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__1__Impl_in_rule__OperationCall__Group_1_1__17972 = new BitSet(new long[]{0x0010200000000080L});
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__2_in_rule__OperationCall__Group_1_1__17975 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_40_in_rule__OperationCall__Group_1_1__1__Impl8003 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__2__Impl_in_rule__OperationCall__Group_1_1__28034 = new BitSet(new long[]{0x0010040000000080L});
+        public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__2__Impl_in_rule__OperationCall__Group_1_1__28034 = new BitSet(new long[]{0x0010200000000080L});
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__3_in_rule__OperationCall__Group_1_1__28037 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__OperationCall__ParameterBindingAssignment_1_1_2_in_rule__OperationCall__Group_1_1__2__Impl8064 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__3__Impl_in_rule__OperationCall__Group_1_1__38095 = new BitSet(new long[]{0x0010040000000080L});
+        public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__3__Impl_in_rule__OperationCall__Group_1_1__38095 = new BitSet(new long[]{0x0010200000000080L});
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__4_in_rule__OperationCall__Group_1_1__38098 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1_3__0_in_rule__OperationCall__Group_1_1__3__Impl8125 = new BitSet(new long[]{0x0010000000000002L});
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1__4__Impl_in_rule__OperationCall__Group_1_1__48156 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_rule__OperationCall__Group_1_1__4__Impl8184 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_45_in_rule__OperationCall__Group_1_1__4__Impl8184 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1_3__0__Impl_in_rule__OperationCall__Group_1_1_3__08225 = new BitSet(new long[]{0x0000000000000080L});
         public static final BitSet FOLLOW_rule__OperationCall__Group_1_1_3__1_in_rule__OperationCall__Group_1_1_3__08228 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_52_in_rule__OperationCall__Group_1_1_3__0__Impl8256 = new BitSet(new long[]{0x0000000000000002L});
@@ -14015,7 +14015,7 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
         public static final BitSet FOLLOW_ruleParamaterBinding_in_rule__OperationCall__ParameterBindingAssignment_1_1_210082 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleParamaterBinding_in_rule__OperationCall__ParameterBindingAssignment_1_1_3_110113 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_ID_in_rule__ParamaterBinding__ParameterAssignment_110148 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExpression_in_rule__ParamaterBinding__ValueAssignment_310183 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_rule__ParamaterBinding__ValueAssignment_310183 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleIdentifierOrValue_in_rule__LiteralExpression__ValueAssignment_1_110214 = new BitSet(new long[]{0x0000000000000002L});
     }
 
