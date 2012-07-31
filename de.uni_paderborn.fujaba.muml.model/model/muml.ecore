@@ -1041,7 +1041,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration"
           eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class encapsules represents a configuration.&#xD;&#xA;&#xD;&#xA;It contains all component instances and connector instances that belong to a concrete configuration.&#xD;&#xA;&#xD;&#xA;\todosd{implement ocl derived for parent port instances derived}"/>
+          <details key="documentation" value="This class encapsules represents a configuration. It contains all component instances and connector instances that belong to a concrete configuration."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
             upperBound="-1" eType="#//model/instance/ComponentInstance" containment="true">
@@ -1295,7 +1295,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
-            eType="#//model/core/Behavior"/>
+            eType="#//model/core/Behavior">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="If this role is a multi-role, this reference points to the Real-Time Statechart that&#xD;&#xA;contains the adaptation behavior and the sub-port behavior. Thus, this real-time&#xD;&#xA;statechart only contains one state which embeds the real-time statecharts&#xD;&#xA;specifying the adaptation behavior and the sub-role behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordered" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
             defaultValueLiteral="">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1608,7 +1612,7 @@
             eType="#//model/realtimestatechart/AsynchronousMessageEvent" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
+            <details key="documentation" value="The trigger event of this transition."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent) in&#xD;&#xA;if eventSet ->size() = 0 then null else eventSet -> first() endif"/>
@@ -1618,7 +1622,7 @@
             eType="#//model/realtimestatechart/AsynchronousMessageEvent" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
+            <details key="documentation" value="The event which is raised upon activiation of this transition."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent) in&#xD;&#xA;if eventSet ->size() = 0 then null else eventSet -> first() endif"/>
@@ -1651,7 +1655,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).&#xD;&#xA;\todosd{restrict type of expression to ComparisionExpression or NotExpression or BinaryLogicExpression}"/>
+            <details key="documentation" value="The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead)."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
@@ -1669,7 +1673,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ClockConstraint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard.&#xD;&#xA;\todosd{Inherit from ComparisonExpression?}"/>
+          <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
             eType="#//model/core/NaturalNumber" containment="true">
