@@ -8,42 +8,51 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
+
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
+
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
+
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
+import org.storydriven.storydiagrams.calls.CallsFactory;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
+
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class LoopItemProvider
+public class ReturnStatementItemProvider
 	extends ExpressionItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -57,7 +66,7 @@ public class LoopItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LoopItemProvider(AdapterFactory adapterFactory) {
+	public ReturnStatementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -88,8 +97,7 @@ public class LoopItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.LOOP__BLOCK);
-			childrenFeatures.add(ActionLanguagePackage.Literals.LOOP__LOOP_TEST);
+			childrenFeatures.add(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -108,14 +116,14 @@ public class LoopItemProvider
 	}
 
 	/**
-	 * This returns Loop.gif.
+	 * This returns ReturnStatement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Loop"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReturnStatement"));
 	}
 
 	/**
@@ -126,10 +134,10 @@ public class LoopItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Loop)object).getComment();
+		String label = ((ReturnStatement)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Loop_type") :
-			getString("_UI_Loop_type") + " " + label;
+			getString("_UI_ReturnStatement_type") :
+			getString("_UI_ReturnStatement_type") + " " + label;
 	}
 
 	/**
@@ -143,9 +151,8 @@ public class LoopItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Loop.class)) {
-			case ActionLanguagePackage.LOOP__BLOCK:
-			case ActionLanguagePackage.LOOP__LOOP_TEST:
+		switch (notification.getFeatureID(ReturnStatement.class)) {
+			case ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -175,146 +182,118 @@ public class LoopItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__BLOCK,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createAttributeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createReturnStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
-			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
