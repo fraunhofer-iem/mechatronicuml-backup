@@ -60,6 +60,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfStatementAccess().getGroup(), "rule__IfStatement__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_5(), "rule__IfStatement__Group_5__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_6(), "rule__IfStatement__Group_6__0");
+					put(grammarAccess.getReturnStatementAccess().getGroup(), "rule__ReturnStatement__Group__0");
 					put(grammarAccess.getAssignmentAccess().getGroup(), "rule__Assignment__Group__0");
 					put(grammarAccess.getAssignmentAccess().getGroup_1_0(), "rule__Assignment__Group_1_0__0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getGroup(), "rule__ForLoopCountingExpression__Group__0");
@@ -98,6 +99,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfStatementAccess().getElseIfConditionsAssignment_5_2(), "rule__IfStatement__ElseIfConditionsAssignment_5_2");
 					put(grammarAccess.getIfStatementAccess().getElseIfBlocksAssignment_5_4(), "rule__IfStatement__ElseIfBlocksAssignment_5_4");
 					put(grammarAccess.getIfStatementAccess().getElseBlockAssignment_6_1(), "rule__IfStatement__ElseBlockAssignment_6_1");
+					put(grammarAccess.getReturnStatementAccess().getExpressionAssignment_2(), "rule__ReturnStatement__ExpressionAssignment_2");
 					put(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAssignment_0(), "rule__Assignment__Lhs_attributeExpressionAssignment_0");
 					put(grammarAccess.getAssignmentAccess().getAssignOperatorAssignment_1_0_0(), "rule__Assignment__AssignOperatorAssignment_1_0_0");
 					put(grammarAccess.getAssignmentAccess().getRhs_assignExpressionAssignment_1_0_1(), "rule__Assignment__Rhs_assignExpressionAssignment_1_0_1");

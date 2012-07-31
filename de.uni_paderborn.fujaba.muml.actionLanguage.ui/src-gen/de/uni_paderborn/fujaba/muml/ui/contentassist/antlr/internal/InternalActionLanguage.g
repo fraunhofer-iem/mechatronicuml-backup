@@ -204,6 +204,34 @@ finally {
 
 
 
+// Entry rule entryRuleReturnStatement
+entryRuleReturnStatement 
+:
+{ before(grammarAccess.getReturnStatementRule()); }
+	 ruleReturnStatement
+{ after(grammarAccess.getReturnStatementRule()); } 
+	 EOF 
+;
+
+// Rule ReturnStatement
+ruleReturnStatement
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getReturnStatementAccess().getGroup()); }
+(rule__ReturnStatement__Group__0)
+{ after(grammarAccess.getReturnStatementAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleExpressionStartRule
 entryRuleExpressionStartRule 
 :
@@ -766,6 +794,12 @@ rule__ExpressionStartRule__Alternatives
 { before(grammarAccess.getExpressionStartRuleAccess().getIfStatementParserRuleCall_4()); }
 	ruleIfStatement
 { after(grammarAccess.getExpressionStartRuleAccess().getIfStatementParserRuleCall_4()); }
+)
+
+    |(
+{ before(grammarAccess.getExpressionStartRuleAccess().getReturnStatementParserRuleCall_5()); }
+	ruleReturnStatement
+{ after(grammarAccess.getExpressionStartRuleAccess().getReturnStatementParserRuleCall_5()); }
 )
 
 ;
@@ -2375,6 +2409,135 @@ rule__IfStatement__Group_6__1__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+
+
+
+
+rule__ReturnStatement__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__ReturnStatement__Group__0__Impl
+	rule__ReturnStatement__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ReturnStatement__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getReturnStatementAccess().getReturnStatementAction_0()); }
+(
+
+)
+{ after(grammarAccess.getReturnStatementAccess().getReturnStatementAction_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__ReturnStatement__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__ReturnStatement__Group__1__Impl
+	rule__ReturnStatement__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ReturnStatement__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getReturnStatementAccess().getReturnKeyword_1()); }
+
+	'return' 
+
+{ after(grammarAccess.getReturnStatementAccess().getReturnKeyword_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__ReturnStatement__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__ReturnStatement__Group__2__Impl
+	rule__ReturnStatement__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ReturnStatement__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getReturnStatementAccess().getExpressionAssignment_2()); }
+(rule__ReturnStatement__ExpressionAssignment_2)
+{ after(grammarAccess.getReturnStatementAccess().getExpressionAssignment_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__ReturnStatement__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__ReturnStatement__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ReturnStatement__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getReturnStatementAccess().getSemicolonKeyword_3()); }
+
+	';' 
+
+{ after(grammarAccess.getReturnStatementAccess().getSemicolonKeyword_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -4446,6 +4609,21 @@ rule__IfStatement__ElseBlockAssignment_6_1
 (
 { before(grammarAccess.getIfStatementAccess().getElseBlockBlockParserRuleCall_6_1_0()); }
 	ruleBlock{ after(grammarAccess.getIfStatementAccess().getElseBlockBlockParserRuleCall_6_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ReturnStatement__ExpressionAssignment_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getReturnStatementAccess().getExpressionArithmeticExpressionParserRuleCall_2_0()); }
+	ruleArithmeticExpression{ after(grammarAccess.getReturnStatementAccess().getExpressionArithmeticExpressionParserRuleCall_2_0()); }
 )
 
 ;
