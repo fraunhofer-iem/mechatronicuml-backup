@@ -18,7 +18,6 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
  *
  * <!-- begin-model-doc -->
  * This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard.
- * \todosd{Inherit from ComparisonExpression?}
  * <!-- end-model-doc -->
  *
  * <p>

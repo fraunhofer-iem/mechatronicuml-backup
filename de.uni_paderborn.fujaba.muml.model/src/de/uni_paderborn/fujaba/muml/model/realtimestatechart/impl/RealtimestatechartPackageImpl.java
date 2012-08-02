@@ -1193,8 +1193,26 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntryPoint_StateEntryPoint() {
+		return (EReference)entryPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExitPoint() {
 		return exitPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExitPoint_StateExitPoint() {
+		return (EReference)exitPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1211,8 +1229,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateEntryPoint_EntryPoint() {
-		return (EReference)stateEntryPointEClass.getEStructuralFeatures().get(1);
+	public EReference getStateEntryPoint_State() {
+		return (EReference)stateEntryPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1220,8 +1238,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateEntryPoint_State() {
-		return (EReference)stateEntryPointEClass.getEStructuralFeatures().get(0);
+	public EReference getStateEntryPoint_EntryPoints() {
+		return (EReference)stateEntryPointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1238,8 +1256,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateExitPoint_ExitPoint() {
-		return (EReference)stateExitPointEClass.getEStructuralFeatures().get(1);
+	public EReference getStateExitPoint_State() {
+		return (EReference)stateExitPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1247,8 +1265,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateExitPoint_State() {
-		return (EReference)stateExitPointEClass.getEStructuralFeatures().get(0);
+	public EReference getStateExitPoint_ExitPoints() {
+		return (EReference)stateExitPointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1410,16 +1428,18 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		exitEventEClass = createEClass(EXIT_EVENT);
 
 		entryPointEClass = createEClass(ENTRY_POINT);
+		createEReference(entryPointEClass, ENTRY_POINT__STATE_ENTRY_POINT);
 
 		exitPointEClass = createEClass(EXIT_POINT);
+		createEReference(exitPointEClass, EXIT_POINT__STATE_EXIT_POINT);
 
 		stateEntryPointEClass = createEClass(STATE_ENTRY_POINT);
 		createEReference(stateEntryPointEClass, STATE_ENTRY_POINT__STATE);
-		createEReference(stateEntryPointEClass, STATE_ENTRY_POINT__ENTRY_POINT);
+		createEReference(stateEntryPointEClass, STATE_ENTRY_POINT__ENTRY_POINTS);
 
 		stateExitPointEClass = createEClass(STATE_EXIT_POINT);
 		createEReference(stateExitPointEClass, STATE_EXIT_POINT__STATE);
-		createEReference(stateExitPointEClass, STATE_EXIT_POINT__EXIT_POINT);
+		createEReference(stateExitPointEClass, STATE_EXIT_POINT__EXIT_POINTS);
 
 		// Create enums
 		synchronizationKindEEnum = createEEnum(SYNCHRONIZATION_KIND);
@@ -1627,16 +1647,18 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(exitEventEClass, ExitEvent.class, "ExitEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entryPointEClass, EntryPoint.class, "EntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntryPoint_StateEntryPoint(), this.getStateEntryPoint(), this.getStateEntryPoint_EntryPoints(), "stateEntryPoint", null, 1, 1, EntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exitPointEClass, ExitPoint.class, "ExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExitPoint_StateExitPoint(), this.getStateExitPoint(), this.getStateExitPoint_ExitPoints(), "stateExitPoint", null, 1, 1, ExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEntryPointEClass, StateEntryPoint.class, "StateEntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateEntryPoint_State(), this.getState(), this.getState_StateEntryPoints(), "state", null, 1, 1, StateEntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStateEntryPoint_EntryPoint(), this.getEntryPoint(), null, "entryPoint", null, 1, -1, StateEntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateEntryPoint_EntryPoints(), this.getEntryPoint(), this.getEntryPoint_StateEntryPoint(), "entryPoints", null, 1, -1, StateEntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateExitPointEClass, StateExitPoint.class, "StateExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateExitPoint_State(), this.getState(), this.getState_StateExitPoints(), "state", null, 1, 1, StateExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStateExitPoint_ExitPoint(), this.getExitPoint(), null, "exitPoint", null, 1, -1, StateExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateExitPoint_ExitPoints(), this.getExitPoint(), this.getExitPoint_StateExitPoint(), "exitPoints", null, 1, -1, StateExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(synchronizationKindEEnum, SynchronizationKind.class, "SynchronizationKind");
@@ -1702,13 +1724,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "OneOutgoingTransition EntryPointAndTargetSameStatechart"
-		   });				
+		   });					
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "AtMostOneOutgoingTransition OneIncomingTransition ExitPointAndSourceSameStatechart"
-		   });				
+		   });					
 		addAnnotation
 		  (stateEntryPointEClass, 
 		   source, 
@@ -1834,7 +1856,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1",
 			 "EntryPointAndTargetSameStatechart", "self.outgoingTransitions->size() = 1 implies\n\t(not self.outgoingTransitions->at(1).target.oclIsUndefined()\n\t and self.outgoingTransitions->at(1).target.statechart = self.statechart\n\t)"
-		   });				
+		   });					
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
@@ -1842,7 +1864,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "AtMostOneOutgoingTransition", "self.outgoingTransitions->size() <= 1",
 			 "OneIncomingTransition", "self.incomingTransitions->size() = 1",
 			 "ExitPointAndSourceSameStatechart", "self.incomingTransitions->size() = 1 implies\n\t(not self.incomingTransitions->at(1).source.oclIsUndefined()\n\t and self.incomingTransitions->at(1).source.statechart = self.statechart\n\t)"
-		   });				
+		   });					
 		addAnnotation
 		  (stateEntryPointEClass, 
 		   source, 

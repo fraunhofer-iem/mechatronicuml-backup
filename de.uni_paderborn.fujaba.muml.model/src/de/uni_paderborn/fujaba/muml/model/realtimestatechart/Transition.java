@@ -172,7 +172,6 @@ public interface Transition extends ExtendableElement, Prioritizable {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The trigger event of this transition.
-	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Trigger Message Event</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_TriggerMessageEvent()
@@ -188,7 +187,6 @@ public interface Transition extends ExtendableElement, Prioritizable {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The event which is raised upon activiation of this transition.
-	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Raise Message Event</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_RaiseMessageEvent()
@@ -297,7 +295,6 @@ public interface Transition extends ExtendableElement, Prioritizable {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).
-	 * \todosd{restrict type of expression to ComparisionExpression or NotExpression or BinaryLogicExpression}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Guard</em>' containment reference.
 	 * @see #setGuard(Expression)

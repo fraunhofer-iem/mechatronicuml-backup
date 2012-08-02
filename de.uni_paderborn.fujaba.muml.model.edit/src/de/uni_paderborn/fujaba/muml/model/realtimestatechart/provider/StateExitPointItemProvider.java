@@ -58,25 +58,25 @@ public class StateExitPointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addExitPointPropertyDescriptor(object);
+			addExitPointsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Exit Point feature.
+	 * This adds a property descriptor for the Exit Points feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExitPointPropertyDescriptor(Object object) {
+	protected void addExitPointsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_StateExitPoint_exitPoint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StateExitPoint_exitPoint_feature", "_UI_StateExitPoint_type"),
-				 RealtimestatechartPackage.Literals.STATE_EXIT_POINT__EXIT_POINT,
+				 getString("_UI_StateExitPoint_exitPoints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StateExitPoint_exitPoints_feature", "_UI_StateExitPoint_type"),
+				 RealtimestatechartPackage.Literals.STATE_EXIT_POINT__EXIT_POINTS,
 				 true,
 				 false,
 				 true,

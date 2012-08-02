@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getState <em>State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getEntryPoint <em>Entry Point</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getEntryPoints <em>Entry Points</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,25 +32,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface StateEntryPoint extends Vertex {
-	/**
-	 * Returns the value of the '<em><b>Entry Point</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entry Point</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Referenced EntyPoints of embedded statecharts. 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Entry Point</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateEntryPoint_EntryPoint()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<EntryPoint> getEntryPoint();
-
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryPoints <em>State Entry Points</em>}'.
@@ -81,5 +62,22 @@ public interface StateEntryPoint extends Vertex {
 	 * @generated
 	 */
 	void setState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Entry Points</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint#getStateEntryPoint <em>State Entry Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Referenced EntyPoints of embedded statecharts. 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Entry Points</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateEntryPoint_EntryPoints()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint#getStateEntryPoint
+	 * @model opposite="stateEntryPoint" required="true"
+	 * @generated
+	 */
+	EList<EntryPoint> getEntryPoints();
 
 } // StateEntryPoint

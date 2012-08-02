@@ -529,7 +529,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "MultiPortRequiresDefinedOrder RoleHasConnector RoleRequiresBehavior RoleRequiresInterface"
-		   });													
+		   });														
 	}
 
 	/**
@@ -568,7 +568,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 			 "RoleHasConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()",
 			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()",
 			 "RoleRequiresInterface", "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"
-		   });											
+		   });												
 		addAnnotation
 		  (getRole_RoleConnector(), 
 		   source, 

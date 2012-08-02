@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getState <em>State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getExitPoint <em>Exit Point</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getExitPoints <em>Exit Points</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,25 +32,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface StateExitPoint extends Vertex {
-	/**
-	 * Returns the value of the '<em><b>Exit Point</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Exit Point</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Referenced ExitPoints of embedded statecharts. 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Exit Point</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateExitPoint_ExitPoint()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<ExitPoint> getExitPoint();
-
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateExitPoints <em>State Exit Points</em>}'.
@@ -81,5 +62,22 @@ public interface StateExitPoint extends Vertex {
 	 * @generated
 	 */
 	void setState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Exit Points</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint#getStateExitPoint <em>State Exit Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Referenced ExitPoints of embedded statecharts. 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Exit Points</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateExitPoint_ExitPoints()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint#getStateExitPoint
+	 * @model opposite="stateExitPoint" required="true"
+	 * @generated
+	 */
+	EList<ExitPoint> getExitPoints();
 
 } // StateExitPoint

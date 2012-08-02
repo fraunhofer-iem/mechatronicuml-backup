@@ -265,6 +265,12 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If this role is a multi-role, this reference points to the Real-Time Statechart that
+	 * contains the adaptation behavior and the sub-port behavior. Thus, this real-time
+	 * statechart only contains one state which embeds the real-time statecharts
+	 * specifying the adaptation behavior and the sub-role behavior.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Role And Adaptation Behavior</em>' reference.
 	 * @see #setRoleAndAdaptationBehavior(Behavior)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_RoleAndAdaptationBehavior()
