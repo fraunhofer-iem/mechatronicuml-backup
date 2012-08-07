@@ -2,7 +2,10 @@
 	<!-- Introduction -->
 	<para>
 		This tutorial will show you how to create models with the Fujaba Real-Time Tool Suite.
-		For that we will create all the required models of the following example.
+		To understand this tutorial you need to now what Mechatronic UML (MUML) is.
+		The tutorial will not explain the features of MUML, so please look into the Tech Report (LINK)
+		if you have any questions concerning MUML.
+		To teach you how to use the Fujaba Real-Time Tool Suite we will create all the required models of the following example.
 	</para>
 	<para>
 		Let there be two robots called BeBots. One shall be the master and one the slave.
@@ -16,7 +19,7 @@
 	<para>
 		To implement this example in Fujaba models we will perform the following steps - as far as possible - gradually:
 	</para>
-	<orderedlist numeration="arabic">
+	<itemizedlist mark='bullet'>
 		<listitem>
 			<para>
 			Create a new project for this tutorial
@@ -84,7 +87,7 @@
 			</para>
 		</listitem>
 		
-	</orderedlist>
+	</itemizedlist>
 	
 	<!-- Step 1: Create a new project -->
 	<sect2><title>Step 1: Create a new project</title>
@@ -128,33 +131,8 @@
 		</para>
 	</sect2>
 	
-	<!-- Step 2: Create Message Interfaces (and Data Types) -->
-	<sect2><title>Step 2: Create Message Interfaces (and Data Types)</title>
-		<para>
-			First of all we need two Message Interfaces that define the interfaces
-			for a coordination pattern that we generate in step 3.
-			For that, right click on your "FujabaTutorial.fujaba" model and select
-			"New --> Other". Within "Fujaba --> Diagrams" select "Messageinterface Diagram"
-			and click "Next", as seen in the following screenshot:
-			<figure id="img:step005">
-				<mediaobject>
-      				<imageobject>
- 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep005.png" scale="100"/>
-      				</imageobject>
-				</mediaobject>
-			</figure>
-			Change the file name to "delegation.messageinterface_diagram" and click  "Next".
-			Make sure that the correct model is selected (FujabaTutorial.fujaba) and click "Finish".
-			The generation of new models always works like this whereas you need to select another
-			model than "Messageinterface Diagram" of course.
-		</para>
-		<para>
-			The Message Interface diagram opens in a new tab.
-			You can also find it within your project folder.
-		</para>
-		
-		<!-- The following paragraphs should be moved in front of step 2 when
-		defining data types is possible without having any models. -->
+	<!-- Step 2: Create Data Types -->
+	<sect2><title>Step 2: Create Data Types</title>
 		<para>
 			First of all we need two array data types for this tutorial.
 			The first type is called "XYPosition" and is an integer array with two
@@ -219,8 +197,32 @@
       		</itemizedlist>
       		Click "OK".
 		</para>
-		
-		<!-- The following paragraphs should stay were they are -->
+	</sect2>
+	
+	<!-- Step 3: Create Message Interfaces -->
+	<sect2><title>Step 3: Create Message Interfaces</title>
+		<para>
+			We need two Message Interfaces that define the interfaces
+			for a coordination pattern that we generate in step 3.
+			For that, right click on your "FujabaTutorial.fujaba" model and select
+			"New --> Other". Within "Fujaba --> Diagrams" select "Messageinterface Diagram"
+			and click "Next", as seen in the following screenshot:
+			<figure id="img:step005">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep005.png" scale="100"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+			Change the file name to "delegation.messageinterface_diagram" and click  "Next".
+			Make sure that the correct model is selected (FujabaTutorial.fujaba) and click "Finish".
+			The generation of new models always works like this whereas you need to select another
+			model than "Messageinterface Diagram" of course.
+		</para>
+		<para>
+			The Message Interface diagram opens in a new tab.
+			You can also find it within your project folder.
+		</para>
 		<para>
 			Now we can start with our Message Interfaces.
 			Open the file "delegation.messageinterface_diagram" and select "MessageInterface"
@@ -272,8 +274,8 @@
 		</para>
 	</sect2>
 	
-	<!-- Step 3: Create a Real-Time Coordination Pattern "Delegation" -->
-	<sect2><title>Step 3: Create a Real-Time Coordination Pattern "Delegation"</title>
+	<!-- Step 4: Create a Real-Time Coordination Pattern "Delegation" -->
+	<sect2><title>Step 4: Create a Real-Time Coordination Pattern "Delegation"</title>
 		<para>
 			To define how the master and the slave BeBots of our example can communicate
 			we need to create a Real-Time Coordination Pattern.
@@ -333,8 +335,8 @@
 		</para>
 	</sect2>
 	
-	<!-- Step 4: Create RTSC for role behavior -->
-	<sect2><title>Step 4: Create RTSC for role behavior</title>
+	<!-- Step 5: Create RTSC for role behavior -->
+	<sect2><title>Step 5: Create RTSC for role behavior</title>
 		<para>
 			Now we want to describe the roles’ behavior by assigning RTSCs.
 			These RTSCs have to be created first.
@@ -483,34 +485,31 @@
       			</imageobject>
 			</mediaobject>
 			</figure>
-			When you now open the delegation pattern you can see within the properties of the “master”
-			role that the behavior is set to “Real-Time Statechart rtsc_role_master” automatically.
+			When you now open the delegation pattern you can see within the properties of the "master"
+			role that the behavior is set to "Real-Time Statechart rtsc_role_master" automatically.
 			Also the red X at the role should be gone.
 		</para>
 		<para>
 			Anyway, what did we do now?
-			Generally, we created a RTSC that describes the behavior of the role “master”
+			Generally, we created a RTSC that describes the behavior of the role "master"
 			of our delegation pattern.
 			But what does this RTSC describe exactly.
-			It says that a master role  is either in the state “Inactive” or “Waiting”.
-			“Inactive” stands for the status the role did not delegate any work to the slave role.
-			“Waiting” stand for the status the role did delegate some work and is waiting for an
+			It says that a master role  is either in the state "Inactive" or "Waiting".
+			"Inactive" stands for the status the role did not delegate any work to the slave role.
+			"Waiting" stand for the status the role did delegate some work and is waiting for an
 			answer of the slave.
 			The master delegates work by raising the message order().
 			Now it has to wait for the slave, which is either sending done() if the work was successful
-			or else fail(). If the master gets theses messages it changes its state to “Inactive” again.
+			or else fail(). If the master gets theses messages it changes its state to "Inactive" again.
 			Furthermore the clock constraint we created has the consequence that if the slave
-			does not answer within 1000 seconds the master also switches to “Inactive”.
+			does not answer within 1000 seconds the master also switches to "Inactive".
 		</para>
 		<para>
-			Now we have to define a RTSC for the role “slave”.
-			The RTSC for the role “slave” is created analogously to the generation of the RTSC
-			for the “master” role.
+			Now we have to define a RTSC for the role "slave".
+			The RTSC for the role "slave" is created analogously to the generation of the RTSC
+			for the "master" role.
 			That is why we do not describe it again in detail.
-			<!-- file and describtion needed -->
-			You can find the file for the RTSC here (-> link) and add it to your project as
-			described here (-> link).
-			Otherwise you can build it up on your own by taking the following screenshot
+			Build it up on your own by taking the following screenshot
 			of the RTSC as a reference:
 			<figure id="img:step015">
 				<mediaobject>
@@ -523,41 +522,41 @@
 		</para>
 	</sect2>
 	
-	<!-- Step 5: Create Atomic Components for Software and GPS -->
-	<sect2><title>Step 5: Create Atomic Components for Software and GPS</title>
+	<!-- Step 6: Create Atomic Components for Software and GPS -->
+	<sect2><title>Step 6: Create Atomic Components for Software and GPS</title>
 		<para>
 			Now we want to start specifying the BeBots.
 			Therefore we have to create two Atomic Components.
 		</para>
 		<para>
-			Create a new Atomiccomponent Diagram named “bebot_ac”.
-			Add an Atomic Component by clicking on “AtomicComponent” in the palette and then
+			Create a new Atomiccomponent Diagram named "bebot_ac".
+			Add an Atomic Component by clicking on "AtomicComponent" in the palette and then
 			clicking into the drawing surface.
-			Name it “BeBot_SW”. This component will describe how the BeBot works internally.
+			Name it "BeBot_SW". This component will describe how the BeBot works internally.
 		</para>
 		<para>
-			Add a Hybrid Port to this Atomic Component by clicking on “HybridPort” in the palette
+			Add a Hybrid Port to this Atomic Component by clicking on "HybridPort" in the palette
 			and then clicking on the Atomic Component.
-			Name it “position”.
+			Name it "position".
 			Select the Hybrid Port and set the type to XYPosition by selecting this in the Properties
-			View under “Misc --> Type”.
-			Make sure that the port is an IN-port by checking the property “Kind” under “General”.
+			View under "Misc --> Type".
+			Make sure that the port is an IN-port by checking the property "Kind" under "General".
 			Via this port the BeBot will request its position.
 		</para>
 		<para>
-			Add a Discrete Port named “master” analogously.
-			This port shall refine the role “master” from our delegation pattern.
+			Add a Discrete Port named "master" analogously.
+			This port shall refine the role "master" from our delegation pattern.
 			Therefore, you have to change some properties in the Properties View:
 			<itemizedlist mark='bullet'>
 	      		<listitem><para>
-	      			General --> Refines: select “Role Delegation.master”
+	      			General --> Refines: select "Role Delegation.master"
 	      			(to bind the master role of the delegation pattern to this port)
 	   			</para></listitem>
 	   			<listitem><para>
-					MessageInterface --> Receiver Message Interface: select “Slave2Master”				
+					MessageInterface --> Receiver Message Interface: select "Slave2Master"				
 	   			</para></listitem>
 	   			<listitem><para>
-					MessageInterface --> Sender Message Interface: select “Master2Slave”				
+					MessageInterface --> Sender Message Interface: select "Master2Slave"				
 	   			</para></listitem>
 	   			<listitem><para>
 					Cardinality --> Lower Bound: set to 0				
@@ -572,9 +571,9 @@
 	   		A slave BeBot will not get this port of course.
 		</para>
 		<para>
-			Now create a Discrete Port “slave” with the same properties,
+			Now create a Discrete Port "slave" with the same properties,
 			but commute the Message Interfaces.
-			The refinement of course has to be set to “Role Delegation.slave”.
+			The refinement of course has to be set to "Role Delegation.slave".
 		</para>
 		<para>
 			Save your work.
@@ -582,16 +581,16 @@
 			we are again getting some red Xs, but we will care about them later.
 		</para>
 		<para>
-			Now create a new Atomic Component named “GPS” with the following properties:
+			Now create a new Atomic Component named "GPS" with the following properties:
 			<itemizedlist mark='bullet'>
 	      		<listitem><para>
-	      			Make the component a continuous component by setting it under “General --> Component Type”.
+	      			Make the component a continuous component by setting it under "General --> Component Type".
 	   			</para></listitem>
 	   			<listitem><para>
-					Add a Continuous OUT-Port named “position” of type “XYPosition”.
+					Add a Continuous OUT-Port named "position" of type "XYPosition".
 	   			</para></listitem>
 	   			<listitem><para>
-					Add a Continuous IN-Port named “gps” of type “XYPosition”.			
+					Add a Continuous IN-Port named "gps" of type "XYPosition".			
 	   			</para></listitem>
 	   		</itemizedlist>
 	   		This component will be in charge of computing the position of the BeBot.
@@ -608,24 +607,27 @@
 		</para>
 	</sect2>
 	
-	<!-- Step 6: Create a Structure Component for the BeBot -->
-	<sect2><title>Step 6: Create a Structure Component for the BeBot</title>
+	<!-- Step 7: Create a Structure Component for the BeBot -->
+	<sect2><title>Step 7: Create a Structure Component for the BeBot</title>
 		<para>
 			Once we have defined our Atomic Components,
 			we now can define the Structure of our BeBot as a whole by creating a Structured Component.
-			Therefore, create a new Structured Component Diagram with the name “bebot”.
+			Therefore, create a new Structured Component Diagram with the name "bebot".
 		</para>
-			Add a new Structured Component by clicking on “StructuredComponent”
-			in the palette and then clicking into the drawing surface. Name it “BeBot”.
+			Add a new Structured Component by clicking on "StructuredComponent"
+			in the palette and then clicking into the drawing surface. Name it "BeBot".
+			Because this component shall embed both atomic components we created and these were of different types
+			this structured component has to be of the component type "hybrid component".
+			Set this within the properties of the structured component "BeBot".
 		<para>
-			Add a Component Part by selecting “ComponentPart” from the palette and clicking
+			Add a Component Part by selecting "ComponentPart" from the palette and clicking
 			into the BeBot component. A new Component Part is generated.
 			Now you have to set the type. For that in the Properties View select
-			“General --> Component Type --> BeBot_SW” to set the type to the atomic component “BeBot_SW” 
-			defined before. Name the component “software”.
+			"General --> Component Type --> BeBot_SW" to set the type to the atomic component "BeBot_SW" 
+			defined before. Name the component "software".
 		</para>
 		<para>
-			Add another Component Part of the type “GPS” with the name “gps” analogously.
+			Add another Component Part of the type "GPS" with the name "gps" analogously.
 		</para>
 		<para>
 			When you save this diagram now it shows the same errors at the Atomic Component Diagram,
@@ -641,25 +643,25 @@
       				</imageobject>
 				</mediaobject>
 			</figure>
-			Connect the “position” ports of both components by an assembly.
+			Connect the "position" ports of both components by an assembly.
 		</para>
 		<para>
-			Create a Discrete Port “Slave” at the border of the component “BeBot”.
-			Set the Receiver Message Interface to “Master2Slave” and the Sender Message Interface to
-			“Slave2Master”.
+			Create a Discrete Port "Slave" at the border of the component "BeBot".
+			Set the Receiver Message Interface to "Master2Slave" and the Sender Message Interface to
+			"Slave2Master".
 		</para>
 		<para>
-			Create a Discrete Port “Master” but with commuted Message Interfaces.
+			Create a Discrete Port "Master" but with commuted Message Interfaces.
 		</para>
 		<para>
-			Connect the Ports “Master” and “master” by a Delegation by clicking on “Delegation”
-			in the palette and drag and drop from “Master” to “master”.
-			Do the same with the “Slave” and “slave” ports. Now the ports of the “BeBot_SW”
+			Connect the Ports "Master" and "master" by a Delegation by clicking on "Delegation"
+			in the palette and drag and drop from "Master" to "master".
+			Do the same with the "Slave" and "slave" ports. Now the ports of the "BeBot_SW"
 			component are delegated to appropriate ports of the Structured Component.
 		</para>
 		<para>
-			Now create a ContinuousPort “Gps” at the border of the component “BeBot” and connect
-			it with a delegation to “gps”.
+			Now create a ContinuousPort "Gps" at the border of the component "BeBot" and connect
+			it with a delegation to "gps".
 		</para>
 		<para>
 			Save your work. Now even more Xs are shown.
@@ -668,30 +670,479 @@
 		</para>
 	</sect2>
 	
-	<!-- Step 7: RTSCs describing the behavior of the ports -->
-	<sect2><title>Step 7: RTSCs describing the behavior of the ports</title>
+	<!-- Step 8: RTSCs describing the behavior of the ports -->
+	<sect2><title>Step 8: RTSCs describing the behavior of the ports</title>
 		<para>
-			We start with creating RTSCs for the Ports “master”, “slave” and “position”.
-			The port “gps” does not need any behavior, because it is continuous.
+			We start with creating RTSCs for the Ports "master", "slave" and "position".
+			The port "gps" does not need any behavior, because it is continuous.
 		</para>
 		<para>
-			Create three RTSC diagrams with name “port_master”, “port_slave” and “port_position”.
-			Name the RTSCs of the diagrams “rtsc_port_master” and so on.
+			Create three RTSC diagrams with name "port_master", "port_slave" and "port_position".
+			Name the RTSCs of the diagrams "rtsc_port_master" and so on.
 			That is all for the moment. The rest of the definition of these diagrams will be done later,
 			because they will be embedded into another RTSC.
 		</para>
 	</sect2>
 	
-	<!-- Step 8: RTSCs describing the behavior of the Atomic Component BeBot_SW -->
-	<sect2><title> Step 8: RTSCs describing the behavior of the Atomic Component BeBot_SW</title>
+	<!-- Step 9: RTSCs describing the behavior of the Atomic Component BeBot_SW -->
+	<sect2><title> Step 9: RTSCs describing the behavior of the Atomic Component BeBot_SW</title>
 		<para>
 			Now we want to define the behavior of the software of a BeBot.
-			Therefore, create a RTSC Diagram with name “component_bebot-sw”.
-			Name the statechart itself “rtsc_component_bebot-sw”.
+			Therefore, create a RTSC Diagram with name "component_bebot-sw".
+			Name the statechart itself "rtsc_component_bebot-sw".
 		</para>
 		<para>
-			... to be continued ....
+			In the Properties View set the Behavioral Element to "Atomic Component BeBot_SW".
+			The software of a BeBot needs an attribute for the current position.
+			Hence, add an attribute by clicking on "…" of the property "Attributes".
+			In the new window click on "Create" to add a new attribute to the attribute list.
+			Set the properties to:
+			<itemizedlist mark='bullet'>
+	      		<listitem><para>
+	      			Name: pos_xy
+	   			</para></listitem>
+	   			<listitem><para>
+					Type: Array Data Type XYPosition
+	   			</para></listitem>
+	   		</itemizedlist>
+	   		Click "OK".
 		</para>
-		<!-- to be continued... -->
+		<para>
+			To keep track of the diagram we create one superstate for the RTSC.
+			Therefore, add a state and name it "bebotsw_main" and change the "Initial" property to true.
+		</para>
+		<para>
+			Now we need three channels for the synchronization of the regions that we create in a moment.
+			Select the state and click on "…" of the property "Misc --> Channels". Click on "Create" to add a channel.
+			Create three channels with the following properties:
+			<itemizedlist mark='bullet'>
+	      		<listitem><para>
+	      			First channel:
+	      			<itemizedlist mark='bullet'>
+	      				<listitem><para>
+	      					Name: driveTo
+	   					</para></listitem>
+	   					<listitem><para>
+							Parameters: Add a parameter with name "target" of type "XYPosition" like adding attributes to a RTSC
+	   					</para></listitem>
+	   				</itemizedlist>
+	   			</para></listitem>
+	   			<listitem><para>
+					Second channel:
+					<itemizedlist mark='bullet'>
+	      				<listitem><para>
+	      					Name: success
+	   					</para></listitem>
+	   				</itemizedlist>
+	   			</para></listitem>
+	   			<listitem><para>
+	   				Third channel:
+	   				<itemizedlist mark='bullet'>
+	      				<listitem><para>
+	      					Name: failure
+	   					</para></listitem>
+	   				</itemizedlist>
+	   			</para></listitem>
+	   		</itemizedlist>
+			Click "OK". Now you see the list of channels inside the state "bebotsw_main".
+			In total our superstate needs four regions, one for each port of the atomic component "BeBot_SW"
+			and one describing the internal behavior itself.	
+		</para>
+		<para>
+			Add a region to the superstate by selecting "Region" from the palette and clicking into the state.
+			Name it "r_position". This region shall be the part describing the behavior of the position port. 
+			In the step before we already created empty RTSCs for the ports. Hence, we add these RTSCs instead of creating new ones. 
+			Click on the region name and take a look at the Properties View.
+			The property "Statechart" now has to be changed to "Realtime Statechart rtsc_port_position". 
+			Now we have added the statechart of "port_position.realtimestatechart_diagram" to the region.
+			Set the behavior of this RTSC of region "r_position" to "Hybrid Port position".
+			As described before add an attribute with the name "IN_position" of type "XYPosition" and a clock "c_period".
+			Now add a state with the name "Idle" and make it an initial state.
+			Add a clock invariant within the property "Misc --> Invariants" of the form "c_period &lt; 50".
+			Now add a self transition for "Idle" and add the following properties for this transition:
+			<itemizedlist mark='bullet'>
+		      	<listitem><para>
+	      			Clock Reset for "c_period"
+	   			</para></listitem>
+	   			<listitem><para>
+					Clock Constraint of the form "c_period &lt;= 50"
+	   			</para></listitem>
+	   		</itemizedlist>	
+	   		Now we want to describe an action performed when this transition is taken.
+	   		Therefore, click on "…" of the property "Action --> Expression". Again a window pops up.
+	   		From the drop-down list at the upper-left corner select "TextualExpression" and click on "Create".
+	   		Set the property "Expression Text" to "pos_xy := IN_position" and "Language" to "java".
+	   		This describes that the action is written in Java and the code is found in "Expression Text".
+	   		Here we set the attribute "pos_xy" of the superstate to the value of "IN_position",
+	   		an attribute of the current region. Click "OK" and now change "Action --> Name" to "position assignment".
+		</para>
+		<para>
+			Your diagram should look like this now:
+			<figure id="img:step018">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep018.png" scale="120"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+			Now add a new region to "bebotsw_main" and name it "r_master".
+			Like before change the statechart to "rtsc_port_master" and set the behavior of this RTSC
+			of the region to "Discrete Port master" As for the last region add an attribute "currentTask"
+			of type "XYPosition" and a clock "c_timeout". Now you have to add a statechart that is exactly
+			like the statechart of "role_master". Therefore, create such a statechart.
+		</para>
+		<para>
+			Now we need to add some things. Select the transition from "Inactive" to "Waiting".
+			When raising the message "order(target)" we want to bind the parameter "target" of
+			the type "XYPosition" to "currentTask". Therefore, click on "…" of "Raise MessageEvent --> Parameter Binding"
+			and type "currentTask" into the value of "target". Furthermore we want to do some synchronization.
+			Select the transition with priority 2.
+			Change the property "Synchronization --> Sync Channel" to "Synchronization Channel failure" and make
+			sure that "Synchronization --> Kind" is set to "SEND". Do the same for the transition with priority 3,
+			but for the channel "success" and of kind "RECEIVE". Now we refined our behavior definition for a role
+			"master" for this port.
+		</para>
+		<para>
+			Your diagram should look like this now:
+			<figure id="img:step019">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep019.png" scale="120"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+			Again, add a new region to "bebotsw_main" and name it "r_slave".
+			As you can imagine, we want to define the behavior of the port "slave" in this step.
+			Like before change the statechart to "rtsc_port_slave".
+			The following steps have to be handled analogously to the description for the last two ports.
+			Therefore, this port is only described in notes.
+			Try to implement these on your own and if you are not sure look at the description before.
+			<itemizedlist mark='bullet'>
+	   			<listitem><para>
+					Set Behavioral Element to "Discrete Port slave"
+	   			</para></listitem>
+	   			<listitem><para>
+					Create Attribute with name "Target" of type "XYPosition"
+	   			</para></listitem>
+	   			<listitem><para>
+	   				Create the following operation
+					<itemizedlist mark='bullet'>
+	   					<listitem><para>
+							"DriveTo" with parameter "target" of type "XYPosition" and Return Type "Boolean"
+	   					</para></listitem>
+	   				</itemizedlist>	
+	   			</para></listitem>
+	   			<listitem><para>
+					Add Clock with name "c_work"
+	   			</para></listitem>
+	   			<listitem><para>
+					Add State named "Inactive", make it initial
+	   			</para></listitem>
+	   			<listitem><para>
+	   				Add State named "Working"
+					<itemizedlist mark='bullet'>
+	   					<listitem><para>
+							Add an Invariant of the form "c_work &lt; 800"
+	   					</para></listitem>
+	   					<listitem><para>
+							Add an Entry Action with the following settings
+							<itemizedlist mark='bullet'>
+	   							<listitem><para>
+	   								Name: "driving"
+	   							</para></listitem>
+	   							<listitem><para>
+	   								Entry Action type: "Textual Expression"
+	   							</para></listitem>
+	   							<listitem><para>
+	   								Expression Text: "//todo" (the implementation at this point is not important for this tutorial)
+	   							</para></listitem>
+	   								Language: "java"
+	   						</itemizedlist>
+	   					</para></listitem>
+	   				</itemizedlist>	
+	   			</para></listitem>
+	   			<listitem><para>
+	   				Add a Transition from "Inactive" to "Working"
+					<itemizedlist mark='bullet'>
+	   					<listitem><para>
+							Priority: 1
+	   					</para></listitem>
+	   					<listitem><para>
+							Add a Clock Reset for "c_work"
+	   					</para></listitem>
+	   					<listitem><para>
+							Add a Trigger Message Event of type "order"
+	   					</para></listitem>
+	   				</itemizedlist>	
+	   			</para></listitem>
+	   			<listitem><para>
+	   				Add a Transition from "Working" to "Inactive"
+					<itemizedlist mark='bullet'>
+	   					<listitem><para>
+							Priority: 1
+	   					</para></listitem>
+	   					<listitem><para>
+							Add a Raise Message Event of type "done"
+	   					</para></listitem>
+	   					<listitem><para>
+	   						Add a Guard with the settings
+							<itemizedlist mark='bullet'>
+	   							<listitem><para>
+	   								Expression Text: "xy_pos == target"
+	   							</para></listitem>
+	   							<listitem><para>
+	   								Language: "java"
+	   							</para></listitem>
+	   						</itemizedlist>
+	   					</para></listitem>
+	   				</itemizedlist>	
+	   			</para></listitem>
+	   			<listitem><para>
+	   				Add another Transition from "Working" to "Inactive"
+					<itemizedlist mark='bullet'>
+	   					<listitem><para>
+							Priority: 2
+	   					</para></listitem>
+	   					<listitem><para>
+							Add a Raise Message Event of type "fail"
+	   					</para></listitem>
+	   					<listitem><para>
+							Add a Clock Constraint of the form "c_work &lt;= 800"
+	   					</para></listitem>
+	   				</itemizedlist>	
+	   			</para></listitem>
+	   		</itemizedlist>	
+	   		The lower part of your diagram should now look like this:
+	   		<figure id="img:step020">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep020.png" scale="120"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+		</para>
+		<para>
+			Now we are done with defining the behavior of the ports of the BeBots.
+			At this point the Bebots themselves do not have any behavior.
+			Hence, we need a fourth region named "r_internalBahavior".
+			Create this and name the corresponding statechart "rtsc_internalBehavior".
+			Again this step is a little bit boring, because it is very similar to the steps before.
+			Nevertheless, it is reasonable for you to fill this statechart with information to practice using the editor.
+			Like before this step is only described in notes:
+			<itemizedlist mark='bullet'>
+	   			<listitem><para>
+					Add Attributes
+					<itemizedlist mark='bullet'>
+	   					<listitem><para>
+							taskList of type "XYPositionArray" (this is an array storing all targets the slave should drive to)
+	   					</para></listitem>
+	   						currentTask of type INT
+	   				</itemizedlist>
+	   			</para></listitem>
+	   			
+	   			<listitem><para>
+	   				Add States
+					<itemizedlist mark='bullet'>
+	   					<listitem><para>
+							NoJobGiven, initial
+	   					</para></listitem>
+	   						JobGiven
+	   				</itemizedlist>	
+	   			</para></listitem>
+	   			
+	   			<listitem><para>
+	   				Add Transitions
+					<itemizedlist mark='bullet'>
+	   					<listitem><para>
+							From "NoJobGiven" to "JobGIven"
+							<itemizedlist mark='bullet'>
+	   							<listitem><para>
+									Set Synchronizations within the Properties View
+									<itemizedlist mark='bullet'>
+					   					<listitem><para>
+											Kind: Send
+					   					</para></listitem>
+					   					<listitem><para>
+											Sync Channel: driveTo
+					   					</para></listitem>
+					   					<listitem><para>
+											ParameterBinding: set the value of the property "target" to "taskList[currentTask]"
+					   					</para></listitem>
+					   				</itemizedlist>	
+	   							</para></listitem>
+	   						</itemizedlist>	
+	   					</para></listitem>
+	   					<listitem><para>
+							From "JobGiven" to "NoJobGiven"
+							<itemizedlist mark='bullet'>
+			   					<listitem><para>
+									Priority: 1
+			   					</para></listitem>
+			   					<listitem><para>
+									Synchronization
+									<itemizedlist mark='bullet'>
+					   					<listitem><para>
+											Kind: Receive
+					   					</para></listitem>
+					   					<listitem><para>
+											Channel: success
+					   					</para></listitem>
+					   				</itemizedlist>	
+			   					</para></listitem>
+			   					<listitem><para>
+									Action
+									<itemizedlist mark='bullet'>
+					   					<listitem><para>
+											Name: "nextTask"
+					   					</para></listitem>
+					   					<listitem><para>
+											Type: Textual Expression
+					   					</para></listitem>
+					   					<listitem><para>
+											Expression Test: "currentTask++"
+					   					</para></listitem>
+					   					<listitem><para>
+											Language: "java"
+					   					</para></listitem>
+	   								</itemizedlist>	
+			   					</para></listitem>
+			   				</itemizedlist>	
+	   					</para></listitem>
+	   					
+	   					<listitem><para>
+							From "JobGiven" to "NoJobGiven"
+							<itemizedlist mark='bullet'>
+			   					<listitem><para>
+									Priority: 2
+			   					</para></listitem>
+			   					<listitem><para>
+									Synchronization
+									<itemizedlist mark='bullet'>
+					   					<listitem><para>
+											Kind: Receive
+					   					</para></listitem>
+					   					<listitem><para>
+											Channel: failure
+					   					</para></listitem>
+					   				</itemizedlist>	
+			   					</para></listitem>
+			   				</itemizedlist>	
+	   					</para></listitem>
+	   				</itemizedlist>	
+	   			</para></listitem>
+	   		</itemizedlist>	
+	   		The lower part of your diagram should now look like this:
+	   		<figure id="img:step021">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep021.png" scale="120"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+		</para>
+	</sect2>
+	<!-- Step 10: The Component Instance Configuration -->
+	<sect2><title>Step 10: The Component Instance Configuration</title>
+		<para>
+			At this point the behavior of our BeBots is defined completely.
+			Now we want to create our scenario of the master BeBot sending a task list to the slave BeBot by
+			defining a Component Instance Configuration. Therefore, create a Component Instance Configuration
+			Diagram named "compInstConfig". What we have to do now is adding instances of our before defined components.
+			Hence, add a Structured Component Instance to the diagram. Within the properties as Component Type select 
+			"Static Structured Component BeBot". Automatically an instance of this component is created. Now name the
+			component "masterBeBot". Connect the "position" ports with an Assembly Instance like we did within the
+			Structured Component Diagram before. Furthermore connect the "gps" ports with a Delegation Instance, too.
+			Because we defined the master and slave ports with lower bound "0" currently there are no instances for
+			these ports. We have to create the needed ones. At the moment we define the master robot.
+			Hence, this component instance only needs the master ports and not the slave ports. Click on the "BeBot_SW"
+			component part. In the properties click on "…" of "Port Instances" to add ports.
+			The master port of this component was a discrete single port. Hence, select "DiscreteSinglePortInstance"
+			and click "Create". A new port appears in the list. Select this port and set the "Port Type" to "Discrete
+			Port master". Set the name to "master". The remaining properties are filled automatically.
+			Now do the same for the "Master" port of the structured component instance "masterBeBot" and connect
+			the master ports with a delegation instance.
+		</para>
+		<para>
+			Now our master BeBot is complete and should look like this:
+			<figure id="img:step022">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep022.png" scale="120"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+		</para>
+		<para>
+			Now we need the slave BeBot. This BeBot is built up almost equally. The only differences are:
+			<itemizedlist mark='bullet'>
+				<listitem><para>
+					The name should be "slaveBeBot", of course.
+				</para></listitem>
+				<listitem><para>
+					Instead of the master ports we now have to add slave ports.
+				</para></listitem>
+			</itemizedlist>	
+			The rest is equally to the master BeBot. Create this instance. It should look like this:
+			<figure id="img:step023">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep023.png" scale="120"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+		</para>
+		<para>
+			The last step is to connecting the "Master" and the "Slave" port of both BeBots
+			to enable communication between these two BeBots. Now our component instance configuration is finished.
+			Altogether it should look like this:
+			<figure id="img:step024">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep024.png" scale="120"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+		</para>
+		<para>
+			 Now there is only one thing left: The Deployment.
+		</para>
+	</sect2>
+	<!-- Step 11: The Deployment -->
+	<sect2><title>Step 11: The Deployment</title>
+		<para>
+			At this point we want to link the software we created up to now to hardware.
+			Therefore, create a Deployment Diagram named "deployment".
+		</para>
+		<para>
+			Within the Properties View set the Name of the diagram to "deployment" and select
+			as Component Instance Configuration the before created "Component Instance Configuration compInstConfig".
+		</para>
+		<para>
+			Now we can define the deployment. We need two Hardware Nodes, one for the Master and one for the Slave.
+			Hence, add two nodes and name them "masterBeBot" and "slaveBeBot".
+			For the correct deployment select "Structured Component Instance masterBeBot" resp.
+			"Structured Component Instance slaveBeBot" for Deployed Instances within the properties of the nodes.
+			The component instances we created before had a GPS port and a Master resp. Slave port.
+			Therefore, add Hardware Ports to the Hardware Nodes. Within the Properties of the Ports you can set
+			the "Deployed Port Instance". The Master BeBot needs the Gps1 port and the Master port.
+			Analogously the Slave BeBot also needs the Gps1 port and the Slave port. The GPS ports have
+			to be in-Ports as preset, but the Master resp. Slave port are in/out-Ports. Hence, set the Property
+			"Kind" of the ports to "IN_OUT".
+		</para>
+		<para>
+			Now create a Communication Link between these two ports so that the BeBots can communicate.
+			The final deployment should look like this:
+			<figure id="img:step025">
+				<mediaobject>
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/tutorial/tutorialStep025.png" scale="120"/>
+      				</imageobject>
+				</mediaobject>
+			</figure>
+		</para>
+		<para>
+			At this point this tutorial ends. We created a scenario where one BeBot sends missions to another BeBot. 
+			This is a very simple example, but you got to know the most common features of the Fujaba Real-Time Tool Suite.
+		</para>
 	</sect2>
 </sect1>
