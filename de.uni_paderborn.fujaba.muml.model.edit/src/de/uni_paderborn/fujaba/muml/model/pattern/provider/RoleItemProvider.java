@@ -79,6 +79,7 @@ public class RoleItemProvider
 			addReceiverMessageInterfacePropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
+			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
 			addOutgoingRoleConnectorPropertyDescriptor(object);
@@ -301,6 +302,28 @@ public class RoleItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Adaptation Behavior feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAdaptationBehaviorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_adaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_adaptationBehavior_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__ADAPTATION_BEHAVIOR,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
