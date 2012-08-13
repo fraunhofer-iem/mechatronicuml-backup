@@ -11,5 +11,47 @@
          </Priority>
       </editpartProvider>
    </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.fujaba">
+         <separator
+               name="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.copyRolePropertiesToPort"
+               label="Copy Role Properties To Port"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="activePartId">
+                     <equals
+                           value="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorID">
+                     </equals>
+                  </with>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.parts.CustomDiscretePortEditPart">
+                        </instanceof>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.commands.CopyRolePropertiesToPort"
+            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.copyRolePropertiesToPort"
+            name="Copy Role Properties To Port">
+      </command>
+   </extension>
 
 </plugin>
