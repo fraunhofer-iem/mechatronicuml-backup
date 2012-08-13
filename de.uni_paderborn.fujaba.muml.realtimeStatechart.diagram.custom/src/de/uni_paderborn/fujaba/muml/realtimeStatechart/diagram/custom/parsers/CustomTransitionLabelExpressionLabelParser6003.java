@@ -71,14 +71,13 @@ public class CustomTransitionLabelExpressionLabelParser6003 extends TransitionLa
 			// just keep the LiteralExpression
 			return ((LiteralExpression) parameterBinding.getValue()).getValue();
 		}
-		String name = parameterBinding.getParameter() == null ? "null" : parameterBinding.getParameter().getName();
-		return name + " := " + value;
+		return value;
 	}
 	
 	private String getParameterBindingExpressionFromList(Transition transition, List<ParameterBinding> parameterBindingList) {
 		StringBuffer buffer = new StringBuffer();
 		for (ParameterBinding parameterBinding : parameterBindingList) {
-			buffer.append(getParameterBindingExpression(transition, parameterBinding) + ",");
+			buffer.append(getParameterBindingExpression(transition, parameterBinding) + ", ");
 		}
 		if (buffer.length() > 1) {
 			// remove last comma
