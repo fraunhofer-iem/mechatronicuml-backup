@@ -31,7 +31,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Loop" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Loop" abstract="true" eSuperTypes="#//Block">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A loop statement executed a block until the Boolean value of loop test expression is false."/>
     </eAnnotations>
