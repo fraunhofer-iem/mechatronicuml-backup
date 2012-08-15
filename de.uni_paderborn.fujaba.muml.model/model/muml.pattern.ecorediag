@@ -210,10 +210,10 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_t_jr7OYOEeGGO7qZWzrUbg" type="3002" source="_t_YFsOYOEeGGO7qZWzrUbg" target="_t_Z64OYOEeGGO7qZWzrUbg">
     <children xmi:type="notation:Node" xmi:id="_t_jr8OYOEeGGO7qZWzrUbg" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_t_jr8eYOEeGGO7qZWzrUbg" x="36" y="29"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_t_jr8eYOEeGGO7qZWzrUbg" x="36" y="14"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_t_kS8OYOEeGGO7qZWzrUbg" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_t_kS8eYOEeGGO7qZWzrUbg" x="36" y="-37"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_t_kS8eYOEeGGO7qZWzrUbg" x="6" y="-37"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_t_jr7eYOEeGGO7qZWzrUbg" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_t_jr7uYOEeGGO7qZWzrUbg" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
