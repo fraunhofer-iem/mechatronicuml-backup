@@ -13,11 +13,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.calls.CallsPackage;
-import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
-import org.storydriven.storydiagrams.templates.TemplatesPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -30,11 +25,11 @@ import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
@@ -57,7 +52,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass runtimePortInstanceEClass = null;
+	private EClass runtimeDiscretePortInstanceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,11 +158,6 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		RealtimestatechartPackage.eINSTANCE.eClass();
 		MsgifacePackage.eINSTANCE.eClass();
 		DeploymentPackage.eINSTANCE.eClass();
-		CallsPackage.eINSTANCE.eClass();
-		ActivitiesPackage.eINSTANCE.eClass();
-		CallsExpressionsPackage.eINSTANCE.eClass();
-		PatternsPackage.eINSTANCE.eClass();
-		TemplatesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theRuntimePackage.createPackageContents();
@@ -198,8 +188,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRuntimePortInstance() {
-		return runtimePortInstanceEClass;
+	public EClass getRuntimeDiscretePortInstance() {
+		return runtimeDiscretePortInstanceEClass;
 	}
 
 	/**
@@ -439,7 +429,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		// Create classes and their features
 		runtimeComponentInstanceEClass = createEClass(RUNTIME_COMPONENT_INSTANCE);
 
-		runtimePortInstanceEClass = createEClass(RUNTIME_PORT_INSTANCE);
+		runtimeDiscretePortInstanceEClass = createEClass(RUNTIME_DISCRETE_PORT_INSTANCE);
 
 		runtimeRoleInstanceEClass = createEClass(RUNTIME_ROLE_INSTANCE);
 
@@ -510,8 +500,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		// Add supertypes to classes
 		runtimeComponentInstanceEClass.getESuperTypes().add(theInstancePackage.getComponentInstance());
 		runtimeComponentInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
-		runtimePortInstanceEClass.getESuperTypes().add(theInstancePackage.getPortInstance());
-		runtimePortInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
+		runtimeDiscretePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscretePortInstance());
+		runtimeDiscretePortInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
 		runtimeRoleInstanceEClass.getESuperTypes().add(thePatternPackage.getRole());
 		runtimeRoleInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
 		messageQueueEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
@@ -523,7 +513,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(runtimeComponentInstanceEClass, RuntimeComponentInstance.class, "RuntimeComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(runtimePortInstanceEClass, RuntimePortInstance.class, "RuntimePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(runtimeDiscretePortInstanceEClass, RuntimeDiscretePortInstance.class, "RuntimeDiscretePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(runtimeRoleInstanceEClass, RuntimeRoleInstance.class, "RuntimeRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

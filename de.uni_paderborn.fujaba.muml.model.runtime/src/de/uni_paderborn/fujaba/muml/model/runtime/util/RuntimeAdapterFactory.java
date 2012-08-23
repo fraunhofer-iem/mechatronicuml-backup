@@ -17,17 +17,17 @@ import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
@@ -92,8 +92,8 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createRuntimeComponentInstanceAdapter();
 			}
 			@Override
-			public Adapter caseRuntimePortInstance(RuntimePortInstance object) {
-				return createRuntimePortInstanceAdapter();
+			public Adapter caseRuntimeDiscretePortInstance(RuntimeDiscretePortInstance object) {
+				return createRuntimeDiscretePortInstanceAdapter();
 			}
 			@Override
 			public Adapter caseRuntimeRoleInstance(RuntimeRoleInstance object) {
@@ -144,6 +144,10 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createPortInstanceAdapter();
 			}
 			@Override
+			public Adapter caseDiscretePortInstance(DiscretePortInstance object) {
+				return createDiscretePortInstanceAdapter();
+			}
+			@Override
 			public Adapter caseConstrainableElement(ConstrainableElement object) {
 				return createConstrainableElementAdapter();
 			}
@@ -190,16 +194,16 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance <em>Port Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance <em>Discrete Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance
 	 * @generated
 	 */
-	public Adapter createRuntimePortInstanceAdapter() {
+	public Adapter createRuntimeDiscretePortInstanceAdapter() {
 		return null;
 	}
 
@@ -368,6 +372,20 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance <em>Discrete Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance
+	 * @generated
+	 */
+	public Adapter createDiscretePortInstanceAdapter() {
 		return null;
 	}
 

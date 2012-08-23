@@ -4,7 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="runtime"
     nsURI="http://www.fujaba.de/muml/model/runtime/0.2.0" nsPrefix="runtime">
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance #//RuntimeBehavioralElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimePortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance #//RuntimeBehavioralElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscretePortInstance #//RuntimeBehavioralElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role #//RuntimeBehavioralElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="MessageQueue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>

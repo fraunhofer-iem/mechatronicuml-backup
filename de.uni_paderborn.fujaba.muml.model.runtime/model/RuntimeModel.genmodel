@@ -4,12 +4,12 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.model.runtime/src"
     modelPluginID="de.uni_paderborn.fujaba.muml.model.runtime" modelName="RuntimeModel"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml ../../org.storydriven.core/model/core.uml.genmodel#//core">
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml ../../org.storydriven.core/model/core.uml.genmodel#//core ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams">
   <foreignModel>RuntimeModel.ecore</foreignModel>
   <genPackages prefix="Runtime" basePackage="de.uni_paderborn.fujaba.muml.model" disposableProviderFactory="true"
       ecorePackage="RuntimeModel.ecore#/">
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeComponentInstance"/>
-    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimePortInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeDiscretePortInstance"/>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeRoleInstance"/>
     <genClasses ecoreClass="RuntimeModel.ecore#//MessageQueue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//MessageQueue/size"/>

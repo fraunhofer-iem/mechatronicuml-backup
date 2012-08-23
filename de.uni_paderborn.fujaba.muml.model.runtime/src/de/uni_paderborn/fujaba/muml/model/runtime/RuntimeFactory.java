@@ -35,13 +35,13 @@ public interface RuntimeFactory extends EFactory {
 	RuntimeComponentInstance createRuntimeComponentInstance();
 
 	/**
-	 * Returns a new object of class '<em>Port Instance</em>'.
+	 * Returns a new object of class '<em>Discrete Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Instance</em>'.
+	 * @return a new object of class '<em>Discrete Port Instance</em>'.
 	 * @generated
 	 */
-	RuntimePortInstance createRuntimePortInstance();
+	RuntimeDiscretePortInstance createRuntimeDiscretePortInstance();
 
 	/**
 	 * Returns a new object of class '<em>Role Instance</em>'.

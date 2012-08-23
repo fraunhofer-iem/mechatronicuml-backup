@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -16,11 +15,11 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
@@ -69,7 +68,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case RuntimePackage.RUNTIME_COMPONENT_INSTANCE: return createRuntimeComponentInstance();
-			case RuntimePackage.RUNTIME_PORT_INSTANCE: return createRuntimePortInstance();
+			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE: return createRuntimeDiscretePortInstance();
 			case RuntimePackage.RUNTIME_ROLE_INSTANCE: return createRuntimeRoleInstance();
 			case RuntimePackage.MESSAGE_QUEUE: return createMessageQueue();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE: return createRealtimeStatechartInstance();
@@ -96,9 +95,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimePortInstance createRuntimePortInstance() {
-		RuntimePortInstanceImpl runtimePortInstance = new RuntimePortInstanceImpl();
-		return runtimePortInstance;
+	public RuntimeDiscretePortInstance createRuntimeDiscretePortInstance() {
+		RuntimeDiscretePortInstanceImpl runtimeDiscretePortInstance = new RuntimeDiscretePortInstanceImpl();
+		return runtimeDiscretePortInstance;
 	}
 
 	/**

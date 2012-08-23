@@ -155,14 +155,14 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_COMPONENT_INSTANCE_FEATURE_COUNT = InstancePackage.COMPONENT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceImpl <em>Port Instance</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeDiscretePortInstanceImpl <em>Discrete Port Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimePortInstance()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeDiscretePortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimeDiscretePortInstance()
 	 * @generated
 	 */
-	int RUNTIME_PORT_INSTANCE = 1;
+	int RUNTIME_DISCRETE_PORT_INSTANCE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -171,7 +171,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__ANNOTATION = InstancePackage.PORT_INSTANCE__ANNOTATION;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__ANNOTATION = InstancePackage.DISCRETE_PORT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -180,7 +180,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__EXTENSION = InstancePackage.PORT_INSTANCE__EXTENSION;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__EXTENSION = InstancePackage.DISCRETE_PORT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -189,7 +189,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__NAME = InstancePackage.PORT_INSTANCE__NAME;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__NAME = InstancePackage.DISCRETE_PORT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -198,7 +198,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__COMMENT = InstancePackage.PORT_INSTANCE__COMMENT;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__COMMENT = InstancePackage.DISCRETE_PORT_INSTANCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
@@ -207,7 +207,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__PORT_TYPE = InstancePackage.PORT_INSTANCE__PORT_TYPE;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__PORT_TYPE = InstancePackage.DISCRETE_PORT_INSTANCE__PORT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
@@ -216,7 +216,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__COMPONENT_INSTANCE = InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE = InstancePackage.DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
@@ -225,7 +225,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
@@ -234,7 +234,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
@@ -243,7 +243,25 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__CONNECTOR_INSTANCES = InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
@@ -252,7 +270,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__STATECHART_INSTANCE = InstancePackage.PORT_INSTANCE_FEATURE_COUNT + 0;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__STATECHART_INSTANCE = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Message Queue</b></em>' containment reference.
@@ -261,16 +279,16 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE__MESSAGE_QUEUE = InstancePackage.PORT_INSTANCE_FEATURE_COUNT + 1;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_QUEUE = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Port Instance</em>' class.
+	 * The number of structural features of the '<em>Discrete Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_FEATURE_COUNT = InstancePackage.PORT_INSTANCE_FEATURE_COUNT + 2;
+	int RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleInstanceImpl <em>Role Instance</em>}' class.
@@ -425,6 +443,15 @@ public interface RuntimePackage extends EPackage {
 	 * @ordered
 	 */
 	int RUNTIME_ROLE_INSTANCE__ROLE_CONNECTOR = PatternPackage.ROLE__ROLE_CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>Is Multi Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_INSTANCE__IS_MULTI_ROLE = PatternPackage.ROLE__IS_MULTI_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
@@ -831,14 +858,14 @@ public interface RuntimePackage extends EPackage {
 	EClass getRuntimeComponentInstance();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance <em>Port Instance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance <em>Discrete Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance
+	 * @return the meta object for class '<em>Discrete Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance
 	 * @generated
 	 */
-	EClass getRuntimePortInstance();
+	EClass getRuntimeDiscretePortInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance <em>Role Instance</em>}'.
@@ -1119,14 +1146,14 @@ public interface RuntimePackage extends EPackage {
 		EClass RUNTIME_COMPONENT_INSTANCE = eINSTANCE.getRuntimeComponentInstance();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceImpl <em>Port Instance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeDiscretePortInstanceImpl <em>Discrete Port Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimePortInstance()
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeDiscretePortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimeDiscretePortInstance()
 		 * @generated
 		 */
-		EClass RUNTIME_PORT_INSTANCE = eINSTANCE.getRuntimePortInstance();
+		EClass RUNTIME_DISCRETE_PORT_INSTANCE = eINSTANCE.getRuntimeDiscretePortInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleInstanceImpl <em>Role Instance</em>}' class.

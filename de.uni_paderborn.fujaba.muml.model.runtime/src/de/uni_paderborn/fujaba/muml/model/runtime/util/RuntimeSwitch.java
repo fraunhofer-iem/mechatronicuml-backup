@@ -16,17 +16,17 @@ import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
@@ -97,14 +97,15 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.RUNTIME_PORT_INSTANCE: {
-				RuntimePortInstance runtimePortInstance = (RuntimePortInstance)theEObject;
-				T result = caseRuntimePortInstance(runtimePortInstance);
-				if (result == null) result = casePortInstance(runtimePortInstance);
-				if (result == null) result = caseRuntimeBehavioralElement(runtimePortInstance);
-				if (result == null) result = caseNamedElement(runtimePortInstance);
-				if (result == null) result = caseCommentableElement(runtimePortInstance);
-				if (result == null) result = caseExtendableElement(runtimePortInstance);
+			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE: {
+				RuntimeDiscretePortInstance runtimeDiscretePortInstance = (RuntimeDiscretePortInstance)theEObject;
+				T result = caseRuntimeDiscretePortInstance(runtimeDiscretePortInstance);
+				if (result == null) result = caseDiscretePortInstance(runtimeDiscretePortInstance);
+				if (result == null) result = caseRuntimeBehavioralElement(runtimeDiscretePortInstance);
+				if (result == null) result = casePortInstance(runtimeDiscretePortInstance);
+				if (result == null) result = caseNamedElement(runtimeDiscretePortInstance);
+				if (result == null) result = caseCommentableElement(runtimeDiscretePortInstance);
+				if (result == null) result = caseExtendableElement(runtimeDiscretePortInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -183,17 +184,17 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Port Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimePortInstance(RuntimePortInstance object) {
+	public T caseRuntimeDiscretePortInstance(RuntimeDiscretePortInstance object) {
 		return null;
 	}
 
@@ -374,6 +375,21 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePortInstance(PortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscretePortInstance(DiscretePortInstance object) {
 		return null;
 	}
 
