@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.fujaba.de/muml/model/core/0.2.7" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.2.7" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7" xmi:id="_lWOcMe-eEeGrR_F0FvcdVA">
+  <categories xmi:id="_lWOcMu-eEeGrR_F0FvcdVA" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcM--eEeGrR_F0FvcdVA" name="VOID"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcNO-eEeGrR_F0FvcdVA" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcNe-eEeGrR_F0FvcdVA" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcNu-eEeGrR_F0FvcdVA" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcN--eEeGrR_F0FvcdVA" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcOO-eEeGrR_F0FvcdVA" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcOe-eEeGrR_F0FvcdVA" name="DOUBLE" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcOu-eEeGrR_F0FvcdVA" name="STRING" primitiveType="STRING"/>
+  </categories>
+  <categories xmi:id="_m3rA0O-eEeGrR_F0FvcdVA" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_m3s2AO-eEeGrR_F0FvcdVA">
+      <operations xmi:id="_3VHqsO-eEeGrR_F0FvcdVA" name="call"/>
+      <operations xmi:id="_wAEIsO-eEeGrR_F0FvcdVA" name="callp">
+        <parameters xmi:id="_yvdHIO-eEeGrR_F0FvcdVA" name="p1" type="_lWOcN--eEeGrR_F0FvcdVA"/>
+        <parameters xmi:id="_0-OEwO-eEeGrR_F0FvcdVA" name="p2" type="_lWOcOu-eEeGrR_F0FvcdVA"/>
+      </operations>
+      <operations xmi:id="_oemU0O--EeG7rIW_B1sp4A" name="bool_op" returnType="_lWOcNO-eEeGrR_F0FvcdVA"/>
+      <attributes xmi:id="_pI740O-eEeGrR_F0FvcdVA" name="foo" type="_lWOcN--eEeGrR_F0FvcdVA"/>
+      <attributes xmi:id="_rFDAMO-eEeGrR_F0FvcdVA" name="bar" type="_lWOcOO-eEeGrR_F0FvcdVA"/>
+      <attributes xmi:id="_taploO-eEeGrR_F0FvcdVA" name="baz" type="_lWOcOu-eEeGrR_F0FvcdVA"/>
+      <attributes xmi:id="_r2YEwO_FEeGRkfLkI2HmyQ" name="b" type="_lWOcNO-eEeGrR_F0FvcdVA"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>
