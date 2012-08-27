@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/de.uni_paderborn.fujaba.muml.feature_0.2.0.qualifier.jar" id="de.uni_paderborn.fujaba.muml.feature" version="0.2.0.qualifier">
-      <category name="de.uni_paderborn.fujaba.muml.feature.category"/>
-   </feature>
-   <category-def name="de.uni_paderborn.fujaba.muml.feature.category" label="MechatronicUML Core"/>
-</site>
