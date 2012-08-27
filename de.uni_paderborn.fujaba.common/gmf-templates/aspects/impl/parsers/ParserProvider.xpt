@@ -1,0 +1,59 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::providers::ParserUtils»
+
+
+«REM» Changed visibility from private to protected permanently «ENDREM»
+«AROUND _parser(modelFacet : gmfgen::LabelModelFacet, element : gmfgen::GenCommonBase) FOR gmfgen::CustomParser»
+«EXPAND xpt::Common::generatedMemberComment»
+	protected «qualifiedName» «parserFieldName(element)»;
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	«REM»
+	«IF holder.extensibleViaService»private«ELSE»public«ENDIF» org.eclipse.gmf.runtime.common.ui.services.parser.IParser «parserAccessorName(element)»() {
+	«ENDREM»
+	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser «parserAccessorName(element)»() {
+		if («parserFieldName(element)» == null) {
+			«parserFieldName(element)» = new «qualifiedName»();
+		}
+		return «parserFieldName(element)»;
+	}
+«ENDAROUND»
+
+
+«REM» Changed visibility from private to protected permanently «ENDREM»
+«AROUND _parser(modelFacet : gmfgen::FeatureLabelModelFacet, element : gmfgen::GenCommonBase) FOR gmfgen::PredefinedParser»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser «parserFieldName(element)»;
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser «parserAccessorName(element)»() {
+		if («parserFieldName(element)» == null) {
+			org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				«EXPAND MetaModel::MetaFeature FOREACH modelFacet.metaFeatures SEPARATOR ', ' »
+			};
+		«IF modelFacet.editableMetaFeatures->size() > 0-»
+			org.eclipse.emf.ecore.EAttribute[] editableFeatures = new org.eclipse.emf.ecore.EAttribute[] {
+				«EXPAND MetaModel::MetaFeature FOREACH modelFacet.editableMetaFeatures SEPARATOR ', '»
+			};
+		«ENDIF-»
+		«getQualifiedClassName()» parser = new «getQualifiedClassName()»(features«IF modelFacet.editableMetaFeatures->size() > 0», editableFeatures«ENDIF»);
+		«EXPAND impl::parsers::ParserProvider::_setPatterns(viewMethod, editMethod, 'parser') FOR modelFacet-»
+			«parserFieldName(element)» = parser;
+		}
+		return «parserFieldName(element)»;
+	}
+«ENDAROUND»
+
+«REM» Changed visibility from private to protected permanently «ENDREM»
+«AROUND _parser(modelFacet : gmfgen::LabelModelFacet, element : gmfgen::GenCommonBase) FOR gmfgen::ExpressionLabelParser»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected «getQualifiedClassName()» «parserFieldName(element)»;
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser «parserAccessorName(element)»() {
+		if («parserFieldName(element)» == null) {
+			«parserFieldName(element)» = new «getQualifiedClassName()»();
+		}
+		return «parserFieldName(element)»;
+	}
+«ENDAROUND»

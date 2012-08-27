@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="runtime"
+    nsURI="http://www.fujaba.de/muml/model/runtime/0.2.0" nsPrefix="runtime">
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance #//RuntimeBehavioralElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscretePortInstance #//RuntimeBehavioralElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role #//RuntimeBehavioralElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageQueue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//RuntimeMessage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBehavioralElement"
+        lowerBound="1" eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/messageQueue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechartInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBehavioralElement"
+        eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/statechartInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="active" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subRealtimeStatechartInstances"
+        upperBound="-1" eType="#//RealtimeStatechartInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableBindings" upperBound="-1"
+        eType="#//VariableBinding" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeMessage" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//RuntimeParameter" containment="true" eOpposite="#//RuntimeParameter/message"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeParameter" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="#//RuntimeMessage" eOpposite="#//RuntimeMessage/parameters"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeBehavioralElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechartInstance" eType="#//RealtimeStatechartInstance"
+        containment="true" eOpposite="#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageQueue" eType="#//MessageQueue"
+        containment="true" eOpposite="#//MessageQueue/runtimeBehavioralElement"/>
+  </eClassifiers>
+</ecore:EPackage>

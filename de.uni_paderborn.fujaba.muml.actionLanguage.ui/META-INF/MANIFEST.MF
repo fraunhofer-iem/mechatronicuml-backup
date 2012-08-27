@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML ActionLanguage (UI)
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Version: 0.3.0.qualifier
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionLanguage.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ui.ide;bundle-version="3.7.0",
+ org.eclipse.jdt.core;bundle-version="3.7.0",
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.builder,
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
+ org.eclipse.compare,
+ de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="0.3.0";visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.3.0",
+ de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram;bundle-version="0.3.0",
+ org.eclipse.ui.editors,
+ org.eclipse.ui,
+ org.antlr.runtime,
+ org.eclipse.emf.compare.match
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Activator: de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator
+Import-Package: org.apache.log4j;version="1.2.15",
+ org.eclipse.core.expressions,
+ org.eclipse.emf.compare.diff.metamodel,
+ org.eclipse.emf.compare.diff.service,
+ org.eclipse.emf.compare.match,
+ org.eclipse.ui.navigator
+Export-Package: de.uni_paderborn.fujaba.muml.ui.contentassist.antlr

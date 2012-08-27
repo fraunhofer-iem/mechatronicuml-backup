@@ -1,0 +1,7 @@
+# Tracing options for the de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram plug-in
+
+# Common issues
+de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/debug=false
+
+# Visual IDs
+de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/debug/visualID=false

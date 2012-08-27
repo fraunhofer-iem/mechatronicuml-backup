@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            icon="icons/obj16/TypeDialog.gif"
+	            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            label="Open Type Dialog"
+	            style="push">
+	            	<visibleWhen checkEnabled="true">
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+	
+	<extension
+        point="org.eclipse.ui.commands">
+     <category
+           id="de.fujaba"
+           name="Fujaba">
+     </category>
+     <command
+           categoryId="de.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+           description="Open Type Dialog"
+           id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+           name="Open Type Dialog">
+     </command>
+  </extension>
+ <extension
+       point="de.fujaba.newwizard.modelinitializer">
+    <initializer
+          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
+    </initializer>
+ </extension>
+	
+</plugin>

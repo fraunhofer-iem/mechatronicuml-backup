@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentstorydiagram"
+    nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.3.0" nsPrefix="componentstorydiagram">
+  <eSubpackages name="controlflow" nsURI="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.0"
+      nsPrefix="controlflow">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryRule" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a component story rule which is used to specifiy reconfiguration of a MechatronicUML component. The actual reconfiguration operation is encapsulated in the contained Activity in order to reuse the existing meta-model for story diagrams. The ComponentStoryRule contains an activity rather than inheriting from an activity to distinguish between the parameter sets."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+          eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryNode" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A component story nodes contains a component story pattern. In a component story rule, only component story pattern but no normal story pattern may be used."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentStoryPattern"
+          lowerBound="1" eType="#//componentstorypattern/ComponentStoryPattern"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ControllerExchangeNode" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Controller Exchange Activity Nodes are used to exchange controllers modeled by continuous components. The controller exchange node either applies a fading function or a flat switching to the out-ports of the continuous component. "/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RelativeDeadline"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The relative deadline denotes the minimum and maximum duration of the controller exchange. In case of a fading function, the deadline denotes the time interval in which both controllers are active and during which their out-ports are faded. In case of a flat switching, the deadline denotes the time interval in which the spline computing by the flat switching is used as a value of the out-port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentStoryPattern"
+          lowerBound="1" eType="#//componentstorypattern/ComponentStoryPattern"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="controllerExchangeStrategy"
+          lowerBound="1" eType="#//controlflow/ControllerExchangeStrategy" defaultValueLiteral="ControllerExchangeStrategy.ATOMIC_SWITCHING"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fadingFunctions" upperBound="-1"
+          eType="#//componentstorypattern/FadingFunction" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A fading function defines how the value of one out-port of a continuous component is faded to the value of another out-port of a continuous component. For each out-port of a continuous component to be deleted, one fading function is required."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ControllerExchangeStrategy">
+      <eLiterals name="ATOMIC_SWITCHING"/>
+      <eLiterals name="FADING_FUNCTION" value="1"/>
+      <eLiterals name="FLAT_SWITCHING" value="2"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="componentstorypattern" nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.0"
+      nsPrefix="componentstorypattern">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryPattern" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="thisVariable" lowerBound="1"
+          eType="#//componentstorypattern/ComponentVariable" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryPatternVariable" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" eType="ecore:EEnum ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingSemantics"
+          defaultValueLiteral="BindingSemantics.MANDATORY"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingOperator" eType="ecore:EEnum ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingOperator"
+          defaultValueLiteral="BindingOperator.CHECK_ONLY"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" eType="ecore:EEnum ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingState"
+          defaultValueLiteral="BindingState.UNBOUND"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentVariable" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
+          eType="#//componentstorypattern/PortVariable" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="partVariables" upperBound="-1"
+          eType="#//componentstorypattern/PartVariable" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
+          eType="#//componentstorypattern/ConnectorVariable" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortVariable" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectorVariables"
+          upperBound="-1" eType="#//componentstorypattern/ConnectorVariable" eOpposite="#//componentstorypattern/ConnectorVariable/target"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnectorVariables"
+          upperBound="-1" eType="#//componentstorypattern/ConnectorVariable" eOpposite="#//componentstorypattern/ConnectorVariable/source"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PartVariable" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
+          eType="#//componentstorypattern/PortVariable" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//componentstorypattern/Call"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectorVariable" abstract="true"
+        eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+          eType="#//componentstorypattern/PortVariable" eOpposite="#//componentstorypattern/PortVariable/outgoingConnectorVariables"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+          eType="#//componentstorypattern/PortVariable" eOpposite="#//componentstorypattern/PortVariable/incomingConnectorVariables"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyVariable" eSuperTypes="#//componentstorypattern/ConnectorVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Assembly"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationVariable" eSuperTypes="#//componentstorypattern/ConnectorVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Delegation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callee" lowerBound="1"
+          eType="#//controlflow/ComponentStoryRule"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FadingFunction" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
+          eType="#//componentstorypattern/PortVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
+          eType="#//componentstorypattern/PortVariable"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

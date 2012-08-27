@@ -1,0 +1,38 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[11pt,a4paper]{article}
+\usepackage[ngerman,german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+
+\textbf{\huge Protokoll SHK-Treffen 10.11.10}\\[0.9cm]
+
+\end{center}
+
+\begin{itemize}
+  \item Das Meta-Modell für Konnektoren wird umgesetzt wie von Christian an der
+  Tafel skizziert.
+  \item Alle Elemente mit Namen erben von ``NamedElement''.
+  \item Die Klasse ``Role'' erhält zwei Assoziation ``required'' und
+  ``provided'' zur Klasse ``MessageInterface''. Vorhandene Assocs zu
+  ``MessageInterface'' werden gelöscht.
+  \item ``Channel'' erbt von ``BehavioralConnector'', die Assoc ``Channel ->
+  UMLRealtimeStatechart'' wird gelöscht.
+  \item Für alle Modellelemente derern Verhalten durch ein Realtime Statechart
+  beschrieben wird wird eine Basisklasse ``BehavioralElement'' eingeführt.
+  \item In der Klasse ``Constraint'' wird die Klasse ``TextualExpression''
+  verwendet, die es ermöglicht zugleich einen Ausdruck und die Sprache in der
+  der Ausdruck formuliert ist, zu speichern. ``language''-Attribut in
+  ``Constraint'' entfällt.
+  \item Welche Klassen im Package ``instance'' bestehen bleiben muss mit Claudia
+  diskutiert werden.
+  \item Julian überlegt sich, wie (parametrisierte) Synchronisationskanäle
+  umgesetzt werden können.
+\end{itemize}
+
+\end{document}

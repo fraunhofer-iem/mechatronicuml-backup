@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.model.actionLanguage/src"
+    modelPluginID="de.uni_paderborn.fujaba.muml.model.actionLanguage" modelName="ActionLanguage"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml ../../org.storydriven.core/model/core.uml.genmodel#//core ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams">
+  <foreignModel>actionLanguage.ecore</foreignModel>
+  <genPackages prefix="ActionLanguage" basePackage="de.uni_paderborn.fujaba.muml.model"
+      disposableProviderFactory="true" ecorePackage="actionLanguage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//AssignOperator">
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/ASSIGN"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/PLUS_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/EQUAL_PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/MINUS_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/EQUAL_MINUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//IncrementDecrementOperator">
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/INCREMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/DECREMENT"/>
+    </genEnums>
+    <genClasses ecoreClass="actionLanguage.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Block/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//Loop">
+      <genFeatures property="None" children="true" createChild="true" propertyDescription=""
+          ecoreFeature="ecore:EReference actionLanguage.ecore#//Loop/block"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Loop/loopTest"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//WhileLoop"/>
+    <genClasses ecoreClass="actionLanguage.ecore#//DoWhileLoop"/>
+    <genClasses ecoreClass="actionLanguage.ecore#//Assignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//Assignment/assignOperator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/rhs_assignExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//Assignment/incrementDecrementOperator"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/lhs_attributeExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//ForLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/initalizeExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/countingExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//IfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/ifCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/ifBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseIfConditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseIfBlocks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//AttributeExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//AttributeExpression/attribute"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//AttributeExpression/indices"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//OperationCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/parameterBinding"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//ReturnStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ReturnStatement/expression"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

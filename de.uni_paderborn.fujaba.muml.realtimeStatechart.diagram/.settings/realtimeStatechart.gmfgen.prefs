@@ -1,0 +1,9 @@
+#Wed Jul 11 18:42:42 CEST 2012
+eclipse.preferences.version=1
+generate_rcp=false
+ignore_gmfgen_validation=false
+ignore_mapmodel_validation=true
+post-reconcile-qvto=platform\:/resource/de.uni_paderborn.fujaba.common/transformations/post-reconcile.qvto
+use_in_transfo_code_gen=true
+use_map_mode=true
+use_runtime_figures=true
