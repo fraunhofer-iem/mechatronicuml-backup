@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML ActionLanguage Edit-Support
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.actionLanguage.edit;singleton:=true
-Bundle-Version: 0.2.0.qualifier
+Bundle-Version: 0.3.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.model.actionLanguage.provider.ActionLanguageEditPlugin$Implementation
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
@@ -10,7 +10,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.model.actionLanguage.provider
 Require-Bundle: org.storydriven.core.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.2.0";visibility:=reexport,
- de.uni_paderborn.fujaba.muml.model.edit;bundle-version="0.2.0",
+ de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.3.0";visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model.edit;bundle-version="0.3.0",
  org.storydriven.storydiagrams.edit;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
