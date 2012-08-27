@@ -326,7 +326,7 @@
       iD="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
       name="Messageinterface Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
-      version="0.2.0.qualifier"
+      version="0.3.0.qualifier"
       activatorClassName="MessageinterfaceDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
