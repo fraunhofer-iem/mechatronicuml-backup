@@ -27,13 +27,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionsExpressionStartRuleParserRuleCall_0_2_0 = (RuleCall)cExpressionsAssignment_0_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
 		private final Assignment cExpressionsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cExpressionsArithmeticExpressionParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
+		private final RuleCall cExpressionsExpressionParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
 		
 		//Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-		//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=ArithmeticExpression;
+		//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
 		public ParserRule getRule() { return rule; }
 
-		//{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=ArithmeticExpression
+		//{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}"
@@ -54,11 +54,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_0_3() { return cRightCurlyBracketKeyword_0_3; }
 
-		//expressions+=ArithmeticExpression
+		//expressions+=Expression
 		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
 
-		//ArithmeticExpression
-		public RuleCall getExpressionsArithmeticExpressionParserRuleCall_1_0() { return cExpressionsArithmeticExpressionParserRuleCall_1_0; }
+		//Expression
+		public RuleCall getExpressionsExpressionParserRuleCall_1_0() { return cExpressionsExpressionParserRuleCall_1_0; }
 	}
 
 	public class ForLoopElements extends AbstractParserRuleElementFinder {
@@ -77,6 +77,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBlockAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cBlockBlockParserRuleCall_7_0 = (RuleCall)cBlockAssignment_7.eContents().get(0);
 		
+		//// TODO: get rid of ForLoopCountingExpression
 		//ForLoop returns actionLanguage::ForLoop:
 		//	"for" "(" initalizeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
 		//	block=Block;
@@ -121,6 +122,60 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Block
 		public RuleCall getBlockBlockParserRuleCall_7_0() { return cBlockBlockParserRuleCall_7_0; }
+	}
+
+	public class ForLoopCountingExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForLoopCountingExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cLhs_attributeExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLhs_attributeExpressionAttributeExpressionParserRuleCall_0_0 = (RuleCall)cLhs_attributeExpressionAssignment_0.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cIncrementDecrementOperatorAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0 = (RuleCall)cIncrementDecrementOperatorAssignment_1_0.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Assignment cAssignOperatorAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
+		private final RuleCall cAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0 = (RuleCall)cAssignOperatorAssignment_1_1_0.eContents().get(0);
+		private final Assignment cRhs_assignExpressionAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_1_1_1_0 = (RuleCall)cRhs_assignExpressionAssignment_1_1_1.eContents().get(0);
+		
+		//ForLoopCountingExpression returns actionLanguage::Assignment:
+		//	lhs_attributeExpression=AttributeExpression (incrementDecrementOperator=IncrementDecrementOperator |
+		//	assignOperator=AssignOperator rhs_assignExpression=Expression);
+		public ParserRule getRule() { return rule; }
+
+		//lhs_attributeExpression=AttributeExpression (incrementDecrementOperator=IncrementDecrementOperator |
+		//assignOperator=AssignOperator rhs_assignExpression=Expression)
+		public Group getGroup() { return cGroup; }
+
+		//lhs_attributeExpression=AttributeExpression
+		public Assignment getLhs_attributeExpressionAssignment_0() { return cLhs_attributeExpressionAssignment_0; }
+
+		//AttributeExpression
+		public RuleCall getLhs_attributeExpressionAttributeExpressionParserRuleCall_0_0() { return cLhs_attributeExpressionAttributeExpressionParserRuleCall_0_0; }
+
+		//incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator rhs_assignExpression=Expression
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//incrementDecrementOperator=IncrementDecrementOperator
+		public Assignment getIncrementDecrementOperatorAssignment_1_0() { return cIncrementDecrementOperatorAssignment_1_0; }
+
+		//IncrementDecrementOperator
+		public RuleCall getIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0() { return cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0; }
+
+		//assignOperator=AssignOperator rhs_assignExpression=Expression
+		public Group getGroup_1_1() { return cGroup_1_1; }
+
+		//assignOperator=AssignOperator
+		public Assignment getAssignOperatorAssignment_1_1_0() { return cAssignOperatorAssignment_1_1_0; }
+
+		//AssignOperator
+		public RuleCall getAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0() { return cAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0; }
+
+		//rhs_assignExpression=Expression
+		public Assignment getRhs_assignExpressionAssignment_1_1_1() { return cRhs_assignExpressionAssignment_1_1_1; }
+
+		//Expression
+		public RuleCall getRhs_assignExpressionExpressionParserRuleCall_1_1_1_0() { return cRhs_assignExpressionExpressionParserRuleCall_1_1_1_0; }
 	}
 
 	public class WhileLoopElements extends AbstractParserRuleElementFinder {
@@ -369,161 +424,148 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Assignment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cLhs_attributeExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0 = (RuleCall)cLhs_attributeExpressionAssignment_0.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Assignment cAssignOperatorAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
-		private final RuleCall cAssignOperatorAssignOperatorEnumRuleCall_1_0_0_0 = (RuleCall)cAssignOperatorAssignment_1_0_0.eContents().get(0);
-		private final Assignment cRhs_assignExpressionAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_1_0_1_0 = (RuleCall)cRhs_assignExpressionAssignment_1_0_1.eContents().get(0);
-		private final Assignment cIncrementDecrementOperatorAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final RuleCall cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0 = (RuleCall)cIncrementDecrementOperatorAssignment_1_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cLhs_attributeExpressionAttributeExpressionParserRuleCall_0_0 = (RuleCall)cLhs_attributeExpressionAssignment_0.eContents().get(0);
+		private final Assignment cAssignOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAssignOperatorAssignOperatorEnumRuleCall_1_0 = (RuleCall)cAssignOperatorAssignment_1.eContents().get(0);
+		private final Assignment cRhs_assignExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_2_0 = (RuleCall)cRhs_assignExpressionAssignment_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
+		//// Assignment
 		//Assignment returns actionLanguage::Assignment:
-		//	lhs_attributeExpression=AttributeLeafExpression (assignOperator=AssignOperator rhs_assignExpression=Expression |
-		//	incrementDecrementOperator=IncrementDecrementOperator) ";";
+		//	lhs_attributeExpression=AttributeExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
 		public ParserRule getRule() { return rule; }
 
-		//lhs_attributeExpression=AttributeLeafExpression (assignOperator=AssignOperator rhs_assignExpression=Expression |
-		//incrementDecrementOperator=IncrementDecrementOperator) ";"
+		//lhs_attributeExpression=AttributeExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";"
 		public Group getGroup() { return cGroup; }
 
-		//lhs_attributeExpression=AttributeLeafExpression
+		//lhs_attributeExpression=AttributeExpression
 		public Assignment getLhs_attributeExpressionAssignment_0() { return cLhs_attributeExpressionAssignment_0; }
 
-		//AttributeLeafExpression
-		public RuleCall getLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0() { return cLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0; }
-
-		//assignOperator=AssignOperator rhs_assignExpression=Expression | incrementDecrementOperator=IncrementDecrementOperator
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
-		//assignOperator=AssignOperator rhs_assignExpression=Expression
-		public Group getGroup_1_0() { return cGroup_1_0; }
+		//AttributeExpression
+		public RuleCall getLhs_attributeExpressionAttributeExpressionParserRuleCall_0_0() { return cLhs_attributeExpressionAttributeExpressionParserRuleCall_0_0; }
 
 		//assignOperator=AssignOperator
-		public Assignment getAssignOperatorAssignment_1_0_0() { return cAssignOperatorAssignment_1_0_0; }
+		public Assignment getAssignOperatorAssignment_1() { return cAssignOperatorAssignment_1; }
 
 		//AssignOperator
-		public RuleCall getAssignOperatorAssignOperatorEnumRuleCall_1_0_0_0() { return cAssignOperatorAssignOperatorEnumRuleCall_1_0_0_0; }
+		public RuleCall getAssignOperatorAssignOperatorEnumRuleCall_1_0() { return cAssignOperatorAssignOperatorEnumRuleCall_1_0; }
 
 		//rhs_assignExpression=Expression
-		public Assignment getRhs_assignExpressionAssignment_1_0_1() { return cRhs_assignExpressionAssignment_1_0_1; }
+		public Assignment getRhs_assignExpressionAssignment_2() { return cRhs_assignExpressionAssignment_2; }
 
 		//Expression
-		public RuleCall getRhs_assignExpressionExpressionParserRuleCall_1_0_1_0() { return cRhs_assignExpressionExpressionParserRuleCall_1_0_1_0; }
-
-		//incrementDecrementOperator=IncrementDecrementOperator
-		public Assignment getIncrementDecrementOperatorAssignment_1_1() { return cIncrementDecrementOperatorAssignment_1_1; }
-
-		//IncrementDecrementOperator
-		public RuleCall getIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0() { return cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0; }
+		public RuleCall getRhs_assignExpressionExpressionParserRuleCall_2_0() { return cRhs_assignExpressionExpressionParserRuleCall_2_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
-	}
-
-	public class ForLoopCountingExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForLoopCountingExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cLhs_attributeExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0 = (RuleCall)cLhs_attributeExpressionAssignment_0.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cIncrementDecrementOperatorAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final RuleCall cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0 = (RuleCall)cIncrementDecrementOperatorAssignment_1_0.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
-		private final Assignment cAssignOperatorAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
-		private final RuleCall cAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0 = (RuleCall)cAssignOperatorAssignment_1_1_0.eContents().get(0);
-		private final Assignment cRhs_assignExpressionAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_1_1_1_0 = (RuleCall)cRhs_assignExpressionAssignment_1_1_1.eContents().get(0);
-		
-		//ForLoopCountingExpression returns actionLanguage::Assignment:
-		//	lhs_attributeExpression=AttributeLeafExpression (incrementDecrementOperator=IncrementDecrementOperator |
-		//	assignOperator=AssignOperator rhs_assignExpression=Expression);
-		public ParserRule getRule() { return rule; }
-
-		//lhs_attributeExpression=AttributeLeafExpression (incrementDecrementOperator=IncrementDecrementOperator |
-		//assignOperator=AssignOperator rhs_assignExpression=Expression)
-		public Group getGroup() { return cGroup; }
-
-		//lhs_attributeExpression=AttributeLeafExpression
-		public Assignment getLhs_attributeExpressionAssignment_0() { return cLhs_attributeExpressionAssignment_0; }
-
-		//AttributeLeafExpression
-		public RuleCall getLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0() { return cLhs_attributeExpressionAttributeLeafExpressionParserRuleCall_0_0; }
-
-		//incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator rhs_assignExpression=Expression
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
-		//incrementDecrementOperator=IncrementDecrementOperator
-		public Assignment getIncrementDecrementOperatorAssignment_1_0() { return cIncrementDecrementOperatorAssignment_1_0; }
-
-		//IncrementDecrementOperator
-		public RuleCall getIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0() { return cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0; }
-
-		//assignOperator=AssignOperator rhs_assignExpression=Expression
-		public Group getGroup_1_1() { return cGroup_1_1; }
-
-		//assignOperator=AssignOperator
-		public Assignment getAssignOperatorAssignment_1_1_0() { return cAssignOperatorAssignment_1_1_0; }
-
-		//AssignOperator
-		public RuleCall getAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0() { return cAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0; }
-
-		//rhs_assignExpression=Expression
-		public Assignment getRhs_assignExpressionAssignment_1_1_1() { return cRhs_assignExpressionAssignment_1_1_1; }
-
-		//Expression
-		public RuleCall getRhs_assignExpressionExpressionParserRuleCall_1_1_1_0() { return cRhs_assignExpressionExpressionParserRuleCall_1_1_1_0; }
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
-		private final RuleCall cArithmeticExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cLogicalExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
+		//// end of assignment
+		//// TODO: get rid of this production
 		//Expression returns expressions::Expression:
-		//	ArithmeticExpression;
+		//	LogicalExpression;
 		public ParserRule getRule() { return rule; }
 
-		//ArithmeticExpression
-		public RuleCall getArithmeticExpressionParserRuleCall() { return cArithmeticExpressionParserRuleCall; }
+		//LogicalExpression
+		public RuleCall getLogicalExpressionParserRuleCall() { return cLogicalExpressionParserRuleCall; }
 	}
 
-	public class ArithmeticExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArithmeticExpression");
+	public class LogicalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalExpression");
+		private final RuleCall cLogicalOrExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//// LogicalExpression
+		//LogicalExpression returns expressions::Expression:
+		//	LogicalOrExpression;
+		public ParserRule getRule() { return rule; }
+
+		//LogicalOrExpression
+		public RuleCall getLogicalOrExpressionParserRuleCall() { return cLogicalOrExpressionParserRuleCall; }
+	}
+
+	public class LogicalOrExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalOrExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cLogicalAndExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cLogicalExpressionLeftExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorLogicalOrOperatorEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightExpressionLogicalAndExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
+		
+		//LogicalOrExpression returns expressions::Expression:
+		//	LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
+		//	rightExpression=LogicalAndExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
+		//rightExpression=LogicalAndExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//LogicalAndExpression
+		public RuleCall getLogicalAndExpressionParserRuleCall_0() { return cLogicalAndExpressionParserRuleCall_0; }
+
+		//({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
+		//rightExpression=LogicalAndExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{commonExpressions::LogicalExpression.leftExpression=current}
+		public Action getLogicalExpressionLeftExpressionAction_1_0() { return cLogicalExpressionLeftExpressionAction_1_0; }
+
+		//operator=LogicalOrOperator
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+
+		//LogicalOrOperator
+		public RuleCall getOperatorLogicalOrOperatorEnumRuleCall_1_1_0() { return cOperatorLogicalOrOperatorEnumRuleCall_1_1_0; }
+
+		//rightExpression=LogicalAndExpression
+		public Assignment getRightExpressionAssignment_1_2() { return cRightExpressionAssignment_1_2; }
+
+		//LogicalAndExpression
+		public RuleCall getRightExpressionLogicalAndExpressionParserRuleCall_1_2_0() { return cRightExpressionLogicalAndExpressionParserRuleCall_1_2_0; }
+	}
+
+	public class LogicalAndExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalAndExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cComparisonExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cArithmeticExpressionLeftExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cLogicalExpressionLeftExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOperatorArithmeticOperatorEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final RuleCall cOperatorLogicalAndOperatorEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
 		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightExpressionComparisonExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
 		
-		//ArithmeticExpression returns expressions::Expression:
-		//	ComparisonExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=ArithmeticOperator
+		//LogicalAndExpression returns expressions::Expression:
+		//	ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
 		//	rightExpression=ComparisonExpression)*;
 		public ParserRule getRule() { return rule; }
 
-		//ComparisonExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=ArithmeticOperator
+		//ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
 		//rightExpression=ComparisonExpression)*
 		public Group getGroup() { return cGroup; }
 
 		//ComparisonExpression
 		public RuleCall getComparisonExpressionParserRuleCall_0() { return cComparisonExpressionParserRuleCall_0; }
 
-		//({commonExpressions::ArithmeticExpression.leftExpression=current} operator=ArithmeticOperator
+		//({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
 		//rightExpression=ComparisonExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{commonExpressions::ArithmeticExpression.leftExpression=current}
-		public Action getArithmeticExpressionLeftExpressionAction_1_0() { return cArithmeticExpressionLeftExpressionAction_1_0; }
+		//{commonExpressions::LogicalExpression.leftExpression=current}
+		public Action getLogicalExpressionLeftExpressionAction_1_0() { return cLogicalExpressionLeftExpressionAction_1_0; }
 
-		//operator=ArithmeticOperator
+		//operator=LogicalAndOperator
 		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
 
-		//ArithmeticOperator
-		public RuleCall getOperatorArithmeticOperatorEnumRuleCall_1_1_0() { return cOperatorArithmeticOperatorEnumRuleCall_1_1_0; }
+		//LogicalAndOperator
+		public RuleCall getOperatorLogicalAndOperatorEnumRuleCall_1_1_0() { return cOperatorLogicalAndOperatorEnumRuleCall_1_1_0; }
 
 		//rightExpression=ComparisonExpression
 		public Assignment getRightExpressionAssignment_1_2() { return cRightExpressionAssignment_1_2; }
@@ -535,286 +577,505 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class ComparisonExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ComparisonExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cLogicalExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cComparisonHigherOpExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cComparisonExpressionLeftExpressionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOperatorAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cOperatorComparingOperatorEnumRuleCall_1_0_1_0 = (RuleCall)cOperatorAssignment_1_0_1.eContents().get(0);
-		private final Assignment cRightExpressionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightExpressionLogicalExpressionParserRuleCall_1_1_0 = (RuleCall)cRightExpressionAssignment_1_1.eContents().get(0);
+		private final Action cComparisonExpressionLeftExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorComparingEQNEQOperatorEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightExpressionComparisonHigherOpExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
 		
+		//// end of LogicalExpression
+		//// ComparisonExpression
 		//ComparisonExpression returns expressions::Expression:
-		//	LogicalExpression (({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator)
-		//	rightExpression=LogicalExpression)*;
+		//	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
+		//	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//LogicalExpression (({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator)
-		//rightExpression=LogicalExpression)*
+		//ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
+		//operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?
 		public Group getGroup() { return cGroup; }
 
-		//LogicalExpression
-		public RuleCall getLogicalExpressionParserRuleCall_0() { return cLogicalExpressionParserRuleCall_0; }
+		//ComparisonHigherOpExpression
+		public RuleCall getComparisonHigherOpExpressionParserRuleCall_0() { return cComparisonHigherOpExpressionParserRuleCall_0; }
 
-		//(({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator)
-		//rightExpression=LogicalExpression)*
+		//({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingEQNEQOperator
+		//rightExpression=ComparisonHigherOpExpression)?
 		public Group getGroup_1() { return cGroup_1; }
-
-		//{commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator
-		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//{commonExpressions::ComparisonExpression.leftExpression=current}
-		public Action getComparisonExpressionLeftExpressionAction_1_0_0() { return cComparisonExpressionLeftExpressionAction_1_0_0; }
+		public Action getComparisonExpressionLeftExpressionAction_1_0() { return cComparisonExpressionLeftExpressionAction_1_0; }
 
-		//operator=ComparingOperator
-		public Assignment getOperatorAssignment_1_0_1() { return cOperatorAssignment_1_0_1; }
+		//operator=ComparingEQNEQOperator
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
 
-		//ComparingOperator
-		public RuleCall getOperatorComparingOperatorEnumRuleCall_1_0_1_0() { return cOperatorComparingOperatorEnumRuleCall_1_0_1_0; }
+		//ComparingEQNEQOperator
+		public RuleCall getOperatorComparingEQNEQOperatorEnumRuleCall_1_1_0() { return cOperatorComparingEQNEQOperatorEnumRuleCall_1_1_0; }
 
-		//rightExpression=LogicalExpression
-		public Assignment getRightExpressionAssignment_1_1() { return cRightExpressionAssignment_1_1; }
+		//rightExpression=ComparisonHigherOpExpression
+		public Assignment getRightExpressionAssignment_1_2() { return cRightExpressionAssignment_1_2; }
 
-		//LogicalExpression
-		public RuleCall getRightExpressionLogicalExpressionParserRuleCall_1_1_0() { return cRightExpressionLogicalExpressionParserRuleCall_1_1_0; }
+		//ComparisonHigherOpExpression
+		public RuleCall getRightExpressionComparisonHigherOpExpressionParserRuleCall_1_2_0() { return cRightExpressionComparisonHigherOpExpressionParserRuleCall_1_2_0; }
 	}
 
-	public class LogicalExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalExpression");
+	public class ComparisonHigherOpExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ComparisonHigherOpExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cUnaryExpressionParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
-		private final RuleCall cAttributeExpressionParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final RuleCall cArithmeticExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cLogicalExpressionLeftExpressionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOperatorAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cOperatorLogicOperatorEnumRuleCall_1_0_1_0 = (RuleCall)cOperatorAssignment_1_0_1.eContents().get(0);
-		private final Assignment cRightExpressionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final Alternatives cRightExpressionAlternatives_1_1_0 = (Alternatives)cRightExpressionAssignment_1_1.eContents().get(0);
-		private final RuleCall cRightExpressionUnaryExpressionParserRuleCall_1_1_0_0 = (RuleCall)cRightExpressionAlternatives_1_1_0.eContents().get(0);
-		private final RuleCall cRightExpressionAttributeExpressionParserRuleCall_1_1_0_1 = (RuleCall)cRightExpressionAlternatives_1_1_0.eContents().get(1);
+		private final Action cComparisonExpressionLeftExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorComparingRelOperatorEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightExpressionArithmeticExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
 		
-		//LogicalExpression returns expressions::Expression:
-		//	(UnaryExpression | AttributeExpression) (({commonExpressions::LogicalExpression.leftExpression=current}
-		//	operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*;
+		//ComparisonHigherOpExpression returns expressions::Expression:
+		//	ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
+		//	rightExpression=ArithmeticExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//(UnaryExpression | AttributeExpression) (({commonExpressions::LogicalExpression.leftExpression=current}
-		//operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*
+		//ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
+		//rightExpression=ArithmeticExpression)?
 		public Group getGroup() { return cGroup; }
 
-		//UnaryExpression | AttributeExpression
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		//ArithmeticExpression
+		public RuleCall getArithmeticExpressionParserRuleCall_0() { return cArithmeticExpressionParserRuleCall_0; }
 
-		//UnaryExpression
-		public RuleCall getUnaryExpressionParserRuleCall_0_0() { return cUnaryExpressionParserRuleCall_0_0; }
-
-		//AttributeExpression
-		public RuleCall getAttributeExpressionParserRuleCall_0_1() { return cAttributeExpressionParserRuleCall_0_1; }
-
-		//(({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator) rightExpression=(UnaryExpression
-		//| AttributeExpression))*
+		//({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
+		//rightExpression=ArithmeticExpression)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator
-		public Group getGroup_1_0() { return cGroup_1_0; }
+		//{commonExpressions::ComparisonExpression.leftExpression=current}
+		public Action getComparisonExpressionLeftExpressionAction_1_0() { return cComparisonExpressionLeftExpressionAction_1_0; }
 
-		//{commonExpressions::LogicalExpression.leftExpression=current}
-		public Action getLogicalExpressionLeftExpressionAction_1_0_0() { return cLogicalExpressionLeftExpressionAction_1_0_0; }
+		//operator=ComparingRelOperator
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
 
-		//operator=LogicOperator
-		public Assignment getOperatorAssignment_1_0_1() { return cOperatorAssignment_1_0_1; }
+		//ComparingRelOperator
+		public RuleCall getOperatorComparingRelOperatorEnumRuleCall_1_1_0() { return cOperatorComparingRelOperatorEnumRuleCall_1_1_0; }
 
-		//LogicOperator
-		public RuleCall getOperatorLogicOperatorEnumRuleCall_1_0_1_0() { return cOperatorLogicOperatorEnumRuleCall_1_0_1_0; }
+		//rightExpression=ArithmeticExpression
+		public Assignment getRightExpressionAssignment_1_2() { return cRightExpressionAssignment_1_2; }
 
-		//rightExpression=(UnaryExpression | AttributeExpression)
-		public Assignment getRightExpressionAssignment_1_1() { return cRightExpressionAssignment_1_1; }
-
-		//UnaryExpression | AttributeExpression
-		public Alternatives getRightExpressionAlternatives_1_1_0() { return cRightExpressionAlternatives_1_1_0; }
-
-		//UnaryExpression
-		public RuleCall getRightExpressionUnaryExpressionParserRuleCall_1_1_0_0() { return cRightExpressionUnaryExpressionParserRuleCall_1_1_0_0; }
-
-		//AttributeExpression
-		public RuleCall getRightExpressionAttributeExpressionParserRuleCall_1_1_0_1() { return cRightExpressionAttributeExpressionParserRuleCall_1_1_0_1; }
+		//ArithmeticExpression
+		public RuleCall getRightExpressionArithmeticExpressionParserRuleCall_1_2_0() { return cRightExpressionArithmeticExpressionParserRuleCall_1_2_0; }
 	}
 
-	public class UnaryExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryExpression");
+	public class ArithmeticExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArithmeticExpression");
+		private final RuleCall cAdditionExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//// end of ComparisonExpression
+		//// ArithmeticExpression	
+		//ArithmeticExpression returns expressions::Expression:
+		//	AdditionExpression;
+		public ParserRule getRule() { return rule; }
+
+		//AdditionExpression
+		public RuleCall getAdditionExpressionParserRuleCall() { return cAdditionExpressionParserRuleCall; }
+	}
+
+	public class AdditionExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AdditionExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMultiplicationExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cArithmeticExpressionLeftExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorAdditionOperatorEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightExpressionMultiplicationExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
+		
+		//AdditionExpression returns expressions::Expression:
+		//	MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
+		//	rightExpression=MultiplicationExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
+		//rightExpression=MultiplicationExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//MultiplicationExpression
+		public RuleCall getMultiplicationExpressionParserRuleCall_0() { return cMultiplicationExpressionParserRuleCall_0; }
+
+		//({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
+		//rightExpression=MultiplicationExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{commonExpressions::ArithmeticExpression.leftExpression=current}
+		public Action getArithmeticExpressionLeftExpressionAction_1_0() { return cArithmeticExpressionLeftExpressionAction_1_0; }
+
+		//operator=AdditionOperator
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+
+		//AdditionOperator
+		public RuleCall getOperatorAdditionOperatorEnumRuleCall_1_1_0() { return cOperatorAdditionOperatorEnumRuleCall_1_1_0; }
+
+		//rightExpression=MultiplicationExpression
+		public Assignment getRightExpressionAssignment_1_2() { return cRightExpressionAssignment_1_2; }
+
+		//MultiplicationExpression
+		public RuleCall getRightExpressionMultiplicationExpressionParserRuleCall_1_2_0() { return cRightExpressionMultiplicationExpressionParserRuleCall_1_2_0; }
+	}
+
+	public class MultiplicationExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MultiplicationExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cUnaryPreExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cUnaryPostExpressionParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final Action cArithmeticExpressionLeftExpressionAction_1_1_0 = (Action)cGroup_1_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cOperatorMultiplicationOperatorEnumRuleCall_1_1_1_0 = (RuleCall)cOperatorAssignment_1_1_1.eContents().get(0);
+		private final Assignment cRightExpressionAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
+		private final Alternatives cRightExpressionAlternatives_1_1_2_0 = (Alternatives)cRightExpressionAssignment_1_1_2.eContents().get(0);
+		private final RuleCall cRightExpressionUnaryPreExpressionParserRuleCall_1_1_2_0_0 = (RuleCall)cRightExpressionAlternatives_1_1_2_0.eContents().get(0);
+		private final RuleCall cRightExpressionUnaryPostExpressionParserRuleCall_1_1_2_0_1 = (RuleCall)cRightExpressionAlternatives_1_1_2_0.eContents().get(1);
+		
+		//MultiplicationExpression returns expressions::Expression:
+		//	UnaryPreExpression | UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
+		//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | UnaryPostExpression))*;
+		public ParserRule getRule() { return rule; }
+
+		//UnaryPreExpression | UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
+		//operator=MultiplicationOperator rightExpression=(UnaryPreExpression | UnaryPostExpression))*
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//UnaryPreExpression
+		public RuleCall getUnaryPreExpressionParserRuleCall_0() { return cUnaryPreExpressionParserRuleCall_0; }
+
+		//UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=MultiplicationOperator
+		//rightExpression=(UnaryPreExpression | UnaryPostExpression))*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//UnaryPostExpression
+		public RuleCall getUnaryPostExpressionParserRuleCall_1_0() { return cUnaryPostExpressionParserRuleCall_1_0; }
+
+		//({commonExpressions::ArithmeticExpression.leftExpression=current} operator=MultiplicationOperator
+		//rightExpression=(UnaryPreExpression | UnaryPostExpression))*
+		public Group getGroup_1_1() { return cGroup_1_1; }
+
+		//{commonExpressions::ArithmeticExpression.leftExpression=current}
+		public Action getArithmeticExpressionLeftExpressionAction_1_1_0() { return cArithmeticExpressionLeftExpressionAction_1_1_0; }
+
+		//operator=MultiplicationOperator
+		public Assignment getOperatorAssignment_1_1_1() { return cOperatorAssignment_1_1_1; }
+
+		//MultiplicationOperator
+		public RuleCall getOperatorMultiplicationOperatorEnumRuleCall_1_1_1_0() { return cOperatorMultiplicationOperatorEnumRuleCall_1_1_1_0; }
+
+		//rightExpression=(UnaryPreExpression | UnaryPostExpression)
+		public Assignment getRightExpressionAssignment_1_1_2() { return cRightExpressionAssignment_1_1_2; }
+
+		//UnaryPreExpression | UnaryPostExpression
+		public Alternatives getRightExpressionAlternatives_1_1_2_0() { return cRightExpressionAlternatives_1_1_2_0; }
+
+		//UnaryPreExpression
+		public RuleCall getRightExpressionUnaryPreExpressionParserRuleCall_1_1_2_0_0() { return cRightExpressionUnaryPreExpressionParserRuleCall_1_1_2_0_0; }
+
+		//UnaryPostExpression
+		public RuleCall getRightExpressionUnaryPostExpressionParserRuleCall_1_1_2_0_1() { return cRightExpressionUnaryPostExpressionParserRuleCall_1_1_2_0_1; }
+	}
+
+	public class UnaryPreExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryPreExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cUnaryExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cOperatorUnaryOperatorEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
+		private final RuleCall cOperatorUnaryPreOperatorEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
 		private final Assignment cEnclosedExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cEnclosedExpressionAttributeExpressionParserRuleCall_2_0 = (RuleCall)cEnclosedExpressionAssignment_2.eContents().get(0);
+		private final RuleCall cEnclosedExpressionOperandParserRuleCall_2_0 = (RuleCall)cEnclosedExpressionAssignment_2.eContents().get(0);
 		
-		//UnaryExpression returns expressions::Expression:
-		//	{commonExpressions::UnaryExpression} operator=UnaryOperator enclosedExpression=AttributeExpression;
+		//// end of ArithmeticExpression
+		//// UnaryPreExpression
+		//UnaryPreExpression returns expressions::Expression:
+		//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand;
 		public ParserRule getRule() { return rule; }
 
-		//{commonExpressions::UnaryExpression} operator=UnaryOperator enclosedExpression=AttributeExpression
+		//{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand
 		public Group getGroup() { return cGroup; }
 
 		//{commonExpressions::UnaryExpression}
 		public Action getUnaryExpressionAction_0() { return cUnaryExpressionAction_0; }
 
-		//operator=UnaryOperator
+		//operator=UnaryPreOperator
 		public Assignment getOperatorAssignment_1() { return cOperatorAssignment_1; }
 
-		//UnaryOperator
-		public RuleCall getOperatorUnaryOperatorEnumRuleCall_1_0() { return cOperatorUnaryOperatorEnumRuleCall_1_0; }
+		//UnaryPreOperator
+		public RuleCall getOperatorUnaryPreOperatorEnumRuleCall_1_0() { return cOperatorUnaryPreOperatorEnumRuleCall_1_0; }
 
-		//enclosedExpression=AttributeExpression
+		//enclosedExpression=Operand
 		public Assignment getEnclosedExpressionAssignment_2() { return cEnclosedExpressionAssignment_2; }
 
+		//Operand
+		public RuleCall getEnclosedExpressionOperandParserRuleCall_2_0() { return cEnclosedExpressionOperandParserRuleCall_2_0; }
+	}
+
+	public class UnaryPostExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryPostExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cOperandParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cUnaryExpressionEnclosedExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorUnaryPostOperatorEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		
+		//// end of UnaryPreExpression
+		//// UnaryPostExpression
+		//UnaryPostExpression returns expressions::Expression:
+		//	Operand ({commonExpressions::UnaryExpression.enclosedExpression=current} operator=UnaryPostOperator)?;
+		public ParserRule getRule() { return rule; }
+
+		//Operand ({commonExpressions::UnaryExpression.enclosedExpression=current} operator=UnaryPostOperator)?
+		public Group getGroup() { return cGroup; }
+
+		//Operand
+		public RuleCall getOperandParserRuleCall_0() { return cOperandParserRuleCall_0; }
+
+		//({commonExpressions::UnaryExpression.enclosedExpression=current} operator=UnaryPostOperator)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{commonExpressions::UnaryExpression.enclosedExpression=current}
+		public Action getUnaryExpressionEnclosedExpressionAction_1_0() { return cUnaryExpressionEnclosedExpressionAction_1_0; }
+
+		//operator=UnaryPostOperator
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+
+		//UnaryPostOperator
+		public RuleCall getOperatorUnaryPostOperatorEnumRuleCall_1_1_0() { return cOperatorUnaryPostOperatorEnumRuleCall_1_1_0; }
+	}
+
+	public class OperandElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Operand");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final RuleCall cLiteralExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cAttributeExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cOperationCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		
+		//// end of UnaryPostExpression
+		//// Operand
+		//Operand returns expressions::Expression:
+		//	"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall;
+		public ParserRule getRule() { return rule; }
+
+		//"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"(" Expression ")"
+		public Group getGroup_0() { return cGroup_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
+
+		//Expression
+		public RuleCall getExpressionParserRuleCall_0_1() { return cExpressionParserRuleCall_0_1; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
+
+		//LiteralExpression
+		public RuleCall getLiteralExpressionParserRuleCall_1() { return cLiteralExpressionParserRuleCall_1; }
+
 		//AttributeExpression
-		public RuleCall getEnclosedExpressionAttributeExpressionParserRuleCall_2_0() { return cEnclosedExpressionAttributeExpressionParserRuleCall_2_0; }
+		public RuleCall getAttributeExpressionParserRuleCall_2() { return cAttributeExpressionParserRuleCall_2; }
+
+		//OperationCall
+		public RuleCall getOperationCallParserRuleCall_3() { return cOperationCallParserRuleCall_3; }
+	}
+
+	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LiteralExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLiteralExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueLiteralParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//// end of Operand
+		//LiteralExpression returns commonExpressions::LiteralExpression:
+		//	{commonExpressions::LiteralExpression} value=Literal;
+		public ParserRule getRule() { return rule; }
+
+		//{commonExpressions::LiteralExpression} value=Literal
+		public Group getGroup() { return cGroup; }
+
+		//{commonExpressions::LiteralExpression}
+		public Action getLiteralExpressionAction_0() { return cLiteralExpressionAction_0; }
+
+		//value=Literal
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//Literal
+		public RuleCall getValueLiteralParserRuleCall_1_0() { return cValueLiteralParserRuleCall_1_0; }
+	}
+
+	public class LiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Literal");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Literal returns ecore::EString:
+		//	NUMBER | BOOLEAN | INT;
+		public ParserRule getRule() { return rule; }
+
+		//NUMBER | BOOLEAN | INT
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//NUMBER
+		public RuleCall getNUMBERTerminalRuleCall_0() { return cNUMBERTerminalRuleCall_0; }
+
+		//BOOLEAN
+		public RuleCall getBOOLEANTerminalRuleCall_1() { return cBOOLEANTerminalRuleCall_1; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
 
 	public class AttributeExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeExpression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cOperationCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAttributeLeafExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AttributeExpression returns expressions::Expression:
-		//	OperationCall | AttributeLeafExpression;
-		public ParserRule getRule() { return rule; }
-
-		//OperationCall | AttributeLeafExpression
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//OperationCall
-		public RuleCall getOperationCallParserRuleCall_0() { return cOperationCallParserRuleCall_0; }
-
-		//AttributeLeafExpression
-		public RuleCall getAttributeLeafExpressionParserRuleCall_1() { return cAttributeLeafExpressionParserRuleCall_1; }
-	}
-
-	public class AttributeLeafExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeLeafExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cAttributeExpressionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cAttributeAttributeCrossReference_1_0 = (CrossReference)cAttributeAssignment_1.eContents().get(0);
-		private final RuleCall cAttributeAttributeIDTerminalRuleCall_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_0.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cIndicesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cIndicesExpressionParserRuleCall_2_1_0 = (RuleCall)cIndicesAssignment_2_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cAttributeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cAttributeAttributeCrossReference_0_0 = (CrossReference)cAttributeAssignment_0.eContents().get(0);
+		private final RuleCall cAttributeAttributeIDTerminalRuleCall_0_0_1 = (RuleCall)cAttributeAttributeCrossReference_0_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cIndicesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cIndicesArithmeticExpressionParserRuleCall_1_1_0 = (RuleCall)cIndicesAssignment_1_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
-		//AttributeLeafExpression returns actionLanguage::AttributeExpression:
-		//	{actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*;
+		/// *
+		//
+		//ArithmeticExpression returns expressions::Expression:
+		//	ComparisonExpression
+		//	(
+		//		({commonExpressions::ArithmeticExpression.leftExpression=current} )
+		//		operator=ArithmeticOperator rightExpression=ComparisonExpression
+		//	)*
+		//;
+		//
+		//ComparisonExpression returns expressions::Expression:
+		//	LogicalExpression 
+		//	(
+		//		({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator )
+		//		rightExpression=LogicalExpression
+		//	)*
+		//;
+		//
+		//LogicalExpression returns expressions::Expression:
+		//	(UnaryExpression | AttributeExpression )
+		//	(
+		//		({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator )
+		//		rightExpression=(UnaryExpression| AttributeExpression)
+		//	)*
+		//;
+		//
+		//UnaryExpression returns expressions::Expression:
+		//	{commonExpressions::UnaryExpression}
+		//	operator=UnaryOperator enclosedExpression=AttributeExpression
+		//;* / / *AttributeExpression returns expressions::Expression:
+		//	OperationCall | AttributeLeafExpression
+		//;* / AttributeExpression returns actionLanguage::AttributeExpression:
+		//	attribute=[core::Attribute] ("[" indices+=ArithmeticExpression "]")*;
 		public ParserRule getRule() { return rule; }
 
-		//{actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*
+		//attribute=[core::Attribute] ("[" indices+=ArithmeticExpression "]")*
 		public Group getGroup() { return cGroup; }
 
-		//{actionLanguage::AttributeExpression}
-		public Action getAttributeExpressionAction_0() { return cAttributeExpressionAction_0; }
-
 		//attribute=[core::Attribute]
-		public Assignment getAttributeAssignment_1() { return cAttributeAssignment_1; }
+		public Assignment getAttributeAssignment_0() { return cAttributeAssignment_0; }
 
 		//[core::Attribute]
-		public CrossReference getAttributeAttributeCrossReference_1_0() { return cAttributeAttributeCrossReference_1_0; }
+		public CrossReference getAttributeAttributeCrossReference_0_0() { return cAttributeAttributeCrossReference_0_0; }
 
 		//ID
-		public RuleCall getAttributeAttributeIDTerminalRuleCall_1_0_1() { return cAttributeAttributeIDTerminalRuleCall_1_0_1; }
+		public RuleCall getAttributeAttributeIDTerminalRuleCall_0_0_1() { return cAttributeAttributeIDTerminalRuleCall_0_0_1; }
 
-		//("[" indices+=Expression "]")*
-		public Group getGroup_2() { return cGroup_2; }
+		//("[" indices+=ArithmeticExpression "]")*
+		public Group getGroup_1() { return cGroup_1; }
 
 		//"["
-		public Keyword getLeftSquareBracketKeyword_2_0() { return cLeftSquareBracketKeyword_2_0; }
+		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
 
-		//indices+=Expression
-		public Assignment getIndicesAssignment_2_1() { return cIndicesAssignment_2_1; }
+		//indices+=ArithmeticExpression
+		public Assignment getIndicesAssignment_1_1() { return cIndicesAssignment_1_1; }
 
-		//Expression
-		public RuleCall getIndicesExpressionParserRuleCall_2_1_0() { return cIndicesExpressionParserRuleCall_2_1_0; }
+		//ArithmeticExpression
+		public RuleCall getIndicesArithmeticExpressionParserRuleCall_1_1_0() { return cIndicesArithmeticExpressionParserRuleCall_1_1_0; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_2_2() { return cRightSquareBracketKeyword_2_2; }
+		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
 	}
 
 	public class OperationCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OperationCall");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cLiteralExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cOperationCallAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOperationAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cOperationOperationCrossReference_1_1_0 = (CrossReference)cOperationAssignment_1_1.eContents().get(0);
-		private final RuleCall cOperationOperationIDTerminalRuleCall_1_1_0_1 = (RuleCall)cOperationOperationCrossReference_1_1_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
-		private final Assignment cParameterBindingAssignment_1_3_0 = (Assignment)cGroup_1_3.eContents().get(0);
-		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_1_3_0_0 = (RuleCall)cParameterBindingAssignment_1_3_0.eContents().get(0);
-		private final Group cGroup_1_3_1 = (Group)cGroup_1_3.eContents().get(1);
-		private final Keyword cCommaKeyword_1_3_1_0 = (Keyword)cGroup_1_3_1.eContents().get(0);
-		private final Assignment cParameterBindingAssignment_1_3_1_1 = (Assignment)cGroup_1_3_1.eContents().get(1);
-		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_1_3_1_1_0 = (RuleCall)cParameterBindingAssignment_1_3_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cOperationOperationCrossReference_0_0 = (CrossReference)cOperationAssignment_0.eContents().get(0);
+		private final RuleCall cOperationOperationIDTerminalRuleCall_0_0_1 = (RuleCall)cOperationOperationCrossReference_0_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cParameterBindingAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_2_0_0 = (RuleCall)cParameterBindingAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cParameterBindingAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_2_1_1_0 = (RuleCall)cParameterBindingAssignment_2_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//OperationCall returns expressions::Expression:
-		//	LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "("
-		//	(parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
+		/// *
+		//AttributeLeafExpression returns actionLanguage::AttributeExpression:
+		//	{actionLanguage::AttributeExpression}
+		//	attribute=[core::Attribute]('['indices+=Expression']')*
+		//;
+		// * / OperationCall returns actionLanguage::OperationCall:
+		//	operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
 		public ParserRule getRule() { return rule; }
 
-		//LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding
-		//("," parameterBinding+=ParamaterBinding)*)? ")"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//LiteralExpression
-		public RuleCall getLiteralExpressionParserRuleCall_0() { return cLiteralExpressionParserRuleCall_0; }
-
-		//{actionLanguage::OperationCall} operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding (","
-		//parameterBinding+=ParamaterBinding)*)? ")"
-		public Group getGroup_1() { return cGroup_1; }
-
-		//{actionLanguage::OperationCall}
-		public Action getOperationCallAction_1_0() { return cOperationCallAction_1_0; }
+		//operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")"
+		public Group getGroup() { return cGroup; }
 
 		//operation=[core::Operation]
-		public Assignment getOperationAssignment_1_1() { return cOperationAssignment_1_1; }
+		public Assignment getOperationAssignment_0() { return cOperationAssignment_0; }
 
 		//[core::Operation]
-		public CrossReference getOperationOperationCrossReference_1_1_0() { return cOperationOperationCrossReference_1_1_0; }
+		public CrossReference getOperationOperationCrossReference_0_0() { return cOperationOperationCrossReference_0_0; }
 
 		//ID
-		public RuleCall getOperationOperationIDTerminalRuleCall_1_1_0_1() { return cOperationOperationIDTerminalRuleCall_1_1_0_1; }
+		public RuleCall getOperationOperationIDTerminalRuleCall_0_0_1() { return cOperationOperationIDTerminalRuleCall_0_0_1; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_2() { return cLeftParenthesisKeyword_1_2; }
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
 		//(parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
-		public Group getGroup_1_3() { return cGroup_1_3; }
+		public Group getGroup_2() { return cGroup_2; }
 
 		//parameterBinding+=ParamaterBinding
-		public Assignment getParameterBindingAssignment_1_3_0() { return cParameterBindingAssignment_1_3_0; }
+		public Assignment getParameterBindingAssignment_2_0() { return cParameterBindingAssignment_2_0; }
 
 		//ParamaterBinding
-		public RuleCall getParameterBindingParamaterBindingParserRuleCall_1_3_0_0() { return cParameterBindingParamaterBindingParserRuleCall_1_3_0_0; }
+		public RuleCall getParameterBindingParamaterBindingParserRuleCall_2_0_0() { return cParameterBindingParamaterBindingParserRuleCall_2_0_0; }
 
 		//("," parameterBinding+=ParamaterBinding)*
-		public Group getGroup_1_3_1() { return cGroup_1_3_1; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//","
-		public Keyword getCommaKeyword_1_3_1_0() { return cCommaKeyword_1_3_1_0; }
+		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 
 		//parameterBinding+=ParamaterBinding
-		public Assignment getParameterBindingAssignment_1_3_1_1() { return cParameterBindingAssignment_1_3_1_1; }
+		public Assignment getParameterBindingAssignment_2_1_1() { return cParameterBindingAssignment_2_1_1; }
 
 		//ParamaterBinding
-		public RuleCall getParameterBindingParamaterBindingParserRuleCall_1_3_1_1_0() { return cParameterBindingParamaterBindingParserRuleCall_1_3_1_1_0; }
+		public RuleCall getParameterBindingParamaterBindingParserRuleCall_2_1_1_0() { return cParameterBindingParamaterBindingParserRuleCall_2_1_1_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_1_4() { return cRightParenthesisKeyword_1_4; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
 	public class ParamaterBindingElements extends AbstractParserRuleElementFinder {
@@ -828,7 +1089,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueExpressionParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
-		//ParamaterBinding returns core::ParameterBinding:
+		/// *
+		//OperationCall returns expressions::Expression:
+		//	LiteralExpression |
+		//	{actionLanguage::OperationCall} operation=[core::Operation]'('(parameterBinding+=ParamaterBinding(',' parameterBinding+=ParamaterBinding)*)?')'
+		//;
+		// * / ParamaterBinding returns core::ParameterBinding:
 		//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
 		public ParserRule getRule() { return rule; }
 
@@ -857,50 +1123,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValueExpressionParserRuleCall_3_0() { return cValueExpressionParserRuleCall_3_0; }
 	}
 
-	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LiteralExpression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cLiteralExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueIdentifierOrValueParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
-		
-		//LiteralExpression returns expressions::Expression:
-		//	"(" Expression ")" | {commonExpressions::LiteralExpression} value=IdentifierOrValue;
-		public ParserRule getRule() { return rule; }
-
-		//"(" Expression ")" | {commonExpressions::LiteralExpression} value=IdentifierOrValue
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"(" Expression ")"
-		public Group getGroup_0() { return cGroup_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
-
-		//Expression
-		public RuleCall getExpressionParserRuleCall_0_1() { return cExpressionParserRuleCall_0_1; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
-
-		//{commonExpressions::LiteralExpression} value=IdentifierOrValue
-		public Group getGroup_1() { return cGroup_1; }
-
-		//{commonExpressions::LiteralExpression}
-		public Action getLiteralExpressionAction_1_0() { return cLiteralExpressionAction_1_0; }
-
-		//value=IdentifierOrValue
-		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
-
-		//IdentifierOrValue
-		public RuleCall getValueIdentifierOrValueParserRuleCall_1_1_0() { return cValueIdentifierOrValueParserRuleCall_1_1_0; }
-	}
-
 	public class IdentifierOrValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IdentifierOrValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -908,7 +1130,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//IdentifierOrValue returns ecore::EString:
+		/// *LiteralExpression returns expressions::Expression:
+		//	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
+		//;* / IdentifierOrValue returns ecore::EString:
 		//	NUMBER | BOOLEAN | INT;
 		public ParserRule getRule() { return rule; }
 
@@ -926,6 +1150,34 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	public class IncrementDecrementOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "IncrementDecrementOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cINCREMENTPlusSignPlusSignKeyword_0_0 = (Keyword)cINCREMENTEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cDECREMENTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDECREMENTHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperator:
+		//	INCREMENT="++" | DECREMENT="--";
+		public EnumRule getRule() { return rule; }
+
+		//INCREMENT="++" | DECREMENT="--"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//INCREMENT="++"
+		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration_0() { return cINCREMENTEnumLiteralDeclaration_0; }
+
+		//"++"
+		public Keyword getINCREMENTPlusSignPlusSignKeyword_0_0() { return cINCREMENTPlusSignPlusSignKeyword_0_0; }
+
+		//DECREMENT="--"
+		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration_1() { return cDECREMENTEnumLiteralDeclaration_1; }
+
+		//"--"
+		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_1_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_1_0; }
+	}
+
 	public class AssignOperatorElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AssignOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -978,159 +1230,83 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getEQUAL_MINUSEqualsSignHyphenMinusKeyword_4_0() { return cEQUAL_MINUSEqualsSignHyphenMinusKeyword_4_0; }
 	}
 
-	public class IncrementDecrementOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "IncrementDecrementOperator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cINCREMENTPlusSignPlusSignKeyword_0_0 = (Keyword)cINCREMENTEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cDECREMENTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cDECREMENTHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_1.eContents().get(0);
+	public class LogicalOrOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalOrOperator");
+		private final EnumLiteralDeclaration cOREnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
+		private final Keyword cORVerticalLineVerticalLineKeyword_0 = (Keyword)cOREnumLiteralDeclaration.eContents().get(0);
 		
-		//enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperator:
-		//	INCREMENT="++" | DECREMENT="--";
+		//enum LogicalOrOperator returns commonExpressions::LogicOperator:
+		//	OR="||";
 		public EnumRule getRule() { return rule; }
 
-		//INCREMENT="++" | DECREMENT="--"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//OR="||"
+		public EnumLiteralDeclaration getOREnumLiteralDeclaration() { return cOREnumLiteralDeclaration; }
 
-		//INCREMENT="++"
-		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration_0() { return cINCREMENTEnumLiteralDeclaration_0; }
-
-		//"++"
-		public Keyword getINCREMENTPlusSignPlusSignKeyword_0_0() { return cINCREMENTPlusSignPlusSignKeyword_0_0; }
-
-		//DECREMENT="--"
-		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration_1() { return cDECREMENTEnumLiteralDeclaration_1; }
-
-		//"--"
-		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_1_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_1_0; }
+		//"||"
+		public Keyword getORVerticalLineVerticalLineKeyword_0() { return cORVerticalLineVerticalLineKeyword_0; }
 	}
 
-	public class LogicOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LogicOperator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cANDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cANDAmpersandKeyword_0_0 = (Keyword)cANDEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cOREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cORVerticalLineKeyword_1_0 = (Keyword)cOREnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cXOREnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cXORXorKeyword_2_0 = (Keyword)cXOREnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cIMPLYEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cIMPLYEqualsSignGreaterThanSignKeyword_3_0 = (Keyword)cIMPLYEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cEQUIVALENTEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cEQUIVALENTLessThanSignEqualsSignGreaterThanSignKeyword_4_0 = (Keyword)cEQUIVALENTEnumLiteralDeclaration_4.eContents().get(0);
+	public class LogicalAndOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalAndOperator");
+		private final EnumLiteralDeclaration cANDEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
+		private final Keyword cANDAmpersandAmpersandKeyword_0 = (Keyword)cANDEnumLiteralDeclaration.eContents().get(0);
 		
-		//enum LogicOperator returns commonExpressions::LogicOperator:
-		//	AND="&" | OR="|" | XOR="xor" | IMPLY="=>" | EQUIVALENT="<=>";
+		//enum LogicalAndOperator returns commonExpressions::LogicOperator:
+		//	AND="&&";
 		public EnumRule getRule() { return rule; }
 
-		//AND="&" | OR="|" | XOR="xor" | IMPLY="=>" | EQUIVALENT="<=>"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//AND="&&"
+		public EnumLiteralDeclaration getANDEnumLiteralDeclaration() { return cANDEnumLiteralDeclaration; }
 
-		//AND="&"
-		public EnumLiteralDeclaration getANDEnumLiteralDeclaration_0() { return cANDEnumLiteralDeclaration_0; }
-
-		//"&"
-		public Keyword getANDAmpersandKeyword_0_0() { return cANDAmpersandKeyword_0_0; }
-
-		//OR="|"
-		public EnumLiteralDeclaration getOREnumLiteralDeclaration_1() { return cOREnumLiteralDeclaration_1; }
-
-		//"|"
-		public Keyword getORVerticalLineKeyword_1_0() { return cORVerticalLineKeyword_1_0; }
-
-		//XOR="xor"
-		public EnumLiteralDeclaration getXOREnumLiteralDeclaration_2() { return cXOREnumLiteralDeclaration_2; }
-
-		//"xor"
-		public Keyword getXORXorKeyword_2_0() { return cXORXorKeyword_2_0; }
-
-		//IMPLY="=>"
-		public EnumLiteralDeclaration getIMPLYEnumLiteralDeclaration_3() { return cIMPLYEnumLiteralDeclaration_3; }
-
-		//"=>"
-		public Keyword getIMPLYEqualsSignGreaterThanSignKeyword_3_0() { return cIMPLYEqualsSignGreaterThanSignKeyword_3_0; }
-
-		//EQUIVALENT="<=>"
-		public EnumLiteralDeclaration getEQUIVALENTEnumLiteralDeclaration_4() { return cEQUIVALENTEnumLiteralDeclaration_4; }
-
-		//"<=>"
-		public Keyword getEQUIVALENTLessThanSignEqualsSignGreaterThanSignKeyword_4_0() { return cEQUIVALENTLessThanSignEqualsSignGreaterThanSignKeyword_4_0; }
+		//"&&"
+		public Keyword getANDAmpersandAmpersandKeyword_0() { return cANDAmpersandAmpersandKeyword_0; }
 	}
 
-	public class ArithmeticOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ArithmeticOperator");
+	public class ComparingEQNEQOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ComparingEQNEQOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cPLUSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cPLUSPlusSignKeyword_0_0 = (Keyword)cPLUSEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cMINUSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cMINUSHyphenMinusKeyword_1_0 = (Keyword)cMINUSEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cTIMESEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cTIMESAsteriskKeyword_2_0 = (Keyword)cTIMESEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cDIVIDEEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cDIVIDESolidusKeyword_3_0 = (Keyword)cDIVIDEEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cMODULOEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cMODULOPercentSignKeyword_4_0 = (Keyword)cMODULOEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cEQUALEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cEQUALEqualsSignEqualsSignKeyword_0_0 = (Keyword)cEQUALEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cUNEQUALEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cUNEQUALLessThanSignGreaterThanSignKeyword_1_0 = (Keyword)cUNEQUALEnumLiteralDeclaration_1.eContents().get(0);
 		
-		//enum ArithmeticOperator returns commonExpressions::ArithmeticOperator:
-		//	PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%";
+		//enum ComparingEQNEQOperator returns commonExpressions::ComparingOperator:
+		//	EQUAL="==" | UNEQUAL="<>";
 		public EnumRule getRule() { return rule; }
 
-		//PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%"
+		//EQUAL="==" | UNEQUAL="<>"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//PLUS="+"
-		public EnumLiteralDeclaration getPLUSEnumLiteralDeclaration_0() { return cPLUSEnumLiteralDeclaration_0; }
+		//EQUAL="=="
+		public EnumLiteralDeclaration getEQUALEnumLiteralDeclaration_0() { return cEQUALEnumLiteralDeclaration_0; }
 
-		//"+"
-		public Keyword getPLUSPlusSignKeyword_0_0() { return cPLUSPlusSignKeyword_0_0; }
+		//"=="
+		public Keyword getEQUALEqualsSignEqualsSignKeyword_0_0() { return cEQUALEqualsSignEqualsSignKeyword_0_0; }
 
-		//MINUS="-"
-		public EnumLiteralDeclaration getMINUSEnumLiteralDeclaration_1() { return cMINUSEnumLiteralDeclaration_1; }
+		//UNEQUAL="<>"
+		public EnumLiteralDeclaration getUNEQUALEnumLiteralDeclaration_1() { return cUNEQUALEnumLiteralDeclaration_1; }
 
-		//"-"
-		public Keyword getMINUSHyphenMinusKeyword_1_0() { return cMINUSHyphenMinusKeyword_1_0; }
-
-		//TIMES="*"
-		public EnumLiteralDeclaration getTIMESEnumLiteralDeclaration_2() { return cTIMESEnumLiteralDeclaration_2; }
-
-		//"*"
-		public Keyword getTIMESAsteriskKeyword_2_0() { return cTIMESAsteriskKeyword_2_0; }
-
-		//DIVIDE="/"
-		public EnumLiteralDeclaration getDIVIDEEnumLiteralDeclaration_3() { return cDIVIDEEnumLiteralDeclaration_3; }
-
-		//"/"
-		public Keyword getDIVIDESolidusKeyword_3_0() { return cDIVIDESolidusKeyword_3_0; }
-
-		//MODULO="%"
-		public EnumLiteralDeclaration getMODULOEnumLiteralDeclaration_4() { return cMODULOEnumLiteralDeclaration_4; }
-
-		//"%"
-		public Keyword getMODULOPercentSignKeyword_4_0() { return cMODULOPercentSignKeyword_4_0; }
+		//"<>"
+		public Keyword getUNEQUALLessThanSignGreaterThanSignKeyword_1_0() { return cUNEQUALLessThanSignGreaterThanSignKeyword_1_0; }
 	}
 
-	public class ComparingOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ComparingOperator");
+	public class ComparingRelOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ComparingRelOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cLESSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cLESSLessThanSignKeyword_0_0 = (Keyword)cLESSEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cLESS_OR_EQUALEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cLESS_OR_EQUALLessThanSignEqualsSignKeyword_1_0 = (Keyword)cLESS_OR_EQUALEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cEQUALEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cEQUALEqualsSignEqualsSignKeyword_2_0 = (Keyword)cEQUALEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cGREATER_OR_EQUALEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cGREATER_OR_EQUALGreaterThanSignEqualsSignKeyword_3_0 = (Keyword)cGREATER_OR_EQUALEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cGREATEREnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cGREATERGreaterThanSignKeyword_4_0 = (Keyword)cGREATEREnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cUNEQUALEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cUNEQUALLessThanSignGreaterThanSignKeyword_5_0 = (Keyword)cUNEQUALEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cGREATER_OR_EQUALEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cGREATER_OR_EQUALGreaterThanSignEqualsSignKeyword_2_0 = (Keyword)cGREATER_OR_EQUALEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cGREATEREnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cGREATERGreaterThanSignKeyword_3_0 = (Keyword)cGREATEREnumLiteralDeclaration_3.eContents().get(0);
 		
-		//enum ComparingOperator returns commonExpressions::ComparingOperator:
-		//	LESS="<" | LESS_OR_EQUAL="<=" | EQUAL="==" | GREATER_OR_EQUAL=">=" | GREATER=">" | UNEQUAL="<>";
+		//enum ComparingRelOperator returns commonExpressions::ComparingOperator:
+		//	LESS="<" | LESS_OR_EQUAL="<=" | GREATER_OR_EQUAL=">=" | GREATER=">";
 		public EnumRule getRule() { return rule; }
 
-		//LESS="<" | LESS_OR_EQUAL="<=" | EQUAL="==" | GREATER_OR_EQUAL=">=" | GREATER=">" | UNEQUAL="<>"
+		//LESS="<" | LESS_OR_EQUAL="<=" | GREATER_OR_EQUAL=">=" | GREATER=">"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//LESS="<"
@@ -1145,33 +1321,77 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//"<="
 		public Keyword getLESS_OR_EQUALLessThanSignEqualsSignKeyword_1_0() { return cLESS_OR_EQUALLessThanSignEqualsSignKeyword_1_0; }
 
-		//EQUAL="=="
-		public EnumLiteralDeclaration getEQUALEnumLiteralDeclaration_2() { return cEQUALEnumLiteralDeclaration_2; }
-
-		//"=="
-		public Keyword getEQUALEqualsSignEqualsSignKeyword_2_0() { return cEQUALEqualsSignEqualsSignKeyword_2_0; }
-
 		//GREATER_OR_EQUAL=">="
-		public EnumLiteralDeclaration getGREATER_OR_EQUALEnumLiteralDeclaration_3() { return cGREATER_OR_EQUALEnumLiteralDeclaration_3; }
+		public EnumLiteralDeclaration getGREATER_OR_EQUALEnumLiteralDeclaration_2() { return cGREATER_OR_EQUALEnumLiteralDeclaration_2; }
 
 		//">="
-		public Keyword getGREATER_OR_EQUALGreaterThanSignEqualsSignKeyword_3_0() { return cGREATER_OR_EQUALGreaterThanSignEqualsSignKeyword_3_0; }
+		public Keyword getGREATER_OR_EQUALGreaterThanSignEqualsSignKeyword_2_0() { return cGREATER_OR_EQUALGreaterThanSignEqualsSignKeyword_2_0; }
 
 		//GREATER=">"
-		public EnumLiteralDeclaration getGREATEREnumLiteralDeclaration_4() { return cGREATEREnumLiteralDeclaration_4; }
+		public EnumLiteralDeclaration getGREATEREnumLiteralDeclaration_3() { return cGREATEREnumLiteralDeclaration_3; }
 
 		//">"
-		public Keyword getGREATERGreaterThanSignKeyword_4_0() { return cGREATERGreaterThanSignKeyword_4_0; }
-
-		//UNEQUAL="<>"
-		public EnumLiteralDeclaration getUNEQUALEnumLiteralDeclaration_5() { return cUNEQUALEnumLiteralDeclaration_5; }
-
-		//"<>"
-		public Keyword getUNEQUALLessThanSignGreaterThanSignKeyword_5_0() { return cUNEQUALLessThanSignGreaterThanSignKeyword_5_0; }
+		public Keyword getGREATERGreaterThanSignKeyword_3_0() { return cGREATERGreaterThanSignKeyword_3_0; }
 	}
 
-	public class UnaryOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryOperator");
+	public class AdditionOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AdditionOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cPLUSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cPLUSPlusSignKeyword_0_0 = (Keyword)cPLUSEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMINUSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cMINUSHyphenMinusKeyword_1_0 = (Keyword)cMINUSEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum AdditionOperator returns commonExpressions::ArithmeticOperator:
+		//	PLUS="+" | MINUS="-";
+		public EnumRule getRule() { return rule; }
+
+		//PLUS="+" | MINUS="-"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//PLUS="+"
+		public EnumLiteralDeclaration getPLUSEnumLiteralDeclaration_0() { return cPLUSEnumLiteralDeclaration_0; }
+
+		//"+"
+		public Keyword getPLUSPlusSignKeyword_0_0() { return cPLUSPlusSignKeyword_0_0; }
+
+		//MINUS="-"
+		public EnumLiteralDeclaration getMINUSEnumLiteralDeclaration_1() { return cMINUSEnumLiteralDeclaration_1; }
+
+		//"-"
+		public Keyword getMINUSHyphenMinusKeyword_1_0() { return cMINUSHyphenMinusKeyword_1_0; }
+	}
+
+	public class MultiplicationOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "MultiplicationOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cTIMESEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cTIMESAsteriskKeyword_0_0 = (Keyword)cTIMESEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cDIVIDEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDIVIDESolidusKeyword_1_0 = (Keyword)cDIVIDEEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum MultiplicationOperator returns commonExpressions::ArithmeticOperator:
+		//	TIMES="*" | DIVIDE="/";
+		public EnumRule getRule() { return rule; }
+
+		//TIMES="*" | DIVIDE="/"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//TIMES="*"
+		public EnumLiteralDeclaration getTIMESEnumLiteralDeclaration_0() { return cTIMESEnumLiteralDeclaration_0; }
+
+		//"*"
+		public Keyword getTIMESAsteriskKeyword_0_0() { return cTIMESAsteriskKeyword_0_0; }
+
+		//DIVIDE="/"
+		public EnumLiteralDeclaration getDIVIDEEnumLiteralDeclaration_1() { return cDIVIDEEnumLiteralDeclaration_1; }
+
+		//"/"
+		public Keyword getDIVIDESolidusKeyword_1_0() { return cDIVIDESolidusKeyword_1_0; }
+	}
+
+	public class UnaryPreOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryPreOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cNOTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cNOTNotKeyword_0_0 = (Keyword)cNOTEnumLiteralDeclaration_0.eContents().get(0);
@@ -1180,7 +1400,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cPLUSEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cPLUSPlusSignKeyword_2_0 = (Keyword)cPLUSEnumLiteralDeclaration_2.eContents().get(0);
 		
-		//enum UnaryOperator returns commonExpressions::UnaryOperator:
+		//enum UnaryPreOperator returns commonExpressions::UnaryOperator:
 		//	NOT="not" | MINUS="-" | PLUS="+";
 		public EnumRule getRule() { return rule; }
 
@@ -1205,33 +1425,72 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//"+"
 		public Keyword getPLUSPlusSignKeyword_2_0() { return cPLUSPlusSignKeyword_2_0; }
 	}
+
+	public class UnaryPostOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryPostOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cINCREMENTPlusSignPlusSignKeyword_0_0 = (Keyword)cINCREMENTEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cDECREMENTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDECREMENTHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum UnaryPostOperator returns commonExpressions::UnaryOperator:
+		//	INCREMENT="++" | DECREMENT="--";
+		public EnumRule getRule() { return rule; }
+
+		//INCREMENT="++" | DECREMENT="--"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//INCREMENT="++"
+		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration_0() { return cINCREMENTEnumLiteralDeclaration_0; }
+
+		//"++"
+		public Keyword getINCREMENTPlusSignPlusSignKeyword_0_0() { return cINCREMENTPlusSignPlusSignKeyword_0_0; }
+
+		//DECREMENT="--"
+		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration_1() { return cDECREMENTEnumLiteralDeclaration_1; }
+
+		//"--"
+		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_1_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_1_0; }
+	}
 	
 	private BlockElements pBlock;
 	private ForLoopElements pForLoop;
+	private ForLoopCountingExpressionElements pForLoopCountingExpression;
 	private WhileLoopElements pWhileLoop;
 	private DoWhileLoopElements pDoWhileLoop;
 	private IfStatementElements pIfStatement;
 	private ReturnStatementElements pReturnStatement;
 	private ExpressionStartRuleElements pExpressionStartRule;
+	private IncrementDecrementOperatorElements unknownRuleIncrementDecrementOperator;
 	private AssignmentElements pAssignment;
-	private ForLoopCountingExpressionElements pForLoopCountingExpression;
+	private AssignOperatorElements unknownRuleAssignOperator;
 	private ExpressionElements pExpression;
-	private ArithmeticExpressionElements pArithmeticExpression;
-	private ComparisonExpressionElements pComparisonExpression;
 	private LogicalExpressionElements pLogicalExpression;
-	private UnaryExpressionElements pUnaryExpression;
+	private LogicalOrExpressionElements pLogicalOrExpression;
+	private LogicalOrOperatorElements unknownRuleLogicalOrOperator;
+	private LogicalAndExpressionElements pLogicalAndExpression;
+	private LogicalAndOperatorElements unknownRuleLogicalAndOperator;
+	private ComparisonExpressionElements pComparisonExpression;
+	private ComparisonHigherOpExpressionElements pComparisonHigherOpExpression;
+	private ComparingEQNEQOperatorElements unknownRuleComparingEQNEQOperator;
+	private ComparingRelOperatorElements unknownRuleComparingRelOperator;
+	private ArithmeticExpressionElements pArithmeticExpression;
+	private AdditionExpressionElements pAdditionExpression;
+	private AdditionOperatorElements unknownRuleAdditionOperator;
+	private MultiplicationExpressionElements pMultiplicationExpression;
+	private MultiplicationOperatorElements unknownRuleMultiplicationOperator;
+	private UnaryPreExpressionElements pUnaryPreExpression;
+	private UnaryPreOperatorElements unknownRuleUnaryPreOperator;
+	private UnaryPostExpressionElements pUnaryPostExpression;
+	private UnaryPostOperatorElements unknownRuleUnaryPostOperator;
+	private OperandElements pOperand;
+	private LiteralExpressionElements pLiteralExpression;
+	private LiteralElements pLiteral;
 	private AttributeExpressionElements pAttributeExpression;
-	private AttributeLeafExpressionElements pAttributeLeafExpression;
 	private OperationCallElements pOperationCall;
 	private ParamaterBindingElements pParamaterBinding;
-	private LiteralExpressionElements pLiteralExpression;
 	private IdentifierOrValueElements pIdentifierOrValue;
-	private AssignOperatorElements unknownRuleAssignOperator;
-	private IncrementDecrementOperatorElements unknownRuleIncrementDecrementOperator;
-	private LogicOperatorElements unknownRuleLogicOperator;
-	private ArithmeticOperatorElements unknownRuleArithmeticOperator;
-	private ComparingOperatorElements unknownRuleComparingOperator;
-	private UnaryOperatorElements unknownRuleUnaryOperator;
 	private TerminalRule tNUMBER;
 	private TerminalRule tBOOLEAN;
 	
@@ -1257,7 +1516,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-	//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=ArithmeticExpression;
+	//	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
 	public BlockElements getBlockAccess() {
 		return (pBlock != null) ? pBlock : (pBlock = new BlockElements());
 	}
@@ -1266,6 +1525,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getBlockAccess().getRule();
 	}
 
+	//// TODO: get rid of ForLoopCountingExpression
 	//ForLoop returns actionLanguage::ForLoop:
 	//	"for" "(" initalizeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
 	//	block=Block;
@@ -1275,6 +1535,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getForLoopRule() {
 		return getForLoopAccess().getRule();
+	}
+
+	//ForLoopCountingExpression returns actionLanguage::Assignment:
+	//	lhs_attributeExpression=AttributeExpression (incrementDecrementOperator=IncrementDecrementOperator |
+	//	assignOperator=AssignOperator rhs_assignExpression=Expression);
+	public ForLoopCountingExpressionElements getForLoopCountingExpressionAccess() {
+		return (pForLoopCountingExpression != null) ? pForLoopCountingExpression : (pForLoopCountingExpression = new ForLoopCountingExpressionElements());
+	}
+	
+	public ParserRule getForLoopCountingExpressionRule() {
+		return getForLoopCountingExpressionAccess().getRule();
 	}
 
 	//WhileLoop returns actionLanguage::WhileLoop:
@@ -1328,140 +1599,25 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getExpressionStartRuleAccess().getRule();
 	}
 
+	//enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperator:
+	//	INCREMENT="++" | DECREMENT="--";
+	public IncrementDecrementOperatorElements getIncrementDecrementOperatorAccess() {
+		return (unknownRuleIncrementDecrementOperator != null) ? unknownRuleIncrementDecrementOperator : (unknownRuleIncrementDecrementOperator = new IncrementDecrementOperatorElements());
+	}
+	
+	public EnumRule getIncrementDecrementOperatorRule() {
+		return getIncrementDecrementOperatorAccess().getRule();
+	}
+
+	//// Assignment
 	//Assignment returns actionLanguage::Assignment:
-	//	lhs_attributeExpression=AttributeLeafExpression (assignOperator=AssignOperator rhs_assignExpression=Expression |
-	//	incrementDecrementOperator=IncrementDecrementOperator) ";";
+	//	lhs_attributeExpression=AttributeExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
 	public AssignmentElements getAssignmentAccess() {
 		return (pAssignment != null) ? pAssignment : (pAssignment = new AssignmentElements());
 	}
 	
 	public ParserRule getAssignmentRule() {
 		return getAssignmentAccess().getRule();
-	}
-
-	//ForLoopCountingExpression returns actionLanguage::Assignment:
-	//	lhs_attributeExpression=AttributeLeafExpression (incrementDecrementOperator=IncrementDecrementOperator |
-	//	assignOperator=AssignOperator rhs_assignExpression=Expression);
-	public ForLoopCountingExpressionElements getForLoopCountingExpressionAccess() {
-		return (pForLoopCountingExpression != null) ? pForLoopCountingExpression : (pForLoopCountingExpression = new ForLoopCountingExpressionElements());
-	}
-	
-	public ParserRule getForLoopCountingExpressionRule() {
-		return getForLoopCountingExpressionAccess().getRule();
-	}
-
-	//Expression returns expressions::Expression:
-	//	ArithmeticExpression;
-	public ExpressionElements getExpressionAccess() {
-		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
-	}
-	
-	public ParserRule getExpressionRule() {
-		return getExpressionAccess().getRule();
-	}
-
-	//ArithmeticExpression returns expressions::Expression:
-	//	ComparisonExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=ArithmeticOperator
-	//	rightExpression=ComparisonExpression)*;
-	public ArithmeticExpressionElements getArithmeticExpressionAccess() {
-		return (pArithmeticExpression != null) ? pArithmeticExpression : (pArithmeticExpression = new ArithmeticExpressionElements());
-	}
-	
-	public ParserRule getArithmeticExpressionRule() {
-		return getArithmeticExpressionAccess().getRule();
-	}
-
-	//ComparisonExpression returns expressions::Expression:
-	//	LogicalExpression (({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator)
-	//	rightExpression=LogicalExpression)*;
-	public ComparisonExpressionElements getComparisonExpressionAccess() {
-		return (pComparisonExpression != null) ? pComparisonExpression : (pComparisonExpression = new ComparisonExpressionElements());
-	}
-	
-	public ParserRule getComparisonExpressionRule() {
-		return getComparisonExpressionAccess().getRule();
-	}
-
-	//LogicalExpression returns expressions::Expression:
-	//	(UnaryExpression | AttributeExpression) (({commonExpressions::LogicalExpression.leftExpression=current}
-	//	operator=LogicOperator) rightExpression=(UnaryExpression | AttributeExpression))*;
-	public LogicalExpressionElements getLogicalExpressionAccess() {
-		return (pLogicalExpression != null) ? pLogicalExpression : (pLogicalExpression = new LogicalExpressionElements());
-	}
-	
-	public ParserRule getLogicalExpressionRule() {
-		return getLogicalExpressionAccess().getRule();
-	}
-
-	//UnaryExpression returns expressions::Expression:
-	//	{commonExpressions::UnaryExpression} operator=UnaryOperator enclosedExpression=AttributeExpression;
-	public UnaryExpressionElements getUnaryExpressionAccess() {
-		return (pUnaryExpression != null) ? pUnaryExpression : (pUnaryExpression = new UnaryExpressionElements());
-	}
-	
-	public ParserRule getUnaryExpressionRule() {
-		return getUnaryExpressionAccess().getRule();
-	}
-
-	//AttributeExpression returns expressions::Expression:
-	//	OperationCall | AttributeLeafExpression;
-	public AttributeExpressionElements getAttributeExpressionAccess() {
-		return (pAttributeExpression != null) ? pAttributeExpression : (pAttributeExpression = new AttributeExpressionElements());
-	}
-	
-	public ParserRule getAttributeExpressionRule() {
-		return getAttributeExpressionAccess().getRule();
-	}
-
-	//AttributeLeafExpression returns actionLanguage::AttributeExpression:
-	//	{actionLanguage::AttributeExpression} attribute=[core::Attribute] ("[" indices+=Expression "]")*;
-	public AttributeLeafExpressionElements getAttributeLeafExpressionAccess() {
-		return (pAttributeLeafExpression != null) ? pAttributeLeafExpression : (pAttributeLeafExpression = new AttributeLeafExpressionElements());
-	}
-	
-	public ParserRule getAttributeLeafExpressionRule() {
-		return getAttributeLeafExpressionAccess().getRule();
-	}
-
-	//OperationCall returns expressions::Expression:
-	//	LiteralExpression | {actionLanguage::OperationCall} operation=[core::Operation] "("
-	//	(parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
-	public OperationCallElements getOperationCallAccess() {
-		return (pOperationCall != null) ? pOperationCall : (pOperationCall = new OperationCallElements());
-	}
-	
-	public ParserRule getOperationCallRule() {
-		return getOperationCallAccess().getRule();
-	}
-
-	//ParamaterBinding returns core::ParameterBinding:
-	//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
-	public ParamaterBindingElements getParamaterBindingAccess() {
-		return (pParamaterBinding != null) ? pParamaterBinding : (pParamaterBinding = new ParamaterBindingElements());
-	}
-	
-	public ParserRule getParamaterBindingRule() {
-		return getParamaterBindingAccess().getRule();
-	}
-
-	//LiteralExpression returns expressions::Expression:
-	//	"(" Expression ")" | {commonExpressions::LiteralExpression} value=IdentifierOrValue;
-	public LiteralExpressionElements getLiteralExpressionAccess() {
-		return (pLiteralExpression != null) ? pLiteralExpression : (pLiteralExpression = new LiteralExpressionElements());
-	}
-	
-	public ParserRule getLiteralExpressionRule() {
-		return getLiteralExpressionAccess().getRule();
-	}
-
-	//IdentifierOrValue returns ecore::EString:
-	//	NUMBER | BOOLEAN | INT;
-	public IdentifierOrValueElements getIdentifierOrValueAccess() {
-		return (pIdentifierOrValue != null) ? pIdentifierOrValue : (pIdentifierOrValue = new IdentifierOrValueElements());
-	}
-	
-	public ParserRule getIdentifierOrValueRule() {
-		return getIdentifierOrValueAccess().getRule();
 	}
 
 	//enum AssignOperator returns actionLanguage::AssignOperator:
@@ -1474,57 +1630,341 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getAssignOperatorAccess().getRule();
 	}
 
-	//enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperator:
-	//	INCREMENT="++" | DECREMENT="--";
-	public IncrementDecrementOperatorElements getIncrementDecrementOperatorAccess() {
-		return (unknownRuleIncrementDecrementOperator != null) ? unknownRuleIncrementDecrementOperator : (unknownRuleIncrementDecrementOperator = new IncrementDecrementOperatorElements());
+	//// end of assignment
+	//// TODO: get rid of this production
+	//Expression returns expressions::Expression:
+	//	LogicalExpression;
+	public ExpressionElements getExpressionAccess() {
+		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
 	}
 	
-	public EnumRule getIncrementDecrementOperatorRule() {
-		return getIncrementDecrementOperatorAccess().getRule();
+	public ParserRule getExpressionRule() {
+		return getExpressionAccess().getRule();
 	}
 
-	//enum LogicOperator returns commonExpressions::LogicOperator:
-	//	AND="&" | OR="|" | XOR="xor" | IMPLY="=>" | EQUIVALENT="<=>";
-	public LogicOperatorElements getLogicOperatorAccess() {
-		return (unknownRuleLogicOperator != null) ? unknownRuleLogicOperator : (unknownRuleLogicOperator = new LogicOperatorElements());
+	//// LogicalExpression
+	//LogicalExpression returns expressions::Expression:
+	//	LogicalOrExpression;
+	public LogicalExpressionElements getLogicalExpressionAccess() {
+		return (pLogicalExpression != null) ? pLogicalExpression : (pLogicalExpression = new LogicalExpressionElements());
 	}
 	
-	public EnumRule getLogicOperatorRule() {
-		return getLogicOperatorAccess().getRule();
+	public ParserRule getLogicalExpressionRule() {
+		return getLogicalExpressionAccess().getRule();
 	}
 
-	//enum ArithmeticOperator returns commonExpressions::ArithmeticOperator:
-	//	PLUS="+" | MINUS="-" | TIMES="*" | DIVIDE="/" | MODULO="%";
-	public ArithmeticOperatorElements getArithmeticOperatorAccess() {
-		return (unknownRuleArithmeticOperator != null) ? unknownRuleArithmeticOperator : (unknownRuleArithmeticOperator = new ArithmeticOperatorElements());
+	//LogicalOrExpression returns expressions::Expression:
+	//	LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
+	//	rightExpression=LogicalAndExpression)*;
+	public LogicalOrExpressionElements getLogicalOrExpressionAccess() {
+		return (pLogicalOrExpression != null) ? pLogicalOrExpression : (pLogicalOrExpression = new LogicalOrExpressionElements());
 	}
 	
-	public EnumRule getArithmeticOperatorRule() {
-		return getArithmeticOperatorAccess().getRule();
+	public ParserRule getLogicalOrExpressionRule() {
+		return getLogicalOrExpressionAccess().getRule();
 	}
 
-	//enum ComparingOperator returns commonExpressions::ComparingOperator:
-	//	LESS="<" | LESS_OR_EQUAL="<=" | EQUAL="==" | GREATER_OR_EQUAL=">=" | GREATER=">" | UNEQUAL="<>";
-	public ComparingOperatorElements getComparingOperatorAccess() {
-		return (unknownRuleComparingOperator != null) ? unknownRuleComparingOperator : (unknownRuleComparingOperator = new ComparingOperatorElements());
+	//enum LogicalOrOperator returns commonExpressions::LogicOperator:
+	//	OR="||";
+	public LogicalOrOperatorElements getLogicalOrOperatorAccess() {
+		return (unknownRuleLogicalOrOperator != null) ? unknownRuleLogicalOrOperator : (unknownRuleLogicalOrOperator = new LogicalOrOperatorElements());
 	}
 	
-	public EnumRule getComparingOperatorRule() {
-		return getComparingOperatorAccess().getRule();
+	public EnumRule getLogicalOrOperatorRule() {
+		return getLogicalOrOperatorAccess().getRule();
 	}
 
-	//enum UnaryOperator returns commonExpressions::UnaryOperator:
+	//LogicalAndExpression returns expressions::Expression:
+	//	ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
+	//	rightExpression=ComparisonExpression)*;
+	public LogicalAndExpressionElements getLogicalAndExpressionAccess() {
+		return (pLogicalAndExpression != null) ? pLogicalAndExpression : (pLogicalAndExpression = new LogicalAndExpressionElements());
+	}
+	
+	public ParserRule getLogicalAndExpressionRule() {
+		return getLogicalAndExpressionAccess().getRule();
+	}
+
+	//enum LogicalAndOperator returns commonExpressions::LogicOperator:
+	//	AND="&&";
+	public LogicalAndOperatorElements getLogicalAndOperatorAccess() {
+		return (unknownRuleLogicalAndOperator != null) ? unknownRuleLogicalAndOperator : (unknownRuleLogicalAndOperator = new LogicalAndOperatorElements());
+	}
+	
+	public EnumRule getLogicalAndOperatorRule() {
+		return getLogicalAndOperatorAccess().getRule();
+	}
+
+	//// end of LogicalExpression
+	//// ComparisonExpression
+	//ComparisonExpression returns expressions::Expression:
+	//	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
+	//	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
+	public ComparisonExpressionElements getComparisonExpressionAccess() {
+		return (pComparisonExpression != null) ? pComparisonExpression : (pComparisonExpression = new ComparisonExpressionElements());
+	}
+	
+	public ParserRule getComparisonExpressionRule() {
+		return getComparisonExpressionAccess().getRule();
+	}
+
+	//ComparisonHigherOpExpression returns expressions::Expression:
+	//	ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
+	//	rightExpression=ArithmeticExpression)?;
+	public ComparisonHigherOpExpressionElements getComparisonHigherOpExpressionAccess() {
+		return (pComparisonHigherOpExpression != null) ? pComparisonHigherOpExpression : (pComparisonHigherOpExpression = new ComparisonHigherOpExpressionElements());
+	}
+	
+	public ParserRule getComparisonHigherOpExpressionRule() {
+		return getComparisonHigherOpExpressionAccess().getRule();
+	}
+
+	//enum ComparingEQNEQOperator returns commonExpressions::ComparingOperator:
+	//	EQUAL="==" | UNEQUAL="<>";
+	public ComparingEQNEQOperatorElements getComparingEQNEQOperatorAccess() {
+		return (unknownRuleComparingEQNEQOperator != null) ? unknownRuleComparingEQNEQOperator : (unknownRuleComparingEQNEQOperator = new ComparingEQNEQOperatorElements());
+	}
+	
+	public EnumRule getComparingEQNEQOperatorRule() {
+		return getComparingEQNEQOperatorAccess().getRule();
+	}
+
+	//enum ComparingRelOperator returns commonExpressions::ComparingOperator:
+	//	LESS="<" | LESS_OR_EQUAL="<=" | GREATER_OR_EQUAL=">=" | GREATER=">";
+	public ComparingRelOperatorElements getComparingRelOperatorAccess() {
+		return (unknownRuleComparingRelOperator != null) ? unknownRuleComparingRelOperator : (unknownRuleComparingRelOperator = new ComparingRelOperatorElements());
+	}
+	
+	public EnumRule getComparingRelOperatorRule() {
+		return getComparingRelOperatorAccess().getRule();
+	}
+
+	//// end of ComparisonExpression
+	//// ArithmeticExpression	
+	//ArithmeticExpression returns expressions::Expression:
+	//	AdditionExpression;
+	public ArithmeticExpressionElements getArithmeticExpressionAccess() {
+		return (pArithmeticExpression != null) ? pArithmeticExpression : (pArithmeticExpression = new ArithmeticExpressionElements());
+	}
+	
+	public ParserRule getArithmeticExpressionRule() {
+		return getArithmeticExpressionAccess().getRule();
+	}
+
+	//AdditionExpression returns expressions::Expression:
+	//	MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
+	//	rightExpression=MultiplicationExpression)*;
+	public AdditionExpressionElements getAdditionExpressionAccess() {
+		return (pAdditionExpression != null) ? pAdditionExpression : (pAdditionExpression = new AdditionExpressionElements());
+	}
+	
+	public ParserRule getAdditionExpressionRule() {
+		return getAdditionExpressionAccess().getRule();
+	}
+
+	//enum AdditionOperator returns commonExpressions::ArithmeticOperator:
+	//	PLUS="+" | MINUS="-";
+	public AdditionOperatorElements getAdditionOperatorAccess() {
+		return (unknownRuleAdditionOperator != null) ? unknownRuleAdditionOperator : (unknownRuleAdditionOperator = new AdditionOperatorElements());
+	}
+	
+	public EnumRule getAdditionOperatorRule() {
+		return getAdditionOperatorAccess().getRule();
+	}
+
+	//MultiplicationExpression returns expressions::Expression:
+	//	UnaryPreExpression | UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
+	//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | UnaryPostExpression))*;
+	public MultiplicationExpressionElements getMultiplicationExpressionAccess() {
+		return (pMultiplicationExpression != null) ? pMultiplicationExpression : (pMultiplicationExpression = new MultiplicationExpressionElements());
+	}
+	
+	public ParserRule getMultiplicationExpressionRule() {
+		return getMultiplicationExpressionAccess().getRule();
+	}
+
+	//enum MultiplicationOperator returns commonExpressions::ArithmeticOperator:
+	//	TIMES="*" | DIVIDE="/";
+	public MultiplicationOperatorElements getMultiplicationOperatorAccess() {
+		return (unknownRuleMultiplicationOperator != null) ? unknownRuleMultiplicationOperator : (unknownRuleMultiplicationOperator = new MultiplicationOperatorElements());
+	}
+	
+	public EnumRule getMultiplicationOperatorRule() {
+		return getMultiplicationOperatorAccess().getRule();
+	}
+
+	//// end of ArithmeticExpression
+	//// UnaryPreExpression
+	//UnaryPreExpression returns expressions::Expression:
+	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand;
+	public UnaryPreExpressionElements getUnaryPreExpressionAccess() {
+		return (pUnaryPreExpression != null) ? pUnaryPreExpression : (pUnaryPreExpression = new UnaryPreExpressionElements());
+	}
+	
+	public ParserRule getUnaryPreExpressionRule() {
+		return getUnaryPreExpressionAccess().getRule();
+	}
+
+	//enum UnaryPreOperator returns commonExpressions::UnaryOperator:
 	//	NOT="not" | MINUS="-" | PLUS="+";
-	public UnaryOperatorElements getUnaryOperatorAccess() {
-		return (unknownRuleUnaryOperator != null) ? unknownRuleUnaryOperator : (unknownRuleUnaryOperator = new UnaryOperatorElements());
+	public UnaryPreOperatorElements getUnaryPreOperatorAccess() {
+		return (unknownRuleUnaryPreOperator != null) ? unknownRuleUnaryPreOperator : (unknownRuleUnaryPreOperator = new UnaryPreOperatorElements());
 	}
 	
-	public EnumRule getUnaryOperatorRule() {
-		return getUnaryOperatorAccess().getRule();
+	public EnumRule getUnaryPreOperatorRule() {
+		return getUnaryPreOperatorAccess().getRule();
 	}
 
-	//terminal NUMBER returns ecore::EBigDecimal:
+	//// end of UnaryPreExpression
+	//// UnaryPostExpression
+	//UnaryPostExpression returns expressions::Expression:
+	//	Operand ({commonExpressions::UnaryExpression.enclosedExpression=current} operator=UnaryPostOperator)?;
+	public UnaryPostExpressionElements getUnaryPostExpressionAccess() {
+		return (pUnaryPostExpression != null) ? pUnaryPostExpression : (pUnaryPostExpression = new UnaryPostExpressionElements());
+	}
+	
+	public ParserRule getUnaryPostExpressionRule() {
+		return getUnaryPostExpressionAccess().getRule();
+	}
+
+	//enum UnaryPostOperator returns commonExpressions::UnaryOperator:
+	//	INCREMENT="++" | DECREMENT="--";
+	public UnaryPostOperatorElements getUnaryPostOperatorAccess() {
+		return (unknownRuleUnaryPostOperator != null) ? unknownRuleUnaryPostOperator : (unknownRuleUnaryPostOperator = new UnaryPostOperatorElements());
+	}
+	
+	public EnumRule getUnaryPostOperatorRule() {
+		return getUnaryPostOperatorAccess().getRule();
+	}
+
+	//// end of UnaryPostExpression
+	//// Operand
+	//Operand returns expressions::Expression:
+	//	"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall;
+	public OperandElements getOperandAccess() {
+		return (pOperand != null) ? pOperand : (pOperand = new OperandElements());
+	}
+	
+	public ParserRule getOperandRule() {
+		return getOperandAccess().getRule();
+	}
+
+	//// end of Operand
+	//LiteralExpression returns commonExpressions::LiteralExpression:
+	//	{commonExpressions::LiteralExpression} value=Literal;
+	public LiteralExpressionElements getLiteralExpressionAccess() {
+		return (pLiteralExpression != null) ? pLiteralExpression : (pLiteralExpression = new LiteralExpressionElements());
+	}
+	
+	public ParserRule getLiteralExpressionRule() {
+		return getLiteralExpressionAccess().getRule();
+	}
+
+	//Literal returns ecore::EString:
+	//	NUMBER | BOOLEAN | INT;
+	public LiteralElements getLiteralAccess() {
+		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
+	}
+	
+	public ParserRule getLiteralRule() {
+		return getLiteralAccess().getRule();
+	}
+
+	/// *
+	//
+	//ArithmeticExpression returns expressions::Expression:
+	//	ComparisonExpression
+	//	(
+	//		({commonExpressions::ArithmeticExpression.leftExpression=current} )
+	//		operator=ArithmeticOperator rightExpression=ComparisonExpression
+	//	)*
+	//;
+	//
+	//ComparisonExpression returns expressions::Expression:
+	//	LogicalExpression 
+	//	(
+	//		({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator )
+	//		rightExpression=LogicalExpression
+	//	)*
+	//;
+	//
+	//LogicalExpression returns expressions::Expression:
+	//	(UnaryExpression | AttributeExpression )
+	//	(
+	//		({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator )
+	//		rightExpression=(UnaryExpression| AttributeExpression)
+	//	)*
+	//;
+	//
+	//UnaryExpression returns expressions::Expression:
+	//	{commonExpressions::UnaryExpression}
+	//	operator=UnaryOperator enclosedExpression=AttributeExpression
+	//;* / / *AttributeExpression returns expressions::Expression:
+	//	OperationCall | AttributeLeafExpression
+	//;* / AttributeExpression returns actionLanguage::AttributeExpression:
+	//	attribute=[core::Attribute] ("[" indices+=ArithmeticExpression "]")*;
+	public AttributeExpressionElements getAttributeExpressionAccess() {
+		return (pAttributeExpression != null) ? pAttributeExpression : (pAttributeExpression = new AttributeExpressionElements());
+	}
+	
+	public ParserRule getAttributeExpressionRule() {
+		return getAttributeExpressionAccess().getRule();
+	}
+
+	/// *
+	//AttributeLeafExpression returns actionLanguage::AttributeExpression:
+	//	{actionLanguage::AttributeExpression}
+	//	attribute=[core::Attribute]('['indices+=Expression']')*
+	//;
+	// * / OperationCall returns actionLanguage::OperationCall:
+	//	operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
+	public OperationCallElements getOperationCallAccess() {
+		return (pOperationCall != null) ? pOperationCall : (pOperationCall = new OperationCallElements());
+	}
+	
+	public ParserRule getOperationCallRule() {
+		return getOperationCallAccess().getRule();
+	}
+
+	/// *
+	//OperationCall returns expressions::Expression:
+	//	LiteralExpression |
+	//	{actionLanguage::OperationCall} operation=[core::Operation]'('(parameterBinding+=ParamaterBinding(',' parameterBinding+=ParamaterBinding)*)?')'
+	//;
+	// * / ParamaterBinding returns core::ParameterBinding:
+	//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
+	public ParamaterBindingElements getParamaterBindingAccess() {
+		return (pParamaterBinding != null) ? pParamaterBinding : (pParamaterBinding = new ParamaterBindingElements());
+	}
+	
+	public ParserRule getParamaterBindingRule() {
+		return getParamaterBindingAccess().getRule();
+	}
+
+	/// *LiteralExpression returns expressions::Expression:
+	//	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
+	//;* / IdentifierOrValue returns ecore::EString:
+	//	NUMBER | BOOLEAN | INT;
+	public IdentifierOrValueElements getIdentifierOrValueAccess() {
+		return (pIdentifierOrValue != null) ? pIdentifierOrValue : (pIdentifierOrValue = new IdentifierOrValueElements());
+	}
+	
+	public ParserRule getIdentifierOrValueRule() {
+		return getIdentifierOrValueAccess().getRule();
+	}
+
+	/// *enum LogicOperator returns commonExpressions::LogicOperator: 
+	//	AND='&' | OR='|' | XOR='xor' | IMPLY='=>' | EQUIVALENT='<=>' 
+	//;
+	//
+	//
+	//enum ArithmeticOperator returns commonExpressions::ArithmeticOperator:
+	//	PLUS='+' | MINUS='-' |TIMES='*' | DIVIDE='/' | MODULO='%'
+	//;
+	//
+	//enum ComparingOperator returns commonExpressions::ComparingOperator:  
+	//	LESS='<' | LESS_OR_EQUAL='<=' | EQUAL='==' | GREATER_OR_EQUAL='>=' | GREATER='>' | UNEQUAL='<>' 
+	//;* / terminal NUMBER returns ecore::EBigDecimal:
 	//	INT "." INT;
 	public TerminalRule getNUMBERRule() {
 		return (tNUMBER != null) ? tNUMBER : (tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER"));

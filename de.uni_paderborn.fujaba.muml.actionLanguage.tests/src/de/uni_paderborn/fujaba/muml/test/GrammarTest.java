@@ -21,15 +21,19 @@ import org.storydriven.core.expressions.common.ComparisonExpression;
 import org.storydriven.core.expressions.common.LiteralExpression;
 import org.storydriven.core.expressions.common.LogicOperator;
 import org.storydriven.core.expressions.common.LogicalExpression;
+import org.storydriven.core.expressions.common.UnaryExpression;
+import org.storydriven.core.expressions.common.UnaryOperator;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.RootNode;
 import de.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 
@@ -105,9 +109,7 @@ public class GrammarTest {
 		assertEquals(ArithmeticOperator.PLUS, ((ArithmeticExpression) expression.getRightExpression()).getOperator());
 		assertNotNull(expression.getLeftExpression());
 	}
-	
-	// TODO: unary expressions in an arithmetic expression
-	
+
 	@Test
 	public void testComparisonExpression1() {
 		ComparisonExpression expression = (ComparisonExpression) getAssignmentRHS("{ b := 5 < 8; }");
@@ -195,6 +197,118 @@ public class GrammarTest {
 		assertTrue(expression.getLeftExpression() instanceof ArithmeticExpression);
 		assertTrue(expression.getRightExpression() instanceof LiteralExpression);
 		assertEquals(LogicOperator.AND, expression.getOperator());
+	}
+	
+	@Test
+	public void testLogicalExpressionParentheses() {
+		LogicalExpression expression = (LogicalExpression) getAssignmentRHS("{ b := (b || not b) && b ; }");
+		assertTrue(expression.getLeftExpression() instanceof LogicalExpression);
+		assertEquals(LogicOperator.OR, ((LogicalExpression) expression.getLeftExpression()).getOperator());
+		assertTrue(expression.getRightExpression() instanceof AttributeExpression);
+		assertEquals(LogicOperator.AND, expression.getOperator());
+	}
+	
+	@Test
+	public void testAssignment1() {
+		Assignment assignment = (Assignment) getModel("{ bar := foo + 9 ; }");
+		assertTrue(assignment.getLhs_attributeExpression() instanceof AttributeExpression);
+		assertTrue(assignment.getRhs_assignExpression() instanceof ArithmeticExpression);
+		assertEquals(AssignOperator.ASSIGN, assignment.getAssignOperator());
+		assertEquals(IncrementDecrementOperator.UNSET, assignment.getIncrementDecrementOperator());
+	}
+	
+	@Test
+	public void testAssignment2() {
+		Assignment assignment = (Assignment) getModel("{ bar += call() ; }");
+		assertTrue(assignment.getLhs_attributeExpression() instanceof AttributeExpression);
+		assertTrue(assignment.getRhs_assignExpression() instanceof OperationCall);
+		assertEquals(AssignOperator.PLUS_EQUAL, assignment.getAssignOperator());
+		assertEquals(IncrementDecrementOperator.UNSET, assignment.getIncrementDecrementOperator());
+	}
+	
+	@Test
+	public void testAssignment3() {
+		Assignment assignment = (Assignment) getModel("{ bar -= 7 ; }");
+		assertTrue(assignment.getLhs_attributeExpression() instanceof AttributeExpression);
+		assertTrue(assignment.getRhs_assignExpression() instanceof LiteralExpression);
+		assertEquals(AssignOperator.MINUS_EQUAL, assignment.getAssignOperator());
+		assertEquals(IncrementDecrementOperator.UNSET, assignment.getIncrementDecrementOperator());
+	}
+	
+	@Test
+	public void testPostIncrement() {
+		// post increment
+		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := bar++ ; }");
+		assertTrue(expression.getEnclosedExpression() instanceof AttributeExpression);
+		assertEquals(UnaryOperator.INCREMENT, expression.getOperator());
+	}
+	
+	@Test
+	public void testPostIncrementParentheses() {
+		// post increment with parentheses
+		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := (bar)++ ; }");
+		assertTrue(expression.getEnclosedExpression() instanceof AttributeExpression);
+		assertEquals(UnaryOperator.INCREMENT, expression.getOperator());
+	}
+	
+	@Test
+	public void testPostIncrementParenthesesNoAttributeExpression() {
+		// type checking should fail here (only attributes in parentheses)
+		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := (bar + 1) ++ ; }");
+		assertTrue(expression.getEnclosedExpression() instanceof ArithmeticExpression);
+		assertEquals(UnaryOperator.INCREMENT, expression.getOperator());
+	}
+	
+	@Test
+	public void testPostDecrement() {
+		// post decrement
+		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := bar-- ; }");
+		assertTrue(expression.getEnclosedExpression() instanceof AttributeExpression);
+		assertEquals(UnaryOperator.DECREMENT, expression.getOperator());
+	}
+
+	@Test
+	public void testUnaryExpressionPlus() {
+		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := +foo ; }");
+		assertTrue(expression.getEnclosedExpression() instanceof AttributeExpression);
+		assertEquals(UnaryOperator.PLUS, expression.getOperator());
+	}
+	
+	@Test
+	public void testUnaryExpressionPlusParentheses() {
+		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := + (foo) ; }");
+		assertTrue(expression.getEnclosedExpression() instanceof AttributeExpression);
+		assertEquals(UnaryOperator.PLUS, expression.getOperator());
+	}
+	
+	@Test
+	public void testUnaryExpressionMinus() {
+		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := -foo ; }");
+		assertTrue(expression.getEnclosedExpression() instanceof AttributeExpression);
+		assertEquals(UnaryOperator.MINUS, expression.getOperator());
+	}
+	
+	@Test
+	public void testUnaryInArithmeticExpression() {
+		ArithmeticExpression expression = (ArithmeticExpression) getAssignmentRHS("{ bar := bar-- + 4 ; }");
+		assertEquals(ArithmeticOperator.PLUS, expression.getOperator());
+		assertTrue(expression.getLeftExpression() instanceof UnaryExpression);
+		assertEquals(UnaryOperator.DECREMENT, ((UnaryExpression) expression.getLeftExpression()).getOperator());
+		assertTrue(expression.getRightExpression() instanceof LiteralExpression);
+	}
+	
+	@Test
+	public void testGuardSyntax1() {
+		loadFromString("bar > 9 && b || foo == 9");
+		assertFalse(loadResult.hasError());
+	}
+	
+	@Test
+	public void testGuardSyntax2() {
+		// this is no valid guard expression (because it is no boolean)
+		// we have to fix this later
+		loadFromString("42");
+		assertFalse(loadResult.hasError());
 	}
 	
 	protected EObject getAssignmentRHS(String text) {
