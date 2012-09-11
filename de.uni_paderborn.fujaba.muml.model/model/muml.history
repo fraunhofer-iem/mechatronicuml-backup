@@ -26218,5 +26218,47 @@
         </parameters>
       </operation>
     </changes>
+    <changes xsi:type="history:CompositeChange" description="Added INCREMENT to UnaryOperator.">
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator"
+          referenceName="eLiterals" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator/INCREMENT"/>
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator/INCREMENT"
+          featureName="name" dataValue="INCREMENT"/>
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator/INCREMENT"
+          featureName="value" dataValue="3" oldDataValue="0"/>
+    </changes>
+    <changes xsi:type="history:CompositeChange" description="Added DECREMENT to UnaryOperator.">
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator"
+          referenceName="eLiterals" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator/DECREMENT"/>
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator/DECREMENT"
+          featureName="name" dataValue="DECREMENT"/>
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryOperator/DECREMENT"
+          featureName="value" dataValue="4" oldDataValue="0"/>
+    </changes>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Represents an unary expression." oldDataValue="Represents a negated expression, e.g. NOT (a &lt; 5)."/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator"
+          referenceName="eAnnotations" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Represents the operator of the expression."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/common/UnaryExpression/operator"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>Represents the operator of the expression.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#/"
+        featureName="nsURI" dataValue="http://www.storydriven.org/core/0.2.8" oldDataValue="http://www.storydriven.org/core/0.2.7"/>
   </releases>
 </history:History>
