@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.0"
+            uri="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider.ControlflowItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -24,7 +24,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.0"
+            uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

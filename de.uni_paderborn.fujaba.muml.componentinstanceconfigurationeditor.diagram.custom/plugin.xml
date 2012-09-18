@@ -20,7 +20,7 @@
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.2.7">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.3.1">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstanceAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2018"
 		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.helpers.DiscreteSinglePortInstanceEditHelperAdvice"

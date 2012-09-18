@@ -2,7 +2,7 @@
 <feature
       id="de.uni_paderborn.fujaba.muml.feature"
       label="%featureName"
-      version="0.3.0.qualifier"
+      version="0.3.1.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -18,8 +18,8 @@
    </license>
 
    <requires>
-      <import plugin="de.uni_paderborn.fujaba.muml.model" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.model.actionLanguage" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.model" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.model.actionLanguage" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.logging" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime"/>
@@ -35,8 +35,8 @@
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.compare"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.actionLanguage" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.actionLanguage" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.emf.compare.match"/>
@@ -66,28 +66,28 @@
       <import plugin="org.eclipse.emf.validation"/>
       <import plugin="org.eclipse.gef"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.common" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.modelinstance" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.modelinstance.edit" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.model.edit" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.common" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.fujaba.modelinstance" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.fujaba.modelinstance.edit" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.model.edit" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.newwizard" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="de.fujaba.newwizard" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.deployment.diagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.deployment.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edapt.migration" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edapt.declaration" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edapt.migration" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edapt.declaration" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edapt.history"/>
       <import plugin="org.eclipse.swt" version="3.7.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.patterneditor.diagram" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.patterneditor.diagram" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.7.0" match="greaterOrEqual"/>
       <import plugin="org.junit4" version="4.8.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.7.0" match="greaterOrEqual"/>
@@ -141,7 +141,7 @@
       <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.ui" version="2.0.0" match="compatible"/>
       <import plugin="org.storydriven.core.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edapt.history" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edapt.history" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>

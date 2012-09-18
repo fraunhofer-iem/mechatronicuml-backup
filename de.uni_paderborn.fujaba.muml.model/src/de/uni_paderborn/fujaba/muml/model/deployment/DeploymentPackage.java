@@ -44,7 +44,7 @@ public interface DeploymentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/deployment/0.2.7";
+	String eNS_URI = "http://www.fujaba.de/muml/model/deployment/0.3.1";
 
 	/**
 	 * The package namespace name.
@@ -492,13 +492,13 @@ public interface DeploymentPackage extends EPackage {
 	int QUALITY_OF_LINK_SERVICE__LATENCY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Deplyoment</b></em>' container reference.
+	 * The feature id for the '<em><b>Deployment</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE__DEPLYOMENT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int QUALITY_OF_LINK_SERVICE__DEPLOYMENT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Quality Of Link Service</em>' class.
@@ -801,15 +801,15 @@ public interface DeploymentPackage extends EPackage {
 	EReference getQualityOfLinkService_Latency();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment <em>Deplyoment</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment <em>Deployment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Deplyoment</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment()
+	 * @return the meta object for the container reference '<em>Deployment</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment()
 	 * @see #getQualityOfLinkService()
 	 * @generated
 	 */
-	EReference getQualityOfLinkService_Deplyoment();
+	EReference getQualityOfLinkService_Deployment();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind <em>Hardware Node Kind</em>}'.
@@ -1064,12 +1064,12 @@ public interface DeploymentPackage extends EPackage {
 		EReference QUALITY_OF_LINK_SERVICE__LATENCY = eINSTANCE.getQualityOfLinkService_Latency();
 
 		/**
-		 * The meta object literal for the '<em><b>Deplyoment</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Deployment</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUALITY_OF_LINK_SERVICE__DEPLYOMENT = eINSTANCE.getQualityOfLinkService_Deplyoment();
+		EReference QUALITY_OF_LINK_SERVICE__DEPLOYMENT = eINSTANCE.getQualityOfLinkService_Deployment();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind <em>Hardware Node Kind</em>}' enum.

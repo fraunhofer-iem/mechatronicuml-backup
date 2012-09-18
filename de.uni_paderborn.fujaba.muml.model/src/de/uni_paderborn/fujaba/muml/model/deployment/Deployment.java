@@ -110,7 +110,7 @@ public interface Deployment extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Quality Of Link Services</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment <em>Deplyoment</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment <em>Deployment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quality Of Link Services</em>' containment reference isn't clear,
@@ -123,8 +123,8 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Quality Of Link Services</em>' containment reference.
 	 * @see #setQualityOfLinkServices(QualityOfLinkService)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getDeployment_QualityOfLinkServices()
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment
-	 * @model opposite="deplyoment" containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment
+	 * @model opposite="deployment" containment="true"
 	 * @generated
 	 */
 	QualityOfLinkService getQualityOfLinkServices();

@@ -26,7 +26,7 @@
    
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/component/0.2.7"
+            uri="http://www.fujaba.de/muml/model/component/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage"
             genModel="model/muml.genmodel"/>
    </extension>
@@ -40,42 +40,42 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/core/0.2.7"
+            uri="http://www.fujaba.de/muml/model/core/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.core.CorePackage"
             genModel="model/muml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/instance/0.2.7"
+            uri="http://www.fujaba.de/muml/model/instance/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.instance.InstancePackage"
             genModel="model/muml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/pattern/0.2.3"
+            uri="http://www.fujaba.de/muml/model/pattern/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage"
             genModel="model/muml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7"
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage"
             genModel="model/muml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/msgiface/0.2.7"
+            uri="http://www.fujaba.de/muml/model/msgiface/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage"
             genModel="model/muml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/deployment/0.2.7"
+            uri="http://www.fujaba.de/muml/model/deployment/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage"
             genModel="model/muml.genmodel"/>
    </extension>

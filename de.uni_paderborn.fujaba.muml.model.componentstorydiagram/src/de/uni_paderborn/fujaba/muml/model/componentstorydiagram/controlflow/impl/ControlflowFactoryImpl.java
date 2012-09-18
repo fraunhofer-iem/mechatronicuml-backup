@@ -35,7 +35,7 @@ public class ControlflowFactoryImpl extends EFactoryImpl implements ControlflowF
 	 */
 	public static ControlflowFactory init() {
 		try {
-			ControlflowFactory theControlflowFactory = (ControlflowFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.0"); 
+			ControlflowFactory theControlflowFactory = (ControlflowFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1"); 
 			if (theControlflowFactory != null) {
 				return theControlflowFactory;
 			}

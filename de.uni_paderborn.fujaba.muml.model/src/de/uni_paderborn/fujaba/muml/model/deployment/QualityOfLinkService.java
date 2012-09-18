@@ -25,7 +25,7 @@ import org.storydriven.core.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getPacketDelayVariation <em>Packet Delay Variation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getLatency <em>Latency</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment <em>Deplyoment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment <em>Deployment</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,34 +85,30 @@ public interface QualityOfLinkService extends CommentableElement, NamedElement {
 	void setLatency(NaturalNumber value);
 
 	/**
-	 * Returns the value of the '<em><b>Deplyoment</b></em>' container reference.
+	 * Returns the value of the '<em><b>Deployment</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getQualityOfLinkServices <em>Quality Of Link Services</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Deplyoment</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The deployment to which the service belongs.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Deplyoment</em>' container reference.
-	 * @see #setDeplyoment(Deployment)
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getQualityOfLinkService_Deplyoment()
+	 * @return the value of the '<em>Deployment</em>' container reference.
+	 * @see #setDeployment(Deployment)
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getQualityOfLinkService_Deployment()
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getQualityOfLinkServices
 	 * @model opposite="qualityOfLinkServices" transient="false"
 	 * @generated
 	 */
-	Deployment getDeplyoment();
+	Deployment getDeployment();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeplyoment <em>Deplyoment</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment <em>Deployment</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deplyoment</em>' container reference.
-	 * @see #getDeplyoment()
+	 * @param value the new value of the '<em>Deployment</em>' container reference.
+	 * @see #getDeployment()
 	 * @generated
 	 */
-	void setDeplyoment(Deployment value);
+	void setDeployment(Deployment value);
 
 } // QualityOfLinkService

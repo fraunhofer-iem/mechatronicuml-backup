@@ -81,7 +81,7 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * CommunicationLinks which has the HardwarePort as source.
+	 * CommunicationLinks which have the HardwarePort as source.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Outgoing Communication Link</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_OutgoingCommunicationLink()
@@ -102,7 +102,7 @@ public interface HardwarePort extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * CommunicationLinks which has the HardwarePort as sink.
+	 * CommunicationLinks which have the HardwarePort as sink.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Incoming Communication Link</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getHardwarePort_IncomingCommunicationLink()

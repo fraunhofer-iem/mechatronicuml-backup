@@ -116,7 +116,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
             modelId="Pattern">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/modelinstance/0.2.7"
+               packageNsURI="http://www.fujaba.de/modelinstance/0.3.1"
                className="ModelElementCategory">
          </diagramElement>
          
@@ -379,7 +379,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.2.7">
+      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"

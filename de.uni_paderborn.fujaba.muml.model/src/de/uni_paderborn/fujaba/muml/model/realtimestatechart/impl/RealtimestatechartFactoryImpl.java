@@ -54,7 +54,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 */
 	public static RealtimestatechartFactory init() {
 		try {
-			RealtimestatechartFactory theRealtimestatechartFactory = (RealtimestatechartFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/realtimestatechart/0.2.7"); 
+			RealtimestatechartFactory theRealtimestatechartFactory = (RealtimestatechartFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/realtimestatechart/0.3.1"); 
 			if (theRealtimestatechartFactory != null) {
 				return theRealtimestatechartFactory;
 			}

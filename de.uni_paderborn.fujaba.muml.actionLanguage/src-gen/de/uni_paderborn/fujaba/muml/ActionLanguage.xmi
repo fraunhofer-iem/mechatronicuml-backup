@@ -8,19 +8,19 @@
       <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="modeling">
-      <ePackage href="http://www.storydriven.org/core/0.2.8#/"/>
+      <ePackage href="http://www.storydriven.org/core/0.3.1#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="rtsc">
-      <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7#/"/>
+      <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="core">
-      <ePackage href="http://www.fujaba.de/muml/model/core/0.2.7#/"/>
+      <ePackage href="http://www.fujaba.de/muml/model/core/0.3.1#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="expressions">
-      <ePackage href="http://www.storydriven.org/core/0.2.8#//expressions"/>
+      <ePackage href="http://www.storydriven.org/core/0.3.1#//expressions"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="commonExpressions">
-      <ePackage href="http://www.storydriven.org/core/0.2.8#//expressions/common"/>
+      <ePackage href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
     </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="Block" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /1/@rules.3 /1/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.0">
@@ -175,7 +175,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ExpressionStartRule">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
@@ -247,26 +247,26 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Expression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LogicalExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LogicalOrExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
             <type metamodel="/0/@metamodelDeclarations.6">
-              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/LogicalExpression"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicalExpression"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -280,23 +280,23 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="LogicalOrOperator">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.8#//expressions/common/LogicOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
       </type>
       <alternatives xsi:type="xtext:EnumLiteralDeclaration">
-        <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/LogicOperator/OR"/>
+        <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator/OR"/>
         <literal value="||"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LogicalAndExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
             <type metamodel="/0/@metamodelDeclarations.6">
-              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/LogicalExpression"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicalExpression"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -310,23 +310,23 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="LogicalAndOperator">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.8#//expressions/common/LogicOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
       </type>
       <alternatives xsi:type="xtext:EnumLiteralDeclaration">
-        <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/LogicOperator/AND"/>
+        <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator/AND"/>
         <literal value="&amp;&amp;"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ComparisonExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
             <type metamodel="/0/@metamodelDeclarations.6">
-              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparisonExpression"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparisonExpression"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -340,14 +340,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ComparisonHigherOpExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
             <type metamodel="/0/@metamodelDeclarations.6">
-              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparisonExpression"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparisonExpression"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -361,58 +361,58 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="ComparingEQNEQOperator">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparingOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparingOperator/EQUAL"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/EQUAL"/>
           <literal value="=="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparingOperator/UNEQUAL"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/UNEQUAL"/>
           <literal value="&lt;>"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="ComparingRelOperator">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparingOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparingOperator/LESS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/LESS"/>
           <literal value="&lt;"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparingOperator/LESS_OR_EQUAL"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/LESS_OR_EQUAL"/>
           <literal value="&lt;="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparingOperator/GREATER_OR_EQUAL"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/GREATER_OR_EQUAL"/>
           <literal value=">="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ComparingOperator/GREATER"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/GREATER"/>
           <literal value=">"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ArithmeticExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="AdditionExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
             <type metamodel="/0/@metamodelDeclarations.6">
-              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/ArithmeticExpression"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticExpression"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -426,22 +426,22 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="AdditionOperator">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.8#//expressions/common/ArithmeticOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ArithmeticOperator/PLUS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator/PLUS"/>
           <literal value="+"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ArithmeticOperator/MINUS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator/MINUS"/>
           <literal value="-"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="MultiplicationExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.26"/>
@@ -450,7 +450,7 @@
           <elements xsi:type="xtext:Group" cardinality="*">
             <elements xsi:type="xtext:Action" feature="leftExpression" operator="=">
               <type metamodel="/0/@metamodelDeclarations.6">
-                <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/ArithmeticExpression"/>
+                <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticExpression"/>
               </type>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -468,27 +468,27 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="MultiplicationOperator">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.8#//expressions/common/ArithmeticOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ArithmeticOperator/TIMES"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator/TIMES"/>
           <literal value="*"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/ArithmeticOperator/DIVIDE"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator/DIVIDE"/>
           <literal value="/"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="UnaryPreExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.6">
-            <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryExpression"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryExpression"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -501,33 +501,33 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="UnaryPreOperator">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryOperator/NOT"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/NOT"/>
           <literal value="not"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryOperator/MINUS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/MINUS"/>
           <literal value="-"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryOperator/PLUS"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/PLUS"/>
           <literal value="+"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="UnaryPostExpression">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.30"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Action" feature="enclosedExpression" operator="=">
             <type metamodel="/0/@metamodelDeclarations.6">
-              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryExpression"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryExpression"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
@@ -538,22 +538,22 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="UnaryPostOperator">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryOperator/INCREMENT"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/INCREMENT"/>
           <literal value="++"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.storydriven.org/core/0.2.8#//expressions/common/UnaryOperator/DECREMENT"/>
+          <enumLiteral href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/DECREMENT"/>
           <literal value="--"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Operand">
       <type metamodel="/0/@metamodelDeclarations.5">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Group">
@@ -568,12 +568,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LiteralExpression">
       <type metamodel="/0/@metamodelDeclarations.6">
-        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/LiteralExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LiteralExpression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.6">
-            <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.2.8#//expressions/common/LiteralExpression"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LiteralExpression"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
@@ -599,7 +599,7 @@
         <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Attribute"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//Attribute"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -621,7 +621,7 @@
         <elements xsi:type="xtext:Assignment" feature="operation" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Operation"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//Operation"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -643,18 +643,18 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ParamaterBinding">
       <type metamodel="/0/@metamodelDeclarations.4">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//ParameterBinding"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//ParameterBinding"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.4">
-            <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//ParameterBinding"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//ParameterBinding"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="parameter" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.2.7#//Parameter"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//Parameter"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>

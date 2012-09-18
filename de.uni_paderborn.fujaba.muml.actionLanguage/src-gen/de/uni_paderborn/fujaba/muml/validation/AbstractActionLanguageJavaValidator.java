@@ -14,7 +14,7 @@ public class AbstractActionLanguageJavaValidator extends AbstractDeclarativeVali
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/actionlanguage/0.2.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.storydriven.org/core/expressions/0.2.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.storydriven.org/core/expressions/common/0.2.0"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/model/core/0.2.7"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/model/core/0.3.1"));
 		return result;
 	}
 

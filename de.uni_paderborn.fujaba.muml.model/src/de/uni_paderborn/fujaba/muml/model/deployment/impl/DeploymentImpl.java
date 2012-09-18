@@ -241,9 +241,9 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 		if (newQualityOfLinkServices != qualityOfLinkServices) {
 			NotificationChain msgs = null;
 			if (qualityOfLinkServices != null)
-				msgs = ((InternalEObject)qualityOfLinkServices).eInverseRemove(this, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT, QualityOfLinkService.class, msgs);
+				msgs = ((InternalEObject)qualityOfLinkServices).eInverseRemove(this, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT, QualityOfLinkService.class, msgs);
 			if (newQualityOfLinkServices != null)
-				msgs = ((InternalEObject)newQualityOfLinkServices).eInverseAdd(this, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT, QualityOfLinkService.class, msgs);
+				msgs = ((InternalEObject)newQualityOfLinkServices).eInverseAdd(this, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT, QualityOfLinkService.class, msgs);
 			msgs = basicSetQualityOfLinkServices(newQualityOfLinkServices, msgs);
 			if (msgs != null) msgs.dispatch();
 		}

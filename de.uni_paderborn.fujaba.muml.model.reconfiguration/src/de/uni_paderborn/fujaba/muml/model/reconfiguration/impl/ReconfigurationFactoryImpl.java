@@ -42,7 +42,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 */
 	public static ReconfigurationFactory init() {
 		try {
-			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.0"); 
+			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.1"); 
 			if (theReconfigurationFactory != null) {
 				return theReconfigurationFactory;
 			}

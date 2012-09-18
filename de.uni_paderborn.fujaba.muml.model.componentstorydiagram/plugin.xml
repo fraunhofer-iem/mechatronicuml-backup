@@ -12,14 +12,14 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.0"
+            uri="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage"
             genModel="model/ComponentStoryDiagram.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.0"
+            uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage"
             genModel="model/ComponentStoryDiagram.genmodel"/>
    </extension>

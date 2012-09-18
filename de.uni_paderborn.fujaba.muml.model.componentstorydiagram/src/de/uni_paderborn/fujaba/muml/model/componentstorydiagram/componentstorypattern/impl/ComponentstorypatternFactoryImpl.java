@@ -39,7 +39,7 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	 */
 	public static ComponentstorypatternFactory init() {
 		try {
-			ComponentstorypatternFactory theComponentstorypatternFactory = (ComponentstorypatternFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.0"); 
+			ComponentstorypatternFactory theComponentstorypatternFactory = (ComponentstorypatternFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1"); 
 			if (theComponentstorypatternFactory != null) {
 				return theComponentstorypatternFactory;
 			}

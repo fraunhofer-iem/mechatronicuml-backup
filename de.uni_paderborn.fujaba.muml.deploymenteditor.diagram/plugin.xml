@@ -98,7 +98,7 @@
          
          <child
                class="HardwareNode"
-               packageNsUri="http://www.fujaba.de/muml/model/deployment/0.2.7">
+               packageNsUri="http://www.fujaba.de/muml/model/deployment/0.3.1">
          </child>
          
       </category>
@@ -116,7 +116,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.deployment.category"
             modelId="Deployment">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/model/deployment/0.2.7"
+               packageNsURI="http://www.fujaba.de/muml/model/deployment/0.3.1"
                className="Deployment">
          </diagramElement>
          
@@ -379,7 +379,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/deployment/0.2.7">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/deployment/0.3.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.deployment.diagram.Deployment_1000"
                name="%metatype.name.Deployment_1000"
@@ -389,7 +389,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/deployment/0.2.7">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/deployment/0.3.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.deployment.diagram.HardwareNode_2001"
                name="%metatype.name.HardwareNode_2001"
@@ -399,7 +399,7 @@
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/deployment/0.2.7">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/deployment/0.3.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.deployment.diagram.HardwarePort_3001"
                name="%metatype.name.HardwarePort_3001"
@@ -409,7 +409,7 @@
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/deployment/0.2.7">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/deployment/0.3.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.deployment.diagram.CommunicationLink_4001"
                name="%metatype.name.CommunicationLink_4001"

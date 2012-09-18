@@ -37,7 +37,7 @@ import org.storydriven.core.impl.CommentableElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getPacketDelayVariation <em>Packet Delay Variation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getLatency <em>Latency</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getDeplyoment <em>Deplyoment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getDeployment <em>Deployment</em>}</li>
  * </ul>
  * </p>
  *
@@ -215,8 +215,8 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Deployment getDeplyoment() {
-		if (eContainerFeatureID() != DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT) return null;
+	public Deployment getDeployment() {
+		if (eContainerFeatureID() != DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT) return null;
 		return (Deployment)eContainer();
 	}
 
@@ -225,8 +225,8 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDeplyoment(Deployment newDeplyoment, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDeplyoment, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT, msgs);
+	public NotificationChain basicSetDeployment(Deployment newDeployment, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDeployment, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT, msgs);
 		return msgs;
 	}
 
@@ -235,20 +235,20 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDeplyoment(Deployment newDeplyoment) {
-		if (newDeplyoment != eInternalContainer() || (eContainerFeatureID() != DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT && newDeplyoment != null)) {
-			if (EcoreUtil.isAncestor(this, newDeplyoment))
+	public void setDeployment(Deployment newDeployment) {
+		if (newDeployment != eInternalContainer() || (eContainerFeatureID() != DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT && newDeployment != null)) {
+			if (EcoreUtil.isAncestor(this, newDeployment))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newDeplyoment != null)
-				msgs = ((InternalEObject)newDeplyoment).eInverseAdd(this, DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, Deployment.class, msgs);
-			msgs = basicSetDeplyoment(newDeplyoment, msgs);
+			if (newDeployment != null)
+				msgs = ((InternalEObject)newDeployment).eInverseAdd(this, DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, Deployment.class, msgs);
+			msgs = basicSetDeployment(newDeployment, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT, newDeplyoment, newDeplyoment));
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT, newDeployment, newDeployment));
 	}
 
 	/**
@@ -259,10 +259,10 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT:
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetDeplyoment((Deployment)otherEnd, msgs);
+				return basicSetDeployment((Deployment)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -279,8 +279,8 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 				return basicSetPacketDelayVariation(null, msgs);
 			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
 				return basicSetLatency(null, msgs);
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT:
-				return basicSetDeplyoment(null, msgs);
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+				return basicSetDeployment(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -293,7 +293,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT:
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
 				return eInternalContainer().eInverseRemove(this, DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, Deployment.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -313,8 +313,8 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 				return getPacketDelayVariation();
 			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
 				return getLatency();
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT:
-				return getDeplyoment();
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+				return getDeployment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -336,8 +336,8 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
 				setLatency((NaturalNumber)newValue);
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT:
-				setDeplyoment((Deployment)newValue);
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+				setDeployment((Deployment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -360,8 +360,8 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
 				setLatency((NaturalNumber)null);
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT:
-				setDeplyoment((Deployment)null);
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+				setDeployment((Deployment)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -381,8 +381,8 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 				return packetDelayVariation != null;
 			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
 				return latency != null;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLYOMENT:
-				return getDeplyoment() != null;
+			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+				return getDeployment() != null;
 		}
 		return super.eIsSet(featureID);
 	}

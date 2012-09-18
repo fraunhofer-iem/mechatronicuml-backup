@@ -428,7 +428,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQualityOfLinkService_Deplyoment() {
+	public EReference getQualityOfLinkService_Deployment() {
 		return (EReference)qualityOfLinkServiceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -507,7 +507,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		qualityOfLinkServiceEClass = createEClass(QUALITY_OF_LINK_SERVICE);
 		createEReference(qualityOfLinkServiceEClass, QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION);
 		createEReference(qualityOfLinkServiceEClass, QUALITY_OF_LINK_SERVICE__LATENCY);
-		createEReference(qualityOfLinkServiceEClass, QUALITY_OF_LINK_SERVICE__DEPLYOMENT);
+		createEReference(qualityOfLinkServiceEClass, QUALITY_OF_LINK_SERVICE__DEPLOYMENT);
 
 		// Create enums
 		hardwareNodeKindEEnum = createEEnum(HARDWARE_NODE_KIND);
@@ -562,7 +562,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		initEReference(getDeployment_CommunicationLinks(), this.getCommunicationLink(), this.getCommunicationLink_Deployment(), "communicationLinks", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeployment_HardwareNodes(), this.getHardwareNode(), this.getHardwareNode_Deployment(), "hardwareNodes", null, 1, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeployment_ComponentInstanceConfiguration(), theInstancePackage.getComponentInstanceConfiguration(), null, "componentInstanceConfiguration", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeployment_QualityOfLinkServices(), this.getQualityOfLinkService(), this.getQualityOfLinkService_Deplyoment(), "qualityOfLinkServices", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeployment_QualityOfLinkServices(), this.getQualityOfLinkService(), this.getQualityOfLinkService_Deployment(), "qualityOfLinkServices", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hardwareNodeEClass, HardwareNode.class, "HardwareNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHardwareNode_Deployment(), this.getDeployment(), this.getDeployment_HardwareNodes(), "deployment", null, 1, 1, HardwareNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -587,7 +587,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		initEClass(qualityOfLinkServiceEClass, QualityOfLinkService.class, "QualityOfLinkService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQualityOfLinkService_PacketDelayVariation(), theCorePackage.getNaturalNumber(), null, "packetDelayVariation", null, 0, 1, QualityOfLinkService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQualityOfLinkService_Latency(), theCorePackage.getNaturalNumber(), null, "latency", null, 0, 1, QualityOfLinkService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQualityOfLinkService_Deplyoment(), this.getDeployment(), this.getDeployment_QualityOfLinkServices(), "deplyoment", null, 0, 1, QualityOfLinkService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQualityOfLinkService_Deployment(), this.getDeployment(), this.getDeployment_QualityOfLinkServices(), "deployment", null, 0, 1, QualityOfLinkService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(hardwareNodeKindEEnum, HardwareNodeKind.class, "HardwareNodeKind");

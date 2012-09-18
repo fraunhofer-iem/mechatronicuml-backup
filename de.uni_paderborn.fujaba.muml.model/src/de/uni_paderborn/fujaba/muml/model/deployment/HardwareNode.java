@@ -120,7 +120,7 @@ public interface HardwareNode extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A HardwareNode is kind ofa  computational resource, a sensor, an actor, or a communication device like a router.
+	 * A HardwareNode is kind of a computational resource, a sensor, an actor, or a communication device like a router.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hardware Node Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind
