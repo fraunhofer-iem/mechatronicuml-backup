@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml" nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml"
+    nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="This package is the base package for all MechatronicUML models, editors &#xD;&#xA;and algorithms. Plugins contributing to MechatronicUML should use &#xD;&#xA;de.uni_paderborn.fujaba.muml as a base package."/>
   </eAnnotations>
@@ -8,7 +10,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The model package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination pattern."/>
     </eAnnotations>
-    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.2.7"
+    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.3.1"
         nsPrefix="component">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -667,7 +669,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.2.7" nsPrefix="core">
+    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.1" nsPrefix="core">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package contains several core classes that are used by classes from several other packages.&#xD;&#xA;It provides abstract base classes for Statecharts, meta-model elements that use a statechart to&#xD;&#xA;define their behavior and meta-model elements that may carry a constraint.&#xD;&#xA;Additionally, the package provides classes for modeling cardinalites as natural numbers including&#xD;&#xA;infinity."/>
       </eAnnotations>
@@ -900,7 +902,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.2.7"
+    <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.3.1"
         nsPrefix="instance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1162,7 +1164,7 @@
         </eAnnotations>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.2.3"
+    <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.3.1"
         nsPrefix="pattern">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1328,7 +1330,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7"
+    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1"
         nsPrefix="realtimestatechart">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2075,7 +2077,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="msgiface" nsURI="http://www.fujaba.de/muml/model/msgiface/0.2.7"
+    <eSubpackages name="msgiface" nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.1"
         nsPrefix="msgiface">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2142,7 +2144,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.2.7"
+    <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.3.1"
         nsPrefix="deployment">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2174,7 +2176,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfLinkServices"
-            eType="#//model/deployment/QualityOfLinkService" containment="true" eOpposite="#//model/deployment/QualityOfLinkService/deplyoment">
+            eType="#//model/deployment/QualityOfLinkService" containment="true" eOpposite="#//model/deployment/QualityOfLinkService/deployment">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Reference to all contained quality of services."/>
           </eAnnotations>
@@ -2210,7 +2212,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="hardwareNodeKind" eType="#//model/deployment/HardwareNodeKind">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A HardwareNode is kind ofa  computational resource, a sensor, an actor, or a communication device like a router."/>
+            <details key="documentation" value="A HardwareNode is kind of a computational resource, a sensor, an actor, or a communication device like a router."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -2236,13 +2238,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingCommunicationLink"
             upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/source">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="CommunicationLinks which has the HardwarePort as source."/>
+            <details key="documentation" value="CommunicationLinks which have the HardwarePort as source."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingCommunicationLink"
             upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/target">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="CommunicationLinks which has the HardwarePort as sink."/>
+            <details key="documentation" value="CommunicationLinks which have the HardwarePort as sink."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployedPortInstance"
@@ -2319,7 +2321,7 @@
             <details key="documentation" value="The time from the source port sending a message to the destination port receiving it."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="deplyoment" eType="#//model/deployment/Deployment"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" eType="#//model/deployment/Deployment"
             eOpposite="#//model/deployment/Deployment/qualityOfLinkServices">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The deployment to which the service belongs."/>

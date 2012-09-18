@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<history:History xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<history:History xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
   <releases date="2012-02-06T22:06:28.923+0100" label="0.2.0">
     <changes xsi:type="history:CompositeChange">
@@ -25357,7 +25358,7 @@
         featureName="value" dataValue="A communication link between hardware nodes and a target used for the deployment of connectors between component instances."
         oldDataValue="A target used for the deployment of connectors between component instances."/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
-        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"/>
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment"
         referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"
@@ -25368,13 +25369,13 @@
         featureName="eType" referenceValue="muml.ecore#//model/deployment/QualityOfLinkService"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/qualityOfService"
         featureName="containment" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment"
         featureName="name" dataValue="deplyoment"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment"
         featureName="eType" referenceValue="muml.ecore#//model/deployment/Deployment"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"
-        featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/QualityOfLinkService/deployment"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment"
         featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/Deployment/qualityOfLinkServices"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/hardwareNode"
         referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -25682,16 +25683,16 @@
       <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="\todoup{}"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment"
-        referenceName="eAnnotations" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/deployment"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-        referenceName="details" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="key" dataValue="documentation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="\todoup{}"/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/Deployment/communicationLinks"
@@ -25803,7 +25804,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="Quality of Service of a communication link. "
         oldDataValue="\todoup{}"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deplyoment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The deployment to which the service belongs."
         oldDataValue="\todoup{}"/>
     <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/ComponentInstance"
@@ -26260,5 +26261,105 @@
     </changes>
     <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#/"
         featureName="nsURI" dataValue="http://www.storydriven.org/core/0.2.8" oldDataValue="http://www.storydriven.org/core/0.2.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/instance/0.3.1" oldDataValue="http://www.fujaba.de/muml/model/instance/0.2.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/pattern/0.3.1" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.2.3"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1"
+        oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/msgiface/0.3.1" oldDataValue="http://www.fujaba.de/muml/model/msgiface/0.2.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/deployment/0.3.1" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.2.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/core/0.3.1" oldDataValue="http://www.fujaba.de/muml/model/core/0.2.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.3.1" oldDataValue="http://www.fujaba.de/muml/model/component/0.2.7"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#/"
+        featureName="nsURI" dataValue="http://www.storydriven.org/core/0.3.1" oldDataValue="http://www.storydriven.org/core/0.2.8"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions"
+        featureName="nsURI" dataValue="http://www.storydriven.org/core/expressions/0.3.1"
+        oldDataValue="http://www.storydriven.org/core/expressions/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//expressions/common"
+        featureName="nsURI" dataValue="http://www.storydriven.org/core/expressions/common/0.3.1"
+        oldDataValue="http://www.storydriven.org/core/expressions/common/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.1" oldDataValue="http://www.fujaba.de/modelinstance/0.2.7"/>
+    <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#/"
+        referenceName="eAnnotations" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%">
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
+          featureName="source" dataValue="http://www.eclipse.org/edapt"/>
+    </changes>
+    <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
+        referenceName="details" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0">
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
+          featureName="key" dataValue="historyURI"/>
+      <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
+          featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+    </changes>
+    <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#/"
+        referenceName="eAnnotations" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%">
+      <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
+          featureName="source" dataValue="http://www.eclipse.org/edapt"/>
+    </changes>
+    <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
+        referenceName="details" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0">
+      <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
+          featureName="key" dataValue="historyURI"/>
+      <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
+          featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="CommunicationLinks which have the HardwarePort as source."
+          oldDataValue="CommunicationLinks which has the HardwarePort as source."/>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>CommunicationLinks which have the HardwarePort as source.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="CommunicationLinks which have the HardwarePort as sink."
+          oldDataValue="CommunicationLinks which has the HardwarePort as sink."/>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>CommunicationLinks which have the HardwarePort as sink.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="A HardwareNode is kind of a computational resource, a sensor, an actor, or a communication device like a router."
+          oldDataValue="A HardwareNode is kind ofa  computational resource, a sensor, an actor, or a communication device like a router."/>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/deployment/HardwareNode/hardwareNodeKind"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>A HardwareNode is kind of a computational resource, a sensor, an actor, or a communication device like a router.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService/deployment"
+          featureName="name" dataValue="deployment" oldDataValue="deplyoment"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/deployment/QualityOfLinkService/deployment"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>deployment</dataValue>
+        </parameters>
+      </operation>
+    </changes>
   </releases>
 </history:History>
