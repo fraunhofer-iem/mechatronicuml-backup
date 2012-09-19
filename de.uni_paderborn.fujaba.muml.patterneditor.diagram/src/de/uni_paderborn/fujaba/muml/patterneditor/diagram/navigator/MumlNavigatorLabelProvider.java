@@ -81,19 +81,19 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/pattern/0.2.3?CoordinationPattern", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_3003); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/model/pattern/0.3.1?CoordinationPattern", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_3003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternRolesEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/model/pattern/0.2.3?CoordinationPattern?roles", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPatternRoles_4003); //$NON-NLS-1$
+					"Navigator?Link?http://www.fujaba.de/muml/model/pattern/0.3.1?CoordinationPattern?roles", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPatternRoles_4003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/model/pattern/0.2.3?RoleConnector", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4004); //$NON-NLS-1$
+					"Navigator?Link?http://www.fujaba.de/muml/model/pattern/0.3.1?RoleConnector", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/model/pattern/0.2.3?CoordinationPattern", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2004); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/model/pattern/0.3.1?CoordinationPattern", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/pattern/0.2.3?Role", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3004); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/model/pattern/0.3.1?Role", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://www.fujaba.de/modelinstance/0.3.1?ModelElementCategory", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
