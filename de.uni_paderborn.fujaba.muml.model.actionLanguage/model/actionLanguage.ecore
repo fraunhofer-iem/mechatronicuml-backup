@@ -6,6 +6,9 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and attribute and operation call expressions. "/>
   </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/edapt">
+    <details key="historyURI" value="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EEnum" name="AssignOperator">
     <eLiterals name="UNSET" literal="UNSET"/>
     <eLiterals name="ASSIGN" value="1" literal=":="/>
