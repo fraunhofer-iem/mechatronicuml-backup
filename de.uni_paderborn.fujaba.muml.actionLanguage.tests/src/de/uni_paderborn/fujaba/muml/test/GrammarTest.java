@@ -35,7 +35,9 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 @RunWith(XtextRunner.class)
 public class GrammarTest {
@@ -311,6 +313,38 @@ public class GrammarTest {
 		assertFalse(loadResult.hasError());
 	}
 	
+	@Test
+	public void testTriggerMessageExpression1() {
+		Transition transition = rtsc.getTransitions().get(0);
+		loadFromString("m1.i", transition);
+		assertFalse(loadResult.hasError());
+		Block block = (Block) loadResult.getEObject();
+		assertTrue(block.getExpressions().get(0) instanceof TriggerMessageExpression);
+		TriggerMessageExpression triggerMessageExpression = (TriggerMessageExpression) block.getExpressions().get(0);
+		assertEquals("m1", triggerMessageExpression.getMessageType().getName());
+		assertEquals("i", triggerMessageExpression.getParameter().getName());
+	}
+	
+	@Test
+	public void testTriggerMessageExpression2() {
+		Transition transition = rtsc.getTransitions().get(0);
+		loadFromString("m1.i + m1.test", transition);
+		assertFalse(loadResult.hasError());
+		Block block = (Block) loadResult.getEObject();
+		assertTrue(block.getExpressions().get(0) instanceof ArithmeticExpression);
+		ArithmeticExpression expression = (ArithmeticExpression) block.getExpressions().get(0);
+		// left expression
+		assertTrue(expression.getLeftExpression() instanceof TriggerMessageExpression);
+		TriggerMessageExpression triggerMessageExpression = (TriggerMessageExpression) expression.getLeftExpression();
+		assertEquals("m1", triggerMessageExpression.getMessageType().getName());
+		assertEquals("i", triggerMessageExpression.getParameter().getName());
+		// right expression
+		assertTrue(expression.getRightExpression() instanceof TriggerMessageExpression);
+		triggerMessageExpression = (TriggerMessageExpression) expression.getRightExpression();
+		assertEquals("m1", triggerMessageExpression.getMessageType().getName());
+		assertEquals("test", triggerMessageExpression.getParameter().getName());
+	}
+	
 	protected EObject getAssignmentRHS(String text) {
 		Assignment assignment = (Assignment) getModel(text);
 		EObject expression = assignment.getRhs_assignExpression();
@@ -327,7 +361,11 @@ public class GrammarTest {
 	}
 	
 	protected void loadFromString(String text) {
-		loadResult = LanguageResource.loadFromString(text, rtsc);
+		loadFromString(text, rtsc);
+	}
+	
+	protected void loadFromString(String text, EObject object) {
+		loadResult = LanguageResource.loadFromString(text, object);
 	}
 
 }

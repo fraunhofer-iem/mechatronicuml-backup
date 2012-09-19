@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.fujaba.de/muml/model/core/0.2.7" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.2.7" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7" xmi:id="_lWOcMe-eEeGrR_F0FvcdVA">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionLanguage="http://www.fujaba.de/muml/actionlanguage/0.2.0" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:core="http://www.fujaba.de/muml/model/core/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:msgiface="http://www.fujaba.de/muml/model/msgiface/0.3.1" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1" xmi:id="_lWOcMe-eEeGrR_F0FvcdVA">
   <categories xmi:id="_lWOcMu-eEeGrR_F0FvcdVA" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcM--eEeGrR_F0FvcdVA" name="VOID"/>
     <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcNO-eEeGrR_F0FvcdVA" name="BOOLEAN" primitiveType="BOOLEAN"/>
@@ -11,7 +11,7 @@
     <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_lWOcOu-eEeGrR_F0FvcdVA" name="STRING" primitiveType="STRING"/>
   </categories>
   <categories xmi:id="_m3rA0O-eEeGrR_F0FvcdVA" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_m3s2AO-eEeGrR_F0FvcdVA">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_m3s2AO-eEeGrR_F0FvcdVA" behavioralElement="_LAHFwAICEeKaS_lxYydiOQ">
       <operations xmi:id="_3VHqsO-eEeGrR_F0FvcdVA" name="call"/>
       <operations xmi:id="_wAEIsO-eEeGrR_F0FvcdVA" name="callp">
         <parameters xmi:id="_yvdHIO-eEeGrR_F0FvcdVA" name="p1" type="_lWOcN--eEeGrR_F0FvcdVA"/>
@@ -22,6 +22,34 @@
       <attributes xmi:id="_rFDAMO-eEeGrR_F0FvcdVA" name="bar" type="_lWOcOO-eEeGrR_F0FvcdVA"/>
       <attributes xmi:id="_taploO-eEeGrR_F0FvcdVA" name="baz" type="_lWOcOu-eEeGrR_F0FvcdVA"/>
       <attributes xmi:id="_r2YEwO_FEeGRkfLkI2HmyQ" name="b" type="_lWOcNO-eEeGrR_F0FvcdVA"/>
+      <transitions xmi:id="_P_dUoAICEeKaS_lxYydiOQ" priority="1" target="_PVrX0AICEeKaS_lxYydiOQ" source="_OvNNsAICEeKaS_lxYydiOQ">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_RDFU0AICEeKaS_lxYydiOQ" kind="TRIGGER">
+          <message xmi:id="_RDGi8AICEeKaS_lxYydiOQ" instanceOf="_GRD8sAICEeKaS_lxYydiOQ"/>
+        </events>
+        <action xmi:id="_QAG04AICEeKaS_lxYydiOQ" name="">
+          <expressions xsi:type="actionLanguage:Block" xmi:id="_QFj8oAICEeKaS_lxYydiOQ"/>
+        </action>
+      </transitions>
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_OvNNsAICEeKaS_lxYydiOQ" name="s1" outgoingTransitions="_P_dUoAICEeKaS_lxYydiOQ"/>
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_PVrX0AICEeKaS_lxYydiOQ" name="s2" incomingTransitions="_P_dUoAICEeKaS_lxYydiOQ"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_FWP6QAICEeKaS_lxYydiOQ" key="de.uni_paderborn.fujaba.muml.messageinterface.category" name="msgiface">
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_Fs9xIAICEeKaS_lxYydiOQ" name="Interface">
+      <messageTypes xmi:id="_GRD8sAICEeKaS_lxYydiOQ" name="m1">
+        <parameters xmi:id="_HJ96oAICEeKaS_lxYydiOQ" name="i"/>
+        <parameters xmi:id="_ILSNsAICEeKaS_lxYydiOQ" name="test"/>
+      </messageTypes>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_KR8_QAICEeKaS_lxYydiOQ" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_KnGI0AICEeKaS_lxYydiOQ" name="comp">
+      <ports xsi:type="component:DiscretePort" xmi:id="_LAHFwAICEeKaS_lxYydiOQ" name="port" behavior="_m3s2AO-eEeGrR_F0FvcdVA" receiverMessageInterface="_Fs9xIAICEeKaS_lxYydiOQ">
+        <cardinality xmi:id="_LAHs0AICEeKaS_lxYydiOQ">
+          <lowerBound xmi:id="_LAIT4AICEeKaS_lxYydiOQ"/>
+          <upperBound xmi:id="_LAKJEAICEeKaS_lxYydiOQ"/>
+        </cardinality>
+      </ports>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
