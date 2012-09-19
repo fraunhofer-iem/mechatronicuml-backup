@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
  *
  * @generated
  */
-public abstract class LoopImpl extends ExpressionImpl implements Loop {
+public abstract class LoopImpl extends BlockImpl implements Loop {
 	/**
 	 * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
 	 * <!-- begin-user-doc -->

@@ -80,6 +80,7 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 			case ActionLanguagePackage.ATTRIBUTE_EXPRESSION: return createAttributeExpression();
 			case ActionLanguagePackage.OPERATION_CALL: return createOperationCall();
 			case ActionLanguagePackage.RETURN_STATEMENT: return createReturnStatement();
+			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION: return createTriggerMessageExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -207,6 +208,16 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	public ReturnStatement createReturnStatement() {
 		ReturnStatementImpl returnStatement = new ReturnStatementImpl();
 		return returnStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TriggerMessageExpression createTriggerMessageExpression() {
+		TriggerMessageExpressionImpl triggerMessageExpression = new TriggerMessageExpressionImpl();
+		return triggerMessageExpression;
 	}
 
 	/**

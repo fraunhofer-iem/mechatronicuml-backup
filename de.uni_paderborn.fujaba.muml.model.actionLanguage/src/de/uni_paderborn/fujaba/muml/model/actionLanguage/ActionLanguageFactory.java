@@ -107,6 +107,15 @@ public interface ActionLanguageFactory extends EFactory {
 	ReturnStatement createReturnStatement();
 
 	/**
+	 * Returns a new object of class '<em>Trigger Message Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Trigger Message Expression</em>'.
+	 * @generated
+	 */
+	TriggerMessageExpression createTriggerMessageExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -227,6 +227,11 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
@@ -301,6 +306,21 @@ public class IfStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionLanguageFactory.eINSTANCE.createBlock()));
 
@@ -343,6 +363,11 @@ public class IfStatementItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionLanguageFactory.eINSTANCE.createReturnStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -421,8 +446,38 @@ public class IfStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
+				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
+				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
+				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
 				 ActionLanguageFactory.eINSTANCE.createBlock()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createForLoop()));
 	}
 
 	/**

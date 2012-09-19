@@ -282,6 +282,29 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TriggerMessageExpressionItemProvider triggerMessageExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTriggerMessageExpressionAdapter() {
+		if (triggerMessageExpressionItemProvider == null) {
+			triggerMessageExpressionItemProvider = new TriggerMessageExpressionItemProvider(this);
+		}
+
+		return triggerMessageExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +412,7 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		if (attributeExpressionItemProvider != null) attributeExpressionItemProvider.dispose();
 		if (operationCallItemProvider != null) operationCallItemProvider.dispose();
 		if (returnStatementItemProvider != null) returnStatementItemProvider.dispose();
+		if (triggerMessageExpressionItemProvider != null) triggerMessageExpressionItemProvider.dispose();
 	}
 
 }

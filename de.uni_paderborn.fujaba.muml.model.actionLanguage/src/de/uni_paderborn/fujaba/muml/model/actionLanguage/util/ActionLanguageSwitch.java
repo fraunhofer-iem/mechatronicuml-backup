@@ -95,6 +95,7 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 			case ActionLanguagePackage.LOOP: {
 				Loop loop = (Loop)theEObject;
 				T result = caseLoop(loop);
+				if (result == null) result = caseBlock(loop);
 				if (result == null) result = caseExpression(loop);
 				if (result == null) result = caseCommentableElement(loop);
 				if (result == null) result = caseExtendableElement(loop);
@@ -105,6 +106,7 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				WhileLoop whileLoop = (WhileLoop)theEObject;
 				T result = caseWhileLoop(whileLoop);
 				if (result == null) result = caseLoop(whileLoop);
+				if (result == null) result = caseBlock(whileLoop);
 				if (result == null) result = caseExpression(whileLoop);
 				if (result == null) result = caseCommentableElement(whileLoop);
 				if (result == null) result = caseExtendableElement(whileLoop);
@@ -115,6 +117,7 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				DoWhileLoop doWhileLoop = (DoWhileLoop)theEObject;
 				T result = caseDoWhileLoop(doWhileLoop);
 				if (result == null) result = caseLoop(doWhileLoop);
+				if (result == null) result = caseBlock(doWhileLoop);
 				if (result == null) result = caseExpression(doWhileLoop);
 				if (result == null) result = caseCommentableElement(doWhileLoop);
 				if (result == null) result = caseExtendableElement(doWhileLoop);
@@ -134,6 +137,7 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				ForLoop forLoop = (ForLoop)theEObject;
 				T result = caseForLoop(forLoop);
 				if (result == null) result = caseLoop(forLoop);
+				if (result == null) result = caseBlock(forLoop);
 				if (result == null) result = caseExpression(forLoop);
 				if (result == null) result = caseCommentableElement(forLoop);
 				if (result == null) result = caseExtendableElement(forLoop);
@@ -173,6 +177,15 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = caseExpression(returnStatement);
 				if (result == null) result = caseCommentableElement(returnStatement);
 				if (result == null) result = caseExtendableElement(returnStatement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION: {
+				TriggerMessageExpression triggerMessageExpression = (TriggerMessageExpression)theEObject;
+				T result = caseTriggerMessageExpression(triggerMessageExpression);
+				if (result == null) result = caseExpression(triggerMessageExpression);
+				if (result == null) result = caseCommentableElement(triggerMessageExpression);
+				if (result == null) result = caseExtendableElement(triggerMessageExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -327,6 +340,21 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReturnStatement(ReturnStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Trigger Message Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Trigger Message Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTriggerMessageExpression(TriggerMessageExpression object) {
 		return null;
 	}
 

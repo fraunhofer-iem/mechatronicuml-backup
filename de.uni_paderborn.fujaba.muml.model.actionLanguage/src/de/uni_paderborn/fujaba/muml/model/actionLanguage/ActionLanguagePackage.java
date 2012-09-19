@@ -137,7 +137,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int LOOP__ANNOTATION = BLOCK__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -146,7 +146,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int LOOP__EXTENSION = BLOCK__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -155,7 +155,16 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+	int LOOP__COMMENT = BLOCK__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOOP__EXPRESSIONS = BLOCK__EXPRESSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -164,7 +173,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__BLOCK = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+	int LOOP__BLOCK = BLOCK_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Loop Test</b></em>' containment reference.
@@ -173,7 +182,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__LOOP_TEST = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int LOOP__LOOP_TEST = BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Loop</em>' class.
@@ -182,7 +191,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int LOOP_FEATURE_COUNT = BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.WhileLoopImpl <em>While Loop</em>}' class.
@@ -220,6 +229,15 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int WHILE_LOOP__COMMENT = LOOP__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_LOOP__EXPRESSIONS = LOOP__EXPRESSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -284,6 +302,15 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int DO_WHILE_LOOP__COMMENT = LOOP__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE_LOOP__EXPRESSIONS = LOOP__EXPRESSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -430,6 +457,15 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int FOR_LOOP__COMMENT = LOOP__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_LOOP__EXPRESSIONS = LOOP__EXPRESSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -751,6 +787,70 @@ public interface ActionLanguagePackage extends EPackage {
 	int RETURN_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TriggerMessageExpressionImpl <em>Trigger Message Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TriggerMessageExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getTriggerMessageExpression()
+	 * @generated
+	 */
+	int TRIGGER_MESSAGE_EXPRESSION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE_EXPRESSION__PARAMETER = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Trigger Message Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -758,7 +858,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 10;
+	int ASSIGN_OPERATOR = 11;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -768,7 +868,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 11;
+	int INCREMENT_DECREMENT_OPERATOR = 12;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Block <em>Block</em>}'.
@@ -1080,6 +1180,38 @@ public interface ActionLanguagePackage extends EPackage {
 	EReference getReturnStatement_Expression();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression <em>Trigger Message Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Trigger Message Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression
+	 * @generated
+	 */
+	EClass getTriggerMessageExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression#getMessageType <em>Message Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Message Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression#getMessageType()
+	 * @see #getTriggerMessageExpression()
+	 * @generated
+	 */
+	EReference getTriggerMessageExpression_MessageType();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parameter</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression#getParameter()
+	 * @see #getTriggerMessageExpression()
+	 * @generated
+	 */
+	EReference getTriggerMessageExpression_Parameter();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1372,6 +1504,32 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RETURN_STATEMENT__EXPRESSION = eINSTANCE.getReturnStatement_Expression();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TriggerMessageExpressionImpl <em>Trigger Message Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TriggerMessageExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getTriggerMessageExpression()
+		 * @generated
+		 */
+		EClass TRIGGER_MESSAGE_EXPRESSION = eINSTANCE.getTriggerMessageExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE = eINSTANCE.getTriggerMessageExpression_MessageType();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIGGER_MESSAGE_EXPRESSION__PARAMETER = eINSTANCE.getTriggerMessageExpression_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}' enum.

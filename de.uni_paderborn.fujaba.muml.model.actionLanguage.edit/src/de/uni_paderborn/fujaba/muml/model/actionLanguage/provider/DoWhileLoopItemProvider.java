@@ -123,6 +123,7 @@ public class DoWhileLoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS ||
 			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
 			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST;
 

@@ -228,6 +228,11 @@ public class ReturnStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add

@@ -44,7 +44,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
  * @generated
  */
 public class LoopItemProvider
-	extends ExpressionItemProvider
+	extends BlockItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -165,18 +165,23 @@ public class LoopItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
+				(ActionLanguagePackage.Literals.LOOP__BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__BLOCK,
-				 ActionLanguageFactory.eINSTANCE.createBlock()));
+				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.LOOP__BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.LOOP__BLOCK,
+				 ActionLanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -222,6 +227,11 @@ public class LoopItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ActionLanguageFactory.eINSTANCE.createReturnStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -306,6 +316,7 @@ public class LoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS ||
 			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
 			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST;
 
@@ -315,17 +326,6 @@ public class LoopItemProvider
 				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
 	}
 
 }

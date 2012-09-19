@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOpera
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
@@ -114,6 +115,13 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	private EClass returnStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass triggerMessageExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -490,6 +498,33 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTriggerMessageExpression() {
+		return triggerMessageExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTriggerMessageExpression_MessageType() {
+		return (EReference)triggerMessageExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTriggerMessageExpression_Parameter() {
+		return (EReference)triggerMessageExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
@@ -573,6 +608,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		returnStatementEClass = createEClass(RETURN_STATEMENT);
 		createEReference(returnStatementEClass, RETURN_STATEMENT__EXPRESSION);
 
+		triggerMessageExpressionEClass = createEClass(TRIGGER_MESSAGE_EXPRESSION);
+		createEReference(triggerMessageExpressionEClass, TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE);
+		createEReference(triggerMessageExpressionEClass, TRIGGER_MESSAGE_EXPRESSION__PARAMETER);
+
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
@@ -604,6 +643,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -611,7 +651,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		// Add supertypes to classes
 		blockEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		loopEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		loopEClass.getESuperTypes().add(this.getBlock());
 		whileLoopEClass.getESuperTypes().add(this.getLoop());
 		doWhileLoopEClass.getESuperTypes().add(this.getLoop());
 		assignmentEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
@@ -620,6 +660,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		attributeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		operationCallEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		returnStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		triggerMessageExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -660,6 +701,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		initEClass(returnStatementEClass, ReturnStatement.class, "ReturnStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReturnStatement_Expression(), theExpressionsPackage.getExpression(), null, "expression", null, 0, 1, ReturnStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(triggerMessageExpressionEClass, TriggerMessageExpression.class, "TriggerMessageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTriggerMessageExpression_MessageType(), theMsgifacePackage.getMessageType(), null, "messageType", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTriggerMessageExpression_Parameter(), theCorePackage.getParameter(), null, "parameter", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");

@@ -29,7 +29,7 @@ import org.storydriven.core.expressions.Expression;
  * @model abstract="true"
  * @generated
  */
-public interface Loop extends Expression {
+public interface Loop extends Block {
 	/**
 	 * Returns the value of the '<em><b>Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

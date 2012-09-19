@@ -124,6 +124,10 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 				return createReturnStatementAdapter();
 			}
 			@Override
+			public Adapter caseTriggerMessageExpression(TriggerMessageExpression object) {
+				return createTriggerMessageExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -292,6 +296,20 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReturnStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression <em>Trigger Message Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression
+	 * @generated
+	 */
+	public Adapter createTriggerMessageExpressionAdapter() {
 		return null;
 	}
 
