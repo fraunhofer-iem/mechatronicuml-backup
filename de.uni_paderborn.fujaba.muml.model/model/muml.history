@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<history:History xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<history:History xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
   <releases date="2012-02-06T22:06:28.923+0100" label="0.2.0">
     <changes xsi:type="history:CompositeChange">
@@ -6352,66 +6351,66 @@
             featureName="value" dataValue="self.invariants->isUnique(clock)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.9/@changes.219/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.219/@element"
+            featureName="key" dataValue="OneInitialState"/>
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.219/@element"
+            featureName="value" dataValue="not self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->isEmpty()"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="key" dataValue="OneInitialState"/>
+            featureName="key" dataValue="NoOutgoingTransitionOfFinalState"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="value" dataValue="not self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->isEmpty()"/>
+            featureName="value" dataValue="self.final implies self.outgoingTransitions->isEmpty()"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
-            featureName="key" dataValue="NoOutgoingTransitionOfFinalState"/>
+            featureName="key" dataValue="NoRegionsOfFinalState"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
-            featureName="value" dataValue="self.final implies self.outgoingTransitions->isEmpty()"/>
+            featureName="value" dataValue="self.final implies self.regions->isEmpty()"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
-            featureName="key" dataValue="NoRegionsOfFinalState"/>
+            featureName="key" dataValue="UniquePrioritiesOfOutgoingTransitions"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
-            featureName="value" dataValue="self.final implies self.regions->isEmpty()"/>
+            featureName="value" dataValue="self.outgoingTransitions->isUnique(priority) "/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
-            featureName="key" dataValue="UniquePrioritiesOfOutgoingTransitions"/>
+            featureName="key" dataValue="UniquePrioritiesOfRegions"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
-            featureName="value" dataValue="self.outgoingTransitions->isUnique(priority) "/>
+            featureName="value" dataValue="self.regions->isUnique(priority)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
-            featureName="key" dataValue="UniquePrioritiesOfRegions"/>
+            featureName="key" dataValue="UniqueChannelNames"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
-            featureName="value" dataValue="self.regions->isUnique(priority)"/>
+            featureName="value" dataValue="self.channels->isUnique(name)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
-            featureName="key" dataValue="UniqueChannelNames"/>
+            featureName="key" dataValue="UniqueRegionNames"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
-            featureName="value" dataValue="self.channels->isUnique(name)"/>
+            featureName="value" dataValue="self.regions->isUnique(name)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
-            featureName="key" dataValue="UniqueRegionNames"/>
+            featureName="key" dataValue="BoundOfInvariantGreaterOrEqualZero"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
-            featureName="value" dataValue="self.regions->isUnique(name)"/>
+            featureName="value" dataValue="self.invariants->forAll(bound.value >= 0)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
-            featureName="key" dataValue="BoundOfInvariantGreaterOrEqualZero"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
-            featureName="value" dataValue="self.invariants->forAll(bound.value >= 0)"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
             featureName="key" dataValue="InvalidClockConstraintOperator"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
             featureName="value" dataValue="self.invariants->forAll(invariant | Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State"
@@ -15922,7 +15921,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateEntryPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"
         oldDataValue="SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateEntryPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+    <changes xsi:type="history:Set" element="#//@releases.9/@changes.219/@element"
         featureName="value" dataValue="self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1"
         oldDataValue="not self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->isEmpty()"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
@@ -26503,7 +26502,7 @@ The different component types are implemented as a variation of the composite de
     <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if self.incomingConnector -> notEmpty() then&#xD;&#xA;&#x9;self.incomingConnector&#xD;&#xA;else&#xD;&#xA;&#x9;self.outgoingConnector&#xD;&#xA;endif"
         oldDataValue="if self.incomingConnector -> notEmpty() then&#xD;&#xA;&#x9;self.incomingConnector&#xD;&#xA;else&#xD;&#xA;&#x9;self.outgoingConnector&#xD;&#xA;Endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
         featureName="value" dataValue="self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"
         oldDataValue="self.invariants->forAll(invariant | Set{ modeling::expressions::ComparingOperator::LESS, modeling::expressions::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
     <changes xsi:type="history:OperationChange">
@@ -28878,5 +28877,19 @@ interfaces.</dataValue>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Assembly/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="key" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts"
         oldDataValue="NoSelfAssembliesForSinglePorts"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          featureName="key" dataValue="OneInitialState"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          featureName="value" dataValue="self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="self.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1"
+        oldDataValue="self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="OneInitialState" value="self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1"/>
+    </changes>
   </releases>
 </history:History>
