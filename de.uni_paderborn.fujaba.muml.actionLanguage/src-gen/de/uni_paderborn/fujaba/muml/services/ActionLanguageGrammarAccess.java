@@ -857,14 +857,15 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteralExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cAttributeExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cOperationCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cTriggerMessageExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//// end of UnaryPostExpression
 		//// Operand
 		//Operand returns expressions::Expression:
-		//	"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall;
+		//	"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall | TriggerMessageExpression;
 		public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall
+		//"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall | TriggerMessageExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" Expression ")"
@@ -887,6 +888,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//OperationCall
 		public RuleCall getOperationCallParserRuleCall_3() { return cOperationCallParserRuleCall_3; }
+
+		//TriggerMessageExpression
+		public RuleCall getTriggerMessageExpressionParserRuleCall_4() { return cTriggerMessageExpressionParserRuleCall_4; }
 	}
 
 	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
@@ -1123,6 +1127,49 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValueExpressionParserRuleCall_3_0() { return cValueExpressionParserRuleCall_3_0; }
 	}
 
+	public class TriggerMessageExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TriggerMessageExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cMessageTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cMessageTypeMessageTypeCrossReference_0_0 = (CrossReference)cMessageTypeAssignment_0.eContents().get(0);
+		private final RuleCall cMessageTypeMessageTypeIDTerminalRuleCall_0_0_1 = (RuleCall)cMessageTypeMessageTypeCrossReference_0_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cParameterParameterCrossReference_2_0 = (CrossReference)cParameterAssignment_2.eContents().get(0);
+		private final RuleCall cParameterParameterIDTerminalRuleCall_2_0_1 = (RuleCall)cParameterParameterCrossReference_2_0.eContents().get(1);
+		
+		/// *LiteralExpression returns expressions::Expression:
+		//	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
+		//;* / // TriggerMessageExpression
+		//TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
+		//	messageType=[msgiface::MessageType] "." parameter=[core::Parameter];
+		public ParserRule getRule() { return rule; }
+
+		//messageType=[msgiface::MessageType] "." parameter=[core::Parameter]
+		public Group getGroup() { return cGroup; }
+
+		//messageType=[msgiface::MessageType]
+		public Assignment getMessageTypeAssignment_0() { return cMessageTypeAssignment_0; }
+
+		//[msgiface::MessageType]
+		public CrossReference getMessageTypeMessageTypeCrossReference_0_0() { return cMessageTypeMessageTypeCrossReference_0_0; }
+
+		//ID
+		public RuleCall getMessageTypeMessageTypeIDTerminalRuleCall_0_0_1() { return cMessageTypeMessageTypeIDTerminalRuleCall_0_0_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+
+		//parameter=[core::Parameter]
+		public Assignment getParameterAssignment_2() { return cParameterAssignment_2; }
+
+		//[core::Parameter]
+		public CrossReference getParameterParameterCrossReference_2_0() { return cParameterParameterCrossReference_2_0; }
+
+		//ID
+		public RuleCall getParameterParameterIDTerminalRuleCall_2_0_1() { return cParameterParameterIDTerminalRuleCall_2_0_1; }
+	}
+
 	public class IdentifierOrValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IdentifierOrValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1130,9 +1177,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		/// *LiteralExpression returns expressions::Expression:
-		//	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
-		//;* / IdentifierOrValue returns ecore::EString:
+		//// end of TriggerMessageExpression
+		//IdentifierOrValue returns ecore::EString:
 		//	NUMBER | BOOLEAN | INT;
 		public ParserRule getRule() { return rule; }
 
@@ -1490,6 +1536,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private AttributeExpressionElements pAttributeExpression;
 	private OperationCallElements pOperationCall;
 	private ParamaterBindingElements pParamaterBinding;
+	private TriggerMessageExpressionElements pTriggerMessageExpression;
 	private IdentifierOrValueElements pIdentifierOrValue;
 	private TerminalRule tNUMBER;
 	private TerminalRule tBOOLEAN;
@@ -1840,7 +1887,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//// end of UnaryPostExpression
 	//// Operand
 	//Operand returns expressions::Expression:
-	//	"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall;
+	//	"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall | TriggerMessageExpression;
 	public OperandElements getOperandAccess() {
 		return (pOperand != null) ? pOperand : (pOperand = new OperandElements());
 	}
@@ -1943,7 +1990,19 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *LiteralExpression returns expressions::Expression:
 	//	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
-	//;* / IdentifierOrValue returns ecore::EString:
+	//;* / // TriggerMessageExpression
+	//TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
+	//	messageType=[msgiface::MessageType] "." parameter=[core::Parameter];
+	public TriggerMessageExpressionElements getTriggerMessageExpressionAccess() {
+		return (pTriggerMessageExpression != null) ? pTriggerMessageExpression : (pTriggerMessageExpression = new TriggerMessageExpressionElements());
+	}
+	
+	public ParserRule getTriggerMessageExpressionRule() {
+		return getTriggerMessageExpressionAccess().getRule();
+	}
+
+	//// end of TriggerMessageExpression
+	//IdentifierOrValue returns ecore::EString:
 	//	NUMBER | BOOLEAN | INT;
 	public IdentifierOrValueElements getIdentifierOrValueAccess() {
 		return (pIdentifierOrValue != null) ? pIdentifierOrValue : (pIdentifierOrValue = new IdentifierOrValueElements());

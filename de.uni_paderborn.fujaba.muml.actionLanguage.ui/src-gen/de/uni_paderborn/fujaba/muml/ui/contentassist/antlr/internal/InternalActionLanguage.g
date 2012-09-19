@@ -792,6 +792,34 @@ finally {
 
 
 
+// Entry rule entryRuleTriggerMessageExpression
+entryRuleTriggerMessageExpression 
+:
+{ before(grammarAccess.getTriggerMessageExpressionRule()); }
+	 ruleTriggerMessageExpression
+{ after(grammarAccess.getTriggerMessageExpressionRule()); } 
+	 EOF 
+;
+
+// Rule TriggerMessageExpression
+ruleTriggerMessageExpression
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getTriggerMessageExpressionAccess().getGroup()); }
+(rule__TriggerMessageExpression__Group__0)
+{ after(grammarAccess.getTriggerMessageExpressionAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 
 
 
@@ -1148,6 +1176,12 @@ rule__Operand__Alternatives
 { before(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); }
 	ruleOperationCall
 { after(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); }
+)
+
+    |(
+{ before(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); }
+	ruleTriggerMessageExpression
+{ after(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); }
 )
 
 ;
@@ -4820,6 +4854,100 @@ finally {
 
 
 
+rule__TriggerMessageExpression__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__TriggerMessageExpression__Group__0__Impl
+	rule__TriggerMessageExpression__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TriggerMessageExpression__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeAssignment_0()); }
+(rule__TriggerMessageExpression__MessageTypeAssignment_0)
+{ after(grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeAssignment_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__TriggerMessageExpression__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__TriggerMessageExpression__Group__1__Impl
+	rule__TriggerMessageExpression__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TriggerMessageExpression__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTriggerMessageExpressionAccess().getFullStopKeyword_1()); }
+
+	'.' 
+
+{ after(grammarAccess.getTriggerMessageExpressionAccess().getFullStopKeyword_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__TriggerMessageExpression__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__TriggerMessageExpression__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TriggerMessageExpression__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTriggerMessageExpressionAccess().getParameterAssignment_2()); }
+(rule__TriggerMessageExpression__ParameterAssignment_2)
+{ after(grammarAccess.getTriggerMessageExpressionAccess().getParameterAssignment_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
 
 rule__Block__ExpressionsAssignment_0_2
     @init {
@@ -5517,6 +5645,44 @@ rule__ParamaterBinding__ValueAssignment_3
 (
 { before(grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0()); }
 	ruleExpression{ after(grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TriggerMessageExpression__MessageTypeAssignment_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeMessageTypeCrossReference_0_0()); }
+(
+{ before(grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeMessageTypeIDTerminalRuleCall_0_0_1()); }
+	RULE_ID{ after(grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeMessageTypeIDTerminalRuleCall_0_0_1()); }
+)
+{ after(grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeMessageTypeCrossReference_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TriggerMessageExpression__ParameterAssignment_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTriggerMessageExpressionAccess().getParameterParameterCrossReference_2_0()); }
+(
+{ before(grammarAccess.getTriggerMessageExpressionAccess().getParameterParameterIDTerminalRuleCall_2_0_1()); }
+	RULE_ID{ after(grammarAccess.getTriggerMessageExpressionAccess().getParameterParameterIDTerminalRuleCall_2_0_1()); }
+)
+{ after(grammarAccess.getTriggerMessageExpressionAccess().getParameterParameterCrossReference_2_0()); }
 )
 
 ;

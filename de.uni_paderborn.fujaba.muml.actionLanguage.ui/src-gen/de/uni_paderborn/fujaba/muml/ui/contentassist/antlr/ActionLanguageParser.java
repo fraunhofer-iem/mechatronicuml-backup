@@ -87,6 +87,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOperationCallAccess().getGroup_2(), "rule__OperationCall__Group_2__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_2_1(), "rule__OperationCall__Group_2_1__0");
 					put(grammarAccess.getParamaterBindingAccess().getGroup(), "rule__ParamaterBinding__Group__0");
+					put(grammarAccess.getTriggerMessageExpressionAccess().getGroup(), "rule__TriggerMessageExpression__Group__0");
 					put(grammarAccess.getBlockAccess().getExpressionsAssignment_0_2(), "rule__Block__ExpressionsAssignment_0_2");
 					put(grammarAccess.getBlockAccess().getExpressionsAssignment_1(), "rule__Block__ExpressionsAssignment_1");
 					put(grammarAccess.getForLoopAccess().getInitalizeExpressionAssignment_2(), "rule__ForLoop__InitalizeExpressionAssignment_2");
@@ -133,6 +134,8 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOperationCallAccess().getParameterBindingAssignment_2_1_1(), "rule__OperationCall__ParameterBindingAssignment_2_1_1");
 					put(grammarAccess.getParamaterBindingAccess().getParameterAssignment_1(), "rule__ParamaterBinding__ParameterAssignment_1");
 					put(grammarAccess.getParamaterBindingAccess().getValueAssignment_3(), "rule__ParamaterBinding__ValueAssignment_3");
+					put(grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeAssignment_0(), "rule__TriggerMessageExpression__MessageTypeAssignment_0");
+					put(grammarAccess.getTriggerMessageExpressionAccess().getParameterAssignment_2(), "rule__TriggerMessageExpression__ParameterAssignment_2");
 				}
 			};
 		}

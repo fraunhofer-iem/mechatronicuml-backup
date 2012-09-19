@@ -11,6 +11,8 @@ import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#/
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core" as core
 
+import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface" as msgiface
+
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" as expressions
 
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/common" as commonExpressions
@@ -212,7 +214,7 @@ enum UnaryPostOperator returns commonExpressions::UnaryOperator:
 // Operand
 
 Operand returns expressions::Expression:
-	'(' Expression ')' | LiteralExpression | AttributeExpression | OperationCall
+	'(' Expression ')' | LiteralExpression | AttributeExpression | OperationCall | TriggerMessageExpression
 ;
 
 // end of Operand
@@ -293,6 +295,14 @@ ParamaterBinding returns core::ParameterBinding:
 /*LiteralExpression returns expressions::Expression:
 	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
 ;*/	
+
+// TriggerMessageExpression
+
+TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
+	messageType=[msgiface::MessageType] '.' parameter=[core::Parameter]
+;
+
+// end of TriggerMessageExpression
 	
 	
 IdentifierOrValue returns ecore::EString:

@@ -3,6 +3,7 @@
  */
 package de.uni_paderborn.fujaba.muml.scoping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -12,10 +13,12 @@ import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
@@ -32,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 	private List<Attribute> attributeList = null;
 	private List<Operation> operationList = null;
+	private List<MessageType> messageTypeList = null;
 	
 	public ActionLanguageScopeProvider() {
 		super();
@@ -56,14 +60,31 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		return Scopes.scopeFor(operationList);
 	}
 	
-	IScope scope_Parameter(Object object, EReference ref) {
-		if (!(object instanceof ParameterBinding)
-				|| !(((ParameterBinding) object).eContainer() instanceof OperationCall)) {
+	IScope scope_MessageType(Object object, EReference ref) {
+		if (messageTypeList == null) {
 			return IScope.NULLSCOPE;
 		}
-		OperationCall operationCall = (OperationCall) ((EObject) object).eContainer();
-		List<Parameter> parameterList = getScopeForOperationCall(operationCall);
-		return Scopes.scopeFor(parameterList);
+		return Scopes.scopeFor(messageTypeList);
+	}
+	
+	IScope scope_Parameter(Object object, EReference ref) {
+		/*if (!(object instanceof ParameterBinding)
+				|| !(((ParameterBinding) object).eContainer() instanceof OperationCall)) {
+			return IScope.NULLSCOPE;
+		}*/
+		if (!(object instanceof EObject)) {
+			return IScope.NULLSCOPE;
+		}
+		EObject eObject = (EObject) object;
+		if ((eObject instanceof ParameterBinding) && eObject.eContainer() instanceof OperationCall) {
+			OperationCall operationCall = (OperationCall) ((EObject) object).eContainer();
+			List<Parameter> parameterList = getScopeForOperationCall(operationCall);
+			return Scopes.scopeFor(parameterList);
+		} else if (eObject instanceof TriggerMessageExpression) {
+			List<Parameter> parameterList = getScopeForTriggerMessageExpression((TriggerMessageExpression) eObject);
+			return Scopes.scopeFor(parameterList);
+		}
+		return IScope.NULLSCOPE;
 	}
 	
 	/*public void setAttributeList(List<Attribute> attributeList) {
@@ -71,6 +92,9 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	}*/
 	
 	public void setScopeForEObject(EObject object) {
+		attributeList = null;
+		operationList = null;
+		messageTypeList = null;
 		if (object instanceof StateEvent) {
 			setScopeForEObject((StateEvent) object);
 		} else if (object instanceof Transition) {
@@ -95,6 +119,11 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	public void setScopeForEObject(Transition transition) {
 		setScopeForRTSC(transition.getStatechart());
+		if (transition.getTriggerMessageEvent() != null
+				&& transition.getTriggerMessageEvent().getMessage() != null) {
+			messageTypeList = new ArrayList<MessageType>();
+			messageTypeList.add(transition.getTriggerMessageEvent().getMessage().getInstanceOf());
+		}
 	}
 	
 	public void setScopeForEObject(Message message) {
@@ -129,6 +158,14 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			return null;
 		}
 		return operationCall.getOperation().getParameters();
+	}
+	
+	private List<Parameter> getScopeForTriggerMessageExpression(TriggerMessageExpression triggerMessageExpression) {
+		if (triggerMessageExpression.getMessageType() == null) {
+			// should not happen
+			return null;
+		}
+		return triggerMessageExpression.getMessageType().getParameters();
 	}
 
 }

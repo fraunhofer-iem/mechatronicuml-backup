@@ -1570,6 +1570,16 @@ ruleOperand returns [EObject current=null]
         $current = $this_OperationCall_5.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); 
+    }
+    this_TriggerMessageExpression_6=ruleTriggerMessageExpression
+    { 
+        $current = $this_TriggerMessageExpression_6.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1861,6 +1871,57 @@ ruleParamaterBinding returns [EObject current=null]
         		"Expression");
 	        afterParserOrEnumRuleCall();
 	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleTriggerMessageExpression
+entryRuleTriggerMessageExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTriggerMessageExpressionRule()); }
+	 iv_ruleTriggerMessageExpression=ruleTriggerMessageExpression 
+	 { $current=$iv_ruleTriggerMessageExpression.current; } 
+	 EOF 
+;
+
+// Rule TriggerMessageExpression
+ruleTriggerMessageExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTriggerMessageExpressionRule());
+	        }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeMessageTypeCrossReference_0_0()); 
+	}
+
+)
+)	otherlv_1='.' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getTriggerMessageExpressionAccess().getFullStopKeyword_1());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTriggerMessageExpressionRule());
+	        }
+        }
+	otherlv_2=RULE_ID
+	{
+		newLeafNode(otherlv_2, grammarAccess.getTriggerMessageExpressionAccess().getParameterParameterCrossReference_2_0()); 
+	}
 
 )
 ))
