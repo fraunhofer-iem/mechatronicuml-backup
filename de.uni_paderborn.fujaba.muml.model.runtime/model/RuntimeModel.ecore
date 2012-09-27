@@ -35,12 +35,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeParameter" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
         eType="#//RuntimeMessage" eOpposite="#//RuntimeMessage/parameters"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JavaObject"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JavaObject"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeBehavioralElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statechartInstance" eType="#//RealtimeStatechartInstance"
@@ -48,4 +50,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageQueue" eType="#//MessageQueue"
         containment="true" eOpposite="#//MessageQueue/runtimeBehavioralElement"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="JavaObject" instanceClassName="java.lang.Object"
+      serializable="false"/>
 </ecore:EPackage>

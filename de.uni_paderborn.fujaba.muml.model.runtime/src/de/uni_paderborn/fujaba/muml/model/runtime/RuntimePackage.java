@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.runtime;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
@@ -737,7 +738,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_PARAMETER__MESSAGE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -792,7 +793,7 @@ public interface RuntimePackage extends EPackage {
 	int VARIABLE_BINDING__ATTRIBUTE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -845,6 +846,17 @@ public interface RuntimePackage extends EPackage {
 	 * @ordered
 	 */
 	int RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT = 2;
+
+
+	/**
+	 * The meta object id for the '<em>Java Object</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.Object
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getJavaObject()
+	 * @generated
+	 */
+	int JAVA_OBJECT = 9;
 
 
 	/**
@@ -1039,15 +1051,15 @@ public interface RuntimePackage extends EPackage {
 	EReference getRuntimeParameter_Message();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter#getValue()
 	 * @see #getRuntimeParameter()
 	 * @generated
 	 */
-	EReference getRuntimeParameter_Value();
+	EAttribute getRuntimeParameter_Value();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding <em>Variable Binding</em>}'.
@@ -1071,15 +1083,15 @@ public interface RuntimePackage extends EPackage {
 	EReference getVariableBinding_Attribute();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getValue()
 	 * @see #getVariableBinding()
 	 * @generated
 	 */
-	EReference getVariableBinding_Value();
+	EAttribute getVariableBinding_Value();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement <em>Behavioral Element</em>}'.
@@ -1112,6 +1124,17 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRuntimeBehavioralElement_MessageQueue();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.Object <em>Java Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Java Object</em>'.
+	 * @see java.lang.Object
+	 * @model instanceClass="java.lang.Object" serializeable="false"
+	 * @generated
+	 */
+	EDataType getJavaObject();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1294,12 +1317,12 @@ public interface RuntimePackage extends EPackage {
 		EReference RUNTIME_PARAMETER__MESSAGE = eINSTANCE.getRuntimeParameter_Message();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_PARAMETER__VALUE = eINSTANCE.getRuntimeParameter_Value();
+		EAttribute RUNTIME_PARAMETER__VALUE = eINSTANCE.getRuntimeParameter_Value();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl <em>Variable Binding</em>}' class.
@@ -1320,12 +1343,12 @@ public interface RuntimePackage extends EPackage {
 		EReference VARIABLE_BINDING__ATTRIBUTE = eINSTANCE.getVariableBinding_Attribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIABLE_BINDING__VALUE = eINSTANCE.getVariableBinding_Value();
+		EAttribute VARIABLE_BINDING__VALUE = eINSTANCE.getVariableBinding_Value();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeBehavioralElementImpl <em>Behavioral Element</em>}' class.
@@ -1352,6 +1375,16 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE = eINSTANCE.getRuntimeBehavioralElement_MessageQueue();
+
+		/**
+		 * The meta object literal for the '<em>Java Object</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.Object
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getJavaObject()
+		 * @generated
+		 */
+		EDataType JAVA_OBJECT = eINSTANCE.getJavaObject();
 
 	}
 

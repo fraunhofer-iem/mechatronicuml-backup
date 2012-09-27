@@ -43,14 +43,24 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	protected Attribute attribute;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject value;
+	protected static final Object VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Object value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,15 +124,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getValue() {
-		if (value != null && value.eIsProxy()) {
-			InternalEObject oldValue = (InternalEObject)value;
-			value = eResolveProxy(oldValue);
-			if (value != oldValue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.VARIABLE_BINDING__VALUE, oldValue, value));
-			}
-		}
+	public Object getValue() {
 		return value;
 	}
 
@@ -131,17 +133,8 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(EObject newValue) {
-		EObject oldValue = value;
+	public void setValue(Object newValue) {
+		Object oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.VARIABLE_BINDING__VALUE, oldValue, value));
@@ -159,8 +152,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
 			case RuntimePackage.VARIABLE_BINDING__VALUE:
-				if (resolve) return getValue();
-				return basicGetValue();
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,7 +169,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 				setAttribute((Attribute)newValue);
 				return;
 			case RuntimePackage.VARIABLE_BINDING__VALUE:
-				setValue((EObject)newValue);
+				setValue(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,7 +187,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 				setAttribute((Attribute)null);
 				return;
 			case RuntimePackage.VARIABLE_BINDING__VALUE:
-				setValue((EObject)null);
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -212,9 +204,25 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 			case RuntimePackage.VARIABLE_BINDING__ATTRIBUTE:
 				return attribute != null;
 			case RuntimePackage.VARIABLE_BINDING__VALUE:
-				return value != null;
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
 	}
 
 } //VariableBindingImpl

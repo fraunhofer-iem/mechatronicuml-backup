@@ -8,6 +8,7 @@
   <foreignModel>RuntimeModel.ecore</foreignModel>
   <genPackages prefix="Runtime" basePackage="de.uni_paderborn.fujaba.muml.model" disposableProviderFactory="true"
       ecorePackage="RuntimeModel.ecore#/">
+    <genDataTypes ecoreDataType="RuntimeModel.ecore#//JavaObject"/>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeComponentInstance"/>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeDiscretePortInstance"/>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeRoleInstance"/>
@@ -29,11 +30,11 @@
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeParameter">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeParameter/message"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeParameter/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//RuntimeParameter/value"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//VariableBinding">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//VariableBinding/attribute"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//VariableBinding/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//VariableBinding/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RuntimeBehavioralElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeBehavioralElement/statechartInstance"/>
