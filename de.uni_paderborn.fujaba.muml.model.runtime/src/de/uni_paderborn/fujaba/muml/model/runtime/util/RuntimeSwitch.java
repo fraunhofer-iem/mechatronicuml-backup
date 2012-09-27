@@ -162,6 +162,8 @@ public class RuntimeSwitch<T> extends Switch<T> {
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT: {
 				RuntimeBehavioralElement runtimeBehavioralElement = (RuntimeBehavioralElement)theEObject;
 				T result = caseRuntimeBehavioralElement(runtimeBehavioralElement);
+				if (result == null) result = caseNamedElement(runtimeBehavioralElement);
+				if (result == null) result = caseExtendableElement(runtimeBehavioralElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

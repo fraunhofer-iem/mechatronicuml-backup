@@ -44,7 +44,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JavaObject"
         transient="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimeBehavioralElement" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeBehavioralElement" abstract="true"
+      eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statechartInstance" eType="#//RealtimeStatechartInstance"
         containment="true" eOpposite="#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageQueue" eType="#//MessageQueue"

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -43,7 +44,6 @@ public class RuntimeComponentInstanceImpl extends ComponentInstanceImpl implemen
 	 * @ordered
 	 */
 	protected RealtimeStatechartInstance statechartInstance;
-
 	/**
 	 * The cached value of the '{@link #getMessageQueue() <em>Message Queue</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -53,7 +53,6 @@ public class RuntimeComponentInstanceImpl extends ComponentInstanceImpl implemen
 	 * @ordered
 	 */
 	protected MessageQueue messageQueue;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

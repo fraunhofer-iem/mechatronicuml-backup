@@ -529,6 +529,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeMessageEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		runtimeParameterEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		variableBindingEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
+		runtimeBehavioralElementEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(runtimeComponentInstanceEClass, RuntimeComponentInstance.class, "RuntimeComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

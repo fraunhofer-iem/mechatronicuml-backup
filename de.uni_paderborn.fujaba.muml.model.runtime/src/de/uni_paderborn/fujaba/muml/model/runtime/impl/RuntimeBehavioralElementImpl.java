@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.core.impl.NamedElementImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
@@ -32,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
  *
  * @generated
  */
-public abstract class RuntimeBehavioralElementImpl extends EObjectImpl implements RuntimeBehavioralElement {
+public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl implements RuntimeBehavioralElement {
 	/**
 	 * The cached value of the '{@link #getStatechartInstance() <em>Statechart Instance</em>}' containment reference.
 	 * <!-- begin-user-doc -->

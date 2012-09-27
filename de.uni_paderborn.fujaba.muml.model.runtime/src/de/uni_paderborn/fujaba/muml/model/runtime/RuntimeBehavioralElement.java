@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
+import org.storydriven.core.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface RuntimeBehavioralElement extends EObject {
+public interface RuntimeBehavioralElement extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Statechart Instance</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
