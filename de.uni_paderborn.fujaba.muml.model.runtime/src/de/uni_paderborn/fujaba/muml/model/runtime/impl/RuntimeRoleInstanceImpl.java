@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -14,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl;
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
@@ -52,7 +51,7 @@ public class RuntimeRoleInstanceImpl extends RoleImpl implements RuntimeRoleInst
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageQueue messageQueue;
+	protected MessageBuffer messageQueue;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,7 +119,7 @@ public class RuntimeRoleInstanceImpl extends RoleImpl implements RuntimeRoleInst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageQueue getMessageQueue() {
+	public MessageBuffer getMessageQueue() {
 		return messageQueue;
 	}
 
@@ -129,8 +128,8 @@ public class RuntimeRoleInstanceImpl extends RoleImpl implements RuntimeRoleInst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMessageQueue(MessageQueue newMessageQueue, NotificationChain msgs) {
-		MessageQueue oldMessageQueue = messageQueue;
+	public NotificationChain basicSetMessageQueue(MessageBuffer newMessageQueue, NotificationChain msgs) {
+		MessageBuffer oldMessageQueue = messageQueue;
 		messageQueue = newMessageQueue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_ROLE_INSTANCE__MESSAGE_QUEUE, oldMessageQueue, newMessageQueue);
@@ -144,13 +143,13 @@ public class RuntimeRoleInstanceImpl extends RoleImpl implements RuntimeRoleInst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMessageQueue(MessageQueue newMessageQueue) {
+	public void setMessageQueue(MessageBuffer newMessageQueue) {
 		if (newMessageQueue != messageQueue) {
 			NotificationChain msgs = null;
 			if (messageQueue != null)
-				msgs = ((InternalEObject)messageQueue).eInverseRemove(this, RuntimePackage.MESSAGE_QUEUE__RUNTIME_BEHAVIORAL_ELEMENT, MessageQueue.class, msgs);
+				msgs = ((InternalEObject)messageQueue).eInverseRemove(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
 			if (newMessageQueue != null)
-				msgs = ((InternalEObject)newMessageQueue).eInverseAdd(this, RuntimePackage.MESSAGE_QUEUE__RUNTIME_BEHAVIORAL_ELEMENT, MessageQueue.class, msgs);
+				msgs = ((InternalEObject)newMessageQueue).eInverseAdd(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
 			msgs = basicSetMessageQueue(newMessageQueue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -173,7 +172,7 @@ public class RuntimeRoleInstanceImpl extends RoleImpl implements RuntimeRoleInst
 			case RuntimePackage.RUNTIME_ROLE_INSTANCE__MESSAGE_QUEUE:
 				if (messageQueue != null)
 					msgs = ((InternalEObject)messageQueue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.RUNTIME_ROLE_INSTANCE__MESSAGE_QUEUE, null, msgs);
-				return basicSetMessageQueue((MessageQueue)otherEnd, msgs);
+				return basicSetMessageQueue((MessageBuffer)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -222,7 +221,7 @@ public class RuntimeRoleInstanceImpl extends RoleImpl implements RuntimeRoleInst
 				setStatechartInstance((RealtimeStatechartInstance)newValue);
 				return;
 			case RuntimePackage.RUNTIME_ROLE_INSTANCE__MESSAGE_QUEUE:
-				setMessageQueue((MessageQueue)newValue);
+				setMessageQueue((MessageBuffer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -240,7 +239,7 @@ public class RuntimeRoleInstanceImpl extends RoleImpl implements RuntimeRoleInst
 				setStatechartInstance((RealtimeStatechartInstance)null);
 				return;
 			case RuntimePackage.RUNTIME_ROLE_INSTANCE__MESSAGE_QUEUE:
-				setMessageQueue((MessageQueue)null);
+				setMessageQueue((MessageBuffer)null);
 				return;
 		}
 		super.eUnset(featureID);

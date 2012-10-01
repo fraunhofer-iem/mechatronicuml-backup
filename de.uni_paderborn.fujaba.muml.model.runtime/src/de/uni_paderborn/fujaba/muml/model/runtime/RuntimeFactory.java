@@ -53,13 +53,13 @@ public interface RuntimeFactory extends EFactory {
 	RuntimeRoleInstance createRuntimeRoleInstance();
 
 	/**
-	 * Returns a new object of class '<em>Message Queue</em>'.
+	 * Returns a new object of class '<em>Message Buffer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Message Queue</em>'.
+	 * @return a new object of class '<em>Message Buffer</em>'.
 	 * @generated
 	 */
-	MessageQueue createMessageQueue();
+	MessageBuffer createMessageBuffer();
 
 	/**
 	 * Returns a new object of class '<em>Realtime Statechart Instance</em>'.

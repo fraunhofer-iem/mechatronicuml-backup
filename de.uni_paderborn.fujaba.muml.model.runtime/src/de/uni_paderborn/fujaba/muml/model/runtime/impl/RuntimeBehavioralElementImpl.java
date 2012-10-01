@@ -12,9 +12,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.impl.NamedElementImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
@@ -52,7 +51,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageQueue messageQueue;
+	protected MessageBuffer messageQueue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +120,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageQueue getMessageQueue() {
+	public MessageBuffer getMessageQueue() {
 		return messageQueue;
 	}
 
@@ -130,8 +129,8 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMessageQueue(MessageQueue newMessageQueue, NotificationChain msgs) {
-		MessageQueue oldMessageQueue = messageQueue;
+	public NotificationChain basicSetMessageQueue(MessageBuffer newMessageQueue, NotificationChain msgs) {
+		MessageBuffer oldMessageQueue = messageQueue;
 		messageQueue = newMessageQueue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE, oldMessageQueue, newMessageQueue);
@@ -145,13 +144,13 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMessageQueue(MessageQueue newMessageQueue) {
+	public void setMessageQueue(MessageBuffer newMessageQueue) {
 		if (newMessageQueue != messageQueue) {
 			NotificationChain msgs = null;
 			if (messageQueue != null)
-				msgs = ((InternalEObject)messageQueue).eInverseRemove(this, RuntimePackage.MESSAGE_QUEUE__RUNTIME_BEHAVIORAL_ELEMENT, MessageQueue.class, msgs);
+				msgs = ((InternalEObject)messageQueue).eInverseRemove(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
 			if (newMessageQueue != null)
-				msgs = ((InternalEObject)newMessageQueue).eInverseAdd(this, RuntimePackage.MESSAGE_QUEUE__RUNTIME_BEHAVIORAL_ELEMENT, MessageQueue.class, msgs);
+				msgs = ((InternalEObject)newMessageQueue).eInverseAdd(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
 			msgs = basicSetMessageQueue(newMessageQueue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -174,7 +173,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
 				if (messageQueue != null)
 					msgs = ((InternalEObject)messageQueue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE, null, msgs);
-				return basicSetMessageQueue((MessageQueue)otherEnd, msgs);
+				return basicSetMessageQueue((MessageBuffer)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -223,7 +222,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 				setStatechartInstance((RealtimeStatechartInstance)newValue);
 				return;
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
-				setMessageQueue((MessageQueue)newValue);
+				setMessageQueue((MessageBuffer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -241,7 +240,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 				setStatechartInstance((RealtimeStatechartInstance)null);
 				return;
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
-				setMessageQueue((MessageQueue)null);
+				setMessageQueue((MessageBuffer)null);
 				return;
 		}
 		super.eUnset(featureID);

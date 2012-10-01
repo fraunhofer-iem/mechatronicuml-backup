@@ -95,16 +95,6 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_ROLE_INSTANCE = 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageQueueImpl <em>Message Queue</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageQueueImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getMessageQueue()
-	 * @generated
-	 */
-	int MESSAGE_QUEUE = 3;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl <em>Realtime Statechart Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -542,13 +532,23 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_ROLE_INSTANCE_FEATURE_COUNT = PatternPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getMessageBuffer()
+	 * @generated
+	 */
+	int MESSAGE_BUFFER = 3;
+
+	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int MESSAGE_BUFFER__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -557,7 +557,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int MESSAGE_BUFFER__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -566,7 +566,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__SIZE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int MESSAGE_BUFFER__SIZE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
@@ -575,7 +575,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__MESSAGES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int MESSAGE_BUFFER__MESSAGES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Behavioral Element</b></em>' container reference.
@@ -584,16 +584,16 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE__RUNTIME_BEHAVIORAL_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Message Queue</em>' class.
+	 * The number of structural features of the '<em>Message Buffer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_QUEUE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -632,22 +632,13 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE__INSTANCE_OF = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>States</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART_INSTANCE__STATES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Active</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__ACTIVE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int REALTIME_STATECHART_INSTANCE__ACTIVE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list.
@@ -656,7 +647,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Variable Bindings</b></em>' containment reference list.
@@ -665,7 +656,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Realtime Statechart Instance</em>' class.
@@ -674,7 +665,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
+	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -917,47 +908,47 @@ public interface RuntimePackage extends EPackage {
 	EClass getRuntimeRoleInstance();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue <em>Message Queue</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer <em>Message Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Message Queue</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue
+	 * @return the meta object for class '<em>Message Buffer</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer
 	 * @generated
 	 */
-	EClass getMessageQueue();
+	EClass getMessageBuffer();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getSize <em>Size</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getSize()
-	 * @see #getMessageQueue()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getSize()
+	 * @see #getMessageBuffer()
 	 * @generated
 	 */
-	EAttribute getMessageQueue_Size();
+	EAttribute getMessageBuffer_Size();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getMessages <em>Messages</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getMessages <em>Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Messages</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getMessages()
-	 * @see #getMessageQueue()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getMessages()
+	 * @see #getMessageBuffer()
 	 * @generated
 	 */
-	EReference getMessageQueue_Messages();
+	EReference getMessageBuffer_Messages();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Runtime Behavioral Element</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getRuntimeBehavioralElement()
-	 * @see #getMessageQueue()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement()
+	 * @see #getMessageBuffer()
 	 * @generated
 	 */
-	EReference getMessageQueue_RuntimeBehavioralElement();
+	EReference getMessageBuffer_RuntimeBehavioralElement();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance <em>Realtime Statechart Instance</em>}'.
@@ -990,17 +981,6 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRealtimeStatechartInstance_InstanceOf();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getStates <em>States</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>States</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getStates()
-	 * @see #getRealtimeStatechartInstance()
-	 * @generated
-	 */
-	EReference getRealtimeStatechartInstance_States();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getActive <em>Active</em>}'.
@@ -1216,14 +1196,14 @@ public interface RuntimePackage extends EPackage {
 		EClass RUNTIME_ROLE_INSTANCE = eINSTANCE.getRuntimeRoleInstance();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageQueueImpl <em>Message Queue</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageQueueImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getMessageQueue()
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getMessageBuffer()
 		 * @generated
 		 */
-		EClass MESSAGE_QUEUE = eINSTANCE.getMessageQueue();
+		EClass MESSAGE_BUFFER = eINSTANCE.getMessageBuffer();
 
 		/**
 		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
@@ -1231,7 +1211,7 @@ public interface RuntimePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE_QUEUE__SIZE = eINSTANCE.getMessageQueue_Size();
+		EAttribute MESSAGE_BUFFER__SIZE = eINSTANCE.getMessageBuffer_Size();
 
 		/**
 		 * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
@@ -1239,7 +1219,7 @@ public interface RuntimePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MESSAGE_QUEUE__MESSAGES = eINSTANCE.getMessageQueue_Messages();
+		EReference MESSAGE_BUFFER__MESSAGES = eINSTANCE.getMessageBuffer_Messages();
 
 		/**
 		 * The meta object literal for the '<em><b>Runtime Behavioral Element</b></em>' container reference feature.
@@ -1247,7 +1227,7 @@ public interface RuntimePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MESSAGE_QUEUE__RUNTIME_BEHAVIORAL_ELEMENT = eINSTANCE.getMessageQueue_RuntimeBehavioralElement();
+		EReference MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT = eINSTANCE.getMessageBuffer_RuntimeBehavioralElement();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl <em>Realtime Statechart Instance</em>}' class.
@@ -1274,14 +1254,6 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference REALTIME_STATECHART_INSTANCE__INSTANCE_OF = eINSTANCE.getRealtimeStatechartInstance_InstanceOf();
-
-		/**
-		 * The meta object literal for the '<em><b>States</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REALTIME_STATECHART_INSTANCE__STATES = eINSTANCE.getRealtimeStatechartInstance_States();
 
 		/**
 		 * The meta object literal for the '<em><b>Active</b></em>' reference feature.

@@ -20,8 +20,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
@@ -101,8 +100,8 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createRuntimeRoleInstanceAdapter();
 			}
 			@Override
-			public Adapter caseMessageQueue(MessageQueue object) {
-				return createMessageQueueAdapter();
+			public Adapter caseMessageBuffer(MessageBuffer object) {
+				return createMessageBufferAdapter();
 			}
 			@Override
 			public Adapter caseRealtimeStatechartInstance(RealtimeStatechartInstance object) {
@@ -223,16 +222,16 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue <em>Message Queue</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer <em>Message Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer
 	 * @generated
 	 */
-	public Adapter createMessageQueueAdapter() {
+	public Adapter createMessageBufferAdapter() {
 		return null;
 	}
 

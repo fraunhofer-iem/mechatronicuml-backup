@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
 import org.storydriven.core.NamedElement;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +56,7 @@ public interface RuntimeBehavioralElement extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Message Queue</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Message Queue</em>' containment reference isn't clear,
@@ -65,13 +64,13 @@ public interface RuntimeBehavioralElement extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message Queue</em>' containment reference.
-	 * @see #setMessageQueue(MessageQueue)
+	 * @see #setMessageQueue(MessageBuffer)
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRuntimeBehavioralElement_MessageQueue()
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getRuntimeBehavioralElement
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement
 	 * @model opposite="runtimeBehavioralElement" containment="true"
 	 * @generated
 	 */
-	MessageQueue getMessageQueue();
+	MessageBuffer getMessageQueue();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageQueue <em>Message Queue</em>}' containment reference.
@@ -81,6 +80,6 @@ public interface RuntimeBehavioralElement extends NamedElement {
 	 * @see #getMessageQueue()
 	 * @generated
 	 */
-	void setMessageQueue(MessageQueue value);
+	void setMessageQueue(MessageBuffer value);
 
 } // RuntimeBehavioralElement

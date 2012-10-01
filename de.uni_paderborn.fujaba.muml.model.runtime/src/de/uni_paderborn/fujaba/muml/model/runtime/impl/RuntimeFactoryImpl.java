@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -14,7 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
@@ -72,7 +71,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 			case RuntimePackage.RUNTIME_COMPONENT_INSTANCE: return createRuntimeComponentInstance();
 			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE: return createRuntimeDiscretePortInstance();
 			case RuntimePackage.RUNTIME_ROLE_INSTANCE: return createRuntimeRoleInstance();
-			case RuntimePackage.MESSAGE_QUEUE: return createMessageQueue();
+			case RuntimePackage.MESSAGE_BUFFER: return createMessageBuffer();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE: return createRealtimeStatechartInstance();
 			case RuntimePackage.RUNTIME_MESSAGE: return createRuntimeMessage();
 			case RuntimePackage.RUNTIME_PARAMETER: return createRuntimeParameter();
@@ -143,9 +142,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageQueue createMessageQueue() {
-		MessageQueueImpl messageQueue = new MessageQueueImpl();
-		return messageQueue;
+	public MessageBuffer createMessageBuffer() {
+		MessageBufferImpl messageBuffer = new MessageBufferImpl();
+		return messageBuffer;
 	}
 
 	/**

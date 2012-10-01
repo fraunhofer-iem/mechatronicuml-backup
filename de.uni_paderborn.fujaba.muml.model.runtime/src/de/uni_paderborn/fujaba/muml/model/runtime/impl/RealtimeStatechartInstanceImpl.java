@@ -37,7 +37,6 @@ import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getStates <em>States</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getActive <em>Active</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getVariableBindings <em>Variable Bindings</em>}</li>
@@ -328,8 +327,6 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				if (resolve) return getInstanceOf();
 				return basicGetInstanceOf();
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__STATES:
-				return getStates();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
 				if (resolve) return getActive();
 				return basicGetActive();
@@ -410,8 +407,6 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return getRuntimeBehavioralElement() != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				return instanceOf != null;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__STATES:
-				return !getStates().isEmpty();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
 				return active != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:

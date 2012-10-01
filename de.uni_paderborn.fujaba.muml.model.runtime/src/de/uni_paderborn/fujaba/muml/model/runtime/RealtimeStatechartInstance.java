@@ -22,7 +22,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getStates <em>States</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getActive <em>Active</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getVariableBindings <em>Variable Bindings</em>}</li>
@@ -87,22 +86,6 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * @generated
 	 */
 	void setInstanceOf(RealtimeStatechart value);
-
-	/**
-	 * Returns the value of the '<em><b>States</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>States</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>States</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRealtimeStatechartInstance_States()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 * @generated
-	 */
-	EList<State> getStates();
 
 	/**
 	 * Returns the value of the '<em><b>Active</b></em>' reference.

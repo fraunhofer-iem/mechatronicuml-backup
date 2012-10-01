@@ -12,15 +12,14 @@
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeComponentInstance"/>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeDiscretePortInstance"/>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeRoleInstance"/>
-    <genClasses ecoreClass="RuntimeModel.ecore#//MessageQueue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//MessageQueue/size"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageQueue/messages"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageQueue/runtimeBehavioralElement"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//MessageBuffer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//MessageBuffer/size"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageBuffer/messages"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageBuffer/runtimeBehavioralElement"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//RealtimeStatechartInstance">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/instanceOf"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/states"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/active"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/subRealtimeStatechartInstances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/variableBindings"/>

@@ -11,23 +11,23 @@ import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Message Queue</b></em>'.
+ * A representation of the model object '<em><b>Message Buffer</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getSize <em>Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getMessages <em>Messages</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getSize <em>Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getMessages <em>Messages</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageQueue()
+ * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageBuffer()
  * @model
  * @generated
  */
-public interface MessageQueue extends ExtendableElement {
+public interface MessageBuffer extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -38,14 +38,14 @@ public interface MessageQueue extends ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Size</em>' attribute.
 	 * @see #setSize(int)
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageQueue_Size()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageBuffer_Size()
 	 * @model
 	 * @generated
 	 */
 	int getSize();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getSize <em>Size</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getSize <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Size</em>' attribute.
@@ -64,7 +64,7 @@ public interface MessageQueue extends ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Messages</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageQueue_Messages()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageBuffer_Messages()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface MessageQueue extends ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Runtime Behavioral Element</em>' container reference.
 	 * @see #setRuntimeBehavioralElement(RuntimeBehavioralElement)
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageQueue_RuntimeBehavioralElement()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageBuffer_RuntimeBehavioralElement()
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageQueue
 	 * @model opposite="messageQueue" required="true" transient="false"
 	 * @generated
@@ -89,7 +89,7 @@ public interface MessageQueue extends ExtendableElement {
 	RuntimeBehavioralElement getRuntimeBehavioralElement();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Runtime Behavioral Element</em>' container reference.
@@ -98,4 +98,4 @@ public interface MessageQueue extends ExtendableElement {
 	 */
 	void setRuntimeBehavioralElement(RuntimeBehavioralElement value);
 
-} // MessageQueue
+} // MessageBuffer

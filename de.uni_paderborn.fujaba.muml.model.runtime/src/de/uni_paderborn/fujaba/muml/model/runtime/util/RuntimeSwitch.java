@@ -19,8 +19,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageQueue;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
@@ -122,10 +121,10 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.MESSAGE_QUEUE: {
-				MessageQueue messageQueue = (MessageQueue)theEObject;
-				T result = caseMessageQueue(messageQueue);
-				if (result == null) result = caseExtendableElement(messageQueue);
+			case RuntimePackage.MESSAGE_BUFFER: {
+				MessageBuffer messageBuffer = (MessageBuffer)theEObject;
+				T result = caseMessageBuffer(messageBuffer);
+				if (result == null) result = caseExtendableElement(messageBuffer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -217,17 +216,17 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message Queue</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message Queue</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMessageQueue(MessageQueue object) {
+	public T caseMessageBuffer(MessageBuffer object) {
 		return null;
 	}
 
