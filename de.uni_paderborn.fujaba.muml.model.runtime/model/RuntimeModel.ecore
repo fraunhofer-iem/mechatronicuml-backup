@@ -6,7 +6,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance #//RuntimeBehavioralElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscretePortInstance #//RuntimeBehavioralElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role #//RuntimeBehavioralElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MessageQueue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
         eType="#//RuntimeMessage" containment="true"/>
@@ -18,9 +18,6 @@
         eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/statechartInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"
-        changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="active" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subRealtimeStatechartInstances"
@@ -48,8 +45,8 @@
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statechartInstance" eType="#//RealtimeStatechartInstance"
         containment="true" eOpposite="#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="messageQueue" eType="#//MessageQueue"
-        containment="true" eOpposite="#//MessageQueue/runtimeBehavioralElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageQueue" eType="#//MessageBuffer"
+        containment="true" eOpposite="#//MessageBuffer/runtimeBehavioralElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="JavaObject" instanceClassName="java.lang.Object"
       serializable="false"/>
