@@ -60,54 +60,8 @@ public class AssemblyInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPropagationDelayLowerBoundPropertyDescriptor(object);
-			addPropagationDelayUpperBoundPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Propagation Delay Lower Bound feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPropagationDelayLowerBoundPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssemblyInstance_propagationDelayLowerBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyInstance_propagationDelayLowerBound_feature", "_UI_AssemblyInstance_type"),
-				 InstancePackage.Literals.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Propagation Delay Upper Bound feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPropagationDelayUpperBoundPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssemblyInstance_propagationDelayUpperBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyInstance_propagationDelayUpperBound_feature", "_UI_AssemblyInstance_type"),
-				 InstancePackage.Literals.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -129,8 +83,7 @@ public class AssemblyInstanceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		AssemblyInstance assemblyInstance = (AssemblyInstance)object;
-		return getString("_UI_AssemblyInstance_type") + " " + assemblyInstance.getPropagationDelayLowerBound();
+		return getString("_UI_AssemblyInstance_type");
 	}
 
 	/**
@@ -146,8 +99,6 @@ public class AssemblyInstanceItemProvider
 
 		switch (notification.getFeatureID(AssemblyInstance.class)) {
 			case InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE:
-			case InstancePackage.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND:
-			case InstancePackage.ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

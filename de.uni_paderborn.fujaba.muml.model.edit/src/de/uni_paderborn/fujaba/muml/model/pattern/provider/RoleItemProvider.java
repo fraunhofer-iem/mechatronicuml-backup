@@ -33,6 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
@@ -409,6 +410,7 @@ public class RoleItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(PatternPackage.Literals.ROLE__CARDINALITY);
+			childrenFeatures.add(PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER);
 		}
 		return childrenFeatures;
 	}
@@ -479,6 +481,7 @@ public class RoleItemProvider
 				return;
 			case PatternPackage.ROLE__CONSTRAINT:
 			case PatternPackage.ROLE__CARDINALITY:
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -516,6 +519,11 @@ public class RoleItemProvider
 			(createChildParameter
 				(PatternPackage.Literals.ROLE__CARDINALITY,
 				 CoreFactory.eINSTANCE.createCardinality()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER,
+				 PatternFactory.eINSTANCE.createMessageBuffer()));
 	}
 
 	/**

@@ -144,6 +144,52 @@ public class PatternItemProviderAdapterFactory extends PatternAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageBufferItemProvider messageBufferItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageBufferAdapter() {
+		if (messageBufferItemProvider == null) {
+			messageBufferItemProvider = new MessageBufferItemProvider(this);
+		}
+
+		return messageBufferItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectorQualityOfServiceAssumptionsItemProvider connectorQualityOfServiceAssumptionsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConnectorQualityOfServiceAssumptionsAdapter() {
+		if (connectorQualityOfServiceAssumptionsItemProvider == null) {
+			connectorQualityOfServiceAssumptionsItemProvider = new ConnectorQualityOfServiceAssumptionsItemProvider(this);
+		}
+
+		return connectorQualityOfServiceAssumptionsItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +291,8 @@ public class PatternItemProviderAdapterFactory extends PatternAdapterFactory imp
 		if (roleConnectorItemProvider != null) roleConnectorItemProvider.dispose();
 		if (coordinationPatternItemProvider != null) coordinationPatternItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
+		if (messageBufferItemProvider != null) messageBufferItemProvider.dispose();
+		if (connectorQualityOfServiceAssumptionsItemProvider != null) connectorQualityOfServiceAssumptionsItemProvider.dispose();
 	}
 
 }
