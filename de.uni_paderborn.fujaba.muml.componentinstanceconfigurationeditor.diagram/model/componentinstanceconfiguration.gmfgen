@@ -1722,7 +1722,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.4/@labels.0/@modelFacet"
-        className="AtomicComponentInstanceLabelExpressionLabelParser5027"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/AtomicComponentInstance"/>
@@ -1730,7 +1729,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.0/@modelFacet"
-        className="AtomicComponentInstanceLabelExpressionLabelParser5028"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/AtomicComponentInstance"/>
@@ -1738,7 +1736,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.0/@modelFacet"
-        className="StructuredComponentInstanceLabelExpressionLabelParser5029"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/StructuredComponentInstance"/>
@@ -1746,7 +1743,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet"
-        className="StructuredComponentInstanceLabelExpressionLabelParser5026"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/StructuredComponentInstance"/>

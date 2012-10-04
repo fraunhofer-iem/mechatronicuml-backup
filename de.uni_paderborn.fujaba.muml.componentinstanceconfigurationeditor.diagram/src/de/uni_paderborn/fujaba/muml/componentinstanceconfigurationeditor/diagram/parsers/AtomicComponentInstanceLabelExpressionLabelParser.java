@@ -85,7 +85,7 @@ public class AtomicComponentInstanceLabelExpressionLabelParser implements
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						6,
+						8,
 						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 								.getAtomicComponentInstance(), typeEnv)
 				.evaluate(target, env);
