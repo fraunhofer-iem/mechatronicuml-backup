@@ -13405,17 +13405,17 @@
             dataValue="int"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/AssemblyInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound"
+          referenceName="eStructuralFeatures" element="#//@releases.10/@changes.9/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.9/@changes.0/@element"
             featureName="name" dataValue="propagationDelayLowerBound"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound"
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.9/@changes.0/@element"
             featureName="eType" referenceValue="Ecore.ecore#//EInt"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/AssemblyInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound"
+          referenceName="eStructuralFeatures" element="#//@releases.10/@changes.10/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.10/@changes.0/@element"
             featureName="name" dataValue="propagationDelayUpperBound"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound"
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.10/@changes.0/@element"
             featureName="eType" referenceValue="Ecore.ecore#//EInt"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State"
@@ -28324,26 +28324,26 @@ specifying the adaptation behavior and the sub-role behavior.</dataValue>
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound"
+    <changes xsi:type="history:Set" element="#//@releases.10/@changes.10/@changes.0/@element"
         featureName="defaultValueLiteral" dataValue="0"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound"
+    <changes xsi:type="history:Set" element="#//@releases.10/@changes.9/@changes.0/@element"
         featureName="defaultValueLiteral" dataValue="0"/>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.10/@changes.9/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.10/@changes.9/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.9/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.10/@changes.9/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.10/@changes.9/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.9/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.9/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The lower bound of the propagation delay of this assembly instance. &#xD;&#xA;The propagation delay defines how long a message needs from its sender to&#xD;&#xA;its receiver port instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change the type from EInt to NaturalNumber.}&#xD;&#xA;\todosd{Is propagation delay the correct term? MUML-Spec 0.2 on page 15 also name it like this, but message delay would also be a good name.}"/>
       </changes>
       <operation name="document">
         <parameters name="element">
-          <referenceValue element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayLowerBound"/>
+          <referenceValue element="#//@releases.10/@changes.9/@changes.0/@element"/>
         </parameters>
         <parameters name="documentation">
           <dataValue>The lower bound of the propagation delay of this assembly instance. &#xD;
@@ -28356,21 +28356,21 @@ its receiver port instance.&#xD;
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.10/@changes.10/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.10/@changes.10/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.10/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.10/@changes.10/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.10/@changes.10/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.10/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.10/@changes.10/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The upper bound of the propagation delay of this assembly instance. &#xD;&#xA;The propagation delay defines how long a message needs from its sender to&#xD;&#xA;its receiver port instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change the type from EInt to NaturalNumber.}"/>
       </changes>
       <operation name="document">
         <parameters name="element">
-          <referenceValue element="muml.ecore#//model/instance/AssemblyInstance/propagationDelayUpperBound"/>
+          <referenceValue element="#//@releases.10/@changes.10/@changes.0/@element"/>
         </parameters>
         <parameters name="documentation">
           <dataValue>The upper bound of the propagation delay of this assembly instance. &#xD;
@@ -29646,5 +29646,598 @@ interfaces.</dataValue>
       </changes>
     </changes>
   </releases>
-  <releases label=""/>
+  <releases label="">
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern" referenceName="eClassifiers"
+          element="muml.ecore#//model/pattern/MessageBuffer">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer"
+            featureName="name" dataValue="MessageBuffer"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/MessageBuffer"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/MessageBuffer"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/pattern"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>MessageBuffer</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern" referenceName="eClassifiers"
+          element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
+            featureName="name" dataValue="ConnectorQualityOfServiceAssumptions"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+        <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="muml.ecore#//model/pattern"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>ConnectorQualityOfServiceAssumptions</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize"
+            featureName="name" dataValue="bufferSize"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize"
+            featureName="eType" referenceValue="muml.ecore#//model/core/NaturalNumber"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>bufferSize</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/NaturalNumber"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/MessageBuffer/messageType">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/messageType"
+            featureName="name" dataValue="messageType"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/messageType"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/messageType"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/messageType"
+            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>messageType</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/msgiface/MessageType"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/MessageBuffer/role">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/role"
+            featureName="name" dataValue="role"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/role"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/role"
+            featureName="eType" referenceValue="muml.ecore#//model/pattern/Role"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>role</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/pattern/Role"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay"
+            featureName="name" dataValue="minMessageDelay"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay"
+            featureName="eType" referenceValue="muml.ecore#//model/core/NaturalNumber"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>minMessageDelay</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/NaturalNumber"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay"
+            featureName="name" dataValue="maxMessageDelay"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay"
+            featureName="eType" referenceValue="muml.ecore#//model/core/NaturalNumber"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>maxMessageDelay</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/core/NaturalNumber"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"
+            featureName="name" dataValue="messageLossPossible"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"
+            featureName="defaultValueLiteral" dataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"
+            featureName="eType" referenceValue="Ecore.ecore#//EBoolean"/>
+      </changes>
+      <operation name="newAttribute">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>messageLossPossible</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="Ecore.ecore#//EBoolean"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="defaultValue">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer"
+            featureName="name" dataValue="receiverMessageBuffer"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer"
+            featureName="eType" referenceValue="muml.ecore#//model/pattern/MessageBuffer"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/pattern/MessageBuffer/role"/>
+      </changes>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/role"
+          featureName="eOpposite" referenceValue="muml.ecore#//model/pattern/Role/receiverMessageBuffer"/>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/Role"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>receiverMessageBuffer</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer/role"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/AssemblyInstance"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EAttribute" name="propagationDelayLowerBound" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+            defaultValueLiteral="0">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The lower bound of the propagation delay of this assembly instance. &#xD;&#xA;The propagation delay defines how long a message needs from its sender to&#xD;&#xA;its receiver port instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change the type from EInt to NaturalNumber.}&#xD;&#xA;\todosd{Is propagation delay the correct term? MUML-Spec 0.2 on page 15 also name it like this, but message delay would also be a good name.}"/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.10/@changes.9/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/AssemblyInstance"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EAttribute" name="propagationDelayUpperBound" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+            defaultValueLiteral="0">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The upper bound of the propagation delay of this assembly instance. &#xD;&#xA;The propagation delay defines how long a message needs from its sender to&#xD;&#xA;its receiver port instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change the type from EInt to NaturalNumber.}"/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.10/@changes.10/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer/bufferSize"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The size of the message buffer. "/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer/bufferSize"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The size of the message buffer. </dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer/messageType"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The message types this message buffer can store."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer/messageType"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The message types this message buffer can store.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer/role"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The role that contains this message buffer."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer/role"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The role that contains this message buffer.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination pattern. Message types are always stored in FIFO order."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/MessageBuffer"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination pattern. Message types are always stored in FIFO order.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The minimal time a message needs from the sender to the receiver using this connector."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The minimal time a message needs from the sender to the receiver using this connector.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The maximal time a message needs from the sender to the receiver using this connector."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The maximal time a message needs from the sender to the receiver using this connector.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Defines if messages that are send using this connector may be lost during transport."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>Defines if messages that are send using this connector may be lost during transport.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The list of quality of service assumptions for this connector. A developer defines these properties before modeling the role statecharts, because the statecharts depend on these assumptions. Software layers under the MechatronicUML layer respectively the hardware itself have to ensure that these assumptions are correct."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>The list of quality of service assumptions for this connector. A developer defines these properties before modeling the role statecharts, because the statecharts depend on these assumptions. Software layers under the MechatronicUML layer respectively the hardware itself have to ensure that these assumptions are correct.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/receiverMessageBuffer"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/Role/receiverMessageBuffer"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"
+          featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+          oldReferenceValue="Ecore.ecore#//EBoolean"/>
+      <operation name="changeAttributeType">
+        <parameters name="attribute">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/RoleConnector"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"
+            featureName="name" dataValue="connectorQualityOfServiceAssumptions"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"
+            featureName="eType" referenceValue="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/pattern/RoleConnector"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>connectorQualityOfServiceAssumptions</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+  </releases>
 </history:History>

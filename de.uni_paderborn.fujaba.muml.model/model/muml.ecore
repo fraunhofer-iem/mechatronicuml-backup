@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml" nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml"
+    nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="This package is the base package for all MechatronicUML models, editors &#xD;&#xA;and algorithms. Plugins contributing to MechatronicUML should use &#xD;&#xA;de.uni_paderborn.fujaba.muml as a base package."/>
   </eAnnotations>
@@ -1001,20 +1003,6 @@
             <details key="derivation" value="connectorType.oclAsType(component::Assembly)"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="propagationDelayLowerBound"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
-            defaultValueLiteral="0">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The lower bound of the propagation delay of this assembly instance. &#xD;&#xA;The propagation delay defines how long a message needs from its sender to&#xD;&#xA;its receiver port instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change the type from EInt to NaturalNumber.}&#xD;&#xA;\todosd{Is propagation delay the correct term? MUML-Spec 0.2 on page 15 also name it like this, but message delay would also be a good name.}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="propagationDelayUpperBound"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
-            defaultValueLiteral="0">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The upper bound of the propagation delay of this assembly instance. &#xD;&#xA;The propagation delay defines how long a message needs from its sender to&#xD;&#xA;its receiver port instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change the type from EInt to NaturalNumber.}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DelegationInstance" eSuperTypes="#//model/instance/ConnectorInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1202,6 +1190,13 @@
             <details key="documentation" value="The coordination pattern this role connector is part of."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorQualityOfServiceAssumptions"
+            lowerBound="1" eType="#//model/pattern/ConnectorQualityOfServiceAssumptions"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1324,6 +1319,61 @@
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if not (self.cardinality.oclIsUndefined()) then&#xD;&#xA;&#x9;(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
+            upperBound="-1" eType="#//model/pattern/MessageBuffer" containment="true"
+            eOpposite="#//model/pattern/MessageBuffer/role">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination pattern. Message types are always stored in FIFO order."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="bufferSize" lowerBound="1"
+            eType="#//model/core/NaturalNumber" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The size of the message buffer. "/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
+            upperBound="-1" eType="#//model/msgiface/MessageType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The message types this message buffer can store."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1"
+            eType="#//model/pattern/Role" eOpposite="#//model/pattern/Role/receiverMessageBuffer">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The role that contains this message buffer."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ConnectorQualityOfServiceAssumptions"
+          eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The list of quality of service assumptions for this connector. A developer defines these properties before modeling the role statecharts, because the statecharts depend on these assumptions. Software layers under the MechatronicUML layer respectively the hardware itself have to ensure that these assumptions are correct."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="minMessageDelay" lowerBound="1"
+            eType="#//model/core/NaturalNumber" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The minimal time a message needs from the sender to the receiver using this connector."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="maxMessageDelay" lowerBound="1"
+            eType="#//model/core/NaturalNumber" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The maximal time a message needs from the sender to the receiver using this connector."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageLossPossible"
+            lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+            defaultValueLiteral="false">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Defines if messages that are send using this connector may be lost during transport."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
