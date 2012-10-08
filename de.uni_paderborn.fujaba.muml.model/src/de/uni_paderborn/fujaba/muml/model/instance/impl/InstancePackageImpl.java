@@ -403,24 +403,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssemblyInstance_PropagationDelayLowerBound() {
-		return (EAttribute)assemblyInstanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssemblyInstance_PropagationDelayUpperBound() {
-		return (EAttribute)assemblyInstanceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDelegationInstance() {
 		return delegationInstanceEClass;
 	}
@@ -661,8 +643,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		assemblyInstanceEClass = createEClass(ASSEMBLY_INSTANCE);
 		createEReference(assemblyInstanceEClass, ASSEMBLY_INSTANCE__ASSEMBLY_TYPE);
-		createEAttribute(assemblyInstanceEClass, ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND);
-		createEAttribute(assemblyInstanceEClass, ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND);
 
 		delegationInstanceEClass = createEClass(DELEGATION_INSTANCE);
 		createEReference(delegationInstanceEClass, DELEGATION_INSTANCE__DELEGATION_TYPE);
@@ -723,7 +703,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Obtain other dependent packages
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 
 		// Create type parameters
@@ -769,8 +748,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		initEClass(assemblyInstanceEClass, AssemblyInstance.class, "AssemblyInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyInstance_AssemblyType(), theComponentPackage.getAssembly(), null, "assemblyType", null, 0, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssemblyInstance_PropagationDelayLowerBound(), theEcorePackage.getEInt(), "propagationDelayLowerBound", "0", 0, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssemblyInstance_PropagationDelayUpperBound(), theEcorePackage.getEInt(), "propagationDelayUpperBound", "0", 0, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(delegationInstanceEClass, DelegationInstance.class, "DelegationInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDelegationInstance_DelegationType(), theComponentPackage.getDelegation(), null, "delegationType", null, 0, 1, DelegationInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -829,7 +806,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																						
+		   });																				
 		addAnnotation
 		  (delegationInstanceEClass, 
 		   source, 
@@ -857,7 +834,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "connectorType.oclAsType(component::Assembly)"
-		   });						
+		   });				
 		addAnnotation
 		  (delegationInstanceEClass, 
 		   source, 

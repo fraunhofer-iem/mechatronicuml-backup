@@ -53,6 +53,24 @@ public interface PatternFactory extends EFactory {
 	Role createRole();
 
 	/**
+	 * Returns a new object of class '<em>Message Buffer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Buffer</em>'.
+	 * @generated
+	 */
+	MessageBuffer createMessageBuffer();
+
+	/**
+	 * Returns a new object of class '<em>Connector Quality Of Service Assumptions</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Connector Quality Of Service Assumptions</em>'.
+	 * @generated
+	 */
+	ConnectorQualityOfServiceAssumptions createConnectorQualityOfServiceAssumptions();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

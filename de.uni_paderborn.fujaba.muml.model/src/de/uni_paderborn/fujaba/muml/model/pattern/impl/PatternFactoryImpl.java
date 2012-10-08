@@ -66,6 +66,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 			case PatternPackage.ROLE_CONNECTOR: return createRoleConnector();
 			case PatternPackage.COORDINATION_PATTERN: return createCoordinationPattern();
 			case PatternPackage.ROLE: return createRole();
+			case PatternPackage.MESSAGE_BUFFER: return createMessageBuffer();
+			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS: return createConnectorQualityOfServiceAssumptions();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -99,6 +101,26 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	public Role createRole() {
 		RoleImpl role = new RoleImpl();
 		return role;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageBuffer createMessageBuffer() {
+		MessageBufferImpl messageBuffer = new MessageBufferImpl();
+		return messageBuffer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConnectorQualityOfServiceAssumptions createConnectorQualityOfServiceAssumptions() {
+		ConnectorQualityOfServiceAssumptionsImpl connectorQualityOfServiceAssumptions = new ConnectorQualityOfServiceAssumptionsImpl();
+		return connectorQualityOfServiceAssumptions;
 	}
 
 	/**

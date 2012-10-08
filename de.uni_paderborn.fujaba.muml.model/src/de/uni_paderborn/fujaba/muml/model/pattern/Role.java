@@ -40,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isIsMultiRole <em>Is Multi Role</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,6 +105,23 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * @generated
 	 */
 	boolean isIsMultiRole();
+
+	/**
+	 * Returns the value of the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Receiver Message Buffer</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_ReceiverMessageBuffer()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getRole
+	 * @model opposite="role" containment="true"
+	 * @generated
+	 */
+	EList<MessageBuffer> getReceiverMessageBuffer();
 
 	/**
 	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' container reference.

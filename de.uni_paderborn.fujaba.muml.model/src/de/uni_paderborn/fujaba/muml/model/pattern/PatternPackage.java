@@ -118,13 +118,22 @@ public interface PatternPackage extends EPackage {
 	int ROLE_CONNECTOR__COORDINATION_PATTERN = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Role Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl <em>Coordination Pattern</em>}' class.
@@ -372,13 +381,187 @@ public interface PatternPackage extends EPackage {
 	int ROLE__IS_MULTI_ROLE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__RECEIVER_MESSAGE_BUFFER = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int ROLE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.MessageBufferImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getMessageBuffer()
+	 * @generated
+	 */
+	int MESSAGE_BUFFER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Buffer Size</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__BUFFER_SIZE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Message Type</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__MESSAGE_TYPE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__ROLE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Message Buffer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.ConnectorQualityOfServiceAssumptionsImpl <em>Connector Quality Of Service Assumptions</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.ConnectorQualityOfServiceAssumptionsImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getConnectorQualityOfServiceAssumptions()
+	 * @generated
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Min Message Delay</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Max Message Delay</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Message Loss Possible</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Connector Quality Of Service Assumptions</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 
 	/**
@@ -434,6 +617,17 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoleConnector_CoordinationPattern();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Connector Quality Of Service Assumptions</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getConnectorQualityOfServiceAssumptions()
+	 * @see #getRoleConnector()
+	 * @generated
+	 */
+	EReference getRoleConnector_ConnectorQualityOfServiceAssumptions();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern <em>Coordination Pattern</em>}'.
@@ -520,6 +714,103 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRole_IsMultiRole();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Receiver Message Buffer</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageBuffer()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_ReceiverMessageBuffer();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer <em>Message Buffer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message Buffer</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer
+	 * @generated
+	 */
+	EClass getMessageBuffer();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getBufferSize <em>Buffer Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Buffer Size</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getBufferSize()
+	 * @see #getMessageBuffer()
+	 * @generated
+	 */
+	EReference getMessageBuffer_BufferSize();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getMessageType <em>Message Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Message Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getMessageType()
+	 * @see #getMessageBuffer()
+	 * @generated
+	 */
+	EReference getMessageBuffer_MessageType();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Role</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getRole()
+	 * @see #getMessageBuffer()
+	 * @generated
+	 */
+	EReference getMessageBuffer_Role();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Connector Quality Of Service Assumptions</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions
+	 * @generated
+	 */
+	EClass getConnectorQualityOfServiceAssumptions();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Min Message Delay</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#getMinMessageDelay()
+	 * @see #getConnectorQualityOfServiceAssumptions()
+	 * @generated
+	 */
+	EReference getConnectorQualityOfServiceAssumptions_MinMessageDelay();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Max Message Delay</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay()
+	 * @see #getConnectorQualityOfServiceAssumptions()
+	 * @generated
+	 */
+	EReference getConnectorQualityOfServiceAssumptions_MaxMessageDelay();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#isMessageLossPossible <em>Message Loss Possible</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message Loss Possible</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#isMessageLossPossible()
+	 * @see #getConnectorQualityOfServiceAssumptions()
+	 * @generated
+	 */
+	EAttribute getConnectorQualityOfServiceAssumptions_MessageLossPossible();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}'.
@@ -685,6 +976,14 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE_CONNECTOR__COORDINATION_PATTERN = eINSTANCE.getRoleConnector_CoordinationPattern();
 
 		/**
+		 * The meta object literal for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = eINSTANCE.getRoleConnector_ConnectorQualityOfServiceAssumptions();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl <em>Coordination Pattern</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -751,6 +1050,82 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROLE__IS_MULTI_ROLE = eINSTANCE.getRole_IsMultiRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Receiver Message Buffer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__RECEIVER_MESSAGE_BUFFER = eINSTANCE.getRole_ReceiverMessageBuffer();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.MessageBufferImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getMessageBuffer()
+		 * @generated
+		 */
+		EClass MESSAGE_BUFFER = eINSTANCE.getMessageBuffer();
+
+		/**
+		 * The meta object literal for the '<em><b>Buffer Size</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_BUFFER__BUFFER_SIZE = eINSTANCE.getMessageBuffer_BufferSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Type</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_BUFFER__MESSAGE_TYPE = eINSTANCE.getMessageBuffer_MessageType();
+
+		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_BUFFER__ROLE = eINSTANCE.getMessageBuffer_Role();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.ConnectorQualityOfServiceAssumptionsImpl <em>Connector Quality Of Service Assumptions</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.ConnectorQualityOfServiceAssumptionsImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getConnectorQualityOfServiceAssumptions()
+		 * @generated
+		 */
+		EClass CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = eINSTANCE.getConnectorQualityOfServiceAssumptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Message Delay</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY = eINSTANCE.getConnectorQualityOfServiceAssumptions_MinMessageDelay();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Message Delay</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY = eINSTANCE.getConnectorQualityOfServiceAssumptions_MaxMessageDelay();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Loss Possible</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = eINSTANCE.getConnectorQualityOfServiceAssumptions_MessageLossPossible();
 
 		/**
 		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' container reference feature.

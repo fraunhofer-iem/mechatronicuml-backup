@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
@@ -57,6 +58,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#isIsMultiRole <em>Is Multi Role</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -202,6 +204,16 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate IS_MULTI_ROLE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PatternPackage.Literals.ROLE__IS_MULTI_ROLE).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceiverMessageBuffer()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MessageBuffer> receiverMessageBuffer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -379,6 +391,18 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 */
 	public boolean isIsMultiRole() {
 		return (Boolean)IS_MULTI_ROLE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MessageBuffer> getReceiverMessageBuffer() {
+		if (receiverMessageBuffer == null) {
+			receiverMessageBuffer = new EObjectContainmentWithInverseEList<MessageBuffer>(MessageBuffer.class, this, PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER, PatternPackage.MESSAGE_BUFFER__ROLE);
+		}
+		return receiverMessageBuffer;
 	}
 
 	/**
@@ -739,6 +763,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				if (outgoingRoleConnector != null)
 					msgs = ((InternalEObject)outgoingRoleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
 				return basicSetOutgoingRoleConnector((RoleConnector)otherEnd, msgs);
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReceiverMessageBuffer()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -765,6 +791,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				return basicSetOutgoingRoleConnector(null, msgs);
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
+				return ((InternalEList<?>)getReceiverMessageBuffer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -827,6 +855,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicGetRoleConnector();
 			case PatternPackage.ROLE__IS_MULTI_ROLE:
 				return isIsMultiRole();
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
+				return getReceiverMessageBuffer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -878,6 +908,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				setOutgoingRoleConnector((RoleConnector)newValue);
 				return;
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
+				getReceiverMessageBuffer().clear();
+				getReceiverMessageBuffer().addAll((Collection<? extends MessageBuffer>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -926,6 +960,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				setOutgoingRoleConnector((RoleConnector)null);
 				return;
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
+				getReceiverMessageBuffer().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -966,6 +1003,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PatternPackage.ROLE__IS_MULTI_ROLE:
 				return IS_MULTI_ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
+				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

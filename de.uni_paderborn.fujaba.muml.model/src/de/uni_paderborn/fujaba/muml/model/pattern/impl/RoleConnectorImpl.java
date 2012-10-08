@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl;
+import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
@@ -30,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +77,16 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	 * @ordered
 	 */
 	protected Role target;
+
+	/**
+	 * The cached value of the '{@link #getConnectorQualityOfServiceAssumptions() <em>Connector Quality Of Service Assumptions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectorQualityOfServiceAssumptions()
+	 * @generated
+	 * @ordered
+	 */
+	protected ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,6 +294,49 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ConnectorQualityOfServiceAssumptions getConnectorQualityOfServiceAssumptions() {
+		return connectorQualityOfServiceAssumptions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions newConnectorQualityOfServiceAssumptions, NotificationChain msgs) {
+		ConnectorQualityOfServiceAssumptions oldConnectorQualityOfServiceAssumptions = connectorQualityOfServiceAssumptions;
+		connectorQualityOfServiceAssumptions = newConnectorQualityOfServiceAssumptions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS, oldConnectorQualityOfServiceAssumptions, newConnectorQualityOfServiceAssumptions);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions newConnectorQualityOfServiceAssumptions) {
+		if (newConnectorQualityOfServiceAssumptions != connectorQualityOfServiceAssumptions) {
+			NotificationChain msgs = null;
+			if (connectorQualityOfServiceAssumptions != null)
+				msgs = ((InternalEObject)connectorQualityOfServiceAssumptions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS, null, msgs);
+			if (newConnectorQualityOfServiceAssumptions != null)
+				msgs = ((InternalEObject)newConnectorQualityOfServiceAssumptions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS, null, msgs);
+			msgs = basicSetConnectorQualityOfServiceAssumptions(newConnectorQualityOfServiceAssumptions, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS, newConnectorQualityOfServiceAssumptions, newConnectorQualityOfServiceAssumptions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -315,6 +370,8 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 				return basicSetTarget(null, msgs);
 			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
 				return basicSetCoordinationPattern(null, msgs);
+			case PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				return basicSetConnectorQualityOfServiceAssumptions(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -351,6 +408,8 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 				return basicGetTarget();
 			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
 				return getCoordinationPattern();
+			case PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				return getConnectorQualityOfServiceAssumptions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -374,6 +433,9 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 				return;
 			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)newValue);
+				return;
+			case PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				setConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -399,6 +461,9 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)null);
 				return;
+			case PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				setConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -419,6 +484,8 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 				return target != null;
 			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
 				return getCoordinationPattern() != null;
+			case PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				return connectorQualityOfServiceAssumptions != null;
 		}
 		return super.eIsSet(featureID);
 	}

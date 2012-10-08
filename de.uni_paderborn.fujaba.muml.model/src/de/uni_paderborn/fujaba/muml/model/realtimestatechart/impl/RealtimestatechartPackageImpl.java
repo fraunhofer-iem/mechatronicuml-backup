@@ -1758,7 +1758,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "OneInvariantPerClock", "self.invariants->isUnique(clock)",
-			 "OneInitialState", "self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1",
 			 "NoOutgoingTransitionOfFinalState", "self.final implies self.outgoingTransitions->isEmpty()",
 			 "NoRegionsOfFinalState", "self.final implies self.regions->isEmpty()",
 			 "UniquePrioritiesOfOutgoingTransitions", "self.outgoingTransitions->isUnique(priority) ",
@@ -1818,7 +1817,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "UniqueNameOfStates", "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)",
 			 "MinOneState", "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()",
-			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"
+			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))",
+			 "OneInitialState", "self.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1"
 		   });											
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 

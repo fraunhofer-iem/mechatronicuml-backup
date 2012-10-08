@@ -284,32 +284,31 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the OneInitialState constraint of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STATE__ONE_INITIAL_STATE__EEXPRESSION = "self.statechart.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1";
-
-	/**
 	 * Validates the OneInitialState constraint of '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateState_OneInitialState(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.STATE,
-				 state,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "OneInitialState",
-				 STATE__ONE_INITIAL_STATE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "OneInitialState", getObjectLabel(state, context) },
+						 new Object[] { state },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

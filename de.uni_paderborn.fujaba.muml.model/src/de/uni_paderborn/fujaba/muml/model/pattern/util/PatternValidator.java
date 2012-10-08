@@ -98,6 +98,10 @@ public class PatternValidator extends EObjectValidator {
 				return validateCoordinationPattern((CoordinationPattern)value, diagnostics, context);
 			case PatternPackage.ROLE:
 				return validateRole((Role)value, diagnostics, context);
+			case PatternPackage.MESSAGE_BUFFER:
+				return validateMessageBuffer((MessageBuffer)value, diagnostics, context);
+			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				return validateConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -365,6 +369,24 @@ public class PatternValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMessageBuffer(MessageBuffer messageBuffer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(messageBuffer, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(connectorQualityOfServiceAssumptions, diagnostics, context);
 	}
 
 	/**

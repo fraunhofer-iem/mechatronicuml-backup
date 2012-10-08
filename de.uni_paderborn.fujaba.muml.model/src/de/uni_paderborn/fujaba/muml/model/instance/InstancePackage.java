@@ -368,31 +368,13 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_INSTANCE__ASSEMBLY_TYPE = CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Propagation Delay Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND = CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Propagation Delay Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND = CONNECTOR_INSTANCE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Assembly Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_INSTANCE_FEATURE_COUNT = CONNECTOR_INSTANCE_FEATURE_COUNT + 3;
+	int ASSEMBLY_INSTANCE_FEATURE_COUNT = CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationInstanceImpl <em>Delegation Instance</em>}' class.
@@ -1541,28 +1523,6 @@ public interface InstancePackage extends EPackage {
 	EReference getAssemblyInstance_AssemblyType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayLowerBound <em>Propagation Delay Lower Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Propagation Delay Lower Bound</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayLowerBound()
-	 * @see #getAssemblyInstance()
-	 * @generated
-	 */
-	EAttribute getAssemblyInstance_PropagationDelayLowerBound();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayUpperBound <em>Propagation Delay Upper Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Propagation Delay Upper Bound</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayUpperBound()
-	 * @see #getAssemblyInstance()
-	 * @generated
-	 */
-	EAttribute getAssemblyInstance_PropagationDelayUpperBound();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance <em>Delegation Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1951,22 +1911,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSEMBLY_INSTANCE__ASSEMBLY_TYPE = eINSTANCE.getAssemblyInstance_AssemblyType();
-
-		/**
-		 * The meta object literal for the '<em><b>Propagation Delay Lower Bound</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ASSEMBLY_INSTANCE__PROPAGATION_DELAY_LOWER_BOUND = eINSTANCE.getAssemblyInstance_PropagationDelayLowerBound();
-
-		/**
-		 * The meta object literal for the '<em><b>Propagation Delay Upper Bound</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ASSEMBLY_INSTANCE__PROPAGATION_DELAY_UPPER_BOUND = eINSTANCE.getAssemblyInstance_PropagationDelayUpperBound();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationInstanceImpl <em>Delegation Instance</em>}' class.

@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getCoordinationPattern <em>Coordination Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,5 +139,30 @@ public interface RoleConnector extends BehavioralElement {
 	 * @generated
 	 */
 	void setCoordinationPattern(CoordinationPattern value);
+
+	/**
+	 * Returns the value of the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Connector Quality Of Service Assumptions</em>' containment reference.
+	 * @see #setConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRoleConnector_ConnectorQualityOfServiceAssumptions()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	ConnectorQualityOfServiceAssumptions getConnectorQualityOfServiceAssumptions();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Connector Quality Of Service Assumptions</em>' containment reference.
+	 * @see #getConnectorQualityOfServiceAssumptions()
+	 * @generated
+	 */
+	void setConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions value);
 
 } // RoleConnector

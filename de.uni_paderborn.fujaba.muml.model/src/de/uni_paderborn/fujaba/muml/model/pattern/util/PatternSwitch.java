@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.pattern.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
@@ -103,6 +104,24 @@ public class PatternSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PatternPackage.MESSAGE_BUFFER: {
+				MessageBuffer messageBuffer = (MessageBuffer)theEObject;
+				T result = caseMessageBuffer(messageBuffer);
+				if (result == null) result = caseNamedElement(messageBuffer);
+				if (result == null) result = caseCommentableElement(messageBuffer);
+				if (result == null) result = caseExtendableElement(messageBuffer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS: {
+				ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions = (ConnectorQualityOfServiceAssumptions)theEObject;
+				T result = caseConnectorQualityOfServiceAssumptions(connectorQualityOfServiceAssumptions);
+				if (result == null) result = caseNamedElement(connectorQualityOfServiceAssumptions);
+				if (result == null) result = caseCommentableElement(connectorQualityOfServiceAssumptions);
+				if (result == null) result = caseExtendableElement(connectorQualityOfServiceAssumptions);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -149,6 +168,36 @@ public class PatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRole(Role object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessageBuffer(MessageBuffer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connector Quality Of Service Assumptions</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connector Quality Of Service Assumptions</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions object) {
 		return null;
 	}
 
@@ -209,6 +258,21 @@ public class PatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConstrainableElement(ConstrainableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCommentableElement(CommentableElement object) {
 		return null;
 	}
 

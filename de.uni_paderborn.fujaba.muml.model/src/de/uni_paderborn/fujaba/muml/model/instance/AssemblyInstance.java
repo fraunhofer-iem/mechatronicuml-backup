@@ -23,8 +23,6 @@ import de.uni_paderborn.fujaba.muml.model.component.Assembly;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getAssemblyType <em>Assembly Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayLowerBound <em>Propagation Delay Lower Bound</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayUpperBound <em>Propagation Delay Upper Bound</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,74 +45,5 @@ public interface AssemblyInstance extends ConnectorInstance {
 	 * @generated
 	 */
 	Assembly getAssemblyType();
-
-	/**
-	 * Returns the value of the '<em><b>Propagation Delay Lower Bound</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Propagation Delay Lower Bound</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The lower bound of the propagation delay of this assembly instance. 
-	 * The propagation delay defines how long a message needs from its sender to
-	 * its receiver port instance.
-	 * 
-	 * \todosd{I suggest to change the type from EInt to NaturalNumber.}
-	 * \todosd{Is propagation delay the correct term? MUML-Spec 0.2 on page 15 also name it like this, but message delay would also be a good name.}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Propagation Delay Lower Bound</em>' attribute.
-	 * @see #setPropagationDelayLowerBound(int)
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_PropagationDelayLowerBound()
-	 * @model default="0"
-	 * @generated
-	 */
-	int getPropagationDelayLowerBound();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayLowerBound <em>Propagation Delay Lower Bound</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Propagation Delay Lower Bound</em>' attribute.
-	 * @see #getPropagationDelayLowerBound()
-	 * @generated
-	 */
-	void setPropagationDelayLowerBound(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Propagation Delay Upper Bound</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Propagation Delay Upper Bound</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The upper bound of the propagation delay of this assembly instance. 
-	 * The propagation delay defines how long a message needs from its sender to
-	 * its receiver port instance.
-	 * 
-	 * \todosd{I suggest to change the type from EInt to NaturalNumber.}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Propagation Delay Upper Bound</em>' attribute.
-	 * @see #setPropagationDelayUpperBound(int)
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_PropagationDelayUpperBound()
-	 * @model default="0"
-	 * @generated
-	 */
-	int getPropagationDelayUpperBound();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getPropagationDelayUpperBound <em>Propagation Delay Upper Bound</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Propagation Delay Upper Bound</em>' attribute.
-	 * @see #getPropagationDelayUpperBound()
-	 * @generated
-	 */
-	void setPropagationDelayUpperBound(int value);
 
 } // AssemblyInstance
