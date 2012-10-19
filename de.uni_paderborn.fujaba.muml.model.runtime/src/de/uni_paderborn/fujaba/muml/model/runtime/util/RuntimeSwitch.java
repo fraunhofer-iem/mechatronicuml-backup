@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
@@ -28,7 +29,6 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
-import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,10 +151,10 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.VARIABLE_BINDING: {
-				VariableBinding variableBinding = (VariableBinding)theEObject;
-				T result = caseVariableBinding(variableBinding);
-				if (result == null) result = caseExtendableElement(variableBinding);
+			case RuntimePackage.ATTRIBUTE_BINDING: {
+				AttributeBinding attributeBinding = (AttributeBinding)theEObject;
+				T result = caseAttributeBinding(attributeBinding);
+				if (result == null) result = caseExtendableElement(attributeBinding);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -276,17 +276,17 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable Binding</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable Binding</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Binding</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariableBinding(VariableBinding object) {
+	public T caseAttributeBinding(AttributeBinding object) {
 		return null;
 	}
 

@@ -23,10 +23,10 @@ import org.storydriven.core.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
+import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
-import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getInstanceOf <em>Instance Of</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getActive <em>Active</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getVariableBindings <em>Variable Bindings</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl#getAttributeBindings <em>Attribute Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,14 +77,14 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	protected EList<RealtimeStatechartInstance> subRealtimeStatechartInstances;
 
 	/**
-	 * The cached value of the '{@link #getVariableBindings() <em>Variable Bindings</em>}' containment reference list.
+	 * The cached value of the '{@link #getAttributeBindings() <em>Attribute Bindings</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVariableBindings()
+	 * @see #getAttributeBindings()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<VariableBinding> variableBindings;
+	protected EList<AttributeBinding> attributeBindings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,11 +259,11 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<VariableBinding> getVariableBindings() {
-		if (variableBindings == null) {
-			variableBindings = new EObjectContainmentEList<VariableBinding>(VariableBinding.class, this, RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS);
+	public EList<AttributeBinding> getAttributeBindings() {
+		if (attributeBindings == null) {
+			attributeBindings = new EObjectContainmentEList<AttributeBinding>(AttributeBinding.class, this, RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS);
 		}
-		return variableBindings;
+		return attributeBindings;
 	}
 
 	/**
@@ -294,8 +294,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return basicSetRuntimeBehavioralElement(null, msgs);
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				return ((InternalEList<?>)getSubRealtimeStatechartInstances()).basicRemove(otherEnd, msgs);
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
-				return ((InternalEList<?>)getVariableBindings()).basicRemove(otherEnd, msgs);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS:
+				return ((InternalEList<?>)getAttributeBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -332,8 +332,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return basicGetActive();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				return getSubRealtimeStatechartInstances();
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
-				return getVariableBindings();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS:
+				return getAttributeBindings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -360,9 +360,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				getSubRealtimeStatechartInstances().clear();
 				getSubRealtimeStatechartInstances().addAll((Collection<? extends RealtimeStatechartInstance>)newValue);
 				return;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
-				getVariableBindings().clear();
-				getVariableBindings().addAll((Collection<? extends VariableBinding>)newValue);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS:
+				getAttributeBindings().clear();
+				getAttributeBindings().addAll((Collection<? extends AttributeBinding>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -388,8 +388,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				getSubRealtimeStatechartInstances().clear();
 				return;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
-				getVariableBindings().clear();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS:
+				getAttributeBindings().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -411,8 +411,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return active != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				return subRealtimeStatechartInstances != null && !subRealtimeStatechartInstances.isEmpty();
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
-				return variableBindings != null && !variableBindings.isEmpty();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS:
+				return attributeBindings != null && !attributeBindings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

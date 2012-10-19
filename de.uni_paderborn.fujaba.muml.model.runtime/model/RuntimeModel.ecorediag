@@ -124,7 +124,7 @@
     <children xmi:type="notation:Node" xmi:id="_RGFW7AhyEeKHHqY1y4sc_Q" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_RGFW7QhyEeKHHqY1y4sc_Q" type="5001">
       <children xmi:type="notation:Node" xmi:id="_RGFW9QhyEeKHHqY1y4sc_Q" type="2001">
-        <element xmi:type="ecore:EAttribute" href="RuntimeModel.ecore#//VariableBinding/value"/>
+        <element xmi:type="ecore:EAttribute" href="RuntimeModel.ecore#//AttributeBinding/value"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_RGFW9ghyEeKHHqY1y4sc_Q"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_RGFW7ghyEeKHHqY1y4sc_Q"/>
@@ -137,7 +137,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_RGFW9AhyEeKHHqY1y4sc_Q"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_RGFW6ghyEeKHHqY1y4sc_Q" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="RuntimeModel.ecore#//VariableBinding"/>
+    <element xmi:type="ecore:EClass" href="RuntimeModel.ecore#//AttributeBinding"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RGFW6whyEeKHHqY1y4sc_Q" x="740" y="190" width="136" height="51"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_RGFW9whyEeKHHqY1y4sc_Q" type="1001">
@@ -405,7 +405,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_RGPHyAhyEeKHHqY1y4sc_Q" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_RGPHyQhyEeKHHqY1y4sc_Q" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/variableBindings"/>
+    <element xmi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/attributeBindings"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RGPHyghyEeKHHqY1y4sc_Q" points="[0, 0, -158, 109]$[158, -109, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RKZO7AhyEeKHHqY1y4sc_Q" id="(1.0,0.28571408293968026)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RKZO7QhyEeKHHqY1y4sc_Q" id="(0.3235294117647059,0.9411764705882353)"/>
@@ -461,7 +461,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_RGPH6AhyEeKHHqY1y4sc_Q" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_RGPH6QhyEeKHHqY1y4sc_Q" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeBehavioralElement/messageQueue"/>
+    <element xmi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeBehavioralElement/messageBuffer"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RGPH6ghyEeKHHqY1y4sc_Q" points="[-8, 6, 0, -82]$[-8, 45, 0, -43]$[-8, 85, 0, -3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Y2BAUgh-EeKHHqY1y4sc_Q" id="(0.5523255813953488,0.8604651162790697)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Y2BAUwh-EeKHHqY1y4sc_Q" id="(0.5535714285714286,0.0784313725490196)"/>
@@ -483,7 +483,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_exeIkQhyEeKHHqY1y4sc_Q" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_exeIkghyEeKHHqY1y4sc_Q" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="RuntimeModel.ecore#//VariableBinding/attribute"/>
+    <element xmi:type="ecore:EReference" href="RuntimeModel.ecore#//AttributeBinding/attribute"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_exeIkwhyEeKHHqY1y4sc_Q" points="[0, 0, -109, 2]$[109, -2, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ex6NcAhyEeKHHqY1y4sc_Q" id="(0.875,0.0196078431372549)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ex6NcQhyEeKHHqY1y4sc_Q" id="(0.14705882352941177,0.8666666666666667)"/>

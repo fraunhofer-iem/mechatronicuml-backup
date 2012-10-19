@@ -125,16 +125,6 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_PARAMETER = 6;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl <em>Variable Binding</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getVariableBinding()
-	 * @generated
-	 */
-	int VARIABLE_BINDING = 7;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeBehavioralElementImpl <em>Behavioral Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,13 +198,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_COMPONENT_INSTANCE__STATECHART_INSTANCE = InstancePackage.COMPONENT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Queue</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_COMPONENT_INSTANCE__MESSAGE_QUEUE = InstancePackage.COMPONENT_INSTANCE_FEATURE_COUNT + 1;
+	int RUNTIME_COMPONENT_INSTANCE__MESSAGE_BUFFER = InstancePackage.COMPONENT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
@@ -334,13 +324,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE__STATECHART_INSTANCE = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Queue</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_QUEUE = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 1;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port Instance</em>' class.
@@ -505,6 +495,15 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_ROLE_INSTANCE__IS_MULTI_ROLE = PatternPackage.ROLE__IS_MULTI_ROLE;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_INSTANCE__RECEIVER_MESSAGE_BUFFER = PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER;
+
+	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -514,13 +513,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_ROLE_INSTANCE__STATECHART_INSTANCE = PatternPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Queue</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_ROLE_INSTANCE__MESSAGE_QUEUE = PatternPackage.ROLE_FEATURE_COUNT + 1;
+	int RUNTIME_ROLE_INSTANCE__MESSAGE_BUFFER = PatternPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Role Instance</em>' class.
@@ -650,13 +649,13 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Variable Bindings</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Attribute Bindings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Realtime Statechart Instance</em>' class.
@@ -767,13 +766,23 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getAttributeBinding()
+	 * @generated
+	 */
+	int ATTRIBUTE_BINDING = 7;
+
+	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int ATTRIBUTE_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -782,7 +791,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int ATTRIBUTE_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -791,7 +800,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__ATTRIBUTE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int ATTRIBUTE_BINDING__ATTRIBUTE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -800,16 +809,16 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__VALUE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int ATTRIBUTE_BINDING__VALUE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Variable Binding</em>' class.
+	 * The number of structural features of the '<em>Attribute Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int ATTRIBUTE_BINDING_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -848,13 +857,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Queue</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Behavioral Element</em>' class.
@@ -1005,15 +1014,15 @@ public interface RuntimePackage extends EPackage {
 	EReference getRealtimeStatechartInstance_SubRealtimeStatechartInstances();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getVariableBindings <em>Variable Bindings</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getAttributeBindings <em>Attribute Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Variable Bindings</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getVariableBindings()
+	 * @return the meta object for the containment reference list '<em>Attribute Bindings</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getAttributeBindings()
 	 * @see #getRealtimeStatechartInstance()
 	 * @generated
 	 */
-	EReference getRealtimeStatechartInstance_VariableBindings();
+	EReference getRealtimeStatechartInstance_AttributeBindings();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage <em>Message</em>}'.
@@ -1069,36 +1078,36 @@ public interface RuntimePackage extends EPackage {
 	EAttribute getRuntimeParameter_Value();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding <em>Variable Binding</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding <em>Attribute Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variable Binding</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding
+	 * @return the meta object for class '<em>Attribute Binding</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding
 	 * @generated
 	 */
-	EClass getVariableBinding();
+	EClass getAttributeBinding();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding#getAttribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getAttribute()
-	 * @see #getVariableBinding()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding#getAttribute()
+	 * @see #getAttributeBinding()
 	 * @generated
 	 */
-	EReference getVariableBinding_Attribute();
+	EReference getAttributeBinding_Attribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getValue()
-	 * @see #getVariableBinding()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding#getValue()
+	 * @see #getAttributeBinding()
 	 * @generated
 	 */
-	EAttribute getVariableBinding_Value();
+	EAttribute getAttributeBinding_Value();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement <em>Behavioral Element</em>}'.
@@ -1122,15 +1131,15 @@ public interface RuntimePackage extends EPackage {
 	EReference getRuntimeBehavioralElement_StatechartInstance();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageQueue <em>Message Queue</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Message Queue</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageQueue()
+	 * @return the meta object for the containment reference '<em>Message Buffer</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageBuffer()
 	 * @see #getRuntimeBehavioralElement()
 	 * @generated
 	 */
-	EReference getRuntimeBehavioralElement_MessageQueue();
+	EReference getRuntimeBehavioralElement_MessageBuffer();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Java Object</em>}'.
@@ -1272,12 +1281,12 @@ public interface RuntimePackage extends EPackage {
 		EReference REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES = eINSTANCE.getRealtimeStatechartInstance_SubRealtimeStatechartInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Variable Bindings</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Attribute Bindings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS = eINSTANCE.getRealtimeStatechartInstance_VariableBindings();
+		EReference REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS = eINSTANCE.getRealtimeStatechartInstance_AttributeBindings();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeMessageImpl <em>Message</em>}' class.
@@ -1324,14 +1333,14 @@ public interface RuntimePackage extends EPackage {
 		EAttribute RUNTIME_PARAMETER__VALUE = eINSTANCE.getRuntimeParameter_Value();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl <em>Variable Binding</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getVariableBinding()
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getAttributeBinding()
 		 * @generated
 		 */
-		EClass VARIABLE_BINDING = eINSTANCE.getVariableBinding();
+		EClass ATTRIBUTE_BINDING = eINSTANCE.getAttributeBinding();
 
 		/**
 		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
@@ -1339,7 +1348,7 @@ public interface RuntimePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIABLE_BINDING__ATTRIBUTE = eINSTANCE.getVariableBinding_Attribute();
+		EReference ATTRIBUTE_BINDING__ATTRIBUTE = eINSTANCE.getAttributeBinding_Attribute();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1347,7 +1356,7 @@ public interface RuntimePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIABLE_BINDING__VALUE = eINSTANCE.getVariableBinding_Value();
+		EAttribute ATTRIBUTE_BINDING__VALUE = eINSTANCE.getAttributeBinding_Value();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeBehavioralElementImpl <em>Behavioral Element</em>}' class.
@@ -1368,12 +1377,12 @@ public interface RuntimePackage extends EPackage {
 		EReference RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE = eINSTANCE.getRuntimeBehavioralElement_StatechartInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Message Queue</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Message Buffer</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE = eINSTANCE.getRuntimeBehavioralElement_MessageQueue();
+		EReference RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER = eINSTANCE.getRuntimeBehavioralElement_MessageBuffer();
 
 		/**
 		 * The meta object literal for the '<em>Java Object</em>' data type.

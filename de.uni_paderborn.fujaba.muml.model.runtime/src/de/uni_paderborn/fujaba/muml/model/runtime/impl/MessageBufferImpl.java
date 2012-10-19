@@ -155,7 +155,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newRuntimeBehavioralElement != null)
-				msgs = ((InternalEObject)newRuntimeBehavioralElement).eInverseAdd(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE, RuntimeBehavioralElement.class, msgs);
+				msgs = ((InternalEObject)newRuntimeBehavioralElement).eInverseAdd(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER, RuntimeBehavioralElement.class, msgs);
 			msgs = basicSetRuntimeBehavioralElement(newRuntimeBehavioralElement, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -204,7 +204,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
-				return eInternalContainer().eInverseRemove(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE, RuntimeBehavioralElement.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER, RuntimeBehavioralElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

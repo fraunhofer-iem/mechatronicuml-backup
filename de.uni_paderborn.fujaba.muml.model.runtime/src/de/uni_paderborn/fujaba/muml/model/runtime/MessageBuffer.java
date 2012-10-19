@@ -72,7 +72,7 @@ public interface MessageBuffer extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Runtime Behavioral Element</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageQueue <em>Message Queue</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Runtime Behavioral Element</em>' container reference isn't clear,
@@ -82,8 +82,8 @@ public interface MessageBuffer extends ExtendableElement {
 	 * @return the value of the '<em>Runtime Behavioral Element</em>' container reference.
 	 * @see #setRuntimeBehavioralElement(RuntimeBehavioralElement)
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageBuffer_RuntimeBehavioralElement()
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageQueue
-	 * @model opposite="messageQueue" required="true" transient="false"
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageBuffer
+	 * @model opposite="messageBuffer" required="true" transient="false"
 	 * @generated
 	 */
 	RuntimeBehavioralElement getRuntimeBehavioralElement();

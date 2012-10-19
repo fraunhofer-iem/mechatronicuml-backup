@@ -17,7 +17,7 @@ import org.storydriven.core.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getStatechartInstance <em>Statechart Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageQueue <em>Message Queue</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,31 +55,31 @@ public interface RuntimeBehavioralElement extends NamedElement {
 	void setStatechartInstance(RealtimeStatechartInstance value);
 
 	/**
-	 * Returns the value of the '<em><b>Message Queue</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Message Buffer</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Message Queue</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Message Buffer</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Queue</em>' containment reference.
-	 * @see #setMessageQueue(MessageBuffer)
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRuntimeBehavioralElement_MessageQueue()
+	 * @return the value of the '<em>Message Buffer</em>' containment reference.
+	 * @see #setMessageBuffer(MessageBuffer)
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRuntimeBehavioralElement_MessageBuffer()
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement
 	 * @model opposite="runtimeBehavioralElement" containment="true"
 	 * @generated
 	 */
-	MessageBuffer getMessageQueue();
+	MessageBuffer getMessageBuffer();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageQueue <em>Message Queue</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Queue</em>' containment reference.
-	 * @see #getMessageQueue()
+	 * @param value the new value of the '<em>Message Buffer</em>' containment reference.
+	 * @see #getMessageBuffer()
 	 * @generated
 	 */
-	void setMessageQueue(MessageBuffer value);
+	void setMessageBuffer(MessageBuffer value);
 
 } // RuntimeBehavioralElement

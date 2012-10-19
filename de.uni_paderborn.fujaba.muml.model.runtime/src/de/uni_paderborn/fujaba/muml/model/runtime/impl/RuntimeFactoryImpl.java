@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
@@ -22,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
-import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE: return createRealtimeStatechartInstance();
 			case RuntimePackage.RUNTIME_MESSAGE: return createRuntimeMessage();
 			case RuntimePackage.RUNTIME_PARAMETER: return createRuntimeParameter();
-			case RuntimePackage.VARIABLE_BINDING: return createVariableBinding();
+			case RuntimePackage.ATTRIBUTE_BINDING: return createAttributeBinding();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -182,9 +182,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableBinding createVariableBinding() {
-		VariableBindingImpl variableBinding = new VariableBindingImpl();
-		return variableBinding;
+	public AttributeBinding createAttributeBinding() {
+		AttributeBindingImpl attributeBinding = new AttributeBindingImpl();
+		return attributeBinding;
 	}
 
 	/**

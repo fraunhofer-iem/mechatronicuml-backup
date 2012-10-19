@@ -13,24 +13,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
+import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
-import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Variable Binding</b></em>'.
+ * An implementation of the model object '<em><b>Attribute Binding</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl#getAttribute <em>Attribute</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VariableBindingImpl extends ExtendableElementImpl implements VariableBinding {
+public class AttributeBindingImpl extends ExtendableElementImpl implements AttributeBinding {
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariableBindingImpl() {
+	protected AttributeBindingImpl() {
 		super();
 	}
 
@@ -77,7 +77,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RuntimePackage.Literals.VARIABLE_BINDING;
+		return RuntimePackage.Literals.ATTRIBUTE_BINDING;
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 			attribute = (Attribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.VARIABLE_BINDING__ATTRIBUTE, oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.ATTRIBUTE_BINDING__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -115,7 +115,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.VARIABLE_BINDING__ATTRIBUTE, oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ATTRIBUTE_BINDING__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -136,7 +136,7 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 		Object oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.VARIABLE_BINDING__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ATTRIBUTE_BINDING__VALUE, oldValue, value));
 	}
 
 	/**
@@ -147,10 +147,10 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.VARIABLE_BINDING__ATTRIBUTE:
+			case RuntimePackage.ATTRIBUTE_BINDING__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
-			case RuntimePackage.VARIABLE_BINDING__VALUE:
+			case RuntimePackage.ATTRIBUTE_BINDING__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -164,10 +164,10 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.VARIABLE_BINDING__ATTRIBUTE:
+			case RuntimePackage.ATTRIBUTE_BINDING__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
 				return;
-			case RuntimePackage.VARIABLE_BINDING__VALUE:
+			case RuntimePackage.ATTRIBUTE_BINDING__VALUE:
 				setValue(newValue);
 				return;
 		}
@@ -182,10 +182,10 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.VARIABLE_BINDING__ATTRIBUTE:
+			case RuntimePackage.ATTRIBUTE_BINDING__ATTRIBUTE:
 				setAttribute((Attribute)null);
 				return;
-			case RuntimePackage.VARIABLE_BINDING__VALUE:
+			case RuntimePackage.ATTRIBUTE_BINDING__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -200,9 +200,9 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.VARIABLE_BINDING__ATTRIBUTE:
+			case RuntimePackage.ATTRIBUTE_BINDING__ATTRIBUTE:
 				return attribute != null;
-			case RuntimePackage.VARIABLE_BINDING__VALUE:
+			case RuntimePackage.ATTRIBUTE_BINDING__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -224,4 +224,4 @@ public class VariableBindingImpl extends ExtendableElementImpl implements Variab
 		return result.toString();
 	}
 
-} //VariableBindingImpl
+} //AttributeBindingImpl

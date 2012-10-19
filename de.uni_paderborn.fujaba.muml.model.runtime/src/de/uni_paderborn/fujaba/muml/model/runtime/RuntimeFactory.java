@@ -89,13 +89,13 @@ public interface RuntimeFactory extends EFactory {
 	RuntimeParameter createRuntimeParameter();
 
 	/**
-	 * Returns a new object of class '<em>Variable Binding</em>'.
+	 * Returns a new object of class '<em>Attribute Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable Binding</em>'.
+	 * @return a new object of class '<em>Attribute Binding</em>'.
 	 * @generated
 	 */
-	VariableBinding createVariableBinding();
+	AttributeBinding createAttributeBinding();
 
 	/**
 	 * Returns the package supported by this factory.

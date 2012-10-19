@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeBehavioralElementImpl#getStatechartInstance <em>Statechart Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeBehavioralElementImpl#getMessageQueue <em>Message Queue</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeBehavioralElementImpl#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,14 +44,14 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	protected RealtimeStatechartInstance statechartInstance;
 
 	/**
-	 * The cached value of the '{@link #getMessageQueue() <em>Message Queue</em>}' containment reference.
+	 * The cached value of the '{@link #getMessageBuffer() <em>Message Buffer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMessageQueue()
+	 * @see #getMessageBuffer()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageBuffer messageQueue;
+	protected MessageBuffer messageBuffer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,8 +120,8 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageBuffer getMessageQueue() {
-		return messageQueue;
+	public MessageBuffer getMessageBuffer() {
+		return messageBuffer;
 	}
 
 	/**
@@ -129,11 +129,11 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMessageQueue(MessageBuffer newMessageQueue, NotificationChain msgs) {
-		MessageBuffer oldMessageQueue = messageQueue;
-		messageQueue = newMessageQueue;
+	public NotificationChain basicSetMessageBuffer(MessageBuffer newMessageBuffer, NotificationChain msgs) {
+		MessageBuffer oldMessageBuffer = messageBuffer;
+		messageBuffer = newMessageBuffer;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE, oldMessageQueue, newMessageQueue);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER, oldMessageBuffer, newMessageBuffer);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -144,18 +144,18 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMessageQueue(MessageBuffer newMessageQueue) {
-		if (newMessageQueue != messageQueue) {
+	public void setMessageBuffer(MessageBuffer newMessageBuffer) {
+		if (newMessageBuffer != messageBuffer) {
 			NotificationChain msgs = null;
-			if (messageQueue != null)
-				msgs = ((InternalEObject)messageQueue).eInverseRemove(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
-			if (newMessageQueue != null)
-				msgs = ((InternalEObject)newMessageQueue).eInverseAdd(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
-			msgs = basicSetMessageQueue(newMessageQueue, msgs);
+			if (messageBuffer != null)
+				msgs = ((InternalEObject)messageBuffer).eInverseRemove(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
+			if (newMessageBuffer != null)
+				msgs = ((InternalEObject)newMessageBuffer).eInverseAdd(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
+			msgs = basicSetMessageBuffer(newMessageBuffer, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE, newMessageQueue, newMessageQueue));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER, newMessageBuffer, newMessageBuffer));
 	}
 
 	/**
@@ -170,10 +170,10 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 				if (statechartInstance != null)
 					msgs = ((InternalEObject)statechartInstance).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE, null, msgs);
 				return basicSetStatechartInstance((RealtimeStatechartInstance)otherEnd, msgs);
-			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
-				if (messageQueue != null)
-					msgs = ((InternalEObject)messageQueue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE, null, msgs);
-				return basicSetMessageQueue((MessageBuffer)otherEnd, msgs);
+			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
+				if (messageBuffer != null)
+					msgs = ((InternalEObject)messageBuffer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER, null, msgs);
+				return basicSetMessageBuffer((MessageBuffer)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -188,8 +188,8 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 		switch (featureID) {
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE:
 				return basicSetStatechartInstance(null, msgs);
-			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
-				return basicSetMessageQueue(null, msgs);
+			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
+				return basicSetMessageBuffer(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -204,8 +204,8 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 		switch (featureID) {
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE:
 				return getStatechartInstance();
-			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
-				return getMessageQueue();
+			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
+				return getMessageBuffer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,8 +221,8 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE:
 				setStatechartInstance((RealtimeStatechartInstance)newValue);
 				return;
-			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
-				setMessageQueue((MessageBuffer)newValue);
+			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
+				setMessageBuffer((MessageBuffer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,8 +239,8 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE:
 				setStatechartInstance((RealtimeStatechartInstance)null);
 				return;
-			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
-				setMessageQueue((MessageBuffer)null);
+			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
+				setMessageBuffer((MessageBuffer)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -256,8 +256,8 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 		switch (featureID) {
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE:
 				return statechartInstance != null;
-			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_QUEUE:
-				return messageQueue != null;
+			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
+				return messageBuffer != null;
 		}
 		return super.eIsSet(featureID);
 	}

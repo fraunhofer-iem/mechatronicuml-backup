@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
@@ -29,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
-import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,8 +116,8 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createRuntimeParameterAdapter();
 			}
 			@Override
-			public Adapter caseVariableBinding(VariableBinding object) {
-				return createVariableBindingAdapter();
+			public Adapter caseAttributeBinding(AttributeBinding object) {
+				return createAttributeBindingAdapter();
 			}
 			@Override
 			public Adapter caseRuntimeBehavioralElement(RuntimeBehavioralElement object) {
@@ -278,16 +278,16 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding <em>Variable Binding</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding <em>Attribute Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding
 	 * @generated
 	 */
-	public Adapter createVariableBindingAdapter() {
+	public Adapter createAttributeBindingAdapter() {
 		return null;
 	}
 
