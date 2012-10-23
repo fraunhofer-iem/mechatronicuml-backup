@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MultiRoleInstanceImpl#getSingleRoleInstances <em>Single Role Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MultiRoleInstanceImpl#getSubRoleInstances <em>Sub Role Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,15 +34,14 @@ import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
  */
 public class MultiRoleInstanceImpl extends RoleInstanceImpl implements MultiRoleInstance {
 	/**
-	 * The cached value of the '{@link #getSingleRoleInstances() <em>Single Role Instances</em>}' reference list.
+	 * The cached value of the '{@link #getSubRoleInstances() <em>Sub Role Instances</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSingleRoleInstances()
+	 * @see #getSubRoleInstances()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SingleRoleInstance> singleRoleInstances;
-
+	protected EList<SingleRoleInstance> subRoleInstances;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,11 +66,11 @@ public class MultiRoleInstanceImpl extends RoleInstanceImpl implements MultiRole
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SingleRoleInstance> getSingleRoleInstances() {
-		if (singleRoleInstances == null) {
-			singleRoleInstances = new EObjectWithInverseResolvingEList<SingleRoleInstance>(SingleRoleInstance.class, this, RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES, RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE);
+	public EList<SingleRoleInstance> getSubRoleInstances() {
+		if (subRoleInstances == null) {
+			subRoleInstances = new EObjectWithInverseResolvingEList<SingleRoleInstance>(SingleRoleInstance.class, this, RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES, RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE);
 		}
-		return singleRoleInstances;
+		return subRoleInstances;
 	}
 
 	/**
@@ -83,8 +82,8 @@ public class MultiRoleInstanceImpl extends RoleInstanceImpl implements MultiRole
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSingleRoleInstances()).basicAdd(otherEnd, msgs);
+			case RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubRoleInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -97,8 +96,8 @@ public class MultiRoleInstanceImpl extends RoleInstanceImpl implements MultiRole
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES:
-				return ((InternalEList<?>)getSingleRoleInstances()).basicRemove(otherEnd, msgs);
+			case RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES:
+				return ((InternalEList<?>)getSubRoleInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -111,8 +110,8 @@ public class MultiRoleInstanceImpl extends RoleInstanceImpl implements MultiRole
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES:
-				return getSingleRoleInstances();
+			case RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES:
+				return getSubRoleInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -126,9 +125,9 @@ public class MultiRoleInstanceImpl extends RoleInstanceImpl implements MultiRole
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES:
-				getSingleRoleInstances().clear();
-				getSingleRoleInstances().addAll((Collection<? extends SingleRoleInstance>)newValue);
+			case RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES:
+				getSubRoleInstances().clear();
+				getSubRoleInstances().addAll((Collection<? extends SingleRoleInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,8 +141,8 @@ public class MultiRoleInstanceImpl extends RoleInstanceImpl implements MultiRole
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES:
-				getSingleRoleInstances().clear();
+			case RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES:
+				getSubRoleInstances().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -157,8 +156,8 @@ public class MultiRoleInstanceImpl extends RoleInstanceImpl implements MultiRole
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES:
-				return singleRoleInstances != null && !singleRoleInstances.isEmpty();
+			case RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES:
+				return subRoleInstances != null && !subRoleInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

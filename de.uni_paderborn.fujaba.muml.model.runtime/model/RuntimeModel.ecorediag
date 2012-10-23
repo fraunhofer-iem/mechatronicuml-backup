@@ -755,7 +755,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_9T5bKRzhEeKfQ79z58tnoQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_9T5bKhzhEeKfQ79z58tnoQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="RuntimeModel.ecore#//MultiRoleInstance/singleRoleInstances"/>
+    <element xmi:type="ecore:EReference" href="RuntimeModel.ecore#//MultiRoleInstance/subRoleInstances"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9T5bKxzhEeKfQ79z58tnoQ" points="[8, 9, 0, -104]$[8, 63, 0, -50]$[8, 113, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9VFt9BzhEeKfQ79z58tnoQ" id="(0.6991869918699187,0.7906976744186046)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9VFt9RzhEeKfQ79z58tnoQ" id="(0.7286821705426356,0.023255813953488372)"/>

@@ -109,9 +109,9 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 		if (newMultiRoleInstance != multiRoleInstance) {
 			NotificationChain msgs = null;
 			if (multiRoleInstance != null)
-				msgs = ((InternalEObject)multiRoleInstance).eInverseRemove(this, RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
+				msgs = ((InternalEObject)multiRoleInstance).eInverseRemove(this, RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
 			if (newMultiRoleInstance != null)
-				msgs = ((InternalEObject)newMultiRoleInstance).eInverseAdd(this, RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
+				msgs = ((InternalEObject)newMultiRoleInstance).eInverseAdd(this, RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
 			msgs = basicSetMultiRoleInstance(newMultiRoleInstance, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -129,7 +129,7 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 		switch (featureID) {
 			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE:
 				if (multiRoleInstance != null)
-					msgs = ((InternalEObject)multiRoleInstance).eInverseRemove(this, RuntimePackage.MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
+					msgs = ((InternalEObject)multiRoleInstance).eInverseRemove(this, RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
 				return basicSetMultiRoleInstance((MultiRoleInstance)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

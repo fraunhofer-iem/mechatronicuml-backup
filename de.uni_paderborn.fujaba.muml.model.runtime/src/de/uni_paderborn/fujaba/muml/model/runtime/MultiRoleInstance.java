@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSingleRoleInstances <em>Single Role Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSubRoleInstances <em>Sub Role Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,21 +26,21 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface MultiRoleInstance extends RoleInstance {
 	/**
-	 * Returns the value of the '<em><b>Single Role Instances</b></em>' reference list.
+	 * Returns the value of the '<em><b>Sub Role Instances</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance#getMultiRoleInstance <em>Multi Role Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Single Role Instances</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Sub Role Instances</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Single Role Instances</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMultiRoleInstance_SingleRoleInstances()
+	 * @return the value of the '<em>Sub Role Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMultiRoleInstance_SubRoleInstances()
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance#getMultiRoleInstance
 	 * @model opposite="multiRoleInstance"
 	 * @generated
 	 */
-	EList<SingleRoleInstance> getSingleRoleInstances();
+	EList<SingleRoleInstance> getSubRoleInstances();
 
 } // MultiRoleInstance

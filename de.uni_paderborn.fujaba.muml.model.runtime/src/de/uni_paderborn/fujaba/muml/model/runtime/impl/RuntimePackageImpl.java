@@ -496,7 +496,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMultiRoleInstance_SingleRoleInstances() {
+	public EReference getMultiRoleInstance_SubRoleInstances() {
 		return (EReference)multiRoleInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -666,7 +666,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		createEReference(singleRoleInstanceEClass, SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE);
 
 		multiRoleInstanceEClass = createEClass(MULTI_ROLE_INSTANCE);
-		createEReference(multiRoleInstanceEClass, MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES);
+		createEReference(multiRoleInstanceEClass, MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES);
 
 		runtimeRoleAssemblyEClass = createEClass(RUNTIME_ROLE_ASSEMBLY);
 		createEReference(runtimeRoleAssemblyEClass, RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES);
@@ -777,10 +777,10 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEReference(getRuntimeBehavioralElement_MessageBuffer(), this.getMessageBuffer(), this.getMessageBuffer_RuntimeBehavioralElement(), "messageBuffer", null, 0, 1, RuntimeBehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(singleRoleInstanceEClass, SingleRoleInstance.class, "SingleRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSingleRoleInstance_MultiRoleInstance(), this.getMultiRoleInstance(), this.getMultiRoleInstance_SingleRoleInstances(), "multiRoleInstance", null, 0, 1, SingleRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSingleRoleInstance_MultiRoleInstance(), this.getMultiRoleInstance(), this.getMultiRoleInstance_SubRoleInstances(), "multiRoleInstance", null, 0, 1, SingleRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(multiRoleInstanceEClass, MultiRoleInstance.class, "MultiRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMultiRoleInstance_SingleRoleInstances(), this.getSingleRoleInstance(), this.getSingleRoleInstance_MultiRoleInstance(), "singleRoleInstances", null, 0, -1, MultiRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMultiRoleInstance_SubRoleInstances(), this.getSingleRoleInstance(), this.getSingleRoleInstance_MultiRoleInstance(), "subRoleInstances", null, 0, -1, MultiRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeRoleAssemblyEClass, RuntimeRoleAssembly.class, "RuntimeRoleAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeRoleAssembly_RoleInstances(), this.getRoleInstance(), this.getRoleInstance_Assembly(), "roleInstances", null, 2, 2, RuntimeRoleAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -57,10 +57,10 @@
       serializable="false"/>
   <eClassifiers xsi:type="ecore:EClass" name="SingleRoleInstance" eSuperTypes="#//RoleInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiRoleInstance" eType="#//MultiRoleInstance"
-        eOpposite="#//MultiRoleInstance/singleRoleInstances"/>
+        eOpposite="#//MultiRoleInstance/subRoleInstances"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiRoleInstance" eSuperTypes="#//RoleInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="singleRoleInstances" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subRoleInstances" upperBound="-1"
         eType="#//SingleRoleInstance" eOpposite="#//SingleRoleInstance/multiRoleInstance"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleAssembly" eSuperTypes="#//RuntimeAssemblyInstance">

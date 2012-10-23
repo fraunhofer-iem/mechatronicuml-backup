@@ -26,7 +26,7 @@ package de.uni_paderborn.fujaba.muml.model.runtime;
 public interface SingleRoleInstance extends RoleInstance {
 	/**
 	 * Returns the value of the '<em><b>Multi Role Instance</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSingleRoleInstances <em>Single Role Instances</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSubRoleInstances <em>Sub Role Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Multi Role Instance</em>' reference isn't clear,
@@ -36,8 +36,8 @@ public interface SingleRoleInstance extends RoleInstance {
 	 * @return the value of the '<em>Multi Role Instance</em>' reference.
 	 * @see #setMultiRoleInstance(MultiRoleInstance)
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getSingleRoleInstance_MultiRoleInstance()
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSingleRoleInstances
-	 * @model opposite="singleRoleInstances"
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSubRoleInstances
+	 * @model opposite="subRoleInstances"
 	 * @generated
 	 */
 	MultiRoleInstance getMultiRoleInstance();

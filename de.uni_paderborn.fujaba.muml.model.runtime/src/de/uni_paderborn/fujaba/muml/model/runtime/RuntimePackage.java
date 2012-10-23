@@ -963,13 +963,13 @@ public interface RuntimePackage extends EPackage {
 	int MULTI_ROLE_INSTANCE__ASSEMBLY = ROLE_INSTANCE__ASSEMBLY;
 
 	/**
-	 * The feature id for the '<em><b>Single Role Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Sub Role Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES = ROLE_INSTANCE_FEATURE_COUNT + 0;
+	int MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES = ROLE_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Multi Role Instance</em>' class.
@@ -1498,15 +1498,15 @@ public interface RuntimePackage extends EPackage {
 	EClass getMultiRoleInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSingleRoleInstances <em>Single Role Instances</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSubRoleInstances <em>Sub Role Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Single Role Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSingleRoleInstances()
+	 * @return the meta object for the reference list '<em>Sub Role Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSubRoleInstances()
 	 * @see #getMultiRoleInstance()
 	 * @generated
 	 */
-	EReference getMultiRoleInstance_SingleRoleInstances();
+	EReference getMultiRoleInstance_SubRoleInstances();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly <em>Role Assembly</em>}'.
@@ -1902,12 +1902,12 @@ public interface RuntimePackage extends EPackage {
 		EClass MULTI_ROLE_INSTANCE = eINSTANCE.getMultiRoleInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Single Role Instances</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Sub Role Instances</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES = eINSTANCE.getMultiRoleInstance_SingleRoleInstances();
+		EReference MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES = eINSTANCE.getMultiRoleInstance_SubRoleInstances();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleAssemblyImpl <em>Role Assembly</em>}' class.

@@ -46,7 +46,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//SingleRoleInstance/multiRoleInstance"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//MultiRoleInstance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MultiRoleInstance/singleRoleInstances"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MultiRoleInstance/subRoleInstances"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeRoleAssembly">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeRoleAssembly/roleInstances"/>
