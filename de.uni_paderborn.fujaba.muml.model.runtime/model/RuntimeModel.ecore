@@ -63,9 +63,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="singleRoleInstances" upperBound="-1"
         eType="#//SingleRoleInstance" eOpposite="#//SingleRoleInstance/multiRoleInstance"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleAssembly" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector #//RuntimeAssemblyInstance">
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleAssembly" eSuperTypes="#//RuntimeAssemblyInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="roleInstances" lowerBound="2"
         upperBound="2" eType="#//RoleInstance" eOpposite="#//RoleInstance/connector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeAssemblyInstance" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">

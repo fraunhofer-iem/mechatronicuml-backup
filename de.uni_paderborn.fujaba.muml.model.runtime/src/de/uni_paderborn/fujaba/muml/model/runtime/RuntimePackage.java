@@ -981,105 +981,6 @@ public interface RuntimePackage extends EPackage {
 	int MULTI_ROLE_INSTANCE_FEATURE_COUNT = ROLE_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__BEHAVIOR = PatternPackage.ROLE_CONNECTOR__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__BIDIRECTIONAL = PatternPackage.ROLE_CONNECTOR__BIDIRECTIONAL;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__SOURCE = PatternPackage.ROLE_CONNECTOR__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__TARGET = PatternPackage.ROLE_CONNECTOR__TARGET;
-
-	/**
-	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__COORDINATION_PATTERN = PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN;
-
-	/**
-	 * The feature id for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__ANNOTATION = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__EXTENSION = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Stored Messages</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__STORED_MESSAGES = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Role Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Role Assembly</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_ASSEMBLY_FEATURE_COUNT = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1114,6 +1015,60 @@ public interface RuntimePackage extends EPackage {
 	 * @ordered
 	 */
 	int RUNTIME_ASSEMBLY_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__ANNOTATION = RUNTIME_ASSEMBLY_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__EXTENSION = RUNTIME_ASSEMBLY_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Stored Messages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__STORED_MESSAGES = RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES;
+
+	/**
+	 * The feature id for the '<em><b>Role Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES = RUNTIME_ASSEMBLY_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__INSTANCE_OF = RUNTIME_ASSEMBLY_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Role Assembly</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY_FEATURE_COUNT = RUNTIME_ASSEMBLY_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1575,6 +1530,17 @@ public interface RuntimePackage extends EPackage {
 	EReference getRuntimeRoleAssembly_RoleInstances();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly#getInstanceOf <em>Instance Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Instance Of</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly#getInstanceOf()
+	 * @see #getRuntimeRoleAssembly()
+	 * @generated
+	 */
+	EReference getRuntimeRoleAssembly_InstanceOf();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance <em>Assembly Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1960,6 +1926,14 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES = eINSTANCE.getRuntimeRoleAssembly_RoleInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Instance Of</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUNTIME_ROLE_ASSEMBLY__INSTANCE_OF = eINSTANCE.getRuntimeRoleAssembly_InstanceOf();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyInstanceImpl <em>Assembly Instance</em>}' class.

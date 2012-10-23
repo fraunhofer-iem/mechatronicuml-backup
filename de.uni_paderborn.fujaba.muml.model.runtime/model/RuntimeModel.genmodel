@@ -50,6 +50,7 @@
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeRoleAssembly">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeRoleAssembly/roleInstances"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeRoleAssembly/instanceOf"/>
     </genClasses>
     <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RuntimeAssemblyInstance">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeAssemblyInstance/storedMessages"/>

@@ -523,6 +523,15 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRuntimeRoleAssembly_InstanceOf() {
+		return (EReference)runtimeRoleAssemblyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRuntimeAssemblyInstance() {
 		return runtimeAssemblyInstanceEClass;
 	}
@@ -661,6 +670,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		runtimeRoleAssemblyEClass = createEClass(RUNTIME_ROLE_ASSEMBLY);
 		createEReference(runtimeRoleAssemblyEClass, RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES);
+		createEReference(runtimeRoleAssemblyEClass, RUNTIME_ROLE_ASSEMBLY__INSTANCE_OF);
 
 		runtimeAssemblyInstanceEClass = createEClass(RUNTIME_ASSEMBLY_INSTANCE);
 		createEReference(runtimeAssemblyInstanceEClass, RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES);
@@ -725,7 +735,6 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeBehavioralElementEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		singleRoleInstanceEClass.getESuperTypes().add(this.getRoleInstance());
 		multiRoleInstanceEClass.getESuperTypes().add(this.getRoleInstance());
-		runtimeRoleAssemblyEClass.getESuperTypes().add(thePatternPackage.getRoleConnector());
 		runtimeRoleAssemblyEClass.getESuperTypes().add(this.getRuntimeAssemblyInstance());
 		runtimeAssemblyInstanceEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 		runtimePortInstanceAssemblyEClass.getESuperTypes().add(theInstancePackage.getAssemblyInstance());
@@ -775,6 +784,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		initEClass(runtimeRoleAssemblyEClass, RuntimeRoleAssembly.class, "RuntimeRoleAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeRoleAssembly_RoleInstances(), this.getRoleInstance(), this.getRoleInstance_Connector(), "roleInstances", null, 2, 2, RuntimeRoleAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeRoleAssembly_InstanceOf(), thePatternPackage.getRoleConnector(), null, "instanceOf", null, 1, 1, RuntimeRoleAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeAssemblyInstanceEClass, RuntimeAssemblyInstance.class, "RuntimeAssemblyInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeAssemblyInstance_StoredMessages(), this.getMessageOnAssembly(), this.getMessageOnAssembly_RuntimeAssembly(), "storedMessages", null, 0, -1, RuntimeAssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

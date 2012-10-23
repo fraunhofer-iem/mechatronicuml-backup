@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.*;
 import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
@@ -193,9 +194,7 @@ public class RuntimeSwitch<T> extends Switch<T> {
 			case RuntimePackage.RUNTIME_ROLE_ASSEMBLY: {
 				RuntimeRoleAssembly runtimeRoleAssembly = (RuntimeRoleAssembly)theEObject;
 				T result = caseRuntimeRoleAssembly(runtimeRoleAssembly);
-				if (result == null) result = caseRoleConnector(runtimeRoleAssembly);
 				if (result == null) result = caseRuntimeAssemblyInstance(runtimeRoleAssembly);
-				if (result == null) result = caseBehavioralElement(runtimeRoleAssembly);
 				if (result == null) result = caseExtendableElement(runtimeRoleAssembly);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -539,36 +538,6 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscretePortInstance(DiscretePortInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBehavioralElement(BehavioralElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Role Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Role Connector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRoleConnector(RoleConnector object) {
 		return null;
 	}
 

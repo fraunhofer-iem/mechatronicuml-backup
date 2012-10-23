@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.*;
 import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
@@ -177,14 +178,6 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDiscretePortInstance(DiscretePortInstance object) {
 				return createDiscretePortInstanceAdapter();
-			}
-			@Override
-			public Adapter caseBehavioralElement(BehavioralElement object) {
-				return createBehavioralElementAdapter();
-			}
-			@Override
-			public Adapter caseRoleConnector(RoleConnector object) {
-				return createRoleConnectorAdapter();
 			}
 			@Override
 			public Adapter caseConnectorInstance(ConnectorInstance object) {
@@ -505,34 +498,6 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscretePortInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement <em>Behavioral Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement
-	 * @generated
-	 */
-	public Adapter createBehavioralElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector <em>Role Connector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector
-	 * @generated
-	 */
-	public Adapter createRoleConnectorAdapter() {
 		return null;
 	}
 
