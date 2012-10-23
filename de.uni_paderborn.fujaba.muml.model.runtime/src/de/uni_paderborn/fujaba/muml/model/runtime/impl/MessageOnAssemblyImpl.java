@@ -189,7 +189,7 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newRuntimeAssembly != null)
-				msgs = ((InternalEObject)newRuntimeAssembly).eInverseAdd(this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES, RuntimeAssemblyInstance.class, msgs);
+				msgs = ((InternalEObject)newRuntimeAssembly).eInverseAdd(this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES, RuntimeAssemblyInstance.class, msgs);
 			msgs = basicSetRuntimeAssembly(newRuntimeAssembly, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -238,7 +238,7 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY:
-				return eInternalContainer().eInverseRemove(this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES, RuntimeAssemblyInstance.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES, RuntimeAssemblyInstance.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

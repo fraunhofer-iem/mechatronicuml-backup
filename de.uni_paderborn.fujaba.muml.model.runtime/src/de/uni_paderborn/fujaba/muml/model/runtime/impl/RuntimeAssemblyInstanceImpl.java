@@ -27,7 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyInstanceImpl#getStoredMessages <em>Stored Messages</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyInstanceImpl#getTransientMessages <em>Transient Messages</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,15 +35,14 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
  */
 public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl implements RuntimeAssemblyInstance {
 	/**
-	 * The cached value of the '{@link #getStoredMessages() <em>Stored Messages</em>}' containment reference list.
+	 * The cached value of the '{@link #getTransientMessages() <em>Transient Messages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStoredMessages()
+	 * @see #getTransientMessages()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MessageOnAssembly> storedMessages;
-
+	protected EList<MessageOnAssembly> transientMessages;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,11 +67,11 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MessageOnAssembly> getStoredMessages() {
-		if (storedMessages == null) {
-			storedMessages = new EObjectContainmentWithInverseEList<MessageOnAssembly>(MessageOnAssembly.class, this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES, RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY);
+	public EList<MessageOnAssembly> getTransientMessages() {
+		if (transientMessages == null) {
+			transientMessages = new EObjectContainmentWithInverseEList<MessageOnAssembly>(MessageOnAssembly.class, this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES, RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY);
 		}
-		return storedMessages;
+		return transientMessages;
 	}
 
 	/**
@@ -84,8 +83,8 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStoredMessages()).basicAdd(otherEnd, msgs);
+			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransientMessages()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -98,8 +97,8 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES:
-				return ((InternalEList<?>)getStoredMessages()).basicRemove(otherEnd, msgs);
+			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+				return ((InternalEList<?>)getTransientMessages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -112,8 +111,8 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES:
-				return getStoredMessages();
+			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+				return getTransientMessages();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -127,9 +126,9 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES:
-				getStoredMessages().clear();
-				getStoredMessages().addAll((Collection<? extends MessageOnAssembly>)newValue);
+			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+				getTransientMessages().clear();
+				getTransientMessages().addAll((Collection<? extends MessageOnAssembly>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -143,8 +142,8 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES:
-				getStoredMessages().clear();
+			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+				getTransientMessages().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -158,8 +157,8 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES:
-				return storedMessages != null && !storedMessages.isEmpty();
+			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+				return transientMessages != null && !transientMessages.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

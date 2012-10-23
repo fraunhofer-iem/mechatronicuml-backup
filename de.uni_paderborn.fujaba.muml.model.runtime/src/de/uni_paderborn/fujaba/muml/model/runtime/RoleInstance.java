@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getConnector <em>Connector</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getAssembly <em>Assembly</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,31 +53,31 @@ public interface RoleInstance extends RuntimeBehavioralElement {
 	void setInstanceOf(Role value);
 
 	/**
-	 * Returns the value of the '<em><b>Connector</b></em>' reference.
+	 * Returns the value of the '<em><b>Assembly</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly#getRoleInstances <em>Role Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Connector</em>' reference isn't clear,
+	 * If the meaning of the '<em>Assembly</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connector</em>' reference.
-	 * @see #setConnector(RuntimeRoleAssembly)
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRoleInstance_Connector()
+	 * @return the value of the '<em>Assembly</em>' reference.
+	 * @see #setAssembly(RuntimeRoleAssembly)
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRoleInstance_Assembly()
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly#getRoleInstances
 	 * @model opposite="roleInstances"
 	 * @generated
 	 */
-	RuntimeRoleAssembly getConnector();
+	RuntimeRoleAssembly getAssembly();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getConnector <em>Connector</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getAssembly <em>Assembly</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connector</em>' reference.
-	 * @see #getConnector()
+	 * @param value the new value of the '<em>Assembly</em>' reference.
+	 * @see #getAssembly()
 	 * @generated
 	 */
-	void setConnector(RuntimeRoleAssembly value);
+	void setAssembly(RuntimeRoleAssembly value);
 
 } // RoleInstance

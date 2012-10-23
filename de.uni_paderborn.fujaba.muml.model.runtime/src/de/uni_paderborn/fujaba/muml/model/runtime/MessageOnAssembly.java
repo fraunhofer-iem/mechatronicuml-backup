@@ -81,7 +81,7 @@ public interface MessageOnAssembly extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Runtime Assembly</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getStoredMessages <em>Stored Messages</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getTransientMessages <em>Transient Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Runtime Assembly</em>' container reference isn't clear,
@@ -91,8 +91,8 @@ public interface MessageOnAssembly extends EObject {
 	 * @return the value of the '<em>Runtime Assembly</em>' container reference.
 	 * @see #setRuntimeAssembly(RuntimeAssemblyInstance)
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageOnAssembly_RuntimeAssembly()
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getStoredMessages
-	 * @model opposite="storedMessages" required="true" transient="false"
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getTransientMessages
+	 * @model opposite="transientMessages" required="true" transient="false"
 	 * @generated
 	 */
 	RuntimeAssemblyInstance getRuntimeAssembly();

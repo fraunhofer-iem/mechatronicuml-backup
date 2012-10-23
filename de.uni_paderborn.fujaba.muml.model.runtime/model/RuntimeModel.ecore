@@ -8,11 +8,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="RoleInstance" abstract="true" eSuperTypes="#//RuntimeBehavioralElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" eType="#//RuntimeRoleAssembly"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//RuntimeRoleAssembly"
         eOpposite="#//RuntimeRoleAssembly/roleInstances"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferSize" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
         eType="#//RuntimeMessage" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBehavioralElement"
@@ -65,13 +65,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleAssembly" eSuperTypes="#//RuntimeAssemblyInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="roleInstances" lowerBound="2"
-        upperBound="2" eType="#//RoleInstance" eOpposite="#//RoleInstance/connector"/>
+        upperBound="2" eType="#//RoleInstance" eOpposite="#//RoleInstance/assembly"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeAssemblyInstance" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="storedMessages" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transientMessages" upperBound="-1"
         eType="#//MessageOnAssembly" containment="true" eOpposite="#//MessageOnAssembly/runtimeAssembly"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimePortInstanceAssembly" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/AssemblyInstance #//RuntimeAssemblyInstance"/>
@@ -81,6 +81,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
         eType="#//RuntimeMessage" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeAssembly" lowerBound="1"
-        eType="#//RuntimeAssemblyInstance" eOpposite="#//RuntimeAssemblyInstance/storedMessages"/>
+        eType="#//RuntimeAssemblyInstance" eOpposite="#//RuntimeAssemblyInstance/transientMessages"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -531,13 +531,13 @@ public interface RuntimePackage extends EPackage {
 	int ROLE_INSTANCE__INSTANCE_OF = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Connector</b></em>' reference.
+	 * The feature id for the '<em><b>Assembly</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__CONNECTOR = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE_INSTANCE__ASSEMBLY = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Role Instance</em>' class.
@@ -567,13 +567,13 @@ public interface RuntimePackage extends EPackage {
 	int MESSAGE_BUFFER__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * The feature id for the '<em><b>Buffer Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__SIZE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int MESSAGE_BUFFER__BUFFER_SIZE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
@@ -873,13 +873,13 @@ public interface RuntimePackage extends EPackage {
 	int SINGLE_ROLE_INSTANCE__INSTANCE_OF = ROLE_INSTANCE__INSTANCE_OF;
 
 	/**
-	 * The feature id for the '<em><b>Connector</b></em>' reference.
+	 * The feature id for the '<em><b>Assembly</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_ROLE_INSTANCE__CONNECTOR = ROLE_INSTANCE__CONNECTOR;
+	int SINGLE_ROLE_INSTANCE__ASSEMBLY = ROLE_INSTANCE__ASSEMBLY;
 
 	/**
 	 * The feature id for the '<em><b>Multi Role Instance</b></em>' reference.
@@ -954,13 +954,13 @@ public interface RuntimePackage extends EPackage {
 	int MULTI_ROLE_INSTANCE__INSTANCE_OF = ROLE_INSTANCE__INSTANCE_OF;
 
 	/**
-	 * The feature id for the '<em><b>Connector</b></em>' reference.
+	 * The feature id for the '<em><b>Assembly</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_ROLE_INSTANCE__CONNECTOR = ROLE_INSTANCE__CONNECTOR;
+	int MULTI_ROLE_INSTANCE__ASSEMBLY = ROLE_INSTANCE__ASSEMBLY;
 
 	/**
 	 * The feature id for the '<em><b>Single Role Instances</b></em>' reference list.
@@ -999,13 +999,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_ASSEMBLY_INSTANCE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Stored Messages</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Transient Messages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Assembly Instance</em>' class.
@@ -1035,13 +1035,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_ROLE_ASSEMBLY__EXTENSION = RUNTIME_ASSEMBLY_INSTANCE__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Stored Messages</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Transient Messages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_ROLE_ASSEMBLY__STORED_MESSAGES = RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES;
+	int RUNTIME_ROLE_ASSEMBLY__TRANSIENT_MESSAGES = RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES;
 
 	/**
 	 * The feature id for the '<em><b>Role Instances</b></em>' reference list.
@@ -1125,13 +1125,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_PORT_INSTANCE_ASSEMBLY__ASSEMBLY_TYPE = InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Stored Messages</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Transient Messages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__STORED_MESSAGES = InstancePackage.ASSEMBLY_INSTANCE_FEATURE_COUNT + 0;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__TRANSIENT_MESSAGES = InstancePackage.ASSEMBLY_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Port Instance Assembly</em>' class.
@@ -1231,15 +1231,15 @@ public interface RuntimePackage extends EPackage {
 	EReference getRoleInstance_InstanceOf();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getConnector <em>Connector</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getAssembly <em>Assembly</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connector</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getConnector()
+	 * @return the meta object for the reference '<em>Assembly</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getAssembly()
 	 * @see #getRoleInstance()
 	 * @generated
 	 */
-	EReference getRoleInstance_Connector();
+	EReference getRoleInstance_Assembly();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer <em>Message Buffer</em>}'.
@@ -1252,15 +1252,15 @@ public interface RuntimePackage extends EPackage {
 	EClass getMessageBuffer();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getSize <em>Size</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getBufferSize <em>Buffer Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getSize()
+	 * @return the meta object for the attribute '<em>Buffer Size</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getBufferSize()
 	 * @see #getMessageBuffer()
 	 * @generated
 	 */
-	EAttribute getMessageBuffer_Size();
+	EAttribute getMessageBuffer_BufferSize();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getMessages <em>Messages</em>}'.
@@ -1551,15 +1551,15 @@ public interface RuntimePackage extends EPackage {
 	EClass getRuntimeAssemblyInstance();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getStoredMessages <em>Stored Messages</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getTransientMessages <em>Transient Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Stored Messages</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getStoredMessages()
+	 * @return the meta object for the containment reference list '<em>Transient Messages</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getTransientMessages()
 	 * @see #getRuntimeAssemblyInstance()
 	 * @generated
 	 */
-	EReference getRuntimeAssemblyInstance_StoredMessages();
+	EReference getRuntimeAssemblyInstance_TransientMessages();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly <em>Port Instance Assembly</em>}'.
@@ -1686,12 +1686,12 @@ public interface RuntimePackage extends EPackage {
 		EReference ROLE_INSTANCE__INSTANCE_OF = eINSTANCE.getRoleInstance_InstanceOf();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Assembly</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE_INSTANCE__CONNECTOR = eINSTANCE.getRoleInstance_Connector();
+		EReference ROLE_INSTANCE__ASSEMBLY = eINSTANCE.getRoleInstance_Assembly();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
@@ -1704,12 +1704,12 @@ public interface RuntimePackage extends EPackage {
 		EClass MESSAGE_BUFFER = eINSTANCE.getMessageBuffer();
 
 		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Buffer Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE_BUFFER__SIZE = eINSTANCE.getMessageBuffer_Size();
+		EAttribute MESSAGE_BUFFER__BUFFER_SIZE = eINSTANCE.getMessageBuffer_BufferSize();
 
 		/**
 		 * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
@@ -1946,12 +1946,12 @@ public interface RuntimePackage extends EPackage {
 		EClass RUNTIME_ASSEMBLY_INSTANCE = eINSTANCE.getRuntimeAssemblyInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Stored Messages</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Transient Messages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES = eINSTANCE.getRuntimeAssemblyInstance_StoredMessages();
+		EReference RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES = eINSTANCE.getRuntimeAssemblyInstance_TransientMessages();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceAssemblyImpl <em>Port Instance Assembly</em>}' class.

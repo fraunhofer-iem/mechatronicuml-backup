@@ -31,7 +31,7 @@ public interface RuntimeRoleAssembly extends RuntimeAssemblyInstance {
 	/**
 	 * Returns the value of the '<em><b>Role Instances</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getConnector <em>Connector</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getAssembly <em>Assembly</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Instances</em>' reference list isn't clear,
@@ -40,8 +40,8 @@ public interface RuntimeRoleAssembly extends RuntimeAssemblyInstance {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRuntimeRoleAssembly_RoleInstances()
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getConnector
-	 * @model opposite="connector" lower="2" upper="2"
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getAssembly
+	 * @model opposite="assembly" lower="2" upper="2"
 	 * @generated
 	 */
 	EList<RoleInstance> getRoleInstances();

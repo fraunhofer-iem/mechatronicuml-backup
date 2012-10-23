@@ -93,7 +93,7 @@ public class RuntimeRoleAssemblyImpl extends RuntimeAssemblyInstanceImpl impleme
 	 */
 	public EList<RoleInstance> getRoleInstances() {
 		if (roleInstances == null) {
-			roleInstances = new EObjectWithInverseResolvingEList<RoleInstance>(RoleInstance.class, this, RuntimePackage.RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES, RuntimePackage.ROLE_INSTANCE__CONNECTOR);
+			roleInstances = new EObjectWithInverseResolvingEList<RoleInstance>(RoleInstance.class, this, RuntimePackage.RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES, RuntimePackage.ROLE_INSTANCE__ASSEMBLY);
 		}
 		return roleInstances;
 	}

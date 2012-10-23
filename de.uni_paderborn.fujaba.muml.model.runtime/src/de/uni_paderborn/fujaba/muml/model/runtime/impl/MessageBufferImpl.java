@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl#getMessages <em>Messages</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  * </ul>
@@ -41,24 +41,24 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
  */
 public class MessageBufferImpl extends ExtendableElementImpl implements MessageBuffer {
 	/**
-	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * The default value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSize()
+	 * @see #getBufferSize()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int SIZE_EDEFAULT = 0;
+	protected static final int BUFFER_SIZE_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * The cached value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSize()
+	 * @see #getBufferSize()
 	 * @generated
 	 * @ordered
 	 */
-	protected int size = SIZE_EDEFAULT;
+	protected int bufferSize = BUFFER_SIZE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
@@ -94,8 +94,8 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getSize() {
-		return size;
+	public int getBufferSize() {
+		return bufferSize;
 	}
 
 	/**
@@ -103,11 +103,11 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSize(int newSize) {
-		int oldSize = size;
-		size = newSize;
+	public void setBufferSize(int newBufferSize) {
+		int oldBufferSize = bufferSize;
+		bufferSize = newBufferSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_BUFFER__SIZE, oldSize, size));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE, oldBufferSize, bufferSize));
 	}
 
 	/**
@@ -217,8 +217,8 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__SIZE:
-				return getSize();
+			case RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE:
+				return getBufferSize();
 			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
 				return getMessages();
 			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
@@ -236,8 +236,8 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__SIZE:
-				setSize((Integer)newValue);
+			case RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE:
+				setBufferSize((Integer)newValue);
 				return;
 			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
 				getMessages().clear();
@@ -258,8 +258,8 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__SIZE:
-				setSize(SIZE_EDEFAULT);
+			case RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE:
+				setBufferSize(BUFFER_SIZE_EDEFAULT);
 				return;
 			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
 				getMessages().clear();
@@ -279,8 +279,8 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__SIZE:
-				return size != SIZE_EDEFAULT;
+			case RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE:
+				return bufferSize != BUFFER_SIZE_EDEFAULT;
 			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
 				return messages != null && !messages.isEmpty();
 			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
@@ -299,8 +299,8 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (size: ");
-		result.append(size);
+		result.append(" (bufferSize: ");
+		result.append(bufferSize);
 		result.append(')');
 		return result.toString();
 	}

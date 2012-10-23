@@ -17,7 +17,7 @@ import org.storydriven.core.ExtendableElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getSize <em>Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getBufferSize <em>Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getMessages <em>Messages</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  * </ul>
@@ -29,30 +29,30 @@ import org.storydriven.core.ExtendableElement;
  */
 public interface MessageBuffer extends ExtendableElement {
 	/**
-	 * Returns the value of the '<em><b>Size</b></em>' attribute.
+	 * Returns the value of the '<em><b>Buffer Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Size</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Buffer Size</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Size</em>' attribute.
-	 * @see #setSize(int)
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageBuffer_Size()
+	 * @return the value of the '<em>Buffer Size</em>' attribute.
+	 * @see #setBufferSize(int)
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getMessageBuffer_BufferSize()
 	 * @model
 	 * @generated
 	 */
-	int getSize();
+	int getBufferSize();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getSize <em>Size</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer#getBufferSize <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Size</em>' attribute.
-	 * @see #getSize()
+	 * @param value the new value of the '<em>Buffer Size</em>' attribute.
+	 * @see #getBufferSize()
 	 * @generated
 	 */
-	void setSize(int value);
+	void setBufferSize(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.

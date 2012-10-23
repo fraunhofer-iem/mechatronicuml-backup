@@ -271,7 +271,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoleInstance_Connector() {
+	public EReference getRoleInstance_Assembly() {
 		return (EReference)roleInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -289,7 +289,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMessageBuffer_Size() {
+	public EAttribute getMessageBuffer_BufferSize() {
 		return (EAttribute)messageBufferEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -541,7 +541,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRuntimeAssemblyInstance_StoredMessages() {
+	public EReference getRuntimeAssemblyInstance_TransientMessages() {
 		return (EReference)runtimeAssemblyInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -633,10 +633,10 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		roleInstanceEClass = createEClass(ROLE_INSTANCE);
 		createEReference(roleInstanceEClass, ROLE_INSTANCE__INSTANCE_OF);
-		createEReference(roleInstanceEClass, ROLE_INSTANCE__CONNECTOR);
+		createEReference(roleInstanceEClass, ROLE_INSTANCE__ASSEMBLY);
 
 		messageBufferEClass = createEClass(MESSAGE_BUFFER);
-		createEAttribute(messageBufferEClass, MESSAGE_BUFFER__SIZE);
+		createEAttribute(messageBufferEClass, MESSAGE_BUFFER__BUFFER_SIZE);
 		createEReference(messageBufferEClass, MESSAGE_BUFFER__MESSAGES);
 		createEReference(messageBufferEClass, MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT);
 
@@ -673,7 +673,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		createEReference(runtimeRoleAssemblyEClass, RUNTIME_ROLE_ASSEMBLY__INSTANCE_OF);
 
 		runtimeAssemblyInstanceEClass = createEClass(RUNTIME_ASSEMBLY_INSTANCE);
-		createEReference(runtimeAssemblyInstanceEClass, RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES);
+		createEReference(runtimeAssemblyInstanceEClass, RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES);
 
 		runtimePortInstanceAssemblyEClass = createEClass(RUNTIME_PORT_INSTANCE_ASSEMBLY);
 
@@ -747,10 +747,10 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		initEClass(roleInstanceEClass, RoleInstance.class, "RoleInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoleInstance_InstanceOf(), thePatternPackage.getRole(), null, "instanceOf", null, 1, 1, RoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoleInstance_Connector(), this.getRuntimeRoleAssembly(), this.getRuntimeRoleAssembly_RoleInstances(), "connector", null, 0, 1, RoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleInstance_Assembly(), this.getRuntimeRoleAssembly(), this.getRuntimeRoleAssembly_RoleInstances(), "assembly", null, 0, 1, RoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageBufferEClass, MessageBuffer.class, "MessageBuffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMessageBuffer_Size(), theEcorePackage.getEInt(), "size", null, 0, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageBuffer_BufferSize(), theEcorePackage.getEInt(), "bufferSize", null, 0, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageBuffer_Messages(), this.getRuntimeMessage(), null, "messages", null, 0, -1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageBuffer_RuntimeBehavioralElement(), this.getRuntimeBehavioralElement(), this.getRuntimeBehavioralElement_MessageBuffer(), "runtimeBehavioralElement", null, 1, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -783,18 +783,18 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEReference(getMultiRoleInstance_SingleRoleInstances(), this.getSingleRoleInstance(), this.getSingleRoleInstance_MultiRoleInstance(), "singleRoleInstances", null, 0, -1, MultiRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeRoleAssemblyEClass, RuntimeRoleAssembly.class, "RuntimeRoleAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRuntimeRoleAssembly_RoleInstances(), this.getRoleInstance(), this.getRoleInstance_Connector(), "roleInstances", null, 2, 2, RuntimeRoleAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeRoleAssembly_RoleInstances(), this.getRoleInstance(), this.getRoleInstance_Assembly(), "roleInstances", null, 2, 2, RuntimeRoleAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRuntimeRoleAssembly_InstanceOf(), thePatternPackage.getRoleConnector(), null, "instanceOf", null, 1, 1, RuntimeRoleAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeAssemblyInstanceEClass, RuntimeAssemblyInstance.class, "RuntimeAssemblyInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRuntimeAssemblyInstance_StoredMessages(), this.getMessageOnAssembly(), this.getMessageOnAssembly_RuntimeAssembly(), "storedMessages", null, 0, -1, RuntimeAssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeAssemblyInstance_TransientMessages(), this.getMessageOnAssembly(), this.getMessageOnAssembly_RuntimeAssembly(), "transientMessages", null, 0, -1, RuntimeAssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimePortInstanceAssemblyEClass, RuntimePortInstanceAssembly.class, "RuntimePortInstanceAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(messageOnAssemblyEClass, MessageOnAssembly.class, "MessageOnAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageOnAssembly_Receiver(), this.getRuntimeBehavioralElement(), null, "receiver", null, 1, 1, MessageOnAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageOnAssembly_Message(), this.getRuntimeMessage(), null, "message", null, 1, 1, MessageOnAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageOnAssembly_RuntimeAssembly(), this.getRuntimeAssemblyInstance(), this.getRuntimeAssemblyInstance_StoredMessages(), "runtimeAssembly", null, 1, 1, MessageOnAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageOnAssembly_RuntimeAssembly(), this.getRuntimeAssemblyInstance(), this.getRuntimeAssemblyInstance_TransientMessages(), "runtimeAssembly", null, 1, 1, MessageOnAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(javaObjectEDataType, Object.class, "JavaObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

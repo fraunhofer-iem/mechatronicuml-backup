@@ -17,7 +17,7 @@ import org.storydriven.core.ExtendableElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getStoredMessages <em>Stored Messages</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getTransientMessages <em>Transient Messages</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,21 +27,21 @@ import org.storydriven.core.ExtendableElement;
  */
 public interface RuntimeAssemblyInstance extends ExtendableElement {
 	/**
-	 * Returns the value of the '<em><b>Stored Messages</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Transient Messages</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly#getRuntimeAssembly <em>Runtime Assembly</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Stored Messages</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Transient Messages</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Stored Messages</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRuntimeAssemblyInstance_StoredMessages()
+	 * @return the value of the '<em>Transient Messages</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRuntimeAssemblyInstance_TransientMessages()
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly#getRuntimeAssembly
 	 * @model opposite="runtimeAssembly" containment="true"
 	 * @generated
 	 */
-	EList<MessageOnAssembly> getStoredMessages();
+	EList<MessageOnAssembly> getTransientMessages();
 
 } // RuntimeAssemblyInstance
