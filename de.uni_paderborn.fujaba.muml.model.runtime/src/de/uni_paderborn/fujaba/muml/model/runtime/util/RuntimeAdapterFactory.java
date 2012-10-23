@@ -15,21 +15,28 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,8 +103,8 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createRuntimeDiscretePortInstanceAdapter();
 			}
 			@Override
-			public Adapter caseRuntimeRoleInstance(RuntimeRoleInstance object) {
-				return createRuntimeRoleInstanceAdapter();
+			public Adapter caseRoleInstance(RoleInstance object) {
+				return createRoleInstanceAdapter();
 			}
 			@Override
 			public Adapter caseMessageBuffer(MessageBuffer object) {
@@ -124,6 +131,30 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createRuntimeBehavioralElementAdapter();
 			}
 			@Override
+			public Adapter caseSingleRoleInstance(SingleRoleInstance object) {
+				return createSingleRoleInstanceAdapter();
+			}
+			@Override
+			public Adapter caseMultiRoleInstance(MultiRoleInstance object) {
+				return createMultiRoleInstanceAdapter();
+			}
+			@Override
+			public Adapter caseRuntimeRoleAssembly(RuntimeRoleAssembly object) {
+				return createRuntimeRoleAssemblyAdapter();
+			}
+			@Override
+			public Adapter caseRuntimeAssemblyInstance(RuntimeAssemblyInstance object) {
+				return createRuntimeAssemblyInstanceAdapter();
+			}
+			@Override
+			public Adapter caseRuntimePortInstanceAssembly(RuntimePortInstanceAssembly object) {
+				return createRuntimePortInstanceAssemblyAdapter();
+			}
+			@Override
+			public Adapter caseMessageOnAssembly(MessageOnAssembly object) {
+				return createMessageOnAssemblyAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -148,16 +179,20 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createDiscretePortInstanceAdapter();
 			}
 			@Override
-			public Adapter caseConstrainableElement(ConstrainableElement object) {
-				return createConstrainableElementAdapter();
-			}
-			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
 			}
 			@Override
-			public Adapter caseRole(Role object) {
-				return createRoleAdapter();
+			public Adapter caseRoleConnector(RoleConnector object) {
+				return createRoleConnectorAdapter();
+			}
+			@Override
+			public Adapter caseConnectorInstance(ConnectorInstance object) {
+				return createConnectorInstanceAdapter();
+			}
+			@Override
+			public Adapter caseAssemblyInstance(AssemblyInstance object) {
+				return createAssemblyInstanceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -208,16 +243,16 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance <em>Role Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance <em>Role Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance
 	 * @generated
 	 */
-	public Adapter createRuntimeRoleInstanceAdapter() {
+	public Adapter createRoleInstanceAdapter() {
 		return null;
 	}
 
@@ -306,6 +341,90 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance <em>Single Role Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance
+	 * @generated
+	 */
+	public Adapter createSingleRoleInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance <em>Multi Role Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance
+	 * @generated
+	 */
+	public Adapter createMultiRoleInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly <em>Role Assembly</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly
+	 * @generated
+	 */
+	public Adapter createRuntimeRoleAssemblyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance <em>Assembly Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance
+	 * @generated
+	 */
+	public Adapter createRuntimeAssemblyInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly <em>Port Instance Assembly</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly
+	 * @generated
+	 */
+	public Adapter createRuntimePortInstanceAssemblyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly <em>Message On Assembly</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly
+	 * @generated
+	 */
+	public Adapter createMessageOnAssemblyAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -390,20 +509,6 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement <em>Constrainable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement
-	 * @generated
-	 */
-	public Adapter createConstrainableElementAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -418,16 +523,44 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role <em>Role</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector <em>Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector
 	 * @generated
 	 */
-	public Adapter createRoleAdapter() {
+	public Adapter createRoleConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance <em>Connector Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance
+	 * @generated
+	 */
+	public Adapter createConnectorInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance <em>Assembly Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance
+	 * @generated
+	 */
+	public Adapter createAssemblyInstanceAdapter() {
 		return null;
 	}
 

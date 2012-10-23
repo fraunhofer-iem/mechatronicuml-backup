@@ -44,15 +44,6 @@ public interface RuntimeFactory extends EFactory {
 	RuntimeDiscretePortInstance createRuntimeDiscretePortInstance();
 
 	/**
-	 * Returns a new object of class '<em>Role Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Role Instance</em>'.
-	 * @generated
-	 */
-	RuntimeRoleInstance createRuntimeRoleInstance();
-
-	/**
 	 * Returns a new object of class '<em>Message Buffer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,6 +87,51 @@ public interface RuntimeFactory extends EFactory {
 	 * @generated
 	 */
 	AttributeBinding createAttributeBinding();
+
+	/**
+	 * Returns a new object of class '<em>Single Role Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Single Role Instance</em>'.
+	 * @generated
+	 */
+	SingleRoleInstance createSingleRoleInstance();
+
+	/**
+	 * Returns a new object of class '<em>Multi Role Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Multi Role Instance</em>'.
+	 * @generated
+	 */
+	MultiRoleInstance createMultiRoleInstance();
+
+	/**
+	 * Returns a new object of class '<em>Role Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Role Assembly</em>'.
+	 * @generated
+	 */
+	RuntimeRoleAssembly createRuntimeRoleAssembly();
+
+	/**
+	 * Returns a new object of class '<em>Port Instance Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Instance Assembly</em>'.
+	 * @generated
+	 */
+	RuntimePortInstanceAssembly createRuntimePortInstanceAssembly();
+
+	/**
+	 * Returns a new object of class '<em>Message On Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message On Assembly</em>'.
+	 * @generated
+	 */
+	MessageOnAssembly createMessageOnAssembly();
 
 	/**
 	 * Returns the package supported by this factory.

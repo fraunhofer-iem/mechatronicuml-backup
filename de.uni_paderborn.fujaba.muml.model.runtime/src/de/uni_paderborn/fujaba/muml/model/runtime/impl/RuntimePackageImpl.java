@@ -24,7 +24,11 @@ import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
@@ -32,7 +36,9 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +66,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass runtimeRoleInstanceEClass = null;
+	private EClass roleInstanceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,6 +109,48 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * @generated
 	 */
 	private EClass runtimeBehavioralElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass singleRoleInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass multiRoleInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeRoleAssemblyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeAssemblyInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimePortInstanceAssemblyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass messageOnAssemblyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,8 +253,26 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRuntimeRoleInstance() {
-		return runtimeRoleInstanceEClass;
+	public EClass getRoleInstance() {
+		return roleInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRoleInstance_InstanceOf() {
+		return (EReference)roleInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRoleInstance_Connector() {
+		return (EReference)roleInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -403,6 +469,123 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSingleRoleInstance() {
+		return singleRoleInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSingleRoleInstance_MultiRoleInstance() {
+		return (EReference)singleRoleInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMultiRoleInstance() {
+		return multiRoleInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMultiRoleInstance_SingleRoleInstances() {
+		return (EReference)multiRoleInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuntimeRoleAssembly() {
+		return runtimeRoleAssemblyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuntimeRoleAssembly_RoleInstances() {
+		return (EReference)runtimeRoleAssemblyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuntimeAssemblyInstance() {
+		return runtimeAssemblyInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuntimeAssemblyInstance_StoredMessages() {
+		return (EReference)runtimeAssemblyInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuntimePortInstanceAssembly() {
+		return runtimePortInstanceAssemblyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMessageOnAssembly() {
+		return messageOnAssemblyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageOnAssembly_Receiver() {
+		return (EReference)messageOnAssemblyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageOnAssembly_Message() {
+		return (EReference)messageOnAssemblyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageOnAssembly_RuntimeAssembly() {
+		return (EReference)messageOnAssemblyEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getJavaObject() {
 		return javaObjectEDataType;
 	}
@@ -439,7 +622,9 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		runtimeDiscretePortInstanceEClass = createEClass(RUNTIME_DISCRETE_PORT_INSTANCE);
 
-		runtimeRoleInstanceEClass = createEClass(RUNTIME_ROLE_INSTANCE);
+		roleInstanceEClass = createEClass(ROLE_INSTANCE);
+		createEReference(roleInstanceEClass, ROLE_INSTANCE__INSTANCE_OF);
+		createEReference(roleInstanceEClass, ROLE_INSTANCE__CONNECTOR);
 
 		messageBufferEClass = createEClass(MESSAGE_BUFFER);
 		createEAttribute(messageBufferEClass, MESSAGE_BUFFER__SIZE);
@@ -467,6 +652,25 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeBehavioralElementEClass = createEClass(RUNTIME_BEHAVIORAL_ELEMENT);
 		createEReference(runtimeBehavioralElementEClass, RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE);
 		createEReference(runtimeBehavioralElementEClass, RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER);
+
+		singleRoleInstanceEClass = createEClass(SINGLE_ROLE_INSTANCE);
+		createEReference(singleRoleInstanceEClass, SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE);
+
+		multiRoleInstanceEClass = createEClass(MULTI_ROLE_INSTANCE);
+		createEReference(multiRoleInstanceEClass, MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES);
+
+		runtimeRoleAssemblyEClass = createEClass(RUNTIME_ROLE_ASSEMBLY);
+		createEReference(runtimeRoleAssemblyEClass, RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES);
+
+		runtimeAssemblyInstanceEClass = createEClass(RUNTIME_ASSEMBLY_INSTANCE);
+		createEReference(runtimeAssemblyInstanceEClass, RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES);
+
+		runtimePortInstanceAssemblyEClass = createEClass(RUNTIME_PORT_INSTANCE_ASSEMBLY);
+
+		messageOnAssemblyEClass = createEClass(MESSAGE_ON_ASSEMBLY);
+		createEReference(messageOnAssemblyEClass, MESSAGE_ON_ASSEMBLY__RECEIVER);
+		createEReference(messageOnAssemblyEClass, MESSAGE_ON_ASSEMBLY__MESSAGE);
+		createEReference(messageOnAssemblyEClass, MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY);
 
 		// Create data types
 		javaObjectEDataType = createEDataType(JAVA_OBJECT);
@@ -512,21 +716,29 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeComponentInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
 		runtimeDiscretePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscretePortInstance());
 		runtimeDiscretePortInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
-		runtimeRoleInstanceEClass.getESuperTypes().add(thePatternPackage.getRole());
-		runtimeRoleInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
+		roleInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 		realtimeStatechartInstanceEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 		runtimeMessageEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		runtimeParameterEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		attributeBindingEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 		runtimeBehavioralElementEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		singleRoleInstanceEClass.getESuperTypes().add(this.getRoleInstance());
+		multiRoleInstanceEClass.getESuperTypes().add(this.getRoleInstance());
+		runtimeRoleAssemblyEClass.getESuperTypes().add(thePatternPackage.getRoleConnector());
+		runtimeRoleAssemblyEClass.getESuperTypes().add(this.getRuntimeAssemblyInstance());
+		runtimeAssemblyInstanceEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
+		runtimePortInstanceAssemblyEClass.getESuperTypes().add(theInstancePackage.getAssemblyInstance());
+		runtimePortInstanceAssemblyEClass.getESuperTypes().add(this.getRuntimeAssemblyInstance());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(runtimeComponentInstanceEClass, RuntimeComponentInstance.class, "RuntimeComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(runtimeDiscretePortInstanceEClass, RuntimeDiscretePortInstance.class, "RuntimeDiscretePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(runtimeRoleInstanceEClass, RuntimeRoleInstance.class, "RuntimeRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(roleInstanceEClass, RoleInstance.class, "RoleInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRoleInstance_InstanceOf(), thePatternPackage.getRole(), null, "instanceOf", null, 1, 1, RoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleInstance_Connector(), this.getRuntimeRoleAssembly(), this.getRuntimeRoleAssembly_RoleInstances(), "connector", null, 0, 1, RoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageBufferEClass, MessageBuffer.class, "MessageBuffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageBuffer_Size(), theEcorePackage.getEInt(), "size", null, 0, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -554,6 +766,25 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEClass(runtimeBehavioralElementEClass, RuntimeBehavioralElement.class, "RuntimeBehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeBehavioralElement_StatechartInstance(), this.getRealtimeStatechartInstance(), this.getRealtimeStatechartInstance_RuntimeBehavioralElement(), "statechartInstance", null, 0, 1, RuntimeBehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRuntimeBehavioralElement_MessageBuffer(), this.getMessageBuffer(), this.getMessageBuffer_RuntimeBehavioralElement(), "messageBuffer", null, 0, 1, RuntimeBehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(singleRoleInstanceEClass, SingleRoleInstance.class, "SingleRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSingleRoleInstance_MultiRoleInstance(), this.getMultiRoleInstance(), this.getMultiRoleInstance_SingleRoleInstances(), "multiRoleInstance", null, 0, 1, SingleRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(multiRoleInstanceEClass, MultiRoleInstance.class, "MultiRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMultiRoleInstance_SingleRoleInstances(), this.getSingleRoleInstance(), this.getSingleRoleInstance_MultiRoleInstance(), "singleRoleInstances", null, 0, -1, MultiRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimeRoleAssemblyEClass, RuntimeRoleAssembly.class, "RuntimeRoleAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRuntimeRoleAssembly_RoleInstances(), this.getRoleInstance(), this.getRoleInstance_Connector(), "roleInstances", null, 2, 2, RuntimeRoleAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimeAssemblyInstanceEClass, RuntimeAssemblyInstance.class, "RuntimeAssemblyInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRuntimeAssemblyInstance_StoredMessages(), this.getMessageOnAssembly(), this.getMessageOnAssembly_RuntimeAssembly(), "storedMessages", null, 0, -1, RuntimeAssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimePortInstanceAssemblyEClass, RuntimePortInstanceAssembly.class, "RuntimePortInstanceAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(messageOnAssemblyEClass, MessageOnAssembly.class, "MessageOnAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageOnAssembly_Receiver(), this.getRuntimeBehavioralElement(), null, "receiver", null, 1, 1, MessageOnAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageOnAssembly_Message(), this.getRuntimeMessage(), null, "message", null, 1, 1, MessageOnAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageOnAssembly_RuntimeAssembly(), this.getRuntimeAssemblyInstance(), this.getRuntimeAssemblyInstance_StoredMessages(), "runtimeAssembly", null, 1, 1, MessageOnAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(javaObjectEDataType, Object.class, "JavaObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

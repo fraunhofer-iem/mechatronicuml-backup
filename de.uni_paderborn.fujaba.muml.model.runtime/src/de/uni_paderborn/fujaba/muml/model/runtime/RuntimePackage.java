@@ -46,7 +46,7 @@ public interface RuntimePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/runtime/0.2.0";
+	String eNS_URI = "http://www.fujaba.de/muml/model/runtime/0.3.0";
 
 	/**
 	 * The package namespace name.
@@ -83,16 +83,6 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	int RUNTIME_DISCRETE_PORT_INSTANCE = 1;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleInstanceImpl <em>Role Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimeRoleInstance()
-	 * @generated
-	 */
-	int RUNTIME_ROLE_INSTANCE = 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RealtimeStatechartInstanceImpl <em>Realtime Statechart Instance</em>}' class.
@@ -342,195 +332,6 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__ANNOTATION = PatternPackage.ROLE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__EXTENSION = PatternPackage.ROLE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__NAME = PatternPackage.ROLE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__CONSTRAINT = PatternPackage.ROLE__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__BEHAVIOR = PatternPackage.ROLE__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Role Connector</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__INCOMING_ROLE_CONNECTOR = PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR;
-
-	/**
-	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__COORDINATION_PATTERN = PatternPackage.ROLE__COORDINATION_PATTERN;
-
-	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__SENDER_MESSAGE_INTERFACE = PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PatternPackage.ROLE__RECEIVER_MESSAGE_INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__CARDINALITY = PatternPackage.ROLE__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Port</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__PORT = PatternPackage.ROLE__PORT;
-
-	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__ADAPTATION_BEHAVIOR = PatternPackage.ROLE__ADAPTATION_BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__ROLE_AND_ADAPTATION_BEHAVIOR = PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__ORDERED = PatternPackage.ROLE__ORDERED;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Role Connector</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__OUTGOING_ROLE_CONNECTOR = PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR;
-
-	/**
-	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__ROLE_CONNECTOR = PatternPackage.ROLE__ROLE_CONNECTOR;
-
-	/**
-	 * The feature id for the '<em><b>Is Multi Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__IS_MULTI_ROLE = PatternPackage.ROLE__IS_MULTI_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__RECEIVER_MESSAGE_BUFFER = PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER;
-
-	/**
-	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__STATECHART_INSTANCE = PatternPackage.ROLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE__MESSAGE_BUFFER = PatternPackage.ROLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Role Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_ROLE_INSTANCE_FEATURE_COUNT = PatternPackage.ROLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -539,6 +340,213 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	int MESSAGE_BUFFER = 3;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getAttributeBinding()
+	 * @generated
+	 */
+	int ATTRIBUTE_BINDING = 7;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl <em>Single Role Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getSingleRoleInstance()
+	 * @generated
+	 */
+	int SINGLE_ROLE_INSTANCE = 9;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MultiRoleInstanceImpl <em>Multi Role Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.MultiRoleInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getMultiRoleInstance()
+	 * @generated
+	 */
+	int MULTI_ROLE_INSTANCE = 10;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleAssemblyImpl <em>Role Assembly</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleAssemblyImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimeRoleAssembly()
+	 * @generated
+	 */
+	int RUNTIME_ROLE_ASSEMBLY = 11;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyInstanceImpl <em>Assembly Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimeAssemblyInstance()
+	 * @generated
+	 */
+	int RUNTIME_ASSEMBLY_INSTANCE = 12;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceAssemblyImpl <em>Port Instance Assembly</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceAssemblyImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimePortInstanceAssembly()
+	 * @generated
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY = 13;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnAssemblyImpl <em>Message On Assembly</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnAssemblyImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getMessageOnAssembly()
+	 * @generated
+	 */
+	int MESSAGE_ON_ASSEMBLY = 14;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_BEHAVIORAL_ELEMENT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_BEHAVIORAL_ELEMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Behavioral Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RoleInstanceImpl <em>Role Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RoleInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRoleInstance()
+	 * @generated
+	 */
+	int ROLE_INSTANCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_INSTANCE__ANNOTATION = RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_INSTANCE__EXTENSION = RUNTIME_BEHAVIORAL_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_INSTANCE__NAME = RUNTIME_BEHAVIORAL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_INSTANCE__STATECHART_INSTANCE = RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_INSTANCE__MESSAGE_BUFFER = RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_INSTANCE__INSTANCE_OF = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Connector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_INSTANCE__CONNECTOR = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Role Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_INSTANCE_FEATURE_COUNT = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -766,16 +774,6 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getAttributeBinding()
-	 * @generated
-	 */
-	int ATTRIBUTE_BINDING = 7;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -827,7 +825,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int SINGLE_ROLE_INSTANCE__ANNOTATION = ROLE_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -836,7 +834,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int SINGLE_ROLE_INSTANCE__EXTENSION = ROLE_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -845,7 +843,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int SINGLE_ROLE_INSTANCE__NAME = ROLE_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
@@ -854,7 +852,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SINGLE_ROLE_INSTANCE__STATECHART_INSTANCE = ROLE_INSTANCE__STATECHART_INSTANCE;
 
 	/**
 	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
@@ -863,17 +861,367 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SINGLE_ROLE_INSTANCE__MESSAGE_BUFFER = ROLE_INSTANCE__MESSAGE_BUFFER;
 
 	/**
-	 * The number of structural features of the '<em>Behavioral Element</em>' class.
+	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SINGLE_ROLE_INSTANCE__INSTANCE_OF = ROLE_INSTANCE__INSTANCE_OF;
 
+	/**
+	 * The feature id for the '<em><b>Connector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_ROLE_INSTANCE__CONNECTOR = ROLE_INSTANCE__CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>Multi Role Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE = ROLE_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Single Role Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_ROLE_INSTANCE_FEATURE_COUNT = ROLE_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE__ANNOTATION = ROLE_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE__EXTENSION = ROLE_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE__NAME = ROLE_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE__STATECHART_INSTANCE = ROLE_INSTANCE__STATECHART_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE__MESSAGE_BUFFER = ROLE_INSTANCE__MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE__INSTANCE_OF = ROLE_INSTANCE__INSTANCE_OF;
+
+	/**
+	 * The feature id for the '<em><b>Connector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE__CONNECTOR = ROLE_INSTANCE__CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>Single Role Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES = ROLE_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Multi Role Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ROLE_INSTANCE_FEATURE_COUNT = ROLE_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__BEHAVIOR = PatternPackage.ROLE_CONNECTOR__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__BIDIRECTIONAL = PatternPackage.ROLE_CONNECTOR__BIDIRECTIONAL;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__SOURCE = PatternPackage.ROLE_CONNECTOR__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__TARGET = PatternPackage.ROLE_CONNECTOR__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__COORDINATION_PATTERN = PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__ANNOTATION = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__EXTENSION = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Stored Messages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__STORED_MESSAGES = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Role Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Role Assembly</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ROLE_ASSEMBLY_FEATURE_COUNT = PatternPackage.ROLE_CONNECTOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ASSEMBLY_INSTANCE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ASSEMBLY_INSTANCE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Stored Messages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Assembly Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ASSEMBLY_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__ANNOTATION = InstancePackage.ASSEMBLY_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__EXTENSION = InstancePackage.ASSEMBLY_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__SOURCE = InstancePackage.ASSEMBLY_INSTANCE__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__TARGET = InstancePackage.ASSEMBLY_INSTANCE__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__CONNECTOR_TYPE = InstancePackage.ASSEMBLY_INSTANCE__CONNECTOR_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Assembly Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__ASSEMBLY_TYPE = InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Stored Messages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__STORED_MESSAGES = InstancePackage.ASSEMBLY_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Port Instance Assembly</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY_FEATURE_COUNT = InstancePackage.ASSEMBLY_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Receiver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_ON_ASSEMBLY__RECEIVER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_ON_ASSEMBLY__MESSAGE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Assembly</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY = 2;
+
+	/**
+	 * The number of structural features of the '<em>Message On Assembly</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_ON_ASSEMBLY_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '<em>Java Object</em>' data type.
@@ -883,7 +1231,7 @@ public interface RuntimePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getJavaObject()
 	 * @generated
 	 */
-	int JAVA_OBJECT = 9;
+	int JAVA_OBJECT = 15;
 
 
 	/**
@@ -907,14 +1255,36 @@ public interface RuntimePackage extends EPackage {
 	EClass getRuntimeDiscretePortInstance();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance <em>Role Instance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance <em>Role Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Role Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance
 	 * @generated
 	 */
-	EClass getRuntimeRoleInstance();
+	EClass getRoleInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getInstanceOf <em>Instance Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Instance Of</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getInstanceOf()
+	 * @see #getRoleInstance()
+	 * @generated
+	 */
+	EReference getRoleInstance_InstanceOf();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getConnector <em>Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getConnector()
+	 * @see #getRoleInstance()
+	 * @generated
+	 */
+	EReference getRoleInstance_Connector();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer <em>Message Buffer</em>}'.
@@ -1142,6 +1512,143 @@ public interface RuntimePackage extends EPackage {
 	EReference getRuntimeBehavioralElement_MessageBuffer();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance <em>Single Role Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Single Role Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance
+	 * @generated
+	 */
+	EClass getSingleRoleInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance#getMultiRoleInstance <em>Multi Role Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Multi Role Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance#getMultiRoleInstance()
+	 * @see #getSingleRoleInstance()
+	 * @generated
+	 */
+	EReference getSingleRoleInstance_MultiRoleInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance <em>Multi Role Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Multi Role Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance
+	 * @generated
+	 */
+	EClass getMultiRoleInstance();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSingleRoleInstances <em>Single Role Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Single Role Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance#getSingleRoleInstances()
+	 * @see #getMultiRoleInstance()
+	 * @generated
+	 */
+	EReference getMultiRoleInstance_SingleRoleInstances();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly <em>Role Assembly</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Role Assembly</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly
+	 * @generated
+	 */
+	EClass getRuntimeRoleAssembly();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly#getRoleInstances <em>Role Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Role Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly#getRoleInstances()
+	 * @see #getRuntimeRoleAssembly()
+	 * @generated
+	 */
+	EReference getRuntimeRoleAssembly_RoleInstances();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance <em>Assembly Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Assembly Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance
+	 * @generated
+	 */
+	EClass getRuntimeAssemblyInstance();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getStoredMessages <em>Stored Messages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Stored Messages</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance#getStoredMessages()
+	 * @see #getRuntimeAssemblyInstance()
+	 * @generated
+	 */
+	EReference getRuntimeAssemblyInstance_StoredMessages();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly <em>Port Instance Assembly</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Instance Assembly</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly
+	 * @generated
+	 */
+	EClass getRuntimePortInstanceAssembly();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly <em>Message On Assembly</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message On Assembly</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly
+	 * @generated
+	 */
+	EClass getMessageOnAssembly();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly#getReceiver <em>Receiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Receiver</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly#getReceiver()
+	 * @see #getMessageOnAssembly()
+	 * @generated
+	 */
+	EReference getMessageOnAssembly_Receiver();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Message</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly#getMessage()
+	 * @see #getMessageOnAssembly()
+	 * @generated
+	 */
+	EReference getMessageOnAssembly_Message();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly#getRuntimeAssembly <em>Runtime Assembly</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Runtime Assembly</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly#getRuntimeAssembly()
+	 * @see #getMessageOnAssembly()
+	 * @generated
+	 */
+	EReference getMessageOnAssembly_RuntimeAssembly();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Java Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1195,14 +1702,30 @@ public interface RuntimePackage extends EPackage {
 		EClass RUNTIME_DISCRETE_PORT_INSTANCE = eINSTANCE.getRuntimeDiscretePortInstance();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleInstanceImpl <em>Role Instance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RoleInstanceImpl <em>Role Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimeRoleInstance()
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RoleInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRoleInstance()
 		 * @generated
 		 */
-		EClass RUNTIME_ROLE_INSTANCE = eINSTANCE.getRuntimeRoleInstance();
+		EClass ROLE_INSTANCE = eINSTANCE.getRoleInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Instance Of</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE_INSTANCE__INSTANCE_OF = eINSTANCE.getRoleInstance_InstanceOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Connector</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE_INSTANCE__CONNECTOR = eINSTANCE.getRoleInstance_Connector();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
@@ -1383,6 +1906,122 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER = eINSTANCE.getRuntimeBehavioralElement_MessageBuffer();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl <em>Single Role Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getSingleRoleInstance()
+		 * @generated
+		 */
+		EClass SINGLE_ROLE_INSTANCE = eINSTANCE.getSingleRoleInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Multi Role Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE = eINSTANCE.getSingleRoleInstance_MultiRoleInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MultiRoleInstanceImpl <em>Multi Role Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.MultiRoleInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getMultiRoleInstance()
+		 * @generated
+		 */
+		EClass MULTI_ROLE_INSTANCE = eINSTANCE.getMultiRoleInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Single Role Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_ROLE_INSTANCE__SINGLE_ROLE_INSTANCES = eINSTANCE.getMultiRoleInstance_SingleRoleInstances();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleAssemblyImpl <em>Role Assembly</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeRoleAssemblyImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimeRoleAssembly()
+		 * @generated
+		 */
+		EClass RUNTIME_ROLE_ASSEMBLY = eINSTANCE.getRuntimeRoleAssembly();
+
+		/**
+		 * The meta object literal for the '<em><b>Role Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUNTIME_ROLE_ASSEMBLY__ROLE_INSTANCES = eINSTANCE.getRuntimeRoleAssembly_RoleInstances();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyInstanceImpl <em>Assembly Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimeAssemblyInstance()
+		 * @generated
+		 */
+		EClass RUNTIME_ASSEMBLY_INSTANCE = eINSTANCE.getRuntimeAssemblyInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Stored Messages</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUNTIME_ASSEMBLY_INSTANCE__STORED_MESSAGES = eINSTANCE.getRuntimeAssemblyInstance_StoredMessages();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceAssemblyImpl <em>Port Instance Assembly</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePortInstanceAssemblyImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getRuntimePortInstanceAssembly()
+		 * @generated
+		 */
+		EClass RUNTIME_PORT_INSTANCE_ASSEMBLY = eINSTANCE.getRuntimePortInstanceAssembly();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnAssemblyImpl <em>Message On Assembly</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnAssemblyImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getMessageOnAssembly()
+		 * @generated
+		 */
+		EClass MESSAGE_ON_ASSEMBLY = eINSTANCE.getMessageOnAssembly();
+
+		/**
+		 * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_ON_ASSEMBLY__RECEIVER = eINSTANCE.getMessageOnAssembly_Receiver();
+
+		/**
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_ON_ASSEMBLY__MESSAGE = eINSTANCE.getMessageOnAssembly_Message();
+
+		/**
+		 * The meta object literal for the '<em><b>Runtime Assembly</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY = eINSTANCE.getMessageOnAssembly_RuntimeAssembly();
 
 		/**
 		 * The meta object literal for the '<em>Java Object</em>' data type.

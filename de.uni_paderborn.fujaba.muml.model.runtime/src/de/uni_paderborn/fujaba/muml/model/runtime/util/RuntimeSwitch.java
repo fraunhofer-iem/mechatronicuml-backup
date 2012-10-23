@@ -14,21 +14,28 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,15 +116,12 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.RUNTIME_ROLE_INSTANCE: {
-				RuntimeRoleInstance runtimeRoleInstance = (RuntimeRoleInstance)theEObject;
-				T result = caseRuntimeRoleInstance(runtimeRoleInstance);
-				if (result == null) result = caseRole(runtimeRoleInstance);
-				if (result == null) result = caseRuntimeBehavioralElement(runtimeRoleInstance);
-				if (result == null) result = caseNamedElement(runtimeRoleInstance);
-				if (result == null) result = caseConstrainableElement(runtimeRoleInstance);
-				if (result == null) result = caseBehavioralElement(runtimeRoleInstance);
-				if (result == null) result = caseExtendableElement(runtimeRoleInstance);
+			case RuntimePackage.ROLE_INSTANCE: {
+				RoleInstance roleInstance = (RoleInstance)theEObject;
+				T result = caseRoleInstance(roleInstance);
+				if (result == null) result = caseRuntimeBehavioralElement(roleInstance);
+				if (result == null) result = caseNamedElement(roleInstance);
+				if (result == null) result = caseExtendableElement(roleInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -166,6 +170,59 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RuntimePackage.SINGLE_ROLE_INSTANCE: {
+				SingleRoleInstance singleRoleInstance = (SingleRoleInstance)theEObject;
+				T result = caseSingleRoleInstance(singleRoleInstance);
+				if (result == null) result = caseRoleInstance(singleRoleInstance);
+				if (result == null) result = caseRuntimeBehavioralElement(singleRoleInstance);
+				if (result == null) result = caseNamedElement(singleRoleInstance);
+				if (result == null) result = caseExtendableElement(singleRoleInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RuntimePackage.MULTI_ROLE_INSTANCE: {
+				MultiRoleInstance multiRoleInstance = (MultiRoleInstance)theEObject;
+				T result = caseMultiRoleInstance(multiRoleInstance);
+				if (result == null) result = caseRoleInstance(multiRoleInstance);
+				if (result == null) result = caseRuntimeBehavioralElement(multiRoleInstance);
+				if (result == null) result = caseNamedElement(multiRoleInstance);
+				if (result == null) result = caseExtendableElement(multiRoleInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RuntimePackage.RUNTIME_ROLE_ASSEMBLY: {
+				RuntimeRoleAssembly runtimeRoleAssembly = (RuntimeRoleAssembly)theEObject;
+				T result = caseRuntimeRoleAssembly(runtimeRoleAssembly);
+				if (result == null) result = caseRoleConnector(runtimeRoleAssembly);
+				if (result == null) result = caseRuntimeAssemblyInstance(runtimeRoleAssembly);
+				if (result == null) result = caseBehavioralElement(runtimeRoleAssembly);
+				if (result == null) result = caseExtendableElement(runtimeRoleAssembly);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE: {
+				RuntimeAssemblyInstance runtimeAssemblyInstance = (RuntimeAssemblyInstance)theEObject;
+				T result = caseRuntimeAssemblyInstance(runtimeAssemblyInstance);
+				if (result == null) result = caseExtendableElement(runtimeAssemblyInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RuntimePackage.RUNTIME_PORT_INSTANCE_ASSEMBLY: {
+				RuntimePortInstanceAssembly runtimePortInstanceAssembly = (RuntimePortInstanceAssembly)theEObject;
+				T result = caseRuntimePortInstanceAssembly(runtimePortInstanceAssembly);
+				if (result == null) result = caseAssemblyInstance(runtimePortInstanceAssembly);
+				if (result == null) result = caseRuntimeAssemblyInstance(runtimePortInstanceAssembly);
+				if (result == null) result = caseConnectorInstance(runtimePortInstanceAssembly);
+				if (result == null) result = caseExtendableElement(runtimePortInstanceAssembly);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RuntimePackage.MESSAGE_ON_ASSEMBLY: {
+				MessageOnAssembly messageOnAssembly = (MessageOnAssembly)theEObject;
+				T result = caseMessageOnAssembly(messageOnAssembly);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -211,7 +268,7 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimeRoleInstance(RuntimeRoleInstance object) {
+	public T caseRoleInstance(RoleInstance object) {
 		return null;
 	}
 
@@ -306,6 +363,96 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Single Role Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Single Role Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSingleRoleInstance(SingleRoleInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Multi Role Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Multi Role Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMultiRoleInstance(MultiRoleInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Role Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Role Assembly</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeRoleAssembly(RuntimeRoleAssembly object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeAssemblyInstance(RuntimeAssemblyInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Instance Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Instance Assembly</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimePortInstanceAssembly(RuntimePortInstanceAssembly object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message On Assembly</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message On Assembly</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessageOnAssembly(MessageOnAssembly object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -396,21 +543,6 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConstrainableElement(ConstrainableElement object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -426,17 +558,47 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Role Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Role Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRole(Role object) {
+	public T caseRoleConnector(RoleConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connector Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorInstance(ConnectorInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssemblyInstance(AssemblyInstance object) {
 		return null;
 	}
 
