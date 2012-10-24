@@ -2,7 +2,7 @@
 <history:History xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
-  <releases date="2012-02-06T22:06:28.923+0100">
+  <releases date="2012-02-06T22:06:28.923+0100" label="0.2.0">
     <changes xsi:type="history:CompositeChange">
       <changes xsi:type="history:Create" element="muml.ecore#/">
         <changes xsi:type="history:Set" element="muml.ecore#/" featureName="name"
@@ -14727,7 +14727,7 @@
       </changes>
     </changes>
   </releases>
-  <releases date="2012-02-06T22:12:41.560+0100" label="">
+  <releases date="2012-02-06T22:12:41.560+0100" label="0.2.1">
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.1" oldDataValue="http://de.fujaba.modelinstance"/>
     <changes xsi:type="history:Set" element="muml.ecore#/" featureName="nsURI" dataValue="http://www.fujaba.de/muml/0.2.1"
@@ -14761,7 +14761,7 @@
       </operation>
     </changes>
   </releases>
-  <releases date="2012-03-08T15:46:19.592+0100" label="">
+  <releases date="2012-03-08T15:46:19.592+0100" label="0.2.2">
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
         featureName="value" dataValue="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()"
         oldDataValue="self.vertices.oclAsType(State)->notEmpty()"/>
@@ -18527,7 +18527,7 @@
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.2.5" oldDataValue="http://www.fujaba.de/modelinstance/0.2.4"/>
   </releases>
-  <releases>
+  <releases date="2012-10-24T10:44:47.737+0200" label="0.3.1">
     <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#/"
         referenceName="eAnnotations" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%">
       <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
@@ -26726,4 +26726,5 @@
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.1" oldDataValue="http://www.fujaba.de/modelinstance/0.2.5"/>
   </releases>
+  <releases/>
 </history:History>
