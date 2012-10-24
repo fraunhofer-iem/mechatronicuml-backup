@@ -25573,9 +25573,9 @@
       <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/QualityOfLinkService"
           featureName="name" dataValue="QualityOfLinkService"/>
       <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/QualityOfLinkService"
-          featureName="eSuperTypes" referenceValue="file:/home/ingo/Eclipse/SHK-GMF/org.storydriven.core/model/core.ecore#//CommentableElement"/>
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       <changes xsi:type="history:Add" element="muml.ecore#//model/deployment/QualityOfLinkService"
-          featureName="eSuperTypes" referenceValue="file:/home/ingo/Eclipse/SHK-GMF/org.storydriven.core/model/core.ecore#//NamedElement"/>
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/QualityOfLinkService"
         referenceName="eAnnotations" element="muml.ecore#//model/deployment/QualityOfLinkService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -25987,7 +25987,7 @@
         featureName="value" dataValue="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."
         oldDataValue="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard.&#xD;&#xA;\todosd{Inherit from ComparisonExpression?}"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ClockConstraint/operator"
-        featureName="eType" referenceValue="file:/home/ingo/Eclipse/SHK-GMF/org.storydriven.core/model/core.ecore#//expressions/common/ComparingOperator"/>
+        featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/common/ComparingOperator"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/triggerMessageEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent) in&#xD;&#xA;if eventSet ->size() = 0 then null else eventSet -> first() endif"
         oldDataValue="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
@@ -26142,7 +26142,7 @@
         featureName="value" dataValue="This is a general representation of a Parameter which is by all model elements&#xD;&#xA;that receive parameters. Examples include operations, message types, and synchronization channels.&#xD;&#xA;A parameter defines a data type."
         oldDataValue="A parameter is used to specify parameters of an operation. A parameter defines a type."/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/activity"
-        featureName="eType" referenceValue="file:/home/ingo/Eclipse/SHK-GMF/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"
+        featureName="eType" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"
         oldReferenceValue="#//@releases.7/@changes.13/@element/Activity"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/instance" referenceName="eClassifiers"
         element="muml.ecore#//model/instance/StructuredComponentInstance">
@@ -26360,9 +26360,9 @@
       <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/MessageBuffer"
           featureName="name" dataValue="MessageBuffer"/>
       <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/MessageBuffer"
-          featureName="eSuperTypes" referenceValue="file:/home/ingo/Eclipse/SHK-GMF/org.storydriven.core/model/core.ecore#//NamedElement"/>
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
       <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/MessageBuffer"
-          featureName="eSuperTypes" referenceValue="file:/home/ingo/Eclipse/SHK-GMF/org.storydriven.core/model/core.ecore#//CommentableElement"/>
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/MessageBuffer"
         referenceName="eAnnotations" element="muml.ecore#//model/pattern/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -26452,9 +26452,9 @@
       <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
           featureName="name" dataValue="ConnectorQualityOfServiceAssumptions"/>
       <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
-          featureName="eSuperTypes" referenceValue="file:/home/ingo/Eclipse/SHK-GMF/org.storydriven.core/model/core.ecore#//NamedElement"/>
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
       <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
-          featureName="eSuperTypes" referenceValue="file:/home/ingo/Eclipse/SHK-GMF/org.storydriven.core/model/core.ecore#//CommentableElement"/>
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions"
         referenceName="eAnnotations" element="muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
