@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -31,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.Cont
  */
 public class ComponentStoryNodeImpl extends ActivityNodeImpl implements ComponentStoryNode {
 	/**
-	 * The cached value of the '{@link #getComponentStoryPattern() <em>Component Story Pattern</em>}' reference.
+	 * The cached value of the '{@link #getComponentStoryPattern() <em>Component Story Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getComponentStoryPattern()
@@ -65,14 +66,6 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	 * @generated
 	 */
 	public ComponentStoryPattern getComponentStoryPattern() {
-		if (componentStoryPattern != null && componentStoryPattern.eIsProxy()) {
-			InternalEObject oldComponentStoryPattern = (InternalEObject)componentStoryPattern;
-			componentStoryPattern = (ComponentStoryPattern)eResolveProxy(oldComponentStoryPattern);
-			if (componentStoryPattern != oldComponentStoryPattern) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, componentStoryPattern));
-			}
-		}
 		return componentStoryPattern;
 	}
 
@@ -81,8 +74,14 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryPattern basicGetComponentStoryPattern() {
-		return componentStoryPattern;
+	public NotificationChain basicSetComponentStoryPattern(ComponentStoryPattern newComponentStoryPattern, NotificationChain msgs) {
+		ComponentStoryPattern oldComponentStoryPattern = componentStoryPattern;
+		componentStoryPattern = newComponentStoryPattern;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, newComponentStoryPattern);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -91,10 +90,31 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	 * @generated
 	 */
 	public void setComponentStoryPattern(ComponentStoryPattern newComponentStoryPattern) {
-		ComponentStoryPattern oldComponentStoryPattern = componentStoryPattern;
-		componentStoryPattern = newComponentStoryPattern;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, componentStoryPattern));
+		if (newComponentStoryPattern != componentStoryPattern) {
+			NotificationChain msgs = null;
+			if (componentStoryPattern != null)
+				msgs = ((InternalEObject)componentStoryPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, null, msgs);
+			if (newComponentStoryPattern != null)
+				msgs = ((InternalEObject)newComponentStoryPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, null, msgs);
+			msgs = basicSetComponentStoryPattern(newComponentStoryPattern, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, newComponentStoryPattern, newComponentStoryPattern));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
+				return basicSetComponentStoryPattern(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -106,8 +126,7 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
-				if (resolve) return getComponentStoryPattern();
-				return basicGetComponentStoryPattern();
+				return getComponentStoryPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

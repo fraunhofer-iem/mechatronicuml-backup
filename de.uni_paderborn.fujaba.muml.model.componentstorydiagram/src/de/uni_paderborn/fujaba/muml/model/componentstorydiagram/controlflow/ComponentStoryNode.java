@@ -32,26 +32,26 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
  */
 public interface ComponentStoryNode extends ActivityNode {
 	/**
-	 * Returns the value of the '<em><b>Component Story Pattern</b></em>' reference.
+	 * Returns the value of the '<em><b>Component Story Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Component Story Pattern</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Story Pattern</em>' reference.
+	 * @return the value of the '<em>Component Story Pattern</em>' containment reference.
 	 * @see #setComponentStoryPattern(ComponentStoryPattern)
 	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage#getComponentStoryNode_ComponentStoryPattern()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ComponentStoryPattern getComponentStoryPattern();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component Story Pattern</em>' reference.
+	 * @param value the new value of the '<em>Component Story Pattern</em>' containment reference.
 	 * @see #getComponentStoryPattern()
 	 * @generated
 	 */

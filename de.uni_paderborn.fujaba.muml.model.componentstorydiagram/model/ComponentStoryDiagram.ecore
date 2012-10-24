@@ -18,7 +18,7 @@
         <details key="documentation" value="A component story nodes contains a component story pattern. In a component story rule, only component story pattern but no normal story pattern may be used."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentStoryPattern"
-          lowerBound="1" eType="#//componentstorypattern/ComponentStoryPattern"/>
+          lowerBound="1" eType="#//componentstorypattern/ComponentStoryPattern" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ControllerExchangeNode" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -228,7 +228,7 @@ public interface ControlflowPackage extends EPackage {
 	int COMPONENT_STORY_NODE__INCOMING = ActivitiesPackage.ACTIVITY_NODE__INCOMING;
 
 	/**
-	 * The feature id for the '<em><b>Component Story Pattern</b></em>' reference.
+	 * The feature id for the '<em><b>Component Story Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -415,10 +415,10 @@ public interface ControlflowPackage extends EPackage {
 	EClass getComponentStoryNode();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component Story Pattern</em>'.
+	 * @return the meta object for the containment reference '<em>Component Story Pattern</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode#getComponentStoryPattern()
 	 * @see #getComponentStoryNode()
 	 * @generated
@@ -540,7 +540,7 @@ public interface ControlflowPackage extends EPackage {
 		EClass COMPONENT_STORY_NODE = eINSTANCE.getComponentStoryNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Story Pattern</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Component Story Pattern</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
