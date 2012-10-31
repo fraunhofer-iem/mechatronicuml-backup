@@ -161,8 +161,8 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 				IAdaptable info) throws ExecutionException {
 			
 			//Step 1: Set message interfaces
-			source.setReceiverMessageInterface(source.getRefines().getReceiverMessageInterface());
-			source.setSenderMessageInterface(source.getRefines().getSenderMessageInterface());
+			source.getReceiverMessageTypes().addAll(source.getRefines().getReceiverMessageTypes());
+			source.getSenderMessageTypes().addAll(source.getRefines().getSenderMessageTypes());
 			
 			//Step 2: Copy statechart
 			source.setBehavior(behavior);
@@ -197,8 +197,8 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 				IAdaptable info) throws ExecutionException {
 			
 			//Step 1: Set message interfaces
-			source.setReceiverMessageInterface(source.getRefines().getReceiverMessageInterface());
-			source.setSenderMessageInterface(source.getRefines().getSenderMessageInterface());
+			source.getReceiverMessageTypes().addAll(source.getRefines().getReceiverMessageTypes());
+			source.getSenderMessageTypes().addAll(source.getRefines().getSenderMessageTypes());
 			
 			//Step 2: Copy statechart
 			source.setRoleAndAdaptationBehavior(roleAndAdaptation);
