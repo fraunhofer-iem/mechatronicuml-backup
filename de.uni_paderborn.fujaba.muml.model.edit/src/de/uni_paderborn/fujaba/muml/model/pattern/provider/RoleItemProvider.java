@@ -76,8 +76,8 @@ public class RoleItemProvider
 			addConstraintPropertyDescriptor(object);
 			addBehaviorPropertyDescriptor(object);
 			addIncomingRoleConnectorPropertyDescriptor(object);
-			addSenderMessageInterfacePropertyDescriptor(object);
-			addReceiverMessageInterfacePropertyDescriptor(object);
+			addSenderMessageTypesPropertyDescriptor(object);
+			addReceiverMessageTypesPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
@@ -157,6 +157,50 @@ public class RoleItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Sender Message Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSenderMessageTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_senderMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_senderMessageTypes_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__SENDER_MESSAGE_TYPES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receiver Message Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiverMessageTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_receiverMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_receiverMessageTypes_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_TYPES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Role Connector feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,50 +247,6 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Sender Message Interface feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_senderMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_senderMessageInterface_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__SENDER_MESSAGE_INTERFACE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Receiver Message Interface feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_receiverMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_receiverMessageInterface_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_INTERFACE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-/**
 	 * This adds a property descriptor for the Cardinality feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

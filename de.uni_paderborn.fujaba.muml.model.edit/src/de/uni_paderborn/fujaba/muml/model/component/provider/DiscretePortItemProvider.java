@@ -63,8 +63,8 @@ public class DiscretePortItemProvider
 
 			addBehaviorPropertyDescriptor(object);
 			addRefinesPropertyDescriptor(object);
-			addSenderMessageInterfacePropertyDescriptor(object);
-			addReceiverMessageInterfacePropertyDescriptor(object);
+			addSenderMessageTypesPropertyDescriptor(object);
+			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 			addIsDiscreteInPortPropertyDescriptor(object);
@@ -119,46 +119,46 @@ public class DiscretePortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Sender Message Interface feature.
+	 * This adds a property descriptor for the Sender Message Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
+	protected void addSenderMessageTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePort_senderMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_senderMessageInterface_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE,
+				 getString("_UI_DiscretePort_senderMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_senderMessageTypes_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__SENDER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_MessageInterfacePropertyCategory"),
+				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Receiver Message Interface feature.
+	 * This adds a property descriptor for the Receiver Message Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
+	protected void addReceiverMessageTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePort_receiverMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_receiverMessageInterface_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE,
+				 getString("_UI_DiscretePort_receiverMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_receiverMessageTypes_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_MessageInterfacePropertyCategory"),
+				 null,
 				 null));
 	}
 

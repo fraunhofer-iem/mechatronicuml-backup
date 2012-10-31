@@ -27,8 +27,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
@@ -44,7 +44,6 @@ import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
@@ -337,15 +336,12 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 								RealtimestatechartPackage.Literals.REALTIME_STATECHART);
 				
 				BehavioralElement element = statechart.getPortOrRoleStatechart().getBehavioralElement();
-				MessageInterface messageInterface = null;
 				if (element instanceof DiscretePort) {
-					messageInterface = ((DiscretePort) element).getReceiverMessageInterface();
+					choices = ((DiscretePort) element).getReceiverMessageTypes();
 				} else if (element instanceof Role) {
-					messageInterface = ((Role) element).getReceiverMessageInterface();
+					choices = ((Role) element).getReceiverMessageTypes();
 				}
-				if (messageInterface != null) {
-					choices.addAll(messageInterface.getAllAvailableMessageTypes());
-				}
+
 				return choices;
 			}
 		});
@@ -431,15 +427,12 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 								RealtimestatechartPackage.Literals.REALTIME_STATECHART);
 				
 				BehavioralElement element = statechart.getPortOrRoleStatechart().getBehavioralElement();
-				MessageInterface messageInterface = null;
 				if (element instanceof DiscretePort) {
-					messageInterface = ((DiscretePort) element).getSenderMessageInterface();
+					choices = ((DiscretePort) element).getSenderMessageTypes();
 				} else if (element instanceof Role) {
-					messageInterface = ((Role) element).getSenderMessageInterface();
+					choices = ((Role) element).getSenderMessageTypes();
 				}
-				if (messageInterface != null) {
-					choices.addAll(messageInterface.getAllAvailableMessageTypes());
-				}
+
 				return choices;
 			}
 		});

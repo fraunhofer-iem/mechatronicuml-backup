@@ -59,26 +59,26 @@ public class DiscretePortInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addReceiverMessageInterfacePropertyDescriptor(object);
-			addSenderMessageInterfacePropertyDescriptor(object);
+			addReceiverMessageTypesPropertyDescriptor(object);
+			addSenderMessageTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Receiver Message Interface feature.
+	 * This adds a property descriptor for the Receiver Message Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
+	protected void addReceiverMessageTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortInstance_receiverMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_receiverMessageInterface_feature", "_UI_DiscretePortInstance_type"),
-				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE,
+				 getString("_UI_DiscretePortInstance_receiverMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_receiverMessageTypes_feature", "_UI_DiscretePortInstance_type"),
+				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES,
 				 false,
 				 false,
 				 false,
@@ -88,19 +88,19 @@ public class DiscretePortInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Sender Message Interface feature.
+	 * This adds a property descriptor for the Sender Message Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
+	protected void addSenderMessageTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortInstance_senderMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_senderMessageInterface_feature", "_UI_DiscretePortInstance_type"),
-				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE,
+				 getString("_UI_DiscretePortInstance_senderMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_senderMessageTypes_feature", "_UI_DiscretePortInstance_type"),
+				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES,
 				 false,
 				 false,
 				 false,
@@ -133,13 +133,6 @@ public class DiscretePortInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DiscretePortInstance.class)) {
-			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE:
-			case InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

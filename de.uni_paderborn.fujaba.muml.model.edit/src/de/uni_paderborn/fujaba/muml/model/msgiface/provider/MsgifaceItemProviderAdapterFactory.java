@@ -75,29 +75,6 @@ public class MsgifaceItemProviderAdapterFactory extends MsgifaceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MessageInterfaceItemProvider messageInterfaceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMessageInterfaceAdapter() {
-		if (messageInterfaceItemProvider == null) {
-			messageInterfaceItemProvider = new MessageInterfaceItemProvider(this);
-		}
-
-		return messageInterfaceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,6 +95,29 @@ public class MsgifaceItemProviderAdapterFactory extends MsgifaceAdapterFactory i
 		}
 
 		return messageTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageTypeRepositoryItemProvider messageTypeRepositoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageTypeRepositoryAdapter() {
+		if (messageTypeRepositoryItemProvider == null) {
+			messageTypeRepositoryItemProvider = new MessageTypeRepositoryItemProvider(this);
+		}
+
+		return messageTypeRepositoryItemProvider;
 	}
 
 	/**
@@ -219,8 +219,8 @@ public class MsgifaceItemProviderAdapterFactory extends MsgifaceAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (messageInterfaceItemProvider != null) messageInterfaceItemProvider.dispose();
 		if (messageTypeItemProvider != null) messageTypeItemProvider.dispose();
+		if (messageTypeRepositoryItemProvider != null) messageTypeRepositoryItemProvider.dispose();
 	}
 
 }
