@@ -287,22 +287,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES = InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
