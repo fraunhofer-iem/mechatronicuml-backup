@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.storydiagrams.calls.CallsPackage;
-import org.storydriven.core.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->

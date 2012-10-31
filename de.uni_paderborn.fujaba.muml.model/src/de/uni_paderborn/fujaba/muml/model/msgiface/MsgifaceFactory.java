@@ -26,15 +26,6 @@ public interface MsgifaceFactory extends EFactory {
 	MsgifaceFactory eINSTANCE = de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifaceFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Message Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Message Interface</em>'.
-	 * @generated
-	 */
-	MessageInterface createMessageInterface();
-
-	/**
 	 * Returns a new object of class '<em>Message Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42,6 +33,15 @@ public interface MsgifaceFactory extends EFactory {
 	 * @generated
 	 */
 	MessageType createMessageType();
+
+	/**
+	 * Returns a new object of class '<em>Message Type Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Type Repository</em>'.
+	 * @generated
+	 */
+	MessageTypeRepository createMessageTypeRepository();
 
 	/**
 	 * Returns the package supported by this factory.

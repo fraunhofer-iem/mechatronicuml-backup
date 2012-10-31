@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -13,7 +14,7 @@ import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,8 +23,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,38 +32,24 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  */
 public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implements DiscretePortInstance {
 	/**
-	 * The cached setting delegate for the '{@link #getReceiverMessageInterface() <em>Receiver Message Interface</em>}' reference.
+	 * The cached setting delegate for the '{@link #getReceiverMessageTypes() <em>Receiver Message Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReceiverMessageInterface()
+	 * @see #getReceiverMessageTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES).getSettingDelegate();
 	/**
-	 * The cached setting delegate for the '{@link #getSenderMessageInterface() <em>Sender Message Interface</em>}' reference.
+	 * The cached setting delegate for the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSenderMessageInterface()
+	 * @see #getSenderMessageTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate SENDER_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES).getSettingDelegate();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected DiscretePortInstanceImpl() {
-		super();
-
-		DerivedAttributeAdapter receiverMessageInterfaceAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE);
-		receiverMessageInterfaceAdapter.addNavigatedDependency(InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE, ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE);
-		
-		DerivedAttributeAdapter senderMessageInterfaceAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE);
-		senderMessageInterfaceAdapter.addNavigatedDependency(InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE, ComponentPackage.Literals.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE);
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,8 +66,9 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getReceiverMessageInterface() {
-		return (MessageInterface)RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	@SuppressWarnings("unchecked")
+	public EList<MessageType> getReceiverMessageTypes() {
+		return (EList<MessageType>)RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -88,26 +76,9 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface basicGetReceiverMessageInterface() {
-		return (MessageInterface)RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface getSenderMessageInterface() {
-		return (MessageInterface)SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetSenderMessageInterface() {
-		return (MessageInterface)SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	@SuppressWarnings("unchecked")
+	public EList<MessageType> getSenderMessageTypes() {
+		return (EList<MessageType>)SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -118,12 +89,10 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE:
-				if (resolve) return getReceiverMessageInterface();
-				return basicGetReceiverMessageInterface();
-			case InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE:
-				if (resolve) return getSenderMessageInterface();
-				return basicGetSenderMessageInterface();
+			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES:
+				return getReceiverMessageTypes();
+			case InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES:
+				return getSenderMessageTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -136,10 +105,10 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE:
-				return RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE:
-				return SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES:
+				return RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES:
+				return SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

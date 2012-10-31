@@ -6,19 +6,23 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
@@ -31,8 +35,8 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getRefines <em>Refines</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isIsDiscreteInPort <em>Is Discrete In Port</em>}</li>
@@ -65,24 +69,24 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	protected Role refines;
 
 	/**
-	 * The cached value of the '{@link #getSenderMessageInterface() <em>Sender Message Interface</em>}' reference.
+	 * The cached value of the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSenderMessageInterface()
+	 * @see #getSenderMessageTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageInterface senderMessageInterface;
+	protected EList<MessageType> senderMessageTypes;
 
 	/**
-	 * The cached value of the '{@link #getReceiverMessageInterface() <em>Receiver Message Interface</em>}' reference.
+	 * The cached value of the '{@link #getReceiverMessageTypes() <em>Receiver Message Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReceiverMessageInterface()
+	 * @see #getReceiverMessageTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageInterface receiverMessageInterface;
+	protected EList<MessageType> receiverMessageTypes;
 
 	/**
 	 * The cached value of the '{@link #getAdaptationBehavior() <em>Adaptation Behavior</em>}' reference.
@@ -278,16 +282,11 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getSenderMessageInterface() {
-		if (senderMessageInterface != null && senderMessageInterface.eIsProxy()) {
-			InternalEObject oldSenderMessageInterface = (InternalEObject)senderMessageInterface;
-			senderMessageInterface = (MessageInterface)eResolveProxy(oldSenderMessageInterface);
-			if (senderMessageInterface != oldSenderMessageInterface) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE, oldSenderMessageInterface, senderMessageInterface));
-			}
+	public EList<MessageType> getSenderMessageTypes() {
+		if (senderMessageTypes == null) {
+			senderMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES);
 		}
-		return senderMessageInterface;
+		return senderMessageTypes;
 	}
 
 	/**
@@ -295,58 +294,11 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface basicGetSenderMessageInterface() {
-		return senderMessageInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSenderMessageInterface(MessageInterface newSenderMessageInterface) {
-		MessageInterface oldSenderMessageInterface = senderMessageInterface;
-		senderMessageInterface = newSenderMessageInterface;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE, oldSenderMessageInterface, senderMessageInterface));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface getReceiverMessageInterface() {
-		if (receiverMessageInterface != null && receiverMessageInterface.eIsProxy()) {
-			InternalEObject oldReceiverMessageInterface = (InternalEObject)receiverMessageInterface;
-			receiverMessageInterface = (MessageInterface)eResolveProxy(oldReceiverMessageInterface);
-			if (receiverMessageInterface != oldReceiverMessageInterface) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE, oldReceiverMessageInterface, receiverMessageInterface));
-			}
+	public EList<MessageType> getReceiverMessageTypes() {
+		if (receiverMessageTypes == null) {
+			receiverMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES);
 		}
-		return receiverMessageInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetReceiverMessageInterface() {
-		return receiverMessageInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReceiverMessageInterface(MessageInterface newReceiverMessageInterface) {
-		MessageInterface oldReceiverMessageInterface = receiverMessageInterface;
-		receiverMessageInterface = newReceiverMessageInterface;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE, oldReceiverMessageInterface, receiverMessageInterface));
+		return receiverMessageTypes;
 	}
 
 	/**
@@ -503,12 +455,10 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				if (resolve) return getRefines();
 				return basicGetRefines();
-			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE:
-				if (resolve) return getSenderMessageInterface();
-				return basicGetSenderMessageInterface();
-			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE:
-				if (resolve) return getReceiverMessageInterface();
-				return basicGetReceiverMessageInterface();
+			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
+				return getSenderMessageTypes();
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
+				return getReceiverMessageTypes();
 			case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR:
 				if (resolve) return getAdaptationBehavior();
 				return basicGetAdaptationBehavior();
@@ -540,11 +490,13 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE:
-				setSenderMessageInterface((MessageInterface)newValue);
+			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
+				getSenderMessageTypes().clear();
+				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE:
-				setReceiverMessageInterface((MessageInterface)newValue);
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
+				getReceiverMessageTypes().clear();
+				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
 			case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)newValue);
@@ -570,11 +522,11 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE:
-				setSenderMessageInterface((MessageInterface)null);
+			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
+				getSenderMessageTypes().clear();
 				return;
-			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE:
-				setReceiverMessageInterface((MessageInterface)null);
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
+				getReceiverMessageTypes().clear();
 				return;
 			case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)null);
@@ -598,10 +550,10 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return behavior != null;
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				return refines != null;
-			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE:
-				return senderMessageInterface != null;
-			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE:
-				return receiverMessageInterface != null;
+			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
+				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
+				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
 			case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR:
 				return adaptationBehavior != null;
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:

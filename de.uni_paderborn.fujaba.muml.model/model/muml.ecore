@@ -161,14 +161,14 @@
             <details key="documentation" value="The role of a coordination pattern that this port refines."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageInterface"
-            eType="#//model/msgiface/MessageInterface">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes"
+            upperBound="-1" eType="#//model/msgiface/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The sender message interface defines which messages this discrete port specification sends."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
-            eType="#//model/msgiface/MessageInterface">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
+            upperBound="-1" eType="#//model/msgiface/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The receiver message interface defines which messages this discrete port specification receives."/>
           </eAnnotations>
@@ -192,7 +192,7 @@
             <details key="documentation" value="This derived attribute indicates if the discrete port is an IN port"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="not self.receiverMessageInterface.oclIsUndefined() and self.senderMessageInterface.oclIsUndefined()"/>
+            <details key="derivation" value="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() = 0"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteOutPort"
@@ -203,7 +203,7 @@
             <details key="documentation" value="This derived attribute indicates if the discrete port is an OUT port"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="not self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()"/>
+            <details key="derivation" value="self.receiverMessageTypes ->size() = 0 and self.senderMessageTypes ->size() >= 1"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteInOutPort"
@@ -214,7 +214,7 @@
             <details key="documentation" value="This derived attribute indicates if the discrete port is an IN OUT port"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="not self.receiverMessageInterface.oclIsUndefined() and not self.senderMessageInterface.oclIsUndefined()"/>
+            <details key="derivation" value="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() >= 1"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1067,21 +1067,21 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a discrete port at instance level. At instance level, we &#xD;&#xA;distinguish between single-port instances and multi-port instances by using&#xD;&#xA;two subclasses of this abstract class."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
-            eType="#//model/msgiface/MessageInterface" changeable="false" volatile="true"
-            transient="true" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
+            upperBound="-1" eType="#//model/msgiface/MessageType" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageInterface&#xA;endif"/>
+            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageTypes&#xD;&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The receiver message interface defines which messages this port instance receives&#xD;&#xA;It is derived from the receiver message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageInterface"
-            eType="#//model/msgiface/MessageInterface" changeable="false" volatile="true"
-            transient="true" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes"
+            upperBound="-1" eType="#//model/msgiface/MessageType" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageInterface&#xA;endif"/>
+            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The sender message interface defines which messages this port instance sends.&#xD;&#xA;It is derived from the sender message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
@@ -1257,14 +1257,14 @@
             <details key="documentation" value="The coordination pattern this role belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageInterface"
-            eType="#//model/msgiface/MessageInterface">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes"
+            upperBound="-1" eType="#//model/msgiface/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The sender message interface defines which messages this port sends."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
-            eType="#//model/msgiface/MessageInterface">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
+            upperBound="-1" eType="#//model/msgiface/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The receiver message interface defines which messages this port receives."/>
           </eAnnotations>
@@ -2135,39 +2135,6 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package defines the message interfaces. A MessageInterface defines a set&#xD;&#xA;of event signatures using the class MessageType. These message types are used&#xD;&#xA;to type the events within a realtime statechart. "/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="MessageInterface" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a message interface. A message interface specifies which messages are allowed to be sent or received by a port or role."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="NoCyclicGeneralization" value="not self->closure(superType)->includes(self)"/>
-          <details key="UniqueMessageTypeNames" value="self.messageTypes->isUnique(name)"/>
-          <details key="NoMessageTypeOrNotAtLeastTwoGeneralizations" value="self.messageTypes->size()>=1 or self.superType->size()>=2"/>
-          <details key="UniqueMessageInterfaceNames" value="MessageInterface.allInstances().name->count(self.name) = 1"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations UniqueMessageInterfaceNames"/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="superType" upperBound="-1"
-            eType="#//model/msgiface/MessageInterface">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The set of message interfaces this message interface inherits from. This message&#xD;&#xA;interface contains all message types that are defined by the super types and their&#xD;&#xA;super types."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="messageTypes" upperBound="-1"
-            eType="#//model/msgiface/MessageType" containment="true" eOpposite="#//model/msgiface/MessageType/messageInterface">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The message types being defined in this message interface."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableMessageTypes"
-            ordered="false" upperBound="-1" eType="#//model/msgiface/MessageType"
-            changeable="false" volatile="true" transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self -> closure(if superType -> isEmpty() then self->asSet() else superType endif).messageTypes -> asSet()"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the list of parameters. The message type inherits from&#xD;&#xA;callable because concrete events in a real-time statechart must provide a &#xD;&#xA;parameter mapping for the parameters of the message type as it is defined for&#xD;&#xA;method invocations."/>
@@ -2178,18 +2145,22 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="UniqueParameterNames"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="messageInterface" lowerBound="1"
-            eType="#//model/msgiface/MessageInterface" eOpposite="#//model/msgiface/MessageInterface/messageTypes">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This is the message interface where this message type is defined in."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
             eType="#//model/core/Parameter" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+            eType="#//model/msgiface/MessageTypeRepository" eOpposite="#//model/msgiface/MessageTypeRepository/messageTypes"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A MessageTypeRepository is used to declare message types which are then used&#xD;&#xA;in MessageInterfaces."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="messageTypes" ordered="false"
+            lowerBound="1" upperBound="-1" eType="#//model/msgiface/MessageType" containment="true"
+            eOpposite="#//model/msgiface/MessageType/repository"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.3.1"

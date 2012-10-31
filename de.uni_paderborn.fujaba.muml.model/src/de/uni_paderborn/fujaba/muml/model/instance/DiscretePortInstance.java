@@ -6,7 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 
 
 /**
@@ -23,8 +25,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,7 +37,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 public interface DiscretePortInstance extends PortInstance {
 
 	/**
-	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Receiver Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -43,16 +46,17 @@ public interface DiscretePortInstance extends PortInstance {
 	 * It is derived from the receiver message interface of its port.
 	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_ReceiverMessageInterface()
+	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_ReceiverMessageTypes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).receiverMessageInterface\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tnull\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).receiverMessageTypes\r\nendif'"
 	 * @generated
 	 */
-	MessageInterface getReceiverMessageInterface();
+	EList<MessageType> getReceiverMessageTypes();
 
 	/**
-	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -60,11 +64,11 @@ public interface DiscretePortInstance extends PortInstance {
 	 * It is derived from the sender message interface of its port.
 	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Sender Message Interface</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_SenderMessageInterface()
+	 * @return the value of the '<em>Sender Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_SenderMessageTypes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).senderMessageInterface\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tnull\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).senderMessageTypes\r\nendif'"
 	 * @generated
 	 */
-	MessageInterface getSenderMessageInterface();
+	EList<MessageType> getSenderMessageTypes();
 } // DiscretePortInstance

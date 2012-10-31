@@ -6,23 +6,18 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
-
 import org.storydriven.core.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 
 /**
  * <!-- begin-user-doc -->

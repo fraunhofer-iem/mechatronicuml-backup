@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.util;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -14,8 +13,8 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 
 /**
@@ -75,15 +74,6 @@ public class MsgifaceSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case MsgifacePackage.MESSAGE_INTERFACE: {
-				MessageInterface messageInterface = (MessageInterface)theEObject;
-				T result = caseMessageInterface(messageInterface);
-				if (result == null) result = caseNamedElement(messageInterface);
-				if (result == null) result = caseCommentableElement(messageInterface);
-				if (result == null) result = caseExtendableElement(messageInterface);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case MsgifacePackage.MESSAGE_TYPE: {
 				MessageType messageType = (MessageType)theEObject;
 				T result = caseMessageType(messageType);
@@ -93,23 +83,17 @@ public class MsgifaceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY: {
+				MessageTypeRepository messageTypeRepository = (MessageTypeRepository)theEObject;
+				T result = caseMessageTypeRepository(messageTypeRepository);
+				if (result == null) result = caseNamedElement(messageTypeRepository);
+				if (result == null) result = caseCommentableElement(messageTypeRepository);
+				if (result == null) result = caseExtendableElement(messageTypeRepository);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message Interface</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMessageInterface(MessageInterface object) {
-		return null;
 	}
 
 	/**
@@ -124,6 +108,21 @@ public class MsgifaceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMessageType(MessageType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message Type Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message Type Repository</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessageTypeRepository(MessageTypeRepository object) {
 		return null;
 	}
 

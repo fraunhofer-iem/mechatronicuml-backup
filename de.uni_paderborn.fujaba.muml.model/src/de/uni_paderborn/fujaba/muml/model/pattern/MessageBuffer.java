@@ -6,14 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.util;
 
-import de.uni_paderborn.fujaba.muml.model.instance.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -15,6 +14,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

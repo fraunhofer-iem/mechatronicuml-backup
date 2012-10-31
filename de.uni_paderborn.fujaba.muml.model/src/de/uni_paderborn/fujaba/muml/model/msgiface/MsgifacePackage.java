@@ -66,88 +66,6 @@ public interface MsgifacePackage extends EPackage {
 	MsgifacePackage eINSTANCE = de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageInterfaceImpl <em>Message Interface</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageInterfaceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl#getMessageInterface()
-	 * @generated
-	 */
-	int MESSAGE_INTERFACE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Super Type</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__SUPER_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Message Types</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__MESSAGE_TYPES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>All Available Message Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Message Interface</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl <em>Message Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,7 +73,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl#getMessageType()
 	 * @generated
 	 */
-	int MESSAGE_TYPE = 1;
+	int MESSAGE_TYPE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -194,22 +112,22 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Interface</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE__MESSAGE_INTERFACE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_TYPE__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__REPOSITORY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Message Type</em>' class.
@@ -221,47 +139,68 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface <em>Message Interface</em>}'.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeRepositoryImpl <em>Message Type Repository</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeRepositoryImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl#getMessageTypeRepository()
 	 * @generated
 	 */
-	EClass getMessageInterface();
+	int MESSAGE_TYPE_REPOSITORY = 1;
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getSuperType <em>Super Type</em>}'.
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Super Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getSuperType()
-	 * @see #getMessageInterface()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getMessageInterface_SuperType();
+	int MESSAGE_TYPE_REPOSITORY__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getMessageTypes()
-	 * @see #getMessageInterface()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getMessageInterface_MessageTypes();
+	int MESSAGE_TYPE_REPOSITORY__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getAllAvailableMessageTypes <em>All Available Message Types</em>}'.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>All Available Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getAllAvailableMessageTypes()
-	 * @see #getMessageInterface()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getMessageInterface_AllAvailableMessageTypes();
+	int MESSAGE_TYPE_REPOSITORY__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE_REPOSITORY__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Message Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Message Type Repository</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE_REPOSITORY_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType <em>Message Type</em>}'.
@@ -274,17 +213,6 @@ public interface MsgifacePackage extends EPackage {
 	EClass getMessageType();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getMessageInterface()
-	 * @see #getMessageType()
-	 * @generated
-	 */
-	EReference getMessageType_MessageInterface();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,6 +222,38 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMessageType_Parameters();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getRepository()
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	EReference getMessageType_Repository();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository <em>Message Type Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message Type Repository</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository
+	 * @generated
+	 */
+	EClass getMessageTypeRepository();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository#getMessageTypes <em>Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository#getMessageTypes()
+	 * @see #getMessageTypeRepository()
+	 * @generated
+	 */
+	EReference getMessageTypeRepository_MessageTypes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -318,40 +278,6 @@ public interface MsgifacePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageInterfaceImpl <em>Message Interface</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageInterfaceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl#getMessageInterface()
-		 * @generated
-		 */
-		EClass MESSAGE_INTERFACE = eINSTANCE.getMessageInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Super Type</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MESSAGE_INTERFACE__SUPER_TYPE = eINSTANCE.getMessageInterface_SuperType();
-
-		/**
-		 * The meta object literal for the '<em><b>Message Types</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MESSAGE_INTERFACE__MESSAGE_TYPES = eINSTANCE.getMessageInterface_MessageTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>All Available Message Types</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES = eINSTANCE.getMessageInterface_AllAvailableMessageTypes();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl <em>Message Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -362,20 +288,38 @@ public interface MsgifacePackage extends EPackage {
 		EClass MESSAGE_TYPE = eINSTANCE.getMessageType();
 
 		/**
-		 * The meta object literal for the '<em><b>Message Interface</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MESSAGE_TYPE__MESSAGE_INTERFACE = eINSTANCE.getMessageType_MessageInterface();
-
-		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference MESSAGE_TYPE__PARAMETERS = eINSTANCE.getMessageType_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_TYPE__REPOSITORY = eINSTANCE.getMessageType_Repository();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeRepositoryImpl <em>Message Type Repository</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeRepositoryImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl#getMessageTypeRepository()
+		 * @generated
+		 */
+		EClass MESSAGE_TYPE_REPOSITORY = eINSTANCE.getMessageTypeRepository();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES = eINSTANCE.getMessageTypeRepository_MessageTypes();
 
 	}
 

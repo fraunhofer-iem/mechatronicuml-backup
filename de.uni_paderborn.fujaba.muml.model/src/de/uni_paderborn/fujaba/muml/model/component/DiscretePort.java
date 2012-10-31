@@ -6,9 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
+import org.eclipse.emf.common.util.EList;
+
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
 /**
@@ -24,8 +26,8 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRefines <em>Refines</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isIsDiscreteInPort <em>Is Discrete In Port</em>}</li>
@@ -68,54 +70,34 @@ public interface DiscretePort extends Port, BehavioralElement {
 	void setRefines(Role value);
 
 	/**
-	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The sender message interface defines which messages this discrete port specification sends.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Sender Message Interface</em>' reference.
-	 * @see #setSenderMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_SenderMessageInterface()
+	 * @return the value of the '<em>Sender Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_SenderMessageTypes()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getSenderMessageInterface();
+	EList<MessageType> getSenderMessageTypes();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getSenderMessageInterface <em>Sender Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sender Message Interface</em>' reference.
-	 * @see #getSenderMessageInterface()
-	 * @generated
-	 */
-	void setSenderMessageInterface(MessageInterface value);
-
-	/**
-	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Receiver Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The receiver message interface defines which messages this discrete port specification receives.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
-	 * @see #setReceiverMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_ReceiverMessageInterface()
+	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_ReceiverMessageTypes()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getReceiverMessageInterface();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageInterface <em>Receiver Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Receiver Message Interface</em>' reference.
-	 * @see #getReceiverMessageInterface()
-	 * @generated
-	 */
-	void setReceiverMessageInterface(MessageInterface value);
+	EList<MessageType> getReceiverMessageTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -193,7 +175,7 @@ public interface DiscretePort extends Port, BehavioralElement {
 	 * @return the value of the '<em>Is Discrete In Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_IsDiscreteInPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.receiverMessageInterface.oclIsUndefined() and self.senderMessageInterface.oclIsUndefined()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() = 0'"
 	 * @generated
 	 */
 	boolean isIsDiscreteInPort();
@@ -209,7 +191,7 @@ public interface DiscretePort extends Port, BehavioralElement {
 	 * @return the value of the '<em>Is Discrete Out Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_IsDiscreteOutPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.receiverMessageTypes ->size() = 0 and self.senderMessageTypes ->size() >= 1'"
 	 * @generated
 	 */
 	boolean isIsDiscreteOutPort();
@@ -225,7 +207,7 @@ public interface DiscretePort extends Port, BehavioralElement {
 	 * @return the value of the '<em>Is Discrete In Out Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_IsDiscreteInOutPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.receiverMessageInterface.oclIsUndefined() and not self.senderMessageInterface.oclIsUndefined()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() >= 1'"
 	 * @generated
 	 */
 	boolean isIsDiscreteInOutPort();

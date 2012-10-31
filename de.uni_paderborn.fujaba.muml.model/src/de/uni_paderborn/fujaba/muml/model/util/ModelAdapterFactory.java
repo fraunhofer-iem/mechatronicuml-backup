@@ -6,14 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.util;
 
-import de.uni_paderborn.fujaba.muml.model.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.model.ModelPackage;
 
 /**
  * <!-- begin-user-doc -->

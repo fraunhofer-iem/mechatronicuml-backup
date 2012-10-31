@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
@@ -48,8 +49,8 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
@@ -96,24 +97,24 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	protected RoleConnector incomingRoleConnector;
 
 	/**
-	 * The cached value of the '{@link #getSenderMessageInterface() <em>Sender Message Interface</em>}' reference.
+	 * The cached value of the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSenderMessageInterface()
+	 * @see #getSenderMessageTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageInterface senderMessageInterface;
+	protected EList<MessageType> senderMessageTypes;
 
 	/**
-	 * The cached value of the '{@link #getReceiverMessageInterface() <em>Receiver Message Interface</em>}' reference.
+	 * The cached value of the '{@link #getReceiverMessageTypes() <em>Receiver Message Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReceiverMessageInterface()
+	 * @see #getReceiverMessageTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageInterface receiverMessageInterface;
+	protected EList<MessageType> receiverMessageTypes;
 
 	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
@@ -451,16 +452,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getSenderMessageInterface() {
-		if (senderMessageInterface != null && senderMessageInterface.eIsProxy()) {
-			InternalEObject oldSenderMessageInterface = (InternalEObject)senderMessageInterface;
-			senderMessageInterface = (MessageInterface)eResolveProxy(oldSenderMessageInterface);
-			if (senderMessageInterface != oldSenderMessageInterface) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE, oldSenderMessageInterface, senderMessageInterface));
-			}
+	public EList<MessageType> getSenderMessageTypes() {
+		if (senderMessageTypes == null) {
+			senderMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, PatternPackage.ROLE__SENDER_MESSAGE_TYPES);
 		}
-		return senderMessageInterface;
+		return senderMessageTypes;
 	}
 
 	/**
@@ -468,58 +464,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface basicGetSenderMessageInterface() {
-		return senderMessageInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSenderMessageInterface(MessageInterface newSenderMessageInterface) {
-		MessageInterface oldSenderMessageInterface = senderMessageInterface;
-		senderMessageInterface = newSenderMessageInterface;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE, oldSenderMessageInterface, senderMessageInterface));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface getReceiverMessageInterface() {
-		if (receiverMessageInterface != null && receiverMessageInterface.eIsProxy()) {
-			InternalEObject oldReceiverMessageInterface = (InternalEObject)receiverMessageInterface;
-			receiverMessageInterface = (MessageInterface)eResolveProxy(oldReceiverMessageInterface);
-			if (receiverMessageInterface != oldReceiverMessageInterface) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__RECEIVER_MESSAGE_INTERFACE, oldReceiverMessageInterface, receiverMessageInterface));
-			}
+	public EList<MessageType> getReceiverMessageTypes() {
+		if (receiverMessageTypes == null) {
+			receiverMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES);
 		}
-		return receiverMessageInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetReceiverMessageInterface() {
-		return receiverMessageInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReceiverMessageInterface(MessageInterface newReceiverMessageInterface) {
-		MessageInterface oldReceiverMessageInterface = receiverMessageInterface;
-		receiverMessageInterface = newReceiverMessageInterface;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__RECEIVER_MESSAGE_INTERFACE, oldReceiverMessageInterface, receiverMessageInterface));
+		return receiverMessageTypes;
 	}
 
 	/**
@@ -829,12 +778,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicGetIncomingRoleConnector();
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern();
-			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
-				if (resolve) return getSenderMessageInterface();
-				return basicGetSenderMessageInterface();
-			case PatternPackage.ROLE__RECEIVER_MESSAGE_INTERFACE:
-				if (resolve) return getReceiverMessageInterface();
-				return basicGetReceiverMessageInterface();
+			case PatternPackage.ROLE__SENDER_MESSAGE_TYPES:
+				return getSenderMessageTypes();
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES:
+				return getReceiverMessageTypes();
 			case PatternPackage.ROLE__CARDINALITY:
 				return getCardinality();
 			case PatternPackage.ROLE__PORT:
@@ -883,11 +830,13 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)newValue);
 				return;
-			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
-				setSenderMessageInterface((MessageInterface)newValue);
+			case PatternPackage.ROLE__SENDER_MESSAGE_TYPES:
+				getSenderMessageTypes().clear();
+				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
-			case PatternPackage.ROLE__RECEIVER_MESSAGE_INTERFACE:
-				setReceiverMessageInterface((MessageInterface)newValue);
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES:
+				getReceiverMessageTypes().clear();
+				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
 			case PatternPackage.ROLE__CARDINALITY:
 				setCardinality((Cardinality)newValue);
@@ -936,11 +885,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)null);
 				return;
-			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
-				setSenderMessageInterface((MessageInterface)null);
+			case PatternPackage.ROLE__SENDER_MESSAGE_TYPES:
+				getSenderMessageTypes().clear();
 				return;
-			case PatternPackage.ROLE__RECEIVER_MESSAGE_INTERFACE:
-				setReceiverMessageInterface((MessageInterface)null);
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES:
+				getReceiverMessageTypes().clear();
 				return;
 			case PatternPackage.ROLE__CARDINALITY:
 				setCardinality((Cardinality)null);
@@ -983,10 +932,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return incomingRoleConnector != null;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern() != null;
-			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
-				return senderMessageInterface != null;
-			case PatternPackage.ROLE__RECEIVER_MESSAGE_INTERFACE:
-				return receiverMessageInterface != null;
+			case PatternPackage.ROLE__SENDER_MESSAGE_TYPES:
+				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
+			case PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES:
+				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
 			case PatternPackage.ROLE__CARDINALITY:
 				return cardinality != null;
 			case PatternPackage.ROLE__PORT:

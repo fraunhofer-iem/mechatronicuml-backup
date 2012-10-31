@@ -22,8 +22,8 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 
 /**
@@ -34,8 +34,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getMessageInterface <em>Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeImpl#getRepository <em>Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,47 +117,6 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getMessageInterface() {
-		if (eContainerFeatureID() != MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE) return null;
-		return (MessageInterface)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetMessageInterface(MessageInterface newMessageInterface, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newMessageInterface, MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMessageInterface(MessageInterface newMessageInterface) {
-		if (newMessageInterface != eInternalContainer() || (eContainerFeatureID() != MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE && newMessageInterface != null)) {
-			if (EcoreUtil.isAncestor(this, newMessageInterface))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newMessageInterface != null)
-				msgs = ((InternalEObject)newMessageInterface).eInverseAdd(this, MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES, MessageInterface.class, msgs);
-			msgs = basicSetMessageInterface(newMessageInterface, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE, newMessageInterface, newMessageInterface));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Parameter> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, MsgifacePackage.MESSAGE_TYPE__PARAMETERS);
@@ -170,13 +129,54 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MessageTypeRepository getRepository() {
+		if (eContainerFeatureID() != MsgifacePackage.MESSAGE_TYPE__REPOSITORY) return null;
+		return (MessageTypeRepository)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRepository(MessageTypeRepository newRepository, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newRepository, MsgifacePackage.MESSAGE_TYPE__REPOSITORY, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRepository(MessageTypeRepository newRepository) {
+		if (newRepository != eInternalContainer() || (eContainerFeatureID() != MsgifacePackage.MESSAGE_TYPE__REPOSITORY && newRepository != null)) {
+			if (EcoreUtil.isAncestor(this, newRepository))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newRepository != null)
+				msgs = ((InternalEObject)newRepository).eInverseAdd(this, MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES, MessageTypeRepository.class, msgs);
+			msgs = basicSetRepository(newRepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__REPOSITORY, newRepository, newRepository));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
+			case MsgifacePackage.MESSAGE_TYPE__REPOSITORY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetMessageInterface((MessageInterface)otherEnd, msgs);
+				return basicSetRepository((MessageTypeRepository)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -189,10 +189,10 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				return basicSetMessageInterface(null, msgs);
 			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case MsgifacePackage.MESSAGE_TYPE__REPOSITORY:
+				return basicSetRepository(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -205,8 +205,8 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				return eInternalContainer().eInverseRemove(this, MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES, MessageInterface.class, msgs);
+			case MsgifacePackage.MESSAGE_TYPE__REPOSITORY:
+				return eInternalContainer().eInverseRemove(this, MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES, MessageTypeRepository.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -221,10 +221,10 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 		switch (featureID) {
 			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
 				return getComment();
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				return getMessageInterface();
 			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
 				return getParameters();
+			case MsgifacePackage.MESSAGE_TYPE__REPOSITORY:
+				return getRepository();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,12 +241,12 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
 				setComment((String)newValue);
 				return;
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				setMessageInterface((MessageInterface)newValue);
-				return;
 			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
+				return;
+			case MsgifacePackage.MESSAGE_TYPE__REPOSITORY:
+				setRepository((MessageTypeRepository)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,11 +263,11 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				setMessageInterface((MessageInterface)null);
-				return;
 			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
 				getParameters().clear();
+				return;
+			case MsgifacePackage.MESSAGE_TYPE__REPOSITORY:
+				setRepository((MessageTypeRepository)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -283,10 +283,10 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 		switch (featureID) {
 			case MsgifacePackage.MESSAGE_TYPE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				return getMessageInterface() != null;
 			case MsgifacePackage.MESSAGE_TYPE__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case MsgifacePackage.MESSAGE_TYPE__REPOSITORY:
+				return getRepository() != null;
 		}
 		return super.eIsSet(featureID);
 	}

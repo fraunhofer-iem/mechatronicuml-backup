@@ -7596,242 +7596,242 @@
             featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/ExitPoint"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface" referenceName="eClassifiers"
-          element="muml.ecore#//model/msgiface/MessageInterface">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface"
+          element="#//@releases.8/@changes.119/@element">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element"
             featureName="name" dataValue="MessageInterface"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/msgiface/MessageInterface"
+        <changes xsi:type="history:Add" element="#//@releases.8/@changes.119/@element"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DiscretePort/senderMessageInterface">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageInterface"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes"
             featureName="name" dataValue="senderMessageInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageInterface"
-            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageInterface"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes"
+            featureName="eType" referenceValue="#//@releases.8/@changes.119/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/senderMessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/DiscretePort/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/senderMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/DiscretePort/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The sender message interface defines which messages this discrete port specification sends."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DiscretePort/receiverMessageInterface">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageInterface"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes"
             featureName="name" dataValue="receiverMessageInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageInterface"
-            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageInterface"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes"
+            featureName="eType" referenceValue="#//@releases.8/@changes.119/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/receiverMessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/DiscretePort/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/receiverMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/DiscretePort/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The receiver message interface defines which messages this discrete port specification receives."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
             featureName="name" dataValue="receiverMessageInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface"
-            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageInterface"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
+            featureName="eType" referenceValue="#//@releases.8/@changes.119/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageInterface&#xA;endif"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The receiver message interface defines which messages this port instance receives&#xD;&#xA;It is derived from the receiver message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
             featureName="name" dataValue="senderMessageInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface"
-            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageInterface"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
+            featureName="eType" referenceValue="#//@releases.8/@changes.119/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageInterface&#xA;endif"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The sender message interface defines which messages this port instance sends.&#xD;&#xA;It is derived from the sender message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/Role/senderMessageInterface">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageInterface"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/Role/senderMessageTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes"
             featureName="name" dataValue="senderMessageInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageInterface"
-            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageInterface"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes"
+            featureName="eType" referenceValue="#//@releases.8/@changes.119/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/senderMessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/pattern/Role/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/senderMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/Role/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/pattern/Role/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/Role/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The sender message interface defines which messages this port sends."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/Role/receiverMessageInterface">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageInterface"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/pattern/Role/receiverMessageTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes"
             featureName="name" dataValue="receiverMessageInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageInterface"
-            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageInterface"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes"
+            featureName="eType" referenceValue="#//@releases.8/@changes.119/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/receiverMessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/pattern/Role/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/receiverMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/pattern/Role/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/pattern/Role/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/pattern/Role/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/pattern/Role/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The receiver message interface defines which messages this port receives."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element"
+          referenceName="eAnnotations" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This class represents a message interface. A message interface specifies which messages are allowed to be sent or received by a port or role."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element"
+          referenceName="eAnnotations" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="#//@releases.2/@changes.258/@element">
         <changes xsi:type="history:Set" element="#//@releases.2/@changes.258/@element"
             featureName="key" dataValue="NoSelfGeneralization"/>
         <changes xsi:type="history:Set" element="#//@releases.2/@changes.258/@element"
             featureName="value" dataValue="self.superType->forAll(x|x&lt;>self)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.8/@changes.90/@element">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.90/@element"
             featureName="key" dataValue="NoBidirectionalGeneralization"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.90/@element"
             featureName="value" dataValue="self.superType->forAll(x|x.superType->forAll(y|y&lt;>self))"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="UniqueMessageTypeNames"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self.messageTypes->isUnique(name)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
             featureName="key" dataValue="NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
             featureName="value" dataValue="self.messageTypes->size()>=1 or self.superType->size()>=2"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface"
-          referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element"
+          referenceName="eAnnotations" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="value" dataValue="NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/msgiface/MessageInterface/superType">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/superType"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element"
+          referenceName="eStructuralFeatures" element="#//@releases.8/@changes.66/@element">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.66/@element"
             featureName="name" dataValue="superType"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/superType"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.66/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/superType"
-            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageInterface"/>
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.66/@element"
+            featureName="eType" referenceValue="#//@releases.8/@changes.119/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/superType"
-          referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageInterface/superType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/superType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.66/@element"
+          referenceName="eAnnotations" element="#//@releases.8/@changes.66/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.66/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/superType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/superType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/superType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.66/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.8/@changes.66/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.66/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/superType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.66/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The set of message interfaces this message interface inherits from. This message&#xD;&#xA;interface contains all message types that are defined by the super types and their&#xD;&#xA;super types."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwareNode"
@@ -9466,58 +9466,58 @@
         <changes xsi:type="history:Set" element="#//@releases.6/@changes.3/@element/@details.0"
             featureName="value" dataValue="callee.oclAsType(msgiface::MessageType)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element"
+          referenceName="eStructuralFeatures" element="#//@releases.8/@changes.119/@element/messageTypes">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes"
             featureName="name" dataValue="messageTypes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes"
             featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/messageTypes"
-          referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/messageTypes"
+          referenceName="eAnnotations" element="#//@releases.8/@changes.119/@element/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.8/@changes.119/@element/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The message types being defined in this message interface."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element"
+          referenceName="eStructuralFeatures" element="#//@releases.8/@changes.67/@element">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element"
             featureName="name" dataValue="allAvailableMessageTypes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element"
             featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes"
-          referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.67/@element"
+          referenceName="eAnnotations" element="#//@releases.8/@changes.67/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.8/@changes.67/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.8/@changes.67/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/allAvailableMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.67/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self -> closure(if superType -> isEmpty() then self->asSet() else superType endif).messageTypes -> asSet()"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageType"
@@ -9557,17 +9557,17 @@
             featureName="value" dataValue="UniqueParameterNames"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageType"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/msgiface/MessageType/messageInterface">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/messageInterface"
+          referenceName="eStructuralFeatures" element="#//@releases.8/@changes.120/@element">
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element"
             featureName="name" dataValue="messageInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/messageInterface"
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/messageInterface"
-            featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/messageInterface"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/msgiface/MessageInterface/messageTypes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/messageTypes"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/msgiface/MessageType/messageInterface"/>
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element"
+            featureName="eType" referenceValue="#//@releases.8/@changes.119/@element"/>
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element"
+            featureName="eOpposite" referenceValue="#//@releases.8/@changes.119/@element/messageTypes"/>
+        <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes"
+            featureName="eOpposite" referenceValue="#//@releases.8/@changes.120/@element"/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.7/@changes.9/@element"
           referenceName="eClassifiers" element="#//@releases.7/@changes.9/@element/Activity">
@@ -15762,20 +15762,20 @@
         <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
       </element>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.90/@element"
         featureName="key" dataValue="NoCyclicGeneralization" oldDataValue="NoBidirectionalGeneralization"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.90/@element"
         featureName="value" dataValue="not self->closure(superType)->includes(self)"
         oldDataValue="self.superType->forAll(x|x.superType->forAll(y|y&lt;>self))"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="NoSelfGeneralization NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
         oldDataValue="NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
-    <changes xsi:type="history:Delete" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Delete" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
         referenceName="details">
       <element xsi:type="ecore:EStringToStringMapEntry" key="NoSelfGeneralization"
           value="self.superType->forAll(x|x&lt;>self)"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
         oldDataValue="NoSelfGeneralization NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
@@ -17936,7 +17936,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()"
         oldDataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asSet()"/>
-    <changes xsi:type="history:Add" element="muml.ecore#//model/msgiface/MessageInterface"
+    <changes xsi:type="history:Add" element="#//@releases.8/@changes.119/@element"
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
     <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/Message/instanceOf"
         referenceName="eAnnotations">
@@ -25288,16 +25288,16 @@
       <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType."/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageType/messageInterface"
-        referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageType/messageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/messageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+    <changes xsi:type="history:Create" target="#//@releases.8/@changes.120/@element"
+        referenceName="eAnnotations" element="#//@releases.8/@changes.120/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageType/messageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-        referenceName="details" element="muml.ecore#//model/msgiface/MessageType/messageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/messageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Create" target="#//@releases.8/@changes.120/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="#//@releases.8/@changes.120/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="key" dataValue="documentation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/messageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="This is the message interface where this message type is defined in."/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//model/component/PatternOccurrence"
@@ -25345,14 +25345,14 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
         featureName="value" dataValue="-- not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) &#xD;&#xA;&#xD;&#xA;not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort)&#xD;&#xA;&#x9;)"
         oldDataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+    <changes xsi:type="history:Create" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
           featureName="key" dataValue="UniqueMessageInterfaceNames"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
           featureName="value" dataValue="MessageInterface.allInstances().name->count(self.name) = 1"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageInterface/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations UniqueMessageInterfaceNames"
         oldDataValue="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
     <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/AssemblyInstance"
@@ -25621,5 +25621,202 @@
         featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint"
         featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints"/>
+    <changes xsi:type="history:Delete" target="#//@releases.8/@changes.119/@element"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="superType" upperBound="-1" eType="#//@releases.8/@changes.119/@element">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The set of message interfaces this message interface inherits from. This message&#xD;&#xA;interface contains all message types that are defined by the super types and their&#xD;&#xA;super types."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="#//@releases.8/@changes.119/@element"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="allAvailableMessageTypes" ordered="false"
+          upperBound="-1" eType="ecore:EClass muml.ecore#//model/msgiface/MessageType"
+          changeable="false" volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self -> closure(if superType -> isEmpty() then self->asSet() else superType endif).messageTypes -> asSet()"/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/messageTypes"
+        featureName="containment" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface" referenceName="eClassifiers"
+        element="muml.ecore#//model/msgiface/MessageTypeRepository"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository"
+        featureName="name" dataValue="MessageTypeRepository"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/msgiface/MessageTypeRepository"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/msgiface/MessageTypeRepository"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageTypeRepository"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"
+        featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"
+        featureName="name" dataValue="messageTypes"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"
+        featureName="ordered" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageType"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/msgiface/MessageType/repository"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/repository"
+        featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageTypeRepository"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/repository"
+        featureName="name" dataValue="repository"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/repository"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/msgiface/MessageType/repository"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageType/repository"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Delete" target="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="NoCyclicGeneralization"
+          value="not self->closure(superType)->includes(self)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations UniqueMessageInterfaceNames"
+        oldDataValue="NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations UniqueMessageInterfaceNames"/>
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="AtLeastOneMessageType" oldDataValue="NoMessageTypeOrNotAtLeastTwoGeneralizations"/>
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="self.messageTypes->size()>=1" oldDataValue="self.messageTypes->size()>=1 or self.superType->size()>=2"/>
+    <changes xsi:type="history:Set" element="#//@releases.8/@changes.119/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniqueMessageTypeNames AtLeastOneMessageType UniqueMessageInterfaceNames"
+        oldDataValue="UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations UniqueMessageInterfaceNames"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageTypeRepository"
+        referenceName="eAnnotations" element="muml.ecore#//model/msgiface/MessageTypeRepository/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/msgiface/MessageTypeRepository/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/msgiface/MessageTypeRepository/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="This package defines the message interfaces. A MessageInterface defines a set&#xD;&#xA;of event signatures using the class MessageType. These message types are used&#xD;&#xA;to type the events within a realtime statechart. "/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface/MessageTypeRepository/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="A MessageTypeRepository is used to declare message types which are then used&#xD;&#xA;in MessageInterfaces."
+        oldDataValue="This package defines the message interfaces. A MessageInterface defines a set&#xD;&#xA;of event signatures using the class MessageType. These message types are used&#xD;&#xA;to type the events within a realtime statechart. "/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes"
+        featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"
+        oldReferenceValue="#//@releases.8/@changes.119/@element"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes"
+        featureName="containment" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes"
+        featureName="name" dataValue="senderMessageTypex" oldDataValue="senderMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes"
+        featureName="name" dataValue="senderMessageTypes" oldDataValue="senderMessageTypex"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/senderMessageTypes"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes"
+        featureName="name" dataValue="receiverMessageTypes" oldDataValue="receiverMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes"
+        featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"
+        oldReferenceValue="#//@releases.8/@changes.119/@element"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/Role/receiverMessageTypes"
+        featureName="containment" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes"
+        featureName="containment" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes"
+        featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"
+        oldReferenceValue="#//@releases.8/@changes.119/@element"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes"
+        featureName="name" dataValue="senderMessageTypes" oldDataValue="senderMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/senderMessageTypes"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes"
+        featureName="name" dataValue="receiverMessageTypes" oldDataValue="receiverMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes"
+        featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"
+        oldReferenceValue="#//@releases.8/@changes.119/@element"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageTypes"
+        featureName="containment" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/isDiscreteInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.receiverMessageTypes ->size() =>1 and self.senderMessageTypes ->size() = 0"
+        oldDataValue="not self.receiverMessageInterface.oclIsUndefined() and self.senderMessageInterface.oclIsUndefined()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/isDiscreteOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.receiverMessageTypes ->size() = 0 and self.senderMessageTypes ->size() >= 1"
+        oldDataValue="not self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/isDiscreteInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() = 0"
+        oldDataValue="self.receiverMessageTypes ->size() =>1 and self.senderMessageTypes ->size() = 0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/isDiscreteInOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() >= 1"
+        oldDataValue="not self.receiverMessageInterface.oclIsUndefined() and not self.senderMessageInterface.oclIsUndefined()"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/msgiface" referenceName="eClassifiers">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
+          featureName="eType" oldReferenceValue="#//@releases.8/@changes.119/@element"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
+          featureName="eType" oldReferenceValue="#//@releases.8/@changes.119/@element"/>
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element"
+          featureName="eType" oldReferenceValue="#//@releases.8/@changes.119/@element"/>
+      <changes xsi:type="history:Set" element="#//@releases.8/@changes.120/@element"
+          featureName="eOpposite" oldReferenceValue="#//@releases.8/@changes.119/@element/messageTypes"/>
+      <element xsi:type="ecore:EClass" name="MessageInterface" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a message interface. A message interface specifies which messages are allowed to be sent or received by a port or role."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="UniqueMessageTypeNames" value="self.messageTypes->isUnique(name)"/>
+          <details key="AtLeastOneMessageType" value="self.messageTypes->size()>=1"/>
+          <details key="UniqueMessageInterfaceNames" value="MessageInterface.allInstances().name->count(self.name) = 1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="UniqueMessageTypeNames AtLeastOneMessageType UniqueMessageInterfaceNames"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="messageTypes" upperBound="-1"
+            eType="ecore:EClass muml.ecore#//model/msgiface/MessageType" eOpposite="#//@releases.8/@changes.120/@element">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The message types being defined in this message interface."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/msgiface/MessageType"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="messageInterface" lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This is the message interface where this message type is defined in."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
+        featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
+        featureName="name" dataValue="receiverMessageTypes" oldDataValue="receiverMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
+        featureName="name" dataValue="senderMessageTypes" oldDataValue="senderMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"
+        featureName="eType" referenceValue="muml.ecore#//model/msgiface/MessageType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageTypes&#xD;&#xA;endif"
+        oldDataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageInterface&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"
+        oldDataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageInterface&#xA;endif"/>
   </releases>
 </history:History>

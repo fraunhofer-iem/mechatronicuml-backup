@@ -8,8 +8,8 @@ package de.uni_paderborn.fujaba.muml.model.component;
 
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
-
 import org.storydriven.core.NamedElement;
+
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 
 /**

@@ -14,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +30,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
@@ -151,54 +151,34 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	void setCoordinationPattern(CoordinationPattern value);
 
 	/**
-	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The sender message interface defines which messages this port sends.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Sender Message Interface</em>' reference.
-	 * @see #setSenderMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_SenderMessageInterface()
+	 * @return the value of the '<em>Sender Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_SenderMessageTypes()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getSenderMessageInterface();
+	EList<MessageType> getSenderMessageTypes();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface <em>Sender Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sender Message Interface</em>' reference.
-	 * @see #getSenderMessageInterface()
-	 * @generated
-	 */
-	void setSenderMessageInterface(MessageInterface value);
-
-	/**
-	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Receiver Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The receiver message interface defines which messages this port receives.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
-	 * @see #setReceiverMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_ReceiverMessageInterface()
+	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_ReceiverMessageTypes()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getReceiverMessageInterface();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface <em>Receiver Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Receiver Message Interface</em>' reference.
-	 * @see #getReceiverMessageInterface()
-	 * @generated
-	 */
-	void setReceiverMessageInterface(MessageInterface value);
+	EList<MessageType> getReceiverMessageTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

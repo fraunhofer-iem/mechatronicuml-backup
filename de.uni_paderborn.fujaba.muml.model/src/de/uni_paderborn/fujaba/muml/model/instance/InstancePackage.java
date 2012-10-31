@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -724,22 +723,22 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES = PORT_INSTANCE__CONNECTOR_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE_FEATURE_COUNT + 0;
+	int DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE_FEATURE_COUNT + 1;
+	int DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES = PORT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port Instance</em>' class.
@@ -842,22 +841,22 @@ public interface InstancePackage extends EPackage {
 	int HYBRID_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+	int HYBRID_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+	int HYBRID_PORT_INSTANCE__SENDER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
 
 	/**
 	 * The number of structural features of the '<em>Hybrid Port Instance</em>' class.
@@ -960,22 +959,22 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_SINGLE_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+	int DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+	int DISCRETE_SINGLE_PORT_INSTANCE__SENDER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port Instance</b></em>' reference.
@@ -1087,22 +1086,22 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+	int DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+	int DISCRETE_MULTI_PORT_INSTANCE__SENDER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Sub Port Instances</b></em>' reference list.
@@ -1617,26 +1616,26 @@ public interface InstancePackage extends EPackage {
 	EClass getDiscretePortInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageInterface()
+	 * @return the meta object for the reference list '<em>Receiver Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageTypes()
 	 * @see #getDiscretePortInstance()
 	 * @generated
 	 */
-	EReference getDiscretePortInstance_ReceiverMessageInterface();
+	EReference getDiscretePortInstance_ReceiverMessageTypes();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageInterface <em>Sender Message Interface</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageTypes <em>Sender Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageInterface()
+	 * @return the meta object for the reference list '<em>Sender Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageTypes()
 	 * @see #getDiscretePortInstance()
 	 * @generated
 	 */
-	EReference getDiscretePortInstance_SenderMessageInterface();
+	EReference getDiscretePortInstance_SenderMessageTypes();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
@@ -1995,20 +1994,20 @@ public interface InstancePackage extends EPackage {
 		EClass DISCRETE_PORT_INSTANCE = eINSTANCE.getDiscretePortInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Receiver Message Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortInstance_ReceiverMessageInterface();
+		EReference DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = eINSTANCE.getDiscretePortInstance_ReceiverMessageTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sender Message Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortInstance_SenderMessageInterface();
+		EReference DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES = eINSTANCE.getDiscretePortInstance_SenderMessageTypes();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.

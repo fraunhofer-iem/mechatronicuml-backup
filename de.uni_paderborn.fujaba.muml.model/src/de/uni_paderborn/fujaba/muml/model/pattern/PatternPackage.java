@@ -291,22 +291,22 @@ public interface PatternPackage extends EPackage {
 	int ROLE__COORDINATION_PATTERN = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__SENDER_MESSAGE_INTERFACE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE__SENDER_MESSAGE_TYPES = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_INTERFACE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ROLE__RECEIVER_MESSAGE_TYPES = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -824,26 +824,26 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_CoordinationPattern();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface <em>Sender Message Interface</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageTypes <em>Sender Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface()
+	 * @return the meta object for the reference list '<em>Sender Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageTypes()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_SenderMessageInterface();
+	EReference getRole_SenderMessageTypes();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface()
+	 * @return the meta object for the reference list '<em>Receiver Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageTypes()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_ReceiverMessageInterface();
+	EReference getRole_ReceiverMessageTypes();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCardinality <em>Cardinality</em>}'.
@@ -1136,20 +1136,20 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__COORDINATION_PATTERN = eINSTANCE.getRole_CoordinationPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sender Message Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__SENDER_MESSAGE_INTERFACE = eINSTANCE.getRole_SenderMessageInterface();
+		EReference ROLE__SENDER_MESSAGE_TYPES = eINSTANCE.getRole_SenderMessageTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Receiver Message Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getRole_ReceiverMessageInterface();
+		EReference ROLE__RECEIVER_MESSAGE_TYPES = eINSTANCE.getRole_ReceiverMessageTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.

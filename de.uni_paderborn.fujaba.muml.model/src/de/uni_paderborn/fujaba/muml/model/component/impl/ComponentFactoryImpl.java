@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -26,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
-import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 
 /**
  * <!-- begin-user-doc -->

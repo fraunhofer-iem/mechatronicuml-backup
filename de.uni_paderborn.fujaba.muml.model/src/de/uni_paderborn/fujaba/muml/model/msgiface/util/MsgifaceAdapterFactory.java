@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.util;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -15,8 +14,8 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 
 /**
@@ -76,12 +75,12 @@ public class MsgifaceAdapterFactory extends AdapterFactoryImpl {
 	protected MsgifaceSwitch<Adapter> modelSwitch =
 		new MsgifaceSwitch<Adapter>() {
 			@Override
-			public Adapter caseMessageInterface(MessageInterface object) {
-				return createMessageInterfaceAdapter();
-			}
-			@Override
 			public Adapter caseMessageType(MessageType object) {
 				return createMessageTypeAdapter();
+			}
+			@Override
+			public Adapter caseMessageTypeRepository(MessageTypeRepository object) {
+				return createMessageTypeRepositoryAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -116,20 +115,6 @@ public class MsgifaceAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface <em>Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface
-	 * @generated
-	 */
-	public Adapter createMessageInterfaceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType <em>Message Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -140,6 +125,20 @@ public class MsgifaceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMessageTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository <em>Message Type Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository
+	 * @generated
+	 */
+	public Adapter createMessageTypeRepositoryAdapter() {
 		return null;
 	}
 

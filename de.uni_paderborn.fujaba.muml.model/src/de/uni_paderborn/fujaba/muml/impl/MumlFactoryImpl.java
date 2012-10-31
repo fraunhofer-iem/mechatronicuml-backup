@@ -6,15 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.impl;
 
-import de.uni_paderborn.fujaba.muml.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.MumlFactory;
+import de.uni_paderborn.fujaba.muml.MumlPackage;
 
 /**
  * <!-- begin-user-doc -->

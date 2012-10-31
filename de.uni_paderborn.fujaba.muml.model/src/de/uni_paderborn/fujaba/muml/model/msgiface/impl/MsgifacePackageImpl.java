@@ -11,12 +11,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.storydriven.storydiagrams.StorydiagramsPackage;
+
 import de.fujaba.modelinstance.ModelinstancePackage;
-import de.uni_paderborn.fujaba.muml.MumlPackage;
-import de.uni_paderborn.fujaba.muml.impl.MumlPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.ModelPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
@@ -25,11 +22,10 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.util.MsgifaceValidator;
@@ -50,14 +46,14 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass messageInterfaceEClass = null;
+	private EClass messageTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass messageTypeEClass = null;
+	private EClass messageTypeRepositoryEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -161,42 +157,6 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMessageInterface() {
-		return messageInterfaceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMessageInterface_SuperType() {
-		return (EReference)messageInterfaceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMessageInterface_MessageTypes() {
-		return (EReference)messageInterfaceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMessageInterface_AllAvailableMessageTypes() {
-		return (EReference)messageInterfaceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMessageType() {
 		return messageTypeEClass;
 	}
@@ -206,7 +166,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMessageType_MessageInterface() {
+	public EReference getMessageType_Parameters() {
 		return (EReference)messageTypeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -215,8 +175,26 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMessageType_Parameters() {
+	public EReference getMessageType_Repository() {
 		return (EReference)messageTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMessageTypeRepository() {
+		return messageTypeRepositoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageTypeRepository_MessageTypes() {
+		return (EReference)messageTypeRepositoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -247,14 +225,12 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		isCreated = true;
 
 		// Create classes and their features
-		messageInterfaceEClass = createEClass(MESSAGE_INTERFACE);
-		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__SUPER_TYPE);
-		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__MESSAGE_TYPES);
-		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__ALL_AVAILABLE_MESSAGE_TYPES);
-
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
-		createEReference(messageTypeEClass, MESSAGE_TYPE__MESSAGE_INTERFACE);
 		createEReference(messageTypeEClass, MESSAGE_TYPE__PARAMETERS);
+		createEReference(messageTypeEClass, MESSAGE_TYPE__REPOSITORY);
+
+		messageTypeRepositoryEClass = createEClass(MESSAGE_TYPE_REPOSITORY);
+		createEReference(messageTypeRepositoryEClass, MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES);
 	}
 
 	/**
@@ -289,20 +265,18 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		messageInterfaceEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		messageInterfaceEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		messageTypeEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		messageTypeEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageInterface_SuperType(), this.getMessageInterface(), null, "superType", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageInterface_MessageTypes(), this.getMessageType(), this.getMessageType_MessageInterface(), "messageTypes", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageInterface_AllAvailableMessageTypes(), this.getMessageType(), null, "allAvailableMessageTypes", null, 0, -1, MessageInterface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageType_MessageInterface(), this.getMessageInterface(), this.getMessageInterface_MessageTypes(), "messageInterface", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageType_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageType_Repository(), this.getMessageTypeRepository(), this.getMessageTypeRepository_MessageTypes(), "repository", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messageTypeRepositoryEClass, MessageTypeRepository.class, "MessageTypeRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageTypeRepository_MessageTypes(), this.getMessageType(), this.getMessageType_Repository(), "messageTypes", null, 1, -1, MessageTypeRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -331,12 +305,6 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });					
 		addAnnotation
-		  (messageInterfaceEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "NoCyclicGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations UniqueMessageInterfaceNames"
-		   });							
-		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
@@ -352,21 +320,6 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
-		addAnnotation
-		  (messageInterfaceEClass, 
-		   source, 
-		   new String[] {
-			 "NoCyclicGeneralization", "not self->closure(superType)->includes(self)",
-			 "UniqueMessageTypeNames", "self.messageTypes->isUnique(name)",
-			 "NoMessageTypeOrNotAtLeastTwoGeneralizations", "self.messageTypes->size()>=1 or self.superType->size()>=2",
-			 "UniqueMessageInterfaceNames", "MessageInterface.allInstances().name->count(self.name) = 1"
-		   });					
-		addAnnotation
-		  (getMessageInterface_AllAvailableMessageTypes(), 
-		   source, 
-		   new String[] {
-			 "derivation", "self -> closure(if superType -> isEmpty() then self->asSet() else superType endif).messageTypes -> asSet()"
-		   });			
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 

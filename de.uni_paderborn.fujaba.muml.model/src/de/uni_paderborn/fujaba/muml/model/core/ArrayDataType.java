@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

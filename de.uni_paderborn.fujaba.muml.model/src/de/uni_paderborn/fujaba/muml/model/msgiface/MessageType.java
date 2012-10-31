@@ -28,8 +28,8 @@ import de.uni_paderborn.fujaba.muml.model.core.Parameter;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getRepository <em>Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,33 +39,6 @@ import de.uni_paderborn.fujaba.muml.model.core.Parameter;
  * @generated
  */
 public interface MessageType extends NamedElement, CommentableElement {
-	/**
-	 * Returns the value of the '<em><b>Message Interface</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This is the message interface where this message type is defined in.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Message Interface</em>' container reference.
-	 * @see #setMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageType_MessageInterface()
-	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface#getMessageTypes
-	 * @model opposite="messageTypes" required="true" transient="false"
-	 * @generated
-	 */
-	MessageInterface getMessageInterface();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Interface</em>' container reference.
-	 * @see #getMessageInterface()
-	 * @generated
-	 */
-	void setMessageInterface(MessageInterface value);
-
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
@@ -84,5 +57,33 @@ public interface MessageType extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
+
+	/**
+	 * Returns the value of the '<em><b>Repository</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository#getMessageTypes <em>Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Repository</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Repository</em>' container reference.
+	 * @see #setRepository(MessageTypeRepository)
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageType_Repository()
+	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository#getMessageTypes
+	 * @model opposite="messageTypes" required="true" transient="false"
+	 * @generated
+	 */
+	MessageTypeRepository getRepository();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getRepository <em>Repository</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Repository</em>' container reference.
+	 * @see #getRepository()
+	 * @generated
+	 */
+	void setRepository(MessageTypeRepository value);
 
 } // MessageType

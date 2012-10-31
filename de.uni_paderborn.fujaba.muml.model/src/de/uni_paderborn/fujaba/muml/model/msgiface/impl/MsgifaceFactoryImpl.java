@@ -6,15 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.impl;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 
@@ -62,8 +61,8 @@ public class MsgifaceFactoryImpl extends EFactoryImpl implements MsgifaceFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MsgifacePackage.MESSAGE_INTERFACE: return createMessageInterface();
 			case MsgifacePackage.MESSAGE_TYPE: return createMessageType();
+			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY: return createMessageTypeRepository();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,9 +73,9 @@ public class MsgifaceFactoryImpl extends EFactoryImpl implements MsgifaceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface createMessageInterface() {
-		MessageInterfaceImpl messageInterface = new MessageInterfaceImpl();
-		return messageInterface;
+	public MessageType createMessageType() {
+		MessageTypeImpl messageType = new MessageTypeImpl();
+		return messageType;
 	}
 
 	/**
@@ -84,9 +83,9 @@ public class MsgifaceFactoryImpl extends EFactoryImpl implements MsgifaceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageType createMessageType() {
-		MessageTypeImpl messageType = new MessageTypeImpl();
-		return messageType;
+	public MessageTypeRepository createMessageTypeRepository() {
+		MessageTypeRepositoryImpl messageTypeRepository = new MessageTypeRepositoryImpl();
+		return messageTypeRepository;
 	}
 
 	/**
