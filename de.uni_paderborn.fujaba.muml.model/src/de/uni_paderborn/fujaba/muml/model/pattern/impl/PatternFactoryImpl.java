@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern.impl;
 
+import de.uni_paderborn.fujaba.muml.model.pattern.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -35,7 +36,7 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	 */
 	public static PatternFactory init() {
 		try {
-			PatternFactory thePatternFactory = (PatternFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/pattern/0.3.1"); 
+			PatternFactory thePatternFactory = (PatternFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/pattern/0.3.2"); 
 			if (thePatternFactory != null) {
 				return thePatternFactory;
 			}

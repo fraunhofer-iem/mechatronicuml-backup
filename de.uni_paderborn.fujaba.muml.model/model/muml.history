@@ -25818,5 +25818,11 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"
         oldDataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageInterface&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/msgiface" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/msgiface/0.3.2" oldDataValue="http://www.fujaba.de/muml/model/msgiface/0.3.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/pattern/0.3.2" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.3.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.3.2" oldDataValue="http://www.fujaba.de/muml/model/component/0.3.1"/>
   </releases>
 </history:History>

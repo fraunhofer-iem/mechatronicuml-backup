@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
+import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -42,7 +43,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 */
 	public static ComponentFactory init() {
 		try {
-			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/component/0.3.1"); 
+			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/component/0.3.2"); 
 			if (theComponentFactory != null) {
 				return theComponentFactory;
 			}

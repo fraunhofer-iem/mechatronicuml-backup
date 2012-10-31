@@ -56,6 +56,15 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	protected DiscretePortInstanceImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
 		return InstancePackage.Literals.DISCRETE_PORT_INSTANCE;

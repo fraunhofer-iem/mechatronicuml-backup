@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.impl;
 
+import de.uni_paderborn.fujaba.muml.model.msgiface.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -32,7 +33,7 @@ public class MsgifaceFactoryImpl extends EFactoryImpl implements MsgifaceFactory
 	 */
 	public static MsgifaceFactory init() {
 		try {
-			MsgifaceFactory theMsgifaceFactory = (MsgifaceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/msgiface/0.3.1"); 
+			MsgifaceFactory theMsgifaceFactory = (MsgifaceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/msgiface/0.3.2"); 
 			if (theMsgifaceFactory != null) {
 				return theMsgifaceFactory;
 			}
