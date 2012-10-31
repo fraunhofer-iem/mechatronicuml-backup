@@ -349,22 +349,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__REFINES = ComponentPackage.DISCRETE_PORT__REFINES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__SENDER_MESSAGE_INTERFACE = ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE;
+	int RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES = ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_INTERFACE = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE;
+	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -1076,22 +1076,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__SENDER_MESSAGE_INTERFACE = RECONFIGURATION_PORT__SENDER_MESSAGE_INTERFACE;
+	int RECONFIGURATION_MESSAGE_PORT__SENDER_MESSAGE_TYPES = RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__RECEIVER_MESSAGE_INTERFACE = RECONFIGURATION_PORT__RECEIVER_MESSAGE_INTERFACE;
+	int RECONFIGURATION_MESSAGE_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -1275,22 +1275,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE = RECONFIGURATION_PORT__SENDER_MESSAGE_INTERFACE;
+	int RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES = RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE = RECONFIGURATION_PORT__RECEIVER_MESSAGE_INTERFACE;
+	int RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -1781,22 +1781,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE = RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE;
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES = RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE;
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -1979,22 +1979,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE = RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_INTERFACE;
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES = RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_INTERFACE;
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
