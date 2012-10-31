@@ -10,7 +10,6 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
@@ -83,17 +82,15 @@ public class RoleBehavior extends AbstractPortBehavior {
 		if (getRole() != null) {
 			// Access the message interfaces...
 			Role role = (Role) getRole();
-			MessageInterface receiverInterface = role
-					.getReceiverMessageInterface();
-			MessageInterface senderInterface = role
-					.getSenderMessageInterface();
+			boolean receiverInterfaceSet = role.getReceiverMessageTypes().size() > 0;
+			boolean senderInterfaceSet = role.getSenderMessageTypes().size() > 0;
 
 			// Find out the PortType depending on the MessageInterfaces set.
-			if (receiverInterface != null && senderInterface != null) {
+			if (receiverInterfaceSet && senderInterfaceSet) {
 				type = CustomPortFigure.PortType.INOUT_PORT;
-			} else if (receiverInterface != null) {
+			} else if (receiverInterfaceSet) {
 				type = CustomPortFigure.PortType.IN_PORT;
-			} else if (senderInterface != null) {
+			} else if (senderInterfaceSet) {
 				type = CustomPortFigure.PortType.OUT_PORT;
 			}
 		}
@@ -117,8 +114,8 @@ public class RoleBehavior extends AbstractPortBehavior {
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == PatternPackage.Literals.ROLE__CARDINALITY) {
 			updateCardinality();
-		} else if (notification.getFeature() == PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_INTERFACE
-				|| notification.getFeature() == PatternPackage.Literals.ROLE__SENDER_MESSAGE_INTERFACE) {
+		} else if (notification.getFeature() == PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_TYPES
+				|| notification.getFeature() == PatternPackage.Literals.ROLE__SENDER_MESSAGE_TYPES) {
 			updatePortType();
 		}
 	}

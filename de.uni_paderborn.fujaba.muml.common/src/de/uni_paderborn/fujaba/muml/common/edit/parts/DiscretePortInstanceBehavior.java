@@ -10,7 +10,6 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 
 public class DiscretePortInstanceBehavior extends AbstractPortInstanceBehavior {
 
@@ -23,9 +22,9 @@ public class DiscretePortInstanceBehavior extends AbstractPortInstanceBehavior {
 		Object featureObject = notification.getFeature();
 		if (featureObject instanceof EStructuralFeature) {
 			EStructuralFeature feature = (EStructuralFeature) featureObject;
-			if (InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE
+			if (InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES
 					.equals(feature)
-					|| InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE
+					|| InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES
 							.equals(feature)) {
 				updatePortType();
 			}
@@ -39,25 +38,25 @@ public class DiscretePortInstanceBehavior extends AbstractPortInstanceBehavior {
 
 	@Override
 	public PortType getPortType() {
-		MessageInterface receiverMessageInterface = null;
-		MessageInterface senderMessageInterface = null;
+		boolean receiverMessageInterfaceSet = false;
+		boolean senderMessageInterfaceSet = false;
 		
 		PortInstance portInstance = getPortInstance();
 		
 		if (portInstance != null
 				&& portInstance instanceof DiscretePortInstance) {
 
-			receiverMessageInterface = ((DiscretePortInstance) portInstance)
-					.getReceiverMessageInterface();
-			senderMessageInterface = ((DiscretePortInstance) portInstance)
-					.getSenderMessageInterface();
+			receiverMessageInterfaceSet = ((DiscretePortInstance) portInstance)
+					.getReceiverMessageTypes().size() > 0;
+			senderMessageInterfaceSet = ((DiscretePortInstance) portInstance)
+					.getSenderMessageTypes().size() > 0;
 		}
 		CustomPortFigure.PortType type = CustomPortFigure.PortType.NONE;
-		if (receiverMessageInterface != null && senderMessageInterface != null) {
+		if (receiverMessageInterfaceSet && senderMessageInterfaceSet) {
 			type = CustomPortFigure.PortType.INOUT_PORT;
-		} else if (receiverMessageInterface != null) {
+		} else if (receiverMessageInterfaceSet) {
 			type = CustomPortFigure.PortType.IN_PORT;
-		} else if (senderMessageInterface != null) {
+		} else if (senderMessageInterfaceSet) {
 			type = CustomPortFigure.PortType.OUT_PORT;
 		}
 		return type;
