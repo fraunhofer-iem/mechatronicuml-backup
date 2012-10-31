@@ -38,5 +38,20 @@
           initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
     </initializer>
  </extension>
+ 
+ 
+ <!-- make sure that the "types" modelelementcategory is accepted as valid -->
+ <extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="de.uni_paderborn.fujaba.muml.types.category"
+            name="types">
+         <child
+               class="DataType"
+               packageNsUri="http://www.fujaba.de/muml/model/core/0.3.1">
+         </child>
+      </category>
+   </extension>
+ 
 	
 </plugin>
