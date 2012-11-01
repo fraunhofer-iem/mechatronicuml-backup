@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel
+gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore
+gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram/model/ComponentStoryDiagram.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram/model/ComponentStoryDiagram.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram/model/ComponentStoryDiagram.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram/model/ComponentStoryDiagram.gmftool
