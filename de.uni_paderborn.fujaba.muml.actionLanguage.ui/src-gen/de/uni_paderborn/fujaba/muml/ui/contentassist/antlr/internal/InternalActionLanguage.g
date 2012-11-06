@@ -1212,6 +1212,12 @@ rule__Literal__Alternatives
 { after(grammarAccess.getLiteralAccess().getINTTerminalRuleCall_2()); }
 )
 
+    |(
+{ before(grammarAccess.getLiteralAccess().getSTRINGTerminalRuleCall_3()); }
+	RULE_STRING
+{ after(grammarAccess.getLiteralAccess().getSTRINGTerminalRuleCall_3()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

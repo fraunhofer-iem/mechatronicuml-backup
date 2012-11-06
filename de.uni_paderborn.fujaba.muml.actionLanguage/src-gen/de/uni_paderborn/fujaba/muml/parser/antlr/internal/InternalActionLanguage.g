@@ -1669,6 +1669,14 @@ ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     { 
     newLeafNode(this_INT_2, grammarAccess.getLiteralAccess().getINTTerminalRuleCall_2()); 
     }
+
+    |    this_STRING_3=RULE_STRING    {
+		$current.merge(this_STRING_3);
+    }
+
+    { 
+    newLeafNode(this_STRING_3, grammarAccess.getLiteralAccess().getSTRINGTerminalRuleCall_3()); 
+    }
 )
     ;
 

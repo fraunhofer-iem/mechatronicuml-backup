@@ -924,12 +924,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSTRINGTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Literal returns ecore::EString:
-		//	NUMBER | BOOLEAN | INT;
+		//	NUMBER | BOOLEAN | INT | STRING;
 		public ParserRule getRule() { return rule; }
 
-		//NUMBER | BOOLEAN | INT
+		//NUMBER | BOOLEAN | INT | STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NUMBER
@@ -940,6 +941,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_3() { return cSTRINGTerminalRuleCall_3; }
 	}
 
 	public class AttributeExpressionElements extends AbstractParserRuleElementFinder {
@@ -1176,13 +1180,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSTRINGTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//// end of TriggerMessageExpression
 		//IdentifierOrValue returns ecore::EString:
-		//	NUMBER | BOOLEAN | INT;
+		//	NUMBER | BOOLEAN | INT | STRING;
 		public ParserRule getRule() { return rule; }
 
-		//NUMBER | BOOLEAN | INT
+		//NUMBER | BOOLEAN | INT | STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NUMBER
@@ -1193,6 +1198,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_3() { return cSTRINGTerminalRuleCall_3; }
 	}
 	
 	
@@ -1908,7 +1916,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Literal returns ecore::EString:
-	//	NUMBER | BOOLEAN | INT;
+	//	NUMBER | BOOLEAN | INT | STRING;
 	public LiteralElements getLiteralAccess() {
 		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
 	}
@@ -2003,7 +2011,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// end of TriggerMessageExpression
 	//IdentifierOrValue returns ecore::EString:
-	//	NUMBER | BOOLEAN | INT;
+	//	NUMBER | BOOLEAN | INT | STRING;
 	public IdentifierOrValueElements getIdentifierOrValueAccess() {
 		return (pIdentifierOrValue != null) ? pIdentifierOrValue : (pIdentifierOrValue = new IdentifierOrValueElements());
 	}

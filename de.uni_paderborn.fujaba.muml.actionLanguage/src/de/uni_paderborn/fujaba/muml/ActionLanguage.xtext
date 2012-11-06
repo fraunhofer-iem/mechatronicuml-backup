@@ -224,7 +224,7 @@ LiteralExpression returns commonExpressions::LiteralExpression:
 ;
 
 Literal returns ecore::EString:
-	NUMBER | BOOLEAN | INT
+	NUMBER | BOOLEAN | INT | STRING
 ;
 
 /*
@@ -306,7 +306,7 @@ TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
 	
 	
 IdentifierOrValue returns ecore::EString:
-	NUMBER | BOOLEAN | INT
+	NUMBER | BOOLEAN | INT | STRING
 ;	
 
 /*enum LogicOperator returns commonExpressions::LogicOperator: 
