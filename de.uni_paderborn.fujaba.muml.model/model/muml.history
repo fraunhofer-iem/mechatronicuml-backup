@@ -2,7 +2,7 @@
 <history:History xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
-  <releases>
+  <releases date="2012-11-07T14:51:41.065+0100" label="0.3.2">
     <changes xsi:type="history:CompositeChange">
       <changes xsi:type="history:Create" element="muml.ecore#/">
         <changes xsi:type="history:Set" element="muml.ecore#/" featureName="name"
@@ -15235,4 +15235,5 @@
       </changes>
     </changes>
   </releases>
+  <releases/>
 </history:History>
