@@ -292,7 +292,8 @@ protected class Block_ExpressionsAssignment_1 extends AssignmentToken  {
 
 /************ begin Rule ForLoop ****************
  *
- * // TODO: get rid of ForLoopCountingExpression
+ * // TODO: clarify if it makes sense to allow arbitrary expressions for
+ * // the initializeExpression and countingExpression
  * ForLoop returns actionLanguage::ForLoop:
  * 	"for" "(" initalizeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
  * 	block=Block;
@@ -2356,7 +2357,6 @@ protected class Assignment_SemicolonKeyword_3 extends KeywordToken  {
 /************ begin Rule Expression ****************
  *
  * // end of assignment
- * // TODO: get rid of this production
  * Expression returns expressions::Expression:
  * 	LogicalExpression;
  *
@@ -4665,38 +4665,7 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
 
 /************ begin Rule AttributeExpression ****************
  *
- * / *
- * 
- * ArithmeticExpression returns expressions::Expression:
- * 	ComparisonExpression
- * 	(
- * 		({commonExpressions::ArithmeticExpression.leftExpression=current} )
- * 		operator=ArithmeticOperator rightExpression=ComparisonExpression
- * 	)*
- * ;
- * 
- * ComparisonExpression returns expressions::Expression:
- * 	LogicalExpression 
- * 	(
- * 		({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator )
- * 		rightExpression=LogicalExpression
- * 	)*
- * ;
- * 
- * LogicalExpression returns expressions::Expression:
- * 	(UnaryExpression | AttributeExpression )
- * 	(
- * 		({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator )
- * 		rightExpression=(UnaryExpression| AttributeExpression)
- * 	)*
- * ;
- * 
- * UnaryExpression returns expressions::Expression:
- * 	{commonExpressions::UnaryExpression}
- * 	operator=UnaryOperator enclosedExpression=AttributeExpression
- * ;* / / *AttributeExpression returns expressions::Expression:
- * 	OperationCall | AttributeLeafExpression
- * ;* / AttributeExpression returns actionLanguage::AttributeExpression:
+ * AttributeExpression returns actionLanguage::AttributeExpression:
  * 	attribute=[core::Attribute] ("[" indices+=ArithmeticExpression "]")*;
  *
  **/
@@ -4887,12 +4856,7 @@ protected class AttributeExpression_RightSquareBracketKeyword_1_2 extends Keywor
 
 /************ begin Rule OperationCall ****************
  *
- * / *
- * AttributeLeafExpression returns actionLanguage::AttributeExpression:
- * 	{actionLanguage::AttributeExpression}
- * 	attribute=[core::Attribute]('['indices+=Expression']')*
- * ;
- * * / OperationCall returns actionLanguage::OperationCall:
+ * OperationCall returns actionLanguage::OperationCall:
  * 	operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
  *
  **/
@@ -5175,12 +5139,7 @@ protected class OperationCall_RightParenthesisKeyword_3 extends KeywordToken  {
 
 /************ begin Rule ParamaterBinding ****************
  *
- * / *
- * OperationCall returns expressions::Expression:
- * 	LiteralExpression |
- * 	{actionLanguage::OperationCall} operation=[core::Operation]'('(parameterBinding+=ParamaterBinding(',' parameterBinding+=ParamaterBinding)*)?')'
- * ;
- * * / ParamaterBinding returns core::ParameterBinding:
+ * ParamaterBinding returns core::ParameterBinding:
  * 	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
  *
  **/
@@ -5351,9 +5310,7 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 
 /************ begin Rule TriggerMessageExpression ****************
  *
- * / *LiteralExpression returns expressions::Expression:
- * 	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
- * ;* / // TriggerMessageExpression
+ * // TriggerMessageExpression
  * TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
  * 	messageType=[msgiface::MessageType] "." parameter=[core::Parameter];
  *

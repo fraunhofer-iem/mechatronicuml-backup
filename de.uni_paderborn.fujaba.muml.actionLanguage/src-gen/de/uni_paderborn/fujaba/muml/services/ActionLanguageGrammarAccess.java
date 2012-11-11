@@ -77,7 +77,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBlockAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cBlockBlockParserRuleCall_7_0 = (RuleCall)cBlockAssignment_7.eContents().get(0);
 		
-		//// TODO: get rid of ForLoopCountingExpression
+		//// TODO: clarify if it makes sense to allow arbitrary expressions for
+		//// the initializeExpression and countingExpression
 		//ForLoop returns actionLanguage::ForLoop:
 		//	"for" "(" initalizeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
 		//	block=Block;
@@ -466,7 +467,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLogicalExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//// end of assignment
-		//// TODO: get rid of this production
 		//Expression returns expressions::Expression:
 		//	LogicalExpression;
 		public ParserRule getRule() { return rule; }
@@ -958,38 +958,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIndicesArithmeticExpressionParserRuleCall_1_1_0 = (RuleCall)cIndicesAssignment_1_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
-		/// *
-		//
-		//ArithmeticExpression returns expressions::Expression:
-		//	ComparisonExpression
-		//	(
-		//		({commonExpressions::ArithmeticExpression.leftExpression=current} )
-		//		operator=ArithmeticOperator rightExpression=ComparisonExpression
-		//	)*
-		//;
-		//
-		//ComparisonExpression returns expressions::Expression:
-		//	LogicalExpression 
-		//	(
-		//		({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator )
-		//		rightExpression=LogicalExpression
-		//	)*
-		//;
-		//
-		//LogicalExpression returns expressions::Expression:
-		//	(UnaryExpression | AttributeExpression )
-		//	(
-		//		({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator )
-		//		rightExpression=(UnaryExpression| AttributeExpression)
-		//	)*
-		//;
-		//
-		//UnaryExpression returns expressions::Expression:
-		//	{commonExpressions::UnaryExpression}
-		//	operator=UnaryOperator enclosedExpression=AttributeExpression
-		//;* / / *AttributeExpression returns expressions::Expression:
-		//	OperationCall | AttributeLeafExpression
-		//;* / AttributeExpression returns actionLanguage::AttributeExpression:
+		//AttributeExpression returns actionLanguage::AttributeExpression:
 		//	attribute=[core::Attribute] ("[" indices+=ArithmeticExpression "]")*;
 		public ParserRule getRule() { return rule; }
 
@@ -1037,12 +1006,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_2_1_1_0 = (RuleCall)cParameterBindingAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		/// *
-		//AttributeLeafExpression returns actionLanguage::AttributeExpression:
-		//	{actionLanguage::AttributeExpression}
-		//	attribute=[core::Attribute]('['indices+=Expression']')*
-		//;
-		// * / OperationCall returns actionLanguage::OperationCall:
+		//OperationCall returns actionLanguage::OperationCall:
 		//	operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
 		public ParserRule getRule() { return rule; }
 
@@ -1097,12 +1061,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueExpressionParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
-		/// *
-		//OperationCall returns expressions::Expression:
-		//	LiteralExpression |
-		//	{actionLanguage::OperationCall} operation=[core::Operation]'('(parameterBinding+=ParamaterBinding(',' parameterBinding+=ParamaterBinding)*)?')'
-		//;
-		// * / ParamaterBinding returns core::ParameterBinding:
+		//ParamaterBinding returns core::ParameterBinding:
 		//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
 		public ParserRule getRule() { return rule; }
 
@@ -1142,9 +1101,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cParameterParameterCrossReference_2_0 = (CrossReference)cParameterAssignment_2.eContents().get(0);
 		private final RuleCall cParameterParameterIDTerminalRuleCall_2_0_1 = (RuleCall)cParameterParameterCrossReference_2_0.eContents().get(1);
 		
-		/// *LiteralExpression returns expressions::Expression:
-		//	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
-		//;* / // TriggerMessageExpression
+		//// TriggerMessageExpression
 		//TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
 		//	messageType=[msgiface::MessageType] "." parameter=[core::Parameter];
 		public ParserRule getRule() { return rule; }
@@ -1580,7 +1537,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getBlockAccess().getRule();
 	}
 
-	//// TODO: get rid of ForLoopCountingExpression
+	//// TODO: clarify if it makes sense to allow arbitrary expressions for
+	//// the initializeExpression and countingExpression
 	//ForLoop returns actionLanguage::ForLoop:
 	//	"for" "(" initalizeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
 	//	block=Block;
@@ -1686,7 +1644,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of assignment
-	//// TODO: get rid of this production
 	//Expression returns expressions::Expression:
 	//	LogicalExpression;
 	public ExpressionElements getExpressionAccess() {
@@ -1925,38 +1882,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getLiteralAccess().getRule();
 	}
 
-	/// *
-	//
-	//ArithmeticExpression returns expressions::Expression:
-	//	ComparisonExpression
-	//	(
-	//		({commonExpressions::ArithmeticExpression.leftExpression=current} )
-	//		operator=ArithmeticOperator rightExpression=ComparisonExpression
-	//	)*
-	//;
-	//
-	//ComparisonExpression returns expressions::Expression:
-	//	LogicalExpression 
-	//	(
-	//		({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator )
-	//		rightExpression=LogicalExpression
-	//	)*
-	//;
-	//
-	//LogicalExpression returns expressions::Expression:
-	//	(UnaryExpression | AttributeExpression )
-	//	(
-	//		({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator )
-	//		rightExpression=(UnaryExpression| AttributeExpression)
-	//	)*
-	//;
-	//
-	//UnaryExpression returns expressions::Expression:
-	//	{commonExpressions::UnaryExpression}
-	//	operator=UnaryOperator enclosedExpression=AttributeExpression
-	//;* / / *AttributeExpression returns expressions::Expression:
-	//	OperationCall | AttributeLeafExpression
-	//;* / AttributeExpression returns actionLanguage::AttributeExpression:
+	//AttributeExpression returns actionLanguage::AttributeExpression:
 	//	attribute=[core::Attribute] ("[" indices+=ArithmeticExpression "]")*;
 	public AttributeExpressionElements getAttributeExpressionAccess() {
 		return (pAttributeExpression != null) ? pAttributeExpression : (pAttributeExpression = new AttributeExpressionElements());
@@ -1966,12 +1892,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getAttributeExpressionAccess().getRule();
 	}
 
-	/// *
-	//AttributeLeafExpression returns actionLanguage::AttributeExpression:
-	//	{actionLanguage::AttributeExpression}
-	//	attribute=[core::Attribute]('['indices+=Expression']')*
-	//;
-	// * / OperationCall returns actionLanguage::OperationCall:
+	//OperationCall returns actionLanguage::OperationCall:
 	//	operation=[core::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")";
 	public OperationCallElements getOperationCallAccess() {
 		return (pOperationCall != null) ? pOperationCall : (pOperationCall = new OperationCallElements());
@@ -1981,12 +1902,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getOperationCallAccess().getRule();
 	}
 
-	/// *
-	//OperationCall returns expressions::Expression:
-	//	LiteralExpression |
-	//	{actionLanguage::OperationCall} operation=[core::Operation]'('(parameterBinding+=ParamaterBinding(',' parameterBinding+=ParamaterBinding)*)?')'
-	//;
-	// * / ParamaterBinding returns core::ParameterBinding:
+	//ParamaterBinding returns core::ParameterBinding:
 	//	{core::ParameterBinding} parameter=[core::Parameter] ":=" value=Expression;
 	public ParamaterBindingElements getParamaterBindingAccess() {
 		return (pParamaterBinding != null) ? pParamaterBinding : (pParamaterBinding = new ParamaterBindingElements());
@@ -1996,9 +1912,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getParamaterBindingAccess().getRule();
 	}
 
-	/// *LiteralExpression returns expressions::Expression:
-	//	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
-	//;* / // TriggerMessageExpression
+	//// TriggerMessageExpression
 	//TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
 	//	messageType=[msgiface::MessageType] "." parameter=[core::Parameter];
 	public TriggerMessageExpressionElements getTriggerMessageExpressionAccess() {
@@ -2020,18 +1934,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getIdentifierOrValueAccess().getRule();
 	}
 
-	/// *enum LogicOperator returns commonExpressions::LogicOperator: 
-	//	AND='&' | OR='|' | XOR='xor' | IMPLY='=>' | EQUIVALENT='<=>' 
-	//;
-	//
-	//
-	//enum ArithmeticOperator returns commonExpressions::ArithmeticOperator:
-	//	PLUS='+' | MINUS='-' |TIMES='*' | DIVIDE='/' | MODULO='%'
-	//;
-	//
-	//enum ComparingOperator returns commonExpressions::ComparingOperator:  
-	//	LESS='<' | LESS_OR_EQUAL='<=' | EQUAL='==' | GREATER_OR_EQUAL='>=' | GREATER='>' | UNEQUAL='<>' 
-	//;* / terminal NUMBER returns ecore::EBigDecimal:
+	//terminal NUMBER returns ecore::EBigDecimal:
 	//	INT "." INT;
 	public TerminalRule getNUMBERRule() {
 		return (tNUMBER != null) ? tNUMBER : (tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER"));

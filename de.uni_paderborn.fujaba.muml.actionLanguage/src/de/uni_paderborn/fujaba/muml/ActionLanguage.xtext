@@ -23,7 +23,8 @@ Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
 	'{'(expressions+=ExpressionStartRule*)'}' | expressions+=Expression
 ;
 
-// TODO: get rid of ForLoopCountingExpression
+// TODO: clarify if it makes sense to allow arbitrary expressions for
+// the initializeExpression and countingExpression
 ForLoop returns actionLanguage::ForLoop:
 	'for' '(' initalizeExpression=Assignment  loopTest=Expression';'  countingExpression=ForLoopCountingExpression ')' 
 		block=Block
@@ -83,7 +84,6 @@ enum AssignOperator returns actionLanguage::AssignOperator:
 
 // end of assignment
 
-// TODO: get rid of this production
 Expression returns expressions::Expression:
 	LogicalExpression
 ;
@@ -227,53 +227,9 @@ Literal returns ecore::EString:
 	NUMBER | BOOLEAN | INT | STRING
 ;
 
-/*
-
-ArithmeticExpression returns expressions::Expression:
-	ComparisonExpression
-	(
-		({commonExpressions::ArithmeticExpression.leftExpression=current} )
-		operator=ArithmeticOperator rightExpression=ComparisonExpression
-	)*
-;
-
-ComparisonExpression returns expressions::Expression:
-	LogicalExpression 
-	(
-		({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingOperator )
-		rightExpression=LogicalExpression
-	)*
-;
-
-LogicalExpression returns expressions::Expression:
-	(UnaryExpression | AttributeExpression )
-	(
-		({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicOperator )
-		rightExpression=(UnaryExpression| AttributeExpression)
-	)*
-;
-
-UnaryExpression returns expressions::Expression:
-	{commonExpressions::UnaryExpression}
-	operator=UnaryOperator enclosedExpression=AttributeExpression
-;*/
-
-
-	
-/*AttributeExpression returns expressions::Expression:
-	OperationCall | AttributeLeafExpression
-;*/
-
 AttributeExpression returns actionLanguage::AttributeExpression:
 	attribute=[core::Attribute] ('['indices+=ArithmeticExpression']')*
 ;
-
-/*
-AttributeLeafExpression returns actionLanguage::AttributeExpression:
-	{actionLanguage::AttributeExpression}
-	attribute=[core::Attribute]('['indices+=Expression']')*
-;
-*/	
 
 OperationCall returns actionLanguage::OperationCall:
 	operation=[core::Operation] '('
@@ -281,20 +237,9 @@ OperationCall returns actionLanguage::OperationCall:
 	')'
 ;
 
-/*
-OperationCall returns expressions::Expression:
-	LiteralExpression |
-	{actionLanguage::OperationCall} operation=[core::Operation]'('(parameterBinding+=ParamaterBinding(',' parameterBinding+=ParamaterBinding)*)?')'
-;
-*/				
-	
 ParamaterBinding returns core::ParameterBinding:
 	{core::ParameterBinding}parameter=[core::Parameter] ':=' value=Expression
 ;	
-
-/*LiteralExpression returns expressions::Expression:
-	{commonExpressions::LiteralExpression} value=IdentifierOrValue 
-;*/	
 
 // TriggerMessageExpression
 
@@ -308,19 +253,6 @@ TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
 IdentifierOrValue returns ecore::EString:
 	NUMBER | BOOLEAN | INT | STRING
 ;	
-
-/*enum LogicOperator returns commonExpressions::LogicOperator: 
-	AND='&' | OR='|' | XOR='xor' | IMPLY='=>' | EQUIVALENT='<=>' 
-;
-
-
-enum ArithmeticOperator returns commonExpressions::ArithmeticOperator:
-	PLUS='+' | MINUS='-' |TIMES='*' | DIVIDE='/' | MODULO='%'
-;
-
-enum ComparingOperator returns commonExpressions::ComparingOperator:  
-	LESS='<' | LESS_OR_EQUAL='<=' | EQUAL='==' | GREATER_OR_EQUAL='>=' | GREATER='>' | UNEQUAL='<>' 
-;*/
 
 terminal NUMBER returns ecore::EBigDecimal:
 	INT'.' INT
