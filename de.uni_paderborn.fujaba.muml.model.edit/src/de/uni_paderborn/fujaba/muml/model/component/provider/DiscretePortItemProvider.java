@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort} object.
@@ -62,14 +63,15 @@ public class DiscretePortItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBehaviorPropertyDescriptor(object);
-			addRefinesPropertyDescriptor(object);
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
+			addRefinesPropertyDescriptor(object);
 			addIsDiscreteInPortPropertyDescriptor(object);
 			addIsDiscreteOutPortPropertyDescriptor(object);
 			addIsDiscreteInOutPortPropertyDescriptor(object);
+			addReceiverMessageBufferPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -129,9 +131,9 @@ public class DiscretePortItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePort_senderMessageTypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_senderMessageTypes_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__SENDER_MESSAGE_TYPES,
+				 getString("_UI_DiscreteInteractionPoint_senderMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionPoint_senderMessageTypes_feature", "_UI_DiscreteInteractionPoint_type"),
+				 PatternPackage.Literals.DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
@@ -151,9 +153,9 @@ public class DiscretePortItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePort_receiverMessageTypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_receiverMessageTypes_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES,
+				 getString("_UI_DiscreteInteractionPoint_receiverMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionPoint_receiverMessageTypes_feature", "_UI_DiscreteInteractionPoint_type"),
+				 PatternPackage.Literals.DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
@@ -173,14 +175,14 @@ public class DiscretePortItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePort_adaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_adaptationBehavior_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__ADAPTATION_BEHAVIOR,
+				 getString("_UI_DiscreteInteractionPoint_adaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionPoint_adaptationBehavior_feature", "_UI_DiscreteInteractionPoint_type"),
+				 PatternPackage.Literals.DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_BehaviorPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -195,14 +197,14 @@ public class DiscretePortItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePort_roleAndAdaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_roleAndAdaptationBehavior_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR,
+				 getString("_UI_DiscreteInteractionPoint_roleAndAdaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionPoint_roleAndAdaptationBehavior_feature", "_UI_DiscreteInteractionPoint_type"),
+				 PatternPackage.Literals.DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_BehaviorPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -269,6 +271,28 @@ public class DiscretePortItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receiver Message Buffer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiverMessageBufferPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePort_receiverMessageBuffer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_receiverMessageBuffer_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

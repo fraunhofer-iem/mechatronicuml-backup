@@ -65,33 +65,10 @@ public class RoleConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addBidirectionalPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Bidirectional feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBidirectionalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RoleConnector_bidirectional_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_bidirectional_feature", "_UI_RoleConnector_type"),
-				 PatternPackage.Literals.ROLE_CONNECTOR__BIDIRECTIONAL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -187,8 +164,7 @@ public class RoleConnectorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		RoleConnector roleConnector = (RoleConnector)object;
-		return getString("_UI_RoleConnector_type") + " " + roleConnector.isBidirectional();
+		return getString("_UI_RoleConnector_type");
 	}
 
 	/**
@@ -203,9 +179,6 @@ public class RoleConnectorItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RoleConnector.class)) {
-			case PatternPackage.ROLE_CONNECTOR__BIDIRECTIONAL:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case PatternPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

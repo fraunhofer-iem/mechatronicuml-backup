@@ -85,6 +85,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			super.getPropertyDescriptors(object);
 
 			addPriorityPropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
 			addSynchronizationPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
@@ -124,6 +125,28 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 	}
 
 	 /**
+	 * This adds a property descriptor for the Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Synchronization feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -760,6 +783,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 
 		switch (notification.getFeatureID(Transition.class)) {
 			case RealtimestatechartPackage.TRANSITION__PRIORITY:
+			case RealtimestatechartPackage.TRANSITION__COMMENT:
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
 			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:

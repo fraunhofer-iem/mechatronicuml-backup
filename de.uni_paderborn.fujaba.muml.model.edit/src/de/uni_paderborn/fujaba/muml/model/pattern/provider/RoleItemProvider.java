@@ -45,7 +45,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * @generated
  */
 public class RoleItemProvider
-	extends NamedElementItemProvider
+	extends DiscreteInteractionPointItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -73,65 +73,14 @@ public class RoleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addConstraintPropertyDescriptor(object);
-			addBehaviorPropertyDescriptor(object);
 			addIncomingRoleConnectorPropertyDescriptor(object);
-			addSenderMessageTypesPropertyDescriptor(object);
-			addReceiverMessageTypesPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
-			addAdaptationBehaviorPropertyDescriptor(object);
-			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
-			addOrderedPropertyDescriptor(object);
 			addOutgoingRoleConnectorPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
 			addIsMultiRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Constraint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstrainableElement_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ConstraintPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Behavior feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBehaviorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BehavioralElement_behavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_BehaviorPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -148,50 +97,6 @@ public class RoleItemProvider
 				 getString("_UI_Role_incomingRoleConnector_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_incomingRoleConnector_feature", "_UI_Role_type"),
 				 PatternPackage.Literals.ROLE__INCOMING_ROLE_CONNECTOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Sender Message Types feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSenderMessageTypesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_senderMessageTypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_senderMessageTypes_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__SENDER_MESSAGE_TYPES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Receiver Message Types feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReceiverMessageTypesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_receiverMessageTypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_receiverMessageTypes_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
@@ -309,72 +214,6 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Adaptation Behavior feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAdaptationBehaviorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_adaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_adaptationBehavior_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__ADAPTATION_BEHAVIOR,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Role And Adaptation Behavior feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRoleAndAdaptationBehaviorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_roleAndAdaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_roleAndAdaptationBehavior_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ordered feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOrderedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_ordered_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_ordered_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__ORDERED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Outgoing Role Connector feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -408,7 +247,6 @@ public class RoleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(PatternPackage.Literals.ROLE__CARDINALITY);
 			childrenFeatures.add(PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER);
 		}
@@ -473,13 +311,10 @@ public class RoleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
-			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-			case PatternPackage.ROLE__ORDERED:
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 			case PatternPackage.ROLE__IS_MULTI_ROLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PatternPackage.ROLE__CONSTRAINT:
 			case PatternPackage.ROLE__CARDINALITY:
 			case PatternPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -502,21 +337,6 @@ public class RoleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(PatternPackage.Literals.ROLE__CARDINALITY,
 				 CoreFactory.eINSTANCE.createCardinality()));
 
@@ -524,17 +344,6 @@ public class RoleItemProvider
 			(createChildParameter
 				(PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER,
 				 PatternFactory.eINSTANCE.createMessageBuffer()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
 	}
 
 }

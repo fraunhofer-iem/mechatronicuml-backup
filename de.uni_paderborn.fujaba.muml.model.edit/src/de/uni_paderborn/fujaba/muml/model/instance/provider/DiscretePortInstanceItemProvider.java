@@ -61,6 +61,8 @@ public class DiscretePortInstanceItemProvider
 
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addSenderMessageTypesPropertyDescriptor(object);
+			addReceiverMessageBufferPropertyDescriptor(object);
+			addRefinesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,6 +103,50 @@ public class DiscretePortInstanceItemProvider
 				 getString("_UI_DiscretePortInstance_senderMessageTypes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_senderMessageTypes_feature", "_UI_DiscretePortInstance_type"),
 				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receiver Message Buffer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiverMessageBufferPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortInstance_receiverMessageBuffer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_receiverMessageBuffer_feature", "_UI_DiscretePortInstance_type"),
+				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Refines feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRefinesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortInstance_refines_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_refines_feature", "_UI_DiscretePortInstance_type"),
+				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__REFINES,
 				 false,
 				 false,
 				 false,
