@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfmap:Mapping xmi:version="2.0"
+<gmfmap:Mapping
+    xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
@@ -22,7 +23,7 @@
         <diagramLabel
             href="realtimeStatechart.gmfgraph#StatechartVariablesLabel"/>
         <viewExpression
-            body="(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if self.attributes->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;self.attributes->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.type.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.type.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if self.operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;self.operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if self.clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;self.clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)"/>
+            body="(&#xD;&#xA;&#xD;&#xA;-- Attributes&#xD;&#xA;&#xD;&#xA;&#x9;if self.attributes->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'var: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;self.attributes->iterate(attribute; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.type.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.type.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Operations&#xD;&#xA;&#xD;&#xA;&#x9;if self.operations->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'op: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;self.operations->iterate(operation; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Clocks&#xD;&#xA;&#xD;&#xA;&#x9;if self.clocks->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'cl: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;self.clocks->iterate(clock; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
       </labelMappings>
       <diagramNode
           href="realtimeStatechart.gmfgraph#Statechart"/>
@@ -281,11 +282,65 @@
                       referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.6/@ownedChild">
                     <containmentFeature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
+                      <domainInitializer
+                          xsi:type="gmfmap:FeatureSeqInitializer">
+                        <initializers
+                            xsi:type="gmfmap:FeatureValueSpec">
+                          <feature
+                              xsi:type="ecore:EAttribute"
+                              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                          <value
+                              body="'entrypoint'"/>
+                        </initializers>
+                      </domainInitializer>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
+                        <features
+                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.2"/>
+                      <diagramNode
+                          href="realtimeStatechart.gmfgraph#EntryPoint"/>
+                    </ownedChild>
                   </children>
                   <children
                       referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.7/@ownedChild">
                     <containmentFeature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
+                      <domainInitializer
+                          xsi:type="gmfmap:FeatureSeqInitializer">
+                        <initializers
+                            xsi:type="gmfmap:FeatureValueSpec">
+                          <feature
+                              xsi:type="ecore:EAttribute"
+                              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                          <value
+                              body="'exitpoint'"/>
+                        </initializers>
+                      </domainInitializer>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
+                        <features
+                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.3"/>
+                      <diagramNode
+                          href="realtimeStatechart.gmfgraph#ExitPoint"/>
+                    </ownedChild>
                   </children>
                   <compartments
                       children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
@@ -383,70 +438,6 @@
             <compartment
                 href="realtimeStatechart.gmfgraph#InvariantCompartment"/>
           </compartments>
-        </ownedChild>
-      </children>
-      <children
-          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
-          <domainInitializer
-              xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'entrypoint'"/>
-            </initializers>
-          </domainInitializer>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
-            <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.2"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#EntryPoint"/>
-        </ownedChild>
-      </children>
-      <children
-          referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
-          <domainInitializer
-              xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'exitpoint'"/>
-            </initializers>
-          </domainInitializer>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
-            <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.3"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#ExitPoint"/>
         </ownedChild>
       </children>
       <compartments
