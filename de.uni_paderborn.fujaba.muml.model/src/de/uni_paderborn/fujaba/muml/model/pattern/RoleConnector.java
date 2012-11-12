@@ -20,7 +20,6 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getCoordinationPattern <em>Coordination Pattern</em>}</li>
@@ -34,31 +33,6 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
  * @generated
  */
 public interface RoleConnector extends BehavioralElement {
-	/**
-	 * Returns the value of the '<em><b>Bidirectional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This attribute stores the direction of the channel. The direction can either be uni- or bi-direcational. This attribute should probably be renamed to bidirectional.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Bidirectional</em>' attribute.
-	 * @see #setBidirectional(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRoleConnector_Bidirectional()
-	 * @model
-	 * @generated
-	 */
-	boolean isBidirectional();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#isBidirectional <em>Bidirectional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bidirectional</em>' attribute.
-	 * @see #isBidirectional()
-	 * @generated
-	 */
-	void setBidirectional(boolean value);
-
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}'.

@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
@@ -48,6 +50,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchronization <em>Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSource <em>Source</em>}</li>
@@ -87,6 +90,26 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * @ordered
 	 */
 	protected int priority = PRIORITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
 
 	// TODO: Why is this not generated?
 	protected static final SynchronizationKind SYNCHRONIZATION_CHANNEL_KIND_EDEFAULT = null;
@@ -269,6 +292,27 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 		priority = newPriority;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__PRIORITY, oldPriority, priority));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -843,6 +887,8 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 		switch (featureID) {
 			case RealtimestatechartPackage.TRANSITION__PRIORITY:
 				return getPriority();
+			case RealtimestatechartPackage.TRANSITION__COMMENT:
+				return getComment();
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return getSynchronization();
 			case RealtimestatechartPackage.TRANSITION__TARGET:
@@ -890,6 +936,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 		switch (featureID) {
 			case RealtimestatechartPackage.TRANSITION__PRIORITY:
 				setPriority((Integer)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__COMMENT:
+				setComment((String)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				setSynchronization((Synchronization)newValue);
@@ -946,6 +995,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__PRIORITY:
 				setPriority(PRIORITY_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.TRANSITION__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				setSynchronization((Synchronization)null);
 				return;
@@ -996,6 +1048,8 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 		switch (featureID) {
 			case RealtimestatechartPackage.TRANSITION__PRIORITY:
 				return priority != PRIORITY_EDEFAULT;
+			case RealtimestatechartPackage.TRANSITION__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return synchronization != null;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
@@ -1041,6 +1095,12 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				default: return -1;
 			}
 		}
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+				case RealtimestatechartPackage.TRANSITION__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -1054,6 +1114,12 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 		if (baseClass == Prioritizable.class) {
 			switch (baseFeatureID) {
 				case RealtimestatechartPackage.PRIORITIZABLE__PRIORITY: return RealtimestatechartPackage.TRANSITION__PRIORITY;
+				default: return -1;
+			}
+		}
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return RealtimestatechartPackage.TRANSITION__COMMENT;
 				default: return -1;
 			}
 		}
@@ -1072,6 +1138,8 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (priority: ");
 		result.append(priority);
+		result.append(", comment: ");
+		result.append(comment);
 		result.append(", blockable: ");
 		result.append(blockable);
 		result.append(')');

@@ -15,6 +15,8 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +27,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl#getRefines <em>Refines</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +53,26 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate SENDER_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES).getSettingDelegate();
+
+
+	/**
+	 * The cached setting delegate for the '{@link #getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceiverMessageBuffer()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getRefines() <em>Refines</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefines()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate REFINES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__REFINES).getSettingDelegate();
 
 
 	/**
@@ -95,6 +119,34 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<MessageBuffer> getReceiverMessageBuffer() {
+		return (EList<MessageBuffer>)RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role getRefines() {
+		return (Role)REFINES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role basicGetRefines() {
+		return (Role)REFINES__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -102,6 +154,11 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 				return getReceiverMessageTypes();
 			case InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES:
 				return getSenderMessageTypes();
+			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER:
+				return getReceiverMessageBuffer();
+			case InstancePackage.DISCRETE_PORT_INSTANCE__REFINES:
+				if (resolve) return getRefines();
+				return basicGetRefines();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,6 +175,10 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 				return RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES:
 				return SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER:
+				return RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.DISCRETE_PORT_INSTANCE__REFINES:
+				return REFINES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

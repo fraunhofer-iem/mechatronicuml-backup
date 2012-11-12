@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -164,6 +165,10 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
+				return createDiscreteInteractionPointAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -448,6 +453,20 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBehavioralElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint <em>Discrete Interaction Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint
+	 * @generated
+	 */
+	public Adapter createDiscreteInteractionPointAdapter() {
 		return null;
 	}
 

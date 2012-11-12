@@ -82,22 +82,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE_CONNECTOR__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_CONNECTOR__BIDIRECTIONAL = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__SOURCE = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE_CONNECTOR__SOURCE = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -106,7 +97,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__TARGET = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE_CONNECTOR__TARGET = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
@@ -115,7 +106,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__COORDINATION_PATTERN = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE_CONNECTOR__COORDINATION_PATTERN = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
@@ -124,7 +115,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Role Connector</em>' class.
@@ -133,7 +124,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+	int ROLE_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl <em>Coordination Pattern</em>}' class.
@@ -218,6 +209,106 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionPointImpl <em>Discrete Interaction Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionPointImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getDiscreteInteractionPoint()
+	 * @generated
+	 */
+	int DISCRETE_INTERACTION_POINT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__CONSTRAINT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__ANNOTATION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__EXTENSION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__NAME = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Interaction Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_POINT_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl <em>Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -228,31 +319,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
+	int ROLE__BEHAVIOR = DISCRETE_INTERACTION_POINT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -261,34 +334,34 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CONSTRAINT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ROLE__CONSTRAINT = DISCRETE_INTERACTION_POINT__CONSTRAINT;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__BEHAVIOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE__ANNOTATION = DISCRETE_INTERACTION_POINT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Role Connector</b></em>' reference.
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__INCOMING_ROLE_CONNECTOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE__EXTENSION = DISCRETE_INTERACTION_POINT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__COORDINATION_PATTERN = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE__NAME = DISCRETE_INTERACTION_POINT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -297,7 +370,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__SENDER_MESSAGE_TYPES = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE__SENDER_MESSAGE_TYPES = DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -306,25 +379,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_TYPES = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__CARDINALITY = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Port</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__PORT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int ROLE__RECEIVER_MESSAGE_TYPES = DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -333,7 +388,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ADAPTATION_BEHAVIOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int ROLE__ADAPTATION_BEHAVIOR = DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -342,16 +397,43 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
+	 * The feature id for the '<em><b>Incoming Role Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ORDERED = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int ROLE__INCOMING_ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__COORDINATION_PATTERN = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__CARDINALITY = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__PORT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Role Connector</b></em>' reference.
@@ -360,7 +442,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OUTGOING_ROLE_CONNECTOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int ROLE__OUTGOING_ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
@@ -369,7 +451,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_CONNECTOR = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int ROLE__ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Multi Role</b></em>' attribute.
@@ -378,7 +460,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__IS_MULTI_ROLE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int ROLE__IS_MULTI_ROLE = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -387,7 +469,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_BUFFER = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int ROLE__RECEIVER_MESSAGE_BUFFER = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -396,7 +478,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int ROLE_FEATURE_COUNT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 8;
 
 
 	/**
@@ -573,17 +655,6 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRoleConnector();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#isBidirectional <em>Bidirectional</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Bidirectional</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#isBidirectional()
-	 * @see #getRoleConnector()
-	 * @generated
-	 */
-	EAttribute getRoleConnector_Bidirectional();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource <em>Source</em>}'.
@@ -813,6 +884,60 @@ public interface PatternPackage extends EPackage {
 	EAttribute getConnectorQualityOfServiceAssumptions_MessageLossPossible();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint <em>Discrete Interaction Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Interaction Point</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint
+	 * @generated
+	 */
+	EClass getDiscreteInteractionPoint();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getSenderMessageTypes <em>Sender Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sender Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getSenderMessageTypes()
+	 * @see #getDiscreteInteractionPoint()
+	 * @generated
+	 */
+	EReference getDiscreteInteractionPoint_SenderMessageTypes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Receiver Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getReceiverMessageTypes()
+	 * @see #getDiscreteInteractionPoint()
+	 * @generated
+	 */
+	EReference getDiscreteInteractionPoint_ReceiverMessageTypes();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getAdaptationBehavior()
+	 * @see #getDiscreteInteractionPoint()
+	 * @generated
+	 */
+	EReference getDiscreteInteractionPoint_AdaptationBehavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getRoleAndAdaptationBehavior()
+	 * @see #getDiscreteInteractionPoint()
+	 * @generated
+	 */
+	EReference getDiscreteInteractionPoint_RoleAndAdaptationBehavior();
+
+	/**
 	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -822,28 +947,6 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_CoordinationPattern();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageTypes <em>Sender Message Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sender Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageTypes()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_SenderMessageTypes();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Receiver Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageTypes()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_ReceiverMessageTypes();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCardinality <em>Cardinality</em>}'.
@@ -866,39 +969,6 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_Port();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_AdaptationBehavior();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_RoleAndAdaptationBehavior();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered <em>Ordered</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ordered</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EAttribute getRole_Ordered();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}'.
@@ -942,14 +1012,6 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROLE_CONNECTOR = eINSTANCE.getRoleConnector();
-
-		/**
-		 * The meta object literal for the '<em><b>Bidirectional</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROLE_CONNECTOR__BIDIRECTIONAL = eINSTANCE.getRoleConnector_Bidirectional();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -1128,12 +1190,14 @@ public interface PatternPackage extends EPackage {
 		EAttribute CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = eINSTANCE.getConnectorQualityOfServiceAssumptions_MessageLossPossible();
 
 		/**
-		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' container reference feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionPointImpl <em>Discrete Interaction Point</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionPointImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getDiscreteInteractionPoint()
 		 * @generated
 		 */
-		EReference ROLE__COORDINATION_PATTERN = eINSTANCE.getRole_CoordinationPattern();
+		EClass DISCRETE_INTERACTION_POINT = eINSTANCE.getDiscreteInteractionPoint();
 
 		/**
 		 * The meta object literal for the '<em><b>Sender Message Types</b></em>' reference list feature.
@@ -1141,7 +1205,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__SENDER_MESSAGE_TYPES = eINSTANCE.getRole_SenderMessageTypes();
+		EReference DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES = eINSTANCE.getDiscreteInteractionPoint_SenderMessageTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Receiver Message Types</b></em>' reference list feature.
@@ -1149,7 +1213,31 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__RECEIVER_MESSAGE_TYPES = eINSTANCE.getRole_ReceiverMessageTypes();
+		EReference DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES = eINSTANCE.getDiscreteInteractionPoint_ReceiverMessageTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionPoint_AdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionPoint_RoleAndAdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__COORDINATION_PATTERN = eINSTANCE.getRole_CoordinationPattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
@@ -1166,30 +1254,6 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__PORT = eINSTANCE.getRole_Port();
-
-		/**
-		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE__ADAPTATION_BEHAVIOR = eINSTANCE.getRole_AdaptationBehavior();
-
-		/**
-		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getRole_RoleAndAdaptationBehavior();
-
-		/**
-		 * The meta object literal for the '<em><b>Ordered</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROLE__ORDERED = eINSTANCE.getRole_Ordered();
 
 		/**
 		 * The meta object literal for the '<em><b>Outgoing Role Connector</b></em>' reference feature.

@@ -15,7 +15,7 @@ import org.storydriven.core.ExtendableElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This abstract class is the common super class of delegations and assemblies.
+ * This abstract class is the common super class of delegations and assemblies between two ports.
  * <!-- end-model-doc -->
  *
  * <p>

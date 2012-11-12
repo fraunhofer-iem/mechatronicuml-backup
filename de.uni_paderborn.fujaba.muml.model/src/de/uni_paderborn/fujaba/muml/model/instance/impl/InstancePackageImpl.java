@@ -496,6 +496,24 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDiscretePortInstance_ReceiverMessageBuffer() {
+		return (EReference)discretePortInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscretePortInstance_Refines() {
+		return (EReference)discretePortInstanceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDiscreteSinglePortInstance() {
 		return discreteSinglePortInstanceEClass;
 	}
@@ -653,6 +671,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		discretePortInstanceEClass = createEClass(DISCRETE_PORT_INSTANCE);
 		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES);
 		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES);
+		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER);
+		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__REFINES);
 
 		discreteSinglePortInstanceEClass = createEClass(DISCRETE_SINGLE_PORT_INSTANCE);
 		createEReference(discreteSinglePortInstanceEClass, DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE);
@@ -698,6 +718,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
+		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -758,6 +779,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(discretePortInstanceEClass, DiscretePortInstance.class, "DiscretePortInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscretePortInstance_ReceiverMessageTypes(), theMsgifacePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePortInstance_SenderMessageTypes(), theMsgifacePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscretePortInstance_ReceiverMessageBuffer(), thePatternPackage.getMessageBuffer(), null, "receiverMessageBuffer", null, 0, -1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscretePortInstance_Refines(), thePatternPackage.getRole(), null, "refines", null, 0, 1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteSinglePortInstanceEClass, DiscreteSinglePortInstance.class, "DiscreteSinglePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteSinglePortInstance_MultiPortInstance(), this.getDiscreteMultiPortInstance(), this.getDiscreteMultiPortInstance_SubPortInstances(), "multiPortInstance", null, 0, 1, DiscreteSinglePortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -806,7 +829,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "constraints", "OneDelegationInstancePerPortInstance"
-		   });																										
+		   });																														
 	}
 
 	/**
@@ -858,6 +881,18 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tnull\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).senderMessageTypes\r\nendif"
+		   });			
+		addAnnotation
+		  (getDiscretePortInstance_ReceiverMessageBuffer(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.portType.refines.receiverMessageBuffer"
+		   });			
+		addAnnotation
+		  (getDiscretePortInstance_Refines(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.portType.refines"
 		   });							
 		addAnnotation
 		  (getDiscreteMultiPortInstance_GmfSubPortInstances(), 

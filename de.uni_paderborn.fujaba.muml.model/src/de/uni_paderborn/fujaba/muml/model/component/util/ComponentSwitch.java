@@ -31,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,10 +125,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				DiscretePort discretePort = (DiscretePort)theEObject;
 				T result = caseDiscretePort(discretePort);
 				if (result == null) result = casePort(discretePort);
-				if (result == null) result = caseBehavioralElement(discretePort);
+				if (result == null) result = caseDiscreteInteractionPoint(discretePort);
 				if (result == null) result = caseNamedElement(discretePort);
 				if (result == null) result = caseCommentableElement(discretePort);
 				if (result == null) result = caseConstrainableElement(discretePort);
+				if (result == null) result = caseBehavioralElement(discretePort);
 				if (result == null) result = caseExtendableElement(discretePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -205,10 +207,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDiscretePort(hybridPort);
 				if (result == null) result = caseContinuousPort(hybridPort);
 				if (result == null) result = casePort(hybridPort);
-				if (result == null) result = caseBehavioralElement(hybridPort);
+				if (result == null) result = caseDiscreteInteractionPoint(hybridPort);
 				if (result == null) result = caseNamedElement(hybridPort);
 				if (result == null) result = caseCommentableElement(hybridPort);
 				if (result == null) result = caseConstrainableElement(hybridPort);
+				if (result == null) result = caseBehavioralElement(hybridPort);
 				if (result == null) result = caseExtendableElement(hybridPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -517,6 +520,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBehavioralElement(BehavioralElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
 		return null;
 	}
 

@@ -9,6 +9,8 @@ package de.uni_paderborn.fujaba.muml.model.instance;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
 
 /**
@@ -27,6 +29,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getRefines <em>Refines</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,4 +75,35 @@ public interface DiscretePortInstance extends PortInstance {
 	 * @generated
 	 */
 	EList<MessageType> getSenderMessageTypes();
+
+	/**
+	 * Returns the value of the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The derived properties of the refined role regarding the receiver message buffers.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Receiver Message Buffer</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_ReceiverMessageBuffer()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portType.refines.receiverMessageBuffer'"
+	 * @generated
+	 */
+	EList<MessageBuffer> getReceiverMessageBuffer();
+
+	/**
+	 * Returns the value of the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The role of a coordination pattern that the port type of this port instance refines.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Refines</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_Refines()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portType.refines'"
+	 * @generated
+	 */
+	Role getRefines();
 } // DiscretePortInstance

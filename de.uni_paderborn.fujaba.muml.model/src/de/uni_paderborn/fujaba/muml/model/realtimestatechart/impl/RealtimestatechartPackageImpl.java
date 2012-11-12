@@ -1487,6 +1487,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		vertexEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		transitionEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 		transitionEClass.getESuperTypes().add(this.getPrioritizable());
+		transitionEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		actionEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		asynchronousMessageEventEClass.getESuperTypes().add(this.getTransitionEvent());
 		doEventEClass.getESuperTypes().add(this.getStateEvent());

@@ -101,6 +101,10 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 				return createConnectorQualityOfServiceAssumptionsAdapter();
 			}
 			@Override
+			public Adapter caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
+				return createDiscreteInteractionPointAdapter();
+			}
+			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
 			}
@@ -207,6 +211,20 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectorQualityOfServiceAssumptionsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint <em>Discrete Interaction Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint
+	 * @generated
+	 */
+	public Adapter createDiscreteInteractionPointAdapter() {
 		return null;
 	}
 

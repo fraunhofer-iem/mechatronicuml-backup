@@ -30,13 +30,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageTypes <em>Sender Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort <em>Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isIsMultiRole <em>Is Multi Role</em>}</li>
@@ -49,7 +44,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL MultiPortRequiresDefinedOrder='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')' RoleHasConnector='self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()' RoleRequiresBehavior='not self.behavior.oclIsUndefined()' RoleRequiresInterface='not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())'"
  * @generated
  */
-public interface Role extends NamedElement, ConstrainableElement, BehavioralElement {
+public interface Role extends DiscreteInteractionPoint {
 	/**
 	 * Returns the value of the '<em><b>Incoming Role Connector</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getTarget <em>Target</em>}'.
@@ -151,36 +146,6 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	void setCoordinationPattern(CoordinationPattern value);
 
 	/**
-	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The sender message interface defines which messages this port sends.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Sender Message Types</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_SenderMessageTypes()
-	 * @model
-	 * @generated
-	 */
-	EList<MessageType> getSenderMessageTypes();
-
-	/**
-	 * Returns the value of the '<em><b>Receiver Message Types</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The receiver message interface defines which messages this port receives.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_ReceiverMessageTypes()
-	 * @model
-	 * @generated
-	 */
-	EList<MessageType> getReceiverMessageTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -229,89 +194,6 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * @generated
 	 */
 	EList<DiscretePort> getPort();
-
-	/**
-	 * Returns the value of the '<em><b>Adaptation Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The adaptation behavior of this role. Note that only multi-ports have an adaptation behavior.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Adaptation Behavior</em>' reference.
-	 * @see #setAdaptationBehavior(Behavior)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_AdaptationBehavior()
-	 * @model
-	 * @generated
-	 */
-	Behavior getAdaptationBehavior();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Adaptation Behavior</em>' reference.
-	 * @see #getAdaptationBehavior()
-	 * @generated
-	 */
-	void setAdaptationBehavior(Behavior value);
-
-	/**
-	 * Returns the value of the '<em><b>Role And Adaptation Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Role And Adaptation Behavior</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * If this role is a multi-role, this reference points to the Real-Time Statechart that
-	 * contains the adaptation behavior and the sub-port behavior. Thus, this real-time
-	 * statechart only contains one state which embeds the real-time statecharts
-	 * specifying the adaptation behavior and the sub-role behavior.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Role And Adaptation Behavior</em>' reference.
-	 * @see #setRoleAndAdaptationBehavior(Behavior)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_RoleAndAdaptationBehavior()
-	 * @model
-	 * @generated
-	 */
-	Behavior getRoleAndAdaptationBehavior();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role And Adaptation Behavior</em>' reference.
-	 * @see #getRoleAndAdaptationBehavior()
-	 * @generated
-	 */
-	void setRoleAndAdaptationBehavior(Behavior value);
-
-	/**
-	 * Returns the value of the '<em><b>Ordered</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This attribute marks a multi-role as being ordered. In an ordered multi-role, one of the contained integer attributes is used to define the order. Then, the instances of the multi-role are numbered from 1 to n for n instances.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Ordered</em>' attribute.
-	 * @see #setOrdered(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Ordered()
-	 * @model default=""
-	 * @generated
-	 */
-	boolean isOrdered();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#isOrdered <em>Ordered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ordered</em>' attribute.
-	 * @see #isOrdered()
-	 * @generated
-	 */
-	void setOrdered(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Outgoing Role Connector</b></em>' reference.

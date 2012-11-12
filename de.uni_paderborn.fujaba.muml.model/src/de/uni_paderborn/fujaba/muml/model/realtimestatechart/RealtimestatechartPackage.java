@@ -621,13 +621,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__PRIORITY = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__COMMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Synchronization</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SYNCHRONIZATION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int TRANSITION__SYNCHRONIZATION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -636,7 +645,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TARGET = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int TRANSITION__TARGET = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -645,7 +654,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SOURCE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int TRANSITION__SOURCE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
@@ -654,7 +663,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__STATECHART = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int TRANSITION__STATECHART = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clock Resets</b></em>' reference list.
@@ -663,7 +672,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_RESETS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int TRANSITION__CLOCK_RESETS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Trigger Message Event</b></em>' reference.
@@ -672,7 +681,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRIGGER_MESSAGE_EVENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
+	int TRANSITION__TRIGGER_MESSAGE_EVENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Raise Message Event</b></em>' reference.
@@ -681,7 +690,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RAISE_MESSAGE_EVENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
+	int TRANSITION__RAISE_MESSAGE_EVENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Clock Constraints</b></em>' containment reference list.
@@ -690,7 +699,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_CONSTRAINTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 8;
+	int TRANSITION__CLOCK_CONSTRAINTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadlines</b></em>' containment reference list.
@@ -699,7 +708,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ABSOLUTE_DEADLINES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 9;
+	int TRANSITION__ABSOLUTE_DEADLINES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Relative Deadline</b></em>' containment reference.
@@ -708,7 +717,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RELATIVE_DEADLINE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 10;
+	int TRANSITION__RELATIVE_DEADLINE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Blockable</b></em>' attribute.
@@ -717,7 +726,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__BLOCKABLE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 11;
+	int TRANSITION__BLOCKABLE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -726,7 +735,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 12;
+	int TRANSITION__GUARD = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
@@ -735,7 +744,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EVENTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 13;
+	int TRANSITION__EVENTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -744,7 +753,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ACTION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 14;
+	int TRANSITION__ACTION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -753,7 +762,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 15;
+	int TRANSITION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.

@@ -23,6 +23,8 @@ import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
@@ -34,14 +36,15 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getBehavior <em>Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getRefines <em>Refines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getRefines <em>Refines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isIsDiscreteInPort <em>Is Discrete In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isIsDiscreteOutPort <em>Is Discrete Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isIsDiscreteInOutPort <em>Is Discrete In Out Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,16 +60,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @ordered
 	 */
 	protected Behavior behavior;
-
-	/**
-	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefines()
-	 * @generated
-	 * @ordered
-	 */
-	protected Role refines;
 
 	/**
 	 * The cached value of the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
@@ -109,6 +102,16 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	protected Behavior roleAndAdaptationBehavior;
 
 	/**
+	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefines()
+	 * @generated
+	 * @ordered
+	 */
+	protected Role refines;
+
+	/**
 	 * The cached setting delegate for the '{@link #isIsDiscreteInPort() <em>Is Discrete In Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +140,16 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate IS_DISCRETE_IN_OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceiverMessageBuffer()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -410,6 +423,16 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	public EList<MessageBuffer> getReceiverMessageBuffer() {
+		return (EList<MessageBuffer>)RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -452,9 +475,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				if (resolve) return getBehavior();
 				return basicGetBehavior();
-			case ComponentPackage.DISCRETE_PORT__REFINES:
-				if (resolve) return getRefines();
-				return basicGetRefines();
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
 				return getSenderMessageTypes();
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
@@ -465,12 +485,17 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				if (resolve) return getRoleAndAdaptationBehavior();
 				return basicGetRoleAndAdaptationBehavior();
+			case ComponentPackage.DISCRETE_PORT__REFINES:
+				if (resolve) return getRefines();
+				return basicGetRefines();
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT:
 				return isIsDiscreteInPort();
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT:
 				return isIsDiscreteOutPort();
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
 				return isIsDiscreteInOutPort();
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
+				return getReceiverMessageBuffer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -487,9 +512,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				setBehavior((Behavior)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT__REFINES:
-				setRefines((Role)newValue);
-				return;
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
 				getSenderMessageTypes().clear();
 				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
@@ -503,6 +525,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return;
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)newValue);
+				return;
+			case ComponentPackage.DISCRETE_PORT__REFINES:
+				setRefines((Role)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -519,9 +544,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				setBehavior((Behavior)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT__REFINES:
-				setRefines((Role)null);
-				return;
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
 				getSenderMessageTypes().clear();
 				return;
@@ -533,6 +555,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return;
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)null);
+				return;
+			case ComponentPackage.DISCRETE_PORT__REFINES:
+				setRefines((Role)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -548,8 +573,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				return behavior != null;
-			case ComponentPackage.DISCRETE_PORT__REFINES:
-				return refines != null;
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
 				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
@@ -558,12 +581,16 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return adaptationBehavior != null;
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				return roleAndAdaptationBehavior != null;
+			case ComponentPackage.DISCRETE_PORT__REFINES:
+				return refines != null;
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT:
 				return IS_DISCRETE_IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT:
 				return IS_DISCRETE_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
 				return IS_DISCRETE_IN_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
+				return RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -581,6 +608,15 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				default: return -1;
 			}
 		}
+		if (baseClass == DiscreteInteractionPoint.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES: return PatternPackage.DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES;
+				case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES: return PatternPackage.DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES;
+				case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR: return PatternPackage.DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR;
+				case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR: return PatternPackage.DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -594,6 +630,15 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.DISCRETE_PORT__BEHAVIOR;
+				default: return -1;
+			}
+		}
+		if (baseClass == DiscreteInteractionPoint.class) {
+			switch (baseFeatureID) {
+				case PatternPackage.DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES: return ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES;
+				case PatternPackage.DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES: return ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES;
+				case PatternPackage.DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR;
+				case PatternPackage.DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 				default: return -1;
 			}
 		}

@@ -548,22 +548,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__BEHAVIOR = PORT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT__REFINES = PORT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__SENDER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 2;
+	int DISCRETE_PORT__SENDER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -572,7 +563,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__RECEIVER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 3;
+	int DISCRETE_PORT__RECEIVER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -581,7 +572,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 4;
+	int DISCRETE_PORT__ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -590,7 +581,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 5;
+	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__REFINES = PORT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
@@ -620,13 +620,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = PORT_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER = PORT_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 9;
+	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl <em>Part</em>}' class.
@@ -1754,15 +1763,6 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__BEHAVIOR = DISCRETE_PORT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__REFINES = DISCRETE_PORT__REFINES;
-
-	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1799,6 +1799,15 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__REFINES = DISCRETE_PORT__REFINES;
+
+	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1824,6 +1833,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int HYBRID_PORT__IS_DISCRETE_IN_OUT_PORT = DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__RECEIVER_MESSAGE_BUFFER = DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -2134,50 +2152,6 @@ public interface ComponentPackage extends EPackage {
 	EReference getDiscretePort_Refines();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getSenderMessageTypes <em>Sender Message Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sender Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getSenderMessageTypes()
-	 * @see #getDiscretePort()
-	 * @generated
-	 */
-	EReference getDiscretePort_SenderMessageTypes();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Receiver Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageTypes()
-	 * @see #getDiscretePort()
-	 * @generated
-	 */
-	EReference getDiscretePort_ReceiverMessageTypes();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getAdaptationBehavior()
-	 * @see #getDiscretePort()
-	 * @generated
-	 */
-	EReference getDiscretePort_AdaptationBehavior();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRoleAndAdaptationBehavior()
-	 * @see #getDiscretePort()
-	 * @generated
-	 */
-	EReference getDiscretePort_RoleAndAdaptationBehavior();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isIsDiscreteInPort <em>Is Discrete In Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2209,6 +2183,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDiscretePort_IsDiscreteInOutPort();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Receiver Message Buffer</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageBuffer()
+	 * @see #getDiscretePort()
+	 * @generated
+	 */
+	EReference getDiscretePort_ReceiverMessageBuffer();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getCardinality <em>Cardinality</em>}'.
@@ -2844,38 +2829,6 @@ public interface ComponentPackage extends EPackage {
 		EReference DISCRETE_PORT__REFINES = eINSTANCE.getDiscretePort_Refines();
 
 		/**
-		 * The meta object literal for the '<em><b>Sender Message Types</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT__SENDER_MESSAGE_TYPES = eINSTANCE.getDiscretePort_SenderMessageTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Receiver Message Types</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT__RECEIVER_MESSAGE_TYPES = eINSTANCE.getDiscretePort_ReceiverMessageTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePort_AdaptationBehavior();
-
-		/**
-		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior();
-
-		/**
 		 * The meta object literal for the '<em><b>Is Discrete In Port</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2898,6 +2851,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = eINSTANCE.getDiscretePort_IsDiscreteInOutPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Receiver Message Buffer</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER = eINSTANCE.getDiscretePort_ReceiverMessageBuffer();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.

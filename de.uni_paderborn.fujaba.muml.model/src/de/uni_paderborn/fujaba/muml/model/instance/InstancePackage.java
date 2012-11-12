@@ -741,13 +741,31 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES = PORT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = PORT_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__REFINES = PORT_INSTANCE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 2;
+	int DISCRETE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HybridPortInstanceImpl <em>Hybrid Port Instance</em>}' class.
@@ -857,6 +875,24 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int HYBRID_PORT_INSTANCE__SENDER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__REFINES = DISCRETE_PORT_INSTANCE__REFINES;
 
 	/**
 	 * The number of structural features of the '<em>Hybrid Port Instance</em>' class.
@@ -975,6 +1011,24 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_SINGLE_PORT_INSTANCE__SENDER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__REFINES = DISCRETE_PORT_INSTANCE__REFINES;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port Instance</b></em>' reference.
@@ -1102,6 +1156,24 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_MULTI_PORT_INSTANCE__SENDER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__REFINES = DISCRETE_PORT_INSTANCE__REFINES;
 
 	/**
 	 * The feature id for the '<em><b>Sub Port Instances</b></em>' reference list.
@@ -1638,6 +1710,28 @@ public interface InstancePackage extends EPackage {
 	EReference getDiscretePortInstance_SenderMessageTypes();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Receiver Message Buffer</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageBuffer()
+	 * @see #getDiscretePortInstance()
+	 * @generated
+	 */
+	EReference getDiscretePortInstance_ReceiverMessageBuffer();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getRefines <em>Refines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Refines</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getRefines()
+	 * @see #getDiscretePortInstance()
+	 * @generated
+	 */
+	EReference getDiscretePortInstance_Refines();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2008,6 +2102,22 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES = eINSTANCE.getDiscretePortInstance_SenderMessageTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Receiver Message Buffer</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = eINSTANCE.getDiscretePortInstance_ReceiverMessageBuffer();
+
+		/**
+		 * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_INSTANCE__REFINES = eINSTANCE.getDiscretePortInstance_Refines();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.

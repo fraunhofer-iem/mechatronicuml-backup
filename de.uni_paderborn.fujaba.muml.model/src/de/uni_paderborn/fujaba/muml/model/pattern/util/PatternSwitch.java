@@ -99,9 +99,10 @@ public class PatternSwitch<T> extends Switch<T> {
 			case PatternPackage.ROLE: {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
-				if (result == null) result = caseNamedElement(role);
-				if (result == null) result = caseConstrainableElement(role);
+				if (result == null) result = caseDiscreteInteractionPoint(role);
 				if (result == null) result = caseBehavioralElement(role);
+				if (result == null) result = caseConstrainableElement(role);
+				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = caseExtendableElement(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -121,6 +122,16 @@ public class PatternSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(connectorQualityOfServiceAssumptions);
 				if (result == null) result = caseCommentableElement(connectorQualityOfServiceAssumptions);
 				if (result == null) result = caseExtendableElement(connectorQualityOfServiceAssumptions);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PatternPackage.DISCRETE_INTERACTION_POINT: {
+				DiscreteInteractionPoint discreteInteractionPoint = (DiscreteInteractionPoint)theEObject;
+				T result = caseDiscreteInteractionPoint(discreteInteractionPoint);
+				if (result == null) result = caseBehavioralElement(discreteInteractionPoint);
+				if (result == null) result = caseConstrainableElement(discreteInteractionPoint);
+				if (result == null) result = caseNamedElement(discreteInteractionPoint);
+				if (result == null) result = caseExtendableElement(discreteInteractionPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -200,6 +211,21 @@ public class PatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
 		return null;
 	}
 

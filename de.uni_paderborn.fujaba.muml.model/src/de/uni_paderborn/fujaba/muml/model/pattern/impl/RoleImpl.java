@@ -45,17 +45,10 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getPort <em>Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#isIsMultiRole <em>Is Multi Role</em>}</li>
@@ -65,27 +58,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *
  * @generated
  */
-public class RoleImpl extends NamedElementImpl implements Role {
-	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConstraint()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Constraint> constraint;
-
-	/**
-	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehavior()
-	 * @generated
-	 * @ordered
-	 */
-	protected Behavior behavior;
-
+public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
 	/**
 	 * The cached value of the '{@link #getIncomingRoleConnector() <em>Incoming Role Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -95,26 +68,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected RoleConnector incomingRoleConnector;
-
-	/**
-	 * The cached value of the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSenderMessageTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MessageType> senderMessageTypes;
-
-	/**
-	 * The cached value of the '{@link #getReceiverMessageTypes() <em>Receiver Message Types</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiverMessageTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MessageType> receiverMessageTypes;
 
 	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
@@ -135,46 +88,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected EList<DiscretePort> port;
-
-	/**
-	 * The cached value of the '{@link #getAdaptationBehavior() <em>Adaptation Behavior</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAdaptationBehavior()
-	 * @generated
-	 * @ordered
-	 */
-	protected Behavior adaptationBehavior;
-
-	/**
-	 * The cached value of the '{@link #getRoleAndAdaptationBehavior() <em>Role And Adaptation Behavior</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleAndAdaptationBehavior()
-	 * @generated
-	 * @ordered
-	 */
-	protected Behavior roleAndAdaptationBehavior;
-
-	/**
-	 * The default value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOrdered()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ORDERED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOrdered()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean ordered = ORDERED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingRoleConnector() <em>Outgoing Role Connector</em>}' reference.
@@ -233,78 +146,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	@Override
 	protected EClass eStaticClass() {
 		return PatternPackage.Literals.ROLE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Constraint> getConstraint() {
-		if (constraint == null) {
-			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, PatternPackage.ROLE__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
-		}
-		return constraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Behavior getBehavior() {
-		if (behavior != null && behavior.eIsProxy()) {
-			InternalEObject oldBehavior = (InternalEObject)behavior;
-			behavior = (Behavior)eResolveProxy(oldBehavior);
-			if (behavior != oldBehavior) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__BEHAVIOR, oldBehavior, behavior));
-			}
-		}
-		return behavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Behavior basicGetBehavior() {
-		return behavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBehavior(Behavior newBehavior, NotificationChain msgs) {
-		Behavior oldBehavior = behavior;
-		behavior = newBehavior;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__BEHAVIOR, oldBehavior, newBehavior);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBehavior(Behavior newBehavior) {
-		if (newBehavior != behavior) {
-			NotificationChain msgs = null;
-			if (behavior != null)
-				msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
-			if (newBehavior != null)
-				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
-			msgs = basicSetBehavior(newBehavior, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__BEHAVIOR, newBehavior, newBehavior));
 	}
 
 	/**
@@ -452,30 +293,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MessageType> getSenderMessageTypes() {
-		if (senderMessageTypes == null) {
-			senderMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, PatternPackage.ROLE__SENDER_MESSAGE_TYPES);
-		}
-		return senderMessageTypes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<MessageType> getReceiverMessageTypes() {
-		if (receiverMessageTypes == null) {
-			receiverMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES);
-		}
-		return receiverMessageTypes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Cardinality getCardinality() {
 		return cardinality;
 	}
@@ -524,103 +341,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			port = new EObjectWithInverseResolvingEList<DiscretePort>(DiscretePort.class, this, PatternPackage.ROLE__PORT, ComponentPackage.DISCRETE_PORT__REFINES);
 		}
 		return port;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Behavior getAdaptationBehavior() {
-		if (adaptationBehavior != null && adaptationBehavior.eIsProxy()) {
-			InternalEObject oldAdaptationBehavior = (InternalEObject)adaptationBehavior;
-			adaptationBehavior = (Behavior)eResolveProxy(oldAdaptationBehavior);
-			if (adaptationBehavior != oldAdaptationBehavior) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
-			}
-		}
-		return adaptationBehavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Behavior basicGetAdaptationBehavior() {
-		return adaptationBehavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAdaptationBehavior(Behavior newAdaptationBehavior) {
-		Behavior oldAdaptationBehavior = adaptationBehavior;
-		adaptationBehavior = newAdaptationBehavior;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Behavior getRoleAndAdaptationBehavior() {
-		if (roleAndAdaptationBehavior != null && roleAndAdaptationBehavior.eIsProxy()) {
-			InternalEObject oldRoleAndAdaptationBehavior = (InternalEObject)roleAndAdaptationBehavior;
-			roleAndAdaptationBehavior = (Behavior)eResolveProxy(oldRoleAndAdaptationBehavior);
-			if (roleAndAdaptationBehavior != oldRoleAndAdaptationBehavior) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
-			}
-		}
-		return roleAndAdaptationBehavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Behavior basicGetRoleAndAdaptationBehavior() {
-		return roleAndAdaptationBehavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRoleAndAdaptationBehavior(Behavior newRoleAndAdaptationBehavior) {
-		Behavior oldRoleAndAdaptationBehavior = roleAndAdaptationBehavior;
-		roleAndAdaptationBehavior = newRoleAndAdaptationBehavior;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isOrdered() {
-		return ordered;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOrdered(boolean newOrdered) {
-		boolean oldOrdered = ordered;
-		ordered = newOrdered;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ORDERED, oldOrdered, ordered));
 	}
 
 	/**
@@ -692,12 +412,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PatternPackage.ROLE__CONSTRAINT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
-			case PatternPackage.ROLE__BEHAVIOR:
-				if (behavior != null)
-					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
-				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				if (incomingRoleConnector != null)
 					msgs = ((InternalEObject)incomingRoleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__TARGET, RoleConnector.class, msgs);
@@ -726,10 +440,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PatternPackage.ROLE__CONSTRAINT:
-				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
-			case PatternPackage.ROLE__BEHAVIOR:
-				return basicSetBehavior(null, msgs);
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				return basicSetIncomingRoleConnector(null, msgs);
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
@@ -768,32 +478,15 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PatternPackage.ROLE__CONSTRAINT:
-				return getConstraint();
-			case PatternPackage.ROLE__BEHAVIOR:
-				if (resolve) return getBehavior();
-				return basicGetBehavior();
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				if (resolve) return getIncomingRoleConnector();
 				return basicGetIncomingRoleConnector();
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern();
-			case PatternPackage.ROLE__SENDER_MESSAGE_TYPES:
-				return getSenderMessageTypes();
-			case PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES:
-				return getReceiverMessageTypes();
 			case PatternPackage.ROLE__CARDINALITY:
 				return getCardinality();
 			case PatternPackage.ROLE__PORT:
 				return getPort();
-			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				if (resolve) return getAdaptationBehavior();
-				return basicGetAdaptationBehavior();
-			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
-				if (resolve) return getRoleAndAdaptationBehavior();
-				return basicGetRoleAndAdaptationBehavior();
-			case PatternPackage.ROLE__ORDERED:
-				return isOrdered();
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				if (resolve) return getOutgoingRoleConnector();
 				return basicGetOutgoingRoleConnector();
@@ -817,26 +510,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PatternPackage.ROLE__CONSTRAINT:
-				getConstraint().clear();
-				getConstraint().addAll((Collection<? extends Constraint>)newValue);
-				return;
-			case PatternPackage.ROLE__BEHAVIOR:
-				setBehavior((Behavior)newValue);
-				return;
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				setIncomingRoleConnector((RoleConnector)newValue);
 				return;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)newValue);
-				return;
-			case PatternPackage.ROLE__SENDER_MESSAGE_TYPES:
-				getSenderMessageTypes().clear();
-				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
-				return;
-			case PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES:
-				getReceiverMessageTypes().clear();
-				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
 			case PatternPackage.ROLE__CARDINALITY:
 				setCardinality((Cardinality)newValue);
@@ -844,15 +522,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__PORT:
 				getPort().clear();
 				getPort().addAll((Collection<? extends DiscretePort>)newValue);
-				return;
-			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				setAdaptationBehavior((Behavior)newValue);
-				return;
-			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
-				setRoleAndAdaptationBehavior((Behavior)newValue);
-				return;
-			case PatternPackage.ROLE__ORDERED:
-				setOrdered((Boolean)newValue);
 				return;
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				setOutgoingRoleConnector((RoleConnector)newValue);
@@ -873,38 +542,17 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PatternPackage.ROLE__CONSTRAINT:
-				getConstraint().clear();
-				return;
-			case PatternPackage.ROLE__BEHAVIOR:
-				setBehavior((Behavior)null);
-				return;
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				setIncomingRoleConnector((RoleConnector)null);
 				return;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)null);
 				return;
-			case PatternPackage.ROLE__SENDER_MESSAGE_TYPES:
-				getSenderMessageTypes().clear();
-				return;
-			case PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES:
-				getReceiverMessageTypes().clear();
-				return;
 			case PatternPackage.ROLE__CARDINALITY:
 				setCardinality((Cardinality)null);
 				return;
 			case PatternPackage.ROLE__PORT:
 				getPort().clear();
-				return;
-			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				setAdaptationBehavior((Behavior)null);
-				return;
-			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
-				setRoleAndAdaptationBehavior((Behavior)null);
-				return;
-			case PatternPackage.ROLE__ORDERED:
-				setOrdered(ORDERED_EDEFAULT);
 				return;
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				setOutgoingRoleConnector((RoleConnector)null);
@@ -924,28 +572,14 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PatternPackage.ROLE__CONSTRAINT:
-				return constraint != null && !constraint.isEmpty();
-			case PatternPackage.ROLE__BEHAVIOR:
-				return behavior != null;
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				return incomingRoleConnector != null;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern() != null;
-			case PatternPackage.ROLE__SENDER_MESSAGE_TYPES:
-				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
-			case PatternPackage.ROLE__RECEIVER_MESSAGE_TYPES:
-				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
 			case PatternPackage.ROLE__CARDINALITY:
 				return cardinality != null;
 			case PatternPackage.ROLE__PORT:
 				return port != null && !port.isEmpty();
-			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				return adaptationBehavior != null;
-			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
-				return roleAndAdaptationBehavior != null;
-			case PatternPackage.ROLE__ORDERED:
-				return ordered != ORDERED_EDEFAULT;
 			case PatternPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
 				return outgoingRoleConnector != null;
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
@@ -956,66 +590,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ConstrainableElement.class) {
-			switch (derivedFeatureID) {
-				case PatternPackage.ROLE__CONSTRAINT: return CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
-				default: return -1;
-			}
-		}
-		if (baseClass == BehavioralElement.class) {
-			switch (derivedFeatureID) {
-				case PatternPackage.ROLE__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ConstrainableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return PatternPackage.ROLE__CONSTRAINT;
-				default: return -1;
-			}
-		}
-		if (baseClass == BehavioralElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return PatternPackage.ROLE__BEHAVIOR;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ordered: ");
-		result.append(ordered);
-		result.append(')');
-		return result.toString();
 	}
 
 } //RoleImpl

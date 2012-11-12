@@ -104,6 +104,8 @@ public class PatternValidator extends EObjectValidator {
 				return validateMessageBuffer((MessageBuffer)value, diagnostics, context);
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return validateConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)value, diagnostics, context);
+			case PatternPackage.DISCRETE_INTERACTION_POINT:
+				return validateDiscreteInteractionPoint((DiscreteInteractionPoint)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -389,6 +391,15 @@ public class PatternValidator extends EObjectValidator {
 	 */
 	public boolean validateConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(connectorQualityOfServiceAssumptions, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteInteractionPoint(DiscreteInteractionPoint discreteInteractionPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(discreteInteractionPoint, diagnostics, context);
 	}
 
 	/**

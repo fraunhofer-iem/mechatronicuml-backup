@@ -158,8 +158,9 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.TRANSITION: {
 				Transition transition = (Transition)theEObject;
 				T result = caseTransition(transition);
-				if (result == null) result = caseExtendableElement(transition);
 				if (result == null) result = casePrioritizable(transition);
+				if (result == null) result = caseCommentableElement(transition);
+				if (result == null) result = caseExtendableElement(transition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

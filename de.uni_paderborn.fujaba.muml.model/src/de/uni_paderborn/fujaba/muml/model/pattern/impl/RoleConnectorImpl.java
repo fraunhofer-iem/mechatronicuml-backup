@@ -27,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
@@ -38,26 +37,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  * @generated
  */
 public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConnector {
-	/**
-	 * The default value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isBidirectional()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean BIDIRECTIONAL_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isBidirectional()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean bidirectional = BIDIRECTIONAL_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -105,27 +84,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	protected EClass eStaticClass() {
 		return PatternPackage.Literals.ROLE_CONNECTOR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isBidirectional() {
-		return bidirectional;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBidirectional(boolean newBidirectional) {
-		boolean oldBidirectional = bidirectional;
-		bidirectional = newBidirectional;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE_CONNECTOR__BIDIRECTIONAL, oldBidirectional, bidirectional));
 	}
 
 	/**
@@ -398,8 +356,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PatternPackage.ROLE_CONNECTOR__BIDIRECTIONAL:
-				return isBidirectional();
 			case PatternPackage.ROLE_CONNECTOR__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
@@ -422,9 +378,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PatternPackage.ROLE_CONNECTOR__BIDIRECTIONAL:
-				setBidirectional((Boolean)newValue);
-				return;
 			case PatternPackage.ROLE_CONNECTOR__SOURCE:
 				setSource((Role)newValue);
 				return;
@@ -449,9 +402,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PatternPackage.ROLE_CONNECTOR__BIDIRECTIONAL:
-				setBidirectional(BIDIRECTIONAL_EDEFAULT);
-				return;
 			case PatternPackage.ROLE_CONNECTOR__SOURCE:
 				setSource((Role)null);
 				return;
@@ -476,8 +426,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PatternPackage.ROLE_CONNECTOR__BIDIRECTIONAL:
-				return bidirectional != BIDIRECTIONAL_EDEFAULT;
 			case PatternPackage.ROLE_CONNECTOR__SOURCE:
 				return source != null;
 			case PatternPackage.ROLE_CONNECTOR__TARGET:
@@ -488,22 +436,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 				return connectorQualityOfServiceAssumptions != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (bidirectional: ");
-		result.append(bidirectional);
-		result.append(')');
-		return result.toString();
 	}
 
 } //RoleConnectorImpl

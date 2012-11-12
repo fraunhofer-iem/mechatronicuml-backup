@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
 import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
@@ -80,6 +81,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	private EClass connectorQualityOfServiceAssumptionsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discreteInteractionPointEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -192,17 +200,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoleConnector_Bidirectional() {
-		return (EAttribute)roleConnectorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getRoleConnector_Source() {
-		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(1);
+		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -211,7 +210,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	public EReference getRoleConnector_Target() {
-		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(2);
+		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -220,7 +219,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	public EReference getRoleConnector_CoordinationPattern() {
-		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(3);
+		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -229,7 +228,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	public EReference getRoleConnector_ConnectorQualityOfServiceAssumptions() {
-		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(4);
+		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -292,7 +291,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	public EReference getRole_RoleConnector() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(10);
+		return (EReference)roleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -301,7 +300,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	public EAttribute getRole_IsMultiRole() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -310,7 +309,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	public EReference getRole_ReceiverMessageBuffer() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(12);
+		return (EReference)roleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -390,6 +389,51 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDiscreteInteractionPoint() {
+		return discreteInteractionPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteInteractionPoint_SenderMessageTypes() {
+		return (EReference)discreteInteractionPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteInteractionPoint_ReceiverMessageTypes() {
+		return (EReference)discreteInteractionPointEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteInteractionPoint_AdaptationBehavior() {
+		return (EReference)discreteInteractionPointEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteInteractionPoint_RoleAndAdaptationBehavior() {
+		return (EReference)discreteInteractionPointEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getRole_CoordinationPattern() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(1);
 	}
@@ -399,7 +443,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_SenderMessageTypes() {
+	public EReference getRole_Cardinality() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -408,7 +452,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_ReceiverMessageTypes() {
+	public EReference getRole_Port() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -417,53 +461,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_Cardinality() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRole_Port() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRole_AdaptationBehavior() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRole_RoleAndAdaptationBehavior() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRole_Ordered() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getRole_OutgoingRoleConnector() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(9);
+		return (EReference)roleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -495,7 +494,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 
 		// Create classes and their features
 		roleConnectorEClass = createEClass(ROLE_CONNECTOR);
-		createEAttribute(roleConnectorEClass, ROLE_CONNECTOR__BIDIRECTIONAL);
 		createEReference(roleConnectorEClass, ROLE_CONNECTOR__SOURCE);
 		createEReference(roleConnectorEClass, ROLE_CONNECTOR__TARGET);
 		createEReference(roleConnectorEClass, ROLE_CONNECTOR__COORDINATION_PATTERN);
@@ -509,13 +507,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__INCOMING_ROLE_CONNECTOR);
 		createEReference(roleEClass, ROLE__COORDINATION_PATTERN);
-		createEReference(roleEClass, ROLE__SENDER_MESSAGE_TYPES);
-		createEReference(roleEClass, ROLE__RECEIVER_MESSAGE_TYPES);
 		createEReference(roleEClass, ROLE__CARDINALITY);
 		createEReference(roleEClass, ROLE__PORT);
-		createEReference(roleEClass, ROLE__ADAPTATION_BEHAVIOR);
-		createEReference(roleEClass, ROLE__ROLE_AND_ADAPTATION_BEHAVIOR);
-		createEAttribute(roleEClass, ROLE__ORDERED);
 		createEReference(roleEClass, ROLE__OUTGOING_ROLE_CONNECTOR);
 		createEReference(roleEClass, ROLE__ROLE_CONNECTOR);
 		createEAttribute(roleEClass, ROLE__IS_MULTI_ROLE);
@@ -530,6 +523,12 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY);
 		createEReference(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY);
 		createEAttribute(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE);
+
+		discreteInteractionPointEClass = createEClass(DISCRETE_INTERACTION_POINT);
+		createEReference(discreteInteractionPointEClass, DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES);
+		createEReference(discreteInteractionPointEClass, DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES);
+		createEReference(discreteInteractionPointEClass, DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR);
+		createEReference(discreteInteractionPointEClass, DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR);
 	}
 
 	/**
@@ -558,9 +557,9 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
-		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -570,17 +569,17 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		roleConnectorEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		coordinationPatternEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		coordinationPatternEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
-		roleEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		roleEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
-		roleEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
+		roleEClass.getESuperTypes().add(this.getDiscreteInteractionPoint());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		connectorQualityOfServiceAssumptionsEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		connectorQualityOfServiceAssumptionsEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		discreteInteractionPointEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
+		discreteInteractionPointEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
+		discreteInteractionPointEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(roleConnectorEClass, RoleConnector.class, "RoleConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoleConnector_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 0, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleConnector_Source(), this.getRole(), this.getRole_OutgoingRoleConnector(), "source", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleConnector_Target(), this.getRole(), this.getRole_IncomingRoleConnector(), "target", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleConnector_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Connector(), "coordinationPattern", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -594,13 +593,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_IncomingRoleConnector(), this.getRoleConnector(), this.getRoleConnector_Target(), "incomingRoleConnector", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Roles(), "coordinationPattern", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_SenderMessageTypes(), theMsgifacePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_ReceiverMessageTypes(), theMsgifacePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Cardinality(), theCorePackage.getCardinality(), null, "cardinality", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Port(), theComponentPackage.getDiscretePort(), theComponentPackage.getDiscretePort_Refines(), "port", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRole_Ordered(), theEcorePackage.getEBoolean(), "ordered", "", 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_OutgoingRoleConnector(), this.getRoleConnector(), this.getRoleConnector_Source(), "outgoingRoleConnector", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_RoleConnector(), this.getRoleConnector(), null, "roleConnector", null, 0, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRole_IsMultiRole(), theEcorePackage.getEBoolean(), "isMultiRole", "", 0, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -615,6 +609,12 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getConnectorQualityOfServiceAssumptions_MinMessageDelay(), theCorePackage.getNaturalNumber(), null, "minMessageDelay", null, 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorQualityOfServiceAssumptions_MaxMessageDelay(), theCorePackage.getNaturalNumber(), null, "maxMessageDelay", null, 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnectorQualityOfServiceAssumptions_MessageLossPossible(), theEcorePackage.getEBoolean(), "messageLossPossible", "false", 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(discreteInteractionPointEClass, DiscreteInteractionPoint.class, "DiscreteInteractionPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDiscreteInteractionPoint_SenderMessageTypes(), theMsgifacePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, DiscreteInteractionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionPoint_ReceiverMessageTypes(), theMsgifacePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, DiscreteInteractionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionPoint_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscreteInteractionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionPoint_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscreteInteractionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -647,7 +647,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyRolesOfSameCoordinationPattern"
-		   });									
+		   });								
 		addAnnotation
 		  (coordinationPatternEClass, 
 		   source, 
@@ -675,7 +675,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "OnlyRolesOfSameCoordinationPattern", "(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"
-		   });									
+		   });								
 		addAnnotation
 		  (coordinationPatternEClass, 
 		   source, 
@@ -698,7 +698,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 			 "RoleHasConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()",
 			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()",
 			 "RoleRequiresInterface", "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"
-		   });												
+		   });							
 		addAnnotation
 		  (getRole_RoleConnector(), 
 		   source, 
@@ -710,7 +710,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "derivation", "if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif"
-		   });									
+		   });														
 	}
 
 } //PatternPackageImpl
