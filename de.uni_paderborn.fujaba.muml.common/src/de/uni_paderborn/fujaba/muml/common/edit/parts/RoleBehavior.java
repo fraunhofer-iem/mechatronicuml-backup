@@ -114,8 +114,8 @@ public class RoleBehavior extends AbstractPortBehavior {
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == PatternPackage.Literals.ROLE__CARDINALITY) {
 			updateCardinality();
-		} else if (notification.getFeature() == PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_TYPES
-				|| notification.getFeature() == PatternPackage.Literals.ROLE__SENDER_MESSAGE_TYPES) {
+		} else if (notification.getFeature() == PatternPackage.Literals.DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES
+				|| notification.getFeature() == PatternPackage.Literals.DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES) {
 			updatePortType();
 		}
 	}
