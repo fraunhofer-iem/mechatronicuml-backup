@@ -156,14 +156,6 @@
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/bidirectional"/>
-              <value
-                  body="false"/>
-            </initializers>
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
                   xsi:type="ecore:EReference"
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/source"/>
               <value

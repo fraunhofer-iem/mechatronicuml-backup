@@ -30,10 +30,9 @@
     <domainDiagramElement
         href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
-        visualID="3003"
+        visualID="3005"
         editPartClassName="CoordinationPattern2EditPart"
         itemSemanticEditPolicyClassName="CoordinationPattern2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternViewFactory"
         canonicalEditPolicyClassName="CoordinationPattern2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="CoordinationPattern2GraphicalNodeEditPolicy"
         createCommandClassName="CoordinationPattern2CreateCommand"
@@ -56,10 +55,9 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/pattern"/>
       </modelFacet>
       <labels
-          visualID="5003"
+          visualID="5005"
           editPartClassName="CoordinationPatternNameEditPart"
-          itemSemanticEditPolicyClassName="CoordinationPatternNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CoordinationPatternNameViewFactory">
+          itemSemanticEditPolicyClassName="CoordinationPatternNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -78,10 +76,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3004"
+        visualID="3006"
         editPartClassName="RoleEditPart"
         itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy"
-        notationViewFactoryClassName="RoleViewFactory"
         canonicalEditPolicyClassName="RoleCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="RoleGraphicalNodeEditPolicy"
         createCommandClassName="RoleCreateCommand"
@@ -113,7 +110,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.12">
+              value="//@expressionProviders/@providers.0/@expressions.11">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -129,7 +126,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.13">
+                      value="//@expressionProviders/@providers.0/@expressions.12">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
@@ -142,7 +139,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.14">
+                      value="//@expressionProviders/@providers.0/@expressions.13">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
@@ -154,10 +151,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5004"
+          visualID="5006"
           editPartClassName="RoleNameEditPart"
-          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="RoleNameViewFactory">
+          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -172,10 +168,9 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2004"
+        visualID="2005"
         editPartClassName="CoordinationPatternEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternViewFactory"
         canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="CoordinationPatternGraphicalNodeEditPolicy"
@@ -315,17 +310,11 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.9">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/bidirectional"/>
-              </initializers>
-              <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.10">
-                <feature
                     href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/source"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.11">
+                  value="//@expressionProviders/@providers.0/@expressions.10">
                 <feature
                     href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/target"/>
               </initializers>
@@ -335,10 +324,9 @@
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4003"
+        visualID="4005"
         editPartClassName="CoordinationPatternRolesEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternRolesItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternRolesViewFactory"
         createCommandClassName="CoordinationPatternRolesCreateCommand"
         reorientCommandClassName="CoordinationPatternRolesReorientCommand">
       <diagramRunTimeClass
@@ -356,10 +344,9 @@
       </modelFacet>
     </links>
     <links
-        visualID="4004"
+        visualID="4006"
         editPartClassName="RoleConnectorEditPart"
         itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy"
-        notationViewFactoryClassName="RoleConnectorViewFactory"
         createCommandClassName="RoleConnectorCreateCommand"
         reorientCommandClassName="RoleConnectorReorientCommand">
       <diagramRunTimeClass
@@ -384,20 +371,18 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/target"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.15"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
     </links>
     <compartments
-        visualID="7004"
+        visualID="7005"
         editPartClassName="CoordinationPatternCoordinationPatternContainerCompartmentEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternCoordinationPatternContainerCompartmentViewFactory"
         canonicalEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
         title="CoordinationPatternContainerCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0"
-        listLayout="false">
+        node="//@diagram/@topLevelNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -588,8 +573,6 @@
           body="1"/>
       <expressions
           body="self.coordinationPattern.connector->any(true)"/>
-      <expressions
-          body="false"/>
       <expressions
           body="self.coordinationPattern.roles->first()"/>
       <expressions

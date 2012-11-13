@@ -66,7 +66,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateRoleConnector_4004(
+				.getLinkConstraints().canCreateRoleConnector_4006(
 						getContainer(), getSource(), getTarget());
 	}
 

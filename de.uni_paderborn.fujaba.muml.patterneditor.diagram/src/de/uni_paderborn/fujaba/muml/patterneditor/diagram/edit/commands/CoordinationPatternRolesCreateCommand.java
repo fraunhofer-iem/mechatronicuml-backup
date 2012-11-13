@@ -53,7 +53,7 @@ public class CoordinationPatternRolesCreateCommand extends EditElementCommand {
 		}
 		// target may be null here but it's possible to check constraint
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateCoordinationPatternRoles_4003(
+				.getLinkConstraints().canCreateCoordinationPatternRoles_4005(
 						getSource(), getTarget());
 	}
 

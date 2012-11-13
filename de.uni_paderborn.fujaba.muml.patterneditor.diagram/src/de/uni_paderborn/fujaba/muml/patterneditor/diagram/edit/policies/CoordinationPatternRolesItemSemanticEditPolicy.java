@@ -22,7 +22,7 @@ public class CoordinationPatternRolesItemSemanticEditPolicy
 	 */
 	public CoordinationPatternRolesItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPatternRoles_4003);
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPatternRoles_4005);
 	}
 
 	/**

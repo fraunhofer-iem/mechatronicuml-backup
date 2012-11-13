@@ -328,7 +328,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCoordinationPatternRoles_4003(
+		public boolean canCreateCoordinationPatternRoles_4005(
 				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern source,
 				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
 			if (source != null) {
@@ -344,13 +344,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistCoordinationPatternRoles_4003(source, target);
+			return canExistCoordinationPatternRoles_4005(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRoleConnector_4004(
+		public boolean canCreateRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container,
 				de.uni_paderborn.fujaba.muml.model.pattern.Role source,
 				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
@@ -359,13 +359,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return canExistRoleConnector_4004(container, null, source, target);
+			return canExistRoleConnector_4006(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistCoordinationPatternRoles_4003(
+		public boolean canExistCoordinationPatternRoles_4005(
 				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern source,
 				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
 			return true;
@@ -374,7 +374,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistRoleConnector_4004(
+		public boolean canExistRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container,
 				de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.model.pattern.Role source,
@@ -388,7 +388,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE.getRole()); //$NON-NLS-1$
 					Object targetVal = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									15,
+									14,
 									de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
 											.getRole(), env).evaluate(
 									target,

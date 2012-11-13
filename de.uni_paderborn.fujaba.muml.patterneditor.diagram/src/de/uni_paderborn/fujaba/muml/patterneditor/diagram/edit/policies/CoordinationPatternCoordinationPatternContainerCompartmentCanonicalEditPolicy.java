@@ -113,7 +113,7 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentCanonical
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-				.getCoordinationPatternCoordinationPatternContainerCompartment_7004SemanticChildren(viewObject);
+				.getCoordinationPatternCoordinationPatternContainerCompartment_7005SemanticChildren(viewObject);
 
 	}
 
