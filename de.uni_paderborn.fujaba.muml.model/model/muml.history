@@ -15235,7 +15235,7 @@
       </changes>
     </changes>
   </releases>
-  <releases>
+  <releases date="2012-11-14T11:39:23.291+0100" label="0.3.3">
     <changes xsi:type="history:Add" element="muml.ecore#//model/realtimestatechart/Transition"
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
     <changes xsi:type="history:OperationChange">
@@ -15698,5 +15698,16 @@
         </parameters>
       </operation>
     </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.3.3" oldDataValue="http://www.fujaba.de/muml/model/component/0.3.2"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/core/0.3.3" oldDataValue="http://www.fujaba.de/muml/model/core/0.3.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/instance/0.3.3" oldDataValue="http://www.fujaba.de/muml/model/instance/0.3.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/pattern/0.3.3" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.3.2"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.3" oldDataValue="http://www.fujaba.de/modelinstance/0.3.2"/>
   </releases>
+  <releases/>
 </history:History>

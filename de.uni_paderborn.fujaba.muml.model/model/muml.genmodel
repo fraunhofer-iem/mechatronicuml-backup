@@ -50,17 +50,10 @@
         <genClasses ecoreClass="muml.ecore#//model/component/DiscretePort">
           <genFeatures notify="false" createChild="false" propertyCategory="General"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/refines"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/senderMessageTypes"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/receiverMessageTypes"/>
-          <genFeatures notify="false" createChild="false" propertyCategory="Behavior"
-              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/adaptationBehavior"/>
-          <genFeatures notify="false" createChild="false" propertyCategory="Behavior"
-              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/roleAndAdaptationBehavior"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DiscretePort/isDiscreteInPort"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DiscretePort/isDiscreteOutPort"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DiscretePort/isDiscreteInOutPort"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/DiscretePort/receiverMessageBuffer"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/ComponentPart">
           <genFeatures notify="false" createChild="false" propertyCategory="General"
@@ -268,6 +261,8 @@
         <genClasses image="false" ecoreClass="muml.ecore#//model/instance/DiscretePortInstance">
           <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes"/>
           <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscretePortInstance/receiverMessageBuffer"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscretePortInstance/refines"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteSinglePortInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -292,7 +287,6 @@
       <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/pattern">
         <genClasses ecoreClass="muml.ecore#//model/pattern/RoleConnector">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/pattern/RoleConnector/bidirectional"/>
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/RoleConnector/source"/>
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
@@ -311,18 +305,10 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/incomingRoleConnector"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/coordinationPattern"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/senderMessageTypes"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/receiverMessageTypes"/>
           <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/cardinality"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/port"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/adaptationBehavior"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/roleAndAdaptationBehavior"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/pattern/Role/ordered"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/outgoingRoleConnector"/>
           <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/roleConnector"/>
@@ -339,6 +325,16 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/pattern/DiscreteInteractionPoint">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionPoint/senderMessageTypes"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionPoint/receiverMessageTypes"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionPoint/adaptationBehavior"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionPoint/roleAndAdaptationBehavior"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.model"
