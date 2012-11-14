@@ -30,7 +30,7 @@ public class ComponentStoryDiagramOCLFactory {
 	 * @generated
 	 */
 	protected ComponentStoryDiagramOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression[5];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression[10];
 	}
 
 	/**
@@ -53,8 +53,13 @@ public class ComponentStoryDiagramOCLFactory {
 					"\'activity\'", //$NON-NLS-1$
 					"\'componentStoryPattern\'", //$NON-NLS-1$
 					"\'componentStoryNode\'", //$NON-NLS-1$
-					"\'this\'", //$NON-NLS-1$
 					"if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then\r\n\t\'<<create>>\'\r\nelse\r\n\tif bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\t\'<<destroy>>\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\nendif", //$NON-NLS-1$
+					"if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then\r\n\t\'<<create>>\'\r\nelse\r\n\tif bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\t\'<<destroy>>\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\nendif", //$NON-NLS-1$
+					"if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then\r\n\t\'<<create>>\'\r\nelse\r\n\tif bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\t\'<<destroy>>\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\nendif", //$NON-NLS-1$
+					"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else self.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then\t\' \' else\t\' / \'.concat(self.type.name) endif in\r\n(if self.name.oclIsUndefined() then \t\'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
+					"if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then\r\n\t\'<<create>>\'\r\nelse\r\n\tif bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\t\'<<destroy>>\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\nendif", //$NON-NLS-1$
+					"self.eContainer().oclIsKindOf(PartVariable)", //$NON-NLS-1$
+					"self.eContainer().oclIsKindOf(PartVariable)", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -17,6 +19,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -106,6 +109,11 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureActivityName());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityActivityCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureActivityContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -120,6 +128,9 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityNameEditPart) {
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityActivityCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureActivityContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -253,6 +264,14 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public class ActivityFigure extends RectangleFigure {
 
 		/**
@@ -263,8 +282,18 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrappingLabel fFigureActivityName;
+
+		/**
+		 * @generated
+		 */
 		public ActivityFigure() {
-			this.setLayoutManager(new StackLayout());
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
 			this.setFill(false);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
@@ -275,11 +304,25 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
+			fFigureActivityName = new WrappingLabel();
+			fFigureActivityName.setText("");
+
+			this.add(fFigureActivityName);
+
 			fFigureActivityContainer = new RectangleFigure();
 			fFigureActivityContainer.setFill(false);
 			fFigureActivityContainer.setOutline(false);
 
-			this.add(fFigureActivityContainer);
+			GridData constraintFFigureActivityContainer = new GridData();
+			constraintFFigureActivityContainer.verticalAlignment = GridData.FILL;
+			constraintFFigureActivityContainer.horizontalAlignment = GridData.FILL;
+			constraintFFigureActivityContainer.horizontalIndent = 0;
+			constraintFFigureActivityContainer.horizontalSpan = 1;
+			constraintFFigureActivityContainer.verticalSpan = 1;
+			constraintFFigureActivityContainer.grabExcessHorizontalSpace = true;
+			constraintFFigureActivityContainer.grabExcessVerticalSpace = true;
+			this.add(fFigureActivityContainer,
+					constraintFFigureActivityContainer);
 
 		}
 
@@ -288,6 +331,13 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 		 */
 		public RectangleFigure getFigureActivityContainer() {
 			return fFigureActivityContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureActivityName() {
+			return fFigureActivityName;
 		}
 
 	}

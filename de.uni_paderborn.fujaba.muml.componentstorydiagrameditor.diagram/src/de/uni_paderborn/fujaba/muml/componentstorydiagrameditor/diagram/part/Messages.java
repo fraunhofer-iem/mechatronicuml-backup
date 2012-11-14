@@ -283,6 +283,36 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String InitialNode4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InitialNode4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String JunctionNode5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String JunctionNode5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityFinalNode6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityFinalNode6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ComponentVariable1CreationTool_title;
 
 	/**

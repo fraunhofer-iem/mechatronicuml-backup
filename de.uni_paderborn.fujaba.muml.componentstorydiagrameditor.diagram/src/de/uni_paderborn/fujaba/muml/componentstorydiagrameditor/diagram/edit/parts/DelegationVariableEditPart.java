@@ -5,12 +5,14 @@ import java.util.List;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
@@ -42,6 +44,49 @@ public class DelegationVariableEditPart extends ConnectionNodeEditPart
 	}
 
 	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureDelegationVariableLabelFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, index);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableNameEditPart) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
 	 * Creates figure for this edit part.
 	 * 
 	 * Body of this method does not depend on settings in generation model
@@ -49,15 +94,55 @@ public class DelegationVariableEditPart extends ConnectionNodeEditPart
 	 * 
 	 * @generated
 	 */
+
 	protected Connection createConnectionFigure() {
-		return new PolylineConnectionEx();
+		return new DelegationVariableFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public PolylineConnectionEx getPrimaryShape() {
-		return (PolylineConnectionEx) getFigure();
+	public DelegationVariableFigure getPrimaryShape() {
+		return (DelegationVariableFigure) getFigure();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class DelegationVariableFigure extends PolylineConnectionEx {
+
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureDelegationVariableLabelFigure;
+
+		/**
+		 * @generated
+		 */
+		public DelegationVariableFigure() {
+
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			fFigureDelegationVariableLabelFigure = new WrappingLabel();
+			fFigureDelegationVariableLabelFigure.setText("");
+
+			this.add(fFigureDelegationVariableLabelFigure);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureDelegationVariableLabelFigure() {
+			return fFigureDelegationVariableLabelFigure;
+		}
+
 	}
 
 	/**

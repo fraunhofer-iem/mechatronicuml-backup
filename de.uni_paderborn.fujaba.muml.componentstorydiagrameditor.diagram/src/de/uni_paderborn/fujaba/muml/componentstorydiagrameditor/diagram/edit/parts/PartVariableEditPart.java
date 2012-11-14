@@ -1,9 +1,15 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts;
 
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.Polyline;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
@@ -11,19 +17,27 @@ import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
+import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -91,6 +105,115 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
 						.getVisualID(childView)) {
+				case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
+
+						// BEGIN FIX: Muml-Bug #58
+						// (Copied from NonResizableLabelEditPolicy and slightly modified, see comments below)
+						private Polyline tether = null;
+
+						protected void eraseChangeBoundsFeedback(
+								ChangeBoundsRequest request) {
+							super.eraseChangeBoundsFeedback(request);
+							if (tether != null)
+								removeFeedback(tether);
+							tether = null;
+						}
+
+						protected IFigure createDragSourceFeedbackFigure() {
+							IFigure feedback = super
+									.createDragSourceFeedbackFigure();
+							tether = new Polyline();
+							tether.setLineStyle(Graphics.LINE_DASHDOT);
+							tether.setForegroundColor(((IGraphicalEditPart) getHost())
+									.getFigure().getForegroundColor());
+							addFeedback(tether);
+							return feedback;
+						}
+
+						protected void showChangeBoundsFeedback(
+								ChangeBoundsRequest request) {
+
+							IFigure p = getDragSourceFeedbackFigure();
+							Rectangle r = p.getBounds();
+							Point refPoint = ((LabelEditPart) getHost())
+									.getReferencePoint();
+
+							// translate the feedback figure
+							PrecisionRectangle rect = new PrecisionRectangle(
+									getInitialFeedbackBounds().getCopy());
+							getHostFigure().translateToAbsolute(rect);
+							rect.translate(request.getMoveDelta());
+							rect.resize(request.getSizeDelta());
+							p.translateToRelative(rect);
+
+							/* BEGIN MODIFIED for Muml-Bug #58 */
+							/* Commented out the following line ... */
+
+							//p.setBounds(rect);
+
+							/* ... and replaced it with super call */
+							super.showChangeBoundsFeedback(request);
+							/* END MODIFIED for Muml-Bug #58 */
+
+							Rectangle centerMain = null;
+							// TODO: remove this hack. We should be using the reference point for
+							// the teher end, however,
+							// the reference point is causing miscaculation when positioning. This
+							// has to be redone in version 2.
+							if (((IGraphicalEditPart) getHost().getParent())
+									.getFigure() instanceof Connection) {
+								centerMain = new Rectangle(refPoint.x,
+										refPoint.y, 0, 0);
+								getHostFigure().translateToAbsolute(centerMain);
+								p.translateToRelative(centerMain);
+							} else {
+								centerMain = ((IGraphicalEditPart) getHost()
+										.getParent()).getFigure().getBounds()
+										.getCopy();
+								centerMain.translate(centerMain.width / 2,
+										centerMain.height / 2);
+								getHostFigure().translateToAbsolute(centerMain);
+								p.translateToRelative(centerMain);
+							}
+
+							PrecisionRectangle ref = new PrecisionRectangle(
+									centerMain);
+
+							Point midTop = new Point(r.x + r.width / 2, r.y);
+							Point midBottom = new Point(r.x + r.width / 2, r.y
+									+ r.height);
+							Point midLeft = new Point(r.x, r.y + r.height / 2);
+							Point midRight = new Point(r.x + r.width, r.y
+									+ r.height / 2);
+
+							Point startPoint = midTop;
+
+							int x = r.x + r.width / 2 - refPoint.x;
+							int y = r.y + r.height / 2 - refPoint.y;
+
+							if (y > 0 && y > x && y > -x)
+								startPoint = midTop;
+							else if (y < 0 && y < x && y < -x)
+								startPoint = midBottom;
+							else if (x < 0 && y > x && y < -x)
+								startPoint = midRight;
+							else
+								startPoint = midLeft;
+
+							tether.setStart(startPoint);
+							tether.setEnd(ref.getLocation());
+						}
+
+						// END FIX: Muml-Bug #58
+
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle(
+									(GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
 				case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariable2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
@@ -125,6 +248,90 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public PartVariableFigure getPrimaryShape() {
 		return (PartVariableFigure) primaryShape;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigurePartVariableNameFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariable2EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
+					PositionConstants.NORTH);
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.add(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariable2EditPart) childEditPart)
+							.getFigure(), locator);
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariable2EditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariable2EditPart) childEditPart)
+							.getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof IBorderItemEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
+		return getContentPane();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addBorderItem(IFigure borderItemContainer,
+			IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel2EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
+					PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
+		}
 	}
 
 	/**
@@ -220,16 +427,27 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public class PartVariableFigure extends RectangleFigure {
+		public void paintFigure(Graphics graphics) {
+			super.paintFigure(graphics);
+		}
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureComponentPartVariableNameFigure;
+		private ScalablePolygonShape fFigureNegative2;
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigurePartChildren;
+		private WrappingLabel fFigurePartVariableNameFigure;
 		/**
 		 * @generated
 		 */
@@ -249,52 +467,22 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			RectangleFigure partVariable0 = new RectangleFigure();
+			partVariable0.setFill(false);
+			partVariable0.setOutline(false);
 
 			this.add(partVariable0);
+			partVariable0.setLayoutManager(new StackLayout());
 
-			GridLayout layoutPartVariable0 = new GridLayout();
-			layoutPartVariable0.numColumns = 1;
-			layoutPartVariable0.makeColumnsEqualWidth = true;
-			partVariable0.setLayoutManager(layoutPartVariable0);
+			RectangleFigure iconContainer1 = new RectangleFigure();
+			iconContainer1.setFill(false);
+			iconContainer1.setOutline(false);
 
-			RectangleFigure container1 = new RectangleFigure();
-			container1.setFill(false);
-			container1.setOutline(false);
-			container1.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
+			partVariable0.add(iconContainer1);
 
-			GridData constraintContainer1 = new GridData();
-			constraintContainer1.verticalAlignment = GridData.CENTER;
-			constraintContainer1.horizontalAlignment = GridData.CENTER;
-			constraintContainer1.horizontalIndent = 0;
-			constraintContainer1.horizontalSpan = 1;
-			constraintContainer1.verticalSpan = 1;
-			constraintContainer1.grabExcessHorizontalSpace = true;
-			constraintContainer1.grabExcessVerticalSpace = true;
-			partVariable0.add(container1, constraintContainer1);
-
-			GridLayout layoutContainer1 = new GridLayout();
-			layoutContainer1.numColumns = 2;
-			layoutContainer1.makeColumnsEqualWidth = true;
-			container1.setLayoutManager(layoutContainer1);
-
-			fFigureComponentPartVariableNameFigure = new WrappingLabel();
-			fFigureComponentPartVariableNameFigure.setText("");
-
-			fFigureComponentPartVariableNameFigure
-					.setFont(FFIGURECOMPONENTPARTVARIABLENAMEFIGURE_FONT);
-
-			GridData constraintFFigureComponentPartVariableNameFigure = new GridData();
-			constraintFFigureComponentPartVariableNameFigure.verticalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentPartVariableNameFigure.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentPartVariableNameFigure.horizontalIndent = 0;
-			constraintFFigureComponentPartVariableNameFigure.horizontalSpan = 1;
-			constraintFFigureComponentPartVariableNameFigure.verticalSpan = 1;
-			constraintFFigureComponentPartVariableNameFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentPartVariableNameFigure.grabExcessVerticalSpace = false;
-			container1.add(fFigureComponentPartVariableNameFigure,
-					constraintFFigureComponentPartVariableNameFigure);
+			GridLayout layoutIconContainer1 = new GridLayout();
+			layoutIconContainer1.numColumns = 1;
+			layoutIconContainer1.makeColumnsEqualWidth = false;
+			iconContainer1.setLayoutManager(layoutIconContainer1);
 
 			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
@@ -312,8 +500,8 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure2.verticalSpan = 1;
 			constraintComponentIconFigure2.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure2.grabExcessVerticalSpace = false;
-			container1
-					.add(componentIconFigure2, constraintComponentIconFigure2);
+			iconContainer1.add(componentIconFigure2,
+					constraintComponentIconFigure2);
 
 			componentIconFigure2.setLayoutManager(new StackLayout());
 
@@ -356,48 +544,65 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
-			RectangleFigure children1 = new RectangleFigure();
-			children1.setFill(false);
-			children1.setOutline(false);
+			RectangleFigure nameContainer1 = new RectangleFigure();
+			nameContainer1.setFill(false);
+			nameContainer1.setOutline(false);
 
-			GridData constraintChildren1 = new GridData();
-			constraintChildren1.verticalAlignment = GridData.FILL;
-			constraintChildren1.horizontalAlignment = GridData.FILL;
-			constraintChildren1.horizontalIndent = 0;
-			constraintChildren1.horizontalSpan = 1;
-			constraintChildren1.verticalSpan = 1;
-			constraintChildren1.grabExcessHorizontalSpace = true;
-			constraintChildren1.grabExcessVerticalSpace = true;
-			partVariable0.add(children1, constraintChildren1);
+			partVariable0.add(nameContainer1);
+
+			GridLayout layoutNameContainer1 = new GridLayout();
+			layoutNameContainer1.numColumns = 1;
+			layoutNameContainer1.makeColumnsEqualWidth = false;
+			nameContainer1.setLayoutManager(layoutNameContainer1);
+
+			fFigurePartVariableNameFigure = new WrappingLabel();
+			fFigurePartVariableNameFigure.setText("");
+
+			fFigurePartVariableNameFigure
+					.setFont(FFIGUREPARTVARIABLENAMEFIGURE_FONT);
+
+			GridData constraintFFigurePartVariableNameFigure = new GridData();
+			constraintFFigurePartVariableNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigurePartVariableNameFigure.horizontalAlignment = GridData.CENTER;
+			constraintFFigurePartVariableNameFigure.horizontalIndent = 0;
+			constraintFFigurePartVariableNameFigure.horizontalSpan = 1;
+			constraintFFigurePartVariableNameFigure.verticalSpan = 1;
+			constraintFFigurePartVariableNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigurePartVariableNameFigure.grabExcessVerticalSpace = true;
+			nameContainer1.add(fFigurePartVariableNameFigure,
+					constraintFFigurePartVariableNameFigure);
 
 			fFigureNegative = new ScalablePolygonShape();
 			fFigureNegative.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
 			fFigureNegative.addPoint(new Point(getMapMode().DPtoLP(1),
 					getMapMode().DPtoLP(1)));
-			fFigureNegative.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(0)));
-			fFigureNegative.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(1)));
-			fFigureNegative.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
 
 			this.add(fFigureNegative);
 
+			fFigureNegative2 = new ScalablePolygonShape();
+			fFigureNegative2.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(0)));
+			fFigureNegative2.addPoint(new Point(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(1)));
+			fFigureNegative2.setFill(true);
+
+			this.add(fFigureNegative2);
+
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureComponentPartVariableNameFigure() {
-			return fFigureComponentPartVariableNameFigure;
+		public ScalablePolygonShape getFigureNegative2() {
+			return fFigureNegative2;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigurePartChildren() {
-			return fFigurePartChildren;
+		public WrappingLabel getFigurePartVariableNameFigure() {
+			return fFigurePartVariableNameFigure;
 		}
 
 		/**
@@ -412,7 +617,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURECOMPONENTPARTVARIABLENAMEFIGURE_FONT = new Font(
+	static final Font FFIGUREPARTVARIABLENAMEFIGURE_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 9, SWT.NORMAL);
 

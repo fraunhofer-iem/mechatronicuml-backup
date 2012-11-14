@@ -27,6 +27,21 @@ public class ActivityActivityCompartmentItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ComponentStoryNodeCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.InitialNodeCreateCommand(
+					req));
+		}
+		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.JunctionNodeCreateCommand(
+					req));
+		}
+		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityFinalNodeCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -99,14 +101,14 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ComponentStoryNodeFigure();
+		return primaryShape = new ComponentStoryNodeRoundedFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ComponentStoryNodeFigure getPrimaryShape() {
-		return (ComponentStoryNodeFigure) primaryShape;
+	public ComponentStoryNodeRoundedFigure getPrimaryShape() {
+		return (ComponentStoryNodeRoundedFigure) primaryShape;
 	}
 
 	/**
@@ -121,7 +123,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryNodeContainer();
+					.getFigureComponentStoryNodePatternContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -139,7 +141,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryNodeContainer();
+					.getFigureComponentStoryNodePatternContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -173,7 +175,8 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
-			return getPrimaryShape().getFigureComponentStoryNodeContainer();
+			return getPrimaryShape()
+					.getFigureComponentStoryNodePatternContainer();
 		}
 		return getContentPane();
 	}
@@ -294,6 +297,15 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeEditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
 		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.InitialNodeEditPart) {
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.JunctionNodeEditPart) {
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityFinalNodeEditPart) {
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		}
 		return types;
 	}
 
@@ -304,6 +316,9 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001) {
 			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryNode_3001);
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007);
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008);
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010);
 		}
 		return types;
 	}
@@ -324,6 +339,9 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001) {
 			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryNode_3001);
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007);
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008);
+			types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010);
 		}
 		return types;
 	}
@@ -331,7 +349,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ComponentStoryNodeFigure extends RectangleFigure {
+	public class ComponentStoryNodeRoundedFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
@@ -340,18 +358,18 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureComponentStoryNodeContainer;
+		private RoundedRectangle fFigureComponentStoryNodePatternContainer;
 
 		/**
 		 * @generated
 		 */
-		public ComponentStoryNodeFigure() {
+		public ComponentStoryNodeRoundedFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
+					getMapMode().DPtoLP(8)));
 			this.setFill(false);
 			createContents();
 		}
@@ -361,25 +379,59 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
+			RoundedRectangle componentStoryNodeNameContainer0 = new RoundedRectangle();
+			componentStoryNodeNameContainer0.setCornerDimensions(new Dimension(
+					getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			componentStoryNodeNameContainer0.setFill(false);
+			componentStoryNodeNameContainer0.setOutline(false);
+			componentStoryNodeNameContainer0.setPreferredSize(new Dimension(
+					getMapMode().DPtoLP(100), getMapMode().DPtoLP(30)));
+
+			this.add(componentStoryNodeNameContainer0, BorderLayout.TOP);
+
+			GridLayout layoutComponentStoryNodeNameContainer0 = new GridLayout();
+			layoutComponentStoryNodeNameContainer0.numColumns = 1;
+			layoutComponentStoryNodeNameContainer0.makeColumnsEqualWidth = true;
+			componentStoryNodeNameContainer0
+					.setLayoutManager(layoutComponentStoryNodeNameContainer0);
+
 			fFigureComponentStoryNodeName = new WrappingLabel();
-			fFigureComponentStoryNodeName.setText("componentStoryNode");
+			fFigureComponentStoryNodeName.setText("");
 
-			this.add(fFigureComponentStoryNodeName);
+			GridData constraintFFigureComponentStoryNodeName = new GridData();
+			constraintFFigureComponentStoryNodeName.verticalAlignment = GridData.CENTER;
+			constraintFFigureComponentStoryNodeName.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureComponentStoryNodeName.horizontalIndent = 0;
+			constraintFFigureComponentStoryNodeName.horizontalSpan = 1;
+			constraintFFigureComponentStoryNodeName.verticalSpan = 1;
+			constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = true;
+			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = false;
+			componentStoryNodeNameContainer0.add(fFigureComponentStoryNodeName,
+					constraintFFigureComponentStoryNodeName);
 
-			fFigureComponentStoryNodeContainer = new RectangleFigure();
-			fFigureComponentStoryNodeContainer.setFill(false);
-			fFigureComponentStoryNodeContainer.setOutline(false);
+			RoundedRectangle componentStoryNodeContentContainer0 = new RoundedRectangle();
+			componentStoryNodeContentContainer0
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
+							getMapMode().DPtoLP(8)));
+			componentStoryNodeContentContainer0.setFill(false);
+			componentStoryNodeContentContainer0.setOutline(false);
 
-			GridData constraintFFigureComponentStoryNodeContainer = new GridData();
-			constraintFFigureComponentStoryNodeContainer.verticalAlignment = GridData.FILL;
-			constraintFFigureComponentStoryNodeContainer.horizontalAlignment = GridData.FILL;
-			constraintFFigureComponentStoryNodeContainer.horizontalIndent = 0;
-			constraintFFigureComponentStoryNodeContainer.horizontalSpan = 1;
-			constraintFFigureComponentStoryNodeContainer.verticalSpan = 1;
-			constraintFFigureComponentStoryNodeContainer.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentStoryNodeContainer.grabExcessVerticalSpace = true;
-			this.add(fFigureComponentStoryNodeContainer,
-					constraintFFigureComponentStoryNodeContainer);
+			this.add(componentStoryNodeContentContainer0, BorderLayout.CENTER);
+
+			BorderLayout layoutComponentStoryNodeContentContainer0 = new BorderLayout();
+			componentStoryNodeContentContainer0
+					.setLayoutManager(layoutComponentStoryNodeContentContainer0);
+
+			fFigureComponentStoryNodePatternContainer = new RoundedRectangle();
+			fFigureComponentStoryNodePatternContainer
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
+							getMapMode().DPtoLP(8)));
+			fFigureComponentStoryNodePatternContainer.setFill(false);
+			fFigureComponentStoryNodePatternContainer.setOutline(false);
+
+			componentStoryNodeContentContainer0.add(
+					fFigureComponentStoryNodePatternContainer,
+					BorderLayout.CENTER);
 
 		}
 
@@ -393,8 +445,8 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureComponentStoryNodeContainer() {
-			return fFigureComponentStoryNodeContainer;
+		public RoundedRectangle getFigureComponentStoryNodePatternContainer() {
+			return fFigureComponentStoryNodePatternContainer;
 		}
 
 	}

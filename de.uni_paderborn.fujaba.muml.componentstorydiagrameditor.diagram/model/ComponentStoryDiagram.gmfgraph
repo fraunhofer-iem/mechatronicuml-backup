@@ -13,31 +13,13 @@
           fill="false"
           lineKind="LINE_DASH">
         <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ActivityContainer"
-            outline="false"
-            fill="false"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="ComponentStoryNodeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ComponentStoryNodeFigure"
-          fill="false">
-        <layout
             xsi:type="gmfgraph:GridLayout"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ComponentStoryNodeName"
-            text="componentStoryNode"/>
+            name="ActivityName"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ComponentStoryNodeContainer"
+            name="ActivityContainer"
             outline="false"
             fill="false">
           <layoutData
@@ -49,22 +31,44 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="ComponentStoryPatternFigure">
+        name="ComponentStoryNodeRoundedFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ComponentStoryPatternFigure"
-          outline="false"
-          lineKind="LINE_DASH">
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ComponentStoryNodeRoundedFigure"
+          fill="false">
         <layout
             xsi:type="gmfgraph:BorderLayout"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentStoryPatternOuterContainer"
+            xsi:type="gmfgraph:RoundedRectangle"
+            name="ComponentStoryNodeNameContainer"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
+          <layout
+              xsi:type="gmfgraph:GridLayout"/>
+          <preferredSize
+              dx="100"
+              dy="30"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ComponentStoryNodeName">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                horizontalAlignment="BEGINNING"/>
+          </children>
+        </children>
+        <children
+            xsi:type="gmfgraph:RoundedRectangle"
+            name="ComponentStoryNodeContentContainer"
             outline="false"
             fill="false">
           <layoutData
@@ -74,18 +78,42 @@
           <layout
               xsi:type="gmfgraph:BorderLayout"/>
           <children
-              xsi:type="gmfgraph:Rectangle"
-              name="ComponentStoryPatternInnerContainer"
+              xsi:type="gmfgraph:RoundedRectangle"
+              name="ComponentStoryNodePatternContainer"
               outline="false"
               fill="false">
             <layoutData
                 xsi:type="gmfgraph:BorderLayoutData"
-                alignment="FILL"/>
+                alignment="FILL"
+                vertical="true"/>
           </children>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="ComponentStoryPatternFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ComponentStoryPattern"
+          outline="false"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:RoundedRectangle"
+            name="ComponentStoryPatternContainer">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="FILL"
+              vertical="true"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="ComponentVariableFigure">
@@ -122,8 +150,8 @@
               fill="false"/>
           <children
               xsi:type="gmfgraph:Label"
-              name="ComponentVariableNameFigure"
-              text="">
+              name="ComponentVariableThis"
+              text="this">
             <layoutData
                 xsi:type="gmfgraph:GridLayoutData"
                 grabExcessHorizontalSpace="true"
@@ -164,6 +192,18 @@
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
+        name="ComponentVariableOperatorFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="ComponentVariableOperator"
+          text="">
+        <font
+            xsi:type="gmfgraph:BasicFont"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.4/@actualFigure"/>
+    </descriptors>
+    <descriptors
         name="PortVariableFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -201,7 +241,31 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="PortVariableNameFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="PortVariableName">
+        <font
+            xsi:type="gmfgraph:BasicFont"
+            height="8"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.6/@actualFigure"/>
+    </descriptors>
+    <descriptors
+        name="PortVariableOperatorFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="PortVariableOperator">
+        <font
+            xsi:type="gmfgraph:BasicFont"
+            height="8"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.7/@actualFigure"/>
     </descriptors>
     <descriptors
         name="PartVariableFigure">
@@ -212,40 +276,19 @@
             xsi:type="gmfgraph:StackLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="PartVariable">
+            name="PartVariable"
+            outline="false"
+            fill="false">
           <layout
-              xsi:type="gmfgraph:GridLayout"/>
+              xsi:type="gmfgraph:StackLayout"/>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="container"
+              name="IconContainer"
               outline="false"
               fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"/>
             <layout
                 xsi:type="gmfgraph:GridLayout"
-                numColumns="2"/>
-            <border
-                xsi:type="gmfgraph:MarginBorder">
-              <insets
-                  top="5"
-                  left="5"
-                  bottom="5"
-                  right="5"/>
-            </border>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="ComponentPartVariableNameFigure">
-              <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  grabExcessHorizontalSpace="true"
-                  verticalAlignment="BEGINNING"
-                  horizontalAlignment="BEGINNING"/>
-              <font
-                  xsi:type="gmfgraph:BasicFont"/>
-            </children>
+                equalWidth="false"/>
             <children
                 xsi:type="gmfgraph:FigureRef">
               <figure
@@ -255,15 +298,22 @@
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="children"
+              name="NameContainer"
               outline="false"
               fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"
-                verticalAlignment="FILL"
-                horizontalAlignment="FILL"/>
+            <layout
+                xsi:type="gmfgraph:GridLayout"
+                equalWidth="false"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="PartVariableNameFigure">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"/>
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+            </children>
           </children>
         </children>
         <children
@@ -274,28 +324,38 @@
           <template
               x="1"
               y="1"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:ScalablePolygon"
+            name="Negative2">
           <template
               x="1"/>
           <template
               y="1"/>
-          <template/>
         </children>
       </actualFigure>
       <accessors
-          accessor="getFigureComponentPartVariableNameFigure"
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
       <accessors
-          accessor="getFigurePartChildren"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+          accessor="getFigurePartVariableNameFigure"
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.1/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="PartVariableOperatorFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="PartVariableOperator"/>
+      <accessors
+          figure="//@figures.0/@descriptors.9/@actualFigure"/>
     </descriptors>
     <descriptors
         name="ActivityEdgeFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="ActivityEdgeFigure"
-          targetDecoration="//@figures.0/@descriptors.6/@actualFigure/@children.1">
+          targetDecoration="//@figures.0/@descriptors.10/@actualFigure/@children.1">
         <children
             xsi:type="gmfgraph:Label"
             name="ActivityLabelFigure"/>
@@ -304,36 +364,54 @@
             name="ActivityEdgeArrow"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="AssemblyVariableFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          name="AssemblyVariableFigure"/>
+          name="AssemblyVariableFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="AssemblyVariableLabelFigure"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="DelegationVariableFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          name="DelegationVariableFigure"/>
-    </descriptors>
-    <descriptors
-        name="ComponentVariableOperatorFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="ComponentVariableOperator"
-          text="&lt;&lt;create>>"/>
+          name="DelegationVariableFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DelegationVariableLabelFigure"/>
+      </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.9/@actualFigure"/>
+          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
       name="Activity"
       figure="ActivityFigure"/>
   <nodes
+      name="InitialNode">
+    <figure
+        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#InitialNodeFigure"/>
+  </nodes>
+  <nodes
+      name="JunctionNode">
+    <figure
+        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#JunctionNodeFigure"/>
+  </nodes>
+  <nodes
+      name="ActivityFinalNode">
+    <figure
+        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
+  </nodes>
+  <nodes
       name="ComponentStoryNode"
-      figure="ComponentStoryNodeFigure"/>
+      figure="ComponentStoryNodeRoundedFigure"/>
   <nodes
       name="ComponentStoryPattern"
       figure="ComponentStoryPatternFigure"/>
@@ -364,30 +442,26 @@
       name="DelegationVariable"
       figure="DelegationVariableFigure"/>
   <compartments
-      name="ComponentVariableCompartment"
-      figure="ComponentVariableFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
-  <compartments
       name="ActivityCompartment"
       figure="ActivityFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <compartments
       name="ComponentStoryNodeCompartment"
-      figure="ComponentStoryNodeFigure"
+      figure="ComponentStoryNodeRoundedFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <compartments
       name="ComponentStoryPatternCompartment"
       figure="ComponentStoryPatternFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels
-      name="ComponentOperatorLabel"
-      figure="ComponentVariableOperatorFigure"
-      elementIcon="false"/>
+  <compartments
+      name="ComponentVariableCompartment"
+      figure="ComponentVariableFigure"
+      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
   <labels
       name="ActivityEdgeLabel"
       figure="ActivityEdgeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.6/@accessors.0">
+      accessor="//@figures.0/@descriptors.10/@accessors.0">
     <facets
         xsi:type="gmfgraph:LabelOffsetFacet"/>
     <facets
@@ -395,13 +469,51 @@
         alignment="CENTER"/>
   </labels>
   <labels
-      name="ComponentVariableNameLabel"
-      figure="ComponentVariableFigure"
+      name="ActivityNameLabel"
+      figure="ActivityFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="ComponentStoryNodeLabel"
-      figure="ComponentStoryNodeFigure"
+      figure="ComponentStoryNodeRoundedFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="ActivityFinalNodeLabel">
+    <figure
+        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
+    <accessor
+        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#//@figures.0/@descriptors.6/@accessors.0"/>
+  </labels>
+  <labels
+      name="ComponentOperatorLabel"
+      figure="ComponentVariableOperatorFigure"
+      elementIcon="false"/>
+  <labels
+      name="PortVariableNameLabel"
+      figure="PortVariableNameFigure"
+      elementIcon="false"/>
+  <labels
+      name="PortVariableOperatorLabel"
+      figure="PortVariableOperatorFigure"
+      elementIcon="false"/>
+  <labels
+      name="PartVariableNameLabel"
+      figure="PartVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <labels
+      name="PartVariableOperatorLabel"
+      figure="PartVariableOperatorFigure"
+      elementIcon="false"/>
+  <labels
+      name="AssemblyNameLabel"
+      figure="AssemblyVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels
+      name="DelegationNameLabel"
+      figure="DelegationVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
 </gmfgraph:Canvas>

@@ -22,6 +22,14 @@
               body="'activity'"/>
         </initializers>
       </domainInitializer>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          readOnly="true">
+        <diagramLabel
+            href="ComponentStoryDiagram.gmfgraph#ActivityNameLabel"/>
+        <features
+            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -89,24 +97,6 @@
                 <ownedChild>
                   <domainMetaElement
                       href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable"/>
-                  <domainInitializer
-                      xsi:type="gmfmap:FeatureSeqInitializer">
-                    <initializers
-                        xsi:type="gmfmap:FeatureValueSpec">
-                      <feature
-                          xsi:type="ecore:EAttribute"
-                          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                      <value
-                          body="'this'"/>
-                    </initializers>
-                  </domainInitializer>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="ComponentStoryDiagram.gmfgraph#ComponentVariableNameLabel"/>
-                    <features
-                        href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  </labelMappings>
                   <labelMappings
                       xsi:type="gmfmap:ExpressionLabelMapping"
                       readOnly="true">
@@ -126,6 +116,21 @@
                     <ownedChild>
                       <domainMetaElement
                           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable"/>
+                      <labelMappings
+                          xsi:type="gmfmap:ExpressionLabelMapping"
+                          readOnly="true">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PortVariableOperatorLabel"/>
+                        <viewExpression
+                            body="if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then&#xD;&#xA;&#x9;'&lt;&lt;create>>'&#xD;&#xA;else&#xD;&#xA;&#x9;if bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then&#xD;&#xA;&#x9;&#x9;'&lt;&lt;destroy>>'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;' '&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+                      </labelMappings>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PortVariableNameLabel"/>
+                        <features
+                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
                           href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
@@ -140,6 +145,21 @@
                     <ownedChild>
                       <domainMetaElement
                           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable"/>
+                      <labelMappings
+                          xsi:type="gmfmap:ExpressionLabelMapping"
+                          readOnly="true">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PartVariableOperatorLabel"/>
+                        <viewExpression
+                            body="if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then&#xD;&#xA;&#x9;'&lt;&lt;create>>'&#xD;&#xA;else&#xD;&#xA;&#x9;if bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then&#xD;&#xA;&#x9;&#x9;'&lt;&lt;destroy>>'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;' '&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+                      </labelMappings>
+                      <labelMappings
+                          xsi:type="gmfmap:ExpressionLabelMapping">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PartVariableNameLabel"/>
+                        <viewExpression
+                            body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then&#x9;' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;(if self.name.oclIsUndefined() then &#x9;'null' else self.name endif).concat(partName.concat(' : '.concat(compName)))"/>
+                      </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
                           href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
@@ -151,6 +171,21 @@
                         <ownedChild>
                           <domainMetaElement
                               href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable"/>
+                          <labelMappings
+                              xsi:type="gmfmap:ExpressionLabelMapping"
+                              readOnly="true">
+                            <diagramLabel
+                                href="ComponentStoryDiagram.gmfgraph#PortVariableOperatorLabel"/>
+                            <viewExpression
+                                body="if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then&#xD;&#xA;&#x9;'&lt;&lt;create>>'&#xD;&#xA;else&#xD;&#xA;&#x9;if bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then&#xD;&#xA;&#x9;&#x9;'&lt;&lt;destroy>>'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;' '&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+                          </labelMappings>
+                          <labelMappings
+                              xsi:type="gmfmap:FeatureLabelMapping">
+                            <diagramLabel
+                                href="ComponentStoryDiagram.gmfgraph#PortVariableNameLabel"/>
+                            <features
+                                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                          </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
@@ -181,8 +216,55 @@
           </compartments>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode"/>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
+          <diagramNode
+              href="ComponentStoryDiagram.gmfgraph#InitialNode"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/JunctionNode"/>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
+          <diagramNode
+              href="ComponentStoryDiagram.gmfgraph#JunctionNode"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"/>
+          <labelMappings
+              readOnly="true">
+            <diagramLabel
+                href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeLabel"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+          <diagramNode
+              href="ComponentStoryDiagram.gmfgraph#ActivityFinalNode"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0">
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3">
         <compartment
             href="ComponentStoryDiagram.gmfgraph#ActivityCompartment"/>
       </compartments>
@@ -213,6 +295,15 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/AssemblyVariable"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="ComponentStoryDiagram.gmfgraph#AssemblyNameLabel"/>
+      <features
+          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <editableFeatures
+          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </labelMappings>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/connectorVariables"/>
     <tool
@@ -226,10 +317,25 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/target"/>
+    <creationConstraints>
+      <sourceEnd
+          body="self.eContainer().oclIsKindOf(PartVariable)"/>
+      <targetEnd
+          body="self.eContainer().oclIsKindOf(PartVariable)"/>
+    </creationConstraints>
   </links>
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/DelegationVariable"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="ComponentStoryDiagram.gmfgraph#DelegationNameLabel"/>
+      <features
+          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <editableFeatures
+          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </labelMappings>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/connectorVariables"/>
     <tool

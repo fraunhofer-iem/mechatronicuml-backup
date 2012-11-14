@@ -61,25 +61,6 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ComponentVariable_3003(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable instance) {
-		try {
-			Object value_0 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
-					.getExpression(
-							3,
-							de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-									.getComponentVariable(), null).evaluate(
-							instance);
-			instance.setName((String) value_0);
-		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 				.getInstance().getElementInitializers();

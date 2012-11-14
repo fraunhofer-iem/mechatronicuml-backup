@@ -42,13 +42,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class ComponentVariableNameEditPart extends CompartmentEditPart
-		implements ITextAwareEditPart {
+public class ActivityNameEditPart extends CompartmentEditPart implements
+		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5002;
+	public static final int VISUAL_ID = 5011;
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class ComponentVariableNameEditPart extends CompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public ComponentVariableNameEditPart(View view) {
+	public ActivityNameEditPart(View view) {
 		super(view);
 	}
 
@@ -226,7 +226,7 @@ public class ComponentVariableNameEditPart extends CompartmentEditPart
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
@@ -290,10 +290,10 @@ public class ComponentVariableNameEditPart extends CompartmentEditPart
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentVariable_3003,
+							de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.Activity_2003,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -503,7 +503,7 @@ public class ComponentVariableNameEditPart extends CompartmentEditPart
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View) getModel();
+		return getPrimaryView();
 	}
 
 	/**

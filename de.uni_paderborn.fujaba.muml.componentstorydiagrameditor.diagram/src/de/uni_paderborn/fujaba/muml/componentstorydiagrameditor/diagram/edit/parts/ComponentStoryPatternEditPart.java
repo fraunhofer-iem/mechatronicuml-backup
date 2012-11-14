@@ -1,9 +1,11 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -17,6 +19,7 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -109,7 +112,7 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryPatternInnerContainer();
+					.getFigureComponentStoryPatternContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -124,7 +127,7 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryPatternInnerContainer();
+					.getFigureComponentStoryPatternContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -158,8 +161,7 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart) {
-			return getPrimaryShape()
-					.getFigureComponentStoryPatternInnerContainer();
+			return getPrimaryShape().getFigureComponentStoryPatternContainer();
 		}
 		return getContentPane();
 	}
@@ -257,12 +259,12 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ComponentStoryPatternFigure extends RectangleFigure {
+	public class ComponentStoryPatternFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureComponentStoryPatternInnerContainer;
+		private RoundedRectangle fFigureComponentStoryPatternContainer;
 
 		/**
 		 * @generated
@@ -272,8 +274,10 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
+					getMapMode().DPtoLP(8)));
+			this.setFill(false);
 			this.setOutline(false);
-			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
 
@@ -282,31 +286,20 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure componentStoryPatternOuterContainer0 = new RectangleFigure();
-			componentStoryPatternOuterContainer0.setFill(false);
-			componentStoryPatternOuterContainer0.setOutline(false);
+			fFigureComponentStoryPatternContainer = new RoundedRectangle();
+			fFigureComponentStoryPatternContainer
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
+							getMapMode().DPtoLP(8)));
 
-			this.add(componentStoryPatternOuterContainer0, BorderLayout.CENTER);
-
-			BorderLayout layoutComponentStoryPatternOuterContainer0 = new BorderLayout();
-			componentStoryPatternOuterContainer0
-					.setLayoutManager(layoutComponentStoryPatternOuterContainer0);
-
-			fFigureComponentStoryPatternInnerContainer = new RectangleFigure();
-			fFigureComponentStoryPatternInnerContainer.setFill(false);
-			fFigureComponentStoryPatternInnerContainer.setOutline(false);
-
-			componentStoryPatternOuterContainer0.add(
-					fFigureComponentStoryPatternInnerContainer,
-					BorderLayout.CENTER);
+			this.add(fFigureComponentStoryPatternContainer, BorderLayout.CENTER);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureComponentStoryPatternInnerContainer() {
-			return fFigureComponentStoryPatternInnerContainer;
+		public RoundedRectangle getFigureComponentStoryPatternContainer() {
+			return fFigureComponentStoryPatternContainer;
 		}
 
 	}

@@ -5,19 +5,18 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableNameEditPart;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 
-public class CustomComponentVariableNameEditPart extends
-		ComponentVariableNameEditPart {
+public class CustomPartVariableNameEditPart extends PartVariableNameEditPart {
 
-	public CustomComponentVariableNameEditPart(View view) {
+	public CustomPartVariableNameEditPart(View view) {
 		super(view);
 	}
 
 	@Override
 	protected void handleNotificationEvent(Notification event) {
-		SdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
+		SdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
 				.getModel()).getElement()).getBindingOperator());
 		super.handleNotificationEvent(event);
 	}
@@ -25,10 +24,9 @@ public class CustomComponentVariableNameEditPart extends
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
-		SdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
+		SdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
 				.getModel()).getElement()).getBindingOperator());
 		((WrappingLabel) getFigure()).setTextUnderline(true);
 
 	}
-
 }

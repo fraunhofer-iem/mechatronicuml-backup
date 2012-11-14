@@ -37,6 +37,9 @@ public class ComponentStoryDiagramPaletteFactory {
 		paletteContainer.add(createActivity1CreationTool());
 		paletteContainer.add(createComponentStoryNode2CreationTool());
 		paletteContainer.add(createActivityEdge3CreationTool());
+		paletteContainer.add(createInitialNode4CreationTool());
+		paletteContainer.add(createJunctionNode5CreationTool());
+		paletteContainer.add(createActivityFinalNode6CreationTool());
 		return paletteContainer;
 	}
 
@@ -100,6 +103,54 @@ public class ComponentStoryDiagramPaletteFactory {
 		entry.setId("createActivityEdge3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createInitialNode4CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.InitialNode4CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.InitialNode4CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007));
+		entry.setId("createInitialNode4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createJunctionNode5CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.JunctionNode5CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.JunctionNode5CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008));
+		entry.setId("createJunctionNode5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createActivityFinalNode6CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityFinalNode6CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityFinalNode6CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010));
+		entry.setId("createActivityFinalNode6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
