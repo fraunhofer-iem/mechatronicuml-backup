@@ -26,13 +26,10 @@ public class SimpleTextualDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void initialize() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void createMainArea(Composite parent) {
-		// TODO Auto-generated method stub
 		super.createMainArea(parent);
 		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 		textfield = new Text(parent, SWT.MULTI | SWT.BORDER | SWT.V_SCROLL);
@@ -42,7 +39,6 @@ public class SimpleTextualDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void okPressed() {
-		// TODO Auto-generated method stub
 		//XtextResource res = new XtextResource();
 		//System.out.println(getContainerObject());
 		resultString = textfield.getText();
