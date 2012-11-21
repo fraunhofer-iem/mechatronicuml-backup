@@ -16,24 +16,26 @@ public class CustomRealtimeStatechartEditPart extends
 		super(view);
 	}
 
-	@Override
-	public void activate() {
-		statechartBehavior.setEditPart(this);
-		super.activate();
-	}
-
-	@Override
-	public void deactivate() {
-		statechartBehavior.setEditPart(null);
-		super.deactivate();
-	}
-
-	@Override
-	protected boolean addFixedChild(EditPart childEditPart) {
-		boolean result = super.addFixedChild(childEditPart);
-		statechartBehavior.afterAddFixedChild(childEditPart);
-		return result;
-	}
+	// Deactivated because we currently do not have Entry/Exit points and so the realtimestatechart does not have border items. 
+	// TODO: Reactivate if we have border items again
+//	@Override
+//	public void activate() {
+//		statechartBehavior.setEditPart(this);
+//		super.activate();
+//	}
+//
+//	@Override
+//	public void deactivate() {
+//		statechartBehavior.setEditPart(null);
+//		super.deactivate();
+//	}
+//
+//	@Override
+//	protected boolean addFixedChild(EditPart childEditPart) {
+//		boolean result = super.addFixedChild(childEditPart);
+//		statechartBehavior.afterAddFixedChild(childEditPart);
+//		return result;
+//	}
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {

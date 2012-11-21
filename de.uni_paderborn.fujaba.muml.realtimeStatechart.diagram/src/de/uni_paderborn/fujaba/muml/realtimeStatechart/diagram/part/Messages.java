@@ -403,22 +403,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_StateEntryPoint_3027_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StateEntryPoint_3027_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ExitPoint_3026_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ExitPoint_3026_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_3017_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_3017_outgoinglinks;
 
 	/**
 	 * @generated
@@ -433,6 +433,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_RealtimeStatechart_1000_links;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Transition_4002_target;
 
 	/**
@@ -443,47 +448,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_StateExitPoint_3030_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateExitPoint_3030_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateEntryPoint_3027_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateEntryPoint_3027_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RealtimeStatechart_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateEntryPoint_3029_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StateEntryPoint_3029_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_EntryPoint_3025_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_EntryPoint_3025_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_State_3017_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_State_3017_outgoinglinks;
 
 	/**
 	 * @generated

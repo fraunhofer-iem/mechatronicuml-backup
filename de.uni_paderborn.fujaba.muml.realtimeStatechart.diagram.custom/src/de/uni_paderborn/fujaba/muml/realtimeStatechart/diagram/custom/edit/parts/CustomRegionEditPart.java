@@ -76,7 +76,7 @@ public class CustomRegionEditPart extends RegionEditPart {
 		if (RealtimestatechartPackage.Literals.REGION__STATECHART
 				.equals(feature)) {
 			statechartChanged((RealtimeStatechart) notification.getNewValue());
-		} else if (RealtimestatechartPackage.Literals.REALTIME_STATECHART__HISTORY
+		} else if (RealtimestatechartPackage.Literals.REGION__GMF_HISTORY
 				.equals(notification.getFeature())) {
 			updateHistory();
 		}
@@ -92,10 +92,6 @@ public class CustomRegionEditPart extends RegionEditPart {
 
 	private void updateHistory() {
 		Region region = (Region) ((View) getModel()).getElement();
-		boolean history = false;
-		if (region.getStatechart() != null) {
-			history = region.getStatechart().isHistory();
-		}
-		getPrimaryShape().getFigureHistoryFigure().setVisible(history);
+		getPrimaryShape().getFigureHistoryFigure().setVisible(region.isGmfHistory());
 	}
 }

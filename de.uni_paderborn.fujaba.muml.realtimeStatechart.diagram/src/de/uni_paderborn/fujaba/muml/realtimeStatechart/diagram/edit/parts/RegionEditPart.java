@@ -10,9 +10,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -342,7 +340,6 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureRegionPriorityLabel;
-
 		/**
 		 * @generated
 		 */
@@ -432,7 +429,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			fFigureHistoryFigure.setLayoutManager(layoutFFigureHistoryFigure);
 
 			WrappingLabel historyLabel3 = new WrappingLabel();
-			historyLabel3.setText("H ");
+			historyLabel3.setText(" H ");
 
 			GridData constraintHistoryLabel3 = new GridData();
 			constraintHistoryLabel3.verticalAlignment = GridData.CENTER;

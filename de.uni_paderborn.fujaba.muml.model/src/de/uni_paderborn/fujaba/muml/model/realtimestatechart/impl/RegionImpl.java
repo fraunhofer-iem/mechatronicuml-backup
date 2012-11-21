@@ -11,11 +11,14 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -34,6 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#getParentState <em>Parent State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl#isGmfHistory <em>Gmf History</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,12 +75,28 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	protected RealtimeStatechart statechart;
 
 	/**
+	 * The cached setting delegate for the '{@link #isGmfHistory() <em>Gmf History</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #isGmfHistory()
 	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate GMF_HISTORY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__GMF_HISTORY).getSettingDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	protected RegionImpl() {
 		super();
+		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(
+				this, RealtimestatechartPackage.Literals.REGION__GMF_HISTORY);
+		portsDerivedAdapter
+				.addNavigatedDependency(
+						RealtimestatechartPackage.Literals.REGION__STATECHART,
+						RealtimestatechartPackage.Literals.REALTIME_STATECHART__HISTORY);
 	}
 
 	/**
@@ -197,6 +217,15 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isGmfHistory() {
+		return (Boolean)GMF_HISTORY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
@@ -286,6 +315,8 @@ public class RegionImpl extends NamedElementImpl implements Region {
 				return getStatechart();
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState();
+			case RealtimestatechartPackage.REGION__GMF_HISTORY:
+				return isGmfHistory();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -347,6 +378,8 @@ public class RegionImpl extends NamedElementImpl implements Region {
 				return statechart != null;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState() != null;
+			case RealtimestatechartPackage.REGION__GMF_HISTORY:
+				return GMF_HISTORY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

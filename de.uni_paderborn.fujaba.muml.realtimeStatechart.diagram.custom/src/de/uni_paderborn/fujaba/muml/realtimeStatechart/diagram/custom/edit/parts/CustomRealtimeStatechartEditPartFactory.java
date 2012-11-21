@@ -15,9 +15,7 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Region
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateActionCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateChannelCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPoint2EditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPoint2EditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
@@ -67,10 +65,10 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			case StateExitPointEditPart.VISUAL_ID:
 				return new CustomStateExitPointEditPart(view);
 				
-			case StateEntryPoint2EditPart.VISUAL_ID:
-				return new CustomStateEntryPoint2EditPart(view);
-			case StateExitPoint2EditPart.VISUAL_ID:
-				return new CustomStateExitPoint2EditPart(view);
+//			case StateEntryPoint2EditPart.VISUAL_ID:
+//				return new CustomStateEntryPoint2EditPart(view);
+//			case StateExitPoint2EditPart.VISUAL_ID:
+//				return new CustomStateExitPoint2EditPart(view);
 				
 			case RegionEditPart.VISUAL_ID:
 				return new CustomRegionEditPart(view);

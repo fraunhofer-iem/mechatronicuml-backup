@@ -22,6 +22,7 @@ import org.storydriven.core.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getParentState <em>Parent State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#isGmfHistory <em>Gmf History</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,5 +92,24 @@ public interface Region extends NamedElement, Prioritizable {
 	 * @generated
 	 */
 	void setParentState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Gmf History</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Gmf History</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This feature exists for GMF. We use it to register a DerivedAttributeAdapter in RegionImpl to be able to get notifications in the CustomRegionEditPart, when the value of "RealtimeStatechart.history" changes.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Gmf History</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_GmfHistory()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if statechart.oclIsUndefined() then\n\tfalse\nelse\n\tstatechart.history\nendif'"
+	 * @generated
+	 */
+	boolean isGmfHistory();
 
 } // Region

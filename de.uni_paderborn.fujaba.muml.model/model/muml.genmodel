@@ -363,6 +363,7 @@
           <genFeatures children="true" createChild="true" propertyCategory="Statechart"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Region/statechart"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Region/parentState"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Region/gmfHistory"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/State">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/regions"/>

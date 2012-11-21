@@ -221,6 +221,7 @@ public class RegionItemProvider
 
 		switch (notification.getFeatureID(Region.class)) {
 			case RealtimestatechartPackage.REGION__PRIORITY:
+			case RealtimestatechartPackage.REGION__GMF_HISTORY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.REGION__STATECHART:

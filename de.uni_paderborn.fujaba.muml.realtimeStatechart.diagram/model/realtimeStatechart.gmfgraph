@@ -94,7 +94,7 @@
           <children
               xsi:type="gmfgraph:Label"
               name="HistoryLabel"
-              text="H ">
+              text=" H ">
             <layoutData
                 xsi:type="gmfgraph:GridLayoutData"
                 grabExcessHorizontalSpace="true"
