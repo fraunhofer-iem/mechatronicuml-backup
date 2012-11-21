@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -35,6 +36,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.ExtendableElement;
 
 import de.fujaba.modelinstance.ModelElementCategory;
@@ -89,19 +91,20 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 			if (object instanceof IFile) {
 				IFile file = (IFile) object;
 				ResourceSet rset = new ResourceSetImpl();
-				URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+				URI uri = URI.createPlatformResourceURI(file.getFullPath()
+						.toString(), true);
 				Resource resource = rset.getResource(uri, true);
 				if (!resource.getContents().isEmpty()) {
 					element = resource.getContents().get(0);
 				}
 			}
-			
+
 			if (element instanceof Diagram) {
 				Diagram diagram = (Diagram) element;
 				element = diagram.getElement();
 			}
 		}
-		
+
 		// Get rootContainer of selected element.
 		EObject rootContainer = null;
 		if (element != null) {
@@ -120,8 +123,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 			RootNode rootNode = (RootNode) rootContainer;
 			typeCategory = getTypeCategory(rootNode);
 			if (typeCategory == null) {
-				new TypeCategoryInitializer()
-						.initialize(rootNode);
+				new TypeCategoryInitializer().initialize(rootNode);
 			}
 			typeCategory = getTypeCategory(rootNode);
 		}
@@ -132,9 +134,10 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 					.getEditingDomain(typeCategory);
 			ResourceSet rset = typeCategory.eResource().getResourceSet();
 			if (editingDomain == null) {
-				editingDomain = (AdapterFactoryEditingDomain) TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rset);
+				editingDomain = (AdapterFactoryEditingDomain) TransactionalEditingDomain.Factory.INSTANCE
+						.createEditingDomain(rset);
 			}
-			
+
 			openTypeDialog(typeCategory, editingDomain);
 
 			for (Resource resource : rset.getResources()) {
@@ -189,19 +192,22 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 				return subClasses;
 			}
 
-			// TODO: This only finds subclasses within the same package
-			// (core-package in this case).
 			private List<EClass> getSubClasses(EClass parentClass) {
 				List<EClass> classList = new ArrayList<EClass>();
-				EList<EClassifier> classifiers = parentClass.getEPackage()
-						.getEClassifiers();
 
-				for (EClassifier classifier : classifiers) {
-					if (classifier instanceof EClass) {
-						EClass clazz = (EClass) classifier;
-						if (parentClass.isSuperTypeOf(clazz)
-								&& !clazz.isAbstract()) {
-							classList.add(clazz);
+				EPackage packages[] = new EPackage[] {
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE,
+						de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage.eINSTANCE };
+				for (EPackage _package : packages) {
+					EList<EClassifier> classifiers = _package.getEClassifiers();
+
+					for (EClassifier classifier : classifiers) {
+						if (classifier instanceof EClass) {
+							EClass clazz = (EClass) classifier;
+							if (parentClass.isSuperTypeOf(clazz)
+									&& !clazz.isAbstract()) {
+								classList.add(clazz);
+							}
 						}
 					}
 				}
@@ -215,15 +221,16 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 		ObjectsListDialogExtension objectsListDialogExtension = new ObjectsListDialogExtension(
 				dialog, adapterFactory, currentValues);
-		
-		objectsListDialogExtension.addFilter(new ObjectsListDialogExtension.IFilter() {
-			
-			@Override
-			public boolean select(EObject object) {
-				return !(object instanceof PrimitiveDataType); 
-			}
 
-		});
+		objectsListDialogExtension
+				.addFilter(new ObjectsListDialogExtension.IFilter() {
+
+					@Override
+					public boolean select(EObject object) {
+						return !(object instanceof PrimitiveDataType);
+					}
+
+				});
 
 		objectCreationDialogExtension
 				.setObjectsListDialogExtension(objectsListDialogExtension);
