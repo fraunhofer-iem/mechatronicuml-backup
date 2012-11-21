@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts;
 
+import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -7,7 +8,9 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -355,6 +358,11 @@ public class RealtimeStatechartEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private Ellipse fFigureHistoryFigure;
+
+		/**
+		 * @generated
+		 */
 		public StatechartFigure() {
 
 			GridLayout layoutThis = new GridLayout();
@@ -387,10 +395,41 @@ public class RealtimeStatechartEditPart extends AbstractBorderedShapeEditPart {
 					constraintStatechartTitleAreaFigure0);
 
 			GridLayout layoutStatechartTitleAreaFigure0 = new GridLayout();
-			layoutStatechartTitleAreaFigure0.numColumns = 2;
+			layoutStatechartTitleAreaFigure0.numColumns = 3;
 			layoutStatechartTitleAreaFigure0.makeColumnsEqualWidth = false;
 			statechartTitleAreaFigure0
 					.setLayoutManager(layoutStatechartTitleAreaFigure0);
+
+			fFigureHistoryFigure = new Ellipse();
+
+			GridData constraintFFigureHistoryFigure = new GridData();
+			constraintFFigureHistoryFigure.verticalAlignment = GridData.BEGINNING;
+			constraintFFigureHistoryFigure.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureHistoryFigure.horizontalIndent = 0;
+			constraintFFigureHistoryFigure.horizontalSpan = 1;
+			constraintFFigureHistoryFigure.verticalSpan = 1;
+			constraintFFigureHistoryFigure.grabExcessHorizontalSpace = false;
+			constraintFFigureHistoryFigure.grabExcessVerticalSpace = false;
+			statechartTitleAreaFigure0.add(fFigureHistoryFigure,
+					constraintFFigureHistoryFigure);
+
+			GridLayout layoutFFigureHistoryFigure = new GridLayout();
+			layoutFFigureHistoryFigure.numColumns = 1;
+			layoutFFigureHistoryFigure.makeColumnsEqualWidth = true;
+			fFigureHistoryFigure.setLayoutManager(layoutFFigureHistoryFigure);
+
+			WrappingLabel historyLabel2 = new WrappingLabel();
+			historyLabel2.setText("H ");
+
+			GridData constraintHistoryLabel2 = new GridData();
+			constraintHistoryLabel2.verticalAlignment = GridData.CENTER;
+			constraintHistoryLabel2.horizontalAlignment = GridData.CENTER;
+			constraintHistoryLabel2.horizontalIndent = 0;
+			constraintHistoryLabel2.horizontalSpan = 1;
+			constraintHistoryLabel2.verticalSpan = 1;
+			constraintHistoryLabel2.grabExcessHorizontalSpace = true;
+			constraintHistoryLabel2.grabExcessVerticalSpace = true;
+			fFigureHistoryFigure.add(historyLabel2, constraintHistoryLabel2);
 
 			fFigureStatechartNameLabel = new WrappingLabel();
 			fFigureStatechartNameLabel.setText("");
@@ -447,6 +486,13 @@ public class RealtimeStatechartEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public RectangleFigure getFigureStatechartContentsCompartment() {
 			return fFigureStatechartContentsCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Ellipse getFigureHistoryFigure() {
+			return fFigureHistoryFigure;
 		}
 
 	}

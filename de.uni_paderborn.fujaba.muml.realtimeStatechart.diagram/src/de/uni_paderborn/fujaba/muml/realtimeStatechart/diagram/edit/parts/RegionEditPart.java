@@ -10,7 +10,9 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -344,6 +346,11 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private Ellipse fFigureHistoryFigure;
+
+		/**
+		 * @generated
+		 */
 		public RegionFigure() {
 
 			GridLayout layoutThis = new GridLayout();
@@ -401,10 +408,41 @@ public class RegionEditPart extends ShapeNodeEditPart {
 					constraintStatechartTitleAreaFigure1);
 
 			GridLayout layoutStatechartTitleAreaFigure1 = new GridLayout();
-			layoutStatechartTitleAreaFigure1.numColumns = 2;
+			layoutStatechartTitleAreaFigure1.numColumns = 3;
 			layoutStatechartTitleAreaFigure1.makeColumnsEqualWidth = false;
 			statechartTitleAreaFigure1
 					.setLayoutManager(layoutStatechartTitleAreaFigure1);
+
+			fFigureHistoryFigure = new Ellipse();
+
+			GridData constraintFFigureHistoryFigure = new GridData();
+			constraintFFigureHistoryFigure.verticalAlignment = GridData.BEGINNING;
+			constraintFFigureHistoryFigure.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureHistoryFigure.horizontalIndent = 0;
+			constraintFFigureHistoryFigure.horizontalSpan = 1;
+			constraintFFigureHistoryFigure.verticalSpan = 1;
+			constraintFFigureHistoryFigure.grabExcessHorizontalSpace = false;
+			constraintFFigureHistoryFigure.grabExcessVerticalSpace = false;
+			statechartTitleAreaFigure1.add(fFigureHistoryFigure,
+					constraintFFigureHistoryFigure);
+
+			GridLayout layoutFFigureHistoryFigure = new GridLayout();
+			layoutFFigureHistoryFigure.numColumns = 1;
+			layoutFFigureHistoryFigure.makeColumnsEqualWidth = true;
+			fFigureHistoryFigure.setLayoutManager(layoutFFigureHistoryFigure);
+
+			WrappingLabel historyLabel3 = new WrappingLabel();
+			historyLabel3.setText("H ");
+
+			GridData constraintHistoryLabel3 = new GridData();
+			constraintHistoryLabel3.verticalAlignment = GridData.CENTER;
+			constraintHistoryLabel3.horizontalAlignment = GridData.CENTER;
+			constraintHistoryLabel3.horizontalIndent = 0;
+			constraintHistoryLabel3.horizontalSpan = 1;
+			constraintHistoryLabel3.verticalSpan = 1;
+			constraintHistoryLabel3.grabExcessHorizontalSpace = true;
+			constraintHistoryLabel3.grabExcessVerticalSpace = true;
+			fFigureHistoryFigure.add(historyLabel3, constraintHistoryLabel3);
 
 			fFigureStatechartNameLabel = new WrappingLabel();
 			fFigureStatechartNameLabel.setText("");
@@ -497,6 +535,13 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 */
 		public WrappingLabel getFigureRegionPriorityLabel() {
 			return fFigureRegionPriorityLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Ellipse getFigureHistoryFigure() {
+			return fFigureHistoryFigure;
 		}
 
 	}

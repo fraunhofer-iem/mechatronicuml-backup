@@ -13,19 +13,19 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Region
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart;
 
 public class CustomRegionEditPart extends RegionEditPart {
-//
-//	private RealtimeStatechart statechart = null;
-//	private AdapterImpl rtscAdapter = new AdapterImpl() {
-//		@Override
-//		public void notifyChanged(Notification notification) {
-//			for(Object child : getChildren()) {
-//				if (child instanceof WrappingLabel7EditPart) {
-//					WrappingLabel7EditPart editPart = (WrappingLabel7EditPart) child;
-//					editPart.refresh();
-//				}
-//			}
-//		}
-//	};
+	//
+	// private RealtimeStatechart statechart = null;
+	// private AdapterImpl rtscAdapter = new AdapterImpl() {
+	// @Override
+	// public void notifyChanged(Notification notification) {
+	// for(Object child : getChildren()) {
+	// if (child instanceof WrappingLabel7EditPart) {
+	// WrappingLabel7EditPart editPart = (WrappingLabel7EditPart) child;
+	// editPart.refresh();
+	// }
+	// }
+	// }
+	// };
 
 	public CustomRegionEditPart(View view) {
 		super(view);
@@ -59,15 +59,15 @@ public class CustomRegionEditPart extends RegionEditPart {
 	}
 
 	private void statechartChanged(RealtimeStatechart newStatechart) {
-//		if (statechart != null) {
-//			statechart.eAdapters().remove(rtscAdapter);
-//		}
-//
-//		statechart = newStatechart;
-//
-//		if (statechart != null) {
-//			statechart.eAdapters().add(rtscAdapter);
-//		}
+		// if (statechart != null) {
+		// statechart.eAdapters().remove(rtscAdapter);
+		// }
+		//
+		// statechart = newStatechart;
+		//
+		// if (statechart != null) {
+		// statechart.eAdapters().add(rtscAdapter);
+		// }
 	}
 
 	@Override
@@ -76,8 +76,26 @@ public class CustomRegionEditPart extends RegionEditPart {
 		if (RealtimestatechartPackage.Literals.REGION__STATECHART
 				.equals(feature)) {
 			statechartChanged((RealtimeStatechart) notification.getNewValue());
+		} else if (RealtimestatechartPackage.Literals.REALTIME_STATECHART__HISTORY
+				.equals(notification.getFeature())) {
+			updateHistory();
 		}
 
 		super.handleNotificationEvent(notification);
+	}
+
+	@Override
+	protected void refreshVisuals() {
+		updateHistory();
+		super.refreshVisuals();
+	}
+
+	private void updateHistory() {
+		Region region = (Region) ((View) getModel()).getElement();
+		boolean history = false;
+		if (region.getStatechart() != null) {
+			history = region.getStatechart().isHistory();
+		}
+		getPrimaryShape().getFigureHistoryFigure().setVisible(history);
 	}
 }

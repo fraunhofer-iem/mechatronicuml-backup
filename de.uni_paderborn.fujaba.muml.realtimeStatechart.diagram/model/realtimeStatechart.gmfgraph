@@ -31,12 +31,14 @@
       </actualFigure>
       <accessors
           accessor="getFigureStatechartNameLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-      <accessors
-          accessor="getFigureStatechartVariablesLabel"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
       <accessors
+          accessor="getFigureStatechartVariablesLabel"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+      <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="InnerStatechartFigure">
@@ -78,8 +80,27 @@
             horizontalAlignment="FILL"/>
         <layout
             xsi:type="gmfgraph:GridLayout"
-            numColumns="2"
+            numColumns="3"
             equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Ellipse"
+            name="HistoryFigure">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              verticalAlignment="BEGINNING"
+              horizontalAlignment="BEGINNING"/>
+          <layout
+              xsi:type="gmfgraph:GridLayout"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="HistoryLabel"
+              text="H ">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"/>
+          </children>
+        </children>
         <children
             xsi:type="gmfgraph:Label"
             name="StatechartNameLabel"
@@ -96,10 +117,12 @@
       </actualFigure>
       <accessors
           accessor="getFigureStatechartNameLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
       <accessors
           accessor="getFigureStatechartVariablesLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="RegionTitleAreaFigure">
@@ -355,13 +378,15 @@
           figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
       <accessors
           accessor="getFigureStatechartNameLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
       <accessors
           accessor="getFigureStatechartVariablesLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
       <accessors
           accessor="getFigureRegionPriorityLabel"
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="TransitionFigure">
@@ -397,25 +422,6 @@
           figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
-        name="HistoryFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Ellipse"
-          name="HistoryFigure"
-          lineWidth="3">
-        <layout
-            xsi:type="gmfgraph:GridLayout"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="HistoryLabel"
-            text="H*">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"/>
-        </children>
-      </actualFigure>
-    </descriptors>
-    <descriptors
         name="StateItemFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -438,7 +444,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureStateEventLabel"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="EntryPointFigure">
@@ -601,7 +607,7 @@
       name="StateItemLabel"
       figure="StateItemFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
   <labels
       name="RegionNameLabel"
       figure="RegionFigure"
