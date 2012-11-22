@@ -122,12 +122,12 @@ public class MumlVisualIDRegistry {
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
-					.getMessageInterface()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID;
+					.getMessageTypeRepository().isSuperTypeOf(
+							domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID;
 			}
 			break;
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypesCompartmentEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
 					.getMessageType().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID;
@@ -167,20 +167,20 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID == nodeVisualID) {
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -188,11 +188,11 @@ public class MumlVisualIDRegistry {
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypesCompartmentEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

@@ -15,16 +15,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class MessageTypeItemSemanticEditPolicy
+public class MessageTypeRepositoryItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public MessageTypeItemSemanticEditPolicy() {
+	public MessageTypeRepositoryItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3007);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageTypeRepository_2007);
 	}
 
 	/**
@@ -57,13 +57,13 @@ public class MessageTypeItemSemanticEditPolicy
 			Node node = (Node) nit.next();
 			switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(node)) {
-			case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
+			case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit
 						.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getVisualID(cnode)) {
-					case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+					case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
 										cnode.getElement(), false))); // directlyOwned: true

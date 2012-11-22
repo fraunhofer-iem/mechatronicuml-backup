@@ -50,7 +50,7 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"\'Interface\'", //$NON-NLS-1$
+					"\'Repository\'", //$NON-NLS-1$
 					"\'messagetype\'", //$NON-NLS-1$
 					"\'p\'", //$NON-NLS-1$
 					"(\n\tif self.eContainer().oclAsType(msgiface::MessageType).parameters->first() = self then\n\t\t\'\'\n\telse\n\t\t\' \'\n\tendif\n).concat(\n\tif self.name.oclIsUndefined() then\n\t\t\'null\'\n\telse\n\t\tself.name\n\tendif\n).concat(\n\tif self.type.oclIsUndefined() or self.type.name.oclIsUndefined() then\n\t\t\'\'\n\telse\n\t\t\' : \'.concat(self.type.name)\n\tendif\n).concat(\n\tif self.eContainer().oclAsType(msgiface::MessageType).parameters->last() = self then\n-- NOTE: normally we should use the empty string here, but then we need to update labels of other Parameters to prevent missing comma-delimiters.\n\t\t\',\'\n\telse\n\t\t\',\'\n\tendif\n)", //$NON-NLS-1$

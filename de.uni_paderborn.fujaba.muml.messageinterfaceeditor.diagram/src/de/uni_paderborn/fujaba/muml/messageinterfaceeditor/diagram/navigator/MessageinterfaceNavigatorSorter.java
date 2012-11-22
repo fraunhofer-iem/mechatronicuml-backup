@@ -10,7 +10,7 @@ public class MessageinterfaceNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7009;
+	private static final int GROUP_CATEGORY = 7011;
 
 	/**
 	 * @generated

@@ -20,7 +20,7 @@ public class ParameterItemSemanticEditPolicy
 	 */
 	public ParameterItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3006);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008);
 	}
 
 	/**

@@ -5,20 +5,6 @@
     xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="messageinterfaceeditor">
   <figures
       name="Default">
-    <figures
-        xsi:type="gmfgraph:PolygonDecoration"
-        name="ClosedArrow">
-      <backgroundColor
-          xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template
-          x="-2"
-          y="2"/>
-      <template
-          x="-2"
-          y="-2"/>
-      <template/>
-    </figures>
     <descriptors
         name="MessageInterfaceFigure">
       <actualFigure
@@ -59,13 +45,6 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
-        name="GeneralizationFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="GeneralizationFigure"
-          targetDecoration="//@figures.0/@figures.0"/>
-    </descriptors>
-    <descriptors
         name="MessageTypeFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -98,10 +77,10 @@
       </actualFigure>
       <accessors
           accessor="getFigureMessageTypeNameLabelFigure"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
       <accessors
           accessor="getFigureParametersCompartmentFigure"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="ParameterFigure">
@@ -117,11 +96,11 @@
       </actualFigure>
       <accessors
           accessor="getFigureParameterLabel"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
-      name="MessageInterface"
+      name="MessageTypeRepository"
       figure="MessageInterfaceFigure">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
@@ -151,9 +130,6 @@
           dy="-1"/>
     </facets>
   </nodes>
-  <connections
-      name="Generalization"
-      figure="GeneralizationFigure"/>
   <compartments
       name="MessageTypesCompartment"
       figure="MessageInterfaceFigure"
@@ -162,13 +138,13 @@
       name="ParametersCompartment"
       figure="MessageTypeFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="MessageTypeName"
       figure="MessageTypeFigure"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="MessageInterfaceName"
       figure="MessageInterfaceFigure"
@@ -180,5 +156,5 @@
       figure="ParameterFigure"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
 </gmfgraph:Canvas>

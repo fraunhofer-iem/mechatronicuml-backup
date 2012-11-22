@@ -51,20 +51,17 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageInterface_2006 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2006"); //$NON-NLS-1$
+	public static final IElementType MessageTypeRepository_2007 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageTypeRepository_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageType_3005 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3005"); //$NON-NLS-1$
+	public static final IElementType MessageType_3007 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3007"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType Parameter_3006 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3006"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType MessageInterfaceSuperType_4004 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4004"); //$NON-NLS-1$
+	public static final IElementType Parameter_3008 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -181,24 +178,19 @@ public class MumlElementTypes {
 					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					MessageInterface_2006,
+					MessageTypeRepository_2007,
 					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
-							.getMessageInterface());
+							.getMessageTypeRepository());
 
 			elements.put(
-					MessageType_3005,
+					MessageType_3007,
 					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
 							.getMessageType());
 
 			elements.put(
-					Parameter_3006,
+					Parameter_3008,
 					de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 							.getParameter());
-
-			elements.put(
-					MessageInterfaceSuperType_4004,
-					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
-							.getMessageInterface_SuperType());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -217,10 +209,9 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(MessageInterface_2006);
-			KNOWN_ELEMENT_TYPES.add(MessageType_3005);
-			KNOWN_ELEMENT_TYPES.add(Parameter_3006);
-			KNOWN_ELEMENT_TYPES.add(MessageInterfaceSuperType_4004);
+			KNOWN_ELEMENT_TYPES.add(MessageTypeRepository_2007);
+			KNOWN_ELEMENT_TYPES.add(MessageType_3007);
+			KNOWN_ELEMENT_TYPES.add(Parameter_3008);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -232,14 +223,12 @@ public class MumlElementTypes {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return MessageInterface_2006;
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+			return MessageTypeRepository_2007;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return MessageType_3005;
+			return MessageType_3007;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return Parameter_3006;
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
-			return MessageInterfaceSuperType_4004;
+			return Parameter_3008;
 		}
 		return null;
 	}

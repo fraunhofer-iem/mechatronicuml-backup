@@ -10,7 +10,7 @@
         title="messageinterfaceeditor">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="MessageInterface"
+          title="MessageTypeRepository"
           description="Create new MessageInterface">
         <smallIcon
             xsi:type="gmftool:BundleImage"
@@ -32,15 +32,6 @@
           description="Create new Parameter">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Generalization"
-          description="Create new Generalization">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/Generalization.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>
   </palette>

@@ -137,7 +137,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 					return false; // foreign diagram
 				}
 				switch (visualID) {
-				case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
 					if (domainElement == null
@@ -152,7 +152,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				}
 			}
 		}
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID == visualID
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID == visualID;
 	}
@@ -214,14 +214,14 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 					.getVisualID(semanticHint);
 		}
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return createMessageInterface_2006(domainElement, containerView,
-					index, persisted, preferencesHint);
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+			return createMessageTypeRepository_2007(domainElement,
+					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return createMessageType_3005(domainElement, containerView, index,
+			return createMessageType_3007(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return createParameter_3006(domainElement, containerView, index,
+			return createParameter_3008(domainElement, containerView, index,
 					persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -238,9 +238,6 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(elementTypeHint)) {
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
-			return createMessageInterfaceSuperType_4004(containerView, index,
-					persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
 		return null;
@@ -249,13 +246,13 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createMessageInterface_2006(EObject domainElement,
+	public Node createMessageTypeRepository_2007(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -290,22 +287,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5012 = createLabel(
+		Node label5015 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypesCompartmentEditPart.VISUAL_ID),
-				false, false, true, true);
+						.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID),
+				false, false, false, false);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createMessageType_3005(EObject domainElement,
+	public Node createMessageType_3007(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -345,10 +342,10 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5008 = createLabel(
+		Node label5014 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
@@ -360,7 +357,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createParameter_3006(EObject domainElement, View containerView,
+	public Node createParameter_3008(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -399,66 +396,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5011 = createLabel(
+		Node label5013 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
 		return node;
-	}
-
-	/**
-	 * @generated
-	 */
-	public Edge createMessageInterfaceSuperType_4004(View containerView,
-			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Connector edge = NotationFactory.eINSTANCE.createConnector();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
-				.createRelativeBendpoints();
-		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
-				2);
-		points.add(new RelativeBendpoint());
-		points.add(new RelativeBendpoint());
-		bendpoints.setPoints(points);
-		edge.setBendpoints(bendpoints);
-		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
-		edge.setElement(null);
-		// initializePreferences
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
-
-		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
-
-		// All lines should be black, see bug #46 of Mechatronic UML.
-		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
-
-		ViewUtil.setStructuralFeatureValue(edge,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle edgeFontStyle = (FontStyle) edge
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (edgeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
-			edgeFontStyle.setFontName(fontData.getName());
-			edgeFontStyle.setFontHeight(fontData.getHeight());
-			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
-		}
-		Routing routing = Routing.get(prefStore
-				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
-		if (routing != null) {
-			ViewUtil.setStructuralFeatureValue(edge,
-					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
-					routing);
-		}
-		return edge;
 	}
 
 	/**

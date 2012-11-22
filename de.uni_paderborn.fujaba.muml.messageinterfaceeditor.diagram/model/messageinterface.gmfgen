@@ -35,10 +35,9 @@
     <domainDiagramElement
         href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
-        visualID="3005"
+        visualID="3007"
         editPartClassName="MessageTypeEditPart"
         itemSemanticEditPolicyClassName="MessageTypeItemSemanticEditPolicy"
-        notationViewFactoryClassName="MessageTypeViewFactory"
         canonicalEditPolicyClassName="MessageTypeCanonicalEditPolicy"
         compartments="//@diagram/@compartments.1"
         graphicalNodeEditPolicyClassName="MessageTypeGraphicalNodeEditPolicy"
@@ -63,9 +62,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageInterface/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageTypeRepository/messageTypes"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageInterface/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageTypeRepository/messageTypes"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -77,10 +76,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5008"
-          editPartClassName="WrappingLabelEditPart"
-          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageTypeLabelViewFactory">
+          visualID="5014"
+          editPartClassName="MessageTypeNameEditPart"
+          itemSemanticEditPolicyClassName="MessageTypeNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -96,10 +94,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3006"
+        visualID="3008"
         editPartClassName="ParameterEditPart"
         itemSemanticEditPolicyClassName="ParameterItemSemanticEditPolicy"
-        notationViewFactoryClassName="ParameterViewFactory"
         canonicalEditPolicyClassName="ParameterCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ParameterGraphicalNodeEditPolicy"
         createCommandClassName="ParameterCreateCommand"
@@ -138,10 +135,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5011"
-          editPartClassName="WrappingLabel2EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ParameterLabelViewFactory">
+          visualID="5013"
+          editPartClassName="WrappingLabelEditPart"
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -154,18 +150,18 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2006"
-        editPartClassName="MessageInterfaceEditPart"
-        itemSemanticEditPolicyClassName="MessageInterfaceItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="MessageInterfaceCanonicalEditPolicy"
+        visualID="2007"
+        editPartClassName="MessageTypeRepositoryEditPart"
+        itemSemanticEditPolicyClassName="MessageTypeRepositoryItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="MessageTypeRepositoryCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
-        graphicalNodeEditPolicyClassName="MessageInterfaceGraphicalNodeEditPolicy"
-        createCommandClassName="MessageInterfaceCreateCommand">
+        graphicalNodeEditPolicyClassName="MessageTypeRepositoryGraphicalNodeEditPolicy"
+        createCommandClassName="MessageTypeRepositoryCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="MessageInterfaceEditHelper"/>
+          editHelperClassName="MessageTypeRepositoryEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="MessageInterfaceFigure"
@@ -177,7 +173,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageInterface"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageTypeRepository"/>
         <containmentMetaFeature
             href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
@@ -193,9 +189,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5012"
-          editPartClassName="MessageInterfaceNameEditPart"
-          itemSemanticEditPolicyClassName="MessageInterfaceNameItemSemanticEditPolicy">
+          visualID="5015"
+          editPartClassName="MessageTypeRepositoryNameEditPart"
+          itemSemanticEditPolicyClassName="MessageTypeRepositoryNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -214,37 +210,17 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <links
-        visualID="4004"
-        editPartClassName="MessageInterfaceSuperTypeEditPart"
-        itemSemanticEditPolicyClassName="MessageInterfaceSuperTypeItemSemanticEditPolicy"
-        notationViewFactoryClassName="MessageInterfaceSuperTypeViewFactory"
-        createCommandClassName="MessageInterfaceSuperTypeCreateCommand"
-        reorientCommandClassName="MessageInterfaceSuperTypeReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="GeneralizationFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GeneralizationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GeneralizationFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;&#x9;df.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageInterface/superType"/>
-      </modelFacet>
-    </links>
     <compartments
-        visualID="7007"
-        editPartClassName="MessageInterfaceMessageTypesCompartmentEditPart"
-        itemSemanticEditPolicyClassName="MessageInterfaceMessageTypesCompartmentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="MessageInterfaceMessageTypesCompartmentCanonicalEditPolicy"
+        visualID="7008"
+        editPartClassName="MessageTypeRepositoryMessageTypesCompartmentEditPart"
+        itemSemanticEditPolicyClassName="MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="MessageTypesCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -253,10 +229,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7006"
+        visualID="7009"
         editPartClassName="MessageTypeParametersCompartmentEditPart"
         itemSemanticEditPolicyClassName="MessageTypeParametersCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="MessageTypeParametersCompartmentViewFactory"
         canonicalEditPolicyClassName="MessageTypeParametersCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1"
         title="ParametersCompartment"
@@ -274,7 +249,7 @@
           title="messageinterfaceeditor">
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="MessageInterface"
+            title="MessageTypeRepository"
             description="Create new MessageInterface"
             smallIconPath="/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom/icons/MessageInterface.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
@@ -288,12 +263,6 @@
             title="Parameter"
             description="Create new Parameter"
             genNodes="//@diagram/@childNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Generalization"
-            description="Create new Generalization"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Generalization.gif"
-            genLinks="//@diagram/@links.0"/>
       </groups>
     </palette>
     <preferencePages
@@ -357,35 +326,6 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@links.0"
-        groupName="links"
-        groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.0"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.0"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet
@@ -415,7 +355,7 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'Interface'"/>
+          body="'Repository'"/>
       <expressions
           body="'messagetype'"/>
       <expressions
@@ -432,7 +372,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
-        className="ParameterLabelExpressionLabelParser5011"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3"
         editExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext

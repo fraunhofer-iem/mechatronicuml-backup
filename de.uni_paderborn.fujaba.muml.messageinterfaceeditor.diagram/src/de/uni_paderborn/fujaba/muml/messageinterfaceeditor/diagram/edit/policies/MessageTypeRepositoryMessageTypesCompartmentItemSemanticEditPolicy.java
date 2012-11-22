@@ -6,25 +6,25 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 /**
  * @generated
  */
-public class MessageTypeParametersCompartmentItemSemanticEditPolicy
+public class MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public MessageTypeParametersCompartmentItemSemanticEditPolicy() {
+	public MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3007);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageTypeRepository_2007);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008 == req
+		if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3007 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.commands.ParameterCreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.commands.MessageTypeCreateCommand(
 					req));
 		}
 		return super.getCreateCommand(req);

@@ -23,54 +23,54 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser messageInterfaceName_5012Parser;
+	protected IParser messageTypeRepositoryName_5015Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageInterfaceName_5012Parser() {
-		if (messageInterfaceName_5012Parser == null) {
+	protected IParser getMessageTypeRepositoryName_5015Parser() {
+		if (messageTypeRepositoryName_5015Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);
-			messageInterfaceName_5012Parser = parser;
+			messageTypeRepositoryName_5015Parser = parser;
 		}
-		return messageInterfaceName_5012Parser;
+		return messageTypeRepositoryName_5015Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser messageTypeName_5008Parser;
+	protected IParser messageTypeName_5014Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageTypeName_5008Parser() {
-		if (messageTypeName_5008Parser == null) {
+	protected IParser getMessageTypeName_5014Parser() {
+		if (messageTypeName_5014Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);
-			messageTypeName_5008Parser = parser;
+			messageTypeName_5014Parser = parser;
 		}
-		return messageTypeName_5008Parser;
+		return messageTypeName_5014Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5011 parameterLabel_5011Parser;
+	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser parameterLabel_5013Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getParameterLabel_5011Parser() {
-		if (parameterLabel_5011Parser == null) {
-			parameterLabel_5011Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5011();
+	protected IParser getParameterLabel_5013Parser() {
+		if (parameterLabel_5013Parser == null) {
+			parameterLabel_5013Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser();
 		}
-		return parameterLabel_5011Parser;
+		return parameterLabel_5013Parser;
 	}
 
 	/**
@@ -78,12 +78,12 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID:
-			return getMessageInterfaceName_5012Parser();
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart.VISUAL_ID:
+			return getMessageTypeRepositoryName_5015Parser();
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
+			return getMessageTypeName_5014Parser();
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getMessageTypeName_5008Parser();
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getParameterLabel_5011Parser();
+			return getParameterLabel_5013Parser();
 		}
 		return null;
 	}

@@ -29,10 +29,10 @@ public class MumlDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypesCompartmentEditPart.VISUAL_ID:
-			return getMessageInterfaceMessageTypesCompartment_7007SemanticChildren(view);
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
+			return getMessageTypeRepositoryMessageTypesCompartment_7008SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
-			return getMessageTypeParametersCompartment_7006SemanticChildren(view);
+			return getMessageTypeParametersCompartment_7009SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -53,7 +53,7 @@ public class MumlDiagramUpdater {
 			ExtendableElement childElement = (ExtendableElement) it.next();
 			int visualID = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID) {
+			if (visualID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
@@ -66,7 +66,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> getMessageInterfaceMessageTypesCompartment_7007SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> getMessageTypeRepositoryMessageTypesCompartment_7008SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -75,7 +75,7 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) containerView
+		de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getMessageTypes().iterator(); it
@@ -97,7 +97,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> getMessageTypeParametersCompartment_7006SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> getMessageTypeParametersCompartment_7009SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -134,12 +134,12 @@ public class MumlDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return getMessageInterface_2006ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+			return getMessageTypeRepository_2007ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return getMessageType_3005ContainedLinks(view);
+			return getMessageType_3007ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return getParameter_3006ContainedLinks(view);
+			return getParameter_3008ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -151,12 +151,12 @@ public class MumlDiagramUpdater {
 			View view) {
 		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return getMessageInterface_2006IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+			return getMessageTypeRepository_2007IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return getMessageType_3005IncomingLinks(view);
+			return getMessageType_3007IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return getParameter_3006IncomingLinks(view);
+			return getParameter_3008IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -168,12 +168,12 @@ public class MumlDiagramUpdater {
 			View view) {
 		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return getMessageInterface_2006OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+			return getMessageTypeRepository_2007OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return getMessageType_3005OutgoingLinks(view);
+			return getMessageType_3007OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return getParameter_3006OutgoingLinks(view);
+			return getParameter_3008OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -189,19 +189,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2006ContainedLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) view
-				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_MessageInterface_SuperType_4004(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageType_3005ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageTypeRepository_2007ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -209,7 +197,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getParameter_3006ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageType_3007ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -217,22 +205,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2006IncomingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) view
-				.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_MessageInterface_SuperType_4004(
-				modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageType_3005IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getParameter_3008ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -240,7 +213,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getParameter_3006IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageTypeRepository_2007IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -248,19 +221,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageInterface_2006OutgoingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) view
-				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_MessageInterface_SuperType_4004(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageType_3005OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageType_3007IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -268,7 +229,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getParameter_3006OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getParameter_3008IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -276,42 +237,25 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getIncomingFeatureModelFacetLinks_MessageInterface_SuperType_4004(
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
-					.getMessageInterface_SuperType()) {
-				result.add(new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor(
-						setting.getEObject(),
-						target,
-						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4004,
-						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
-			}
-		}
-		return result;
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageTypeRepository_2007OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getOutgoingFeatureModelFacetLinks_MessageInterface_SuperType_4004(
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface source) {
-		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor>();
-		for (Iterator<?> destinations = source.getSuperType().iterator(); destinations
-				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface destination = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) destinations
-					.next();
-			result.add(new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor(
-					source,
-					destination,
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4004,
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
-		}
-		return result;
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getMessageType_3007OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlLinkDescriptor> getParameter_3008OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
 	}
 
 }

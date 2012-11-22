@@ -57,7 +57,7 @@ public class ParameterCreateCommand extends EditElementCommand {
 		owner.getParameters().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers
-				.getInstance().init_Parameter_3006(newElement);
+				.getInstance().init_Parameter_3008(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -12,15 +12,15 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_MessageInterface_2006(
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface instance) {
+	public void init_MessageTypeRepository_2007(
+			de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
 							de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
-									.getMessageInterface(), null).evaluate(
-							instance);
+									.getMessageTypeRepository(), null)
+					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
@@ -31,7 +31,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_MessageType_3005(
+	public void init_MessageType_3007(
 			de.uni_paderborn.fujaba.muml.model.msgiface.MessageType instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
@@ -49,7 +49,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Parameter_3006(
+	public void init_Parameter_3008(
 			de.uni_paderborn.fujaba.muml.model.core.Parameter instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory

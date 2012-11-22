@@ -10,7 +10,7 @@
         href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageTypeRepository"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
@@ -19,7 +19,7 @@
               xsi:type="ecore:EAttribute"
               href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           <value
-              body="'Interface'"/>
+              body="'Repository'"/>
         </initializers>
       </domainInitializer>
       <labelMappings
@@ -33,11 +33,11 @@
           xsi:type="gmftool:CreationTool"
           href="messageinterface.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="messageinterface.gmfgraph#MessageInterface"/>
+          href="messageinterface.gmfgraph#MessageTypeRepository"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType"/>
@@ -112,16 +112,6 @@
       </compartments>
     </ownedChild>
   </nodes>
-  <links>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="messageinterface.gmftool#//@palette/@tools.0/@tools.3"/>
-    <diagramLink
-        href="messageinterface.gmfgraph#Generalization"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface/superType"/>
-  </links>
   <diagram>
     <diagramCanvas
         href="messageinterface.gmfgraph#messageinterfaceeditor"/>

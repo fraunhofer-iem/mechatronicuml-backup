@@ -34,17 +34,17 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2006);
-			return types;
-		}
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3005);
+			types.add(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageTypeRepository_2007);
 			return types;
 		}
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3006);
+			types.add(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008);
+			return types;
+		}
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart) {
+			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+			types.add(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3007);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -56,10 +56,6 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
 				.getAdapter(IGraphicalEditPart.class);
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -69,10 +65,6 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -85,10 +77,6 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 				.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -99,10 +87,6 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -113,10 +97,6 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
 				.getAdapter(IGraphicalEditPart.class);
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
 		return Collections.EMPTY_LIST;
 	}
 

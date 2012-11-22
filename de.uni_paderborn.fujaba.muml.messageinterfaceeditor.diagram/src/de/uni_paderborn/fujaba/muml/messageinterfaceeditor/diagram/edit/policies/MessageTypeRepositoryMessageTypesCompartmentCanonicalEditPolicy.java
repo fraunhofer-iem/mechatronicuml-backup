@@ -2,12 +2,9 @@ package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policie
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -18,31 +15,24 @@ import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-
-import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * @generated
  */
-public class MessageInterfaceDiagramCanonicalEditPolicy extends
-		CanonicalEditPolicy {
-
+public class MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy
+		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
-	public MessageInterfaceDiagramCanonicalEditPolicy() {
+	public MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy() {
 	}
 
-	public MessageInterfaceDiagramCanonicalEditPolicy(boolean canonicalNodes) {
+	public MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy(
+			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
 
@@ -62,8 +52,8 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return ModelinstancePackage.eINSTANCE
-				.getModelElementCategory_ModelElements();
+		return de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+				.getMessageTypeRepository_MessageTypes();
 	}
 
 	/**
@@ -93,7 +83,7 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID;
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 								.getVisualID(childView)) {
@@ -108,7 +98,7 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramUpdater
-				.getModelElementCategory_1000SemanticChildren(viewObject);
+				.getMessageTypeRepositoryMessageTypesCompartment_7008SemanticChildren(viewObject);
 
 	}
 
@@ -125,7 +115,7 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -207,7 +197,6 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 		if (changed || createdViews.size() > 0) {
 			postProcessRefreshSemantic(createdViews);
 		}
-
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()

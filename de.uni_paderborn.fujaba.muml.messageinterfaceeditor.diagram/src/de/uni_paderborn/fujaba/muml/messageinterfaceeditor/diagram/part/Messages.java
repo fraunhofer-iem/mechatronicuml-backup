@@ -248,12 +248,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String MessageInterface1CreationTool_title;
+	public static String MessageTypeRepository1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageInterface1CreationTool_desc;
+	public static String MessageTypeRepository1CreationTool_desc;
 
 	/**
 	 * @generated
@@ -278,17 +278,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Generalization4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Generalization4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String MessageInterfaceMessageTypesCompartmentEditPart_title;
+	public static String MessageTypeRepositoryMessageTypesCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -299,31 +289,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterfaceSuperType_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ModelElementCategory_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterface_2006_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterface_2006_outgoinglinks;
 
 	/**
 	 * @generated

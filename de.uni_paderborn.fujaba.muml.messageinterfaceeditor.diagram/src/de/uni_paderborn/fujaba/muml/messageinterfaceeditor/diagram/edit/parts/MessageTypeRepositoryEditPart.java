@@ -1,7 +1,8 @@
 package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts;
 
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -12,7 +13,6 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
@@ -22,17 +22,20 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
  */
-public class ParameterEditPart extends ShapeNodeEditPart {
+public class MessageTypeRepositoryEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3008;
+	public static final int VISUAL_ID = 2007;
 
 	/**
 	 * @generated
@@ -47,7 +50,7 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public ParameterEditPart(View view) {
+	public MessageTypeRepositoryEditPart(View view) {
 		super(view);
 	}
 
@@ -58,7 +61,7 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.ParameterItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageTypeRepositoryItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -94,23 +97,32 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ParameterFigure();
+		return primaryShape = new MessageInterfaceFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ParameterFigure getPrimaryShape() {
-		return (ParameterFigure) primaryShape;
+	public MessageInterfaceFigure getPrimaryShape() {
+		return (MessageInterfaceFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart) {
-			((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureParameterLabel());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureMessageInterfaceNameLabelFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureMessageTypesCompartmentFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -120,7 +132,15 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureMessageTypesCompartmentFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -150,6 +170,9 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart) {
+			return getPrimaryShape().getFigureMessageTypesCompartmentFigure();
+		}
 		return getContentPane();
 	}
 
@@ -157,23 +180,11 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(-1, -1);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 90);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
 
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public EditPolicy getPrimaryDragEditPolicy() {
-		EditPolicy result = super.getPrimaryDragEditPolicy();
-		if (result instanceof ResizableEditPolicy) {
-			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.NONE);
-		}
 		return result;
 	}
 
@@ -260,25 +271,35 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public class ParameterFigure extends RectangleFigure {
+	public class MessageInterfaceFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureParameterLabel;
+		private WrappingLabel fFigureMessageInterfaceNameLabelFigure;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureMessageTypesCompartmentFigure;
 
 		/**
 		 * @generated
 		 */
-		public ParameterFigure() {
-			this.setFill(false);
-			this.setOutline(false);
+		public MessageInterfaceFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = false;
+			layoutThis.marginWidth = 1;
+			layoutThis.marginHeight = 0;
+			this.setLayoutManager(layoutThis);
+
 			createContents();
 		}
 
@@ -287,20 +308,60 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureParameterLabel = new WrappingLabel();
-			fFigureParameterLabel.setText("");
+			fFigureMessageInterfaceNameLabelFigure = new WrappingLabel();
+			fFigureMessageInterfaceNameLabelFigure.setText("");
 
-			this.add(fFigureParameterLabel);
+			fFigureMessageInterfaceNameLabelFigure
+					.setFont(FFIGUREMESSAGEINTERFACENAMELABELFIGURE_FONT);
+
+			GridData constraintFFigureMessageInterfaceNameLabelFigure = new GridData();
+			constraintFFigureMessageInterfaceNameLabelFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageInterfaceNameLabelFigure.horizontalAlignment = GridData.CENTER;
+			constraintFFigureMessageInterfaceNameLabelFigure.horizontalIndent = 0;
+			constraintFFigureMessageInterfaceNameLabelFigure.horizontalSpan = 1;
+			constraintFFigureMessageInterfaceNameLabelFigure.verticalSpan = 1;
+			constraintFFigureMessageInterfaceNameLabelFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageInterfaceNameLabelFigure.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageInterfaceNameLabelFigure,
+					constraintFFigureMessageInterfaceNameLabelFigure);
+
+			fFigureMessageTypesCompartmentFigure = new RectangleFigure();
+			fFigureMessageTypesCompartmentFigure.setOutline(false);
+
+			GridData constraintFFigureMessageTypesCompartmentFigure = new GridData();
+			constraintFFigureMessageTypesCompartmentFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageTypesCompartmentFigure.horizontalAlignment = GridData.FILL;
+			constraintFFigureMessageTypesCompartmentFigure.horizontalIndent = 0;
+			constraintFFigureMessageTypesCompartmentFigure.horizontalSpan = 1;
+			constraintFFigureMessageTypesCompartmentFigure.verticalSpan = 1;
+			constraintFFigureMessageTypesCompartmentFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageTypesCompartmentFigure.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageTypesCompartmentFigure,
+					constraintFFigureMessageTypesCompartmentFigure);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureParameterLabel() {
-			return fFigureParameterLabel;
+		public WrappingLabel getFigureMessageInterfaceNameLabelFigure() {
+			return fFigureMessageInterfaceNameLabelFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureMessageTypesCompartmentFigure() {
+			return fFigureMessageTypesCompartmentFigure;
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGUREMESSAGEINTERFACENAMELABELFIGURE_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 10, SWT.BOLD);
 
 }

@@ -20,6 +20,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+import org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 
@@ -67,11 +68,6 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
-
-	/**
-	 * @generated
-	 */
 	private de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers initializers;
 
 	/**
@@ -102,7 +98,6 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
-		linkConstraints = null;
 		initializers = null;
 		oclFactory = null;
 		instance = null;
@@ -156,6 +151,7 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
+		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ModelinstanceItemProviderAdapterFactory());
 		factories.add(new StorydiagramsItemProviderAdapterFactory());
@@ -258,21 +254,6 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDocumentProvider();
 		}
 		return documentProvider;
-	}
-
-	/**
-	 * @generated
-	 */
-	public de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
-		return linkConstraints;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setLinkConstraints(
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
-		this.linkConstraints = lc;
 	}
 
 	/**

@@ -32,23 +32,22 @@ public class MumlPaletteFactory {
 		PaletteGroup paletteContainer = new PaletteGroup(
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Messageinterfaceeditor1Group_title);
 		paletteContainer.setId("createMessageinterfaceeditor1Group"); //$NON-NLS-1$
-		paletteContainer.add(createMessageInterface1CreationTool());
+		paletteContainer.add(createMessageTypeRepository1CreationTool());
 		paletteContainer.add(createMessageType2CreationTool());
 		paletteContainer.add(createParameter3CreationTool());
-		paletteContainer.add(createGeneralization4CreationTool());
 		return paletteContainer;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createMessageInterface1CreationTool() {
+	private ToolEntry createMessageTypeRepository1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageInterface1CreationTool_title,
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageInterface1CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageTypeRepository1CreationTool_title,
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageTypeRepository1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2006));
-		entry.setId("createMessageInterface1CreationTool"); //$NON-NLS-1$
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageTypeRepository_2007));
+		entry.setId("createMessageTypeRepository1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom/icons/MessageInterface.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -63,10 +62,10 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageType2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageType2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3005));
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3007));
 		entry.setId("createMessageType2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3005));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -79,26 +78,10 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Parameter3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Parameter3CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3006));
+						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008));
 		entry.setId("createParameter3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3006));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createGeneralization4CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Generalization4CreationTool_title,
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.Generalization4CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4004));
-		entry.setId("createGeneralization4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Generalization.gif")); //$NON-NLS-1$
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -127,35 +110,6 @@ public class MumlPaletteFactory {
 		 */
 		public Tool createTool() {
 			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LinkToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> relationshipTypes;
-
-		/**
-		 * @generated
-		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> relationshipTypes) {
-			super(title, description, null, null);
-			this.relationshipTypes = relationshipTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
 			tool.setProperties(getToolProperties());
 			return tool;
 		}

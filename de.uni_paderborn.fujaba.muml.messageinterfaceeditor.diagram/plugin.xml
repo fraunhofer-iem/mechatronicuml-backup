@@ -97,8 +97,8 @@
             name="msgiface">
          
          <child
-               class="MessageInterface"
-               packageNsUri="http://www.fujaba.de/muml/model/msgiface/0.3.1">
+               class="MessageTypeRepository"
+               packageNsUri="http://www.fujaba.de/muml/model/msgiface/0.3.2">
          </child>
          
       </category>
@@ -116,13 +116,13 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.messageinterface.category"
             modelId="Messageinterface">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/modelinstance/0.3.2"
+               packageNsURI="http://www.fujaba.de/modelinstance/0.3.3"
                className="ModelElementCategory">
          </diagramElement>
          
          <topLevelNode
-               domainElement="MessageInterface"
-               semanticHint="2006">
+               domainElement="MessageTypeRepository"
+               semanticHint="2007">
          </topLevelNode>
          
       </editor>
@@ -324,8 +324,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Messageinterface"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2006,3005,3006"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2007,3007,3008"/>
       </viewProvider>
    </extension>
 
@@ -337,16 +336,16 @@
             <method name="getType()" value="Messageinterface"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2006,3005,3006"/>
+            <method name="getType()" value="2007,3007,3008"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4004"/>
+            <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5012,5008,5011"/>
+            <method name="getType()" value="5015,5014,5013"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7007,7006"/>
+            <method name="getType()" value="7008,7009"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -357,8 +356,8 @@
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart" id="ModelElementCategory_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart" id="MessageInterface_2006"/>
-         <context elements="ModelElementCategory_1000,MessageInterface_2006"/>
+         <object class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart" id="MessageTypeRepository_2007"/>
+         <context elements="ModelElementCategory_1000,MessageTypeRepository_2007"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -378,7 +377,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.2">
+      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.3">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
@@ -388,44 +387,35 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.2">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2006"
-               name="%metatype.name.MessageInterface_2006"
+               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageTypeRepository_2007"
+               name="%metatype.name.MessageTypeRepository_2007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MessageInterface"
-               edithelper="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.helpers.MessageInterfaceEditHelper">
-            <param name="semanticHint" value="2006"/>
+               eclass="MessageTypeRepository"
+               edithelper="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.helpers.MessageTypeRepositoryEditHelper">
+            <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.2">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3005"
-               name="%metatype.name.MessageType_3005"
+               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3007"
+               name="%metatype.name.MessageType_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MessageType"
                edithelper="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.helpers.MessageTypeEditHelper">
-            <param name="semanticHint" value="3005"/>
+            <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.3.3">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3006"
-               name="%metatype.name.Parameter_3006"
+               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3008"
+               name="%metatype.name.Parameter_3008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Parameter"
                edithelper="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.helpers.ParameterEditHelper">
-            <param name="semanticHint" value="3006"/>
+            <param name="semanticHint" value="3008"/>
          </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.1">
-         <specializationType
-               id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4004"
-               name="%metatype.name.MessageInterfaceSuperType_4004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4004"/>
-         </specializationType>
       </metamodel>
    </extension>
 
@@ -440,10 +430,9 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ModelElementCategory_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2006"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3005"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3006"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4004"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageTypeRepository_2007"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3007"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3008"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

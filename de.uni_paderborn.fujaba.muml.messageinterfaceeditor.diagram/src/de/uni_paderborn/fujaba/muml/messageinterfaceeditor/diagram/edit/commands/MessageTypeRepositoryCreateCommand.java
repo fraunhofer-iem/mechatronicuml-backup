@@ -12,15 +12,17 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.fujaba.modelinstance.ModelElementCategory;
+
 /**
  * @generated
  */
-public class MessageTypeCreateCommand extends EditElementCommand {
+public class MessageTypeRepositoryCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public MessageTypeCreateCommand(CreateElementRequest req) {
+	public MessageTypeRepositoryCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,14 +52,14 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageType newElement = de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory.eINSTANCE
-				.createMessageType();
+		de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository newElement = de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory.eINSTANCE
+				.createMessageTypeRepository();
 
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository owner = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository) getElementToEdit();
-		owner.getMessageTypes().add(newElement);
+		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
+		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers
-				.getInstance().init_MessageType_3007(newElement);
+				.getInstance().init_MessageTypeRepository_2007(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -69,7 +71,7 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageType newElement,
+			de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

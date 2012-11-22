@@ -42,13 +42,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabelEditPart extends CompartmentEditPart implements
-		ITextAwareEditPart {
+public class MessageTypeRepositoryNameEditPart extends CompartmentEditPart
+		implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5013;
+	public static final int VISUAL_ID = 5015;
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public WrappingLabelEditPart(View view) {
+	public MessageTypeRepositoryNameEditPart(View view) {
 		super(view);
 	}
 
@@ -290,10 +290,10 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MessageinterfaceParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008,
+							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageTypeRepository_2007,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -503,7 +503,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**

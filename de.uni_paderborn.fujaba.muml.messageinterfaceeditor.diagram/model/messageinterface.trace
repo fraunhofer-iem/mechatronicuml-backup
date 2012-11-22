@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <trace:TraceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
-  <nodeTraces visualID="2006" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.1' and _eClass_.name = 'MessageInterface') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/modelinstance/0.3.2' and _eClass_.name = 'ModelElementCategory') and _containmentMF_.name = 'modelElements')">
-    <nodeLabelTraces visualID="5012" queryText="true"/>
-    <compartmentTraces visualID="7007" queryText="true"/>
+  <nodeTraces visualID="2007" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.2' and _eClass_.name = 'MessageTypeRepository') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/modelinstance/0.3.3' and _eClass_.name = 'ModelElementCategory') and _containmentMF_.name = 'modelElements')">
+    <nodeLabelTraces visualID="5015" queryText="true"/>
+    <compartmentTraces visualID="7008" queryText="true"/>
   </nodeTraces>
-  <childNodeTraces visualID="3005" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.1' and _eClass_.name = 'MessageType') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.1' and _eClass_.name = 'MessageInterface') and _containmentMF_.name = 'messageTypes')">
-    <nodeLabelTraces visualID="5008" queryText="true"/>
-    <compartmentTraces visualID="7006" queryText="true"/>
+  <childNodeTraces visualID="3007" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.2' and _eClass_.name = 'MessageType') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.2' and _eClass_.name = 'MessageTypeRepository') and _containmentMF_.name = 'messageTypes')">
+    <nodeLabelTraces visualID="5014" queryText="true"/>
+    <compartmentTraces visualID="7009" queryText="true"/>
   </childNodeTraces>
-  <childNodeTraces visualID="3006" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/core/0.3.1' and _eClass_.name = 'Parameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.1' and _eClass_.name = 'MessageType') and _containmentMF_.name = 'parameters')">
-    <nodeLabelTraces visualID="5011" queryText="true"/>
+  <childNodeTraces visualID="3008" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/core/0.3.3' and _eClass_.name = 'Parameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.2' and _eClass_.name = 'MessageType') and _containmentMF_.name = 'parameters')">
+    <nodeLabelTraces visualID="5013" queryText="true"/>
   </childNodeTraces>
-  <linkTraces visualID="4004" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/msgiface/0.3.1' and _eClass_.name = 'MessageInterface') and _feature_.name = 'superType')"/>
 </trace:TraceModel>
