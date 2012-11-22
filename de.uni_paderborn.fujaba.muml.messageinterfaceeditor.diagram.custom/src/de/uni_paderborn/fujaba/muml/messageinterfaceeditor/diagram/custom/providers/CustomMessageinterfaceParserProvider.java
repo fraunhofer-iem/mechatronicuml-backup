@@ -12,11 +12,11 @@ public class CustomMessageinterfaceParserProvider extends
 		MessageinterfaceParserProvider {
 
 	@Override
-	protected IParser getParameterLabel_5011Parser() {
-		if (parameterLabel_5011Parser == null) {
-			parameterLabel_5011Parser = new CustomParameterLabelExpressionLabelParser5011();
+	protected IParser getParameterLabel_5013Parser() {
+		if (parameterLabel_5013Parser == null) {
+			parameterLabel_5013Parser = new CustomParameterLabelExpressionLabelParser5011();
 		}
-		return parameterLabel_5011Parser;
+		return parameterLabel_5013Parser;
 	}
 
 }
