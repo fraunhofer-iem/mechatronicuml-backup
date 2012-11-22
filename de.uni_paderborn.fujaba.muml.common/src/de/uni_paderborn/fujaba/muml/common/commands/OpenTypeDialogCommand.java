@@ -195,9 +195,11 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 			private List<EClass> getSubClasses(EClass parentClass) {
 				List<EClass> classList = new ArrayList<EClass>();
 
+				// TODO: Provide Extension Point, which fills packages array
+				
 				EPackage packages[] = new EPackage[] {
-						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE,
-						de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage.eINSTANCE };
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+						};
 				for (EPackage _package : packages) {
 					EList<EClassifier> classifiers = _package.getEClassifiers();
 
