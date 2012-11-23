@@ -68,18 +68,6 @@ public class CustomDiscreteMultiPortInstance2EditPart extends DiscreteMultiPortI
 	@Override
 	public void activate() {
 		getDelegation().activate();
-
-		EditPart parentEditPart = getParent();
-		IFigure figure = null;
-		if (parentEditPart instanceof GraphicalEditPart) {
-			figure = ((GraphicalEditPart) parentEditPart).getFigure();
-		}
-		if (figure instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			getDelegation().addContainerLayoutListener(portContainerFigure);
-		}
-
 		super.activate();
 	}
 
@@ -88,17 +76,6 @@ public class CustomDiscreteMultiPortInstance2EditPart extends DiscreteMultiPortI
 	 */
 	@Override
 	public void deactivate() {
-		EditPart parentEditPart = getParent();
-		IFigure figure = null;
-		if (parentEditPart instanceof GraphicalEditPart) {
-			figure = ((GraphicalEditPart) parentEditPart).getFigure();
-		}
-		if (figure instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			getDelegation().removeContainerLayoutListener(
-					portContainerFigure);
-		}
 		getDelegation().deactivate();
 		super.deactivate();
 	}

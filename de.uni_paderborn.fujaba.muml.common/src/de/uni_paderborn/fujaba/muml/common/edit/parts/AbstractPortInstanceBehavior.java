@@ -35,7 +35,7 @@ public abstract class AbstractPortInstanceBehavior extends AbstractPortBehavior 
 		if (figure instanceof BorderedNodeFigure) {
 			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
 			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			addContainerLayoutListener(portContainerFigure);
+			addLayoutListener(portContainerFigure);
 		}
 
 		super.activate();

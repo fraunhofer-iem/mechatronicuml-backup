@@ -34,7 +34,7 @@ public abstract class AbstractPortBehavior {
 	/**
 	 * The offset that the port lies within it's container.
 	 */
-	private static final Dimension OFFSET = new Dimension(12, 12);
+	protected static final Dimension DEFAULT_OFFSET = new Dimension(12, 12);
 
 	/**
 	 * The LayoutListener for layouting the port's container.
@@ -67,7 +67,7 @@ public abstract class AbstractPortBehavior {
 	public abstract CustomPortFigure.PortType getPortType();
 
 	public abstract boolean isMulti();
-	
+
 	public abstract boolean isMandatory();
 
 	/**
@@ -134,21 +134,22 @@ public abstract class AbstractPortBehavior {
 	}
 
 	/**
-	 * Adds a LayoutListener to the given port container figure. This listener
-	 * will hook into layout changes (movements) and update the port's visual
-	 * orientation according to the side it lies at.
+	 * Adds a LayoutListener to the given figure. This listener will hook into
+	 * layout changes (movements) and update the port's visual orientation
+	 * according to the side it lies at.
 	 * 
-	 * @param containerFigure
-	 *            The port's container figure.
+	 * @param figure
+	 *            The figure.
 	 */
-	public void addContainerLayoutListener(IFigure containerFigure) {
-		if (editPart instanceof AbstractBorderItemEditPart) {
-			containerFigure.addLayoutListener(getContainerLayoutListener());
-		}
+	public void addLayoutListener(IFigure figure) {
+		// if (editPart instanceof AbstractBorderItemEditPart) {
+		figure.removeLayoutListener(getContainerLayoutListener());
+		figure.addLayoutListener(getContainerLayoutListener());
+		// }
 	}
 
 	/**
-	 * Removes the LayoutListener from the given port container figure.
+	 * Removes the LayoutListener from the given figure.
 	 * 
 	 * @param containerFigure
 	 *            The port's container figure.
@@ -164,15 +165,19 @@ public abstract class AbstractPortBehavior {
 	 * objects.
 	 */
 	public void activate() {
+		updateBorderItemLocator();
+		updatePortType();
+		updateCardinality();
+	}
+
+	protected void updateBorderItemLocator() {
 		if (editPart instanceof AbstractBorderItemEditPart) {
 			IBorderItemLocator locator = ((AbstractBorderItemEditPart) editPart)
 					.getBorderItemLocator();
 			if (locator instanceof BorderItemLocator) {
-				((BorderItemLocator) locator).setBorderItemOffset(OFFSET);
+				((BorderItemLocator) locator).setBorderItemOffset(DEFAULT_OFFSET);
 			}
 		}
-		updatePortType();
-		updateCardinality();
 	}
 
 	/**
