@@ -118,23 +118,6 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				if (RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS
 						.equals(feature)) {
 					return new ActionCellEditor(parent, feature);
-				} else if (RealtimestatechartPackage.Literals.SYNCHRONIZATION__PARAMETER_BINDING
-						.equals(feature)) {
-					return new ParameterBindingCreationCellEditor(parent,
-							feature) {
-						@Override
-						public Collection<Parameter> getParameters(
-								EObject object) {
-							Synchronization synchronization = (Synchronization) object;
-							if (synchronization != null
-									&& synchronization.getSyncChannel() != null) {
-								SynchronizationChannel syncChannel = synchronization
-										.getSyncChannel();
-								return syncChannel.getParameters();
-							}
-							return Collections.emptyList();
-						}
-					};
 				} else if (RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING
 						.equals(feature)) {
 					return new ParameterBindingCreationCellEditor(parent,
