@@ -107,6 +107,15 @@ public interface CoreFactory extends EFactory {
 	ParameterBinding createParameterBinding();
 
 	/**
+	 * Returns a new object of class '<em>Time Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Time Value</em>'.
+	 * @generated
+	 */
+	TimeValue createTimeValue();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

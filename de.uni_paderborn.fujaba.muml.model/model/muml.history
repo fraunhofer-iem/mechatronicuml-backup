@@ -15709,7 +15709,7 @@
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.3" oldDataValue="http://www.fujaba.de/modelinstance/0.3.2"/>
   </releases>
-  <releases>
+  <releases date="2012-11-23T15:46:42.326+0100" label="0.3.4">
     <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Region"
         referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/Region/gmfHistory"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Region/gmfHistory"
@@ -15756,5 +15756,51 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="This feature exists for GMF. We use it to register a DerivedAttributeAdapter in RegionImpl to be able to get notifications in the CustomRegionEditPart, when the value of &quot;RealtimeStatechart.history&quot; changes."
         oldDataValue="The component type typing this component part."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+        element="muml.ecore#//model/core/TimeUnit"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeUnit" featureName="name"
+        dataValue="TimeUnit"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeUnit" featureName="instanceClassName"
+        dataValue="java.util.concurrent.TimeUnit"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeUnit" featureName="instanceTypeName"
+        dataValue="java.util.concurrent.TimeUnit"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+        element="muml.ecore#//model/core/TimeValue"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue" featureName="name"
+        dataValue="TimeValue"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/core/TimeValue" featureName="eSuperTypes"
+        referenceValue="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/TimeValue"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/core/TimeValue/value"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/value"
+        featureName="name" dataValue="value"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/value"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/value"
+        featureName="eType" referenceValue="muml.ecore#//model/core/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/value"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/TimeValue"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/core/TimeValue/unit"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/unit"
+        featureName="name" dataValue="unit"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/unit"
+        featureName="eType" referenceValue="muml.ecore#//model/core/TimeUnit"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/unit"
+        featureName="unsettable" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ClockConstraint/bound"
+        featureName="eType" referenceValue="muml.ecore#//model/core/TimeValue" oldReferenceValue="muml.ecore#//model/core/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Deadline/lowerBound"
+        featureName="eType" referenceValue="muml.ecore#//model/core/TimeValue" oldReferenceValue="muml.ecore#//model/core/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Deadline/upperBound"
+        featureName="eType" referenceValue="muml.ecore#//model/core/TimeValue" oldReferenceValue="muml.ecore#//model/core/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.4"
+        oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/core/0.3.4" oldDataValue="http://www.fujaba.de/muml/model/core/0.3.3"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.4" oldDataValue="http://www.fujaba.de/modelinstance/0.3.3"/>
   </releases>
+  <releases/>
 </history:History>

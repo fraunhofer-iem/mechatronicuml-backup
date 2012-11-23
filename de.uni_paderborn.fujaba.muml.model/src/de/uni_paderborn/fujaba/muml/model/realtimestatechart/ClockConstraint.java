@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.expressions.common.ComparingOperator;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,12 +46,12 @@ public interface ClockConstraint extends EObject {
 	 * The bound of a deadline (upper or lower) is a natural number.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Bound</em>' containment reference.
-	 * @see #setBound(NaturalNumber)
+	 * @see #setBound(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClockConstraint_Bound()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	NaturalNumber getBound();
+	TimeValue getBound();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getBound <em>Bound</em>}' containment reference.
@@ -61,7 +61,7 @@ public interface ClockConstraint extends EObject {
 	 * @see #getBound()
 	 * @generated
 	 */
-	void setBound(NaturalNumber value);
+	void setBound(TimeValue value);
 
 	/**
 	 * Returns the value of the '<em><b>Clock</b></em>' reference.

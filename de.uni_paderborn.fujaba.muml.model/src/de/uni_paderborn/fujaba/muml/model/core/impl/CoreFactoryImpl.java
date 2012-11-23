@@ -6,7 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
+import java.util.concurrent.TimeUnit;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -26,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +44,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 */
 	public static CoreFactory init() {
 		try {
-			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.3"); 
+			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.4"); 
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}
@@ -80,6 +82,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case CorePackage.ARRAY_DATA_TYPE: return createArrayDataType();
 			case CorePackage.PARAMETER_BINDING: return createParameterBinding();
+			case CorePackage.TIME_VALUE: return createTimeValue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +98,8 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 		switch (eDataType.getClassifierID()) {
 			case CorePackage.PRIMITIVE_TYPES:
 				return createPrimitiveTypesFromString(eDataType, initialValue);
+			case CorePackage.TIME_UNIT:
+				return createTimeUnitFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -110,6 +115,8 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 		switch (eDataType.getClassifierID()) {
 			case CorePackage.PRIMITIVE_TYPES:
 				return convertPrimitiveTypesToString(eDataType, instanceValue);
+			case CorePackage.TIME_UNIT:
+				return convertTimeUnitToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -210,6 +217,16 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TimeValue createTimeValue() {
+		TimeValueImpl timeValue = new TimeValueImpl();
+		return timeValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PrimitiveTypes createPrimitiveTypesFromString(EDataType eDataType, String initialValue) {
 		PrimitiveTypes result = PrimitiveTypes.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -223,6 +240,24 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 */
 	public String convertPrimitiveTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeUnit createTimeUnitFromString(EDataType eDataType, String initialValue) {
+		return (TimeUnit)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTimeUnitToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

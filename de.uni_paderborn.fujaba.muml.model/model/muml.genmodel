@@ -152,6 +152,7 @@
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/DOUBLE"/>
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/core/PrimitiveTypes/STRING"/>
         </genEnums>
+        <genDataTypes ecoreDataType="muml.ecore#//model/core/TimeUnit"/>
         <genClasses ecoreClass="muml.ecore#//model/core/NaturalNumber">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/NaturalNumber/value"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/NaturalNumber/infinity"/>
@@ -214,6 +215,10 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/core/ParameterBinding/parameter"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/ParameterBinding/value"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/core/TimeValue">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/TimeValue/value"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/TimeValue/unit"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.model"

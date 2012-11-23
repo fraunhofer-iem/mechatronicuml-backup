@@ -6,8 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
+import java.util.concurrent.TimeUnit;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -40,6 +43,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.core.util.CoreValidator;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
@@ -155,7 +159,21 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass timeValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum primitiveTypesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType timeUnitEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -556,8 +574,44 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTimeValue() {
+		return timeValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTimeValue_Value() {
+		return (EReference)timeValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTimeValue_Unit() {
+		return (EAttribute)timeValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPrimitiveTypes() {
 		return primitiveTypesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getTimeUnit() {
+		return timeUnitEDataType;
 	}
 
 	/**
@@ -634,8 +688,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(parameterBindingEClass, PARAMETER_BINDING__PARAMETER);
 		createEReference(parameterBindingEClass, PARAMETER_BINDING__VALUE);
 
+		timeValueEClass = createEClass(TIME_VALUE);
+		createEReference(timeValueEClass, TIME_VALUE__VALUE);
+		createEAttribute(timeValueEClass, TIME_VALUE__UNIT);
+
 		// Create enums
 		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
+
+		// Create data types
+		timeUnitEDataType = createEDataType(TIME_UNIT);
 	}
 
 	/**
@@ -686,6 +747,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 		arrayDataTypeEClass.getESuperTypes().add(this.getDataType());
 		parameterBindingEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
+		timeValueEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -744,6 +806,10 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getParameterBinding_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParameterBinding_Value(), theExpressionsPackage.getExpression(), null, "value", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(timeValueEClass, TimeValue.class, "TimeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTimeValue_Value(), this.getNaturalNumber(), null, "value", null, 1, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeValue_Unit(), this.getTimeUnit(), "unit", null, 0, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.VOID);
@@ -754,6 +820,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.LONG);
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.DOUBLE);
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.STRING);
+
+		// Initialize data types
+		initEDataType(timeUnitEDataType, TimeUnit.class, "TimeUnit", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.core;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -51,7 +52,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/core/0.3.3";
+	String eNS_URI = "http://www.fujaba.de/muml/model/core/0.3.4";
 
 	/**
 	 * The package namespace name.
@@ -776,6 +777,61 @@ public interface CorePackage extends EPackage {
 	int PARAMETER_BINDING_FEATURE_COUNT = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.TimeValueImpl <em>Time Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.TimeValueImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeValue()
+	 * @generated
+	 */
+	int TIME_VALUE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE__ANNOTATION = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE__EXTENSION = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE__VALUE = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE__UNIT = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Time Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE_FEATURE_COUNT = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -783,7 +839,17 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getPrimitiveTypes()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPES = 13;
+	int PRIMITIVE_TYPES = 14;
+
+	/**
+	 * The meta object id for the '<em>Time Unit</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.concurrent.TimeUnit
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeUnit()
+	 * @generated
+	 */
+	int TIME_UNIT = 15;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.
@@ -1136,6 +1202,38 @@ public interface CorePackage extends EPackage {
 	EReference getParameterBinding_Value();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.TimeValue <em>Time Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time Value</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.TimeValue
+	 * @generated
+	 */
+	EClass getTimeValue();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.core.TimeValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.TimeValue#getValue()
+	 * @see #getTimeValue()
+	 * @generated
+	 */
+	EReference getTimeValue_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.TimeValue#getUnit <em>Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.TimeValue#getUnit()
+	 * @see #getTimeValue()
+	 * @generated
+	 */
+	EAttribute getTimeValue_Unit();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1144,6 +1242,17 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getPrimitiveTypes();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.concurrent.TimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Time Unit</em>'.
+	 * @see java.util.concurrent.TimeUnit
+	 * @model instanceClass="java.util.concurrent.TimeUnit"
+	 * @generated
+	 */
+	EDataType getTimeUnit();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1458,6 +1567,32 @@ public interface CorePackage extends EPackage {
 		EReference PARAMETER_BINDING__VALUE = eINSTANCE.getParameterBinding_Value();
 
 		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.TimeValueImpl <em>Time Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.TimeValueImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeValue()
+		 * @generated
+		 */
+		EClass TIME_VALUE = eINSTANCE.getTimeValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TIME_VALUE__VALUE = eINSTANCE.getTimeValue_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_VALUE__UNIT = eINSTANCE.getTimeValue_Unit();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1466,6 +1601,16 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum PRIMITIVE_TYPES = eINSTANCE.getPrimitiveTypes();
+
+		/**
+		 * The meta object literal for the '<em>Time Unit</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.concurrent.TimeUnit
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeUnit()
+		 * @generated
+		 */
+		EDataType TIME_UNIT = eINSTANCE.getTimeUnit();
 
 	}
 

@@ -655,7 +655,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.3" nsPrefix="core">
+    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.4" nsPrefix="core">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package contains several core classes that are used by classes from several other packages.&#xD;&#xA;It provides abstract base classes for Statecharts, meta-model elements that use a statechart to&#xD;&#xA;define their behavior and meta-model elements that may carry a constraint.&#xD;&#xA;Additionally, the package provides classes for modeling cardinalites as natural numbers including&#xD;&#xA;infinity."/>
       </eAnnotations>
@@ -886,6 +886,13 @@
             <details key="documentation" value="The value which is associated with the parameter. The value is defined by an expression."/>
           </eAnnotations>
         </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="TimeUnit" instanceClassName="java.util.concurrent.TimeUnit"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TimeValue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//model/core/NaturalNumber" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//model/core/TimeUnit"
+            unsettable="true"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.3.3"
@@ -1378,7 +1385,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1"
+    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.4"
         nsPrefix="realtimestatechart">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1389,13 +1396,13 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a deadline consisting of an upper and a lower bound."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//model/core/NaturalNumber"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//model/core/TimeValue"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The upper bound of a deadline is a natural number."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//model/core/NaturalNumber"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//model/core/TimeValue"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The lower bound of a deadline is a natural number."/>
@@ -1733,7 +1740,7 @@
           <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
-            eType="#//model/core/NaturalNumber" containment="true">
+            eType="#//model/core/TimeValue" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The bound of a deadline (upper or lower) is a natural number."/>
           </eAnnotations>

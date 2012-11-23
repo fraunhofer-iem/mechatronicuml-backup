@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -30,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -188,6 +188,13 @@ public class CoreSwitch<T> extends Switch<T> {
 				ParameterBinding parameterBinding = (ParameterBinding)theEObject;
 				T result = caseParameterBinding(parameterBinding);
 				if (result == null) result = caseExtendableElement(parameterBinding);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.TIME_VALUE: {
+				TimeValue timeValue = (TimeValue)theEObject;
+				T result = caseTimeValue(timeValue);
+				if (result == null) result = caseExtendableElement(timeValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -387,6 +394,21 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterBinding(ParameterBinding object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Time Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Time Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTimeValue(TimeValue object) {
 		return null;
 	}
 

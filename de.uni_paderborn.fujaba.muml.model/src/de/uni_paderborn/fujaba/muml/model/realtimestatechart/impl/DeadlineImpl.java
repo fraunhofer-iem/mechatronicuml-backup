@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
@@ -40,7 +40,7 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber upperBound;
+	protected TimeValue upperBound;
 
 	/**
 	 * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' containment reference.
@@ -50,7 +50,7 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber lowerBound;
+	protected TimeValue lowerBound;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getUpperBound() {
+	public TimeValue getUpperBound() {
 		return upperBound;
 	}
 
@@ -85,8 +85,8 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUpperBound(NaturalNumber newUpperBound, NotificationChain msgs) {
-		NaturalNumber oldUpperBound = upperBound;
+	public NotificationChain basicSetUpperBound(TimeValue newUpperBound, NotificationChain msgs) {
+		TimeValue oldUpperBound = upperBound;
 		upperBound = newUpperBound;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DEADLINE__UPPER_BOUND, oldUpperBound, newUpperBound);
@@ -100,7 +100,7 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUpperBound(NaturalNumber newUpperBound) {
+	public void setUpperBound(TimeValue newUpperBound) {
 		if (newUpperBound != upperBound) {
 			NotificationChain msgs = null;
 			if (upperBound != null)
@@ -119,7 +119,7 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getLowerBound() {
+	public TimeValue getLowerBound() {
 		return lowerBound;
 	}
 
@@ -128,8 +128,8 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLowerBound(NaturalNumber newLowerBound, NotificationChain msgs) {
-		NaturalNumber oldLowerBound = lowerBound;
+	public NotificationChain basicSetLowerBound(TimeValue newLowerBound, NotificationChain msgs) {
+		TimeValue oldLowerBound = lowerBound;
 		lowerBound = newLowerBound;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DEADLINE__LOWER_BOUND, oldLowerBound, newLowerBound);
@@ -143,7 +143,7 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLowerBound(NaturalNumber newLowerBound) {
+	public void setLowerBound(TimeValue newLowerBound) {
 		if (newLowerBound != lowerBound) {
 			NotificationChain msgs = null;
 			if (lowerBound != null)
@@ -198,10 +198,10 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.DEADLINE__UPPER_BOUND:
-				setUpperBound((NaturalNumber)newValue);
+				setUpperBound((TimeValue)newValue);
 				return;
 			case RealtimestatechartPackage.DEADLINE__LOWER_BOUND:
-				setLowerBound((NaturalNumber)newValue);
+				setLowerBound((TimeValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -216,10 +216,10 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.DEADLINE__UPPER_BOUND:
-				setUpperBound((NaturalNumber)null);
+				setUpperBound((TimeValue)null);
 				return;
 			case RealtimestatechartPackage.DEADLINE__LOWER_BOUND:
-				setLowerBound((NaturalNumber)null);
+				setLowerBound((TimeValue)null);
 				return;
 		}
 		super.eUnset(featureID);

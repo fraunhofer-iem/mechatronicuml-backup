@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,12 +44,12 @@ public interface Deadline extends EObject {
 	 * The upper bound of a deadline is a natural number.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Upper Bound</em>' containment reference.
-	 * @see #setUpperBound(NaturalNumber)
+	 * @see #setUpperBound(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getDeadline_UpperBound()
 	 * @model containment="true"
 	 * @generated
 	 */
-	NaturalNumber getUpperBound();
+	TimeValue getUpperBound();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline#getUpperBound <em>Upper Bound</em>}' containment reference.
@@ -59,7 +59,7 @@ public interface Deadline extends EObject {
 	 * @see #getUpperBound()
 	 * @generated
 	 */
-	void setUpperBound(NaturalNumber value);
+	void setUpperBound(TimeValue value);
 
 	/**
 	 * Returns the value of the '<em><b>Lower Bound</b></em>' containment reference.
@@ -73,12 +73,12 @@ public interface Deadline extends EObject {
 	 * The lower bound of a deadline is a natural number.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Lower Bound</em>' containment reference.
-	 * @see #setLowerBound(NaturalNumber)
+	 * @see #setLowerBound(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getDeadline_LowerBound()
 	 * @model containment="true"
 	 * @generated
 	 */
-	NaturalNumber getLowerBound();
+	TimeValue getLowerBound();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline#getLowerBound <em>Lower Bound</em>}' containment reference.
@@ -88,6 +88,6 @@ public interface Deadline extends EObject {
 	 * @see #getLowerBound()
 	 * @generated
 	 */
-	void setLowerBound(NaturalNumber value);
+	void setLowerBound(TimeValue value);
 
 } // Deadline

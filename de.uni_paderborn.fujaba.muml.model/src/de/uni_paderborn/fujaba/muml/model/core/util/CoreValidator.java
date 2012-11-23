@@ -6,8 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -129,8 +130,12 @@ public class CoreValidator extends EObjectValidator {
 				return validateArrayDataType((ArrayDataType)value, diagnostics, context);
 			case CorePackage.PARAMETER_BINDING:
 				return validateParameterBinding((ParameterBinding)value, diagnostics, context);
+			case CorePackage.TIME_VALUE:
+				return validateTimeValue((TimeValue)value, diagnostics, context);
 			case CorePackage.PRIMITIVE_TYPES:
 				return validatePrimitiveTypes((PrimitiveTypes)value, diagnostics, context);
+			case CorePackage.TIME_UNIT:
+				return validateTimeUnit((TimeUnit)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -337,7 +342,25 @@ public class CoreValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateTimeValue(TimeValue timeValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(timeValue, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validatePrimitiveTypes(PrimitiveTypes primitiveTypes, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTimeUnit(TimeUnit timeUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

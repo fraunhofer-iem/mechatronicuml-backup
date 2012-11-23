@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.storydriven.core.expressions.common.ComparingOperator;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -43,7 +43,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber bound;
+	protected TimeValue bound;
 
 	/**
 	 * The cached value of the '{@link #getClock() <em>Clock</em>}' reference.
@@ -100,7 +100,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getBound() {
+	public TimeValue getBound() {
 		return bound;
 	}
 
@@ -109,8 +109,8 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBound(NaturalNumber newBound, NotificationChain msgs) {
-		NaturalNumber oldBound = bound;
+	public NotificationChain basicSetBound(TimeValue newBound, NotificationChain msgs) {
+		TimeValue oldBound = bound;
 		bound = newBound;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.CLOCK_CONSTRAINT__BOUND, oldBound, newBound);
@@ -124,7 +124,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBound(NaturalNumber newBound) {
+	public void setBound(TimeValue newBound) {
 		if (newBound != bound) {
 			NotificationChain msgs = null;
 			if (bound != null)
@@ -239,7 +239,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__BOUND:
-				setBound((NaturalNumber)newValue);
+				setBound((TimeValue)newValue);
 				return;
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK:
 				setClock((Clock)newValue);
@@ -260,7 +260,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__BOUND:
-				setBound((NaturalNumber)null);
+				setBound((TimeValue)null);
 				return;
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK:
 				setClock((Clock)null);
