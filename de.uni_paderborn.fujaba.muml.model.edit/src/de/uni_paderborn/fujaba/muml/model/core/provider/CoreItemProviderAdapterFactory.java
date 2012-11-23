@@ -305,6 +305,52 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.PortDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortDataTypeItemProvider portDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.PortDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortDataTypeAdapter() {
+		if (portDataTypeItemProvider == null) {
+			portDataTypeItemProvider = new PortDataTypeItemProvider(this);
+		}
+
+		return portDataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.RoleDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RoleDataTypeItemProvider roleDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.RoleDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRoleDataTypeAdapter() {
+		if (roleDataTypeItemProvider == null) {
+			roleDataTypeItemProvider = new RoleDataTypeItemProvider(this);
+		}
+
+		return roleDataTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,6 +459,8 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (arrayDataTypeItemProvider != null) arrayDataTypeItemProvider.dispose();
 		if (parameterBindingItemProvider != null) parameterBindingItemProvider.dispose();
 		if (timeValueItemProvider != null) timeValueItemProvider.dispose();
+		if (portDataTypeItemProvider != null) portDataTypeItemProvider.dispose();
+		if (roleDataTypeItemProvider != null) roleDataTypeItemProvider.dispose();
 	}
 
 }

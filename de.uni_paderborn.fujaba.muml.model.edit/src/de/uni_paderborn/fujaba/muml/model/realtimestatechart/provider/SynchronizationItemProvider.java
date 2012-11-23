@@ -24,10 +24,15 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
+import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -71,7 +76,6 @@ public class SynchronizationItemProvider
 
 			addSyncChannelPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
-			addParameterBindingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -121,28 +125,6 @@ public class SynchronizationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Parameter Binding feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParameterBindingPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Synchronization_parameterBinding_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_parameterBinding_feature", "_UI_Synchronization_type"),
-				 RealtimestatechartPackage.Literals.SYNCHRONIZATION__PARAMETER_BINDING,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -154,7 +136,7 @@ public class SynchronizationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.SYNCHRONIZATION__PARAMETER_BINDING);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -214,7 +196,7 @@ public class SynchronizationItemProvider
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION__PARAMETER_BINDING:
+			case RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -244,8 +226,73 @@ public class SynchronizationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__PARAMETER_BINDING,
-				 CoreFactory.eINSTANCE.createParameterBinding()));
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 CoreFactory.eINSTANCE.createActivityCallExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**
