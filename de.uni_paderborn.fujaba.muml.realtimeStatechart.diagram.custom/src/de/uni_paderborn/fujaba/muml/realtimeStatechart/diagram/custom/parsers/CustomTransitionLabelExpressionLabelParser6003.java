@@ -34,8 +34,6 @@ public class CustomTransitionLabelExpressionLabelParser6003 extends TransitionLa
 				getMessageParameterBindingExpression(transition,
 						transition.getRaiseMessageEvent() == null ? null : transition.getRaiseMessageEvent().getMessage()));
 		typeEnv.put("synchronizationParameterBinding", EcorePackage.Literals.ESTRING);
-		env.put("synchronizationParameterBinding",
-				getSynchronizationParameterBindingExpression(transition));
 
 	}
 
@@ -93,11 +91,5 @@ public class CustomTransitionLabelExpressionLabelParser6003 extends TransitionLa
 		return getParameterBindingExpressionFromList(transition, message.getParameterBinding());
 	}
 	
-	private String getSynchronizationParameterBindingExpression(Transition transition) {
-		if (transition.getSynchronization() == null) {
-			return "";
-		}
-		return getParameterBindingExpressionFromList(transition, transition.getSynchronization().getParameterBinding());
-	}
 
 }
