@@ -270,6 +270,16 @@ public class AttributeExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ATTRIBUTE_EXPRESSION__INDICES,
+				 ActionLanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ATTRIBUTE_EXPRESSION__INDICES,
+				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ATTRIBUTE_EXPRESSION__INDICES,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add

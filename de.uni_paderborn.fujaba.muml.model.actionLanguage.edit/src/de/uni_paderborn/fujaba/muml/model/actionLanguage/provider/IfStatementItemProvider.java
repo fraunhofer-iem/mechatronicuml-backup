@@ -232,6 +232,16 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 ActionLanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
@@ -368,6 +378,16 @@ public class IfStatementItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 ActionLanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
 
 		newChildDescriptors.add
 			(createChildParameter

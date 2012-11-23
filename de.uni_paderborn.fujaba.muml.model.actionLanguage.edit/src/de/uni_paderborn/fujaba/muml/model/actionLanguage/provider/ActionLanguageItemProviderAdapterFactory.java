@@ -305,6 +305,52 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DiscreteInteractionEndpointReferenceItemProvider discreteInteractionEndpointReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDiscreteInteractionEndpointReferenceAdapter() {
+		if (discreteInteractionEndpointReferenceItemProvider == null) {
+			discreteInteractionEndpointReferenceItemProvider = new DiscreteInteractionEndpointReferenceItemProvider(this);
+		}
+
+		return discreteInteractionEndpointReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PositionSelectorItemProvider positionSelectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPositionSelectorAdapter() {
+		if (positionSelectorItemProvider == null) {
+			positionSelectorItemProvider = new PositionSelectorItemProvider(this);
+		}
+
+		return positionSelectorItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,6 +459,8 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		if (operationCallItemProvider != null) operationCallItemProvider.dispose();
 		if (returnStatementItemProvider != null) returnStatementItemProvider.dispose();
 		if (triggerMessageExpressionItemProvider != null) triggerMessageExpressionItemProvider.dispose();
+		if (discreteInteractionEndpointReferenceItemProvider != null) discreteInteractionEndpointReferenceItemProvider.dispose();
+		if (positionSelectorItemProvider != null) positionSelectorItemProvider.dispose();
 	}
 
 }
