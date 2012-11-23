@@ -128,6 +128,14 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 				return createTriggerMessageExpressionAdapter();
 			}
 			@Override
+			public Adapter caseDiscreteInteractionEndpointReference(DiscreteInteractionEndpointReference object) {
+				return createDiscreteInteractionEndpointReferenceAdapter();
+			}
+			@Override
+			public Adapter casePositionSelector(PositionSelector object) {
+				return createPositionSelectorAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -310,6 +318,34 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTriggerMessageExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference <em>Discrete Interaction Endpoint Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference
+	 * @generated
+	 */
+	public Adapter createDiscreteInteractionEndpointReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector <em>Position Selector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector
+	 * @generated
+	 */
+	public Adapter createPositionSelectorAdapter() {
 		return null;
 	}
 

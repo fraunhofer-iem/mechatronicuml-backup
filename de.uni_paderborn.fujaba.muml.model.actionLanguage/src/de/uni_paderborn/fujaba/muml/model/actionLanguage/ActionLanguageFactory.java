@@ -116,6 +116,24 @@ public interface ActionLanguageFactory extends EFactory {
 	TriggerMessageExpression createTriggerMessageExpression();
 
 	/**
+	 * Returns a new object of class '<em>Discrete Interaction Endpoint Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discrete Interaction Endpoint Reference</em>'.
+	 * @generated
+	 */
+	DiscreteInteractionEndpointReference createDiscreteInteractionEndpointReference();
+
+	/**
+	 * Returns a new object of class '<em>Position Selector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Position Selector</em>'.
+	 * @generated
+	 */
+	PositionSelector createPositionSelector();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

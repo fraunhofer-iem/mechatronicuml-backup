@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionLanguage"
-    nsURI="http://www.fujaba.de/muml/actionlanguage/0.2.0" nsPrefix="actionLanguage">
+    nsURI="http://www.fujaba.de/muml/actionlanguage/0.3.5" nsPrefix="actionLanguage">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and attribute and operation call expressions. "/>
   </eAnnotations>
@@ -196,5 +196,24 @@
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointReference"
+      eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//AttributeExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
+        eType="#//PositionSelector" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PositionSelectorKind">
+    <eLiterals name="SELF"/>
+    <eLiterals name="FIRST" value="1"/>
+    <eLiterals name="LAST" value="2"/>
+    <eLiterals name="PREV" value="3" literal=""/>
+    <eLiterals name="NEXT" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionSelector" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PositionSelectorKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successor" eType="#//PositionSelector"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

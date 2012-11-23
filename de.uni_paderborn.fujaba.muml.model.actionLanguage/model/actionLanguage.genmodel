@@ -21,6 +21,13 @@
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/INCREMENT"/>
       <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/DECREMENT"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//PositionSelectorKind">
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/SELF"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/FIRST"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/LAST"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/PREV"/>
+      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/NEXT"/>
+    </genEnums>
     <genClasses ecoreClass="actionLanguage.ecore#//Block">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Block/expressions"/>
     </genClasses>
@@ -58,6 +65,18 @@
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//ReturnStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ReturnStatement/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//TriggerMessageExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//TriggerMessageExpression/messageType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//TriggerMessageExpression/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//DiscreteInteractionEndpointReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//DiscreteInteractionEndpointReference/position"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//PositionSelector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//PositionSelector/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//PositionSelector/successor"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

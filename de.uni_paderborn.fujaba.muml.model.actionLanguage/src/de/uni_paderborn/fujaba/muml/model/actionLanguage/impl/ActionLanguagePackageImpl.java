@@ -20,12 +20,15 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelectorKind;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
@@ -128,6 +131,20 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass discreteInteractionEndpointReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass positionSelectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assignOperatorEEnum = null;
 
 	/**
@@ -136,6 +153,13 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	private EEnum incrementDecrementOperatorEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum positionSelectorKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -525,6 +549,60 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDiscreteInteractionEndpointReference() {
+		return discreteInteractionEndpointReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteInteractionEndpointReference_Attribute() {
+		return (EReference)discreteInteractionEndpointReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteInteractionEndpointReference_Position() {
+		return (EReference)discreteInteractionEndpointReferenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPositionSelector() {
+		return positionSelectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPositionSelector_Kind() {
+		return (EAttribute)positionSelectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPositionSelector_Successor() {
+		return (EReference)positionSelectorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
@@ -538,6 +616,15 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	@Override
 	public EEnum getIncrementDecrementOperator() {
 		return incrementDecrementOperatorEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getPositionSelectorKind() {
+		return positionSelectorKindEEnum;
 	}
 
 	/**
@@ -612,9 +699,18 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEReference(triggerMessageExpressionEClass, TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE);
 		createEReference(triggerMessageExpressionEClass, TRIGGER_MESSAGE_EXPRESSION__PARAMETER);
 
+		discreteInteractionEndpointReferenceEClass = createEClass(DISCRETE_INTERACTION_ENDPOINT_REFERENCE);
+		createEReference(discreteInteractionEndpointReferenceEClass, DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE);
+		createEReference(discreteInteractionEndpointReferenceEClass, DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION);
+
+		positionSelectorEClass = createEClass(POSITION_SELECTOR);
+		createEAttribute(positionSelectorEClass, POSITION_SELECTOR__KIND);
+		createEReference(positionSelectorEClass, POSITION_SELECTOR__SUCCESSOR);
+
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
+		positionSelectorKindEEnum = createEEnum(POSITION_SELECTOR_KIND);
 	}
 
 	/**
@@ -661,6 +757,8 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		operationCallEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		returnStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		triggerMessageExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		discreteInteractionEndpointReferenceEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		positionSelectorEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -706,6 +804,14 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getTriggerMessageExpression_MessageType(), theMsgifacePackage.getMessageType(), null, "messageType", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTriggerMessageExpression_Parameter(), theCorePackage.getParameter(), null, "parameter", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(discreteInteractionEndpointReferenceEClass, DiscreteInteractionEndpointReference.class, "DiscreteInteractionEndpointReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDiscreteInteractionEndpointReference_Attribute(), this.getAttributeExpression(), null, "attribute", null, 0, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpointReference_Position(), this.getPositionSelector(), null, "position", null, 1, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(positionSelectorEClass, PositionSelector.class, "PositionSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPositionSelector_Kind(), this.getPositionSelectorKind(), "kind", null, 0, 1, PositionSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPositionSelector_Successor(), this.getPositionSelector(), null, "successor", null, 0, 1, PositionSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.UNSET);
@@ -720,8 +826,35 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.INCREMENT);
 		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.DECREMENT);
 
+		initEEnum(positionSelectorKindEEnum, PositionSelectorKind.class, "PositionSelectorKind");
+		addEEnumLiteral(positionSelectorKindEEnum, PositionSelectorKind.SELF);
+		addEEnumLiteral(positionSelectorKindEEnum, PositionSelectorKind.FIRST);
+		addEEnumLiteral(positionSelectorKindEEnum, PositionSelectorKind.LAST);
+		addEEnumLiteral(positionSelectorKindEEnum, PositionSelectorKind.PREV);
+		addEEnumLiteral(positionSelectorKindEEnum, PositionSelectorKind.NEXT);
+
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/edapt
+		createEdaptAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/edapt</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEdaptAnnotations() {
+		String source = "http://www.eclipse.org/edapt";			
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "historyURI", "../../de.uni_paderborn.fujaba.muml.model/model/muml.history"
+		   });																														
 	}
 
 } //ActionLanguagePackageImpl

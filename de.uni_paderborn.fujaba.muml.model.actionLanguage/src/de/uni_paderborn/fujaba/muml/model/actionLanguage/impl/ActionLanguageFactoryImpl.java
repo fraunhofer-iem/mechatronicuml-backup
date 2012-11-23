@@ -42,7 +42,7 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	 */
 	public static ActionLanguageFactory init() {
 		try {
-			ActionLanguageFactory theActionLanguageFactory = (ActionLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.2.0"); 
+			ActionLanguageFactory theActionLanguageFactory = (ActionLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.5"); 
 			if (theActionLanguageFactory != null) {
 				return theActionLanguageFactory;
 			}
@@ -81,6 +81,8 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 			case ActionLanguagePackage.OPERATION_CALL: return createOperationCall();
 			case ActionLanguagePackage.RETURN_STATEMENT: return createReturnStatement();
 			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION: return createTriggerMessageExpression();
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE: return createDiscreteInteractionEndpointReference();
+			case ActionLanguagePackage.POSITION_SELECTOR: return createPositionSelector();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -98,6 +100,8 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 				return createAssignOperatorFromString(eDataType, initialValue);
 			case ActionLanguagePackage.INCREMENT_DECREMENT_OPERATOR:
 				return createIncrementDecrementOperatorFromString(eDataType, initialValue);
+			case ActionLanguagePackage.POSITION_SELECTOR_KIND:
+				return createPositionSelectorKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -115,6 +119,8 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 				return convertAssignOperatorToString(eDataType, instanceValue);
 			case ActionLanguagePackage.INCREMENT_DECREMENT_OPERATOR:
 				return convertIncrementDecrementOperatorToString(eDataType, instanceValue);
+			case ActionLanguagePackage.POSITION_SELECTOR_KIND:
+				return convertPositionSelectorKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -225,6 +231,26 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DiscreteInteractionEndpointReference createDiscreteInteractionEndpointReference() {
+		DiscreteInteractionEndpointReferenceImpl discreteInteractionEndpointReference = new DiscreteInteractionEndpointReferenceImpl();
+		return discreteInteractionEndpointReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PositionSelector createPositionSelector() {
+		PositionSelectorImpl positionSelector = new PositionSelectorImpl();
+		return positionSelector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AssignOperator createAssignOperatorFromString(EDataType eDataType, String initialValue) {
 		AssignOperator result = AssignOperator.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -257,6 +283,26 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	 * @generated
 	 */
 	public String convertIncrementDecrementOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PositionSelectorKind createPositionSelectorKindFromString(EDataType eDataType, String initialValue) {
+		PositionSelectorKind result = PositionSelectorKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPositionSelectorKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
