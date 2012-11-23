@@ -2738,26 +2738,26 @@
             featureName="value" dataValue="Decides the kind: Is this a send or a reveive synchronization?"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Synchronization"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.16/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.16/@element"
             featureName="name" dataValue="parameterBinding"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.16/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.16/@element"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.16/@element"
             featureName="eType" referenceValue="muml.ecore#//model/core/ParameterBinding"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.16/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.16/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.16/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.16/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.3/@changes.16/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.16/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.16/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="ParameterBindings that belong to a synchronization."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart"
@@ -7698,26 +7698,26 @@
             featureName="value" dataValue="The state in which this synchronization channel is defined."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/SynchronizationChannel"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters"
+          referenceName="eStructuralFeatures" element="#//@releases.3/@changes.12/@element">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.12/@element"
             featureName="name" dataValue="parameters"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.12/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.12/@element"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.12/@element"
             featureName="eType" referenceValue="muml.ecore#//model/core/Parameter"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.12/@element"
+          referenceName="eAnnotations" element="#//@releases.3/@changes.12/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.12/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.3/@changes.12/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.3/@changes.12/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.12/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.3/@changes.12/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Parameters of a SynchronizationChannel."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Synchronization"
@@ -15801,6 +15801,167 @@
         dataValue="http://www.fujaba.de/muml/model/core/0.3.4" oldDataValue="http://www.fujaba.de/muml/model/core/0.3.3"/>
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.4" oldDataValue="http://www.fujaba.de/modelinstance/0.3.3"/>
+  </releases>
+  <releases date="2012-11-23T17:09:06.803+0100" label="0.3.5">
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+        element="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"
+        featureName="name" dataValue="DiscreteInteractionEndpointType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"
+        featureName="abstract" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"
+        featureName="abstract" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/DataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"
+        featureName="abstract" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+        element="muml.ecore#//model/core/PortDataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/PortDataType"
+        featureName="name" dataValue="PortDataType"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/core/PortDataType"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
+        element="muml.ecore#//model/core/RoleDataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/RoleDataType"
+        featureName="name" dataValue="RoleDataType"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/core/RoleDataType"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/SynchronizationChannel"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="parameters" upperBound="-1" eType="ecore:EClass muml.ecore#//model/core/Parameter"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Parameters of a SynchronizationChannel."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/SynchronizationChannel"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/selectorType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/selectorType"
+        featureName="name" dataValue="selectorType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/SynchronizationChannel/selectorType"
+        featureName="eType" referenceValue="muml.ecore#//model/core/DataType"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/Synchronization"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
+          eType="ecore:EClass muml.ecore#//model/core/ParameterBinding" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="ParameterBindings that belong to a synchronization."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Synchronization"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/Synchronization/selectorExpression"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/selectorExpression"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/selectorExpression"
+        featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/selectorExpression"
+        featureName="name" dataValue="selectorExpression"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"
+        featureName="name" dataValue="DiscreteInteractionEndpointDataType" oldDataValue="DiscreteInteractionEndpointType"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference"
+        featureName="name" dataValue="DiscreteInteractionEndpointReference"/>
+    <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        referenceName="eClassifiers" element="#//@releases.3/@changes.27/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.3/@changes.27/@element"
+        featureName="name" dataValue="AttributeReference"/>
+    <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="AttributeReference"/>
+    </changes>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference"
+        referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"
+        featureName="name" dataValue="attribute"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"
+        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//AttributeExpression"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"
+        featureName="name" dataValue="PositionSelectorKind"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"
+        referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/SELF"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/SELF"
+        featureName="name" dataValue="SELF"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"
+        referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/FIRST"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/FIRST"
+        featureName="name" dataValue="FIRST"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/FIRST"
+        featureName="value" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"
+        referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/LAST"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/LAST"
+        featureName="name" dataValue="LAST"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/LAST"
+        featureName="value" dataValue="2" oldDataValue="0"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"
+        referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/PREV"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/PREV"
+        featureName="value" dataValue="3" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/PREV"
+        featureName="literal" dataValue=""/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/PREV"
+        featureName="name" dataValue="PREV"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"
+        referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/NEXT"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/NEXT"
+        featureName="value" dataValue="4" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/NEXT"
+        featureName="name" dataValue="NEXT"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector"
+        featureName="name" dataValue="SelectorPosition"/>
+    <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector"
+        referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector/kind"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector/kind"
+        featureName="name" dataValue="kind"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector/kind"
+        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector"
+        featureName="name" dataValue="PositionSelector" oldDataValue="SelectorPosition"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference"
+        referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/position"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/position"
+        featureName="name" dataValue="position"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/position"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/position"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/position"
+        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector"
+        referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector/successor"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector/successor"
+        featureName="name" dataValue="successor"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector/successor"
+        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelector/successor"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/actionlanguage/0.3.4"
+        oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.2.0"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/actionlanguage/0.3.5"
+        oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.3.4"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/core/0.3.5" oldDataValue="http://www.fujaba.de/muml/model/core/0.3.4"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.5"
+        oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.4"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.5" oldDataValue="http://www.fujaba.de/modelinstance/0.3.4"/>
   </releases>
   <releases/>
 </history:History>

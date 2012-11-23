@@ -24,12 +24,15 @@ import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
+import de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.core.PortDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.core.RoleDataType;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
@@ -132,6 +135,12 @@ public class CoreValidator extends EObjectValidator {
 				return validateParameterBinding((ParameterBinding)value, diagnostics, context);
 			case CorePackage.TIME_VALUE:
 				return validateTimeValue((TimeValue)value, diagnostics, context);
+			case CorePackage.DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE:
+				return validateDiscreteInteractionEndpointDataType((DiscreteInteractionEndpointDataType)value, diagnostics, context);
+			case CorePackage.PORT_DATA_TYPE:
+				return validatePortDataType((PortDataType)value, diagnostics, context);
+			case CorePackage.ROLE_DATA_TYPE:
+				return validateRoleDataType((RoleDataType)value, diagnostics, context);
 			case CorePackage.PRIMITIVE_TYPES:
 				return validatePrimitiveTypes((PrimitiveTypes)value, diagnostics, context);
 			case CorePackage.TIME_UNIT:
@@ -344,6 +353,33 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateTimeValue(TimeValue timeValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(timeValue, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteInteractionEndpointDataType(DiscreteInteractionEndpointDataType discreteInteractionEndpointDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(discreteInteractionEndpointDataType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortDataType(PortDataType portDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(portDataType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRoleDataType(RoleDataType roleDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(roleDataType, diagnostics, context);
 	}
 
 	/**

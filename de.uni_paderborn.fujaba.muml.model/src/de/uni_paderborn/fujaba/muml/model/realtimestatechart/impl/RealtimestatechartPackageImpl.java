@@ -937,7 +937,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSynchronizationChannel_Parameters() {
+	public EReference getSynchronizationChannel_SelectorType() {
 		return (EReference)synchronizationChannelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -973,7 +973,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSynchronization_ParameterBinding() {
+	public EReference getSynchronization_SelectorExpression() {
 		return (EReference)synchronizationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1395,12 +1395,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		synchronizationChannelEClass = createEClass(SYNCHRONIZATION_CHANNEL);
 		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__STATE);
-		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__PARAMETERS);
+		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE);
 
 		synchronizationEClass = createEClass(SYNCHRONIZATION);
 		createEReference(synchronizationEClass, SYNCHRONIZATION__SYNC_CHANNEL);
 		createEAttribute(synchronizationEClass, SYNCHRONIZATION__KIND);
-		createEReference(synchronizationEClass, SYNCHRONIZATION__PARAMETER_BINDING);
+		createEReference(synchronizationEClass, SYNCHRONIZATION__SELECTOR_EXPRESSION);
 
 		prioritizableEClass = createEClass(PRIORITIZABLE);
 		createEAttribute(prioritizableEClass, PRIORITIZABLE__PRIORITY);
@@ -1609,12 +1609,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(synchronizationChannelEClass, SynchronizationChannel.class, "SynchronizationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSynchronizationChannel_State(), this.getState(), this.getState_Channels(), "state", null, 1, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSynchronizationChannel_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSynchronizationChannel_SelectorType(), theCorePackage.getDataType(), null, "selectorType", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(synchronizationEClass, Synchronization.class, "Synchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSynchronization_SyncChannel(), this.getSynchronizationChannel(), null, "syncChannel", null, 0, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSynchronization_Kind(), this.getSynchronizationKind(), "kind", null, 1, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSynchronization_ParameterBinding(), theCorePackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSynchronization_SelectorExpression(), theExpressionsPackage.getExpression(), null, "selectorExpression", null, 0, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(prioritizableEClass, Prioritizable.class, "Prioritizable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrioritizable_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Prioritizable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1720,7 +1720,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "ValidLowerUpperPeriod"
-		   });																			
+		   });																	
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
@@ -1824,7 +1824,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "ValidLowerUpperPeriod", "self.periodLower >= 1 and self.periodLower <= self.periodUpper"
-		   });																			
+		   });																	
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 

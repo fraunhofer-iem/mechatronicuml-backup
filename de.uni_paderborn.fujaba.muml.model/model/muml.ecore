@@ -655,7 +655,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.4" nsPrefix="core">
+    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.5" nsPrefix="core">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package contains several core classes that are used by classes from several other packages.&#xD;&#xA;It provides abstract base classes for Statecharts, meta-model elements that use a statechart to&#xD;&#xA;define their behavior and meta-model elements that may carry a constraint.&#xD;&#xA;Additionally, the package provides classes for modeling cardinalites as natural numbers including&#xD;&#xA;infinity."/>
       </eAnnotations>
@@ -894,6 +894,10 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//model/core/TimeUnit"
             unsettable="true"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointDataType"
+          abstract="true" eSuperTypes="#//model/core/DataType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PortDataType" eSuperTypes="#//model/core/DiscreteInteractionEndpointDataType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RoleDataType" eSuperTypes="#//model/core/DiscreteInteractionEndpointDataType"/>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.3.3"
         nsPrefix="instance">
@@ -1385,7 +1389,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.4"
+    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.5"
         nsPrefix="realtimestatechart">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1837,12 +1841,7 @@
             <details key="documentation" value="The state in which this synchronization channel is defined."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-            eType="#//model/core/Parameter" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Parameters of a SynchronizationChannel."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="selectorType" eType="#//model/core/DataType"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1859,12 +1858,9 @@
             <details key="documentation" value="Decides the kind: Is this a send or a reveive synchronization?"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
-            eType="#//model/core/ParameterBinding" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="ParameterBindings that belong to a synchronization."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="selectorExpression"
+            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+            containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Prioritizable" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

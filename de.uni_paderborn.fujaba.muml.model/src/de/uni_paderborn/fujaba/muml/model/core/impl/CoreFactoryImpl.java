@@ -25,8 +25,10 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.core.PortDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.core.RoleDataType;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
@@ -44,7 +46,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 */
 	public static CoreFactory init() {
 		try {
-			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.4"); 
+			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.5"); 
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}
@@ -83,6 +85,8 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.ARRAY_DATA_TYPE: return createArrayDataType();
 			case CorePackage.PARAMETER_BINDING: return createParameterBinding();
 			case CorePackage.TIME_VALUE: return createTimeValue();
+			case CorePackage.PORT_DATA_TYPE: return createPortDataType();
+			case CorePackage.ROLE_DATA_TYPE: return createRoleDataType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -220,6 +224,26 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public TimeValue createTimeValue() {
 		TimeValueImpl timeValue = new TimeValueImpl();
 		return timeValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortDataType createPortDataType() {
+		PortDataTypeImpl portDataType = new PortDataTypeImpl();
+		return portDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleDataType createRoleDataType() {
+		RoleDataTypeImpl roleDataType = new RoleDataTypeImpl();
+		return roleDataType;
 	}
 
 	/**

@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Parameter;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getState <em>State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getSelectorType <em>Selector Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,22 +63,29 @@ public interface SynchronizationChannel extends NamedElement, CommentableElement
 	void setState(State value);
 
 	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
+	 * Returns the value of the '<em><b>Selector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Selector Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Parameters of a SynchronizationChannel.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_Parameters()
-	 * @model containment="true"
+	 * @return the value of the '<em>Selector Type</em>' reference.
+	 * @see #setSelectorType(DataType)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_SelectorType()
+	 * @model
 	 * @generated
 	 */
-	EList<Parameter> getParameters();
+	DataType getSelectorType();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getSelectorType <em>Selector Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selector Type</em>' reference.
+	 * @see #getSelectorType()
+	 * @generated
+	 */
+	void setSelectorType(DataType value);
 
 } // SynchronizationChannel

@@ -220,6 +220,9 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/TimeValue/value"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/TimeValue/unit"/>
         </genClasses>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/core/DiscreteInteractionEndpointDataType"/>
+        <genClasses ecoreClass="muml.ecore#//model/core/PortDataType"/>
+        <genClasses ecoreClass="muml.ecore#//model/core/RoleDataType"/>
       </nestedGenPackages>
       <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/instance">
@@ -459,12 +462,13 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/SynchronizationChannel">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/SynchronizationChannel/state"/>
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/SynchronizationChannel/parameters"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/SynchronizationChannel/selectorType"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/Synchronization">
           <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Synchronization/syncChannel"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Synchronization/kind"/>
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Synchronization/parameterBinding"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Synchronization/selectorExpression"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Prioritizable">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>

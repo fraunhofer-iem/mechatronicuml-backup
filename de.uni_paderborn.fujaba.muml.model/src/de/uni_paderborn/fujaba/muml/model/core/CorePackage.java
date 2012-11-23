@@ -52,7 +52,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/core/0.3.4";
+	String eNS_URI = "http://www.fujaba.de/muml/model/core/0.3.5";
 
 	/**
 	 * The package namespace name.
@@ -832,6 +832,171 @@ public interface CorePackage extends EPackage {
 	int TIME_VALUE_FEATURE_COUNT = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.DiscreteInteractionEndpointDataTypeImpl <em>Discrete Interaction Endpoint Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.DiscreteInteractionEndpointDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getDiscreteInteractionEndpointDataType()
+	 * @generated
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__COMMENT = DATA_TYPE__COMMENT;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Interaction Endpoint Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.PortDataTypeImpl <em>Port Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.PortDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getPortDataType()
+	 * @generated
+	 */
+	int PORT_DATA_TYPE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__ANNOTATION = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__EXTENSION = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__NAME = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE__COMMENT = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__COMMENT;
+
+	/**
+	 * The number of structural features of the '<em>Port Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DATA_TYPE_FEATURE_COUNT = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.RoleDataTypeImpl <em>Role Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.RoleDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getRoleDataType()
+	 * @generated
+	 */
+	int ROLE_DATA_TYPE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_DATA_TYPE__ANNOTATION = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_DATA_TYPE__EXTENSION = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_DATA_TYPE__NAME = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_DATA_TYPE__COMMENT = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE__COMMENT;
+
+	/**
+	 * The number of structural features of the '<em>Role Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_DATA_TYPE_FEATURE_COUNT = DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -839,7 +1004,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getPrimitiveTypes()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPES = 14;
+	int PRIMITIVE_TYPES = 17;
 
 	/**
 	 * The meta object id for the '<em>Time Unit</em>' data type.
@@ -849,7 +1014,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 15;
+	int TIME_UNIT = 18;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.
@@ -1234,6 +1399,36 @@ public interface CorePackage extends EPackage {
 	EAttribute getTimeValue_Unit();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType <em>Discrete Interaction Endpoint Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Interaction Endpoint Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType
+	 * @generated
+	 */
+	EClass getDiscreteInteractionEndpointDataType();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.PortDataType <em>Port Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.PortDataType
+	 * @generated
+	 */
+	EClass getPortDataType();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.RoleDataType <em>Role Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Role Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.RoleDataType
+	 * @generated
+	 */
+	EClass getRoleDataType();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1591,6 +1786,36 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TIME_VALUE__UNIT = eINSTANCE.getTimeValue_Unit();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.DiscreteInteractionEndpointDataTypeImpl <em>Discrete Interaction Endpoint Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.DiscreteInteractionEndpointDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getDiscreteInteractionEndpointDataType()
+		 * @generated
+		 */
+		EClass DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE = eINSTANCE.getDiscreteInteractionEndpointDataType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.PortDataTypeImpl <em>Port Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.PortDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getPortDataType()
+		 * @generated
+		 */
+		EClass PORT_DATA_TYPE = eINSTANCE.getPortDataType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.RoleDataTypeImpl <em>Role Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.RoleDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getRoleDataType()
+		 * @generated
+		 */
+		EClass ROLE_DATA_TYPE = eINSTANCE.getRoleDataType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes <em>Primitive Types</em>}' enum.

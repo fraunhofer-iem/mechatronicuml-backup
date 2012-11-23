@@ -25,11 +25,14 @@ import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
+import de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.core.PortDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.model.core.RoleDataType;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
@@ -143,6 +146,18 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTimeValue(TimeValue object) {
 				return createTimeValueAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteInteractionEndpointDataType(DiscreteInteractionEndpointDataType object) {
+				return createDiscreteInteractionEndpointDataTypeAdapter();
+			}
+			@Override
+			public Adapter casePortDataType(PortDataType object) {
+				return createPortDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseRoleDataType(RoleDataType object) {
+				return createRoleDataTypeAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -377,6 +392,48 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTimeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType <em>Discrete Interaction Endpoint Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType
+	 * @generated
+	 */
+	public Adapter createDiscreteInteractionEndpointDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.PortDataType <em>Port Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.PortDataType
+	 * @generated
+	 */
+	public Adapter createPortDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.RoleDataType <em>Role Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.RoleDataType
+	 * @generated
+	 */
+	public Adapter createRoleDataTypeAdapter() {
 		return null;
 	}
 

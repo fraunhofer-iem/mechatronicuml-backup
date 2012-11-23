@@ -6,22 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.core.DataType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
@@ -35,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChan
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getSelectorType <em>Selector Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,14 +58,14 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * The cached value of the '{@link #getSelectorType() <em>Selector Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParameters()
+	 * @see #getSelectorType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Parameter> parameters;
+	protected DataType selectorType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,11 +153,37 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS);
+	public DataType getSelectorType() {
+		if (selectorType != null && selectorType.eIsProxy()) {
+			InternalEObject oldSelectorType = (InternalEObject)selectorType;
+			selectorType = (DataType)eResolveProxy(oldSelectorType);
+			if (selectorType != oldSelectorType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE, oldSelectorType, selectorType));
+			}
 		}
-		return parameters;
+		return selectorType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType basicGetSelectorType() {
+		return selectorType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectorType(DataType newSelectorType) {
+		DataType oldSelectorType = selectorType;
+		selectorType = newSelectorType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE, oldSelectorType, selectorType));
 	}
 
 	/**
@@ -191,8 +212,6 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return basicSetState(null, msgs);
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -223,8 +242,9 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 				return getComment();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState();
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
-				return getParameters();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE:
+				if (resolve) return getSelectorType();
+				return basicGetSelectorType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,9 +264,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)newValue);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE:
+				setSelectorType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -266,8 +285,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)null);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
-				getParameters().clear();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE:
+				setSelectorType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -285,8 +304,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState() != null;
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE:
+				return selectorType != null;
 		}
 		return super.eIsSet(featureID);
 	}

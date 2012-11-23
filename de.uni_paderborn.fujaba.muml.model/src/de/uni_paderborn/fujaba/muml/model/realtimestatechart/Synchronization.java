@@ -6,10 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
-
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSyncChannel <em>Sync Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getKind <em>Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getParameterBinding <em>Parameter Binding</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSelectorExpression <em>Selector Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,22 +86,29 @@ public interface Synchronization extends ExtendableElement {
 	void setKind(SynchronizationKind value);
 
 	/**
-	 * Returns the value of the '<em><b>Parameter Binding</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding}.
+	 * Returns the value of the '<em><b>Selector Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameter Binding</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Selector Expression</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * ParameterBindings that belong to a synchronization.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Parameter Binding</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_ParameterBinding()
+	 * @return the value of the '<em>Selector Expression</em>' containment reference.
+	 * @see #setSelectorExpression(Expression)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_SelectorExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ParameterBinding> getParameterBinding();
+	Expression getSelectorExpression();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSelectorExpression <em>Selector Expression</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selector Expression</em>' containment reference.
+	 * @see #getSelectorExpression()
+	 * @generated
+	 */
+	void setSelectorExpression(Expression value);
 
 } // Synchronization

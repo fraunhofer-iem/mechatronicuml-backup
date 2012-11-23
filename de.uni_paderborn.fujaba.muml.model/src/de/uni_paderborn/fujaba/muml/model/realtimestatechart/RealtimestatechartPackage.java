@@ -44,7 +44,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.3.4";
+	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.3.5";
 
 	/**
 	 * The package namespace name.
@@ -1162,13 +1162,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_CHANNEL__STATE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Selector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Synchronization Channel</em>' class.
@@ -1216,13 +1216,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION__KIND = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Parameter Binding</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Selector Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__PARAMETER_BINDING = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int SYNCHRONIZATION__SELECTOR_EXPRESSION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Synchronization</em>' class.
@@ -2614,15 +2614,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getSynchronizationChannel_State();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getSelectorType <em>Selector Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getParameters()
+	 * @return the meta object for the reference '<em>Selector Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getSelectorType()
 	 * @see #getSynchronizationChannel()
 	 * @generated
 	 */
-	EReference getSynchronizationChannel_Parameters();
+	EReference getSynchronizationChannel_SelectorType();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization <em>Synchronization</em>}'.
@@ -2657,15 +2657,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getSynchronization_Kind();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getParameterBinding <em>Parameter Binding</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSelectorExpression <em>Selector Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameter Binding</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getParameterBinding()
+	 * @return the meta object for the containment reference '<em>Selector Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSelectorExpression()
 	 * @see #getSynchronization()
 	 * @generated
 	 */
-	EReference getSynchronization_ParameterBinding();
+	EReference getSynchronization_SelectorExpression();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable <em>Prioritizable</em>}'.
@@ -3585,12 +3585,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference SYNCHRONIZATION_CHANNEL__STATE = eINSTANCE.getSynchronizationChannel_State();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Selector Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYNCHRONIZATION_CHANNEL__PARAMETERS = eINSTANCE.getSynchronizationChannel_Parameters();
+		EReference SYNCHRONIZATION_CHANNEL__SELECTOR_TYPE = eINSTANCE.getSynchronizationChannel_SelectorType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.
@@ -3619,12 +3619,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute SYNCHRONIZATION__KIND = eINSTANCE.getSynchronization_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameter Binding</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Selector Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYNCHRONIZATION__PARAMETER_BINDING = eINSTANCE.getSynchronization_ParameterBinding();
+		EReference SYNCHRONIZATION__SELECTOR_EXPRESSION = eINSTANCE.getSynchronization_SelectorExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizableImpl <em>Prioritizable</em>}' class.

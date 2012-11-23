@@ -37,12 +37,15 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.DataType;
+import de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.core.PortDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.core.RoleDataType;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.core.util.CoreValidator;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
@@ -160,6 +163,27 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass timeValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discreteInteractionEndpointDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass portDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass roleDataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -601,6 +625,33 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDiscreteInteractionEndpointDataType() {
+		return discreteInteractionEndpointDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPortDataType() {
+		return portDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRoleDataType() {
+		return roleDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPrimitiveTypes() {
 		return primitiveTypesEEnum;
 	}
@@ -692,6 +743,12 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(timeValueEClass, TIME_VALUE__VALUE);
 		createEAttribute(timeValueEClass, TIME_VALUE__UNIT);
 
+		discreteInteractionEndpointDataTypeEClass = createEClass(DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE);
+
+		portDataTypeEClass = createEClass(PORT_DATA_TYPE);
+
+		roleDataTypeEClass = createEClass(ROLE_DATA_TYPE);
+
 		// Create enums
 		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
 
@@ -748,6 +805,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		arrayDataTypeEClass.getESuperTypes().add(this.getDataType());
 		parameterBindingEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
 		timeValueEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
+		discreteInteractionEndpointDataTypeEClass.getESuperTypes().add(this.getDataType());
+		portDataTypeEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointDataType());
+		roleDataTypeEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointDataType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -809,6 +869,12 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(timeValueEClass, TimeValue.class, "TimeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTimeValue_Value(), this.getNaturalNumber(), null, "value", null, 1, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeValue_Unit(), this.getTimeUnit(), "unit", null, 0, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(discreteInteractionEndpointDataTypeEClass, DiscreteInteractionEndpointDataType.class, "DiscreteInteractionEndpointDataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(portDataTypeEClass, PortDataType.class, "PortDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(roleDataTypeEClass, RoleDataType.class, "RoleDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");

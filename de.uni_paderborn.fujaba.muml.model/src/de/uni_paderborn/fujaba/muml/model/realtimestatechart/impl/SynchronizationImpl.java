@@ -6,19 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
@@ -33,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl#getSyncChannel <em>Sync Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl#getParameterBinding <em>Parameter Binding</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl#getSelectorExpression <em>Selector Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,14 +66,14 @@ public class SynchronizationImpl extends ExtendableElementImpl implements Synchr
 	protected SynchronizationKind kind = KIND_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getParameterBinding() <em>Parameter Binding</em>}' containment reference list.
+	 * The cached value of the '{@link #getSelectorExpression() <em>Selector Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParameterBinding()
+	 * @see #getSelectorExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ParameterBinding> parameterBinding;
+	protected Expression selectorExpression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,11 +158,42 @@ public class SynchronizationImpl extends ExtendableElementImpl implements Synchr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ParameterBinding> getParameterBinding() {
-		if (parameterBinding == null) {
-			parameterBinding = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, RealtimestatechartPackage.SYNCHRONIZATION__PARAMETER_BINDING);
+	public Expression getSelectorExpression() {
+		return selectorExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSelectorExpression(Expression newSelectorExpression, NotificationChain msgs) {
+		Expression oldSelectorExpression = selectorExpression;
+		selectorExpression = newSelectorExpression;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION, oldSelectorExpression, newSelectorExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return parameterBinding;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectorExpression(Expression newSelectorExpression) {
+		if (newSelectorExpression != selectorExpression) {
+			NotificationChain msgs = null;
+			if (selectorExpression != null)
+				msgs = ((InternalEObject)selectorExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION, null, msgs);
+			if (newSelectorExpression != null)
+				msgs = ((InternalEObject)newSelectorExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION, null, msgs);
+			msgs = basicSetSelectorExpression(newSelectorExpression, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION, newSelectorExpression, newSelectorExpression));
 	}
 
 	/**
@@ -178,8 +204,8 @@ public class SynchronizationImpl extends ExtendableElementImpl implements Synchr
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION__PARAMETER_BINDING:
-				return ((InternalEList<?>)getParameterBinding()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION:
+				return basicSetSelectorExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -197,8 +223,8 @@ public class SynchronizationImpl extends ExtendableElementImpl implements Synchr
 				return basicGetSyncChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				return getKind();
-			case RealtimestatechartPackage.SYNCHRONIZATION__PARAMETER_BINDING:
-				return getParameterBinding();
+			case RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION:
+				return getSelectorExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,9 +244,8 @@ public class SynchronizationImpl extends ExtendableElementImpl implements Synchr
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				setKind((SynchronizationKind)newValue);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION__PARAMETER_BINDING:
-				getParameterBinding().clear();
-				getParameterBinding().addAll((Collection<? extends ParameterBinding>)newValue);
+			case RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION:
+				setSelectorExpression((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -240,8 +265,8 @@ public class SynchronizationImpl extends ExtendableElementImpl implements Synchr
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION__PARAMETER_BINDING:
-				getParameterBinding().clear();
+			case RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION:
+				setSelectorExpression((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,8 +284,8 @@ public class SynchronizationImpl extends ExtendableElementImpl implements Synchr
 				return syncChannel != null;
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				return kind != KIND_EDEFAULT;
-			case RealtimestatechartPackage.SYNCHRONIZATION__PARAMETER_BINDING:
-				return parameterBinding != null && !parameterBinding.isEmpty();
+			case RealtimestatechartPackage.SYNCHRONIZATION__SELECTOR_EXPRESSION:
+				return selectorExpression != null;
 		}
 		return super.eIsSet(featureID);
 	}
