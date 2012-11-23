@@ -282,6 +282,29 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.TimeValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TimeValueItemProvider timeValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.TimeValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTimeValueAdapter() {
+		if (timeValueItemProvider == null) {
+			timeValueItemProvider = new TimeValueItemProvider(this);
+		}
+
+		return timeValueItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +412,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 		if (arrayDataTypeItemProvider != null) arrayDataTypeItemProvider.dispose();
 		if (parameterBindingItemProvider != null) parameterBindingItemProvider.dispose();
+		if (timeValueItemProvider != null) timeValueItemProvider.dispose();
 	}
 
 }

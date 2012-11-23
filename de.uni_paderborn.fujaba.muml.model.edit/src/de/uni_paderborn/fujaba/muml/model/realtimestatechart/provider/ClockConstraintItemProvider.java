@@ -312,7 +312,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 CoreFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**

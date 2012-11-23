@@ -189,12 +189,12 @@ public class DeadlineItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 CoreFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 CoreFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**
