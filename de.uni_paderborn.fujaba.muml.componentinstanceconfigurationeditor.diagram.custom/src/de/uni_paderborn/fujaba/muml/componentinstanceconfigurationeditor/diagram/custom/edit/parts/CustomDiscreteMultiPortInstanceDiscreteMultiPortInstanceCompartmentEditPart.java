@@ -2,8 +2,6 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -43,6 +41,10 @@ public class CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment
 		// Begin: Fix for Mechatronic-UML Bug #116
 		result.setBorder(null);
 		// End Fix
+		
+		result.setBackgroundColor(null);
+		result.setOpaque(false);
+		//result.setTransparency(100);
 
 		return result;
 	}

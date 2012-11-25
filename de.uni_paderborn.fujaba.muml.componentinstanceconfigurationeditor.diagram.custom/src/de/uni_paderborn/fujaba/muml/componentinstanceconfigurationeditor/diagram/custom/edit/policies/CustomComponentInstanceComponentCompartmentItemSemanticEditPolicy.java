@@ -1,10 +1,5 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.policies;
 
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 
 //
 ///**

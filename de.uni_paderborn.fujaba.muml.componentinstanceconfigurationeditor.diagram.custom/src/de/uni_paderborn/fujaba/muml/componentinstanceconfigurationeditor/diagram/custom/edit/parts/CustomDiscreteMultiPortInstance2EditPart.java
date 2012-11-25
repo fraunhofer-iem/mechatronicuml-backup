@@ -1,12 +1,8 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.parts;
 
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.parts.DiscreteMultiPortInstanceBehavior;
@@ -27,6 +23,7 @@ public class CustomDiscreteMultiPortInstance2EditPart extends DiscreteMultiPortI
 	 * All behavior is delegated, to reduce duplicate code.
 	 */
 	private DiscreteMultiPortInstanceBehavior delegation;
+
 
 	/**
 	 * Constructs this EditPart.

@@ -33,6 +33,11 @@ public class CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment
 		// Begin: Fix for Mechatronic-UML Bug #116
 		result.setBorder(null);
 		// End Fix
+		
+		result.setBackgroundColor(null);
+		result.setOpaque(false);
+		//result.setTransparency(100);
+
 
 		return result;
 	}

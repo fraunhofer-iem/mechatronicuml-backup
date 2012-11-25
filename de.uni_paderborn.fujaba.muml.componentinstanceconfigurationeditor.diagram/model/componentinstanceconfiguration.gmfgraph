@@ -10,6 +10,7 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="DiscreteMultiPortInstanceFigure"
+          fill="false"
           lineKind="LINE_DASH">
         <layout
             xsi:type="gmfgraph:GridLayout"/>

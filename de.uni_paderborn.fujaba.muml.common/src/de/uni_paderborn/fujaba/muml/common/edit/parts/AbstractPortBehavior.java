@@ -170,7 +170,7 @@ public abstract class AbstractPortBehavior {
 		updateCardinality();
 	}
 
-	protected void updateBorderItemLocator() {
+	public void updateBorderItemLocator() {
 		if (editPart instanceof AbstractBorderItemEditPart) {
 			IBorderItemLocator locator = ((AbstractBorderItemEditPart) editPart)
 					.getBorderItemLocator();

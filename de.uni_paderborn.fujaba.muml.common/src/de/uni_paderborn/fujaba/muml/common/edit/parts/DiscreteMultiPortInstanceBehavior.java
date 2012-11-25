@@ -10,6 +10,7 @@ import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -56,9 +57,10 @@ public class DiscreteMultiPortInstanceBehavior extends
 	}
 
 	@Override
-	protected void updateBorderItemLocator() {
+	public void updateBorderItemLocator() {
 		IBorderItemLocator locator = ((AbstractBorderItemEditPart) editPart)
 				.getBorderItemLocator();
+
 		if (locator instanceof BorderItemLocator) {
 			Dimension size = editPart.getContentPane().getSize();
 			Dimension offset = new Dimension(size.width / 2, size.height / 2);
@@ -94,6 +96,8 @@ public class DiscreteMultiPortInstanceBehavior extends
 
 	private class MultiPortLayoutListener extends LayoutListener.Stub {
 
+		private static final int MAX_RECURSION_DEPTH = 3;
+
 		/**
 		 * Stores how often we already switched orientation recursively. It is
 		 * not allowed to switch orientation multiple times after another,
@@ -102,11 +106,11 @@ public class DiscreteMultiPortInstanceBehavior extends
 		 * GMF moves to another side, we switch orientation again. This causes
 		 * an infinite loop, which we want to prevent.
 		 */
-		private int switches = 0;
+		private int depth = 0;
 
 		/**
-		 * Is layouting currently activated, or deactivated due to too many
-		 * switches.
+		 * Is layouting currently activated, or deactivated due to too much
+		 * depth.
 		 */
 		private boolean activateLayouting = true;
 
@@ -147,7 +151,7 @@ public class DiscreteMultiPortInstanceBehavior extends
 
 			// Once the recursion depth is greater than a constant value, we
 			// deactivate layouting
-			if (switches > 3) {
+			if (depth > MAX_RECURSION_DEPTH) {
 				activateLayouting = false;
 			}
 
@@ -155,6 +159,11 @@ public class DiscreteMultiPortInstanceBehavior extends
 			if (!activateLayouting) {
 				return;
 			}
+			
+
+			// Increment recursion depth counter
+			depth++;
+			
 
 			//
 			// Start relayouting
@@ -168,7 +177,7 @@ public class DiscreteMultiPortInstanceBehavior extends
 				return;
 			}
 
-			updateBorderItemLocator();
+			
 			
 			// Relocate border item locator to be able to
 			// request current side
@@ -220,23 +229,26 @@ public class DiscreteMultiPortInstanceBehavior extends
 					toolbarLayout.setHorizontal(horizontal);
 					compartmentFigure.getContentPane().setLayoutManager(
 							toolbarLayout);
+					
 
-					// Remember that we switched orientation. We are not
-					// allowed to do this multiple times after another
-					// recursively.
-					switches++;
 
 					// Make sure we call the layout routine recursively,
 					// to check, if the recursive call will switch
 					// orientation again.
 					container.validate();
+					
+					updateBorderItemLocator();
+					
+					container.validate();
 
-					// Decrement counter, as the recursive call ended.
-					switches--;
 
 				}
 			}
+
+			// Decrement recursion depth counter
+			depth--;
 		}
+
 	};
 
 }

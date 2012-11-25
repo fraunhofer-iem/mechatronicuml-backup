@@ -598,6 +598,7 @@ public class DiscreteMultiPortInstanceEditPart extends
 			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
+			this.setFill(false);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}

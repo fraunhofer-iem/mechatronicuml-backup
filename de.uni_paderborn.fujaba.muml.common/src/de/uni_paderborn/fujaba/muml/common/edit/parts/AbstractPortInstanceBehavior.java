@@ -27,13 +27,9 @@ public abstract class AbstractPortInstanceBehavior extends AbstractPortBehavior 
 			portInstance = (PortInstance) editPart.getNotationView().getElement();
 		}
 
-		EditPart parentEditPart = editPart.getParent();
-		IFigure figure = null;
-		if (parentEditPart instanceof GraphicalEditPart) {
-			figure = ((GraphicalEditPart) parentEditPart).getFigure();
-		}
-		if (figure instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
+		GraphicalEditPart parentEditPart = (GraphicalEditPart) editPart.getParent();
+		if (parentEditPart.getFigure() instanceof BorderedNodeFigure) {
+			BorderedNodeFigure bnf = (BorderedNodeFigure) parentEditPart.getFigure();
 			IFigure portContainerFigure = bnf.getBorderItemContainer();
 			addLayoutListener(portContainerFigure);
 		}
