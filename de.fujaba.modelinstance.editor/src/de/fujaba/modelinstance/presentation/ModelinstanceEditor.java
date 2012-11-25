@@ -917,8 +917,6 @@ public class ModelinstanceEditor
 		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
 		viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
 	}
-
-	// TODO: Write Templates for the changes in createModel() and the added methods checkMigration(), performMigration()
 	
 	/**
 	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
