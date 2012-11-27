@@ -358,7 +358,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private RoundedRectangle fFigureComponentStoryNodePatternContainer;
+		private RectangleFigure fFigureComponentStoryNodePatternContainer;
 
 		/**
 		 * @generated
@@ -368,8 +368,8 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
+					getMapMode().DPtoLP(12)));
 			this.setFill(false);
 			createContents();
 		}
@@ -379,21 +379,19 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RoundedRectangle componentStoryNodeNameContainer0 = new RoundedRectangle();
-			componentStoryNodeNameContainer0.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
-			componentStoryNodeNameContainer0.setFill(false);
-			componentStoryNodeNameContainer0.setOutline(false);
-			componentStoryNodeNameContainer0.setPreferredSize(new Dimension(
-					getMapMode().DPtoLP(100), getMapMode().DPtoLP(30)));
+			RectangleFigure storyNodeNameContainer0 = new RectangleFigure();
+			storyNodeNameContainer0.setFill(false);
+			storyNodeNameContainer0.setOutline(false);
+			storyNodeNameContainer0.setPreferredSize(new Dimension(getMapMode()
+					.DPtoLP(100), getMapMode().DPtoLP(30)));
 
-			this.add(componentStoryNodeNameContainer0, BorderLayout.TOP);
+			this.add(storyNodeNameContainer0, BorderLayout.TOP);
 
-			GridLayout layoutComponentStoryNodeNameContainer0 = new GridLayout();
-			layoutComponentStoryNodeNameContainer0.numColumns = 1;
-			layoutComponentStoryNodeNameContainer0.makeColumnsEqualWidth = true;
-			componentStoryNodeNameContainer0
-					.setLayoutManager(layoutComponentStoryNodeNameContainer0);
+			GridLayout layoutStoryNodeNameContainer0 = new GridLayout();
+			layoutStoryNodeNameContainer0.numColumns = 1;
+			layoutStoryNodeNameContainer0.makeColumnsEqualWidth = true;
+			storyNodeNameContainer0
+					.setLayoutManager(layoutStoryNodeNameContainer0);
 
 			fFigureComponentStoryNodeName = new WrappingLabel();
 			fFigureComponentStoryNodeName.setText("");
@@ -405,14 +403,11 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureComponentStoryNodeName.horizontalSpan = 1;
 			constraintFFigureComponentStoryNodeName.verticalSpan = 1;
 			constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = false;
-			componentStoryNodeNameContainer0.add(fFigureComponentStoryNodeName,
+			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = true;
+			storyNodeNameContainer0.add(fFigureComponentStoryNodeName,
 					constraintFFigureComponentStoryNodeName);
 
-			RoundedRectangle componentStoryNodeContentContainer0 = new RoundedRectangle();
-			componentStoryNodeContentContainer0
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-							getMapMode().DPtoLP(8)));
+			RectangleFigure componentStoryNodeContentContainer0 = new RectangleFigure();
 			componentStoryNodeContentContainer0.setFill(false);
 			componentStoryNodeContentContainer0.setOutline(false);
 
@@ -422,10 +417,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			componentStoryNodeContentContainer0
 					.setLayoutManager(layoutComponentStoryNodeContentContainer0);
 
-			fFigureComponentStoryNodePatternContainer = new RoundedRectangle();
-			fFigureComponentStoryNodePatternContainer
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-							getMapMode().DPtoLP(8)));
+			fFigureComponentStoryNodePatternContainer = new RectangleFigure();
 			fFigureComponentStoryNodePatternContainer.setFill(false);
 			fFigureComponentStoryNodePatternContainer.setOutline(false);
 
@@ -445,7 +437,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public RoundedRectangle getFigureComponentStoryNodePatternContainer() {
+		public RectangleFigure getFigureComponentStoryNodePatternContainer() {
 			return fFigureComponentStoryNodePatternContainer;
 		}
 

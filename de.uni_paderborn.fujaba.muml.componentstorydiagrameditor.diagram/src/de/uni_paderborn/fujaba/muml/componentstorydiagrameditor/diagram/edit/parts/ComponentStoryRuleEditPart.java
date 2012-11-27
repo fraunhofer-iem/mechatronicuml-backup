@@ -21,7 +21,7 @@ public class ComponentStoryRuleEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "ComponentStoryDiagram"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Component Story"; //$NON-NLS-1$
 
 	/**
 	 * @generated

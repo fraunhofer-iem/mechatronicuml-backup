@@ -1,13 +1,15 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -278,7 +280,6 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private RectangleFigure fFigureActivityContainer;
-
 		/**
 		 * @generated
 		 */
@@ -291,11 +292,10 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
+			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
-			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
 
@@ -304,10 +304,31 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
+			ScalablePolygonShape polyline0 = new ScalablePolygonShape();
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(2)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode()
+					.DPtoLP(2)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(21), getMapMode()
+					.DPtoLP(1)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(21), getMapMode()
+					.DPtoLP(0)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(21), getMapMode()
+					.DPtoLP(1)));
+			polyline0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode()
+					.DPtoLP(2)));
+			polyline0.setFill(true);
+			polyline0.setBorder(new MarginBorder(getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(2), getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(20)));
+
+			this.add(polyline0);
+			polyline0.setLayoutManager(new StackLayout());
+
 			fFigureActivityName = new WrappingLabel();
 			fFigureActivityName.setText("");
 
-			this.add(fFigureActivityName);
+			polyline0.add(fFigureActivityName);
 
 			fFigureActivityContainer = new RectangleFigure();
 			fFigureActivityContainer.setFill(false);

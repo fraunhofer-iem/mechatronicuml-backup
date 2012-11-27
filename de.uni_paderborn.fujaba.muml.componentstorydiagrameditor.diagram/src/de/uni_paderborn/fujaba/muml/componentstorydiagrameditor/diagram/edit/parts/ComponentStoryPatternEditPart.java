@@ -1,10 +1,7 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
-import org.eclipse.draw2d.FlowLayout;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -19,7 +16,6 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -274,8 +270,8 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
+					getMapMode().DPtoLP(12)));
 			this.setFill(false);
 			this.setOutline(false);
 			createContents();
@@ -288,8 +284,10 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 
 			fFigureComponentStoryPatternContainer = new RoundedRectangle();
 			fFigureComponentStoryPatternContainer
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-							getMapMode().DPtoLP(8)));
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
+							getMapMode().DPtoLP(12)));
+			fFigureComponentStoryPatternContainer.setFill(false);
+			fFigureComponentStoryPatternContainer.setOutline(false);
 
 			this.add(fFigureComponentStoryPatternContainer, BorderLayout.CENTER);
 

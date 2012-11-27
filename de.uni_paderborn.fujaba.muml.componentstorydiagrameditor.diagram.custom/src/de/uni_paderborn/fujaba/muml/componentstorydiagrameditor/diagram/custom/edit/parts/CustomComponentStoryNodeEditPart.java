@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
-import org.eclipse.draw2d.RoundedRectangle;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScrollPane;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
@@ -36,7 +36,7 @@ public class CustomComponentStoryNodeEditPart extends
 		if (((ComponentStoryNode) ((View) getModel()).getElement()) != null) {
 
 			// resize the pattern compartment
-			RoundedRectangle patternRectangle = getPrimaryShape().getFigureComponentStoryNodePatternContainer();
+			RectangleFigure patternRectangle = getPrimaryShape().getFigureComponentStoryNodePatternContainer();
 			if (!patternRectangle.getChildren().isEmpty()) {
 				ResizableCompartmentFigure patternCompartment = (ResizableCompartmentFigure) patternRectangle
 						.getChildren().get(0);

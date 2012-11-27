@@ -386,6 +386,62 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object sourceVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
+									6,
+									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+											.getPortVariable(), env).evaluate(
+									source,
+									Collections.singletonMap(
+											"oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				if (target == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> env = Collections
+							.<String, EClassifier> singletonMap(
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
+					Object targetVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									7,
+									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+											.getPortVariable(), env).evaluate(
+									target,
+									Collections.singletonMap(
+											"oppositeEnd", source)); //$NON-NLS-1$
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				return true;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return false;
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistDelegationVariable_4003(
+				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
+				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable linkInstance,
+				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source,
+				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target) {
+			try {
+				if (source == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> env = Collections
+							.<String, EClassifier> singletonMap(
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
+					Object sourceVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
 									8,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
@@ -423,17 +479,6 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
-		}
-
-		/**
-		 * @generated
-		 */
-		public boolean canExistDelegationVariable_4003(
-				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable linkInstance,
-				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source,
-				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target) {
-			return true;
 		}
 	}
 

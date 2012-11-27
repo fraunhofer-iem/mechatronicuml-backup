@@ -84,7 +84,7 @@ public class PartVariableLabelExpressionLabelParser5006 implements IParser {
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						5,
+						3,
 						de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getPartVariable(), typeEnv).evaluate(target,
 						env);

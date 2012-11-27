@@ -631,7 +631,7 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		Node label5009 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableNameEditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
 		return node;
 	}
 

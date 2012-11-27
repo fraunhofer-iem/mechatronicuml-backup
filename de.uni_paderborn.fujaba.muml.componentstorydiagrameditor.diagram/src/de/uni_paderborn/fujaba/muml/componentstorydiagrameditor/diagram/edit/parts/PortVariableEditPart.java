@@ -425,7 +425,11 @@ public class PortVariableEditPart extends BorderedBorderItemEditPart {
 		/**
 		 * @generated
 		 */
-		private ScalablePolygonShape fFigureNegativePort;
+		private ScalablePolygonShape fFigurePortNegative1;
+		/**
+		 * @generated
+		 */
+		private ScalablePolygonShape fFigurePortNegative2;
 
 		/**
 		 * @generated
@@ -452,28 +456,38 @@ public class PortVariableEditPart extends BorderedBorderItemEditPart {
 
 			this.add(portVariable0);
 
-			fFigureNegativePort = new ScalablePolygonShape();
-			fFigureNegativePort.addPoint(new Point(getMapMode().DPtoLP(0),
+			fFigurePortNegative1 = new ScalablePolygonShape();
+			fFigurePortNegative1.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
-			fFigureNegativePort.addPoint(new Point(getMapMode().DPtoLP(1),
+			fFigurePortNegative1.addPoint(new Point(getMapMode().DPtoLP(1),
 					getMapMode().DPtoLP(1)));
-			fFigureNegativePort.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(0)));
-			fFigureNegativePort.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(1)));
-			fFigureNegativePort.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-			fFigureNegativePort.setFill(true);
+			fFigurePortNegative1.setFill(true);
 
-			this.add(fFigureNegativePort);
+			this.add(fFigurePortNegative1);
+
+			fFigurePortNegative2 = new ScalablePolygonShape();
+			fFigurePortNegative2.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(0)));
+			fFigurePortNegative2.addPoint(new Point(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(1)));
+			fFigurePortNegative2.setFill(true);
+
+			this.add(fFigurePortNegative2);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public ScalablePolygonShape getFigureNegativePort() {
-			return fFigureNegativePort;
+		public ScalablePolygonShape getFigurePortNegative1() {
+			return fFigurePortNegative1;
+		}
+
+		/**
+		 * @generated
+		 */
+		public ScalablePolygonShape getFigurePortNegative2() {
+			return fFigurePortNegative2;
 		}
 
 	}

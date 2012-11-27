@@ -12,6 +12,7 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.XYLayout;
@@ -453,17 +454,20 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private RectangleFigure fFigureChildren;
+		/**
+		 * @generated
+		 */
+		private ScalablePolygonShape fFigureComponentNegative1;
+		/**
+		 * @generated
+		 */
+		private ScalablePolygonShape fFigureComponentNegative2;
 
 		/**
 		 * @generated
 		 */
 		public ComponentVariableFigure() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			this.setLayoutManager(layoutThis);
-
+			this.setLayoutManager(new StackLayout());
 			createContents();
 		}
 
@@ -472,33 +476,45 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure container0 = new RectangleFigure();
-			container0.setFill(false);
-			container0.setOutline(false);
-			container0.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
+			RectangleFigure componentVariableContent0 = new RectangleFigure();
+			componentVariableContent0.setFill(false);
+			componentVariableContent0.setOutline(false);
+
+			this.add(componentVariableContent0);
+
+			GridLayout layoutComponentVariableContent0 = new GridLayout();
+			layoutComponentVariableContent0.numColumns = 1;
+			layoutComponentVariableContent0.makeColumnsEqualWidth = true;
+			componentVariableContent0
+					.setLayoutManager(layoutComponentVariableContent0);
+
+			RectangleFigure container1 = new RectangleFigure();
+			container1.setFill(false);
+			container1.setOutline(false);
+			container1.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(3)));
 
-			GridData constraintContainer0 = new GridData();
-			constraintContainer0.verticalAlignment = GridData.BEGINNING;
-			constraintContainer0.horizontalAlignment = GridData.FILL;
-			constraintContainer0.horizontalIndent = 0;
-			constraintContainer0.horizontalSpan = 1;
-			constraintContainer0.verticalSpan = 1;
-			constraintContainer0.grabExcessHorizontalSpace = true;
-			constraintContainer0.grabExcessVerticalSpace = false;
-			this.add(container0, constraintContainer0);
+			GridData constraintContainer1 = new GridData();
+			constraintContainer1.verticalAlignment = GridData.BEGINNING;
+			constraintContainer1.horizontalAlignment = GridData.FILL;
+			constraintContainer1.horizontalIndent = 0;
+			constraintContainer1.horizontalSpan = 1;
+			constraintContainer1.verticalSpan = 1;
+			constraintContainer1.grabExcessHorizontalSpace = true;
+			constraintContainer1.grabExcessVerticalSpace = false;
+			componentVariableContent0.add(container1, constraintContainer1);
 
-			GridLayout layoutContainer0 = new GridLayout();
-			layoutContainer0.numColumns = 3;
-			layoutContainer0.makeColumnsEqualWidth = true;
-			container0.setLayoutManager(layoutContainer0);
+			GridLayout layoutContainer1 = new GridLayout();
+			layoutContainer1.numColumns = 3;
+			layoutContainer1.makeColumnsEqualWidth = true;
+			container1.setLayoutManager(layoutContainer1);
 
-			RectangleFigure fake1 = new RectangleFigure();
-			fake1.setFill(false);
-			fake1.setOutline(false);
+			RectangleFigure fake2 = new RectangleFigure();
+			fake2.setFill(false);
+			fake2.setOutline(false);
 
-			container0.add(fake1);
+			container1.add(fake2);
 
 			fFigureComponentVariableNameFigure = new WrappingLabel();
 			fFigureComponentVariableNameFigure.setText("this");
@@ -514,66 +530,66 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureComponentVariableNameFigure.verticalSpan = 1;
 			constraintFFigureComponentVariableNameFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureComponentVariableNameFigure.grabExcessVerticalSpace = false;
-			container0.add(fFigureComponentVariableNameFigure,
+			container1.add(fFigureComponentVariableNameFigure,
 					constraintFFigureComponentVariableNameFigure);
 
 			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
-			RectangleFigure componentIconFigure1 = new RectangleFigure();
-			componentIconFigure1.setFill(false);
-			componentIconFigure1.setOutline(false);
-			componentIconFigure1.setPreferredSize(new Dimension(getMapMode()
+			RectangleFigure componentIconFigure2 = new RectangleFigure();
+			componentIconFigure2.setFill(false);
+			componentIconFigure2.setOutline(false);
+			componentIconFigure2.setPreferredSize(new Dimension(getMapMode()
 					.DPtoLP(20), getMapMode().DPtoLP(20)));
 
-			GridData constraintComponentIconFigure1 = new GridData();
-			constraintComponentIconFigure1.verticalAlignment = GridData.BEGINNING;
-			constraintComponentIconFigure1.horizontalAlignment = GridData.END;
-			constraintComponentIconFigure1.horizontalIndent = 0;
-			constraintComponentIconFigure1.horizontalSpan = 1;
-			constraintComponentIconFigure1.verticalSpan = 1;
-			constraintComponentIconFigure1.grabExcessHorizontalSpace = true;
-			constraintComponentIconFigure1.grabExcessVerticalSpace = false;
-			container0
-					.add(componentIconFigure1, constraintComponentIconFigure1);
+			GridData constraintComponentIconFigure2 = new GridData();
+			constraintComponentIconFigure2.verticalAlignment = GridData.BEGINNING;
+			constraintComponentIconFigure2.horizontalAlignment = GridData.END;
+			constraintComponentIconFigure2.horizontalIndent = 0;
+			constraintComponentIconFigure2.horizontalSpan = 1;
+			constraintComponentIconFigure2.verticalSpan = 1;
+			constraintComponentIconFigure2.grabExcessHorizontalSpace = true;
+			constraintComponentIconFigure2.grabExcessVerticalSpace = false;
+			container1
+					.add(componentIconFigure2, constraintComponentIconFigure2);
 
-			componentIconFigure1.setLayoutManager(new StackLayout());
+			componentIconFigure2.setLayoutManager(new StackLayout());
 
-			RectangleFigure componentIconOuter2 = new RectangleFigure();
-			componentIconOuter2.setFill(false);
-			componentIconOuter2.setOutline(false);
+			RectangleFigure componentIconOuter3 = new RectangleFigure();
+			componentIconOuter3.setFill(false);
+			componentIconOuter3.setOutline(false);
 
-			componentIconFigure1.add(componentIconOuter2);
-			componentIconOuter2.setLayoutManager(new XYLayout());
+			componentIconFigure2.add(componentIconOuter3);
+			componentIconOuter3.setLayoutManager(new XYLayout());
 
-			RectangleFigure b13 = new RectangleFigure();
+			RectangleFigure b14 = new RectangleFigure();
 
-			componentIconOuter2.add(b13, new Rectangle(getMapMode().DPtoLP(4),
+			componentIconOuter3.add(b14, new Rectangle(getMapMode().DPtoLP(4),
 					getMapMode().DPtoLP(0), getMapMode().DPtoLP(16),
 					getMapMode().DPtoLP(20)));
 
-			RectangleFigure componentIconInner12 = new RectangleFigure();
-			componentIconInner12.setFill(false);
-			componentIconInner12.setOutline(false);
+			RectangleFigure componentIconInner13 = new RectangleFigure();
+			componentIconInner13.setFill(false);
+			componentIconInner13.setOutline(false);
 
-			componentIconFigure1.add(componentIconInner12);
-			componentIconInner12.setLayoutManager(new XYLayout());
+			componentIconFigure2.add(componentIconInner13);
+			componentIconInner13.setLayoutManager(new XYLayout());
 
-			RectangleFigure c13 = new RectangleFigure();
+			RectangleFigure c14 = new RectangleFigure();
 
-			componentIconInner12.add(c13, new Rectangle(getMapMode().DPtoLP(0),
+			componentIconInner13.add(c14, new Rectangle(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(2), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
-			RectangleFigure componentIconInner22 = new RectangleFigure();
-			componentIconInner22.setFill(false);
-			componentIconInner22.setOutline(false);
+			RectangleFigure componentIconInner23 = new RectangleFigure();
+			componentIconInner23.setFill(false);
+			componentIconInner23.setOutline(false);
 
-			componentIconFigure1.add(componentIconInner22);
-			componentIconInner22.setLayoutManager(new XYLayout());
+			componentIconFigure2.add(componentIconInner23);
+			componentIconInner23.setLayoutManager(new XYLayout());
 
-			RectangleFigure d13 = new RectangleFigure();
+			RectangleFigure d14 = new RectangleFigure();
 
-			componentIconInner22.add(d13, new Rectangle(getMapMode().DPtoLP(0),
+			componentIconInner23.add(d14, new Rectangle(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
@@ -589,7 +605,25 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureChildren.verticalSpan = 1;
 			constraintFFigureChildren.grabExcessHorizontalSpace = true;
 			constraintFFigureChildren.grabExcessVerticalSpace = true;
-			this.add(fFigureChildren, constraintFFigureChildren);
+			componentVariableContent0.add(fFigureChildren,
+					constraintFFigureChildren);
+
+			fFigureComponentNegative1 = new ScalablePolygonShape();
+			fFigureComponentNegative1.addPoint(new Point(
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			fFigureComponentNegative1.addPoint(new Point(
+					getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+
+			this.add(fFigureComponentNegative1);
+
+			fFigureComponentNegative2 = new ScalablePolygonShape();
+			fFigureComponentNegative2.addPoint(new Point(
+					getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
+			fFigureComponentNegative2.addPoint(new Point(
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(1)));
+			fFigureComponentNegative2.setFill(true);
+
+			this.add(fFigureComponentNegative2);
 
 		}
 
@@ -605,6 +639,20 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public RectangleFigure getFigureChildren() {
 			return fFigureChildren;
+		}
+
+		/**
+		 * @generated
+		 */
+		public ScalablePolygonShape getFigureComponentNegative1() {
+			return fFigureComponentNegative1;
+		}
+
+		/**
+		 * @generated
+		 */
+		public ScalablePolygonShape getFigureComponentNegative2() {
+			return fFigureComponentNegative2;
 		}
 
 	}

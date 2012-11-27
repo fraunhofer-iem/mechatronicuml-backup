@@ -254,8 +254,8 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableNameEditPart) {
-			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableNameEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel5EditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigurePartVariableNameFigure());
 			return true;
@@ -276,7 +276,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableNameEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel5EditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariable2EditPart) {
@@ -436,14 +436,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public class PartVariableFigure extends RectangleFigure {
-		public void paintFigure(Graphics graphics) {
-			super.paintFigure(graphics);
-		}
 
-		/**
-		 * @generated
-		 */
-		private ScalablePolygonShape fFigureNegative2;
 		/**
 		 * @generated
 		 */
@@ -451,7 +444,11 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private ScalablePolygonShape fFigureNegative;
+		private ScalablePolygonShape fFigurePartNegative1;
+		/**
+		 * @generated
+		 */
+		private ScalablePolygonShape fFigurePartNegative2;
 
 		/**
 		 * @generated
@@ -572,30 +569,23 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			nameContainer1.add(fFigurePartVariableNameFigure,
 					constraintFFigurePartVariableNameFigure);
 
-			fFigureNegative = new ScalablePolygonShape();
-			fFigureNegative.addPoint(new Point(getMapMode().DPtoLP(0),
+			fFigurePartNegative1 = new ScalablePolygonShape();
+			fFigurePartNegative1.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
-			fFigureNegative.addPoint(new Point(getMapMode().DPtoLP(1),
+			fFigurePartNegative1.addPoint(new Point(getMapMode().DPtoLP(1),
 					getMapMode().DPtoLP(1)));
 
-			this.add(fFigureNegative);
+			this.add(fFigurePartNegative1);
 
-			fFigureNegative2 = new ScalablePolygonShape();
-			fFigureNegative2.addPoint(new Point(getMapMode().DPtoLP(1),
+			fFigurePartNegative2 = new ScalablePolygonShape();
+			fFigurePartNegative2.addPoint(new Point(getMapMode().DPtoLP(1),
 					getMapMode().DPtoLP(0)));
-			fFigureNegative2.addPoint(new Point(getMapMode().DPtoLP(0),
+			fFigurePartNegative2.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(1)));
-			fFigureNegative2.setFill(true);
+			fFigurePartNegative2.setFill(true);
 
-			this.add(fFigureNegative2);
+			this.add(fFigurePartNegative2);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		public ScalablePolygonShape getFigureNegative2() {
-			return fFigureNegative2;
 		}
 
 		/**
@@ -608,8 +598,15 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public ScalablePolygonShape getFigureNegative() {
-			return fFigureNegative;
+		public ScalablePolygonShape getFigurePartNegative1() {
+			return fFigurePartNegative1;
+		}
+
+		/**
+		 * @generated
+		 */
+		public ScalablePolygonShape getFigurePartNegative2() {
+			return fFigurePartNegative2;
 		}
 
 	}

@@ -53,12 +53,12 @@ public class ComponentStoryDiagramOCLFactory {
 					"\'activity\'", //$NON-NLS-1$
 					"\'componentStoryPattern\'", //$NON-NLS-1$
 					"\'componentStoryNode\'", //$NON-NLS-1$
-					"if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then\r\n\t\'<<create>>\'\r\nelse\r\n\tif bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\t\'<<destroy>>\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\nendif", //$NON-NLS-1$
-					"if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then\r\n\t\'<<create>>\'\r\nelse\r\n\tif bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\t\'<<destroy>>\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\nendif", //$NON-NLS-1$
-					"if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then\r\n\t\'<<create>>\'\r\nelse\r\n\tif bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\t\'<<destroy>>\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\nendif", //$NON-NLS-1$
-					"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else self.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then\t\' \' else\t\' / \'.concat(self.type.name) endif in\r\n(if self.name.oclIsUndefined() then \t\'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
-					"if bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then\r\n\t\'<<create>>\'\r\nelse\r\n\tif bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\t\'<<destroy>>\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\nendif", //$NON-NLS-1$
+					"storydiagrams::patterns::BindingState::BOUND", //$NON-NLS-1$
+					"storydiagrams::patterns::BindingSemantics::MANDATORY", //$NON-NLS-1$
+					"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
 					"self.eContainer().oclIsKindOf(PartVariable)", //$NON-NLS-1$
+					"self.eContainer().oclIsKindOf(PartVariable) and self <> oppositeEnd", //$NON-NLS-1$
+					"self.eContainer().oclIsKindOf(ComponentVariable)", //$NON-NLS-1$
 					"self.eContainer().oclIsKindOf(PartVariable)", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

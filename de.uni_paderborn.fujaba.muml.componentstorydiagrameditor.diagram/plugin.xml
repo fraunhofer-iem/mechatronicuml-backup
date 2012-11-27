@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.createDiagram"
 	            icon="icons/obj16/ControlflowDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.createDiagram"
-	            label="Initialize ComponentStoryDiagram Diagram"
+	            label="Initialize Component Story Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
@@ -111,10 +111,10 @@
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"
             editorId="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorID"
-            editorName="ComponentStoryDiagram Editor"
+            editorName="Component Story Editor"
             fileExtension="componentstorydiagram_diagram"
             modelElementCategoryKey="org.storydriven.storydiagrams.activities.category"
-            modelId="ComponentStoryDiagram">
+            modelId="Component Story">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1"
                className="ComponentStoryRule">
@@ -133,7 +133,7 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="ComponentStoryDiagramPresentation">
+         id="Component StoryPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -150,7 +150,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="ComponentStoryDiagramPresentationIDE">
+         id="Component StoryPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -160,7 +160,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="ComponentStoryDiagramRender">
+            id="Component StoryRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -299,7 +299,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="ComponentStoryDiagram"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component Story"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3002,3003,3004,3005,3006,3007,3008,3010"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003"/>
       </viewProvider>
@@ -310,7 +310,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="ComponentStoryDiagram"/>
+            <method name="getType()" value="Component Story"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2003,3001,3002,3003,3004,3005,3006,3007,3008,3010"/>

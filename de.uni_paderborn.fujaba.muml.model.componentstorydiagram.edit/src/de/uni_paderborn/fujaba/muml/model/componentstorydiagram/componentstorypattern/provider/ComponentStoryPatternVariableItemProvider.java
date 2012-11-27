@@ -107,11 +107,11 @@ public class ComponentStoryPatternVariableItemProvider
 	 * This adds a property descriptor for the Binding Semantics feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addBindingSemanticsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new BindingSemanticsPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ComponentStoryPatternVariable_bindingSemantics_feature"),
@@ -155,7 +155,7 @@ public class ComponentStoryPatternVariableItemProvider
 	 */
 	protected void addBindingStatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new BindingStatePropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ComponentStoryPatternVariable_bindingState_feature"),

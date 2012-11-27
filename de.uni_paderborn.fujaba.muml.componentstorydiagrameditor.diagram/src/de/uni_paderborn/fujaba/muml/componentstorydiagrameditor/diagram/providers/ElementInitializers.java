@@ -2,6 +2,9 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.provide
 
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.patterns.BindingSemantics;
+import org.storydriven.storydiagrams.patterns.BindingState;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
  * @generated
@@ -52,6 +55,40 @@ public class ElementInitializers {
 									.getComponentStoryNode(), null).evaluate(
 							instance);
 			instance.setName((String) value_1);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ComponentVariable_3003(
+			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
+					.getExpression(
+							3,
+							de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+									.getComponentVariable(), null).evaluate(
+							instance);
+
+			value_0 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression
+					.performCast(value_0,
+							PatternsPackage.eINSTANCE.getBindingState());
+			instance.setBindingState((BindingState) value_0);
+			Object value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
+					.getExpression(
+							4,
+							de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+									.getComponentVariable(), null).evaluate(
+							instance);
+
+			value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression
+					.performCast(value_1,
+							PatternsPackage.eINSTANCE.getBindingSemantics());
+			instance.setBindingSemantics((BindingSemantics) value_1);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

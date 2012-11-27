@@ -2,17 +2,12 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.swt.graphics.RGB;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.AssemblyVariableEditPart;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 
 public class CustomAssemblyVariableEditPart extends AssemblyVariableEditPart {
-
-	private static final RGB RGB_CHECK = new RGB(0, 0, 0);
-	private static final RGB RGB_CREATE = new RGB(0, 192, 0);
-	private static final RGB RGB_DESTROY = new RGB(192, 0, 0);
 	
 	public CustomAssemblyVariableEditPart(View view) {
 		super(view);
@@ -21,37 +16,10 @@ public class CustomAssemblyVariableEditPart extends AssemblyVariableEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
-		adaptViewColor((View)getModel());
-	}
-	
-	private void adaptViewColor(View view) {
-		org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.draw2d.ColorConstants.blue
-				.getRGB();
-
-		BindingOperator bindingOperator = ((AssemblyVariable) ((View) getModel()).getElement())
-				.getBindingOperator();
-		
-		switch (bindingOperator) {
-		case CREATE:
-			lineRGB = RGB_CREATE;
-			break;
-		case DESTROY:
-			lineRGB = RGB_DESTROY;
-			break;
-		default:
-		case CHECK_ONLY:
-			lineRGB = RGB_CHECK;
-			break;
+		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
+				.equals(notification.getFeature())) {
+			CsdmUtility.adaptColor(this);
 		}
-
-		org.eclipse.gmf.runtime.diagram.core.util.ViewUtil
-				.setStructuralFeatureValue(
-						view,
-						org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE
-								.getLineStyle_LineColor(),
-						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities
-								.RGBToInteger(lineRGB));
-
 	}
 
 }
