@@ -53,5 +53,47 @@
       </category>
    </extension>
  
+ <extension
+       point="org.eclipse.ltk.core.refactoring.moveParticipants">
+    <moveParticipant
+          class="de.uni_paderborn.fujaba.muml.common.refactoring.DiagramMoveParticipant"
+          id="de.uni_paderborn.fujaba.muml.common.refactoring.diagramMoveParticipant"
+          name="Move MUML Diagran Files">
+       <enablement>
+          <adapt
+                type="org.eclipse.core.resources.IResource">
+             <or>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.atomiccomponent_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.componentinstanceconfiguration_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.deployment_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.pattern_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.messageinterface_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.realtimestatechart_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.structuredcomponent_diagram">
+                </test>
+             </or>
+          </adapt></enablement>
+    </moveParticipant>
+ </extension>
 	
 </plugin>
