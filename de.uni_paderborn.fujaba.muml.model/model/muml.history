@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<history:History xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<history:History xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
   <releases date="2012-11-07T14:51:41.065+0100" label="0.3.2">
     <changes xsi:type="history:CompositeChange">
@@ -2439,52 +2438,52 @@
             featureName="value" dataValue="self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or&#xD;&#xA;self.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=&#xD;&#xA;self.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or &#x9;&#x9;&#x9;&#x9;&#xD;&#xA;self.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=&#xD;&#xA;self.target.oclAsType(StateExitPoint).statechart.embeddingRegion"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.4/@changes.46/@element">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.46/@element"
+            featureName="key" dataValue="EntryPointMustOnlyPointToStatesOrStateEntryPoints"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.46/@element"
+            featureName="value" dataValue="self.source.oclIsKindOf(EntryPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State)&#xA;&#x9;or self.target.oclIsKindOf(StateEntryPoint)&#xA;)"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.4/@changes.45/@element">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.45/@element"
+            featureName="key" dataValue="ExitPointMustOnlyPointToStatesOrStateExitPoints"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.45/@element"
+            featureName="value" dataValue="self.source.oclIsKindOf(ExitPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State) &#xA;&#x9;or self.target.oclIsKindOf(StateExitPoint)&#xA;)"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
-            featureName="key" dataValue="EntryPointMustOnlyPointToStatesOrStateEntryPoints"/>
+            featureName="key" dataValue="TriggerMessageEventsMustNotHaveAnOwnedParameterBinding"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
-            featureName="value" dataValue="self.source.oclIsKindOf(EntryPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State)&#xA;&#x9;or self.target.oclIsKindOf(StateEntryPoint)&#xA;)"/>
+            featureName="value" dataValue="not self.triggerMessageEvent.message.oclIsUndefined() implies&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
-            featureName="key" dataValue="ExitPointMustOnlyPointToStatesOrStateExitPoints"/>
+            featureName="key" dataValue="ValidTriggerMessageEvents"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
-            featureName="value" dataValue="self.source.oclIsKindOf(ExitPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State) &#xA;&#x9;or self.target.oclIsKindOf(StateExitPoint)&#xA;)"/>
+            featureName="value" dataValue="let a : msgiface::MessageInterface =&#xD;&#xA;(&#xD;&#xA;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then&#xD;&#xA;&#x9;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;) in&#xD;&#xA;(not triggerMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf))"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
-            featureName="key" dataValue="TriggerMessageEventsMustNotHaveAnOwnedParameterBinding"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
-            featureName="value" dataValue="not self.triggerMessageEvent.message.oclIsUndefined() implies&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
-            featureName="key" dataValue="ValidTriggerMessageEvents"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
-            featureName="value" dataValue="let a : msgiface::MessageInterface =&#xD;&#xA;(&#xD;&#xA;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then&#xD;&#xA;&#x9;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;) in&#xD;&#xA;(not triggerMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf))"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
             featureName="key" dataValue="ValidRaiseMessageEvents"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
             featureName="value" dataValue="let a : msgiface::MessageInterface =&#xD;&#xA;(&#xD;&#xA;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then&#xD;&#xA;&#x9;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).senderMessageInterface&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;) in&#xD;&#xA;(not raiseMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf))"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+          referenceName="details" element="#//@releases.4/@changes.58/@element">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.58/@element"
             featureName="key" dataValue="EntryPointOutgoingTransitionNoAdditionalElements"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.58/@element"
             featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::EntryPoint))&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.synchronization.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockResets->isEmpty()&#xA;&#x9;&#x9;and self.triggerMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xA;&#x9;&#x9;and self.events->isEmpty()&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xA;&#x9;)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+          referenceName="details" element="#//@releases.4/@changes.57/@element">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.57/@element"
             featureName="key" dataValue="StateExitPointOutgoingTransitionNoAdditionalElements"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.57/@element"
             featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::StateExitPoint))&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.synchronization.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockResets->isEmpty()&#xA;&#x9;&#x9;and self.triggerMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xA;&#x9;&#x9;and self.events->isEmpty()&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xA;&#x9;)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition"
@@ -7974,49 +7973,49 @@
             featureName="value" dataValue="The transitions of the realtime statechart."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"
             featureName="name" dataValue="vertices"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"
             featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/Vertex"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Vertex"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/Vertex/statechart">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/statechart"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/State/statechart">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/statechart"
             featureName="name" dataValue="statechart"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/statechart"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/statechart"
             featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/statechart"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/Vertex/statechart"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/statechart"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/State/statechart"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Vertex/statechart"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/Vertex/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/statechart"
+          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/State/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Vertex/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/Vertex/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/realtimestatechart/State/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/statechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The realtime statechart this state belongs to.&#xA;\todoib{Should be 1..1, but GMF needs 0..1 here!}"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"
+          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The states of this realtime statechart."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/RealtimeStatechart"
@@ -8287,11 +8286,141 @@
             featureName="value" dataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart"
+          referenceName="eClassifiers" element="#//@releases.4/@changes.35/@element">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element"
+            featureName="name" dataValue="EntryPoint"/>
+        <changes xsi:type="history:Add" element="#//@releases.4/@changes.35/@element"
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/realtimestatechart/Vertex"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+            featureName="key" dataValue="constraints"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+            featureName="value" dataValue="OneOutgoingTransition EntryPointAndTargetSameStatechart"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="An EntyPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  EntryPoint is used to activate a dedicated inner state of an embedded statechart."/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+            featureName="key" dataValue="OneOutgoingTransition"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+            featureName="value" dataValue="self.outgoingTransitions->size() = 1"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+            featureName="key" dataValue="EntryPointAndTargetSameStatechart"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+            featureName="value" dataValue="self.outgoingTransitions->size() = 1 implies&#xA;&#x9;(not self.outgoingTransitions->at(1).target.oclIsUndefined()&#xA;&#x9; and self.outgoingTransitions->at(1).target.statechart = self.statechart&#xA;&#x9;)"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart"
+          referenceName="eClassifiers" element="#//@releases.4/@changes.34/@element">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element"
+            featureName="name" dataValue="ExitPoint"/>
+        <changes xsi:type="history:Add" element="#//@releases.4/@changes.34/@element"
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/realtimestatechart/Vertex"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+            featureName="key" dataValue="constraints"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+            featureName="value" dataValue="AtMostOneOutgoingTransition OneIncomingTransition ExitPointAndSourceSameStatechart"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  ExitPoint is used to deactivate a dedicated inner state of an embedded statechart."/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+            featureName="key" dataValue="AtMostOneOutgoingTransition"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+            featureName="value" dataValue="self.outgoingTransitions->size() &lt;= 1"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+            featureName="key" dataValue="OneIncomingTransition"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+            featureName="value" dataValue="self.incomingTransitions->size() = 1"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+            featureName="key" dataValue="ExitPointAndSourceSameStatechart"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+            featureName="value" dataValue="self.incomingTransitions->size() = 1 implies&#xA;&#x9;(not self.incomingTransitions->at(1).source.oclIsUndefined()&#xA;&#x9; and self.incomingTransitions->at(1).source.statechart = self.statechart&#xA;&#x9;)"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart"
           referenceName="eClassifiers" element="muml.ecore#//model/realtimestatechart/EntryPoint">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint"
-            featureName="name" dataValue="EntryPoint"/>
+            featureName="name" dataValue="StateEntryPoint"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/realtimestatechart/EntryPoint"
             featureName="eSuperTypes" referenceValue="muml.ecore#//model/realtimestatechart/Vertex"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/State/entryPoints">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints"
+            featureName="name" dataValue="stateEntryPoints"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints"
+            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/EntryPoint"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/entryPoints"
+          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/State/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/realtimestatechart/State/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="A state references its entry points. They can only exist, if a state embeds one or more statecharts."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint"
           referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
@@ -8303,7 +8432,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="key" dataValue="constraints"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
-            featureName="value" dataValue="OneOutgoingTransition EntryPointAndTargetSameStatechart"/>
+            featureName="value" dataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint"
           referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -8315,7 +8444,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="An EntyPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  EntryPoint is used to activate a dedicated inner state of an embedded statechart."/>
+            featureName="value" dataValue="The StateEntryPoint is assigned to a state. An EntyPoint is an intermediate pseudostate which reference EntryPoints of embedded statecharts. The incoming transitions are chained with the outgoing transition of the referenced EntryPoints on the lower hierarchy level."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint"
           referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
@@ -8325,23 +8454,119 @@
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="key" dataValue="OneOutgoingTransition"/>
+            featureName="key" dataValue="AtLeastOneIncomingTransition"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="value" dataValue="self.outgoingTransitions->size() = 1"/>
+            featureName="value" dataValue="self.incomingTransitions ->size()>0"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="key" dataValue="EntryPointAndTargetSameStatechart"/>
+            featureName="key" dataValue="AtLeastOneOutgoingTransition"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="value" dataValue="self.outgoingTransitions->size() = 1 implies&#xA;&#x9;(not self.outgoingTransitions->at(1).target.oclIsUndefined()&#xA;&#x9; and self.outgoingTransitions->at(1).target.statechart = self.statechart&#xA;&#x9;)"/>
+            featureName="value" dataValue="self.outgoingTransitions->size() > 0"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/EntryPoint/state">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/state"
+            featureName="name" dataValue="state"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/state"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/state"
+            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/State"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/state"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/State/entryPoints"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/EntryPoint/state"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint/state"
+          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/EntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/realtimestatechart/EntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="The StateEntryPoint is assigned to a state."/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint"
+          referenceName="eStructuralFeatures" element="#//@releases.4/@changes.40/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element"
+            featureName="name" dataValue="entryPoints"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element"
+            featureName="eType" referenceValue="#//@releases.4/@changes.35/@element"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element"
+          referenceName="eStructuralFeatures" element="#//@releases.4/@changes.35/@element/stateEntryPoint">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/stateEntryPoint"
+            featureName="name" dataValue="stateEntryPoint"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/stateEntryPoint"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/stateEntryPoint"
+            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/EntryPoint"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/stateEntryPoint"
+            featureName="eOpposite" referenceValue="#//@releases.4/@changes.40/@changes.0/@element"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element"
+            featureName="eOpposite" referenceValue="#//@releases.4/@changes.35/@element/stateEntryPoint"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element/stateEntryPoint"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.35/@element/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.35/@element/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.4/@changes.35/@element/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.35/@element/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Referenced StateEntryPoint of embedding statechart. "/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.40/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.40/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.40/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.4/@changes.40/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Referenced EntyPoints of embedded statecharts. "/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart"
           referenceName="eClassifiers" element="muml.ecore#//model/realtimestatechart/ExitPoint">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint"
-            featureName="name" dataValue="ExitPoint"/>
+            featureName="name" dataValue="StateExitPoint"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/realtimestatechart/ExitPoint"
             featureName="eSuperTypes" referenceValue="muml.ecore#//model/realtimestatechart/Vertex"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/State/exitPoints">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints"
+            featureName="name" dataValue="stateExitPoints"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints"
+            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/ExitPoint"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/exitPoints"
+          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/State/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/realtimestatechart/State/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="A state references its exit points. They can only exist, if a state embeds one or more statecharts."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint"
           referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
@@ -8353,7 +8578,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="key" dataValue="constraints"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
-            featureName="value" dataValue="AtMostOneOutgoingTransition OneIncomingTransition ExitPointAndSourceSameStatechart"/>
+            featureName="value" dataValue="OneOutgoingTransition"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint"
           referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -8365,7 +8590,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  ExitPoint is used to deactivate a dedicated inner state of an embedded statechart."/>
+            featureName="value" dataValue="The StateExitPoint is assigned to a state. An ExitPoint is an intermediate pseudostate which reference ExitPoints of embedded statecharts. The incoming transition of the referenced ExitPoints on the lower hierarchy level are chained with the outgoing transition of the StateExitPoint."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint"
           referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
@@ -8373,309 +8598,83 @@
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="key" dataValue="AtMostOneOutgoingTransition"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="value" dataValue="self.outgoingTransitions->size() &lt;= 1"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="key" dataValue="OneIncomingTransition"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="value" dataValue="self.incomingTransitions->size() = 1"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
-            featureName="key" dataValue="ExitPointAndSourceSameStatechart"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
-            featureName="value" dataValue="self.incomingTransitions->size() = 1 implies&#xA;&#x9;(not self.incomingTransitions->at(1).source.oclIsUndefined()&#xA;&#x9; and self.incomingTransitions->at(1).source.statechart = self.statechart&#xA;&#x9;)"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart"
-          referenceName="eClassifiers" element="muml.ecore#//model/realtimestatechart/StateEntryPoint">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint"
-            featureName="name" dataValue="StateEntryPoint"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/realtimestatechart/StateEntryPoint"
-            featureName="eSuperTypes" referenceValue="muml.ecore#//model/realtimestatechart/Vertex"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints"
-            featureName="name" dataValue="stateEntryPoints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints"
-            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints"
-            featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints"
-            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/StateEntryPoint"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/stateEntryPoints"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/stateEntryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="A state references its entry points. They can only exist, if a state embeds one or more statecharts."/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
-            featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
-            featureName="value" dataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="The StateEntryPoint is assigned to a state. An EntyPoint is an intermediate pseudostate which reference EntryPoints of embedded statecharts. The incoming transitions are chained with the outgoing transition of the referenced EntryPoints on the lower hierarchy level."/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="key" dataValue="AtLeastOneIncomingTransition"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
-            featureName="value" dataValue="self.incomingTransitions ->size()>0"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="key" dataValue="AtLeastOneOutgoingTransition"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
-            featureName="value" dataValue="self.outgoingTransitions->size() > 0"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state"
-            featureName="name" dataValue="state"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state"
-            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state"
-            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/State"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/State/stateEntryPoints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateEntryPoints"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/StateEntryPoint/state"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint/state"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="The StateEntryPoint is assigned to a state."/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints"
-            featureName="name" dataValue="entryPoints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints"
-            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints"
-            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints"
-            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/EntryPoint"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint"
-            featureName="name" dataValue="stateEntryPoint"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint"
-            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint"
-            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/StateEntryPoint"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/stateEntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="Referenced StateEntryPoint of embedding statechart. "/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="Referenced EntyPoints of embedded statecharts. "/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart"
-          referenceName="eClassifiers" element="muml.ecore#//model/realtimestatechart/StateExitPoint">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint"
-            featureName="name" dataValue="StateExitPoint"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/realtimestatechart/StateExitPoint"
-            featureName="eSuperTypes" referenceValue="muml.ecore#//model/realtimestatechart/Vertex"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints"
-            featureName="name" dataValue="stateExitPoints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints"
-            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints"
-            featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints"
-            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/StateExitPoint"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/stateExitPoints"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/State/stateExitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="A state references its exit points. They can only exist, if a state embeds one or more statecharts."/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
-            featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
-            featureName="value" dataValue="OneOutgoingTransition"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
-            featureName="value" dataValue="The StateExitPoint is assigned to a state. An ExitPoint is an intermediate pseudostate which reference ExitPoints of embedded statecharts. The incoming transition of the referenced ExitPoints on the lower hierarchy level are chained with the outgoing transition of the StateExitPoint."/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-            featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="OneOutgoingTransition"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
             featureName="value" dataValue="self.outgoingTransitions->size() = 1"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/ExitPoint/state">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/state"
             featureName="name" dataValue="state"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/state"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/state"
             featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/State"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/State/stateExitPoints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/stateExitPoints"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/StateExitPoint/state"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/state"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/State/exitPoints"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/ExitPoint/state"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint/state"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/state"
+          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/ExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/realtimestatechart/ExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/state/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The StateExitPoint is assigned to a state. "/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints"
-            featureName="name" dataValue="exitPoints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints"
-            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints"
-            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints"
-            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/ExitPoint"/>
-      </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint"
-            featureName="name" dataValue="stateExitPoint"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint"
+          referenceName="eStructuralFeatures" element="#//@releases.4/@changes.41/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element"
+            featureName="name" dataValue="exitPoints"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint"
-            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/StateExitPoint"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element"
+            featureName="eType" referenceValue="#//@releases.4/@changes.34/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element"
+          referenceName="eStructuralFeatures" element="#//@releases.4/@changes.34/@element/stateExitPoint">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/stateExitPoint"
+            featureName="name" dataValue="stateExitPoint"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/stateExitPoint"
+            featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/stateExitPoint"
+            featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/ExitPoint"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/stateExitPoint"
+            featureName="eOpposite" referenceValue="#//@releases.4/@changes.41/@changes.0/@element"/>
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element"
+            featureName="eOpposite" referenceValue="#//@releases.4/@changes.34/@element/stateExitPoint"/>
+      </changes>
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element/stateExitPoint"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.34/@element/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.34/@element/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.4/@changes.34/@element/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/stateExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Referenced StateEntryPoint of embedding statechart."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints"
-          referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.41/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.4/@changes.41/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.4/@changes.41/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.4/@changes.41/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoints/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Referenced ExitPoints of embedded statecharts. "/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/msgtype" referenceName="eClassifiers"
@@ -16074,5 +16073,304 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
         featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort)&#xD;&#xA;&#x9;)"
         oldDataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.6"
+        oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.5"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="An EntryPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. The EntryPoint is assigned to a state. An EntryPoint is used to activate a dedicated inner state for embedded statecharts."
+          oldDataValue="The StateEntryPoint is assigned to a state. An EntyPoint is an intermediate pseudostate which reference EntryPoints of embedded statecharts. The incoming transitions are chained with the outgoing transition of the referenced EntryPoints on the lower hierarchy level."/>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/EntryPoint"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>An EntryPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. The EntryPoint is assigned to a state. An EntryPoint is used to activate a dedicated inner state for embedded statecharts.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="#//@releases.4/@changes.34/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  ExitPoint is used to deactivate a dedicated inner state of an embedded statechart."
+          oldDataValue="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  ExitPoint is used to deactivate a dedicated inner state of an embedded statechart."/>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="#//@releases.4/@changes.34/@element"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  ExitPoint is used to deactivate a dedicated inner state of an embedded statechart.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. The ExitPoint is assigned to a state. An ExitPoint is used to jointly deactivate dedicated inner states of embedded statecharts."
+          oldDataValue="The StateExitPoint is assigned to a state. An ExitPoint is an intermediate pseudostate which reference ExitPoints of embedded statecharts. The incoming transition of the referenced ExitPoints on the lower hierarchy level are chained with the outgoing transition of the StateExitPoint."/>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/ExitPoint"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. The ExitPoint is assigned to a state. An ExitPoint is used to jointly deactivate dedicated inner states of embedded statecharts.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart"
+        referenceName="eClassifiers">
+      <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element"
+          featureName="eType" oldReferenceValue="#//@releases.4/@changes.34/@element"/>
+      <changes xsi:type="history:Set" element="#//@releases.4/@changes.41/@changes.0/@element"
+          featureName="eOpposite" oldReferenceValue="#//@releases.4/@changes.34/@element/stateExitPoint"/>
+      <element xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="muml.ecore#//model/realtimestatechart/Vertex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="AtMostOneOutgoingTransition OneIncomingTransition ExitPointAndSourceSameStatechart"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  ExitPoint is used to deactivate a dedicated inner state of an embedded statechart."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="AtMostOneOutgoingTransition" value="self.outgoingTransitions->size() &lt;= 1"/>
+          <details key="OneIncomingTransition" value="self.incomingTransitions->size() = 1"/>
+          <details key="ExitPointAndSourceSameStatechart" value="self.incomingTransitions->size() = 1 implies&#xA;&#x9;(not self.incomingTransitions->at(1).source.oclIsUndefined()&#xA;&#x9; and self.incomingTransitions->at(1).source.statechart = self.statechart&#xA;&#x9;)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="stateExitPoint" lowerBound="1"
+            eType="ecore:EClass muml.ecore#//model/realtimestatechart/ExitPoint" eOpposite="#//@releases.4/@changes.41/@changes.0/@element">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Referenced StateEntryPoint of embedding statechart."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart"
+        referenceName="eClassifiers">
+      <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element"
+          featureName="eOpposite" oldReferenceValue="#//@releases.4/@changes.35/@element/stateEntryPoint"/>
+      <changes xsi:type="history:Set" element="#//@releases.4/@changes.40/@changes.0/@element"
+          featureName="eType" oldReferenceValue="#//@releases.4/@changes.35/@element"/>
+      <element xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="muml.ecore#//model/realtimestatechart/Vertex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="OneOutgoingTransition EntryPointAndTargetSameStatechart"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An EntyPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. An  EntryPoint is used to activate a dedicated inner state of an embedded statechart."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
+          <details key="EntryPointAndTargetSameStatechart" value="self.outgoingTransitions->size() = 1 implies&#xA;&#x9;(not self.outgoingTransitions->at(1).target.oclIsUndefined()&#xA;&#x9; and self.outgoingTransitions->at(1).target.statechart = self.statechart&#xA;&#x9;)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="stateEntryPoint" lowerBound="1"
+            eType="ecore:EClass muml.ecore#//model/realtimestatechart/EntryPoint"
+            eOpposite="#//@releases.4/@changes.40/@changes.0/@element">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Referenced StateEntryPoint of embedding statechart. "/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </element>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint"
+          featureName="name" dataValue="EntryPoint" oldDataValue="StateEntryPoint"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/EntryPoint"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>EntryPoint</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint"
+          featureName="name" dataValue="ExitPoint" oldDataValue="StateExitPoint"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/ExitPoint"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>ExitPoint</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/entryPoints"
+          featureName="name" dataValue="entryPoints" oldDataValue="stateEntryPoints"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/State/entryPoints"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>entryPoints</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/exitPoints"
+          featureName="name" dataValue="exitPoints" oldDataValue="stateExitPoints"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/State/exitPoints"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>exitPoints</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/EntryPoint"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="entryPoints" lowerBound="1" upperBound="-1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Referenced EntyPoints of embedded statecharts. "/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.4/@changes.40/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/ExitPoint"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="exitPoints" lowerBound="1" upperBound="-1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Referenced ExitPoints of embedded statecharts. "/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.4/@changes.41/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"
+          featureName="eType" referenceValue="muml.ecore#//model/realtimestatechart/State"
+          oldReferenceValue="muml.ecore#//model/realtimestatechart/Vertex"/>
+      <changes xsi:type="history:Move" target="muml.ecore#//model/realtimestatechart/State"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/State/statechart"
+          source="muml.ecore#//model/realtimestatechart/Vertex"/>
+      <operation name="specializeReference">
+        <parameters name="reference">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/State"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"
+          featureName="name" dataValue="states" oldDataValue="vertices"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>states</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- State A to State B within the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(ExitPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).statechart.embeddingRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.embeddingRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)"
+        oldDataValue="self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or&#xD;&#xA;self.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=&#xD;&#xA;self.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or &#x9;&#x9;&#x9;&#x9;&#xD;&#xA;self.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=&#xD;&#xA;self.target.oclAsType(StateExitPoint).statechart.embeddingRegion"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="ExitPointMustOnlyPointToStatesOrStateExitPoints"
+          value="self.source.oclIsKindOf(ExitPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State) &#xA;&#x9;or self.target.oclIsKindOf(StateExitPoint)&#xA;)"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="EntryPointMustOnlyPointToStatesOrStateEntryPoints"
+          value="self.source.oclIsKindOf(EntryPoint) implies (&#xA;&#x9;self.target.oclIsKindOf(State)&#xA;&#x9;or self.target.oclIsKindOf(StateEntryPoint)&#xA;)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="SetTargetAndSource NoCrossingOfRegionBorders TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"
+        oldDataValue="SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateExitPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="key" dataValue=""/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="value" dataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="key" dataValue="TransitionToExitPointNoSideEffectsOrDeadlines"
+        oldDataValue=""/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="key" dataValue="TransitionFromExitPointNoConditions"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="key" dataValue="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines"
+        oldDataValue="TransitionToExitPointNoSideEffectsOrDeadlines"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="key" dataValue="ExitPointOutgoingTransitionsNoConditions" oldDataValue="TransitionFromExitPointNoConditions"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="StateExitPointOutgoingTransitionNoAdditionalElements"
+          value="(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::StateExitPoint))&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.synchronization.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockResets->isEmpty()&#xA;&#x9;&#x9;and self.triggerMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xA;&#x9;&#x9;and self.events->isEmpty()&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="EntryPointOutgoingTransitionNoAdditionalElements"
+          value="(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::EntryPoint))&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.synchronization.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockResets->isEmpty()&#xA;&#x9;&#x9;and self.triggerMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xA;&#x9;&#x9;and self.events->isEmpty()&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="SetTargetAndSource NoCrossingOfRegionBorders TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions"
+        oldDataValue="SetTargetAndSource NoCrossingOfRegionBorders TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.4/@changes.66/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.66/@element"
+        featureName="key" dataValue="AtLeastOneIncomingTransitionPerRegion"/>
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.66/@element"
+        featureName="value" dataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="AtLeastOneIncomingTransitionPerRegion AtLeastOneOutgoingTransition"
+        oldDataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="AtLeastOneIncomingTransitionPerRegion"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"
+        oldDataValue="AtLeastOneIncomingTransitionPerRegion AtLeastOneOutgoingTransition"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="AtLeastOneIncomingTransitionPerRegion"
+          value="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition"
+        oldDataValue="OneOutgoingTransition"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="not self.state.simple"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="ExitPointsOnlyAtCompositeStates"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition ExitPointsOnlyAtCompositeStates"
+        oldDataValue="AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="LegalTransitionsOnly" oldDataValue="NoCrossingOfRegionBorders"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="SetTargetAndSource LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions"
+        oldDataValue="SetTargetAndSource NoCrossingOfRegionBorders TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.exitPoints.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"
+        oldDataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;)"/>
   </releases>
 </history:History>
