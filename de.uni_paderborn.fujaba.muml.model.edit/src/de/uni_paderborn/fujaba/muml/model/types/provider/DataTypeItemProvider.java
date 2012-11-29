@@ -4,14 +4,22 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.core.provider;
+package de.uni_paderborn.fujaba.muml.model.types.provider;
 
+
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
+import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -19,20 +27,25 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
+import org.storydriven.core.CorePackage;
+
+import org.storydriven.core.provider.NamedElementItemProvider;
+
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
+import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.types.DataType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArrayDataTypeItemProvider
-	extends DataTypeItemProvider
+public class DataTypeItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -45,7 +58,7 @@ public class ArrayDataTypeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArrayDataTypeItemProvider(AdapterFactory adapterFactory) {
+	public DataTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,65 +73,31 @@ public class ArrayDataTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(new NaturalNumberPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ArrayDataType_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ArrayDataType_cardinality_feature", "_UI_ArrayDataType_type"),
-				 CorePackage.Literals.ARRAY_DATA_TYPE__CARDINALITY,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ArrayDataType_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ArrayDataType_type_feature", "_UI_ArrayDataType_type"),
-				 CorePackage.Literals.ARRAY_DATA_TYPE__TYPE,
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This returns ArrayDataType.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArrayDataType"));
 	}
 
 	/**
@@ -129,10 +108,10 @@ public class ArrayDataTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ArrayDataType)object).getName();
+		String label = ((DataType)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ArrayDataType_type") :
-			getString("_UI_ArrayDataType_type") + " " + label;
+			getString("_UI_DataType_type") :
+			getString("_UI_DataType_type") + " " + label;
 	}
 
 	/**
@@ -146,8 +125,8 @@ public class ArrayDataTypeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ArrayDataType.class)) {
-			case CorePackage.ARRAY_DATA_TYPE__CARDINALITY:
+		switch (notification.getFeatureID(DataType.class)) {
+			case TypesPackage.DATA_TYPE__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -164,6 +143,27 @@ public class ArrayDataTypeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

@@ -4,14 +4,14 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.msgiface.provider;
+package de.uni_paderborn.fujaba.muml.model.msgtype.provider;
 
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypeFactory;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -42,7 +42,7 @@ import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -115,7 +115,7 @@ public class MessageTypeRepositoryItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MsgifacePackage.Literals.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES);
+			childrenFeatures.add(MsgtypePackage.Literals.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES);
 		}
 		return childrenFeatures;
 	}
@@ -170,10 +170,10 @@ public class MessageTypeRepositoryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MessageTypeRepository.class)) {
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -203,8 +203,8 @@ public class MessageTypeRepositoryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MsgifacePackage.Literals.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES,
-				 MsgifaceFactory.eINSTANCE.createMessageType()));
+				(MsgtypePackage.Literals.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES,
+				 MsgtypeFactory.eINSTANCE.createMessageType()));
 	}
 
 	/**

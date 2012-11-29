@@ -4,14 +4,18 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.core.provider;
+package de.uni_paderborn.fujaba.muml.model.component.provider;
 
+
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,17 +26,14 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrimitiveDataTypeItemProvider
-	extends DataTypeItemProvider
+public class DirectedTypedPortItemProvider
+	extends PortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -45,7 +46,7 @@ public class PrimitiveDataTypeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveDataTypeItemProvider(AdapterFactory adapterFactory) {
+	public DirectedTypedPortItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,25 +61,26 @@ public class PrimitiveDataTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPrimitiveTypePropertyDescriptor(object);
+			addKindPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Primitive Type feature.
+	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPrimitiveTypePropertyDescriptor(Object object) {
+	protected void addKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PrimitiveDataType_primitiveType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveDataType_primitiveType_feature", "_UI_PrimitiveDataType_type"),
-				 CorePackage.Literals.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE,
+				 getString("_UI_DirectedTypedPort_kind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DirectedTypedPort_kind_feature", "_UI_DirectedTypedPort_type"),
+				 ComponentPackage.Literals.DIRECTED_TYPED_PORT__KIND,
 				 true,
 				 false,
 				 false,
@@ -88,14 +90,25 @@ public class PrimitiveDataTypeItemProvider
 	}
 
 	/**
-	 * This returns PrimitiveDataType.gif.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PrimitiveDataType"));
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DirectedTypedPort_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DirectedTypedPort_type_feature", "_UI_DirectedTypedPort_type"),
+				 ComponentPackage.Literals.DIRECTED_TYPED_PORT__TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -106,10 +119,10 @@ public class PrimitiveDataTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PrimitiveDataType)object).getName();
+		String label = ((DirectedTypedPort)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PrimitiveDataType_type") :
-			getString("_UI_PrimitiveDataType_type") + " " + label;
+			getString("_UI_DirectedTypedPort_type") :
+			getString("_UI_DirectedTypedPort_type") + " " + label;
 	}
 
 	/**
@@ -123,8 +136,8 @@ public class PrimitiveDataTypeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PrimitiveDataType.class)) {
-			case CorePackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
+		switch (notification.getFeatureID(DirectedTypedPort.class)) {
+			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

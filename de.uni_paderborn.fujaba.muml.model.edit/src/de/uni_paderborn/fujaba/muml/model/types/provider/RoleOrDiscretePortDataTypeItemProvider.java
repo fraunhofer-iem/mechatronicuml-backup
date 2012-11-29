@@ -4,10 +4,10 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.core.provider;
+package de.uni_paderborn.fujaba.muml.model.types.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.core.RoleDataType;
+import de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,13 +23,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.RoleDataType} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RoleDataTypeItemProvider
-	extends DiscreteInteractionEndpointDataTypeItemProvider
+public class RoleOrDiscretePortDataTypeItemProvider
+	extends DataTypeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -42,7 +42,7 @@ public class RoleDataTypeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleDataTypeItemProvider(AdapterFactory adapterFactory) {
+	public RoleOrDiscretePortDataTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,14 +62,14 @@ public class RoleDataTypeItemProvider
 	}
 
 	/**
-	 * This returns RoleDataType.gif.
+	 * This returns RoleOrDiscretePortDataType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RoleDataType"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RoleOrDiscretePortDataType"));
 	}
 
 	/**
@@ -80,10 +80,10 @@ public class RoleDataTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RoleDataType)object).getName();
+		String label = ((RoleOrDiscretePortDataType)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RoleDataType_type") :
-			getString("_UI_RoleDataType_type") + " " + label;
+			getString("_UI_RoleOrDiscretePortDataType_type") :
+			getString("_UI_RoleOrDiscretePortDataType_type") + " " + label;
 	}
 
 	/**

@@ -14,9 +14,10 @@ Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
  de.uni_paderborn.fujaba.muml.model.core.provider,
  de.uni_paderborn.fujaba.muml.model.deployment.provider,
  de.uni_paderborn.fujaba.muml.model.instance.provider,
- de.uni_paderborn.fujaba.muml.model.msgiface.provider,
+ de.uni_paderborn.fujaba.muml.model.msgtype.provider,
  de.uni_paderborn.fujaba.muml.model.pattern.provider,
- de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider
+ de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider,
+ de.uni_paderborn.fujaba.muml.model.types.provider
 Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.model;bundle-version="0.3.1";visibility:=reexport,
  de.fujaba.modelinstance.edit;bundle-version="0.3.1";visibility:=reexport,

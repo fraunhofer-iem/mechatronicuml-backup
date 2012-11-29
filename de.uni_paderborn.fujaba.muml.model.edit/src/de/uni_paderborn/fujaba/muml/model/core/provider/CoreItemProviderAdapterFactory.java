@@ -213,52 +213,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PrimitiveDataTypeItemProvider primitiveDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPrimitiveDataTypeAdapter() {
-		if (primitiveDataTypeItemProvider == null) {
-			primitiveDataTypeItemProvider = new PrimitiveDataTypeItemProvider(this);
-		}
-
-		return primitiveDataTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ArrayDataTypeItemProvider arrayDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.ArrayDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createArrayDataTypeAdapter() {
-		if (arrayDataTypeItemProvider == null) {
-			arrayDataTypeItemProvider = new ArrayDataTypeItemProvider(this);
-		}
-
-		return arrayDataTypeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -302,52 +256,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		}
 
 		return timeValueItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.PortDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PortDataTypeItemProvider portDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.PortDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPortDataTypeAdapter() {
-		if (portDataTypeItemProvider == null) {
-			portDataTypeItemProvider = new PortDataTypeItemProvider(this);
-		}
-
-		return portDataTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.RoleDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RoleDataTypeItemProvider roleDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.RoleDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRoleDataTypeAdapter() {
-		if (roleDataTypeItemProvider == null) {
-			roleDataTypeItemProvider = new RoleDataTypeItemProvider(this);
-		}
-
-		return roleDataTypeItemProvider;
 	}
 
 	/**
@@ -455,12 +363,8 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (operationItemProvider != null) operationItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
-		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
-		if (arrayDataTypeItemProvider != null) arrayDataTypeItemProvider.dispose();
 		if (parameterBindingItemProvider != null) parameterBindingItemProvider.dispose();
 		if (timeValueItemProvider != null) timeValueItemProvider.dispose();
-		if (portDataTypeItemProvider != null) portDataTypeItemProvider.dispose();
-		if (roleDataTypeItemProvider != null) roleDataTypeItemProvider.dispose();
 	}
 
 }

@@ -35,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyD
  * @generated
  */
 public class HybridPortItemProvider
-	extends DiscretePortItemProvider
+	extends DirectedTypedPortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -63,103 +63,11 @@ public class HybridPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addKindPropertyDescriptor(object);
-			addIsContinuousInPortPropertyDescriptor(object);
-			addIsContinuousOutPortPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
 			addIsHybridInPortPropertyDescriptor(object);
 			addIsHybridOutPortPropertyDescriptor(object);
 			addSamplingIntervalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Kind feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContinuousPort_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_kind_feature", "_UI_ContinuousPort_type"),
-				 ComponentPackage.Literals.CONTINUOUS_PORT__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_GeneralPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContinuousPort_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_type_feature", "_UI_ContinuousPort_type"),
-				 ComponentPackage.Literals.CONTINUOUS_PORT__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-	
-	/**
-	 * This adds a property descriptor for the Is Continuous In Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsContinuousInPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContinuousPort_isContinuousInPort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_isContinuousInPort_feature", "_UI_ContinuousPort_type"),
-				 ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Continuous Out Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsContinuousOutPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContinuousPort_isContinuousOutPort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_isContinuousOutPort_feature", "_UI_ContinuousPort_type"),
-				 ComponentPackage.Literals.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -302,9 +210,6 @@ public class HybridPortItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HybridPort.class)) {
-			case ComponentPackage.HYBRID_PORT__KIND:
-			case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_IN_PORT:
-			case ComponentPackage.HYBRID_PORT__IS_CONTINUOUS_OUT_PORT:
 			case ComponentPackage.HYBRID_PORT__IS_HYBRID_IN_PORT:
 			case ComponentPackage.HYBRID_PORT__IS_HYBRID_OUT_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

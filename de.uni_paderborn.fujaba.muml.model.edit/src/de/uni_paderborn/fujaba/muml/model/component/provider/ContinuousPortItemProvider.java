@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
  * @generated
  */
 public class ContinuousPortItemProvider
-	extends PortItemProvider
+	extends DirectedTypedPortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -60,56 +60,10 @@ public class ContinuousPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addKindPropertyDescriptor(object);
 			addIsContinuousInPortPropertyDescriptor(object);
 			addIsContinuousOutPortPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Kind feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContinuousPort_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_kind_feature", "_UI_ContinuousPort_type"),
-				 ComponentPackage.Literals.CONTINUOUS_PORT__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_GeneralPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContinuousPort_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_type_feature", "_UI_ContinuousPort_type"),
-				 ComponentPackage.Literals.CONTINUOUS_PORT__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -193,7 +147,6 @@ public class ContinuousPortItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ContinuousPort.class)) {
-			case ComponentPackage.CONTINUOUS_PORT__KIND:
 			case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT:
 			case ComponentPackage.CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

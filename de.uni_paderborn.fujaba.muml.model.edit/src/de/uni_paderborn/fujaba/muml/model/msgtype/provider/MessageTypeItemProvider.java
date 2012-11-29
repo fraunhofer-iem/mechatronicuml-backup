@@ -4,15 +4,26 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.core.provider;
+package de.uni_paderborn.fujaba.muml.model.msgtype.provider;
 
+
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,22 +33,22 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.core.CorePackage;
+
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
 
+import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.DataType} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataTypeItemProvider
+public class MessageTypeItemProvider
 	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -51,7 +62,7 @@ public class DataTypeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataTypeItemProvider(AdapterFactory adapterFactory) {
+	public MessageTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -94,6 +105,47 @@ public class DataTypeItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(MsgtypePackage.Literals.MESSAGE_TYPE__PARAMETERS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns MessageType.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MessageType"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,10 +153,10 @@ public class DataTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DataType)object).getName();
+		String label = ((MessageType)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DataType_type") :
-			getString("_UI_DataType_type") + " " + label;
+			getString("_UI_MessageType_type") :
+			getString("_UI_MessageType_type") + " " + label;
 	}
 
 	/**
@@ -118,9 +170,12 @@ public class DataTypeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DataType.class)) {
-			case de.uni_paderborn.fujaba.muml.model.core.CorePackage.DATA_TYPE__COMMENT:
+		switch (notification.getFeatureID(MessageType.class)) {
+			case MsgtypePackage.MESSAGE_TYPE__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case MsgtypePackage.MESSAGE_TYPE__PARAMETERS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -146,6 +201,11 @@ public class DataTypeItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MsgtypePackage.Literals.MESSAGE_TYPE__PARAMETERS,
+				 CoreFactory.eINSTANCE.createParameter()));
 	}
 
 	/**
