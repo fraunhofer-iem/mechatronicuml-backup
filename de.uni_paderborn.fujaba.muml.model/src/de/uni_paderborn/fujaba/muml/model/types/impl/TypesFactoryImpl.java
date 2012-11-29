@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.model.types.ArrayDataType;
+import de.uni_paderborn.fujaba.muml.model.types.PartDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes;
 import de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType;
@@ -67,6 +68,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 			case TypesPackage.ROLE_OR_DISCRETE_PORT_DATA_TYPE: return createRoleOrDiscretePortDataType();
 			case TypesPackage.ARRAY_DATA_TYPE: return createArrayDataType();
 			case TypesPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
+			case TypesPackage.PART_DATA_TYPE: return createPartDataType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -130,6 +132,16 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	public PrimitiveDataType createPrimitiveDataType() {
 		PrimitiveDataTypeImpl primitiveDataType = new PrimitiveDataTypeImpl();
 		return primitiveDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartDataType createPartDataType() {
+		PartDataTypeImpl partDataType = new PartDataTypeImpl();
+		return partDataType;
 	}
 
 	/**

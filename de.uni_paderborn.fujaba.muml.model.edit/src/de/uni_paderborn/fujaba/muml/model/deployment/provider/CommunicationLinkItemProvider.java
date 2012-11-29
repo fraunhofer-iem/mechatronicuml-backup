@@ -24,7 +24,6 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;

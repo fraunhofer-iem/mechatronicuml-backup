@@ -309,6 +309,61 @@ public interface TypesPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.types.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.PartDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getPartDataType()
+	 * @generated
+	 */
+	int PART_DATA_TYPE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE__COMMENT = DATA_TYPE__COMMENT;
+
+	/**
+	 * The number of structural features of the '<em>Part Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes <em>Primitive Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -316,7 +371,7 @@ public interface TypesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getPrimitiveTypes()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPES = 4;
+	int PRIMITIVE_TYPES = 5;
 
 
 	/**
@@ -391,6 +446,16 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDataType();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.types.PartDataType <em>Part Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Part Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.types.PartDataType
+	 * @generated
+	 */
+	EClass getPartDataType();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes <em>Primitive Types</em>}'.
@@ -487,6 +552,16 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATA_TYPE = eINSTANCE.getDataType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.types.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.types.impl.PartDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getPartDataType()
+		 * @generated
+		 */
+		EClass PART_DATA_TYPE = eINSTANCE.getPartDataType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes <em>Primitive Types</em>}' enum.

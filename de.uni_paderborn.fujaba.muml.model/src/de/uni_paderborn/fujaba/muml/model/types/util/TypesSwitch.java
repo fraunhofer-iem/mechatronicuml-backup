@@ -15,6 +15,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
+import de.uni_paderborn.fujaba.muml.model.types.PartDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
@@ -115,6 +116,16 @@ public class TypesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TypesPackage.PART_DATA_TYPE: {
+				PartDataType partDataType = (PartDataType)theEObject;
+				T result = casePartDataType(partDataType);
+				if (result == null) result = caseDataType(partDataType);
+				if (result == null) result = caseNamedElement(partDataType);
+				if (result == null) result = caseCommentableElement(partDataType);
+				if (result == null) result = caseExtendableElement(partDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -176,6 +187,21 @@ public class TypesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataType(DataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Part Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Part Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePartDataType(PartDataType object) {
 		return null;
 	}
 

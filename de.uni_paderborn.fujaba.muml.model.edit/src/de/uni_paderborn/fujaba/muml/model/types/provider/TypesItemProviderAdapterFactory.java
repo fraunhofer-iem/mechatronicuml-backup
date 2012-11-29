@@ -6,15 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.types.provider;
 
-import de.uni_paderborn.fujaba.muml.model.types.util.TypesAdapterFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -26,6 +23,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import de.uni_paderborn.fujaba.muml.model.types.util.TypesAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -145,6 +144,29 @@ public class TypesItemProviderAdapterFactory extends TypesAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.types.PartDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PartDataTypeItemProvider partDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.types.PartDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPartDataTypeAdapter() {
+		if (partDataTypeItemProvider == null) {
+			partDataTypeItemProvider = new PartDataTypeItemProvider(this);
+		}
+
+		return partDataTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -246,6 +268,7 @@ public class TypesItemProviderAdapterFactory extends TypesAdapterFactory impleme
 		if (roleOrDiscretePortDataTypeItemProvider != null) roleOrDiscretePortDataTypeItemProvider.dispose();
 		if (arrayDataTypeItemProvider != null) arrayDataTypeItemProvider.dispose();
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
+		if (partDataTypeItemProvider != null) partDataTypeItemProvider.dispose();
 	}
 
 }

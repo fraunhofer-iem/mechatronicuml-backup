@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.instance.provider;
+package de.uni_paderborn.fujaba.muml.model.types.provider;
 
 
 import java.util.Collection;
@@ -19,16 +19,16 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.types.PartDataType;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.types.PartDataType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AtomicComponentInstanceItemProvider
-	extends ComponentInstanceItemProvider
+public class PartDataTypeItemProvider
+	extends DataTypeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -41,7 +41,7 @@ public class AtomicComponentInstanceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AtomicComponentInstanceItemProvider(AdapterFactory adapterFactory) {
+	public PartDataTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,14 +61,14 @@ public class AtomicComponentInstanceItemProvider
 	}
 
 	/**
-	 * This returns AtomicComponentInstance.gif.
+	 * This returns PartDataType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/AtomicComponentInstance"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PartDataType"));
 	}
 
 	/**
@@ -79,10 +79,10 @@ public class AtomicComponentInstanceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AtomicComponentInstance)object).getName();
+		String label = ((PartDataType)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_AtomicComponentInstance_type") :
-			getString("_UI_AtomicComponentInstance_type") + " " + label;
+			getString("_UI_PartDataType_type") :
+			getString("_UI_PartDataType_type") + " " + label;
 	}
 
 	/**

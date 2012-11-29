@@ -588,6 +588,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/types/PrimitiveDataType/primitiveType"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/types/DataType"/>
+        <genClasses ecoreClass="muml.ecore#//model/types/PartDataType"/>
       </nestedGenPackages>
     </nestedGenPackages>
   </genPackages>
