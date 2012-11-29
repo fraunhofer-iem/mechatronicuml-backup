@@ -19,7 +19,7 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
@@ -39,6 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;
 import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -212,8 +213,9 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		InstancePackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgifacePackage.eINSTANCE.eClass();
+		MsgtypePackage.eINSTANCE.eClass();
 		DeploymentPackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theRuntimePackage.createPackageContents();
