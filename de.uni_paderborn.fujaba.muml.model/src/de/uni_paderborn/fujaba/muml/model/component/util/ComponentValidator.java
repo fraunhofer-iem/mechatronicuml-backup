@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
+import de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
@@ -132,6 +133,8 @@ public class ComponentValidator extends EObjectValidator {
 				return validatePatternOccurrence((PatternOccurrence)value, diagnostics, context);
 			case ComponentPackage.STRUCTURED_COMPONENT:
 				return validateStructuredComponent((StructuredComponent)value, diagnostics, context);
+			case ComponentPackage.DIRECTED_TYPED_PORT:
+				return validateDirectedTypedPort((DirectedTypedPort)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_KIND:
 				return validateComponentKind((ComponentKind)value, diagnostics, context);
 			case ComponentPackage.CONTINUOUS_PORT_DIRECTION_KIND:
@@ -948,6 +951,15 @@ public class ComponentValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDirectedTypedPort(DirectedTypedPort directedTypedPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(directedTypedPort, diagnostics, context);
 	}
 
 	/**
@@ -2042,24 +2054,7 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateHybridPort(HybridPort hybridPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(hybridPort, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageInterface(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageInterface(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortMustRefineMultiRole(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateContinuousPort_LowerBoundMustBeZeroOrOne(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateContinuousPort_UpperBoundMustBeOne(hybridPort, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(hybridPort, diagnostics, context);
 	}
 
 	/**

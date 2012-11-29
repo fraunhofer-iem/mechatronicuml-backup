@@ -4,15 +4,15 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.core.impl;
+package de.uni_paderborn.fujaba.muml.model.types.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.PrimitiveDataTypeImpl#getPrimitiveType <em>Primitive Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.types.impl.PrimitiveDataTypeImpl#getPrimitiveType <em>Primitive Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,7 +64,7 @@ public class PrimitiveDataTypeImpl extends DataTypeImpl implements PrimitiveData
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CorePackage.Literals.PRIMITIVE_DATA_TYPE;
+		return TypesPackage.Literals.PRIMITIVE_DATA_TYPE;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class PrimitiveDataTypeImpl extends DataTypeImpl implements PrimitiveData
 		PrimitiveTypes oldPrimitiveType = primitiveType;
 		primitiveType = newPrimitiveType == null ? PRIMITIVE_TYPE_EDEFAULT : newPrimitiveType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE, oldPrimitiveType, primitiveType));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypesPackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE, oldPrimitiveType, primitiveType));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class PrimitiveDataTypeImpl extends DataTypeImpl implements PrimitiveData
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
+			case TypesPackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
 				return getPrimitiveType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class PrimitiveDataTypeImpl extends DataTypeImpl implements PrimitiveData
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CorePackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
+			case TypesPackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
 				setPrimitiveType((PrimitiveTypes)newValue);
 				return;
 		}
@@ -125,7 +125,7 @@ public class PrimitiveDataTypeImpl extends DataTypeImpl implements PrimitiveData
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CorePackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
+			case TypesPackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
 				setPrimitiveType(PRIMITIVE_TYPE_EDEFAULT);
 				return;
 		}
@@ -140,7 +140,7 @@ public class PrimitiveDataTypeImpl extends DataTypeImpl implements PrimitiveData
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
+			case TypesPackage.PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE:
 				return primitiveType != PRIMITIVE_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

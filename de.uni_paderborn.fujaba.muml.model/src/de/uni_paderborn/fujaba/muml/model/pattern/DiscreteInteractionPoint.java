@@ -12,7 +12,7 @@ import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 public interface DiscreteInteractionPoint extends BehavioralElement, ConstrainableElement, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -55,7 +55,7 @@ public interface DiscreteInteractionPoint extends BehavioralElement, Constrainab
 
 	/**
 	 * Returns the value of the '<em><b>Receiver Message Types</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

@@ -11,7 +11,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public interface MessageBuffer extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Message Type</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageType}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

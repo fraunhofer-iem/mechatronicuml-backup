@@ -80,24 +80,6 @@ public interface CoreFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
-	 * Returns a new object of class '<em>Primitive Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Primitive Data Type</em>'.
-	 * @generated
-	 */
-	PrimitiveDataType createPrimitiveDataType();
-
-	/**
-	 * Returns a new object of class '<em>Array Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Array Data Type</em>'.
-	 * @generated
-	 */
-	ArrayDataType createArrayDataType();
-
-	/**
 	 * Returns a new object of class '<em>Parameter Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,24 +96,6 @@ public interface CoreFactory extends EFactory {
 	 * @generated
 	 */
 	TimeValue createTimeValue();
-
-	/**
-	 * Returns a new object of class '<em>Port Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Data Type</em>'.
-	 * @generated
-	 */
-	PortDataType createPortDataType();
-
-	/**
-	 * Returns a new object of class '<em>Role Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Role Data Type</em>'.
-	 * @generated
-	 */
-	RoleDataType createRoleDataType();
 
 	/**
 	 * Returns the package supported by this factory.

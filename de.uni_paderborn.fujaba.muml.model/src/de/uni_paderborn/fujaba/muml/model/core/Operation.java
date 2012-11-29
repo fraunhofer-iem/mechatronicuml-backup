@@ -11,6 +11,8 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.expressions.Expression;
 
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Operation</b></em>'.

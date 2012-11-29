@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
@@ -25,10 +24,6 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.core.PortDataType;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.model.core.RoleDataType;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
@@ -46,7 +41,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 */
 	public static CoreFactory init() {
 		try {
-			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.5"); 
+			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.6"); 
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}
@@ -81,12 +76,8 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.ATTRIBUTE: return createAttribute();
 			case CorePackage.OPERATION: return createOperation();
 			case CorePackage.PARAMETER: return createParameter();
-			case CorePackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
-			case CorePackage.ARRAY_DATA_TYPE: return createArrayDataType();
 			case CorePackage.PARAMETER_BINDING: return createParameterBinding();
 			case CorePackage.TIME_VALUE: return createTimeValue();
-			case CorePackage.PORT_DATA_TYPE: return createPortDataType();
-			case CorePackage.ROLE_DATA_TYPE: return createRoleDataType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -100,8 +91,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case CorePackage.PRIMITIVE_TYPES:
-				return createPrimitiveTypesFromString(eDataType, initialValue);
 			case CorePackage.TIME_UNIT:
 				return createTimeUnitFromString(eDataType, initialValue);
 			default:
@@ -117,8 +106,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case CorePackage.PRIMITIVE_TYPES:
-				return convertPrimitiveTypesToString(eDataType, instanceValue);
 			case CorePackage.TIME_UNIT:
 				return convertTimeUnitToString(eDataType, instanceValue);
 			default:
@@ -191,26 +178,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveDataType createPrimitiveDataType() {
-		PrimitiveDataTypeImpl primitiveDataType = new PrimitiveDataTypeImpl();
-		return primitiveDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArrayDataType createArrayDataType() {
-		ArrayDataTypeImpl arrayDataType = new ArrayDataTypeImpl();
-		return arrayDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ParameterBinding createParameterBinding() {
 		ParameterBindingImpl parameterBinding = new ParameterBindingImpl();
 		return parameterBinding;
@@ -224,46 +191,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public TimeValue createTimeValue() {
 		TimeValueImpl timeValue = new TimeValueImpl();
 		return timeValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortDataType createPortDataType() {
-		PortDataTypeImpl portDataType = new PortDataTypeImpl();
-		return portDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleDataType createRoleDataType() {
-		RoleDataTypeImpl roleDataType = new RoleDataTypeImpl();
-		return roleDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PrimitiveTypes createPrimitiveTypesFromString(EDataType eDataType, String initialValue) {
-		PrimitiveTypes result = PrimitiveTypes.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertPrimitiveTypesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

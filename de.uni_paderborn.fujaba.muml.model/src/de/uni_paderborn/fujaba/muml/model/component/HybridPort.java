@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
  * @model
  * @generated
  */
-public interface HybridPort extends DiscretePort, ContinuousPort {
+public interface HybridPort extends DirectedTypedPort {
 
 	/**
 	 * Returns the value of the '<em><b>Is Hybrid In Port</b></em>' attribute.

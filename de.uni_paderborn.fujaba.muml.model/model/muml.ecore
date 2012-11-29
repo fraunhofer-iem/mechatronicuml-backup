@@ -10,7 +10,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The model package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination pattern."/>
     </eAnnotations>
-    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.3.3"
+    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.3.6"
         nsPrefix="component">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -94,7 +94,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ContinuousPort" eSuperTypes="#//model/component/Port">
+      <eClassifiers xsi:type="ecore:EClass" name="ContinuousPort" eSuperTypes="#//model/component/DirectedTypedPort">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a concrete port specification which provides the &#xD;&#xA;continuous functionality of a port. A continuous port emits a signal value.&#xD;&#xA;A signal value has a data type and it has concrete values at all points in time."/>
         </eAnnotations>
@@ -105,12 +105,6 @@
           <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
           <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
-            eType="#//model/component/ContinuousPortDirectionKind">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Decides the direction of a continous port."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isContinuousInPort"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
@@ -131,12 +125,6 @@
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::OUT"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-            eType="#//model/core/DataType">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Defines the data type of the signal value which is emitted or received by "/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -474,7 +462,7 @@
           <details key="documentation" value="Abstract super class for all connectors that have an associated behavior. The &#xD;&#xA;behavior is specified as a real-time statechart.&#xD;&#xA;&#xD;&#xA;\todosd{Do we really need this class? Do we really want to specify the behavior with a RTSC?}"/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/DiscretePort #//model/component/ContinuousPort">
+      <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/DirectedTypedPort">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces."/>
         </eAnnotations>
@@ -589,6 +577,21 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DirectedTypedPort" abstract="true"
+          eSuperTypes="#//model/component/Port">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+            eType="#//model/component/ContinuousPortDirectionKind">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Decides the direction of a continous port."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+            eType="#//model/types/DataType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Defines the data type of the signal value which is emitted or received by "/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
     </eSubpackages>
     <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.2.2"
         nsPrefix="constraint">
@@ -655,7 +658,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.5" nsPrefix="core">
+    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.6" nsPrefix="core">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package contains several core classes that are used by classes from several other packages.&#xD;&#xA;It provides abstract base classes for Statecharts, meta-model elements that use a statechart to&#xD;&#xA;define their behavior and meta-model elements that may carry a constraint.&#xD;&#xA;Additionally, the package provides classes for modeling cardinalites as natural numbers including&#xD;&#xA;infinity."/>
       </eAnnotations>
@@ -790,7 +793,7 @@
           <details key="documentation" value="Implementation of an Attribute of a behavior which has a certain type."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-            eType="#//model/core/DataType">
+            eType="#//model/types/DataType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The type of this attribute."/>
           </eAnnotations>
@@ -801,7 +804,7 @@
           <details key="documentation" value="An operation specifies a behavior that can be called with a list of concrete parameters and may return a return value."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
-            eType="#//model/core/DataType">
+            eType="#//model/types/DataType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The type of the return value of this operation."/>
           </eAnnotations>
@@ -821,53 +824,11 @@
           <details key="documentation" value="This is a general representation of a Parameter which is by all model elements&#xD;&#xA;that receive parameters. Examples include operations, message types, and synchronization channels.&#xD;&#xA;A parameter defines a data type."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-            eType="#//model/core/DataType">
+            eType="#//model/types/DataType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The type of this parameter."/>
           </eAnnotations>
         </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveTypes">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Defines all primitive types that may be used in MechatronicUML."/>
-        </eAnnotations>
-        <eLiterals name="VOID"/>
-        <eLiterals name="BOOLEAN" value="1"/>
-        <eLiterals name="BYTE" value="2"/>
-        <eLiterals name="SHORT" value="3"/>
-        <eLiterals name="INT" value="4"/>
-        <eLiterals name="LONG" value="5"/>
-        <eLiterals name="DOUBLE" value="6"/>
-        <eLiterals name="STRING" value="7"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Abstract super class for all types that may be used for attributes, parameters, and operations."/>
-        </eAnnotations>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" eSuperTypes="#//model/core/DataType">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This data type represents a primitive data type and refers to the PrimitiveDataType enumeration for specifying the concrete primitive type."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitiveType" lowerBound="1"
-            eType="#//model/core/PrimitiveTypes" defaultValueLiteral="PrimitiveTypes.VOID">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ArrayDataType" eSuperTypes="#//model/core/DataType">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This data type represents an array data type and specifies the maximum cardinality of inner data types."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-            eType="#//model/core/DataType">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference points to the definition of the data type."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-            eType="#//model/core/NaturalNumber" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -894,10 +855,6 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//model/core/TimeUnit"
             unsettable="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointDataType"
-          abstract="true" eSuperTypes="#//model/core/DataType"/>
-      <eClassifiers xsi:type="ecore:EClass" name="PortDataType" eSuperTypes="#//model/core/DiscreteInteractionEndpointDataType"/>
-      <eClassifiers xsi:type="ecore:EClass" name="RoleDataType" eSuperTypes="#//model/core/DiscreteInteractionEndpointDataType"/>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.3.3"
         nsPrefix="instance">
@@ -1065,7 +1022,7 @@
           <details key="documentation" value="This class represents a discrete port at instance level. At instance level, we &#xD;&#xA;distinguish between single-port instances and multi-port instances by using&#xD;&#xA;two subclasses of this abstract class."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
-            upperBound="-1" eType="#//model/msgiface/MessageType" changeable="false"
+            upperBound="-1" eType="#//model/msgtype/MessageType" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageTypes&#xD;&#xA;endif"/>
@@ -1075,7 +1032,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes"
-            upperBound="-1" eType="#//model/msgiface/MessageType" changeable="false"
+            upperBound="-1" eType="#//model/msgtype/MessageType" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"/>
@@ -1321,7 +1278,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
-            upperBound="-1" eType="#//model/msgiface/MessageType">
+            upperBound="-1" eType="#//model/msgtype/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The message types this message buffer can store."/>
           </eAnnotations>
@@ -1364,13 +1321,13 @@
           <details key="documentation" value="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes"
-            upperBound="-1" eType="#//model/msgiface/MessageType">
+            upperBound="-1" eType="#//model/msgtype/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The sender message interface defines which messages this discrete port specification sends."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
-            upperBound="-1" eType="#//model/msgiface/MessageType">
+            upperBound="-1" eType="#//model/msgtype/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The receiver message interface defines which messages this discrete port specification receives."/>
           </eAnnotations>
@@ -1841,7 +1798,7 @@
             <details key="documentation" value="The state in which this synchronization channel is defined."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="selectorType" eType="#//model/core/DataType"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="selectorType" eType="#//model/types/DataType"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2020,7 +1977,7 @@
           <details key="documentation" value="The messages are exchanged between components in order to communicate&#xD;&#xA;asynchronously. A message is typed over a message type and provides a &#xD;&#xA;binding of all parameters defined by the message type to concrete values."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
-            eType="#//model/msgiface/MessageType">
+            eType="#//model/msgtype/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Retrieves the message type this message is typed over."/>
           </eAnnotations>
@@ -2138,8 +2095,8 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="msgiface" nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.2"
-        nsPrefix="msgiface">
+    <eSubpackages name="msgtype" nsURI="http://www.fujaba.de/muml/model/msgtype/0.3.6"
+        nsPrefix="msgtype">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
         <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2165,15 +2122,15 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
-            eType="#//model/msgiface/MessageTypeRepository" eOpposite="#//model/msgiface/MessageTypeRepository/messageTypes"/>
+            eType="#//model/msgtype/MessageTypeRepository" eOpposite="#//model/msgtype/MessageTypeRepository/messageTypes"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A MessageTypeRepository is used to declare message types which are then used&#xD;&#xA;in MessageInterfaces."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="messageTypes" ordered="false"
-            lowerBound="1" upperBound="-1" eType="#//model/msgiface/MessageType" containment="true"
-            eOpposite="#//model/msgiface/MessageType/repository"/>
+            lowerBound="1" upperBound="-1" eType="#//model/msgtype/MessageType" containment="true"
+            eOpposite="#//model/msgtype/MessageType/repository"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.3.1"
@@ -2360,6 +2317,53 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="types" nsURI="http://www.fujaba.de/muml/model/types/0.3.6"
+        nsPrefix="types">
+      <eClassifiers xsi:type="ecore:EClass" name="RoleOrDiscretePortDataType" eSuperTypes="#//model/types/DataType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ArrayDataType" eSuperTypes="#//model/types/DataType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This data type represents an array data type and specifies the maximum cardinality of inner data types."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+            eType="#//model/types/DataType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This reference points to the definition of the data type."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
+            eType="#//model/core/NaturalNumber" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" eSuperTypes="#//model/types/DataType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This data type represents a primitive data type and refers to the PrimitiveDataType enumeration for specifying the concrete primitive type."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitiveType" lowerBound="1"
+            eType="#//model/types/PrimitiveTypes" defaultValueLiteral="PrimitiveTypes.VOID">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Abstract super class for all types that may be used for attributes, parameters, and operations."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveTypes">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines all primitive types that may be used in MechatronicUML."/>
+        </eAnnotations>
+        <eLiterals name="VOID"/>
+        <eLiterals name="BOOLEAN" value="1"/>
+        <eLiterals name="BYTE" value="2"/>
+        <eLiterals name="SHORT" value="3"/>
+        <eLiterals name="INT" value="4"/>
+        <eLiterals name="LONG" value="5"/>
+        <eLiterals name="DOUBLE" value="6"/>
+        <eLiterals name="STRING" value="7"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PartDataType" eSuperTypes="#//model/types/DataType"/>
     </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

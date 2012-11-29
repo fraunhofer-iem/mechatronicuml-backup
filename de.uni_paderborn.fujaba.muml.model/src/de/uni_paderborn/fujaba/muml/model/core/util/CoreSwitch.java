@@ -16,22 +16,16 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.calls.Invocation;
 
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
-import de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.core.PortDataType;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.model.core.RoleDataType;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
@@ -158,35 +152,6 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CorePackage.DATA_TYPE: {
-				DataType dataType = (DataType)theEObject;
-				T result = caseDataType(dataType);
-				if (result == null) result = caseNamedElement(dataType);
-				if (result == null) result = caseCommentableElement(dataType);
-				if (result == null) result = caseExtendableElement(dataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.PRIMITIVE_DATA_TYPE: {
-				PrimitiveDataType primitiveDataType = (PrimitiveDataType)theEObject;
-				T result = casePrimitiveDataType(primitiveDataType);
-				if (result == null) result = caseDataType(primitiveDataType);
-				if (result == null) result = caseNamedElement(primitiveDataType);
-				if (result == null) result = caseCommentableElement(primitiveDataType);
-				if (result == null) result = caseExtendableElement(primitiveDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.ARRAY_DATA_TYPE: {
-				ArrayDataType arrayDataType = (ArrayDataType)theEObject;
-				T result = caseArrayDataType(arrayDataType);
-				if (result == null) result = caseDataType(arrayDataType);
-				if (result == null) result = caseNamedElement(arrayDataType);
-				if (result == null) result = caseCommentableElement(arrayDataType);
-				if (result == null) result = caseExtendableElement(arrayDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CorePackage.PARAMETER_BINDING: {
 				ParameterBinding parameterBinding = (ParameterBinding)theEObject;
 				T result = caseParameterBinding(parameterBinding);
@@ -198,38 +163,6 @@ public class CoreSwitch<T> extends Switch<T> {
 				TimeValue timeValue = (TimeValue)theEObject;
 				T result = caseTimeValue(timeValue);
 				if (result == null) result = caseExtendableElement(timeValue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE: {
-				DiscreteInteractionEndpointDataType discreteInteractionEndpointDataType = (DiscreteInteractionEndpointDataType)theEObject;
-				T result = caseDiscreteInteractionEndpointDataType(discreteInteractionEndpointDataType);
-				if (result == null) result = caseDataType(discreteInteractionEndpointDataType);
-				if (result == null) result = caseNamedElement(discreteInteractionEndpointDataType);
-				if (result == null) result = caseCommentableElement(discreteInteractionEndpointDataType);
-				if (result == null) result = caseExtendableElement(discreteInteractionEndpointDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.PORT_DATA_TYPE: {
-				PortDataType portDataType = (PortDataType)theEObject;
-				T result = casePortDataType(portDataType);
-				if (result == null) result = caseDiscreteInteractionEndpointDataType(portDataType);
-				if (result == null) result = caseDataType(portDataType);
-				if (result == null) result = caseNamedElement(portDataType);
-				if (result == null) result = caseCommentableElement(portDataType);
-				if (result == null) result = caseExtendableElement(portDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.ROLE_DATA_TYPE: {
-				RoleDataType roleDataType = (RoleDataType)theEObject;
-				T result = caseRoleDataType(roleDataType);
-				if (result == null) result = caseDiscreteInteractionEndpointDataType(roleDataType);
-				if (result == null) result = caseDataType(roleDataType);
-				if (result == null) result = caseNamedElement(roleDataType);
-				if (result == null) result = caseCommentableElement(roleDataType);
-				if (result == null) result = caseExtendableElement(roleDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -373,51 +306,6 @@ public class CoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataType(DataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePrimitiveDataType(PrimitiveDataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Array Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Array Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArrayDataType(ArrayDataType object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Parameter Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -444,51 +332,6 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTimeValue(TimeValue object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDiscreteInteractionEndpointDataType(DiscreteInteractionEndpointDataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePortDataType(PortDataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Role Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Role Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRoleDataType(RoleDataType object) {
 		return null;
 	}
 

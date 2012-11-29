@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.msgiface.util;
+package de.uni_paderborn.fujaba.muml.model.msgtype.util;
 
 import java.util.Map;
 
@@ -14,25 +14,25 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage
+ * @see de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage
  * @generated
  */
-public class MsgifaceValidator extends EObjectValidator {
+public class MsgtypeValidator extends EObjectValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final MsgifaceValidator INSTANCE = new MsgifaceValidator();
+	public static final MsgtypeValidator INSTANCE = new MsgtypeValidator();
 
 	/**
 	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
@@ -42,7 +42,7 @@ public class MsgifaceValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.model.msgiface";
+	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.model.msgtype";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -66,7 +66,7 @@ public class MsgifaceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MsgifaceValidator() {
+	public MsgtypeValidator() {
 		super();
 	}
 
@@ -78,7 +78,7 @@ public class MsgifaceValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return MsgifacePackage.eINSTANCE;
+	  return MsgtypePackage.eINSTANCE;
 	}
 
 	/**
@@ -90,9 +90,9 @@ public class MsgifaceValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case MsgifacePackage.MESSAGE_TYPE:
+			case MsgtypePackage.MESSAGE_TYPE:
 				return validateMessageType((MessageType)value, diagnostics, context);
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY:
 				return validateMessageTypeRepository((MessageTypeRepository)value, diagnostics, context);
 			default:
 				return true;
@@ -135,7 +135,7 @@ public class MsgifaceValidator extends EObjectValidator {
 	public boolean validateMessageType_UniqueParameterNames(MessageType messageType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(MsgifacePackage.Literals.MESSAGE_TYPE,
+				(MsgtypePackage.Literals.MESSAGE_TYPE,
 				 messageType,
 				 diagnostics,
 				 context,
@@ -170,4 +170,4 @@ public class MsgifaceValidator extends EObjectValidator {
 		return super.getResourceLocator();
 	}
 
-} //MsgifaceValidator
+} //MsgtypeValidator

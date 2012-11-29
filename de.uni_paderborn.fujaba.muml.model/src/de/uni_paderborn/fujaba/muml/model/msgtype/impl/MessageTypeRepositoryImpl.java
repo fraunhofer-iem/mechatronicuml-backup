@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.msgiface.impl;
+package de.uni_paderborn.fujaba.muml.model.msgtype.impl;
 
 import java.util.Collection;
 
@@ -20,9 +20,9 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,8 +31,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeRepositoryImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgiface.impl.MessageTypeRepositoryImpl#getMessageTypes <em>Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgtype.impl.MessageTypeRepositoryImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.msgtype.impl.MessageTypeRepositoryImpl#getMessageTypes <em>Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,7 +85,7 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MsgifacePackage.Literals.MESSAGE_TYPE_REPOSITORY;
+		return MsgtypePackage.Literals.MESSAGE_TYPE_REPOSITORY;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE_REPOSITORY__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, MsgtypePackage.MESSAGE_TYPE_REPOSITORY__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	 */
 	public EList<MessageType> getMessageTypes() {
 		if (messageTypes == null) {
-			messageTypes = new EObjectContainmentWithInverseEList<MessageType>(MessageType.class, this, MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES, MsgifacePackage.MESSAGE_TYPE__REPOSITORY);
+			messageTypes = new EObjectContainmentWithInverseEList<MessageType>(MessageType.class, this, MsgtypePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES, MsgtypePackage.MESSAGE_TYPE__REPOSITORY);
 		}
 		return messageTypes;
 	}
@@ -130,7 +130,7 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMessageTypes()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -144,7 +144,7 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
 				return ((InternalEList<?>)getMessageTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -158,9 +158,9 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
 				return getComment();
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
 				return getMessageTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -175,10 +175,10 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
 				setComment((String)newValue);
 				return;
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
 				getMessageTypes().clear();
 				getMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
@@ -194,10 +194,10 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
 				getMessageTypes().clear();
 				return;
 		}
@@ -212,9 +212,9 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
+			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES:
 				return messageTypes != null && !messageTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -229,7 +229,7 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case MsgifacePackage.MESSAGE_TYPE_REPOSITORY__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				case MsgtypePackage.MESSAGE_TYPE_REPOSITORY__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -245,7 +245,7 @@ public class MessageTypeRepositoryImpl extends NamedElementImpl implements Messa
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return MsgifacePackage.MESSAGE_TYPE_REPOSITORY__COMMENT;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return MsgtypePackage.MESSAGE_TYPE_REPOSITORY__COMMENT;
 				default: return -1;
 			}
 		}

@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

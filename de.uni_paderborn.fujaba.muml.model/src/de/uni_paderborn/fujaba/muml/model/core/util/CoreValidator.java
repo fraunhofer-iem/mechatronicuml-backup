@@ -16,23 +16,16 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
-import de.uni_paderborn.fujaba.muml.model.core.DiscreteInteractionEndpointDataType;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.core.PortDataType;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.model.core.RoleDataType;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
@@ -125,24 +118,10 @@ public class CoreValidator extends EObjectValidator {
 				return validateOperation((Operation)value, diagnostics, context);
 			case CorePackage.PARAMETER:
 				return validateParameter((Parameter)value, diagnostics, context);
-			case CorePackage.DATA_TYPE:
-				return validateDataType((DataType)value, diagnostics, context);
-			case CorePackage.PRIMITIVE_DATA_TYPE:
-				return validatePrimitiveDataType((PrimitiveDataType)value, diagnostics, context);
-			case CorePackage.ARRAY_DATA_TYPE:
-				return validateArrayDataType((ArrayDataType)value, diagnostics, context);
 			case CorePackage.PARAMETER_BINDING:
 				return validateParameterBinding((ParameterBinding)value, diagnostics, context);
 			case CorePackage.TIME_VALUE:
 				return validateTimeValue((TimeValue)value, diagnostics, context);
-			case CorePackage.DISCRETE_INTERACTION_ENDPOINT_DATA_TYPE:
-				return validateDiscreteInteractionEndpointDataType((DiscreteInteractionEndpointDataType)value, diagnostics, context);
-			case CorePackage.PORT_DATA_TYPE:
-				return validatePortDataType((PortDataType)value, diagnostics, context);
-			case CorePackage.ROLE_DATA_TYPE:
-				return validateRoleDataType((RoleDataType)value, diagnostics, context);
-			case CorePackage.PRIMITIVE_TYPES:
-				return validatePrimitiveTypes((PrimitiveTypes)value, diagnostics, context);
 			case CorePackage.TIME_UNIT:
 				return validateTimeUnit((TimeUnit)value, diagnostics, context);
 			default:
@@ -315,33 +294,6 @@ public class CoreValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDataType(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(dataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePrimitiveDataType(PrimitiveDataType primitiveDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(primitiveDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateArrayDataType(ArrayDataType arrayDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(arrayDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateParameterBinding(ParameterBinding parameterBinding, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(parameterBinding, diagnostics, context);
 	}
@@ -353,42 +305,6 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateTimeValue(TimeValue timeValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(timeValue, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDiscreteInteractionEndpointDataType(DiscreteInteractionEndpointDataType discreteInteractionEndpointDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discreteInteractionEndpointDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePortDataType(PortDataType portDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(portDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRoleDataType(RoleDataType roleDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(roleDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePrimitiveTypes(PrimitiveTypes primitiveTypes, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
 	}
 
 	/**

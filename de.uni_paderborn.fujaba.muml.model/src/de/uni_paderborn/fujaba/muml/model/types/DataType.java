@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.core;
+package de.uni_paderborn.fujaba.muml.model.types;
 
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
@@ -19,7 +19,7 @@ import org.storydriven.core.NamedElement;
  * <!-- end-model-doc -->
  *
  *
- * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getDataType()
+ * @see de.uni_paderborn.fujaba.muml.model.types.TypesPackage#getDataType()
  * @model abstract="true"
  * @generated
  */

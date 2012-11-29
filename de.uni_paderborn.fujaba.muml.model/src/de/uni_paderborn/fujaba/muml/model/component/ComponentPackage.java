@@ -48,7 +48,7 @@ public interface ComponentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.3.3";
+	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.3.6";
 
 	/**
 	 * The package namespace name.
@@ -276,6 +276,142 @@ public interface ComponentPackage extends EPackage {
 	int PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl <em>Directed Typed Port</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDirectedTypedPort()
+	 * @generated
+	 */
+	int DIRECTED_TYPED_PORT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__ANNOTATION = PORT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__EXTENSION = PORT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__NAME = PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__COMMENT = PORT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__CONSTRAINT = PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__CARDINALITY = PORT__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__INCOMING_CONNECTORS = PORT__INCOMING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__COMPONENT = PORT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__CONNECTORS = PORT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__IS_MULTI_PORT = PORT__IS_MULTI_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__KIND = PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__TYPE = PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Directed Typed Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -292,7 +428,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__ANNOTATION = PORT__ANNOTATION;
+	int CONTINUOUS_PORT__ANNOTATION = DIRECTED_TYPED_PORT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -301,7 +437,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__EXTENSION = PORT__EXTENSION;
+	int CONTINUOUS_PORT__EXTENSION = DIRECTED_TYPED_PORT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -310,7 +446,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__NAME = PORT__NAME;
+	int CONTINUOUS_PORT__NAME = DIRECTED_TYPED_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -319,7 +455,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__COMMENT = PORT__COMMENT;
+	int CONTINUOUS_PORT__COMMENT = DIRECTED_TYPED_PORT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -328,7 +464,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__CONSTRAINT = PORT__CONSTRAINT;
+	int CONTINUOUS_PORT__CONSTRAINT = DIRECTED_TYPED_PORT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -337,7 +473,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__CARDINALITY = PORT__CARDINALITY;
+	int CONTINUOUS_PORT__CARDINALITY = DIRECTED_TYPED_PORT__CARDINALITY;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -346,7 +482,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__INCOMING_CONNECTORS = PORT__INCOMING_CONNECTORS;
+	int CONTINUOUS_PORT__INCOMING_CONNECTORS = DIRECTED_TYPED_PORT__INCOMING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -355,7 +491,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
+	int CONTINUOUS_PORT__OUTGOING_CONNECTORS = DIRECTED_TYPED_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -364,7 +500,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__COMPONENT = PORT__COMPONENT;
+	int CONTINUOUS_PORT__COMPONENT = DIRECTED_TYPED_PORT__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -373,7 +509,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__CONNECTORS = PORT__CONNECTORS;
+	int CONTINUOUS_PORT__CONNECTORS = DIRECTED_TYPED_PORT__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
@@ -382,7 +518,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__IS_MULTI_PORT = PORT__IS_MULTI_PORT;
+	int CONTINUOUS_PORT__IS_MULTI_PORT = DIRECTED_TYPED_PORT__IS_MULTI_PORT;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -391,25 +527,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__KIND = PORT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Continuous In Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT = PORT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Is Continuous Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT = PORT_FEATURE_COUNT + 2;
+	int CONTINUOUS_PORT__KIND = DIRECTED_TYPED_PORT__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -418,7 +536,25 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__TYPE = PORT_FEATURE_COUNT + 3;
+	int CONTINUOUS_PORT__TYPE = DIRECTED_TYPED_PORT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Is Continuous In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Continuous Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Continuous Port</em>' class.
@@ -427,7 +563,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 4;
+	int CONTINUOUS_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl <em>Discrete Port</em>}' class.
@@ -1661,7 +1797,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__ANNOTATION = DISCRETE_PORT__ANNOTATION;
+	int HYBRID_PORT__ANNOTATION = DIRECTED_TYPED_PORT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1670,7 +1806,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__EXTENSION = DISCRETE_PORT__EXTENSION;
+	int HYBRID_PORT__EXTENSION = DIRECTED_TYPED_PORT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1679,7 +1815,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__NAME = DISCRETE_PORT__NAME;
+	int HYBRID_PORT__NAME = DIRECTED_TYPED_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1688,7 +1824,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__COMMENT = DISCRETE_PORT__COMMENT;
+	int HYBRID_PORT__COMMENT = DIRECTED_TYPED_PORT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -1697,7 +1833,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__CONSTRAINT = DISCRETE_PORT__CONSTRAINT;
+	int HYBRID_PORT__CONSTRAINT = DIRECTED_TYPED_PORT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -1706,7 +1842,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__CARDINALITY = DISCRETE_PORT__CARDINALITY;
+	int HYBRID_PORT__CARDINALITY = DIRECTED_TYPED_PORT__CARDINALITY;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -1715,7 +1851,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__INCOMING_CONNECTORS = DISCRETE_PORT__INCOMING_CONNECTORS;
+	int HYBRID_PORT__INCOMING_CONNECTORS = DIRECTED_TYPED_PORT__INCOMING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -1724,7 +1860,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__OUTGOING_CONNECTORS = DISCRETE_PORT__OUTGOING_CONNECTORS;
+	int HYBRID_PORT__OUTGOING_CONNECTORS = DIRECTED_TYPED_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1733,7 +1869,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__COMPONENT = DISCRETE_PORT__COMPONENT;
+	int HYBRID_PORT__COMPONENT = DIRECTED_TYPED_PORT__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -1742,7 +1878,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__CONNECTORS = DISCRETE_PORT__CONNECTORS;
+	int HYBRID_PORT__CONNECTORS = DIRECTED_TYPED_PORT__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
@@ -1751,97 +1887,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__IS_MULTI_PORT = DISCRETE_PORT__IS_MULTI_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__BEHAVIOR = DISCRETE_PORT__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__SENDER_MESSAGE_TYPES = DISCRETE_PORT__SENDER_MESSAGE_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__RECEIVER_MESSAGE_TYPES = DISCRETE_PORT__RECEIVER_MESSAGE_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__ADAPTATION_BEHAVIOR = DISCRETE_PORT__ADAPTATION_BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__REFINES = DISCRETE_PORT__REFINES;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__IS_DISCRETE_IN_PORT = DISCRETE_PORT__IS_DISCRETE_IN_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__IS_DISCRETE_OUT_PORT = DISCRETE_PORT__IS_DISCRETE_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__IS_DISCRETE_IN_OUT_PORT = DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__RECEIVER_MESSAGE_BUFFER = DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;
+	int HYBRID_PORT__IS_MULTI_PORT = DIRECTED_TYPED_PORT__IS_MULTI_PORT;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1850,25 +1896,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__KIND = DISCRETE_PORT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Continuous In Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__IS_CONTINUOUS_IN_PORT = DISCRETE_PORT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Is Continuous Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__IS_CONTINUOUS_OUT_PORT = DISCRETE_PORT_FEATURE_COUNT + 2;
+	int HYBRID_PORT__KIND = DIRECTED_TYPED_PORT__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1877,7 +1905,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__TYPE = DISCRETE_PORT_FEATURE_COUNT + 3;
+	int HYBRID_PORT__TYPE = DIRECTED_TYPED_PORT__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Is Hybrid In Port</b></em>' attribute.
@@ -1886,7 +1914,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__IS_HYBRID_IN_PORT = DISCRETE_PORT_FEATURE_COUNT + 4;
+	int HYBRID_PORT__IS_HYBRID_IN_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Hybrid Out Port</b></em>' attribute.
@@ -1895,7 +1923,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__IS_HYBRID_OUT_PORT = DISCRETE_PORT_FEATURE_COUNT + 5;
+	int HYBRID_PORT__IS_HYBRID_OUT_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sampling Interval</b></em>' containment reference.
@@ -1904,7 +1932,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__SAMPLING_INTERVAL = DISCRETE_PORT_FEATURE_COUNT + 6;
+	int HYBRID_PORT__SAMPLING_INTERVAL = DIRECTED_TYPED_PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Hybrid Port</em>' class.
@@ -1913,7 +1941,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_FEATURE_COUNT = DISCRETE_PORT_FEATURE_COUNT + 7;
+	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl <em>Pattern Occurrence</em>}' class.
@@ -1978,7 +2006,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentKind()
 	 * @generated
 	 */
-	int COMPONENT_KIND = 14;
+	int COMPONENT_KIND = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}' enum.
@@ -1988,7 +2016,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortDirectionKind()
 	 * @generated
 	 */
-	int CONTINUOUS_PORT_DIRECTION_KIND = 15;
+	int CONTINUOUS_PORT_DIRECTION_KIND = 16;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Component <em>Component</em>}'.
@@ -2085,28 +2113,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getContinuousPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getKind <em>Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Kind</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getKind()
-	 * @see #getContinuousPort()
-	 * @generated
-	 */
-	EAttribute getContinuousPort_Kind();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getType()
-	 * @see #getContinuousPort()
-	 * @generated
-	 */
-	EReference getContinuousPort_Type();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#isIsContinuousInPort <em>Is Continuous In Port</em>}'.
@@ -2389,6 +2395,38 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStructuredComponent_AllAtomicComponents();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort <em>Directed Typed Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Directed Typed Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort
+	 * @generated
+	 */
+	EClass getDirectedTypedPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getKind()
+	 * @see #getDirectedTypedPort()
+	 * @generated
+	 */
+	EAttribute getDirectedTypedPort_Kind();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType()
+	 * @see #getDirectedTypedPort()
+	 * @generated
+	 */
+	EReference getDirectedTypedPort_Type();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.AtomicComponent <em>Atomic Component</em>}'.
@@ -2779,22 +2817,6 @@ public interface ComponentPackage extends EPackage {
 		EClass CONTINUOUS_PORT = eINSTANCE.getContinuousPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTINUOUS_PORT__KIND = eINSTANCE.getContinuousPort_Kind();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTINUOUS_PORT__TYPE = eINSTANCE.getContinuousPort_Type();
-
-		/**
 		 * The meta object literal for the '<em><b>Is Continuous In Port</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3009,6 +3031,32 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = eINSTANCE.getStructuredComponent_AllAtomicComponents();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl <em>Directed Typed Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDirectedTypedPort()
+		 * @generated
+		 */
+		EClass DIRECTED_TYPED_PORT = eINSTANCE.getDirectedTypedPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIRECTED_TYPED_PORT__KIND = eINSTANCE.getDirectedTypedPort_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIRECTED_TYPED_PORT__TYPE = eINSTANCE.getDirectedTypedPort_Type();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AtomicComponentImpl <em>Atomic Component</em>}' class.

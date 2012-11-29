@@ -4,16 +4,17 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.core.impl;
+package de.uni_paderborn.fujaba.muml.model.types.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
+import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.model.core.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.DataTypeImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.types.impl.DataTypeImpl#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,7 +66,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CorePackage.Literals.DATA_TYPE;
+		return TypesPackage.Literals.DATA_TYPE;
 	}
 
 	/**
@@ -86,7 +87,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.DATA_TYPE__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypesPackage.DATA_TYPE__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -97,7 +98,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.DATA_TYPE__COMMENT:
+			case TypesPackage.DATA_TYPE__COMMENT:
 				return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -111,7 +112,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CorePackage.DATA_TYPE__COMMENT:
+			case TypesPackage.DATA_TYPE__COMMENT:
 				setComment((String)newValue);
 				return;
 		}
@@ -126,7 +127,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CorePackage.DATA_TYPE__COMMENT:
+			case TypesPackage.DATA_TYPE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
 		}
@@ -141,7 +142,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.DATA_TYPE__COMMENT:
+			case TypesPackage.DATA_TYPE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
@@ -156,7 +157,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case CorePackage.DATA_TYPE__COMMENT: return org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				case TypesPackage.DATA_TYPE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -172,7 +173,7 @@ public abstract class DataTypeImpl extends NamedElementImpl implements DataType 
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.DATA_TYPE__COMMENT;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return TypesPackage.DATA_TYPE__COMMENT;
 				default: return -1;
 			}
 		}

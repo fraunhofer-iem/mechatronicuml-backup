@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.core;
+package de.uni_paderborn.fujaba.muml.model.types;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * Defines all primitive types that may be used in MechatronicUML.
  * <!-- end-model-doc -->
- * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getPrimitiveTypes()
+ * @see de.uni_paderborn.fujaba.muml.model.types.TypesPackage#getPrimitiveTypes()
  * @model
  * @generated
  */
