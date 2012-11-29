@@ -145,52 +145,6 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PartDataTypeItemProvider partDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPartDataTypeAdapter() {
-		if (partDataTypeItemProvider == null) {
-			partDataTypeItemProvider = new PartDataTypeItemProvider(this);
-		}
-
-		return partDataTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PortDataTypeItemProvider portDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPortDataTypeAdapter() {
-		if (portDataTypeItemProvider == null) {
-			portDataTypeItemProvider = new PortDataTypeItemProvider(this);
-		}
-
-		return portDataTypeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -453,8 +407,6 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 		if (reconfigurableStructuredComponentItemProvider != null) reconfigurableStructuredComponentItemProvider.dispose();
 		if (managerItemProvider != null) managerItemProvider.dispose();
 		if (executorItemProvider != null) executorItemProvider.dispose();
-		if (partDataTypeItemProvider != null) partDataTypeItemProvider.dispose();
-		if (portDataTypeItemProvider != null) portDataTypeItemProvider.dispose();
 		if (reconfigurationMessagePortItemProvider != null) reconfigurationMessagePortItemProvider.dispose();
 		if (executorSpecificationEntryItemProvider != null) executorSpecificationEntryItemProvider.dispose();
 		if (managerSpecificationEntryItemProvider != null) managerSpecificationEntryItemProvider.dispose();
