@@ -37,9 +37,10 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
 
 /**
@@ -214,8 +215,9 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		InstancePackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgifacePackage.eINSTANCE.eClass();
+		MsgtypePackage.eINSTANCE.eClass();
 		DeploymentPackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theActionLanguagePackage.createPackageContents();
@@ -739,7 +741,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
+		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -801,7 +803,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getReturnStatement_Expression(), theExpressionsPackage.getExpression(), null, "expression", null, 0, 1, ReturnStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(triggerMessageExpressionEClass, TriggerMessageExpression.class, "TriggerMessageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTriggerMessageExpression_MessageType(), theMsgifacePackage.getMessageType(), null, "messageType", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTriggerMessageExpression_MessageType(), theMsgtypePackage.getMessageType(), null, "messageType", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTriggerMessageExpression_Parameter(), theCorePackage.getParameter(), null, "parameter", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteInteractionEndpointReferenceEClass, DiscreteInteractionEndpointReference.class, "DiscreteInteractionEndpointReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

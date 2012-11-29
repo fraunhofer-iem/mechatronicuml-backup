@@ -6,22 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
-
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.expressions.impl.ExpressionImpl;
+
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,12 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->
