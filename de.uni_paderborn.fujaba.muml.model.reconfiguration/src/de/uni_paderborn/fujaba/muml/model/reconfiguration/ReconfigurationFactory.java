@@ -53,24 +53,6 @@ public interface ReconfigurationFactory extends EFactory {
 	Executor createExecutor();
 
 	/**
-	 * Returns a new object of class '<em>Part Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Part Data Type</em>'.
-	 * @generated
-	 */
-	PartDataType createPartDataType();
-
-	/**
-	 * Returns a new object of class '<em>Port Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Data Type</em>'.
-	 * @generated
-	 */
-	PortDataType createPortDataType();
-
-	/**
 	 * Returns a new object of class '<em>Message Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

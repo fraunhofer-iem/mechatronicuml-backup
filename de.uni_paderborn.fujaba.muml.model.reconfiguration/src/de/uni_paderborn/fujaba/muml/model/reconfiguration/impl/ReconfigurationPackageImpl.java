@@ -13,14 +13,14 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.storydriven.core.expressions.ExpressionsPackage;
+
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
@@ -30,8 +30,6 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfiguratio
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;
@@ -45,6 +43,7 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.util.ReconfigurationValidator;
+import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,20 +141,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass partDataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass portDataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass reconfigurableComponentEClass = null;
 
 	/**
@@ -239,8 +224,9 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		InstancePackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgifacePackage.eINSTANCE.eClass();
+		MsgtypePackage.eINSTANCE.eClass();
 		DeploymentPackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theReconfigurationPackage.createPackageContents();
@@ -523,42 +509,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPartDataType() {
-		return partDataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPartDataType_ComponentPart() {
-		return (EReference)partDataTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPortDataType() {
-		return portDataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPortDataType_Port() {
-		return (EReference)portDataTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getReconfigurableComponent() {
 		return reconfigurableComponentEClass;
 	}
@@ -742,12 +692,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurationConditionEClass = createEClass(RECONFIGURATION_CONDITION);
 		createEReference(reconfigurationConditionEClass, RECONFIGURATION_CONDITION__PARAMETERS);
 
-		partDataTypeEClass = createEClass(PART_DATA_TYPE);
-		createEReference(partDataTypeEClass, PART_DATA_TYPE__COMPONENT_PART);
-
-		portDataTypeEClass = createEClass(PORT_DATA_TYPE);
-		createEReference(portDataTypeEClass, PORT_DATA_TYPE__PORT);
-
 		reconfigurableComponentEClass = createEClass(RECONFIGURABLE_COMPONENT);
 
 		reconfigurationMessagePortEClass = createEClass(RECONFIGURATION_MESSAGE_PORT);
@@ -812,7 +756,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
+		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
@@ -832,8 +776,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		partDataTypeEClass.getESuperTypes().add(theCorePackage.getDataType());
-		portDataTypeEClass.getESuperTypes().add(theCorePackage.getDataType());
 		reconfigurationMessagePortEClass.getESuperTypes().add(this.getReconfigurationPort());
 		reconfigurationExecutionPortEClass.getESuperTypes().add(this.getReconfigurationPort());
 		executorSpecificationEntryEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
@@ -870,12 +812,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(reconfigurationConditionEClass, ReconfigurationCondition.class, "ReconfigurationCondition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationCondition_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, ReconfigurationCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(partDataTypeEClass, PartDataType.class, "PartDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPartDataType_ComponentPart(), theComponentPackage.getComponentPart(), null, "componentPart", null, 1, 1, PartDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(portDataTypeEClass, PortDataType.class, "PortDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPortDataType_Port(), theComponentPackage.getPort(), null, "port", null, 1, 1, PortDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(reconfigurableComponentEClass, ReconfigurableComponent.class, "ReconfigurableComponent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(reconfigurationMessagePortEClass, ReconfigurationMessagePort.class, "ReconfigurationMessagePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -893,7 +829,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEAttribute(getManagerSpecificationEntry_Treat(), ecorePackage.getEBoolean(), "treat", "true", 0, 1, ManagerSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getManagerSpecificationEntry_Propagate(), ecorePackage.getEBoolean(), "propagate", "false", 0, 1, ManagerSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getManagerSpecificationEntry_Manager(), this.getManager(), this.getManager_SpecificationEntries(), "manager", null, 1, 1, ManagerSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getManagerSpecificationEntry_MessageType(), theMsgifacePackage.getMessageType(), null, "messageType", null, 1, 1, ManagerSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getManagerSpecificationEntry_MessageType(), theMsgtypePackage.getMessageType(), null, "messageType", null, 1, 1, ManagerSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getManagerSpecificationEntry_Guard(), this.getReconfigurationCondition(), null, "guard", null, 0, 1, ManagerSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationControllerEClass, ReconfigurationController.class, "ReconfigurationController", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -936,7 +872,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });												
+		   });										
 		addAnnotation
 		  (executorSpecificationEntryEClass, 
 		   source, 
@@ -964,7 +900,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)"
-		   });									
+		   });							
 		addAnnotation
 		  (executorSpecificationEntryEClass, 
 		   source, 

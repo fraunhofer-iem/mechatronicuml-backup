@@ -6,19 +6,33 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.util.ComponentValidator;
-
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.model.component.util.ComponentValidator;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,10 +129,6 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateReconfigurationRule((ReconfigurationRule)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_CONDITION:
 				return validateReconfigurationCondition((ReconfigurationCondition)value, diagnostics, context);
-			case ReconfigurationPackage.PART_DATA_TYPE:
-				return validatePartDataType((PartDataType)value, diagnostics, context);
-			case ReconfigurationPackage.PORT_DATA_TYPE:
-				return validatePortDataType((PortDataType)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURABLE_COMPONENT:
 				return validateReconfigurableComponent((ReconfigurableComponent)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT:
@@ -314,24 +324,6 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 */
 	public boolean validateReconfigurationCondition(ReconfigurationCondition reconfigurationCondition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(reconfigurationCondition, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePartDataType(PartDataType partDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(partDataType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePortDataType(PortDataType portDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(portDataType, diagnostics, context);
 	}
 
 	/**

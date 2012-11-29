@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.core.impl.CommentableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;

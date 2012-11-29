@@ -6,28 +6,40 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.Component;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
-
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,14 +126,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createReconfigurationConditionAdapter();
 			}
 			@Override
-			public Adapter casePartDataType(PartDataType object) {
-				return createPartDataTypeAdapter();
-			}
-			@Override
-			public Adapter casePortDataType(PortDataType object) {
-				return createPortDataTypeAdapter();
-			}
-			@Override
 			public Adapter caseReconfigurableComponent(ReconfigurableComponent object) {
 				return createReconfigurableComponentAdapter();
 			}
@@ -194,12 +198,12 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createBehavioralElementAdapter();
 			}
 			@Override
-			public Adapter caseDiscretePort(DiscretePort object) {
-				return createDiscretePortAdapter();
+			public Adapter caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
+				return createDiscreteInteractionPointAdapter();
 			}
 			@Override
-			public Adapter caseDataType(DataType object) {
-				return createDataTypeAdapter();
+			public Adapter caseDiscretePort(DiscretePort object) {
+				return createDiscretePortAdapter();
 			}
 			@Override
 			public Adapter caseExpression(Expression object) {
@@ -394,34 +398,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType <em>Part Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType
-	 * @generated
-	 */
-	public Adapter createPartDataTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType <em>Port Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType
-	 * @generated
-	 */
-	public Adapter createPortDataTypeAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -604,6 +580,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint <em>Discrete Interaction Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint
+	 * @generated
+	 */
+	public Adapter createDiscreteInteractionPointAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort <em>Discrete Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -614,20 +604,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscretePortAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.DataType
-	 * @generated
-	 */
-	public Adapter createDataTypeAdapter() {
 		return null;
 	}
 

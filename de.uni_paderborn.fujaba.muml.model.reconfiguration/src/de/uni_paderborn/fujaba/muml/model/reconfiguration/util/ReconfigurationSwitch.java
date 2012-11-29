@@ -6,26 +6,39 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.Component;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
-
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
-import de.uni_paderborn.fujaba.muml.model.core.DataType;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,10 +115,11 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				T result = caseReconfigurationPort(reconfigurationPort);
 				if (result == null) result = caseDiscretePort(reconfigurationPort);
 				if (result == null) result = casePort(reconfigurationPort);
-				if (result == null) result = caseBehavioralElement(reconfigurationPort);
+				if (result == null) result = caseDiscreteInteractionPoint(reconfigurationPort);
 				if (result == null) result = caseNamedElement(reconfigurationPort);
 				if (result == null) result = caseCommentableElement(reconfigurationPort);
 				if (result == null) result = caseConstrainableElement(reconfigurationPort);
+				if (result == null) result = caseBehavioralElement(reconfigurationPort);
 				if (result == null) result = caseExtendableElement(reconfigurationPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -154,26 +168,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.PART_DATA_TYPE: {
-				PartDataType partDataType = (PartDataType)theEObject;
-				T result = casePartDataType(partDataType);
-				if (result == null) result = caseDataType(partDataType);
-				if (result == null) result = caseNamedElement(partDataType);
-				if (result == null) result = caseCommentableElement(partDataType);
-				if (result == null) result = caseExtendableElement(partDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ReconfigurationPackage.PORT_DATA_TYPE: {
-				PortDataType portDataType = (PortDataType)theEObject;
-				T result = casePortDataType(portDataType);
-				if (result == null) result = caseDataType(portDataType);
-				if (result == null) result = caseNamedElement(portDataType);
-				if (result == null) result = caseCommentableElement(portDataType);
-				if (result == null) result = caseExtendableElement(portDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ReconfigurationPackage.RECONFIGURABLE_COMPONENT: {
 				ReconfigurableComponent reconfigurableComponent = (ReconfigurableComponent)theEObject;
 				T result = caseReconfigurableComponent(reconfigurableComponent);
@@ -186,10 +180,11 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseReconfigurationPort(reconfigurationMessagePort);
 				if (result == null) result = caseDiscretePort(reconfigurationMessagePort);
 				if (result == null) result = casePort(reconfigurationMessagePort);
-				if (result == null) result = caseBehavioralElement(reconfigurationMessagePort);
+				if (result == null) result = caseDiscreteInteractionPoint(reconfigurationMessagePort);
 				if (result == null) result = caseNamedElement(reconfigurationMessagePort);
 				if (result == null) result = caseCommentableElement(reconfigurationMessagePort);
 				if (result == null) result = caseConstrainableElement(reconfigurationMessagePort);
+				if (result == null) result = caseBehavioralElement(reconfigurationMessagePort);
 				if (result == null) result = caseExtendableElement(reconfigurationMessagePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -200,10 +195,11 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseReconfigurationPort(reconfigurationExecutionPort);
 				if (result == null) result = caseDiscretePort(reconfigurationExecutionPort);
 				if (result == null) result = casePort(reconfigurationExecutionPort);
-				if (result == null) result = caseBehavioralElement(reconfigurationExecutionPort);
+				if (result == null) result = caseDiscreteInteractionPoint(reconfigurationExecutionPort);
 				if (result == null) result = caseNamedElement(reconfigurationExecutionPort);
 				if (result == null) result = caseCommentableElement(reconfigurationExecutionPort);
 				if (result == null) result = caseConstrainableElement(reconfigurationExecutionPort);
+				if (result == null) result = caseBehavioralElement(reconfigurationExecutionPort);
 				if (result == null) result = caseExtendableElement(reconfigurationExecutionPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -253,10 +249,11 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseReconfigurationPort(externalReconfigurationExecutionPort);
 				if (result == null) result = caseDiscretePort(externalReconfigurationExecutionPort);
 				if (result == null) result = casePort(externalReconfigurationExecutionPort);
-				if (result == null) result = caseBehavioralElement(externalReconfigurationExecutionPort);
+				if (result == null) result = caseDiscreteInteractionPoint(externalReconfigurationExecutionPort);
 				if (result == null) result = caseNamedElement(externalReconfigurationExecutionPort);
 				if (result == null) result = caseCommentableElement(externalReconfigurationExecutionPort);
 				if (result == null) result = caseConstrainableElement(externalReconfigurationExecutionPort);
+				if (result == null) result = caseBehavioralElement(externalReconfigurationExecutionPort);
 				if (result == null) result = caseExtendableElement(externalReconfigurationExecutionPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -268,10 +265,11 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseReconfigurationPort(internalReconfigurationExecutionPort);
 				if (result == null) result = caseDiscretePort(internalReconfigurationExecutionPort);
 				if (result == null) result = casePort(internalReconfigurationExecutionPort);
-				if (result == null) result = caseBehavioralElement(internalReconfigurationExecutionPort);
+				if (result == null) result = caseDiscreteInteractionPoint(internalReconfigurationExecutionPort);
 				if (result == null) result = caseNamedElement(internalReconfigurationExecutionPort);
 				if (result == null) result = caseCommentableElement(internalReconfigurationExecutionPort);
 				if (result == null) result = caseConstrainableElement(internalReconfigurationExecutionPort);
+				if (result == null) result = caseBehavioralElement(internalReconfigurationExecutionPort);
 				if (result == null) result = caseExtendableElement(internalReconfigurationExecutionPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -466,36 +464,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReconfigurationCondition(ReconfigurationCondition object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Part Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Part Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePartDataType(PartDataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePortDataType(PortDataType object) {
 		return null;
 	}
 
@@ -695,6 +663,21 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -706,21 +689,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscretePort(DiscretePort object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataType(DataType object) {
 		return null;
 	}
 

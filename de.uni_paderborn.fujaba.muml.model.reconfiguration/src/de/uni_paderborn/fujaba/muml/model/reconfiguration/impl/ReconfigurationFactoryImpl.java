@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,12 +18,11 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfiguratio
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 
 /**
@@ -42,7 +40,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 */
 	public static ReconfigurationFactory init() {
 		try {
-			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.1"); 
+			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.6"); 
 			if (theReconfigurationFactory != null) {
 				return theReconfigurationFactory;
 			}
@@ -74,8 +72,6 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT: return createReconfigurableStructuredComponent();
 			case ReconfigurationPackage.MANAGER: return createManager();
 			case ReconfigurationPackage.EXECUTOR: return createExecutor();
-			case ReconfigurationPackage.PART_DATA_TYPE: return createPartDataType();
-			case ReconfigurationPackage.PORT_DATA_TYPE: return createPortDataType();
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT: return createReconfigurationMessagePort();
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: return createExecutorSpecificationEntry();
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY: return createManagerSpecificationEntry();
@@ -116,26 +112,6 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public Executor createExecutor() {
 		ExecutorImpl executor = new ExecutorImpl();
 		return executor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PartDataType createPartDataType() {
-		PartDataTypeImpl partDataType = new PartDataTypeImpl();
-		return partDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortDataType createPortDataType() {
-		PortDataTypeImpl portDataType = new PortDataTypeImpl();
-		return portDataType;
 	}
 
 	/**

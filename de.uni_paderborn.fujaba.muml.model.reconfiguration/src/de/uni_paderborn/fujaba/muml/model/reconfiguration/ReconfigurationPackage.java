@@ -49,7 +49,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/0.3.1";
+	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/0.3.6";
 
 	/**
 	 * The package namespace name.
@@ -340,15 +340,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__BEHAVIOR = ComponentPackage.DISCRETE_PORT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__REFINES = ComponentPackage.DISCRETE_PORT__REFINES;
-
-	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -385,6 +376,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__REFINES = ComponentPackage.DISCRETE_PORT__REFINES;
+
+	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,6 +410,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT = ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -501,7 +510,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationController()
 	 * @generated
 	 */
-	int RECONFIGURATION_CONTROLLER = 14;
+	int RECONFIGURATION_CONTROLLER = 12;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.RuleBasedReconfigurationControllerImpl <em>Rule Based Reconfiguration Controller</em>}' class.
@@ -511,7 +520,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getRuleBasedReconfigurationController()
 	 * @generated
 	 */
-	int RULE_BASED_RECONFIGURATION_CONTROLLER = 15;
+	int RULE_BASED_RECONFIGURATION_CONTROLLER = 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl <em>External Reconfiguration Execution Port</em>}' class.
@@ -521,7 +530,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getExternalReconfigurationExecutionPort()
 	 * @generated
 	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT = 16;
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT = 14;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.InternalReconfigurationExecutionPortImpl <em>Internal Reconfiguration Execution Port</em>}' class.
@@ -531,7 +540,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getInternalReconfigurationExecutionPort()
 	 * @generated
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT = 17;
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.
@@ -801,135 +810,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_CONDITION_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getPartDataType()
-	 * @generated
-	 */
-	int PART_DATA_TYPE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__ANNOTATION = CorePackage.DATA_TYPE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__EXTENSION = CorePackage.DATA_TYPE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__NAME = CorePackage.DATA_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__COMMENT = CorePackage.DATA_TYPE__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Component Part</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__COMPONENT_PART = CorePackage.DATA_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Part Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE_FEATURE_COUNT = CorePackage.DATA_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl <em>Port Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getPortDataType()
-	 * @generated
-	 */
-	int PORT_DATA_TYPE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_DATA_TYPE__ANNOTATION = CorePackage.DATA_TYPE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_DATA_TYPE__EXTENSION = CorePackage.DATA_TYPE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_DATA_TYPE__NAME = CorePackage.DATA_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_DATA_TYPE__COMMENT = CorePackage.DATA_TYPE__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_DATA_TYPE__PORT = CorePackage.DATA_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Port Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_DATA_TYPE_FEATURE_COUNT = CorePackage.DATA_TYPE_FEATURE_COUNT + 1;
-
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -937,7 +817,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurableComponent()
 	 * @generated
 	 */
-	int RECONFIGURABLE_COMPONENT = 9;
+	int RECONFIGURABLE_COMPONENT = 7;
 
 	/**
 	 * The number of structural features of the '<em>Reconfigurable Component</em>' class.
@@ -956,7 +836,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessagePort()
 	 * @generated
 	 */
-	int RECONFIGURATION_MESSAGE_PORT = 10;
+	int RECONFIGURATION_MESSAGE_PORT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1067,15 +947,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
-
-	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1112,6 +983,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
+
+	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1139,6 +1019,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
 	 * The number of structural features of the '<em>Message Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1155,7 +1044,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationExecutionPort()
 	 * @generated
 	 */
-	int RECONFIGURATION_EXECUTION_PORT = 11;
+	int RECONFIGURATION_EXECUTION_PORT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1266,15 +1155,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
-
-	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1311,6 +1191,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
+
+	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1338,6 +1227,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
 	 * The number of structural features of the '<em>Execution Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1354,7 +1252,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getExecutorSpecificationEntry()
 	 * @generated
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY = 12;
+	int EXECUTOR_SPECIFICATION_ENTRY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1436,7 +1334,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getManagerSpecificationEntry()
 	 * @generated
 	 */
-	int MANAGER_SPECIFICATION_ENTRY = 13;
+	int MANAGER_SPECIFICATION_ENTRY = 11;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1772,15 +1670,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
-
-	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1817,6 +1706,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
+
+	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1842,6 +1740,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' reference list.
@@ -1970,15 +1877,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
-
-	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2015,6 +1913,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
+
+	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2042,6 +1949,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
 	 * The number of structural features of the '<em>Internal Reconfiguration Execution Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2059,7 +1975,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationRuleCallExpression()
 	 * @generated
 	 */
-	int RECONFIGURATION_RULE_CALL_EXPRESSION = 18;
+	int RECONFIGURATION_RULE_CALL_EXPRESSION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2411,48 +2327,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReconfigurationCondition_Parameters();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType <em>Part Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Part Data Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType
-	 * @generated
-	 */
-	EClass getPartDataType();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType#getComponentPart <em>Component Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType#getComponentPart()
-	 * @see #getPartDataType()
-	 * @generated
-	 */
-	EReference getPartDataType_ComponentPart();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType <em>Port Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port Data Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType
-	 * @generated
-	 */
-	EClass getPortDataType();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType#getPort <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType#getPort()
-	 * @see #getPortDataType()
-	 * @generated
-	 */
-	EReference getPortDataType_Port();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}'.
@@ -2883,42 +2757,6 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RECONFIGURATION_CONDITION__PARAMETERS = eINSTANCE.getReconfigurationCondition_Parameters();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PartDataTypeImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getPartDataType()
-		 * @generated
-		 */
-		EClass PART_DATA_TYPE = eINSTANCE.getPartDataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Component Part</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PART_DATA_TYPE__COMPONENT_PART = eINSTANCE.getPartDataType_ComponentPart();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl <em>Port Data Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.PortDataTypeImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getPortDataType()
-		 * @generated
-		 */
-		EClass PORT_DATA_TYPE = eINSTANCE.getPortDataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_DATA_TYPE__PORT = eINSTANCE.getPortDataType_Port();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}' class.
