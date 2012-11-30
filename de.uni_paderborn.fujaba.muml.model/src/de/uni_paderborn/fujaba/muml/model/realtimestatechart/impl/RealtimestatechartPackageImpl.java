@@ -56,9 +56,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
@@ -250,20 +248,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	private EClass exitPointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stateEntryPointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stateExitPointEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -591,7 +575,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_StateEntryPoints() {
+	public EReference getState_EntryPoints() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -609,8 +593,17 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_StateExitPoints() {
+	public EReference getState_ExitPoints() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_Statechart() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -638,15 +631,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EReference getVertex_IncomingTransitions() {
 		return (EReference)vertexEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVertex_Statechart() {
-		return (EReference)vertexEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1032,7 +1016,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRealtimeStatechart_Vertices() {
+	public EReference getRealtimeStatechart_States() {
 		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1203,7 +1187,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntryPoint_StateEntryPoint() {
+	public EReference getEntryPoint_State() {
 		return (EReference)entryPointEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1221,62 +1205,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExitPoint_StateExitPoint() {
+	public EReference getExitPoint_State() {
 		return (EReference)exitPointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStateEntryPoint() {
-		return stateEntryPointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStateEntryPoint_State() {
-		return (EReference)stateEntryPointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStateEntryPoint_EntryPoints() {
-		return (EReference)stateEntryPointEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStateExitPoint() {
-		return stateExitPointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStateExitPoint_State() {
-		return (EReference)stateExitPointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStateExitPoint_ExitPoints() {
-		return (EReference)stateExitPointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1353,14 +1283,14 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(stateEClass, STATE__URGENT);
 		createEReference(stateEClass, STATE__CHANNELS);
 		createEReference(stateEClass, STATE__EVENTS);
-		createEReference(stateEClass, STATE__STATE_ENTRY_POINTS);
+		createEReference(stateEClass, STATE__ENTRY_POINTS);
 		createEAttribute(stateEClass, STATE__SIMPLE);
-		createEReference(stateEClass, STATE__STATE_EXIT_POINTS);
+		createEReference(stateEClass, STATE__EXIT_POINTS);
+		createEReference(stateEClass, STATE__STATECHART);
 
 		vertexEClass = createEClass(VERTEX);
 		createEReference(vertexEClass, VERTEX__OUTGOING_TRANSITIONS);
 		createEReference(vertexEClass, VERTEX__INCOMING_TRANSITIONS);
-		createEReference(vertexEClass, VERTEX__STATECHART);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__SYNCHRONIZATION);
@@ -1413,7 +1343,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		realtimeStatechartEClass = createEClass(REALTIME_STATECHART);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__EMBEDDING_REGION);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__TRANSITIONS);
-		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__VERTICES);
+		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__STATES);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__CLOCKS);
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__HISTORY);
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__EVENT_QUEUE_SIZE);
@@ -1439,18 +1369,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		exitEventEClass = createEClass(EXIT_EVENT);
 
 		entryPointEClass = createEClass(ENTRY_POINT);
-		createEReference(entryPointEClass, ENTRY_POINT__STATE_ENTRY_POINT);
+		createEReference(entryPointEClass, ENTRY_POINT__STATE);
 
 		exitPointEClass = createEClass(EXIT_POINT);
-		createEReference(exitPointEClass, EXIT_POINT__STATE_EXIT_POINT);
-
-		stateEntryPointEClass = createEClass(STATE_ENTRY_POINT);
-		createEReference(stateEntryPointEClass, STATE_ENTRY_POINT__STATE);
-		createEReference(stateEntryPointEClass, STATE_ENTRY_POINT__ENTRY_POINTS);
-
-		stateExitPointEClass = createEClass(STATE_EXIT_POINT);
-		createEReference(stateExitPointEClass, STATE_EXIT_POINT__STATE);
-		createEReference(stateExitPointEClass, STATE_EXIT_POINT__EXIT_POINTS);
+		createEReference(exitPointEClass, EXIT_POINT__STATE);
 
 		// Create enums
 		synchronizationKindEEnum = createEEnum(SYNCHRONIZATION_KIND);
@@ -1521,8 +1443,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		exitEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
 		entryPointEClass.getESuperTypes().add(this.getVertex());
 		exitPointEClass.getESuperTypes().add(this.getVertex());
-		stateEntryPointEClass.getESuperTypes().add(this.getVertex());
-		stateExitPointEClass.getESuperTypes().add(this.getVertex());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(deadlineEClass, Deadline.class, "Deadline", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1553,9 +1473,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getState_Urgent(), ecorePackage.getEBoolean(), "urgent", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_Channels(), this.getSynchronizationChannel(), this.getSynchronizationChannel_State(), "channels", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_Events(), this.getStateEvent(), null, "events", null, 0, -1, State.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getState_StateEntryPoints(), this.getStateEntryPoint(), this.getStateEntryPoint_State(), "stateEntryPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_EntryPoints(), this.getEntryPoint(), this.getEntryPoint_State(), "entryPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getState_Simple(), theEcorePackage.getEBoolean(), "simple", "false", 0, 1, State.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getState_StateExitPoints(), this.getStateExitPoint(), this.getStateExitPoint_State(), "stateExitPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_ExitPoints(), this.getExitPoint(), this.getExitPoint_State(), "exitPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_Statechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_States(), "statechart", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(stateEClass, theEcorePackage.getEInt(), "getUniqueRegionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEInt(), "hint", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1566,7 +1487,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(vertexEClass, Vertex.class, "Vertex", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVertex_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertex_IncomingTransitions(), this.getTransition(), this.getTransition_Target(), "incomingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVertex_Statechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_Vertices(), "statechart", null, 0, 1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(vertexEClass, ecorePackage.getEBoolean(), "isSuperVertexOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1628,7 +1548,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(realtimeStatechartEClass, RealtimeStatechart.class, "RealtimeStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRealtimeStatechart_EmbeddingRegion(), this.getRegion(), this.getRegion_Statechart(), "embeddingRegion", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_Transitions(), this.getTransition(), this.getTransition_Statechart(), "transitions", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRealtimeStatechart_Vertices(), this.getVertex(), this.getVertex_Statechart(), "vertices", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechart_States(), this.getState(), this.getState_Statechart(), "states", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_Clocks(), this.getClock(), this.getClock_Statechart(), "clocks", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRealtimeStatechart_History(), ecorePackage.getEBoolean(), "history", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRealtimeStatechart_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1661,18 +1581,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(exitEventEClass, ExitEvent.class, "ExitEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entryPointEClass, EntryPoint.class, "EntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntryPoint_StateEntryPoint(), this.getStateEntryPoint(), this.getStateEntryPoint_EntryPoints(), "stateEntryPoint", null, 1, 1, EntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntryPoint_State(), this.getState(), this.getState_EntryPoints(), "state", null, 1, 1, EntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exitPointEClass, ExitPoint.class, "ExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExitPoint_StateExitPoint(), this.getStateExitPoint(), this.getStateExitPoint_ExitPoints(), "stateExitPoint", null, 1, 1, ExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stateEntryPointEClass, StateEntryPoint.class, "StateEntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStateEntryPoint_State(), this.getState(), this.getState_StateEntryPoints(), "state", null, 1, 1, StateEntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStateEntryPoint_EntryPoints(), this.getEntryPoint(), this.getEntryPoint_StateEntryPoint(), "entryPoints", null, 1, -1, StateEntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stateExitPointEClass, StateExitPoint.class, "StateExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStateExitPoint_State(), this.getState(), this.getState_StateExitPoints(), "state", null, 1, 1, StateExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStateExitPoint_ExitPoints(), this.getExitPoint(), this.getExitPoint_StateExitPoint(), "exitPoints", null, 1, -1, StateExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExitPoint_State(), this.getState(), this.getState_ExitPoints(), "state", null, 1, 1, ExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(synchronizationKindEEnum, SynchronizationKind.class, "SynchronizationKind");
@@ -1719,7 +1631,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders EntryPointMustOnlyPointToStatesOrStateEntryPoints ExitPointMustOnlyPointToStatesOrStateExitPoints TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents EntryPointOutgoingTransitionNoAdditionalElements StateExitPointOutgoingTransitionNoAdditionalElements"
+			 "constraints", "SetTargetAndSource LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions"
 		   });																														
 		addAnnotation
 		  (doEventEClass, 
@@ -1737,26 +1649,14 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OneOutgoingTransition EntryPointAndTargetSameStatechart"
+			 "constraints", "AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"
 		   });					
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtMostOneOutgoingTransition OneIncomingTransition ExitPointAndSourceSameStatechart"
-		   });					
-		addAnnotation
-		  (stateEntryPointEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"
-		   });						
-		addAnnotation
-		  (stateExitPointEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "OneOutgoingTransition"
-		   });				
+			 "constraints", "AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition ExitPointsOnlyAtCompositeStates"
+		   });			
 	}
 
 	/**
@@ -1804,14 +1704,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "SetTargetAndSource", "self.target->notEmpty() and self.source->notEmpty()",
-			 "NoCrossingOfRegionBorders", "self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or\r\nself.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=\r\nself.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or \t\t\t\t\r\nself.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=\r\nself.target.oclAsType(StateExitPoint).statechart.embeddingRegion",
-			 "EntryPointMustOnlyPointToStatesOrStateEntryPoints", "self.source.oclIsKindOf(EntryPoint) implies (\n\tself.target.oclIsKindOf(State)\n\tor self.target.oclIsKindOf(StateEntryPoint)\n)",
-			 "ExitPointMustOnlyPointToStatesOrStateExitPoints", "self.source.oclIsKindOf(ExitPoint) implies (\n\tself.target.oclIsKindOf(State) \n\tor self.target.oclIsKindOf(StateExitPoint)\n)",
+			 "LegalTransitionsOnly", "-- State A to State B within the same statechart\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)\r\nor\r\n-- State A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(ExitPoint).state.statechart)\r\nor\r\n-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\nor\r\n-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).statechart.embeddingRegion.parentState)\r\nor\r\n-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.embeddingRegion.parentState)\r\nor\r\n-- ExitPoint of A to State B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)\r\nor\r\n-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\nor\r\n-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)",
 			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "not self.triggerMessageEvent.message.oclIsUndefined() implies\nself.triggerMessageEvent.message.parameterBinding->isEmpty()",
 			 "ValidTriggerMessageEvents", "let a : msgiface::MessageInterface =\r\n(\r\n\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then\r\n\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\r\n\telse\r\n\t\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then\r\n\t\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\r\n\t\telse\r\n\t\t\tnull\r\n\t\tendif\r\n\tendif\r\n) in\r\n(not triggerMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf))",
 			 "ValidRaiseMessageEvents", "let a : msgiface::MessageInterface =\r\n(\r\n\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then\r\n\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface\r\n\telse\r\n\t\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then\r\n\t\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).senderMessageInterface\r\n\t\telse\r\n\t\t\tnull\r\n\t\tendif\r\n\tendif\r\n) in\r\n(not raiseMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf))",
-			 "EntryPointOutgoingTransitionNoAdditionalElements", "(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::EntryPoint))\n\timplies (\n\t\tself.synchronization.oclIsUndefined()\n\t\tand self.clockResets->isEmpty()\n\t\tand self.triggerMessageEvent.oclIsUndefined()\n\t\tand self.raiseMessageEvent.oclIsUndefined()\n\t\tand self.clockConstraints->isEmpty()\n\t\tand self.absoluteDeadlines->isEmpty()\n\t\tand self.relativeDeadline.oclIsUndefined()\n\t\tand self.guard.oclIsUndefined()\n\t\tand self.events->isEmpty()\n\t\tand self.action.oclIsUndefined()\n\t)",
-			 "StateExitPointOutgoingTransitionNoAdditionalElements", "(not self.source.oclIsUndefined() and self.source.oclIsTypeOf(realtimestatechart::StateExitPoint))\n\timplies (\n\t\tself.synchronization.oclIsUndefined()\n\t\tand self.clockResets->isEmpty()\n\t\tand self.triggerMessageEvent.oclIsUndefined()\n\t\tand self.raiseMessageEvent.oclIsUndefined()\n\t\tand self.clockConstraints->isEmpty()\n\t\tand self.absoluteDeadlines->isEmpty()\n\t\tand self.relativeDeadline.oclIsUndefined()\n\t\tand self.guard.oclIsUndefined()\n\t\tand self.events->isEmpty()\n\t\tand self.action.oclIsUndefined()\n\t)"
+			 "ExitPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
+			 "ExitPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)"
 		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 
@@ -1874,30 +1772,17 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
-			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1",
-			 "EntryPointAndTargetSameStatechart", "self.outgoingTransitions->size() = 1 implies\n\t(not self.outgoingTransitions->at(1).target.oclIsUndefined()\n\t and self.outgoingTransitions->at(1).target.statechart = self.statechart\n\t)"
+			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->size()>0",
+			 "AtLeastOneOutgoingTransition", "self.outgoingTransitions->size() > 0"
 		   });					
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "AtMostOneOutgoingTransition", "self.outgoingTransitions->size() <= 1",
-			 "OneIncomingTransition", "self.incomingTransitions->size() = 1",
-			 "ExitPointAndSourceSameStatechart", "self.incomingTransitions->size() = 1 implies\n\t(not self.incomingTransitions->at(1).source.oclIsUndefined()\n\t and self.incomingTransitions->at(1).source.statechart = self.statechart\n\t)"
-		   });					
-		addAnnotation
-		  (stateEntryPointEClass, 
-		   source, 
-		   new String[] {
-			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->size()>0",
-			 "AtLeastOneOutgoingTransition", "self.outgoingTransitions->size() > 0"
-		   });						
-		addAnnotation
-		  (stateExitPointEClass, 
-		   source, 
-		   new String[] {
-			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
-		   });		
+			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state have at least one state that connects to the ExitPoint\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->exists(s |\r\n\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n\t\tor\r\n\t\ts.exitPoints.outgoingTransitions->exists(t | t.target = self)\r\n\t)\r\n)",
+			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1",
+			 "ExitPointsOnlyAtCompositeStates", "not self.state.simple"
+		   });	
 	}
 
 } //RealtimestatechartPackageImpl

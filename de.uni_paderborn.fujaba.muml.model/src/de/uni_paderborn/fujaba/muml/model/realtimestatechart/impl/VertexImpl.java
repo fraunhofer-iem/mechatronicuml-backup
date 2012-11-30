@@ -11,14 +11,11 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.NamedElementImpl;
 
@@ -40,7 +37,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.VertexImpl#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.VertexImpl#getIncomingTransitions <em>Incoming Transitions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.VertexImpl#getStatechart <em>Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,47 +104,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 			incomingTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS, RealtimestatechartPackage.TRANSITION__TARGET);
 		}
 		return incomingTransitions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RealtimeStatechart getStatechart() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.VERTEX__STATECHART) return null;
-		return (RealtimeStatechart)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.VERTEX__STATECHART, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStatechart(RealtimeStatechart newStatechart) {
-		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.VERTEX__STATECHART && newStatechart != null)) {
-			if (EcoreUtil.isAncestor(this, newStatechart))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__VERTICES, RealtimeStatechart.class, msgs);
-			msgs = basicSetStatechart(newStatechart, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.VERTEX__STATECHART, newStatechart, newStatechart));
 	}
 
 	/**
@@ -230,10 +185,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingTransitions()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingTransitions()).basicAdd(otherEnd, msgs);
-			case RealtimestatechartPackage.VERTEX__STATECHART:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((RealtimeStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -250,24 +201,8 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return ((InternalEList<?>)getOutgoingTransitions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return ((InternalEList<?>)getIncomingTransitions()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.VERTEX__STATECHART:
-				return basicSetStatechart(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.VERTEX__STATECHART:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__VERTICES, RealtimeStatechart.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -282,8 +217,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return getOutgoingTransitions();
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return getIncomingTransitions();
-			case RealtimestatechartPackage.VERTEX__STATECHART:
-				return getStatechart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,9 +238,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				getIncomingTransitions().clear();
 				getIncomingTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
-			case RealtimestatechartPackage.VERTEX__STATECHART:
-				setStatechart((RealtimeStatechart)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -326,9 +256,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				getIncomingTransitions().clear();
 				return;
-			case RealtimestatechartPackage.VERTEX__STATECHART:
-				setStatechart((RealtimeStatechart)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -345,8 +272,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return outgoingTransitions != null && !outgoingTransitions.isEmpty();
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return incomingTransitions != null && !incomingTransitions.isEmpty();
-			case RealtimestatechartPackage.VERTEX__STATECHART:
-				return getStatechart() != null;
 		}
 		return super.eIsSet(featureID);
 	}

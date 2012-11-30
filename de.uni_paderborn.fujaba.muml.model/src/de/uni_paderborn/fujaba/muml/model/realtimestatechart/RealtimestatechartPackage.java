@@ -44,7 +44,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.3.5";
+	String eNS_URI = "http://www.fujaba.de/muml/model/realtimestatechart/0.3.6";
 
 	/**
 	 * The package namespace name.
@@ -385,22 +385,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int VERTEX__INCOMING_TRANSITIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERTEX__STATECHART = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Vertex</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int VERTEX_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl <em>State</em>}' class.
@@ -456,15 +447,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATE__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__STATECHART = VERTEX__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Regions</b></em>' containment reference list.
@@ -557,13 +539,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__EVENTS = VERTEX_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>State Entry Points</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Entry Points</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__STATE_ENTRY_POINTS = VERTEX_FEATURE_COUNT + 10;
+	int STATE__ENTRY_POINTS = VERTEX_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Simple</b></em>' attribute.
@@ -575,13 +557,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__SIMPLE = VERTEX_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>State Exit Points</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Exit Points</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__STATE_EXIT_POINTS = VERTEX_FEATURE_COUNT + 12;
+	int STATE__EXIT_POINTS = VERTEX_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__STATECHART = VERTEX_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -590,7 +581,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 13;
+	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
@@ -1343,13 +1334,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__TRANSITIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
+	 * The feature id for the '<em><b>States</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__VERTICES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int REALTIME_STATECHART__STATES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -1635,22 +1626,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_POINT__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
+	 * The feature id for the '<em><b>State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_POINT__STATECHART = VERTEX__STATECHART;
-
-	/**
-	 * The feature id for the '<em><b>State Entry Point</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_POINT__STATE_ENTRY_POINT = VERTEX_FEATURE_COUNT + 0;
+	int ENTRY_POINT__STATE = VERTEX_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Entry Point</em>' class.
@@ -1717,22 +1699,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int EXIT_POINT__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
+	 * The feature id for the '<em><b>State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXIT_POINT__STATECHART = VERTEX__STATECHART;
-
-	/**
-	 * The feature id for the '<em><b>State Exit Point</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXIT_POINT__STATE_EXIT_POINT = VERTEX_FEATURE_COUNT + 0;
+	int EXIT_POINT__STATE = VERTEX_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Exit Point</em>' class.
@@ -1744,188 +1717,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int EXIT_POINT_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryPointImpl <em>State Entry Point</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryPointImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getStateEntryPoint()
-	 * @generated
-	 */
-	int STATE_ENTRY_POINT = 25;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__ANNOTATION = VERTEX__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__EXTENSION = VERTEX__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__NAME = VERTEX__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__OUTGOING_TRANSITIONS = VERTEX__OUTGOING_TRANSITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Transitions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__STATECHART = VERTEX__STATECHART;
-
-	/**
-	 * The feature id for the '<em><b>State</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__STATE = VERTEX_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Entry Points</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT__ENTRY_POINTS = VERTEX_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>State Entry Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_ENTRY_POINT_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateExitPointImpl <em>State Exit Point</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateExitPointImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getStateExitPoint()
-	 * @generated
-	 */
-	int STATE_EXIT_POINT = 26;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__ANNOTATION = VERTEX__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__EXTENSION = VERTEX__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__NAME = VERTEX__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__OUTGOING_TRANSITIONS = VERTEX__OUTGOING_TRANSITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Transitions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__STATECHART = VERTEX__STATECHART;
-
-	/**
-	 * The feature id for the '<em><b>State</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__STATE = VERTEX_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Exit Points</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT__EXIT_POINTS = VERTEX_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>State Exit Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind <em>Synchronization Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1933,7 +1724,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronizationKind()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_KIND = 27;
+	int SYNCHRONIZATION_KIND = 25;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind <em>Event Kind</em>}' enum.
@@ -1943,7 +1734,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEventKind()
 	 * @generated
 	 */
-	int EVENT_KIND = 28;
+	int EVENT_KIND = 26;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline <em>Deadline</em>}'.
@@ -2160,15 +1951,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getState_Events();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryPoints <em>State Entry Points</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryPoints <em>Entry Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>State Entry Points</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryPoints()
+	 * @return the meta object for the containment reference list '<em>Entry Points</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryPoints()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_StateEntryPoints();
+	EReference getState_EntryPoints();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isSimple <em>Simple</em>}'.
@@ -2182,15 +1973,26 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getState_Simple();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateExitPoints <em>State Exit Points</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitPoints <em>Exit Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>State Exit Points</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateExitPoints()
+	 * @return the meta object for the containment reference list '<em>Exit Points</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitPoints()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_StateExitPoints();
+	EReference getState_ExitPoints();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStatechart <em>Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStatechart()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_Statechart();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isInitial <em>Initial</em>}'.
@@ -2256,17 +2058,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVertex_IncomingTransitions();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getStatechart()
-	 * @see #getVertex()
-	 * @generated
-	 */
-	EReference getVertex_Statechart();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition <em>Transition</em>}'.
@@ -2721,15 +2512,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getRealtimeStatechart_Transitions();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices <em>Vertices</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStates <em>States</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Vertices</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices()
+	 * @return the meta object for the containment reference list '<em>States</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStates()
 	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getRealtimeStatechart_Vertices();
+	EReference getRealtimeStatechart_States();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getClocks <em>Clocks</em>}'.
@@ -2923,15 +2714,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getEntryPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint#getStateEntryPoint <em>State Entry Point</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>State Entry Point</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint#getStateEntryPoint()
+	 * @return the meta object for the container reference '<em>State</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint#getState()
 	 * @see #getEntryPoint()
 	 * @generated
 	 */
-	EReference getEntryPoint_StateEntryPoint();
+	EReference getEntryPoint_State();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint <em>Exit Point</em>}'.
@@ -2944,79 +2735,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getExitPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint#getStateExitPoint <em>State Exit Point</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>State Exit Point</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint#getStateExitPoint()
+	 * @return the meta object for the container reference '<em>State</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint#getState()
 	 * @see #getExitPoint()
 	 * @generated
 	 */
-	EReference getExitPoint_StateExitPoint();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint <em>State Entry Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State Entry Point</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint
-	 * @generated
-	 */
-	EClass getStateEntryPoint();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getState <em>State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>State</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getState()
-	 * @see #getStateEntryPoint()
-	 * @generated
-	 */
-	EReference getStateEntryPoint_State();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getEntryPoints <em>Entry Points</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Entry Points</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint#getEntryPoints()
-	 * @see #getStateEntryPoint()
-	 * @generated
-	 */
-	EReference getStateEntryPoint_EntryPoints();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint <em>State Exit Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State Exit Point</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint
-	 * @generated
-	 */
-	EClass getStateExitPoint();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getState <em>State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>State</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getState()
-	 * @see #getStateExitPoint()
-	 * @generated
-	 */
-	EReference getStateExitPoint_State();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getExitPoints <em>Exit Points</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Exit Points</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint#getExitPoints()
-	 * @see #getStateExitPoint()
-	 * @generated
-	 */
-	EReference getStateExitPoint_ExitPoints();
+	EReference getExitPoint_State();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind <em>Synchronization Kind</em>}'.
@@ -3233,12 +2960,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference STATE__EVENTS = eINSTANCE.getState_Events();
 
 		/**
-		 * The meta object literal for the '<em><b>State Entry Points</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Entry Points</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__STATE_ENTRY_POINTS = eINSTANCE.getState_StateEntryPoints();
+		EReference STATE__ENTRY_POINTS = eINSTANCE.getState_EntryPoints();
 
 		/**
 		 * The meta object literal for the '<em><b>Simple</b></em>' attribute feature.
@@ -3249,12 +2976,20 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute STATE__SIMPLE = eINSTANCE.getState_Simple();
 
 		/**
-		 * The meta object literal for the '<em><b>State Exit Points</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Exit Points</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__STATE_EXIT_POINTS = eINSTANCE.getState_StateExitPoints();
+		EReference STATE__EXIT_POINTS = eINSTANCE.getState_ExitPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>Statechart</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__STATECHART = eINSTANCE.getState_Statechart();
 
 		/**
 		 * The meta object literal for the '<em><b>Initial</b></em>' attribute feature.
@@ -3305,14 +3040,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VERTEX__INCOMING_TRANSITIONS = eINSTANCE.getVertex_IncomingTransitions();
-
-		/**
-		 * The meta object literal for the '<em><b>Statechart</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VERTEX__STATECHART = eINSTANCE.getVertex_Statechart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
@@ -3671,12 +3398,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference REALTIME_STATECHART__TRANSITIONS = eINSTANCE.getRealtimeStatechart_Transitions();
 
 		/**
-		 * The meta object literal for the '<em><b>Vertices</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REALTIME_STATECHART__VERTICES = eINSTANCE.getRealtimeStatechart_Vertices();
+		EReference REALTIME_STATECHART__STATES = eINSTANCE.getRealtimeStatechart_States();
 
 		/**
 		 * The meta object literal for the '<em><b>Clocks</b></em>' containment reference list feature.
@@ -3837,12 +3564,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass ENTRY_POINT = eINSTANCE.getEntryPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>State Entry Point</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>State</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTRY_POINT__STATE_ENTRY_POINT = eINSTANCE.getEntryPoint_StateEntryPoint();
+		EReference ENTRY_POINT__STATE = eINSTANCE.getEntryPoint_State();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ExitPointImpl <em>Exit Point</em>}' class.
@@ -3855,64 +3582,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass EXIT_POINT = eINSTANCE.getExitPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>State Exit Point</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXIT_POINT__STATE_EXIT_POINT = eINSTANCE.getExitPoint_StateExitPoint();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryPointImpl <em>State Entry Point</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryPointImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getStateEntryPoint()
-		 * @generated
-		 */
-		EClass STATE_ENTRY_POINT = eINSTANCE.getStateEntryPoint();
-
-		/**
 		 * The meta object literal for the '<em><b>State</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE_ENTRY_POINT__STATE = eINSTANCE.getStateEntryPoint_State();
-
-		/**
-		 * The meta object literal for the '<em><b>Entry Points</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATE_ENTRY_POINT__ENTRY_POINTS = eINSTANCE.getStateEntryPoint_EntryPoints();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateExitPointImpl <em>State Exit Point</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateExitPointImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getStateExitPoint()
-		 * @generated
-		 */
-		EClass STATE_EXIT_POINT = eINSTANCE.getStateExitPoint();
-
-		/**
-		 * The meta object literal for the '<em><b>State</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATE_EXIT_POINT__STATE = eINSTANCE.getStateExitPoint_State();
-
-		/**
-		 * The meta object literal for the '<em><b>Exit Points</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATE_EXIT_POINT__EXIT_POINTS = eINSTANCE.getStateExitPoint_ExitPoints();
+		EReference EXIT_POINT__STATE = eINSTANCE.getExitPoint_State();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind <em>Synchronization Kind</em>}' enum.

@@ -35,9 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
@@ -199,14 +197,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExitPoint(ExitPoint object) {
 				return createExitPointAdapter();
-			}
-			@Override
-			public Adapter caseStateEntryPoint(StateEntryPoint object) {
-				return createStateEntryPointAdapter();
-			}
-			@Override
-			public Adapter caseStateExitPoint(StateExitPoint object) {
-				return createStateExitPointAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -591,34 +581,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExitPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint <em>State Entry Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint
-	 * @generated
-	 */
-	public Adapter createStateEntryPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint <em>State Exit Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint
-	 * @generated
-	 */
-	public Adapter createStateExitPointAdapter() {
 		return null;
 	}
 

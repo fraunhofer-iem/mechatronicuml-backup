@@ -489,52 +489,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StateEntryPointItemProvider stateEntryPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStateEntryPointAdapter() {
-		if (stateEntryPointItemProvider == null) {
-			stateEntryPointItemProvider = new StateEntryPointItemProvider(this);
-		}
-
-		return stateEntryPointItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StateExitPointItemProvider stateExitPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStateExitPointAdapter() {
-		if (stateExitPointItemProvider == null) {
-			stateExitPointItemProvider = new StateExitPointItemProvider(this);
-		}
-
-		return stateExitPointItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -651,8 +605,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
 		if (entryPointItemProvider != null) entryPointItemProvider.dispose();
 		if (exitPointItemProvider != null) exitPointItemProvider.dispose();
-		if (stateEntryPointItemProvider != null) stateEntryPointItemProvider.dispose();
-		if (stateExitPointItemProvider != null) stateExitPointItemProvider.dispose();
 	}
 
 }

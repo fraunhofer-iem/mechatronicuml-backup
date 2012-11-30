@@ -34,9 +34,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
@@ -293,24 +291,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				if (result == null) result = caseVertex(exitPoint);
 				if (result == null) result = caseNamedElement(exitPoint);
 				if (result == null) result = caseExtendableElement(exitPoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.STATE_ENTRY_POINT: {
-				StateEntryPoint stateEntryPoint = (StateEntryPoint)theEObject;
-				T result = caseStateEntryPoint(stateEntryPoint);
-				if (result == null) result = caseVertex(stateEntryPoint);
-				if (result == null) result = caseNamedElement(stateEntryPoint);
-				if (result == null) result = caseExtendableElement(stateEntryPoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.STATE_EXIT_POINT: {
-				StateExitPoint stateExitPoint = (StateExitPoint)theEObject;
-				T result = caseStateExitPoint(stateExitPoint);
-				if (result == null) result = caseVertex(stateExitPoint);
-				if (result == null) result = caseNamedElement(stateExitPoint);
-				if (result == null) result = caseExtendableElement(stateExitPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -690,36 +670,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExitPoint(ExitPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>State Entry Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>State Entry Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStateEntryPoint(StateEntryPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>State Exit Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>State Exit Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStateExitPoint(StateExitPoint object) {
 		return null;
 	}
 

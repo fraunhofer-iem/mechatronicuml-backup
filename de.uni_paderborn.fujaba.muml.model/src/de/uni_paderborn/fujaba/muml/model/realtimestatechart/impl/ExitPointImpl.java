@@ -11,10 +11,11 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,23 +24,13 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ExitPointImpl#getStateExitPoint <em>State Exit Point</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ExitPointImpl#getState <em>State</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class ExitPointImpl extends VertexImpl implements ExitPoint {
-	/**
-	 * The cached value of the '{@link #getStateExitPoint() <em>State Exit Point</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStateExitPoint()
-	 * @generated
-	 * @ordered
-	 */
-	protected StateExitPoint stateExitPoint;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,16 +55,9 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StateExitPoint getStateExitPoint() {
-		if (stateExitPoint != null && stateExitPoint.eIsProxy()) {
-			InternalEObject oldStateExitPoint = (InternalEObject)stateExitPoint;
-			stateExitPoint = (StateExitPoint)eResolveProxy(oldStateExitPoint);
-			if (stateExitPoint != oldStateExitPoint) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT, oldStateExitPoint, stateExitPoint));
-			}
-		}
-		return stateExitPoint;
+	public State getState() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.EXIT_POINT__STATE) return null;
+		return (State)eContainer();
 	}
 
 	/**
@@ -81,22 +65,8 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StateExitPoint basicGetStateExitPoint() {
-		return stateExitPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStateExitPoint(StateExitPoint newStateExitPoint, NotificationChain msgs) {
-		StateExitPoint oldStateExitPoint = stateExitPoint;
-		stateExitPoint = newStateExitPoint;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT, oldStateExitPoint, newStateExitPoint);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+	public NotificationChain basicSetState(State newState, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newState, RealtimestatechartPackage.EXIT_POINT__STATE, msgs);
 		return msgs;
 	}
 
@@ -105,18 +75,20 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStateExitPoint(StateExitPoint newStateExitPoint) {
-		if (newStateExitPoint != stateExitPoint) {
+	public void setState(State newState) {
+		if (newState != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.EXIT_POINT__STATE && newState != null)) {
+			if (EcoreUtil.isAncestor(this, newState))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (stateExitPoint != null)
-				msgs = ((InternalEObject)stateExitPoint).eInverseRemove(this, RealtimestatechartPackage.STATE_EXIT_POINT__EXIT_POINTS, StateExitPoint.class, msgs);
-			if (newStateExitPoint != null)
-				msgs = ((InternalEObject)newStateExitPoint).eInverseAdd(this, RealtimestatechartPackage.STATE_EXIT_POINT__EXIT_POINTS, StateExitPoint.class, msgs);
-			msgs = basicSetStateExitPoint(newStateExitPoint, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newState != null)
+				msgs = ((InternalEObject)newState).eInverseAdd(this, RealtimestatechartPackage.STATE__EXIT_POINTS, State.class, msgs);
+			msgs = basicSetState(newState, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT, newStateExitPoint, newStateExitPoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.EXIT_POINT__STATE, newState, newState));
 	}
 
 	/**
@@ -127,10 +99,10 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT:
-				if (stateExitPoint != null)
-					msgs = ((InternalEObject)stateExitPoint).eInverseRemove(this, RealtimestatechartPackage.STATE_EXIT_POINT__EXIT_POINTS, StateExitPoint.class, msgs);
-				return basicSetStateExitPoint((StateExitPoint)otherEnd, msgs);
+			case RealtimestatechartPackage.EXIT_POINT__STATE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetState((State)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -143,8 +115,8 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT:
-				return basicSetStateExitPoint(null, msgs);
+			case RealtimestatechartPackage.EXIT_POINT__STATE:
+				return basicSetState(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,11 +127,24 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RealtimestatechartPackage.EXIT_POINT__STATE:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__EXIT_POINTS, State.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT:
-				if (resolve) return getStateExitPoint();
-				return basicGetStateExitPoint();
+			case RealtimestatechartPackage.EXIT_POINT__STATE:
+				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,8 +157,8 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT:
-				setStateExitPoint((StateExitPoint)newValue);
+			case RealtimestatechartPackage.EXIT_POINT__STATE:
+				setState((State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,8 +172,8 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT:
-				setStateExitPoint((StateExitPoint)null);
+			case RealtimestatechartPackage.EXIT_POINT__STATE:
+				setState((State)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -202,8 +187,8 @@ public class ExitPointImpl extends VertexImpl implements ExitPoint {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_POINT__STATE_EXIT_POINT:
-				return stateExitPoint != null;
+			case RealtimestatechartPackage.EXIT_POINT__STATE:
+				return getState() != null;
 		}
 		return super.eIsSet(featureID);
 	}

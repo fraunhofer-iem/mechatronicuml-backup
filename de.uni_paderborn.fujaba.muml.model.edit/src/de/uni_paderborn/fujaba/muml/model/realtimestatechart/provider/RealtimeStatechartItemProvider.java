@@ -341,7 +341,7 @@ public class RealtimeStatechartItemProvider
 			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS);
 			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__ATTRIBUTES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__TRANSITIONS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS);
 		}
 		return childrenFeatures;
@@ -410,7 +410,7 @@ public class RealtimeStatechartItemProvider
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:
 			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
-			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -456,28 +456,8 @@ public class RealtimeStatechartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES,
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATES,
 				 RealtimestatechartFactory.eINSTANCE.createState()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createExitPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createStateEntryPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createStateExitPoint()));
 
 		newChildDescriptors.add
 			(createChildParameter

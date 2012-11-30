@@ -23,7 +23,6 @@ import org.storydriven.core.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getIncomingTransitions <em>Incoming Transitions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,34 +64,6 @@ public interface Vertex extends NamedElement {
 	 * @generated
 	 */
 	EList<Transition> getIncomingTransitions();
-
-	/**
-	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices <em>Vertices</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The realtime statechart this state belongs to.
-	 * \todoib{Should be 1..1, but GMF needs 0..1 here!}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(RealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getVertex_Statechart()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices
-	 * @model opposite="vertices" transient="false"
-	 * @generated
-	 */
-	RealtimeStatechart getStatechart();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statechart</em>' container reference.
-	 * @see #getStatechart()
-	 * @generated
-	 */
-	void setStatechart(RealtimeStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->

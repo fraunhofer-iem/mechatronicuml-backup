@@ -291,8 +291,8 @@ public class StateItemProvider
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_EVENT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__INVARIANTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__CHANNELS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__STATE_ENTRY_POINTS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__STATE_EXIT_POINTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_POINTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EXIT_POINTS);
 		}
 		return childrenFeatures;
 	}
@@ -360,8 +360,8 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__ENTRY_EVENT:
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 			case RealtimestatechartPackage.STATE__CHANNELS:
-			case RealtimestatechartPackage.STATE__STATE_ENTRY_POINTS:
-			case RealtimestatechartPackage.STATE__STATE_EXIT_POINTS:
+			case RealtimestatechartPackage.STATE__ENTRY_POINTS:
+			case RealtimestatechartPackage.STATE__EXIT_POINTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -411,13 +411,13 @@ public class StateItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__STATE_ENTRY_POINTS,
-				 RealtimestatechartFactory.eINSTANCE.createStateEntryPoint()));
+				(RealtimestatechartPackage.Literals.STATE__ENTRY_POINTS,
+				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__STATE_EXIT_POINTS,
-				 RealtimestatechartFactory.eINSTANCE.createStateExitPoint()));
+				(RealtimestatechartPackage.Literals.STATE__EXIT_POINTS,
+				 RealtimestatechartFactory.eINSTANCE.createExitPoint()));
 	}
 
 }

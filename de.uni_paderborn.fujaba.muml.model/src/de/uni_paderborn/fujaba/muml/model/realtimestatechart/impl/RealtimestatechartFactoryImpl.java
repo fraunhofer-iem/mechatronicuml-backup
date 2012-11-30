@@ -31,8 +31,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
@@ -53,7 +51,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 */
 	public static RealtimestatechartFactory init() {
 		try {
-			RealtimestatechartFactory theRealtimestatechartFactory = (RealtimestatechartFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/realtimestatechart/0.3.5"); 
+			RealtimestatechartFactory theRealtimestatechartFactory = (RealtimestatechartFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/realtimestatechart/0.3.6"); 
 			if (theRealtimestatechartFactory != null) {
 				return theRealtimestatechartFactory;
 			}
@@ -100,8 +98,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
 			case RealtimestatechartPackage.ENTRY_POINT: return createEntryPoint();
 			case RealtimestatechartPackage.EXIT_POINT: return createExitPoint();
-			case RealtimestatechartPackage.STATE_ENTRY_POINT: return createStateEntryPoint();
-			case RealtimestatechartPackage.STATE_EXIT_POINT: return createStateExitPoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -319,26 +315,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public ExitPoint createExitPoint() {
 		ExitPointImpl exitPoint = new ExitPointImpl();
 		return exitPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StateEntryPoint createStateEntryPoint() {
-		StateEntryPointImpl stateEntryPoint = new StateEntryPointImpl();
-		return stateEntryPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StateExitPoint createStateExitPoint() {
-		StateExitPointImpl stateExitPoint = new StateExitPointImpl();
-		return stateExitPoint;
 	}
 
 	/**

@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getVertices <em>Vertices</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getStates <em>States</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
@@ -97,21 +97,21 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	EList<Transition> getTransitions();
 
 	/**
-	 * Returns the value of the '<em><b>Vertices</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}'.
+	 * Returns the value of the '<em><b>States</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStatechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The states of this realtime statechart.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Vertices</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_Vertices()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex#getStatechart
+	 * @return the value of the '<em>States</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_States()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStatechart
 	 * @model opposite="statechart" containment="true"
 	 * @generated
 	 */
-	EList<Vertex> getVertices();
+	EList<State> getStates();
 
 	/**
 	 * Returns the value of the '<em><b>Clocks</b></em>' containment reference list.

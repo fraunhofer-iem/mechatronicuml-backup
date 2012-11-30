@@ -40,7 +40,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,7 +54,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getEmbeddingRegion <em>Embedding Region</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getVertices <em>Vertices</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getStates <em>States</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getEventQueueSize <em>Event Queue Size</em>}</li>
@@ -131,14 +130,14 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	protected EList<Transition> transitions;
 
 	/**
-	 * The cached value of the '{@link #getVertices() <em>Vertices</em>}' containment reference list.
+	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVertices()
+	 * @see #getStates()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Vertex> vertices;
+	protected EList<State> states;
 
 	/**
 	 * The cached value of the '{@link #getClocks() <em>Clocks</em>}' containment reference list.
@@ -422,11 +421,11 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Vertex> getVertices() {
-		if (vertices == null) {
-			vertices = new EObjectContainmentWithInverseEList<Vertex>(Vertex.class, this, RealtimestatechartPackage.REALTIME_STATECHART__VERTICES, RealtimestatechartPackage.VERTEX__STATECHART);
+	public EList<State> getStates() {
+		if (states == null) {
+			states = new EObjectContainmentWithInverseEList<State>(State.class, this, RealtimestatechartPackage.REALTIME_STATECHART__STATES, RealtimestatechartPackage.STATE__STATECHART);
 		}
-		return vertices;
+		return states;
 	}
 
 	/**
@@ -623,8 +622,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return basicSetEmbeddingRegion((Region)otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
-			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVertices()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStates()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClocks()).basicAdd(otherEnd, msgs);
 		}
@@ -649,8 +648,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return basicSetEmbeddingRegion(null, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:
-				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
+				return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
 		}
@@ -692,8 +691,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getEmbeddingRegion();
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return getTransitions();
-			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:
-				return getVertices();
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
+				return getStates();
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return getClocks();
 			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
@@ -744,9 +743,9 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				getTransitions().clear();
 				getTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:
-				getVertices().clear();
-				getVertices().addAll((Collection<? extends Vertex>)newValue);
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
+				getStates().clear();
+				getStates().addAll((Collection<? extends State>)newValue);
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				getClocks().clear();
@@ -788,8 +787,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				getTransitions().clear();
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:
-				getVertices().clear();
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
+				getStates().clear();
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				getClocks().clear();
@@ -824,8 +823,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getEmbeddingRegion() != null;
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return transitions != null && !transitions.isEmpty();
-			case RealtimestatechartPackage.REALTIME_STATECHART__VERTICES:
-				return vertices != null && !vertices.isEmpty();
+			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
+				return states != null && !states.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return clocks != null && !clocks.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:

@@ -228,10 +228,10 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Vertex> getVertices() {
+	public EList<? extends Vertex> getVertices() {
 //		return (EList<Vertex>)VERTICES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 		if (getStatechart() != null) {
-			return getStatechart().getVertices();
+			return getStatechart().getStates();
 		}
 		return (EList<Vertex>) ECollections.EMPTY_ELIST;
 	}
